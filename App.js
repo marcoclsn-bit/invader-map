@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
+import * as Location from 'expo-location';
 import { INVADERS } from './data/invaders';
 
 // ─── Constantes ───────────────────────────────────────────────────────────────
@@ -173,6 +174,7 @@ function InvaderPanel({ invader, flashed, onToggleFlash, onClose }) {
 // ─── App ──────────────────────────────────────────────────────────────────────
 
 export default function App() {
+  const mapRef = useRef(null);
   const [selected, setSelected] = useState(null);
   const [showFilters, setShowFilters] = useState(false);
   const [flashed, setFlashed] = useState(new Set());
@@ -182,6 +184,26 @@ export default function App() {
     flashedState: 'all',
     activeLabels: new Set(),
   });
+  const [locationGranted, setLocationGranted] = useState(false);
+
+  useEffect(() => {
+    (async () => {
+      const { status } = await Location.requestForegroundPermissionsAsync();
+      setLocationGranted(status === 'granted');
+    })();
+  }, []);
+
+  async function goToUserLocation() {
+    const loc = await Location.getCurrentPositionAsync({
+      accuracy: Location.Accuracy.Balanced,
+    });
+    mapRef.current?.animateToRegion({
+      latitude: loc.coords.latitude,
+      longitude: loc.coords.longitude,
+      latitudeDelta: 0.01,
+      longitudeDelta: 0.01,
+    }, 600);
+  }
 
   function toggleFlash(id) {
     setFlashed((prev) => {
@@ -206,8 +228,10 @@ export default function App() {
   return (
     <View style={styles.container}>
       <MapView
+        ref={mapRef}
         style={styles.map}
         mapType="mutedStandard"
+        showsUserLocation={locationGranted}
         initialRegion={{
           latitude: 48.8566,
           longitude: 2.3522,
@@ -227,7 +251,7 @@ export default function App() {
         ))}
       </MapView>
 
-      {/* Bouton Filtres */}
+      {/* Boutons flottants */}
       <TouchableOpacity
         style={[styles.filtersBtn, hasActiveFilters && styles.filtersBtnActive]}
         onPress={() => { setShowFilters((v) => !v); setSelected(null); }}
@@ -235,6 +259,13 @@ export default function App() {
         <Text style={[styles.filtersBtnText, hasActiveFilters && styles.filtersBtnTextActive]}>
           {hasActiveFilters ? `Filtres •` : 'Filtres'}
         </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={[styles.locateBtn, !locationGranted && styles.locateBtnDisabled]}
+        onPress={locationGranted ? goToUserLocation : undefined}
+      >
+        <Text style={styles.locateBtnText}>⊙</Text>
       </TouchableOpacity>
 
       {showFilters && (
@@ -265,7 +296,7 @@ const styles = StyleSheet.create({
   container: { flex: 1 },
   map: { ...StyleSheet.absoluteFillObject },
 
-  // Bouton Filtres flottant
+  // Boutons flottants
   filtersBtn: {
     position: 'absolute',
     top: 56,
@@ -290,6 +321,29 @@ const styles = StyleSheet.create({
   },
   filtersBtnTextActive: {
     color: '#fff',
+  },
+  locateBtn: {
+    position: 'absolute',
+    top: 110,
+    right: 16,
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.15,
+    shadowRadius: 6,
+    elevation: 4,
+  },
+  locateBtnDisabled: {
+    opacity: 0.4,
+  },
+  locateBtnText: {
+    fontSize: 20,
+    color: '#1C1C1E',
   },
 
   // Panneau générique (partagé entre FilterPanel et InvaderPanel)
