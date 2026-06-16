@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
+import Svg, { Path } from 'react-native-svg';
 import { INVADERS } from './data/invaders';
 
 // ─── Constantes ───────────────────────────────────────────────────────────────
@@ -35,6 +36,33 @@ function applyFilters(invaders, filters, flashed, labels) {
     }
     return true;
   });
+}
+
+// ─── Marqueur utilisateur (point bleu + cône de direction) ───────────────────
+
+function UserMarker({ coordinate, heading }) {
+  if (!coordinate) return null;
+  return (
+    <Marker coordinate={coordinate} flat anchor={{ x: 0.5, y: 0.5 }} tracksViewChanges={false}>
+      <View style={styles.userMarker}>
+        {/* Cône — seule cette View pivote selon le heading */}
+        <View style={[styles.coneWrapper, { transform: [{ rotate: `${heading}deg` }] }]}>
+          <Svg width={80} height={80}>
+            {/* Tip au centre (40,40), ouverture vers le haut à 60° */}
+            <Path
+              d="M40,40 L17,0 L63,0 Z"
+              fill="rgba(0,122,255,0.18)"
+              stroke="rgba(0,122,255,0.45)"
+              strokeWidth={1}
+              strokeLinejoin="round"
+            />
+          </Svg>
+        </View>
+        {/* Point bleu — ne pivote pas */}
+        <View style={styles.userDot} />
+      </View>
+    </Marker>
+  );
 }
 
 // ─── Panneau de filtres ───────────────────────────────────────────────────────
@@ -184,22 +212,40 @@ export default function App() {
     flashedState: 'all',
     activeLabels: new Set(),
   });
-  const [locationGranted, setLocationGranted] = useState(false);
+  const [userLocation, setUserLocation] = useState(null);
+  const [userHeading, setUserHeading] = useState(0);
 
   useEffect(() => {
+    let positionSub = null;
+    let headingSub = null;
+
     (async () => {
       const { status } = await Location.requestForegroundPermissionsAsync();
-      setLocationGranted(status === 'granted');
+      if (status !== 'granted') return;
+
+      positionSub = await Location.watchPositionAsync(
+        { accuracy: Location.Accuracy.High, distanceInterval: 3 },
+        (loc) => setUserLocation({
+          latitude: loc.coords.latitude,
+          longitude: loc.coords.longitude,
+        })
+      );
+
+      headingSub = await Location.watchHeadingAsync((h) => {
+        setUserHeading(h.trueHeading >= 0 ? h.trueHeading : (h.magHeading ?? 0));
+      });
     })();
+
+    return () => {
+      positionSub?.remove();
+      headingSub?.remove();
+    };
   }, []);
 
-  async function goToUserLocation() {
-    const loc = await Location.getCurrentPositionAsync({
-      accuracy: Location.Accuracy.Balanced,
-    });
+  function goToUserLocation() {
+    if (!userLocation) return;
     mapRef.current?.animateToRegion({
-      latitude: loc.coords.latitude,
-      longitude: loc.coords.longitude,
+      ...userLocation,
       latitudeDelta: 0.01,
       longitudeDelta: 0.01,
     }, 600);
@@ -232,7 +278,7 @@ export default function App() {
         style={styles.map}
         mapType="mutedStandard"
         showsCompass={false}
-        showsUserLocation={locationGranted}
+        showsUserLocation={false}
         initialRegion={{
           latitude: 48.8566,
           longitude: 2.3522,
@@ -250,6 +296,7 @@ export default function App() {
             onPress={() => { setSelected(invader); setShowFilters(false); }}
           />
         ))}
+        <UserMarker coordinate={userLocation} heading={userHeading} />
       </MapView>
 
       {/* Boutons flottants — empilés verticalement en haut à droite */}
@@ -264,8 +311,8 @@ export default function App() {
         </TouchableOpacity>
 
         <TouchableOpacity
-          style={[styles.locateBtn, !locationGranted && styles.locateBtnDisabled]}
-          onPress={locationGranted ? goToUserLocation : undefined}
+          style={[styles.locateBtn, !userLocation && styles.locateBtnDisabled]}
+          onPress={userLocation ? goToUserLocation : undefined}
         >
           <Text style={styles.locateBtnText}>⊙</Text>
         </TouchableOpacity>
@@ -348,6 +395,32 @@ const styles = StyleSheet.create({
   locateBtnText: {
     fontSize: 20,
     color: '#1C1C1E',
+  },
+
+  // Marqueur utilisateur
+  userMarker: {
+    width: 80,
+    height: 80,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  coneWrapper: {
+    position: 'absolute',
+    width: 80,
+    height: 80,
+  },
+  userDot: {
+    width: 16,
+    height: 16,
+    borderRadius: 8,
+    backgroundColor: '#007AFF',
+    borderWidth: 2.5,
+    borderColor: '#fff',
+    shadowColor: '#007AFF',
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.4,
+    shadowRadius: 4,
+    elevation: 3,
   },
 
   // Panneau générique (partagé entre FilterPanel et InvaderPanel)
