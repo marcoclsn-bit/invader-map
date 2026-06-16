@@ -18,7 +18,10 @@ Porteur de projet orienté produit/design, débutant en code. Explications clair
 
 ## État actuel
 - Phase 0 terminée (outillage, projet créé, app sur iPhone)
-- Phase 1 en cours : la carte de Paris s'affiche. Prochaine étape = afficher des marqueurs Invaders (quelques-uns en dur, puis le jeu de données complet).
+- Phase 1 terminée : carte de Paris + 1 528 marqueurs Invaders colorés par statut
+- `data/invaders.js` : 1 528 Invaders Paris uniquement (PA_01…PA_1528), champs propres — id, lat, lng (nombres), status normalisé (ok/damaged/destroyed/unknown), points (nombre), hint
+- `App.js` : fiche détail au tap (id, statut FR, points, hint), bouton « Filtres » flottant avec panneau (filtre par statut, état flashé, étiquettes), état `flashed` (Set d'IDs) et `labels` (objet) prêts pour persistance AsyncStorage
+- Prochaine étape : persistance des données utilisateur (flashed + labels) avec AsyncStorage, puis rafraîchissement automatique des données Invaders
 
 ## Roadmap
 0. Setup ✅
