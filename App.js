@@ -1,8 +1,7 @@
-import { useState, useEffect, useRef, useMemo, memo } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
-import Svg, { Path } from 'react-native-svg';
 import { INVADERS } from './data/invaders';
 
 // ─── Constantes ───────────────────────────────────────────────────────────────
@@ -37,59 +36,6 @@ function applyFilters(invaders, filters, flashed, labels) {
     return true;
   });
 }
-
-// ─── Marqueur utilisateur (point bleu + cône de direction) ───────────────────
-
-const UserMarker = memo(function UserMarker({ coordinate }) {
-  const [heading, setHeading] = useState(0);
-  const lastHeading = useRef(0);
-
-  // Heading géré ici pour ne pas re-rendre App + les 1528 marqueurs
-  useEffect(() => {
-    let sub = null;
-    (async () => {
-      sub = await Location.watchHeadingAsync((h) => {
-        const raw = h.trueHeading >= 0 ? h.trueHeading : (h.magHeading ?? 0);
-        // Ignore les micro-variations < 3° pour stopper le tremblement
-        const diff = Math.abs(raw - lastHeading.current);
-        const delta = diff > 180 ? 360 - diff : diff;
-        if (delta >= 3) {
-          lastHeading.current = raw;
-          setHeading(raw);
-        }
-      });
-    })();
-    return () => { sub?.remove(); };
-  }, []);
-
-  if (!coordinate) return null;
-
-  return (
-    <Marker coordinate={coordinate} flat anchor={{ x: 0.5, y: 0.5 }} tracksViewChanges>
-      <View style={styles.userMarker}>
-        {/* Cône — pivote selon le heading */}
-        <View style={[styles.coneWrapper, { transform: [{ rotate: `${heading}deg` }] }]}>
-          <Svg width={80} height={80}>
-            <Path
-              d="M40,40 L17,0 L63,0 Z"
-              fill="rgba(0,122,255,0.18)"
-              stroke="rgba(0,122,255,0.45)"
-              strokeWidth={1}
-              strokeLinejoin="round"
-            />
-          </Svg>
-        </View>
-        {/* Point bleu — ne pivote pas */}
-        <View style={styles.userDot} />
-      </View>
-    </Marker>
-  );
-},
-// Ne re-rend que si les coordonnées changent réellement
-(prev, next) =>
-  prev.coordinate?.latitude === next.coordinate?.latitude &&
-  prev.coordinate?.longitude === next.coordinate?.longitude
-);
 
 // ─── Panneau de filtres ───────────────────────────────────────────────────────
 
@@ -238,6 +184,7 @@ export default function App() {
     flashedState: 'all',
     activeLabels: new Set(),
   });
+  const [locationGranted, setLocationGranted] = useState(false);
   const [userLocation, setUserLocation] = useState(null);
 
   useEffect(() => {
@@ -246,11 +193,11 @@ export default function App() {
     (async () => {
       const { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== 'granted') return;
+      setLocationGranted(true);
 
       positionSub = await Location.watchPositionAsync(
         { accuracy: Location.Accuracy.High, distanceInterval: 8 },
         (loc) => {
-          // Ignore les fixes GPS imprécis (rayon > 40 m)
           if (loc.coords.accuracy > 40) return;
           setUserLocation({
             latitude: loc.coords.latitude,
@@ -302,7 +249,7 @@ export default function App() {
         style={styles.map}
         mapType="mutedStandard"
         showsCompass={false}
-        showsUserLocation={false}
+        showsUserLocation={locationGranted}
         initialRegion={{
           latitude: 48.8566,
           longitude: 2.3522,
@@ -320,7 +267,6 @@ export default function App() {
             onPress={() => { setSelected(invader); setShowFilters(false); }}
           />
         ))}
-        <UserMarker coordinate={userLocation} />
       </MapView>
 
       {/* Boutons flottants — empilés verticalement en haut à droite */}
@@ -419,32 +365,6 @@ const styles = StyleSheet.create({
   locateBtnText: {
     fontSize: 20,
     color: '#1C1C1E',
-  },
-
-  // Marqueur utilisateur
-  userMarker: {
-    width: 80,
-    height: 80,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  coneWrapper: {
-    position: 'absolute',
-    width: 80,
-    height: 80,
-  },
-  userDot: {
-    width: 16,
-    height: 16,
-    borderRadius: 8,
-    backgroundColor: '#007AFF',
-    borderWidth: 2.5,
-    borderColor: '#fff',
-    shadowColor: '#007AFF',
-    shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.4,
-    shadowRadius: 4,
-    elevation: 3,
   },
 
   // Panneau générique (partagé entre FilterPanel et InvaderPanel)
