@@ -45,3 +45,7 @@ Alerte de proximité, cartes hors-ligne, stats de progression, multi-villes, "In
 - Une fonctionnalité à la fois, une victoire visible à chaque étape.
 - Commit Git régulier.
 - Privilégier le local (pas de backend) tant que possible.
+
+## À compléter (TODO)
+- Étiquettes : UI pour créer / renommer / supprimer des étiquettes personnalisées (pour l'instant, seules les étiquettes par défaut existent).
+- Marquage « déjà flashé » / « reste à faire » par l'utilisateur (toggle sur la fiche d'un Invader).
