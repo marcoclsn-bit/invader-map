@@ -231,6 +231,7 @@ export default function App() {
         ref={mapRef}
         style={styles.map}
         mapType="mutedStandard"
+        showsCompass={false}
         showsUserLocation={locationGranted}
         initialRegion={{
           latitude: 48.8566,
@@ -251,22 +252,24 @@ export default function App() {
         ))}
       </MapView>
 
-      {/* Boutons flottants */}
-      <TouchableOpacity
-        style={[styles.filtersBtn, hasActiveFilters && styles.filtersBtnActive]}
-        onPress={() => { setShowFilters((v) => !v); setSelected(null); }}
-      >
-        <Text style={[styles.filtersBtnText, hasActiveFilters && styles.filtersBtnTextActive]}>
-          {hasActiveFilters ? `Filtres •` : 'Filtres'}
-        </Text>
-      </TouchableOpacity>
+      {/* Boutons flottants — empilés verticalement en haut à droite */}
+      <View style={styles.floatingButtons}>
+        <TouchableOpacity
+          style={[styles.filtersBtn, hasActiveFilters && styles.filtersBtnActive]}
+          onPress={() => { setShowFilters((v) => !v); setSelected(null); }}
+        >
+          <Text style={[styles.filtersBtnText, hasActiveFilters && styles.filtersBtnTextActive]}>
+            {hasActiveFilters ? 'Filtres •' : 'Filtres'}
+          </Text>
+        </TouchableOpacity>
 
-      <TouchableOpacity
-        style={[styles.locateBtn, !locationGranted && styles.locateBtnDisabled]}
-        onPress={locationGranted ? goToUserLocation : undefined}
-      >
-        <Text style={styles.locateBtnText}>⊙</Text>
-      </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.locateBtn, !locationGranted && styles.locateBtnDisabled]}
+          onPress={locationGranted ? goToUserLocation : undefined}
+        >
+          <Text style={styles.locateBtnText}>⊙</Text>
+        </TouchableOpacity>
+      </View>
 
       {showFilters && (
         <FilterPanel
@@ -297,10 +300,14 @@ const styles = StyleSheet.create({
   map: { ...StyleSheet.absoluteFillObject },
 
   // Boutons flottants
-  filtersBtn: {
+  floatingButtons: {
     position: 'absolute',
-    top: 56,
+    top: 60,
     right: 16,
+    alignItems: 'flex-end',
+    gap: 10,
+  },
+  filtersBtn: {
     backgroundColor: '#fff',
     paddingHorizontal: 16,
     paddingVertical: 8,
@@ -323,9 +330,6 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   locateBtn: {
-    position: 'absolute',
-    top: 110,
-    right: 16,
     width: 40,
     height: 40,
     borderRadius: 20,
