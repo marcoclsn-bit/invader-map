@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo, memo } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
@@ -40,15 +40,36 @@ function applyFilters(invaders, filters, flashed, labels) {
 
 // ─── Marqueur utilisateur (point bleu + cône de direction) ───────────────────
 
-function UserMarker({ coordinate, heading }) {
+const UserMarker = memo(function UserMarker({ coordinate }) {
+  const [heading, setHeading] = useState(0);
+  const lastHeading = useRef(0);
+
+  // Heading géré ici pour ne pas re-rendre App + les 1528 marqueurs
+  useEffect(() => {
+    let sub = null;
+    (async () => {
+      sub = await Location.watchHeadingAsync((h) => {
+        const raw = h.trueHeading >= 0 ? h.trueHeading : (h.magHeading ?? 0);
+        // Ignore les micro-variations < 3° pour stopper le tremblement
+        const diff = Math.abs(raw - lastHeading.current);
+        const delta = diff > 180 ? 360 - diff : diff;
+        if (delta >= 3) {
+          lastHeading.current = raw;
+          setHeading(raw);
+        }
+      });
+    })();
+    return () => { sub?.remove(); };
+  }, []);
+
   if (!coordinate) return null;
+
   return (
-    <Marker coordinate={coordinate} flat anchor={{ x: 0.5, y: 0.5 }} tracksViewChanges={false}>
+    <Marker coordinate={coordinate} flat anchor={{ x: 0.5, y: 0.5 }} tracksViewChanges>
       <View style={styles.userMarker}>
-        {/* Cône — seule cette View pivote selon le heading */}
+        {/* Cône — pivote selon le heading */}
         <View style={[styles.coneWrapper, { transform: [{ rotate: `${heading}deg` }] }]}>
           <Svg width={80} height={80}>
-            {/* Tip au centre (40,40), ouverture vers le haut à 60° */}
             <Path
               d="M40,40 L17,0 L63,0 Z"
               fill="rgba(0,122,255,0.18)"
@@ -63,7 +84,12 @@ function UserMarker({ coordinate, heading }) {
       </View>
     </Marker>
   );
-}
+},
+// Ne re-rend que si les coordonnées changent réellement
+(prev, next) =>
+  prev.coordinate?.latitude === next.coordinate?.latitude &&
+  prev.coordinate?.longitude === next.coordinate?.longitude
+);
 
 // ─── Panneau de filtres ───────────────────────────────────────────────────────
 
@@ -213,33 +239,28 @@ export default function App() {
     activeLabels: new Set(),
   });
   const [userLocation, setUserLocation] = useState(null);
-  const [userHeading, setUserHeading] = useState(0);
 
   useEffect(() => {
     let positionSub = null;
-    let headingSub = null;
 
     (async () => {
       const { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== 'granted') return;
 
       positionSub = await Location.watchPositionAsync(
-        { accuracy: Location.Accuracy.High, distanceInterval: 3 },
-        (loc) => setUserLocation({
-          latitude: loc.coords.latitude,
-          longitude: loc.coords.longitude,
-        })
+        { accuracy: Location.Accuracy.High, distanceInterval: 8 },
+        (loc) => {
+          // Ignore les fixes GPS imprécis (rayon > 40 m)
+          if (loc.coords.accuracy > 40) return;
+          setUserLocation({
+            latitude: loc.coords.latitude,
+            longitude: loc.coords.longitude,
+          });
+        }
       );
-
-      headingSub = await Location.watchHeadingAsync((h) => {
-        setUserHeading(h.trueHeading >= 0 ? h.trueHeading : (h.magHeading ?? 0));
-      });
     })();
 
-    return () => {
-      positionSub?.remove();
-      headingSub?.remove();
-    };
+    return () => { positionSub?.remove(); };
   }, []);
 
   function goToUserLocation() {
@@ -264,7 +285,10 @@ export default function App() {
     setShowFilters(false);
   }
 
-  const visibleInvaders = applyFilters(INVADERS, filters, flashed, labels);
+  const visibleInvaders = useMemo(
+    () => applyFilters(INVADERS, filters, flashed, labels),
+    [filters, flashed, labels]
+  );
 
   const hasActiveFilters =
     filters.statuses.size < ALL_STATUSES.length ||
@@ -296,7 +320,7 @@ export default function App() {
             onPress={() => { setSelected(invader); setShowFilters(false); }}
           />
         ))}
-        <UserMarker coordinate={userLocation} heading={userHeading} />
+        <UserMarker coordinate={userLocation} />
       </MapView>
 
       {/* Boutons flottants — empilés verticalement en haut à droite */}
