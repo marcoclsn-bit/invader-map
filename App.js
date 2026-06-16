@@ -2,7 +2,9 @@ import { useState, useEffect, useRef, useMemo } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { INVADERS } from './data/invaders';
+import { InvaderListModal } from './components/InvaderListModal';
 
 // ─── Constantes ───────────────────────────────────────────────────────────────
 
@@ -186,6 +188,23 @@ export default function App() {
   });
   const [locationGranted, setLocationGranted] = useState(false);
   const [userLocation, setUserLocation] = useState(null);
+  const [showList, setShowList] = useState(false);
+  const [flashedLoaded, setFlashedLoaded] = useState(false);
+
+  // Chargement initial depuis AsyncStorage
+  useEffect(() => {
+    AsyncStorage.getItem('invader_flashed')
+      .then((raw) => {
+        if (raw) setFlashed(new Set(JSON.parse(raw)));
+      })
+      .finally(() => setFlashedLoaded(true));
+  }, []);
+
+  // Sauvegarde à chaque changement (seulement après le chargement initial)
+  useEffect(() => {
+    if (!flashedLoaded) return;
+    AsyncStorage.setItem('invader_flashed', JSON.stringify([...flashed]));
+  }, [flashed, flashedLoaded]);
 
   useEffect(() => {
     let positionSub = null;
@@ -225,6 +244,14 @@ export default function App() {
       next.has(id) ? next.delete(id) : next.add(id);
       return next;
     });
+  }
+
+  function bulkFlash() {
+    setFlashed(new Set(INVADERS.map((inv) => inv.id)));
+  }
+
+  function bulkUnflash() {
+    setFlashed(new Set());
   }
 
   function closeAll() {
@@ -286,6 +313,13 @@ export default function App() {
         >
           <Text style={styles.locateBtnText}>⊙</Text>
         </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.listBtn}
+          onPress={() => setShowList(true)}
+        >
+          <Text style={styles.locateBtnText}>≡</Text>
+        </TouchableOpacity>
       </View>
 
       {showFilters && (
@@ -297,6 +331,15 @@ export default function App() {
           onClose={() => setShowFilters(false)}
         />
       )}
+
+      <InvaderListModal
+        visible={showList}
+        flashed={flashed}
+        onToggleFlash={toggleFlash}
+        onBulkFlash={bulkFlash}
+        onBulkUnflash={bulkUnflash}
+        onClose={() => setShowList(false)}
+      />
 
       {selected && !showFilters && (
         <InvaderPanel
@@ -365,6 +408,19 @@ const styles = StyleSheet.create({
   locateBtnText: {
     fontSize: 20,
     color: '#1C1C1E',
+  },
+  listBtn: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.15,
+    shadowRadius: 6,
+    elevation: 4,
   },
 
   // Panneau générique (partagé entre FilterPanel et InvaderPanel)
