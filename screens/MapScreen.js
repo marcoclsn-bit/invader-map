@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, Platform, Linking, Alert } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
 import { INVADERS } from '../data/invaders';
 import { useAppContext } from '../context/AppContext';
 import { STATUS_COLOR, STATUS_LABEL, ALL_STATUSES } from '../constants';
+import { getMarkerColor } from '../utils/markerColor';
 
 // ─── Logique de filtrage ──────────────────────────────────────────────────────
 
@@ -21,10 +22,24 @@ function applyFilters(invaders, filters, flashed, labels) {
   });
 }
 
+// ─── Navigation externe ───────────────────────────────────────────────────────
+
+async function openInApp(app, lat, lng) {
+  if (app === 'apple') {
+    Linking.openURL(`maps://?daddr=${lat},${lng}&dirflg=w`).catch(() => {});
+  } else {
+    const canUseNative = await Linking.canOpenURL('comgooglemaps://');
+    const url = canUseNative
+      ? `comgooglemaps://?daddr=${lat},${lng}&directionsmode=walking`
+      : `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=walking`;
+    Linking.openURL(url).catch(() => {});
+  }
+}
+
 // ─── Panneau de filtres ───────────────────────────────────────────────────────
 
-function FilterPanel({ filters, onFiltersChange, flashed, labels, onClose }) {
-  const allLabels = [...new Set(Object.values(labels).flat())];
+function FilterPanel({ filters, onFiltersChange, onClose }) {
+  const { labelDefs, statusColors } = useAppContext();
 
   function toggleStatus(status) {
     const next = new Set(filters.statuses);
@@ -36,9 +51,9 @@ function FilterPanel({ filters, onFiltersChange, flashed, labels, onClose }) {
     onFiltersChange({ ...filters, flashedState: val });
   }
 
-  function toggleLabel(label) {
+  function toggleLabelFilter(labelId) {
     const next = new Set(filters.activeLabels);
-    next.has(label) ? next.delete(label) : next.add(label);
+    next.has(labelId) ? next.delete(labelId) : next.add(labelId);
     onFiltersChange({ ...filters, activeLabels: next });
   }
 
@@ -55,6 +70,7 @@ function FilterPanel({ filters, onFiltersChange, flashed, labels, onClose }) {
       <View style={styles.chipRow}>
         {ALL_STATUSES.map((status) => {
           const active = filters.statuses.has(status);
+          const color = statusColors[status];
           return (
             <TouchableOpacity
               key={status}
@@ -62,11 +78,11 @@ function FilterPanel({ filters, onFiltersChange, flashed, labels, onClose }) {
               style={[
                 styles.chip,
                 active
-                  ? { backgroundColor: STATUS_COLOR[status] }
-                  : { backgroundColor: '#F2F2F7', borderColor: STATUS_COLOR[status], borderWidth: 1.5 },
+                  ? { backgroundColor: color }
+                  : { backgroundColor: '#F2F2F7', borderColor: color, borderWidth: 1.5 },
               ]}
             >
-              <Text style={[styles.chipText, !active && { color: STATUS_COLOR[status] }]}>
+              <Text style={[styles.chipText, !active && { color }]}>
                 {STATUS_LABEL[status]}
               </Text>
             </TouchableOpacity>
@@ -94,19 +110,24 @@ function FilterPanel({ filters, onFiltersChange, flashed, labels, onClose }) {
       </View>
 
       <Text style={styles.sectionTitle}>Étiquettes</Text>
-      {allLabels.length === 0 ? (
-        <Text style={styles.emptyNote}>Aucune étiquette créée</Text>
+      {labelDefs.filter((d) => !d.system).length === 0 ? (
+        <Text style={styles.emptyNote}>Aucune étiquette définie</Text>
       ) : (
         <View style={styles.chipRow}>
-          {allLabels.map((label) => {
-            const active = filters.activeLabels.has(label);
+          {labelDefs.filter((d) => !d.system).map((def) => {
+            const active = filters.activeLabels.has(def.id);
             return (
               <TouchableOpacity
-                key={label}
-                onPress={() => toggleLabel(label)}
-                style={[styles.chip, active && styles.chipActiveNeutral]}
+                key={def.id}
+                onPress={() => toggleLabelFilter(def.id)}
+                style={[
+                  styles.chip,
+                  active
+                    ? { backgroundColor: def.color }
+                    : { backgroundColor: '#F2F2F7', borderColor: def.color, borderWidth: 1.5 },
+                ]}
               >
-                <Text style={[styles.chipText, active && styles.chipTextActive]}>{label}</Text>
+                <Text style={[styles.chipText, active && styles.chipTextActive]}>{def.name}</Text>
               </TouchableOpacity>
             );
           })}
@@ -118,8 +139,10 @@ function FilterPanel({ filters, onFiltersChange, flashed, labels, onClose }) {
 
 // ─── Fiche Invader ────────────────────────────────────────────────────────────
 
-function InvaderPanel({ invader, flashed, onToggleFlash, onClose }) {
+function InvaderPanel({ invader, flashed, onToggleFlash, onNavigate, onClose }) {
+  const { labelDefs, statusColors, labels, toggleLabel } = useAppContext();
   const isFlashed = flashed.has(invader.id);
+  const invLabelIds = labels[invader.id] ?? [];
 
   return (
     <View style={styles.panel}>
@@ -131,7 +154,7 @@ function InvaderPanel({ invader, flashed, onToggleFlash, onClose }) {
       </View>
 
       <View style={styles.panelRow}>
-        <View style={[styles.statusBadge, { backgroundColor: STATUS_COLOR[invader.status] }]}>
+        <View style={[styles.statusBadge, { backgroundColor: statusColors[invader.status] }]}>
           <Text style={styles.statusText}>{STATUS_LABEL[invader.status] ?? invader.status}</Text>
         </View>
         <Text style={styles.points}>{invader.points} pts</Text>
@@ -148,8 +171,40 @@ function InvaderPanel({ invader, flashed, onToggleFlash, onClose }) {
             {isFlashed ? '✓ Flashé' : 'Marquer comme flashé'}
           </Text>
         </TouchableOpacity>
-        {/* Futures actions : étiquettes, signaler… */}
+        <TouchableOpacity
+          onPress={() => onNavigate(invader.lat, invader.lng)}
+          style={styles.actionBtn}
+        >
+          <Text style={styles.actionBtnText}>Y aller</Text>
+        </TouchableOpacity>
       </View>
+
+      {labelDefs.filter((d) => !d.system).length > 0 && (
+        <View style={styles.labelSection}>
+          <Text style={styles.labelSectionTitle}>ÉTIQUETTES</Text>
+          <View style={styles.labelChips}>
+            {labelDefs.filter((d) => !d.system).map((def) => {
+              const applied = invLabelIds.includes(def.id);
+              return (
+                <TouchableOpacity
+                  key={def.id}
+                  style={[
+                    styles.labelChip,
+                    applied
+                      ? { backgroundColor: def.color }
+                      : { borderColor: def.color, borderWidth: 1.5 },
+                  ]}
+                  onPress={() => toggleLabel(invader.id, def.id)}
+                >
+                  <Text style={[styles.labelChipText, applied && styles.labelChipTextActive]}>
+                    {def.name}
+                  </Text>
+                </TouchableOpacity>
+              );
+            })}
+          </View>
+        </View>
+      )}
     </View>
   );
 }
@@ -157,13 +212,35 @@ function InvaderPanel({ invader, flashed, onToggleFlash, onClose }) {
 // ─── Écran carte ──────────────────────────────────────────────────────────────
 
 export default function MapScreen() {
-  const { flashed, labels, filters, setFilters, toggleFlash } = useAppContext();
+  const { flashed, labels, labelDefs, statusColors, colorOverrides, filters, setFilters, toggleFlash, mapsApp, setMapsAppPref } = useAppContext();
 
   const mapRef = useRef(null);
+  const centeredRef = useRef(false); // garde : ne recentre qu'une seule fois au démarrage
   const [selected, setSelected] = useState(null);
   const [showFilters, setShowFilters] = useState(false);
   const [locationGranted, setLocationGranted] = useState(false);
   const [userLocation, setUserLocation] = useState(null);
+  function handleNavigate(lat, lng) {
+    if (mapsApp) {
+      openInApp(mapsApp, lat, lng);
+      return;
+    }
+    Alert.alert(
+      'App de cartes par défaut',
+      'Choisissez votre application. Ce choix sera mémorisé et modifiable dans Réglages.',
+      [
+        {
+          text: 'Plans',
+          onPress: () => { setMapsAppPref('apple'); openInApp('apple', lat, lng); },
+        },
+        {
+          text: 'Google Maps',
+          onPress: () => { setMapsAppPref('google'); openInApp('google', lat, lng); },
+        },
+        { text: 'Annuler', style: 'cancel' },
+      ]
+    );
+  }
 
   useEffect(() => {
     let positionSub = null;
@@ -175,7 +252,19 @@ export default function MapScreen() {
         { accuracy: Location.Accuracy.High, distanceInterval: 8 },
         (loc) => {
           if (loc.coords.accuracy > 40) return;
-          setUserLocation({ latitude: loc.coords.latitude, longitude: loc.coords.longitude });
+          const { latitude, longitude } = loc.coords;
+          setUserLocation({ latitude, longitude });
+          // Centrage initial unique : ne se déclenche qu'à la première position fiable
+          if (!centeredRef.current) {
+            centeredRef.current = true;
+            const nearParis = Math.abs(latitude - 48.8566) < 0.45 && Math.abs(longitude - 2.3522) < 0.65;
+            if (nearParis) {
+              mapRef.current?.animateToRegion(
+                { latitude, longitude, latitudeDelta: 0.01, longitudeDelta: 0.01 },
+                800
+              );
+            }
+          }
         }
       );
     })();
@@ -222,7 +311,8 @@ export default function MapScreen() {
           <Marker
             key={invader.id}
             coordinate={{ latitude: invader.lat, longitude: invader.lng }}
-            pinColor={STATUS_COLOR[invader.status] ?? '#8E8E93'}
+            pinColor={getMarkerColor(invader, labels, labelDefs, colorOverrides, statusColors, flashed)}
+            tracksViewChanges={false}
             stopPropagation
             onPress={() => { setSelected(invader); setShowFilters(false); }}
           />
@@ -252,8 +342,6 @@ export default function MapScreen() {
         <FilterPanel
           filters={filters}
           onFiltersChange={setFilters}
-          flashed={flashed}
-          labels={labels}
           onClose={() => setShowFilters(false)}
         />
       )}
@@ -263,6 +351,7 @@ export default function MapScreen() {
           invader={selected}
           flashed={flashed}
           onToggleFlash={toggleFlash}
+          onNavigate={handleNavigate}
           onClose={() => setSelected(null)}
         />
       )}
@@ -345,10 +434,12 @@ const styles = StyleSheet.create({
   hint: { marginTop: 12, fontSize: 14, color: '#636366', fontStyle: 'italic' },
   actions: { marginTop: 16, flexDirection: 'row', gap: 10 },
   actionBtn: {
+    flex: 1,
     borderRadius: 8,
     paddingHorizontal: 14,
     paddingVertical: 8,
     backgroundColor: '#F2F2F7',
+    alignItems: 'center',
   },
   actionBtnActive: { backgroundColor: '#34C759' },
   actionBtnText: { fontSize: 14, fontWeight: '500', color: '#1C1C1E' },
@@ -374,4 +465,22 @@ const styles = StyleSheet.create({
   chipText: { fontSize: 13, fontWeight: '500', color: '#636366' },
   chipTextActive: { color: '#fff' },
   emptyNote: { fontSize: 13, color: '#C7C7CC', fontStyle: 'italic' },
+
+  labelSection: { marginTop: 16 },
+  labelSectionTitle: {
+    fontSize: 11,
+    fontWeight: '600',
+    color: '#8E8E93',
+    letterSpacing: 0.5,
+    marginBottom: 8,
+  },
+  labelChips: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+  labelChip: {
+    borderRadius: 20,
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    backgroundColor: 'transparent',
+  },
+  labelChipText: { fontSize: 13, fontWeight: '500', color: '#1C1C1E' },
+  labelChipTextActive: { color: '#fff' },
 });

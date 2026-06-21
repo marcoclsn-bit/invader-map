@@ -20,8 +20,9 @@ Porteur de projet orienté produit/design, débutant en code. Explications clair
 - Phase 0 terminée (outillage, projet créé, app sur iPhone)
 - Phase 1 terminée : carte de Paris + 1 528 marqueurs Invaders colorés par statut
 - `data/invaders.js` : 1 528 Invaders Paris uniquement (PA_01…PA_1528), champs propres — id, lat, lng (nombres), status normalisé (ok/damaged/destroyed/unknown), points (nombre), hint
-- `App.js` : fiche détail au tap (id, statut FR, points, hint), bouton « Filtres » flottant avec panneau (filtre par statut, état flashé, étiquettes), état `flashed` (Set d'IDs) et `labels` (objet) prêts pour persistance AsyncStorage
-- Prochaine étape : persistance des données utilisateur (flashed + labels) avec AsyncStorage, puis rafraîchissement automatique des données Invaders
+- `App.js` : 4 onglets (Carte, Liste, Trajet, Réglages), état global via AppContext (flashed, labels, labelDefs, statusColors, colorOverrides, mapsApp)
+- Règle de couleur des marqueurs : **flashé** (couleur de `lbl_flashed`) > **colorOverride** > **1re étiquette** > **couleur du statut**. `lbl_flashed` est une étiquette système (non assignable manuellement, flag `system: true`), recolorable dans Réglages.
+- Prochaine étape : rafraîchissement automatique des données Invaders (GitHub Action + cache local)
 
 ## Roadmap
 0. Setup ✅

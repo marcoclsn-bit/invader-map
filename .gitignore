@@ -33,6 +33,9 @@ yarn-error.*
 # local env files
 .env*.local
 
+# clé API (ne pas committer)
+config/ors.js
+
 # typescript
 *.tsbuildinfo
 
