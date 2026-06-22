@@ -13,6 +13,7 @@ import { INVADERS } from '../data/invaders';
 import { STATUS_COLOR } from '../constants';
 import { ORS_API_KEY } from '../config/ors';
 import { useAppContext } from '../context/AppContext';
+import { INVADER_DISTRICT, arLabel } from '../utils/arrondissement';
 
 const PARIS = { latitude: 48.8566, longitude: 2.3522, latitudeDelta: 0.12, longitudeDelta: 0.12 };
 const VISIT_MIN = 2;   // minutes par Invader (observation + photo)
@@ -161,7 +162,7 @@ function HuntRow({ inv, index, isFlashed, statusColors, onPress }) {
 
 // ─── Écran Chasse ─────────────────────────────────────────────────────────────
 
-export default function ChasseScreen() {
+export default function ChasseScreen({ route }) {
   const insets = useSafeAreaInsets();
   const mapRef = useRef(null);
   const gpsRef = useRef(null);
@@ -196,6 +197,7 @@ export default function ChasseScreen() {
   const [budgetMin, setBudgetMin] = useState(60);
   const [profile, setProfile] = useState('foot-walking');
   const [unflashedOnly, setUnflashedOnly] = useState(true);
+  const [arFilter, setArFilter] = useState(null); // c_ar (1-20) ou null = tous Paris
 
   // ─── Résultat + navigation ─────────────────────────────────────────────────
   const [loading, setLoading] = useState(false);
@@ -206,6 +208,28 @@ export default function ChasseScreen() {
   const [following, setFollowing] = useState(false);
   const [drifted, setDrifted] = useState(false);
   const [userPos, setUserPos] = useState(null);
+
+  // ─── Preset depuis Palmarès ───────────────────────────────────────────────
+  useEffect(() => {
+    const preset = route?.params?.arPreset;
+    if (!preset) return;
+    setMode('quartier');
+    setQText(preset.label);
+    setQCoords([preset.lon, preset.lat]);
+    setArFilter(preset.ar);
+    setResult(null);
+    setSelectedInv(null);
+    setError(null);
+    setInputCollapsed(false);
+    setFollowing(false);
+    setDrifted(false);
+    setTimeout(() => {
+      mapRef.current?.animateToRegion(
+        { latitude: preset.lat, longitude: preset.lon, latitudeDelta: 0.028, longitudeDelta: 0.028 },
+        600
+      );
+    }, 300);
+  }, [route?.params?.arPreset?._ts]); // _ts change à chaque tap → déclenche même arr. deux fois
 
   // ─── Cadrage carte après génération ──────────────────────────────────────
   useEffect(() => {
@@ -286,6 +310,7 @@ export default function ChasseScreen() {
   function onQChange(text) {
     setQText(text);
     setQCoords(null);
+    setArFilter(null); // l'utilisateur tape → plus de filtre arrondissement
     clearTimeout(debounce.current);
     if (text.length >= 3) {
       setQSearching(true);
@@ -346,7 +371,8 @@ export default function ChasseScreen() {
       const [startLon, startLat] = mode === 'around' ? gpsRef.current : qCoords;
       const candidates = INVADERS.filter(inv =>
         inv.status !== 'destroyed' &&
-        (!unflashedOnly || !flashed.has(inv.id))
+        (!unflashedOnly || !flashed.has(inv.id)) &&
+        (arFilter === null || INVADER_DISTRICT.get(inv.id) === arFilter)
       );
 
       const selected = greedyHunt(startLon, startLat, candidates, budgetMin, SPEEDS[profile]);
@@ -485,7 +511,7 @@ export default function ChasseScreen() {
                     ].map(m => (
                       <TouchableOpacity key={m.key}
                         style={[styles.modeBtn, mode === m.key && styles.modeBtnActive]}
-                        onPress={() => setMode(m.key)}
+                        onPress={() => { setMode(m.key); if (m.key === 'around') setArFilter(null); }}
                       >
                         <Ionicons name={m.icon} size={13} color={mode === m.key ? '#fff' : '#636366'} />
                         <Text style={[styles.modeBtnText, mode === m.key && styles.modeBtnTextActive]}>
@@ -603,6 +629,19 @@ export default function ChasseScreen() {
                       thumbColor="#fff"
                     />
                   </View>
+
+                  {/* Filtre arrondissement actif */}
+                  {arFilter !== null && (
+                    <View style={styles.arFilterBanner}>
+                      <Ionicons name="filter-outline" size={13} color="#5856D6" />
+                      <Text style={styles.arFilterText}>
+                        Limité au {arLabel(arFilter)}
+                      </Text>
+                      <TouchableOpacity onPress={() => setArFilter(null)} hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}>
+                        <Ionicons name="close-circle" size={15} color="#8E8E93" />
+                      </TouchableOpacity>
+                    </View>
+                  )}
 
                   {/* Bouton générer */}
                   <TouchableOpacity
@@ -768,6 +807,13 @@ const styles = StyleSheet.create({
   genBtnText: { color: '#fff', fontWeight: '600', fontSize: 15 },
   errorText: { fontSize: 13, color: '#FF3B30', marginTop: 8, textAlign: 'center' },
   hintText: { fontSize: 12, color: '#8E8E93', marginTop: 6, textAlign: 'center' },
+
+  arFilterBanner: {
+    flexDirection: 'row', alignItems: 'center', gap: 6,
+    backgroundColor: '#5856D615', borderRadius: 8,
+    paddingHorizontal: 10, paddingVertical: 7, marginTop: 10,
+  },
+  arFilterText: { flex: 1, fontSize: 12, color: '#5856D6', fontWeight: '500' },
 
   // ── Boutons navigation ─────────────────────────────────────────────────────
   mapOverlay: {

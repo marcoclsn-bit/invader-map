@@ -3,6 +3,7 @@ import {
   StyleSheet, View, Text, FlatList, TextInput,
   TouchableOpacity, Switch, Alert,
 } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { INVADERS } from '../data/invaders';
 import { useAppContext } from '../context/AppContext';
@@ -32,7 +33,7 @@ const InvaderRow = memo(function InvaderRow({ item, isFlashed, onToggle }) {
 
 // ─── Écran liste ──────────────────────────────────────────────────────────────
 
-export default function ListScreen() {
+export default function ListScreen({ navigation }) {
   const { flashed, toggleFlash, bulkFlash, bulkUnflash } = useAppContext();
   const insets = useSafeAreaInsets();
   const [search, setSearch] = useState('');
@@ -80,7 +81,12 @@ export default function ListScreen() {
       {/* En-tête */}
       <View style={styles.header}>
         <Text style={styles.title}>Invaders Paris</Text>
-        <Text style={styles.counter}>{flashed.size} / {TOTAL} flashés</Text>
+        <View style={styles.headerRight}>
+          <Text style={styles.counter}>{flashed.size} / {TOTAL} flashés</Text>
+          <TouchableOpacity onPress={() => navigation.getParent()?.navigate('Réglages')} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
+            <Ionicons name="settings-outline" size={20} color="#8E8E93" />
+          </TouchableOpacity>
+        </View>
       </View>
 
       {/* Recherche */}
@@ -157,6 +163,7 @@ const styles = StyleSheet.create({
     borderBottomColor: '#E5E5EA',
   },
   title: { fontSize: 20, fontWeight: '700', color: '#1C1C1E' },
+  headerRight: { flexDirection: 'row', alignItems: 'center', gap: 12 },
   counter: { fontSize: 13, color: '#8E8E93' },
   searchInput: {
     marginHorizontal: 16,

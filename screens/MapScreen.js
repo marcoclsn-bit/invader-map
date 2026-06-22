@@ -2,6 +2,8 @@ import { useState, useEffect, useRef, useMemo } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, Platform, Linking, Alert } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Ionicons } from '@expo/vector-icons';
 import { INVADERS } from '../data/invaders';
 import { useAppContext } from '../context/AppContext';
 import { STATUS_COLOR, STATUS_LABEL, ALL_STATUSES } from '../constants';
@@ -211,8 +213,9 @@ function InvaderPanel({ invader, flashed, onToggleFlash, onNavigate, onClose }) 
 
 // ─── Écran carte ──────────────────────────────────────────────────────────────
 
-export default function MapScreen() {
+export default function MapScreen({ navigation }) {
   const { flashed, labels, labelDefs, statusColors, colorOverrides, filters, setFilters, toggleFlash, mapsApp, setMapsAppPref } = useAppContext();
+  const insets = useSafeAreaInsets();
 
   const mapRef = useRef(null);
   const centeredRef = useRef(false); // garde : ne recentre qu'une seule fois au démarrage
@@ -319,8 +322,15 @@ export default function MapScreen() {
         ))}
       </MapView>
 
-      {/* Boutons flottants */}
-      <View style={styles.floatingButtons}>
+      {/* Boutons flottants (⚙ en tête de colonne) */}
+      <View style={[styles.floatingButtons, { top: insets.top + 10 }]}>
+        <TouchableOpacity
+          style={styles.gearBtn}
+          onPress={() => navigation.getParent()?.navigate('Réglages')}
+        >
+          <Ionicons name="settings-outline" size={20} color="#1C1C1E" />
+        </TouchableOpacity>
+
         <TouchableOpacity
           style={[styles.filtersBtn, hasActiveFilters && styles.filtersBtnActive]}
           onPress={() => { setShowFilters((v) => !v); setSelected(null); }}
@@ -367,10 +377,16 @@ const styles = StyleSheet.create({
 
   floatingButtons: {
     position: 'absolute',
-    top: 60,
     right: 16,
     alignItems: 'flex-end',
     gap: 10,
+  },
+  gearBtn: {
+    width: 38, height: 38, borderRadius: 19,
+    backgroundColor: '#fff',
+    alignItems: 'center', justifyContent: 'center',
+    shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.15, shadowRadius: 4, elevation: 4,
   },
   filtersBtn: {
     backgroundColor: '#fff',
