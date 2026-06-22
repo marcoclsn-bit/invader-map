@@ -5,25 +5,37 @@ import { Ionicons } from '@expo/vector-icons';
 import { INVADERS } from '../data/invaders';
 import { useAppContext } from '../context/AppContext';
 import { INVADER_DISTRICT, arLabel, ARRONDISSEMENT_CENTERS } from '../utils/arrondissement';
+import { useTheme } from '../theme/ThemeContext';
+import { typography } from '../theme/tokens';
 
-const ACCENT = '#5856D6';
 // Les détruits sont exclus partout : on ne peut pas les flasher → jamais comptés
 const FLASHABLE = INVADERS.filter(inv => inv.status !== 'destroyed');
 const TOTAL_ALL_PTS = FLASHABLE.reduce((s, inv) => s + inv.points, 0);
 
+// ─── Cache de styles thémés ───────────────────────────────────────────────────
+let _styleCache = null;
+function getStyles(theme) {
+  if (_styleCache?.theme === theme) return _styleCache.styles;
+  const styles = makeStyles(theme);
+  _styleCache = { theme, styles };
+  return styles;
+}
+
 // ─── Barre de progression ─────────────────────────────────────────────────────
 
-function ProgressBar({ pct, color = ACCENT }) {
+function ProgressBar({ pct, theme }) {
+  const styles = getStyles(theme);
   return (
     <View style={styles.track}>
-      <View style={[styles.fill, { width: `${Math.min(pct, 100)}%`, backgroundColor: color }]} />
+      <View style={[styles.fill, { width: `${Math.min(pct, 100)}%`, backgroundColor: theme.accent }]} />
     </View>
   );
 }
 
 // ─── Ligne arrondissement ─────────────────────────────────────────────────────
 
-function ArRow({ item, onHunt }) {
+function ArRow({ item, onHunt, theme }) {
+  const styles = getStyles(theme);
   const pct = item.total > 0 ? (item.flashed / item.total) * 100 : 0;
 
   return (
@@ -32,10 +44,10 @@ function ArRow({ item, onHunt }) {
         <Text style={styles.arName}>{arLabel(item.ar)}</Text>
         <View style={styles.chasserCTA}>
           <Text style={styles.chasserText}>Chasser ici</Text>
-          <Ionicons name="chevron-forward" size={13} color={ACCENT} />
+          <Ionicons name="chevron-forward" size={13} color={theme.accent} />
         </View>
       </View>
-      <ProgressBar pct={pct} />
+      <ProgressBar pct={pct} theme={theme} />
       <Text style={styles.arStat}>
         {item.flashed}/{item.total} flashés · {pct.toFixed(0)} % · {item.totalPts} pts
       </Text>
@@ -45,35 +57,33 @@ function ArRow({ item, onHunt }) {
 
 // ─── Vue arrondissements ──────────────────────────────────────────────────────
 
-function ArrondissementsView({ stats, insets, onBack, onSettings, onHuntAr }) {
+function ArrondissementsView({ stats, insets, onBack, onSettings, onHuntAr, theme }) {
+  const styles = getStyles(theme);
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
-      {/* En-tête */}
       <View style={styles.header}>
         <TouchableOpacity style={styles.backBtn} onPress={onBack} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
-          <Ionicons name="chevron-back" size={20} color={ACCENT} />
+          <Ionicons name="chevron-back" size={20} color={theme.accent} />
           <Text style={styles.backText}>Retour</Text>
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Paris</Text>
         <TouchableOpacity onPress={onSettings} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
-          <Ionicons name="settings-outline" size={22} color="#8E8E93" />
+          <Ionicons name="settings-outline" size={22} color={theme.textSecondary} />
         </TouchableOpacity>
       </View>
 
-      {/* Résumé Paris */}
       <View style={styles.summaryCard}>
         <Text style={styles.summaryLabel}>
           {stats.flashed} / {stats.total} flashés · {stats.flashedPts} / {stats.totalPts} pts
         </Text>
-        <ProgressBar pct={stats.pct} />
+        <ProgressBar pct={stats.pct} theme={theme} />
         <Text style={styles.summaryPct}>{stats.pct.toFixed(1)} %</Text>
       </View>
 
-      {/* Liste des arrondissements */}
       <FlatList
         data={stats.arrondissements}
         keyExtractor={item => String(item.ar)}
-        renderItem={({ item }) => <ArRow item={item} onHunt={() => onHuntAr(item.ar)} />}
+        renderItem={({ item }) => <ArRow item={item} onHunt={() => onHuntAr(item.ar)} theme={theme} />}
         ItemSeparatorComponent={() => <View style={styles.separator} />}
         contentContainerStyle={{ paddingBottom: insets.bottom + 20 }}
       />
@@ -86,18 +96,17 @@ function ArrondissementsView({ stats, insets, onBack, onSettings, onHuntAr }) {
 export default function PalmèresScreen({ navigation }) {
   const insets = useSafeAreaInsets();
   const { flashed } = useAppContext();
-  const [drillVille, setDrillVille] = useState(null); // null = liste villes, 'Paris' = arrondissements
+  const { theme } = useTheme();
+  const styles = getStyles(theme);
+  const [drillVille, setDrillVille] = useState(null);
 
-  // Statistiques globales + par arrondissement (recalculé si flashed change)
   const stats = useMemo(() => {
     let totalFlashed = 0;
     let totalFlashedPts = 0;
-
     const byAr = new Map();
     for (let ar = 1; ar <= 20; ar++) {
       byAr.set(ar, { ar, total: 0, flashed: 0, totalPts: 0, flashedPts: 0 });
     }
-
     for (const inv of FLASHABLE) {
       const isFlashed = flashed.has(inv.id);
       if (isFlashed) { totalFlashed++; totalFlashedPts += inv.points; }
@@ -111,9 +120,7 @@ export default function PalmèresScreen({ navigation }) {
         }
       }
     }
-
     const pct = FLASHABLE.length > 0 ? (totalFlashed / FLASHABLE.length) * 100 : 0;
-
     return {
       total: FLASHABLE.length,
       flashed: totalFlashed,
@@ -124,9 +131,7 @@ export default function PalmèresScreen({ navigation }) {
     };
   }, [flashed]);
 
-  function openSettings() {
-    navigation.getParent()?.navigate('Réglages');
-  }
+  function openSettings() { navigation.getParent()?.navigate('Réglages'); }
 
   function huntAr(ar) {
     const center = ARRONDISSEMENT_CENTERS.get(ar);
@@ -144,35 +149,32 @@ export default function PalmèresScreen({ navigation }) {
         onBack={() => setDrillVille(null)}
         onSettings={openSettings}
         onHuntAr={huntAr}
+        theme={theme}
       />
     );
   }
 
-  // ── Niveau 1 : liste des villes ──────────────────────────────────────────
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
-      {/* En-tête */}
       <View style={styles.header}>
         <Text style={styles.title}>Palmarès</Text>
         <TouchableOpacity onPress={openSettings} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
-          <Ionicons name="settings-outline" size={22} color="#8E8E93" />
+          <Ionicons name="settings-outline" size={22} color={theme.textSecondary} />
         </TouchableOpacity>
       </View>
 
-      {/* Résumé global */}
       <View style={styles.summaryCard}>
         <Text style={styles.summaryLabel}>
           {stats.flashed} / {stats.total} Invaders flashés · {stats.flashedPts} pts
         </Text>
-        <ProgressBar pct={stats.pct} />
-        <Text style={styles.summaryPct}>{stats.pct.toFixed(1)} % complétés</Text>
+        <ProgressBar pct={stats.pct} theme={theme} />
+        <Text style={styles.summaryPct}>{stats.pct.toFixed(1)} %</Text>
       </View>
 
-      {/* Carte Paris */}
       <TouchableOpacity style={styles.villeCard} onPress={() => setDrillVille('Paris')} activeOpacity={0.7}>
         <View style={styles.villeLeft}>
           <View style={styles.villeIcon}>
-            <Ionicons name="business-outline" size={22} color={ACCENT} />
+            <Ionicons name="business-outline" size={22} color={theme.accent} />
           </View>
           <View>
             <Text style={styles.villeName}>Paris</Text>
@@ -181,74 +183,62 @@ export default function PalmèresScreen({ navigation }) {
             </Text>
           </View>
         </View>
-        <Ionicons name="chevron-forward" size={18} color="#C7C7CC" />
+        <Ionicons name="chevron-forward" size={18} color={theme.textSecondary} />
       </TouchableOpacity>
     </View>
   );
 }
 
-// ─── Styles ──────────────────────────────────────────────────────────────────
+// ─── Styles thémés ────────────────────────────────────────────────────────────
 
-const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#F2F2F7' },
+function makeStyles(t) {
+  return StyleSheet.create({
+    container: { flex: 1, backgroundColor: t.bg },
 
-  // En-tête
-  header: {
-    flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
-    paddingHorizontal: 20, paddingVertical: 14,
-    backgroundColor: '#fff',
-    borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: '#E5E5EA',
-  },
-  title: { fontSize: 20, fontWeight: '700', color: '#1C1C1E' },
-  headerTitle: { fontSize: 17, fontWeight: '600', color: '#1C1C1E' },
-  backBtn: { flexDirection: 'row', alignItems: 'center', gap: 2, minWidth: 70 },
-  backText: { fontSize: 16, color: ACCENT, fontWeight: '500' },
+    header: {
+      flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
+      paddingHorizontal: 20, paddingVertical: 14,
+      backgroundColor: t.surface,
+      borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: t.border,
+    },
+    title: { ...typography.arcadeTitle, color: t.textPrimary },
+    headerTitle: { ...typography.arcadeTitle, color: t.textPrimary },
+    backBtn: { flexDirection: 'row', alignItems: 'center', gap: 2, minWidth: 70 },
+    backText: { fontSize: 16, color: t.accent, fontWeight: '500' },
 
-  // Résumé global
-  summaryCard: {
-    margin: 16,
-    backgroundColor: '#fff', borderRadius: 14,
-    padding: 16,
-    shadowColor: '#000', shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.06, shadowRadius: 4, elevation: 2,
-  },
-  summaryLabel: { fontSize: 14, color: '#3C3C43', marginBottom: 10 },
-  summaryPct: { fontSize: 13, color: ACCENT, fontWeight: '600', marginTop: 6, textAlign: 'right' },
+    summaryCard: {
+      margin: 16, backgroundColor: t.surface, borderRadius: 14, padding: 16,
+      shadowColor: '#000', shadowOffset: { width: 0, height: 1 },
+      shadowOpacity: 0.1, shadowRadius: 4, elevation: 2,
+    },
+    summaryLabel: { fontSize: 14, color: t.textSecondary, marginBottom: 10 },
+    summaryPct: { ...typography.arcadeScore, color: t.accent, marginTop: 8, textAlign: 'right' },
 
-  // Barre de progression
-  track: {
-    height: 8, borderRadius: 4, backgroundColor: '#E5E5EA', overflow: 'hidden',
-  },
-  fill: { height: 8, borderRadius: 4 },
+    track: { height: 8, borderRadius: 4, backgroundColor: t.border, overflow: 'hidden' },
+    fill: { height: 8, borderRadius: 4 },
 
-  // Carte ville
-  villeCard: {
-    marginHorizontal: 16,
-    backgroundColor: '#fff', borderRadius: 14,
-    paddingHorizontal: 16, paddingVertical: 14,
-    flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
-    shadowColor: '#000', shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.06, shadowRadius: 4, elevation: 2,
-  },
-  villeLeft: { flexDirection: 'row', alignItems: 'center', gap: 14 },
-  villeIcon: {
-    width: 42, height: 42, borderRadius: 12,
-    backgroundColor: ACCENT + '15',
-    alignItems: 'center', justifyContent: 'center',
-  },
-  villeName: { fontSize: 16, fontWeight: '600', color: '#1C1C1E' },
-  villeSub: { fontSize: 13, color: '#8E8E93', marginTop: 2 },
+    villeCard: {
+      marginHorizontal: 16, backgroundColor: t.surface, borderRadius: 14,
+      paddingHorizontal: 16, paddingVertical: 14,
+      flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
+      shadowColor: '#000', shadowOffset: { width: 0, height: 1 },
+      shadowOpacity: 0.1, shadowRadius: 4, elevation: 2,
+    },
+    villeLeft: { flexDirection: 'row', alignItems: 'center', gap: 14 },
+    villeIcon: {
+      width: 42, height: 42, borderRadius: 12,
+      backgroundColor: t.accentDim, alignItems: 'center', justifyContent: 'center',
+    },
+    villeName: { ...typography.arcadeHeading, color: t.textPrimary },
+    villeSub: { fontSize: 13, color: t.textSecondary, marginTop: 2 },
 
-  // Lignes arrondissements
-  arRow: {
-    backgroundColor: '#fff',
-    paddingHorizontal: 20, paddingVertical: 14,
-  },
-  arTitleRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 },
-  arName: { fontSize: 15, fontWeight: '600', color: '#1C1C1E' },
-  chasserCTA: { flexDirection: 'row', alignItems: 'center', gap: 3 },
-  chasserText: { fontSize: 13, color: ACCENT, fontWeight: '500' },
-  arStat: { fontSize: 12, color: '#8E8E93', marginTop: 6 },
+    arRow: { backgroundColor: t.surface, paddingHorizontal: 20, paddingVertical: 14 },
+    arTitleRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 },
+    arName: { ...typography.arcadeHeading, color: t.textPrimary },
+    chasserCTA: { flexDirection: 'row', alignItems: 'center', gap: 3 },
+    chasserText: { fontSize: 13, color: t.accent, fontWeight: '500' },
+    arStat: { fontSize: 12, color: t.textSecondary, marginTop: 6 },
 
-  separator: { height: StyleSheet.hairlineWidth, backgroundColor: '#E5E5EA' },
-});
+    separator: { height: StyleSheet.hairlineWidth, backgroundColor: t.border },
+  });
+}

@@ -1,8 +1,9 @@
+// Couleurs par défaut des statuts (thème sombre — correspondent aux tokens dark)
 export const STATUS_COLOR = {
-  ok: '#34C759',
-  damaged: '#FF9500',
-  destroyed: '#FF3B30',
-  unknown: '#8E8E93',
+  ok:        '#00E08A',
+  damaged:   '#FFB02E',
+  destroyed: '#FF4D4D',
+  unknown:   '#7A8A82',
 };
 
 export const STATUS_LABEL = {
@@ -26,7 +27,7 @@ export const PALETTE = [
 // Étiquettes prédéfinies (recolorables, non supprimables)
 // lbl_flashed : étiquette système — gérée automatiquement via l'état flashé, non assignable manuellement
 export const DEFAULT_LABEL_DEFS = [
-  { id: 'lbl_flashed', name: 'Déjà flashé', color: '#5856D6', isDefault: true, system: true },
+  { id: 'lbl_flashed', name: 'Déjà flashé', color: '#3DF96B', isDefault: true, system: true },
   { id: 'lbl_voir',    name: 'À voir',       color: '#007AFF', isDefault: true },
   { id: 'lbl_favori',  name: 'Favori',       color: '#FFCC00', isDefault: true },
 ];

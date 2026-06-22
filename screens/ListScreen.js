@@ -8,13 +8,25 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { INVADERS } from '../data/invaders';
 import { useAppContext } from '../context/AppContext';
 import { STATUS_COLOR, STATUS_LABEL } from '../constants';
+import { useTheme } from '../theme/ThemeContext';
+import { typography } from '../theme/tokens';
 
 const TOTAL = INVADERS.length;
 const ROW_HEIGHT = 56;
 
+// ─── Cache de styles thémés ───────────────────────────────────────────────────
+let _styleCache = null;
+function getStyles(theme) {
+  if (_styleCache?.theme === theme) return _styleCache.styles;
+  const styles = makeStyles(theme);
+  _styleCache = { theme, styles };
+  return styles;
+}
+
 // ─── Ligne ────────────────────────────────────────────────────────────────────
 
-const InvaderRow = memo(function InvaderRow({ item, isFlashed, onToggle }) {
+const InvaderRow = memo(function InvaderRow({ item, isFlashed, onToggle, theme }) {
+  const styles = getStyles(theme);
   return (
     <View style={styles.row}>
       <View style={[styles.statusDot, { backgroundColor: STATUS_COLOR[item.status] }]} />
@@ -25,7 +37,9 @@ const InvaderRow = memo(function InvaderRow({ item, isFlashed, onToggle }) {
       <Switch
         value={isFlashed}
         onValueChange={onToggle}
-        trackColor={{ false: '#E5E5EA', true: '#34C759' }}
+        trackColor={{ false: theme.border, true: theme.accent }}
+        thumbColor={theme.bg}
+        ios_backgroundColor={theme.border}
       />
     </View>
   );
@@ -35,9 +49,11 @@ const InvaderRow = memo(function InvaderRow({ item, isFlashed, onToggle }) {
 
 export default function ListScreen({ navigation }) {
   const { flashed, toggleFlash, bulkFlash, bulkUnflash } = useAppContext();
+  const { theme } = useTheme();
+  const styles = getStyles(theme);
   const insets = useSafeAreaInsets();
   const [search, setSearch] = useState('');
-  const [filter, setFilter] = useState('all'); // 'all' | 'flashed' | 'unflashed'
+  const [filter, setFilter] = useState('all');
 
   const rows = useMemo(() => {
     const q = search.trim().toUpperCase();
@@ -58,8 +74,9 @@ export default function ListScreen({ navigation }) {
       item={item}
       isFlashed={flashed.has(item.id)}
       onToggle={() => toggleFlash(item.id)}
+      theme={theme}
     />
-  ), [flashed, toggleFlash]);
+  ), [flashed, toggleFlash, theme]);
 
   function confirmBulkFlash() {
     Alert.alert('Tout marquer comme flashé', `Marquer les ${TOTAL} Invaders comme flashés ?`, [
@@ -77,22 +94,23 @@ export default function ListScreen({ navigation }) {
 
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
-
-      {/* En-tête */}
       <View style={styles.header}>
         <Text style={styles.title}>Invaders Paris</Text>
         <View style={styles.headerRight}>
           <Text style={styles.counter}>{flashed.size} / {TOTAL} flashés</Text>
-          <TouchableOpacity onPress={() => navigation.getParent()?.navigate('Réglages')} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
-            <Ionicons name="settings-outline" size={20} color="#8E8E93" />
+          <TouchableOpacity
+            onPress={() => navigation.getParent()?.navigate('Réglages')}
+            hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+          >
+            <Ionicons name="settings-outline" size={20} color={theme.textSecondary} />
           </TouchableOpacity>
         </View>
       </View>
 
-      {/* Recherche */}
       <TextInput
         style={styles.searchInput}
         placeholder="Rechercher (ex : 42 ou PA_42)"
+        placeholderTextColor={theme.textSecondary}
         value={search}
         onChangeText={setSearch}
         clearButtonMode="while-editing"
@@ -101,7 +119,6 @@ export default function ListScreen({ navigation }) {
         returnKeyType="search"
       />
 
-      {/* Filtres */}
       <View style={styles.filterRow}>
         {[['all', 'Tous'], ['flashed', 'Flashés'], ['unflashed', 'Reste à faire']].map(([val, label]) => (
           <TouchableOpacity
@@ -114,17 +131,15 @@ export default function ListScreen({ navigation }) {
         ))}
       </View>
 
-      {/* Actions groupées */}
       <View style={styles.bulkRow}>
         <TouchableOpacity style={styles.bulkBtn} onPress={confirmBulkFlash}>
           <Text style={styles.bulkBtnText}>✓ Tout flasher</Text>
         </TouchableOpacity>
         <TouchableOpacity style={[styles.bulkBtn, styles.bulkBtnDestructive]} onPress={confirmBulkUnflash}>
-          <Text style={styles.bulkBtnText}>✕ Tout démarquer</Text>
+          <Text style={[styles.bulkBtnText, { color: theme.destructive }]}>✕ Tout démarquer</Text>
         </TouchableOpacity>
       </View>
 
-      {/* Liste */}
       {rows.length === 0 ? (
         <View style={styles.empty}>
           <Text style={styles.emptyText}>Aucun résultat</Text>
@@ -135,7 +150,7 @@ export default function ListScreen({ navigation }) {
           keyExtractor={(item) => item.id}
           renderItem={renderItem}
           getItemLayout={getItemLayout}
-          extraData={flashed}
+          extraData={[flashed, theme]}
           initialNumToRender={20}
           maxToRenderPerBatch={20}
           windowSize={5}
@@ -143,81 +158,61 @@ export default function ListScreen({ navigation }) {
           ItemSeparatorComponent={() => <View style={styles.separator} />}
         />
       )}
-
     </View>
   );
 }
 
-// ─── Styles ───────────────────────────────────────────────────────────────────
+// ─── Styles thémés ────────────────────────────────────────────────────────────
 
-const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#fff' },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'baseline',
-    paddingHorizontal: 20,
-    paddingTop: 16,
-    paddingBottom: 10,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: '#E5E5EA',
-  },
-  title: { fontSize: 20, fontWeight: '700', color: '#1C1C1E' },
-  headerRight: { flexDirection: 'row', alignItems: 'center', gap: 12 },
-  counter: { fontSize: 13, color: '#8E8E93' },
-  searchInput: {
-    marginHorizontal: 16,
-    marginTop: 12,
-    marginBottom: 10,
-    backgroundColor: '#F2F2F7',
-    borderRadius: 10,
-    paddingHorizontal: 12,
-    paddingVertical: 9,
-    fontSize: 15,
-  },
-  filterRow: { flexDirection: 'row', paddingHorizontal: 16, gap: 8, marginBottom: 10 },
-  chip: {
-    borderRadius: 20,
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    backgroundColor: '#F2F2F7',
-  },
-  chipActive: { backgroundColor: '#1C1C1E' },
-  chipText: { fontSize: 13, fontWeight: '500', color: '#636366' },
-  chipTextActive: { color: '#fff' },
-  bulkRow: {
-    flexDirection: 'row',
-    paddingHorizontal: 16,
-    gap: 8,
-    paddingBottom: 10,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: '#E5E5EA',
-  },
-  bulkBtn: {
-    flex: 1,
-    backgroundColor: '#F2F2F7',
-    borderRadius: 8,
-    paddingVertical: 9,
-    alignItems: 'center',
-  },
-  bulkBtnDestructive: { backgroundColor: '#FFEAEA' },
-  bulkBtnText: { fontSize: 13, fontWeight: '500', color: '#1C1C1E' },
-  row: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 16,
-    height: ROW_HEIGHT,
-    backgroundColor: '#fff',
-  },
-  statusDot: { width: 10, height: 10, borderRadius: 5, marginRight: 12 },
-  rowInfo: { flex: 1 },
-  rowId: { fontSize: 15, fontWeight: '600', color: '#1C1C1E' },
-  rowMeta: { fontSize: 12, color: '#8E8E93', marginTop: 1 },
-  separator: {
-    height: StyleSheet.hairlineWidth,
-    backgroundColor: '#E5E5EA',
-    marginLeft: 38,
-  },
-  empty: { flex: 1, alignItems: 'center', justifyContent: 'center' },
-  emptyText: { fontSize: 16, color: '#C7C7CC' },
-});
+function makeStyles(t) {
+  return StyleSheet.create({
+    container: { flex: 1, backgroundColor: t.bg },
+    header: {
+      flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center',
+      paddingHorizontal: 20, paddingTop: 16, paddingBottom: 10,
+      borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: t.border,
+      backgroundColor: t.surface,
+    },
+    title: { ...typography.arcadeTitle, color: t.textPrimary },
+    headerRight: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+    counter: { ...typography.arcadeHeading, fontSize: 12, color: t.textSecondary },
+
+    searchInput: {
+      marginHorizontal: 16, marginTop: 12, marginBottom: 10,
+      backgroundColor: t.surfaceHigh,
+      borderRadius: 10, paddingHorizontal: 12, paddingVertical: 9,
+      fontSize: 15, color: t.textPrimary,
+    },
+
+    filterRow: { flexDirection: 'row', paddingHorizontal: 16, gap: 8, marginBottom: 10 },
+    chip: { borderRadius: 20, paddingHorizontal: 12, paddingVertical: 6, backgroundColor: t.surfaceHigh },
+    chipActive: { backgroundColor: t.accent },
+    chipText: { fontSize: 13, fontWeight: '500', color: t.textSecondary },
+    chipTextActive: { color: t.bg },
+
+    bulkRow: {
+      flexDirection: 'row', paddingHorizontal: 16, gap: 8, paddingBottom: 10,
+      borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: t.border,
+    },
+    bulkBtn: {
+      flex: 1, backgroundColor: t.surfaceHigh, borderRadius: 8,
+      paddingVertical: 9, alignItems: 'center',
+    },
+    bulkBtnDestructive: { backgroundColor: t.surfaceHigh },
+    bulkBtnText: { fontSize: 13, fontWeight: '500', color: t.textPrimary },
+
+    row: {
+      flexDirection: 'row', alignItems: 'center',
+      paddingHorizontal: 16, height: ROW_HEIGHT,
+      backgroundColor: t.surface,
+    },
+    statusDot: { width: 10, height: 10, borderRadius: 5, marginRight: 12 },
+    rowInfo: { flex: 1 },
+    rowId: { fontSize: 15, fontWeight: '600', color: t.textPrimary },
+    rowMeta: { fontSize: 12, color: t.textSecondary, marginTop: 1 },
+    separator: { height: StyleSheet.hairlineWidth, backgroundColor: t.border, marginLeft: 38 },
+
+    empty: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+    emptyText: { fontSize: 16, color: t.textSecondary },
+  });
+}

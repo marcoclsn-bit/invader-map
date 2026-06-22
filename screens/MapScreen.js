@@ -6,8 +6,19 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { INVADERS } from '../data/invaders';
 import { useAppContext } from '../context/AppContext';
-import { STATUS_COLOR, STATUS_LABEL, ALL_STATUSES } from '../constants';
+import { STATUS_LABEL, ALL_STATUSES } from '../constants';
 import { getMarkerColor } from '../utils/markerColor';
+import { useTheme } from '../theme/ThemeContext';
+import { typography } from '../theme/tokens';
+
+// ─── Cache de styles thémés (un seul StyleSheet par thème) ───────────────────
+let _styleCache = null;
+function getStyles(theme) {
+  if (_styleCache?.theme === theme) return _styleCache.styles;
+  const styles = makeStyles(theme);
+  _styleCache = { theme, styles };
+  return styles;
+}
 
 // ─── Logique de filtrage ──────────────────────────────────────────────────────
 
@@ -42,17 +53,15 @@ async function openInApp(app, lat, lng) {
 
 function FilterPanel({ filters, onFiltersChange, onClose }) {
   const { labelDefs, statusColors } = useAppContext();
+  const { theme } = useTheme();
+  const styles = getStyles(theme);
 
   function toggleStatus(status) {
     const next = new Set(filters.statuses);
     next.has(status) ? next.delete(status) : next.add(status);
     onFiltersChange({ ...filters, statuses: next });
   }
-
-  function setFlashedState(val) {
-    onFiltersChange({ ...filters, flashedState: val });
-  }
-
+  function setFlashedState(val) { onFiltersChange({ ...filters, flashedState: val }); }
   function toggleLabelFilter(labelId) {
     const next = new Set(filters.activeLabels);
     next.has(labelId) ? next.delete(labelId) : next.add(labelId);
@@ -81,10 +90,10 @@ function FilterPanel({ filters, onFiltersChange, onClose }) {
                 styles.chip,
                 active
                   ? { backgroundColor: color }
-                  : { backgroundColor: '#F2F2F7', borderColor: color, borderWidth: 1.5 },
+                  : { backgroundColor: theme.surfaceHigh, borderColor: color, borderWidth: 1.5 },
               ]}
             >
-              <Text style={[styles.chipText, !active && { color }]}>
+              <Text style={[styles.chipText, active && styles.chipTextActive]}>
                 {STATUS_LABEL[status]}
               </Text>
             </TouchableOpacity>
@@ -126,7 +135,7 @@ function FilterPanel({ filters, onFiltersChange, onClose }) {
                   styles.chip,
                   active
                     ? { backgroundColor: def.color }
-                    : { backgroundColor: '#F2F2F7', borderColor: def.color, borderWidth: 1.5 },
+                    : { backgroundColor: theme.surfaceHigh, borderColor: def.color, borderWidth: 1.5 },
                 ]}
               >
                 <Text style={[styles.chipText, active && styles.chipTextActive]}>{def.name}</Text>
@@ -143,6 +152,8 @@ function FilterPanel({ filters, onFiltersChange, onClose }) {
 
 function InvaderPanel({ invader, flashed, onToggleFlash, onNavigate, onClose }) {
   const { labelDefs, statusColors, labels, toggleLabel } = useAppContext();
+  const { theme } = useTheme();
+  const styles = getStyles(theme);
   const isFlashed = flashed.has(invader.id);
   const invLabelIds = labels[invader.id] ?? [];
 
@@ -173,10 +184,7 @@ function InvaderPanel({ invader, flashed, onToggleFlash, onNavigate, onClose }) 
             {isFlashed ? '✓ Flashé' : 'Marquer comme flashé'}
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => onNavigate(invader.lat, invader.lng)}
-          style={styles.actionBtn}
-        >
+        <TouchableOpacity onPress={() => onNavigate(invader.lat, invader.lng)} style={styles.actionBtn}>
           <Text style={styles.actionBtnText}>Y aller</Text>
         </TouchableOpacity>
       </View>
@@ -192,9 +200,7 @@ function InvaderPanel({ invader, flashed, onToggleFlash, onNavigate, onClose }) 
                   key={def.id}
                   style={[
                     styles.labelChip,
-                    applied
-                      ? { backgroundColor: def.color }
-                      : { borderColor: def.color, borderWidth: 1.5 },
+                    applied ? { backgroundColor: def.color } : { borderColor: def.color, borderWidth: 1.5 },
                   ]}
                   onPress={() => toggleLabel(invader.id, def.id)}
                 >
@@ -215,31 +221,25 @@ function InvaderPanel({ invader, flashed, onToggleFlash, onNavigate, onClose }) 
 
 export default function MapScreen({ navigation }) {
   const { flashed, labels, labelDefs, statusColors, colorOverrides, filters, setFilters, toggleFlash, mapsApp, setMapsAppPref } = useAppContext();
+  const { theme } = useTheme();
+  const styles = getStyles(theme);
   const insets = useSafeAreaInsets();
 
   const mapRef = useRef(null);
-  const centeredRef = useRef(false); // garde : ne recentre qu'une seule fois au démarrage
+  const centeredRef = useRef(false);
   const [selected, setSelected] = useState(null);
   const [showFilters, setShowFilters] = useState(false);
   const [locationGranted, setLocationGranted] = useState(false);
   const [userLocation, setUserLocation] = useState(null);
+
   function handleNavigate(lat, lng) {
-    if (mapsApp) {
-      openInApp(mapsApp, lat, lng);
-      return;
-    }
+    if (mapsApp) { openInApp(mapsApp, lat, lng); return; }
     Alert.alert(
       'App de cartes par défaut',
       'Choisissez votre application. Ce choix sera mémorisé et modifiable dans Réglages.',
       [
-        {
-          text: 'Plans',
-          onPress: () => { setMapsAppPref('apple'); openInApp('apple', lat, lng); },
-        },
-        {
-          text: 'Google Maps',
-          onPress: () => { setMapsAppPref('google'); openInApp('google', lat, lng); },
-        },
+        { text: 'Plans',       onPress: () => { setMapsAppPref('apple');  openInApp('apple',  lat, lng); } },
+        { text: 'Google Maps', onPress: () => { setMapsAppPref('google'); openInApp('google', lat, lng); } },
         { text: 'Annuler', style: 'cancel' },
       ]
     );
@@ -257,7 +257,6 @@ export default function MapScreen({ navigation }) {
           if (loc.coords.accuracy > 40) return;
           const { latitude, longitude } = loc.coords;
           setUserLocation({ latitude, longitude });
-          // Centrage initial unique : ne se déclenche qu'à la première position fiable
           if (!centeredRef.current) {
             centeredRef.current = true;
             const nearParis = Math.abs(latitude - 48.8566) < 0.45 && Math.abs(longitude - 2.3522) < 0.65;
@@ -279,10 +278,7 @@ export default function MapScreen({ navigation }) {
     mapRef.current?.animateToRegion({ ...userLocation, latitudeDelta: 0.01, longitudeDelta: 0.01 }, 600);
   }
 
-  function closeAll() {
-    setSelected(null);
-    setShowFilters(false);
-  }
+  function closeAll() { setSelected(null); setShowFilters(false); }
 
   const visibleInvaders = useMemo(
     () => applyFilters(INVADERS, filters, flashed, labels),
@@ -302,12 +298,7 @@ export default function MapScreen({ navigation }) {
         mapType="mutedStandard"
         showsCompass={false}
         showsUserLocation={locationGranted}
-        initialRegion={{
-          latitude: 48.8566,
-          longitude: 2.3522,
-          latitudeDelta: 0.12,
-          longitudeDelta: 0.12,
-        }}
+        initialRegion={{ latitude: 48.8566, longitude: 2.3522, latitudeDelta: 0.12, longitudeDelta: 0.12 }}
         onPress={closeAll}
       >
         {visibleInvaders.map((invader) => (
@@ -328,7 +319,7 @@ export default function MapScreen({ navigation }) {
           style={styles.gearBtn}
           onPress={() => navigation.getParent()?.navigate('Réglages')}
         >
-          <Ionicons name="settings-outline" size={20} color="#1C1C1E" />
+          <Ionicons name="settings-outline" size={20} color={theme.textPrimary} />
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -349,11 +340,7 @@ export default function MapScreen({ navigation }) {
       </View>
 
       {showFilters && (
-        <FilterPanel
-          filters={filters}
-          onFiltersChange={setFilters}
-          onClose={() => setShowFilters(false)}
-        />
+        <FilterPanel filters={filters} onFiltersChange={setFilters} onClose={() => setShowFilters(false)} />
       )}
 
       {selected && !showFilters && (
@@ -369,134 +356,79 @@ export default function MapScreen({ navigation }) {
   );
 }
 
-// ─── Styles ───────────────────────────────────────────────────────────────────
+// ─── Styles thémés ────────────────────────────────────────────────────────────
 
-const styles = StyleSheet.create({
-  container: { flex: 1 },
-  map: { ...StyleSheet.absoluteFillObject },
+function makeStyles(t) {
+  return StyleSheet.create({
+    container: { flex: 1 },
+    map: { ...StyleSheet.absoluteFillObject },
 
-  floatingButtons: {
-    position: 'absolute',
-    right: 16,
-    alignItems: 'flex-end',
-    gap: 10,
-  },
-  gearBtn: {
-    width: 38, height: 38, borderRadius: 19,
-    backgroundColor: '#fff',
-    alignItems: 'center', justifyContent: 'center',
-    shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.15, shadowRadius: 4, elevation: 4,
-  },
-  filtersBtn: {
-    backgroundColor: '#fff',
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    borderRadius: 20,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.15,
-    shadowRadius: 6,
-    elevation: 4,
-  },
-  filtersBtnActive: { backgroundColor: '#1C1C1E' },
-  filtersBtnText: { fontSize: 14, fontWeight: '600', color: '#1C1C1E' },
-  filtersBtnTextActive: { color: '#fff' },
-  locateBtn: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.15,
-    shadowRadius: 6,
-    elevation: 4,
-  },
-  locateBtnDisabled: { opacity: 0.4 },
-  locateBtnText: { fontSize: 20, color: '#1C1C1E' },
+    floatingButtons: { position: 'absolute', right: 16, alignItems: 'flex-end', gap: 10 },
+    gearBtn: {
+      width: 38, height: 38, borderRadius: 19,
+      backgroundColor: t.surface, alignItems: 'center', justifyContent: 'center',
+      shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.25, shadowRadius: 4, elevation: 4,
+    },
+    filtersBtn: {
+      backgroundColor: t.surface,
+      paddingHorizontal: 16, paddingVertical: 8, borderRadius: 20,
+      shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.25, shadowRadius: 6, elevation: 4,
+    },
+    filtersBtnActive: { backgroundColor: t.accent },
+    filtersBtnText: { fontSize: 14, fontWeight: '600', color: t.textPrimary },
+    filtersBtnTextActive: { color: t.bg },
+    locateBtn: {
+      width: 40, height: 40, borderRadius: 20,
+      backgroundColor: t.surface, alignItems: 'center', justifyContent: 'center',
+      shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.25, shadowRadius: 6, elevation: 4,
+    },
+    locateBtnDisabled: { opacity: 0.4 },
+    locateBtnText: { fontSize: 20, color: t.textPrimary },
 
-  panel: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    backgroundColor: '#fff',
-    borderTopLeftRadius: 16,
-    borderTopRightRadius: 16,
-    paddingHorizontal: 20,
-    paddingTop: 20,
-    paddingBottom: 40,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: -2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
-    elevation: 8,
-  },
-  panelHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 16,
-  },
-  panelId: { fontSize: 20, fontWeight: '700', color: '#1C1C1E' },
-  closeButton: { fontSize: 18, color: '#8E8E93' },
-  panelRow: { flexDirection: 'row', alignItems: 'center', gap: 12 },
-  statusBadge: { borderRadius: 6, paddingHorizontal: 10, paddingVertical: 4 },
-  statusText: { color: '#fff', fontWeight: '600', fontSize: 13 },
-  points: { fontSize: 15, color: '#3C3C43' },
-  hint: { marginTop: 12, fontSize: 14, color: '#636366', fontStyle: 'italic' },
-  actions: { marginTop: 16, flexDirection: 'row', gap: 10 },
-  actionBtn: {
-    flex: 1,
-    borderRadius: 8,
-    paddingHorizontal: 14,
-    paddingVertical: 8,
-    backgroundColor: '#F2F2F7',
-    alignItems: 'center',
-  },
-  actionBtnActive: { backgroundColor: '#34C759' },
-  actionBtnText: { fontSize: 14, fontWeight: '500', color: '#1C1C1E' },
-  actionBtnTextActive: { color: '#fff' },
+    panel: {
+      position: 'absolute', bottom: 0, left: 0, right: 0,
+      backgroundColor: t.surface,
+      borderTopLeftRadius: 16, borderTopRightRadius: 16,
+      paddingHorizontal: 20, paddingTop: 20, paddingBottom: 40,
+      shadowColor: '#000', shadowOffset: { width: 0, height: -2 },
+      shadowOpacity: 0.3, shadowRadius: 8, elevation: 8,
+    },
+    panelHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 },
+    panelId: { ...typography.arcadeTitle, color: t.textPrimary },
+    closeButton: { fontSize: 18, color: t.textSecondary },
+    panelRow: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+    statusBadge: { borderRadius: 6, paddingHorizontal: 10, paddingVertical: 4 },
+    statusText: { color: '#fff', fontWeight: '600', fontSize: 13 },
+    points: { fontSize: 15, color: t.textSecondary },
+    hint: { marginTop: 12, fontSize: 14, color: t.textSecondary, fontStyle: 'italic' },
+    actions: { marginTop: 16, flexDirection: 'row', gap: 10 },
+    actionBtn: {
+      flex: 1, borderRadius: 8, paddingHorizontal: 14, paddingVertical: 8,
+      backgroundColor: t.surfaceHigh, alignItems: 'center',
+    },
+    actionBtnActive: { backgroundColor: t.accent },
+    actionBtnText: { fontSize: 14, fontWeight: '500', color: t.textPrimary },
+    actionBtnTextActive: { color: t.bg },
 
-  sectionTitle: {
-    fontSize: 13,
-    fontWeight: '600',
-    color: '#8E8E93',
-    textTransform: 'uppercase',
-    letterSpacing: 0.5,
-    marginBottom: 8,
-    marginTop: 14,
-  },
-  chipRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
-  chip: {
-    borderRadius: 20,
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    backgroundColor: '#F2F2F7',
-  },
-  chipActiveNeutral: { backgroundColor: '#1C1C1E' },
-  chipText: { fontSize: 13, fontWeight: '500', color: '#636366' },
-  chipTextActive: { color: '#fff' },
-  emptyNote: { fontSize: 13, color: '#C7C7CC', fontStyle: 'italic' },
+    sectionTitle: {
+      fontSize: 13, fontWeight: '600', color: t.textSecondary,
+      textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 8, marginTop: 14,
+    },
+    chipRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+    chip: { borderRadius: 20, paddingHorizontal: 12, paddingVertical: 6, backgroundColor: t.surfaceHigh },
+    chipActiveNeutral: { backgroundColor: t.accent },
+    chipText: { fontSize: 13, fontWeight: '500', color: t.textSecondary },
+    chipTextActive: { color: t.bg },
+    emptyNote: { fontSize: 13, color: t.textSecondary, fontStyle: 'italic' },
 
-  labelSection: { marginTop: 16 },
-  labelSectionTitle: {
-    fontSize: 11,
-    fontWeight: '600',
-    color: '#8E8E93',
-    letterSpacing: 0.5,
-    marginBottom: 8,
-  },
-  labelChips: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
-  labelChip: {
-    borderRadius: 20,
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    backgroundColor: 'transparent',
-  },
-  labelChipText: { fontSize: 13, fontWeight: '500', color: '#1C1C1E' },
-  labelChipTextActive: { color: '#fff' },
-});
+    labelSection: { marginTop: 16 },
+    labelSectionTitle: { fontSize: 11, fontWeight: '600', color: t.textSecondary, letterSpacing: 0.5, marginBottom: 8 },
+    labelChips: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+    labelChip: { borderRadius: 20, paddingHorizontal: 12, paddingVertical: 6, backgroundColor: 'transparent' },
+    labelChipText: { fontSize: 13, fontWeight: '500', color: t.textPrimary },
+    labelChipTextActive: { color: '#fff' },
+  });
+}

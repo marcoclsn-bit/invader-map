@@ -14,6 +14,8 @@ import { STATUS_COLOR, STATUS_LABEL } from '../constants';
 import { ORS_API_KEY } from '../config/ors';
 import { useAppContext } from '../context/AppContext';
 import { getMarkerColor } from '../utils/markerColor';
+import { useTheme } from '../theme/ThemeContext';
+import { typography } from '../theme/tokens';
 
 const PARIS = { latitude: 48.8566, longitude: 2.3522, latitudeDelta: 0.12, longitudeDelta: 0.12 };
 const DEBOUNCE_MS = 300;
@@ -103,6 +105,16 @@ async function orsRoute(from, to, profile) {
   return coords;
 }
 
+// ─── Cache de styles thémés ───────────────────────────────────────────────────
+
+let _styleCache = null;
+function getStyles(theme) {
+  if (_styleCache?.theme === theme) return _styleCache.styles;
+  const s = makeStyles(theme);
+  _styleCache = { theme, styles: s };
+  return s;
+}
+
 // ─── Champ d'adresse avec autocomplétion ─────────────────────────────────────
 
 function AddressInput({
@@ -111,6 +123,8 @@ function AddressInput({
   iconName, iconColor, isConfirmed, resolving,
   gpsOption, onSelectGps,
 }) {
+  const { theme } = useTheme();
+  const styles = getStyles(theme);
   const showDropdown = gpsOption || searching || showEmpty || suggestions.length > 0;
   return (
     <View>
@@ -120,7 +134,7 @@ function AddressInput({
           ref={inputRef}
           style={styles.inputField}
           placeholder={placeholder}
-          placeholderTextColor="#C7C7CC"
+          placeholderTextColor={theme.textSecondary}
           value={value}
           onChangeText={onChange}
           onFocus={onFocus}
@@ -133,9 +147,9 @@ function AddressInput({
           autoCapitalize="sentences"
         />
         {resolving ? (
-          <ActivityIndicator size="small" color="#8E8E93" style={styles.inputAdornment} />
+          <ActivityIndicator size="small" color={theme.textSecondary} style={styles.inputAdornment} />
         ) : isConfirmed ? (
-          <Ionicons name="checkmark-circle" size={18} color="#34C759" style={styles.inputAdornment} />
+          <Ionicons name="checkmark-circle" size={18} color={theme.statusOk} style={styles.inputAdornment} />
         ) : null}
       </View>
       {showDropdown && (
@@ -144,7 +158,7 @@ function AddressInput({
           {gpsOption && (
             <TouchableOpacity style={styles.suggItem} onPress={onSelectGps}>
               <View style={styles.gpsRow}>
-                <Ionicons name="locate" size={14} color="#007AFF" />
+                <Ionicons name="locate" size={14} color={theme.accent} />
                 <Text style={styles.gpsRowText}>Ma position</Text>
               </View>
             </TouchableOpacity>
@@ -152,7 +166,7 @@ function AddressInput({
           {/* Contenu principal */}
           {searching ? (
             <View style={[styles.suggState, gpsOption && styles.suggBorder]}>
-              <ActivityIndicator size="small" color="#8E8E93" />
+              <ActivityIndicator size="small" color={theme.textSecondary} />
               <Text style={styles.suggStateText}>Recherche…</Text>
             </View>
           ) : showEmpty ? (
@@ -186,6 +200,8 @@ function AddressInput({
 // ─── Ligne d'un Invader dans la liste ────────────────────────────────────────
 
 function RouteInvaderRow({ inv, isFlashed, statusColors, onPress }) {
+  const { theme } = useTheme();
+  const styles = getStyles(theme);
   return (
     <TouchableOpacity style={styles.routeRow} onPress={onPress} activeOpacity={0.7}>
       <View style={[styles.routeDot, { backgroundColor: statusColors[inv.status] ?? STATUS_COLOR[inv.status] }]} />
@@ -204,6 +220,8 @@ function RouteInvaderRow({ inv, isFlashed, statusColors, onPress }) {
 
 function RouteInvaderDetail({ inv, isFlashed, onToggleFlash, onNavigate, onBack }) {
   const { statusColors } = useAppContext();
+  const { theme } = useTheme();
+  const styles = getStyles(theme);
   return (
     <View style={styles.detailPanel}>
       <View style={styles.detailHeader}>
@@ -240,6 +258,8 @@ function RouteInvaderDetail({ inv, isFlashed, onToggleFlash, onNavigate, onBack 
 // ─── Panneau résultat : compteur + filtre + liste ─────────────────────────────
 
 function RoutePanel({ allInvaders, displayInvaders, flashed, statusColors, showOnlyUnflashed, onToggleFilter, onSelectInvader }) {
+  const { theme } = useTheme();
+  const styles = getStyles(theme);
   const total = allInvaders.length;
   const unflashedCount = allInvaders.filter((inv) => !flashed.has(inv.id)).length;
   return (
@@ -261,8 +281,8 @@ function RoutePanel({ allInvaders, displayInvaders, flashed, statusColors, showO
             <Switch
               value={showOnlyUnflashed}
               onValueChange={onToggleFilter}
-              trackColor={{ false: '#E5E5EA', true: '#34C759' }}
-              thumbColor="#fff"
+              trackColor={{ false: theme.border, true: theme.statusOk }}
+              thumbColor={theme.bg}
             />
           </View>
         )}
@@ -302,6 +322,8 @@ export default function TrajetScreen() {
   const arrDebounce = useRef(null);
 
   const { flashed, toggleFlash, labels, labelDefs, colorOverrides, statusColors, mapsApp, setMapsAppPref } = useAppContext();
+  const { theme } = useTheme();
+  const styles = getStyles(theme);
 
   // ─── Champs d'adresse ────────────────────────────────────────────────────
 
@@ -730,9 +752,9 @@ export default function TrajetScreen() {
         >
           {routePolyline && (
             <>
-              <Polyline coordinates={remainingPolyline ?? routePolyline} strokeColor="#007AFF" strokeWidth={4} lineCap="round" />
+              <Polyline coordinates={remainingPolyline ?? routePolyline} strokeColor={theme.accent} strokeWidth={4} lineCap="round" />
               {walkedPolyline && (
-                <Polyline coordinates={walkedPolyline} strokeColor="#B0B0BA" strokeWidth={4} lineCap="round" />
+                <Polyline coordinates={walkedPolyline} strokeColor={theme.textSecondary} strokeWidth={4} lineCap="round" />
               )}
               {/* Repère départ — masqué en suivi et quand le départ est la position GPS */}
               {!following && depText !== GPS_TOKEN && (
@@ -800,7 +822,7 @@ export default function TrajetScreen() {
                   suggestions={depSugg}
                   placeholder="Départ : ma position actuelle"
                   iconName="navigate"
-                  iconColor="#007AFF"
+                  iconColor={theme.accent}
                   isConfirmed={depCoords !== null}
                   resolving={depResolving}
                   gpsOption={showDepGpsOption}
@@ -809,7 +831,7 @@ export default function TrajetScreen() {
                 <View style={styles.dividerRow}>
                   <View style={styles.inputDivider} />
                   <TouchableOpacity style={styles.swapBtn} onPress={swapDepArr}>
-                    <Ionicons name="swap-vertical" size={16} color="#636366" />
+                    <Ionicons name="swap-vertical" size={16} color={theme.textSecondary} />
                   </TouchableOpacity>
                 </View>
                 <AddressInput
@@ -826,7 +848,7 @@ export default function TrajetScreen() {
                   suggestions={arrSugg}
                   placeholder="Arrivée : adresse ou lieu"
                   iconName="location"
-                  iconColor="#8E8E93"
+                  iconColor={theme.textSecondary}
                   isConfirmed={arrCoords !== null}
                   resolving={arrResolving}
                   gpsOption={false}
@@ -848,7 +870,7 @@ export default function TrajetScreen() {
                       onPress={() => setShowInfo(v => !v)}
                       hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
                     >
-                      <Ionicons name="information-circle-outline" size={17} color="#8E8E93" />
+                      <Ionicons name="information-circle-outline" size={17} color={theme.textSecondary} />
                     </TouchableOpacity>
                   </View>
                   <Slider
@@ -858,9 +880,9 @@ export default function TrajetScreen() {
                     step={1}
                     value={BUFFER_OPTIONS.findIndex(o => o.value === bufferKm)}
                     onValueChange={idx => setBufferKm(BUFFER_OPTIONS[idx].value)}
-                    minimumTrackTintColor="#007AFF"
-                    maximumTrackTintColor="#E5E5EA"
-                    thumbTintColor="#007AFF"
+                    minimumTrackTintColor={theme.accent}
+                    maximumTrackTintColor={theme.border}
+                    thumbTintColor={theme.accent}
                   />
                   {showInfo && (
                     <View style={styles.infoCard}>
@@ -872,13 +894,13 @@ export default function TrajetScreen() {
                 </View>
                 {loadingPhase === 'route' && (
                   <View style={styles.statusRow}>
-                    <ActivityIndicator size="small" color="#007AFF" />
+                    <ActivityIndicator size="small" color={theme.accent} />
                     <Text style={styles.loadingText}>Recherche de l'itinéraire…</Text>
                   </View>
                 )}
                 {loadingPhase === 'invaders' && (
                   <View style={styles.statusRow}>
-                    <ActivityIndicator size="small" color="#007AFF" />
+                    <ActivityIndicator size="small" color={theme.accent} />
                     <Text style={styles.loadingText}>Recherche des Invaders sur le trajet…</Text>
                   </View>
                 )}
@@ -886,7 +908,7 @@ export default function TrajetScreen() {
               </ScrollView>
             )}
             <TouchableOpacity style={styles.collapseBtn} onPress={() => setInputCollapsed(v => !v)}>
-              <Ionicons name={inputCollapsed ? 'chevron-down' : 'chevron-up'} size={16} color="#8E8E93" />
+              <Ionicons name={inputCollapsed ? 'chevron-down' : 'chevron-up'} size={16} color={theme.textSecondary} />
             </TouchableOpacity>
           </View>
         )}
@@ -906,7 +928,7 @@ export default function TrajetScreen() {
             )}
             {(!following || drifted) && (
               <TouchableOpacity style={styles.recenterBtn} onPress={recenter}>
-                <Ionicons name="locate-outline" size={22} color="#007AFF" />
+                <Ionicons name="locate-outline" size={22} color={theme.accent} />
               </TouchableOpacity>
             )}
           </View>
@@ -941,197 +963,162 @@ export default function TrajetScreen() {
   );
 }
 
-// ─── Styles ──────────────────────────────────────────────────────────────────
+// ─── Styles thémés ───────────────────────────────────────────────────────────
 
-const styles = StyleSheet.create({
-  container: { flex: 1 },
+function makeStyles(t) {
+  return StyleSheet.create({
+    container: { flex: 1 },
 
-  // ── Carte flottante d'itinéraire ──────────────────────────────────────────
-  inputCard: {
-    position: 'absolute',
-    left: 12,
-    right: 12,
-    backgroundColor: '#fff',
-    borderRadius: 16,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 6 },
-    shadowOpacity: 0.14,
-    shadowRadius: 14,
-    elevation: 10,
-    zIndex: 20,
-  },
-  inputContent: { paddingHorizontal: 16, paddingTop: 12, paddingBottom: 12 },
-  collapseBtn: {
-    alignItems: 'center',
-    paddingVertical: 6,
-    borderTopWidth: StyleSheet.hairlineWidth,
-    borderTopColor: '#E5E5EA',
-  },
+    // ── Carte flottante d'itinéraire ────────────────────────────────────────
+    inputCard: {
+      position: 'absolute', left: 12, right: 12,
+      backgroundColor: t.surface,
+      borderRadius: 16,
+      shadowColor: '#000', shadowOffset: { width: 0, height: 6 },
+      shadowOpacity: 0.25, shadowRadius: 14, elevation: 10, zIndex: 20,
+    },
+    inputContent: { paddingHorizontal: 16, paddingTop: 12, paddingBottom: 12 },
+    collapseBtn: {
+      alignItems: 'center', paddingVertical: 6,
+      borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: t.border,
+    },
 
-  // Rangée icône + champ + adornment
-  inputRow: { flexDirection: 'row', alignItems: 'center' },
-  inputIcon: { marginRight: 10, width: 20, textAlign: 'center' },
-  inputField: { flex: 1, fontSize: 15, color: '#1C1C1E', paddingVertical: 10 },
-  inputAdornment: { marginLeft: 8 },
+    inputRow: { flexDirection: 'row', alignItems: 'center' },
+    inputIcon: { marginRight: 10, width: 20, textAlign: 'center' },
+    inputField: { flex: 1, fontSize: 15, color: t.textPrimary, paddingVertical: 10 },
+    inputAdornment: { marginLeft: 8 },
 
-  // Séparateur + swap
-  dividerRow: { flexDirection: 'row', alignItems: 'center' },
-  inputDivider: { flex: 1, height: StyleSheet.hairlineWidth, backgroundColor: '#E5E5EA' },
-  swapBtn: { padding: 6, marginLeft: 8, borderRadius: 14, backgroundColor: '#F2F2F7' },
+    dividerRow: { flexDirection: 'row', alignItems: 'center' },
+    inputDivider: { flex: 1, height: StyleSheet.hairlineWidth, backgroundColor: t.border },
+    swapBtn: { padding: 6, marginLeft: 8, borderRadius: 14, backgroundColor: t.surfaceHigh },
 
-  // Dropdown de suggestions
-  suggestions: {
-    backgroundColor: '#fff',
-    borderRadius: 8,
-    marginTop: 4,
-    marginBottom: 4,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 6,
-    elevation: 6,
-    overflow: 'hidden',
-  },
-  suggItem: { paddingVertical: 12, paddingHorizontal: 14, backgroundColor: '#fff' },
-  suggBorder: { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: '#E5E5EA' },
-  suggText: { fontSize: 14, color: '#1C1C1E' },
-  // Rangée GPS
-  gpsRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
-  gpsRowText: { fontSize: 14, color: '#007AFF', fontWeight: '500' },
-  // États recherche / vide
-  suggState: { flexDirection: 'row', alignItems: 'center', gap: 8, padding: 14 },
-  suggStateText: { fontSize: 14, color: '#8E8E93' },
-  suggFallbackText: { fontSize: 14, color: '#007AFF', fontStyle: 'italic' },
+    suggestions: {
+      backgroundColor: t.surface, borderRadius: 8, marginTop: 4, marginBottom: 4,
+      shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.15, shadowRadius: 6, elevation: 6, overflow: 'hidden',
+    },
+    suggItem: { paddingVertical: 12, paddingHorizontal: 14, backgroundColor: t.surface },
+    suggBorder: { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: t.border },
+    suggText: { fontSize: 14, color: t.textPrimary },
+    gpsRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+    gpsRowText: { fontSize: 14, color: t.accent, fontWeight: '500' },
+    suggState: { flexDirection: 'row', alignItems: 'center', gap: 8, padding: 14 },
+    suggStateText: { fontSize: 14, color: t.textSecondary },
+    suggFallbackText: { fontSize: 14, color: t.accent, fontStyle: 'italic' },
 
-  controlRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 10 },
-  goBtn: {
-    backgroundColor: '#007AFF', borderRadius: 20,
-    paddingHorizontal: 18, paddingVertical: 8, alignItems: 'center',
-  },
-  goBtnFull: { marginTop: 10, paddingVertical: 12 },
-  goBtnDisabled: { opacity: 0.55 },
-  goBtnText: { color: '#fff', fontWeight: '600', fontSize: 14 },
+    controlRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 10 },
+    goBtn: {
+      backgroundColor: t.accent, borderRadius: 20,
+      paddingHorizontal: 18, paddingVertical: 8, alignItems: 'center',
+    },
+    goBtnFull: { marginTop: 10, paddingVertical: 12 },
+    goBtnDisabled: { opacity: 0.55 },
+    goBtnText: { color: t.bg, fontWeight: '600', fontSize: 14 },
 
-  bufferSection: { marginTop: 10 },
-  bufferHeader: { flexDirection: 'row', alignItems: 'center', gap: 6 },
-  bufferLabel: { fontSize: 13, color: '#8E8E93' },
-  bufferSlider: { width: '100%', height: 32, marginTop: 2 },
-  infoCard: { marginTop: 6, backgroundColor: '#F2F2F7', borderRadius: 10, padding: 12 },
-  infoText: { fontSize: 13, color: '#3C3C43', lineHeight: 18 },
+    bufferSection: { marginTop: 10 },
+    bufferHeader: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+    bufferLabel: { fontSize: 13, color: t.textSecondary },
+    bufferSlider: { width: '100%', height: 32, marginTop: 2 },
+    infoCard: { marginTop: 6, backgroundColor: t.surfaceHigh, borderRadius: 10, padding: 12 },
+    infoText: { fontSize: 13, color: t.textSecondary, lineHeight: 18 },
 
-  statusRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 10 },
-  loadingText: { fontSize: 13, color: '#636366' },
-  errorText: { fontSize: 13, color: '#FF3B30', marginTop: 10 },
+    statusRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 10 },
+    loadingText: { fontSize: 13, color: t.textSecondary },
+    errorText: { fontSize: 13, color: t.destructive, marginTop: 10 },
 
-  // ── Carte ─────────────────────────────────────────────────────────────────
-  mapContainer: { flex: 1 },
-  map: { flex: 1 },
-  dot: { width: 14, height: 14, borderRadius: 7, borderWidth: 2, borderColor: '#fff' },
-  // Repères départ / arrivée (View custom, distincts des dots Invaders)
-  pinDep: {
-    width: 34, height: 34, borderRadius: 17,
-    backgroundColor: '#007AFF',
-    alignItems: 'center', justifyContent: 'center',
-    borderWidth: 2, borderColor: '#fff',
-    shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.3, shadowRadius: 3,
-  },
-  pinArr: {
-    width: 34, height: 34, borderRadius: 17,
-    backgroundColor: '#1C1C1E',
-    alignItems: 'center', justifyContent: 'center',
-    borderWidth: 2, borderColor: '#fff',
-    shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.3, shadowRadius: 3,
-  },
+    // ── Carte ───────────────────────────────────────────────────────────────
+    mapContainer: { flex: 1 },
+    map: { flex: 1 },
+    dot: { width: 14, height: 14, borderRadius: 7, borderWidth: 2, borderColor: '#fff' },
+    pinDep: {
+      width: 34, height: 34, borderRadius: 17,
+      backgroundColor: t.accent, alignItems: 'center', justifyContent: 'center',
+      borderWidth: 2, borderColor: '#fff',
+      shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.3, shadowRadius: 3,
+    },
+    pinArr: {
+      width: 34, height: 34, borderRadius: 17,
+      backgroundColor: t.textPrimary, alignItems: 'center', justifyContent: 'center',
+      borderWidth: 2, borderColor: '#fff',
+      shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.3, shadowRadius: 3,
+    },
 
-  // Overlay boutons flottants (Démarrer / Terminer / Recentrer)
-  mapOverlay: {
-    position: 'absolute',
-    bottom: 12,
-    left: 12,
-    right: 12,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-end',
-  },
-  startBtn: {
-    flexDirection: 'row', alignItems: 'center', gap: 6,
-    backgroundColor: '#007AFF', borderRadius: 20,
-    paddingHorizontal: 16, paddingVertical: 10,
-    shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2, shadowRadius: 4, elevation: 4,
-  },
-  stopBtn: {
-    flexDirection: 'row', alignItems: 'center', gap: 6,
-    backgroundColor: '#1C1C1E', borderRadius: 20,
-    paddingHorizontal: 16, paddingVertical: 10,
-    shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2, shadowRadius: 4, elevation: 4,
-  },
-  trackBtnText: { color: '#fff', fontWeight: '600', fontSize: 14 },
-  recenterBtn: {
-    width: 42, height: 42, borderRadius: 21,
-    backgroundColor: '#fff', alignItems: 'center', justifyContent: 'center',
-    shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.15, shadowRadius: 4, elevation: 4,
-  },
+    mapOverlay: {
+      position: 'absolute', bottom: 12, left: 12, right: 12,
+      flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end',
+    },
+    startBtn: {
+      flexDirection: 'row', alignItems: 'center', gap: 6,
+      backgroundColor: t.accent, borderRadius: 20,
+      paddingHorizontal: 16, paddingVertical: 10,
+      shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.2, shadowRadius: 4, elevation: 4,
+    },
+    stopBtn: {
+      flexDirection: 'row', alignItems: 'center', gap: 6,
+      backgroundColor: t.surfaceHigh, borderRadius: 20,
+      paddingHorizontal: 16, paddingVertical: 10,
+      shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.2, shadowRadius: 4, elevation: 4,
+    },
+    trackBtnText: { color: t.textPrimary, fontWeight: '600', fontSize: 14 },
+    recenterBtn: {
+      width: 42, height: 42, borderRadius: 21,
+      backgroundColor: t.surface, alignItems: 'center', justifyContent: 'center',
+      shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.2, shadowRadius: 4, elevation: 4,
+    },
 
-  // ── Panneau résultat ──────────────────────────────────────────────────────
-  routePanel: {
-    height: 260,
-    backgroundColor: '#fff',
-    borderTopWidth: StyleSheet.hairlineWidth,
-    borderTopColor: '#E5E5EA',
-  },
-  routePanelHeader: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: '#E5E5EA',
-  },
-  routeSummary: { fontSize: 14, fontWeight: '600', color: '#1C1C1E', lineHeight: 20 },
-  toggleWrap: { flexDirection: 'row', alignItems: 'center', gap: 6 },
-  toggleLabel: { fontSize: 13, color: '#636366' },
-  routeList: { flex: 1 },
-  listEmpty: { fontSize: 14, color: '#8E8E93', textAlign: 'center', marginTop: 24, paddingHorizontal: 16 },
+    // ── Panneau résultat ─────────────────────────────────────────────────────
+    routePanel: {
+      height: 260, backgroundColor: t.surface,
+      borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: t.border,
+    },
+    routePanelHeader: {
+      flexDirection: 'row', alignItems: 'center',
+      paddingHorizontal: 16, paddingVertical: 12,
+      borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: t.border,
+    },
+    routeSummary: { fontSize: 14, fontWeight: '600', color: t.textPrimary, lineHeight: 20 },
+    toggleWrap: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+    toggleLabel: { fontSize: 13, color: t.textSecondary },
+    routeList: { flex: 1 },
+    listEmpty: { fontSize: 14, color: t.textSecondary, textAlign: 'center', marginTop: 24, paddingHorizontal: 16 },
 
-  routeRow: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 16, height: 48, gap: 10 },
-  routeDot: { width: 10, height: 10, borderRadius: 5, flexShrink: 0 },
-  routeId: { fontWeight: '600', fontSize: 14, color: '#1C1C1E', width: 84 },
-  routePts: { fontSize: 13, color: '#636366', flex: 1 },
-  routeBadge: { borderRadius: 12, paddingHorizontal: 10, paddingVertical: 3, backgroundColor: '#F2F2F7' },
-  routeBadgeFlashed: { backgroundColor: '#E8F9EE' },
-  routeBadgeText: { fontSize: 12, fontWeight: '500', color: '#636366' },
-  routeBadgeTextFlashed: { color: '#34C759' },
+    routeRow: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 16, height: 48, gap: 10 },
+    routeDot: { width: 10, height: 10, borderRadius: 5, flexShrink: 0 },
+    routeId: { fontWeight: '600', fontSize: 14, color: t.textPrimary, width: 84 },
+    routePts: { fontSize: 13, color: t.textSecondary, flex: 1 },
+    routeBadge: { borderRadius: 12, paddingHorizontal: 10, paddingVertical: 3, backgroundColor: t.surfaceHigh },
+    routeBadgeFlashed: { backgroundColor: t.accentDim },
+    routeBadgeText: { fontSize: 12, fontWeight: '500', color: t.textSecondary },
+    routeBadgeTextFlashed: { color: t.statusOk },
 
-  separator: { height: StyleSheet.hairlineWidth, backgroundColor: '#E5E5EA', marginLeft: 16 },
+    separator: { height: StyleSheet.hairlineWidth, backgroundColor: t.border, marginLeft: 16 },
 
-  // ── Fiche détail ──────────────────────────────────────────────────────────
-  detailPanel: {
-    backgroundColor: '#fff',
-    borderTopWidth: StyleSheet.hairlineWidth,
-    borderTopColor: '#E5E5EA',
-    paddingHorizontal: 20,
-    paddingTop: 16,
-    paddingBottom: 32,
-  },
-  detailHeader: {
-    flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14,
-  },
-  backBtn: { fontSize: 16, color: '#007AFF', fontWeight: '500' },
-  detailId: { fontSize: 18, fontWeight: '700', color: '#1C1C1E' },
-  detailMeta: { flexDirection: 'row', alignItems: 'center', gap: 12, marginBottom: 10 },
-  statusBadge: { borderRadius: 6, paddingHorizontal: 10, paddingVertical: 4 },
-  statusText: { color: '#fff', fontWeight: '600', fontSize: 13 },
-  detailPts: { fontSize: 15, color: '#3C3C43' },
-  hint: { fontSize: 14, color: '#636366', fontStyle: 'italic', marginBottom: 4 },
-  detailActions: { flexDirection: 'row', gap: 10, marginTop: 14 },
-  actionBtn: {
-    flex: 1, borderRadius: 8, paddingHorizontal: 14, paddingVertical: 8,
-    backgroundColor: '#F2F2F7', alignItems: 'center',
-  },
-  actionBtnActive: { backgroundColor: '#34C759' },
-  actionBtnText: { fontSize: 14, fontWeight: '500', color: '#1C1C1E' },
-  actionBtnTextActive: { color: '#fff' },
-});
+    // ── Fiche détail ─────────────────────────────────────────────────────────
+    detailPanel: {
+      backgroundColor: t.surface,
+      borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: t.border,
+      paddingHorizontal: 20, paddingTop: 16, paddingBottom: 32,
+    },
+    detailHeader: {
+      flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14,
+    },
+    backBtn: { fontSize: 16, color: t.link, fontWeight: '500' },
+    detailId: { ...typography.arcadeTitle, color: t.textPrimary },
+    detailMeta: { flexDirection: 'row', alignItems: 'center', gap: 12, marginBottom: 10 },
+    statusBadge: { borderRadius: 6, paddingHorizontal: 10, paddingVertical: 4 },
+    statusText: { color: '#fff', fontWeight: '600', fontSize: 13 },
+    detailPts: { fontSize: 15, color: t.textSecondary },
+    hint: { fontSize: 14, color: t.textSecondary, fontStyle: 'italic', marginBottom: 4 },
+    detailActions: { flexDirection: 'row', gap: 10, marginTop: 14 },
+    actionBtn: {
+      flex: 1, borderRadius: 8, paddingHorizontal: 14, paddingVertical: 8,
+      backgroundColor: t.surfaceHigh, alignItems: 'center',
+    },
+    actionBtnActive: { backgroundColor: t.accent },
+    actionBtnText: { fontSize: 14, fontWeight: '500', color: t.textPrimary },
+    actionBtnTextActive: { color: t.bg },
+  });
+}

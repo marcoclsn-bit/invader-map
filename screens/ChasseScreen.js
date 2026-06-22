@@ -14,6 +14,7 @@ import { STATUS_COLOR } from '../constants';
 import { ORS_API_KEY } from '../config/ors';
 import { useAppContext } from '../context/AppContext';
 import { INVADER_DISTRICT, arLabel } from '../utils/arrondissement';
+import { useTheme } from '../theme/ThemeContext';
 
 const PARIS = { latitude: 48.8566, longitude: 2.3522, latitudeDelta: 0.12, longitudeDelta: 0.12 };
 const VISIT_MIN = 2;   // minutes par Invader (observation + photo)
@@ -140,9 +141,21 @@ function formatBudget(min) {
   return m === 0 ? `${h} h` : `${h} h ${String(m).padStart(2, '0')}`;
 }
 
+// ─── Cache de styles thémés ───────────────────────────────────────────────────
+
+let _styleCache = null;
+function getStyles(theme) {
+  if (_styleCache?.theme === theme) return _styleCache.styles;
+  const s = makeStyles(theme);
+  _styleCache = { theme, styles: s };
+  return s;
+}
+
 // ─── Ligne de résultat ────────────────────────────────────────────────────────
 
 function HuntRow({ inv, index, isFlashed, statusColors, onPress }) {
+  const { theme } = useTheme();
+  const styles = getStyles(theme);
   return (
     <TouchableOpacity style={styles.huntRow} onPress={onPress} activeOpacity={0.7}>
       <View style={styles.orderBadge}>
@@ -171,6 +184,8 @@ export default function ChasseScreen({ route }) {
   const locationSub = useRef(null);
 
   const { flashed, statusColors } = useAppContext();
+  const { theme } = useTheme();
+  const styles = getStyles(theme);
 
   // ─── GPS ──────────────────────────────────────────────────────────────────
   const [gpsReady, setGpsReady] = useState(false);
@@ -464,11 +479,11 @@ export default function ChasseScreen({ route }) {
               <>
                 {/* Tracé — gris derrière, orange devant */}
                 {walkedPolyline && (
-                  <Polyline coordinates={walkedPolyline} strokeColor="#B0B0BA" strokeWidth={4} lineCap="round" />
+                  <Polyline coordinates={walkedPolyline} strokeColor={theme.textSecondary} strokeWidth={4} lineCap="round" />
                 )}
                 <Polyline
                   coordinates={remainingPolyline ?? result.polyline}
-                  strokeColor="#007AFF"
+                  strokeColor={theme.accent}
                   strokeWidth={4}
                   lineCap="round"
                 />
@@ -513,7 +528,7 @@ export default function ChasseScreen({ route }) {
                         style={[styles.modeBtn, mode === m.key && styles.modeBtnActive]}
                         onPress={() => { setMode(m.key); if (m.key === 'around') setArFilter(null); }}
                       >
-                        <Ionicons name={m.icon} size={13} color={mode === m.key ? '#fff' : '#636366'} />
+                        <Ionicons name={m.icon} size={13} color={mode === m.key ? theme.bg : theme.textSecondary} />
                         <Text style={[styles.modeBtnText, mode === m.key && styles.modeBtnTextActive]}>
                           {m.label}
                         </Text>
@@ -525,7 +540,7 @@ export default function ChasseScreen({ route }) {
                   {mode === 'quartier' && (
                     <View style={styles.qWrap}>
                       <View style={styles.qRow}>
-                        <Ionicons name="location-outline" size={15} color="#8E8E93" style={styles.qIcon} />
+                        <Ionicons name="location-outline" size={15} color={theme.textSecondary} style={styles.qIcon} />
                         <TextInput
                           ref={quartierInputRef}
                           style={styles.qField}
@@ -540,17 +555,17 @@ export default function ChasseScreen({ route }) {
                           autoCorrect={false}
                           autoCapitalize="sentences"
                         />
-                        {qResolving && <ActivityIndicator size="small" color="#8E8E93" />}
+                        {qResolving && <ActivityIndicator size="small" color={theme.textSecondary} />}
                         {qCoords && !qResolving && (
-                          <Ionicons name="checkmark-circle" size={17} color="#34C759" />
+                          <Ionicons name="checkmark-circle" size={17} color={theme.statusOk} />
                         )}
-                        {qSearching && !qResolving && <ActivityIndicator size="small" color="#8E8E93" />}
+                        {qSearching && !qResolving && <ActivityIndicator size="small" color={theme.textSecondary} />}
                       </View>
                       {showQDropdown && (
                         <View style={styles.suggestions}>
                           {qSearching ? (
                             <View style={styles.suggState}>
-                              <ActivityIndicator size="small" color="#8E8E93" />
+                              <ActivityIndicator size="small" color={theme.textSecondary} />
                               <Text style={styles.suggStateText}>Recherche…</Text>
                             </View>
                           ) : qSugg.length > 0 ? (
@@ -569,7 +584,7 @@ export default function ChasseScreen({ route }) {
                               </View>
                               <TouchableOpacity style={[styles.suggItem, styles.suggBorder]} onPress={onQFallback}>
                                 {qResolving
-                                  ? <ActivityIndicator size="small" color="#007AFF" />
+                                  ? <ActivityIndicator size="small" color={theme.accent} />
                                   : <Text style={styles.suggFallbackText} numberOfLines={1}>
                                       Utiliser « {qText} »
                                     </Text>
@@ -593,9 +608,9 @@ export default function ChasseScreen({ route }) {
                     step={1}
                     value={budgetMin / 15}
                     onValueChange={v => setBudgetMin(Math.round(v) * 15)}
-                    minimumTrackTintColor="#007AFF"
-                    maximumTrackTintColor="#E5E5EA"
-                    thumbTintColor="#007AFF"
+                    minimumTrackTintColor={theme.accent}
+                    maximumTrackTintColor={theme.border}
+                    thumbTintColor={theme.accent}
                   />
 
                   {/* Transport */}
@@ -610,7 +625,7 @@ export default function ChasseScreen({ route }) {
                           style={[styles.segBtn, profile === p.key && styles.segBtnActive]}
                           onPress={() => setProfile(p.key)}
                         >
-                          <Ionicons name={p.icon} size={15} color={profile === p.key ? '#fff' : '#636366'} />
+                          <Ionicons name={p.icon} size={15} color={profile === p.key ? theme.bg : theme.textSecondary} />
                           <Text style={[styles.segBtnText, profile === p.key && styles.segBtnTextActive]}>
                             {p.label}
                           </Text>
@@ -625,20 +640,20 @@ export default function ChasseScreen({ route }) {
                     <Switch
                       value={unflashedOnly}
                       onValueChange={setUnflashedOnly}
-                      trackColor={{ false: '#E5E5EA', true: '#007AFF' }}
-                      thumbColor="#fff"
+                      trackColor={{ false: theme.border, true: theme.accent }}
+                      thumbColor={theme.bg}
                     />
                   </View>
 
                   {/* Filtre arrondissement actif */}
                   {arFilter !== null && (
                     <View style={styles.arFilterBanner}>
-                      <Ionicons name="filter-outline" size={13} color="#5856D6" />
+                      <Ionicons name="filter-outline" size={13} color={theme.accent} />
                       <Text style={styles.arFilterText}>
                         Limité au {arLabel(arFilter)}
                       </Text>
                       <TouchableOpacity onPress={() => setArFilter(null)} hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}>
-                        <Ionicons name="close-circle" size={15} color="#8E8E93" />
+                        <Ionicons name="close-circle" size={15} color={theme.textSecondary} />
                       </TouchableOpacity>
                     </View>
                   )}
@@ -663,7 +678,7 @@ export default function ChasseScreen({ route }) {
                 </ScrollView>
               )}
               <TouchableOpacity style={styles.collapseBtn} onPress={() => setInputCollapsed(v => !v)}>
-                <Ionicons name={inputCollapsed ? 'chevron-down' : 'chevron-up'} size={16} color="#8E8E93" />
+                <Ionicons name={inputCollapsed ? 'chevron-down' : 'chevron-up'} size={16} color={theme.textSecondary} />
               </TouchableOpacity>
             </View>
           )}
@@ -683,7 +698,7 @@ export default function ChasseScreen({ route }) {
               )}
               {(!following || drifted) && (
                 <TouchableOpacity style={styles.recenterBtn} onPress={recenter}>
-                  <Ionicons name="locate-outline" size={22} color="#007AFF" />
+                  <Ionicons name="locate-outline" size={22} color={theme.accent} />
                 </TouchableOpacity>
               )}
             </View>
@@ -722,166 +737,155 @@ export default function ChasseScreen({ route }) {
   );
 }
 
-// ─── Styles ──────────────────────────────────────────────────────────────────
+// ─── Styles thémés ───────────────────────────────────────────────────────────
 
-const styles = StyleSheet.create({
-  container: { flex: 1 },
-  mapContainer: { flex: 1 },
-  map: { flex: 1 },
+function makeStyles(t) {
+  return StyleSheet.create({
+    container: { flex: 1 },
+    mapContainer: { flex: 1 },
+    map: { flex: 1 },
 
-  // ── Carte flottante ────────────────────────────────────────────────────────
-  inputCard: {
-    position: 'absolute',
-    left: 12,
-    right: 12,
-    backgroundColor: '#fff',
-    borderRadius: 16,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 6 },
-    shadowOpacity: 0.14,
-    shadowRadius: 14,
-    elevation: 10,
-    zIndex: 20,
-  },
-  inputContent: { paddingHorizontal: 16, paddingTop: 12, paddingBottom: 10 },
-  collapseBtn: {
-    alignItems: 'center',
-    paddingVertical: 6,
-    borderTopWidth: StyleSheet.hairlineWidth,
-    borderTopColor: '#E5E5EA',
-  },
+    // ── Carte flottante ──────────────────────────────────────────────────────
+    inputCard: {
+      position: 'absolute', left: 12, right: 12,
+      backgroundColor: t.surface,
+      borderRadius: 16,
+      shadowColor: '#000', shadowOffset: { width: 0, height: 6 },
+      shadowOpacity: 0.25, shadowRadius: 14, elevation: 10, zIndex: 20,
+    },
+    inputContent: { paddingHorizontal: 16, paddingTop: 12, paddingBottom: 10 },
+    collapseBtn: {
+      alignItems: 'center', paddingVertical: 6,
+      borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: t.border,
+    },
 
-  // ── Sélecteur de mode ──────────────────────────────────────────────────────
-  modeRow: { flexDirection: 'row', gap: 8 },
-  modeBtn: {
-    flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
-    gap: 6, paddingVertical: 9, borderRadius: 10, backgroundColor: '#F2F2F7',
-  },
-  modeBtnActive: { backgroundColor: '#007AFF' },
-  modeBtnText: { fontSize: 13, fontWeight: '500', color: '#636366' },
-  modeBtnTextActive: { color: '#fff' },
+    // ── Sélecteur de mode ────────────────────────────────────────────────────
+    modeRow: { flexDirection: 'row', gap: 8 },
+    modeBtn: {
+      flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
+      gap: 6, paddingVertical: 9, borderRadius: 10, backgroundColor: t.surfaceHigh,
+    },
+    modeBtnActive: { backgroundColor: t.accent },
+    modeBtnText: { fontSize: 13, fontWeight: '500', color: t.textSecondary },
+    modeBtnTextActive: { color: t.bg },
 
-  // ── Champ quartier ─────────────────────────────────────────────────────────
-  qWrap: { marginTop: 10 },
-  qRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
-  qIcon: { width: 20, textAlign: 'center' },
-  qField: { flex: 1, fontSize: 15, color: '#1C1C1E', paddingVertical: 8 },
+    // ── Champ quartier ───────────────────────────────────────────────────────
+    qWrap: { marginTop: 10 },
+    qRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+    qIcon: { width: 20, textAlign: 'center' },
+    qField: { flex: 1, fontSize: 15, color: t.textPrimary, paddingVertical: 8 },
 
-  // ── Dropdown ───────────────────────────────────────────────────────────────
-  suggestions: {
-    backgroundColor: '#fff', borderRadius: 8, marginTop: 4,
-    shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1, shadowRadius: 6, elevation: 6, overflow: 'hidden',
-  },
-  suggItem: { paddingVertical: 12, paddingHorizontal: 14, backgroundColor: '#fff' },
-  suggBorder: { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: '#E5E5EA' },
-  suggText: { fontSize: 14, color: '#1C1C1E' },
-  suggState: { flexDirection: 'row', alignItems: 'center', gap: 8, padding: 14 },
-  suggStateText: { fontSize: 14, color: '#8E8E93' },
-  suggFallbackText: { fontSize: 14, color: '#007AFF', fontStyle: 'italic' },
+    // ── Dropdown ─────────────────────────────────────────────────────────────
+    suggestions: {
+      backgroundColor: t.surface, borderRadius: 8, marginTop: 4,
+      shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.15, shadowRadius: 6, elevation: 6, overflow: 'hidden',
+    },
+    suggItem: { paddingVertical: 12, paddingHorizontal: 14, backgroundColor: t.surface },
+    suggBorder: { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: t.border },
+    suggText: { fontSize: 14, color: t.textPrimary },
+    suggState: { flexDirection: 'row', alignItems: 'center', gap: 8, padding: 14 },
+    suggStateText: { fontSize: 14, color: t.textSecondary },
+    suggFallbackText: { fontSize: 14, color: t.accent, fontStyle: 'italic' },
 
-  // ── Champs formulaire ──────────────────────────────────────────────────────
-  divider: { height: StyleSheet.hairlineWidth, backgroundColor: '#E5E5EA', marginVertical: 10 },
-  fieldLabel: { fontSize: 13, color: '#8E8E93' },
-  slider: { width: '100%', height: 32, marginBottom: 2 },
+    // ── Champs formulaire ────────────────────────────────────────────────────
+    divider: { height: StyleSheet.hairlineWidth, backgroundColor: t.border, marginVertical: 10 },
+    fieldLabel: { fontSize: 13, color: t.textSecondary },
+    slider: { width: '100%', height: 32, marginBottom: 2 },
 
-  transportRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: 2 },
-  segmented: { flexDirection: 'row', gap: 6 },
-  segBtn: {
-    flexDirection: 'row', alignItems: 'center', gap: 5,
-    paddingHorizontal: 12, paddingVertical: 7,
-    borderRadius: 10, backgroundColor: '#F2F2F7',
-  },
-  segBtnActive: { backgroundColor: '#007AFF' },
-  segBtnText: { fontSize: 13, fontWeight: '500', color: '#636366' },
-  segBtnTextActive: { color: '#fff' },
+    transportRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: 2 },
+    segmented: { flexDirection: 'row', gap: 6 },
+    segBtn: {
+      flexDirection: 'row', alignItems: 'center', gap: 5,
+      paddingHorizontal: 12, paddingVertical: 7,
+      borderRadius: 10, backgroundColor: t.surfaceHigh,
+    },
+    segBtnActive: { backgroundColor: t.accent },
+    segBtnText: { fontSize: 13, fontWeight: '500', color: t.textSecondary },
+    segBtnTextActive: { color: t.bg },
 
-  toggleRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: 10 },
-  toggleLabel: { fontSize: 13, color: '#1C1C1E' },
+    toggleRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: 10 },
+    toggleLabel: { fontSize: 13, color: t.textPrimary },
 
-  genBtn: {
-    marginTop: 12, backgroundColor: '#007AFF',
-    borderRadius: 20, paddingVertical: 12, alignItems: 'center',
-  },
-  genBtnDisabled: { opacity: 0.45 },
-  genBtnText: { color: '#fff', fontWeight: '600', fontSize: 15 },
-  errorText: { fontSize: 13, color: '#FF3B30', marginTop: 8, textAlign: 'center' },
-  hintText: { fontSize: 12, color: '#8E8E93', marginTop: 6, textAlign: 'center' },
+    genBtn: {
+      marginTop: 12, backgroundColor: t.accent,
+      borderRadius: 20, paddingVertical: 12, alignItems: 'center',
+    },
+    genBtnDisabled: { opacity: 0.45 },
+    genBtnText: { color: t.bg, fontWeight: '600', fontSize: 15 },
+    errorText: { fontSize: 13, color: t.destructive, marginTop: 8, textAlign: 'center' },
+    hintText: { fontSize: 12, color: t.textSecondary, marginTop: 6, textAlign: 'center' },
 
-  arFilterBanner: {
-    flexDirection: 'row', alignItems: 'center', gap: 6,
-    backgroundColor: '#5856D615', borderRadius: 8,
-    paddingHorizontal: 10, paddingVertical: 7, marginTop: 10,
-  },
-  arFilterText: { flex: 1, fontSize: 12, color: '#5856D6', fontWeight: '500' },
+    arFilterBanner: {
+      flexDirection: 'row', alignItems: 'center', gap: 6,
+      backgroundColor: t.accentDim, borderRadius: 8,
+      paddingHorizontal: 10, paddingVertical: 7, marginTop: 10,
+    },
+    arFilterText: { flex: 1, fontSize: 12, color: t.accent, fontWeight: '500' },
 
-  // ── Boutons navigation ─────────────────────────────────────────────────────
-  mapOverlay: {
-    position: 'absolute',
-    bottom: 12, left: 12, right: 12,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-end',
-  },
-  startBtn: {
-    flexDirection: 'row', alignItems: 'center', gap: 6,
-    backgroundColor: '#007AFF', borderRadius: 20,
-    paddingHorizontal: 16, paddingVertical: 10,
-    shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.2, shadowRadius: 4, elevation: 4,
-  },
-  stopBtn: {
-    flexDirection: 'row', alignItems: 'center', gap: 6,
-    backgroundColor: '#1C1C1E', borderRadius: 20,
-    paddingHorizontal: 16, paddingVertical: 10,
-    shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.2, shadowRadius: 4, elevation: 4,
-  },
-  trackBtnText: { color: '#fff', fontWeight: '600', fontSize: 14 },
-  recenterBtn: {
-    width: 42, height: 42, borderRadius: 21,
-    backgroundColor: '#fff', alignItems: 'center', justifyContent: 'center',
-    shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.15, shadowRadius: 4, elevation: 4,
-  },
+    // ── Boutons navigation ───────────────────────────────────────────────────
+    mapOverlay: {
+      position: 'absolute', bottom: 12, left: 12, right: 12,
+      flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end',
+    },
+    startBtn: {
+      flexDirection: 'row', alignItems: 'center', gap: 6,
+      backgroundColor: t.accent, borderRadius: 20,
+      paddingHorizontal: 16, paddingVertical: 10,
+      shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.2, shadowRadius: 4, elevation: 4,
+    },
+    stopBtn: {
+      flexDirection: 'row', alignItems: 'center', gap: 6,
+      backgroundColor: t.surfaceHigh, borderRadius: 20,
+      paddingHorizontal: 16, paddingVertical: 10,
+      shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.2, shadowRadius: 4, elevation: 4,
+    },
+    trackBtnText: { color: t.textPrimary, fontWeight: '600', fontSize: 14 },
+    recenterBtn: {
+      width: 42, height: 42, borderRadius: 21,
+      backgroundColor: t.surface, alignItems: 'center', justifyContent: 'center',
+      shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.2, shadowRadius: 4, elevation: 4,
+    },
 
-  // ── Marqueurs carte ────────────────────────────────────────────────────────
-  pinStart: {
-    width: 36, height: 36, borderRadius: 18, backgroundColor: '#007AFF',
-    alignItems: 'center', justifyContent: 'center',
-    borderWidth: 2, borderColor: '#fff',
-    shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.3, shadowRadius: 3,
-  },
-  huntMarker: {
-    width: 28, height: 28, borderRadius: 14, backgroundColor: '#007AFF',
-    alignItems: 'center', justifyContent: 'center',
-    borderWidth: 2, borderColor: '#fff',
-    shadowColor: '#000', shadowOffset: { width: 0, height: 1 }, shadowOpacity: 0.2, shadowRadius: 2,
-  },
-  huntMarkerSel: { backgroundColor: '#1C1C1E', borderColor: '#007AFF' },
-  huntMarkerNum: { color: '#fff', fontSize: 11, fontWeight: '700' },
+    // ── Marqueurs carte ──────────────────────────────────────────────────────
+    pinStart: {
+      width: 36, height: 36, borderRadius: 18, backgroundColor: t.accent,
+      alignItems: 'center', justifyContent: 'center',
+      borderWidth: 2, borderColor: '#fff',
+      shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.3, shadowRadius: 3,
+    },
+    huntMarker: {
+      width: 28, height: 28, borderRadius: 14, backgroundColor: t.accent,
+      alignItems: 'center', justifyContent: 'center',
+      borderWidth: 2, borderColor: '#fff',
+      shadowColor: '#000', shadowOffset: { width: 0, height: 1 }, shadowOpacity: 0.2, shadowRadius: 2,
+    },
+    huntMarkerSel: { backgroundColor: t.textPrimary, borderColor: t.accent },
+    huntMarkerNum: { color: t.bg, fontSize: 11, fontWeight: '700' },
 
-  // ── Panneau résultat ───────────────────────────────────────────────────────
-  resultPanel: {
-    height: 220,
-    backgroundColor: '#fff',
-    borderTopWidth: StyleSheet.hairlineWidth,
-    borderTopColor: '#E5E5EA',
-  },
-  resultHeader: {
-    paddingHorizontal: 16, paddingVertical: 12,
-    borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: '#E5E5EA',
-  },
-  resultSummary: { fontSize: 14, fontWeight: '600', color: '#1C1C1E' },
-  resultList: { flex: 1 },
+    // ── Panneau résultat ─────────────────────────────────────────────────────
+    resultPanel: {
+      height: 220, backgroundColor: t.surface,
+      borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: t.border,
+    },
+    resultHeader: {
+      paddingHorizontal: 16, paddingVertical: 12,
+      borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: t.border,
+    },
+    resultSummary: { fontSize: 14, fontWeight: '600', color: t.textPrimary },
+    resultList: { flex: 1 },
 
-  huntRow: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 16, height: 48, gap: 10 },
-  orderBadge: {
-    width: 22, height: 22, borderRadius: 11, backgroundColor: '#007AFF',
-    alignItems: 'center', justifyContent: 'center', flexShrink: 0,
-  },
-  orderNum: { color: '#fff', fontSize: 11, fontWeight: '700' },
-  huntDot: { width: 10, height: 10, borderRadius: 5, flexShrink: 0 },
-  huntId: { fontWeight: '600', fontSize: 14, color: '#1C1C1E', width: 80 },
-  huntPts: { fontSize: 13, color: '#636366', flex: 1 },
-  flashedBadge: { borderRadius: 12, paddingHorizontal: 10, paddingVertical: 3, backgroundColor: '#E8F9EE' },
-  flashedBadgeText: { fontSize: 12, fontWeight: '600', color: '#34C759' },
-  separator: { height: StyleSheet.hairlineWidth, backgroundColor: '#E5E5EA', marginLeft: 16 },
-});
+    huntRow: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 16, height: 48, gap: 10 },
+    orderBadge: {
+      width: 22, height: 22, borderRadius: 11, backgroundColor: t.accent,
+      alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+    },
+    orderNum: { color: t.bg, fontSize: 11, fontWeight: '700' },
+    huntDot: { width: 10, height: 10, borderRadius: 5, flexShrink: 0 },
+    huntId: { fontWeight: '600', fontSize: 14, color: t.textPrimary, width: 80 },
+    huntPts: { fontSize: 13, color: t.textSecondary, flex: 1 },
+    flashedBadge: { borderRadius: 12, paddingHorizontal: 10, paddingVertical: 3, backgroundColor: t.accentDim },
+    flashedBadgeText: { fontSize: 12, fontWeight: '600', color: t.statusOk },
+    separator: { height: StyleSheet.hairlineWidth, backgroundColor: t.border, marginLeft: 16 },
+  });
+}
