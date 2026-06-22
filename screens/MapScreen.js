@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, Platform, Linking, Alert } from 'react-native';
+import { StyleSheet, View, Text, Image, TouchableOpacity, Platform, Linking, Alert, Animated } from 'react-native';
 import MapView from 'react-native-maps';
 import * as Location from 'expo-location';
+import * as Haptics from 'expo-haptics';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { INVADERS } from '../data/invaders';
@@ -10,6 +11,9 @@ import { STATUS_LABEL, ALL_STATUSES } from '../constants';
 import InvaderMarker from '../components/InvaderMarker';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
+
+const FLASHED_IMG = require('../assets/markers/alien_flashed.png');
+const MARKER_SIZE  = 30;
 
 // ─── Cache de styles thémés (un seul StyleSheet par thème) ───────────────────
 let _styleCache = null;
@@ -47,6 +51,72 @@ async function openInApp(app, lat, lng) {
       : `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=walking`;
     Linking.openURL(url).catch(() => {});
   }
+}
+
+// ─── Overlay d'animation flash ────────────────────────────────────────────────
+// Rendu en dehors de la MapView (non clippé, non snapshotté).
+// Positionné via mapRef.pointForCoordinate → coordonnées relatives au container.
+
+function FlashOverlay({ invader, point, theme, onDone }) {
+  const scale    = useRef(new Animated.Value(1)).current;
+  const transY   = useRef(new Animated.Value(0)).current;
+  const ptsAlpha = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    Animated.parallel([
+      // Pop du marqueur : gonfle puis revient avec rebond
+      Animated.sequence([
+        Animated.timing(scale, { toValue: 1.75, duration: 110, useNativeDriver: true }),
+        Animated.spring(scale, { toValue: 1, useNativeDriver: true, damping: 5, stiffness: 260, mass: 0.5 }),
+      ]),
+      // "+X PTS" monte en fondu
+      Animated.sequence([
+        Animated.timing(ptsAlpha, { toValue: 1, duration: 80,  useNativeDriver: true }),
+        Animated.delay(380),
+        Animated.timing(ptsAlpha, { toValue: 0, duration: 280, useNativeDriver: true }),
+      ]),
+      Animated.timing(transY, { toValue: -62, duration: 760, useNativeDriver: true }),
+    ]).start(onDone);
+  }, []);
+
+  const { x, y } = point;
+  const half = MARKER_SIZE / 2;
+
+  return (
+    <>
+      {/* Alien flashé en pop */}
+      <Animated.View
+        pointerEvents="none"
+        style={{
+          position: 'absolute',
+          left: x - half, top: y - half,
+          width: MARKER_SIZE, height: MARKER_SIZE,
+          transform: [{ scale }],
+          zIndex: 900,
+        }}
+      >
+        <Image source={FLASHED_IMG} style={{ width: MARKER_SIZE, height: MARKER_SIZE }} resizeMode="contain" fadeDuration={0} />
+      </Animated.View>
+
+      {/* +X PTS qui monte */}
+      <Animated.Text
+        pointerEvents="none"
+        style={{
+          position: 'absolute',
+          left: x - half,
+          top: y - MARKER_SIZE - 2,
+          fontFamily: 'Silkscreen_700Bold',
+          fontSize: 13,
+          color: theme.accent,
+          opacity: ptsAlpha,
+          transform: [{ translateY: transY }],
+          zIndex: 901,
+        }}
+      >
+        +{invader.points} PTS
+      </Animated.Text>
+    </>
+  );
 }
 
 // ─── Panneau de filtres ───────────────────────────────────────────────────────
@@ -227,6 +297,7 @@ export default function MapScreen({ navigation }) {
 
   const mapRef = useRef(null);
   const centeredRef = useRef(false);
+  const [flashEffect, setFlashEffect] = useState(null);
   const [selected, setSelected] = useState(null);
   const [showFilters, setShowFilters] = useState(false);
   const [locationGranted, setLocationGranted] = useState(false);
@@ -279,6 +350,21 @@ export default function MapScreen({ navigation }) {
   }
 
   function closeAll() { setSelected(null); setShowFilters(false); }
+
+  async function handleFlashFromMap(id) {
+    const willFlash = !flashed.has(id);
+    toggleFlash(id);
+    if (!willFlash) return; // dé-flash : silencieux, pas d'animation
+
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+
+    const inv = INVADERS.find((i) => i.id === id);
+    if (!inv || !mapRef.current) return;
+    try {
+      const point = await mapRef.current.pointForCoordinate({ latitude: inv.lat, longitude: inv.lng });
+      setFlashEffect({ invader: inv, point, key: Date.now() });
+    } catch (_) {}
+  }
 
   const filteredInvaders = useMemo(
     () => applyFilters(INVADERS, filters, flashed, labels),
@@ -376,11 +462,22 @@ export default function MapScreen({ navigation }) {
         <FilterPanel filters={filters} onFiltersChange={setFilters} onClose={() => setShowFilters(false)} />
       )}
 
+      {/* Overlay animation flash — au-dessus de la carte, transparent aux touches */}
+      {flashEffect && (
+        <FlashOverlay
+          key={flashEffect.key}
+          invader={flashEffect.invader}
+          point={flashEffect.point}
+          theme={theme}
+          onDone={() => setFlashEffect(null)}
+        />
+      )}
+
       {selected && !showFilters && (
         <InvaderPanel
           invader={selected}
           flashed={flashed}
-          onToggleFlash={toggleFlash}
+          onToggleFlash={handleFlashFromMap}
           onNavigate={handleNavigate}
           onClose={() => setSelected(null)}
         />
