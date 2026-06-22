@@ -297,8 +297,10 @@ export default function MapScreen({ navigation }) {
 
   const mapRef = useRef(null);
   const centeredRef = useRef(false);
-  // Centre de tri fixé une fois (1re position GPS ou Paris). Ref = pas de re-render.
   const sortCenterRef = useRef({ lat: 48.8566, lng: 2.3522 });
+  const gpsSortedRef  = useRef(false); // vrai après le 1er tri live (jamais re-triggeré)
+  // sortVersion s'incrémente max 2× : cache iOS puis 1re fix live → retrigge le useMemo
+  const [sortVersion, setSortVersion] = useState(0);
   const [flashEffect, setFlashEffect] = useState(null);
   const [selected, setSelected] = useState(null);
   const [showFilters, setShowFilters] = useState(false);
@@ -324,16 +326,35 @@ export default function MapScreen({ navigation }) {
       const { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== 'granted') return;
       setLocationGranted(true);
+
+      // ── Étape A : position du cache iOS (instantanée, max 5 min) ──────────
+      // Donne un centre de tri immédiat sans attendre une nouvelle fix GPS.
+      try {
+        const cached = await Location.getLastKnownPositionAsync({ maxAge: 5 * 60 * 1000 });
+        if (cached && cached.coords.accuracy < 200) {
+          sortCenterRef.current = { lat: cached.coords.latitude, lng: cached.coords.longitude };
+          setSortVersion(1); // re-tri immédiat centré sur la dernière position connue
+        }
+      } catch (_) {}
+
+      // ── Étape B : watch live (fix précise, quelques secondes) ─────────────
       positionSub = await Location.watchPositionAsync(
         { accuracy: Location.Accuracy.High, distanceInterval: 8 },
         (loc) => {
           if (loc.coords.accuracy > 40) return;
           const { latitude, longitude } = loc.coords;
           setUserLocation({ latitude, longitude });
+
+          // Re-tri unique sur la 1re fix live précise (jamais répété ensuite)
+          if (!gpsSortedRef.current) {
+            gpsSortedRef.current = true;
+            sortCenterRef.current = { lat: latitude, lng: longitude };
+            setSortVersion((v) => v + 1);
+          }
+
+          // Centrage carte sur la 1re position (comportement inchangé)
           if (!centeredRef.current) {
             centeredRef.current = true;
-            // Mémorise la 1re position GPS comme centre de tri (une seule fois)
-            sortCenterRef.current = { lat: latitude, lng: longitude };
             const nearParis = Math.abs(latitude - 48.8566) < 0.45 && Math.abs(longitude - 2.3522) < 0.65;
             if (nearParis) {
               mapRef.current?.animateToRegion(
@@ -375,8 +396,8 @@ export default function MapScreen({ navigation }) {
     [filters, flashed, labels]
   );
 
-  // Trie par distance au centre de référence (ref, jamais en dep → stable).
-  // Ne dépend QUE de filteredInvaders : un flash ne retrigger pas le tri.
+  // sortVersion en dep : le useMemo re-tourne quand sortCenterRef est mis à jour
+  // (max 2×). Flash et GPS continus ne touchent ni filteredInvaders ni sortVersion.
   const sortedInvaders = useMemo(() => {
     const { lat, lng } = sortCenterRef.current;
     return [...filteredInvaders].sort((a, b) => {
@@ -384,17 +405,16 @@ export default function MapScreen({ navigation }) {
       const db = (b.lat - lat) ** 2 + (b.lng - lng) ** 2;
       return da - db;
     });
-  }, [filteredInvaders]);
+  }, [filteredInvaders, sortVersion]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Chargement progressif : 80 marqueurs immédiats, +250 par frame d'animation
-  const INITIAL = 80;
+  const INITIAL = 120;
   const BATCH   = 250;
   const [renderedCount, setRenderedCount] = useState(INITIAL);
 
-  // Reset uniquement quand l'utilisateur change ses filtres — PAS sur flash ni GPS.
+  // Reset sur changement de filtre OU re-tri intentionnel — jamais sur flash/GPS.
   useEffect(() => {
     setRenderedCount(INITIAL);
-  }, [filters]);
+  }, [filters, sortVersion]);
 
   useEffect(() => {
     if (renderedCount >= sortedInvaders.length) return;
