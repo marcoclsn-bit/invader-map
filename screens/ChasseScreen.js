@@ -468,7 +468,7 @@ export default function ChasseScreen({ route }) {
                 )}
                 <Polyline
                   coordinates={remainingPolyline ?? result.polyline}
-                  strokeColor="#FF9500"
+                  strokeColor="#007AFF"
                   strokeWidth={4}
                   lineCap="round"
                 />
@@ -569,7 +569,7 @@ export default function ChasseScreen({ route }) {
                               </View>
                               <TouchableOpacity style={[styles.suggItem, styles.suggBorder]} onPress={onQFallback}>
                                 {qResolving
-                                  ? <ActivityIndicator size="small" color="#FF9500" />
+                                  ? <ActivityIndicator size="small" color="#007AFF" />
                                   : <Text style={styles.suggFallbackText} numberOfLines={1}>
                                       Utiliser « {qText} »
                                     </Text>
@@ -593,9 +593,9 @@ export default function ChasseScreen({ route }) {
                     step={1}
                     value={budgetMin / 15}
                     onValueChange={v => setBudgetMin(Math.round(v) * 15)}
-                    minimumTrackTintColor="#FF9500"
+                    minimumTrackTintColor="#007AFF"
                     maximumTrackTintColor="#E5E5EA"
-                    thumbTintColor="#FF9500"
+                    thumbTintColor="#007AFF"
                   />
 
                   {/* Transport */}
@@ -625,7 +625,7 @@ export default function ChasseScreen({ route }) {
                     <Switch
                       value={unflashedOnly}
                       onValueChange={setUnflashedOnly}
-                      trackColor={{ false: '#E5E5EA', true: '#FF9500' }}
+                      trackColor={{ false: '#E5E5EA', true: '#007AFF' }}
                       thumbColor="#fff"
                     />
                   </View>
@@ -683,7 +683,7 @@ export default function ChasseScreen({ route }) {
               )}
               {(!following || drifted) && (
                 <TouchableOpacity style={styles.recenterBtn} onPress={recenter}>
-                  <Ionicons name="locate-outline" size={22} color="#FF9500" />
+                  <Ionicons name="locate-outline" size={22} color="#007AFF" />
                 </TouchableOpacity>
               )}
             </View>
@@ -757,7 +757,7 @@ const styles = StyleSheet.create({
     flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
     gap: 6, paddingVertical: 9, borderRadius: 10, backgroundColor: '#F2F2F7',
   },
-  modeBtnActive: { backgroundColor: '#FF9500' },
+  modeBtnActive: { backgroundColor: '#007AFF' },
   modeBtnText: { fontSize: 13, fontWeight: '500', color: '#636366' },
   modeBtnTextActive: { color: '#fff' },
 
@@ -778,7 +778,7 @@ const styles = StyleSheet.create({
   suggText: { fontSize: 14, color: '#1C1C1E' },
   suggState: { flexDirection: 'row', alignItems: 'center', gap: 8, padding: 14 },
   suggStateText: { fontSize: 14, color: '#8E8E93' },
-  suggFallbackText: { fontSize: 14, color: '#FF9500', fontStyle: 'italic' },
+  suggFallbackText: { fontSize: 14, color: '#007AFF', fontStyle: 'italic' },
 
   // ── Champs formulaire ──────────────────────────────────────────────────────
   divider: { height: StyleSheet.hairlineWidth, backgroundColor: '#E5E5EA', marginVertical: 10 },
@@ -792,7 +792,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12, paddingVertical: 7,
     borderRadius: 10, backgroundColor: '#F2F2F7',
   },
-  segBtnActive: { backgroundColor: '#FF9500' },
+  segBtnActive: { backgroundColor: '#007AFF' },
   segBtnText: { fontSize: 13, fontWeight: '500', color: '#636366' },
   segBtnTextActive: { color: '#fff' },
 
@@ -800,7 +800,7 @@ const styles = StyleSheet.create({
   toggleLabel: { fontSize: 13, color: '#1C1C1E' },
 
   genBtn: {
-    marginTop: 12, backgroundColor: '#FF9500',
+    marginTop: 12, backgroundColor: '#007AFF',
     borderRadius: 20, paddingVertical: 12, alignItems: 'center',
   },
   genBtnDisabled: { opacity: 0.45 },
@@ -825,7 +825,7 @@ const styles = StyleSheet.create({
   },
   startBtn: {
     flexDirection: 'row', alignItems: 'center', gap: 6,
-    backgroundColor: '#FF9500', borderRadius: 20,
+    backgroundColor: '#007AFF', borderRadius: 20,
     paddingHorizontal: 16, paddingVertical: 10,
     shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.2, shadowRadius: 4, elevation: 4,
   },
@@ -844,18 +844,18 @@ const styles = StyleSheet.create({
 
   // ── Marqueurs carte ────────────────────────────────────────────────────────
   pinStart: {
-    width: 36, height: 36, borderRadius: 18, backgroundColor: '#FF9500',
+    width: 36, height: 36, borderRadius: 18, backgroundColor: '#007AFF',
     alignItems: 'center', justifyContent: 'center',
     borderWidth: 2, borderColor: '#fff',
     shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.3, shadowRadius: 3,
   },
   huntMarker: {
-    width: 28, height: 28, borderRadius: 14, backgroundColor: '#FF9500',
+    width: 28, height: 28, borderRadius: 14, backgroundColor: '#007AFF',
     alignItems: 'center', justifyContent: 'center',
     borderWidth: 2, borderColor: '#fff',
     shadowColor: '#000', shadowOffset: { width: 0, height: 1 }, shadowOpacity: 0.2, shadowRadius: 2,
   },
-  huntMarkerSel: { backgroundColor: '#1C1C1E', borderColor: '#FF9500' },
+  huntMarkerSel: { backgroundColor: '#1C1C1E', borderColor: '#007AFF' },
   huntMarkerNum: { color: '#fff', fontSize: 11, fontWeight: '700' },
 
   // ── Panneau résultat ───────────────────────────────────────────────────────
@@ -874,7 +874,7 @@ const styles = StyleSheet.create({
 
   huntRow: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 16, height: 48, gap: 10 },
   orderBadge: {
-    width: 22, height: 22, borderRadius: 11, backgroundColor: '#FF9500',
+    width: 22, height: 22, borderRadius: 11, backgroundColor: '#007AFF',
     alignItems: 'center', justifyContent: 'center', flexShrink: 0,
   },
   orderNum: { color: '#fff', fontSize: 11, fontWeight: '700' },
