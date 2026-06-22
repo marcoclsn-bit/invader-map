@@ -1,13 +1,13 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, Platform, Linking, Alert } from 'react-native';
-import MapView, { Marker } from 'react-native-maps';
+import MapView from 'react-native-maps';
 import * as Location from 'expo-location';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { INVADERS } from '../data/invaders';
 import { useAppContext } from '../context/AppContext';
 import { STATUS_LABEL, ALL_STATUSES } from '../constants';
-import { getMarkerColor } from '../utils/markerColor';
+import InvaderMarker from '../components/InvaderMarker';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 
@@ -301,16 +301,18 @@ export default function MapScreen({ navigation }) {
         initialRegion={{ latitude: 48.8566, longitude: 2.3522, latitudeDelta: 0.12, longitudeDelta: 0.12 }}
         onPress={closeAll}
       >
-        {visibleInvaders.map((invader) => (
-          <Marker
-            key={invader.id}
-            coordinate={{ latitude: invader.lat, longitude: invader.lng }}
-            pinColor={getMarkerColor(invader, labels, labelDefs, colorOverrides, statusColors, flashed)}
-            tracksViewChanges={false}
-            stopPropagation
-            onPress={() => { setSelected(invader); setShowFilters(false); }}
-          />
-        ))}
+        {visibleInvaders.map((invader) => {
+          const isFlashed = flashed.has(invader.id);
+          return (
+            <InvaderMarker
+              key={`${invader.id}-${isFlashed ? 1 : 0}`}
+              invader={invader}
+              isFlashed={isFlashed}
+              stopPropagation
+              onPress={() => { setSelected(invader); setShowFilters(false); }}
+            />
+          );
+        })}
       </MapView>
 
       {/* Boutons flottants (⚙ en tête de colonne) */}

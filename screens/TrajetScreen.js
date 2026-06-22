@@ -13,7 +13,7 @@ import { INVADERS } from '../data/invaders';
 import { STATUS_COLOR, STATUS_LABEL } from '../constants';
 import { ORS_API_KEY } from '../config/ors';
 import { useAppContext } from '../context/AppContext';
-import { getMarkerColor } from '../utils/markerColor';
+import InvaderMarker from '../components/InvaderMarker';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 
@@ -782,20 +782,17 @@ export default function TrajetScreen() {
               </Marker>
             </>
           )}
-          {displayInvaders?.map((inv) => (
-            <Marker
-              key={inv.id}
-              coordinate={{ latitude: inv.lat, longitude: inv.lng }}
-              anchor={{ x: 0.5, y: 0.5 }}
-              tracksViewChanges={false}
-              onPress={() => selectRouteInvader(inv)}
-            >
-              <View style={[
-                styles.dot,
-                { backgroundColor: getMarkerColor(inv, labels, labelDefs, colorOverrides, statusColors, flashed) },
-              ]} />
-            </Marker>
-          ))}
+          {displayInvaders?.map((inv) => {
+            const isFlashed = flashed.has(inv.id);
+            return (
+              <InvaderMarker
+                key={`${inv.id}-${isFlashed ? 1 : 0}`}
+                invader={inv}
+                isFlashed={isFlashed}
+                onPress={() => selectRouteInvader(inv)}
+              />
+            );
+          })}
         </MapView>
 
         {/* ── Carte flottante d'itinéraire (au-dessus de la carte) ── */}
@@ -1029,7 +1026,6 @@ function makeStyles(t) {
     // ── Carte ───────────────────────────────────────────────────────────────
     mapContainer: { flex: 1 },
     map: { flex: 1 },
-    dot: { width: 14, height: 14, borderRadius: 7, borderWidth: 2, borderColor: '#fff' },
     pinDep: {
       width: 34, height: 34, borderRadius: 17,
       backgroundColor: t.accent, alignItems: 'center', justifyContent: 'center',
