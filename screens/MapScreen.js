@@ -5,7 +5,6 @@ import * as Location from 'expo-location';
 import * as Haptics from 'expo-haptics';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { INVADERS } from '../data/invaders';
 import { useAppContext } from '../context/AppContext';
 import { STATUS_LABEL, ALL_STATUSES } from '../constants';
 import InvaderMarker from '../components/InvaderMarker';
@@ -305,7 +304,7 @@ function InvaderPanel({ invader, flashed, onToggleFlash, onNavigate, onClose }) 
 // ─── Écran carte ──────────────────────────────────────────────────────────────
 
 export default function MapScreen({ navigation }) {
-  const { flashed, labels, labelDefs, statusColors, colorOverrides, filters, setFilters, toggleFlash, mapsApp, setMapsAppPref } = useAppContext();
+  const { invaders, flashed, labels, labelDefs, statusColors, colorOverrides, filters, setFilters, toggleFlash, mapsApp, setMapsAppPref } = useAppContext();
   const { theme, isDark } = useTheme();
   const styles = getStyles(theme);
   const insets = useSafeAreaInsets();
@@ -398,7 +397,7 @@ export default function MapScreen({ navigation }) {
 
     Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
 
-    const inv = INVADERS.find((i) => i.id === id);
+    const inv = invaders.find((i) => i.id === id);
     if (!inv || !mapRef.current) return;
     try {
       const point = await mapRef.current.pointForCoordinate({ latitude: inv.lat, longitude: inv.lng });
@@ -407,8 +406,8 @@ export default function MapScreen({ navigation }) {
   }
 
   const filteredInvaders = useMemo(
-    () => applyFilters(INVADERS, filters, flashed, labels),
-    [filters, flashed, labels]
+    () => applyFilters(invaders, filters, flashed, labels),
+    [invaders, filters, flashed, labels]
   );
 
   // sortVersion en dep : le useMemo re-tourne quand sortCenterRef est mis à jour

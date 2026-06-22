@@ -2,15 +2,10 @@ import { useMemo, useState } from 'react';
 import { StyleSheet, View, Text, FlatList, TouchableOpacity } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { INVADERS } from '../data/invaders';
 import { useAppContext } from '../context/AppContext';
 import { INVADER_DISTRICT, arLabel, ARRONDISSEMENT_CENTERS } from '../utils/arrondissement';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
-
-// Les détruits sont exclus partout : on ne peut pas les flasher → jamais comptés
-const FLASHABLE = INVADERS.filter(inv => inv.status !== 'destroyed');
-const TOTAL_ALL_PTS = FLASHABLE.reduce((s, inv) => s + inv.points, 0);
 
 // ─── Cache de styles thémés ───────────────────────────────────────────────────
 let _styleCache = null;
@@ -95,10 +90,20 @@ function ArrondissementsView({ stats, insets, onBack, onSettings, onHuntAr, them
 
 export default function PalmèresScreen({ navigation }) {
   const insets = useSafeAreaInsets();
-  const { flashed } = useAppContext();
+  const { invaders, flashed } = useAppContext();
   const { theme } = useTheme();
   const styles = getStyles(theme);
   const [drillVille, setDrillVille] = useState(null);
+
+  // Les détruits sont exclus : on ne peut pas les flasher
+  const flashable = useMemo(
+    () => invaders.filter(inv => inv.status !== 'destroyed'),
+    [invaders]
+  );
+  const totalAllPts = useMemo(
+    () => flashable.reduce((s, inv) => s + inv.points, 0),
+    [flashable]
+  );
 
   const stats = useMemo(() => {
     let totalFlashed = 0;
@@ -107,7 +112,7 @@ export default function PalmèresScreen({ navigation }) {
     for (let ar = 1; ar <= 20; ar++) {
       byAr.set(ar, { ar, total: 0, flashed: 0, totalPts: 0, flashedPts: 0 });
     }
-    for (const inv of FLASHABLE) {
+    for (const inv of flashable) {
       const isFlashed = flashed.has(inv.id);
       if (isFlashed) { totalFlashed++; totalFlashedPts += inv.points; }
       const ar = INVADER_DISTRICT.get(inv.id);
@@ -120,16 +125,16 @@ export default function PalmèresScreen({ navigation }) {
         }
       }
     }
-    const pct = FLASHABLE.length > 0 ? (totalFlashed / FLASHABLE.length) * 100 : 0;
+    const pct = flashable.length > 0 ? (totalFlashed / flashable.length) * 100 : 0;
     return {
-      total: FLASHABLE.length,
+      total: flashable.length,
       flashed: totalFlashed,
-      totalPts: TOTAL_ALL_PTS,
+      totalPts: totalAllPts,
       flashedPts: totalFlashedPts,
       pct,
       arrondissements: Array.from(byAr.values()).sort((a, b) => a.ar - b.ar),
     };
-  }, [flashed]);
+  }, [flashable, totalAllPts, flashed]);
 
   function openSettings() { navigation.getParent()?.navigate('Réglages'); }
 

@@ -1,5 +1,7 @@
 // Données Invaders — Paris. Source: communauté (goguelnikov/SpaceInvaders).
 // Coordonnées nettoyées (virgule -> point, en nombres), statuts normalisés.
+export const INVADERS_VERSION    = 1;
+export const INVADERS_UPDATED_AT = '2026-06-22';
 export const INVADERS = [
   {"id": "PA_01", "city": "PA", "lat": 48.85180349, "lng": 2.37813702, "status": "destroyed", "points": 10, "hint": ""},
   {"id": "PA_02", "city": "PA", "lat": 48.86105085, "lng": 2.35035371, "status": "ok", "points": 10, "hint": ""},

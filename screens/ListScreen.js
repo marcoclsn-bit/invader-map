@@ -5,13 +5,11 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { INVADERS } from '../data/invaders';
 import { useAppContext } from '../context/AppContext';
 import { STATUS_COLOR, STATUS_LABEL } from '../constants';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 
-const TOTAL = INVADERS.length;
 const ROW_HEIGHT = 56;
 
 // ─── Cache de styles thémés ───────────────────────────────────────────────────
@@ -48,7 +46,7 @@ const InvaderRow = memo(function InvaderRow({ item, isFlashed, onToggle, theme }
 // ─── Écran liste ──────────────────────────────────────────────────────────────
 
 export default function ListScreen({ navigation }) {
-  const { flashed, toggleFlash, bulkFlash, bulkUnflash } = useAppContext();
+  const { invaders, flashed, toggleFlash, bulkFlash, bulkUnflash } = useAppContext();
   const { theme } = useTheme();
   const styles = getStyles(theme);
   const insets = useSafeAreaInsets();
@@ -57,13 +55,13 @@ export default function ListScreen({ navigation }) {
 
   const rows = useMemo(() => {
     const q = search.trim().toUpperCase();
-    return INVADERS.filter((inv) => {
+    return invaders.filter((inv) => {
       if (q && !inv.id.includes(q)) return false;
       if (filter === 'flashed' && !flashed.has(inv.id)) return false;
       if (filter === 'unflashed' && flashed.has(inv.id)) return false;
       return true;
     });
-  }, [search, filter, flashed]);
+  }, [invaders, search, filter, flashed]);
 
   const getItemLayout = useCallback((_, index) => ({
     length: ROW_HEIGHT, offset: ROW_HEIGHT * index, index,
@@ -79,7 +77,7 @@ export default function ListScreen({ navigation }) {
   ), [flashed, toggleFlash, theme]);
 
   function confirmBulkFlash() {
-    Alert.alert('Tout marquer comme flashé', `Marquer les ${TOTAL} Invaders comme flashés ?`, [
+    Alert.alert('Tout marquer comme flashé', `Marquer les ${invaders.length} Invaders comme flashés ?`, [
       { text: 'Annuler', style: 'cancel' },
       { text: 'Confirmer', onPress: bulkFlash },
     ]);
@@ -97,7 +95,7 @@ export default function ListScreen({ navigation }) {
       <View style={styles.header}>
         <Text style={styles.title}>Invaders Paris</Text>
         <View style={styles.headerRight}>
-          <Text style={styles.counter}>{flashed.size} / {TOTAL} flashés</Text>
+          <Text style={styles.counter}>{flashed.size} / {invaders.length} flashés</Text>
           <TouchableOpacity
             onPress={() => navigation.getParent()?.navigate('Réglages')}
             hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}

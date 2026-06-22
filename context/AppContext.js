@@ -1,7 +1,8 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { INVADERS } from '../data/invaders';
+import { INVADERS as EMBEDDED_INVADERS, INVADERS_VERSION, INVADERS_UPDATED_AT } from '../data/invaders';
 import { ALL_STATUSES, DEFAULT_LABELS, STATUS_COLOR, DEFAULT_LABEL_DEFS } from '../constants';
+import { initInvaderData, onDataUpdate, checkForUpdate } from '../services/invaderData';
 
 const AppContext = createContext(null);
 
@@ -10,6 +11,11 @@ export function useAppContext() {
 }
 
 export function AppProvider({ children }) {
+  // ─── Données Invaders (dynamiques : embarquées → cache → distantes) ──────────
+  const [invaders,     setInvaders]     = useState(EMBEDDED_INVADERS);
+  const [dataVersion,  setDataVersion]  = useState(INVADERS_VERSION);
+  const [dataUpdatedAt, setDataUpdatedAt] = useState(INVADERS_UPDATED_AT);
+
   const [flashed, setFlashed] = useState(new Set());
   const [labels, setLabels] = useState({});           // invaderID → [labelId, ...]
   const [labelDefs, setLabelDefs] = useState([...DEFAULT_LABEL_DEFS]);
@@ -22,6 +28,28 @@ export function AppProvider({ children }) {
   });
   const [mapsApp, setMapsApp] = useState(null);
   const [loaded, setLoaded] = useState(false);
+
+  // ─── Initialisation des données Invaders (cache + remote en arrière-plan) ───
+  useEffect(() => {
+    initInvaderData().then(({ invaders: data, version, updatedAt }) => {
+      setInvaders(data);
+      setDataVersion(version);
+      setDataUpdatedAt(updatedAt);
+    });
+    const unsub = onDataUpdate(({ invaders: data, version, updatedAt }) => {
+      setInvaders(data);
+      setDataVersion(version);
+      setDataUpdatedAt(updatedAt);
+    });
+    return unsub;
+  }, []);
+
+  // ─── Vérification manuelle (Réglages) ────────────────────────────────────────
+  async function checkDataUpdate() {
+    const status = await checkForUpdate();
+    // Si une mise à jour a eu lieu, le listener onDataUpdate met déjà à jour l'état
+    return status;
+  }
 
   // Chargement au démarrage (tout en parallèle)
   useEffect(() => {
@@ -70,7 +98,7 @@ export function AppProvider({ children }) {
     });
   }
 
-  function bulkFlash()   { setFlashed(new Set(INVADERS.map((inv) => inv.id))); }
+  function bulkFlash()   { setFlashed(new Set(invaders.map((inv) => inv.id))); }
   function bulkUnflash() { setFlashed(new Set()); }
 
   // ─── Étiquettes — association invader → label IDs ─────────────────────────
@@ -138,6 +166,7 @@ export function AppProvider({ children }) {
 
   return (
     <AppContext.Provider value={{
+      invaders, dataVersion, dataUpdatedAt, checkDataUpdate,
       flashed, labels, labelDefs, statusColors, colorOverrides,
       filters, setFilters,
       toggleFlash, bulkFlash, bulkUnflash,

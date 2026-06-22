@@ -172,10 +172,18 @@ export default function SettingsScreen() {
     labelDefs, addLabel, updateLabel, deleteLabel,
     mapsApp, setMapsAppPref,
     resetLabels,
+    dataVersion, dataUpdatedAt, checkDataUpdate,
   } = useAppContext();
 
   const [colorPickerFor, setColorPickerFor] = useState(null);
   const [labelForm, setLabelForm] = useState(undefined);
+  const [updateStatus, setUpdateStatus] = useState(null); // null|'checking'|'up_to_date'|string
+
+  async function handleCheckUpdate() {
+    setUpdateStatus('checking');
+    const status = await checkDataUpdate();
+    setUpdateStatus(status);
+  }
 
   function confirmReset() {
     Alert.alert(
@@ -295,6 +303,43 @@ export default function SettingsScreen() {
 
       {/* ── Données ── */}
       <Section title="Données">
+        {/* Version actuelle */}
+        <View style={[layout.row, { borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: theme.border }]}>
+          <Text style={[layout.rowLabel, { color: theme.textSecondary }]}>Version des données</Text>
+          <Text style={[layout.rowHint, { color: theme.textSecondary }]}>
+            v{dataVersion} — {dataUpdatedAt || '—'}
+          </Text>
+        </View>
+
+        {/* Bouton vérification */}
+        <TouchableOpacity
+          style={[layout.row, { flexDirection: 'row', alignItems: 'center', borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: theme.border }]}
+          onPress={handleCheckUpdate}
+          disabled={updateStatus === 'checking'}
+          activeOpacity={0.6}
+        >
+          <View style={{ flex: 1 }}>
+            <Text style={[layout.rowLabel, { color: updateStatus === 'checking' ? theme.textSecondary : theme.textPrimary }]}>
+              {updateStatus === 'checking' ? 'Vérification…' : 'Vérifier les mises à jour'}
+            </Text>
+            {updateStatus && updateStatus !== 'checking' && (
+              <Text style={[layout.rowHint, {
+                color: updateStatus === 'up_to_date' || updateStatus.startsWith('updated')
+                  ? theme.accent : theme.destructive,
+              }]}>
+                {updateStatus === 'up_to_date'
+                  ? 'Données à jour'
+                  : updateStatus.startsWith('updated_v')
+                    ? `Nouvelle version installée (${updateStatus.replace('updated_', '')})`
+                    : updateStatus === 'offline'
+                      ? 'Hors ligne — réessaie plus tard'
+                      : 'Erreur de mise à jour'}
+              </Text>
+            )}
+          </View>
+          <Text style={{ color: theme.textSecondary, fontSize: 20 }}>›</Text>
+        </TouchableOpacity>
+
         <Row
           label="Réinitialiser les étiquettes et couleurs"
           hint="Préserve la progression (Invaders flashés)."
@@ -391,4 +436,8 @@ const layout = StyleSheet.create({
     color: '#fff', fontSize: 20, fontWeight: '700',
     textShadowColor: 'rgba(0,0,0,0.4)', textShadowOffset: { width: 0, height: 1 }, textShadowRadius: 3,
   },
+
+  // Éléments partagés de liste
+  separator: { height: StyleSheet.hairlineWidth },
+  chevron: { justifyContent: 'center', paddingLeft: 6 },
 });

@@ -9,7 +9,6 @@ import * as turf from '@turf/turf';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
-import { INVADERS } from '../data/invaders';
 import { STATUS_COLOR, STATUS_LABEL } from '../constants';
 import { ORS_API_KEY } from '../config/ors';
 import { useAppContext } from '../context/AppContext';
@@ -321,7 +320,7 @@ export default function TrajetScreen() {
   const depDebounce = useRef(null);
   const arrDebounce = useRef(null);
 
-  const { flashed, toggleFlash, labels, labelDefs, colorOverrides, statusColors, mapsApp, setMapsAppPref } = useAppContext();
+  const { invaders, flashed, toggleFlash, labels, labelDefs, colorOverrides, statusColors, mapsApp, setMapsAppPref } = useAppContext();
   const { theme, isDark } = useTheme();
   const styles = getStyles(theme);
 
@@ -382,7 +381,7 @@ export default function TrajetScreen() {
     if (!routeCoords) { setRouteInvaders(null); setSelectedRouteInv(null); return; }
     try {
       const line = turf.lineString(routeCoords);
-      const nearby = INVADERS.filter((inv) => {
+      const nearby = invaders.filter((inv) => {
         const nearest = turf.nearestPointOnLine(line, turf.point([inv.lng, inv.lat]), { units: 'kilometers' });
         return nearest.properties.dist <= bufferKm;
       });

@@ -9,7 +9,6 @@ import * as turf from '@turf/turf';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
-import { INVADERS } from '../data/invaders';
 import { STATUS_COLOR } from '../constants';
 import { ORS_API_KEY } from '../config/ors';
 import { useAppContext } from '../context/AppContext';
@@ -183,7 +182,7 @@ export default function ChasseScreen({ route }) {
   const debounce = useRef(null);
   const locationSub = useRef(null);
 
-  const { flashed, statusColors } = useAppContext();
+  const { invaders, flashed, statusColors } = useAppContext();
   const { theme, isDark } = useTheme();
   const styles = getStyles(theme);
 
@@ -384,7 +383,7 @@ export default function ChasseScreen({ route }) {
     setLoading(true);
     try {
       const [startLon, startLat] = mode === 'around' ? gpsRef.current : qCoords;
-      const candidates = INVADERS.filter(inv =>
+      const candidates = invaders.filter(inv =>
         inv.status !== 'destroyed' &&
         (!unflashedOnly || !flashed.has(inv.id)) &&
         (arFilter === null || INVADER_DISTRICT.get(inv.id) === arFilter)
