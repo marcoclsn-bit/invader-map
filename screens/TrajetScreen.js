@@ -7,6 +7,8 @@ import MapView, { Polyline, Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
 import * as turf from '@turf/turf';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Ionicons } from '@expo/vector-icons';
+import Slider from '@react-native-community/slider';
 import { INVADERS } from '../data/invaders';
 import { STATUS_COLOR, STATUS_LABEL } from '../constants';
 import { ORS_API_KEY } from '../config/ors';
@@ -16,8 +18,7 @@ import { getMarkerColor } from '../utils/markerColor';
 const PARIS = { latitude: 48.8566, longitude: 2.3522, latitudeDelta: 0.12, longitudeDelta: 0.12 };
 const DEBOUNCE_MS = 300;
 const MIN_CHARS = 3;
-
-// Limite les résultats ORS à la France ; focus.point suffit pour prioriser Paris
+const GPS_TOKEN = 'Ma position';
 const ORS_COUNTRY = 'boundary.country=FR';
 
 const BUFFER_OPTIONS = [
@@ -63,6 +64,7 @@ async function orsAutocomplete(text, focusCoords) {
   }
 }
 
+// Retourne { coords: [lon, lat], label: string }
 async function orsGeocode(text) {
   const url =
     `https://api.openrouteservice.org/geocode/search` +
@@ -72,7 +74,8 @@ async function orsGeocode(text) {
   if (!res.ok) throw new Error('Adresse introuvable');
   const json = await res.json();
   if (!json.features?.length) throw new Error(`Adresse introuvable : « ${text} »`);
-  return json.features[0].geometry.coordinates;
+  const f = json.features[0];
+  return { coords: f.geometry.coordinates, label: f.properties.label };
 }
 
 async function orsRoute(from, to, profile) {
@@ -85,7 +88,6 @@ async function orsRoute(from, to, profile) {
     }
   );
   if (!res.ok) {
-    // ORS renvoie parfois un JSON d'erreur exploitable
     try {
       const err = await res.json();
       const msg = err?.error?.message ?? err?.message;
@@ -102,40 +104,60 @@ async function orsRoute(from, to, profile) {
 }
 
 // ─── Champ d'adresse avec autocomplétion ─────────────────────────────────────
-// searching : requête ORS en cours
-// showEmpty : texte suffisant, requête terminée, 0 résultat
 
-function AddressInput({ inputRef, value, onChange, onSelect, onBlur, onSubmitEditing, onFallback, searching, showEmpty, suggestions, placeholder }) {
-  const showDropdown = searching || showEmpty || suggestions.length > 0;
+function AddressInput({
+  inputRef, value, onChange, onSelect, onFocus, onBlur, onSubmitEditing,
+  onFallback, searching, showEmpty, suggestions, placeholder,
+  iconName, iconColor, isConfirmed, resolving,
+  gpsOption, onSelectGps,
+}) {
+  const showDropdown = gpsOption || searching || showEmpty || suggestions.length > 0;
   return (
     <View>
-      <TextInput
-        ref={inputRef}
-        style={styles.input}
-        placeholder={placeholder}
-        placeholderTextColor="#C7C7CC"
-        value={value}
-        onChangeText={onChange}
-        onBlur={onBlur}
-        onSubmitEditing={onSubmitEditing}
-        keyboardType="default"
-        returnKeyType="done"
-        clearButtonMode="while-editing"
-        autoCorrect={false}
-        autoCapitalize="sentences"
-      />
+      <View style={styles.inputRow}>
+        <Ionicons name={iconName} size={16} color={iconColor} style={styles.inputIcon} />
+        <TextInput
+          ref={inputRef}
+          style={styles.inputField}
+          placeholder={placeholder}
+          placeholderTextColor="#C7C7CC"
+          value={value}
+          onChangeText={onChange}
+          onFocus={onFocus}
+          onBlur={onBlur}
+          onSubmitEditing={onSubmitEditing}
+          keyboardType="default"
+          returnKeyType="done"
+          clearButtonMode="while-editing"
+          autoCorrect={false}
+          autoCapitalize="sentences"
+        />
+        {resolving ? (
+          <ActivityIndicator size="small" color="#8E8E93" style={styles.inputAdornment} />
+        ) : isConfirmed ? (
+          <Ionicons name="checkmark-circle" size={18} color="#34C759" style={styles.inputAdornment} />
+        ) : null}
+      </View>
       {showDropdown && (
         <View style={styles.suggestions}>
+          {/* Raccourci GPS en tête (départ uniquement) */}
+          {gpsOption && (
+            <TouchableOpacity style={styles.suggItem} onPress={onSelectGps}>
+              <View style={styles.gpsRow}>
+                <Ionicons name="locate" size={14} color="#007AFF" />
+                <Text style={styles.gpsRowText}>Ma position</Text>
+              </View>
+            </TouchableOpacity>
+          )}
+          {/* Contenu principal */}
           {searching ? (
-            // ─ Recherche en cours ─
-            <View style={styles.suggState}>
+            <View style={[styles.suggState, gpsOption && styles.suggBorder]}>
               <ActivityIndicator size="small" color="#8E8E93" />
               <Text style={styles.suggStateText}>Recherche…</Text>
             </View>
           ) : showEmpty ? (
-            // ─ Aucun résultat + filet de sécurité ─
             <>
-              <View style={styles.suggState}>
+              <View style={[styles.suggState, gpsOption && styles.suggBorder]}>
                 <Text style={styles.suggStateText}>Aucun résultat</Text>
               </View>
               <TouchableOpacity style={[styles.suggItem, styles.suggBorder]} onPress={onFallback}>
@@ -144,18 +166,17 @@ function AddressInput({ inputRef, value, onChange, onSelect, onBlur, onSubmitEdi
                 </Text>
               </TouchableOpacity>
             </>
-          ) : (
-            // ─ Suggestions ─
+          ) : suggestions.length > 0 ? (
             suggestions.map((s, i) => (
               <TouchableOpacity
                 key={i}
-                style={[styles.suggItem, i > 0 && styles.suggBorder]}
+                style={[styles.suggItem, (gpsOption || i > 0) && styles.suggBorder]}
                 onPress={() => onSelect(s)}
               >
                 <Text style={styles.suggText} numberOfLines={1}>{s.label}</Text>
               </TouchableOpacity>
             ))
-          )}
+          ) : null}
         </View>
       )}
     </View>
@@ -221,7 +242,6 @@ function RouteInvaderDetail({ inv, isFlashed, onToggleFlash, onNavigate, onBack 
 function RoutePanel({ allInvaders, displayInvaders, flashed, statusColors, showOnlyUnflashed, onToggleFilter, onSelectInvader }) {
   const total = allInvaders.length;
   const unflashedCount = allInvaders.filter((inv) => !flashed.has(inv.id)).length;
-
   return (
     <View style={styles.routePanel}>
       <View style={styles.routePanelHeader}>
@@ -247,7 +267,6 @@ function RoutePanel({ allInvaders, displayInvaders, flashed, statusColors, showO
           </View>
         )}
       </View>
-
       {total === 0 ? null : displayInvaders.length === 0 ? (
         <Text style={styles.listEmpty}>Tous les Invaders de ce trajet sont flashés !</Text>
       ) : (
@@ -290,13 +309,19 @@ export default function TrajetScreen() {
   const [depCoords, setDepCoords] = useState(null);
   const [depSugg, setDepSugg] = useState([]);
   const [depSearching, setDepSearching] = useState(false);
+  const [depFocused, setDepFocused] = useState(false);
+  const [depResolving, setDepResolving] = useState(false);
+  const [gpsAvailable, setGpsAvailable] = useState(false);
 
   const [arrText, setArrText] = useState('');
   const [arrCoords, setArrCoords] = useState(null);
   const [arrSugg, setArrSugg] = useState([]);
   const [arrSearching, setArrSearching] = useState(false);
+  const [arrFocused, setArrFocused] = useState(false);
+  const [arrResolving, setArrResolving] = useState(false);
 
-  const [loading, setLoading] = useState(false);
+  // 'route' = appel ORS en cours  |  'invaders' = calcul turf en cours  |  null = inactif
+  const [loadingPhase, setLoadingPhase] = useState(null);
   const [error, setError] = useState(null);
 
   // ─── Résultat de l'itinéraire ─────────────────────────────────────────────
@@ -307,6 +332,12 @@ export default function TrajetScreen() {
   const [bufferKm, setBufferKm] = useState(0.1);
   const [showOnlyUnflashed, setShowOnlyUnflashed] = useState(false);
   const [selectedRouteInv, setSelectedRouteInv] = useState(null);
+  const [showInfo, setShowInfo] = useState(false);
+  const [following, setFollowing] = useState(false);
+  const [drifted, setDrifted] = useState(false);
+  const [userPos, setUserPos] = useState(null);
+  const [inputCollapsed, setInputCollapsed] = useState(false);
+  const locationSub = useRef(null);
 
   // ─── GPS au montage ───────────────────────────────────────────────────────
 
@@ -317,8 +348,9 @@ export default function TrajetScreen() {
       const loc = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.Balanced });
       const coords = [loc.coords.longitude, loc.coords.latitude];
       gpsRef.current = coords;
+      setGpsAvailable(true);
       setDepCoords(coords);
-      setDepText('Ma Position');
+      setDepText(GPS_TOKEN);
     })();
   }, []);
 
@@ -332,12 +364,73 @@ export default function TrajetScreen() {
         const nearest = turf.nearestPointOnLine(line, turf.point([inv.lng, inv.lat]), { units: 'kilometers' });
         return nearest.properties.dist <= bufferKm;
       });
+      console.log('[Trajet] Invaders dans le couloir (source liste) :', nearby.length);
       setRouteInvaders(nearby);
       setSelectedRouteInv(null);
+      // fitToCoordinates est déplacé dans l'effect sur routeInvaders (ci-dessous) :
+      // il doit s'exécuter APRÈS que le panneau résultat (260 px) soit apparu,
+      // sinon la région est calculée pour une MapView trop haute et des markers
+      // se retrouvent cachés derrière le panneau.
     } catch {
       setRouteInvaders([]);
+    } finally {
+      setLoadingPhase(null);
     }
   }, [routeCoords, bufferKm]);
+
+  // ─── Cadrage carte — déclenché après que routeInvaders est commité ────────
+  // À ce stade le panneau résultat (260 px) est déjà rendu, donc la MapView a
+  // sa hauteur définitive et fitToCoordinates utilise les bonnes dimensions.
+
+  useEffect(() => {
+    if (!routeInvaders || !routeCoords) return;
+    console.log('[Trajet] Markers rendus sur la carte :', routeInvaders.length);
+    const routeLatlngs = routeCoords.map(([lng, lat]) => ({ latitude: lat, longitude: lng }));
+    const invLatlngs = routeInvaders.map((inv) => ({ latitude: inv.lat, longitude: inv.lng }));
+    const allCoords = invLatlngs.length > 0 ? [...routeLatlngs, ...invLatlngs] : routeLatlngs;
+    mapRef.current?.fitToCoordinates(allCoords, {
+      edgePadding: { top: 60, right: 40, bottom: 40, left: 40 },
+      animated: true,
+    });
+  }, [routeInvaders, routeCoords]);
+
+  // ─── Suivi de position (actif uniquement en mode following) ──────────────
+
+  useEffect(() => {
+    if (!following || !routeCoords) {
+      locationSub.current?.remove();
+      locationSub.current = null;
+      setUserPos(null);
+      return;
+    }
+    let cancelled = false;
+    Location.watchPositionAsync(
+      { accuracy: Location.Accuracy.BestForNavigation, timeInterval: 2000, distanceInterval: 5 },
+      (loc) => setUserPos({ latitude: loc.coords.latitude, longitude: loc.coords.longitude, heading: loc.coords.heading })
+    ).then(sub => {
+      if (cancelled) sub.remove();
+      else locationSub.current = sub;
+    }).catch(() => {});
+    return () => {
+      cancelled = true;
+      locationSub.current?.remove();
+      locationSub.current = null;
+    };
+  }, [following, routeCoords]);
+
+  // ─── Caméra orientée heading (actif en suivi non-dérivé) ─────────────────
+
+  useEffect(() => {
+    if (!following || drifted || !userPos) return;
+    mapRef.current?.animateCamera(
+      {
+        center: { latitude: userPos.latitude, longitude: userPos.longitude },
+        heading: userPos.heading >= 0 ? userPos.heading : 0,
+        zoom: 17,
+      },
+      { duration: 500 }
+    );
+  }, [userPos, following, drifted]);
 
   // ─── Invaders affichés selon le filtre ───────────────────────────────────
 
@@ -345,6 +438,29 @@ export default function TrajetScreen() {
     if (!routeInvaders) return null;
     return showOnlyUnflashed ? routeInvaders.filter((inv) => !flashed.has(inv.id)) : routeInvaders;
   }, [routeInvaders, showOnlyUnflashed, flashed]);
+
+  // ─── Découpe du tracé en portion parcourue (gris) + restante (bleu) ──────
+
+  const { walkedPolyline, remainingPolyline } = useMemo(() => {
+    if (!routePolyline || !routeCoords || !following || !userPos) {
+      return { walkedPolyline: null, remainingPolyline: routePolyline };
+    }
+    try {
+      const line = turf.lineString(routeCoords);
+      const nearest = turf.nearestPointOnLine(line, turf.point([userPos.longitude, userPos.latitude]));
+      const idx = nearest.properties.index ?? 0;
+      const split = nearest.geometry.coordinates;
+      const toLl = ([lng, lat]) => ({ latitude: lat, longitude: lng });
+      const walked = [...routeCoords.slice(0, idx + 1).map(toLl), { latitude: split[1], longitude: split[0] }];
+      const remaining = [{ latitude: split[1], longitude: split[0] }, ...routeCoords.slice(idx + 1).map(toLl)];
+      return {
+        walkedPolyline: walked.length >= 2 ? walked : null,
+        remainingPolyline: remaining.length >= 2 ? remaining : routePolyline,
+      };
+    } catch {
+      return { walkedPolyline: null, remainingPolyline: routePolyline };
+    }
+  }, [routePolyline, routeCoords, userPos, following]);
 
   // ─── Gestion du départ ───────────────────────────────────────────────────
 
@@ -366,8 +482,14 @@ export default function TrajetScreen() {
     }
   }
 
+  function onDepFocus() { setDepFocused(true); }
+
   function onDepBlur() {
-    setTimeout(() => { setDepSugg([]); setDepSearching(false); }, 150);
+    setTimeout(() => {
+      setDepSugg([]);
+      setDepSearching(false);
+      setDepFocused(false);
+    }, 150);
   }
 
   function selectDep(s) {
@@ -375,14 +497,34 @@ export default function TrajetScreen() {
     setDepCoords(s.coords);
     setDepSugg([]);
     setDepSearching(false);
+    setDepFocused(false);
     Keyboard.dismiss();
   }
 
-  function onDepFallback() {
-    // Accepte le texte tel quel ; orsGeocode le résoudra au moment du calcul
+  function selectDepGps() {
+    setDepText(GPS_TOKEN);
+    setDepCoords(gpsRef.current);
     setDepSugg([]);
     setDepSearching(false);
+    setDepFocused(false);
     Keyboard.dismiss();
+  }
+
+  async function onDepFallback() {
+    setDepSugg([]);
+    setDepSearching(false);
+    setDepResolving(true);
+    try {
+      const result = await orsGeocode(depText);
+      setDepText(result.label);
+      setDepCoords(result.coords);
+    } catch {
+      // texte conservé ; calculate() retentera au calcul
+    } finally {
+      setDepResolving(false);
+      setDepFocused(false);
+      Keyboard.dismiss();
+    }
   }
 
   // ─── Gestion de l'arrivée ─────────────────────────────────────────────────
@@ -405,8 +547,14 @@ export default function TrajetScreen() {
     }
   }
 
+  function onArrFocus() { setArrFocused(true); }
+
   function onArrBlur() {
-    setTimeout(() => { setArrSugg([]); setArrSearching(false); }, 150);
+    setTimeout(() => {
+      setArrSugg([]);
+      setArrSearching(false);
+      setArrFocused(false);
+    }, 150);
   }
 
   function selectArr(s) {
@@ -414,13 +562,38 @@ export default function TrajetScreen() {
     setArrCoords(s.coords);
     setArrSugg([]);
     setArrSearching(false);
+    setArrFocused(false);
     Keyboard.dismiss();
   }
 
-  function onArrFallback() {
+  async function onArrFallback() {
     setArrSugg([]);
     setArrSearching(false);
-    Keyboard.dismiss();
+    setArrResolving(true);
+    try {
+      const result = await orsGeocode(arrText);
+      setArrText(result.label);
+      setArrCoords(result.coords);
+    } catch {
+      // texte conservé ; calculate() retentera au calcul
+    } finally {
+      setArrResolving(false);
+      setArrFocused(false);
+      Keyboard.dismiss();
+    }
+  }
+
+  // ─── Échange départ / arrivée ─────────────────────────────────────────────
+
+  function swapDepArr() {
+    const tmpText = depText;
+    const tmpCoords = depCoords;
+    setDepText(arrText);
+    setDepCoords(arrCoords);
+    setArrText(tmpText);
+    setArrCoords(tmpCoords);
+    setDepSugg([]);
+    setArrSugg([]);
   }
 
   // ─── Calcul de l'itinéraire ───────────────────────────────────────────────
@@ -430,39 +603,83 @@ export default function TrajetScreen() {
     if (!arrText.trim()) { setError("Saisissez une adresse d'arrivée"); return; }
     if (!ORS_API_KEY || ORS_API_KEY === 'VOTRE_CLE_API_ORS_ICI') { setError('Clé API ORS manquante'); return; }
 
-    setLoading(true);
+    setLoadingPhase('route');
+    setFollowing(false);
     setError(null);
     setRouteCoords(null);
     setRoutePolyline(null);
     setSelectedRouteInv(null);
 
     try {
+      // ─ Départ ─
       let fromCoords = depCoords;
       if (!fromCoords) {
-        if (!depText.trim()) {
-          if (!gpsRef.current) throw new Error('Position GPS indisponible');
+        if (!depText.trim() || depText === GPS_TOKEN) {
+          if (!gpsRef.current) throw new Error('Position GPS indisponible. Activez la localisation et réessayez.');
           fromCoords = gpsRef.current;
         } else {
-          fromCoords = await orsGeocode(depText);
+          const result = await orsGeocode(depText);
+          fromCoords = result.coords;
+          setDepText(result.label);
+          setDepCoords(result.coords);
         }
       }
-      const toCoords = arrCoords ?? await orsGeocode(arrText);
+
+      // ─ Arrivée ─
+      let toCoords = arrCoords;
+      if (!toCoords) {
+        const result = await orsGeocode(arrText);
+        toCoords = result.coords;
+        setArrText(result.label);
+        setArrCoords(result.coords);
+      }
+
       const coords = await orsRoute(fromCoords, toCoords, 'foot-walking');
       const latlngs = coords.map(([lng, lat]) => ({ latitude: lat, longitude: lng }));
       setRoutePolyline(latlngs);
+      // Phase 2 : le useEffect([routeCoords]) calcule les Invaders ;
+      // le useEffect([routeInvaders]) cadrera la carte une fois le panneau affiché
+      setLoadingPhase('invaders');
       setRouteCoords(coords);
-      mapRef.current?.fitToCoordinates(latlngs, {
-        edgePadding: { top: 40, right: 40, bottom: 20, left: 40 },
-        animated: true,
-      });
     } catch (e) {
-      setError(e.message ?? 'Erreur lors du calcul de l\'itinéraire');
-    } finally {
-      setLoading(false);
+      setLoadingPhase(null);
+      setError(e.message ?? "Erreur lors du calcul de l'itinéraire");
     }
   }
 
   // ─── Sélection / navigation ───────────────────────────────────────────────
+
+  function startFollowing() {
+    setFollowing(true);
+    setDrifted(false);
+    if (gpsRef.current) {
+      mapRef.current?.animateCamera(
+        { center: { latitude: gpsRef.current[1], longitude: gpsRef.current[0] }, zoom: 17 },
+        { duration: 500 }
+      );
+    }
+  }
+
+  function stopFollowing() {
+    setFollowing(false);
+    setDrifted(false);
+  }
+
+  async function recenter() {
+    if (following) {
+      setDrifted(false);
+      return;
+    }
+    try {
+      const loc = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.Balanced });
+      mapRef.current?.animateToRegion({
+        latitude: loc.coords.latitude,
+        longitude: loc.coords.longitude,
+        latitudeDelta: 0.003,
+        longitudeDelta: 0.003,
+      }, 400);
+    } catch {}
+  }
 
   function selectRouteInvader(inv) {
     setSelectedRouteInv(inv);
@@ -487,111 +704,217 @@ export default function TrajetScreen() {
 
   // ─── Rendu ───────────────────────────────────────────────────────────────
 
-  // showEmpty : assez de texte + pas en train de chercher + 0 résultat
-  const depShowEmpty = depText.length >= MIN_CHARS && !depSearching && depSugg.length === 0 && !depCoords;
-  const arrShowEmpty = arrText.length >= MIN_CHARS && !arrSearching && arrSugg.length === 0 && !arrCoords;
+  // depShowEmpty / arrShowEmpty conditionnés à *Focused : ferme le dropdown après blur
+  const depShowEmpty = depText.length >= MIN_CHARS && !depSearching && depSugg.length === 0 && !depCoords && depFocused;
+  const arrShowEmpty = arrText.length >= MIN_CHARS && !arrSearching && arrSugg.length === 0 && !arrCoords && arrFocused;
+  const showDepGpsOption = gpsAvailable && depFocused && depText !== GPS_TOKEN;
 
   return (
     <KeyboardAvoidingView
       style={{ flex: 1 }}
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
-      <View style={[styles.container, { paddingTop: insets.top }]}>
+      <View style={styles.container}>
 
-        {/* ── Zone de saisie (scrollable pour que le bouton reste accessible clavier ouvert) ── */}
-        <ScrollView
-          style={styles.inputArea}
-          contentContainerStyle={styles.inputContent}
-          keyboardShouldPersistTaps="handled"
-          scrollEnabled={false}
-          showsVerticalScrollIndicator={false}
-        >
-          <AddressInput
-            inputRef={depInputRef}
-            value={depText}
-            onChange={onDepChange}
-            onSelect={selectDep}
-            onBlur={onDepBlur}
-            onSubmitEditing={() => arrInputRef.current?.focus()}
-            onFallback={onDepFallback}
-            searching={depSearching}
-            showEmpty={depShowEmpty}
-            suggestions={depSugg}
-            placeholder="Départ : ma position actuelle"
-          />
-          <View style={styles.inputDivider} />
-          <AddressInput
-            inputRef={arrInputRef}
-            value={arrText}
-            onChange={onArrChange}
-            onSelect={selectArr}
-            onBlur={onArrBlur}
-            onSubmitEditing={calculate}
-            onFallback={onArrFallback}
-            searching={arrSearching}
-            showEmpty={arrShowEmpty}
-            suggestions={arrSugg}
-            placeholder="Arrivée : adresse ou lieu"
-          />
-
-          {/* Calculer */}
-          <TouchableOpacity
-            style={[styles.goBtn, styles.goBtnFull, loading && styles.goBtnDisabled]}
-            onPress={calculate}
-            disabled={loading}
-          >
-            <Text style={styles.goBtnText}>Calculer l'itinéraire</Text>
-          </TouchableOpacity>
-
-          {/* Largeur du couloir */}
-          <View style={styles.controlRow}>
-            <Text style={styles.bufferLabel}>Couloir :</Text>
-            {BUFFER_OPTIONS.map(({ label, value }) => (
-              <TouchableOpacity
-                key={value}
-                style={[styles.bufferBtn, bufferKm === value && styles.bufferBtnActive]}
-                onPress={() => setBufferKm(value)}
-              >
-                <Text style={[styles.bufferBtnText, bufferKm === value && styles.bufferBtnTextActive]}>{label}</Text>
-              </TouchableOpacity>
-            ))}
-          </View>
-
-          {/* État du calcul */}
-          {loading && (
-            <View style={styles.statusRow}>
-              <ActivityIndicator size="small" color="#007AFF" />
-              <Text style={styles.loadingText}>Recherche de l'itinéraire…</Text>
-            </View>
-          )}
-          {!loading && error ? <Text style={styles.errorText}>{error}</Text> : null}
-        </ScrollView>
-
-        {/* ── Carte ── */}
+        {/* ── Carte + carte flottante + boutons ── */}
+        <View style={styles.mapContainer}>
         <MapView
           ref={mapRef}
           style={styles.map}
           mapType="mutedStandard"
           showsCompass={false}
+          showsUserLocation={!!routePolyline}
           initialRegion={PARIS}
           onPress={() => Keyboard.dismiss()}
+          onPanDrag={() => { if (following) setDrifted(true); }}
         >
           {routePolyline && (
-            <Polyline coordinates={routePolyline} strokeColor="#007AFF" strokeWidth={4} lineCap="round" />
+            <>
+              <Polyline coordinates={remainingPolyline ?? routePolyline} strokeColor="#007AFF" strokeWidth={4} lineCap="round" />
+              {walkedPolyline && (
+                <Polyline coordinates={walkedPolyline} strokeColor="#B0B0BA" strokeWidth={4} lineCap="round" />
+              )}
+              {/* Repère départ — masqué en suivi et quand le départ est la position GPS */}
+              {!following && depText !== GPS_TOKEN && (
+              <Marker
+                key="route-dep"
+                coordinate={routePolyline[0]}
+                anchor={{ x: 0.5, y: 0.5 }}
+                tracksViewChanges={false}
+              >
+                <View style={styles.pinDep}>
+                  <Ionicons name="navigate" size={16} color="#fff" />
+                </View>
+              </Marker>
+              )}
+              {/* Repère arrivée */}
+              <Marker
+                key="route-arr"
+                coordinate={routePolyline[routePolyline.length - 1]}
+                anchor={{ x: 0.5, y: 0.5 }}
+                tracksViewChanges={false}
+              >
+                <View style={styles.pinArr}>
+                  <Ionicons name="flag" size={16} color="#fff" />
+                </View>
+              </Marker>
+            </>
           )}
           {displayInvaders?.map((inv) => (
             <Marker
               key={inv.id}
               coordinate={{ latitude: inv.lat, longitude: inv.lng }}
-              pinColor={getMarkerColor(inv, labels, labelDefs, colorOverrides, statusColors, flashed)}
+              anchor={{ x: 0.5, y: 0.5 }}
               tracksViewChanges={false}
               onPress={() => selectRouteInvader(inv)}
-            />
+            >
+              <View style={[
+                styles.dot,
+                { backgroundColor: getMarkerColor(inv, labels, labelDefs, colorOverrides, statusColors, flashed) },
+              ]} />
+            </Marker>
           ))}
         </MapView>
 
-        {/* ── Panneau de résultat ── */}
-        {routeInvaders !== null && displayInvaders !== null && (
+        {/* ── Carte flottante d'itinéraire (au-dessus de la carte) ── */}
+        {!following && (
+          <View style={[styles.inputCard, { top: insets.top + 8 }]}>
+            {!inputCollapsed && (
+              <ScrollView
+                contentContainerStyle={styles.inputContent}
+                keyboardShouldPersistTaps="handled"
+                scrollEnabled={false}
+                showsVerticalScrollIndicator={false}
+              >
+                <AddressInput
+                  inputRef={depInputRef}
+                  value={depText}
+                  onChange={onDepChange}
+                  onSelect={selectDep}
+                  onFocus={onDepFocus}
+                  onBlur={onDepBlur}
+                  onSubmitEditing={() => arrInputRef.current?.focus()}
+                  onFallback={onDepFallback}
+                  searching={depSearching}
+                  showEmpty={depShowEmpty}
+                  suggestions={depSugg}
+                  placeholder="Départ : ma position actuelle"
+                  iconName="navigate"
+                  iconColor="#007AFF"
+                  isConfirmed={depCoords !== null}
+                  resolving={depResolving}
+                  gpsOption={showDepGpsOption}
+                  onSelectGps={selectDepGps}
+                />
+                <View style={styles.dividerRow}>
+                  <View style={styles.inputDivider} />
+                  <TouchableOpacity style={styles.swapBtn} onPress={swapDepArr}>
+                    <Ionicons name="swap-vertical" size={16} color="#636366" />
+                  </TouchableOpacity>
+                </View>
+                <AddressInput
+                  inputRef={arrInputRef}
+                  value={arrText}
+                  onChange={onArrChange}
+                  onSelect={selectArr}
+                  onFocus={onArrFocus}
+                  onBlur={onArrBlur}
+                  onSubmitEditing={calculate}
+                  onFallback={onArrFallback}
+                  searching={arrSearching}
+                  showEmpty={arrShowEmpty}
+                  suggestions={arrSugg}
+                  placeholder="Arrivée : adresse ou lieu"
+                  iconName="location"
+                  iconColor="#8E8E93"
+                  isConfirmed={arrCoords !== null}
+                  resolving={arrResolving}
+                  gpsOption={false}
+                  onSelectGps={null}
+                />
+                <TouchableOpacity
+                  style={[styles.goBtn, styles.goBtnFull, (loadingPhase || !depCoords || !arrCoords) && styles.goBtnDisabled]}
+                  onPress={calculate}
+                  disabled={loadingPhase !== null || !depCoords || !arrCoords}
+                >
+                  <Text style={styles.goBtnText}>Calculer l'itinéraire</Text>
+                </TouchableOpacity>
+                <View style={styles.bufferSection}>
+                  <View style={styles.bufferHeader}>
+                    <Text style={styles.bufferLabel}>
+                      Couloir : {BUFFER_OPTIONS.find(o => o.value === bufferKm)?.label}
+                    </Text>
+                    <TouchableOpacity
+                      onPress={() => setShowInfo(v => !v)}
+                      hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+                    >
+                      <Ionicons name="information-circle-outline" size={17} color="#8E8E93" />
+                    </TouchableOpacity>
+                  </View>
+                  <Slider
+                    style={styles.bufferSlider}
+                    minimumValue={0}
+                    maximumValue={2}
+                    step={1}
+                    value={BUFFER_OPTIONS.findIndex(o => o.value === bufferKm)}
+                    onValueChange={idx => setBufferKm(BUFFER_OPTIONS[idx].value)}
+                    minimumTrackTintColor="#007AFF"
+                    maximumTrackTintColor="#E5E5EA"
+                    thumbTintColor="#007AFF"
+                  />
+                  {showInfo && (
+                    <View style={styles.infoCard}>
+                      <Text style={styles.infoText}>
+                        Le couloir est la distance maximale autour de ton itinéraire dans laquelle l'app cherche des Invaders. Plus il est large, plus tu en vois — mais certains seront un peu plus loin de ton chemin.
+                      </Text>
+                    </View>
+                  )}
+                </View>
+                {loadingPhase === 'route' && (
+                  <View style={styles.statusRow}>
+                    <ActivityIndicator size="small" color="#007AFF" />
+                    <Text style={styles.loadingText}>Recherche de l'itinéraire…</Text>
+                  </View>
+                )}
+                {loadingPhase === 'invaders' && (
+                  <View style={styles.statusRow}>
+                    <ActivityIndicator size="small" color="#007AFF" />
+                    <Text style={styles.loadingText}>Recherche des Invaders sur le trajet…</Text>
+                  </View>
+                )}
+                {!loadingPhase && error ? <Text style={styles.errorText}>{error}</Text> : null}
+              </ScrollView>
+            )}
+            <TouchableOpacity style={styles.collapseBtn} onPress={() => setInputCollapsed(v => !v)}>
+              <Ionicons name={inputCollapsed ? 'chevron-down' : 'chevron-up'} size={16} color="#8E8E93" />
+            </TouchableOpacity>
+          </View>
+        )}
+
+        {/* Boutons flottants sur la carte */}
+        {routePolyline && (
+          <View style={styles.mapOverlay} pointerEvents="box-none">
+            {following ? (
+              <TouchableOpacity style={styles.stopBtn} onPress={stopFollowing}>
+                <Ionicons name="stop-circle-outline" size={18} color="#fff" />
+                <Text style={styles.trackBtnText}>Quitter</Text>
+              </TouchableOpacity>
+            ) : (
+              <TouchableOpacity style={styles.startBtn} onPress={startFollowing}>
+                <Text style={styles.trackBtnText}>Démarrer</Text>
+              </TouchableOpacity>
+            )}
+            {(!following || drifted) && (
+              <TouchableOpacity style={styles.recenterBtn} onPress={recenter}>
+                <Ionicons name="locate-outline" size={22} color="#007AFF" />
+              </TouchableOpacity>
+            )}
+          </View>
+        )}
+        </View>
+
+        {/* ── Panneau de résultat (masqué en navigation) ── */}
+        {!following && routeInvaders !== null && displayInvaders !== null && (
           selectedRouteInv ? (
             <RouteInvaderDetail
               inv={selectedRouteInv}
@@ -621,29 +944,42 @@ export default function TrajetScreen() {
 // ─── Styles ──────────────────────────────────────────────────────────────────
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#fff' },
+  container: { flex: 1 },
 
-  // ── Zone de saisie ────────────────────────────────────────────────────────
-  inputArea: {
-    flexGrow: 0,
+  // ── Carte flottante d'itinéraire ──────────────────────────────────────────
+  inputCard: {
+    position: 'absolute',
+    left: 12,
+    right: 12,
     backgroundColor: '#fff',
+    borderRadius: 16,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.08,
-    shadowRadius: 4,
-    elevation: 4,
-    zIndex: 10,
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.14,
+    shadowRadius: 14,
+    elevation: 10,
+    zIndex: 20,
   },
-  inputContent: {
-    paddingHorizontal: 16,
-    paddingTop: 10,
-    paddingBottom: 12,
+  inputContent: { paddingHorizontal: 16, paddingTop: 12, paddingBottom: 12 },
+  collapseBtn: {
+    alignItems: 'center',
+    paddingVertical: 6,
+    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopColor: '#E5E5EA',
   },
 
-  input: { fontSize: 15, color: '#1C1C1E', paddingVertical: 10 },
-  inputDivider: { height: StyleSheet.hairlineWidth, backgroundColor: '#E5E5EA' },
+  // Rangée icône + champ + adornment
+  inputRow: { flexDirection: 'row', alignItems: 'center' },
+  inputIcon: { marginRight: 10, width: 20, textAlign: 'center' },
+  inputField: { flex: 1, fontSize: 15, color: '#1C1C1E', paddingVertical: 10 },
+  inputAdornment: { marginLeft: 8 },
 
-  // Dropdown de suggestions (en flux — apparaît sous le champ)
+  // Séparateur + swap
+  dividerRow: { flexDirection: 'row', alignItems: 'center' },
+  inputDivider: { flex: 1, height: StyleSheet.hairlineWidth, backgroundColor: '#E5E5EA' },
+  swapBtn: { padding: 6, marginLeft: 8, borderRadius: 14, backgroundColor: '#F2F2F7' },
+
+  // Dropdown de suggestions
   suggestions: {
     backgroundColor: '#fff',
     borderRadius: 8,
@@ -659,7 +995,10 @@ const styles = StyleSheet.create({
   suggItem: { paddingVertical: 12, paddingHorizontal: 14, backgroundColor: '#fff' },
   suggBorder: { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: '#E5E5EA' },
   suggText: { fontSize: 14, color: '#1C1C1E' },
-  // États : recherche / aucun résultat
+  // Rangée GPS
+  gpsRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  gpsRowText: { fontSize: 14, color: '#007AFF', fontWeight: '500' },
+  // États recherche / vide
   suggState: { flexDirection: 'row', alignItems: 'center', gap: 8, padding: 14 },
   suggStateText: { fontSize: 14, color: '#8E8E93' },
   suggFallbackText: { fontSize: 14, color: '#007AFF', fontStyle: 'italic' },
@@ -673,18 +1012,68 @@ const styles = StyleSheet.create({
   goBtnDisabled: { opacity: 0.55 },
   goBtnText: { color: '#fff', fontWeight: '600', fontSize: 14 },
 
-  bufferLabel: { fontSize: 13, color: '#8E8E93', marginRight: 2 },
-  bufferBtn: { borderRadius: 16, paddingHorizontal: 12, paddingVertical: 5, backgroundColor: '#F2F2F7' },
-  bufferBtnActive: { backgroundColor: '#1C1C1E' },
-  bufferBtnText: { fontSize: 13, fontWeight: '500', color: '#636366' },
-  bufferBtnTextActive: { color: '#fff' },
+  bufferSection: { marginTop: 10 },
+  bufferHeader: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  bufferLabel: { fontSize: 13, color: '#8E8E93' },
+  bufferSlider: { width: '100%', height: 32, marginTop: 2 },
+  infoCard: { marginTop: 6, backgroundColor: '#F2F2F7', borderRadius: 10, padding: 12 },
+  infoText: { fontSize: 13, color: '#3C3C43', lineHeight: 18 },
 
   statusRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 10 },
   loadingText: { fontSize: 13, color: '#636366' },
   errorText: { fontSize: 13, color: '#FF3B30', marginTop: 10 },
 
   // ── Carte ─────────────────────────────────────────────────────────────────
+  mapContainer: { flex: 1 },
   map: { flex: 1 },
+  dot: { width: 14, height: 14, borderRadius: 7, borderWidth: 2, borderColor: '#fff' },
+  // Repères départ / arrivée (View custom, distincts des dots Invaders)
+  pinDep: {
+    width: 34, height: 34, borderRadius: 17,
+    backgroundColor: '#007AFF',
+    alignItems: 'center', justifyContent: 'center',
+    borderWidth: 2, borderColor: '#fff',
+    shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.3, shadowRadius: 3,
+  },
+  pinArr: {
+    width: 34, height: 34, borderRadius: 17,
+    backgroundColor: '#1C1C1E',
+    alignItems: 'center', justifyContent: 'center',
+    borderWidth: 2, borderColor: '#fff',
+    shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.3, shadowRadius: 3,
+  },
+
+  // Overlay boutons flottants (Démarrer / Terminer / Recentrer)
+  mapOverlay: {
+    position: 'absolute',
+    bottom: 12,
+    left: 12,
+    right: 12,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-end',
+  },
+  startBtn: {
+    flexDirection: 'row', alignItems: 'center', gap: 6,
+    backgroundColor: '#007AFF', borderRadius: 20,
+    paddingHorizontal: 16, paddingVertical: 10,
+    shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2, shadowRadius: 4, elevation: 4,
+  },
+  stopBtn: {
+    flexDirection: 'row', alignItems: 'center', gap: 6,
+    backgroundColor: '#1C1C1E', borderRadius: 20,
+    paddingHorizontal: 16, paddingVertical: 10,
+    shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2, shadowRadius: 4, elevation: 4,
+  },
+  trackBtnText: { color: '#fff', fontWeight: '600', fontSize: 14 },
+  recenterBtn: {
+    width: 42, height: 42, borderRadius: 21,
+    backgroundColor: '#fff', alignItems: 'center', justifyContent: 'center',
+    shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.15, shadowRadius: 4, elevation: 4,
+  },
 
   // ── Panneau résultat ──────────────────────────────────────────────────────
   routePanel: {

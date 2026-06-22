@@ -5,6 +5,7 @@ import { AppProvider } from './context/AppContext';
 import MapScreen from './screens/MapScreen';
 import ListScreen from './screens/ListScreen';
 import TrajetScreen from './screens/TrajetScreen';
+import ChasseScreen from './screens/ChasseScreen';
 import SettingsScreen from './screens/SettingsScreen';
 
 const Tab = createBottomTabNavigator();
@@ -44,6 +45,15 @@ export default function App() {
             options={{
               tabBarIcon: ({ color, size, focused }) => (
                 <Ionicons name={focused ? 'navigate' : 'navigate-outline'} size={size} color={color} />
+              ),
+            }}
+          />
+          <Tab.Screen
+            name="Chasse"
+            component={ChasseScreen}
+            options={{
+              tabBarIcon: ({ color, size, focused }) => (
+                <Ionicons name={focused ? 'trophy' : 'trophy-outline'} size={size} color={color} />
               ),
             }}
           />
