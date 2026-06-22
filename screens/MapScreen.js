@@ -280,10 +280,41 @@ export default function MapScreen({ navigation }) {
 
   function closeAll() { setSelected(null); setShowFilters(false); }
 
-  const visibleInvaders = useMemo(
+  const filteredInvaders = useMemo(
     () => applyFilters(INVADERS, filters, flashed, labels),
     [filters, flashed, labels]
   );
+
+  // Trie par distance au centre de référence (utilisateur si dispo, sinon Paris)
+  // pour que le chargement progressif parte du plus proche au plus loin.
+  const sortedInvaders = useMemo(() => {
+    const clat = userLocation?.latitude  ?? 48.8566;
+    const clng = userLocation?.longitude ?? 2.3522;
+    return [...filteredInvaders].sort((a, b) => {
+      const da = (a.lat - clat) ** 2 + (a.lng - clng) ** 2;
+      const db = (b.lat - clat) ** 2 + (b.lng - clng) ** 2;
+      return da - db;
+    });
+  }, [filteredInvaders, userLocation]);
+
+  // Chargement progressif : 80 marqueurs immédiats, +250 par frame d'animation
+  const INITIAL = 80;
+  const BATCH   = 250;
+  const [renderedCount, setRenderedCount] = useState(INITIAL);
+
+  useEffect(() => {
+    setRenderedCount(INITIAL);
+  }, [sortedInvaders]);
+
+  useEffect(() => {
+    if (renderedCount >= sortedInvaders.length) return;
+    const id = requestAnimationFrame(() =>
+      setRenderedCount(c => Math.min(c + BATCH, sortedInvaders.length))
+    );
+    return () => cancelAnimationFrame(id);
+  }, [renderedCount, sortedInvaders.length]);
+
+  const visibleInvaders = sortedInvaders.slice(0, renderedCount);
 
   const hasActiveFilters =
     filters.statuses.size < ALL_STATUSES.length ||
