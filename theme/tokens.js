@@ -43,6 +43,9 @@ export const dark = {
   // Actions
   destructive: '#FF4D4D',
   link:        '#3DF96B',
+
+  // Score arcade (flash +PTS) — jaune chaud, lisible sur n'importe quel fond
+  accentScore: '#FFD23F',
 };
 
 export const light = {
@@ -74,6 +77,9 @@ export const light = {
   // Actions
   destructive: '#FF3B30',
   link:        '#007AFF',
+
+  // Score arcade (flash +PTS) — même jaune, lisible sur fond clair aussi
+  accentScore: '#CC9900',
 };
 
 export const THEMES = { dark, light };

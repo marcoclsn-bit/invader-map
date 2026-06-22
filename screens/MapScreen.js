@@ -57,25 +57,35 @@ async function openInApp(app, lat, lng) {
 // Rendu en dehors de la MapView (non clippé, non snapshotté).
 // Positionné via mapRef.pointForCoordinate → coordonnées relatives au container.
 
+const SCORE_W = 220; // largeur fixe du texte score, centré sur le marqueur
+
 function FlashOverlay({ invader, point, theme, onDone }) {
-  const scale    = useRef(new Animated.Value(1)).current;
-  const transY   = useRef(new Animated.Value(0)).current;
-  const ptsAlpha = useRef(new Animated.Value(0)).current;
+  const markerScale = useRef(new Animated.Value(1)).current;
+  const scoreScale  = useRef(new Animated.Value(0.6)).current;
+  const transY      = useRef(new Animated.Value(0)).current;
+  const ptsAlpha    = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     Animated.parallel([
-      // Pop du marqueur : gonfle puis revient avec rebond
+      // Pop du marqueur : plus prononcé
       Animated.sequence([
-        Animated.timing(scale, { toValue: 1.75, duration: 110, useNativeDriver: true }),
-        Animated.spring(scale, { toValue: 1, useNativeDriver: true, damping: 5, stiffness: 260, mass: 0.5 }),
+        Animated.timing(markerScale, { toValue: 2.1, duration: 120, useNativeDriver: true }),
+        Animated.spring(markerScale, { toValue: 1, useNativeDriver: true, damping: 4, stiffness: 260, mass: 0.5 }),
       ]),
-      // "+X PTS" monte en fondu
+      // Score jaune : jaillit (scale 0.6→1.3 avec rebond), reste visible ~1.1 s
       Animated.sequence([
-        Animated.timing(ptsAlpha, { toValue: 1, duration: 80,  useNativeDriver: true }),
-        Animated.delay(380),
-        Animated.timing(ptsAlpha, { toValue: 0, duration: 280, useNativeDriver: true }),
+        Animated.parallel([
+          Animated.timing(ptsAlpha, { toValue: 1, duration: 70, useNativeDriver: true }),
+          Animated.sequence([
+            Animated.timing(scoreScale, { toValue: 1.3, duration: 150, useNativeDriver: true }),
+            Animated.spring(scoreScale, { toValue: 1, useNativeDriver: true, damping: 6, stiffness: 200, mass: 0.6 }),
+          ]),
+        ]),
+        Animated.delay(680),
+        Animated.timing(ptsAlpha, { toValue: 0, duration: 350, useNativeDriver: true }),
       ]),
-      Animated.timing(transY, { toValue: -62, duration: 760, useNativeDriver: true }),
+      // Monte bien plus haut
+      Animated.timing(transY, { toValue: -110, duration: 1100, useNativeDriver: true }),
     ]).start(onDone);
   }, []);
 
@@ -91,26 +101,31 @@ function FlashOverlay({ invader, point, theme, onDone }) {
           position: 'absolute',
           left: x - half, top: y - half,
           width: MARKER_SIZE, height: MARKER_SIZE,
-          transform: [{ scale }],
+          transform: [{ scale: markerScale }],
           zIndex: 900,
         }}
       >
         <Image source={FLASHED_IMG} style={{ width: MARKER_SIZE, height: MARKER_SIZE }} resizeMode="contain" fadeDuration={0} />
       </Animated.View>
 
-      {/* +X PTS qui monte */}
+      {/* Score arcade : jaune, Press Start 2P, ombre sombre pour lisibilité */}
       <Animated.Text
         pointerEvents="none"
         style={{
           position: 'absolute',
-          left: x - half,
-          top: y - MARKER_SIZE - 2,
-          fontFamily: 'Silkscreen_700Bold',
-          fontSize: 18,
-          color: theme.accent,
+          width: SCORE_W,
+          left: x - SCORE_W / 2,
+          top: y - MARKER_SIZE - 20,
+          fontFamily: 'PressStart2P_400Regular',
+          fontSize: 22,
+          color: theme.accentScore,
+          textAlign: 'center',
+          textShadowColor: 'rgba(0,0,0,0.85)',
+          textShadowOffset: { width: 0, height: 2 },
+          textShadowRadius: 6,
           opacity: ptsAlpha,
-          transform: [{ translateY: transY }],
-          zIndex: 901,
+          transform: [{ scale: scoreScale }, { translateY: transY }],
+          zIndex: 999,
         }}
       >
         +{invader.points} PTS
