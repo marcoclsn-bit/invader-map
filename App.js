@@ -1,11 +1,9 @@
-import { useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import * as SplashScreen from 'expo-splash-screen';
 import { useFonts, Silkscreen_400Regular, Silkscreen_700Bold } from '@expo-google-fonts/silkscreen';
 import { PressStart2P_400Regular } from '@expo-google-fonts/press-start-2p';
 import { AppProvider } from './context/AppContext';
@@ -16,8 +14,6 @@ import TrajetScreen from './screens/TrajetScreen';
 import ChasseScreen from './screens/ChasseScreen';
 import PalmèresScreen from './screens/PalmèresScreen';
 import SettingsScreen from './screens/SettingsScreen';
-
-SplashScreen.preventAutoHideAsync();
 
 const Tab = createBottomTabNavigator();
 const Root = createNativeStackNavigator();
@@ -64,10 +60,6 @@ function ThemedApp() {
     Silkscreen_700Bold,
     PressStart2P_400Regular,
   });
-
-  useEffect(() => {
-    if (fontsLoaded || fontError) SplashScreen.hideAsync();
-  }, [fontsLoaded, fontError]);
 
   if (!fontsLoaded && !fontError) {
     return <View style={{ flex: 1, backgroundColor: theme.bg }} />;
