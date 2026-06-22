@@ -106,7 +106,7 @@ function FlashOverlay({ invader, point, theme, onDone }) {
           left: x - half,
           top: y - MARKER_SIZE - 2,
           fontFamily: 'Silkscreen_700Bold',
-          fontSize: 13,
+          fontSize: 18,
           color: theme.accent,
           opacity: ptsAlpha,
           transform: [{ translateY: transY }],
@@ -297,6 +297,8 @@ export default function MapScreen({ navigation }) {
 
   const mapRef = useRef(null);
   const centeredRef = useRef(false);
+  // Centre de tri fixé une fois (1re position GPS ou Paris). Ref = pas de re-render.
+  const sortCenterRef = useRef({ lat: 48.8566, lng: 2.3522 });
   const [flashEffect, setFlashEffect] = useState(null);
   const [selected, setSelected] = useState(null);
   const [showFilters, setShowFilters] = useState(false);
@@ -330,6 +332,8 @@ export default function MapScreen({ navigation }) {
           setUserLocation({ latitude, longitude });
           if (!centeredRef.current) {
             centeredRef.current = true;
+            // Mémorise la 1re position GPS comme centre de tri (une seule fois)
+            sortCenterRef.current = { lat: latitude, lng: longitude };
             const nearParis = Math.abs(latitude - 48.8566) < 0.45 && Math.abs(longitude - 2.3522) < 0.65;
             if (nearParis) {
               mapRef.current?.animateToRegion(
@@ -356,7 +360,7 @@ export default function MapScreen({ navigation }) {
     toggleFlash(id);
     if (!willFlash) return; // dé-flash : silencieux, pas d'animation
 
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
 
     const inv = INVADERS.find((i) => i.id === id);
     if (!inv || !mapRef.current) return;
@@ -371,26 +375,26 @@ export default function MapScreen({ navigation }) {
     [filters, flashed, labels]
   );
 
-  // Trie par distance au centre de référence (utilisateur si dispo, sinon Paris)
-  // pour que le chargement progressif parte du plus proche au plus loin.
+  // Trie par distance au centre de référence (ref, jamais en dep → stable).
+  // Ne dépend QUE de filteredInvaders : un flash ne retrigger pas le tri.
   const sortedInvaders = useMemo(() => {
-    const clat = userLocation?.latitude  ?? 48.8566;
-    const clng = userLocation?.longitude ?? 2.3522;
+    const { lat, lng } = sortCenterRef.current;
     return [...filteredInvaders].sort((a, b) => {
-      const da = (a.lat - clat) ** 2 + (a.lng - clng) ** 2;
-      const db = (b.lat - clat) ** 2 + (b.lng - clng) ** 2;
+      const da = (a.lat - lat) ** 2 + (a.lng - lng) ** 2;
+      const db = (b.lat - lat) ** 2 + (b.lng - lng) ** 2;
       return da - db;
     });
-  }, [filteredInvaders, userLocation]);
+  }, [filteredInvaders]);
 
   // Chargement progressif : 80 marqueurs immédiats, +250 par frame d'animation
   const INITIAL = 80;
   const BATCH   = 250;
   const [renderedCount, setRenderedCount] = useState(INITIAL);
 
+  // Reset uniquement quand l'utilisateur change ses filtres — PAS sur flash ni GPS.
   useEffect(() => {
     setRenderedCount(INITIAL);
-  }, [sortedInvaders]);
+  }, [filters]);
 
   useEffect(() => {
     if (renderedCount >= sortedInvaders.length) return;
