@@ -184,7 +184,7 @@ export default function ChasseScreen({ route }) {
   const locationSub = useRef(null);
 
   const { flashed, statusColors } = useAppContext();
-  const { theme } = useTheme();
+  const { theme, isDark } = useTheme();
   const styles = getStyles(theme);
 
   // ─── GPS ──────────────────────────────────────────────────────────────────
@@ -469,7 +469,10 @@ export default function ChasseScreen({ route }) {
             ref={mapRef}
             style={styles.map}
             mapType="mutedStandard"
+            userInterfaceStyle={isDark ? 'dark' : 'light'}
             showsCompass={false}
+            showsTraffic={false}
+            showsPointsOfInterest={false}
             showsUserLocation={gpsReady}
             initialRegion={PARIS}
             onPress={() => Keyboard.dismiss()}

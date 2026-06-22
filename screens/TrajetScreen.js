@@ -322,7 +322,7 @@ export default function TrajetScreen() {
   const arrDebounce = useRef(null);
 
   const { flashed, toggleFlash, labels, labelDefs, colorOverrides, statusColors, mapsApp, setMapsAppPref } = useAppContext();
-  const { theme } = useTheme();
+  const { theme, isDark } = useTheme();
   const styles = getStyles(theme);
 
   // ─── Champs d'adresse ────────────────────────────────────────────────────
@@ -744,7 +744,10 @@ export default function TrajetScreen() {
           ref={mapRef}
           style={styles.map}
           mapType="mutedStandard"
+          userInterfaceStyle={isDark ? 'dark' : 'light'}
           showsCompass={false}
+          showsTraffic={false}
+          showsPointsOfInterest={false}
           showsUserLocation={!!routePolyline}
           initialRegion={PARIS}
           onPress={() => Keyboard.dismiss()}

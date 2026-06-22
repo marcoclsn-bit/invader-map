@@ -306,7 +306,7 @@ function InvaderPanel({ invader, flashed, onToggleFlash, onNavigate, onClose }) 
 
 export default function MapScreen({ navigation }) {
   const { flashed, labels, labelDefs, statusColors, colorOverrides, filters, setFilters, toggleFlash, mapsApp, setMapsAppPref } = useAppContext();
-  const { theme } = useTheme();
+  const { theme, isDark } = useTheme();
   const styles = getStyles(theme);
   const insets = useSafeAreaInsets();
 
@@ -452,7 +452,10 @@ export default function MapScreen({ navigation }) {
         ref={mapRef}
         style={styles.map}
         mapType="mutedStandard"
+        userInterfaceStyle={isDark ? 'dark' : 'light'}
         showsCompass={false}
+        showsTraffic={false}
+        showsPointsOfInterest={false}
         showsUserLocation={locationGranted}
         initialRegion={{ latitude: 48.8566, longitude: 2.3522, latitudeDelta: 0.12, longitudeDelta: 0.12 }}
         onPress={closeAll}
