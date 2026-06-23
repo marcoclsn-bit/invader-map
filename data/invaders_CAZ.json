@@ -1,0 +1,409 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "CAZ",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 40,
+  "invaders": [
+    {
+      "id": "CAZ_01",
+      "city": "CAZ",
+      "lat": 43.1851684199,
+      "lng": 5.7045046179,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_02",
+      "city": "CAZ",
+      "lat": 43.1360052624,
+      "lng": 5.7541163061,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_03",
+      "city": "CAZ",
+      "lat": 43.5525962781,
+      "lng": 7.0206389204,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_04",
+      "city": "CAZ",
+      "lat": 43.551776338,
+      "lng": 7.0172637361,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_05",
+      "city": "CAZ",
+      "lat": 43.5462267382,
+      "lng": 7.0342607142,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_06",
+      "city": "CAZ",
+      "lat": 43.6210821781,
+      "lng": 6.969563248,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_07",
+      "city": "CAZ",
+      "lat": 43.608150492,
+      "lng": 6.9848148457,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_08",
+      "city": "CAZ",
+      "lat": 43.6992391681,
+      "lng": 7.1216370171,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_09",
+      "city": "CAZ",
+      "lat": 43.5707377222,
+      "lng": 7.1087790193,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_10",
+      "city": "CAZ",
+      "lat": 43.5545326706,
+      "lng": 7.1223942715,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_11",
+      "city": "CAZ",
+      "lat": 43.5860424389,
+      "lng": 7.1199663847,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_12",
+      "city": "CAZ",
+      "lat": 43.5688825623,
+      "lng": 7.1109586542,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_13",
+      "city": "CAZ",
+      "lat": 43.6966031336,
+      "lng": 7.2735614816,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_14",
+      "city": "CAZ",
+      "lat": 43.695587295,
+      "lng": 7.2734971638,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_15",
+      "city": "CAZ",
+      "lat": 43.784615063,
+      "lng": 7.5217586514,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_16",
+      "city": "CAZ",
+      "lat": 43.7376734488,
+      "lng": 7.4221604661,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_17",
+      "city": "CAZ",
+      "lat": 43.6896872008,
+      "lng": 7.295669836,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_18",
+      "city": "CAZ",
+      "lat": 43.7622182629,
+      "lng": 7.4626621639,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_19",
+      "city": "CAZ",
+      "lat": 43.7059825834,
+      "lng": 7.3122247796,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_20",
+      "city": "CAZ",
+      "lat": 43.6843914848,
+      "lng": 7.3322738764,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_21",
+      "city": "CAZ",
+      "lat": 43.7042354205,
+      "lng": 7.3105169776,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_22",
+      "city": "CAZ",
+      "lat": 43.4323300099,
+      "lng": 6.7350922631,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_23",
+      "city": "CAZ",
+      "lat": 43.4564429568,
+      "lng": 6.9213892941,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_24",
+      "city": "CAZ",
+      "lat": 43.4376162503,
+      "lng": 6.892149185,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_25",
+      "city": "CAZ",
+      "lat": 43.30869718,
+      "lng": 6.6393294975,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_26",
+      "city": "CAZ",
+      "lat": 43.2413467013,
+      "lng": 6.6497526559,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_27",
+      "city": "CAZ",
+      "lat": 43.2693966188,
+      "lng": 6.6361777321,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_28",
+      "city": "CAZ",
+      "lat": 43.2347679793,
+      "lng": 6.5743094033,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_29",
+      "city": "CAZ",
+      "lat": 43.1518051794,
+      "lng": 6.3426016401,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_30",
+      "city": "CAZ",
+      "lat": 43.1377171335,
+      "lng": 6.3717650575,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_31",
+      "city": "CAZ",
+      "lat": 43.1377912602,
+      "lng": 6.3773830754,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_32",
+      "city": "CAZ",
+      "lat": 43.0725560812,
+      "lng": 6.1479594128,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_33",
+      "city": "CAZ",
+      "lat": 43.1249031516,
+      "lng": 6.1285320866,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_34",
+      "city": "CAZ",
+      "lat": 43.1051086559,
+      "lng": 6.127548493,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_35",
+      "city": "CAZ",
+      "lat": 43.1836291822,
+      "lng": 5.6669435925,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_36",
+      "city": "CAZ",
+      "lat": 43.1731741319,
+      "lng": 6.5332445233,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_37",
+      "city": "CAZ",
+      "lat": 43.1877455174,
+      "lng": 6.5752490214,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_38",
+      "city": "CAZ",
+      "lat": 42.9992154111,
+      "lng": 6.2019604382,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_39",
+      "city": "CAZ",
+      "lat": 43.0021076234,
+      "lng": 6.2029442957,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAZ_40",
+      "city": "CAZ",
+      "lat": 43.0000187901,
+      "lng": 6.2023053479,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

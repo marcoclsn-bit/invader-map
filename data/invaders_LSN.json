@@ -1,0 +1,169 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "LSN",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 16,
+  "invaders": [
+    {
+      "id": "LSN_01",
+      "city": "LSN",
+      "lat": 46.5205793595,
+      "lng": 6.6285863115,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LSN_02",
+      "city": "LSN",
+      "lat": 46.5206868579,
+      "lng": 6.6325233351,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LSN_04",
+      "city": "LSN",
+      "lat": 46.5207832916,
+      "lng": 6.6368914135,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LSN_05",
+      "city": "LSN",
+      "lat": 46.521117082,
+      "lng": 6.6305303589,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LSN_07",
+      "city": "LSN",
+      "lat": 46.5201375179,
+      "lng": 6.6306233822,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LSN_08",
+      "city": "LSN",
+      "lat": 46.5204606136,
+      "lng": 6.6300038883,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LSN_09",
+      "city": "LSN",
+      "lat": 46.5217894764,
+      "lng": 6.6290567024,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LSN_10",
+      "city": "LSN",
+      "lat": 46.5183193733,
+      "lng": 6.6298944869,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LSN_11",
+      "city": "LSN",
+      "lat": 46.52083225,
+      "lng": 6.635337563,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LSN_12",
+      "city": "LSN",
+      "lat": 46.5231104341,
+      "lng": 6.6350850868,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LSN_13",
+      "city": "LSN",
+      "lat": 46.5177630773,
+      "lng": 6.6305601207,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LSN_14",
+      "city": "LSN",
+      "lat": 46.520277463,
+      "lng": 6.6314193876,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LSN_15",
+      "city": "LSN",
+      "lat": 46.5225246932,
+      "lng": 6.6343909411,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LSN_16",
+      "city": "LSN",
+      "lat": 46.5224961745,
+      "lng": 6.6321618248,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LSN_17",
+      "city": "LSN",
+      "lat": 46.5200178853,
+      "lng": 6.6314502889,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LSN_18",
+      "city": "LSN",
+      "lat": 46.5236111342,
+      "lng": 6.625064209,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

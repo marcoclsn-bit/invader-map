@@ -1,0 +1,1299 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "HK",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 129,
+  "invaders": [
+    {
+      "id": "HK_01",
+      "city": "HK",
+      "lat": 22.3055432021,
+      "lng": 114.1719281183,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_02",
+      "city": "HK",
+      "lat": 22.3080134222,
+      "lng": 114.1701304864,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_03",
+      "city": "HK",
+      "lat": 22.3244578827,
+      "lng": 114.1659161229,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_04",
+      "city": "HK",
+      "lat": 22.2980727157,
+      "lng": 114.169511913,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_05",
+      "city": "HK",
+      "lat": 22.3011836678,
+      "lng": 114.1749750402,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_06",
+      "city": "HK",
+      "lat": 22.3009472194,
+      "lng": 114.1731156933,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_07",
+      "city": "HK",
+      "lat": 22.2760983632,
+      "lng": 114.1692609001,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_08",
+      "city": "HK",
+      "lat": 22.3251583655,
+      "lng": 114.1675429836,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_09",
+      "city": "HK",
+      "lat": 22.2834683808,
+      "lng": 114.1859225007,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_10",
+      "city": "HK",
+      "lat": 22.2815031215,
+      "lng": 114.1852070188,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_12",
+      "city": "HK",
+      "lat": 22.2965884033,
+      "lng": 114.1722526073,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_13",
+      "city": "HK",
+      "lat": 22.2999697504,
+      "lng": 114.1743871258,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_14",
+      "city": "HK",
+      "lat": 22.3003826959,
+      "lng": 114.1760725666,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_16",
+      "city": "HK",
+      "lat": 22.278856128,
+      "lng": 114.1821890792,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_17",
+      "city": "HK",
+      "lat": 22.2819009255,
+      "lng": 114.183497868,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_18",
+      "city": "HK",
+      "lat": 22.2804757052,
+      "lng": 114.1855300593,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_19",
+      "city": "HK",
+      "lat": 22.2821742369,
+      "lng": 114.1850719035,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_20",
+      "city": "HK",
+      "lat": 22.3226602403,
+      "lng": 114.1687072824,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_21",
+      "city": "HK",
+      "lat": 22.2971471826,
+      "lng": 114.1744253033,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_22",
+      "city": "HK",
+      "lat": 22.2935198661,
+      "lng": 114.1692255798,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_23",
+      "city": "HK",
+      "lat": 22.2775879694,
+      "lng": 114.1862337777,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_24",
+      "city": "HK",
+      "lat": 22.3003590195,
+      "lng": 114.1760627529,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_25",
+      "city": "HK",
+      "lat": 22.2823754596,
+      "lng": 114.154950475,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_26",
+      "city": "HK",
+      "lat": 22.2183376311,
+      "lng": 114.2100544589,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_27",
+      "city": "HK",
+      "lat": 22.2184371565,
+      "lng": 114.2118278536,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_28",
+      "city": "HK",
+      "lat": 22.2429822875,
+      "lng": 114.2221252463,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_29",
+      "city": "HK",
+      "lat": 22.2463688615,
+      "lng": 114.2482972831,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_30",
+      "city": "HK",
+      "lat": 22.22921282,
+      "lng": 114.2519787098,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_31",
+      "city": "HK",
+      "lat": 22.2828808992,
+      "lng": 114.1861521782,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_32",
+      "city": "HK",
+      "lat": 22.2843006286,
+      "lng": 114.1501185819,
+      "status": "destroyed",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_33",
+      "city": "HK",
+      "lat": 22.2846408459,
+      "lng": 114.1506343668,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_34",
+      "city": "HK",
+      "lat": 22.2785859501,
+      "lng": 114.188979346,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_35",
+      "city": "HK",
+      "lat": 22.2785083135,
+      "lng": 114.1917840293,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_36",
+      "city": "HK",
+      "lat": 22.2856634487,
+      "lng": 114.155485552,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_37",
+      "city": "HK",
+      "lat": 22.2865211455,
+      "lng": 114.1608179676,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_38",
+      "city": "HK",
+      "lat": 22.2867680786,
+      "lng": 114.1453323501,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_39",
+      "city": "HK",
+      "lat": 22.2802734885,
+      "lng": 114.1816147066,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_40",
+      "city": "HK",
+      "lat": 22.2794800079,
+      "lng": 114.1839859739,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_41",
+      "city": "HK",
+      "lat": 22.279437381,
+      "lng": 114.1595162872,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_42",
+      "city": "HK",
+      "lat": 22.2798477369,
+      "lng": 114.1615638138,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_43",
+      "city": "HK",
+      "lat": 22.2790534926,
+      "lng": 114.1550618646,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_44",
+      "city": "HK",
+      "lat": 22.2777062223,
+      "lng": 114.1862328401,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_45",
+      "city": "HK",
+      "lat": 22.2793307388,
+      "lng": 114.1624166347,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_46",
+      "city": "HK",
+      "lat": 22.287839114,
+      "lng": 114.1459558504,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_47",
+      "city": "HK",
+      "lat": 22.2743462492,
+      "lng": 114.1733953867,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_48",
+      "city": "HK",
+      "lat": 22.2793344609,
+      "lng": 114.1841180471,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_49",
+      "city": "HK",
+      "lat": 22.3031624822,
+      "lng": 114.1591296599,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_50",
+      "city": "HK",
+      "lat": 22.2934372317,
+      "lng": 114.1693764669,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_51",
+      "city": "HK",
+      "lat": 22.3090089769,
+      "lng": 114.1713888594,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_52",
+      "city": "HK",
+      "lat": 22.3105599508,
+      "lng": 114.1704655195,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_53",
+      "city": "HK",
+      "lat": 22.3316262863,
+      "lng": 114.1624221627,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_54",
+      "city": "HK",
+      "lat": 22.3195869231,
+      "lng": 114.1718286062,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_55",
+      "city": "HK",
+      "lat": 22.2820198656,
+      "lng": 114.1820219893,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_56",
+      "city": "HK",
+      "lat": 22.2818030023,
+      "lng": 114.1834163348,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_57",
+      "city": "HK",
+      "lat": 22.2862596991,
+      "lng": 114.1469408146,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_58",
+      "city": "HK",
+      "lat": 22.268994966,
+      "lng": 114.1866725148,
+      "status": "destroyed",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_59",
+      "city": "HK",
+      "lat": 22.2842933092,
+      "lng": 114.1598146583,
+      "status": "destroyed",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_60",
+      "city": "HK",
+      "lat": 22.2727066534,
+      "lng": 114.1490695474,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_61",
+      "city": "HK",
+      "lat": 22.2696510221,
+      "lng": 114.1643755362,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_62",
+      "city": "HK",
+      "lat": 22.287480647,
+      "lng": 114.152070533,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_63",
+      "city": "HK",
+      "lat": 22.2871355057,
+      "lng": 114.153533659,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_64",
+      "city": "HK",
+      "lat": 22.2795829317,
+      "lng": 114.1627559634,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_65",
+      "city": "HK",
+      "lat": 22.2777995136,
+      "lng": 114.1677315218,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_66",
+      "city": "HK",
+      "lat": 22.274953369,
+      "lng": 114.1716786272,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_67",
+      "city": "HK",
+      "lat": 22.2852524412,
+      "lng": 114.1908770262,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_68",
+      "city": "HK",
+      "lat": 22.2846393809,
+      "lng": 114.1916025258,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_69",
+      "city": "HK",
+      "lat": 22.2844724977,
+      "lng": 114.1516125922,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_70",
+      "city": "HK",
+      "lat": 22.2822593526,
+      "lng": 114.153496111,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_71",
+      "city": "HK",
+      "lat": 22.2812543078,
+      "lng": 114.1547363506,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_72",
+      "city": "HK",
+      "lat": 22.2846652805,
+      "lng": 114.1930628557,
+      "status": "destroyed",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_73",
+      "city": "HK",
+      "lat": 22.2800035601,
+      "lng": 114.1846347197,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_74",
+      "city": "HK",
+      "lat": 22.2798252961,
+      "lng": 114.186042745,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_75",
+      "city": "HK",
+      "lat": 22.2797154841,
+      "lng": 114.1658914284,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_76",
+      "city": "HK",
+      "lat": 22.2829343106,
+      "lng": 114.1554377297,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_77",
+      "city": "HK",
+      "lat": 22.2915884719,
+      "lng": 114.1955510415,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_78",
+      "city": "HK",
+      "lat": 22.2839715802,
+      "lng": 114.1521506329,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_79",
+      "city": "HK",
+      "lat": 22.2834858575,
+      "lng": 114.15188567,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_80",
+      "city": "HK",
+      "lat": 22.2833252145,
+      "lng": 114.1516455118,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_81",
+      "city": "HK",
+      "lat": 22.2834494815,
+      "lng": 114.1517288488,
+      "status": "destroyed",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_82",
+      "city": "HK",
+      "lat": 22.3254265412,
+      "lng": 114.1644138109,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_83",
+      "city": "HK",
+      "lat": 22.2868137001,
+      "lng": 114.1608901865,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_84",
+      "city": "HK",
+      "lat": 22.2794370384,
+      "lng": 114.1861013201,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_85",
+      "city": "HK",
+      "lat": 22.2772199244,
+      "lng": 114.181513389,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_86",
+      "city": "HK",
+      "lat": 22.2986589885,
+      "lng": 114.1722486388,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_87",
+      "city": "HK",
+      "lat": 22.3300957523,
+      "lng": 114.16593136,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_88",
+      "city": "HK",
+      "lat": 22.330751934,
+      "lng": 114.1611756853,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_89",
+      "city": "HK",
+      "lat": 22.2807720687,
+      "lng": 114.1560325235,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_90",
+      "city": "HK",
+      "lat": 22.286319237,
+      "lng": 114.1484654467,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_91",
+      "city": "HK",
+      "lat": 22.2809574049,
+      "lng": 114.1561099507,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_92",
+      "city": "HK",
+      "lat": 22.2849617919,
+      "lng": 114.1520009682,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_93",
+      "city": "HK",
+      "lat": 22.2844768896,
+      "lng": 114.1516796061,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_94",
+      "city": "HK",
+      "lat": 22.2852298055,
+      "lng": 114.1485247856,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_95",
+      "city": "HK",
+      "lat": 22.2856157724,
+      "lng": 114.1491071567,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_96",
+      "city": "HK",
+      "lat": 22.2848479718,
+      "lng": 114.1469865694,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_97",
+      "city": "HK",
+      "lat": 22.2841360289,
+      "lng": 114.149098506,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_98",
+      "city": "HK",
+      "lat": 22.2852105116,
+      "lng": 114.1486683067,
+      "status": "destroyed",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_99",
+      "city": "HK",
+      "lat": 22.2836718612,
+      "lng": 114.2743684294,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_100",
+      "city": "HK",
+      "lat": 22.2878229306,
+      "lng": 114.1460447998,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_101",
+      "city": "HK",
+      "lat": 22.3023439794,
+      "lng": 114.1755631058,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_102",
+      "city": "HK",
+      "lat": 22.3305885573,
+      "lng": 114.188189183,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_103",
+      "city": "HK",
+      "lat": 22.2947548576,
+      "lng": 114.1656357498,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_104",
+      "city": "HK",
+      "lat": 22.2949601205,
+      "lng": 114.1672907109,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_105",
+      "city": "HK",
+      "lat": 22.295637889,
+      "lng": 114.1681121447,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_107",
+      "city": "HK",
+      "lat": 22.2945591003,
+      "lng": 114.1649430466,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_108",
+      "city": "HK",
+      "lat": 22.2945922953,
+      "lng": 114.1649206677,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_109",
+      "city": "HK",
+      "lat": 22.294609356,
+      "lng": 114.1652912625,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_110",
+      "city": "HK",
+      "lat": 22.2978319444,
+      "lng": 114.1683020171,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_111",
+      "city": "HK",
+      "lat": 22.297672093,
+      "lng": 114.1683621424,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_112",
+      "city": "HK",
+      "lat": 22.2955307265,
+      "lng": 114.1682162559,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_113",
+      "city": "HK",
+      "lat": 22.2961780022,
+      "lng": 114.168836538,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_114",
+      "city": "HK",
+      "lat": 22.2950608499,
+      "lng": 114.1678957452,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_115",
+      "city": "HK",
+      "lat": 22.2975434457,
+      "lng": 114.1688446687,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_116",
+      "city": "HK",
+      "lat": 22.2972157303,
+      "lng": 114.168903342,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_117",
+      "city": "HK",
+      "lat": 22.2951423143,
+      "lng": 114.1681236981,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_118",
+      "city": "HK",
+      "lat": 22.294463048,
+      "lng": 114.1685502575,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_119",
+      "city": "HK",
+      "lat": 22.2952501402,
+      "lng": 114.1678586851,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_120",
+      "city": "HK",
+      "lat": 22.2814478834,
+      "lng": 114.1518703965,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_121",
+      "city": "HK",
+      "lat": 22.2834465932,
+      "lng": 114.1493248726,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_122",
+      "city": "HK",
+      "lat": 22.2835531928,
+      "lng": 114.1531346181,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_123",
+      "city": "HK",
+      "lat": 22.2861604912,
+      "lng": 114.1627940231,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_124",
+      "city": "HK",
+      "lat": 22.2819919317,
+      "lng": 114.1579551954,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_125",
+      "city": "HK",
+      "lat": 22.2793809406,
+      "lng": 114.1784606447,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_126",
+      "city": "HK",
+      "lat": 22.2778069194,
+      "lng": 114.1792496035,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_127",
+      "city": "HK",
+      "lat": 22.2695591127,
+      "lng": 114.1240061725,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_128",
+      "city": "HK",
+      "lat": 22.3295189484,
+      "lng": 114.1903532388,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_129",
+      "city": "HK",
+      "lat": 22.3237512907,
+      "lng": 114.1669734723,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_130",
+      "city": "HK",
+      "lat": 22.2962557373,
+      "lng": 114.1682681245,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_131",
+      "city": "HK",
+      "lat": 22.2781720992,
+      "lng": 114.1723348542,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HK_132",
+      "city": "HK",
+      "lat": 22.2976726162,
+      "lng": 114.1745025575,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

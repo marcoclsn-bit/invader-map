@@ -1,0 +1,529 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "SP",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 52,
+  "invaders": [
+    {
+      "id": "SP_01",
+      "city": "SP",
+      "lat": -23.5605971767,
+      "lng": -46.6554054672,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_02",
+      "city": "SP",
+      "lat": -23.5623016595,
+      "lng": -46.6645069306,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_03",
+      "city": "SP",
+      "lat": -23.554007522,
+      "lng": -46.6557199933,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_04",
+      "city": "SP",
+      "lat": -23.5552039809,
+      "lng": -46.6855185813,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_05",
+      "city": "SP",
+      "lat": -23.5614881928,
+      "lng": -46.6559472178,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_06",
+      "city": "SP",
+      "lat": -23.5534771795,
+      "lng": -46.6551868443,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_07",
+      "city": "SP",
+      "lat": -23.5524721443,
+      "lng": -46.6536120108,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_08",
+      "city": "SP",
+      "lat": -23.5200436804,
+      "lng": -46.7009740136,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_09",
+      "city": "SP",
+      "lat": -23.5194439089,
+      "lng": -46.7098826693,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_10",
+      "city": "SP",
+      "lat": -23.5606419828,
+      "lng": -46.6569106754,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_11",
+      "city": "SP",
+      "lat": -23.5398734533,
+      "lng": -46.696782252,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_12",
+      "city": "SP",
+      "lat": -23.5557576618,
+      "lng": -46.6905708576,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_13",
+      "city": "SP",
+      "lat": -23.5615498603,
+      "lng": -46.6918538417,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_14",
+      "city": "SP",
+      "lat": -23.5520961119,
+      "lng": -46.6254337266,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_15",
+      "city": "SP",
+      "lat": -23.5423426338,
+      "lng": -46.6400494863,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_16",
+      "city": "SP",
+      "lat": -23.5469646507,
+      "lng": -46.6465316148,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_17",
+      "city": "SP",
+      "lat": -23.5552638395,
+      "lng": -46.6639696445,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_18",
+      "city": "SP",
+      "lat": -23.5644947158,
+      "lng": -46.6943517817,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_19",
+      "city": "SP",
+      "lat": -23.5623369174,
+      "lng": -46.6213593215,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_20",
+      "city": "SP",
+      "lat": -23.5540530293,
+      "lng": -46.6612796209,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_21",
+      "city": "SP",
+      "lat": -23.5566000209,
+      "lng": -46.6643336289,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_22",
+      "city": "SP",
+      "lat": -23.5477918595,
+      "lng": -46.6493192034,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_23",
+      "city": "SP",
+      "lat": -23.5556813614,
+      "lng": -46.6634259025,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_24",
+      "city": "SP",
+      "lat": -23.5558855424,
+      "lng": -46.6749470349,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_25",
+      "city": "SP",
+      "lat": -23.5224907329,
+      "lng": -46.6867558034,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_26",
+      "city": "SP",
+      "lat": -23.5447480863,
+      "lng": -46.6388588007,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_27",
+      "city": "SP",
+      "lat": -23.5614688279,
+      "lng": -46.6559269536,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_28",
+      "city": "SP",
+      "lat": -23.526865725,
+      "lng": -46.6727435927,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_29",
+      "city": "SP",
+      "lat": -23.5377191945,
+      "lng": -46.6491448746,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_30",
+      "city": "SP",
+      "lat": -23.5278392712,
+      "lng": -46.6624756376,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_31",
+      "city": "SP",
+      "lat": -23.5478966515,
+      "lng": -46.640126107,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_32",
+      "city": "SP",
+      "lat": -23.5618957704,
+      "lng": -46.6557015898,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_33",
+      "city": "SP",
+      "lat": -23.5614629959,
+      "lng": -46.6555812786,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_34",
+      "city": "SP",
+      "lat": -23.5570106914,
+      "lng": -46.635068078,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_35",
+      "city": "SP",
+      "lat": -23.5543882456,
+      "lng": -46.6352787606,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_36",
+      "city": "SP",
+      "lat": -23.5553090717,
+      "lng": -46.6555149475,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_37",
+      "city": "SP",
+      "lat": -23.5099432968,
+      "lng": -46.6899380818,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_38",
+      "city": "SP",
+      "lat": -23.5548333956,
+      "lng": -46.6553283745,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_39",
+      "city": "SP",
+      "lat": -23.5614900698,
+      "lng": -46.6558206913,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_40",
+      "city": "SP",
+      "lat": -23.5495400585,
+      "lng": -46.6421817671,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_41",
+      "city": "SP",
+      "lat": -23.5559369176,
+      "lng": -46.6835730231,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_42",
+      "city": "SP",
+      "lat": -23.5531158141,
+      "lng": -46.6740331554,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_43",
+      "city": "SP",
+      "lat": -23.548041355,
+      "lng": -46.6423403163,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_44",
+      "city": "SP",
+      "lat": -23.5487806762,
+      "lng": -46.6397851525,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_45",
+      "city": "SP",
+      "lat": -23.5501719519,
+      "lng": -46.6437647608,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_46",
+      "city": "SP",
+      "lat": -23.5503255003,
+      "lng": -46.6542980191,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_47",
+      "city": "SP",
+      "lat": -23.5597953217,
+      "lng": -46.6849900561,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_48",
+      "city": "SP",
+      "lat": -23.5686538319,
+      "lng": -46.6951260129,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_49",
+      "city": "SP",
+      "lat": -23.5522820882,
+      "lng": -46.6580243101,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_50",
+      "city": "SP",
+      "lat": -23.5612811698,
+      "lng": -46.6557580896,
+      "status": "hidden",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_51",
+      "city": "SP",
+      "lat": -23.556818722,
+      "lng": -46.6801403867,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SP_52",
+      "city": "SP",
+      "lat": -23.5575762662,
+      "lng": -46.6384085426,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

@@ -1,0 +1,579 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "GRN",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 57,
+  "invaders": [
+    {
+      "id": "GRN_01",
+      "city": "GRN",
+      "lat": 45.1926864574,
+      "lng": 5.7241090681,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_02",
+      "city": "GRN",
+      "lat": 45.1924115025,
+      "lng": 5.7278090084,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_03",
+      "city": "GRN",
+      "lat": 45.1927489935,
+      "lng": 5.7274258199,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_04",
+      "city": "GRN",
+      "lat": 45.1927987436,
+      "lng": 5.731372281,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_05",
+      "city": "GRN",
+      "lat": 45.1905434103,
+      "lng": 5.7303046678,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_06",
+      "city": "GRN",
+      "lat": 45.1866765127,
+      "lng": 5.7264140475,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_07",
+      "city": "GRN",
+      "lat": 45.1900856039,
+      "lng": 5.7288436417,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_08",
+      "city": "GRN",
+      "lat": 45.1895172935,
+      "lng": 5.7222282486,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_09",
+      "city": "GRN",
+      "lat": 45.1888844574,
+      "lng": 5.7224972871,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_10",
+      "city": "GRN",
+      "lat": 45.1844933747,
+      "lng": 5.7221173054,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_11",
+      "city": "GRN",
+      "lat": 45.19291822,
+      "lng": 5.7298910462,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_12",
+      "city": "GRN",
+      "lat": 45.1941781165,
+      "lng": 5.7292889277,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_13",
+      "city": "GRN",
+      "lat": 45.1885328047,
+      "lng": 5.724987233,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_14",
+      "city": "GRN",
+      "lat": 45.1956879141,
+      "lng": 5.729512898,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_15",
+      "city": "GRN",
+      "lat": 45.185933622,
+      "lng": 5.7293860432,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_16",
+      "city": "GRN",
+      "lat": 45.1857629216,
+      "lng": 5.7326538149,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_17",
+      "city": "GRN",
+      "lat": 45.1879212385,
+      "lng": 5.7205485019,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_18",
+      "city": "GRN",
+      "lat": 45.1881571037,
+      "lng": 5.7154633792,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_19",
+      "city": "GRN",
+      "lat": 45.1880240841,
+      "lng": 5.7249918098,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_20",
+      "city": "GRN",
+      "lat": 45.1830608722,
+      "lng": 5.7314622802,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_21",
+      "city": "GRN",
+      "lat": 45.178531089,
+      "lng": 5.7315767374,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_22",
+      "city": "GRN",
+      "lat": 45.1836471649,
+      "lng": 5.7329445228,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_23",
+      "city": "GRN",
+      "lat": 45.1839435624,
+      "lng": 5.7176103633,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_24",
+      "city": "GRN",
+      "lat": 45.1902451629,
+      "lng": 5.729091019,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_25",
+      "city": "GRN",
+      "lat": 45.1811113022,
+      "lng": 5.7252670452,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_26",
+      "city": "GRN",
+      "lat": 45.1852202484,
+      "lng": 5.7223981022,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_27",
+      "city": "GRN",
+      "lat": 45.1875012375,
+      "lng": 5.7303520945,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_28",
+      "city": "GRN",
+      "lat": 45.1872461816,
+      "lng": 5.7227104566,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_29",
+      "city": "GRN",
+      "lat": 45.1877917304,
+      "lng": 5.7216914171,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_30",
+      "city": "GRN",
+      "lat": 45.1864913076,
+      "lng": 5.7228697285,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_31",
+      "city": "GRN",
+      "lat": 45.1901123234,
+      "lng": 5.7311804199,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_32",
+      "city": "GRN",
+      "lat": 45.1877674177,
+      "lng": 5.7254382941,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_33",
+      "city": "GRN",
+      "lat": 45.1883818884,
+      "lng": 5.7241939318,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_34",
+      "city": "GRN",
+      "lat": 45.1862244185,
+      "lng": 5.7247767237,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_35",
+      "city": "GRN",
+      "lat": 45.1603001341,
+      "lng": 5.7331669379,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_36",
+      "city": "GRN",
+      "lat": 45.1903908575,
+      "lng": 5.7295446566,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_37",
+      "city": "GRN",
+      "lat": 45.1924158901,
+      "lng": 5.7200730298,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_38",
+      "city": "GRN",
+      "lat": 45.1925616426,
+      "lng": 5.7201592046,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_39",
+      "city": "GRN",
+      "lat": 45.1913035571,
+      "lng": 5.7145353769,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_40",
+      "city": "GRN",
+      "lat": 45.1883139063,
+      "lng": 5.7158221092,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_41",
+      "city": "GRN",
+      "lat": 45.1881334981,
+      "lng": 5.7048056595,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_42",
+      "city": "GRN",
+      "lat": 45.1949647998,
+      "lng": 5.72851906,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_43",
+      "city": "GRN",
+      "lat": 45.191320283,
+      "lng": 5.7275511483,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_44",
+      "city": "GRN",
+      "lat": 45.1884280453,
+      "lng": 5.7261972243,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_45",
+      "city": "GRN",
+      "lat": 45.1914224849,
+      "lng": 5.7280637179,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_46",
+      "city": "GRN",
+      "lat": 45.188204762,
+      "lng": 5.7154666924,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_47",
+      "city": "GRN",
+      "lat": 45.1864132132,
+      "lng": 5.7226153426,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_48",
+      "city": "GRN",
+      "lat": 45.1838013979,
+      "lng": 5.7179448497,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_49",
+      "city": "GRN",
+      "lat": 45.1862642322,
+      "lng": 5.7181657355,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_50",
+      "city": "GRN",
+      "lat": 45.1936255201,
+      "lng": 5.719551555,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_51",
+      "city": "GRN",
+      "lat": 45.1884757453,
+      "lng": 5.7252747413,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_52",
+      "city": "GRN",
+      "lat": 45.1806062207,
+      "lng": 5.7162670321,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_53",
+      "city": "GRN",
+      "lat": 45.1944319851,
+      "lng": 5.72295012,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_54",
+      "city": "GRN",
+      "lat": 45.2045225911,
+      "lng": 5.7408118192,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_55",
+      "city": "GRN",
+      "lat": 45.1864805292,
+      "lng": 5.7266307815,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_56",
+      "city": "GRN",
+      "lat": 45.1612569701,
+      "lng": 5.755340103,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRN_57",
+      "city": "GRN",
+      "lat": 45.1559803241,
+      "lng": 5.7482502242,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

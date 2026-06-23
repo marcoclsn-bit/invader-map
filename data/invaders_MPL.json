@@ -1,0 +1,379 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "MPL",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 37,
+  "invaders": [
+    {
+      "id": "MPL_01",
+      "city": "MPL",
+      "lat": 43.613219419,
+      "lng": 3.8756752306,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_02",
+      "city": "MPL",
+      "lat": 43.6127972715,
+      "lng": 3.8764190174,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_03",
+      "city": "MPL",
+      "lat": 43.6134469631,
+      "lng": 3.8770423572,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_04",
+      "city": "MPL",
+      "lat": 43.6125990084,
+      "lng": 3.8791830049,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_05",
+      "city": "MPL",
+      "lat": 43.6122978015,
+      "lng": 3.8791216476,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_06",
+      "city": "MPL",
+      "lat": 43.6124573737,
+      "lng": 3.8799583877,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_07",
+      "city": "MPL",
+      "lat": 43.6112732436,
+      "lng": 3.8792814693,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_08",
+      "city": "MPL",
+      "lat": 43.6118728519,
+      "lng": 3.8781205804,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_09",
+      "city": "MPL",
+      "lat": 43.6115581542,
+      "lng": 3.8778039138,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_10",
+      "city": "MPL",
+      "lat": 43.6108867992,
+      "lng": 3.8782198111,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_11",
+      "city": "MPL",
+      "lat": 43.6107779591,
+      "lng": 3.8778440861,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_12",
+      "city": "MPL",
+      "lat": 43.610992437,
+      "lng": 3.8769481939,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_14",
+      "city": "MPL",
+      "lat": 43.6100392585,
+      "lng": 3.8772030527,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_15",
+      "city": "MPL",
+      "lat": 43.609717546,
+      "lng": 3.8764794415,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_17",
+      "city": "MPL",
+      "lat": 43.6096181935,
+      "lng": 3.8752290922,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_18",
+      "city": "MPL",
+      "lat": 43.6090201727,
+      "lng": 3.8755194961,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_19",
+      "city": "MPL",
+      "lat": 43.6084473226,
+      "lng": 3.8745467023,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_21",
+      "city": "MPL",
+      "lat": 43.6093638272,
+      "lng": 3.8747676121,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_22",
+      "city": "MPL",
+      "lat": 43.6106530313,
+      "lng": 3.8736575459,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_23",
+      "city": "MPL",
+      "lat": 43.6111447204,
+      "lng": 3.8741738661,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_24",
+      "city": "MPL",
+      "lat": 43.6115207859,
+      "lng": 3.873633331,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_25",
+      "city": "MPL",
+      "lat": 43.6145453315,
+      "lng": 3.8790418082,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_26",
+      "city": "MPL",
+      "lat": 43.6117868195,
+      "lng": 3.8746512011,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_27",
+      "city": "MPL",
+      "lat": 43.6119663077,
+      "lng": 3.875800596,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_28",
+      "city": "MPL",
+      "lat": 43.6125158751,
+      "lng": 3.8748034166,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_29",
+      "city": "MPL",
+      "lat": 43.6080026125,
+      "lng": 3.8735119713,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_30",
+      "city": "MPL",
+      "lat": 43.6112515035,
+      "lng": 3.8752974692,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_31",
+      "city": "MPL",
+      "lat": 43.6107432704,
+      "lng": 3.8764079569,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_32",
+      "city": "MPL",
+      "lat": 43.6106073396,
+      "lng": 3.8752159053,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_33",
+      "city": "MPL",
+      "lat": 43.6108586913,
+      "lng": 3.8746778283,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_34",
+      "city": "MPL",
+      "lat": 43.6112051462,
+      "lng": 3.8722714253,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_35",
+      "city": "MPL",
+      "lat": 43.6122804639,
+      "lng": 3.8765216303,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_36",
+      "city": "MPL",
+      "lat": 43.6119118855,
+      "lng": 3.8766883818,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_38",
+      "city": "MPL",
+      "lat": 43.6119387558,
+      "lng": 3.8759879847,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_39",
+      "city": "MPL",
+      "lat": 43.6092465939,
+      "lng": 3.8769255888,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_41",
+      "city": "MPL",
+      "lat": 43.6065956306,
+      "lng": 3.8714994982,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MPL_42",
+      "city": "MPL",
+      "lat": 43.6075988964,
+      "lng": 3.8814168852,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

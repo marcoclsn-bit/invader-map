@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "CON",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 2,
+  "invaders": [
+    {
+      "id": "CON_01",
+      "city": "CON",
+      "lat": 44.0939181099,
+      "lng": -1.3248175271,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CON_02",
+      "city": "CON",
+      "lat": 44.0911846534,
+      "lng": -1.3211889943,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "ANVR",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 2,
+  "invaders": [
+    {
+      "id": "ANVR_01",
+      "city": "ANVR",
+      "lat": 51.2181407685,
+      "lng": 4.4147108851,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ANVR_02",
+      "city": "ANVR",
+      "lat": 51.2215125737,
+      "lng": 4.4002231703,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

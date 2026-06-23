@@ -1,0 +1,449 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "BGK",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 44,
+  "invaders": [
+    {
+      "id": "BGK_01",
+      "city": "BGK",
+      "lat": 13.9213162185,
+      "lng": 100.6025762902,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_02",
+      "city": "BGK",
+      "lat": 13.7280644278,
+      "lng": 100.5327371681,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_03",
+      "city": "BGK",
+      "lat": 13.7270608192,
+      "lng": 100.5336485752,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_04",
+      "city": "BGK",
+      "lat": 13.744820202,
+      "lng": 100.5314153828,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_05",
+      "city": "BGK",
+      "lat": 13.7460511481,
+      "lng": 100.5319365422,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_07",
+      "city": "BGK",
+      "lat": 13.7446084138,
+      "lng": 100.5330023867,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_09",
+      "city": "BGK",
+      "lat": 13.7420945473,
+      "lng": 100.5529241752,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_10",
+      "city": "BGK",
+      "lat": 13.7425034417,
+      "lng": 100.551896721,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_11",
+      "city": "BGK",
+      "lat": 13.7280598815,
+      "lng": 100.5330549014,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_14",
+      "city": "BGK",
+      "lat": 13.7453859217,
+      "lng": 100.5403502207,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_15",
+      "city": "BGK",
+      "lat": 13.7446213995,
+      "lng": 100.5402876511,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_16",
+      "city": "BGK",
+      "lat": 13.744242988,
+      "lng": 100.5430428806,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_17",
+      "city": "BGK",
+      "lat": 13.7402391412,
+      "lng": 100.5561031965,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_18",
+      "city": "BGK",
+      "lat": 13.7414021821,
+      "lng": 100.5397607798,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_19",
+      "city": "BGK",
+      "lat": 13.7403185361,
+      "lng": 100.5396913173,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_20",
+      "city": "BGK",
+      "lat": 13.7211321746,
+      "lng": 100.5459299735,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_21",
+      "city": "BGK",
+      "lat": 13.7533225381,
+      "lng": 100.5443650587,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_24",
+      "city": "BGK",
+      "lat": 13.7244494754,
+      "lng": 100.5162983827,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_25",
+      "city": "BGK",
+      "lat": 13.7255288625,
+      "lng": 100.5226020936,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_26",
+      "city": "BGK",
+      "lat": 13.725552027,
+      "lng": 100.5263588095,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_27",
+      "city": "BGK",
+      "lat": 13.7263996234,
+      "lng": 100.5443542681,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_28",
+      "city": "BGK",
+      "lat": 13.7217891889,
+      "lng": 100.5497179159,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_29",
+      "city": "BGK",
+      "lat": 13.7593433487,
+      "lng": 100.49915172,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_30",
+      "city": "BGK",
+      "lat": 13.747785367,
+      "lng": 100.5484694916,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_31",
+      "city": "BGK",
+      "lat": 13.759451845,
+      "lng": 100.498317824,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_32",
+      "city": "BGK",
+      "lat": 13.7601565896,
+      "lng": 100.4990268064,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_33",
+      "city": "BGK",
+      "lat": 13.725108328,
+      "lng": 100.5795200355,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_34",
+      "city": "BGK",
+      "lat": 13.7376164703,
+      "lng": 100.559823803,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_35",
+      "city": "BGK",
+      "lat": 13.7245148791,
+      "lng": 100.5490269666,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_36",
+      "city": "BGK",
+      "lat": 13.7615156028,
+      "lng": 100.4978264485,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_37",
+      "city": "BGK",
+      "lat": 13.7581132927,
+      "lng": 100.4990820324,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_38",
+      "city": "BGK",
+      "lat": 13.75839245,
+      "lng": 100.4990188489,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_39",
+      "city": "BGK",
+      "lat": 13.7634533068,
+      "lng": 100.4953697297,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_40",
+      "city": "BGK",
+      "lat": 13.7626391185,
+      "lng": 100.4986224831,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_41",
+      "city": "BGK",
+      "lat": 13.7593222389,
+      "lng": 100.5023726132,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_42",
+      "city": "BGK",
+      "lat": 13.7531649037,
+      "lng": 100.5170577599,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_43",
+      "city": "BGK",
+      "lat": 13.7489799292,
+      "lng": 100.5167984156,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_44",
+      "city": "BGK",
+      "lat": 13.7562121472,
+      "lng": 100.4895107184,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_45",
+      "city": "BGK",
+      "lat": 13.7403125858,
+      "lng": 100.5142872513,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_47",
+      "city": "BGK",
+      "lat": 13.7397303609,
+      "lng": 100.4974087268,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_48",
+      "city": "BGK",
+      "lat": 13.7660128469,
+      "lng": 100.5389718797,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_49",
+      "city": "BGK",
+      "lat": 13.7308598422,
+      "lng": 100.5688417966,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_50",
+      "city": "BGK",
+      "lat": 13.7396969468,
+      "lng": 100.5467349715,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BGK_51",
+      "city": "BGK",
+      "lat": 13.7215574551,
+      "lng": 100.5527532407,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

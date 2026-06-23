@@ -1,0 +1,259 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "BSL",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 25,
+  "invaders": [
+    {
+      "id": "BSL_01",
+      "city": "BSL",
+      "lat": 47.5629644126,
+      "lng": 7.5980246761,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BSL_02",
+      "city": "BSL",
+      "lat": 47.5520374564,
+      "lng": 7.5910231751,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BSL_03",
+      "city": "BSL",
+      "lat": 47.557532466,
+      "lng": 7.5868098527,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BSL_04",
+      "city": "BSL",
+      "lat": 47.5636929442,
+      "lng": 7.596240776,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BSL_05",
+      "city": "BSL",
+      "lat": 47.5651134619,
+      "lng": 7.5913170856,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BSL_06",
+      "city": "BSL",
+      "lat": 47.5565429887,
+      "lng": 7.5878249399,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BSL_07",
+      "city": "BSL",
+      "lat": 47.5518253811,
+      "lng": 7.5867981162,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BSL_08",
+      "city": "BSL",
+      "lat": 47.5620797138,
+      "lng": 7.6001247035,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BSL_09",
+      "city": "BSL",
+      "lat": 47.5499752649,
+      "lng": 7.5881863768,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BSL_10",
+      "city": "BSL",
+      "lat": 47.5478012891,
+      "lng": 7.5929029658,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BSL_11",
+      "city": "BSL",
+      "lat": 47.5737372,
+      "lng": 7.5988837991,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BSL_12",
+      "city": "BSL",
+      "lat": 47.5575199421,
+      "lng": 7.5967690318,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BSL_13",
+      "city": "BSL",
+      "lat": 47.5595829822,
+      "lng": 7.59807651,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BSL_14",
+      "city": "BSL",
+      "lat": 47.5660599649,
+      "lng": 7.5894685104,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BSL_15",
+      "city": "BSL",
+      "lat": 47.553358467,
+      "lng": 7.5952418923,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BSL_16",
+      "city": "BSL",
+      "lat": 47.5532873543,
+      "lng": 7.5950580076,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BSL_17",
+      "city": "BSL",
+      "lat": 47.551564948,
+      "lng": 7.594821843,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BSL_18",
+      "city": "BSL",
+      "lat": 47.5548607861,
+      "lng": 7.5896437567,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BSL_19",
+      "city": "BSL",
+      "lat": 47.5634323139,
+      "lng": 7.5828930295,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BSL_20",
+      "city": "BSL",
+      "lat": 47.5658134892,
+      "lng": 7.5908716838,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BSL_21",
+      "city": "BSL",
+      "lat": 47.5583194889,
+      "lng": 7.5979062256,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BSL_22",
+      "city": "BSL",
+      "lat": 47.5555577119,
+      "lng": 7.5841176222,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BSL_23",
+      "city": "BSL",
+      "lat": 47.5540400253,
+      "lng": 7.5888400685,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BSL_24",
+      "city": "BSL",
+      "lat": 47.5785031555,
+      "lng": 7.5581682022,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BSL_25",
+      "city": "BSL",
+      "lat": 47.5629904403,
+      "lng": 7.5979160155,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

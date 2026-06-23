@@ -1,0 +1,119 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "TLS",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 11,
+  "invaders": [
+    {
+      "id": "TLS_01",
+      "city": "TLS",
+      "lat": 43.9086413186,
+      "lng": 0.7902048291,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TLS_02",
+      "city": "TLS",
+      "lat": 43.7313632451,
+      "lng": 0.8735685912,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TLS_03",
+      "city": "TLS",
+      "lat": 43.6084082405,
+      "lng": 1.4374261224,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TLS_04",
+      "city": "TLS",
+      "lat": 43.6015543895,
+      "lng": 1.4476086499,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TLS_05",
+      "city": "TLS",
+      "lat": 43.5982400845,
+      "lng": 1.4441916528,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TLS_06",
+      "city": "TLS",
+      "lat": 43.6056649327,
+      "lng": 1.4442272748,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TLS_07",
+      "city": "TLS",
+      "lat": 43.6034198639,
+      "lng": 1.4473032943,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TLS_08",
+      "city": "TLS",
+      "lat": 43.6017574882,
+      "lng": 1.4394262709,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TLS_09",
+      "city": "TLS",
+      "lat": 43.5544415685,
+      "lng": 1.4927932268,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TLS_10",
+      "city": "TLS",
+      "lat": 43.5736659693,
+      "lng": 1.4798219893,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TLS_11",
+      "city": "TLS",
+      "lat": 44.2600928326,
+      "lng": 1.5872587782,
+      "status": "hidden",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

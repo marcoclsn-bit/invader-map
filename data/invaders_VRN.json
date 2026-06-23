@@ -1,0 +1,129 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "VRN",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 12,
+  "invaders": [
+    {
+      "id": "VRN_01",
+      "city": "VRN",
+      "lat": 25.2985762031,
+      "lng": 83.0050174136,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRN_03",
+      "city": "VRN",
+      "lat": 25.3042001086,
+      "lng": 83.0075128247,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRN_04",
+      "city": "VRN",
+      "lat": 25.3035250944,
+      "lng": 83.0072358,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRN_05",
+      "city": "VRN",
+      "lat": 25.3045830058,
+      "lng": 83.0077549147,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRN_06",
+      "city": "VRN",
+      "lat": 25.2932452055,
+      "lng": 83.0049747757,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRN_07",
+      "city": "VRN",
+      "lat": 25.2890715218,
+      "lng": 83.0041348519,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRN_08",
+      "city": "VRN",
+      "lat": 25.3061134317,
+      "lng": 83.0103214518,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRN_09",
+      "city": "VRN",
+      "lat": 25.3078361334,
+      "lng": 83.0099741284,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRN_10",
+      "city": "VRN",
+      "lat": 25.3118179676,
+      "lng": 83.0133390139,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRN_11",
+      "city": "VRN",
+      "lat": 25.3062304952,
+      "lng": 83.0102298086,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRN_12",
+      "city": "VRN",
+      "lat": 25.2996026003,
+      "lng": 83.0076218512,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRN_14",
+      "city": "VRN",
+      "lat": 25.2908887078,
+      "lng": 83.0065881238,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "MEN",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 5,
+  "invaders": [
+    {
+      "id": "MEN_01",
+      "city": "MEN",
+      "lat": 39.996894108,
+      "lng": 3.8167560776,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MEN_02",
+      "city": "MEN",
+      "lat": 40.0063943491,
+      "lng": 3.8831057678,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MEN_03",
+      "city": "MEN",
+      "lat": 40.0551686701,
+      "lng": 3.8854255716,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MEN_04",
+      "city": "MEN",
+      "lat": 40.0013550249,
+      "lng": 3.8398261476,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MEN_05",
+      "city": "MEN",
+      "lat": 40.0015828962,
+      "lng": 3.8358350927,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

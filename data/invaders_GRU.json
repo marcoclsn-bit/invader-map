@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "GRU",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 3,
+  "invaders": [
+    {
+      "id": "GRU_01",
+      "city": "GRU",
+      "lat": 43.3697332324,
+      "lng": 17.4286114697,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRU_02",
+      "city": "GRU",
+      "lat": 43.3697182936,
+      "lng": 17.4317928755,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GRU_03",
+      "city": "GRU",
+      "lat": 43.4212236555,
+      "lng": 17.2808254713,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

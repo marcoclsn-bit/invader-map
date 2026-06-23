@@ -1,0 +1,459 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "FTBL",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 45,
+  "invaders": [
+    {
+      "id": "FTBL_01",
+      "city": "FTBL",
+      "lat": 48.2878626597,
+      "lng": 2.5966199066,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_02",
+      "city": "FTBL",
+      "lat": 48.2841547101,
+      "lng": 2.5961845464,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_03",
+      "city": "FTBL",
+      "lat": 48.3494647775,
+      "lng": 2.6080017529,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_04",
+      "city": "FTBL",
+      "lat": 48.4039773578,
+      "lng": 2.7017510457,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_05",
+      "city": "FTBL",
+      "lat": 48.4463755252,
+      "lng": 2.6016891705,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_06",
+      "city": "FTBL",
+      "lat": 48.2982929994,
+      "lng": 2.5739686576,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_07",
+      "city": "FTBL",
+      "lat": 48.4048559062,
+      "lng": 2.6995154445,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_08",
+      "city": "FTBL",
+      "lat": 48.4026829293,
+      "lng": 2.6971518894,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_09",
+      "city": "FTBL",
+      "lat": 48.4024593362,
+      "lng": 2.4705382092,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_10",
+      "city": "FTBL",
+      "lat": 48.4443667284,
+      "lng": 2.6079907551,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_11",
+      "city": "FTBL",
+      "lat": 48.4747824703,
+      "lng": 2.6931708452,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_12",
+      "city": "FTBL",
+      "lat": 48.4157021823,
+      "lng": 2.726939998,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_13",
+      "city": "FTBL",
+      "lat": 48.4037314776,
+      "lng": 2.6920960001,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_14",
+      "city": "FTBL",
+      "lat": 48.4097156406,
+      "lng": 2.7258833715,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_15",
+      "city": "FTBL",
+      "lat": 48.3876153513,
+      "lng": 2.6680964246,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_16",
+      "city": "FTBL",
+      "lat": 48.4429053214,
+      "lng": 2.6119269288,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_17",
+      "city": "FTBL",
+      "lat": 48.4493026392,
+      "lng": 2.7597302372,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_18",
+      "city": "FTBL",
+      "lat": 48.4129591567,
+      "lng": 2.7602291916,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_19",
+      "city": "FTBL",
+      "lat": 48.4487668703,
+      "lng": 2.728557321,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_21",
+      "city": "FTBL",
+      "lat": 48.4882882254,
+      "lng": 2.691188094,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_22",
+      "city": "FTBL",
+      "lat": 48.4954611181,
+      "lng": 2.6332930868,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_23",
+      "city": "FTBL",
+      "lat": 48.476466551,
+      "lng": 2.6197429469,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_24",
+      "city": "FTBL",
+      "lat": 48.4455304018,
+      "lng": 2.6373958561,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_25",
+      "city": "FTBL",
+      "lat": 48.3170891472,
+      "lng": 2.6474165121,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_26",
+      "city": "FTBL",
+      "lat": 48.3347541654,
+      "lng": 2.7477114808,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_27",
+      "city": "FTBL",
+      "lat": 48.3158779543,
+      "lng": 2.7716576278,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_28",
+      "city": "FTBL",
+      "lat": 48.3848922592,
+      "lng": 2.7904763603,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_29",
+      "city": "FTBL",
+      "lat": 48.3962793841,
+      "lng": 2.7834197393,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_30",
+      "city": "FTBL",
+      "lat": 48.4865301193,
+      "lng": 2.7553180763,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_31",
+      "city": "FTBL",
+      "lat": 48.4093025083,
+      "lng": 2.6324460252,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_32",
+      "city": "FTBL",
+      "lat": 48.4123279808,
+      "lng": 2.5648950548,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_33",
+      "city": "FTBL",
+      "lat": 48.3525700503,
+      "lng": 2.5685910272,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_34",
+      "city": "FTBL",
+      "lat": 48.3215753381,
+      "lng": 2.5652939913,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_35",
+      "city": "FTBL",
+      "lat": 48.4121639275,
+      "lng": 2.4726522277,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_36",
+      "city": "FTBL",
+      "lat": 48.340796402,
+      "lng": 2.7161040152,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_37",
+      "city": "FTBL",
+      "lat": 48.3724970301,
+      "lng": 2.8190836995,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_38",
+      "city": "FTBL",
+      "lat": 48.4338843934,
+      "lng": 2.7262133703,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_39",
+      "city": "FTBL",
+      "lat": 48.3813364133,
+      "lng": 2.7225454821,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_40",
+      "city": "FTBL",
+      "lat": 48.3712483866,
+      "lng": 2.7179032011,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_41",
+      "city": "FTBL",
+      "lat": 48.333942903,
+      "lng": 2.7458685907,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_42",
+      "city": "FTBL",
+      "lat": 48.4499874947,
+      "lng": 2.7550292133,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_43",
+      "city": "FTBL",
+      "lat": 48.4054854974,
+      "lng": 2.7002957079,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_44",
+      "city": "FTBL",
+      "lat": 48.4061176097,
+      "lng": 2.7021606546,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_45",
+      "city": "FTBL",
+      "lat": 48.3966590342,
+      "lng": 2.7850125742,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FTBL_46",
+      "city": "FTBL",
+      "lat": 48.3162641425,
+      "lng": 2.6930271604,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "RN",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 4,
+  "invaders": [
+    {
+      "id": "RN_01",
+      "city": "RN",
+      "lat": 48.1137140872,
+      "lng": -1.6795195094,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RN_02",
+      "city": "RN",
+      "lat": 48.1136095012,
+      "lng": -1.6808401318,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RN_03",
+      "city": "RN",
+      "lat": 48.1072988227,
+      "lng": -1.6801913284,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RN_04",
+      "city": "RN",
+      "lat": 48.108600184,
+      "lng": -1.6772238081,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

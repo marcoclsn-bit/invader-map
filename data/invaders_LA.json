@@ -1,0 +1,2149 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "LA",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 214,
+  "invaders": [
+    {
+      "id": "LA_01",
+      "city": "LA",
+      "lat": 34.083852797,
+      "lng": -118.3442519677,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_02",
+      "city": "LA",
+      "lat": 34.0838103272,
+      "lng": -118.3530708343,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_03",
+      "city": "LA",
+      "lat": 34.0833327564,
+      "lng": -118.3476348545,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_04",
+      "city": "LA",
+      "lat": 34.0788388537,
+      "lng": -118.3613239171,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_05",
+      "city": "LA",
+      "lat": 34.0776311116,
+      "lng": -118.3615539783,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_06",
+      "city": "LA",
+      "lat": 34.0836763897,
+      "lng": -118.3499219059,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_07",
+      "city": "LA",
+      "lat": 34.1053376419,
+      "lng": -118.3189704586,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_08",
+      "city": "LA",
+      "lat": 34.1201762873,
+      "lng": -118.3215686656,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_09",
+      "city": "LA",
+      "lat": 34.0668567,
+      "lng": -118.3615269716,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_10",
+      "city": "LA",
+      "lat": 34.0760563119,
+      "lng": -118.351424326,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_11",
+      "city": "LA",
+      "lat": 34.1340901786,
+      "lng": -118.3210946963,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_12",
+      "city": "LA",
+      "lat": 34.101683369,
+      "lng": -118.3427174608,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_13",
+      "city": "LA",
+      "lat": 34.143236718,
+      "lng": -118.3980618334,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_14",
+      "city": "LA",
+      "lat": 34.1089376664,
+      "lng": -118.3696164033,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_15",
+      "city": "LA",
+      "lat": 34.0603073032,
+      "lng": -118.3762027544,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_16",
+      "city": "LA",
+      "lat": 33.9908058986,
+      "lng": -118.4665265182,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_17",
+      "city": "LA",
+      "lat": 34.0753601338,
+      "lng": -118.3837267285,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_18",
+      "city": "LA",
+      "lat": 34.0320230469,
+      "lng": -118.4181824609,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_19",
+      "city": "LA",
+      "lat": 34.0858378166,
+      "lng": -118.344219412,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_20",
+      "city": "LA",
+      "lat": 33.9434582275,
+      "lng": -118.4083673921,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_21",
+      "city": "LA",
+      "lat": 34.1039364625,
+      "lng": -118.291678995,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_22",
+      "city": "LA",
+      "lat": 34.0748282832,
+      "lng": -118.3237482833,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_23",
+      "city": "LA",
+      "lat": 34.0822780891,
+      "lng": -118.3438849922,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_24",
+      "city": "LA",
+      "lat": 34.0715829766,
+      "lng": -118.3607912904,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_25",
+      "city": "LA",
+      "lat": 34.0760811361,
+      "lng": -118.3768588329,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_26",
+      "city": "LA",
+      "lat": 34.0945811528,
+      "lng": -118.3757221551,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_27",
+      "city": "LA",
+      "lat": 34.0727794843,
+      "lng": -118.3701715884,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_28",
+      "city": "LA",
+      "lat": 34.0760877433,
+      "lng": -118.3722105312,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_29",
+      "city": "LA",
+      "lat": 34.0707484142,
+      "lng": -118.4042881564,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_30",
+      "city": "LA",
+      "lat": 34.0671638745,
+      "lng": -118.4023811662,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_31",
+      "city": "LA",
+      "lat": 34.0617202847,
+      "lng": -118.4469603487,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_32",
+      "city": "LA",
+      "lat": 34.0638422151,
+      "lng": -118.4451169184,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_33",
+      "city": "LA",
+      "lat": 34.076337549,
+      "lng": -118.4545944423,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_34",
+      "city": "LA",
+      "lat": 34.0140317124,
+      "lng": -118.4980490522,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_35",
+      "city": "LA",
+      "lat": 34.0467708147,
+      "lng": -118.4468799849,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_36",
+      "city": "LA",
+      "lat": 34.0625152044,
+      "lng": -118.3577189985,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_37",
+      "city": "LA",
+      "lat": 34.1065798952,
+      "lng": -118.3783956967,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_38",
+      "city": "LA",
+      "lat": 34.0833906505,
+      "lng": -118.3511596082,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_39",
+      "city": "LA",
+      "lat": 34.0838029262,
+      "lng": -118.3704034678,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_40",
+      "city": "LA",
+      "lat": 34.0834912688,
+      "lng": -118.3513494911,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_41",
+      "city": "LA",
+      "lat": 34.0124023703,
+      "lng": -118.373567824,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_42",
+      "city": "LA",
+      "lat": 34.0837193536,
+      "lng": -118.3538719532,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_43",
+      "city": "LA",
+      "lat": 33.9893690747,
+      "lng": -118.47581746,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_44",
+      "city": "LA",
+      "lat": 34.0175731775,
+      "lng": -118.4985918022,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_45",
+      "city": "LA",
+      "lat": 34.0979351165,
+      "lng": -118.2864334957,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_46",
+      "city": "LA",
+      "lat": 34.0979428436,
+      "lng": -118.3144361895,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_47",
+      "city": "LA",
+      "lat": 34.1016919338,
+      "lng": -118.3371202596,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_48",
+      "city": "LA",
+      "lat": 34.123775997,
+      "lng": -118.3014017343,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_49",
+      "city": "LA",
+      "lat": 34.0306264507,
+      "lng": -118.2738156475,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_50",
+      "city": "LA",
+      "lat": 34.0632281537,
+      "lng": -118.3614835326,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_51",
+      "city": "LA",
+      "lat": 34.0563655409,
+      "lng": -118.442193194,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_52",
+      "city": "LA",
+      "lat": 34.1037033519,
+      "lng": -118.3272874832,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_53",
+      "city": "LA",
+      "lat": 34.1004125038,
+      "lng": -118.3296149413,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_54",
+      "city": "LA",
+      "lat": 34.0839395744,
+      "lng": -118.357479677,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_55",
+      "city": "LA",
+      "lat": 34.0619465545,
+      "lng": -118.3761557921,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_56",
+      "city": "LA",
+      "lat": 34.0834913626,
+      "lng": -118.3512082125,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_57",
+      "city": "LA",
+      "lat": 34.107374613,
+      "lng": -118.3887248096,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_58",
+      "city": "LA",
+      "lat": 34.1004612608,
+      "lng": -118.38173213,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_59",
+      "city": "LA",
+      "lat": 34.0833405864,
+      "lng": -118.3431140083,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_60",
+      "city": "LA",
+      "lat": 34.0845413714,
+      "lng": -118.3438070217,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_61",
+      "city": "LA",
+      "lat": 34.1341433587,
+      "lng": -118.3216148016,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_62",
+      "city": "LA",
+      "lat": 34.0904811387,
+      "lng": -118.3845326072,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_63",
+      "city": "LA",
+      "lat": 33.9767873128,
+      "lng": -118.4215601858,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_64",
+      "city": "LA",
+      "lat": 34.0834561143,
+      "lng": -118.3513907811,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_65",
+      "city": "LA",
+      "lat": 33.9449479257,
+      "lng": -118.4057701644,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_66",
+      "city": "LA",
+      "lat": 34.0977497024,
+      "lng": -118.3289119344,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_67",
+      "city": "LA",
+      "lat": 34.1340317957,
+      "lng": -118.3221977848,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_68",
+      "city": "LA",
+      "lat": 34.1339233472,
+      "lng": -118.3220509603,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_69",
+      "city": "LA",
+      "lat": 34.1340182277,
+      "lng": -118.3216903133,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_70",
+      "city": "LA",
+      "lat": 34.1341122007,
+      "lng": -118.3214280424,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_71",
+      "city": "LA",
+      "lat": 34.0395794566,
+      "lng": -118.5588057992,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_72",
+      "city": "LA",
+      "lat": 33.9912373881,
+      "lng": -118.4752327011,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_73",
+      "city": "LA",
+      "lat": 33.9904400243,
+      "lng": -118.4769331652,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_74",
+      "city": "LA",
+      "lat": 34.066981865,
+      "lng": -118.409492621,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_75",
+      "city": "LA",
+      "lat": 34.0763755743,
+      "lng": -118.3446811094,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_76",
+      "city": "LA",
+      "lat": 34.0176541251,
+      "lng": -118.4997790287,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_77",
+      "city": "LA",
+      "lat": 34.0305063292,
+      "lng": -118.4712195884,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_78",
+      "city": "LA",
+      "lat": 34.0280838843,
+      "lng": -118.468262403,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_79",
+      "city": "LA",
+      "lat": 34.0537616005,
+      "lng": -118.4651925566,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_80",
+      "city": "LA",
+      "lat": 34.1017681996,
+      "lng": -118.3260334938,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_81",
+      "city": "LA",
+      "lat": 34.0554768367,
+      "lng": -118.4522700398,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_82",
+      "city": "LA",
+      "lat": 34.0732036744,
+      "lng": -118.343880758,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_83",
+      "city": "LA",
+      "lat": 34.0494504162,
+      "lng": -118.2560866604,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_84",
+      "city": "LA",
+      "lat": 34.1026155376,
+      "lng": -118.2915989152,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_85",
+      "city": "LA",
+      "lat": 34.1015686931,
+      "lng": -118.3117311257,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_86",
+      "city": "LA",
+      "lat": 34.0625462033,
+      "lng": -118.3489802791,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_87",
+      "city": "LA",
+      "lat": 34.0668404011,
+      "lng": -118.3615855022,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_88",
+      "city": "LA",
+      "lat": 34.0745552677,
+      "lng": -118.3438610038,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_89",
+      "city": "LA",
+      "lat": 34.0719217227,
+      "lng": -118.3575203099,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_90",
+      "city": "LA",
+      "lat": 34.0907031683,
+      "lng": -118.3005774631,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_91",
+      "city": "LA",
+      "lat": 34.0835755682,
+      "lng": -118.2989895889,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_92",
+      "city": "LA",
+      "lat": 34.035550967,
+      "lng": -118.3492106726,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_93",
+      "city": "LA",
+      "lat": 34.0789825603,
+      "lng": -118.3615202959,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_94",
+      "city": "LA",
+      "lat": 33.9617780284,
+      "lng": -118.3703456744,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_95",
+      "city": "LA",
+      "lat": 34.0404812438,
+      "lng": -118.4434207022,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_96",
+      "city": "LA",
+      "lat": 34.1236421621,
+      "lng": -118.3428398483,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_97",
+      "city": "LA",
+      "lat": 34.0932527904,
+      "lng": -118.3094005847,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_98",
+      "city": "LA",
+      "lat": 34.0645006164,
+      "lng": -118.3596039988,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_99",
+      "city": "LA",
+      "lat": 34.038276939,
+      "lng": -118.2368862685,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_100",
+      "city": "LA",
+      "lat": 34.0613013545,
+      "lng": -118.2353293387,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_101",
+      "city": "LA",
+      "lat": 34.0662388735,
+      "lng": -118.2384369013,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_102",
+      "city": "LA",
+      "lat": 34.1341346811,
+      "lng": -118.3212942671,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_103",
+      "city": "LA",
+      "lat": 34.1340108295,
+      "lng": -118.3218739902,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_104",
+      "city": "LA",
+      "lat": 34.1339814779,
+      "lng": -118.3217890833,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_105",
+      "city": "LA",
+      "lat": 34.0472930452,
+      "lng": -118.2460235148,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_106",
+      "city": "LA",
+      "lat": 34.0779084986,
+      "lng": -118.2634826449,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_107",
+      "city": "LA",
+      "lat": 34.0777582299,
+      "lng": -118.2639405726,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_108",
+      "city": "LA",
+      "lat": 34.0896725048,
+      "lng": -118.2683812292,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_109",
+      "city": "LA",
+      "lat": 34.1002252988,
+      "lng": -118.289933062,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_110",
+      "city": "LA",
+      "lat": 34.1014877329,
+      "lng": -118.3362563136,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_111",
+      "city": "LA",
+      "lat": 34.050147732,
+      "lng": -118.2569426454,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_112",
+      "city": "LA",
+      "lat": 34.0411690594,
+      "lng": -118.2672157516,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_113",
+      "city": "LA",
+      "lat": 34.1044313466,
+      "lng": -118.3784272512,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_114",
+      "city": "LA",
+      "lat": 34.0935247549,
+      "lng": -118.2818068044,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_115",
+      "city": "LA",
+      "lat": 34.0781334891,
+      "lng": -118.2629885381,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_116",
+      "city": "LA",
+      "lat": 34.0333149233,
+      "lng": -118.3758796599,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_117",
+      "city": "LA",
+      "lat": 34.0332525011,
+      "lng": -118.3752709956,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_118",
+      "city": "LA",
+      "lat": 34.03706037,
+      "lng": -118.3777358881,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_119",
+      "city": "LA",
+      "lat": 34.0910425446,
+      "lng": -118.3831630902,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_120",
+      "city": "LA",
+      "lat": 34.092328719,
+      "lng": -118.3790696161,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_121",
+      "city": "LA",
+      "lat": 34.1014039057,
+      "lng": -118.3309527824,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_122",
+      "city": "LA",
+      "lat": 34.0966129175,
+      "lng": -118.3280024307,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_123",
+      "city": "LA",
+      "lat": 34.0948110041,
+      "lng": -118.2828486161,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_124",
+      "city": "LA",
+      "lat": 34.1048988521,
+      "lng": -118.3254683566,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_125",
+      "city": "LA",
+      "lat": 34.0835701974,
+      "lng": -118.3229922741,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_126",
+      "city": "LA",
+      "lat": 34.0717802534,
+      "lng": -118.3439515318,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_127",
+      "city": "LA",
+      "lat": 34.0937525978,
+      "lng": -118.3084617176,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_128",
+      "city": "LA",
+      "lat": 33.9914836736,
+      "lng": -118.4754033393,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_129",
+      "city": "LA",
+      "lat": 34.0121016506,
+      "lng": -118.4934714915,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_130",
+      "city": "LA",
+      "lat": 34.0907852256,
+      "lng": -118.3617081939,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_131",
+      "city": "LA",
+      "lat": 34.1172967102,
+      "lng": -118.3379920645,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_132",
+      "city": "LA",
+      "lat": 34.0721860456,
+      "lng": -118.3671709409,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_133",
+      "city": "LA",
+      "lat": 34.0920850313,
+      "lng": -118.2796960463,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_134",
+      "city": "LA",
+      "lat": 34.0764837058,
+      "lng": -118.2874859213,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_135",
+      "city": "LA",
+      "lat": 34.0266902652,
+      "lng": -118.3836541252,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_136",
+      "city": "LA",
+      "lat": 34.0330575796,
+      "lng": -118.3750812358,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_137",
+      "city": "LA",
+      "lat": 34.0788131631,
+      "lng": -118.3616100903,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_138",
+      "city": "LA",
+      "lat": 34.0625221026,
+      "lng": -118.4468479674,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_139",
+      "city": "LA",
+      "lat": 34.0745167368,
+      "lng": -118.3234489645,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_140",
+      "city": "LA",
+      "lat": 34.086344069,
+      "lng": -118.3265056638,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_141",
+      "city": "LA",
+      "lat": 34.1014750856,
+      "lng": -118.3351671194,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_142",
+      "city": "LA",
+      "lat": 34.101421098,
+      "lng": -118.3351211446,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_143",
+      "city": "LA",
+      "lat": 34.0980840147,
+      "lng": -118.3685967968,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_144",
+      "city": "LA",
+      "lat": 34.0504191686,
+      "lng": -118.2387710514,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_145",
+      "city": "LA",
+      "lat": 34.0507537117,
+      "lng": -118.2388933195,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_146",
+      "city": "LA",
+      "lat": 34.0501461018,
+      "lng": -118.2384359441,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_147",
+      "city": "LA",
+      "lat": 34.0502017864,
+      "lng": -118.2385145959,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_148",
+      "city": "LA",
+      "lat": 34.0507678548,
+      "lng": -118.2389290526,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_149",
+      "city": "LA",
+      "lat": 34.0503768381,
+      "lng": -118.2383941043,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_150",
+      "city": "LA",
+      "lat": 34.0507171028,
+      "lng": -118.2381591378,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_151",
+      "city": "LA",
+      "lat": 34.0505378935,
+      "lng": -118.2385841723,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_152",
+      "city": "LA",
+      "lat": 34.0111115459,
+      "lng": -118.4159812433,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_153",
+      "city": "LA",
+      "lat": 34.032006432,
+      "lng": -118.3761852278,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_154",
+      "city": "LA",
+      "lat": 34.0504142266,
+      "lng": -118.2383550348,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_155",
+      "city": "LA",
+      "lat": 34.0508338558,
+      "lng": -118.2395994264,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_156",
+      "city": "LA",
+      "lat": 34.0501670504,
+      "lng": -118.23873852,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_157",
+      "city": "LA",
+      "lat": 34.0501802038,
+      "lng": -118.2385812724,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_158",
+      "city": "LA",
+      "lat": 34.0501929954,
+      "lng": -118.2383977051,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_159",
+      "city": "LA",
+      "lat": 34.0704636757,
+      "lng": -118.2507933278,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_160",
+      "city": "LA",
+      "lat": 34.0722919595,
+      "lng": -118.2506719935,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_161",
+      "city": "LA",
+      "lat": 34.0502522595,
+      "lng": -118.2388662413,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_162",
+      "city": "LA",
+      "lat": 34.0502580777,
+      "lng": -118.2385591979,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_163",
+      "city": "LA",
+      "lat": 34.0503354818,
+      "lng": -118.2383505928,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_164",
+      "city": "LA",
+      "lat": 34.1105443701,
+      "lng": -118.1911653615,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_165",
+      "city": "LA",
+      "lat": 34.1180302953,
+      "lng": -118.1896703167,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_166",
+      "city": "LA",
+      "lat": 34.0504485736,
+      "lng": -118.2386142389,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_167",
+      "city": "LA",
+      "lat": 34.0505781663,
+      "lng": -118.2389649757,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_168",
+      "city": "LA",
+      "lat": 34.0431026364,
+      "lng": -118.2380838353,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_169",
+      "city": "LA",
+      "lat": 34.1014111435,
+      "lng": -118.3430588908,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_170",
+      "city": "LA",
+      "lat": 34.0826664339,
+      "lng": -118.2733687112,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_171",
+      "city": "LA",
+      "lat": 33.9942566097,
+      "lng": -118.4611994305,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_172",
+      "city": "LA",
+      "lat": 34.0679357718,
+      "lng": -118.2264990112,
+      "status": "hidden",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_173",
+      "city": "LA",
+      "lat": 34.1055561965,
+      "lng": -118.288749834,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_174",
+      "city": "LA",
+      "lat": 34.0830476395,
+      "lng": -118.2841817483,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_175",
+      "city": "LA",
+      "lat": 34.1080765354,
+      "lng": -118.2872903341,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_176",
+      "city": "LA",
+      "lat": 34.1015994055,
+      "lng": -118.3097587092,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_177",
+      "city": "LA",
+      "lat": 34.0834842163,
+      "lng": -118.2954151734,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_178",
+      "city": "LA",
+      "lat": 34.0924795001,
+      "lng": -118.3790006733,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_179",
+      "city": "LA",
+      "lat": 34.040345727,
+      "lng": -118.2315369074,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_180",
+      "city": "LA",
+      "lat": 34.0468419457,
+      "lng": -118.2445658438,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_181",
+      "city": "LA",
+      "lat": 34.0497037036,
+      "lng": -118.2397322741,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_182",
+      "city": "LA",
+      "lat": 34.0488391859,
+      "lng": -118.24083733,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_183",
+      "city": "LA",
+      "lat": 34.0452939422,
+      "lng": -118.236210152,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_184",
+      "city": "LA",
+      "lat": 34.0248593497,
+      "lng": -118.2503006817,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_185",
+      "city": "LA",
+      "lat": 34.0346447576,
+      "lng": -118.2267868252,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_186",
+      "city": "LA",
+      "lat": 34.0673970461,
+      "lng": -118.291315161,
+      "status": "destroyed",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_187",
+      "city": "LA",
+      "lat": 34.0478252074,
+      "lng": -118.243955847,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_188",
+      "city": "LA",
+      "lat": 34.041555762,
+      "lng": -118.2373158482,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_189",
+      "city": "LA",
+      "lat": 34.0417929421,
+      "lng": -118.2363496585,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_190",
+      "city": "LA",
+      "lat": 34.002447606,
+      "lng": -118.4841458017,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_191",
+      "city": "LA",
+      "lat": 33.9878906223,
+      "lng": -118.4721408794,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_192",
+      "city": "LA",
+      "lat": 34.0379249063,
+      "lng": -118.2917286151,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_193",
+      "city": "LA",
+      "lat": 34.0360344745,
+      "lng": -118.3667015878,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_194",
+      "city": "LA",
+      "lat": 34.0336588029,
+      "lng": -118.2914132676,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_195",
+      "city": "LA",
+      "lat": 34.0348586463,
+      "lng": -118.2343836145,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_196",
+      "city": "LA",
+      "lat": 34.0475164557,
+      "lng": -118.2496639281,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_197",
+      "city": "LA",
+      "lat": 34.0835615132,
+      "lng": -118.3436866509,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_198",
+      "city": "LA",
+      "lat": 34.0701356746,
+      "lng": -118.2635777416,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_199",
+      "city": "LA",
+      "lat": 34.0771230588,
+      "lng": -118.2817356732,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_200",
+      "city": "LA",
+      "lat": 34.097722407,
+      "lng": -118.3137868203,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_201",
+      "city": "LA",
+      "lat": 34.1122366636,
+      "lng": -118.3350525952,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_202",
+      "city": "LA",
+      "lat": 34.0741460556,
+      "lng": -118.2516914664,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_203",
+      "city": "LA",
+      "lat": 34.0766168489,
+      "lng": -118.2575542842,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_204",
+      "city": "LA",
+      "lat": 34.0504031621,
+      "lng": -118.2413166703,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_205",
+      "city": "LA",
+      "lat": 34.0380436745,
+      "lng": -118.2326865433,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_206",
+      "city": "LA",
+      "lat": 34.0347166498,
+      "lng": -118.2322010502,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_207",
+      "city": "LA",
+      "lat": 34.0438266866,
+      "lng": -118.2324520422,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_208",
+      "city": "LA",
+      "lat": 34.0489469056,
+      "lng": -118.2732412063,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_209",
+      "city": "LA",
+      "lat": 34.0525503554,
+      "lng": -118.2870825137,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_210",
+      "city": "LA",
+      "lat": 34.0691492203,
+      "lng": -118.293686357,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_211",
+      "city": "LA",
+      "lat": 34.0835743837,
+      "lng": -118.2737092783,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_212",
+      "city": "LA",
+      "lat": 34.0903040032,
+      "lng": -118.3056613912,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_213",
+      "city": "LA",
+      "lat": 34.0910356298,
+      "lng": -118.2970427468,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LA_214",
+      "city": "LA",
+      "lat": 34.0444342596,
+      "lng": -118.2539144922,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

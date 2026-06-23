@@ -1,0 +1,339 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "GNV",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 33,
+  "invaders": [
+    {
+      "id": "GNV_01",
+      "city": "GNV",
+      "lat": 46.2039835668,
+      "lng": 6.1364370061,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_02",
+      "city": "GNV",
+      "lat": 46.2041103798,
+      "lng": 6.1376805585,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_03",
+      "city": "GNV",
+      "lat": 46.2017655504,
+      "lng": 6.1396023809,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_04",
+      "city": "GNV",
+      "lat": 46.201205965,
+      "lng": 6.1393094177,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_05",
+      "city": "GNV",
+      "lat": 46.199475024,
+      "lng": 6.1376173723,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_06",
+      "city": "GNV",
+      "lat": 46.1995606858,
+      "lng": 6.1395260603,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_07",
+      "city": "GNV",
+      "lat": 46.2042493758,
+      "lng": 6.1421358649,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_08",
+      "city": "GNV",
+      "lat": 46.2000603658,
+      "lng": 6.1429088043,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_09",
+      "city": "GNV",
+      "lat": 46.2104074233,
+      "lng": 6.1412216635,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_10",
+      "city": "GNV",
+      "lat": 46.2105019643,
+      "lng": 6.1396079779,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_11",
+      "city": "GNV",
+      "lat": 46.2025738952,
+      "lng": 6.1404547519,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_12",
+      "city": "GNV",
+      "lat": 46.1986161305,
+      "lng": 6.1372005628,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_13",
+      "city": "GNV",
+      "lat": 46.1979203815,
+      "lng": 6.1429923795,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_14",
+      "city": "GNV",
+      "lat": 46.2055478613,
+      "lng": 6.13980277,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_15",
+      "city": "GNV",
+      "lat": 46.2015991087,
+      "lng": 6.1476282774,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_16",
+      "city": "GNV",
+      "lat": 46.2098866441,
+      "lng": 6.1459529589,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_17",
+      "city": "GNV",
+      "lat": 46.2100785224,
+      "lng": 6.1538899072,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_18",
+      "city": "GNV",
+      "lat": 46.2058277902,
+      "lng": 6.1472630465,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_19",
+      "city": "GNV",
+      "lat": 46.2064822514,
+      "lng": 6.1466454773,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_20",
+      "city": "GNV",
+      "lat": 46.2041453692,
+      "lng": 6.1502839623,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_21",
+      "city": "GNV",
+      "lat": 46.2015382153,
+      "lng": 6.1494805072,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_22",
+      "city": "GNV",
+      "lat": 46.2014752704,
+      "lng": 6.138075624,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_23",
+      "city": "GNV",
+      "lat": 46.2063462056,
+      "lng": 6.1404649558,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_24",
+      "city": "GNV",
+      "lat": 46.2086073661,
+      "lng": 6.1372047748,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_25",
+      "city": "GNV",
+      "lat": 46.2086725765,
+      "lng": 6.1409991382,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_26",
+      "city": "GNV",
+      "lat": 46.2025965055,
+      "lng": 6.1553721691,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_27",
+      "city": "GNV",
+      "lat": 46.2043660492,
+      "lng": 6.1535552252,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_28",
+      "city": "GNV",
+      "lat": 46.1992386054,
+      "lng": 6.1522390936,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_29",
+      "city": "GNV",
+      "lat": 46.2030281696,
+      "lng": 6.1447428986,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_30",
+      "city": "GNV",
+      "lat": 46.2068507338,
+      "lng": 6.1441030812,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_31",
+      "city": "GNV",
+      "lat": 46.2047851787,
+      "lng": 6.1435126844,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_32",
+      "city": "GNV",
+      "lat": 46.2046113409,
+      "lng": 6.1400533236,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "GNV_33",
+      "city": "GNV",
+      "lat": 46.2063229642,
+      "lng": 6.1404759076,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

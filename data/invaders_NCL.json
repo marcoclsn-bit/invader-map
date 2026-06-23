@@ -1,0 +1,259 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "NCL",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 25,
+  "invaders": [
+    {
+      "id": "NCL_01",
+      "city": "NCL",
+      "lat": 54.9736620423,
+      "lng": -1.6112904408,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NCL_02",
+      "city": "NCL",
+      "lat": 54.9723111306,
+      "lng": -1.6105318417,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NCL_03",
+      "city": "NCL",
+      "lat": 54.9696100792,
+      "lng": -1.6110883361,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NCL_04",
+      "city": "NCL",
+      "lat": 54.9719376673,
+      "lng": -1.6124797645,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NCL_05",
+      "city": "NCL",
+      "lat": 54.9693771118,
+      "lng": -1.5979063295,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NCL_06",
+      "city": "NCL",
+      "lat": 54.9680877846,
+      "lng": -1.6012855036,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NCL_07",
+      "city": "NCL",
+      "lat": 54.9693938618,
+      "lng": -1.6039535098,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NCL_08",
+      "city": "NCL",
+      "lat": 54.9741370736,
+      "lng": -1.6144533955,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NCL_09",
+      "city": "NCL",
+      "lat": 54.9711245826,
+      "lng": -1.6137799737,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NCL_10",
+      "city": "NCL",
+      "lat": 54.9688584151,
+      "lng": -1.6124240533,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NCL_11",
+      "city": "NCL",
+      "lat": 54.9704365676,
+      "lng": -1.6196852581,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NCL_12",
+      "city": "NCL",
+      "lat": 54.9717807243,
+      "lng": -1.6209276673,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NCL_13",
+      "city": "NCL",
+      "lat": 54.9696594956,
+      "lng": -1.6185588438,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NCL_14",
+      "city": "NCL",
+      "lat": 54.969310008,
+      "lng": -1.5987807726,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NCL_15",
+      "city": "NCL",
+      "lat": 54.9742980042,
+      "lng": -1.6007610155,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NCL_16",
+      "city": "NCL",
+      "lat": 54.969429966,
+      "lng": -1.6096634074,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NCL_17",
+      "city": "NCL",
+      "lat": 54.9756867879,
+      "lng": -1.6105484809,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NCL_18",
+      "city": "NCL",
+      "lat": 54.968799003,
+      "lng": -1.6066097704,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NCL_19",
+      "city": "NCL",
+      "lat": 54.9622414709,
+      "lng": -1.6039309897,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NCL_20",
+      "city": "NCL",
+      "lat": 54.962210654,
+      "lng": -1.6039343874,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NCL_21",
+      "city": "NCL",
+      "lat": 54.9615082762,
+      "lng": -1.6050829494,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NCL_22",
+      "city": "NCL",
+      "lat": 54.970367633,
+      "lng": -1.6096452623,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NCL_23",
+      "city": "NCL",
+      "lat": 54.9717252871,
+      "lng": -1.6127772242,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NCL_24",
+      "city": "NCL",
+      "lat": 54.9707076762,
+      "lng": -1.6142417122,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NCL_25",
+      "city": "NCL",
+      "lat": 54.9692791926,
+      "lng": -1.5975459582,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

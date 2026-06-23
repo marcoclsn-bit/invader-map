@@ -1,0 +1,59 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "MBSA",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 5,
+  "invaders": [
+    {
+      "id": "MBSA_03",
+      "city": "MBSA",
+      "lat": -4.0632943465,
+      "lng": 39.675767489,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MBSA_04",
+      "city": "MBSA",
+      "lat": -4.0618945005,
+      "lng": 39.6710546419,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MBSA_05",
+      "city": "MBSA",
+      "lat": -4.061045824,
+      "lng": 39.6718735979,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MBSA_07",
+      "city": "MBSA",
+      "lat": -4.0616410267,
+      "lng": 39.6661900557,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MBSA_10",
+      "city": "MBSA",
+      "lat": -3.638029913,
+      "lng": 39.8491907237,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

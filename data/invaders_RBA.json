@@ -1,0 +1,179 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "RBA",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 17,
+  "invaders": [
+    {
+      "id": "RBA_01",
+      "city": "RBA",
+      "lat": 34.0373005869,
+      "lng": -6.8400179926,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RBA_02",
+      "city": "RBA",
+      "lat": 34.0314487322,
+      "lng": -6.8362673563,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RBA_04",
+      "city": "RBA",
+      "lat": 34.0284258552,
+      "lng": -6.834600125,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RBA_05",
+      "city": "RBA",
+      "lat": 34.0260414159,
+      "lng": -6.8401961761,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RBA_06",
+      "city": "RBA",
+      "lat": 34.0302471701,
+      "lng": -6.8453559714,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RBA_07",
+      "city": "RBA",
+      "lat": 34.028084335,
+      "lng": -6.8341672311,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RBA_08",
+      "city": "RBA",
+      "lat": 34.0290076992,
+      "lng": -6.8380100316,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RBA_09",
+      "city": "RBA",
+      "lat": 34.0186214392,
+      "lng": -6.8310118553,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RBA_10",
+      "city": "RBA",
+      "lat": 33.9950137052,
+      "lng": -6.8472918604,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RBA_12",
+      "city": "RBA",
+      "lat": 34.008707027,
+      "lng": -6.8416098731,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RBA_13",
+      "city": "RBA",
+      "lat": 34.0222662963,
+      "lng": -6.8312467958,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RBA_14",
+      "city": "RBA",
+      "lat": 34.0142697343,
+      "lng": -6.8475104264,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RBA_15",
+      "city": "RBA",
+      "lat": 33.9948152863,
+      "lng": -6.851156594,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RBA_16",
+      "city": "RBA",
+      "lat": 34.0311698366,
+      "lng": -6.8355845866,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RBA_17",
+      "city": "RBA",
+      "lat": 34.0237744514,
+      "lng": -6.8237528975,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RBA_18",
+      "city": "RBA",
+      "lat": 34.0237137904,
+      "lng": -6.8249070617,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RBA_20",
+      "city": "RBA",
+      "lat": 34.0263768086,
+      "lng": -6.8373710019,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

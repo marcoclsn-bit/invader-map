@@ -1,0 +1,809 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "MIA",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 80,
+  "invaders": [
+    {
+      "id": "MIA_01",
+      "city": "MIA",
+      "lat": 25.7774113627,
+      "lng": -80.132332646,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_02",
+      "city": "MIA",
+      "lat": 25.7796097553,
+      "lng": -80.1319782242,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_03",
+      "city": "MIA",
+      "lat": 25.792395798,
+      "lng": -80.1320595258,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_04",
+      "city": "MIA",
+      "lat": 25.7902524616,
+      "lng": -80.1300944016,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_05",
+      "city": "MIA",
+      "lat": 25.787223811,
+      "lng": -80.1305908798,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_06",
+      "city": "MIA",
+      "lat": 25.7745291517,
+      "lng": -80.1419246097,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_07",
+      "city": "MIA",
+      "lat": 25.774430427,
+      "lng": -80.1411420018,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_08",
+      "city": "MIA",
+      "lat": 25.780593025,
+      "lng": -80.1326161416,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_09",
+      "city": "MIA",
+      "lat": 25.7983175686,
+      "lng": -80.132039687,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_10",
+      "city": "MIA",
+      "lat": 25.803776945,
+      "lng": -80.199026009,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_11",
+      "city": "MIA",
+      "lat": 25.8113628023,
+      "lng": -80.1952929555,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_12",
+      "city": "MIA",
+      "lat": 25.8029539327,
+      "lng": -80.1909088379,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_13",
+      "city": "MIA",
+      "lat": 25.7896487659,
+      "lng": -80.1905904731,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_14",
+      "city": "MIA",
+      "lat": 25.7811398864,
+      "lng": -80.1304338221,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_15",
+      "city": "MIA",
+      "lat": 25.8010357921,
+      "lng": -80.1991693736,
+      "status": "destroyed",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_16",
+      "city": "MIA",
+      "lat": 25.7955461385,
+      "lng": -80.1984822969,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_17",
+      "city": "MIA",
+      "lat": 25.7998018668,
+      "lng": -80.1909487794,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_18",
+      "city": "MIA",
+      "lat": 25.7991652195,
+      "lng": -80.1989283034,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_19",
+      "city": "MIA",
+      "lat": 25.8126394343,
+      "lng": -80.1923880011,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_20",
+      "city": "MIA",
+      "lat": 25.7969820222,
+      "lng": -80.1950217683,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_21",
+      "city": "MIA",
+      "lat": 25.7940987511,
+      "lng": -80.1275438135,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_22",
+      "city": "MIA",
+      "lat": 25.7899658711,
+      "lng": -80.1794848598,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_23",
+      "city": "MIA",
+      "lat": 25.8031626427,
+      "lng": -80.1951914776,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_24",
+      "city": "MIA",
+      "lat": 25.7912432637,
+      "lng": -80.154011854,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_25",
+      "city": "MIA",
+      "lat": 25.7918344859,
+      "lng": -80.1436142569,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_26",
+      "city": "MIA",
+      "lat": 25.7957034084,
+      "lng": -80.1267869573,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_27",
+      "city": "MIA",
+      "lat": 25.7914896794,
+      "lng": -80.1493585118,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_28",
+      "city": "MIA",
+      "lat": 25.7762415179,
+      "lng": -80.1317041689,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_29",
+      "city": "MIA",
+      "lat": 25.7643072054,
+      "lng": -80.1309613699,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_30",
+      "city": "MIA",
+      "lat": 25.787498639,
+      "lng": -80.1315937429,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_31",
+      "city": "MIA",
+      "lat": 25.7939415364,
+      "lng": -80.1276517949,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_32",
+      "city": "MIA",
+      "lat": 25.7961432793,
+      "lng": -80.1273283843,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_33",
+      "city": "MIA",
+      "lat": 25.787754687,
+      "lng": -80.1284677352,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_34",
+      "city": "MIA",
+      "lat": 25.7772479458,
+      "lng": -80.1314239178,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_35",
+      "city": "MIA",
+      "lat": 25.7763664187,
+      "lng": -80.1899192953,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_36",
+      "city": "MIA",
+      "lat": 25.7904937654,
+      "lng": -80.1447797354,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_37",
+      "city": "MIA",
+      "lat": 25.7894484723,
+      "lng": -80.1875050738,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_38",
+      "city": "MIA",
+      "lat": 25.7894765109,
+      "lng": -80.1891401093,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_39",
+      "city": "MIA",
+      "lat": 25.8102144897,
+      "lng": -80.1903458581,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_40",
+      "city": "MIA",
+      "lat": 25.8042765557,
+      "lng": -80.1912459741,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_41",
+      "city": "MIA",
+      "lat": 25.8040241592,
+      "lng": -80.1968653801,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_42",
+      "city": "MIA",
+      "lat": 25.8000986776,
+      "lng": -80.1950409021,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_43",
+      "city": "MIA",
+      "lat": 25.7635706297,
+      "lng": -80.1927298946,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_44",
+      "city": "MIA",
+      "lat": 25.7724502892,
+      "lng": -80.1919872126,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_45",
+      "city": "MIA",
+      "lat": 25.8118433129,
+      "lng": -80.1952757234,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_46",
+      "city": "MIA",
+      "lat": 25.7791584728,
+      "lng": -80.1321524486,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_47",
+      "city": "MIA",
+      "lat": 25.7736967964,
+      "lng": -80.1903786877,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_48",
+      "city": "MIA",
+      "lat": 25.7848208455,
+      "lng": -80.1761929867,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_49",
+      "city": "MIA",
+      "lat": 25.7708785207,
+      "lng": -80.1873900221,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_50",
+      "city": "MIA",
+      "lat": 25.7657153577,
+      "lng": -80.2148337226,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_51",
+      "city": "MIA",
+      "lat": 25.8262727348,
+      "lng": -80.1916755118,
+      "status": "hidden",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_52",
+      "city": "MIA",
+      "lat": 25.8118463086,
+      "lng": -80.1911570709,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_53",
+      "city": "MIA",
+      "lat": 25.785408082,
+      "lng": -80.190730427,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_54",
+      "city": "MIA",
+      "lat": 25.7658665301,
+      "lng": -80.2113096555,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_55",
+      "city": "MIA",
+      "lat": 25.7803579488,
+      "lng": -80.2147087428,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_56",
+      "city": "MIA",
+      "lat": 25.7670033495,
+      "lng": -80.1369619501,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_57",
+      "city": "MIA",
+      "lat": 25.79055161,
+      "lng": -80.136364243,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_58",
+      "city": "MIA",
+      "lat": 25.7947242736,
+      "lng": -80.1880729771,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_59",
+      "city": "MIA",
+      "lat": 25.7936135877,
+      "lng": -80.1862646427,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_60",
+      "city": "MIA",
+      "lat": 25.7854049959,
+      "lng": -80.1940786606,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_61",
+      "city": "MIA",
+      "lat": 25.7790972294,
+      "lng": -80.1410154133,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_62",
+      "city": "MIA",
+      "lat": 25.774604254,
+      "lng": -80.1407891241,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_63",
+      "city": "MIA",
+      "lat": 25.7898051037,
+      "lng": -80.1815603161,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_64",
+      "city": "MIA",
+      "lat": 25.7465546735,
+      "lng": -80.1839842209,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_65",
+      "city": "MIA",
+      "lat": 25.654882656,
+      "lng": -80.168363841,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_66",
+      "city": "MIA",
+      "lat": 25.6545710403,
+      "lng": -80.1744243671,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_67",
+      "city": "MIA",
+      "lat": 25.7293616124,
+      "lng": -80.2322168855,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_68",
+      "city": "MIA",
+      "lat": 25.7690987924,
+      "lng": -80.1352224694,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_69",
+      "city": "MIA",
+      "lat": 25.8022548487,
+      "lng": -80.2051089206,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_70",
+      "city": "MIA",
+      "lat": 25.780446939,
+      "lng": -80.1305989863,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_71",
+      "city": "MIA",
+      "lat": 25.7840212757,
+      "lng": -80.1315631819,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_72",
+      "city": "MIA",
+      "lat": 25.7939890221,
+      "lng": -80.2758414395,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_73",
+      "city": "MIA",
+      "lat": 25.8125418902,
+      "lng": -80.1901773799,
+      "status": "destroyed",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_74",
+      "city": "MIA",
+      "lat": 25.8410688563,
+      "lng": -80.1964155623,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_75",
+      "city": "MIA",
+      "lat": 25.7506108059,
+      "lng": -80.2600070087,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_79",
+      "city": "MIA",
+      "lat": 25.7907785337,
+      "lng": -80.1384322292,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_80",
+      "city": "MIA",
+      "lat": 25.7963082097,
+      "lng": -80.1318014145,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_81",
+      "city": "MIA",
+      "lat": 25.7916497598,
+      "lng": -80.1492027121,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_82",
+      "city": "MIA",
+      "lat": 25.7950218563,
+      "lng": -80.2607978469,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MIA_84",
+      "city": "MIA",
+      "lat": 25.8560843541,
+      "lng": -80.1266644589,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

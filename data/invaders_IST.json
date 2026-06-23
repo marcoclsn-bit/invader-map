@@ -1,0 +1,169 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "IST",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 16,
+  "invaders": [
+    {
+      "id": "IST_01",
+      "city": "IST",
+      "lat": 41.0270459498,
+      "lng": 28.9745776053,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "IST_02",
+      "city": "IST",
+      "lat": 41.0283547726,
+      "lng": 28.9744761464,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "IST_04",
+      "city": "IST",
+      "lat": 41.0044121246,
+      "lng": 28.9765584694,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "IST_05",
+      "city": "IST",
+      "lat": 41.0100656232,
+      "lng": 28.9700555285,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "IST_06",
+      "city": "IST",
+      "lat": 41.0096671695,
+      "lng": 28.9700286444,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "IST_07",
+      "city": "IST",
+      "lat": 41.029442877,
+      "lng": 28.9754998074,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "IST_08",
+      "city": "IST",
+      "lat": 41.0356868351,
+      "lng": 28.9773130546,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "IST_09",
+      "city": "IST",
+      "lat": 41.0349007189,
+      "lng": 28.9770259662,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "IST_10",
+      "city": "IST",
+      "lat": 41.026108187,
+      "lng": 28.9748592525,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "IST_11",
+      "city": "IST",
+      "lat": 41.0158940233,
+      "lng": 28.9557679471,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "IST_12",
+      "city": "IST",
+      "lat": 41.0112986383,
+      "lng": 28.9610644018,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "IST_13",
+      "city": "IST",
+      "lat": 41.0130384492,
+      "lng": 28.9684754466,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "IST_14",
+      "city": "IST",
+      "lat": 41.0060774475,
+      "lng": 28.9729757981,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "IST_17",
+      "city": "IST",
+      "lat": 41.0304480767,
+      "lng": 28.9757217817,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "IST_18",
+      "city": "IST",
+      "lat": 41.03437152,
+      "lng": 28.9808750063,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "IST_20",
+      "city": "IST",
+      "lat": 41.0325359213,
+      "lng": 28.9850313864,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

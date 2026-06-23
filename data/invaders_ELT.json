@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "ELT",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 2,
+  "invaders": [
+    {
+      "id": "ELT_01",
+      "city": "ELT",
+      "lat": 29.5133252867,
+      "lng": 34.9245748697,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ELT_02",
+      "city": "ELT",
+      "lat": 29.5505043689,
+      "lng": 34.9548591788,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

@@ -1,0 +1,409 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "BBO",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 40,
+  "invaders": [
+    {
+      "id": "BBO_01",
+      "city": "BBO",
+      "lat": 43.2570787079,
+      "lng": -2.9321362034,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_02",
+      "city": "BBO",
+      "lat": 43.2621080112,
+      "lng": -2.92262771,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_03",
+      "city": "BBO",
+      "lat": 43.2570523633,
+      "lng": -2.9314237329,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_04",
+      "city": "BBO",
+      "lat": 43.2601781094,
+      "lng": -2.9257009711,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_05",
+      "city": "BBO",
+      "lat": 43.262201574,
+      "lng": -2.9246867544,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_06",
+      "city": "BBO",
+      "lat": 43.25611479,
+      "lng": -2.9249276073,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_07",
+      "city": "BBO",
+      "lat": 43.2566362223,
+      "lng": -2.9286183078,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_08",
+      "city": "BBO",
+      "lat": 43.2546650135,
+      "lng": -2.9246119342,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_09",
+      "city": "BBO",
+      "lat": 43.2575510681,
+      "lng": -2.9228132913,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_10",
+      "city": "BBO",
+      "lat": 43.2562715802,
+      "lng": -2.922555575,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_11",
+      "city": "BBO",
+      "lat": 43.2568152875,
+      "lng": -2.9235397334,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_12",
+      "city": "BBO",
+      "lat": 43.2580671291,
+      "lng": -2.9278827701,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_13",
+      "city": "BBO",
+      "lat": 43.2579429535,
+      "lng": -2.9188889564,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_14",
+      "city": "BBO",
+      "lat": 43.2582686418,
+      "lng": -2.925978237,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_15",
+      "city": "BBO",
+      "lat": 43.2588317545,
+      "lng": -2.9262420298,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_16",
+      "city": "BBO",
+      "lat": 43.2533274994,
+      "lng": -2.9228690328,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_17",
+      "city": "BBO",
+      "lat": 43.2576189745,
+      "lng": -2.9347557576,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_18",
+      "city": "BBO",
+      "lat": 43.2631148199,
+      "lng": -2.9396543597,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_19",
+      "city": "BBO",
+      "lat": 43.265396365,
+      "lng": -2.9384584275,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_20",
+      "city": "BBO",
+      "lat": 43.2648751154,
+      "lng": -2.9326768808,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_21",
+      "city": "BBO",
+      "lat": 43.2642645074,
+      "lng": -2.9280209121,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_22",
+      "city": "BBO",
+      "lat": 43.2673194985,
+      "lng": -2.9294918235,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_23",
+      "city": "BBO",
+      "lat": 43.2679667309,
+      "lng": -2.9334709121,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_24",
+      "city": "BBO",
+      "lat": 43.2680210026,
+      "lng": -2.933403818,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_25",
+      "city": "BBO",
+      "lat": 43.2680112365,
+      "lng": -2.9334718396,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_26",
+      "city": "BBO",
+      "lat": 43.2679855066,
+      "lng": -2.9333402681,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_27",
+      "city": "BBO",
+      "lat": 43.2574526463,
+      "lng": -2.9262869251,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_28",
+      "city": "BBO",
+      "lat": 43.255426999,
+      "lng": -2.9256956106,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_29",
+      "city": "BBO",
+      "lat": 43.2640749873,
+      "lng": -2.9281082249,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_30",
+      "city": "BBO",
+      "lat": 43.2533053124,
+      "lng": -2.9402968923,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_31",
+      "city": "BBO",
+      "lat": 43.2652683948,
+      "lng": -2.9532728754,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_32",
+      "city": "BBO",
+      "lat": 43.2687700035,
+      "lng": -2.9404359365,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_33",
+      "city": "BBO",
+      "lat": 43.2642580358,
+      "lng": -2.924449673,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_34",
+      "city": "BBO",
+      "lat": 43.2611505976,
+      "lng": -2.9320045524,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_35",
+      "city": "BBO",
+      "lat": 43.2559961986,
+      "lng": -2.9364704679,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_36",
+      "city": "BBO",
+      "lat": 43.2619349519,
+      "lng": -2.9403871248,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_37",
+      "city": "BBO",
+      "lat": 43.2721451056,
+      "lng": -2.9414195586,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_38",
+      "city": "BBO",
+      "lat": 43.2735741919,
+      "lng": -2.9217008023,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_39",
+      "city": "BBO",
+      "lat": 43.2601044169,
+      "lng": -2.9305753068,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BBO_40",
+      "city": "BBO",
+      "lat": 43.2677890558,
+      "lng": -2.9445656773,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

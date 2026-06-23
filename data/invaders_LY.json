@@ -1,0 +1,489 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "LY",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 48,
+  "invaders": [
+    {
+      "id": "LY_01",
+      "city": "LY",
+      "lat": 45.7723607596,
+      "lng": 4.8409901964,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_02",
+      "city": "LY",
+      "lat": 45.766638411,
+      "lng": 4.832292193,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_03",
+      "city": "LY",
+      "lat": 45.7678880187,
+      "lng": 4.8295331818,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_04",
+      "city": "LY",
+      "lat": 45.7722432141,
+      "lng": 4.829283881,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_05",
+      "city": "LY",
+      "lat": 45.7713147692,
+      "lng": 4.8310798412,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_06",
+      "city": "LY",
+      "lat": 45.7677634039,
+      "lng": 4.8280612178,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_07",
+      "city": "LY",
+      "lat": 45.7648229457,
+      "lng": 4.8281669305,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_08",
+      "city": "LY",
+      "lat": 45.7626343588,
+      "lng": 4.851703082,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_09",
+      "city": "LY",
+      "lat": 45.7617739942,
+      "lng": 4.8519044478,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_10",
+      "city": "LY",
+      "lat": 45.7622219669,
+      "lng": 4.8529604265,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_11",
+      "city": "LY",
+      "lat": 45.7635805528,
+      "lng": 4.8561496612,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_12",
+      "city": "LY",
+      "lat": 45.7702971441,
+      "lng": 4.8520297175,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_13",
+      "city": "LY",
+      "lat": 45.7686954761,
+      "lng": 4.8307299482,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_14",
+      "city": "LY",
+      "lat": 45.7680292129,
+      "lng": 4.8280074261,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_15",
+      "city": "LY",
+      "lat": 45.7598969979,
+      "lng": 4.8328689906,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_16",
+      "city": "LY",
+      "lat": 45.7549541825,
+      "lng": 4.831181781,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_17",
+      "city": "LY",
+      "lat": 45.7527299882,
+      "lng": 4.8301044622,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_18",
+      "city": "LY",
+      "lat": 45.7653982267,
+      "lng": 4.8341256733,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_19",
+      "city": "LY",
+      "lat": 45.7695027593,
+      "lng": 4.8435347595,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_20",
+      "city": "LY",
+      "lat": 45.7668922406,
+      "lng": 4.8344477648,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_21",
+      "city": "LY",
+      "lat": 45.7678059586,
+      "lng": 4.8341430629,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_22",
+      "city": "LY",
+      "lat": 45.7684925832,
+      "lng": 4.8343844837,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_23",
+      "city": "LY",
+      "lat": 45.7698561587,
+      "lng": 4.8349132966,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_24",
+      "city": "LY",
+      "lat": 45.7707122234,
+      "lng": 4.8357662306,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_25",
+      "city": "LY",
+      "lat": 45.775559301,
+      "lng": 4.8349005167,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_26",
+      "city": "LY",
+      "lat": 45.7750497417,
+      "lng": 4.8375124719,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_27",
+      "city": "LY",
+      "lat": 45.7838752348,
+      "lng": 4.8526636181,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_28",
+      "city": "LY",
+      "lat": 45.7841223003,
+      "lng": 4.8524818853,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_29",
+      "city": "LY",
+      "lat": 45.780021505,
+      "lng": 4.8488602784,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_30",
+      "city": "LY",
+      "lat": 45.7807237221,
+      "lng": 4.8093973807,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_31",
+      "city": "LY",
+      "lat": 45.7783968065,
+      "lng": 4.8094394375,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_32",
+      "city": "LY",
+      "lat": 45.7761761145,
+      "lng": 4.8071357125,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_33",
+      "city": "LY",
+      "lat": 45.7701312737,
+      "lng": 4.8143940712,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_34",
+      "city": "LY",
+      "lat": 45.76791335,
+      "lng": 4.8171176989,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_35",
+      "city": "LY",
+      "lat": 45.7676852656,
+      "lng": 4.8201417811,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_36",
+      "city": "LY",
+      "lat": 45.7603283344,
+      "lng": 4.8218315786,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_37",
+      "city": "LY",
+      "lat": 45.7568690968,
+      "lng": 4.8209437963,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_38",
+      "city": "LY",
+      "lat": 45.749727361,
+      "lng": 4.8281831276,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_39",
+      "city": "LY",
+      "lat": 45.7496378928,
+      "lng": 4.8282837509,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_40",
+      "city": "LY",
+      "lat": 45.7522056238,
+      "lng": 4.8460176753,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_41",
+      "city": "LY",
+      "lat": 45.7546899442,
+      "lng": 4.8122809757,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_42",
+      "city": "LY",
+      "lat": 45.777148397,
+      "lng": 4.8205574477,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_43",
+      "city": "LY",
+      "lat": 45.7568710434,
+      "lng": 4.8268653612,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_44",
+      "city": "LY",
+      "lat": 45.7554108451,
+      "lng": 4.8315202453,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_45",
+      "city": "LY",
+      "lat": 45.7566380249,
+      "lng": 4.8321209727,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_46",
+      "city": "LY",
+      "lat": 45.7562902072,
+      "lng": 4.8319215616,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_47",
+      "city": "LY",
+      "lat": 45.7550145405,
+      "lng": 4.831246527,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LY_48",
+      "city": "LY",
+      "lat": 45.7576772632,
+      "lng": 4.8310443864,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

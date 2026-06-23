@@ -1,0 +1,49 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "MRAK",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 4,
+  "invaders": [
+    {
+      "id": "MRAK_01",
+      "city": "MRAK",
+      "lat": 31.6207931142,
+      "lng": -7.9847965265,
+      "status": "ok",
+      "points": 30,
+      "hint": "There are 3 entrances, don't mix them up or you'll get lost!",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MRAK_02",
+      "city": "MRAK",
+      "lat": 31.4389556485,
+      "lng": -8.2034958929,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MRAK_03",
+      "city": "MRAK",
+      "lat": 31.6362159186,
+      "lng": -8.0134489628,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MRAK_04",
+      "city": "MRAK",
+      "lat": 31.3439802028,
+      "lng": -7.9517353272,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

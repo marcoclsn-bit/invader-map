@@ -1,0 +1,979 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "MARS",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 97,
+  "invaders": [
+    {
+      "id": "MARS_01",
+      "city": "MARS",
+      "lat": 43.3037849367,
+      "lng": 5.3802496726,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_02",
+      "city": "MARS",
+      "lat": 43.2919766667,
+      "lng": 5.3728435277,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_03",
+      "city": "MARS",
+      "lat": 43.29306334,
+      "lng": 5.3719324748,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_04",
+      "city": "MARS",
+      "lat": 43.2945775318,
+      "lng": 5.3820246213,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_05",
+      "city": "MARS",
+      "lat": 43.2941033408,
+      "lng": 5.383425876,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_06",
+      "city": "MARS",
+      "lat": 43.2926827221,
+      "lng": 5.3840118204,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_07",
+      "city": "MARS",
+      "lat": 43.2956534461,
+      "lng": 5.3821528736,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_08",
+      "city": "MARS",
+      "lat": 43.2999570418,
+      "lng": 5.3681461219,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_09",
+      "city": "MARS",
+      "lat": 43.2977897144,
+      "lng": 5.3675410787,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_10",
+      "city": "MARS",
+      "lat": 43.303846922,
+      "lng": 5.3775505962,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_11",
+      "city": "MARS",
+      "lat": 43.3006135852,
+      "lng": 5.3804357589,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_12",
+      "city": "MARS",
+      "lat": 43.2973105623,
+      "lng": 5.3656088824,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_13",
+      "city": "MARS",
+      "lat": 43.3008101856,
+      "lng": 5.3824227386,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_14",
+      "city": "MARS",
+      "lat": 43.2968722288,
+      "lng": 5.4052820985,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_15",
+      "city": "MARS",
+      "lat": 43.3606295733,
+      "lng": 5.3147533468,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_16",
+      "city": "MARS",
+      "lat": 43.3613126882,
+      "lng": 5.3140507112,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_17",
+      "city": "MARS",
+      "lat": 43.361131601,
+      "lng": 5.3127510121,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_18",
+      "city": "MARS",
+      "lat": 43.3608963358,
+      "lng": 5.3108079271,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_19",
+      "city": "MARS",
+      "lat": 43.3479551288,
+      "lng": 5.3623927568,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_20",
+      "city": "MARS",
+      "lat": 43.3200940461,
+      "lng": 5.3728246293,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_21",
+      "city": "MARS",
+      "lat": 43.3262701467,
+      "lng": 5.3605683244,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_22",
+      "city": "MARS",
+      "lat": 43.2262707153,
+      "lng": 5.4164083728,
+      "status": "damaged",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_23",
+      "city": "MARS",
+      "lat": 43.2299005855,
+      "lng": 5.4366584251,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_24",
+      "city": "MARS",
+      "lat": 43.3575569921,
+      "lng": 5.4230891809,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_25",
+      "city": "MARS",
+      "lat": 43.3518720437,
+      "lng": 5.438725631,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_26",
+      "city": "MARS",
+      "lat": 43.330583661,
+      "lng": 5.4274773555,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_27",
+      "city": "MARS",
+      "lat": 43.3285936336,
+      "lng": 5.4136899883,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_28",
+      "city": "MARS",
+      "lat": 43.3190135655,
+      "lng": 5.4081884855,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_29",
+      "city": "MARS",
+      "lat": 43.3168883949,
+      "lng": 5.4039845823,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_30",
+      "city": "MARS",
+      "lat": 43.2991869444,
+      "lng": 5.3850696311,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_31",
+      "city": "MARS",
+      "lat": 43.2964504482,
+      "lng": 5.3624001037,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_32",
+      "city": "MARS",
+      "lat": 43.2946318684,
+      "lng": 5.3557285768,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_33",
+      "city": "MARS",
+      "lat": 43.2953051647,
+      "lng": 5.38579855,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_34",
+      "city": "MARS",
+      "lat": 43.2942645302,
+      "lng": 5.3806452684,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_35",
+      "city": "MARS",
+      "lat": 43.2964399517,
+      "lng": 5.3746138065,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_36",
+      "city": "MARS",
+      "lat": 43.2980617268,
+      "lng": 5.3771984874,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_37",
+      "city": "MARS",
+      "lat": 43.2776477072,
+      "lng": 5.4277359427,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_38",
+      "city": "MARS",
+      "lat": 43.2959596752,
+      "lng": 5.4057661495,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_39",
+      "city": "MARS",
+      "lat": 43.2929010919,
+      "lng": 5.3826927283,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_40",
+      "city": "MARS",
+      "lat": 43.3042533722,
+      "lng": 5.4148153332,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_41",
+      "city": "MARS",
+      "lat": 43.2951653296,
+      "lng": 5.3910624772,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_42",
+      "city": "MARS",
+      "lat": 43.2843802314,
+      "lng": 5.3674326466,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_43",
+      "city": "MARS",
+      "lat": 43.2893336113,
+      "lng": 5.368284539,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_44",
+      "city": "MARS",
+      "lat": 43.2922580113,
+      "lng": 5.3773567801,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_45",
+      "city": "MARS",
+      "lat": 43.2891275891,
+      "lng": 5.3787257877,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_46",
+      "city": "MARS",
+      "lat": 43.30617439,
+      "lng": 5.3659170364,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_47",
+      "city": "MARS",
+      "lat": 43.2986831423,
+      "lng": 5.3664896236,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_48",
+      "city": "MARS",
+      "lat": 43.2947163125,
+      "lng": 5.3844587839,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_49",
+      "city": "MARS",
+      "lat": 43.2126143163,
+      "lng": 5.3536176065,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_50",
+      "city": "MARS",
+      "lat": 43.2176106549,
+      "lng": 5.3459103789,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_51",
+      "city": "MARS",
+      "lat": 43.3032800894,
+      "lng": 5.3650701633,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_52",
+      "city": "MARS",
+      "lat": 43.2992353808,
+      "lng": 5.3690603362,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_53",
+      "city": "MARS",
+      "lat": 43.2961689228,
+      "lng": 5.3673259209,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_54",
+      "city": "MARS",
+      "lat": 43.2975423109,
+      "lng": 5.3685350388,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_55",
+      "city": "MARS",
+      "lat": 43.298029644,
+      "lng": 5.3705769032,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_56",
+      "city": "MARS",
+      "lat": 43.2968811755,
+      "lng": 5.3726515794,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_57",
+      "city": "MARS",
+      "lat": 43.2990530136,
+      "lng": 5.3803657574,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_58",
+      "city": "MARS",
+      "lat": 43.2957386495,
+      "lng": 5.3637781487,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_59",
+      "city": "MARS",
+      "lat": 43.2911413724,
+      "lng": 5.3559073948,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_60",
+      "city": "MARS",
+      "lat": 43.2851367759,
+      "lng": 5.3501282659,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_61",
+      "city": "MARS",
+      "lat": 43.2853987832,
+      "lng": 5.3518057864,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_62",
+      "city": "MARS",
+      "lat": 43.2854712383,
+      "lng": 5.3506231001,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_63",
+      "city": "MARS",
+      "lat": 43.2828536295,
+      "lng": 5.350369567,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_64",
+      "city": "MARS",
+      "lat": 43.282583446,
+      "lng": 5.3489814736,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_65",
+      "city": "MARS",
+      "lat": 43.2799826059,
+      "lng": 5.3516902919,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_66",
+      "city": "MARS",
+      "lat": 43.2800581061,
+      "lng": 5.3519459634,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_67",
+      "city": "MARS",
+      "lat": 43.2854433756,
+      "lng": 5.3835647915,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_68",
+      "city": "MARS",
+      "lat": 43.2829849218,
+      "lng": 5.3484668802,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_69",
+      "city": "MARS",
+      "lat": 43.2629010642,
+      "lng": 5.3757750644,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_70",
+      "city": "MARS",
+      "lat": 43.2472229723,
+      "lng": 5.3739888397,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_71",
+      "city": "MARS",
+      "lat": 43.2383329873,
+      "lng": 5.3618118657,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_72",
+      "city": "MARS",
+      "lat": 43.2827686217,
+      "lng": 5.4548701356,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_73",
+      "city": "MARS",
+      "lat": 43.210378928,
+      "lng": 5.4201956122,
+      "status": "damaged",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_74",
+      "city": "MARS",
+      "lat": 43.2503766187,
+      "lng": 5.3898284781,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_75",
+      "city": "MARS",
+      "lat": 43.3019549171,
+      "lng": 5.3802811158,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_76",
+      "city": "MARS",
+      "lat": 43.3023989371,
+      "lng": 5.3830883573,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_77",
+      "city": "MARS",
+      "lat": 43.2973863421,
+      "lng": 5.3812606718,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_78",
+      "city": "MARS",
+      "lat": 43.2911457717,
+      "lng": 5.3830759803,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_79",
+      "city": "MARS",
+      "lat": 43.2948284892,
+      "lng": 5.3747491557,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_80",
+      "city": "MARS",
+      "lat": 43.2836240183,
+      "lng": 5.3990731022,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_81",
+      "city": "MARS",
+      "lat": 43.2790094964,
+      "lng": 5.3995210847,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_82",
+      "city": "MARS",
+      "lat": 43.29351606,
+      "lng": 5.382896034,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_83",
+      "city": "MARS",
+      "lat": 43.3258843573,
+      "lng": 5.4094079182,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_84",
+      "city": "MARS",
+      "lat": 43.2691597498,
+      "lng": 5.3884820289,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_85",
+      "city": "MARS",
+      "lat": 43.2815143065,
+      "lng": 5.4046605077,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_86",
+      "city": "MARS",
+      "lat": 43.3037588942,
+      "lng": 5.418690293,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_87",
+      "city": "MARS",
+      "lat": 43.2113615267,
+      "lng": 5.4233937202,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_88",
+      "city": "MARS",
+      "lat": 43.2131056608,
+      "lng": 5.4434029571,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_89",
+      "city": "MARS",
+      "lat": 43.3203312545,
+      "lng": 5.3679776584,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_90",
+      "city": "MARS",
+      "lat": 43.2619422683,
+      "lng": 5.3942619838,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_91",
+      "city": "MARS",
+      "lat": 43.2612006976,
+      "lng": 5.3962229133,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_92",
+      "city": "MARS",
+      "lat": 43.2608750823,
+      "lng": 5.3962586262,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_93",
+      "city": "MARS",
+      "lat": 43.2613356329,
+      "lng": 5.3962986413,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_94",
+      "city": "MARS",
+      "lat": 43.2611007565,
+      "lng": 5.3961589097,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_95",
+      "city": "MARS",
+      "lat": 43.2610705819,
+      "lng": 5.3962757465,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_96",
+      "city": "MARS",
+      "lat": 43.2620046801,
+      "lng": 5.3950735658,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MARS_97",
+      "city": "MARS",
+      "lat": 43.2616587824,
+      "lng": 5.3962975013,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

@@ -1,0 +1,529 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "POTI",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 52,
+  "invaders": [
+    {
+      "id": "POTI_01",
+      "city": "POTI",
+      "lat": -19.5964345813,
+      "lng": -65.7570144596,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_02",
+      "city": "POTI",
+      "lat": -19.5765396652,
+      "lng": -65.7697761269,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_03",
+      "city": "POTI",
+      "lat": -19.576796804,
+      "lng": -65.7743878416,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_04",
+      "city": "POTI",
+      "lat": -19.5587358407,
+      "lng": -65.7763396899,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_05",
+      "city": "POTI",
+      "lat": -19.6066877978,
+      "lng": -65.7429608745,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_06",
+      "city": "POTI",
+      "lat": -19.5990300207,
+      "lng": -65.7548687546,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_07",
+      "city": "POTI",
+      "lat": -19.6092588484,
+      "lng": -65.7396549258,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_08",
+      "city": "POTI",
+      "lat": -19.6149755666,
+      "lng": -65.7408815726,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_09",
+      "city": "POTI",
+      "lat": -19.5958721425,
+      "lng": -65.7381906075,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_10",
+      "city": "POTI",
+      "lat": -19.5886519038,
+      "lng": -65.7456304088,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_11",
+      "city": "POTI",
+      "lat": -19.6078002489,
+      "lng": -65.7452649318,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_12",
+      "city": "POTI",
+      "lat": -19.6036789682,
+      "lng": -65.7163510595,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_13",
+      "city": "POTI",
+      "lat": -19.6056687738,
+      "lng": -65.745673456,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_14",
+      "city": "POTI",
+      "lat": -19.5891446512,
+      "lng": -65.7585086606,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_15",
+      "city": "POTI",
+      "lat": -19.5918286018,
+      "lng": -65.7733147025,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_16",
+      "city": "POTI",
+      "lat": -19.5892304951,
+      "lng": -65.7631704633,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_17",
+      "city": "POTI",
+      "lat": -19.6057847863,
+      "lng": -65.7503219841,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_18",
+      "city": "POTI",
+      "lat": -19.6104099927,
+      "lng": -65.7558072104,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_19",
+      "city": "POTI",
+      "lat": -19.6132319309,
+      "lng": -65.7571274256,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_20",
+      "city": "POTI",
+      "lat": -19.5788571643,
+      "lng": -65.7645136802,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_21",
+      "city": "POTI",
+      "lat": -19.572862249,
+      "lng": -65.74878276,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_22",
+      "city": "POTI",
+      "lat": -19.5816018355,
+      "lng": -65.7497614487,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_23",
+      "city": "POTI",
+      "lat": -19.5820349019,
+      "lng": -65.7456513556,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_24",
+      "city": "POTI",
+      "lat": -19.5965647035,
+      "lng": -65.7461296131,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_25",
+      "city": "POTI",
+      "lat": -19.5867522473,
+      "lng": -65.7494584441,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_26",
+      "city": "POTI",
+      "lat": -19.5787048756,
+      "lng": -65.7576191155,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_27",
+      "city": "POTI",
+      "lat": -19.6067756276,
+      "lng": -65.7498549272,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_28",
+      "city": "POTI",
+      "lat": -19.6081221232,
+      "lng": -65.7461459096,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_29",
+      "city": "POTI",
+      "lat": -19.5769507558,
+      "lng": -65.7337349782,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_30",
+      "city": "POTI",
+      "lat": -19.5947514689,
+      "lng": -65.7502208615,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_31",
+      "city": "POTI",
+      "lat": -19.5945381921,
+      "lng": -65.7550455789,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_32",
+      "city": "POTI",
+      "lat": -19.5944982314,
+      "lng": -65.7428414317,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_33",
+      "city": "POTI",
+      "lat": -19.5804507576,
+      "lng": -65.7631263132,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_34",
+      "city": "POTI",
+      "lat": -19.5564555732,
+      "lng": -65.7608104044,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_35",
+      "city": "POTI",
+      "lat": -19.5824423619,
+      "lng": -65.7607226064,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_36",
+      "city": "POTI",
+      "lat": -19.5917982727,
+      "lng": -65.7402304974,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_37",
+      "city": "POTI",
+      "lat": -19.5951561923,
+      "lng": -65.7521797936,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_38",
+      "city": "POTI",
+      "lat": -19.5876321017,
+      "lng": -65.7524186367,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_39",
+      "city": "POTI",
+      "lat": -19.5878182942,
+      "lng": -65.7510004011,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_40",
+      "city": "POTI",
+      "lat": -19.5863765398,
+      "lng": -65.7508399617,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_41",
+      "city": "POTI",
+      "lat": -19.5866252046,
+      "lng": -65.7536646629,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_42",
+      "city": "POTI",
+      "lat": -19.5873336751,
+      "lng": -65.7547015997,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_43",
+      "city": "POTI",
+      "lat": -19.5880059539,
+      "lng": -65.7587617806,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_44",
+      "city": "POTI",
+      "lat": -19.5869247251,
+      "lng": -65.7532811079,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_45",
+      "city": "POTI",
+      "lat": -19.5872488586,
+      "lng": -65.7538416652,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_46",
+      "city": "POTI",
+      "lat": -19.5870765902,
+      "lng": -65.7553204919,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_47",
+      "city": "POTI",
+      "lat": -19.5809609188,
+      "lng": -65.7622942149,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_48",
+      "city": "POTI",
+      "lat": -19.5891579244,
+      "lng": -65.7526256746,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_49",
+      "city": "POTI",
+      "lat": -19.5857895155,
+      "lng": -65.7557810934,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_50",
+      "city": "POTI",
+      "lat": -19.5934641796,
+      "lng": -65.7488575712,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_51",
+      "city": "POTI",
+      "lat": -19.5907999478,
+      "lng": -65.750834728,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "POTI_52",
+      "city": "POTI",
+      "lat": -19.5926739421,
+      "lng": -65.7453569237,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

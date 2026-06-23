@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "VLMO",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 3,
+  "invaders": [
+    {
+      "id": "VLMO_01",
+      "city": "VLMO",
+      "lat": 45.455321525,
+      "lng": 6.4505635988,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VLMO_02",
+      "city": "VLMO",
+      "lat": 45.4777220037,
+      "lng": 6.4556398898,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VLMO_03",
+      "city": "VLMO",
+      "lat": 45.4620064418,
+      "lng": 6.4448267288,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

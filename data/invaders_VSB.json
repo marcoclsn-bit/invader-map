@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "VSB",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 3,
+  "invaders": [
+    {
+      "id": "VSB_01",
+      "city": "VSB",
+      "lat": 57.6387487475,
+      "lng": 18.2925079122,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VSB_02",
+      "city": "VSB",
+      "lat": 57.639226627,
+      "lng": 18.2912309331,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VSB_03",
+      "city": "VSB",
+      "lat": 57.6387899846,
+      "lng": 18.2903814447,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

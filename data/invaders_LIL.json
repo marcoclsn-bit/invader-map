@@ -1,0 +1,69 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "LIL",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 6,
+  "invaders": [
+    {
+      "id": "LIL_00",
+      "city": "LIL",
+      "lat": 50.3666565646,
+      "lng": 2.9664181546,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LIL_01",
+      "city": "LIL",
+      "lat": 50.6421805816,
+      "lng": 3.0659438893,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LIL_02",
+      "city": "LIL",
+      "lat": 50.6395324599,
+      "lng": 3.0613793033,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LIL_03",
+      "city": "LIL",
+      "lat": 50.6409786988,
+      "lng": 3.0594727611,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LIL_04",
+      "city": "LIL",
+      "lat": 50.6363297223,
+      "lng": 3.0636856656,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LIL_05",
+      "city": "LIL",
+      "lat": 50.6388031274,
+      "lng": 3.0620918928,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

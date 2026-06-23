@@ -1,0 +1,419 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "AVI",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 41,
+  "invaders": [
+    {
+      "id": "AVI_01",
+      "city": "AVI",
+      "lat": 43.9501976233,
+      "lng": 4.8086551866,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_02",
+      "city": "AVI",
+      "lat": 43.9467777184,
+      "lng": 4.8075597888,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_03",
+      "city": "AVI",
+      "lat": 43.946661289,
+      "lng": 4.806633777,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_04",
+      "city": "AVI",
+      "lat": 43.9490881426,
+      "lng": 4.8053173567,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_05",
+      "city": "AVI",
+      "lat": 43.9498716424,
+      "lng": 4.8057560411,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_06",
+      "city": "AVI",
+      "lat": 43.9503717465,
+      "lng": 4.8062990951,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_07",
+      "city": "AVI",
+      "lat": 43.9490112925,
+      "lng": 4.8084725799,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_08",
+      "city": "AVI",
+      "lat": 43.9511207089,
+      "lng": 4.8038034011,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_09",
+      "city": "AVI",
+      "lat": 43.9503764198,
+      "lng": 4.8063093289,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_10",
+      "city": "AVI",
+      "lat": 43.9491691537,
+      "lng": 4.8073464114,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_11",
+      "city": "AVI",
+      "lat": 43.9479975301,
+      "lng": 4.8082389764,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_12",
+      "city": "AVI",
+      "lat": 43.9463908761,
+      "lng": 4.8094046644,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_13",
+      "city": "AVI",
+      "lat": 43.9500551758,
+      "lng": 4.8073989793,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_14",
+      "city": "AVI",
+      "lat": 43.9492310009,
+      "lng": 4.8065366668,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_15",
+      "city": "AVI",
+      "lat": 43.948497935,
+      "lng": 4.8061661715,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_16",
+      "city": "AVI",
+      "lat": 43.9472417501,
+      "lng": 4.8063738238,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_17",
+      "city": "AVI",
+      "lat": 43.9428034469,
+      "lng": 4.8054491923,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_18",
+      "city": "AVI",
+      "lat": 43.945097422,
+      "lng": 4.8057154191,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_19",
+      "city": "AVI",
+      "lat": 43.9470870879,
+      "lng": 4.8109361628,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_20",
+      "city": "AVI",
+      "lat": 43.9492870541,
+      "lng": 4.8115153107,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_21",
+      "city": "AVI",
+      "lat": 43.951228891,
+      "lng": 4.8105742913,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_22",
+      "city": "AVI",
+      "lat": 43.9496592744,
+      "lng": 4.8078312557,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_23",
+      "city": "AVI",
+      "lat": 43.9518346597,
+      "lng": 4.8049734479,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_24",
+      "city": "AVI",
+      "lat": 43.951582967,
+      "lng": 4.8063668502,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_25",
+      "city": "AVI",
+      "lat": 43.94488482,
+      "lng": 4.8131897561,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_26",
+      "city": "AVI",
+      "lat": 43.9470097119,
+      "lng": 4.8104235627,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_27",
+      "city": "AVI",
+      "lat": 43.946471318,
+      "lng": 4.8113829867,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_28",
+      "city": "AVI",
+      "lat": 43.9480908272,
+      "lng": 4.8088253324,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_29",
+      "city": "AVI",
+      "lat": 43.9479687033,
+      "lng": 4.8074682055,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_30",
+      "city": "AVI",
+      "lat": 43.9479535216,
+      "lng": 4.8067827309,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_31",
+      "city": "AVI",
+      "lat": 43.9497508298,
+      "lng": 4.8029492813,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_32",
+      "city": "AVI",
+      "lat": 43.948844556,
+      "lng": 4.8041281128,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_33",
+      "city": "AVI",
+      "lat": 43.9441272967,
+      "lng": 4.8075023535,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_34",
+      "city": "AVI",
+      "lat": 43.9443710655,
+      "lng": 4.8079060253,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_35",
+      "city": "AVI",
+      "lat": 43.9455701729,
+      "lng": 4.807232136,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_36",
+      "city": "AVI",
+      "lat": 43.9519007889,
+      "lng": 4.8038053468,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_37",
+      "city": "AVI",
+      "lat": 43.9516647324,
+      "lng": 4.808892926,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_38",
+      "city": "AVI",
+      "lat": 43.9491596801,
+      "lng": 4.8145135911,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_39",
+      "city": "AVI",
+      "lat": 43.9460374449,
+      "lng": 4.8130110318,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_40",
+      "city": "AVI",
+      "lat": 43.9533509562,
+      "lng": 4.805337278,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AVI_41",
+      "city": "AVI",
+      "lat": 43.9508475032,
+      "lng": 4.8243645525,
+      "status": "destroyed",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

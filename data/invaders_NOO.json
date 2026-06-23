@@ -1,0 +1,109 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "NOO",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 10,
+  "invaders": [
+    {
+      "id": "NOO_01",
+      "city": "NOO",
+      "lat": 52.2193100683,
+      "lng": 4.4196716577,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NOO_02",
+      "city": "NOO",
+      "lat": 52.2193785059,
+      "lng": 4.4196714621,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NOO_03",
+      "city": "NOO",
+      "lat": 52.2194576933,
+      "lng": 4.4196530721,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NOO_04",
+      "city": "NOO",
+      "lat": 52.219440381,
+      "lng": 4.4196700194,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NOO_05",
+      "city": "NOO",
+      "lat": 52.2194606841,
+      "lng": 4.4196806115,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NOO_06",
+      "city": "NOO",
+      "lat": 52.2193644458,
+      "lng": 4.4197474139,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NOO_07",
+      "city": "NOO",
+      "lat": 52.219380176,
+      "lng": 4.4198371523,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NOO_08",
+      "city": "NOO",
+      "lat": 52.2160036534,
+      "lng": 4.4165536289,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NOO_09",
+      "city": "NOO",
+      "lat": 52.2150641978,
+      "lng": 4.4208862003,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NOO_10",
+      "city": "NOO",
+      "lat": 52.2152506979,
+      "lng": 4.4207577024,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

@@ -1,0 +1,1239 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "TK",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 123,
+  "invaders": [
+    {
+      "id": "TK_01",
+      "city": "TK",
+      "lat": 35.6479551722,
+      "lng": 139.702066189,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_02",
+      "city": "TK",
+      "lat": 35.648001787,
+      "lng": 139.703242273,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_03",
+      "city": "TK",
+      "lat": 35.6487941048,
+      "lng": 139.7043837406,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_04",
+      "city": "TK",
+      "lat": 35.6487197041,
+      "lng": 139.7039341576,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_06",
+      "city": "TK",
+      "lat": 35.6474608719,
+      "lng": 139.7019441024,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_07",
+      "city": "TK",
+      "lat": 35.6490785048,
+      "lng": 139.7046227176,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_08",
+      "city": "TK",
+      "lat": 35.6707912751,
+      "lng": 139.7046903081,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_09",
+      "city": "TK",
+      "lat": 35.6711016552,
+      "lng": 139.7080718975,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_10",
+      "city": "TK",
+      "lat": 35.6719586629,
+      "lng": 139.7082816998,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_11",
+      "city": "TK",
+      "lat": 35.6705435884,
+      "lng": 139.7090106922,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_12",
+      "city": "TK",
+      "lat": 35.6689550857,
+      "lng": 139.7072808584,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_13",
+      "city": "TK",
+      "lat": 35.6693044752,
+      "lng": 139.707676015,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_14",
+      "city": "TK",
+      "lat": 35.6697057256,
+      "lng": 139.7078150809,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_15",
+      "city": "TK",
+      "lat": 35.6686435908,
+      "lng": 139.7075847073,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_16",
+      "city": "TK",
+      "lat": 35.6705177589,
+      "lng": 139.7054351591,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_17",
+      "city": "TK",
+      "lat": 35.6616222117,
+      "lng": 139.6981892726,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_18",
+      "city": "TK",
+      "lat": 35.6617934263,
+      "lng": 139.6995619368,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_19",
+      "city": "TK",
+      "lat": 35.6615426351,
+      "lng": 139.6974898114,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_20",
+      "city": "TK",
+      "lat": 35.6625241752,
+      "lng": 139.6974961099,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_21",
+      "city": "TK",
+      "lat": 35.6639985317,
+      "lng": 139.6996800527,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_22",
+      "city": "TK",
+      "lat": 35.6480249205,
+      "lng": 139.7045366782,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_23",
+      "city": "TK",
+      "lat": 35.6476162016,
+      "lng": 139.7018098232,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_25",
+      "city": "TK",
+      "lat": 35.6483080048,
+      "lng": 139.7006901917,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_27",
+      "city": "TK",
+      "lat": 35.6479950716,
+      "lng": 139.7014393348,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_29",
+      "city": "TK",
+      "lat": 35.6475400584,
+      "lng": 139.7030989043,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_30",
+      "city": "TK",
+      "lat": 35.6477613647,
+      "lng": 139.7023189129,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_31",
+      "city": "TK",
+      "lat": 35.6490961622,
+      "lng": 139.7010659148,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_32",
+      "city": "TK",
+      "lat": 35.6472845688,
+      "lng": 139.7058627594,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_33",
+      "city": "TK",
+      "lat": 35.6462800145,
+      "lng": 139.7068785329,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_34",
+      "city": "TK",
+      "lat": 35.6676979423,
+      "lng": 139.7070515398,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_35",
+      "city": "TK",
+      "lat": 35.6657999508,
+      "lng": 139.7052233877,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_36",
+      "city": "TK",
+      "lat": 35.6697127826,
+      "lng": 139.7080808314,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_37",
+      "city": "TK",
+      "lat": 35.6692641325,
+      "lng": 139.7069404095,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_38",
+      "city": "TK",
+      "lat": 35.6699212959,
+      "lng": 139.706729164,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_39",
+      "city": "TK",
+      "lat": 35.6691252855,
+      "lng": 139.7000704051,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_40",
+      "city": "TK",
+      "lat": 35.6690365859,
+      "lng": 139.7018016857,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_41",
+      "city": "TK",
+      "lat": 35.6695468872,
+      "lng": 139.6959532249,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_42",
+      "city": "TK",
+      "lat": 35.668216709,
+      "lng": 139.694465701,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_43",
+      "city": "TK",
+      "lat": 35.6688845446,
+      "lng": 139.7125880256,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_45",
+      "city": "TK",
+      "lat": 35.6661912505,
+      "lng": 139.7103409172,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_46",
+      "city": "TK",
+      "lat": 35.6680285454,
+      "lng": 139.7069440735,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_47",
+      "city": "TK",
+      "lat": 35.6688770306,
+      "lng": 139.706506783,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_48",
+      "city": "TK",
+      "lat": 35.6696620726,
+      "lng": 139.6881875097,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_50",
+      "city": "TK",
+      "lat": 35.6534071128,
+      "lng": 139.7052127254,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_51",
+      "city": "TK",
+      "lat": 35.6497683197,
+      "lng": 139.7046694342,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_52",
+      "city": "TK",
+      "lat": 35.693876865,
+      "lng": 139.6994902966,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_53",
+      "city": "TK",
+      "lat": 35.6590762398,
+      "lng": 139.6954283059,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_54",
+      "city": "TK",
+      "lat": 35.6589874535,
+      "lng": 139.6969510023,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_56",
+      "city": "TK",
+      "lat": 35.6689749331,
+      "lng": 139.7076738293,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_57",
+      "city": "TK",
+      "lat": 35.6598615042,
+      "lng": 139.6985576903,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_58",
+      "city": "TK",
+      "lat": 35.6600436751,
+      "lng": 139.6977185424,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_59",
+      "city": "TK",
+      "lat": 35.6594437397,
+      "lng": 139.6991180835,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_62",
+      "city": "TK",
+      "lat": 35.6623086246,
+      "lng": 139.697304279,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_64",
+      "city": "TK",
+      "lat": 35.6677429369,
+      "lng": 139.6889401691,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_65",
+      "city": "TK",
+      "lat": 35.6639756846,
+      "lng": 139.7316143081,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_68",
+      "city": "TK",
+      "lat": 35.67056034,
+      "lng": 139.7692426356,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_69",
+      "city": "TK",
+      "lat": 35.6628143813,
+      "lng": 139.7084780421,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_70",
+      "city": "TK",
+      "lat": 35.6574597761,
+      "lng": 139.7013318497,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_72",
+      "city": "TK",
+      "lat": 35.6589252502,
+      "lng": 139.6953269163,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_73",
+      "city": "TK",
+      "lat": 35.660223116,
+      "lng": 139.6984395844,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_74",
+      "city": "TK",
+      "lat": 35.6465674395,
+      "lng": 139.7067247853,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_76",
+      "city": "TK",
+      "lat": 35.6442437095,
+      "lng": 139.6991969725,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_77",
+      "city": "TK",
+      "lat": 35.6421158432,
+      "lng": 139.6976846448,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_78",
+      "city": "TK",
+      "lat": 35.6600996891,
+      "lng": 139.724248604,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_80",
+      "city": "TK",
+      "lat": 35.6712118347,
+      "lng": 139.709095893,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_81",
+      "city": "TK",
+      "lat": 35.6671389919,
+      "lng": 139.7066890253,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_82",
+      "city": "TK",
+      "lat": 35.6541166066,
+      "lng": 139.6933957524,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_83",
+      "city": "TK",
+      "lat": 35.6616749222,
+      "lng": 139.6962146866,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_84",
+      "city": "TK",
+      "lat": 35.6591801398,
+      "lng": 139.7026429648,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_85",
+      "city": "TK",
+      "lat": 35.6593811679,
+      "lng": 139.7010622586,
+      "status": "hidden",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_86",
+      "city": "TK",
+      "lat": 35.6599730503,
+      "lng": 139.723185858,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_87",
+      "city": "TK",
+      "lat": 35.6745812028,
+      "lng": 139.7109957077,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_88",
+      "city": "TK",
+      "lat": 35.6656648167,
+      "lng": 139.7132417091,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_89",
+      "city": "TK",
+      "lat": 35.6563400574,
+      "lng": 139.7049003344,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_90",
+      "city": "TK",
+      "lat": 35.6584585493,
+      "lng": 139.7315241766,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_91",
+      "city": "TK",
+      "lat": 35.6634814417,
+      "lng": 139.7017104009,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_92",
+      "city": "TK",
+      "lat": 35.6592188952,
+      "lng": 139.7026264502,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_93",
+      "city": "TK",
+      "lat": 35.6625279465,
+      "lng": 139.7009652113,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_94",
+      "city": "TK",
+      "lat": 35.6599388901,
+      "lng": 139.6998730373,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_95",
+      "city": "TK",
+      "lat": 35.6576291339,
+      "lng": 139.7019132794,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_96",
+      "city": "TK",
+      "lat": 35.6497941754,
+      "lng": 139.6916391302,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_97",
+      "city": "TK",
+      "lat": 35.6467244386,
+      "lng": 139.6976014054,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_98",
+      "city": "TK",
+      "lat": 35.6488754658,
+      "lng": 139.7078449445,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_99",
+      "city": "TK",
+      "lat": 35.6608127476,
+      "lng": 139.7149755219,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_100",
+      "city": "TK",
+      "lat": 35.6691901509,
+      "lng": 139.7061086733,
+      "status": "destroyed",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_101",
+      "city": "TK",
+      "lat": 35.6660528141,
+      "lng": 139.7135540167,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_102",
+      "city": "TK",
+      "lat": 35.6617152026,
+      "lng": 139.7285457582,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_103",
+      "city": "TK",
+      "lat": 35.6640657818,
+      "lng": 139.7317346795,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_104",
+      "city": "TK",
+      "lat": 35.6474471563,
+      "lng": 139.7021403858,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_105",
+      "city": "TK",
+      "lat": 35.6616245932,
+      "lng": 139.6997058344,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_106",
+      "city": "TK",
+      "lat": 35.6697824377,
+      "lng": 139.7074773015,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_107",
+      "city": "TK",
+      "lat": 35.6704306979,
+      "lng": 139.7071765296,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_108",
+      "city": "TK",
+      "lat": 35.6674604109,
+      "lng": 139.7045579255,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_109",
+      "city": "TK",
+      "lat": 35.6594626893,
+      "lng": 139.7233490512,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_110",
+      "city": "TK",
+      "lat": 35.6899487002,
+      "lng": 139.6975808612,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_111",
+      "city": "TK",
+      "lat": 35.6467379525,
+      "lng": 139.7021297176,
+      "status": "destroyed",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_112",
+      "city": "TK",
+      "lat": 35.6461128489,
+      "lng": 139.7125682199,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_113",
+      "city": "TK",
+      "lat": 35.6508146596,
+      "lng": 139.7221875022,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_114",
+      "city": "TK",
+      "lat": 35.6896831641,
+      "lng": 139.7021819654,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_115",
+      "city": "TK",
+      "lat": 35.6627710317,
+      "lng": 139.6948363302,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_116",
+      "city": "TK",
+      "lat": 35.6680706425,
+      "lng": 139.6884243972,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_117",
+      "city": "TK",
+      "lat": 35.6714952507,
+      "lng": 139.703106878,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_118",
+      "city": "TK",
+      "lat": 35.6696518172,
+      "lng": 139.7082384955,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_119",
+      "city": "TK",
+      "lat": 35.662121119,
+      "lng": 139.7013291372,
+      "status": "destroyed",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_120",
+      "city": "TK",
+      "lat": 35.6491650882,
+      "lng": 139.7010977142,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_121",
+      "city": "TK",
+      "lat": 35.6593900839,
+      "lng": 139.6953611035,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_122",
+      "city": "TK",
+      "lat": 35.6580597741,
+      "lng": 139.6964509293,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_123",
+      "city": "TK",
+      "lat": 35.6564384237,
+      "lng": 139.7454368767,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_124",
+      "city": "TK",
+      "lat": 35.6605566179,
+      "lng": 139.6681002335,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_125",
+      "city": "TK",
+      "lat": 35.6613170722,
+      "lng": 139.6675352219,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_126",
+      "city": "TK",
+      "lat": 35.6615802998,
+      "lng": 139.6691154935,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_127",
+      "city": "TK",
+      "lat": 35.7024151662,
+      "lng": 139.6654419064,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_128",
+      "city": "TK",
+      "lat": 35.6708594631,
+      "lng": 139.7135738459,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_129",
+      "city": "TK",
+      "lat": 35.650058325,
+      "lng": 139.7119278771,
+      "status": "damaged",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_130",
+      "city": "TK",
+      "lat": 35.6888938143,
+      "lng": 139.6990545734,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_131",
+      "city": "TK",
+      "lat": 35.6493380442,
+      "lng": 139.7005214191,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_132",
+      "city": "TK",
+      "lat": 35.6239518335,
+      "lng": 139.7759616734,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_133",
+      "city": "TK",
+      "lat": 35.6584237025,
+      "lng": 139.7325994979,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_134",
+      "city": "TK",
+      "lat": 35.6447135853,
+      "lng": 139.6998380017,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_135",
+      "city": "TK",
+      "lat": 35.6776538828,
+      "lng": 139.7059180602,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_136",
+      "city": "TK",
+      "lat": 35.6429635573,
+      "lng": 139.6694923493,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_137",
+      "city": "TK",
+      "lat": 35.6440186614,
+      "lng": 139.672665231,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "TK_138",
+      "city": "TK",
+      "lat": 35.6666751459,
+      "lng": 139.7055911306,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

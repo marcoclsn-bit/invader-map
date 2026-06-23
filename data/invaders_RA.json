@@ -1,0 +1,409 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "RA",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 40,
+  "invaders": [
+    {
+      "id": "RA_01",
+      "city": "RA",
+      "lat": 44.4137079244,
+      "lng": 12.2083045367,
+      "status": "damaged",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_02",
+      "city": "RA",
+      "lat": 44.411439397,
+      "lng": 12.200592713,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_03",
+      "city": "RA",
+      "lat": 44.4184932935,
+      "lng": 12.2034658699,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_04",
+      "city": "RA",
+      "lat": 44.4191926153,
+      "lng": 12.1999368608,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_05",
+      "city": "RA",
+      "lat": 44.4200090908,
+      "lng": 12.1941454988,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_06",
+      "city": "RA",
+      "lat": 44.4166521858,
+      "lng": 12.1990820752,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_07",
+      "city": "RA",
+      "lat": 44.4151842611,
+      "lng": 12.2001675591,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_08",
+      "city": "RA",
+      "lat": 44.4171927894,
+      "lng": 12.2017335602,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_09",
+      "city": "RA",
+      "lat": 44.4168548844,
+      "lng": 12.2041721055,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_10",
+      "city": "RA",
+      "lat": 44.4101464199,
+      "lng": 12.2019767167,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_11",
+      "city": "RA",
+      "lat": 44.4177215823,
+      "lng": 12.2006090384,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_12",
+      "city": "RA",
+      "lat": 44.4225495213,
+      "lng": 12.2016946359,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_13",
+      "city": "RA",
+      "lat": 44.4230125182,
+      "lng": 12.1947316281,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_14",
+      "city": "RA",
+      "lat": 44.4194377313,
+      "lng": 12.1950253846,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_15",
+      "city": "RA",
+      "lat": 44.4189144308,
+      "lng": 12.1977543454,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_16",
+      "city": "RA",
+      "lat": 44.4187959802,
+      "lng": 12.1986068718,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_17",
+      "city": "RA",
+      "lat": 44.4153008871,
+      "lng": 12.1883056367,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_18",
+      "city": "RA",
+      "lat": 44.4176786167,
+      "lng": 12.1918653772,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_19",
+      "city": "RA",
+      "lat": 44.4177410844,
+      "lng": 12.199007255,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_20",
+      "city": "RA",
+      "lat": 44.4192324442,
+      "lng": 12.1962393097,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_21",
+      "city": "RA",
+      "lat": 44.4165372969,
+      "lng": 12.2093897319,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_22",
+      "city": "RA",
+      "lat": 44.4164602618,
+      "lng": 12.2084091907,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_23",
+      "city": "RA",
+      "lat": 44.4914255605,
+      "lng": 12.2840800652,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_24",
+      "city": "RA",
+      "lat": 44.4880065312,
+      "lng": 12.2804347232,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_25",
+      "city": "RA",
+      "lat": 44.3554262522,
+      "lng": 11.8096770764,
+      "status": "destroyed",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_26",
+      "city": "RA",
+      "lat": 44.4216110517,
+      "lng": 12.1954691644,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_27",
+      "city": "RA",
+      "lat": 44.4133566544,
+      "lng": 12.1975749021,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_28",
+      "city": "RA",
+      "lat": 44.4157004046,
+      "lng": 12.1959418577,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_29",
+      "city": "RA",
+      "lat": 44.4239600206,
+      "lng": 12.2072485046,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_30",
+      "city": "RA",
+      "lat": 44.4140254372,
+      "lng": 12.2055662247,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_31",
+      "city": "RA",
+      "lat": 44.4918519046,
+      "lng": 12.2800885548,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_32",
+      "city": "RA",
+      "lat": 44.4183694632,
+      "lng": 12.1971203363,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_33",
+      "city": "RA",
+      "lat": 44.418849167,
+      "lng": 12.1992242483,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_34",
+      "city": "RA",
+      "lat": 44.4195718097,
+      "lng": 12.2074433743,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_35",
+      "city": "RA",
+      "lat": 44.4165072064,
+      "lng": 12.1975321184,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_36",
+      "city": "RA",
+      "lat": 44.4181261075,
+      "lng": 12.2018026724,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_37",
+      "city": "RA",
+      "lat": 44.4158159285,
+      "lng": 12.1961808795,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_38",
+      "city": "RA",
+      "lat": 44.4204024638,
+      "lng": 12.196811801,
+      "status": "destroyed",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_39",
+      "city": "RA",
+      "lat": 44.4135772945,
+      "lng": 12.2012342277,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RA_40",
+      "city": "RA",
+      "lat": 44.4138405939,
+      "lng": 12.2061915649,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

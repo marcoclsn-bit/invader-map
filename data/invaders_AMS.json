@@ -1,0 +1,269 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "AMS",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 26,
+  "invaders": [
+    {
+      "id": "AMS_01",
+      "city": "AMS",
+      "lat": 52.3682403334,
+      "lng": 4.8976985193,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AMS_02",
+      "city": "AMS",
+      "lat": 52.3705504855,
+      "lng": 4.8903843254,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AMS_03",
+      "city": "AMS",
+      "lat": 52.3715646183,
+      "lng": 4.9005463904,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AMS_04",
+      "city": "AMS",
+      "lat": 52.3753987086,
+      "lng": 4.8833512317,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AMS_05",
+      "city": "AMS",
+      "lat": 52.3746402519,
+      "lng": 4.8812728418,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AMS_06",
+      "city": "AMS",
+      "lat": 52.3709791107,
+      "lng": 4.8797359528,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AMS_07",
+      "city": "AMS",
+      "lat": 52.3685363971,
+      "lng": 4.8812714438,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AMS_08",
+      "city": "AMS",
+      "lat": 52.3654633714,
+      "lng": 4.8816283523,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AMS_09",
+      "city": "AMS",
+      "lat": 52.3599049636,
+      "lng": 4.9021398531,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AMS_10",
+      "city": "AMS",
+      "lat": 52.3607191872,
+      "lng": 4.908598192,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AMS_11",
+      "city": "AMS",
+      "lat": 52.3635610847,
+      "lng": 4.8983773139,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AMS_12",
+      "city": "AMS",
+      "lat": 52.3665176603,
+      "lng": 4.9010672036,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AMS_13",
+      "city": "AMS",
+      "lat": 52.3680242712,
+      "lng": 4.8989390392,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AMS_14",
+      "city": "AMS",
+      "lat": 52.3742506158,
+      "lng": 4.8930346222,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AMS_15",
+      "city": "AMS",
+      "lat": 52.3750720135,
+      "lng": 4.8994446898,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AMS_16",
+      "city": "AMS",
+      "lat": 52.3710526759,
+      "lng": 4.898336696,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AMS_17",
+      "city": "AMS",
+      "lat": 52.361724787,
+      "lng": 4.8868935853,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AMS_18",
+      "city": "AMS",
+      "lat": 52.3627339798,
+      "lng": 4.8878462202,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AMS_19",
+      "city": "AMS",
+      "lat": 52.3647952079,
+      "lng": 4.8899572584,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AMS_20",
+      "city": "AMS",
+      "lat": 52.3653214485,
+      "lng": 4.8902378312,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AMS_21",
+      "city": "AMS",
+      "lat": 52.3723727685,
+      "lng": 4.8935421686,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AMS_22",
+      "city": "AMS",
+      "lat": 52.37377286,
+      "lng": 4.8959638596,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AMS_23",
+      "city": "AMS",
+      "lat": 52.3753945317,
+      "lng": 4.9000295014,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AMS_24",
+      "city": "AMS",
+      "lat": 52.3703112288,
+      "lng": 4.8842722629,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AMS_25",
+      "city": "AMS",
+      "lat": 52.3623203121,
+      "lng": 4.8839721721,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AMS_26",
+      "city": "AMS",
+      "lat": 52.3616887189,
+      "lng": 4.8816756996,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

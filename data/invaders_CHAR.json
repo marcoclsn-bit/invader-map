@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "CHAR",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 1,
+  "invaders": [
+    {
+      "id": "CHAR_01",
+      "city": "CHAR",
+      "lat": 50.4054126711,
+      "lng": 4.4499209425,
+      "status": "damaged",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

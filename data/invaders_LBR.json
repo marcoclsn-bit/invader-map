@@ -1,0 +1,89 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "LBR",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 8,
+  "invaders": [
+    {
+      "id": "LBR_01",
+      "city": "LBR",
+      "lat": 43.8578844961,
+      "lng": 5.5567263815,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LBR_02",
+      "city": "LBR",
+      "lat": 43.8682998773,
+      "lng": 5.1430390458,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LBR_03",
+      "city": "LBR",
+      "lat": 43.8886259652,
+      "lng": 5.2404259571,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LBR_04",
+      "city": "LBR",
+      "lat": 43.9033710594,
+      "lng": 5.1903693629,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LBR_05",
+      "city": "LBR",
+      "lat": 43.8823674838,
+      "lng": 5.3822545252,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LBR_06",
+      "city": "LBR",
+      "lat": 43.8645147761,
+      "lng": 5.6811470386,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LBR_07",
+      "city": "LBR",
+      "lat": 43.8225659574,
+      "lng": 5.3062450404,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LBR_08",
+      "city": "LBR",
+      "lat": 43.7948029034,
+      "lng": 5.3441769163,
+      "status": "damaged",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

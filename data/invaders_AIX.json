@@ -1,0 +1,109 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "AIX",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 10,
+  "invaders": [
+    {
+      "id": "AIX_01",
+      "city": "AIX",
+      "lat": 43.5285840236,
+      "lng": 5.4431859342,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AIX_02",
+      "city": "AIX",
+      "lat": 43.5308733553,
+      "lng": 5.447449928,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AIX_03",
+      "city": "AIX",
+      "lat": 43.5273653439,
+      "lng": 5.4516721246,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AIX_04",
+      "city": "AIX",
+      "lat": 43.527691519,
+      "lng": 5.4508445297,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AIX_05",
+      "city": "AIX",
+      "lat": 43.5267219607,
+      "lng": 5.4473786357,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AIX_06",
+      "city": "AIX",
+      "lat": 43.5281249734,
+      "lng": 5.4455825004,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AIX_07",
+      "city": "AIX",
+      "lat": 43.5270610314,
+      "lng": 5.4465184675,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AIX_08",
+      "city": "AIX",
+      "lat": 43.5271746378,
+      "lng": 5.4477032421,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AIX_09",
+      "city": "AIX",
+      "lat": 43.5270452796,
+      "lng": 5.4485361316,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "AIX_10",
+      "city": "AIX",
+      "lat": 43.5280994319,
+      "lng": 5.4493464239,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "MTB",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 11,
+  "invaders": [
+    {
+      "id": "MTB_01",
+      "city": "MTB",
+      "lat": 44.01708182,
+      "lng": 1.3520054148,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MTB_02",
+      "city": "MTB",
+      "lat": 44.018748044,
+      "lng": 1.3511829343,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MTB_03",
+      "city": "MTB",
+      "lat": 44.0195376991,
+      "lng": 1.3503840732,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MTB_04",
+      "city": "MTB",
+      "lat": 44.0177655107,
+      "lng": 1.3541676397,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MTB_05",
+      "city": "MTB",
+      "lat": 44.0149656043,
+      "lng": 1.3519913984,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MTB_06",
+      "city": "MTB",
+      "lat": 44.0138159042,
+      "lng": 1.3501017338,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MTB_07",
+      "city": "MTB",
+      "lat": 44.0167114462,
+      "lng": 1.3519618535,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MTB_08",
+      "city": "MTB",
+      "lat": 44.0172195385,
+      "lng": 1.3513410708,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MTB_09",
+      "city": "MTB",
+      "lat": 44.0160966868,
+      "lng": 1.35154314,
+      "status": "damaged",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MTB_10",
+      "city": "MTB",
+      "lat": 44.0148705365,
+      "lng": 1.3548357872,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MTB_11",
+      "city": "MTB",
+      "lat": 44.0168102623,
+      "lng": 1.3515414505,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

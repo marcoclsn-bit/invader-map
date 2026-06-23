@@ -1,0 +1,209 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "KAT",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 20,
+  "invaders": [
+    {
+      "id": "KAT_01",
+      "city": "KAT",
+      "lat": 27.7108160926,
+      "lng": 85.3111100179,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KAT_03",
+      "city": "KAT",
+      "lat": 27.7025907976,
+      "lng": 85.3075799519,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KAT_05",
+      "city": "KAT",
+      "lat": 27.707332413,
+      "lng": 85.3098172329,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KAT_07",
+      "city": "KAT",
+      "lat": 27.7085045062,
+      "lng": 85.3075535599,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KAT_08",
+      "city": "KAT",
+      "lat": 27.7077407686,
+      "lng": 85.3073461379,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KAT_09",
+      "city": "KAT",
+      "lat": 27.7058150736,
+      "lng": 85.3095874258,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KAT_10",
+      "city": "KAT",
+      "lat": 27.7070973645,
+      "lng": 85.3114705024,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KAT_11",
+      "city": "KAT",
+      "lat": 27.7006917332,
+      "lng": 85.3049952935,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KAT_12",
+      "city": "KAT",
+      "lat": 27.7122240305,
+      "lng": 85.3103616892,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KAT_13",
+      "city": "KAT",
+      "lat": 27.7113661405,
+      "lng": 85.3086257103,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KAT_15",
+      "city": "KAT",
+      "lat": 27.7094549947,
+      "lng": 85.3104247677,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KAT_16",
+      "city": "KAT",
+      "lat": 27.7003838809,
+      "lng": 85.3075078597,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KAT_17",
+      "city": "KAT",
+      "lat": 27.6992150418,
+      "lng": 85.3071742408,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KAT_18",
+      "city": "KAT",
+      "lat": 27.7155155247,
+      "lng": 85.2894253452,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KAT_22",
+      "city": "KAT",
+      "lat": 27.7088235349,
+      "lng": 85.3147450407,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KAT_23",
+      "city": "KAT",
+      "lat": 27.7121413006,
+      "lng": 85.3121292733,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KAT_25",
+      "city": "KAT",
+      "lat": 27.7113201982,
+      "lng": 85.3110201896,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KAT_26",
+      "city": "KAT",
+      "lat": 27.7008414547,
+      "lng": 85.3075131863,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KAT_27",
+      "city": "KAT",
+      "lat": 27.7180571561,
+      "lng": 85.3120034393,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KAT_28",
+      "city": "KAT",
+      "lat": 27.7149121745,
+      "lng": 85.3104227707,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

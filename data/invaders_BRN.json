@@ -1,0 +1,299 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "BRN",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 29,
+  "invaders": [
+    {
+      "id": "BRN_01",
+      "city": "BRN",
+      "lat": 46.9463774956,
+      "lng": 7.4473071487,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRN_02",
+      "city": "BRN",
+      "lat": 46.9486230604,
+      "lng": 7.4529378983,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRN_03",
+      "city": "BRN",
+      "lat": 46.948946761,
+      "lng": 7.4555912485,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRN_04",
+      "city": "BRN",
+      "lat": 46.9484626886,
+      "lng": 7.4580590466,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRN_05",
+      "city": "BRN",
+      "lat": 46.9490235649,
+      "lng": 7.4568706138,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRN_06",
+      "city": "BRN",
+      "lat": 46.9484564109,
+      "lng": 7.4577484597,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRN_07",
+      "city": "BRN",
+      "lat": 46.9476080559,
+      "lng": 7.4524705616,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRN_08",
+      "city": "BRN",
+      "lat": 46.9489225681,
+      "lng": 7.4582010206,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRN_09",
+      "city": "BRN",
+      "lat": 46.9335226391,
+      "lng": 7.4485824791,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRN_10",
+      "city": "BRN",
+      "lat": 46.9493089668,
+      "lng": 7.4402712683,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRN_11",
+      "city": "BRN",
+      "lat": 46.9485757246,
+      "lng": 7.4471049346,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRN_12",
+      "city": "BRN",
+      "lat": 46.949463442,
+      "lng": 7.4478295624,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRN_13",
+      "city": "BRN",
+      "lat": 46.944114482,
+      "lng": 7.4492625782,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRN_14",
+      "city": "BRN",
+      "lat": 46.9510052233,
+      "lng": 7.460232903,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRN_15",
+      "city": "BRN",
+      "lat": 46.9484336904,
+      "lng": 7.4598209135,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRN_16",
+      "city": "BRN",
+      "lat": 46.9483525628,
+      "lng": 7.4557407693,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRN_17",
+      "city": "BRN",
+      "lat": 46.9469303842,
+      "lng": 7.4534025875,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRN_18",
+      "city": "BRN",
+      "lat": 46.9466016768,
+      "lng": 7.4528837754,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRN_19",
+      "city": "BRN",
+      "lat": 46.9463245689,
+      "lng": 7.4496749746,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRN_20",
+      "city": "BRN",
+      "lat": 46.9474109262,
+      "lng": 7.4482431524,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRN_21",
+      "city": "BRN",
+      "lat": 46.9468792905,
+      "lng": 7.4523607296,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRN_22",
+      "city": "BRN",
+      "lat": 46.9555595117,
+      "lng": 7.4594811919,
+      "status": "destroyed",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRN_23",
+      "city": "BRN",
+      "lat": 46.948323189,
+      "lng": 7.4541259366,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRN_24",
+      "city": "BRN",
+      "lat": 46.9461563914,
+      "lng": 7.4531688688,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRN_25",
+      "city": "BRN",
+      "lat": 46.9469208224,
+      "lng": 7.4569724429,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRN_26",
+      "city": "BRN",
+      "lat": 46.9507469871,
+      "lng": 7.4407877115,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRN_27",
+      "city": "BRN",
+      "lat": 46.9499386569,
+      "lng": 7.4584556404,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRN_28",
+      "city": "BRN",
+      "lat": 46.9505493152,
+      "lng": 7.4388094807,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRN_29",
+      "city": "BRN",
+      "lat": 46.9548123642,
+      "lng": 7.4461558217,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

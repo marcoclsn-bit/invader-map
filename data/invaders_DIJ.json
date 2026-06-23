@@ -1,0 +1,69 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "DIJ",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 6,
+  "invaders": [
+    {
+      "id": "DIJ_01",
+      "city": "DIJ",
+      "lat": 47.3254536107,
+      "lng": 5.0458259108,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DIJ_02",
+      "city": "DIJ",
+      "lat": 47.3224448246,
+      "lng": 5.0427620628,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DIJ_03",
+      "city": "DIJ",
+      "lat": 47.324240802,
+      "lng": 5.0395073988,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DIJ_04",
+      "city": "DIJ",
+      "lat": 47.3237440637,
+      "lng": 5.0443444393,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DIJ_05",
+      "city": "DIJ",
+      "lat": 47.3208069882,
+      "lng": 5.043362774,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DIJ_06",
+      "city": "DIJ",
+      "lat": 47.3230418895,
+      "lng": 5.0384373762,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

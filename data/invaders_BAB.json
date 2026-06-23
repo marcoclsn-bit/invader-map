@@ -1,0 +1,609 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "BAB",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 60,
+  "invaders": [
+    {
+      "id": "BAB_01",
+      "city": "BAB",
+      "lat": 43.4783045,
+      "lng": -1.5579615,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_02",
+      "city": "BAB",
+      "lat": 43.481179,
+      "lng": -1.559055,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_03",
+      "city": "BAB",
+      "lat": 43.481617,
+      "lng": -1.56391,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_04",
+      "city": "BAB",
+      "lat": 43.482354,
+      "lng": -1.563714,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_05",
+      "city": "BAB",
+      "lat": 43.4812033,
+      "lng": -1.5669732,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_06",
+      "city": "BAB",
+      "lat": 43.487173,
+      "lng": -1.556655,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_07",
+      "city": "BAB",
+      "lat": 43.4864,
+      "lng": -1.557293,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_08",
+      "city": "BAB",
+      "lat": 43.489023,
+      "lng": -1.553927,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_09",
+      "city": "BAB",
+      "lat": 43.503717,
+      "lng": -1.538684,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_10",
+      "city": "BAB",
+      "lat": 43.481835,
+      "lng": -1.515145,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_11",
+      "city": "BAB",
+      "lat": 43.479316,
+      "lng": -1.558374,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_12",
+      "city": "BAB",
+      "lat": 43.481566,
+      "lng": -1.568891,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_13",
+      "city": "BAB",
+      "lat": 43.383152,
+      "lng": -1.663514,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_14",
+      "city": "BAB",
+      "lat": 43.476451,
+      "lng": -1.566651,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_15",
+      "city": "BAB",
+      "lat": 43.489473,
+      "lng": -1.478131,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_16",
+      "city": "BAB",
+      "lat": 43.4906228,
+      "lng": -1.4788363,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_17",
+      "city": "BAB",
+      "lat": 43.490765,
+      "lng": -1.477149,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_18",
+      "city": "BAB",
+      "lat": 43.4901474,
+      "lng": -1.4766374,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_19",
+      "city": "BAB",
+      "lat": 43.488467,
+      "lng": -1.475617,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_20",
+      "city": "BAB",
+      "lat": 43.4909238,
+      "lng": -1.4758754,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_21",
+      "city": "BAB",
+      "lat": 43.489222,
+      "lng": -1.474164,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_22",
+      "city": "BAB",
+      "lat": 43.4912102,
+      "lng": -1.4738298,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_23",
+      "city": "BAB",
+      "lat": 43.492241,
+      "lng": -1.4737505,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_24",
+      "city": "BAB",
+      "lat": 43.493258,
+      "lng": -1.467952,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_25",
+      "city": "BAB",
+      "lat": 43.496161,
+      "lng": -1.470631,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_26",
+      "city": "BAB",
+      "lat": 43.491284,
+      "lng": -1.472661,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_27",
+      "city": "BAB",
+      "lat": 43.4894864,
+      "lng": -1.4720499,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_28",
+      "city": "BAB",
+      "lat": 43.488897,
+      "lng": -1.4726826,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_29",
+      "city": "BAB",
+      "lat": 43.489671,
+      "lng": -1.47581,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_30",
+      "city": "BAB",
+      "lat": 43.4897238,
+      "lng": -1.4754409,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_31",
+      "city": "BAB",
+      "lat": 43.4897846,
+      "lng": -1.4745179,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_32",
+      "city": "BAB",
+      "lat": 43.49274,
+      "lng": -1.475019,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_33",
+      "city": "BAB",
+      "lat": 43.481659,
+      "lng": -1.563843,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_34",
+      "city": "BAB",
+      "lat": 43.426074,
+      "lng": -1.609803,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_35",
+      "city": "BAB",
+      "lat": 43.481231,
+      "lng": -1.562902,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_36",
+      "city": "BAB",
+      "lat": 43.483444,
+      "lng": -1.568116,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_37",
+      "city": "BAB",
+      "lat": 43.482942,
+      "lng": -1.560855,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_38",
+      "city": "BAB",
+      "lat": 43.483578,
+      "lng": -1.562451,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_39",
+      "city": "BAB",
+      "lat": 43.482062,
+      "lng": -1.565579,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_40",
+      "city": "BAB",
+      "lat": 43.481856,
+      "lng": -1.564951,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_41",
+      "city": "BAB",
+      "lat": 43.482269,
+      "lng": -1.567928,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_42",
+      "city": "BAB",
+      "lat": 43.487834,
+      "lng": -1.554834,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_43",
+      "city": "BAB",
+      "lat": 43.495242,
+      "lng": -1.469647,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_44",
+      "city": "BAB",
+      "lat": 43.4903946,
+      "lng": -1.4685888,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_45",
+      "city": "BAB",
+      "lat": 43.490586,
+      "lng": -1.474016,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_46",
+      "city": "BAB",
+      "lat": 43.480972,
+      "lng": -1.55743,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_47",
+      "city": "BAB",
+      "lat": 43.481877,
+      "lng": -1.556499,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_48",
+      "city": "BAB",
+      "lat": 43.4803177,
+      "lng": -1.5456601,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_49",
+      "city": "BAB",
+      "lat": 43.480558,
+      "lng": -1.515279,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_50",
+      "city": "BAB",
+      "lat": 43.528933,
+      "lng": -1.524447,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_51",
+      "city": "BAB",
+      "lat": 43.48092,
+      "lng": -1.567263,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_52",
+      "city": "BAB",
+      "lat": 43.498305,
+      "lng": -1.544091,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_53",
+      "city": "BAB",
+      "lat": 43.486301,
+      "lng": -1.550384,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_54",
+      "city": "BAB",
+      "lat": 43.432584,
+      "lng": -1.599165,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_55",
+      "city": "BAB",
+      "lat": 43.462331,
+      "lng": -1.572583,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_56",
+      "city": "BAB",
+      "lat": 43.483506,
+      "lng": -1.565892,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_57",
+      "city": "BAB",
+      "lat": 43.49102,
+      "lng": -1.552229,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_58",
+      "city": "BAB",
+      "lat": 43.500805,
+      "lng": -1.540894,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_59",
+      "city": "BAB",
+      "lat": 43.460288,
+      "lng": -1.539773,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BAB_60",
+      "city": "BAB",
+      "lat": 43.483311,
+      "lng": -1.559713,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

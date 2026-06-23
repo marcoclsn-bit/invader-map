@@ -1,0 +1,349 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "BTA",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 34,
+  "invaders": [
+    {
+      "id": "BTA_01",
+      "city": "BTA",
+      "lat": 42.6990740089,
+      "lng": 9.4478973376,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_02",
+      "city": "BTA",
+      "lat": 42.6972235241,
+      "lng": 9.4478005943,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_03",
+      "city": "BTA",
+      "lat": 42.6965474647,
+      "lng": 9.4468574386,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_04",
+      "city": "BTA",
+      "lat": 42.6949160728,
+      "lng": 9.4473011986,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_05",
+      "city": "BTA",
+      "lat": 42.6965653108,
+      "lng": 9.4495664043,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_06",
+      "city": "BTA",
+      "lat": 42.6975732975,
+      "lng": 9.4506447124,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_07",
+      "city": "BTA",
+      "lat": 42.6970010371,
+      "lng": 9.4520770811,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_08",
+      "city": "BTA",
+      "lat": 42.6950676002,
+      "lng": 9.4474755051,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_09",
+      "city": "BTA",
+      "lat": 42.6946232122,
+      "lng": 9.4500791066,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_10",
+      "city": "BTA",
+      "lat": 42.6981316292,
+      "lng": 9.4484317779,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_11",
+      "city": "BTA",
+      "lat": 42.6954959659,
+      "lng": 9.4480686335,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_12",
+      "city": "BTA",
+      "lat": 42.6966391442,
+      "lng": 9.448025921,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_13",
+      "city": "BTA",
+      "lat": 42.6953506065,
+      "lng": 9.4495057237,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_14",
+      "city": "BTA",
+      "lat": 42.6993972477,
+      "lng": 9.4515527481,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_15",
+      "city": "BTA",
+      "lat": 42.7035334855,
+      "lng": 9.4532281676,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_16",
+      "city": "BTA",
+      "lat": 42.7026538572,
+      "lng": 9.4529295391,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_17",
+      "city": "BTA",
+      "lat": 42.7047726585,
+      "lng": 9.4509860396,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_18",
+      "city": "BTA",
+      "lat": 42.704679511,
+      "lng": 9.4515616923,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_19",
+      "city": "BTA",
+      "lat": 42.7018687466,
+      "lng": 9.4516017356,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_20",
+      "city": "BTA",
+      "lat": 42.6965339758,
+      "lng": 9.4441325396,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_21",
+      "city": "BTA",
+      "lat": 42.6998103733,
+      "lng": 9.4454785032,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_22",
+      "city": "BTA",
+      "lat": 42.6758188612,
+      "lng": 9.4443235143,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_23",
+      "city": "BTA",
+      "lat": 42.6931897356,
+      "lng": 9.452556524,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_24",
+      "city": "BTA",
+      "lat": 42.6942460327,
+      "lng": 9.4539853438,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_25",
+      "city": "BTA",
+      "lat": 42.6931109628,
+      "lng": 9.4506850611,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_26",
+      "city": "BTA",
+      "lat": 42.6930175394,
+      "lng": 9.4518016539,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_27",
+      "city": "BTA",
+      "lat": 42.8175078446,
+      "lng": 9.4866042499,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_28",
+      "city": "BTA",
+      "lat": 42.6950738224,
+      "lng": 9.4526719392,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_29",
+      "city": "BTA",
+      "lat": 42.6965457016,
+      "lng": 9.4493599282,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_30",
+      "city": "BTA",
+      "lat": 42.7020879468,
+      "lng": 9.4506955251,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_31",
+      "city": "BTA",
+      "lat": 42.6998088392,
+      "lng": 9.4509769936,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_32",
+      "city": "BTA",
+      "lat": 42.69983102,
+      "lng": 9.4496825921,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_33",
+      "city": "BTA",
+      "lat": 42.7022340548,
+      "lng": 9.4485567434,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BTA_34",
+      "city": "BTA",
+      "lat": 42.696518995,
+      "lng": 9.4497561533,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

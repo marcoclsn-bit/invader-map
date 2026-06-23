@@ -1,0 +1,119 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "BRL",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 11,
+  "invaders": [
+    {
+      "id": "BRL_01",
+      "city": "BRL",
+      "lat": 52.5005389773,
+      "lng": 13.423694926,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRL_02",
+      "city": "BRL",
+      "lat": 52.5007657365,
+      "lng": 13.4209576198,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRL_03",
+      "city": "BRL",
+      "lat": 52.5206081984,
+      "lng": 13.4115812072,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRL_04",
+      "city": "BRL",
+      "lat": 52.5269854661,
+      "lng": 13.3970054031,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRL_05",
+      "city": "BRL",
+      "lat": 52.527440315,
+      "lng": 13.3981503431,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRL_06",
+      "city": "BRL",
+      "lat": 52.5357332628,
+      "lng": 13.4064876446,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRL_07",
+      "city": "BRL",
+      "lat": 52.5257597519,
+      "lng": 13.4038049843,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRL_09",
+      "city": "BRL",
+      "lat": 52.5050450191,
+      "lng": 13.3218818894,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRL_10",
+      "city": "BRL",
+      "lat": 52.5003915345,
+      "lng": 13.4270821931,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRL_11",
+      "city": "BRL",
+      "lat": 52.4994305869,
+      "lng": 13.4269914404,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRL_12",
+      "city": "BRL",
+      "lat": 52.4986335276,
+      "lng": 13.3564798591,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

@@ -1,0 +1,479 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "MAN",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 47,
+  "invaders": [
+    {
+      "id": "MAN_01",
+      "city": "MAN",
+      "lat": 53.4840944586,
+      "lng": -2.2373349806,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_02",
+      "city": "MAN",
+      "lat": 53.4841755733,
+      "lng": -2.2354763481,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_03",
+      "city": "MAN",
+      "lat": 53.4836597123,
+      "lng": -2.2348849055,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_04",
+      "city": "MAN",
+      "lat": 53.4770639521,
+      "lng": -2.2365248016,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_05",
+      "city": "MAN",
+      "lat": 53.473925289,
+      "lng": -2.2402671381,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_06",
+      "city": "MAN",
+      "lat": 53.4702648619,
+      "lng": -2.2370916064,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_07",
+      "city": "MAN",
+      "lat": 53.4753080464,
+      "lng": -2.2338423761,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_08",
+      "city": "MAN",
+      "lat": 53.4845431602,
+      "lng": -2.2402384647,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_09",
+      "city": "MAN",
+      "lat": 53.4819555482,
+      "lng": -2.2338696255,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_10",
+      "city": "MAN",
+      "lat": 53.4813199886,
+      "lng": -2.2348963998,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_11",
+      "city": "MAN",
+      "lat": 53.4778529755,
+      "lng": -2.238513998,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_12",
+      "city": "MAN",
+      "lat": 53.4761616178,
+      "lng": -2.2384727789,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_13",
+      "city": "MAN",
+      "lat": 53.4824680627,
+      "lng": -2.2366190289,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_14",
+      "city": "MAN",
+      "lat": 53.480420793,
+      "lng": -2.233452813,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_15",
+      "city": "MAN",
+      "lat": 53.4789454987,
+      "lng": -2.242247514,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_16",
+      "city": "MAN",
+      "lat": 53.4774976636,
+      "lng": -2.2360116751,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_17",
+      "city": "MAN",
+      "lat": 53.4822921098,
+      "lng": -2.2373963089,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_18",
+      "city": "MAN",
+      "lat": 53.4858120505,
+      "lng": -2.2396285592,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_19",
+      "city": "MAN",
+      "lat": 53.4834839371,
+      "lng": -2.2376610557,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_20",
+      "city": "MAN",
+      "lat": 53.4799169394,
+      "lng": -2.2321385468,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_21",
+      "city": "MAN",
+      "lat": 53.4789114248,
+      "lng": -2.233022586,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_22",
+      "city": "MAN",
+      "lat": 53.4787038885,
+      "lng": -2.2341237012,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_23",
+      "city": "MAN",
+      "lat": 53.4768982581,
+      "lng": -2.2387501977,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_24",
+      "city": "MAN",
+      "lat": 53.4774425911,
+      "lng": -2.2403806637,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_25",
+      "city": "MAN",
+      "lat": 53.4736554657,
+      "lng": -2.2415797375,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_26",
+      "city": "MAN",
+      "lat": 53.4745724407,
+      "lng": -2.2506521092,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_27",
+      "city": "MAN",
+      "lat": 53.4744543922,
+      "lng": -2.25303522,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_28",
+      "city": "MAN",
+      "lat": 53.4740527882,
+      "lng": -2.2513072713,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_29",
+      "city": "MAN",
+      "lat": 53.4739327015,
+      "lng": -2.2479712125,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_30",
+      "city": "MAN",
+      "lat": 53.4807679771,
+      "lng": -2.2373513104,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_31",
+      "city": "MAN",
+      "lat": 53.4814501456,
+      "lng": -2.2352568481,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_32",
+      "city": "MAN",
+      "lat": 53.4810437621,
+      "lng": -2.2338317931,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_33",
+      "city": "MAN",
+      "lat": 53.4814575992,
+      "lng": -2.246463042,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_34",
+      "city": "MAN",
+      "lat": 53.4827941513,
+      "lng": -2.2477664972,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_35",
+      "city": "MAN",
+      "lat": 53.4839655616,
+      "lng": -2.2480349539,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_36",
+      "city": "MAN",
+      "lat": 53.4861531826,
+      "lng": -2.2418118828,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_37",
+      "city": "MAN",
+      "lat": 53.4785161748,
+      "lng": -2.240405064,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_38",
+      "city": "MAN",
+      "lat": 53.4846146231,
+      "lng": -2.2457993994,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_39",
+      "city": "MAN",
+      "lat": 53.4870652569,
+      "lng": -2.2445652312,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_40",
+      "city": "MAN",
+      "lat": 53.4868846137,
+      "lng": -2.2427536384,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_41",
+      "city": "MAN",
+      "lat": 53.4773220343,
+      "lng": -2.2309596026,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_42",
+      "city": "MAN",
+      "lat": 53.4845843081,
+      "lng": -2.2384088893,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_43",
+      "city": "MAN",
+      "lat": 53.4749358113,
+      "lng": -2.2403970767,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_44",
+      "city": "MAN",
+      "lat": 53.4848984161,
+      "lng": -2.237913843,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_45",
+      "city": "MAN",
+      "lat": 53.481873042,
+      "lng": -2.2370031442,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_46",
+      "city": "MAN",
+      "lat": 53.4830636482,
+      "lng": -2.2467890983,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MAN_47",
+      "city": "MAN",
+      "lat": 53.4830683999,
+      "lng": -2.2335742756,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

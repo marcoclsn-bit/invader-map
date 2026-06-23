@@ -1,0 +1,852 @@
+{
+  "version": 1,
+  "updatedAt": "2026-06-23",
+  "cities": [
+    {
+      "code": "AIX",
+      "name": "AIX",
+      "count": 10,
+      "version": 2,
+      "center": {
+        "lat": 43.527874,
+        "lng": 5.447822
+      }
+    },
+    {
+      "code": "AMS",
+      "name": "AMS",
+      "count": 26,
+      "version": 2,
+      "center": {
+        "lat": 52.368266,
+        "lng": 4.891931
+      }
+    },
+    {
+      "code": "ANVR",
+      "name": "ANVR",
+      "count": 2,
+      "version": 2,
+      "center": {
+        "lat": 51.219827,
+        "lng": 4.407467
+      }
+    },
+    {
+      "code": "ANZR",
+      "name": "ANZR",
+      "count": 4,
+      "version": 2,
+      "center": {
+        "lat": 46.304457,
+        "lng": 7.391638
+      }
+    },
+    {
+      "code": "AVI",
+      "name": "AVI",
+      "count": 41,
+      "version": 2,
+      "center": {
+        "lat": 43.948504,
+        "lng": 4.808082
+      }
+    },
+    {
+      "code": "BAB",
+      "name": "BAB",
+      "count": 60,
+      "version": 2,
+      "center": {
+        "lat": 43.483143,
+        "lng": -1.530272
+      }
+    },
+    {
+      "code": "BBO",
+      "name": "BBO",
+      "count": 40,
+      "version": 2,
+      "center": {
+        "lat": 43.261473,
+        "lng": -2.930698
+      }
+    },
+    {
+      "code": "BGK",
+      "name": "BGK",
+      "count": 44,
+      "version": 2,
+      "center": {
+        "lat": 13.746657,
+        "lng": 100.531365
+      }
+    },
+    {
+      "code": "BRC",
+      "name": "BRC",
+      "count": 17,
+      "version": 2,
+      "center": {
+        "lat": 41.38332,
+        "lng": 2.172895
+      }
+    },
+    {
+      "code": "BRL",
+      "name": "BRL",
+      "count": 11,
+      "version": 2,
+      "center": {
+        "lat": 52.512848,
+        "lng": 13.399465
+      }
+    },
+    {
+      "code": "BRN",
+      "name": "BRN",
+      "count": 29,
+      "version": 2,
+      "center": {
+        "lat": 46.94815,
+        "lng": 7.452157
+      }
+    },
+    {
+      "code": "BSL",
+      "name": "BSL",
+      "count": 25,
+      "version": 2,
+      "center": {
+        "lat": 47.559128,
+        "lng": 7.591117
+      }
+    },
+    {
+      "code": "BTA",
+      "name": "BTA",
+      "count": 34,
+      "version": 2,
+      "center": {
+        "lat": 42.700778,
+        "lng": 9.45079
+      }
+    },
+    {
+      "code": "BXL",
+      "name": "BXL",
+      "count": 42,
+      "version": 2,
+      "center": {
+        "lat": 50.840751,
+        "lng": 4.353495
+      }
+    },
+    {
+      "code": "CAPF",
+      "name": "CAPF",
+      "count": 10,
+      "version": 2,
+      "center": {
+        "lat": 44.662923,
+        "lng": -1.240386
+      }
+    },
+    {
+      "code": "CAZ",
+      "name": "CAZ",
+      "count": 40,
+      "version": 2,
+      "center": {
+        "lat": 43.407445,
+        "lng": 6.754997
+      }
+    },
+    {
+      "code": "CCU",
+      "name": "CCU",
+      "count": 3,
+      "version": 2,
+      "center": {
+        "lat": 21.163555,
+        "lng": -86.765476
+      }
+    },
+    {
+      "code": "CHAR",
+      "name": "CHAR",
+      "count": 1,
+      "version": 2,
+      "center": {
+        "lat": 50.405413,
+        "lng": 4.449921
+      }
+    },
+    {
+      "code": "CLR",
+      "name": "CLR",
+      "count": 47,
+      "version": 2,
+      "center": {
+        "lat": 45.800334,
+        "lng": 3.090138
+      }
+    },
+    {
+      "code": "CON",
+      "name": "CON",
+      "count": 2,
+      "version": 2,
+      "center": {
+        "lat": 44.092551,
+        "lng": -1.323003
+      }
+    },
+    {
+      "code": "DIJ",
+      "name": "DIJ",
+      "count": 6,
+      "version": 2,
+      "center": {
+        "lat": 47.323289,
+        "lng": 5.042373
+      }
+    },
+    {
+      "code": "DJBA",
+      "name": "DJBA",
+      "count": 58,
+      "version": 2,
+      "center": {
+        "lat": 33.807735,
+        "lng": 10.891873
+      }
+    },
+    {
+      "code": "DJN",
+      "name": "DJN",
+      "count": 22,
+      "version": 2,
+      "center": {
+        "lat": 36.366028,
+        "lng": 127.381718
+      }
+    },
+    {
+      "code": "ELT",
+      "name": "ELT",
+      "count": 2,
+      "version": 2,
+      "center": {
+        "lat": 29.531915,
+        "lng": 34.939717
+      }
+    },
+    {
+      "code": "FAO",
+      "name": "FAO",
+      "count": 4,
+      "version": 2,
+      "center": {
+        "lat": 37.018078,
+        "lng": -7.956933
+      }
+    },
+    {
+      "code": "FKF",
+      "name": "FKF",
+      "count": 14,
+      "version": 2,
+      "center": {
+        "lat": 49.896913,
+        "lng": 8.617763
+      }
+    },
+    {
+      "code": "FRQ",
+      "name": "FRQ",
+      "count": 4,
+      "version": 2,
+      "center": {
+        "lat": 43.959362,
+        "lng": 5.780969
+      }
+    },
+    {
+      "code": "FTBL",
+      "name": "FTBL",
+      "count": 45,
+      "version": 2,
+      "center": {
+        "lat": 48.396162,
+        "lng": 2.67744
+      }
+    },
+    {
+      "code": "GNV",
+      "name": "GNV",
+      "count": 33,
+      "version": 2,
+      "center": {
+        "lat": 46.204134,
+        "lng": 6.143286
+      }
+    },
+    {
+      "code": "GRN",
+      "name": "GRN",
+      "count": 57,
+      "version": 2,
+      "center": {
+        "lat": 45.187278,
+        "lng": 5.725809
+      }
+    },
+    {
+      "code": "GRU",
+      "name": "GRU",
+      "count": 3,
+      "version": 2,
+      "center": {
+        "lat": 43.386892,
+        "lng": 17.38041
+      }
+    },
+    {
+      "code": "HALM",
+      "name": "HALM",
+      "count": 2,
+      "version": 2,
+      "center": {
+        "lat": 56.679103,
+        "lng": 12.773971
+      }
+    },
+    {
+      "code": "HK",
+      "name": "Hong Kong",
+      "count": 129,
+      "version": 2,
+      "center": {
+        "lat": 22.35,
+        "lng": 114.1
+      },
+      "bbox": {
+        "minLat": 22.15,
+        "maxLat": 22.55,
+        "minLng": 113.8,
+        "maxLng": 114.4
+      }
+    },
+    {
+      "code": "IST",
+      "name": "IST",
+      "count": 16,
+      "version": 2,
+      "center": {
+        "lat": 41.021834,
+        "lng": 28.973144
+      }
+    },
+    {
+      "code": "KAT",
+      "name": "KAT",
+      "count": 20,
+      "version": 2,
+      "center": {
+        "lat": 27.708242,
+        "lng": 85.308541
+      }
+    },
+    {
+      "code": "KLN",
+      "name": "KLN",
+      "count": 27,
+      "version": 2,
+      "center": {
+        "lat": 50.928348,
+        "lng": 6.972527
+      }
+    },
+    {
+      "code": "LA",
+      "name": "Los Angeles",
+      "count": 214,
+      "version": 2,
+      "center": {
+        "lat": 34.0522,
+        "lng": -118.24
+      },
+      "bbox": {
+        "minLat": 33.7,
+        "maxLat": 34.35,
+        "minLng": -118.7,
+        "maxLng": -117.6
+      }
+    },
+    {
+      "code": "LBR",
+      "name": "LBR",
+      "count": 8,
+      "version": 2,
+      "center": {
+        "lat": 43.860304,
+        "lng": 5.355548
+      }
+    },
+    {
+      "code": "LCT",
+      "name": "LCT",
+      "count": 9,
+      "version": 2,
+      "center": {
+        "lat": 43.185047,
+        "lng": 5.61956
+      }
+    },
+    {
+      "code": "LDN",
+      "name": "London",
+      "count": 162,
+      "version": 2,
+      "center": {
+        "lat": 51.5074,
+        "lng": -0.1278
+      },
+      "bbox": {
+        "minLat": 51.28,
+        "maxLat": 51.7,
+        "minLng": -0.55,
+        "maxLng": 0.35
+      }
+    },
+    {
+      "code": "LIL",
+      "name": "LIL",
+      "count": 6,
+      "version": 2,
+      "center": {
+        "lat": 50.59408,
+        "lng": 3.046499
+      }
+    },
+    {
+      "code": "LJU",
+      "name": "LJU",
+      "count": 42,
+      "version": 2,
+      "center": {
+        "lat": 46.052129,
+        "lng": 14.504968
+      }
+    },
+    {
+      "code": "LSN",
+      "name": "LSN",
+      "count": 16,
+      "version": 2,
+      "center": {
+        "lat": 46.520907,
+        "lng": 6.631474
+      }
+    },
+    {
+      "code": "LY",
+      "name": "LY",
+      "count": 48,
+      "version": 2,
+      "center": {
+        "lat": 45.765931,
+        "lng": 4.832401
+      }
+    },
+    {
+      "code": "MAN",
+      "name": "MAN",
+      "count": 47,
+      "version": 2,
+      "center": {
+        "lat": 53.480175,
+        "lng": -2.2395
+      }
+    },
+    {
+      "code": "MARS",
+      "name": "MARS",
+      "count": 97,
+      "version": 2,
+      "center": {
+        "lat": 43.290374,
+        "lng": 5.380988
+      }
+    },
+    {
+      "code": "MBSA",
+      "name": "MBSA",
+      "count": 5,
+      "version": 2,
+      "center": {
+        "lat": -3.977181,
+        "lng": 39.706815
+      }
+    },
+    {
+      "code": "MEN",
+      "name": "MEN",
+      "count": 5,
+      "version": 2,
+      "center": {
+        "lat": 40.012279,
+        "lng": 3.85219
+      }
+    },
+    {
+      "code": "MIA",
+      "name": "MIA",
+      "count": 80,
+      "version": 2,
+      "center": {
+        "lat": 25.785872,
+        "lng": -80.170405
+      }
+    },
+    {
+      "code": "MLB",
+      "name": "MLB",
+      "count": 16,
+      "version": 2,
+      "center": {
+        "lat": -37.81405,
+        "lng": 144.970848
+      }
+    },
+    {
+      "code": "MLGA",
+      "name": "MLGA",
+      "count": 29,
+      "version": 2,
+      "center": {
+        "lat": 36.720009,
+        "lng": -4.413475
+      }
+    },
+    {
+      "code": "MPL",
+      "name": "MPL",
+      "count": 37,
+      "version": 2,
+      "center": {
+        "lat": 43.610993,
+        "lng": 3.876258
+      }
+    },
+    {
+      "code": "MRAK",
+      "name": "MRAK",
+      "count": 4,
+      "version": 2,
+      "center": {
+        "lat": 31.509986,
+        "lng": -8.038369
+      }
+    },
+    {
+      "code": "MTB",
+      "name": "MTB",
+      "count": 11,
+      "version": 2,
+      "center": {
+        "lat": 44.016693,
+        "lng": 1.351914
+      }
+    },
+    {
+      "code": "MUN",
+      "name": "MUN",
+      "count": 18,
+      "version": 2,
+      "center": {
+        "lat": 48.138454,
+        "lng": 11.557057
+      }
+    },
+    {
+      "code": "NA",
+      "name": "NA",
+      "count": 3,
+      "version": 2,
+      "center": {
+        "lat": 47.216183,
+        "lng": -1.545731
+      }
+    },
+    {
+      "code": "NCL",
+      "name": "NCL",
+      "count": 25,
+      "version": 2,
+      "center": {
+        "lat": 54.969838,
+        "lng": -1.608875
+      }
+    },
+    {
+      "code": "NIM",
+      "name": "NIM",
+      "count": 5,
+      "version": 2,
+      "center": {
+        "lat": 43.835926,
+        "lng": 4.361553
+      }
+    },
+    {
+      "code": "NOO",
+      "name": "NOO",
+      "count": 10,
+      "version": 2,
+      "center": {
+        "lat": 52.218211,
+        "lng": 4.419613
+      }
+    },
+    {
+      "code": "NY",
+      "name": "New York",
+      "count": 192,
+      "version": 2,
+      "center": {
+        "lat": 40.7128,
+        "lng": -74.006
+      },
+      "bbox": {
+        "minLat": 40.48,
+        "maxLat": 40.93,
+        "minLng": -74.3,
+        "maxLng": -73.6
+      }
+    },
+    {
+      "code": "PA",
+      "name": "Paris",
+      "count": 1528,
+      "version": 2,
+      "center": {
+        "lat": 48.8566,
+        "lng": 2.3522
+      },
+      "bbox": {
+        "minLat": 48.5,
+        "maxLat": 49.1,
+        "minLng": 1.9,
+        "maxLng": 3
+      }
+    },
+    {
+      "code": "PAU",
+      "name": "PAU",
+      "count": 10,
+      "version": 2,
+      "center": {
+        "lat": 43.298545,
+        "lng": -0.369796
+      }
+    },
+    {
+      "code": "POTI",
+      "name": "POTI",
+      "count": 52,
+      "version": 2,
+      "center": {
+        "lat": -19.590711,
+        "lng": -65.75234
+      }
+    },
+    {
+      "code": "PRP",
+      "name": "PRP",
+      "count": 8,
+      "version": 2,
+      "center": {
+        "lat": 42.699504,
+        "lng": 2.894014
+      }
+    },
+    {
+      "code": "PRT",
+      "name": "PRT",
+      "count": 26,
+      "version": 2,
+      "center": {
+        "lat": -31.964293,
+        "lng": 115.829748
+      }
+    },
+    {
+      "code": "RA",
+      "name": "RA",
+      "count": 40,
+      "version": 2,
+      "center": {
+        "lat": 44.421317,
+        "lng": 12.196371
+      }
+    },
+    {
+      "code": "RBA",
+      "name": "RBA",
+      "count": 17,
+      "version": 2,
+      "center": {
+        "lat": 34.021723,
+        "lng": -6.83765
+      }
+    },
+    {
+      "code": "RDU",
+      "name": "RDU",
+      "count": 6,
+      "version": 2,
+      "center": {
+        "lat": 50.002999,
+        "lng": 5.1489
+      }
+    },
+    {
+      "code": "REUN",
+      "name": "REUN",
+      "count": 10,
+      "version": 2,
+      "center": {
+        "lat": -20.983031,
+        "lng": 55.348044
+      }
+    },
+    {
+      "code": "RN",
+      "name": "RN",
+      "count": 4,
+      "version": 2,
+      "center": {
+        "lat": 48.110806,
+        "lng": -1.679444
+      }
+    },
+    {
+      "code": "ROM",
+      "name": "ROM",
+      "count": 75,
+      "version": 2,
+      "center": {
+        "lat": 41.888717,
+        "lng": 12.508482
+      }
+    },
+    {
+      "code": "RTD",
+      "name": "RTD",
+      "count": 25,
+      "version": 2,
+      "center": {
+        "lat": 51.915087,
+        "lng": 4.476791
+      }
+    },
+    {
+      "code": "SD",
+      "name": "SD",
+      "count": 20,
+      "version": 2,
+      "center": {
+        "lat": 32.715531,
+        "lng": -117.162032
+      }
+    },
+    {
+      "code": "SP",
+      "name": "SP",
+      "count": 52,
+      "version": 2,
+      "center": {
+        "lat": -23.550924,
+        "lng": -46.661818
+      }
+    },
+    {
+      "code": "TK",
+      "name": "Tokyo",
+      "count": 123,
+      "version": 2,
+      "center": {
+        "lat": 35.6762,
+        "lng": 139.65
+      },
+      "bbox": {
+        "minLat": 35.5,
+        "maxLat": 35.85,
+        "minLng": 139.4,
+        "maxLng": 139.9
+      }
+    },
+    {
+      "code": "TLS",
+      "name": "TLS",
+      "count": 11,
+      "version": 2,
+      "center": {
+        "lat": 43.695205,
+        "lng": 1.353076
+      }
+    },
+    {
+      "code": "VLMO",
+      "name": "VLMO",
+      "count": 3,
+      "version": 2,
+      "center": {
+        "lat": 45.465017,
+        "lng": 6.450343
+      }
+    },
+    {
+      "code": "VRN",
+      "name": "VRN",
+      "count": 12,
+      "version": 2,
+      "center": {
+        "lat": 25.301308,
+        "lng": 83.007892
+      }
+    },
+    {
+      "code": "VRS",
+      "name": "VRS",
+      "count": 42,
+      "version": 2,
+      "center": {
+        "lat": 48.80571,
+        "lng": 2.128069
+      }
+    },
+    {
+      "code": "VSB",
+      "name": "VSB",
+      "count": 3,
+      "version": 2,
+      "center": {
+        "lat": 57.638922,
+        "lng": 18.291373
+      }
+    },
+    {
+      "code": "WN",
+      "name": "WN",
+      "count": 56,
+      "version": 2,
+      "center": {
+        "lat": 48.207892,
+        "lng": 16.365737
+      }
+    }
+  ]
+}

@@ -1,0 +1,759 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "ROM",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 75,
+  "invaders": [
+    {
+      "id": "ROM_01",
+      "city": "ROM",
+      "lat": 41.8869605407,
+      "lng": 12.5250781091,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_02",
+      "city": "ROM",
+      "lat": 41.8781656642,
+      "lng": 12.5417763827,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_03",
+      "city": "ROM",
+      "lat": 41.8928758083,
+      "lng": 12.5157337247,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_04",
+      "city": "ROM",
+      "lat": 41.8884977055,
+      "lng": 12.5287910464,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_05",
+      "city": "ROM",
+      "lat": 41.8999628339,
+      "lng": 12.5168588373,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_06",
+      "city": "ROM",
+      "lat": 41.9183963734,
+      "lng": 12.4789297679,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_07",
+      "city": "ROM",
+      "lat": 41.8634245592,
+      "lng": 12.4804464608,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_08",
+      "city": "ROM",
+      "lat": 41.8956230238,
+      "lng": 12.5043283007,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_09",
+      "city": "ROM",
+      "lat": 41.8891491695,
+      "lng": 12.4704980126,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_10",
+      "city": "ROM",
+      "lat": 41.8753770359,
+      "lng": 12.474130212,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_11",
+      "city": "ROM",
+      "lat": 41.8754088516,
+      "lng": 12.5414775805,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_12",
+      "city": "ROM",
+      "lat": 41.892893625,
+      "lng": 12.541637476,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_13",
+      "city": "ROM",
+      "lat": 41.8891805469,
+      "lng": 12.5298886256,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_14",
+      "city": "ROM",
+      "lat": 41.8887489075,
+      "lng": 12.5186645204,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_15",
+      "city": "ROM",
+      "lat": 41.8889217931,
+      "lng": 12.5256411679,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_16",
+      "city": "ROM",
+      "lat": 41.9112714,
+      "lng": 12.4986653742,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_17",
+      "city": "ROM",
+      "lat": 41.9355710249,
+      "lng": 12.5063548991,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_18",
+      "city": "ROM",
+      "lat": 41.9284155232,
+      "lng": 12.468958455,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_19",
+      "city": "ROM",
+      "lat": 41.9363247067,
+      "lng": 12.4667100897,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_20",
+      "city": "ROM",
+      "lat": 41.9075210361,
+      "lng": 12.4554275175,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_21",
+      "city": "ROM",
+      "lat": 41.8912117739,
+      "lng": 12.4704982421,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_22",
+      "city": "ROM",
+      "lat": 41.8839598127,
+      "lng": 12.4741018116,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_23",
+      "city": "ROM",
+      "lat": 41.8745779505,
+      "lng": 12.5228377653,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_24",
+      "city": "ROM",
+      "lat": 41.91862985,
+      "lng": 12.5012681032,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_25",
+      "city": "ROM",
+      "lat": 41.8942129963,
+      "lng": 12.4920996467,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_26",
+      "city": "ROM",
+      "lat": 41.8836395476,
+      "lng": 12.4744052209,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_27",
+      "city": "ROM",
+      "lat": 41.8854532607,
+      "lng": 12.4852072819,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_28",
+      "city": "ROM",
+      "lat": 41.8971846656,
+      "lng": 12.5132713628,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_29",
+      "city": "ROM",
+      "lat": 41.8941251993,
+      "lng": 12.5062624727,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_30",
+      "city": "ROM",
+      "lat": 41.8955349988,
+      "lng": 12.4934127625,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_31",
+      "city": "ROM",
+      "lat": 41.894855519,
+      "lng": 12.491103006,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_32",
+      "city": "ROM",
+      "lat": 41.8964151152,
+      "lng": 12.5151938647,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_33",
+      "city": "ROM",
+      "lat": 41.8963426749,
+      "lng": 12.5141869347,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_34",
+      "city": "ROM",
+      "lat": 41.8964704178,
+      "lng": 12.4863806574,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_35",
+      "city": "ROM",
+      "lat": 41.898456598,
+      "lng": 12.4846191049,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_36",
+      "city": "ROM",
+      "lat": 41.9112608857,
+      "lng": 12.4770028219,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_37",
+      "city": "ROM",
+      "lat": 41.9073628896,
+      "lng": 12.4759390867,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_38",
+      "city": "ROM",
+      "lat": 41.904702393,
+      "lng": 12.4770321351,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_39",
+      "city": "ROM",
+      "lat": 41.8854270032,
+      "lng": 12.5091046781,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_40",
+      "city": "ROM",
+      "lat": 41.8936266373,
+      "lng": 12.4787476554,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_41",
+      "city": "ROM",
+      "lat": 41.8944395571,
+      "lng": 12.4691266003,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_42",
+      "city": "ROM",
+      "lat": 41.8879053803,
+      "lng": 12.4943965169,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_43",
+      "city": "ROM",
+      "lat": 41.897295355,
+      "lng": 12.4850221643,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_44",
+      "city": "ROM",
+      "lat": 41.9000235788,
+      "lng": 12.4798625577,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_45",
+      "city": "ROM",
+      "lat": 41.9013521334,
+      "lng": 12.4736297511,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_46",
+      "city": "ROM",
+      "lat": 41.9000747441,
+      "lng": 12.4707557389,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_47",
+      "city": "ROM",
+      "lat": 41.8994581246,
+      "lng": 12.4704843731,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_48",
+      "city": "ROM",
+      "lat": 41.8980643144,
+      "lng": 12.4715997286,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_49",
+      "city": "ROM",
+      "lat": 41.9033679325,
+      "lng": 12.4833275766,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_50",
+      "city": "ROM",
+      "lat": 41.9063412836,
+      "lng": 12.483016011,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_51",
+      "city": "ROM",
+      "lat": 41.8706028819,
+      "lng": 12.4793465317,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_52",
+      "city": "ROM",
+      "lat": 41.862715569,
+      "lng": 12.4857028023,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_53",
+      "city": "ROM",
+      "lat": 41.8787086425,
+      "lng": 12.4789474161,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_54",
+      "city": "ROM",
+      "lat": 41.8915143874,
+      "lng": 12.4613593394,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_55",
+      "city": "ROM",
+      "lat": 41.8933946813,
+      "lng": 12.4769790552,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_56",
+      "city": "ROM",
+      "lat": 41.8898258198,
+      "lng": 12.5238015985,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_57",
+      "city": "ROM",
+      "lat": 41.8900749422,
+      "lng": 12.49421151,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_58",
+      "city": "ROM",
+      "lat": 41.8951566188,
+      "lng": 12.472692004,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_59",
+      "city": "ROM",
+      "lat": 41.8957267276,
+      "lng": 12.4766495423,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_60",
+      "city": "ROM",
+      "lat": 41.8896376566,
+      "lng": 12.4710989829,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_61",
+      "city": "ROM",
+      "lat": 41.8896051705,
+      "lng": 12.4731926056,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_62",
+      "city": "ROM",
+      "lat": 41.8795251889,
+      "lng": 12.5369446916,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_63",
+      "city": "ROM",
+      "lat": 41.889367464,
+      "lng": 12.5195171302,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_64",
+      "city": "ROM",
+      "lat": 41.8996016134,
+      "lng": 12.5011617502,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_65",
+      "city": "ROM",
+      "lat": 41.8734268627,
+      "lng": 12.5016457026,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_66",
+      "city": "ROM",
+      "lat": 41.8838113885,
+      "lng": 12.5314907039,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_67",
+      "city": "ROM",
+      "lat": 41.9008621653,
+      "lng": 12.4830056111,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_68",
+      "city": "ROM",
+      "lat": 41.9079988274,
+      "lng": 12.5047767288,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_69",
+      "city": "ROM",
+      "lat": 41.8741014662,
+      "lng": 12.5065806029,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_70",
+      "city": "ROM",
+      "lat": 41.8275006184,
+      "lng": 12.67552601,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_71",
+      "city": "ROM",
+      "lat": 41.8275069553,
+      "lng": 12.6755966807,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_72",
+      "city": "ROM",
+      "lat": 41.8278936557,
+      "lng": 12.6741722898,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_73",
+      "city": "ROM",
+      "lat": 41.8267248541,
+      "lng": 12.6742914317,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_74",
+      "city": "ROM",
+      "lat": 41.8268126214,
+      "lng": 12.6714762485,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ROM_75",
+      "city": "ROM",
+      "lat": 41.827198482,
+      "lng": 12.6721045446,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

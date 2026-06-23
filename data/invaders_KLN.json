@@ -1,0 +1,279 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "KLN",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 27,
+  "invaders": [
+    {
+      "id": "KLN_01",
+      "city": "KLN",
+      "lat": 50.9369402972,
+      "lng": 6.9761036591,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KLN_02",
+      "city": "KLN",
+      "lat": 50.9401406058,
+      "lng": 6.9463412942,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KLN_03",
+      "city": "KLN",
+      "lat": 50.93884534,
+      "lng": 6.9448516414,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KLN_04",
+      "city": "KLN",
+      "lat": 50.9409918291,
+      "lng": 6.9452655655,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KLN_05",
+      "city": "KLN",
+      "lat": 50.9413914638,
+      "lng": 6.9514990778,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KLN_06",
+      "city": "KLN",
+      "lat": 50.9412502503,
+      "lng": 6.9533144913,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KLN_07",
+      "city": "KLN",
+      "lat": 50.9400130014,
+      "lng": 6.958206316,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KLN_08",
+      "city": "KLN",
+      "lat": 50.9376345435,
+      "lng": 6.9619587401,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KLN_09",
+      "city": "KLN",
+      "lat": 50.9374925477,
+      "lng": 6.9611192826,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KLN_10",
+      "city": "KLN",
+      "lat": 50.9406505588,
+      "lng": 6.9427947003,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KLN_11",
+      "city": "KLN",
+      "lat": 50.9379566817,
+      "lng": 6.9416683222,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KLN_12",
+      "city": "KLN",
+      "lat": 50.9305458647,
+      "lng": 6.9393572484,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KLN_13",
+      "city": "KLN",
+      "lat": 50.9285721056,
+      "lng": 6.936011914,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KLN_14",
+      "city": "KLN",
+      "lat": 50.9283145171,
+      "lng": 6.936006254,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KLN_15",
+      "city": "KLN",
+      "lat": 50.9289218839,
+      "lng": 6.9396309584,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KLN_16",
+      "city": "KLN",
+      "lat": 50.9380935069,
+      "lng": 6.9456524208,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KLN_17",
+      "city": "KLN",
+      "lat": 50.9383768366,
+      "lng": 6.9718134148,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KLN_18",
+      "city": "KLN",
+      "lat": 50.9412495315,
+      "lng": 6.9668374766,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KLN_19",
+      "city": "KLN",
+      "lat": 50.9412170833,
+      "lng": 6.9611106888,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KLN_20",
+      "city": "KLN",
+      "lat": 50.9412642532,
+      "lng": 6.9598687195,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KLN_21",
+      "city": "KLN",
+      "lat": 50.9397441362,
+      "lng": 6.9594850793,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KLN_22",
+      "city": "KLN",
+      "lat": 50.9382666612,
+      "lng": 6.9622352553,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KLN_23",
+      "city": "KLN",
+      "lat": 50.93851183,
+      "lng": 6.9424708966,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KLN_24",
+      "city": "KLN",
+      "lat": 50.9416764227,
+      "lng": 6.9593103516,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KLN_25",
+      "city": "KLN",
+      "lat": 50.8525926767,
+      "lng": 7.1320129381,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KLN_26",
+      "city": "KLN",
+      "lat": 50.8522784994,
+      "lng": 7.1315736942,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "KLN_27",
+      "city": "KLN",
+      "lat": 50.8524746416,
+      "lng": 7.1317299063,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

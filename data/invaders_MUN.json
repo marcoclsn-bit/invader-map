@@ -1,0 +1,189 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "MUN",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 18,
+  "invaders": [
+    {
+      "id": "MUN_01",
+      "city": "MUN",
+      "lat": 48.1381267982,
+      "lng": 11.5422992797,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MUN_02",
+      "city": "MUN",
+      "lat": 48.1485699896,
+      "lng": 11.5644461151,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MUN_03",
+      "city": "MUN",
+      "lat": 48.1317770907,
+      "lng": 11.5894469556,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MUN_04",
+      "city": "MUN",
+      "lat": 48.1343198678,
+      "lng": 11.5762175707,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MUN_05",
+      "city": "MUN",
+      "lat": 48.1339836609,
+      "lng": 11.5678291641,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MUN_06",
+      "city": "MUN",
+      "lat": 48.1585133312,
+      "lng": 11.5116716825,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MUN_07",
+      "city": "MUN",
+      "lat": 48.1222561256,
+      "lng": 11.5684027805,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MUN_08",
+      "city": "MUN",
+      "lat": 48.1332887944,
+      "lng": 11.5331827945,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MUN_09",
+      "city": "MUN",
+      "lat": 48.1563395882,
+      "lng": 11.5312997931,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MUN_10",
+      "city": "MUN",
+      "lat": 48.1311776447,
+      "lng": 11.5664031016,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MUN_11",
+      "city": "MUN",
+      "lat": 48.1196506989,
+      "lng": 11.5566491053,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MUN_12",
+      "city": "MUN",
+      "lat": 48.1475809068,
+      "lng": 11.5765916384,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MUN_13",
+      "city": "MUN",
+      "lat": 48.1489331655,
+      "lng": 11.5802219253,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MUN_14",
+      "city": "MUN",
+      "lat": 48.1345090415,
+      "lng": 11.5795960834,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MUN_15",
+      "city": "MUN",
+      "lat": 48.1392883421,
+      "lng": 11.5559521039,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MUN_16",
+      "city": "MUN",
+      "lat": 48.1459518982,
+      "lng": 11.5361204917,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MUN_17",
+      "city": "MUN",
+      "lat": 48.1397824556,
+      "lng": 11.5345798862,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MUN_18",
+      "city": "MUN",
+      "lat": 48.1281184253,
+      "lng": 11.5561216044,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

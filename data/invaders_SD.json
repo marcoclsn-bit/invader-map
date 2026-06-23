@@ -1,0 +1,209 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "SD",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 20,
+  "invaders": [
+    {
+      "id": "SD_01",
+      "city": "SD",
+      "lat": 32.7176100441,
+      "lng": -117.1693756687,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SD_02",
+      "city": "SD",
+      "lat": 32.7158441648,
+      "lng": -117.1533709501,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SD_03",
+      "city": "SD",
+      "lat": 32.7129529314,
+      "lng": -117.1753282631,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SD_05",
+      "city": "SD",
+      "lat": 32.7137782901,
+      "lng": -117.1581120704,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SD_06",
+      "city": "SD",
+      "lat": 32.7260771287,
+      "lng": -117.167306671,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SD_07",
+      "city": "SD",
+      "lat": 32.7155929129,
+      "lng": -117.1686594054,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SD_08",
+      "city": "SD",
+      "lat": 32.7178305699,
+      "lng": -117.1637671786,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SD_09",
+      "city": "SD",
+      "lat": 32.7180335787,
+      "lng": -117.1521789377,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SD_10",
+      "city": "SD",
+      "lat": 32.7127730058,
+      "lng": -117.1533510771,
+      "status": "destroyed",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SD_11",
+      "city": "SD",
+      "lat": 32.7166444736,
+      "lng": -117.1593591202,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SD_12",
+      "city": "SD",
+      "lat": 32.6996458981,
+      "lng": -117.1434063383,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SD_13",
+      "city": "SD",
+      "lat": 32.7165331123,
+      "lng": -117.1600445657,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SD_14",
+      "city": "SD",
+      "lat": 32.7242804466,
+      "lng": -117.1686648499,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SD_15",
+      "city": "SD",
+      "lat": 32.713325261,
+      "lng": -117.1639433011,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SD_16",
+      "city": "SD",
+      "lat": 32.7226209275,
+      "lng": -117.1629976352,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SD_17",
+      "city": "SD",
+      "lat": 32.7120162426,
+      "lng": -117.1691113126,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SD_18",
+      "city": "SD",
+      "lat": 32.7105323652,
+      "lng": -117.164828317,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SD_19",
+      "city": "SD",
+      "lat": 32.7170953749,
+      "lng": -117.1611463038,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SD_20",
+      "city": "SD",
+      "lat": 32.7134154471,
+      "lng": -117.1633204091,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "SD_21",
+      "city": "SD",
+      "lat": 32.7140256938,
+      "lng": -117.1623767964,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

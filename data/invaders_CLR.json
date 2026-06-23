@@ -1,0 +1,479 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "CLR",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 47,
+  "invaders": [
+    {
+      "id": "CLR_01",
+      "city": "CLR",
+      "lat": 45.7786175601,
+      "lng": 3.0792573337,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_02",
+      "city": "CLR",
+      "lat": 45.7756263773,
+      "lng": 3.0824668266,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_03",
+      "city": "CLR",
+      "lat": 45.7760497731,
+      "lng": 3.0862216514,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_04",
+      "city": "CLR",
+      "lat": 45.7784554565,
+      "lng": 3.0873601668,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_05",
+      "city": "CLR",
+      "lat": 45.7802935682,
+      "lng": 3.0882348681,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_06",
+      "city": "CLR",
+      "lat": 45.779204448,
+      "lng": 3.0847676619,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_07",
+      "city": "CLR",
+      "lat": 45.77832198,
+      "lng": 3.0840202548,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_08",
+      "city": "CLR",
+      "lat": 45.777113585,
+      "lng": 3.0861552172,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_09",
+      "city": "CLR",
+      "lat": 45.7771823348,
+      "lng": 3.1014338406,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_10",
+      "city": "CLR",
+      "lat": 45.7757594671,
+      "lng": 3.0869922831,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_11",
+      "city": "CLR",
+      "lat": 45.7804611217,
+      "lng": 3.0909077903,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_12",
+      "city": "CLR",
+      "lat": 45.7736543739,
+      "lng": 3.0806657741,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_13",
+      "city": "CLR",
+      "lat": 45.7733070454,
+      "lng": 3.091858285,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_14",
+      "city": "CLR",
+      "lat": 45.7889003593,
+      "lng": 3.0986971483,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_15",
+      "city": "CLR",
+      "lat": 45.7691788911,
+      "lng": 3.0839001134,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_16",
+      "city": "CLR",
+      "lat": 45.7909008651,
+      "lng": 3.1132394603,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_17",
+      "city": "CLR",
+      "lat": 45.7749473203,
+      "lng": 3.0956396655,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_18",
+      "city": "CLR",
+      "lat": 45.7771035188,
+      "lng": 3.0893187318,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_19",
+      "city": "CLR",
+      "lat": 45.7743997244,
+      "lng": 3.0866661167,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_20",
+      "city": "CLR",
+      "lat": 45.7738628476,
+      "lng": 3.0754539836,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_21",
+      "city": "CLR",
+      "lat": 45.773480229,
+      "lng": 3.0751265542,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_22",
+      "city": "CLR",
+      "lat": 45.7785702245,
+      "lng": 3.0899802611,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_23",
+      "city": "CLR",
+      "lat": 45.7777467383,
+      "lng": 3.0900047105,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_24",
+      "city": "CLR",
+      "lat": 45.7786221876,
+      "lng": 3.0841677538,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_25",
+      "city": "CLR",
+      "lat": 45.7786486867,
+      "lng": 3.0820639363,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_26",
+      "city": "CLR",
+      "lat": 45.7784989856,
+      "lng": 3.0808653601,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_27",
+      "city": "CLR",
+      "lat": 45.9117776373,
+      "lng": 3.0447948622,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_28",
+      "city": "CLR",
+      "lat": 45.7797038411,
+      "lng": 3.0916317994,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_29",
+      "city": "CLR",
+      "lat": 45.7803457842,
+      "lng": 3.0819735752,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_30",
+      "city": "CLR",
+      "lat": 45.7860366416,
+      "lng": 3.079533336,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_31",
+      "city": "CLR",
+      "lat": 45.7712224128,
+      "lng": 3.0834313735,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_32",
+      "city": "CLR",
+      "lat": 45.7778396698,
+      "lng": 3.0871800673,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_33",
+      "city": "CLR",
+      "lat": 45.7793992108,
+      "lng": 3.1003633849,
+      "status": "damaged",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_34",
+      "city": "CLR",
+      "lat": 45.7709529316,
+      "lng": 3.0866897572,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_35",
+      "city": "CLR",
+      "lat": 45.7968427037,
+      "lng": 3.107751114,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_36",
+      "city": "CLR",
+      "lat": 45.7764589478,
+      "lng": 3.0987381443,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_37",
+      "city": "CLR",
+      "lat": 45.7782684472,
+      "lng": 3.0847455566,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_38",
+      "city": "CLR",
+      "lat": 45.7802026805,
+      "lng": 3.0868128999,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_39",
+      "city": "CLR",
+      "lat": 45.7760169483,
+      "lng": 3.083212082,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_40",
+      "city": "CLR",
+      "lat": 45.891676609,
+      "lng": 3.1099698477,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_41",
+      "city": "CLR",
+      "lat": 45.8938281047,
+      "lng": 3.1126461164,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_42",
+      "city": "CLR",
+      "lat": 45.8938405491,
+      "lng": 3.1135101547,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_43",
+      "city": "CLR",
+      "lat": 45.8913003639,
+      "lng": 3.1136301416,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_44",
+      "city": "CLR",
+      "lat": 45.8926519248,
+      "lng": 3.116874732,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_45",
+      "city": "CLR",
+      "lat": 45.8892865148,
+      "lng": 3.1204555535,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_46",
+      "city": "CLR",
+      "lat": 45.894774846,
+      "lng": 3.119596926,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CLR_47",
+      "city": "CLR",
+      "lat": 45.8843537704,
+      "lng": 3.0374910865,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

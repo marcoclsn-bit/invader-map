@@ -1,0 +1,259 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "RTD",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 25,
+  "invaders": [
+    {
+      "id": "RTD_01",
+      "city": "RTD",
+      "lat": 51.9174785348,
+      "lng": 4.4751614168,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RTD_02",
+      "city": "RTD",
+      "lat": 51.912327177,
+      "lng": 4.4831816567,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RTD_03",
+      "city": "RTD",
+      "lat": 51.9160669516,
+      "lng": 4.4792874728,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RTD_04",
+      "city": "RTD",
+      "lat": 51.9174876575,
+      "lng": 4.4746060029,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RTD_05",
+      "city": "RTD",
+      "lat": 51.9207182821,
+      "lng": 4.4903880316,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RTD_06",
+      "city": "RTD",
+      "lat": 51.9203999659,
+      "lng": 4.4895301271,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RTD_07",
+      "city": "RTD",
+      "lat": 51.9197575277,
+      "lng": 4.465478533,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RTD_08",
+      "city": "RTD",
+      "lat": 51.9195182966,
+      "lng": 4.475637546,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RTD_09",
+      "city": "RTD",
+      "lat": 51.9044308756,
+      "lng": 4.4845853303,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RTD_10",
+      "city": "RTD",
+      "lat": 51.908349176,
+      "lng": 4.4919023192,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RTD_11",
+      "city": "RTD",
+      "lat": 51.9104912966,
+      "lng": 4.4959243532,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RTD_12",
+      "city": "RTD",
+      "lat": 51.9124360766,
+      "lng": 4.4986414115,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RTD_13",
+      "city": "RTD",
+      "lat": 51.9168388631,
+      "lng": 4.4915200944,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RTD_14",
+      "city": "RTD",
+      "lat": 51.9127506115,
+      "lng": 4.4673550842,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RTD_15",
+      "city": "RTD",
+      "lat": 51.9146863395,
+      "lng": 4.4596708811,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RTD_16",
+      "city": "RTD",
+      "lat": 51.9149864343,
+      "lng": 4.46333266,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RTD_17",
+      "city": "RTD",
+      "lat": 51.9144874844,
+      "lng": 4.4657555732,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RTD_18",
+      "city": "RTD",
+      "lat": 51.9151405918,
+      "lng": 4.4661991833,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RTD_19",
+      "city": "RTD",
+      "lat": 51.9165968249,
+      "lng": 4.4693631253,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RTD_20",
+      "city": "RTD",
+      "lat": 51.9206393777,
+      "lng": 4.4703741023,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RTD_21",
+      "city": "RTD",
+      "lat": 51.9191178748,
+      "lng": 4.4718942115,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RTD_22",
+      "city": "RTD",
+      "lat": 51.915538245,
+      "lng": 4.4761352006,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RTD_23",
+      "city": "RTD",
+      "lat": 51.9158371366,
+      "lng": 4.4779107058,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RTD_24",
+      "city": "RTD",
+      "lat": 51.9144536295,
+      "lng": 4.4717909959,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RTD_25",
+      "city": "RTD",
+      "lat": 51.9066326784,
+      "lng": 4.4641417725,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

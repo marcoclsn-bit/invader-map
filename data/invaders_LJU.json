@@ -1,0 +1,429 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "LJU",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 42,
+  "invaders": [
+    {
+      "id": "LJU_01",
+      "city": "LJU",
+      "lat": 46.0547124178,
+      "lng": 14.4928921204,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_02",
+      "city": "LJU",
+      "lat": 46.054687588,
+      "lng": 14.492905468,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_03",
+      "city": "LJU",
+      "lat": 46.054654231,
+      "lng": 14.4928614775,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_04",
+      "city": "LJU",
+      "lat": 46.0546818397,
+      "lng": 14.4930400897,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_05",
+      "city": "LJU",
+      "lat": 46.0545626426,
+      "lng": 14.4929267992,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_06",
+      "city": "LJU",
+      "lat": 46.0545560283,
+      "lng": 14.4929653249,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_07",
+      "city": "LJU",
+      "lat": 46.0546093457,
+      "lng": 14.4928884464,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_08",
+      "city": "LJU",
+      "lat": 46.054532384,
+      "lng": 14.4932047475,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_09",
+      "city": "LJU",
+      "lat": 46.0519894009,
+      "lng": 14.5073884872,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_10",
+      "city": "LJU",
+      "lat": 46.0565329372,
+      "lng": 14.5159147611,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_11",
+      "city": "LJU",
+      "lat": 46.0537494387,
+      "lng": 14.5167561606,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_12",
+      "city": "LJU",
+      "lat": 46.0523659151,
+      "lng": 14.5102630612,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_13",
+      "city": "LJU",
+      "lat": 46.0486171192,
+      "lng": 14.5050272052,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_14",
+      "city": "LJU",
+      "lat": 46.0490062219,
+      "lng": 14.5050096366,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_15",
+      "city": "LJU",
+      "lat": 46.0493100151,
+      "lng": 14.5052273821,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_16",
+      "city": "LJU",
+      "lat": 46.0496232394,
+      "lng": 14.5056135084,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_17",
+      "city": "LJU",
+      "lat": 46.0508173915,
+      "lng": 14.5060308095,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_18",
+      "city": "LJU",
+      "lat": 46.0576578033,
+      "lng": 14.5168971961,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_19",
+      "city": "LJU",
+      "lat": 46.0573664243,
+      "lng": 14.5168781979,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_20",
+      "city": "LJU",
+      "lat": 46.05467106,
+      "lng": 14.4929614499,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_21",
+      "city": "LJU",
+      "lat": 46.0545056024,
+      "lng": 14.5301510889,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_22",
+      "city": "LJU",
+      "lat": 46.0563441799,
+      "lng": 14.5345937069,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_23",
+      "city": "LJU",
+      "lat": 46.0691279472,
+      "lng": 14.4890516157,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_24",
+      "city": "LJU",
+      "lat": 46.0436018134,
+      "lng": 14.5053934149,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_25",
+      "city": "LJU",
+      "lat": 46.0443027436,
+      "lng": 14.5056511395,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_26",
+      "city": "LJU",
+      "lat": 46.0409330168,
+      "lng": 14.5109041182,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_27",
+      "city": "LJU",
+      "lat": 46.0410626145,
+      "lng": 14.5128248975,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_28",
+      "city": "LJU",
+      "lat": 46.0669305504,
+      "lng": 14.4912227934,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_29",
+      "city": "LJU",
+      "lat": 46.0486283462,
+      "lng": 14.5191885822,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_30",
+      "city": "LJU",
+      "lat": 46.0474184425,
+      "lng": 14.4948928996,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_31",
+      "city": "LJU",
+      "lat": 46.0502935291,
+      "lng": 14.5098375161,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_32",
+      "city": "LJU",
+      "lat": 46.0469214242,
+      "lng": 14.5066897079,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_33",
+      "city": "LJU",
+      "lat": 46.0482555426,
+      "lng": 14.5061954127,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_34",
+      "city": "LJU",
+      "lat": 46.0484156086,
+      "lng": 14.5061574755,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_35",
+      "city": "LJU",
+      "lat": 46.0504733328,
+      "lng": 14.5091148763,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_36",
+      "city": "LJU",
+      "lat": 46.0521989586,
+      "lng": 14.5105224718,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_37",
+      "city": "LJU",
+      "lat": 46.0517367616,
+      "lng": 14.5034240723,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_38",
+      "city": "LJU",
+      "lat": 46.0541079317,
+      "lng": 14.5029007884,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_39",
+      "city": "LJU",
+      "lat": 46.0539291739,
+      "lng": 14.5045634981,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_40",
+      "city": "LJU",
+      "lat": 46.0542884986,
+      "lng": 14.5045970602,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_41",
+      "city": "LJU",
+      "lat": 46.0518646579,
+      "lng": 14.4936881161,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LJU_42",
+      "city": "LJU",
+      "lat": 46.0453631256,
+      "lng": 14.5094486158,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

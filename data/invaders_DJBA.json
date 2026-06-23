@@ -1,0 +1,589 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "DJBA",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 58,
+  "invaders": [
+    {
+      "id": "DJBA_01",
+      "city": "DJBA",
+      "lat": 33.8212861833,
+      "lng": 10.8538271079,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_02",
+      "city": "DJBA",
+      "lat": 33.8218182168,
+      "lng": 10.8537995219,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_03",
+      "city": "DJBA",
+      "lat": 33.8208903651,
+      "lng": 10.8532002785,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_04",
+      "city": "DJBA",
+      "lat": 33.8205319516,
+      "lng": 10.8544746327,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_05",
+      "city": "DJBA",
+      "lat": 33.8208867847,
+      "lng": 10.8541329152,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_06",
+      "city": "DJBA",
+      "lat": 33.8280375668,
+      "lng": 10.8841966134,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_07",
+      "city": "DJBA",
+      "lat": 33.8767397495,
+      "lng": 10.8580612424,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_08",
+      "city": "DJBA",
+      "lat": 33.8757030495,
+      "lng": 10.8574631076,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_09",
+      "city": "DJBA",
+      "lat": 33.8761040484,
+      "lng": 10.8583972839,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_10",
+      "city": "DJBA",
+      "lat": 33.8777551132,
+      "lng": 10.8580615288,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_11",
+      "city": "DJBA",
+      "lat": 33.8774808224,
+      "lng": 10.8586253763,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_12",
+      "city": "DJBA",
+      "lat": 33.8771449221,
+      "lng": 10.8609348151,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_13",
+      "city": "DJBA",
+      "lat": 33.8747695171,
+      "lng": 10.8596039568,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_14",
+      "city": "DJBA",
+      "lat": 33.8748225352,
+      "lng": 10.8590747046,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_15",
+      "city": "DJBA",
+      "lat": 33.8744386562,
+      "lng": 10.8585856561,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_16",
+      "city": "DJBA",
+      "lat": 33.8835863992,
+      "lng": 10.8603719221,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_17",
+      "city": "DJBA",
+      "lat": 33.8651458662,
+      "lng": 10.8679943984,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_18",
+      "city": "DJBA",
+      "lat": 33.801272452,
+      "lng": 10.8837154552,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_19",
+      "city": "DJBA",
+      "lat": 33.7861023173,
+      "lng": 10.8461263501,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_20",
+      "city": "DJBA",
+      "lat": 33.7194388446,
+      "lng": 10.7441910172,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_21",
+      "city": "DJBA",
+      "lat": 33.7685061812,
+      "lng": 10.7320955733,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_22",
+      "city": "DJBA",
+      "lat": 33.7413582557,
+      "lng": 10.9737763722,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_23",
+      "city": "DJBA",
+      "lat": 33.7286964081,
+      "lng": 10.8641372024,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_24",
+      "city": "DJBA",
+      "lat": 33.7285790117,
+      "lng": 10.8561562057,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_25",
+      "city": "DJBA",
+      "lat": 33.7349568737,
+      "lng": 10.8323710191,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_26",
+      "city": "DJBA",
+      "lat": 33.6944413436,
+      "lng": 10.8744564675,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_27",
+      "city": "DJBA",
+      "lat": 33.6691386847,
+      "lng": 10.8760277962,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_28",
+      "city": "DJBA",
+      "lat": 33.8800773184,
+      "lng": 10.9510462982,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_29",
+      "city": "DJBA",
+      "lat": 33.8637888814,
+      "lng": 10.8649455615,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_30",
+      "city": "DJBA",
+      "lat": 33.8624230112,
+      "lng": 10.8632215784,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_31",
+      "city": "DJBA",
+      "lat": 33.8709674866,
+      "lng": 10.8721774407,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_32",
+      "city": "DJBA",
+      "lat": 33.8228931796,
+      "lng": 11.0416655259,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_33",
+      "city": "DJBA",
+      "lat": 33.8214213616,
+      "lng": 11.0423722438,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_34",
+      "city": "DJBA",
+      "lat": 33.7684172236,
+      "lng": 11.024760355,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_35",
+      "city": "DJBA",
+      "lat": 33.8203697907,
+      "lng": 10.8564000156,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_36",
+      "city": "DJBA",
+      "lat": 33.8188274394,
+      "lng": 10.8538297318,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_37",
+      "city": "DJBA",
+      "lat": 33.8038228601,
+      "lng": 11.0542814567,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_38",
+      "city": "DJBA",
+      "lat": 33.6516460947,
+      "lng": 10.8793885052,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_39",
+      "city": "DJBA",
+      "lat": 33.7408641855,
+      "lng": 10.7350671427,
+      "status": "damaged",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_40",
+      "city": "DJBA",
+      "lat": 33.7239016825,
+      "lng": 10.7501100571,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_41",
+      "city": "DJBA",
+      "lat": 33.8776275845,
+      "lng": 10.8785160039,
+      "status": "damaged",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_42",
+      "city": "DJBA",
+      "lat": 33.8260411465,
+      "lng": 10.985796996,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_43",
+      "city": "DJBA",
+      "lat": 33.7535662438,
+      "lng": 11.0124696499,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_44",
+      "city": "DJBA",
+      "lat": 33.639880399,
+      "lng": 10.935370067,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_45",
+      "city": "DJBA",
+      "lat": 33.7403044216,
+      "lng": 10.9148284287,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_46",
+      "city": "DJBA",
+      "lat": 33.797055502,
+      "lng": 10.9639323655,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_47",
+      "city": "DJBA",
+      "lat": 33.8085766729,
+      "lng": 10.9912807636,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_48",
+      "city": "DJBA",
+      "lat": 33.8084488732,
+      "lng": 10.9912532156,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_49",
+      "city": "DJBA",
+      "lat": 33.8077650161,
+      "lng": 10.9894367002,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_50",
+      "city": "DJBA",
+      "lat": 33.8037426934,
+      "lng": 10.7909896796,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_51",
+      "city": "DJBA",
+      "lat": 33.8093969687,
+      "lng": 10.7906063838,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_52",
+      "city": "DJBA",
+      "lat": 33.8636568622,
+      "lng": 10.7965416414,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_53",
+      "city": "DJBA",
+      "lat": 33.8629599379,
+      "lng": 10.9754807574,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_54",
+      "city": "DJBA",
+      "lat": 33.8258642904,
+      "lng": 11.0463793019,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_55",
+      "city": "DJBA",
+      "lat": 33.8058765618,
+      "lng": 10.9728122115,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_56",
+      "city": "DJBA",
+      "lat": 33.807773469,
+      "lng": 10.9584748666,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_57",
+      "city": "DJBA",
+      "lat": 33.8143504394,
+      "lng": 10.8591810267,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJBA_58",
+      "city": "DJBA",
+      "lat": 33.8066730072,
+      "lng": 10.9921707742,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

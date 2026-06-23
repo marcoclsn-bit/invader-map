@@ -1,0 +1,229 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "DJN",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 22,
+  "invaders": [
+    {
+      "id": "DJN_01",
+      "city": "DJN",
+      "lat": 36.3668948558,
+      "lng": 127.3866062258,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJN_02",
+      "city": "DJN",
+      "lat": 36.3663518617,
+      "lng": 127.3864007231,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJN_03",
+      "city": "DJN",
+      "lat": 36.3665224424,
+      "lng": 127.3858872261,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJN_04",
+      "city": "DJN",
+      "lat": 36.3666100341,
+      "lng": 127.3862302691,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJN_05",
+      "city": "DJN",
+      "lat": 36.3666051355,
+      "lng": 127.3861128101,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJN_06",
+      "city": "DJN",
+      "lat": 36.3667549012,
+      "lng": 127.3857882689,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJN_07",
+      "city": "DJN",
+      "lat": 36.3667285222,
+      "lng": 127.3859486445,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJN_08",
+      "city": "DJN",
+      "lat": 36.3669232725,
+      "lng": 127.3860300921,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJN_09",
+      "city": "DJN",
+      "lat": 36.3654913459,
+      "lng": 127.3846851404,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJN_10",
+      "city": "DJN",
+      "lat": 36.3654609165,
+      "lng": 127.3851847874,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJN_11",
+      "city": "DJN",
+      "lat": 36.3666824123,
+      "lng": 127.3854623858,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJN_13",
+      "city": "DJN",
+      "lat": 36.3621802028,
+      "lng": 127.3477615897,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJN_14",
+      "city": "DJN",
+      "lat": 36.3664612618,
+      "lng": 127.3859839095,
+      "status": "hidden",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJN_15",
+      "city": "DJN",
+      "lat": 36.3671750941,
+      "lng": 127.3852767699,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJN_16",
+      "city": "DJN",
+      "lat": 36.3855967201,
+      "lng": 127.3536613589,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJN_17",
+      "city": "DJN",
+      "lat": 36.366523619,
+      "lng": 127.3862570303,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJN_18",
+      "city": "DJN",
+      "lat": 36.3727865033,
+      "lng": 127.3636916237,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJN_19",
+      "city": "DJN",
+      "lat": 36.3956169794,
+      "lng": 127.3568009716,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJN_20",
+      "city": "DJN",
+      "lat": 36.3886849802,
+      "lng": 127.378712833,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJN_21",
+      "city": "DJN",
+      "lat": 36.3350758161,
+      "lng": 127.4226768249,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJN_22",
+      "city": "DJN",
+      "lat": 36.3266917048,
+      "lng": 127.4272339459,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "DJN_23",
+      "city": "DJN",
+      "lat": 36.35478916,
+      "lng": 127.3454100661,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

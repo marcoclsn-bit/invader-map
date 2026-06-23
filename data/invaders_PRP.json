@@ -1,0 +1,89 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "PRP",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 8,
+  "invaders": [
+    {
+      "id": "PRP_01",
+      "city": "PRP",
+      "lat": 42.700001689,
+      "lng": 2.8868516796,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "PRP_02",
+      "city": "PRP",
+      "lat": 42.6984170808,
+      "lng": 2.8969004203,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "PRP_03",
+      "city": "PRP",
+      "lat": 42.6997188933,
+      "lng": 2.9011551986,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "PRP_04",
+      "city": "PRP",
+      "lat": 42.701552447,
+      "lng": 2.8933319504,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "PRP_05",
+      "city": "PRP",
+      "lat": 42.6988542977,
+      "lng": 2.8956552406,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "PRP_06",
+      "city": "PRP",
+      "lat": 42.6996358069,
+      "lng": 2.8950472609,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "PRP_07",
+      "city": "PRP",
+      "lat": 42.6975544184,
+      "lng": 2.8926425554,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "PRP_08",
+      "city": "PRP",
+      "lat": 42.7002969043,
+      "lng": 2.8905296388,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

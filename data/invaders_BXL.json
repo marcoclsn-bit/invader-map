@@ -1,0 +1,429 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "BXL",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 42,
+  "invaders": [
+    {
+      "id": "BXL_01",
+      "city": "BXL",
+      "lat": 50.853572675,
+      "lng": 4.3468076006,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_02",
+      "city": "BXL",
+      "lat": 50.8486620936,
+      "lng": 4.3456937063,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_03",
+      "city": "BXL",
+      "lat": 50.8383384345,
+      "lng": 4.3386008313,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_04",
+      "city": "BXL",
+      "lat": 50.8372907588,
+      "lng": 4.3468851733,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_05",
+      "city": "BXL",
+      "lat": 50.8450679121,
+      "lng": 4.3500335037,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_06",
+      "city": "BXL",
+      "lat": 50.8381090136,
+      "lng": 4.3512203214,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_07",
+      "city": "BXL",
+      "lat": 50.8390154277,
+      "lng": 4.3534646937,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_08",
+      "city": "BXL",
+      "lat": 50.8390724869,
+      "lng": 4.3474662212,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_09",
+      "city": "BXL",
+      "lat": 50.841694889,
+      "lng": 4.3477947108,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_10",
+      "city": "BXL",
+      "lat": 50.8414707954,
+      "lng": 4.3536719495,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_11",
+      "city": "BXL",
+      "lat": 50.8505274674,
+      "lng": 4.3470271758,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_12",
+      "city": "BXL",
+      "lat": 50.8526935752,
+      "lng": 4.3455376966,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_13",
+      "city": "BXL",
+      "lat": 50.8471972346,
+      "lng": 4.3523115745,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_14",
+      "city": "BXL",
+      "lat": 50.8460261841,
+      "lng": 4.3517242768,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_15",
+      "city": "BXL",
+      "lat": 50.8430574782,
+      "lng": 4.3504950212,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_16",
+      "city": "BXL",
+      "lat": 50.8393629066,
+      "lng": 4.3489290293,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_17",
+      "city": "BXL",
+      "lat": 50.8326756156,
+      "lng": 4.3434374112,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_18",
+      "city": "BXL",
+      "lat": 50.8432749906,
+      "lng": 4.3585940846,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_19",
+      "city": "BXL",
+      "lat": 50.8361438872,
+      "lng": 4.3646939662,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_20",
+      "city": "BXL",
+      "lat": 50.8394747266,
+      "lng": 4.3720568709,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_21",
+      "city": "BXL",
+      "lat": 50.8389382324,
+      "lng": 4.3720722381,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_22",
+      "city": "BXL",
+      "lat": 50.8411272258,
+      "lng": 4.3755981578,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_23",
+      "city": "BXL",
+      "lat": 50.8271900786,
+      "lng": 4.371691317,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_24",
+      "city": "BXL",
+      "lat": 50.827806757,
+      "lng": 4.3688497481,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_25",
+      "city": "BXL",
+      "lat": 50.8287220228,
+      "lng": 4.362907229,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_26",
+      "city": "BXL",
+      "lat": 50.8465340112,
+      "lng": 4.3546518272,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_27",
+      "city": "BXL",
+      "lat": 50.8457182853,
+      "lng": 4.3546893535,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_28",
+      "city": "BXL",
+      "lat": 50.8449198641,
+      "lng": 4.3539233482,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_29",
+      "city": "BXL",
+      "lat": 50.8306244204,
+      "lng": 4.3459692283,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_30",
+      "city": "BXL",
+      "lat": 50.8302445443,
+      "lng": 4.3444719255,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_31",
+      "city": "BXL",
+      "lat": 50.8241393045,
+      "lng": 4.3504920848,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_32",
+      "city": "BXL",
+      "lat": 50.8248161505,
+      "lng": 4.3572838091,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_33",
+      "city": "BXL",
+      "lat": 50.827841023,
+      "lng": 4.3712851369,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_34",
+      "city": "BXL",
+      "lat": 50.8380564026,
+      "lng": 4.3615423145,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_35",
+      "city": "BXL",
+      "lat": 50.8485738762,
+      "lng": 4.3561205652,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_36",
+      "city": "BXL",
+      "lat": 50.8497099109,
+      "lng": 4.3489661575,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_37",
+      "city": "BXL",
+      "lat": 50.8461314226,
+      "lng": 4.3490870742,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_38",
+      "city": "BXL",
+      "lat": 50.8485692967,
+      "lng": 4.3542044265,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_39",
+      "city": "BXL",
+      "lat": 50.8420766847,
+      "lng": 4.3516163914,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_40",
+      "city": "BXL",
+      "lat": 50.8450508211,
+      "lng": 4.3486431515,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_41",
+      "city": "BXL",
+      "lat": 50.8509805499,
+      "lng": 4.3380913245,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BXL_42",
+      "city": "BXL",
+      "lat": 50.8510465742,
+      "lng": 4.3382028957,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

@@ -1,0 +1,1929 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "NY",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 192,
+  "invaders": [
+    {
+      "id": "NY_01",
+      "city": "NY",
+      "lat": 40.72280667,
+      "lng": -73.9959781068,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_02",
+      "city": "NY",
+      "lat": 40.7243112516,
+      "lng": -73.9959018976,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_03",
+      "city": "NY",
+      "lat": 40.7223363857,
+      "lng": -74.0003898779,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_04",
+      "city": "NY",
+      "lat": 40.72423811,
+      "lng": -73.9980400138,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_05",
+      "city": "NY",
+      "lat": 40.7266450272,
+      "lng": -73.9938180406,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_06",
+      "city": "NY",
+      "lat": 40.7205373301,
+      "lng": -73.9979697017,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_07",
+      "city": "NY",
+      "lat": 40.7205442523,
+      "lng": -73.9998704279,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_08",
+      "city": "NY",
+      "lat": 40.7168521737,
+      "lng": -74.0092176304,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_09",
+      "city": "NY",
+      "lat": 40.710655445,
+      "lng": -74.0131981021,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_10",
+      "city": "NY",
+      "lat": 40.7214849902,
+      "lng": -73.9980817654,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_11",
+      "city": "NY",
+      "lat": 40.7255607276,
+      "lng": -73.9989845336,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_12",
+      "city": "NY",
+      "lat": 40.7473381257,
+      "lng": -74.0077298346,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_13",
+      "city": "NY",
+      "lat": 40.7222261941,
+      "lng": -73.9982304964,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_14",
+      "city": "NY",
+      "lat": 40.7470040549,
+      "lng": -74.0045245,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_15",
+      "city": "NY",
+      "lat": 40.7489542584,
+      "lng": -74.0048965203,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_16",
+      "city": "NY",
+      "lat": 40.7635259677,
+      "lng": -73.9756480319,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_17",
+      "city": "NY",
+      "lat": 40.7281878576,
+      "lng": -73.9845410486,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_18",
+      "city": "NY",
+      "lat": 40.7224796728,
+      "lng": -73.9929804799,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_19",
+      "city": "NY",
+      "lat": 40.7551828482,
+      "lng": -73.996408772,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_20",
+      "city": "NY",
+      "lat": 40.7220010886,
+      "lng": -74.0026549436,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_21",
+      "city": "NY",
+      "lat": 40.7236898381,
+      "lng": -74.0013371387,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_23",
+      "city": "NY",
+      "lat": 40.7452159298,
+      "lng": -73.9982048785,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_24",
+      "city": "NY",
+      "lat": 40.7205128323,
+      "lng": -73.988210716,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_25",
+      "city": "NY",
+      "lat": 40.7210020587,
+      "lng": -73.9879224921,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_26",
+      "city": "NY",
+      "lat": 40.7278754281,
+      "lng": -73.9841226913,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_27",
+      "city": "NY",
+      "lat": 40.7250357269,
+      "lng": -73.99055081,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_28",
+      "city": "NY",
+      "lat": 40.7213822959,
+      "lng": -73.9946880557,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_29",
+      "city": "NY",
+      "lat": 40.7149435746,
+      "lng": -73.9773253668,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_30",
+      "city": "NY",
+      "lat": 40.7118905995,
+      "lng": -73.9671715917,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_31",
+      "city": "NY",
+      "lat": 40.7141889077,
+      "lng": -73.9609185877,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_32",
+      "city": "NY",
+      "lat": 40.7100900445,
+      "lng": -73.9607364845,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_33",
+      "city": "NY",
+      "lat": 40.7395948888,
+      "lng": -74.0073393671,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_34",
+      "city": "NY",
+      "lat": 40.7177462914,
+      "lng": -73.9621828711,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_35",
+      "city": "NY",
+      "lat": 40.7172366301,
+      "lng": -73.9581578342,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_36",
+      "city": "NY",
+      "lat": 40.7172672725,
+      "lng": -73.9585318863,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_37",
+      "city": "NY",
+      "lat": 40.7150349628,
+      "lng": -73.9627331252,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_38",
+      "city": "NY",
+      "lat": 40.7446408136,
+      "lng": -73.9318364044,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_39",
+      "city": "NY",
+      "lat": 40.7443117775,
+      "lng": -73.9319051649,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_40",
+      "city": "NY",
+      "lat": 40.7190059779,
+      "lng": -74.0009773455,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_41",
+      "city": "NY",
+      "lat": 40.7176394005,
+      "lng": -74.0024804458,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_42",
+      "city": "NY",
+      "lat": 40.7232528863,
+      "lng": -73.9827037376,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_43",
+      "city": "NY",
+      "lat": 40.7203069875,
+      "lng": -73.984240252,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_44",
+      "city": "NY",
+      "lat": 40.7230174104,
+      "lng": -73.9798658337,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_45",
+      "city": "NY",
+      "lat": 40.7223533357,
+      "lng": -73.9934440479,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_46",
+      "city": "NY",
+      "lat": 40.7183220189,
+      "lng": -74.0017172461,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_47",
+      "city": "NY",
+      "lat": 40.7218131745,
+      "lng": -74.0018694305,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_48",
+      "city": "NY",
+      "lat": 40.7207648585,
+      "lng": -74.0093124729,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_49",
+      "city": "NY",
+      "lat": 40.7354415808,
+      "lng": -74.0034143923,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_50",
+      "city": "NY",
+      "lat": 40.7455162345,
+      "lng": -73.9469632239,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_51",
+      "city": "NY",
+      "lat": 40.7465802501,
+      "lng": -74.005415355,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_52",
+      "city": "NY",
+      "lat": 40.747866215,
+      "lng": -74.006230579,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_53",
+      "city": "NY",
+      "lat": 40.7456145196,
+      "lng": -74.0067419937,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_54",
+      "city": "NY",
+      "lat": 40.7474734274,
+      "lng": -74.0038187456,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_55",
+      "city": "NY",
+      "lat": 40.7034807093,
+      "lng": -73.9940639658,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_56",
+      "city": "NY",
+      "lat": 40.7037834495,
+      "lng": -73.989646103,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_57",
+      "city": "NY",
+      "lat": 40.7169315957,
+      "lng": -74.0105944423,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_58",
+      "city": "NY",
+      "lat": 40.7183572549,
+      "lng": -74.0087015377,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_59",
+      "city": "NY",
+      "lat": 40.7209183561,
+      "lng": -74.0037239573,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_60",
+      "city": "NY",
+      "lat": 40.7336286862,
+      "lng": -73.9902156923,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_61",
+      "city": "NY",
+      "lat": 40.7352868152,
+      "lng": -73.9902955223,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_62",
+      "city": "NY",
+      "lat": 40.7574654284,
+      "lng": -73.985620064,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_63",
+      "city": "NY",
+      "lat": 40.722248874,
+      "lng": -73.997236457,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_64",
+      "city": "NY",
+      "lat": 40.7832737546,
+      "lng": -73.9594445957,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_65",
+      "city": "NY",
+      "lat": 40.7738196482,
+      "lng": -73.9708358578,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_66",
+      "city": "NY",
+      "lat": 40.7677051287,
+      "lng": -73.9639708268,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_67",
+      "city": "NY",
+      "lat": 40.7618471813,
+      "lng": -73.9707112111,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_68",
+      "city": "NY",
+      "lat": 40.7175978082,
+      "lng": -73.9931668932,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_69",
+      "city": "NY",
+      "lat": 40.7290288293,
+      "lng": -73.9889543365,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_70",
+      "city": "NY",
+      "lat": 40.7525984499,
+      "lng": -73.9764761375,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_71",
+      "city": "NY",
+      "lat": 40.7217844447,
+      "lng": -74.0032302849,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_72",
+      "city": "NY",
+      "lat": 40.7273276053,
+      "lng": -73.9888426586,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_73",
+      "city": "NY",
+      "lat": 40.7036539267,
+      "lng": -73.9939254075,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_74",
+      "city": "NY",
+      "lat": 40.7509534733,
+      "lng": -73.9203223042,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_75",
+      "city": "NY",
+      "lat": 40.7225328977,
+      "lng": -73.9950491045,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_76",
+      "city": "NY",
+      "lat": 40.7509543691,
+      "lng": -73.9200620248,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_77",
+      "city": "NY",
+      "lat": 40.7541385409,
+      "lng": -73.9923303463,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_78",
+      "city": "NY",
+      "lat": 40.7471540894,
+      "lng": -73.9813263092,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_79",
+      "city": "NY",
+      "lat": 40.7090904842,
+      "lng": -74.0079665713,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_80",
+      "city": "NY",
+      "lat": 40.7076339723,
+      "lng": -74.0132120795,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_81",
+      "city": "NY",
+      "lat": 40.7486434056,
+      "lng": -74.0040692792,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_82",
+      "city": "NY",
+      "lat": 40.7428732989,
+      "lng": -74.0074904654,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_83",
+      "city": "NY",
+      "lat": 40.7495953889,
+      "lng": -73.9361106895,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_84",
+      "city": "NY",
+      "lat": 40.7493642919,
+      "lng": -73.9380085842,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_85",
+      "city": "NY",
+      "lat": 40.7459237585,
+      "lng": -73.9033685305,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_86",
+      "city": "NY",
+      "lat": 40.7249407001,
+      "lng": -74.0024099646,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_87",
+      "city": "NY",
+      "lat": 40.7211385154,
+      "lng": -73.9943863292,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_88",
+      "city": "NY",
+      "lat": 40.7475622725,
+      "lng": -74.0075830755,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_89",
+      "city": "NY",
+      "lat": 40.7486578764,
+      "lng": -74.0047978036,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_90",
+      "city": "NY",
+      "lat": 40.746680202,
+      "lng": -74.0070116137,
+      "status": "hidden",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_91",
+      "city": "NY",
+      "lat": 40.7385892105,
+      "lng": -74.0038232764,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_92",
+      "city": "NY",
+      "lat": 40.7376288426,
+      "lng": -74.0045430746,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_93",
+      "city": "NY",
+      "lat": 40.7165487668,
+      "lng": -73.9592305622,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_94",
+      "city": "NY",
+      "lat": 40.721843717,
+      "lng": -73.9580572289,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_95",
+      "city": "NY",
+      "lat": 40.7457970474,
+      "lng": -73.9455359892,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_96",
+      "city": "NY",
+      "lat": 40.7238093906,
+      "lng": -73.9970988567,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_97",
+      "city": "NY",
+      "lat": 40.720903461,
+      "lng": -73.985996747,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_98",
+      "city": "NY",
+      "lat": 40.7216734538,
+      "lng": -73.9838691634,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_99",
+      "city": "NY",
+      "lat": 40.7241302971,
+      "lng": -73.982053589,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_100",
+      "city": "NY",
+      "lat": 40.7473606861,
+      "lng": -74.0057192774,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_101",
+      "city": "NY",
+      "lat": 40.7227595658,
+      "lng": -73.9795734042,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_102",
+      "city": "NY",
+      "lat": 40.7428659664,
+      "lng": -74.0075937582,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_103",
+      "city": "NY",
+      "lat": 40.7113079306,
+      "lng": -73.9630686177,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_104",
+      "city": "NY",
+      "lat": 40.7172645689,
+      "lng": -73.9630463709,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_105",
+      "city": "NY",
+      "lat": 40.7247291236,
+      "lng": -73.990256603,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_106",
+      "city": "NY",
+      "lat": 40.7244327531,
+      "lng": -73.9926975053,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_107",
+      "city": "NY",
+      "lat": 40.7393144472,
+      "lng": -74.0075374201,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_108",
+      "city": "NY",
+      "lat": 40.7394400361,
+      "lng": -74.0071747175,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_109",
+      "city": "NY",
+      "lat": 40.7403129804,
+      "lng": -74.0060502436,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_110",
+      "city": "NY",
+      "lat": 40.7467611868,
+      "lng": -74.0049323265,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_111",
+      "city": "NY",
+      "lat": 40.7481892171,
+      "lng": -74.0049426037,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_112",
+      "city": "NY",
+      "lat": 40.7466691841,
+      "lng": -74.0071673095,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_113",
+      "city": "NY",
+      "lat": 40.7081316569,
+      "lng": -73.9991228504,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_114",
+      "city": "NY",
+      "lat": 40.7349494552,
+      "lng": -74.0017390394,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_115",
+      "city": "NY",
+      "lat": 40.7263144232,
+      "lng": -73.9922171344,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_116",
+      "city": "NY",
+      "lat": 40.7142767986,
+      "lng": -73.9904910076,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_117",
+      "city": "NY",
+      "lat": 40.7271449647,
+      "lng": -73.9889879326,
+      "status": "hidden",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_118",
+      "city": "NY",
+      "lat": 40.7228863938,
+      "lng": -74.0009911821,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_119",
+      "city": "NY",
+      "lat": 40.7229636659,
+      "lng": -74.0041622358,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_120",
+      "city": "NY",
+      "lat": 40.7236115966,
+      "lng": -74.0039256609,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_121",
+      "city": "NY",
+      "lat": 40.7231403911,
+      "lng": -73.9898703698,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_122",
+      "city": "NY",
+      "lat": 40.7212125378,
+      "lng": -73.9938411909,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_123",
+      "city": "NY",
+      "lat": 40.7223068782,
+      "lng": -73.9929784851,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_124",
+      "city": "NY",
+      "lat": 40.7190504104,
+      "lng": -73.999369673,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_125",
+      "city": "NY",
+      "lat": 40.7235625198,
+      "lng": -74.0039924904,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_126",
+      "city": "NY",
+      "lat": 40.7206238311,
+      "lng": -73.9899719327,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_127",
+      "city": "NY",
+      "lat": 40.7176408002,
+      "lng": -73.9963926767,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_128",
+      "city": "NY",
+      "lat": 40.7198032113,
+      "lng": -73.9990301286,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_129",
+      "city": "NY",
+      "lat": 40.7203929922,
+      "lng": -73.9937568254,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_130",
+      "city": "NY",
+      "lat": 40.7182672427,
+      "lng": -73.988182822,
+      "status": "destroyed",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_131",
+      "city": "NY",
+      "lat": 40.7265202252,
+      "lng": -73.993857555,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_132",
+      "city": "NY",
+      "lat": 40.7407800877,
+      "lng": -74.0070011723,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_133",
+      "city": "NY",
+      "lat": 40.7406854828,
+      "lng": -74.004957053,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_134",
+      "city": "NY",
+      "lat": 40.7486293298,
+      "lng": -74.004158725,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_135",
+      "city": "NY",
+      "lat": 40.7467187478,
+      "lng": -73.9886528185,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_136",
+      "city": "NY",
+      "lat": 40.7056607729,
+      "lng": -73.924006343,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_137",
+      "city": "NY",
+      "lat": 40.7070664556,
+      "lng": -73.9234586361,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_138",
+      "city": "NY",
+      "lat": 40.7390591782,
+      "lng": -74.0034204039,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_139",
+      "city": "NY",
+      "lat": 40.7418059424,
+      "lng": -74.0012363918,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_140",
+      "city": "NY",
+      "lat": 40.7353681836,
+      "lng": -73.9828543707,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_141",
+      "city": "NY",
+      "lat": 40.7181674578,
+      "lng": -73.9848199609,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_142",
+      "city": "NY",
+      "lat": 40.7253681419,
+      "lng": -73.9841880372,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_143",
+      "city": "NY",
+      "lat": 40.7272840674,
+      "lng": -73.9848146682,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_144",
+      "city": "NY",
+      "lat": 40.7265885448,
+      "lng": -73.9831968985,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_145",
+      "city": "NY",
+      "lat": 40.7287922661,
+      "lng": -73.9842026772,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_146",
+      "city": "NY",
+      "lat": 40.7234443924,
+      "lng": -73.9853157117,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_147",
+      "city": "NY",
+      "lat": 40.7184060752,
+      "lng": -73.9975345793,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_148",
+      "city": "NY",
+      "lat": 40.717132077,
+      "lng": -73.9959307007,
+      "status": "damaged",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_149",
+      "city": "NY",
+      "lat": 40.7097969423,
+      "lng": -73.9246421236,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_150",
+      "city": "NY",
+      "lat": 40.7059952025,
+      "lng": -73.921734648,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_151",
+      "city": "NY",
+      "lat": 40.7232891005,
+      "lng": -73.9964488801,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_152",
+      "city": "NY",
+      "lat": 40.7175356933,
+      "lng": -73.9978175156,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_153",
+      "city": "NY",
+      "lat": 40.7194189625,
+      "lng": -73.9942450296,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_154",
+      "city": "NY",
+      "lat": 40.7235143936,
+      "lng": -73.9926453394,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_155",
+      "city": "NY",
+      "lat": 40.723652023,
+      "lng": -73.9849878182,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_156",
+      "city": "NY",
+      "lat": 40.7182157662,
+      "lng": -73.9911406616,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_157",
+      "city": "NY",
+      "lat": 40.7184807416,
+      "lng": -73.988951672,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_158",
+      "city": "NY",
+      "lat": 40.7833674499,
+      "lng": -73.9480020303,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_159",
+      "city": "NY",
+      "lat": 40.7622458883,
+      "lng": -73.9647071713,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_160",
+      "city": "NY",
+      "lat": 40.6703498437,
+      "lng": -73.9304482038,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_161",
+      "city": "NY",
+      "lat": 40.7209769368,
+      "lng": -73.9956191731,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_162",
+      "city": "NY",
+      "lat": 40.7259906111,
+      "lng": -73.941801048,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_163",
+      "city": "NY",
+      "lat": 40.7441259742,
+      "lng": -74.0065107961,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_164",
+      "city": "NY",
+      "lat": 40.7273734982,
+      "lng": -73.9827266797,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_165",
+      "city": "NY",
+      "lat": 40.7269461055,
+      "lng": -73.984351026,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_166",
+      "city": "NY",
+      "lat": 40.7290619661,
+      "lng": -74.0049290933,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_167",
+      "city": "NY",
+      "lat": 40.7075473545,
+      "lng": -73.955813143,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_168",
+      "city": "NY",
+      "lat": 40.7330508397,
+      "lng": -74.000087928,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_169",
+      "city": "NY",
+      "lat": 40.7284461434,
+      "lng": -74.0113721383,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_170",
+      "city": "NY",
+      "lat": 40.7145027993,
+      "lng": -73.992022133,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_171",
+      "city": "NY",
+      "lat": 40.7296806877,
+      "lng": -74.0020397235,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_172",
+      "city": "NY",
+      "lat": 40.7406607659,
+      "lng": -74.0078807364,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_173",
+      "city": "NY",
+      "lat": 40.7637923982,
+      "lng": -73.9829056742,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_174",
+      "city": "NY",
+      "lat": 40.7284982151,
+      "lng": -73.9875970864,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_175",
+      "city": "NY",
+      "lat": 40.7253122452,
+      "lng": -73.9871059099,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_176",
+      "city": "NY",
+      "lat": 40.7400426521,
+      "lng": -74.0036849028,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_177",
+      "city": "NY",
+      "lat": 40.7213029065,
+      "lng": -73.9883998597,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_178",
+      "city": "NY",
+      "lat": 40.727815216,
+      "lng": -73.990949942,
+      "status": "destroyed",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_179",
+      "city": "NY",
+      "lat": 40.7306851387,
+      "lng": -74.047944601,
+      "status": "destroyed",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_180",
+      "city": "NY",
+      "lat": 40.7231147313,
+      "lng": -74.0039168926,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_181",
+      "city": "NY",
+      "lat": 40.7398695598,
+      "lng": -73.9989655016,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_182",
+      "city": "NY",
+      "lat": 40.7372645994,
+      "lng": -73.9970813319,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_183",
+      "city": "NY",
+      "lat": 40.7216551419,
+      "lng": -73.9872084077,
+      "status": "damaged",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_184",
+      "city": "NY",
+      "lat": 40.720003838,
+      "lng": -73.9619055869,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_185",
+      "city": "NY",
+      "lat": 40.7165472487,
+      "lng": -73.9632719855,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_186",
+      "city": "NY",
+      "lat": 40.7141765125,
+      "lng": -73.9537565811,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_187",
+      "city": "NY",
+      "lat": 40.7494030494,
+      "lng": -74.0045645213,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_188",
+      "city": "NY",
+      "lat": 40.7215777457,
+      "lng": -73.9929348962,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_189",
+      "city": "NY",
+      "lat": 40.7592121049,
+      "lng": -73.9978257787,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_216",
+      "city": "NY",
+      "lat": 40.7176535081,
+      "lng": -73.9981752227,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_217",
+      "city": "NY",
+      "lat": 40.7232918426,
+      "lng": -73.9547694453,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_218",
+      "city": "NY",
+      "lat": 40.720626988,
+      "lng": -73.9952453884,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NY_219",
+      "city": "NY",
+      "lat": 40.722213956,
+      "lng": -73.9571544122,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

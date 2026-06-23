@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "CCU",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 3,
+  "invaders": [
+    {
+      "id": "CCU_01",
+      "city": "CCU",
+      "lat": 21.2008193294,
+      "lng": -86.7255448835,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CCU_02",
+      "city": "CCU",
+      "lat": 21.2007017972,
+      "lng": -86.7250904817,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CCU_03",
+      "city": "CCU",
+      "lat": 21.089144453,
+      "lng": -86.8457921276,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

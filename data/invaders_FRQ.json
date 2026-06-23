@@ -1,0 +1,49 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "FRQ",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 4,
+  "invaders": [
+    {
+      "id": "FRQ_01",
+      "city": "FRQ",
+      "lat": 43.9600323868,
+      "lng": 5.780965756,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FRQ_02",
+      "city": "FRQ",
+      "lat": 43.9586815759,
+      "lng": 5.7811250343,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FRQ_03",
+      "city": "FRQ",
+      "lat": 43.9590190469,
+      "lng": 5.7812282326,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FRQ_04",
+      "city": "FRQ",
+      "lat": 43.9597160185,
+      "lng": 5.78055834,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

@@ -1,0 +1,299 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "MLGA",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 29,
+  "invaders": [
+    {
+      "id": "MLGA_01",
+      "city": "MLGA",
+      "lat": 36.7179440093,
+      "lng": -4.4092526444,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MLGA_02",
+      "city": "MLGA",
+      "lat": 36.7221157622,
+      "lng": -4.3880704711,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MLGA_03",
+      "city": "MLGA",
+      "lat": 36.7215546974,
+      "lng": -4.3789223855,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MLGA_04",
+      "city": "MLGA",
+      "lat": 36.7222932354,
+      "lng": -4.3657053712,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MLGA_05",
+      "city": "MLGA",
+      "lat": 36.7190382896,
+      "lng": -4.4106874186,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MLGA_06",
+      "city": "MLGA",
+      "lat": 36.7184242293,
+      "lng": -4.4117371831,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MLGA_07",
+      "city": "MLGA",
+      "lat": 36.7124108355,
+      "lng": -4.4293557942,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MLGA_08",
+      "city": "MLGA",
+      "lat": 36.7120775199,
+      "lng": -4.430263863,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MLGA_09",
+      "city": "MLGA",
+      "lat": 36.7242835044,
+      "lng": -4.4190977835,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MLGA_10",
+      "city": "MLGA",
+      "lat": 36.7222943774,
+      "lng": -4.3746768817,
+      "status": "destroyed",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MLGA_11",
+      "city": "MLGA",
+      "lat": 36.7186942262,
+      "lng": -4.4154631393,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MLGA_12",
+      "city": "MLGA",
+      "lat": 36.7184601376,
+      "lng": -4.4141124932,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MLGA_13",
+      "city": "MLGA",
+      "lat": 36.7176858953,
+      "lng": -4.4174297951,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MLGA_14",
+      "city": "MLGA",
+      "lat": 36.7202102896,
+      "lng": -4.4256016068,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MLGA_15",
+      "city": "MLGA",
+      "lat": 36.7241850032,
+      "lng": -4.4212003384,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MLGA_16",
+      "city": "MLGA",
+      "lat": 36.7184025081,
+      "lng": -4.4254048555,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MLGA_17",
+      "city": "MLGA",
+      "lat": 36.7208527339,
+      "lng": -4.4221151562,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MLGA_18",
+      "city": "MLGA",
+      "lat": 36.7212162336,
+      "lng": -4.421704633,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MLGA_19",
+      "city": "MLGA",
+      "lat": 36.7213208663,
+      "lng": -4.4232843383,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MLGA_20",
+      "city": "MLGA",
+      "lat": 36.7183386662,
+      "lng": -4.4216077936,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MLGA_21",
+      "city": "MLGA",
+      "lat": 36.7201743143,
+      "lng": -4.4210159167,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MLGA_22",
+      "city": "MLGA",
+      "lat": 36.7207353905,
+      "lng": -4.4201014266,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MLGA_23",
+      "city": "MLGA",
+      "lat": 36.7213199801,
+      "lng": -4.4188191778,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MLGA_24",
+      "city": "MLGA",
+      "lat": 36.7220592404,
+      "lng": -4.4210458263,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MLGA_25",
+      "city": "MLGA",
+      "lat": 36.7178033012,
+      "lng": -4.4208899203,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MLGA_26",
+      "city": "MLGA",
+      "lat": 36.7217831452,
+      "lng": -4.4251620776,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MLGA_27",
+      "city": "MLGA",
+      "lat": 36.7229167751,
+      "lng": -4.4172705648,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MLGA_28",
+      "city": "MLGA",
+      "lat": 36.7231710408,
+      "lng": -4.4183465707,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "MLGA_29",
+      "city": "MLGA",
+      "lat": 36.7184880609,
+      "lng": -4.4024249977,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "HALM",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 2,
+  "invaders": [
+    {
+      "id": "HALM_01",
+      "city": "HALM",
+      "lat": 56.6792181349,
+      "lng": 12.7740253145,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "HALM_02",
+      "city": "HALM",
+      "lat": 56.6789871469,
+      "lng": 12.773915807,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "REUN",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 10,
+  "invaders": [
+    {
+      "id": "REUN_01",
+      "city": "REUN",
+      "lat": -21.0546304849,
+      "lng": 55.2221396937,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "REUN_02",
+      "city": "REUN",
+      "lat": -21.0470707425,
+      "lng": 55.2221177724,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "REUN_03",
+      "city": "REUN",
+      "lat": -21.0077827938,
+      "lng": 55.2727027137,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "REUN_04",
+      "city": "REUN",
+      "lat": -20.9293303751,
+      "lng": 55.3315800221,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "REUN_05",
+      "city": "REUN",
+      "lat": -20.8969151049,
+      "lng": 55.5100351227,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "REUN_06",
+      "city": "REUN",
+      "lat": -20.8796754242,
+      "lng": 55.447047352,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "REUN_07",
+      "city": "REUN",
+      "lat": -20.885780566,
+      "lng": 55.4508313837,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "REUN_08",
+      "city": "REUN",
+      "lat": -20.8861442628,
+      "lng": 55.4333653727,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "REUN_10",
+      "city": "REUN",
+      "lat": -21.1379163357,
+      "lng": 55.2956115156,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "REUN_11",
+      "city": "REUN",
+      "lat": -21.1050591257,
+      "lng": 55.2950068324,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

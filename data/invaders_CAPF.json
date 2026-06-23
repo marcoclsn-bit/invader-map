@@ -1,0 +1,109 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "CAPF",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 10,
+  "invaders": [
+    {
+      "id": "CAPF_01",
+      "city": "CAPF",
+      "lat": 44.6929497948,
+      "lng": -1.2331749563,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAPF_02",
+      "city": "CAPF",
+      "lat": 44.655072976,
+      "lng": -1.2540681393,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAPF_03",
+      "city": "CAPF",
+      "lat": 44.6587346282,
+      "lng": -1.2491374466,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAPF_04",
+      "city": "CAPF",
+      "lat": 44.6223785756,
+      "lng": -1.2472764881,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAPF_05",
+      "city": "CAPF",
+      "lat": 44.6566532283,
+      "lng": -1.2391355615,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAPF_06",
+      "city": "CAPF",
+      "lat": 44.6565151877,
+      "lng": -1.2401288736,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAPF_07",
+      "city": "CAPF",
+      "lat": 44.6525768732,
+      "lng": -1.2424313004,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAPF_08",
+      "city": "CAPF",
+      "lat": 44.6737494295,
+      "lng": -1.2390827218,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAPF_09",
+      "city": "CAPF",
+      "lat": 44.7135011978,
+      "lng": -1.2107117556,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "CAPF_10",
+      "city": "CAPF",
+      "lat": 44.6470945198,
+      "lng": -1.2487144873,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

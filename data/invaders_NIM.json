@@ -1,0 +1,59 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "NIM",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 5,
+  "invaders": [
+    {
+      "id": "NIM_01",
+      "city": "NIM",
+      "lat": 43.8351968393,
+      "lng": 4.3622539101,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NIM_02",
+      "city": "NIM",
+      "lat": 43.8356508837,
+      "lng": 4.3613470021,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NIM_03",
+      "city": "NIM",
+      "lat": 43.8371009712,
+      "lng": 4.3596053927,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NIM_04",
+      "city": "NIM",
+      "lat": 43.8381839406,
+      "lng": 4.3573295461,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "NIM_05",
+      "city": "NIM",
+      "lat": 43.833496167,
+      "lng": 4.3672272897,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "FKF",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 14,
+  "invaders": [
+    {
+      "id": "FKF_01",
+      "city": "FKF",
+      "lat": 50.0522450023,
+      "lng": 8.5855887259,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FKF_02",
+      "city": "FKF",
+      "lat": 50.0522739977,
+      "lng": 8.5856260264,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FKF_03",
+      "city": "FKF",
+      "lat": 49.8717868269,
+      "lng": 8.6221561633,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FKF_04",
+      "city": "FKF",
+      "lat": 49.8717197684,
+      "lng": 8.6227992596,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FKF_05",
+      "city": "FKF",
+      "lat": 49.8709473477,
+      "lng": 8.6233556292,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FKF_06",
+      "city": "FKF",
+      "lat": 49.8709021567,
+      "lng": 8.6232241173,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FKF_07",
+      "city": "FKF",
+      "lat": 49.8708775514,
+      "lng": 8.623195055,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FKF_08",
+      "city": "FKF",
+      "lat": 49.8708943748,
+      "lng": 8.6233172083,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FKF_09",
+      "city": "FKF",
+      "lat": 49.8709660142,
+      "lng": 8.6233556159,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FKF_10",
+      "city": "FKF",
+      "lat": 49.8708947572,
+      "lng": 8.6231907009,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FKF_11",
+      "city": "FKF",
+      "lat": 49.8708202711,
+      "lng": 8.6232508429,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FKF_12",
+      "city": "FKF",
+      "lat": 49.8708641081,
+      "lng": 8.6233104445,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FKF_13",
+      "city": "FKF",
+      "lat": 49.8708967733,
+      "lng": 8.623399641,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FKF_14",
+      "city": "FKF",
+      "lat": 49.8706947866,
+      "lng": 8.6229151136,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "ANZR",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 4,
+  "invaders": [
+    {
+      "id": "ANZR_01",
+      "city": "ANZR",
+      "lat": 46.3120428376,
+      "lng": 7.3860922757,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ANZR_02",
+      "city": "ANZR",
+      "lat": 46.3125421237,
+      "lng": 7.3857960744,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ANZR_03",
+      "city": "ANZR",
+      "lat": 46.2961944488,
+      "lng": 7.3963325197,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "ANZR_04",
+      "city": "ANZR",
+      "lat": 46.297050556,
+      "lng": 7.3983294883,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

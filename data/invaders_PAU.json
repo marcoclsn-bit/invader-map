@@ -1,0 +1,109 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "PAU",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 10,
+  "invaders": [
+    {
+      "id": "PAU_01",
+      "city": "PAU",
+      "lat": 43.2965179508,
+      "lng": -0.3728932387,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "PAU_02",
+      "city": "PAU",
+      "lat": 43.2953874741,
+      "lng": -0.3720462959,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "PAU_03",
+      "city": "PAU",
+      "lat": 43.2993559224,
+      "lng": -0.3668767624,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "PAU_04",
+      "city": "PAU",
+      "lat": 43.2958653285,
+      "lng": -0.3659455777,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "PAU_05",
+      "city": "PAU",
+      "lat": 43.2960723553,
+      "lng": -0.3749804914,
+      "status": "damaged",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "PAU_06",
+      "city": "PAU",
+      "lat": 43.2951562788,
+      "lng": -0.373953202,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "PAU_07",
+      "city": "PAU",
+      "lat": 43.2980144748,
+      "lng": -0.3699191817,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "PAU_08",
+      "city": "PAU",
+      "lat": 43.2986940533,
+      "lng": -0.3683275337,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "PAU_09",
+      "city": "PAU",
+      "lat": 43.3167758678,
+      "lng": -0.3674902691,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "PAU_10",
+      "city": "PAU",
+      "lat": 43.2936076187,
+      "lng": -0.3655265353,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

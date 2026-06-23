@@ -1,0 +1,69 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "RDU",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 6,
+  "invaders": [
+    {
+      "id": "RDU_01",
+      "city": "RDU",
+      "lat": 50.00282766,
+      "lng": 5.1458581281,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RDU_02",
+      "city": "RDU",
+      "lat": 50.001891397,
+      "lng": 5.1458712931,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RDU_03",
+      "city": "RDU",
+      "lat": 50.001100656,
+      "lng": 5.1474724512,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RDU_04",
+      "city": "RDU",
+      "lat": 50.002294694,
+      "lng": 5.1491369283,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RDU_05",
+      "city": "RDU",
+      "lat": 50.0025245372,
+      "lng": 5.1468911872,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "RDU_06",
+      "city": "RDU",
+      "lat": 50.0073555467,
+      "lng": 5.1581696185,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

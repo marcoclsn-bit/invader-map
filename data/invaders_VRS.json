@@ -1,0 +1,429 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "VRS",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 42,
+  "invaders": [
+    {
+      "id": "VRS_01",
+      "city": "VRS",
+      "lat": 48.8077031992,
+      "lng": 2.1308988348,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_02",
+      "city": "VRS",
+      "lat": 48.8062540077,
+      "lng": 2.1308805109,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_03",
+      "city": "VRS",
+      "lat": 48.8055858639,
+      "lng": 2.1303642079,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_04",
+      "city": "VRS",
+      "lat": 48.807099617,
+      "lng": 2.1324933682,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_05",
+      "city": "VRS",
+      "lat": 48.801296926,
+      "lng": 2.1250803741,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_06",
+      "city": "VRS",
+      "lat": 48.8020251244,
+      "lng": 2.1293286968,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_07",
+      "city": "VRS",
+      "lat": 48.8086606049,
+      "lng": 2.1294180952,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_08",
+      "city": "VRS",
+      "lat": 48.8002774779,
+      "lng": 2.1247379174,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_09",
+      "city": "VRS",
+      "lat": 48.8007918116,
+      "lng": 2.1284096353,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_10",
+      "city": "VRS",
+      "lat": 48.8321820904,
+      "lng": 2.152848059,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_11",
+      "city": "VRS",
+      "lat": 48.8056160182,
+      "lng": 2.1354359476,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_12",
+      "city": "VRS",
+      "lat": 48.8063800023,
+      "lng": 2.1273550681,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_13",
+      "city": "VRS",
+      "lat": 48.7983631824,
+      "lng": 2.1532881477,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_14",
+      "city": "VRS",
+      "lat": 48.7982337507,
+      "lng": 2.1351701872,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_15",
+      "city": "VRS",
+      "lat": 48.8066019072,
+      "lng": 2.1248064452,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_16",
+      "city": "VRS",
+      "lat": 48.7995366431,
+      "lng": 2.1241990437,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_17",
+      "city": "VRS",
+      "lat": 48.8093230466,
+      "lng": 2.1250596187,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_18",
+      "city": "VRS",
+      "lat": 48.805027244,
+      "lng": 2.1271481604,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_19",
+      "city": "VRS",
+      "lat": 48.7979950579,
+      "lng": 2.1231555379,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_20",
+      "city": "VRS",
+      "lat": 48.8008952866,
+      "lng": 2.1199634223,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_21",
+      "city": "VRS",
+      "lat": 48.8001961293,
+      "lng": 2.1321271365,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_22",
+      "city": "VRS",
+      "lat": 48.805474666,
+      "lng": 2.1257565355,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_23",
+      "city": "VRS",
+      "lat": 48.801300385,
+      "lng": 2.1185161861,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_24",
+      "city": "VRS",
+      "lat": 48.8046184972,
+      "lng": 2.1182235018,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_25",
+      "city": "VRS",
+      "lat": 48.8046457581,
+      "lng": 2.1127032155,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_26",
+      "city": "VRS",
+      "lat": 48.8068177573,
+      "lng": 2.1100463683,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_27",
+      "city": "VRS",
+      "lat": 48.8113106815,
+      "lng": 2.1101462755,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_28",
+      "city": "VRS",
+      "lat": 48.8094428232,
+      "lng": 2.1136048967,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_29",
+      "city": "VRS",
+      "lat": 48.8050733869,
+      "lng": 2.1192773185,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_30",
+      "city": "VRS",
+      "lat": 48.8083299652,
+      "lng": 2.1155913463,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_31",
+      "city": "VRS",
+      "lat": 48.808235359,
+      "lng": 2.1196973712,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_32",
+      "city": "VRS",
+      "lat": 48.8058970694,
+      "lng": 2.1191082775,
+      "status": "destroyed",
+      "points": 0,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_33",
+      "city": "VRS",
+      "lat": 48.8049450354,
+      "lng": 2.1159670686,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_34",
+      "city": "VRS",
+      "lat": 48.8068575718,
+      "lng": 2.1430258005,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_35",
+      "city": "VRS",
+      "lat": 48.802313964,
+      "lng": 2.159135751,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_36",
+      "city": "VRS",
+      "lat": 48.7958554774,
+      "lng": 2.1383695217,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_37",
+      "city": "VRS",
+      "lat": 48.7984089788,
+      "lng": 2.1254663718,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_38",
+      "city": "VRS",
+      "lat": 48.8032810439,
+      "lng": 2.1262956514,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_39",
+      "city": "VRS",
+      "lat": 48.8087026669,
+      "lng": 2.1238924174,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_40",
+      "city": "VRS",
+      "lat": 48.8194639555,
+      "lng": 2.1377689791,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_41",
+      "city": "VRS",
+      "lat": 48.8099142109,
+      "lng": 2.1342473322,
+      "status": "ok",
+      "points": 100,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "VRS_42",
+      "city": "VRS",
+      "lat": 48.8189020964,
+      "lng": 2.1499018833,
+      "status": "ok",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

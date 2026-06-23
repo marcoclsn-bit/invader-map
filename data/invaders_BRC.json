@@ -1,0 +1,179 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "BRC",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 17,
+  "invaders": [
+    {
+      "id": "BRC_01",
+      "city": "BRC",
+      "lat": 41.3826818675,
+      "lng": 2.1676615436,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRC_02",
+      "city": "BRC",
+      "lat": 41.382959943,
+      "lng": 2.1678692267,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRC_03",
+      "city": "BRC",
+      "lat": 41.3819331085,
+      "lng": 2.1698534432,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRC_04",
+      "city": "BRC",
+      "lat": 41.3822728014,
+      "lng": 2.1736310498,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRC_05",
+      "city": "BRC",
+      "lat": 41.3835435233,
+      "lng": 2.1755254767,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRC_06",
+      "city": "BRC",
+      "lat": 41.3834324856,
+      "lng": 2.181648581,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRC_07",
+      "city": "BRC",
+      "lat": 41.3805349682,
+      "lng": 2.1708465134,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRC_08",
+      "city": "BRC",
+      "lat": 41.3817229556,
+      "lng": 2.1646159634,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRC_09",
+      "city": "BRC",
+      "lat": 41.384700075,
+      "lng": 2.1815130806,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRC_10",
+      "city": "BRC",
+      "lat": 41.3861857304,
+      "lng": 2.179095565,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRC_11",
+      "city": "BRC",
+      "lat": 41.3810279416,
+      "lng": 2.1772370992,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRC_12",
+      "city": "BRC",
+      "lat": 41.3824276594,
+      "lng": 2.1688555989,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRC_13",
+      "city": "BRC",
+      "lat": 41.3875452526,
+      "lng": 2.1756514449,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRC_14",
+      "city": "BRC",
+      "lat": 41.3873199199,
+      "lng": 2.1756393768,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRC_15",
+      "city": "BRC",
+      "lat": 41.3855345725,
+      "lng": 2.1746310487,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRC_16",
+      "city": "BRC",
+      "lat": 41.3827708762,
+      "lng": 2.1665799168,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "BRC_17",
+      "city": "BRC",
+      "lat": 41.3798509654,
+      "lng": 2.1683588142,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

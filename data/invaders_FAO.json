@@ -1,0 +1,49 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "FAO",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 4,
+  "invaders": [
+    {
+      "id": "FAO_01",
+      "city": "FAO",
+      "lat": 37.016003132,
+      "lng": -7.9357964517,
+      "status": "ok",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FAO_02",
+      "city": "FAO",
+      "lat": 37.013064575,
+      "lng": -7.9344161091,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FAO_03",
+      "city": "FAO",
+      "lat": 37.0273562943,
+      "lng": -8.0223959326,
+      "status": "destroyed",
+      "points": 40,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "FAO_04",
+      "city": "FAO",
+      "lat": 37.0158895887,
+      "lng": -7.9351235772,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}

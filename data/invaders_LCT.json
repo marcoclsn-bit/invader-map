@@ -1,0 +1,99 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "LCT",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 9,
+  "invaders": [
+    {
+      "id": "LCT_01",
+      "city": "LCT",
+      "lat": 43.1925915258,
+      "lng": 5.6350501265,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LCT_02",
+      "city": "LCT",
+      "lat": 43.191226148,
+      "lng": 5.6196333225,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LCT_03",
+      "city": "LCT",
+      "lat": 43.1740564612,
+      "lng": 5.6063372015,
+      "status": "ok",
+      "points": 10,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LCT_04",
+      "city": "LCT",
+      "lat": 43.1798003249,
+      "lng": 5.6117589956,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LCT_05",
+      "city": "LCT",
+      "lat": 43.1982743346,
+      "lng": 5.6332388512,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LCT_06",
+      "city": "LCT",
+      "lat": 43.19829016,
+      "lng": 5.6326485371,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LCT_07",
+      "city": "LCT",
+      "lat": 43.1849481656,
+      "lng": 5.6200486968,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LCT_08",
+      "city": "LCT",
+      "lat": 43.1737839415,
+      "lng": 5.6059085686,
+      "status": "ok",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    },
+    {
+      "id": "LCT_09",
+      "city": "LCT",
+      "lat": 43.1724480665,
+      "lng": 5.6114149284,
+      "status": "damaged",
+      "points": 50,
+      "hint": "",
+      "source": "goguelnikov"
+    }
+  ]
+}
