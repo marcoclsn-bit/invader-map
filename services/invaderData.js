@@ -30,7 +30,7 @@ import {
 // Remplace par l'URL GitHub raw quand le fichier est publié dans le repo.
 // Format attendu : { version, updatedAt, invaders: [...] }
 export const DATA_URL =
-  'https://raw.githubusercontent.com/OWNER/REPO/main/data/invaders.json';
+  'https://raw.githubusercontent.com/marcoclsn-bit/invader-map/main/data/invaders.json';
 
 // ─── Clés AsyncStorage ────────────────────────────────────────────────────────
 const KEY_DATA = '@invader_remote_data';

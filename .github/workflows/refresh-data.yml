@@ -1,0 +1,59 @@
+# .github/workflows/refresh-data.yml
+#
+# Rafraîchit data/invaders.json depuis la source communautaire goguelnikov/SpaceInvaders.
+#
+# Déclencheurs :
+#   - Planifié : tous les lundis à 6h UTC
+#   - Manuel   : onglet "Actions" du repo → "Run workflow"
+#
+# Ce que fait l'Action :
+#   1. Exécute scripts/build_invaders.mjs
+#   2. Si le fichier data/invaders.json a changé → commit + push automatique
+#   3. Sinon → rien (pas de commit inutile)
+#
+# Comment relancer manuellement :
+#   Sur GitHub : onglet Actions → "Rafraîchissement des données Invaders" → "Run workflow"
+
+name: Rafraîchissement des données Invaders
+
+on:
+  schedule:
+    # Tous les lundis à 6h UTC (choisir une heure creuse)
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+    # Déclenchement manuel possible depuis l'onglet Actions
+
+jobs:
+  refresh:
+    name: Mise à jour data/invaders.json
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write   # nécessaire pour le commit automatique
+
+    steps:
+      - name: Checkout du repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Exécution du script de build
+        run: node scripts/build_invaders.mjs
+
+      - name: Commit si données modifiées
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet data/invaders.json 2>/dev/null && \
+             git ls-files --error-unmatch data/invaders.json 2>/dev/null; then
+            echo "Aucun changement détecté dans data/invaders.json — pas de commit."
+          else
+            git add data/invaders.json
+            git commit -m "data: mise à jour automatique Invaders Paris ($(date -u +%Y-%m-%d))"
+            git push
+            echo "✓ data/invaders.json mis à jour et poussé."
+          fi
