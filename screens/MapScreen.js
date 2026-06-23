@@ -7,7 +7,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { useAppContext } from '../context/AppContext';
-import { CITIES } from '../cities/registry';
+import { CITIES, ENABLED_CITIES } from '../cities/registry';
 import { ALL_STATUSES } from '../constants';
 import InvaderMarker from '../components/InvaderMarker';
 import { useTheme } from '../theme/ThemeContext';
@@ -501,6 +501,19 @@ export default function MapScreen({ navigation }) {
         })}
       </MapView>
 
+      {/* Chip ville — visible seulement si plusieurs villes actives */}
+      {ENABLED_CITIES.length > 1 && (
+        <TouchableOpacity
+          style={[styles.cityChip, { top: insets.top + 10 }]}
+          onPress={() => navigation.getParent()?.navigate('Palmarès')}
+          activeOpacity={0.75}
+        >
+          <Ionicons name="globe-outline" size={13} color={theme.textPrimary} />
+          <Text style={styles.cityChipText}>{city.name}</Text>
+          <Ionicons name="chevron-down" size={11} color={theme.textSecondary} />
+        </TouchableOpacity>
+      )}
+
       {/* Boutons flottants (⚙ en tête de colonne) */}
       <View style={[styles.floatingButtons, { top: insets.top + 10 }]}>
         <TouchableOpacity
@@ -562,6 +575,15 @@ function makeStyles(t) {
     container: { flex: 1 },
     map: { ...StyleSheet.absoluteFillObject },
 
+    cityChip: {
+      position: 'absolute', left: 16,
+      flexDirection: 'row', alignItems: 'center', gap: 5,
+      backgroundColor: t.surface,
+      paddingHorizontal: 12, paddingVertical: 8, borderRadius: 20,
+      shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.2, shadowRadius: 4, elevation: 4,
+    },
+    cityChipText: { fontSize: 13, fontWeight: '600', color: t.textPrimary },
     floatingButtons: { position: 'absolute', right: 16, alignItems: 'flex-end', gap: 10 },
     gearBtn: {
       width: 38, height: 38, borderRadius: 19,

@@ -94,7 +94,7 @@ function ArrondissementsView({ stats, insets, onBack, onSettings, onHuntAr, them
 
 export default function PalmèresScreen({ navigation }) {
   const insets = useSafeAreaInsets();
-  const { invaders, flashed } = useAppContext();
+  const { invaders, flashed, currentCityCode, setCurrentCity, cityIndex } = useAppContext();
   const { theme } = useTheme();
   const { t } = useTranslation();
   const styles = getStyles(theme);
@@ -182,30 +182,55 @@ export default function PalmèresScreen({ navigation }) {
         <Text style={styles.summaryPct}>{stats.pct.toFixed(1)} %</Text>
       </View>
 
-      {ENABLED_CITIES.map(c => (
-        <TouchableOpacity
-          key={c.code}
-          style={styles.villeCard}
-          onPress={() => setDrillVille(c.code)}
-          activeOpacity={0.7}
-        >
-          <View style={styles.villeLeft}>
-            <View style={styles.villeIcon}>
-              <Ionicons name="business-outline" size={22} color={theme.accent} />
-            </View>
-            <View>
-              <Text style={styles.villeName}>{c.name}</Text>
-              <Text style={styles.villeSub}>
-                {t('palmares.villeCard', { flashed: stats.flashed, total: stats.total, pct: stats.pct.toFixed(0), pts: stats.flashedPts })}
-              </Text>
-            </View>
+      {ENABLED_CITIES.map(c => {
+        const isActive = c.code === currentCityCode;
+        const cityInfo = cityIndex.find(ci => ci.code === c.code);
+        const cityTotal = cityInfo?.count ?? null;
+        return (
+          <View key={c.code} style={styles.villeBlock}>
+            <TouchableOpacity
+              style={[styles.villeCard, isActive && { borderColor: theme.accent, borderWidth: 1.5 }]}
+              onPress={() => setCurrentCity(c.code)}
+              activeOpacity={0.7}
+            >
+              <View style={styles.villeLeft}>
+                <View style={[styles.villeIcon, isActive && { backgroundColor: theme.accent }]}>
+                  <Ionicons name="business-outline" size={22} color={isActive ? '#fff' : theme.accent} />
+                </View>
+                <View>
+                  <Text style={styles.villeName}>{c.name}</Text>
+                  <Text style={styles.villeSub}>
+                    {isActive
+                      ? t('palmares.villeCard', { flashed: stats.flashed, total: stats.total, pct: stats.pct.toFixed(0), pts: stats.flashedPts })
+                      : cityTotal !== null
+                        ? t('palmares.villeCardTotal', { count: cityTotal })
+                        : '…'
+                    }
+                  </Text>
+                </View>
+              </View>
+              {isActive
+                ? <Ionicons name="checkmark-circle" size={22} color={theme.accent} />
+                : <Ionicons name="chevron-forward" size={18} color={theme.textSecondary} />
+              }
+            </TouchableOpacity>
+
+            {isActive && c.subdivisionsKey && (
+              <TouchableOpacity
+                style={styles.districtLink}
+                onPress={() => setDrillVille(c.code)}
+                activeOpacity={0.7}
+              >
+                <Ionicons name="grid-outline" size={14} color={theme.accent} />
+                <Text style={[styles.districtLinkText, { color: theme.accent }]}>
+                  {t('palmares.viewByDistrict')}
+                </Text>
+                <Ionicons name="chevron-forward" size={13} color={theme.accent} />
+              </TouchableOpacity>
+            )}
           </View>
-          {c.subdivisionsKey
-            ? <Ionicons name="chevron-forward" size={18} color={theme.textSecondary} />
-            : null
-          }
-        </TouchableOpacity>
-      ))}
+        );
+      })}
     </View>
   );
 }
@@ -238,13 +263,20 @@ function makeStyles(t) {
     track: { height: 8, borderRadius: 4, backgroundColor: t.border, overflow: 'hidden' },
     fill: { height: 8, borderRadius: 4 },
 
+    villeBlock: { marginHorizontal: 16, marginBottom: 12 },
     villeCard: {
-      marginHorizontal: 16, backgroundColor: t.surface, borderRadius: 14,
+      backgroundColor: t.surface, borderRadius: 14,
       paddingHorizontal: 16, paddingVertical: 14,
       flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
       shadowColor: '#000', shadowOffset: { width: 0, height: 1 },
       shadowOpacity: 0.1, shadowRadius: 4, elevation: 2,
     },
+    districtLink: {
+      flexDirection: 'row', alignItems: 'center', gap: 6,
+      paddingHorizontal: 14, paddingVertical: 9, marginTop: 6,
+      alignSelf: 'flex-start',
+    },
+    districtLinkText: { fontSize: 13, fontWeight: '500' },
     villeLeft: { flexDirection: 'row', alignItems: 'center', gap: 14 },
     villeIcon: {
       width: 42, height: 42, borderRadius: 12,

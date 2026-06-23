@@ -17,16 +17,16 @@ export const CITIES = {
     subdivisionsKey: 'paris-arrondissements',
     enabled: true,
   },
-  // LDN: {
-  //   code: 'LDN',
-  //   name: 'London',
-  //   center: { lat: 51.5074, lng: -0.1278 },
-  //   mapDelta: { latitudeDelta: 0.12, longitudeDelta: 0.12 },
-  //   bbox: { minLat: 51.28, maxLat: 51.70, minLng: -0.55, maxLng: 0.35 },
-  //   orsCountry: 'boundary.country=GB',
-  //   subdivisionsKey: null,
-  //   enabled: false,
-  // },
+  LDN: {
+    code: 'LDN',
+    name: 'London',
+    center: { lat: 51.5074, lng: -0.1278 },
+    mapDelta: { latitudeDelta: 0.12, longitudeDelta: 0.12 },
+    bbox: { minLat: 51.28, maxLat: 51.70, minLng: -0.55, maxLng: 0.35 },
+    orsCountry: 'boundary.country=GB',
+    subdivisionsKey: null,
+    enabled: true,
+  },
 };
 
 export const ENABLED_CITIES = Object.values(CITIES).filter(c => c.enabled);

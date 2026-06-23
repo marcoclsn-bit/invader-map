@@ -134,6 +134,8 @@
     "arStat": "{{flashed}}/{{total}} flashés · {{pct}} % · {{pts}} pts",
     "detailSummary": "{{flashed}} / {{total}} flashés · {{pts}} pts",
     "villeCard": "{{flashed}}/{{total}} · {{pct}} % · {{pts}} pts",
+    "villeCardTotal": "{{count}} invaders",
+    "viewByDistrict": "Voir par arrondissement",
     "paris": "Paris"
   },
   "onboarding": {
