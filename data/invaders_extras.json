@@ -1,0 +1,68 @@
+{
+  "_readme": {
+    "titre": "Invaders Paris — ajouts et corrections manuels",
+    "description": "Ce fichier complète la source automatique (goguelnikov/SpaceInvaders). Les entrées ici ont PRIORITÉ sur la base : si un id est présent dans les deux, ta version gagne.",
+    "note_json": "JSON n'accepte pas de commentaires. Les champs qui commencent par '_' sont ignorés par le script. Les entrées avec 'disabled: true' sont des exemples inactifs.",
+
+    "comment_ajouter_un_invader": [
+      "── Comment ajouter un Invader ──────────────────────────────",
+      "1. Copie un bloc {} du tableau 'invaders' ci-dessous.",
+      "2. Remplis les champs (voir détails ci-dessous).",
+      "3. Retire la ligne 'disabled: true' pour activer l'entrée.",
+      "4. Sauvegarde le fichier.",
+      "5. Dans un terminal, depuis la racine du projet :",
+      "     git add data/invaders_extras.json",
+      "     git commit -m 'extras: ajout PA_XXXX'",
+      "     git push",
+      "→ La GitHub Action intègre l'entrée dans invaders.json au prochain run.",
+      "→ Pour l'appliquer immédiatement : node scripts/build_invaders.mjs"
+    ],
+
+    "champs": {
+      "id":       "Identifiant unique. Ex : 'PA_1529'. Si l'id existe déjà dans la base goguelnikov, ta version le remplace.",
+      "lat":      "Latitude GPS — nombre décimal avec un POINT (pas une virgule). Ex : 48.8566. Dans Google Maps : appui long sur l'endroit → copie les coordonnées (premier nombre = latitude).",
+      "lng":      "Longitude GPS — nombre décimal avec un POINT. Ex : 2.3522. (second nombre dans Google Maps).",
+      "status":   "État de l'Invader. Valeurs possibles : ok | damaged | destroyed | hidden | unknown",
+      "points":   "Valeur en points. Nombre entier : 10, 20, 30, 40 ou 50.",
+      "hint":     "Indice de localisation (texte libre). Peut être vide : \"\".",
+      "source":   "Origine de l'info (facultatif). Ex : 'perso', 'pnote', 'flashinvaders'. Par défaut : 'extras'.",
+      "disabled": "Mettre true pour désactiver une entrée sans la supprimer (utile pour les exemples)."
+    }
+  },
+
+  "invaders": [
+    {
+      "_comment": "EXEMPLE 1 — nouvel Invader absent de la base goguelnikov. Retire la ligne 'disabled' pour l'activer.",
+      "disabled": true,
+      "id": "PA_1529",
+      "lat": 48.8601,
+      "lng": 2.3477,
+      "status": "ok",
+      "points": 20,
+      "hint": "Rue de Rivoli, angle rue du Roule, 1er arr. — niveau 2e étage",
+      "source": "perso"
+    },
+    {
+      "_comment": "EXEMPLE 2 — correction d'un Invader existant (mauvaises coordonnées ou statut erroné dans la base).",
+      "disabled": true,
+      "id": "PA_0042",
+      "lat": 48.8712,
+      "lng": 2.3301,
+      "status": "damaged",
+      "points": 10,
+      "hint": "Bd Haussmann, angle rue Taitbout, 9e arr. — niveau 3e étage",
+      "source": "perso"
+    },
+    {
+      "_comment": "EXEMPLE 3 — Invader repéré via pnote.eu, non encore référencé dans goguelnikov.",
+      "disabled": true,
+      "id": "PA_EX_PNOTE",
+      "lat": 48.8553,
+      "lng": 2.3489,
+      "status": "ok",
+      "points": 30,
+      "hint": "Île de la Cité, derrière Notre-Dame",
+      "source": "pnote"
+    }
+  ]
+}
