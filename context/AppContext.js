@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect, useRef } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as Location from 'expo-location';
 import { INVADERS as EMBEDDED_PA, INVADERS_VERSION, INVADERS_UPDATED_AT } from '../data/invaders';
 import { ALL_STATUSES, DEFAULT_LABELS, STATUS_COLOR, DEFAULT_LABEL_DEFS } from '../constants';
 import { initInvaderService, loadCityData, onCityUpdate, checkCityForUpdate, getCityIndex } from '../services/invaderData';
@@ -10,6 +11,16 @@ const AppContext = createContext(null);
 
 export function useAppContext() {
   return useContext(AppContext);
+}
+
+// Ville activée la plus proche d'une coordonnée GPS
+function _nearestCity(lat, lng) {
+  return ENABLED_CITIES.reduce((best, c) => {
+    const dlat = lat - c.center.lat;
+    const dlng = (lng - c.center.lng) * Math.cos(lat * Math.PI / 180);
+    const d2 = dlat * dlat + dlng * dlng;
+    return d2 < best.d2 ? { city: c, d2 } : best;
+  }, { city: ENABLED_CITIES[0], d2: Infinity }).city;
 }
 
 export function AppProvider({ children }) {
@@ -136,20 +147,22 @@ export function AppProvider({ children }) {
 
   // ─── Chargement au démarrage ──────────────────────────────────────────────────
   useEffect(() => {
-    Promise.all([
-      AsyncStorage.getItem('invader_flashed'),
-      AsyncStorage.getItem('invader_labels'),
-      AsyncStorage.getItem('invader_label_defs'),
-      AsyncStorage.getItem('invader_status_colors'),
-      AsyncStorage.getItem('invader_color_overrides'),
-      AsyncStorage.getItem('invader_maps_app'),
-      AsyncStorage.getItem(LANGUAGE_STORAGE_KEY),
-      AsyncStorage.getItem('@invader_onboarding_done'),
-      AsyncStorage.getItem('@invader_current_city'),
-    ]).then(([
-      flashedRaw, labelsRaw, labelDefsRaw, statusColorsRaw, colorOverridesRaw,
-      mapsAppRaw, langRaw, onboardingRaw, currentCityRaw,
-    ]) => {
+    (async () => {
+      const [
+        flashedRaw, labelsRaw, labelDefsRaw, statusColorsRaw, colorOverridesRaw,
+        mapsAppRaw, langRaw, onboardingRaw, currentCityRaw,
+      ] = await Promise.all([
+        AsyncStorage.getItem('invader_flashed'),
+        AsyncStorage.getItem('invader_labels'),
+        AsyncStorage.getItem('invader_label_defs'),
+        AsyncStorage.getItem('invader_status_colors'),
+        AsyncStorage.getItem('invader_color_overrides'),
+        AsyncStorage.getItem('invader_maps_app'),
+        AsyncStorage.getItem(LANGUAGE_STORAGE_KEY),
+        AsyncStorage.getItem('@invader_onboarding_done'),
+        AsyncStorage.getItem('@invader_current_city'),
+      ]);
+
       if (flashedRaw)       setFlashed(new Set(JSON.parse(flashedRaw)));
       if (labelsRaw)        setLabels(JSON.parse(labelsRaw));
       if (labelDefsRaw) {
@@ -170,20 +183,34 @@ export function AppProvider({ children }) {
       applyLanguage(storedLang);
       if (!onboardingRaw) setShowOnboarding(true);
 
-      // Restaure la ville précédente si elle est dans le registre
-      if (currentCityRaw && CITIES[currentCityRaw] && currentCityRaw !== DEFAULT_CITY_CODE) {
-        currentCityCodeRef.current = currentCityRaw;
-        setCurrentCityCode(currentCityRaw);
+      // Ville de démarrage : GPS > préférence stockée > défaut (PA)
+      let cityToLoad = DEFAULT_CITY_CODE;
+      try {
+        const pos = await Location.getLastKnownPositionAsync({ maxAge: 3_600_000 });
+        if (pos) {
+          cityToLoad = _nearestCity(pos.coords.latitude, pos.coords.longitude).code;
+        } else if (currentCityRaw && CITIES[currentCityRaw]) {
+          cityToLoad = currentCityRaw;
+        }
+      } catch (_) {
+        if (currentCityRaw && CITIES[currentCityRaw]) cityToLoad = currentCityRaw;
+      }
+
+      if (cityToLoad !== DEFAULT_CITY_CODE) {
+        currentCityCodeRef.current = cityToLoad;
+        setCurrentCityCode(cityToLoad);
         setInvaders([]);
-        loadCityData(currentCityRaw).then(data => {
-          if (data && currentCityCodeRef.current === currentCityRaw) {
+        loadCityData(cityToLoad).then(data => {
+          if (data && currentCityCodeRef.current === cityToLoad) {
             setInvaders(data.invaders);
             setCityVersion(data.version);
             setCityUpdatedAt(data.updatedAt);
           }
         });
       }
-    }).finally(() => setLoaded(true));
+
+      setLoaded(true);
+    })();
   }, []);
 
   // ─── Persistance automatique ──────────────────────────────────────────────────
