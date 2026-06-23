@@ -21,7 +21,7 @@ La **première ligne** doit être l'en-tête. Les noms de colonnes sont sensible
 | Colonne  | Description | Valeur par défaut |
 |----------|-------------|-------------------|
 | `hint`   | Indice de localisation (texte libre) | *(vide)* |
-| `status` | `ok` / `damaged` / `destroyed` / `hidden` / `unknown` | `unknown` |
+| `status` | `ok` / `damaged` / `destroyed` / `hidden` / `unknown` | `ok` |
 | `points` | Valeur en points : 10, 20, 30, 40 ou 50 | `10` |
 
 Les colonnes peuvent être dans n'importe quel ordre du moment que l'en-tête

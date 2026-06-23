@@ -32,7 +32,7 @@ const EXTRAS     = join(__dir, '..', 'data', 'invaders_extras.json');
 /** Bbox Île-de-France — doit rester cohérente avec build_invaders.mjs. */
 const BBOX = { minLat: 48.50, maxLat: 49.10, minLng: 1.90, maxLng: 3.00 };
 
-const DEFAULT_STATUS = 'unknown';
+const DEFAULT_STATUS = 'ok';
 const DEFAULT_POINTS = 10;
 
 const VALID_STATUSES = new Set(['ok', 'damaged', 'destroyed', 'hidden', 'unknown']);
