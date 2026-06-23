@@ -129,7 +129,7 @@ function FlashOverlay({ invader, point, theme, onDone }) {
           zIndex: 999,
         }}
       >
-        +{invader.points} PTS
+        {invader.points != null ? `+${invader.points} PTS` : '✓'}
       </Animated.Text>
     </>
   );
@@ -269,7 +269,7 @@ function InvaderPanel({ invader, flashed, onToggleFlash, onNavigate, onClose }) 
         <View style={[styles.statusBadge, { backgroundColor: statusColors[invader.status] }]}>
           <Text style={styles.statusText}>{t(`common.status.${invader.status}`) ?? invader.status}</Text>
         </View>
-        <Text style={styles.points}>{invader.points} pts</Text>
+        <Text style={styles.points}>{invader.points != null ? `${invader.points} pts` : '— pts'}</Text>
       </View>
 
       {invader.hint ? <Text style={styles.hint}>{invader.hint}</Text> : null}
@@ -418,6 +418,16 @@ export default function MapScreen({ navigation }) {
 
   function closeAll() { setSelected(null); setShowFilters(false); }
 
+  // Anime vers le centre de la nouvelle ville et ferme tout
+  useEffect(() => {
+    setSelected(null);
+    setShowFilters(false);
+    mapRef.current?.animateToRegion(
+      { latitude: city.center.lat, longitude: city.center.lng, ...city.mapDelta },
+      600
+    );
+  }, [currentCityCode]); // eslint-disable-line react-hooks/exhaustive-deps
+
   async function handleFlashFromMap(id) {
     const willFlash = !flashed.has(id);
     toggleFlash(id);
@@ -505,7 +515,7 @@ export default function MapScreen({ navigation }) {
       {ENABLED_CITIES.length > 1 && (
         <TouchableOpacity
           style={[styles.cityChip, { top: insets.top + 10 }]}
-          onPress={() => navigation.getParent()?.navigate('Palmarès')}
+          onPress={() => navigation.navigate('Palmarès')}
           activeOpacity={0.75}
         >
           <Ionicons name="globe-outline" size={13} color={theme.textPrimary} />

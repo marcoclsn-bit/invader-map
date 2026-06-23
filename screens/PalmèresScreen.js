@@ -106,7 +106,7 @@ export default function PalmèresScreen({ navigation }) {
     [invaders]
   );
   const totalAllPts = useMemo(
-    () => flashable.reduce((s, inv) => s + inv.points, 0),
+    () => flashable.reduce((s, inv) => s + (inv.points ?? 0), 0),
     [flashable]
   );
 
@@ -119,14 +119,15 @@ export default function PalmèresScreen({ navigation }) {
     }
     for (const inv of flashable) {
       const isFlashed = flashed.has(inv.id);
-      if (isFlashed) { totalFlashed++; totalFlashedPts += inv.points; }
+      const pts = inv.points ?? 0;
+      if (isFlashed) { totalFlashed++; totalFlashedPts += pts; }
       const ar = INVADER_DISTRICT.get(inv.id);
       if (ar) {
         const s = byAr.get(ar);
         if (s) {
           s.total++;
-          s.totalPts += inv.points;
-          if (isFlashed) { s.flashed++; s.flashedPts += inv.points; }
+          s.totalPts += pts;
+          if (isFlashed) { s.flashed++; s.flashedPts += pts; }
         }
       }
     }
