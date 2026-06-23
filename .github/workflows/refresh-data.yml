@@ -18,8 +18,8 @@ name: Rafraîchissement des données Invaders
 
 on:
   schedule:
-    # Tous les lundis à 6h UTC (choisir une heure creuse)
-    - cron: '0 6 * * 1'
+    # Tous les jours à 6h UTC (heure creuse)
+    - cron: '0 6 * * *'
   workflow_dispatch:
     # Déclenchement manuel possible depuis l'onglet Actions
 
