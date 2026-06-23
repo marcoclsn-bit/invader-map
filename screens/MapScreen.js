@@ -234,6 +234,17 @@ function FilterPanel({ filters, onFiltersChange, onClose }) {
 
 // ─── Fiche Invader ────────────────────────────────────────────────────────────
 
+// Ouvre le hashtag Instagram de l'Invader.
+// En Expo Go : canOpenURL retourne toujours false (pas de LSApplicationQueriesSchemes)
+// → ouvre Safari. En build EAS avec app.json configuré → tente l'app d'abord.
+async function openInstagramTag(id) {
+  if (!id || !/^[\w]+$/.test(id)) return; // id vide ou format bizarre → on ne fait rien
+  const appUrl = `instagram://tag?name=${id}`;
+  const webUrl = `https://www.instagram.com/explore/tags/${encodeURIComponent(id)}/`;
+  const canOpen = await Linking.canOpenURL(appUrl).catch(() => false);
+  Linking.openURL(canOpen ? appUrl : webUrl).catch(() => Linking.openURL(webUrl));
+}
+
 function InvaderPanel({ invader, flashed, onToggleFlash, onNavigate, onClose }) {
   const { labelDefs, statusColors, labels, toggleLabel } = useAppContext();
   const { theme } = useTheme();
@@ -272,6 +283,15 @@ function InvaderPanel({ invader, flashed, onToggleFlash, onNavigate, onClose }) 
           <Text style={styles.actionBtnText}>Y aller</Text>
         </TouchableOpacity>
       </View>
+
+      <TouchableOpacity
+        style={styles.igBtn}
+        onPress={() => openInstagramTag(invader.id)}
+        activeOpacity={0.7}
+      >
+        <Ionicons name="logo-instagram" size={16} color="#E1306C" />
+        <Text style={styles.igBtnText}>Voir sur Instagram</Text>
+      </TouchableOpacity>
 
       {labelDefs.filter((d) => !d.system).length > 0 && (
         <View style={styles.labelSection}>
@@ -583,6 +603,12 @@ function makeStyles(t) {
     actionBtnActive: { backgroundColor: t.accent },
     actionBtnText: { fontSize: 14, fontWeight: '500', color: t.textPrimary },
     actionBtnTextActive: { color: t.bg },
+    igBtn: {
+      marginTop: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
+      gap: 7, paddingVertical: 8, borderRadius: 8,
+      borderWidth: 1, borderColor: '#E1306C',
+    },
+    igBtnText: { fontSize: 14, fontWeight: '500', color: '#E1306C' },
 
     sectionTitle: {
       fontSize: 13, fontWeight: '600', color: t.textSecondary,
