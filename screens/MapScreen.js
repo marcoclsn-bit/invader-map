@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
-import { StyleSheet, View, Text, Image, TouchableOpacity, Platform, Linking, Alert, Animated, ActivityIndicator } from 'react-native';
-import MapView from 'react-native-maps';
+import { StyleSheet, View, Text, Image, TouchableOpacity, Platform, Alert, Animated, ActivityIndicator } from 'react-native';
+import MapView, { Polygon } from 'react-native-maps';
 import * as Location from 'expo-location';
 import * as Haptics from 'expo-haptics';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -10,8 +10,11 @@ import { useAppContext } from '../context/AppContext';
 import { CITIES, ENABLED_CITIES } from '../cities/registry';
 import { ALL_STATUSES } from '../constants';
 import InvaderMarker from '../components/InvaderMarker';
+import InvaderPanel from '../components/InvaderPanel';
+import HeadingCone from '../components/HeadingCone';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
+import { openNavigationApp } from '../utils/navigation';
 
 const FLASHED_IMG = require('../assets/markers/alien_flashed.png');
 const MARKER_SIZE  = 30;
@@ -41,18 +44,6 @@ function applyFilters(invaders, filters, flashed, labels) {
 }
 
 // ─── Navigation externe ───────────────────────────────────────────────────────
-
-async function openInApp(app, lat, lng) {
-  if (app === 'apple') {
-    Linking.openURL(`maps://?daddr=${lat},${lng}&dirflg=w`).catch(() => {});
-  } else {
-    const canUseNative = await Linking.canOpenURL('comgooglemaps://');
-    const url = canUseNative
-      ? `comgooglemaps://?daddr=${lat},${lng}&directionsmode=walking`
-      : `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=walking`;
-    Linking.openURL(url).catch(() => {});
-  }
-}
 
 // ─── Overlay d'animation flash ────────────────────────────────────────────────
 // Rendu en dehors de la MapView (non clippé, non snapshotté).
@@ -237,93 +228,6 @@ function FilterPanel({ filters, onFiltersChange, onClose }) {
 
 // ─── Fiche Invader ────────────────────────────────────────────────────────────
 
-// Ouvre le hashtag Instagram de l'Invader.
-// En Expo Go : canOpenURL retourne toujours false (pas de LSApplicationQueriesSchemes)
-// → ouvre Safari. En build EAS avec app.json configuré → tente l'app d'abord.
-async function openInstagramTag(id) {
-  if (!id || !/^[\w]+$/.test(id)) return; // id vide ou format bizarre → on ne fait rien
-  const appUrl = `instagram://tag?name=${id}`;
-  const webUrl = `https://www.instagram.com/explore/tags/${encodeURIComponent(id)}/`;
-  const canOpen = await Linking.canOpenURL(appUrl).catch(() => false);
-  Linking.openURL(canOpen ? appUrl : webUrl).catch(() => Linking.openURL(webUrl));
-}
-
-function InvaderPanel({ invader, flashed, onToggleFlash, onNavigate, onClose }) {
-  const { labelDefs, statusColors, labels, toggleLabel } = useAppContext();
-  const { theme } = useTheme();
-  const { t } = useTranslation();
-  const styles = getStyles(theme);
-  const isFlashed = flashed.has(invader.id);
-  const invLabelIds = labels[invader.id] ?? [];
-
-  return (
-    <View style={styles.panel}>
-      <View style={styles.panelHeader}>
-        <Text style={styles.panelId}>{invader.id}</Text>
-        <TouchableOpacity onPress={onClose} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
-          <Text style={styles.closeButton}>✕</Text>
-        </TouchableOpacity>
-      </View>
-
-      <View style={styles.panelRow}>
-        <View style={[styles.statusBadge, { backgroundColor: statusColors[invader.status] }]}>
-          <Text style={styles.statusText}>{t(`common.status.${invader.status}`) ?? invader.status}</Text>
-        </View>
-        <Text style={styles.points}>{invader.points != null ? `${invader.points} pts` : '— pts'}</Text>
-      </View>
-
-      {invader.hint ? <Text style={styles.hint}>{invader.hint}</Text> : null}
-
-      <View style={styles.actions}>
-        <TouchableOpacity
-          onPress={() => onToggleFlash(invader.id)}
-          style={[styles.actionBtn, isFlashed && styles.actionBtnActive]}
-        >
-          <Text style={[styles.actionBtnText, isFlashed && styles.actionBtnTextActive]}>
-            {isFlashed ? t('map.panel.alreadyFlashed') : t('map.panel.markFlashed')}
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => onNavigate(invader.lat, invader.lng)} style={styles.actionBtn}>
-          <Text style={styles.actionBtnText}>{t('map.panel.navigate')}</Text>
-        </TouchableOpacity>
-      </View>
-
-      <TouchableOpacity
-        style={styles.igBtn}
-        onPress={() => openInstagramTag(invader.id)}
-        activeOpacity={0.7}
-      >
-        <Ionicons name="logo-instagram" size={16} color="#E1306C" />
-        <Text style={styles.igBtnText}>{t('map.panel.instagram')}</Text>
-      </TouchableOpacity>
-
-      {labelDefs.filter((d) => !d.system).length > 0 && (
-        <View style={styles.labelSection}>
-          <Text style={styles.labelSectionTitle}>{t('map.panel.labelsTitle')}</Text>
-          <View style={styles.labelChips}>
-            {labelDefs.filter((d) => !d.system).map((def) => {
-              const applied = invLabelIds.includes(def.id);
-              return (
-                <TouchableOpacity
-                  key={def.id}
-                  style={[
-                    styles.labelChip,
-                    applied ? { backgroundColor: def.color } : { borderColor: def.color, borderWidth: 1.5 },
-                  ]}
-                  onPress={() => toggleLabel(invader.id, def.id)}
-                >
-                  <Text style={[styles.labelChipText, applied && styles.labelChipTextActive]}>
-                    {def.name}
-                  </Text>
-                </TouchableOpacity>
-              );
-            })}
-          </View>
-        </View>
-      )}
-    </View>
-  );
-}
 
 // ─── Écran carte ──────────────────────────────────────────────────────────────
 
@@ -346,15 +250,16 @@ export default function MapScreen({ navigation }) {
   const [showFilters, setShowFilters] = useState(false);
   const [locationGranted, setLocationGranted] = useState(false);
   const [userLocation, setUserLocation] = useState(null);
+  const [userHeading, setUserHeading] = useState(null);
 
   function handleNavigate(lat, lng) {
-    if (mapsApp) { openInApp(mapsApp, lat, lng); return; }
+    if (mapsApp) { openNavigationApp(mapsApp, lat, lng); return; }
     Alert.alert(
       t('common.mapsApp.title'),
       t('common.mapsApp.msg'),
       [
-        { text: t('common.mapsApp.apple'),  onPress: () => { setMapsAppPref('apple');  openInApp('apple',  lat, lng); } },
-        { text: t('common.mapsApp.google'), onPress: () => { setMapsAppPref('google'); openInApp('google', lat, lng); } },
+        { text: t('common.mapsApp.apple'),  onPress: () => { setMapsAppPref('apple');  openNavigationApp('apple',  lat, lng); } },
+        { text: t('common.mapsApp.google'), onPress: () => { setMapsAppPref('google'); openNavigationApp('google', lat, lng); } },
         { text: t('common.cancel'), style: 'cancel' },
       ]
     );
@@ -362,22 +267,22 @@ export default function MapScreen({ navigation }) {
 
   useEffect(() => {
     let positionSub = null;
+    let headingSub  = null;
     (async () => {
       const { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== 'granted') return;
       setLocationGranted(true);
 
       // ── Étape A : position du cache iOS (instantanée, max 5 min) ──────────
-      // Donne un centre de tri immédiat sans attendre une nouvelle fix GPS.
       try {
         const cached = await Location.getLastKnownPositionAsync({ maxAge: 5 * 60 * 1000 });
         if (cached && cached.coords.accuracy < 200) {
           sortCenterRef.current = { lat: cached.coords.latitude, lng: cached.coords.longitude };
-          setSortVersion(1); // re-tri immédiat centré sur la dernière position connue
+          setSortVersion(1);
         }
       } catch (_) {}
 
-      // ── Étape B : watch live (fix précise, quelques secondes) ─────────────
+      // ── Étape B : watch live (position) ───────────────────────────────────
       positionSub = await Location.watchPositionAsync(
         { accuracy: Location.Accuracy.High, distanceInterval: 8 },
         (loc) => {
@@ -385,14 +290,12 @@ export default function MapScreen({ navigation }) {
           const { latitude, longitude } = loc.coords;
           setUserLocation({ latitude, longitude });
 
-          // Re-tri unique sur la 1re fix live précise (jamais répété ensuite)
           if (!gpsSortedRef.current) {
             gpsSortedRef.current = true;
             sortCenterRef.current = { lat: latitude, lng: longitude };
             setSortVersion((v) => v + 1);
           }
 
-          // Centrage carte sur la 1re position (comportement inchangé)
           if (!centeredRef.current) {
             centeredRef.current = true;
             const b = city.bbox;
@@ -407,8 +310,14 @@ export default function MapScreen({ navigation }) {
           }
         }
       );
+
+      // ── Étape C : cap de la boussole ──────────────────────────────────────
+      headingSub = await Location.watchHeadingAsync(({ trueHeading, magHeading }) => {
+        const h = trueHeading >= 0 ? trueHeading : magHeading;
+        if (h >= 0) setUserHeading(h);
+      });
     })();
-    return () => { positionSub?.remove(); };
+    return () => { positionSub?.remove(); headingSub?.remove(); };
   }, []);
 
   function goToUserLocation() {
@@ -501,6 +410,7 @@ export default function MapScreen({ navigation }) {
           initialRegion={{ latitude: city.center.lat, longitude: city.center.lng, ...city.mapDelta }}
           onPress={closeAll}
         >
+          <HeadingCone userLocation={userLocation} heading={userHeading} />
           {visibleInvaders.map((invader) => {
             const isFlashed = flashed.has(invader.id);
             return (
@@ -575,7 +485,6 @@ export default function MapScreen({ navigation }) {
       {selected && !showFilters && !isChangingCity && (
         <InvaderPanel
           invader={selected}
-          flashed={flashed}
           onToggleFlash={handleFlashFromMap}
           onNavigate={handleNavigate}
           onClose={() => setSelected(null)}
@@ -642,37 +551,6 @@ function makeStyles(t) {
     },
     cityTransitionText: { fontSize: 18, fontWeight: '700', letterSpacing: 0.5 },
 
-    panel: {
-      position: 'absolute', bottom: 0, left: 0, right: 0,
-      backgroundColor: t.surface,
-      borderTopLeftRadius: 16, borderTopRightRadius: 16,
-      paddingHorizontal: 20, paddingTop: 20, paddingBottom: 40,
-      shadowColor: '#000', shadowOffset: { width: 0, height: -2 },
-      shadowOpacity: 0.3, shadowRadius: 8, elevation: 8,
-    },
-    panelHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 },
-    panelId: { ...typography.arcadeTitle, color: t.textPrimary },
-    closeButton: { fontSize: 18, color: t.textSecondary },
-    panelRow: { flexDirection: 'row', alignItems: 'center', gap: 12 },
-    statusBadge: { borderRadius: 6, paddingHorizontal: 10, paddingVertical: 4 },
-    statusText: { color: '#fff', fontWeight: '600', fontSize: 13 },
-    points: { fontSize: 15, color: t.textSecondary },
-    hint: { marginTop: 12, fontSize: 14, color: t.textSecondary, fontStyle: 'italic' },
-    actions: { marginTop: 16, flexDirection: 'row', gap: 10 },
-    actionBtn: {
-      flex: 1, borderRadius: 8, paddingHorizontal: 14, paddingVertical: 8,
-      backgroundColor: t.surfaceHigh, alignItems: 'center',
-    },
-    actionBtnActive: { backgroundColor: t.accent },
-    actionBtnText: { fontSize: 14, fontWeight: '500', color: t.textPrimary },
-    actionBtnTextActive: { color: t.bg },
-    igBtn: {
-      marginTop: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
-      gap: 7, paddingVertical: 8, borderRadius: 8,
-      borderWidth: 1, borderColor: '#E1306C',
-    },
-    igBtnText: { fontSize: 14, fontWeight: '500', color: '#E1306C' },
-
     sectionTitle: {
       fontSize: 13, fontWeight: '600', color: t.textSecondary,
       textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 8, marginTop: 14,
@@ -683,12 +561,5 @@ function makeStyles(t) {
     chipText: { fontSize: 13, fontWeight: '500', color: t.textSecondary },
     chipTextActive: { color: t.bg },
     emptyNote: { fontSize: 13, color: t.textSecondary, fontStyle: 'italic' },
-
-    labelSection: { marginTop: 16 },
-    labelSectionTitle: { fontSize: 11, fontWeight: '600', color: t.textSecondary, letterSpacing: 0.5, marginBottom: 8 },
-    labelChips: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
-    labelChip: { borderRadius: 20, paddingHorizontal: 12, paddingVertical: 6, backgroundColor: 'transparent' },
-    labelChipText: { fontSize: 13, fontWeight: '500', color: t.textPrimary },
-    labelChipTextActive: { color: '#fff' },
   });
 }

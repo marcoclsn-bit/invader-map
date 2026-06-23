@@ -3,7 +3,7 @@ import {
   StyleSheet, View, Text, TextInput, TouchableOpacity, ActivityIndicator,
   FlatList, Switch, ScrollView, Keyboard, Platform, KeyboardAvoidingView,
 } from 'react-native';
-import MapView, { Polyline, Marker } from 'react-native-maps';
+import MapView, { Polyline, Marker, Polygon } from 'react-native-maps';
 import * as Location from 'expo-location';
 import * as turf from '@turf/turf';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -17,6 +17,9 @@ import { useAppContext } from '../context/AppContext';
 import { CITIES } from '../cities/registry';
 import { INVADER_DISTRICT, arLabel } from '../utils/arrondissement';
 import { useTheme } from '../theme/ThemeContext';
+import InvaderPanel from '../components/InvaderPanel';
+import HeadingCone from '../components/HeadingCone';
+import { openNavigationApp } from '../utils/navigation';
 
 // Palier 1 : référence PA — les fonctions ORS accepteront un paramètre ville en Palier 2
 const _PA        = CITIES.PA;
@@ -190,7 +193,7 @@ export default function ChasseScreen({ route }) {
   const debounce = useRef(null);
   const locationSub = useRef(null);
 
-  const { invaders, flashed, statusColors, currentCityCode } = useAppContext();
+  const { invaders, flashed, statusColors, currentCityCode, toggleFlash, mapsApp } = useAppContext();
   const city = CITIES[currentCityCode] ?? CITIES.PA;
   const { theme, isDark } = useTheme();
   const { t } = useTranslation();
@@ -232,6 +235,8 @@ export default function ChasseScreen({ route }) {
   const [following, setFollowing] = useState(false);
   const [drifted, setDrifted] = useState(false);
   const [userPos, setUserPos] = useState(null);
+  const [userHeading, setUserHeading] = useState(null);
+  const headingSub = useRef(null);
 
   // ─── Preset depuis Palmarès ───────────────────────────────────────────────
   useEffect(() => {
@@ -288,10 +293,20 @@ export default function ChasseScreen({ route }) {
       if (cancelled) sub.remove();
       else locationSub.current = sub;
     }).catch(() => {});
+    Location.watchHeadingAsync(({ trueHeading, magHeading }) => {
+      const h = trueHeading >= 0 ? trueHeading : magHeading;
+      if (h >= 0) setUserHeading(h);
+    }).then(sub => {
+      if (cancelled) sub.remove();
+      else headingSub.current = sub;
+    }).catch(() => {});
+
     return () => {
       cancelled = true;
       locationSub.current?.remove();
       locationSub.current = null;
+      headingSub.current?.remove();
+      headingSub.current = null;
     };
   }, [following, result]);
 
@@ -518,7 +533,18 @@ export default function ChasseScreen({ route }) {
                 ))}
               </>
             )}
+            <HeadingCone userLocation={userPos} heading={userHeading} />
           </MapView>
+
+          {/* ── Panel invader sélectionné ── */}
+          {selectedInv && (
+            <InvaderPanel
+              invader={selectedInv}
+              onToggleFlash={(id) => { toggleFlash(id); }}
+              onNavigate={(lat, lng) => openNavigationApp(mapsApp ?? 'apple', lat, lng)}
+              onClose={() => setSelectedInv(null)}
+            />
+          )}
 
           {/* ── Carte flottante formulaire (masquée en navigation) ── */}
           {!following && (

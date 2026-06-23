@@ -3,7 +3,7 @@ import {
   StyleSheet, View, Text, TextInput, TouchableOpacity, ActivityIndicator,
   FlatList, Switch, Alert, Linking, Keyboard, Platform, KeyboardAvoidingView, ScrollView,
 } from 'react-native';
-import MapView, { Polyline, Marker } from 'react-native-maps';
+import MapView, { Polyline, Marker, Polygon } from 'react-native-maps';
 import * as Location from 'expo-location';
 import * as turf from '@turf/turf';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -16,8 +16,10 @@ import { ORS_API_KEY } from '../config/ors';
 import { useAppContext } from '../context/AppContext';
 import { CITIES } from '../cities/registry';
 import InvaderMarker from '../components/InvaderMarker';
+import HeadingCone from '../components/HeadingCone';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
+import { openInstagramTag, openNavigationApp } from '../utils/navigation';
 
 // Palier 1 : référence PA — les fonctions ORS accepteront un paramètre ville en Palier 2
 const _PA         = CITIES.PA;
@@ -258,6 +260,14 @@ function RouteInvaderDetail({ inv, isFlashed, onToggleFlash, onNavigate, onBack 
           <Text style={styles.actionBtnText}>{t('common.navigate')}</Text>
         </TouchableOpacity>
       </View>
+      <TouchableOpacity
+        style={styles.igBtn}
+        onPress={() => openInstagramTag(inv.id)}
+        activeOpacity={0.7}
+      >
+        <Ionicons name="logo-instagram" size={16} color="#E1306C" />
+        <Text style={styles.igBtnText}>{t('map.panel.instagram')}</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -369,8 +379,10 @@ export default function TrajetScreen() {
   const [following, setFollowing] = useState(false);
   const [drifted, setDrifted] = useState(false);
   const [userPos, setUserPos] = useState(null);
+  const [userHeading, setUserHeading] = useState(null);
   const [inputCollapsed, setInputCollapsed] = useState(false);
   const locationSub = useRef(null);
+  const headingSub  = useRef(null);
 
   // ─── GPS au montage ───────────────────────────────────────────────────────
 
@@ -444,10 +456,21 @@ export default function TrajetScreen() {
       if (cancelled) sub.remove();
       else locationSub.current = sub;
     }).catch(() => {});
+
+    Location.watchHeadingAsync(({ trueHeading, magHeading }) => {
+      const h = trueHeading >= 0 ? trueHeading : magHeading;
+      if (h >= 0) setUserHeading(h);
+    }).then(sub => {
+      if (cancelled) sub.remove();
+      else headingSub.current = sub;
+    }).catch(() => {});
+
     return () => {
       cancelled = true;
       locationSub.current?.remove();
       locationSub.current = null;
+      headingSub.current?.remove();
+      headingSub.current = null;
     };
   }, [following, routeCoords]);
 
@@ -807,6 +830,7 @@ export default function TrajetScreen() {
               />
             );
           })}
+          <HeadingCone userLocation={userPos} heading={userHeading} />
         </MapView>
 
         {/* ── Carte flottante d'itinéraire (au-dessus de la carte) ── */}
@@ -1121,6 +1145,11 @@ function makeStyles(t) {
     detailPts: { fontSize: 15, color: t.textSecondary },
     hint: { fontSize: 14, color: t.textSecondary, fontStyle: 'italic', marginBottom: 4 },
     detailActions: { flexDirection: 'row', gap: 10, marginTop: 14 },
+    igBtn: {
+      marginTop: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
+      gap: 7, paddingVertical: 8, borderRadius: 8, borderWidth: 1, borderColor: '#E1306C',
+    },
+    igBtnText: { fontSize: 14, fontWeight: '500', color: '#E1306C' },
     actionBtn: {
       flex: 1, borderRadius: 8, paddingHorizontal: 14, paddingVertical: 8,
       backgroundColor: t.surfaceHigh, alignItems: 'center',
