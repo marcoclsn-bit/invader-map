@@ -1,8 +1,8 @@
 {
-  "version": 2,
+  "version": 3,
   "updatedAt": "2026-06-23",
   "city": "CON",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 2,
   "invaders": [
     {
@@ -13,6 +13,7 @@
       "status": "damaged",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/con_01/",
       "source": "goguelnikov"
     },
     {
@@ -23,6 +24,7 @@
       "status": "ok",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/con_02/",
       "source": "goguelnikov"
     }
   ]

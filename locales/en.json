@@ -1,0 +1,239 @@
+{
+  "common": {
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "delete": "Delete",
+    "pts": "pts",
+    "status": {
+      "ok": "OK",
+      "damaged": "Damaged",
+      "destroyed": "Destroyed",
+      "hidden": "Hidden",
+      "unknown": "Unknown"
+    },
+    "flashed": "✓ Flashed",
+    "markFlashed": "Mark as flashed",
+    "navigate": "Navigate",
+    "todo": "To do",
+    "searching": "Searching…",
+    "noResults": "No results",
+    "mapsApp": {
+      "title": "Default maps app",
+      "msg": "Choose your navigation app. This choice will be saved and can be changed in Settings.",
+      "apple": "Maps",
+      "google": "Google Maps"
+    }
+  },
+  "tabs": {
+    "map": "Map",
+    "list": "List",
+    "route": "Route",
+    "hunt": "Hunt",
+    "palmares": "Scores"
+  },
+  "map": {
+    "filter": {
+      "title": "Filters",
+      "titleActive": "Filters •",
+      "conditionSection": "Condition",
+      "flashSection": "Status",
+      "labelsSection": "Labels",
+      "all": "All",
+      "flashed": "✓ Flashed",
+      "unflashed": "To do",
+      "noLabels": "No labels defined"
+    },
+    "panel": {
+      "markFlashed": "Mark as flashed",
+      "alreadyFlashed": "✓ Flashed",
+      "navigate": "Navigate",
+      "instagram": "See on Instagram",
+      "labelsTitle": "LABELS"
+    }
+  },
+  "list": {
+    "title": "Paris Invaders",
+    "searchPlaceholder": "Search (e.g. 42 or PA_42)",
+    "counter": "{{flashed}} / {{total}} flashed",
+    "all": "All",
+    "flashed": "Flashed",
+    "unflashed": "To do",
+    "empty": "No results",
+    "bulkFlashBtn": "✓ Flash all",
+    "bulkUnflashBtn": "✕ Unmark all",
+    "bulkFlash": {
+      "title": "Mark all as flashed",
+      "msg_one": "Mark {{count}} Invader as flashed?",
+      "msg_other": "Mark {{count}} Invaders as flashed?"
+    },
+    "bulkUnflash": {
+      "title": "Unmark all",
+      "msg": "Remove the flash mark from all Invaders?"
+    }
+  },
+  "route": {
+    "gpsLabel": "My location",
+    "departurePlaceholder": "From: my current location",
+    "arrivalPlaceholder": "To: address or place",
+    "useAddress": "Use \"{{text}}\"",
+    "backToList": "‹ List",
+    "noInvadersOnRoute": "No Invaders on this route",
+    "invadersOnRoute_one": "{{count}} Invader on this route",
+    "invadersOnRoute_other": "{{count}} Invaders on this route",
+    "unflashedSuffix_one": ", including {{count}} to flash",
+    "unflashedSuffix_other": ", including {{count}} to flash",
+    "showTodo": "To do",
+    "allFlashed": "All Invaders on this route are flashed!",
+    "calculate": "Calculate route",
+    "corridor": "Corridor: {{label}}",
+    "corridorInfo": "The corridor is the maximum distance around your route in which the app searches for Invaders. The wider it is, the more you see — but some will be a bit further from your path.",
+    "loadingRoute": "Calculating route…",
+    "loadingInvaders": "Finding Invaders on route…",
+    "quit": "Quit",
+    "error": {
+      "noArrival": "Enter a destination address",
+      "noApiKey": "ORS API key missing",
+      "noGps": "GPS unavailable. Please enable location services and try again.",
+      "addressNotFound": "Address not found",
+      "addressNotFoundFor": "Address not found: \"{{text}}\"",
+      "routeNotFound": "Route not found between these two points",
+      "routeCalc": "Error calculating route"
+    }
+  },
+  "hunt": {
+    "aroundMe": "Around me",
+    "neighborhood": "In a neighbourhood",
+    "neighborhoodPlaceholder": "Neighbourhood or address",
+    "useAddress": "Use \"{{text}}\"",
+    "timeLabel": "Time: {{duration}}",
+    "transport": "Transport",
+    "walking": "Walking",
+    "cycling": "Cycling",
+    "unflashedOnly": "Unflashed only",
+    "filteredTo": "Limited to {{label}}",
+    "generate": "Generate hunt",
+    "start": "Start",
+    "quit": "Quit",
+    "waitingGps": "Waiting for GPS signal…",
+    "resultCount_one": "{{count}} Invader",
+    "resultCount_other": "{{count}} Invaders",
+    "error": {
+      "noInvadersReachable": "No Invaders reachable within this time budget. Try increasing the time or changing your starting point.",
+      "addressNotFound": "Address not found",
+      "routeNotFound": "Route not found",
+      "routeCalc": "Unable to calculate route",
+      "generation": "Error generating hunt"
+    }
+  },
+  "palmares": {
+    "title": "Scores",
+    "back": "Back",
+    "huntHere": "Hunt here",
+    "flashedSummary": "{{flashed}} / {{total}} Invaders flashed · {{pts}} pts",
+    "arStat": "{{flashed}}/{{total}} flashed · {{pct}} % · {{pts}} pts",
+    "detailSummary": "{{flashed}} / {{total}} flashed · {{pts}} pts",
+    "villeCard": "{{flashed}}/{{total}} · {{pct}} % · {{pts}} pts",
+    "paris": "Paris"
+  },
+  "onboarding": {
+    "skip": "Skip",
+    "next": "Next",
+    "allowAndStart": "Allow location & start",
+    "continueWithoutGps": "Continue without GPS",
+    "retryPermission": "Try again",
+    "locationDenied": "Location was denied. You can enable it later in your phone's Settings. The app works without GPS (map and list available).",
+    "slides": {
+      "welcome": {
+        "title": "INVADER MAP",
+        "subtitle": "Hunt Space Invader mosaics across Paris."
+      },
+      "map": {
+        "title": "Map & Flash",
+        "body": "Find Space Invader mosaics around you. Mark each one you've flashed and track your progress in Scores."
+      },
+      "route": {
+        "title": "Route & Hunt",
+        "body": "Discover Invaders along your route from A to B. Or generate an optimised hunt based on your time and transport."
+      },
+      "location": {
+        "title": "Location",
+        "body": "The app uses your location to show you on the map and calculate routes. Your data stays on your device."
+      }
+    }
+  },
+  "about": {
+    "title": "About",
+    "appSection": "The app",
+    "appPitch": "Find Space Invader mosaics wherever you are.",
+    "versionApp": "App version",
+    "versionData": "Data version",
+    "creatorSection": "Creator",
+    "createdBy": "Made by Marco",
+    "thanksSection": "Acknowledgements",
+    "thanks1": "Thanks to Camille B. for converting me into an Invader hunter through our travels.",
+    "thanks2": "Thanks to Benoît B. for showing me that true enthusiasts existed and deserved a smoother experience.",
+    "creditsSection": "Credits & sources",
+    "creditsDataLabel": "Invader data",
+    "creditsMapLabel": "Maps",
+    "creditsRoutingLabel": "Routing",
+    "creditsFontsLabel": "Fonts (SIL OFL)",
+    "legalSection": "Legal notice",
+    "legalText": "Invader Map is an independent fan project, unofficial and unaffiliated with the artist Invader or the FlashInvaders app. Space Invader mosaics are the work and exclusive property of the artist Invader. This application is not authorised, sponsored, or approved by the artist."
+  },
+  "settings": {
+    "title": "Settings",
+    "appearance": {
+      "section": "Appearance",
+      "darkTheme": "Dark theme"
+    },
+    "statusColors": {
+      "section": "Status colours",
+      "colorFor": "Colour — {{status}}"
+    },
+    "labels": {
+      "section": "My labels",
+      "noLabel": "No labels",
+      "noLabelHint": "Create the first one with the button below.",
+      "default": "default",
+      "createLabel": "+ Create a label",
+      "newLabel": "New label",
+      "editColor": "Label colour",
+      "editLabel": "Edit label",
+      "namePlaceholder": "Label name",
+      "colorLabel": "Colour",
+      "confirmDeleteTitle": "Delete \"{{name}}\"?",
+      "confirmDeleteMsg": "The label will be removed from all Invaders.",
+      "resetTitle": "Reset",
+      "resetMsg": "Labels, custom colours, and Invader colouring will be reset to defaults. Flash progress is preserved.",
+      "resetAction": "Reset",
+      "resetAll": "Reset labels and colours",
+      "resetHint": "Preserves flash progress."
+    },
+    "navigation": {
+      "section": "Navigation",
+      "mapsApp": "Default maps app",
+      "mapsAppHint": "Will be asked on first \"Navigate\""
+    },
+    "data": {
+      "section": "Data",
+      "dataVersion": "Data version",
+      "checkUpdates": "Check for updates",
+      "checking": "Checking…",
+      "upToDate": "Up to date",
+      "newVersion": "New version installed ({{v}})",
+      "offline": "Offline — try again later",
+      "updateError": "Update error"
+    },
+    "language": {
+      "section": "Language",
+      "system": "System",
+      "fr": "Français",
+      "en": "English",
+      "es": "Español",
+      "it": "Italiano"
+    },
+    "aboutEntry": "About",
+    "replayOnboarding": "Replay introduction"
+  }
+}

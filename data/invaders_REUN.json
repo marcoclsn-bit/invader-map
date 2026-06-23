@@ -1,8 +1,8 @@
 {
-  "version": 2,
+  "version": 3,
   "updatedAt": "2026-06-23",
   "city": "REUN",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 10,
   "invaders": [
     {
@@ -13,6 +13,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/reun_01/",
       "source": "goguelnikov"
     },
     {
@@ -23,6 +24,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/reun_02/",
       "source": "goguelnikov"
     },
     {
@@ -33,6 +35,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/reun_03/",
       "source": "goguelnikov"
     },
     {
@@ -43,6 +46,7 @@
       "status": "damaged",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/reun_04/",
       "source": "goguelnikov"
     },
     {
@@ -53,6 +57,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/reun_05/",
       "source": "goguelnikov"
     },
     {
@@ -63,6 +68,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/reun_06/",
       "source": "goguelnikov"
     },
     {
@@ -73,6 +79,7 @@
       "status": "ok",
       "points": 40,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/reun_07/",
       "source": "goguelnikov"
     },
     {
@@ -83,7 +90,19 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/reun_08/",
       "source": "goguelnikov"
+    },
+    {
+      "id": "REUN_09",
+      "city": "REUN",
+      "lat": -21.1387814069,
+      "lng": 55.2948917197,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/reun_09/",
+      "source": "pnote"
     },
     {
       "id": "REUN_10",
@@ -93,6 +112,7 @@
       "status": "ok",
       "points": 40,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/reun_10/",
       "source": "goguelnikov"
     },
     {
@@ -103,6 +123,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/reun_11/",
       "source": "goguelnikov"
     }
   ]

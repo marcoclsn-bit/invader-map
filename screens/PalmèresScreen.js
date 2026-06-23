@@ -2,7 +2,9 @@ import { useMemo, useState } from 'react';
 import { StyleSheet, View, Text, FlatList, TouchableOpacity } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 import { useAppContext } from '../context/AppContext';
+import { CITIES, ENABLED_CITIES } from '../cities/registry';
 import { INVADER_DISTRICT, arLabel, ARRONDISSEMENT_CENTERS } from '../utils/arrondissement';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
@@ -30,6 +32,7 @@ function ProgressBar({ pct, theme }) {
 // ─── Ligne arrondissement ─────────────────────────────────────────────────────
 
 function ArRow({ item, onHunt, theme }) {
+  const { t } = useTranslation();
   const styles = getStyles(theme);
   const pct = item.total > 0 ? (item.flashed / item.total) * 100 : 0;
 
@@ -38,13 +41,13 @@ function ArRow({ item, onHunt, theme }) {
       <View style={styles.arTitleRow}>
         <Text style={styles.arName}>{arLabel(item.ar)}</Text>
         <View style={styles.chasserCTA}>
-          <Text style={styles.chasserText}>Chasser ici</Text>
+          <Text style={styles.chasserText}>{t('palmares.huntHere')}</Text>
           <Ionicons name="chevron-forward" size={13} color={theme.accent} />
         </View>
       </View>
       <ProgressBar pct={pct} theme={theme} />
       <Text style={styles.arStat}>
-        {item.flashed}/{item.total} flashés · {pct.toFixed(0)} % · {item.totalPts} pts
+        {t('palmares.arStat', { flashed: item.flashed, total: item.total, pct: pct.toFixed(0), pts: item.totalPts })}
       </Text>
     </TouchableOpacity>
   );
@@ -53,15 +56,16 @@ function ArRow({ item, onHunt, theme }) {
 // ─── Vue arrondissements ──────────────────────────────────────────────────────
 
 function ArrondissementsView({ stats, insets, onBack, onSettings, onHuntAr, theme }) {
+  const { t } = useTranslation();
   const styles = getStyles(theme);
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
       <View style={styles.header}>
         <TouchableOpacity style={styles.backBtn} onPress={onBack} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
           <Ionicons name="chevron-back" size={20} color={theme.accent} />
-          <Text style={styles.backText}>Retour</Text>
+          <Text style={styles.backText}>{t('palmares.back')}</Text>
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>Paris</Text>
+        <Text style={styles.headerTitle}>{t('palmares.paris')}</Text>
         <TouchableOpacity onPress={onSettings} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
           <Ionicons name="settings-outline" size={22} color={theme.textSecondary} />
         </TouchableOpacity>
@@ -69,7 +73,7 @@ function ArrondissementsView({ stats, insets, onBack, onSettings, onHuntAr, them
 
       <View style={styles.summaryCard}>
         <Text style={styles.summaryLabel}>
-          {stats.flashed} / {stats.total} flashés · {stats.flashedPts} / {stats.totalPts} pts
+          {t('palmares.detailSummary', { flashed: stats.flashed, total: stats.total, pts: `${stats.flashedPts} / ${stats.totalPts}` })}
         </Text>
         <ProgressBar pct={stats.pct} theme={theme} />
         <Text style={styles.summaryPct}>{stats.pct.toFixed(1)} %</Text>
@@ -92,6 +96,7 @@ export default function PalmèresScreen({ navigation }) {
   const insets = useSafeAreaInsets();
   const { invaders, flashed } = useAppContext();
   const { theme } = useTheme();
+  const { t } = useTranslation();
   const styles = getStyles(theme);
   const [drillVille, setDrillVille] = useState(null);
 
@@ -146,7 +151,8 @@ export default function PalmèresScreen({ navigation }) {
     });
   }
 
-  if (drillVille === 'Paris') {
+  // Drill-down : ville avec subdivisions (arrondissements pour Paris)
+  if (drillVille && CITIES[drillVille]?.subdivisionsKey) {
     return (
       <ArrondissementsView
         stats={stats}
@@ -162,7 +168,7 @@ export default function PalmèresScreen({ navigation }) {
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
       <View style={styles.header}>
-        <Text style={styles.title}>Palmarès</Text>
+        <Text style={styles.title}>{t('palmares.title')}</Text>
         <TouchableOpacity onPress={openSettings} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
           <Ionicons name="settings-outline" size={22} color={theme.textSecondary} />
         </TouchableOpacity>
@@ -170,26 +176,36 @@ export default function PalmèresScreen({ navigation }) {
 
       <View style={styles.summaryCard}>
         <Text style={styles.summaryLabel}>
-          {stats.flashed} / {stats.total} Invaders flashés · {stats.flashedPts} pts
+          {t('palmares.flashedSummary', { flashed: stats.flashed, total: stats.total, pts: stats.flashedPts })}
         </Text>
         <ProgressBar pct={stats.pct} theme={theme} />
         <Text style={styles.summaryPct}>{stats.pct.toFixed(1)} %</Text>
       </View>
 
-      <TouchableOpacity style={styles.villeCard} onPress={() => setDrillVille('Paris')} activeOpacity={0.7}>
-        <View style={styles.villeLeft}>
-          <View style={styles.villeIcon}>
-            <Ionicons name="business-outline" size={22} color={theme.accent} />
+      {ENABLED_CITIES.map(c => (
+        <TouchableOpacity
+          key={c.code}
+          style={styles.villeCard}
+          onPress={() => setDrillVille(c.code)}
+          activeOpacity={0.7}
+        >
+          <View style={styles.villeLeft}>
+            <View style={styles.villeIcon}>
+              <Ionicons name="business-outline" size={22} color={theme.accent} />
+            </View>
+            <View>
+              <Text style={styles.villeName}>{c.name}</Text>
+              <Text style={styles.villeSub}>
+                {t('palmares.villeCard', { flashed: stats.flashed, total: stats.total, pct: stats.pct.toFixed(0), pts: stats.flashedPts })}
+              </Text>
+            </View>
           </View>
-          <View>
-            <Text style={styles.villeName}>Paris</Text>
-            <Text style={styles.villeSub}>
-              {stats.flashed}/{stats.total} · {stats.pct.toFixed(0)} % · {stats.flashedPts} pts
-            </Text>
-          </View>
-        </View>
-        <Ionicons name="chevron-forward" size={18} color={theme.textSecondary} />
-      </TouchableOpacity>
+          {c.subdivisionsKey
+            ? <Ionicons name="chevron-forward" size={18} color={theme.textSecondary} />
+            : null
+          }
+        </TouchableOpacity>
+      ))}
     </View>
   );
 }

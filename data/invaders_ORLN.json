@@ -1,0 +1,141 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "ORLN",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 0,
+  "invaders": [
+    {
+      "id": "ORLN_01",
+      "city": "ORLN",
+      "lat": 47.9050688259,
+      "lng": 1.9045905654,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/orln_01/",
+      "source": "pnote"
+    },
+    {
+      "id": "ORLN_02",
+      "city": "ORLN",
+      "lat": 47.9019937281,
+      "lng": 1.9028980825,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/orln_02/",
+      "source": "pnote"
+    },
+    {
+      "id": "ORLN_03",
+      "city": "ORLN",
+      "lat": 47.9003825956,
+      "lng": 1.9009345197,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/orln_03/",
+      "source": "pnote"
+    },
+    {
+      "id": "ORLN_04",
+      "city": "ORLN",
+      "lat": 47.8984714066,
+      "lng": 1.9048484765,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/orln_04/",
+      "source": "pnote"
+    },
+    {
+      "id": "ORLN_05",
+      "city": "ORLN",
+      "lat": 47.8999558741,
+      "lng": 1.9062982053,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/orln_05/",
+      "source": "pnote"
+    },
+    {
+      "id": "ORLN_06",
+      "city": "ORLN",
+      "lat": 47.8990089525,
+      "lng": 1.9069437907,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/orln_06/",
+      "source": "pnote"
+    },
+    {
+      "id": "ORLN_07",
+      "city": "ORLN",
+      "lat": 47.9002205304,
+      "lng": 1.9101148343,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/orln_07/",
+      "source": "pnote"
+    },
+    {
+      "id": "ORLN_08",
+      "city": "ORLN",
+      "lat": 47.9009032018,
+      "lng": 1.909099823,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/orln_08/",
+      "source": "pnote"
+    },
+    {
+      "id": "ORLN_09",
+      "city": "ORLN",
+      "lat": 47.898890858,
+      "lng": 1.9208100273,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/orln_09/",
+      "source": "pnote"
+    },
+    {
+      "id": "ORLN_10",
+      "city": "ORLN",
+      "lat": 47.8990299674,
+      "lng": 1.911433323,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/orln_10/",
+      "source": "pnote"
+    },
+    {
+      "id": "ORLN_11",
+      "city": "ORLN",
+      "lat": 47.899074935,
+      "lng": 1.9094522227,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/orln_11/",
+      "source": "pnote"
+    },
+    {
+      "id": "ORLN_12",
+      "city": "ORLN",
+      "lat": 47.8988340469,
+      "lng": 1.9032692863,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/orln_12/",
+      "source": "pnote"
+    }
+  ]
+}

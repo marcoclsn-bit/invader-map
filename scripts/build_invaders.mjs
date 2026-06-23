@@ -2,61 +2,210 @@
 /**
  * scripts/build_invaders.mjs
  *
- * Télécharge la source goguelnikov/SpaceInvaders, la fusionne avec
- * data/invaders_extras.json (ajouts/corrections manuels), valide et
- * produit data/invaders.json (le fichier servi en remote par l'app).
+ * Pipeline multi-sources :
+ *   Base      : goguelnikov/SpaceInvaders — ids, coordonnées réelles, points, statuts
+ *   Enrichit  : pnote.eu — instagramUrl (100 % couverture) + ids absents de gog
+ *   Surcharge : data/invaders_extras.json — toujours prioritaire
  *
- * Usage (manuel) :
- *   node scripts/build_invaders.mjs
+ * Règles de fusion (par id) :
+ *   - Coordonnées  : goguelnikov (réelles) pour les ids communs ; obf_lat/obf_lng pnote pour les ids pnote-only
+ *   - Statut       : goguelnikov pour les ids communs (pnote ignoré, divergences loguées)
+ *   - points       : goguelnikov ; null si absent ou id pnote-only
+ *   - instagramUrl : pnote pour tous les ids (gog n'en a pas)
+ *   - source       : "goguelnikov" / "pnote" / "extras"
  *
- * Usage (GitHub Action) : même commande — le workflow commit le fichier
- * si et seulement si git détecte un changement.
+ * Sortie :
+ *   data/index.json             — liste légère des villes
+ *   data/invaders_<CODE>.json   — Invaders par ville
  *
- * Règle de fusion : si un id est dans les deux sources → extras gagne.
- * Un id présent seulement dans extras → ajouté au total.
- *
- * Garde-fous (le script ÉCHOUE et N'ÉCRIT PAS si) :
- *   - La source distante est inaccessible ou produit un JSON invalide
- *   - Des coordonnées de la base tombent hors de la bbox Île-de-France
- *   - Le nombre d'Invaders de la BASE (hors extras) chute de > 10 %
- *     (les extras sont exclues de ce calcul — elles ne masquent pas une régression)
- *
- * Extras invalides → avertissement dans les logs, ignorées sans planter.
+ * Garde-fous par ville (sur la base goguelnikov) :
+ *   - chute > 10 % vs version précédente → skip
+ *   - contenu inchangé → pas de réécriture
  */
 
 import { readFileSync, writeFileSync, existsSync } from 'fs';
-import { createHash }                               from 'crypto';
-import { fileURLToPath }                            from 'url';
-import { join, dirname }                            from 'path';
+import { createHash }    from 'crypto';
+import { fileURLToPath } from 'url';
+import { join, dirname } from 'path';
 
-// ── Configuration ─────────────────────────────────────────────────────────────
+// ── URLs sources ──────────────────────────────────────────────────────────────
 
-/** URL de la source communautaire. Changer si le fichier source évolue. */
-const SOURCE_URL =
+const GOG_URL   =
   'https://raw.githubusercontent.com/goguelnikov/SpaceInvaders/main/world_space_invaders_V05.json';
+const PNOTE_URL = 'https://pnote.eu/projects/invaders/map/invaders.json';
 
-const __dir       = dirname(fileURLToPath(import.meta.url));
-const OUTPUT      = join(__dir, '..', 'data', 'invaders.json');
-const EXTRAS_FILE = join(__dir, '..', 'data', 'invaders_extras.json');
+const __dir      = dirname(fileURLToPath(import.meta.url));
+const DATA_DIR   = join(__dir, '..', 'data');
+const INDEX_FILE = join(DATA_DIR, 'index.json');
+const EXTRAS_FILE= join(DATA_DIR, 'invaders_extras.json');
 
-/** Bbox Île-de-France — couvre Paris + banlieue immédiate (Invaders codés PA). */
-const BBOX = { minLat: 48.50, maxLat: 49.10, minLng: 1.90, maxLng: 3.00 };
-
-/** Perte maximale tolérée sur la BASE goguelnikov entre deux runs. */
 const MAX_LOSS_PCT = 0.10;
 
 const SOURCE_ATTRIBUTION =
-  'Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). ' +
+  'Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) ' +
+  "et pnote.eu (avec autorisation de l'auteur). " +
   "Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.";
+
+// ── Métadonnées des villes ────────────────────────────────────────────────────
+// bbox → validation des coordonnées activée pour cette ville
+// name only → validation désactivée (incertain ou non nécessaire)
+
+const KNOWN_CITIES = {
+  // ── Avec bbox (coordonnées validées) ──────────────────────────────────────
+  PA:   { name: 'Paris',            bbox: { minLat: 48.50, maxLat: 49.10, minLng: 1.90,  maxLng: 3.00  } },
+  LDN:  { name: 'London',           bbox: { minLat: 51.28, maxLat: 51.70, minLng: -0.55, maxLng: 0.35  } },
+  NY:   { name: 'New York',         bbox: { minLat: 40.48, maxLat: 40.93, minLng: -74.3, maxLng: -73.6 } },
+  TK:   { name: 'Tokyo',            bbox: { minLat: 35.50, maxLat: 35.85, minLng: 139.4, maxLng: 139.9 } },
+  LA:   { name: 'Los Angeles',      bbox: { minLat: 33.70, maxLat: 34.35, minLng: -118.7,maxLng: -117.6} },
+  HK:   { name: 'Hong Kong',        bbox: { minLat: 22.15, maxLat: 22.55, minLng: 113.8, maxLng: 114.4 } },
+  AIX:  { name: 'Aix-en-Provence',  bbox: { minLat: 43.45, maxLat: 43.65, minLng: 5.30,  maxLng: 5.60  } },
+  AMI:  { name: 'Amiens',           bbox: { minLat: 49.83, maxLat: 49.95, minLng: 2.22,  maxLng: 2.35  } },
+  AMS:  { name: 'Amsterdam',        bbox: { minLat: 52.28, maxLat: 52.45, minLng: 4.72,  maxLng: 5.10  } },
+  ANVR: { name: 'Anvers',           bbox: { minLat: 51.10, maxLat: 51.35, minLng: 4.30,  maxLng: 4.55  } },
+  AVI:  { name: 'Avignon',          bbox: { minLat: 43.85, maxLat: 44.05, minLng: 4.75,  maxLng: 4.95  } },
+  BGK:  { name: 'Bangkok',          bbox: { minLat: 13.50, maxLat: 14.00, minLng: 100.3, maxLng: 100.8 } },
+  BRL:  { name: 'Berlin',           bbox: { minLat: 52.35, maxLat: 52.70, minLng: 13.10, maxLng: 13.80 } },
+  BRN:  { name: 'Berne',            bbox: { minLat: 46.85, maxLat: 47.05, minLng: 7.35,  maxLng: 7.60  } },
+  BSL:  { name: 'Bâle',             bbox: { minLat: 47.48, maxLat: 47.62, minLng: 7.50,  maxLng: 7.70  } },
+  BXL:  { name: 'Bruxelles',        bbox: { minLat: 50.75, maxLat: 50.95, minLng: 4.25,  maxLng: 4.50  } },
+  CAZ:  { name: 'Casablanca',       bbox: { minLat: 33.45, maxLat: 33.70, minLng: -7.70, maxLng: -7.45 } },
+  CCU:  { name: 'Kolkata',          bbox: { minLat: 22.45, maxLat: 22.70, minLng: 88.25, maxLng: 88.50 } },
+  CLR:  { name: 'Clermont-Ferrand', bbox: { minLat: 45.70, maxLat: 45.85, minLng: 3.00,  maxLng: 3.20  } },
+  DIJ:  { name: 'Dijon',            bbox: { minLat: 47.25, maxLat: 47.40, minLng: 4.95,  maxLng: 5.15  } },
+  DJBA: { name: 'Djerba',           bbox: { minLat: 33.65, maxLat: 33.95, minLng: 10.70, maxLng: 11.00 } },
+  FAO:  { name: 'Faro',             bbox: { minLat: 36.95, maxLat: 37.10, minLng: -7.95, maxLng: -7.85 } },
+  FKF:  { name: 'Fukuoka',          bbox: { minLat: 33.50, maxLat: 33.70, minLng: 130.3, maxLng: 130.5 } },
+  FTBL: { name: 'Fort-de-France',   bbox: { minLat: 14.55, maxLat: 14.65, minLng: -61.2, maxLng: -61.0 } },
+  GNV:  { name: 'Genève',           bbox: { minLat: 46.15, maxLat: 46.30, minLng: 6.05,  maxLng: 6.25  } },
+  GRN:  { name: 'Grenoble',         bbox: { minLat: 45.10, maxLat: 45.25, minLng: 5.65,  maxLng: 5.80  } },
+  IST:  { name: 'Istanbul',         bbox: { minLat: 40.85, maxLat: 41.25, minLng: 28.60, maxLng: 29.20 } },
+  KAT:  { name: 'Katmandu',         bbox: { minLat: 27.60, maxLat: 27.80, minLng: 85.20, maxLng: 85.45 } },
+  KLN:  { name: 'Cologne',          bbox: { minLat: 50.80, maxLat: 51.05, minLng: 6.80,  maxLng: 7.10  } },
+  LIL:  { name: 'Lille',            bbox: { minLat: 50.55, maxLat: 50.70, minLng: 2.95,  maxLng: 3.15  } },
+  LJU:  { name: 'Ljubljana',        bbox: { minLat: 46.00, maxLat: 46.12, minLng: 14.45, maxLng: 14.60 } },
+  LSN:  { name: 'Lausanne',         bbox: { minLat: 46.48, maxLat: 46.58, minLng: 6.58,  maxLng: 6.72  } },
+  LY:   { name: 'Lyon',             bbox: { minLat: 45.65, maxLat: 45.85, minLng: 4.75,  maxLng: 5.00  } },
+  MAN:  { name: 'Manchester',       bbox: { minLat: 53.40, maxLat: 53.55, minLng: -2.35, maxLng: -2.10 } },
+  MARS: { name: 'Marseille',        bbox: { minLat: 43.20, maxLat: 43.40, minLng: 5.30,  maxLng: 5.55  } },
+  MIA:  { name: 'Miami',            bbox: { minLat: 25.65, maxLat: 25.90, minLng: -80.30,maxLng: -80.10} },
+  MLB:  { name: 'Melbourne',        bbox: { minLat: -37.90,maxLat: -37.70,minLng: 144.8, maxLng: 145.1 } },
+  MLGA: { name: 'Malaga',           bbox: { minLat: 36.65, maxLat: 36.80, minLng: -4.55, maxLng: -4.35 } },
+  MPL:  { name: 'Montpellier',      bbox: { minLat: 43.55, maxLat: 43.70, minLng: 3.80,  maxLng: 3.95  } },
+  MRAK: { name: 'Marrakech',        bbox: { minLat: 31.55, maxLat: 31.70, minLng: -8.05, maxLng: -7.90 } },
+  MUN:  { name: 'Munich',           bbox: { minLat: 48.05, maxLat: 48.25, minLng: 11.45, maxLng: 11.70 } },
+  NIM:  { name: 'Nîmes',            bbox: { minLat: 43.80, maxLat: 43.90, minLng: 4.30,  maxLng: 4.45  } },
+  ORLN: { name: 'Orléans',          bbox: { minLat: 47.85, maxLat: 48.00, minLng: 1.80,  maxLng: 1.98  } },
+  PAU:  { name: 'Pau',              bbox: { minLat: 43.25, maxLat: 43.35, minLng: -0.45, maxLng: -0.30 } },
+  POTI: { name: 'Pondichéry',       bbox: { minLat: 11.85, maxLat: 12.00, minLng: 79.80, maxLng: 79.95 } },
+  PRP:  { name: 'Perpignan',        bbox: { minLat: 42.65, maxLat: 42.75, minLng: 2.85,  maxLng: 3.00  } },
+  PRT:  { name: 'Porto',            bbox: { minLat: 41.10, maxLat: 41.25, minLng: -8.70, maxLng: -8.55 } },
+  RBA:  { name: 'Rabat',            bbox: { minLat: 33.90, maxLat: 34.10, minLng: -6.90, maxLng: -6.75 } },
+  REUN: { name: 'La Réunion',       bbox: { minLat: -21.40,maxLat: -20.85,minLng: 55.20, maxLng: 55.85 } },
+  RN:   { name: 'Rouen',            bbox: { minLat: 49.38, maxLat: 49.50, minLng: 1.00,  maxLng: 1.15  } },
+  ROM:  { name: 'Rome',             bbox: { minLat: 41.80, maxLat: 41.95, minLng: 12.40, maxLng: 12.60 } },
+  RTD:  { name: 'Rotterdam',        bbox: { minLat: 51.85, maxLat: 52.00, minLng: 4.35,  maxLng: 4.55  } },
+  SD:   { name: 'San Diego',        bbox: { minLat: 32.60, maxLat: 32.85, minLng: -117.3,maxLng: -117.0} },
+  SP:   { name: 'São Paulo',        bbox: { minLat: -23.70,maxLat: -23.45,minLng: -46.80,maxLng: -46.50} },
+  TLS:  { name: 'Toulouse',         bbox: { minLat: 43.55, maxLat: 43.70, minLng: 1.35,  maxLng: 1.55  } },
+  VRN:  { name: 'Vérone',           bbox: { minLat: 45.40, maxLat: 45.55, minLng: 10.95, maxLng: 11.10 } },
+  WN:   { name: 'Vienne',           bbox: { minLat: 48.15, maxLat: 48.25, minLng: 16.30, maxLng: 16.45 } },
+  // ── Noms identifiés, bbox inconnue (pas de validation coords) ─────────────
+  ANZR: { name: 'Annecy' },
+  BAB:  { name: 'Bab (Algérie)' },
+  BBO:  { name: 'Bilbao' },
+  BRC:  { name: 'Barcelone' },
+  BT:   { name: 'BT' },
+  BTA:  { name: 'Bogotá' },
+  CAPF: { name: 'Cap-Ferret' },
+  CHAR: { name: 'Chartres' },
+  CON:  { name: 'Constance' },
+  DHK:  { name: 'Dhaka' },
+  DJN:  { name: 'DJN' },
+  ELT:  { name: 'Eilat' },
+  FRQ:  { name: 'FRQ' },
+  GRTI: { name: 'GRTI' },
+  GRU:  { name: 'Guarulhos' },
+  HALM: { name: 'Halmstad' },
+  LBR:  { name: 'Libreville' },
+  LCT:  { name: 'Lecce' },
+  MBSA: { name: 'Mombasa' },
+  MEN:  { name: 'Menton' },
+  MTB:  { name: 'Montbéliard' },
+  NA:   { name: 'Naples' },
+  NCL:  { name: 'Newcastle' },
+  NOO:  { name: 'La Nouvelle-Orléans' },
+  RA:   { name: 'Roubaix' },
+  RDU:  { name: 'Raleigh-Durham' },
+  SL:   { name: 'Sarajevo' },
+  SPACE:{ name: 'SPACE' },
+  VLMO: { name: 'Villemomble' },
+  VRS:  { name: 'Varsovie' },
+  VSB:  { name: 'Strasbourg' },
+};
+
+// Centres géographiques précis (carte + index)
+const KNOWN_CENTERS = {
+  PA:   { lat: 48.8566, lng: 2.3522   },
+  LDN:  { lat: 51.5074, lng: -0.1278  },
+  NY:   { lat: 40.7128, lng: -74.0060 },
+  TK:   { lat: 35.6762, lng: 139.6503 },
+  LA:   { lat: 34.0522, lng: -118.243 },
+  HK:   { lat: 22.3193, lng: 114.169  },
+  AIX:  { lat: 43.5297, lng: 5.4474   },
+  AMI:  { lat: 49.8942, lng: 2.2957   },
+  AMS:  { lat: 52.3676, lng: 4.9041   },
+  ANVR: { lat: 51.2194, lng: 4.4025   },
+  AVI:  { lat: 43.9493, lng: 4.8055   },
+  BGK:  { lat: 13.7563, lng: 100.502  },
+  BRL:  { lat: 52.5200, lng: 13.4050  },
+  BRN:  { lat: 46.9481, lng: 7.4474   },
+  BSL:  { lat: 47.5596, lng: 7.5886   },
+  BXL:  { lat: 50.8503, lng: 4.3517   },
+  CAZ:  { lat: 33.5731, lng: -7.5898  },
+  CCU:  { lat: 22.5726, lng: 88.3639  },
+  CLR:  { lat: 45.7772, lng: 3.0870   },
+  DIJ:  { lat: 47.3216, lng: 5.0415   },
+  DJBA: { lat: 33.8751, lng: 10.8451  },
+  FAO:  { lat: 37.0194, lng: -7.9322  },
+  FKF:  { lat: 33.5904, lng: 130.402  },
+  FTBL: { lat: 14.6068, lng: -61.0758 },
+  GNV:  { lat: 46.2044, lng: 6.1432   },
+  GRN:  { lat: 45.1885, lng: 5.7245   },
+  IST:  { lat: 41.0082, lng: 28.9784  },
+  KAT:  { lat: 27.7172, lng: 85.3240  },
+  KLN:  { lat: 50.9333, lng: 6.9500   },
+  LIL:  { lat: 50.6292, lng: 3.0573   },
+  LJU:  { lat: 46.0569, lng: 14.5058  },
+  LSN:  { lat: 46.5197, lng: 6.6323   },
+  LY:   { lat: 45.7640, lng: 4.8357   },
+  MAN:  { lat: 53.4808, lng: -2.2426  },
+  MARS: { lat: 43.2965, lng: 5.3698   },
+  MIA:  { lat: 25.7617, lng: -80.1918 },
+  MLB:  { lat: -37.814, lng: 144.963  },
+  MLGA: { lat: 36.7213, lng: -4.4214  },
+  MPL:  { lat: 43.6117, lng: 3.8777   },
+  MRAK: { lat: 31.6295, lng: -7.9811  },
+  MUN:  { lat: 48.1351, lng: 11.5820  },
+  NIM:  { lat: 43.8367, lng: 4.3601   },
+  ORLN: { lat: 47.9029, lng: 1.9092   },
+  PAU:  { lat: 43.2951, lng: -0.3708  },
+  POTI: { lat: 11.9416, lng: 79.8083  },
+  PRP:  { lat: 42.6887, lng: 2.8948   },
+  PRT:  { lat: 41.1579, lng: -8.6291  },
+  RBA:  { lat: 33.9716, lng: -6.8498  },
+  REUN: { lat: -20.900, lng: 55.5000  },
+  RN:   { lat: 49.4432, lng: 1.0993   },
+  ROM:  { lat: 41.9028, lng: 12.4964  },
+  RTD:  { lat: 51.9225, lng: 4.4792   },
+  SD:   { lat: 32.7157, lng: -117.161 },
+  SP:   { lat: -23.550, lng: -46.633  },
+  TLS:  { lat: 43.6047, lng: 1.4442   },
+  VRN:  { lat: 45.4654, lng: 10.9054  },
+  WN:   { lat: 48.2082, lng: 16.3738  },
+};
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
-// Normalisation des statuts source → notre format
-//   OK / ok                          → 'ok'
-//   damaged / a little damaged / very damaged → 'damaged'
-//   destroyed                        → 'destroyed'
-//   hidden                           → 'hidden'
-//   unknown / tout le reste          → 'unknown'
 function normalizeStatus(raw) {
   const s = String(raw ?? '').toLowerCase().trim();
   if (s === 'ok')        return 'ok';
@@ -66,248 +215,354 @@ function normalizeStatus(raw) {
   return 'unknown';
 }
 
-// La source goguelnikov utilise la virgule comme séparateur décimal.
 function parseCoord(v) {
   const n = parseFloat(String(v ?? '').replace(',', '.'));
   return isNaN(n) ? null : n;
 }
 
-function inBbox(lat, lng) {
-  return lat >= BBOX.minLat && lat <= BBOX.maxLat &&
-         lng >= BBOX.minLng && lng <= BBOX.maxLng;
+function inBbox(lat, lng, bbox) {
+  return lat >= bbox.minLat && lat <= bbox.maxLat &&
+         lng >= bbox.minLng && lng <= bbox.maxLng;
 }
 
-// Hash uniquement sur les champs visibles par l'utilisateur — exclut 'source'
-// pour ne pas déclencher une fausse nouvelle version quand seule la métadonnée change.
+function cityCodeFromId(id) {
+  return String(id ?? '').match(/^([A-Za-z]+)/)?.[1]?.toUpperCase() ?? '';
+}
+
 function contentHash(invaders) {
   const sorted = [...invaders].sort((a, b) => a.id.localeCompare(b.id));
-  const minimal = sorted.map(({ id, city, lat, lng, status, points, hint }) =>
-    ({ id, city, lat, lng, status, points, hint })
+  const minimal = sorted.map(({ id, city, lat, lng, status, points, hint, instagramUrl }) =>
+    ({ id, city, lat, lng, status, points: points ?? null, hint, instagramUrl: instagramUrl ?? null })
   );
   return createHash('sha256').update(JSON.stringify(minimal)).digest('hex').slice(0, 16);
 }
 
-// Validation de la base goguelnikov (erreurs fatales).
-function validateBase(baseInvaders, previousBaseCount) {
-  if (!Array.isArray(baseInvaders) || baseInvaders.length === 0) {
-    throw new Error('La base goguelnikov est vide après filtrage — source probablement invalide.');
-  }
-  // Bbox : toutes les coordonnées de la base doivent être dans l'Île-de-France
-  const outOfBbox = baseInvaders.filter(inv => !inBbox(inv.lat, inv.lng));
-  if (outOfBbox.length > 0) {
-    const sample = outOfBbox.slice(0, 5).map(i => `${i.id}(${i.lat},${i.lng})`).join(', ');
-    throw new Error(
-      `${outOfBbox.length} Invader(s) de la base hors bbox : ${sample}. ` +
-      'Vérifie le parsing des coordonnées ou ajuste BBOX.'
-    );
-  }
-  // Chute brutale vs version précédente (sur la base uniquement, hors extras)
-  if (previousBaseCount > 0) {
-    const loss = (previousBaseCount - baseInvaders.length) / previousBaseCount;
-    if (loss > MAX_LOSS_PCT) {
-      throw new Error(
-        `Chute brutale de la base : ${previousBaseCount} → ${baseInvaders.length} ` +
-        `(−${(loss * 100).toFixed(1)} %, seuil ${MAX_LOSS_PCT * 100} %). ` +
-        'Source suspecte — mise à jour refusée. Vérifie goguelnikov manuellement.'
-      );
-    }
-  }
+function indexHash(cities) {
+  const minimal = [...cities]
+    .sort((a, b) => a.code.localeCompare(b.code))
+    .map(({ code, count, version }) => ({ code, count, version }));
+  return createHash('sha256').update(JSON.stringify(minimal)).digest('hex').slice(0, 16);
+}
+
+function computeCenter(invaders) {
+  const valid = invaders.filter(i => typeof i.lat === 'number' && typeof i.lng === 'number');
+  if (!valid.length) return { lat: 0, lng: 0 };
+  const lat = valid.reduce((s, i) => s + i.lat, 0) / valid.length;
+  const lng = valid.reduce((s, i) => s + i.lng, 0) / valid.length;
+  return { lat: +lat.toFixed(6), lng: +lng.toFixed(6) };
+}
+
+// ── Téléchargement ────────────────────────────────────────────────────────────
+
+async function fetchJSON(url, label) {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`HTTP ${res.status} — ${url}`);
+  const buf  = await res.arrayBuffer();
+  const text = new TextDecoder('utf-8').decode(buf).replace(/^﻿/, '');
+  const json = JSON.parse(text);
+  const arr  = Array.isArray(json) ? json : json.invaders ?? [];
+  console.log(`      ${label} : ${arr.length} entrées`);
+  return arr;
 }
 
 // ── Main ──────────────────────────────────────────────────────────────────────
 
 async function main() {
-  const bar = '─'.repeat(62);
+  const bar = '─'.repeat(64);
   console.log(bar);
-  console.log('  build_invaders.mjs');
+  console.log('  build_invaders.mjs  (goguelnikov + pnote)');
   console.log(bar);
-  console.log('Source  :', SOURCE_URL);
-  console.log('Extras  :', existsSync(EXTRAS_FILE) ? EXTRAS_FILE : '(absent)');
-  console.log('Sortie  :', OUTPUT);
   console.log('');
 
-  // ── [1/5] Téléchargement ──────────────────────────────────────────────────
-  console.log('[1/5] Téléchargement de la source…');
-  const res = await fetch(SOURCE_URL);
-  if (!res.ok) throw new Error(`Échec HTTP ${res.status} — ${SOURCE_URL}`);
+  // ── [1/6] Téléchargement des deux sources ─────────────────────────────────
+  console.log('[1/6] Téléchargement…');
+  const [gogRaw, pnoteRaw] = await Promise.all([
+    fetchJSON(GOG_URL,   'goguelnikov'),
+    fetchJSON(PNOTE_URL, 'pnote      '),
+  ]);
 
-  // La source utilise un BOM UTF-8 — décodage explicite
-  const buf  = await res.arrayBuffer();
-  const text = new TextDecoder('utf-8').decode(buf).replace(/^﻿/, '');
-  const raw  = JSON.parse(text);
-  console.log(`      ${raw.length} entrées reçues (toutes villes)`);
+  // ── [2/6] Groupement goguelnikov par ville ────────────────────────────────
+  console.log('\n[2/6] Groupement par ville…');
+  const gogByCity = new Map();
+  for (const entry of gogRaw) {
+    const code = String(entry.city ?? '').trim().toUpperCase();
+    if (!code) continue;
+    if (!gogByCity.has(code)) gogByCity.set(code, []);
+    gogByCity.get(code).push(entry);
+  }
 
-  // ── [2/5] Base goguelnikov : filtrage Paris + normalisation ───────────────
-  console.log('\n[2/5] Filtrage city="PA" + normalisation (base goguelnikov)…');
-  const baseInvaders = raw
-    .filter(entry => entry.city === 'PA')
-    .map(entry => {
+  // Groupement pnote par ville (depuis le préfixe d'id)
+  const pnoteByCity = new Map(); // code → Map<id, {status,instagramUrl,hint,obf_lat,obf_lng}>
+  for (const e of pnoteRaw) {
+    const id   = String(e.id ?? '').trim();
+    const code = cityCodeFromId(id);
+    if (!id || !code) continue;
+    if (!pnoteByCity.has(code)) pnoteByCity.set(code, new Map());
+    pnoteByCity.get(code).set(id, {
+      id,
+      status:       normalizeStatus(e.status),
+      instagramUrl: String(e.instagramUrl ?? '').trim() || null,
+      hint:         e.hint ? String(e.hint).trim() : '',
+      obf_lat:      typeof e.obf_lat === 'number' ? e.obf_lat : null,
+      obf_lng:      typeof e.obf_lng === 'number' ? e.obf_lng : null,
+    });
+  }
+
+  // Union des codes (gog ∪ pnote)
+  const allCodes = new Set([...gogByCity.keys(), ...pnoteByCity.keys()]);
+  const sortedCodes = [...allCodes].sort();
+  console.log(`      ${gogByCity.size} villes goguelnikov, ${pnoteByCity.size} villes pnote`);
+  console.log(`      ${allCodes.size} villes au total`);
+
+  // ── [3/6] État précédent ──────────────────────────────────────────────────
+  console.log('\n[3/6] État précédent…');
+  let prevIndex = null;
+  if (existsSync(INDEX_FILE)) {
+    try {
+      prevIndex = JSON.parse(readFileSync(INDEX_FILE, 'utf8'));
+      console.log(`      index.json : v${prevIndex.version}, ${prevIndex.cities?.length ?? 0} villes`);
+    } catch { console.warn('      index.json illisible — repart de zéro'); }
+  } else {
+    console.log('      Pas d\'index existant — première génération');
+  }
+  const prevIndexVersion = typeof prevIndex?.version === 'number' ? prevIndex.version : 0;
+
+  // ── [4/6] Extras ──────────────────────────────────────────────────────────
+  console.log('\n[4/6] Extras…');
+  const extrasPA = new Map();
+  if (existsSync(EXTRAS_FILE)) {
+    try {
+      const extrasRaw   = JSON.parse(readFileSync(EXTRAS_FILE, 'utf8'));
+      const allEntries  = extrasRaw.invaders ?? [];
+      const disabledCnt = allEntries.filter(e => e.disabled).length;
+      const active      = allEntries.filter(e => !e.disabled);
+      let skipped = 0;
+      for (const e of active) {
+        if (!e.id || typeof e.lat !== 'number' || typeof e.lng !== 'number') { skipped++; continue; }
+        if (KNOWN_CITIES.PA?.bbox && !inBbox(e.lat, e.lng, KNOWN_CITIES.PA.bbox)) { skipped++; continue; }
+        extrasPA.set(String(e.id), {
+          id:           String(e.id),
+          city:         'PA',
+          lat:          e.lat,
+          lng:          e.lng,
+          status:       normalizeStatus(e.status),
+          points:       Math.max(0, parseInt(String(e.points ?? 0), 10) || 0),
+          hint:         String(e.hint ?? '').trim(),
+          instagramUrl: String(e.instagramUrl ?? '').trim() || null,
+          source:       String(e.source ?? 'extras'),
+        });
+      }
+      console.log(`      ${extrasPA.size} extras valides, ${skipped} ignorées, ${disabledCnt} désactivées`);
+    } catch (e) { console.warn('      ⚠ Extras illisibles :', e.message); }
+  } else {
+    console.log('      Fichier extras absent');
+  }
+
+  // ── [5/6] Traitement par ville ────────────────────────────────────────────
+  console.log('\n[5/6] Traitement par ville…');
+  const today      = new Date().toISOString().slice(0, 10);
+  const indexCities = [];
+
+  // Compteurs globaux pour le résumé
+  let gTotal = 0, gGog = 0, gPnote = 0, gExtras = 0;
+  let gInstagram = 0, gNullPoints = 0, gDivergences = 0;
+  let paTotal = 0, paGog = 0, paPnote = 0, paExtras = 0;
+
+  for (const code of sortedCodes) {
+    const gogEntries   = gogByCity.get(code)   ?? [];
+    const pnoteForCity = pnoteByCity.get(code) ?? new Map();
+    const meta         = KNOWN_CITIES[code]    ?? null;
+    const outFile      = join(DATA_DIR, `invaders_${code}.json`);
+
+    process.stdout.write(`  ${code.padEnd(6)} `);
+
+    // ── Base goguelnikov ───────────────────────────────────────────────────
+    const baseInvaders = [];
+    const baseIds      = new Set();
+    let cityDivergences = 0;
+
+    for (const entry of gogEntries) {
       const lat = parseCoord(entry.lat);
       const lng = parseCoord(entry.lng);
-      if (lat === null || lng === null) {
-        throw new Error(`Coordonnées invalides pour ${entry.id} : lat="${entry.lat}" lng="${entry.lng}"`);
-      }
-      return {
-        id:     String(entry.id),
-        city:   String(entry.city),
+      if (lat === null || lng === null) continue;
+      if (meta?.bbox && !inBbox(lat, lng, meta.bbox)) continue;
+
+      const id         = String(entry.id);
+      const gogStatus  = normalizeStatus(entry.status);
+      const pnoteEntry = pnoteForCity.get(id);
+
+      // Divergence statut (log, pas de modification)
+      if (pnoteEntry && pnoteEntry.status !== gogStatus) cityDivergences++;
+
+      baseInvaders.push({
+        id,
+        city:         code,
         lat,
         lng,
-        status: normalizeStatus(entry.status),
-        points: parseInt(String(entry.points), 10) || 0,
-        hint:   String(entry.hint ?? '').trim(),
-        source: 'goguelnikov',
-      };
-    })
-    .sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
-
-  const byStatus = {};
-  for (const inv of baseInvaders) byStatus[inv.status] = (byStatus[inv.status] ?? 0) + 1;
-  console.log(`      ${baseInvaders.length} Invaders Paris`);
-  console.log('      Statuts :', Object.entries(byStatus).map(([k, v]) => `${k}=${v}`).join(', '));
-
-  // ── [3/5] Lecture du fichier précédent ───────────────────────────────────
-  console.log('\n[3/5] Comparaison avec la version précédente…');
-  let previousVersion   = 1;
-  let previousBaseCount = 0;   // entrées goguelnikov uniquement (hors extras)
-  let previousHash      = '';
-
-  if (existsSync(OUTPUT)) {
-    try {
-      const existing     = JSON.parse(readFileSync(OUTPUT, 'utf8'));
-      previousVersion    = typeof existing.version === 'number' ? existing.version : 1;
-      const prevInvaders = existing.invaders ?? [];
-      // Les anciennes versions (sans champ source) sont toutes considérées goguelnikov
-      previousBaseCount  = prevInvaders.filter(i => !i.source || i.source === 'goguelnikov').length;
-      previousHash       = contentHash(prevInvaders);
-      console.log(`      Fichier existant : v${previousVersion}, ${prevInvaders.length} Invaders`);
-      console.log(`      dont base goguelnikov : ${previousBaseCount}`);
-    } catch (e) {
-      console.warn('      Fichier existant illisible :', e.message, '— on repart de v1');
+        status:       gogStatus,                        // goguelnikov gagne
+        points:       parseInt(String(entry.points), 10) || 0,
+        hint:         String(entry.hint ?? '').trim(),
+        instagramUrl: pnoteEntry?.instagramUrl ?? null, // pnote enrichit
+        source:       'goguelnikov',
+      });
+      baseIds.add(id);
     }
-  } else {
-    console.log('      Pas de fichier existant — première génération');
+    baseInvaders.sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
+
+    // ── Version précédente par ville ──────────────────────────────────────
+    let prevVersion   = 1;
+    let prevBaseCount = 0;
+    let prevHash      = '';
+    if (existsSync(outFile)) {
+      try {
+        const prev   = JSON.parse(readFileSync(outFile, 'utf8'));
+        prevVersion   = typeof prev.version    === 'number' ? prev.version    : 1;
+        prevBaseCount = typeof prev._baseCount === 'number' ? prev._baseCount : 0;
+        prevHash      = contentHash(prev.invaders ?? []);
+      } catch { /* ignore */ }
+    }
+
+    // ── Garde-fou : chute brutale de la base goguelnikov ─────────────────
+    if (prevBaseCount > 0 && gogEntries.length > 0) {
+      const loss = (prevBaseCount - baseInvaders.length) / prevBaseCount;
+      if (loss > MAX_LOSS_PCT) {
+        console.log(`⚠  SKIP — chute base ${prevBaseCount}→${baseInvaders.length} (−${(loss*100).toFixed(1)}%)`);
+        const prevCity = prevIndex?.cities?.find(c => c.code === code);
+        if (prevCity) indexCities.push(prevCity);
+        continue;
+      }
+    }
+
+    // ── Ajout des ids pnote-only ──────────────────────────────────────────
+    const pnoteOnlyInvaders = [];
+    for (const [id, pe] of pnoteForCity) {
+      if (baseIds.has(id)) continue;
+      if (pe.obf_lat === null || pe.obf_lng === null) continue;
+      pnoteOnlyInvaders.push({
+        id,
+        city:         code,
+        lat:          pe.obf_lat,
+        lng:          pe.obf_lng,
+        status:       pe.status,
+        points:       null,                   // inconnu
+        hint:         pe.hint || '',
+        instagramUrl: pe.instagramUrl,
+        source:       'pnote',
+      });
+    }
+    pnoteOnlyInvaders.sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
+
+    let enriched = [...baseInvaders, ...pnoteOnlyInvaders]
+      .sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
+
+    if (enriched.length === 0) {
+      console.log('⚠  SKIP — aucun Invader valide');
+      const prevCity = prevIndex?.cities?.find(c => c.code === code);
+      if (prevCity) indexCities.push(prevCity);
+      continue;
+    }
+
+    // ── Fusion extras (PA uniquement) ─────────────────────────────────────
+    let extrasAdded = 0, extrasOverridden = 0;
+    let finalInvaders = enriched;
+    if (code === 'PA' && extrasPA.size > 0) {
+      const merged = new Map(enriched.map(i => [i.id, i]));
+      for (const [id, extra] of extrasPA) {
+        merged.has(id) ? extrasOverridden++ : extrasAdded++;
+        merged.set(id, extra);
+      }
+      finalInvaders = [...merged.values()]
+        .sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
+    }
+
+    // ── Hash + écriture si modifié ────────────────────────────────────────
+    const newHash    = contentHash(finalInvaders);
+    const changed    = newHash !== prevHash;
+    const newVersion = changed ? prevVersion + 1 : prevVersion;
+
+    if (changed) {
+      writeFileSync(outFile, JSON.stringify({
+        version:     newVersion,
+        updatedAt:   today,
+        city:        code,
+        attribution: SOURCE_ATTRIBUTION,
+        _baseCount:  baseInvaders.length,
+        invaders:    finalInvaders,
+      }, null, 2), 'utf8');
+    }
+
+    // ── Compteurs ─────────────────────────────────────────────────────────
+    const withIg       = finalInvaders.filter(i => i.instagramUrl).length;
+    const withNullPts  = finalInvaders.filter(i => i.points === null).length;
+    gTotal       += finalInvaders.length;
+    gGog         += baseInvaders.length;
+    gPnote       += pnoteOnlyInvaders.length;
+    gExtras      += extrasAdded;
+    gInstagram   += withIg;
+    gNullPoints  += withNullPts;
+    gDivergences += cityDivergences;
+    if (code === 'PA') {
+      paTotal  = finalInvaders.length; paGog  = baseInvaders.length;
+      paPnote  = pnoteOnlyInvaders.length; paExtras = extrasAdded;
+    }
+
+    // ── Centre ────────────────────────────────────────────────────────────
+    const cityCenter = KNOWN_CENTERS[code] ?? computeCenter(finalInvaders);
+
+    indexCities.push({
+      code,
+      name:    meta?.name ?? code,
+      count:   finalInvaders.length,
+      version: newVersion,
+      center:  cityCenter,
+      ...(meta?.bbox ? { bbox: meta.bbox } : {}),
+    });
+
+    const parts = [`${baseInvaders.length} gog`];
+    if (pnoteOnlyInvaders.length) parts.push(`+${pnoteOnlyInvaders.length} pnote`);
+    if (extrasAdded)              parts.push(`+${extrasAdded} extras`);
+    if (cityDivergences)          parts.push(`~${cityDivergences}⚡`);
+    const flag = changed ? `✓ v${newVersion}` : `— v${newVersion}`;
+    console.log(`${String(finalInvaders.length).padStart(5)} (${parts.join(', ')})  ${flag}  ${meta?.name ?? '?'}`);
   }
 
-  // ── [4/5] Validation base + fusion extras ────────────────────────────────
-  console.log('\n[4/5] Validation de la base + fusion des extras…');
-  validateBase(baseInvaders, previousBaseCount);
-  console.log('      ✓ Base goguelnikov valide (bbox OK, pas de chute suspecte)');
+  // ── [6/6] Index ───────────────────────────────────────────────────────────
+  console.log('\n[6/6] Index…');
+  const prevIndexHash  = prevIndex?.cities ? indexHash(prevIndex.cities) : '';
+  const newIndexHash   = indexHash(indexCities);
+  const indexChanged   = newIndexHash !== prevIndexHash;
+  const newIndexVersion = indexChanged ? prevIndexVersion + 1 : prevIndexVersion;
 
-  // Fusion : on part d'une Map pour permettre aux extras d'écraser la base
-  const mergedMap = new Map(baseInvaders.map(inv => [inv.id, inv]));
-  let extraAdded      = 0;
-  let extraOverridden = 0;
-  let extraSkipped    = 0;
-  let extraDisabled   = 0;
+  writeFileSync(INDEX_FILE, JSON.stringify({
+    version:   newIndexVersion,
+    updatedAt: today,
+    cities:    indexCities,
+  }, null, 2), 'utf8');
 
-  if (existsSync(EXTRAS_FILE)) {
-    let extrasRaw;
-    try {
-      extrasRaw = JSON.parse(readFileSync(EXTRAS_FILE, 'utf8'));
-    } catch (e) {
-      console.warn('      ⚠ Impossible de lire invaders_extras.json :', e.message, '— ignoré');
-      extrasRaw = { invaders: [] };
-    }
-
-    const allEntries = extrasRaw.invaders ?? [];
-    extraDisabled    = allEntries.filter(e => e.disabled).length;
-    const entries    = allEntries.filter(e => !e.disabled);
-
-    for (const entry of entries) {
-      // Validation souple : avertissement sans faire planter le script
-      if (!entry.id) {
-        console.warn('      ⚠ Extra ignoré : champ "id" manquant —', JSON.stringify(entry).slice(0, 60));
-        extraSkipped++;
-        continue;
-      }
-      if (typeof entry.lat !== 'number' || typeof entry.lng !== 'number') {
-        console.warn(`      ⚠ Extra ${entry.id} ignoré : lat/lng doivent être des nombres (pas des strings).`);
-        extraSkipped++;
-        continue;
-      }
-      if (!inBbox(entry.lat, entry.lng)) {
-        console.warn(`      ⚠ Extra ${entry.id} ignoré : coordonnées hors bbox Île-de-France (lat=${entry.lat}, lng=${entry.lng}).`);
-        extraSkipped++;
-        continue;
-      }
-
-      const normalized = {
-        id:     String(entry.id),
-        city:   String(entry.city ?? 'PA'),
-        lat:    entry.lat,
-        lng:    entry.lng,
-        status: normalizeStatus(entry.status),
-        points: Math.max(0, parseInt(String(entry.points ?? 0), 10) || 0),
-        hint:   String(entry.hint ?? '').trim(),
-        source: String(entry.source ?? 'extras'),
-      };
-
-      if (mergedMap.has(entry.id)) {
-        extraOverridden++;
-      } else {
-        extraAdded++;
-      }
-      mergedMap.set(entry.id, normalized);
-    }
-
-    if (extraDisabled > 0 || entries.length > 0) {
-      console.log(`      Extras : ${extraDisabled} exemple(s) désactivé(s) ignorés`);
-    }
-    if (entries.length > 0) {
-      console.log(`      Extras actives : +${extraAdded} ajouts, ~${extraOverridden} surcharge(s), ${extraSkipped} ignorée(s)`);
-    } else {
-      console.log('      Extras actives : aucune (toutes désactivées ou fichier vide)');
-    }
-  } else {
-    console.log('      Extras : fichier absent, ignoré');
-  }
-
-  // Tableau final fusionné, trié par id
-  const finalInvaders = [...mergedMap.values()]
-    .sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
-
-  // ── Comparaison de contenu ────────────────────────────────────────────────
-  const newHash    = contentHash(finalInvaders);
-  const hasChanged = newHash !== previousHash;
-  const newVersion = hasChanged ? previousVersion + 1 : previousVersion;
+  const indexFlag = indexChanged ? `✓ v${newIndexVersion}` : `— v${newIndexVersion}`;
+  console.log(`      index.json ${indexFlag}, ${indexCities.length} villes`);
 
   // ── Résumé ────────────────────────────────────────────────────────────────
-  console.log('\n' + bar);
-  console.log('  RÉSUMÉ');
-  console.log(bar);
-  console.log(`  Base goguelnikov  : ${baseInvaders.length} Invaders`);
-  console.log(`  Extras appliquées : +${extraAdded} ajouts, ~${extraOverridden} surcharge(s)`);
-  console.log(`  Total final       : ${finalInvaders.length} Invaders`);
-  if (previousBaseCount > 0) {
-    const delta = baseInvaders.length - previousBaseCount;
-    console.log(`  Variation base    : ${delta >= 0 ? '+' : ''}${delta} vs version précédente`);
-  }
-  console.log(`  Contenu modifié   : ${hasChanged ? 'OUI' : 'NON'}`);
-  if (hasChanged) {
-    console.log(`  Version           : ${previousVersion} → ${newVersion}`);
-  } else {
-    console.log(`  Version           : ${previousVersion} (inchangée)`);
-  }
-  console.log(bar);
-
-  if (!hasChanged) {
-    console.log('\n✓ Données inchangées. Aucun fichier écrit.');
-    return;
-  }
-
-  // ── Écriture ──────────────────────────────────────────────────────────────
-  const today  = new Date().toISOString().slice(0, 10);
-  const output = {
-    version:     newVersion,
-    updatedAt:   today,
-    source:      SOURCE_URL,
-    attribution: SOURCE_ATTRIBUTION,
-    invaders:    finalInvaders,
-  };
-
-  writeFileSync(OUTPUT, JSON.stringify(output, null, 2), 'utf8');
-  console.log(`\n✓ Fichier écrit : ${OUTPUT}`);
-  console.log(`  Version ${newVersion} — ${today} — ${finalInvaders.length} Invaders Paris`);
+  const bar2 = '═'.repeat(64);
+  console.log('\n' + bar2);
+  console.log('  RÉSUMÉ GLOBAL');
+  console.log(bar2);
+  console.log(`  Base goguelnikov      : ${String(gGog).padStart(6)} Invaders`);
+  console.log(`  Ajouts pnote-only     : ${String(gPnote).padStart(6)} Invaders (coords obfusquées)`);
+  console.log(`  Ajouts extras         : ${String(gExtras).padStart(6)} Invaders`);
+  console.log(`  ─────────────────────────────────────────`);
+  console.log(`  TOTAL                 : ${String(gTotal).padStart(6)} Invaders`);
+  console.log('');
+  console.log(`  Avec instagramUrl     : ${String(gInstagram).padStart(6)} / ${gTotal} (${(gInstagram/gTotal*100).toFixed(1)} %)`);
+  console.log(`  Points inconnus (null): ${String(gNullPoints).padStart(6)}  (pnote-only)`);
+  console.log(`  Divergences statuts   : ${String(gDivergences).padStart(6)}  (gog≠pnote, ids communs, statut gog conservé)`);
+  console.log('');
+  console.log(`  ── Paris ─────────────────────────────────`);
+  console.log(`  Base gog              : ${paGog}`);
+  console.log(`  Ajouts pnote          : +${paPnote}  (PA_${paGog + 1}…PA_${paGog + paPnote})`);
+  console.log(`  Extras                : +${paExtras}`);
+  console.log(`  Total Paris           : ${paTotal}  (était 1 528)`);
+  console.log(bar2);
 }
 
 main().catch(err => {

@@ -5,8 +5,9 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useTranslation } from 'react-i18next';
 import { useAppContext } from '../context/AppContext';
-import { STATUS_COLOR, STATUS_LABEL } from '../constants';
+import { STATUS_COLOR } from '../constants';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 
@@ -24,13 +25,14 @@ function getStyles(theme) {
 // ─── Ligne ────────────────────────────────────────────────────────────────────
 
 const InvaderRow = memo(function InvaderRow({ item, isFlashed, onToggle, theme }) {
+  const { t } = useTranslation();
   const styles = getStyles(theme);
   return (
     <View style={styles.row}>
       <View style={[styles.statusDot, { backgroundColor: STATUS_COLOR[item.status] }]} />
       <View style={styles.rowInfo}>
         <Text style={styles.rowId}>{item.id}</Text>
-        <Text style={styles.rowMeta}>{STATUS_LABEL[item.status]} · {item.points} pts</Text>
+        <Text style={styles.rowMeta}>{t(`common.status.${item.status}`)} · {item.points} {t('common.pts')}</Text>
       </View>
       <Switch
         value={isFlashed}
@@ -48,6 +50,7 @@ const InvaderRow = memo(function InvaderRow({ item, isFlashed, onToggle, theme }
 export default function ListScreen({ navigation }) {
   const { invaders, flashed, toggleFlash, bulkFlash, bulkUnflash } = useAppContext();
   const { theme } = useTheme();
+  const { t } = useTranslation();
   const styles = getStyles(theme);
   const insets = useSafeAreaInsets();
   const [search, setSearch] = useState('');
@@ -77,25 +80,33 @@ export default function ListScreen({ navigation }) {
   ), [flashed, toggleFlash, theme]);
 
   function confirmBulkFlash() {
-    Alert.alert('Tout marquer comme flashé', `Marquer les ${invaders.length} Invaders comme flashés ?`, [
-      { text: 'Annuler', style: 'cancel' },
-      { text: 'Confirmer', onPress: bulkFlash },
-    ]);
+    Alert.alert(
+      t('list.bulkFlash.title'),
+      t('list.bulkFlash.msg', { count: invaders.length }),
+      [
+        { text: t('common.cancel'), style: 'cancel' },
+        { text: t('common.confirm'), onPress: bulkFlash },
+      ]
+    );
   }
 
   function confirmBulkUnflash() {
-    Alert.alert('Tout démarquer', 'Retirer le marquage de tous les Invaders ?', [
-      { text: 'Annuler', style: 'cancel' },
-      { text: 'Confirmer', style: 'destructive', onPress: bulkUnflash },
-    ]);
+    Alert.alert(
+      t('list.bulkUnflash.title'),
+      t('list.bulkUnflash.msg'),
+      [
+        { text: t('common.cancel'), style: 'cancel' },
+        { text: t('common.confirm'), style: 'destructive', onPress: bulkUnflash },
+      ]
+    );
   }
 
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
       <View style={styles.header}>
-        <Text style={styles.title}>Invaders Paris</Text>
+        <Text style={styles.title}>{t('list.title')}</Text>
         <View style={styles.headerRight}>
-          <Text style={styles.counter}>{flashed.size} / {invaders.length} flashés</Text>
+          <Text style={styles.counter}>{t('list.counter', { flashed: flashed.size, total: invaders.length })}</Text>
           <TouchableOpacity
             onPress={() => navigation.getParent()?.navigate('Réglages')}
             hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
@@ -107,7 +118,7 @@ export default function ListScreen({ navigation }) {
 
       <TextInput
         style={styles.searchInput}
-        placeholder="Rechercher (ex : 42 ou PA_42)"
+        placeholder={t('list.searchPlaceholder')}
         placeholderTextColor={theme.textSecondary}
         value={search}
         onChangeText={setSearch}
@@ -118,7 +129,7 @@ export default function ListScreen({ navigation }) {
       />
 
       <View style={styles.filterRow}>
-        {[['all', 'Tous'], ['flashed', 'Flashés'], ['unflashed', 'Reste à faire']].map(([val, label]) => (
+        {[['all', t('list.all')], ['flashed', t('list.flashed')], ['unflashed', t('list.unflashed')]].map(([val, label]) => (
           <TouchableOpacity
             key={val}
             onPress={() => setFilter(val)}
@@ -131,16 +142,16 @@ export default function ListScreen({ navigation }) {
 
       <View style={styles.bulkRow}>
         <TouchableOpacity style={styles.bulkBtn} onPress={confirmBulkFlash}>
-          <Text style={styles.bulkBtnText}>✓ Tout flasher</Text>
+          <Text style={styles.bulkBtnText}>{t('list.bulkFlashBtn')}</Text>
         </TouchableOpacity>
         <TouchableOpacity style={[styles.bulkBtn, styles.bulkBtnDestructive]} onPress={confirmBulkUnflash}>
-          <Text style={[styles.bulkBtnText, { color: theme.destructive }]}>✕ Tout démarquer</Text>
+          <Text style={[styles.bulkBtnText, { color: theme.destructive }]}>{t('list.bulkUnflashBtn')}</Text>
         </TouchableOpacity>
       </View>
 
       {rows.length === 0 ? (
         <View style={styles.empty}>
-          <Text style={styles.emptyText}>Aucun résultat</Text>
+          <Text style={styles.emptyText}>{t('list.empty')}</Text>
         </View>
       ) : (
         <FlatList

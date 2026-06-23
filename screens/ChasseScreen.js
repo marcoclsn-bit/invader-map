@@ -9,13 +9,20 @@ import * as turf from '@turf/turf';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
+import { useTranslation } from 'react-i18next';
+import i18n from '../i18n';
 import { STATUS_COLOR } from '../constants';
 import { ORS_API_KEY } from '../config/ors';
 import { useAppContext } from '../context/AppContext';
+import { CITIES } from '../cities/registry';
 import { INVADER_DISTRICT, arLabel } from '../utils/arrondissement';
 import { useTheme } from '../theme/ThemeContext';
 
-const PARIS = { latitude: 48.8566, longitude: 2.3522, latitudeDelta: 0.12, longitudeDelta: 0.12 };
+// Palier 1 : référence PA — les fonctions ORS accepteront un paramètre ville en Palier 2
+const _PA        = CITIES.PA;
+const PARIS      = { latitude: _PA.center.lat, longitude: _PA.center.lng, ..._PA.mapDelta };
+const _ORS_FOCUS = `focus.point.lat=${_PA.center.lat}&focus.point.lon=${_PA.center.lng}`;
+const _ORS_CTY   = _PA.orsCountry;
 const VISIT_MIN = 2;   // minutes par Invader (observation + photo)
 const SPEEDS = { 'foot-walking': 5, 'cycling-regular': 15 }; // km/h
 const DEBOUNCE_MS = 300;
@@ -89,13 +96,13 @@ async function orsMultiRoute(waypointsLonLat, profile) {
     }
   );
   if (!res.ok) {
-    let msg = "Calcul d'itinéraire impossible";
+    let msg = i18n.t('hunt.error.routeCalc');
     try { const e = await res.json(); msg = e?.error?.message ?? e?.message ?? msg; } catch {}
     throw new Error(msg);
   }
   const json = await res.json();
   const feature = json.features?.[0];
-  if (!feature) throw new Error('Itinéraire introuvable');
+  if (!feature) throw new Error(i18n.t('hunt.error.routeNotFound'));
   return {
     coords: feature.geometry.coordinates,
     durationMin: Math.round(feature.properties.summary.duration / 60),
@@ -105,12 +112,12 @@ async function orsMultiRoute(waypointsLonLat, profile) {
 async function orsAutocomplete(text, focusCoords) {
   const focus = focusCoords
     ? `focus.point.lat=${focusCoords[1]}&focus.point.lon=${focusCoords[0]}`
-    : 'focus.point.lat=48.8566&focus.point.lon=2.3522';
+    : _ORS_FOCUS;
   try {
     const res = await fetch(
       `https://api.openrouteservice.org/geocode/autocomplete` +
       `?api_key=${ORS_API_KEY}&text=${encodeURIComponent(text)}` +
-      `&${focus}&boundary.country=FR&size=5`
+      `&${focus}&${_ORS_CTY}&size=5`
     );
     if (!res.ok) return [];
     const json = await res.json();
@@ -122,11 +129,11 @@ async function orsGeocode(text) {
   const url =
     `https://api.openrouteservice.org/geocode/search` +
     `?api_key=${ORS_API_KEY}&text=${encodeURIComponent(text)}` +
-    `&focus.point.lat=48.8566&focus.point.lon=2.3522&boundary.country=FR&size=1`;
+    `&${_ORS_FOCUS}&${_ORS_CTY}&size=1`;
   const res = await fetch(url);
-  if (!res.ok) throw new Error('Adresse introuvable');
+  if (!res.ok) throw new Error(i18n.t('hunt.error.addressNotFound'));
   const json = await res.json();
-  if (!json.features?.length) throw new Error(`Adresse introuvable : « ${text} »`);
+  if (!json.features?.length) throw new Error(i18n.t('hunt.error.addressNotFound'));
   const f = json.features[0];
   return { coords: f.geometry.coordinates, label: f.properties.label };
 }
@@ -154,6 +161,7 @@ function getStyles(theme) {
 
 function HuntRow({ inv, index, isFlashed, statusColors, onPress }) {
   const { theme } = useTheme();
+  const { t } = useTranslation();
   const styles = getStyles(theme);
   return (
     <TouchableOpacity style={styles.huntRow} onPress={onPress} activeOpacity={0.7}>
@@ -162,7 +170,7 @@ function HuntRow({ inv, index, isFlashed, statusColors, onPress }) {
       </View>
       <View style={[styles.huntDot, { backgroundColor: statusColors[inv.status] ?? STATUS_COLOR[inv.status] }]} />
       <Text style={styles.huntId}>{inv.id}</Text>
-      <Text style={styles.huntPts}>{inv.points} pts</Text>
+      <Text style={styles.huntPts}>{inv.points} {t('common.pts')}</Text>
       {isFlashed && (
         <View style={styles.flashedBadge}>
           <Text style={styles.flashedBadgeText}>✓</Text>
@@ -182,8 +190,10 @@ export default function ChasseScreen({ route }) {
   const debounce = useRef(null);
   const locationSub = useRef(null);
 
-  const { invaders, flashed, statusColors } = useAppContext();
+  const { invaders, flashed, statusColors, currentCityCode } = useAppContext();
+  const city = CITIES[currentCityCode] ?? CITIES.PA;
   const { theme, isDark } = useTheme();
+  const { t } = useTranslation();
   const styles = getStyles(theme);
 
   // ─── GPS ──────────────────────────────────────────────────────────────────
@@ -392,7 +402,7 @@ export default function ChasseScreen({ route }) {
       const selected = greedyHunt(startLon, startLat, candidates, budgetMin, SPEEDS[profile]);
 
       if (selected.length === 0) {
-        setError("Aucun Invader atteignable avec ce budget. Essaie d'augmenter le temps ou de changer de point de départ.");
+        setError(t('hunt.error.noInvadersReachable'));
         return;
       }
 
@@ -414,7 +424,7 @@ export default function ChasseScreen({ route }) {
       });
       setInputCollapsed(true);
     } catch (e) {
-      setError(e.message ?? 'Erreur lors de la génération');
+      setError(e.message ?? t('hunt.error.generation'));
     } finally {
       setLoading(false);
     }
@@ -473,7 +483,7 @@ export default function ChasseScreen({ route }) {
             showsTraffic={false}
             showsPointsOfInterest={false}
             showsUserLocation={gpsReady}
-            initialRegion={PARIS}
+            initialRegion={{ latitude: city.center.lat, longitude: city.center.lng, ...city.mapDelta }}
             onPress={() => Keyboard.dismiss()}
             onPanDrag={() => { if (following) setDrifted(true); }}
           >
@@ -523,8 +533,8 @@ export default function ChasseScreen({ route }) {
                   {/* Sélecteur de mode */}
                   <View style={styles.modeRow}>
                     {[
-                      { key: 'around',   label: 'Autour de moi',   icon: 'locate-outline' },
-                      { key: 'quartier', label: 'Dans un quartier', icon: 'map-outline' },
+                      { key: 'around',   label: t('hunt.aroundMe'),     icon: 'locate-outline' },
+                      { key: 'quartier', label: t('hunt.neighborhood'),  icon: 'map-outline' },
                     ].map(m => (
                       <TouchableOpacity key={m.key}
                         style={[styles.modeBtn, mode === m.key && styles.modeBtnActive]}
@@ -546,7 +556,7 @@ export default function ChasseScreen({ route }) {
                         <TextInput
                           ref={quartierInputRef}
                           style={styles.qField}
-                          placeholder="Quartier ou adresse"
+                          placeholder={t('hunt.neighborhoodPlaceholder')}
                           placeholderTextColor="#C7C7CC"
                           value={qText}
                           onChangeText={onQChange}
@@ -568,7 +578,7 @@ export default function ChasseScreen({ route }) {
                           {qSearching ? (
                             <View style={styles.suggState}>
                               <ActivityIndicator size="small" color={theme.textSecondary} />
-                              <Text style={styles.suggStateText}>Recherche…</Text>
+                              <Text style={styles.suggStateText}>{t('common.searching')}</Text>
                             </View>
                           ) : qSugg.length > 0 ? (
                             qSugg.map((s, i) => (
@@ -582,13 +592,13 @@ export default function ChasseScreen({ route }) {
                           ) : qShowEmpty ? (
                             <>
                               <View style={styles.suggState}>
-                                <Text style={styles.suggStateText}>Aucun résultat</Text>
+                                <Text style={styles.suggStateText}>{t('common.noResults')}</Text>
                               </View>
                               <TouchableOpacity style={[styles.suggItem, styles.suggBorder]} onPress={onQFallback}>
                                 {qResolving
                                   ? <ActivityIndicator size="small" color={theme.accent} />
                                   : <Text style={styles.suggFallbackText} numberOfLines={1}>
-                                      Utiliser « {qText} »
+                                      {t('hunt.useAddress', { text: qText })}
                                     </Text>
                                 }
                               </TouchableOpacity>
@@ -602,7 +612,7 @@ export default function ChasseScreen({ route }) {
                   <View style={styles.divider} />
 
                   {/* Budget temps */}
-                  <Text style={styles.fieldLabel}>Temps : {formatBudget(budgetMin)}</Text>
+                  <Text style={styles.fieldLabel}>{t('hunt.timeLabel', { duration: formatBudget(budgetMin) })}</Text>
                   <Slider
                     style={styles.slider}
                     minimumValue={1}
@@ -617,11 +627,11 @@ export default function ChasseScreen({ route }) {
 
                   {/* Transport */}
                   <View style={styles.transportRow}>
-                    <Text style={styles.fieldLabel}>Transport</Text>
+                    <Text style={styles.fieldLabel}>{t('hunt.transport')}</Text>
                     <View style={styles.segmented}>
                       {[
-                        { key: 'foot-walking',    label: 'À pied', icon: 'walk-outline' },
-                        { key: 'cycling-regular', label: 'Vélo',   icon: 'bicycle-outline' },
+                        { key: 'foot-walking',    label: t('hunt.walking'),  icon: 'walk-outline' },
+                        { key: 'cycling-regular', label: t('hunt.cycling'),  icon: 'bicycle-outline' },
                       ].map(p => (
                         <TouchableOpacity key={p.key}
                           style={[styles.segBtn, profile === p.key && styles.segBtnActive]}
@@ -638,7 +648,7 @@ export default function ChasseScreen({ route }) {
 
                   {/* Toggle */}
                   <View style={styles.toggleRow}>
-                    <Text style={styles.toggleLabel}>Non flashés uniquement</Text>
+                    <Text style={styles.toggleLabel}>{t('hunt.unflashedOnly')}</Text>
                     <Switch
                       value={unflashedOnly}
                       onValueChange={setUnflashedOnly}
@@ -652,7 +662,7 @@ export default function ChasseScreen({ route }) {
                     <View style={styles.arFilterBanner}>
                       <Ionicons name="filter-outline" size={13} color={theme.accent} />
                       <Text style={styles.arFilterText}>
-                        Limité au {arLabel(arFilter)}
+                        {t('hunt.filteredTo', { label: arLabel(arFilter) })}
                       </Text>
                       <TouchableOpacity onPress={() => setArFilter(null)} hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}>
                         <Ionicons name="close-circle" size={15} color={theme.textSecondary} />
@@ -668,14 +678,14 @@ export default function ChasseScreen({ route }) {
                   >
                     {loading
                       ? <ActivityIndicator color="#fff" />
-                      : <Text style={styles.genBtnText}>Générer la chasse</Text>
+                      : <Text style={styles.genBtnText}>{t('hunt.generate')}</Text>
                     }
                   </TouchableOpacity>
 
                   {error ? (
                     <Text style={styles.errorText}>{error}</Text>
                   ) : mode === 'around' && !gpsReady ? (
-                    <Text style={styles.hintText}>En attente de la position GPS…</Text>
+                    <Text style={styles.hintText}>{t('hunt.waitingGps')}</Text>
                   ) : null}
                 </ScrollView>
               )}
@@ -691,11 +701,11 @@ export default function ChasseScreen({ route }) {
               {following ? (
                 <TouchableOpacity style={styles.stopBtn} onPress={stopFollowing}>
                   <Ionicons name="stop-circle-outline" size={18} color="#fff" />
-                  <Text style={styles.trackBtnText}>Quitter</Text>
+                  <Text style={styles.trackBtnText}>{t('hunt.quit')}</Text>
                 </TouchableOpacity>
               ) : (
                 <TouchableOpacity style={styles.startBtn} onPress={startFollowing}>
-                  <Text style={styles.trackBtnText}>Démarrer</Text>
+                  <Text style={styles.trackBtnText}>{t('hunt.start')}</Text>
                 </TouchableOpacity>
               )}
               {(!following || drifted) && (
@@ -712,8 +722,8 @@ export default function ChasseScreen({ route }) {
           <View style={styles.resultPanel}>
             <View style={styles.resultHeader}>
               <Text style={styles.resultSummary}>
-                {result.invaders.length} Invader{result.invaders.length > 1 ? 's' : ''}
-                {' · '}{result.totalPts} pts{' · '}~{formatBudget(result.durationMin)}
+                {t('hunt.resultCount', { count: result.invaders.length })}
+                {' · '}{result.totalPts} {t('common.pts')}{' · '}~{formatBudget(result.durationMin)}
               </Text>
             </View>
             <FlatList

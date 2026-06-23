@@ -1,8 +1,8 @@
 {
-  "version": 2,
+  "version": 3,
   "updatedAt": "2026-06-23",
   "city": "LJU",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 42,
   "invaders": [
     {
@@ -13,6 +13,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_01/",
       "source": "goguelnikov"
     },
     {
@@ -23,6 +24,7 @@
       "status": "ok",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_02/",
       "source": "goguelnikov"
     },
     {
@@ -33,6 +35,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_03/",
       "source": "goguelnikov"
     },
     {
@@ -43,6 +46,7 @@
       "status": "ok",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_04/",
       "source": "goguelnikov"
     },
     {
@@ -53,6 +57,7 @@
       "status": "damaged",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_05/",
       "source": "goguelnikov"
     },
     {
@@ -63,6 +68,7 @@
       "status": "ok",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_06/",
       "source": "goguelnikov"
     },
     {
@@ -73,6 +79,7 @@
       "status": "ok",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_07/",
       "source": "goguelnikov"
     },
     {
@@ -83,6 +90,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_08/",
       "source": "goguelnikov"
     },
     {
@@ -93,6 +101,7 @@
       "status": "damaged",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_09/",
       "source": "goguelnikov"
     },
     {
@@ -103,6 +112,7 @@
       "status": "damaged",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_10/",
       "source": "goguelnikov"
     },
     {
@@ -113,6 +123,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_11/",
       "source": "goguelnikov"
     },
     {
@@ -123,6 +134,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_12/",
       "source": "goguelnikov"
     },
     {
@@ -133,6 +145,7 @@
       "status": "ok",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_13/",
       "source": "goguelnikov"
     },
     {
@@ -143,6 +156,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_14/",
       "source": "goguelnikov"
     },
     {
@@ -153,6 +167,7 @@
       "status": "ok",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_15/",
       "source": "goguelnikov"
     },
     {
@@ -163,6 +178,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_16/",
       "source": "goguelnikov"
     },
     {
@@ -173,6 +189,7 @@
       "status": "damaged",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_17/",
       "source": "goguelnikov"
     },
     {
@@ -183,6 +200,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_18/",
       "source": "goguelnikov"
     },
     {
@@ -193,6 +211,7 @@
       "status": "damaged",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_19/",
       "source": "goguelnikov"
     },
     {
@@ -203,6 +222,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_20/",
       "source": "goguelnikov"
     },
     {
@@ -213,6 +233,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_21/",
       "source": "goguelnikov"
     },
     {
@@ -223,6 +244,7 @@
       "status": "ok",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_22/",
       "source": "goguelnikov"
     },
     {
@@ -233,6 +255,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_23/",
       "source": "goguelnikov"
     },
     {
@@ -243,6 +266,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_24/",
       "source": "goguelnikov"
     },
     {
@@ -253,6 +277,7 @@
       "status": "damaged",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_25/",
       "source": "goguelnikov"
     },
     {
@@ -263,6 +288,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_26/",
       "source": "goguelnikov"
     },
     {
@@ -273,6 +299,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_27/",
       "source": "goguelnikov"
     },
     {
@@ -283,6 +310,7 @@
       "status": "ok",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_28/",
       "source": "goguelnikov"
     },
     {
@@ -293,6 +321,7 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_29/",
       "source": "goguelnikov"
     },
     {
@@ -303,6 +332,7 @@
       "status": "ok",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_30/",
       "source": "goguelnikov"
     },
     {
@@ -313,6 +343,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_31/",
       "source": "goguelnikov"
     },
     {
@@ -323,6 +354,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_32/",
       "source": "goguelnikov"
     },
     {
@@ -333,6 +365,7 @@
       "status": "ok",
       "points": 40,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_33/",
       "source": "goguelnikov"
     },
     {
@@ -343,6 +376,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_34/",
       "source": "goguelnikov"
     },
     {
@@ -353,6 +387,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_35/",
       "source": "goguelnikov"
     },
     {
@@ -363,6 +398,7 @@
       "status": "ok",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_36/",
       "source": "goguelnikov"
     },
     {
@@ -373,6 +409,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_37/",
       "source": "goguelnikov"
     },
     {
@@ -383,6 +420,7 @@
       "status": "ok",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_38/",
       "source": "goguelnikov"
     },
     {
@@ -393,6 +431,7 @@
       "status": "ok",
       "points": 40,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_39/",
       "source": "goguelnikov"
     },
     {
@@ -403,6 +442,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_40/",
       "source": "goguelnikov"
     },
     {
@@ -413,6 +453,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_41/",
       "source": "goguelnikov"
     },
     {
@@ -423,6 +464,7 @@
       "status": "ok",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lju_42/",
       "source": "goguelnikov"
     }
   ]

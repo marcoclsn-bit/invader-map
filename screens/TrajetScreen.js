@@ -9,18 +9,23 @@ import * as turf from '@turf/turf';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
-import { STATUS_COLOR, STATUS_LABEL } from '../constants';
+import { useTranslation } from 'react-i18next';
+import i18n from '../i18n';
+import { STATUS_COLOR } from '../constants';
 import { ORS_API_KEY } from '../config/ors';
 import { useAppContext } from '../context/AppContext';
+import { CITIES } from '../cities/registry';
 import InvaderMarker from '../components/InvaderMarker';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 
-const PARIS = { latitude: 48.8566, longitude: 2.3522, latitudeDelta: 0.12, longitudeDelta: 0.12 };
+// Palier 1 : référence PA — les fonctions ORS accepteront un paramètre ville en Palier 2
+const _PA         = CITIES.PA;
+const PARIS       = { latitude: _PA.center.lat, longitude: _PA.center.lng, ..._PA.mapDelta };
+const ORS_COUNTRY = _PA.orsCountry;
+const _ORS_FOCUS  = `focus.point.lat=${_PA.center.lat}&focus.point.lon=${_PA.center.lng}`;
 const DEBOUNCE_MS = 300;
-const MIN_CHARS = 3;
-const GPS_TOKEN = 'Ma position';
-const ORS_COUNTRY = 'boundary.country=FR';
+const MIN_CHARS   = 3;
 
 const BUFFER_OPTIONS = [
   { label: '50 m',  value: 0.05 },
@@ -47,7 +52,7 @@ async function openInApp(app, lat, lng) {
 async function orsAutocomplete(text, focusCoords) {
   const focus = focusCoords
     ? `focus.point.lat=${focusCoords[1]}&focus.point.lon=${focusCoords[0]}`
-    : 'focus.point.lat=48.8566&focus.point.lon=2.3522';
+    : _ORS_FOCUS;
   const url =
     `https://api.openrouteservice.org/geocode/autocomplete` +
     `?api_key=${ORS_API_KEY}&text=${encodeURIComponent(text)}` +
@@ -70,11 +75,11 @@ async function orsGeocode(text) {
   const url =
     `https://api.openrouteservice.org/geocode/search` +
     `?api_key=${ORS_API_KEY}&text=${encodeURIComponent(text)}` +
-    `&focus.point.lat=48.8566&focus.point.lon=2.3522&${ORS_COUNTRY}&size=1`;
+    `&${_ORS_FOCUS}&${ORS_COUNTRY}&size=1`;
   const res = await fetch(url);
-  if (!res.ok) throw new Error('Adresse introuvable');
+  if (!res.ok) throw new Error(i18n.t('route.error.addressNotFound'));
   const json = await res.json();
-  if (!json.features?.length) throw new Error(`Adresse introuvable : « ${text} »`);
+  if (!json.features?.length) throw new Error(i18n.t('route.error.addressNotFoundFor', { text }));
   const f = json.features[0];
   return { coords: f.geometry.coordinates, label: f.properties.label };
 }
@@ -94,13 +99,13 @@ async function orsRoute(from, to, profile) {
       const msg = err?.error?.message ?? err?.message;
       if (msg) throw new Error(msg);
     } catch (e) {
-      if (e.message && e.message !== 'Itinéraire introuvable') throw e;
+      if (e.message && e.message !== i18n.t('route.error.addressNotFound')) throw e;
     }
-    throw new Error('Itinéraire introuvable entre ces deux points');
+    throw new Error(i18n.t('route.error.routeNotFound'));
   }
   const json = await res.json();
   const coords = json.features?.[0]?.geometry?.coordinates;
-  if (!coords || coords.length < 2) throw new Error('Itinéraire introuvable');
+  if (!coords || coords.length < 2) throw new Error(i18n.t('route.error.routeNotFound'));
   return coords;
 }
 
@@ -123,6 +128,7 @@ function AddressInput({
   gpsOption, onSelectGps,
 }) {
   const { theme } = useTheme();
+  const { t } = useTranslation();
   const styles = getStyles(theme);
   const showDropdown = gpsOption || searching || showEmpty || suggestions.length > 0;
   return (
@@ -158,7 +164,7 @@ function AddressInput({
             <TouchableOpacity style={styles.suggItem} onPress={onSelectGps}>
               <View style={styles.gpsRow}>
                 <Ionicons name="locate" size={14} color={theme.accent} />
-                <Text style={styles.gpsRowText}>Ma position</Text>
+                <Text style={styles.gpsRowText}>{t('route.gpsLabel')}</Text>
               </View>
             </TouchableOpacity>
           )}
@@ -166,16 +172,16 @@ function AddressInput({
           {searching ? (
             <View style={[styles.suggState, gpsOption && styles.suggBorder]}>
               <ActivityIndicator size="small" color={theme.textSecondary} />
-              <Text style={styles.suggStateText}>Recherche…</Text>
+              <Text style={styles.suggStateText}>{t('common.searching')}</Text>
             </View>
           ) : showEmpty ? (
             <>
               <View style={[styles.suggState, gpsOption && styles.suggBorder]}>
-                <Text style={styles.suggStateText}>Aucun résultat</Text>
+                <Text style={styles.suggStateText}>{t('common.noResults')}</Text>
               </View>
               <TouchableOpacity style={[styles.suggItem, styles.suggBorder]} onPress={onFallback}>
                 <Text style={styles.suggFallbackText} numberOfLines={1}>
-                  Utiliser « {value} »
+                  {t('route.useAddress', { text: value })}
                 </Text>
               </TouchableOpacity>
             </>
@@ -200,15 +206,16 @@ function AddressInput({
 
 function RouteInvaderRow({ inv, isFlashed, statusColors, onPress }) {
   const { theme } = useTheme();
+  const { t } = useTranslation();
   const styles = getStyles(theme);
   return (
     <TouchableOpacity style={styles.routeRow} onPress={onPress} activeOpacity={0.7}>
       <View style={[styles.routeDot, { backgroundColor: statusColors[inv.status] ?? STATUS_COLOR[inv.status] }]} />
       <Text style={styles.routeId}>{inv.id}</Text>
-      <Text style={styles.routePts}>{inv.points} pts</Text>
+      <Text style={styles.routePts}>{inv.points} {t('common.pts')}</Text>
       <View style={[styles.routeBadge, isFlashed && styles.routeBadgeFlashed]}>
         <Text style={[styles.routeBadgeText, isFlashed && styles.routeBadgeTextFlashed]}>
-          {isFlashed ? '✓ Flashé' : 'À faire'}
+          {isFlashed ? t('common.flashed') : t('common.todo')}
         </Text>
       </View>
     </TouchableOpacity>
@@ -220,21 +227,22 @@ function RouteInvaderRow({ inv, isFlashed, statusColors, onPress }) {
 function RouteInvaderDetail({ inv, isFlashed, onToggleFlash, onNavigate, onBack }) {
   const { statusColors } = useAppContext();
   const { theme } = useTheme();
+  const { t } = useTranslation();
   const styles = getStyles(theme);
   return (
     <View style={styles.detailPanel}>
       <View style={styles.detailHeader}>
         <TouchableOpacity onPress={onBack} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
-          <Text style={styles.backBtn}>‹ Liste</Text>
+          <Text style={styles.backBtn}>{t('route.backToList')}</Text>
         </TouchableOpacity>
         <Text style={styles.detailId}>{inv.id}</Text>
         <View style={{ width: 52 }} />
       </View>
       <View style={styles.detailMeta}>
         <View style={[styles.statusBadge, { backgroundColor: statusColors[inv.status] ?? STATUS_COLOR[inv.status] }]}>
-          <Text style={styles.statusText}>{STATUS_LABEL[inv.status] ?? inv.status}</Text>
+          <Text style={styles.statusText}>{t(`common.status.${inv.status}`) ?? inv.status}</Text>
         </View>
-        <Text style={styles.detailPts}>{inv.points} pts</Text>
+        <Text style={styles.detailPts}>{inv.points} {t('common.pts')}</Text>
       </View>
       {inv.hint ? <Text style={styles.hint}>{inv.hint}</Text> : null}
       <View style={styles.detailActions}>
@@ -243,11 +251,11 @@ function RouteInvaderDetail({ inv, isFlashed, onToggleFlash, onNavigate, onBack 
           onPress={() => onToggleFlash(inv.id)}
         >
           <Text style={[styles.actionBtnText, isFlashed && styles.actionBtnTextActive]}>
-            {isFlashed ? '✓ Flashé' : 'Marquer comme flashé'}
+            {isFlashed ? t('common.flashed') : t('common.markFlashed')}
           </Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.actionBtn} onPress={() => onNavigate(inv.lat, inv.lng)}>
-          <Text style={styles.actionBtnText}>Y aller</Text>
+          <Text style={styles.actionBtnText}>{t('common.navigate')}</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -258,6 +266,7 @@ function RouteInvaderDetail({ inv, isFlashed, onToggleFlash, onNavigate, onBack 
 
 function RoutePanel({ allInvaders, displayInvaders, flashed, statusColors, showOnlyUnflashed, onToggleFilter, onSelectInvader }) {
   const { theme } = useTheme();
+  const { t } = useTranslation();
   const styles = getStyles(theme);
   const total = allInvaders.length;
   const unflashedCount = allInvaders.filter((inv) => !flashed.has(inv.id)).length;
@@ -266,17 +275,17 @@ function RoutePanel({ allInvaders, displayInvaders, flashed, statusColors, showO
       <View style={styles.routePanelHeader}>
         <View style={{ flex: 1, marginRight: 10 }}>
           {total === 0 ? (
-            <Text style={styles.routeSummary}>Aucun Invader sur ce trajet</Text>
+            <Text style={styles.routeSummary}>{t('route.noInvadersOnRoute')}</Text>
           ) : (
             <Text style={styles.routeSummary} numberOfLines={2}>
-              {`${total} Invader${total > 1 ? 's' : ''} sur ce trajet`}
-              {unflashedCount > 0 ? `, dont ${unflashedCount} à flasher` : ''}
+              {t('route.invadersOnRoute', { count: total })}
+              {unflashedCount > 0 ? t('route.unflashedSuffix', { count: unflashedCount }) : ''}
             </Text>
           )}
         </View>
         {total > 0 && (
           <View style={styles.toggleWrap}>
-            <Text style={styles.toggleLabel}>À faire</Text>
+            <Text style={styles.toggleLabel}>{t('route.showTodo')}</Text>
             <Switch
               value={showOnlyUnflashed}
               onValueChange={onToggleFilter}
@@ -287,7 +296,7 @@ function RoutePanel({ allInvaders, displayInvaders, flashed, statusColors, showO
         )}
       </View>
       {total === 0 ? null : displayInvaders.length === 0 ? (
-        <Text style={styles.listEmpty}>Tous les Invaders de ce trajet sont flashés !</Text>
+        <Text style={styles.listEmpty}>{t('route.allFlashed')}</Text>
       ) : (
         <FlatList
           data={displayInvaders}
@@ -320,9 +329,12 @@ export default function TrajetScreen() {
   const depDebounce = useRef(null);
   const arrDebounce = useRef(null);
 
-  const { invaders, flashed, toggleFlash, labels, labelDefs, colorOverrides, statusColors, mapsApp, setMapsAppPref } = useAppContext();
+  const { invaders, flashed, toggleFlash, labels, labelDefs, colorOverrides, statusColors, mapsApp, setMapsAppPref, currentCityCode } = useAppContext();
+  const city = CITIES[currentCityCode] ?? CITIES.PA;
   const { theme, isDark } = useTheme();
+  const { t } = useTranslation();
   const styles = getStyles(theme);
+  const GPS_LABEL = t('route.gpsLabel');
 
   // ─── Champs d'adresse ────────────────────────────────────────────────────
 
@@ -371,7 +383,7 @@ export default function TrajetScreen() {
       gpsRef.current = coords;
       setGpsAvailable(true);
       setDepCoords(coords);
-      setDepText(GPS_TOKEN);
+      setDepText(GPS_LABEL);
     })();
   }, []);
 
@@ -523,7 +535,7 @@ export default function TrajetScreen() {
   }
 
   function selectDepGps() {
-    setDepText(GPS_TOKEN);
+    setDepText(GPS_LABEL);
     setDepCoords(gpsRef.current);
     setDepSugg([]);
     setDepSearching(false);
@@ -621,8 +633,8 @@ export default function TrajetScreen() {
 
   async function calculate() {
     Keyboard.dismiss();
-    if (!arrText.trim()) { setError("Saisissez une adresse d'arrivée"); return; }
-    if (!ORS_API_KEY || ORS_API_KEY === 'VOTRE_CLE_API_ORS_ICI') { setError('Clé API ORS manquante'); return; }
+    if (!arrText.trim()) { setError(t('route.error.noArrival')); return; }
+    if (!ORS_API_KEY || ORS_API_KEY === 'VOTRE_CLE_API_ORS_ICI') { setError(t('route.error.noApiKey')); return; }
 
     setLoadingPhase('route');
     setFollowing(false);
@@ -635,8 +647,8 @@ export default function TrajetScreen() {
       // ─ Départ ─
       let fromCoords = depCoords;
       if (!fromCoords) {
-        if (!depText.trim() || depText === GPS_TOKEN) {
-          if (!gpsRef.current) throw new Error('Position GPS indisponible. Activez la localisation et réessayez.');
+        if (!depText.trim() || depText === GPS_LABEL) {
+          if (!gpsRef.current) throw new Error(t('route.error.noGps'));
           fromCoords = gpsRef.current;
         } else {
           const result = await orsGeocode(depText);
@@ -664,7 +676,7 @@ export default function TrajetScreen() {
       setRouteCoords(coords);
     } catch (e) {
       setLoadingPhase(null);
-      setError(e.message ?? "Erreur lors du calcul de l'itinéraire");
+      setError(e.message ?? t('route.error.routeCalc'));
     }
   }
 
@@ -713,12 +725,12 @@ export default function TrajetScreen() {
   function handleNavigate(lat, lng) {
     if (mapsApp) { openInApp(mapsApp, lat, lng); return; }
     Alert.alert(
-      'App de cartes par défaut',
-      'Choisissez votre application. Ce choix sera mémorisé et modifiable dans Réglages.',
+      t('common.mapsApp.title'),
+      t('common.mapsApp.msg'),
       [
-        { text: 'Plans',       onPress: () => { setMapsAppPref('apple');  openInApp('apple',  lat, lng); } },
-        { text: 'Google Maps', onPress: () => { setMapsAppPref('google'); openInApp('google', lat, lng); } },
-        { text: 'Annuler', style: 'cancel' },
+        { text: t('common.mapsApp.apple'),  onPress: () => { setMapsAppPref('apple');  openInApp('apple',  lat, lng); } },
+        { text: t('common.mapsApp.google'), onPress: () => { setMapsAppPref('google'); openInApp('google', lat, lng); } },
+        { text: t('common.cancel'), style: 'cancel' },
       ]
     );
   }
@@ -728,7 +740,7 @@ export default function TrajetScreen() {
   // depShowEmpty / arrShowEmpty conditionnés à *Focused : ferme le dropdown après blur
   const depShowEmpty = depText.length >= MIN_CHARS && !depSearching && depSugg.length === 0 && !depCoords && depFocused;
   const arrShowEmpty = arrText.length >= MIN_CHARS && !arrSearching && arrSugg.length === 0 && !arrCoords && arrFocused;
-  const showDepGpsOption = gpsAvailable && depFocused && depText !== GPS_TOKEN;
+  const showDepGpsOption = gpsAvailable && depFocused && depText !== GPS_LABEL;
 
   return (
     <KeyboardAvoidingView
@@ -748,7 +760,7 @@ export default function TrajetScreen() {
           showsTraffic={false}
           showsPointsOfInterest={false}
           showsUserLocation={!!routePolyline}
-          initialRegion={PARIS}
+          initialRegion={{ latitude: city.center.lat, longitude: city.center.lng, ...city.mapDelta }}
           onPress={() => Keyboard.dismiss()}
           onPanDrag={() => { if (following) setDrifted(true); }}
         >
@@ -759,7 +771,7 @@ export default function TrajetScreen() {
                 <Polyline coordinates={walkedPolyline} strokeColor={theme.textSecondary} strokeWidth={4} lineCap="round" />
               )}
               {/* Repère départ — masqué en suivi et quand le départ est la position GPS */}
-              {!following && depText !== GPS_TOKEN && (
+              {!following && depText !== GPS_LABEL && (
               <Marker
                 key="route-dep"
                 coordinate={routePolyline[0]}
@@ -819,7 +831,7 @@ export default function TrajetScreen() {
                   searching={depSearching}
                   showEmpty={depShowEmpty}
                   suggestions={depSugg}
-                  placeholder="Départ : ma position actuelle"
+                  placeholder={t('route.departurePlaceholder')}
                   iconName="navigate"
                   iconColor={theme.accent}
                   isConfirmed={depCoords !== null}
@@ -845,7 +857,7 @@ export default function TrajetScreen() {
                   searching={arrSearching}
                   showEmpty={arrShowEmpty}
                   suggestions={arrSugg}
-                  placeholder="Arrivée : adresse ou lieu"
+                  placeholder={t('route.arrivalPlaceholder')}
                   iconName="location"
                   iconColor={theme.textSecondary}
                   isConfirmed={arrCoords !== null}
@@ -858,12 +870,12 @@ export default function TrajetScreen() {
                   onPress={calculate}
                   disabled={loadingPhase !== null || !depCoords || !arrCoords}
                 >
-                  <Text style={styles.goBtnText}>Calculer l'itinéraire</Text>
+                  <Text style={styles.goBtnText}>{t('route.calculate')}</Text>
                 </TouchableOpacity>
                 <View style={styles.bufferSection}>
                   <View style={styles.bufferHeader}>
                     <Text style={styles.bufferLabel}>
-                      Couloir : {BUFFER_OPTIONS.find(o => o.value === bufferKm)?.label}
+                      {t('route.corridor', { label: BUFFER_OPTIONS.find(o => o.value === bufferKm)?.label })}
                     </Text>
                     <TouchableOpacity
                       onPress={() => setShowInfo(v => !v)}
@@ -885,22 +897,20 @@ export default function TrajetScreen() {
                   />
                   {showInfo && (
                     <View style={styles.infoCard}>
-                      <Text style={styles.infoText}>
-                        Le couloir est la distance maximale autour de ton itinéraire dans laquelle l'app cherche des Invaders. Plus il est large, plus tu en vois — mais certains seront un peu plus loin de ton chemin.
-                      </Text>
+                      <Text style={styles.infoText}>{t('route.corridorInfo')}</Text>
                     </View>
                   )}
                 </View>
                 {loadingPhase === 'route' && (
                   <View style={styles.statusRow}>
                     <ActivityIndicator size="small" color={theme.accent} />
-                    <Text style={styles.loadingText}>Recherche de l'itinéraire…</Text>
+                    <Text style={styles.loadingText}>{t('route.loadingRoute')}</Text>
                   </View>
                 )}
                 {loadingPhase === 'invaders' && (
                   <View style={styles.statusRow}>
                     <ActivityIndicator size="small" color={theme.accent} />
-                    <Text style={styles.loadingText}>Recherche des Invaders sur le trajet…</Text>
+                    <Text style={styles.loadingText}>{t('route.loadingInvaders')}</Text>
                   </View>
                 )}
                 {!loadingPhase && error ? <Text style={styles.errorText}>{error}</Text> : null}
@@ -918,7 +928,7 @@ export default function TrajetScreen() {
             {following ? (
               <TouchableOpacity style={styles.stopBtn} onPress={stopFollowing}>
                 <Ionicons name="stop-circle-outline" size={18} color="#fff" />
-                <Text style={styles.trackBtnText}>Quitter</Text>
+                <Text style={styles.trackBtnText}>{t('route.quit')}</Text>
               </TouchableOpacity>
             ) : (
               <TouchableOpacity style={styles.startBtn} onPress={startFollowing}>

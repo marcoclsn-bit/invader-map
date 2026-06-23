@@ -1,0 +1,239 @@
+{
+  "common": {
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "pts": "pts",
+    "status": {
+      "ok": "OK",
+      "damaged": "Dañado",
+      "destroyed": "Destruido",
+      "hidden": "Oculto",
+      "unknown": "Desconocido"
+    },
+    "flashed": "✓ Fotografiado",
+    "markFlashed": "Marcar como fotografiado",
+    "navigate": "Navegar",
+    "todo": "Por hacer",
+    "searching": "Buscando…",
+    "noResults": "Sin resultados",
+    "mapsApp": {
+      "title": "App de mapas predeterminada",
+      "msg": "Elige tu app de navegación. La elección se guardará y se puede cambiar en Ajustes.",
+      "apple": "Mapas",
+      "google": "Google Maps"
+    }
+  },
+  "tabs": {
+    "map": "Mapa",
+    "list": "Lista",
+    "route": "Ruta",
+    "hunt": "Caza",
+    "palmares": "Palmarés"
+  },
+  "map": {
+    "filter": {
+      "title": "Filtros",
+      "titleActive": "Filtros •",
+      "conditionSection": "Condición",
+      "flashSection": "Estado",
+      "labelsSection": "Etiquetas",
+      "all": "Todos",
+      "flashed": "✓ Fotografiados",
+      "unflashed": "Por hacer",
+      "noLabels": "Sin etiquetas definidas"
+    },
+    "panel": {
+      "markFlashed": "Marcar como fotografiado",
+      "alreadyFlashed": "✓ Fotografiado",
+      "navigate": "Navegar",
+      "instagram": "Ver en Instagram",
+      "labelsTitle": "ETIQUETAS"
+    }
+  },
+  "list": {
+    "title": "Invaders París",
+    "searchPlaceholder": "Buscar (p. ej. 42 o PA_42)",
+    "counter": "{{flashed}} / {{total}} fotografiados",
+    "all": "Todos",
+    "flashed": "Fotografiados",
+    "unflashed": "Por hacer",
+    "empty": "Sin resultados",
+    "bulkFlashBtn": "✓ Fotografiar todos",
+    "bulkUnflashBtn": "✕ Desmarcar todos",
+    "bulkFlash": {
+      "title": "Marcar todos como fotografiados",
+      "msg_one": "¿Marcar {{count}} Invader como fotografiado?",
+      "msg_other": "¿Marcar {{count}} Invaders como fotografiados?"
+    },
+    "bulkUnflash": {
+      "title": "Desmarcar todos",
+      "msg": "¿Quitar la marca de todos los Invaders?"
+    }
+  },
+  "route": {
+    "gpsLabel": "Mi posición",
+    "departurePlaceholder": "Origen: mi posición actual",
+    "arrivalPlaceholder": "Destino: dirección o lugar",
+    "useAddress": "Usar «{{text}}»",
+    "backToList": "‹ Lista",
+    "noInvadersOnRoute": "Ningún Invader en esta ruta",
+    "invadersOnRoute_one": "{{count}} Invader en esta ruta",
+    "invadersOnRoute_other": "{{count}} Invaders en esta ruta",
+    "unflashedSuffix_one": ", de los cuales {{count}} por fotografiar",
+    "unflashedSuffix_other": ", de los cuales {{count}} por fotografiar",
+    "showTodo": "Por hacer",
+    "allFlashed": "¡Todos los Invaders de esta ruta están fotografiados!",
+    "calculate": "Calcular ruta",
+    "corridor": "Corredor: {{label}}",
+    "corridorInfo": "El corredor es la distancia máxima alrededor de tu ruta donde la app busca Invaders. Cuanto más amplio, más ves — pero algunos estarán un poco más lejos de tu camino.",
+    "loadingRoute": "Calculando ruta…",
+    "loadingInvaders": "Buscando Invaders en la ruta…",
+    "quit": "Salir",
+    "error": {
+      "noArrival": "Introduce una dirección de destino",
+      "noApiKey": "Clave API ORS no configurada",
+      "noGps": "GPS no disponible. Activa los servicios de ubicación e inténtalo de nuevo.",
+      "addressNotFound": "Dirección no encontrada",
+      "addressNotFoundFor": "Dirección no encontrada: «{{text}}»",
+      "routeNotFound": "Ruta no encontrada entre estos dos puntos",
+      "routeCalc": "Error al calcular la ruta"
+    }
+  },
+  "hunt": {
+    "aroundMe": "A mi alrededor",
+    "neighborhood": "En un barrio",
+    "neighborhoodPlaceholder": "Barrio o dirección",
+    "useAddress": "Usar «{{text}}»",
+    "timeLabel": "Tiempo: {{duration}}",
+    "transport": "Transporte",
+    "walking": "A pie",
+    "cycling": "Bicicleta",
+    "unflashedOnly": "Solo no fotografiados",
+    "filteredTo": "Limitado al {{label}}",
+    "generate": "Generar caza",
+    "start": "Iniciar",
+    "quit": "Salir",
+    "waitingGps": "Esperando señal GPS…",
+    "resultCount_one": "{{count}} Invader",
+    "resultCount_other": "{{count}} Invaders",
+    "error": {
+      "noInvadersReachable": "Ningún Invader alcanzable con este tiempo. Intenta aumentar el tiempo o cambiar el punto de partida.",
+      "addressNotFound": "Dirección no encontrada",
+      "routeNotFound": "Ruta no encontrada",
+      "routeCalc": "Imposible calcular la ruta",
+      "generation": "Error al generar la caza"
+    }
+  },
+  "palmares": {
+    "title": "Palmarés",
+    "back": "Volver",
+    "huntHere": "Cazar aquí",
+    "flashedSummary": "{{flashed}} / {{total}} Invaders fotografiados · {{pts}} pts",
+    "arStat": "{{flashed}}/{{total}} fotografiados · {{pct}} % · {{pts}} pts",
+    "detailSummary": "{{flashed}} / {{total}} fotografiados · {{pts}} pts",
+    "villeCard": "{{flashed}}/{{total}} · {{pct}} % · {{pts}} pts",
+    "paris": "París"
+  },
+  "onboarding": {
+    "skip": "Saltar",
+    "next": "Siguiente",
+    "allowAndStart": "Autorizar y empezar",
+    "continueWithoutGps": "Continuar sin GPS",
+    "retryPermission": "Reintentar",
+    "locationDenied": "La ubicación fue denegada. Puedes activarla más tarde en los Ajustes de tu teléfono. La app funciona sin GPS (mapa y lista disponibles).",
+    "slides": {
+      "welcome": {
+        "title": "INVADER MAP",
+        "subtitle": "Ve a la caza de Space Invaders por París."
+      },
+      "map": {
+        "title": "Mapa & Flash",
+        "body": "Encuentra los mosaicos Space Invader a tu alrededor. Marca cada uno que hayas fotografiado y sigue tu progreso en Palmarés."
+      },
+      "route": {
+        "title": "Ruta & Caza",
+        "body": "Descubre Invaders en tu camino de A a B. O genera una caza optimizada según tu tiempo y medio de transporte."
+      },
+      "location": {
+        "title": "Ubicación GPS",
+        "body": "La app usa tu ubicación para situarte en el mapa y calcular rutas. Tus datos permanecen en tu dispositivo."
+      }
+    }
+  },
+  "about": {
+    "title": "Acerca de",
+    "appSection": "La aplicación",
+    "appPitch": "Encuentra los mosaicos Space Invader donde quieras.",
+    "versionApp": "Versión de la app",
+    "versionData": "Versión de los datos",
+    "creatorSection": "Creador",
+    "createdBy": "Creada por Marco",
+    "thanksSection": "Agradecimientos",
+    "thanks1": "Gracias a Camille B. por convertirme en cazador de Invaders a lo largo de nuestros viajes.",
+    "thanks2": "Gracias a Benoît B. por mostrarme que existían verdaderos apasionados que merecían una experiencia más fluida.",
+    "creditsSection": "Créditos y fuentes",
+    "creditsDataLabel": "Datos de Invaders",
+    "creditsMapLabel": "Cartografía",
+    "creditsRoutingLabel": "Itinerarios",
+    "creditsFontsLabel": "Fuentes tipográficas (SIL OFL)",
+    "legalSection": "Aviso legal",
+    "legalText": "Invader Map es un proyecto de fans independiente, no oficial y no afiliado al artista Invader ni a la aplicación FlashInvaders. Los mosaicos Space Invader son la obra y propiedad exclusiva del artista Invader. Esta aplicación no está autorizada, patrocinada ni aprobada por el artista."
+  },
+  "settings": {
+    "title": "Ajustes",
+    "appearance": {
+      "section": "Apariencia",
+      "darkTheme": "Tema oscuro"
+    },
+    "statusColors": {
+      "section": "Colores de estado",
+      "colorFor": "Color — {{status}}"
+    },
+    "labels": {
+      "section": "Mis etiquetas",
+      "noLabel": "Sin etiquetas",
+      "noLabelHint": "Crea la primera con el botón de abajo.",
+      "default": "predeterminada",
+      "createLabel": "+ Crear etiqueta",
+      "newLabel": "Nueva etiqueta",
+      "editColor": "Color de etiqueta",
+      "editLabel": "Editar etiqueta",
+      "namePlaceholder": "Nombre de etiqueta",
+      "colorLabel": "Color",
+      "confirmDeleteTitle": "¿Eliminar «{{name}}»?",
+      "confirmDeleteMsg": "La etiqueta se eliminará de todos los Invaders.",
+      "resetTitle": "Restablecer",
+      "resetMsg": "Las etiquetas, colores personalizados y la colorización de los Invaders se restablecerán. El progreso (Invaders fotografiados) se conserva.",
+      "resetAction": "Restablecer",
+      "resetAll": "Restablecer etiquetas y colores",
+      "resetHint": "El progreso de fotografiados se conserva."
+    },
+    "navigation": {
+      "section": "Navegación",
+      "mapsApp": "App de mapas predeterminada",
+      "mapsAppHint": "Se pedirá en el primer «Navegar»"
+    },
+    "data": {
+      "section": "Datos",
+      "dataVersion": "Versión de datos",
+      "checkUpdates": "Buscar actualizaciones",
+      "checking": "Verificando…",
+      "upToDate": "Datos actualizados",
+      "newVersion": "Nueva versión instalada ({{v}})",
+      "offline": "Sin conexión — inténtalo más tarde",
+      "updateError": "Error de actualización"
+    },
+    "language": {
+      "section": "Idioma",
+      "system": "Sistema",
+      "fr": "Français",
+      "en": "English",
+      "es": "Español",
+      "it": "Italiano"
+    },
+    "aboutEntry": "Acerca de",
+    "replayOnboarding": "Ver la introducción de nuevo"
+  }
+}

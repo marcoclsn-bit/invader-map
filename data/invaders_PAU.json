@@ -1,8 +1,8 @@
 {
-  "version": 2,
+  "version": 3,
   "updatedAt": "2026-06-23",
   "city": "PAU",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 10,
   "invaders": [
     {
@@ -13,6 +13,7 @@
       "status": "ok",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/pau_01/",
       "source": "goguelnikov"
     },
     {
@@ -23,6 +24,7 @@
       "status": "ok",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/pau_02/",
       "source": "goguelnikov"
     },
     {
@@ -33,6 +35,7 @@
       "status": "ok",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/pau_03/",
       "source": "goguelnikov"
     },
     {
@@ -43,6 +46,7 @@
       "status": "ok",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/pau_04/",
       "source": "goguelnikov"
     },
     {
@@ -53,6 +57,7 @@
       "status": "damaged",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/pau_05/",
       "source": "goguelnikov"
     },
     {
@@ -63,6 +68,7 @@
       "status": "ok",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/pau_06/",
       "source": "goguelnikov"
     },
     {
@@ -73,6 +79,7 @@
       "status": "damaged",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/pau_07/",
       "source": "goguelnikov"
     },
     {
@@ -83,6 +90,7 @@
       "status": "damaged",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/pau_08/",
       "source": "goguelnikov"
     },
     {
@@ -93,6 +101,7 @@
       "status": "destroyed",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/pau_09/",
       "source": "goguelnikov"
     },
     {
@@ -103,6 +112,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/pau_10/",
       "source": "goguelnikov"
     }
   ]

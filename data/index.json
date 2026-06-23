@@ -1,42 +1,76 @@
 {
-  "version": 1,
+  "version": 2,
   "updatedAt": "2026-06-23",
   "cities": [
     {
       "code": "AIX",
-      "name": "AIX",
+      "name": "Aix-en-Provence",
       "count": 10,
+      "version": 3,
+      "center": {
+        "lat": 43.5297,
+        "lng": 5.4474
+      },
+      "bbox": {
+        "minLat": 43.45,
+        "maxLat": 43.65,
+        "minLng": 5.3,
+        "maxLng": 5.6
+      }
+    },
+    {
+      "code": "AMI",
+      "name": "Amiens",
+      "count": 16,
       "version": 2,
       "center": {
-        "lat": 43.527874,
-        "lng": 5.447822
+        "lat": 49.8942,
+        "lng": 2.2957
+      },
+      "bbox": {
+        "minLat": 49.83,
+        "maxLat": 49.95,
+        "minLng": 2.22,
+        "maxLng": 2.35
       }
     },
     {
       "code": "AMS",
-      "name": "AMS",
+      "name": "Amsterdam",
       "count": 26,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 52.368266,
-        "lng": 4.891931
+        "lat": 52.3676,
+        "lng": 4.9041
+      },
+      "bbox": {
+        "minLat": 52.28,
+        "maxLat": 52.45,
+        "minLng": 4.72,
+        "maxLng": 5.1
       }
     },
     {
       "code": "ANVR",
-      "name": "ANVR",
+      "name": "Anvers",
       "count": 2,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 51.219827,
-        "lng": 4.407467
+        "lat": 51.2194,
+        "lng": 4.4025
+      },
+      "bbox": {
+        "minLat": 51.1,
+        "maxLat": 51.35,
+        "minLng": 4.3,
+        "maxLng": 4.55
       }
     },
     {
       "code": "ANZR",
-      "name": "ANZR",
+      "name": "Annecy",
       "count": 4,
-      "version": 2,
+      "version": 3,
       "center": {
         "lat": 46.304457,
         "lng": 7.391638
@@ -44,19 +78,25 @@
     },
     {
       "code": "AVI",
-      "name": "AVI",
+      "name": "Avignon",
       "count": 41,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 43.948504,
-        "lng": 4.808082
+        "lat": 43.9493,
+        "lng": 4.8055
+      },
+      "bbox": {
+        "minLat": 43.85,
+        "maxLat": 44.05,
+        "minLng": 4.75,
+        "maxLng": 4.95
       }
     },
     {
       "code": "BAB",
-      "name": "BAB",
+      "name": "Bab (Algérie)",
       "count": 60,
-      "version": 2,
+      "version": 3,
       "center": {
         "lat": 43.483143,
         "lng": -1.530272
@@ -64,9 +104,9 @@
     },
     {
       "code": "BBO",
-      "name": "BBO",
+      "name": "Bilbao",
       "count": 40,
-      "version": 2,
+      "version": 3,
       "center": {
         "lat": 43.261473,
         "lng": -2.930698
@@ -74,19 +114,25 @@
     },
     {
       "code": "BGK",
-      "name": "BGK",
+      "name": "Bangkok",
       "count": 44,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 13.746657,
-        "lng": 100.531365
+        "lat": 13.7563,
+        "lng": 100.502
+      },
+      "bbox": {
+        "minLat": 13.5,
+        "maxLat": 14,
+        "minLng": 100.3,
+        "maxLng": 100.8
       }
     },
     {
       "code": "BRC",
-      "name": "BRC",
+      "name": "Barcelone",
       "count": 17,
-      "version": 2,
+      "version": 3,
       "center": {
         "lat": 41.38332,
         "lng": 2.172895
@@ -94,39 +140,57 @@
     },
     {
       "code": "BRL",
-      "name": "BRL",
+      "name": "Berlin",
       "count": 11,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 52.512848,
-        "lng": 13.399465
+        "lat": 52.52,
+        "lng": 13.405
+      },
+      "bbox": {
+        "minLat": 52.35,
+        "maxLat": 52.7,
+        "minLng": 13.1,
+        "maxLng": 13.8
       }
     },
     {
       "code": "BRN",
-      "name": "BRN",
+      "name": "Berne",
       "count": 29,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 46.94815,
-        "lng": 7.452157
+        "lat": 46.9481,
+        "lng": 7.4474
+      },
+      "bbox": {
+        "minLat": 46.85,
+        "maxLat": 47.05,
+        "minLng": 7.35,
+        "maxLng": 7.6
       }
     },
     {
       "code": "BSL",
-      "name": "BSL",
+      "name": "Bâle",
       "count": 25,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 47.559128,
-        "lng": 7.591117
+        "lat": 47.5596,
+        "lng": 7.5886
+      },
+      "bbox": {
+        "minLat": 47.48,
+        "maxLat": 47.62,
+        "minLng": 7.5,
+        "maxLng": 7.7
       }
     },
     {
       "code": "BTA",
-      "name": "BTA",
+      "name": "Bogotá",
       "count": 34,
-      "version": 2,
+      "version": 3,
       "center": {
         "lat": 42.700778,
         "lng": 9.45079
@@ -134,19 +198,25 @@
     },
     {
       "code": "BXL",
-      "name": "BXL",
+      "name": "Bruxelles",
       "count": 42,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 50.840751,
-        "lng": 4.353495
+        "lat": 50.8503,
+        "lng": 4.3517
+      },
+      "bbox": {
+        "minLat": 50.75,
+        "maxLat": 50.95,
+        "minLng": 4.25,
+        "maxLng": 4.5
       }
     },
     {
       "code": "CAPF",
-      "name": "CAPF",
+      "name": "Cap-Ferret",
       "count": 10,
-      "version": 2,
+      "version": 3,
       "center": {
         "lat": 44.662923,
         "lng": -1.240386
@@ -174,9 +244,9 @@
     },
     {
       "code": "CHAR",
-      "name": "CHAR",
+      "name": "Chartres",
       "count": 1,
-      "version": 2,
+      "version": 3,
       "center": {
         "lat": 50.405413,
         "lng": 4.449921
@@ -194,9 +264,9 @@
     },
     {
       "code": "CON",
-      "name": "CON",
+      "name": "Constance",
       "count": 2,
-      "version": 2,
+      "version": 3,
       "center": {
         "lat": 44.092551,
         "lng": -1.323003
@@ -204,12 +274,18 @@
     },
     {
       "code": "DIJ",
-      "name": "DIJ",
+      "name": "Dijon",
       "count": 6,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 47.323289,
-        "lng": 5.042373
+        "lat": 47.3216,
+        "lng": 5.0415
+      },
+      "bbox": {
+        "minLat": 47.25,
+        "maxLat": 47.4,
+        "minLng": 4.95,
+        "maxLng": 5.15
       }
     },
     {
@@ -226,7 +302,7 @@
       "code": "DJN",
       "name": "DJN",
       "count": 22,
-      "version": 2,
+      "version": 3,
       "center": {
         "lat": 36.366028,
         "lng": 127.381718
@@ -234,9 +310,9 @@
     },
     {
       "code": "ELT",
-      "name": "ELT",
+      "name": "Eilat",
       "count": 2,
-      "version": 2,
+      "version": 3,
       "center": {
         "lat": 29.531915,
         "lng": 34.939717
@@ -266,7 +342,7 @@
       "code": "FRQ",
       "name": "FRQ",
       "count": 4,
-      "version": 2,
+      "version": 3,
       "center": {
         "lat": 43.959362,
         "lng": 5.780969
@@ -284,29 +360,41 @@
     },
     {
       "code": "GNV",
-      "name": "GNV",
+      "name": "Genève",
       "count": 33,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 46.204134,
-        "lng": 6.143286
+        "lat": 46.2044,
+        "lng": 6.1432
+      },
+      "bbox": {
+        "minLat": 46.15,
+        "maxLat": 46.3,
+        "minLng": 6.05,
+        "maxLng": 6.25
       }
     },
     {
       "code": "GRN",
-      "name": "GRN",
+      "name": "Grenoble",
       "count": 57,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 45.187278,
-        "lng": 5.725809
+        "lat": 45.1885,
+        "lng": 5.7245
+      },
+      "bbox": {
+        "minLat": 45.1,
+        "maxLat": 45.25,
+        "minLng": 5.65,
+        "maxLng": 5.8
       }
     },
     {
       "code": "GRU",
-      "name": "GRU",
+      "name": "Guarulhos",
       "count": 3,
-      "version": 2,
+      "version": 3,
       "center": {
         "lat": 43.386892,
         "lng": 17.38041
@@ -314,9 +402,9 @@
     },
     {
       "code": "HALM",
-      "name": "HALM",
+      "name": "Halmstad",
       "count": 2,
-      "version": 2,
+      "version": 3,
       "center": {
         "lat": 56.679103,
         "lng": 12.773971
@@ -325,11 +413,11 @@
     {
       "code": "HK",
       "name": "Hong Kong",
-      "count": 129,
-      "version": 2,
+      "count": 130,
+      "version": 3,
       "center": {
-        "lat": 22.35,
-        "lng": 114.1
+        "lat": 22.3193,
+        "lng": 114.169
       },
       "bbox": {
         "minLat": 22.15,
@@ -340,22 +428,34 @@
     },
     {
       "code": "IST",
-      "name": "IST",
+      "name": "Istanbul",
       "count": 16,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 41.021834,
-        "lng": 28.973144
+        "lat": 41.0082,
+        "lng": 28.9784
+      },
+      "bbox": {
+        "minLat": 40.85,
+        "maxLat": 41.25,
+        "minLng": 28.6,
+        "maxLng": 29.2
       }
     },
     {
       "code": "KAT",
-      "name": "KAT",
-      "count": 20,
-      "version": 2,
+      "name": "Katmandu",
+      "count": 21,
+      "version": 3,
       "center": {
-        "lat": 27.708242,
-        "lng": 85.308541
+        "lat": 27.7172,
+        "lng": 85.324
+      },
+      "bbox": {
+        "minLat": 27.6,
+        "maxLat": 27.8,
+        "minLng": 85.2,
+        "maxLng": 85.45
       }
     },
     {
@@ -372,10 +472,10 @@
       "code": "LA",
       "name": "Los Angeles",
       "count": 214,
-      "version": 2,
+      "version": 3,
       "center": {
         "lat": 34.0522,
-        "lng": -118.24
+        "lng": -118.243
       },
       "bbox": {
         "minLat": 33.7,
@@ -386,9 +486,9 @@
     },
     {
       "code": "LBR",
-      "name": "LBR",
+      "name": "Libreville",
       "count": 8,
-      "version": 2,
+      "version": 3,
       "center": {
         "lat": 43.860304,
         "lng": 5.355548
@@ -396,9 +496,9 @@
     },
     {
       "code": "LCT",
-      "name": "LCT",
+      "name": "Lecce",
       "count": 9,
-      "version": 2,
+      "version": 3,
       "center": {
         "lat": 43.185047,
         "lng": 5.61956
@@ -407,8 +507,8 @@
     {
       "code": "LDN",
       "name": "London",
-      "count": 162,
-      "version": 2,
+      "count": 193,
+      "version": 3,
       "center": {
         "lat": 51.5074,
         "lng": -0.1278
@@ -432,59 +532,89 @@
     },
     {
       "code": "LJU",
-      "name": "LJU",
+      "name": "Ljubljana",
       "count": 42,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 46.052129,
-        "lng": 14.504968
+        "lat": 46.0569,
+        "lng": 14.5058
+      },
+      "bbox": {
+        "minLat": 46,
+        "maxLat": 46.12,
+        "minLng": 14.45,
+        "maxLng": 14.6
       }
     },
     {
       "code": "LSN",
-      "name": "LSN",
+      "name": "Lausanne",
       "count": 16,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 46.520907,
-        "lng": 6.631474
+        "lat": 46.5197,
+        "lng": 6.6323
+      },
+      "bbox": {
+        "minLat": 46.48,
+        "maxLat": 46.58,
+        "minLng": 6.58,
+        "maxLng": 6.72
       }
     },
     {
       "code": "LY",
-      "name": "LY",
+      "name": "Lyon",
       "count": 48,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 45.765931,
-        "lng": 4.832401
+        "lat": 45.764,
+        "lng": 4.8357
+      },
+      "bbox": {
+        "minLat": 45.65,
+        "maxLat": 45.85,
+        "minLng": 4.75,
+        "maxLng": 5
       }
     },
     {
       "code": "MAN",
-      "name": "MAN",
+      "name": "Manchester",
       "count": 47,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 53.480175,
-        "lng": -2.2395
+        "lat": 53.4808,
+        "lng": -2.2426
+      },
+      "bbox": {
+        "minLat": 53.4,
+        "maxLat": 53.55,
+        "minLng": -2.35,
+        "maxLng": -2.1
       }
     },
     {
       "code": "MARS",
-      "name": "MARS",
+      "name": "Marseille",
       "count": 97,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 43.290374,
-        "lng": 5.380988
+        "lat": 43.2965,
+        "lng": 5.3698
+      },
+      "bbox": {
+        "minLat": 43.2,
+        "maxLat": 43.4,
+        "minLng": 5.3,
+        "maxLng": 5.55
       }
     },
     {
       "code": "MBSA",
-      "name": "MBSA",
+      "name": "Mombasa",
       "count": 5,
-      "version": 2,
+      "version": 3,
       "center": {
         "lat": -3.977181,
         "lng": 39.706815
@@ -492,9 +622,9 @@
     },
     {
       "code": "MEN",
-      "name": "MEN",
+      "name": "Menton",
       "count": 5,
-      "version": 2,
+      "version": 3,
       "center": {
         "lat": 40.012279,
         "lng": 3.85219
@@ -502,42 +632,66 @@
     },
     {
       "code": "MIA",
-      "name": "MIA",
+      "name": "Miami",
       "count": 80,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 25.785872,
-        "lng": -80.170405
+        "lat": 25.7617,
+        "lng": -80.1918
+      },
+      "bbox": {
+        "minLat": 25.65,
+        "maxLat": 25.9,
+        "minLng": -80.3,
+        "maxLng": -80.1
       }
     },
     {
       "code": "MLB",
-      "name": "MLB",
+      "name": "Melbourne",
       "count": 16,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": -37.81405,
-        "lng": 144.970848
+        "lat": -37.814,
+        "lng": 144.963
+      },
+      "bbox": {
+        "minLat": -37.9,
+        "maxLat": -37.7,
+        "minLng": 144.8,
+        "maxLng": 145.1
       }
     },
     {
       "code": "MLGA",
-      "name": "MLGA",
+      "name": "Malaga",
       "count": 29,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 36.720009,
-        "lng": -4.413475
+        "lat": 36.7213,
+        "lng": -4.4214
+      },
+      "bbox": {
+        "minLat": 36.65,
+        "maxLat": 36.8,
+        "minLng": -4.55,
+        "maxLng": -4.35
       }
     },
     {
       "code": "MPL",
-      "name": "MPL",
-      "count": 37,
-      "version": 2,
+      "name": "Montpellier",
+      "count": 38,
+      "version": 3,
       "center": {
-        "lat": 43.610993,
-        "lng": 3.876258
+        "lat": 43.6117,
+        "lng": 3.8777
+      },
+      "bbox": {
+        "minLat": 43.55,
+        "maxLat": 43.7,
+        "minLng": 3.8,
+        "maxLng": 3.95
       }
     },
     {
@@ -552,9 +706,9 @@
     },
     {
       "code": "MTB",
-      "name": "MTB",
+      "name": "Montbéliard",
       "count": 11,
-      "version": 2,
+      "version": 3,
       "center": {
         "lat": 44.016693,
         "lng": 1.351914
@@ -562,19 +716,25 @@
     },
     {
       "code": "MUN",
-      "name": "MUN",
+      "name": "Munich",
       "count": 18,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 48.138454,
-        "lng": 11.557057
+        "lat": 48.1351,
+        "lng": 11.582
+      },
+      "bbox": {
+        "minLat": 48.05,
+        "maxLat": 48.25,
+        "minLng": 11.45,
+        "maxLng": 11.7
       }
     },
     {
       "code": "NA",
-      "name": "NA",
+      "name": "Naples",
       "count": 3,
-      "version": 2,
+      "version": 3,
       "center": {
         "lat": 47.216183,
         "lng": -1.545731
@@ -582,9 +742,9 @@
     },
     {
       "code": "NCL",
-      "name": "NCL",
+      "name": "Newcastle",
       "count": 25,
-      "version": 2,
+      "version": 3,
       "center": {
         "lat": 54.969838,
         "lng": -1.608875
@@ -592,19 +752,25 @@
     },
     {
       "code": "NIM",
-      "name": "NIM",
+      "name": "Nîmes",
       "count": 5,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 43.835926,
-        "lng": 4.361553
+        "lat": 43.8367,
+        "lng": 4.3601
+      },
+      "bbox": {
+        "minLat": 43.8,
+        "maxLat": 43.9,
+        "minLng": 4.3,
+        "maxLng": 4.45
       }
     },
     {
       "code": "NOO",
-      "name": "NOO",
+      "name": "La Nouvelle-Orléans",
       "count": 10,
-      "version": 2,
+      "version": 3,
       "center": {
         "lat": 52.218211,
         "lng": 4.419613
@@ -614,7 +780,7 @@
       "code": "NY",
       "name": "New York",
       "count": 192,
-      "version": 2,
+      "version": 3,
       "center": {
         "lat": 40.7128,
         "lng": -74.006
@@ -627,10 +793,26 @@
       }
     },
     {
+      "code": "ORLN",
+      "name": "Orléans",
+      "count": 12,
+      "version": 2,
+      "center": {
+        "lat": 47.9029,
+        "lng": 1.9092
+      },
+      "bbox": {
+        "minLat": 47.85,
+        "maxLat": 48,
+        "minLng": 1.8,
+        "maxLng": 1.98
+      }
+    },
+    {
       "code": "PA",
       "name": "Paris",
-      "count": 1528,
-      "version": 2,
+      "count": 1568,
+      "version": 3,
       "center": {
         "lat": 48.8566,
         "lng": 2.3522
@@ -644,12 +826,18 @@
     },
     {
       "code": "PAU",
-      "name": "PAU",
+      "name": "Pau",
       "count": 10,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 43.298545,
-        "lng": -0.369796
+        "lat": 43.2951,
+        "lng": -0.3708
+      },
+      "bbox": {
+        "minLat": 43.25,
+        "maxLat": 43.35,
+        "minLng": -0.45,
+        "maxLng": -0.3
       }
     },
     {
@@ -664,12 +852,18 @@
     },
     {
       "code": "PRP",
-      "name": "PRP",
+      "name": "Perpignan",
       "count": 8,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 42.699504,
-        "lng": 2.894014
+        "lat": 42.6887,
+        "lng": 2.8948
+      },
+      "bbox": {
+        "minLat": 42.65,
+        "maxLat": 42.75,
+        "minLng": 2.85,
+        "maxLng": 3
       }
     },
     {
@@ -684,9 +878,9 @@
     },
     {
       "code": "RA",
-      "name": "RA",
+      "name": "Roubaix",
       "count": 40,
-      "version": 2,
+      "version": 3,
       "center": {
         "lat": 44.421317,
         "lng": 12.196371
@@ -694,19 +888,25 @@
     },
     {
       "code": "RBA",
-      "name": "RBA",
+      "name": "Rabat",
       "count": 17,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 34.021723,
-        "lng": -6.83765
+        "lat": 33.9716,
+        "lng": -6.8498
+      },
+      "bbox": {
+        "minLat": 33.9,
+        "maxLat": 34.1,
+        "minLng": -6.9,
+        "maxLng": -6.75
       }
     },
     {
       "code": "RDU",
-      "name": "RDU",
+      "name": "Raleigh-Durham",
       "count": 6,
-      "version": 2,
+      "version": 3,
       "center": {
         "lat": 50.002999,
         "lng": 5.1489
@@ -714,12 +914,18 @@
     },
     {
       "code": "REUN",
-      "name": "REUN",
-      "count": 10,
-      "version": 2,
+      "name": "La Réunion",
+      "count": 11,
+      "version": 3,
       "center": {
-        "lat": -20.983031,
-        "lng": 55.348044
+        "lat": -20.9,
+        "lng": 55.5
+      },
+      "bbox": {
+        "minLat": -21.4,
+        "maxLat": -20.85,
+        "minLng": 55.2,
+        "maxLng": 55.85
       }
     },
     {
@@ -734,52 +940,86 @@
     },
     {
       "code": "ROM",
-      "name": "ROM",
+      "name": "Rome",
       "count": 75,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 41.888717,
-        "lng": 12.508482
+        "lat": 41.9028,
+        "lng": 12.4964
+      },
+      "bbox": {
+        "minLat": 41.8,
+        "maxLat": 41.95,
+        "minLng": 12.4,
+        "maxLng": 12.6
       }
     },
     {
       "code": "RTD",
-      "name": "RTD",
+      "name": "Rotterdam",
       "count": 25,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 51.915087,
-        "lng": 4.476791
+        "lat": 51.9225,
+        "lng": 4.4792
+      },
+      "bbox": {
+        "minLat": 51.85,
+        "maxLat": 52,
+        "minLng": 4.35,
+        "maxLng": 4.55
       }
     },
     {
       "code": "SD",
-      "name": "SD",
+      "name": "San Diego",
       "count": 20,
+      "version": 3,
+      "center": {
+        "lat": 32.7157,
+        "lng": -117.161
+      },
+      "bbox": {
+        "minLat": 32.6,
+        "maxLat": 32.85,
+        "minLng": -117.3,
+        "maxLng": -117
+      }
+    },
+    {
+      "code": "SL",
+      "name": "Sarajevo",
+      "count": 14,
       "version": 2,
       "center": {
-        "lat": 32.715531,
-        "lng": -117.162032
+        "lat": 37.561233,
+        "lng": 126.959511
       }
     },
     {
       "code": "SP",
-      "name": "SP",
+      "name": "São Paulo",
       "count": 52,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": -23.550924,
-        "lng": -46.661818
+        "lat": -23.55,
+        "lng": -46.633
+      },
+      "bbox": {
+        "minLat": -23.7,
+        "maxLat": -23.45,
+        "minLng": -46.8,
+        "maxLng": -46.5
       }
     },
     {
       "code": "TK",
       "name": "Tokyo",
       "count": 123,
-      "version": 2,
+      "version": 3,
       "center": {
         "lat": 35.6762,
-        "lng": 139.65
+        "lng": 139.6503
       },
       "bbox": {
         "minLat": 35.5,
@@ -800,9 +1040,9 @@
     },
     {
       "code": "VLMO",
-      "name": "VLMO",
+      "name": "Villemomble",
       "count": 3,
-      "version": 2,
+      "version": 3,
       "center": {
         "lat": 45.465017,
         "lng": 6.450343
@@ -820,9 +1060,9 @@
     },
     {
       "code": "VRS",
-      "name": "VRS",
+      "name": "Varsovie",
       "count": 42,
-      "version": 2,
+      "version": 3,
       "center": {
         "lat": 48.80571,
         "lng": 2.128069
@@ -830,9 +1070,9 @@
     },
     {
       "code": "VSB",
-      "name": "VSB",
+      "name": "Strasbourg",
       "count": 3,
-      "version": 2,
+      "version": 3,
       "center": {
         "lat": 57.638922,
         "lng": 18.291373
@@ -840,12 +1080,18 @@
     },
     {
       "code": "WN",
-      "name": "WN",
+      "name": "Vienne",
       "count": 56,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 48.207892,
-        "lng": 16.365737
+        "lat": 48.2082,
+        "lng": 16.3738
+      },
+      "bbox": {
+        "minLat": 48.15,
+        "maxLat": 48.25,
+        "minLng": 16.3,
+        "maxLng": 16.45
       }
     }
   ]

@@ -1,9 +1,9 @@
 {
-  "version": 2,
+  "version": 3,
   "updatedAt": "2026-06-23",
   "city": "ROM",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
-  "_baseCount": 75,
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 69,
   "invaders": [
     {
       "id": "ROM_01",
@@ -13,6 +13,7 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_01/",
       "source": "goguelnikov"
     },
     {
@@ -23,6 +24,7 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_02/",
       "source": "goguelnikov"
     },
     {
@@ -33,6 +35,7 @@
       "status": "ok",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_03/",
       "source": "goguelnikov"
     },
     {
@@ -43,6 +46,7 @@
       "status": "ok",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_04/",
       "source": "goguelnikov"
     },
     {
@@ -53,6 +57,7 @@
       "status": "ok",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_05/",
       "source": "goguelnikov"
     },
     {
@@ -63,6 +68,7 @@
       "status": "ok",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_06/",
       "source": "goguelnikov"
     },
     {
@@ -73,6 +79,7 @@
       "status": "ok",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_07/",
       "source": "goguelnikov"
     },
     {
@@ -83,6 +90,7 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_08/",
       "source": "goguelnikov"
     },
     {
@@ -93,6 +101,7 @@
       "status": "ok",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_09/",
       "source": "goguelnikov"
     },
     {
@@ -103,6 +112,7 @@
       "status": "ok",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_10/",
       "source": "goguelnikov"
     },
     {
@@ -113,6 +123,7 @@
       "status": "ok",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_11/",
       "source": "goguelnikov"
     },
     {
@@ -123,6 +134,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_12/",
       "source": "goguelnikov"
     },
     {
@@ -133,6 +145,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_13/",
       "source": "goguelnikov"
     },
     {
@@ -143,6 +156,7 @@
       "status": "destroyed",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_14/",
       "source": "goguelnikov"
     },
     {
@@ -153,6 +167,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_15/",
       "source": "goguelnikov"
     },
     {
@@ -163,6 +178,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_16/",
       "source": "goguelnikov"
     },
     {
@@ -173,6 +189,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_17/",
       "source": "goguelnikov"
     },
     {
@@ -183,6 +200,7 @@
       "status": "destroyed",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_18/",
       "source": "goguelnikov"
     },
     {
@@ -193,6 +211,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_19/",
       "source": "goguelnikov"
     },
     {
@@ -203,6 +222,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_20/",
       "source": "goguelnikov"
     },
     {
@@ -213,6 +233,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_21/",
       "source": "goguelnikov"
     },
     {
@@ -223,6 +244,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_22/",
       "source": "goguelnikov"
     },
     {
@@ -233,6 +255,7 @@
       "status": "ok",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_23/",
       "source": "goguelnikov"
     },
     {
@@ -243,6 +266,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_24/",
       "source": "goguelnikov"
     },
     {
@@ -253,6 +277,7 @@
       "status": "damaged",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_25/",
       "source": "goguelnikov"
     },
     {
@@ -263,6 +288,7 @@
       "status": "ok",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_26/",
       "source": "goguelnikov"
     },
     {
@@ -273,6 +299,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_27/",
       "source": "goguelnikov"
     },
     {
@@ -283,6 +310,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_28/",
       "source": "goguelnikov"
     },
     {
@@ -293,6 +321,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_29/",
       "source": "goguelnikov"
     },
     {
@@ -303,6 +332,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_30/",
       "source": "goguelnikov"
     },
     {
@@ -313,6 +343,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_31/",
       "source": "goguelnikov"
     },
     {
@@ -323,6 +354,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_32/",
       "source": "goguelnikov"
     },
     {
@@ -333,6 +365,7 @@
       "status": "damaged",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_33/",
       "source": "goguelnikov"
     },
     {
@@ -343,6 +376,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_34/",
       "source": "goguelnikov"
     },
     {
@@ -353,6 +387,7 @@
       "status": "destroyed",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_35/",
       "source": "goguelnikov"
     },
     {
@@ -363,6 +398,7 @@
       "status": "ok",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_36/",
       "source": "goguelnikov"
     },
     {
@@ -373,6 +409,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_37/",
       "source": "goguelnikov"
     },
     {
@@ -383,6 +420,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_38/",
       "source": "goguelnikov"
     },
     {
@@ -393,6 +431,7 @@
       "status": "ok",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_39/",
       "source": "goguelnikov"
     },
     {
@@ -403,6 +442,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_40/",
       "source": "goguelnikov"
     },
     {
@@ -413,6 +453,7 @@
       "status": "ok",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_41/",
       "source": "goguelnikov"
     },
     {
@@ -423,6 +464,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_42/",
       "source": "goguelnikov"
     },
     {
@@ -433,6 +475,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_43/",
       "source": "goguelnikov"
     },
     {
@@ -443,6 +486,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_44/",
       "source": "goguelnikov"
     },
     {
@@ -453,6 +497,7 @@
       "status": "destroyed",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_45/",
       "source": "goguelnikov"
     },
     {
@@ -463,6 +508,7 @@
       "status": "ok",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_46/",
       "source": "goguelnikov"
     },
     {
@@ -473,6 +519,7 @@
       "status": "ok",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_47/",
       "source": "goguelnikov"
     },
     {
@@ -483,6 +530,7 @@
       "status": "destroyed",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_48/",
       "source": "goguelnikov"
     },
     {
@@ -493,6 +541,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_49/",
       "source": "goguelnikov"
     },
     {
@@ -503,6 +552,7 @@
       "status": "damaged",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_50/",
       "source": "goguelnikov"
     },
     {
@@ -513,6 +563,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_51/",
       "source": "goguelnikov"
     },
     {
@@ -523,6 +574,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_52/",
       "source": "goguelnikov"
     },
     {
@@ -533,6 +585,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_53/",
       "source": "goguelnikov"
     },
     {
@@ -543,6 +596,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_54/",
       "source": "goguelnikov"
     },
     {
@@ -553,6 +607,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_55/",
       "source": "goguelnikov"
     },
     {
@@ -563,6 +618,7 @@
       "status": "ok",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_56/",
       "source": "goguelnikov"
     },
     {
@@ -573,6 +629,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_57/",
       "source": "goguelnikov"
     },
     {
@@ -583,6 +640,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_58/",
       "source": "goguelnikov"
     },
     {
@@ -593,6 +651,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_59/",
       "source": "goguelnikov"
     },
     {
@@ -603,6 +662,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_60/",
       "source": "goguelnikov"
     },
     {
@@ -613,6 +673,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_61/",
       "source": "goguelnikov"
     },
     {
@@ -623,6 +684,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_62/",
       "source": "goguelnikov"
     },
     {
@@ -633,6 +695,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_63/",
       "source": "goguelnikov"
     },
     {
@@ -643,6 +706,7 @@
       "status": "ok",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_64/",
       "source": "goguelnikov"
     },
     {
@@ -653,6 +717,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_65/",
       "source": "goguelnikov"
     },
     {
@@ -663,6 +728,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_66/",
       "source": "goguelnikov"
     },
     {
@@ -673,6 +739,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_67/",
       "source": "goguelnikov"
     },
     {
@@ -683,6 +750,7 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_68/",
       "source": "goguelnikov"
     },
     {
@@ -693,6 +761,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_69/",
       "source": "goguelnikov"
     },
     {
@@ -701,9 +770,10 @@
       "lat": 41.8275006184,
       "lng": 12.67552601,
       "status": "ok",
-      "points": 100,
+      "points": null,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_70/",
+      "source": "pnote"
     },
     {
       "id": "ROM_71",
@@ -711,9 +781,10 @@
       "lat": 41.8275069553,
       "lng": 12.6755966807,
       "status": "ok",
-      "points": 100,
+      "points": null,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_71/",
+      "source": "pnote"
     },
     {
       "id": "ROM_72",
@@ -721,9 +792,10 @@
       "lat": 41.8278936557,
       "lng": 12.6741722898,
       "status": "ok",
-      "points": 30,
+      "points": null,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_72/",
+      "source": "pnote"
     },
     {
       "id": "ROM_73",
@@ -731,9 +803,10 @@
       "lat": 41.8267248541,
       "lng": 12.6742914317,
       "status": "ok",
-      "points": 30,
+      "points": null,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_73/",
+      "source": "pnote"
     },
     {
       "id": "ROM_74",
@@ -741,9 +814,10 @@
       "lat": 41.8268126214,
       "lng": 12.6714762485,
       "status": "ok",
-      "points": 50,
+      "points": null,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_74/",
+      "source": "pnote"
     },
     {
       "id": "ROM_75",
@@ -751,9 +825,10 @@
       "lat": 41.827198482,
       "lng": 12.6721045446,
       "status": "ok",
-      "points": 50,
+      "points": null,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/rom_75/",
+      "source": "pnote"
     }
   ]
 }

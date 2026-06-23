@@ -1,0 +1,163 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "SL",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 0,
+  "invaders": [
+    {
+      "id": "SL_01",
+      "city": "SL",
+      "lat": 37.5555844325,
+      "lng": 126.9209083062,
+      "status": "destroyed",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/sl_01/",
+      "source": "pnote"
+    },
+    {
+      "id": "SL_02",
+      "city": "SL",
+      "lat": 37.5534896453,
+      "lng": 126.9222200187,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/sl_02/",
+      "source": "pnote"
+    },
+    {
+      "id": "SL_03",
+      "city": "SL",
+      "lat": 37.5543729572,
+      "lng": 126.9305442492,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/sl_03/",
+      "source": "pnote"
+    },
+    {
+      "id": "SL_04",
+      "city": "SL",
+      "lat": 37.5515901545,
+      "lng": 126.9217726707,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/sl_04/",
+      "source": "pnote"
+    },
+    {
+      "id": "SL_05",
+      "city": "SL",
+      "lat": 37.5537379066,
+      "lng": 126.9243532591,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/sl_05/",
+      "source": "pnote"
+    },
+    {
+      "id": "SL_06",
+      "city": "SL",
+      "lat": 37.5522541052,
+      "lng": 126.922479323,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/sl_06/",
+      "source": "pnote"
+    },
+    {
+      "id": "SL_07",
+      "city": "SL",
+      "lat": 37.5567569482,
+      "lng": 126.9843147346,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/sl_07/",
+      "source": "pnote"
+    },
+    {
+      "id": "SL_08",
+      "city": "SL",
+      "lat": 37.5585374899,
+      "lng": 126.9846539353,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/sl_08/",
+      "source": "pnote"
+    },
+    {
+      "id": "SL_09",
+      "city": "SL",
+      "lat": 37.5718441244,
+      "lng": 126.9869816162,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/sl_09/",
+      "source": "pnote"
+    },
+    {
+      "id": "SL_10",
+      "city": "SL",
+      "lat": 37.57378057,
+      "lng": 126.98540943,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/sl_10/",
+      "source": "pnote"
+    },
+    {
+      "id": "SL_11",
+      "city": "SL",
+      "lat": 37.5741676629,
+      "lng": 126.9845107701,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/sl_11/",
+      "source": "pnote"
+    },
+    {
+      "id": "SL_12",
+      "city": "SL",
+      "lat": 37.5732296012,
+      "lng": 126.9864299698,
+      "status": "destroyed",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/sl_12/",
+      "source": "pnote"
+    },
+    {
+      "id": "SL_13",
+      "city": "SL",
+      "lat": 37.5647978543,
+      "lng": 126.9871913909,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/sl_13/",
+      "source": "pnote"
+    },
+    {
+      "id": "SL_14",
+      "city": "SL",
+      "lat": 37.5631183941,
+      "lng": 126.9913813798,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/sl_14/",
+      "source": "pnote"
+    }
+  ]
+}

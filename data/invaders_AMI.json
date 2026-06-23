@@ -1,0 +1,185 @@
+{
+  "version": 2,
+  "updatedAt": "2026-06-23",
+  "city": "AMI",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 0,
+  "invaders": [
+    {
+      "id": "AMI_01",
+      "city": "AMI",
+      "lat": 49.8906437377,
+      "lng": 2.2907121966,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/ami_01/",
+      "source": "pnote"
+    },
+    {
+      "id": "AMI_02",
+      "city": "AMI",
+      "lat": 49.8943146458,
+      "lng": 2.2923065775,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/ami_02/",
+      "source": "pnote"
+    },
+    {
+      "id": "AMI_03",
+      "city": "AMI",
+      "lat": 49.8949954048,
+      "lng": 2.296167803,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/ami_03/",
+      "source": "pnote"
+    },
+    {
+      "id": "AMI_04",
+      "city": "AMI",
+      "lat": 49.8977527806,
+      "lng": 2.3017638211,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/ami_04/",
+      "source": "pnote"
+    },
+    {
+      "id": "AMI_05",
+      "city": "AMI",
+      "lat": 49.9000610728,
+      "lng": 2.3083745514,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/ami_05/",
+      "source": "pnote"
+    },
+    {
+      "id": "AMI_06",
+      "city": "AMI",
+      "lat": 49.9009381349,
+      "lng": 2.3013826563,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/ami_06/",
+      "source": "pnote"
+    },
+    {
+      "id": "AMI_07",
+      "city": "AMI",
+      "lat": 49.9051379403,
+      "lng": 2.2979600768,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/ami_07/",
+      "source": "pnote"
+    },
+    {
+      "id": "AMI_08",
+      "city": "AMI",
+      "lat": 49.8895353682,
+      "lng": 2.3026772462,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/ami_08/",
+      "source": "pnote"
+    },
+    {
+      "id": "AMI_09",
+      "city": "AMI",
+      "lat": 49.8921540494,
+      "lng": 2.3004342177,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/ami_09/",
+      "source": "pnote"
+    },
+    {
+      "id": "AMI_10",
+      "city": "AMI",
+      "lat": 49.8921247634,
+      "lng": 2.300217801,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/ami_10/",
+      "source": "pnote"
+    },
+    {
+      "id": "AMI_11",
+      "city": "AMI",
+      "lat": 49.8947878085,
+      "lng": 2.3005426322,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/ami_11/",
+      "source": "pnote"
+    },
+    {
+      "id": "AMI_12",
+      "city": "AMI",
+      "lat": 49.8961763348,
+      "lng": 2.3049458247,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/ami_12/",
+      "source": "pnote"
+    },
+    {
+      "id": "AMI_13",
+      "city": "AMI",
+      "lat": 49.8955703362,
+      "lng": 2.3033737571,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/ami_13/",
+      "source": "pnote"
+    },
+    {
+      "id": "AMI_14",
+      "city": "AMI",
+      "lat": 49.8930734065,
+      "lng": 2.2974235204,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/ami_14/",
+      "source": "pnote"
+    },
+    {
+      "id": "AMI_15",
+      "city": "AMI",
+      "lat": 49.8936511084,
+      "lng": 2.2980545249,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/ami_15/",
+      "source": "pnote"
+    },
+    {
+      "id": "AMI_16",
+      "city": "AMI",
+      "lat": 49.8909229936,
+      "lng": 2.3063165097,
+      "status": "ok",
+      "points": null,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/ami_16/",
+      "source": "pnote"
+    }
+  ]
+}

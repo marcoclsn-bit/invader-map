@@ -1,8 +1,8 @@
 {
-  "version": 2,
+  "version": 3,
   "updatedAt": "2026-06-23",
   "city": "MIA",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 80,
   "invaders": [
     {
@@ -13,6 +13,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_01/",
       "source": "goguelnikov"
     },
     {
@@ -23,6 +24,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_02/",
       "source": "goguelnikov"
     },
     {
@@ -33,6 +35,7 @@
       "status": "damaged",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_03/",
       "source": "goguelnikov"
     },
     {
@@ -43,6 +46,7 @@
       "status": "damaged",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_04/",
       "source": "goguelnikov"
     },
     {
@@ -53,6 +57,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_05/",
       "source": "goguelnikov"
     },
     {
@@ -63,6 +68,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_06/",
       "source": "goguelnikov"
     },
     {
@@ -73,6 +79,7 @@
       "status": "destroyed",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_07/",
       "source": "goguelnikov"
     },
     {
@@ -83,6 +90,7 @@
       "status": "destroyed",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_08/",
       "source": "goguelnikov"
     },
     {
@@ -93,6 +101,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_09/",
       "source": "goguelnikov"
     },
     {
@@ -103,6 +112,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_10/",
       "source": "goguelnikov"
     },
     {
@@ -113,6 +123,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_11/",
       "source": "goguelnikov"
     },
     {
@@ -123,6 +134,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_12/",
       "source": "goguelnikov"
     },
     {
@@ -133,6 +145,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_13/",
       "source": "goguelnikov"
     },
     {
@@ -143,6 +156,7 @@
       "status": "destroyed",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_14/",
       "source": "goguelnikov"
     },
     {
@@ -153,6 +167,7 @@
       "status": "destroyed",
       "points": 100,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_15/",
       "source": "goguelnikov"
     },
     {
@@ -163,6 +178,7 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_16/",
       "source": "goguelnikov"
     },
     {
@@ -173,6 +189,7 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_17/",
       "source": "goguelnikov"
     },
     {
@@ -183,6 +200,7 @@
       "status": "destroyed",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_18/",
       "source": "goguelnikov"
     },
     {
@@ -193,6 +211,7 @@
       "status": "destroyed",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_19/",
       "source": "goguelnikov"
     },
     {
@@ -203,6 +222,7 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_20/",
       "source": "goguelnikov"
     },
     {
@@ -213,6 +233,7 @@
       "status": "damaged",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_21/",
       "source": "goguelnikov"
     },
     {
@@ -223,6 +244,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_22/",
       "source": "goguelnikov"
     },
     {
@@ -233,6 +255,7 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_23/",
       "source": "goguelnikov"
     },
     {
@@ -243,6 +266,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_24/",
       "source": "goguelnikov"
     },
     {
@@ -253,6 +277,7 @@
       "status": "destroyed",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_25/",
       "source": "goguelnikov"
     },
     {
@@ -263,6 +288,7 @@
       "status": "destroyed",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_26/",
       "source": "goguelnikov"
     },
     {
@@ -273,6 +299,7 @@
       "status": "destroyed",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_27/",
       "source": "goguelnikov"
     },
     {
@@ -283,6 +310,7 @@
       "status": "destroyed",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_28/",
       "source": "goguelnikov"
     },
     {
@@ -293,6 +321,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_29/",
       "source": "goguelnikov"
     },
     {
@@ -303,6 +332,7 @@
       "status": "destroyed",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_30/",
       "source": "goguelnikov"
     },
     {
@@ -313,6 +343,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_31/",
       "source": "goguelnikov"
     },
     {
@@ -323,6 +354,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_32/",
       "source": "goguelnikov"
     },
     {
@@ -333,6 +365,7 @@
       "status": "damaged",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_33/",
       "source": "goguelnikov"
     },
     {
@@ -343,6 +376,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_34/",
       "source": "goguelnikov"
     },
     {
@@ -353,6 +387,7 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_35/",
       "source": "goguelnikov"
     },
     {
@@ -363,6 +398,7 @@
       "status": "destroyed",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_36/",
       "source": "goguelnikov"
     },
     {
@@ -373,6 +409,7 @@
       "status": "destroyed",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_37/",
       "source": "goguelnikov"
     },
     {
@@ -383,6 +420,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_38/",
       "source": "goguelnikov"
     },
     {
@@ -393,6 +431,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_39/",
       "source": "goguelnikov"
     },
     {
@@ -403,6 +442,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_40/",
       "source": "goguelnikov"
     },
     {
@@ -413,6 +453,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_41/",
       "source": "goguelnikov"
     },
     {
@@ -423,6 +464,7 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_42/",
       "source": "goguelnikov"
     },
     {
@@ -433,6 +475,7 @@
       "status": "destroyed",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_43/",
       "source": "goguelnikov"
     },
     {
@@ -443,6 +486,7 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_44/",
       "source": "goguelnikov"
     },
     {
@@ -453,6 +497,7 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_45/",
       "source": "goguelnikov"
     },
     {
@@ -463,6 +508,7 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_46/",
       "source": "goguelnikov"
     },
     {
@@ -473,6 +519,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_47/",
       "source": "goguelnikov"
     },
     {
@@ -483,6 +530,7 @@
       "status": "ok",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_48/",
       "source": "goguelnikov"
     },
     {
@@ -493,6 +541,7 @@
       "status": "destroyed",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_49/",
       "source": "goguelnikov"
     },
     {
@@ -503,6 +552,7 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_50/",
       "source": "goguelnikov"
     },
     {
@@ -513,6 +563,7 @@
       "status": "hidden",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_51/",
       "source": "goguelnikov"
     },
     {
@@ -523,6 +574,7 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_52/",
       "source": "goguelnikov"
     },
     {
@@ -533,6 +585,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_53/",
       "source": "goguelnikov"
     },
     {
@@ -543,6 +596,7 @@
       "status": "ok",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_54/",
       "source": "goguelnikov"
     },
     {
@@ -553,6 +607,7 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_55/",
       "source": "goguelnikov"
     },
     {
@@ -563,6 +618,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_56/",
       "source": "goguelnikov"
     },
     {
@@ -573,6 +629,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_57/",
       "source": "goguelnikov"
     },
     {
@@ -583,6 +640,7 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_58/",
       "source": "goguelnikov"
     },
     {
@@ -593,6 +651,7 @@
       "status": "damaged",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_59/",
       "source": "goguelnikov"
     },
     {
@@ -603,6 +662,7 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_60/",
       "source": "goguelnikov"
     },
     {
@@ -613,6 +673,7 @@
       "status": "ok",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_61/",
       "source": "goguelnikov"
     },
     {
@@ -623,6 +684,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_62/",
       "source": "goguelnikov"
     },
     {
@@ -633,6 +695,7 @@
       "status": "damaged",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_63/",
       "source": "goguelnikov"
     },
     {
@@ -643,6 +706,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_64/",
       "source": "goguelnikov"
     },
     {
@@ -653,6 +717,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_65/",
       "source": "goguelnikov"
     },
     {
@@ -663,6 +728,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_66/",
       "source": "goguelnikov"
     },
     {
@@ -673,6 +739,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_67/",
       "source": "goguelnikov"
     },
     {
@@ -683,6 +750,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_68/",
       "source": "goguelnikov"
     },
     {
@@ -693,6 +761,7 @@
       "status": "damaged",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_69/",
       "source": "goguelnikov"
     },
     {
@@ -703,6 +772,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_70/",
       "source": "goguelnikov"
     },
     {
@@ -713,6 +783,7 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_71/",
       "source": "goguelnikov"
     },
     {
@@ -723,6 +794,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_72/",
       "source": "goguelnikov"
     },
     {
@@ -733,6 +805,7 @@
       "status": "destroyed",
       "points": 100,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_73/",
       "source": "goguelnikov"
     },
     {
@@ -743,6 +816,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_74/",
       "source": "goguelnikov"
     },
     {
@@ -753,6 +827,7 @@
       "status": "ok",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_75/",
       "source": "goguelnikov"
     },
     {
@@ -763,6 +838,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_79/",
       "source": "goguelnikov"
     },
     {
@@ -773,6 +849,7 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_80/",
       "source": "goguelnikov"
     },
     {
@@ -783,6 +860,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_81/",
       "source": "goguelnikov"
     },
     {
@@ -793,6 +871,7 @@
       "status": "destroyed",
       "points": 0,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_82/",
       "source": "goguelnikov"
     },
     {
@@ -803,6 +882,7 @@
       "status": "destroyed",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/mia_84/",
       "source": "goguelnikov"
     }
   ]

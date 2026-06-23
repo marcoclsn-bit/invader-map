@@ -1,8 +1,8 @@
 {
-  "version": 2,
+  "version": 3,
   "updatedAt": "2026-06-23",
   "city": "CHAR",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 1,
   "invaders": [
     {
@@ -13,6 +13,7 @@
       "status": "damaged",
       "points": 100,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/char_01/",
       "source": "goguelnikov"
     }
   ]

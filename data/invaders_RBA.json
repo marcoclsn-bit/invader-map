@@ -1,8 +1,8 @@
 {
-  "version": 2,
+  "version": 3,
   "updatedAt": "2026-06-23",
   "city": "RBA",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 17,
   "invaders": [
     {
@@ -13,6 +13,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rba_01/",
       "source": "goguelnikov"
     },
     {
@@ -23,6 +24,7 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rba_02/",
       "source": "goguelnikov"
     },
     {
@@ -33,6 +35,7 @@
       "status": "ok",
       "points": 40,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rba_04/",
       "source": "goguelnikov"
     },
     {
@@ -43,6 +46,7 @@
       "status": "ok",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rba_05/",
       "source": "goguelnikov"
     },
     {
@@ -53,6 +57,7 @@
       "status": "destroyed",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rba_06/",
       "source": "goguelnikov"
     },
     {
@@ -63,6 +68,7 @@
       "status": "destroyed",
       "points": 40,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rba_07/",
       "source": "goguelnikov"
     },
     {
@@ -73,6 +79,7 @@
       "status": "destroyed",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rba_08/",
       "source": "goguelnikov"
     },
     {
@@ -83,6 +90,7 @@
       "status": "ok",
       "points": 40,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rba_09/",
       "source": "goguelnikov"
     },
     {
@@ -93,6 +101,7 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rba_10/",
       "source": "goguelnikov"
     },
     {
@@ -103,6 +112,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rba_12/",
       "source": "goguelnikov"
     },
     {
@@ -113,6 +123,7 @@
       "status": "ok",
       "points": 40,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rba_13/",
       "source": "goguelnikov"
     },
     {
@@ -123,6 +134,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rba_14/",
       "source": "goguelnikov"
     },
     {
@@ -133,6 +145,7 @@
       "status": "destroyed",
       "points": 40,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rba_15/",
       "source": "goguelnikov"
     },
     {
@@ -143,6 +156,7 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rba_16/",
       "source": "goguelnikov"
     },
     {
@@ -153,6 +167,7 @@
       "status": "ok",
       "points": 40,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rba_17/",
       "source": "goguelnikov"
     },
     {
@@ -163,6 +178,7 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rba_18/",
       "source": "goguelnikov"
     },
     {
@@ -173,6 +189,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/rba_20/",
       "source": "goguelnikov"
     }
   ]

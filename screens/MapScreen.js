@@ -5,8 +5,10 @@ import * as Location from 'expo-location';
 import * as Haptics from 'expo-haptics';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 import { useAppContext } from '../context/AppContext';
-import { STATUS_LABEL, ALL_STATUSES } from '../constants';
+import { CITIES } from '../cities/registry';
+import { ALL_STATUSES } from '../constants';
 import InvaderMarker from '../components/InvaderMarker';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
@@ -138,6 +140,7 @@ function FlashOverlay({ invader, point, theme, onDone }) {
 function FilterPanel({ filters, onFiltersChange, onClose }) {
   const { labelDefs, statusColors } = useAppContext();
   const { theme } = useTheme();
+  const { t } = useTranslation();
   const styles = getStyles(theme);
 
   function toggleStatus(status) {
@@ -155,13 +158,13 @@ function FilterPanel({ filters, onFiltersChange, onClose }) {
   return (
     <View style={styles.panel}>
       <View style={styles.panelHeader}>
-        <Text style={styles.panelId}>Filtres</Text>
+        <Text style={styles.panelId}>{t('map.filter.title')}</Text>
         <TouchableOpacity onPress={onClose} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
           <Text style={styles.closeButton}>✕</Text>
         </TouchableOpacity>
       </View>
 
-      <Text style={styles.sectionTitle}>Statut</Text>
+      <Text style={styles.sectionTitle}>{t('map.filter.conditionSection')}</Text>
       <View style={styles.chipRow}>
         {ALL_STATUSES.map((status) => {
           const active = filters.statuses.has(status);
@@ -178,19 +181,19 @@ function FilterPanel({ filters, onFiltersChange, onClose }) {
               ]}
             >
               <Text style={[styles.chipText, active && styles.chipTextActive]}>
-                {STATUS_LABEL[status]}
+                {t(`common.status.${status}`)}
               </Text>
             </TouchableOpacity>
           );
         })}
       </View>
 
-      <Text style={styles.sectionTitle}>État</Text>
+      <Text style={styles.sectionTitle}>{t('map.filter.flashSection')}</Text>
       <View style={styles.chipRow}>
         {[
-          { val: 'all', label: 'Tous' },
-          { val: 'flashed', label: '✓ Flashés' },
-          { val: 'unflashed', label: 'Reste à faire' },
+          { val: 'all', label: t('map.filter.all') },
+          { val: 'flashed', label: t('map.filter.flashed') },
+          { val: 'unflashed', label: t('map.filter.unflashed') },
         ].map(({ val, label }) => (
           <TouchableOpacity
             key={val}
@@ -204,9 +207,9 @@ function FilterPanel({ filters, onFiltersChange, onClose }) {
         ))}
       </View>
 
-      <Text style={styles.sectionTitle}>Étiquettes</Text>
+      <Text style={styles.sectionTitle}>{t('map.filter.labelsSection')}</Text>
       {labelDefs.filter((d) => !d.system).length === 0 ? (
-        <Text style={styles.emptyNote}>Aucune étiquette définie</Text>
+        <Text style={styles.emptyNote}>{t('map.filter.noLabels')}</Text>
       ) : (
         <View style={styles.chipRow}>
           {labelDefs.filter((d) => !d.system).map((def) => {
@@ -248,6 +251,7 @@ async function openInstagramTag(id) {
 function InvaderPanel({ invader, flashed, onToggleFlash, onNavigate, onClose }) {
   const { labelDefs, statusColors, labels, toggleLabel } = useAppContext();
   const { theme } = useTheme();
+  const { t } = useTranslation();
   const styles = getStyles(theme);
   const isFlashed = flashed.has(invader.id);
   const invLabelIds = labels[invader.id] ?? [];
@@ -263,7 +267,7 @@ function InvaderPanel({ invader, flashed, onToggleFlash, onNavigate, onClose }) 
 
       <View style={styles.panelRow}>
         <View style={[styles.statusBadge, { backgroundColor: statusColors[invader.status] }]}>
-          <Text style={styles.statusText}>{STATUS_LABEL[invader.status] ?? invader.status}</Text>
+          <Text style={styles.statusText}>{t(`common.status.${invader.status}`) ?? invader.status}</Text>
         </View>
         <Text style={styles.points}>{invader.points} pts</Text>
       </View>
@@ -276,11 +280,11 @@ function InvaderPanel({ invader, flashed, onToggleFlash, onNavigate, onClose }) 
           style={[styles.actionBtn, isFlashed && styles.actionBtnActive]}
         >
           <Text style={[styles.actionBtnText, isFlashed && styles.actionBtnTextActive]}>
-            {isFlashed ? '✓ Flashé' : 'Marquer comme flashé'}
+            {isFlashed ? t('map.panel.alreadyFlashed') : t('map.panel.markFlashed')}
           </Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => onNavigate(invader.lat, invader.lng)} style={styles.actionBtn}>
-          <Text style={styles.actionBtnText}>Y aller</Text>
+          <Text style={styles.actionBtnText}>{t('map.panel.navigate')}</Text>
         </TouchableOpacity>
       </View>
 
@@ -290,12 +294,12 @@ function InvaderPanel({ invader, flashed, onToggleFlash, onNavigate, onClose }) 
         activeOpacity={0.7}
       >
         <Ionicons name="logo-instagram" size={16} color="#E1306C" />
-        <Text style={styles.igBtnText}>Voir sur Instagram</Text>
+        <Text style={styles.igBtnText}>{t('map.panel.instagram')}</Text>
       </TouchableOpacity>
 
       {labelDefs.filter((d) => !d.system).length > 0 && (
         <View style={styles.labelSection}>
-          <Text style={styles.labelSectionTitle}>ÉTIQUETTES</Text>
+          <Text style={styles.labelSectionTitle}>{t('map.panel.labelsTitle')}</Text>
           <View style={styles.labelChips}>
             {labelDefs.filter((d) => !d.system).map((def) => {
               const applied = invLabelIds.includes(def.id);
@@ -324,14 +328,16 @@ function InvaderPanel({ invader, flashed, onToggleFlash, onNavigate, onClose }) 
 // ─── Écran carte ──────────────────────────────────────────────────────────────
 
 export default function MapScreen({ navigation }) {
-  const { invaders, flashed, labels, labelDefs, statusColors, colorOverrides, filters, setFilters, toggleFlash, mapsApp, setMapsAppPref } = useAppContext();
+  const { invaders, flashed, labels, labelDefs, statusColors, colorOverrides, filters, setFilters, toggleFlash, mapsApp, setMapsAppPref, currentCityCode } = useAppContext();
+  const city = CITIES[currentCityCode] ?? CITIES.PA;
   const { theme, isDark } = useTheme();
+  const { t } = useTranslation();
   const styles = getStyles(theme);
   const insets = useSafeAreaInsets();
 
   const mapRef = useRef(null);
   const centeredRef = useRef(false);
-  const sortCenterRef = useRef({ lat: 48.8566, lng: 2.3522 });
+  const sortCenterRef = useRef({ lat: city.center.lat, lng: city.center.lng });
   const gpsSortedRef  = useRef(false); // vrai après le 1er tri live (jamais re-triggeré)
   // sortVersion s'incrémente max 2× : cache iOS puis 1re fix live → retrigge le useMemo
   const [sortVersion, setSortVersion] = useState(0);
@@ -344,12 +350,12 @@ export default function MapScreen({ navigation }) {
   function handleNavigate(lat, lng) {
     if (mapsApp) { openInApp(mapsApp, lat, lng); return; }
     Alert.alert(
-      'App de cartes par défaut',
-      'Choisissez votre application. Ce choix sera mémorisé et modifiable dans Réglages.',
+      t('common.mapsApp.title'),
+      t('common.mapsApp.msg'),
       [
-        { text: 'Plans',       onPress: () => { setMapsAppPref('apple');  openInApp('apple',  lat, lng); } },
-        { text: 'Google Maps', onPress: () => { setMapsAppPref('google'); openInApp('google', lat, lng); } },
-        { text: 'Annuler', style: 'cancel' },
+        { text: t('common.mapsApp.apple'),  onPress: () => { setMapsAppPref('apple');  openInApp('apple',  lat, lng); } },
+        { text: t('common.mapsApp.google'), onPress: () => { setMapsAppPref('google'); openInApp('google', lat, lng); } },
+        { text: t('common.cancel'), style: 'cancel' },
       ]
     );
   }
@@ -389,8 +395,10 @@ export default function MapScreen({ navigation }) {
           // Centrage carte sur la 1re position (comportement inchangé)
           if (!centeredRef.current) {
             centeredRef.current = true;
-            const nearParis = Math.abs(latitude - 48.8566) < 0.45 && Math.abs(longitude - 2.3522) < 0.65;
-            if (nearParis) {
+            const b = city.bbox;
+            const nearCity = latitude >= b.minLat && latitude <= b.maxLat &&
+                             longitude >= b.minLng && longitude <= b.maxLng;
+            if (nearCity) {
               mapRef.current?.animateToRegion(
                 { latitude, longitude, latitudeDelta: 0.01, longitudeDelta: 0.01 },
                 800
@@ -476,7 +484,7 @@ export default function MapScreen({ navigation }) {
         showsTraffic={false}
         showsPointsOfInterest={false}
         showsUserLocation={locationGranted}
-        initialRegion={{ latitude: 48.8566, longitude: 2.3522, latitudeDelta: 0.12, longitudeDelta: 0.12 }}
+        initialRegion={{ latitude: city.center.lat, longitude: city.center.lng, ...city.mapDelta }}
         onPress={closeAll}
       >
         {visibleInvaders.map((invader) => {
@@ -507,7 +515,7 @@ export default function MapScreen({ navigation }) {
           onPress={() => { setShowFilters((v) => !v); setSelected(null); }}
         >
           <Text style={[styles.filtersBtnText, hasActiveFilters && styles.filtersBtnTextActive]}>
-            {hasActiveFilters ? 'Filtres •' : 'Filtres'}
+            {hasActiveFilters ? t('map.filter.titleActive') : t('map.filter.title')}
           </Text>
         </TouchableOpacity>
 

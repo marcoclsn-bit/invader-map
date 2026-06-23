@@ -15,7 +15,9 @@
     "ios": {
       "supportsTablet": true,
       "infoPlist": {
-        "LSApplicationQueriesSchemes": ["comgooglemaps"]
+        "LSApplicationQueriesSchemes": [
+          "comgooglemaps"
+        ]
       }
     },
     "android": {
@@ -34,7 +36,8 @@
         {
           "locationWhenInUsePermission": "Invader Map utilise votre position pour vous situer sur la carte et vous aider à trouver les Invaders proches."
         }
-      ]
+      ],
+      "expo-localization"
     ]
   }
 }

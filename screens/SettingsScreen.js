@@ -1,13 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import {
   StyleSheet, View, Text, TouchableOpacity, ScrollView, Switch, Alert,
   Modal, TextInput, Pressable,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useTranslation } from 'react-i18next';
+import { Ionicons } from '@expo/vector-icons';
 import { useAppContext } from '../context/AppContext';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
-import { PALETTE, STATUS_LABEL, ALL_STATUSES } from '../constants';
+import { PALETTE, ALL_STATUSES } from '../constants';
+import { SUPPORTED_LANGUAGES } from '../i18n';
 
 // ─── Sélecteur de couleur ─────────────────────────────────────────────────────
 
@@ -39,13 +42,9 @@ function ColorPickerModal({ title, value, onSelect, onClose }) {
 
 function LabelFormModal({ def, onSave, onClose }) {
   const { theme } = useTheme();
-  const [name, setName] = useState('');
-  const [color, setColor] = useState(PALETTE[5]);
-
-  useEffect(() => {
-    setName(def?.name ?? '');
-    setColor(def?.color ?? PALETTE[5]);
-  }, [def]);
+  const { t } = useTranslation();
+  const [name, setName] = useState(def?.name ?? '');
+  const [color, setColor] = useState(def?.color ?? PALETTE[5]);
 
   function handleSave() {
     const trimmed = name.trim();
@@ -61,7 +60,7 @@ function LabelFormModal({ def, onSave, onClose }) {
       <Pressable style={layout.formOverlay} onPress={onClose}>
         <Pressable style={[layout.formCard, { backgroundColor: theme.surface }]}>
           <Text style={[layout.formTitle, { color: theme.textPrimary }]}>
-            {isNew ? 'Nouvelle étiquette' : isDefault ? 'Couleur de l\'étiquette' : 'Modifier l\'étiquette'}
+            {isNew ? t('settings.labels.newLabel') : isDefault ? t('settings.labels.editColor') : t('settings.labels.editLabel')}
           </Text>
 
           {isDefault
@@ -72,7 +71,7 @@ function LabelFormModal({ def, onSave, onClose }) {
                 placeholderTextColor={theme.textSecondary}
                 value={name}
                 onChangeText={setName}
-                placeholder="Nom de l'étiquette"
+                placeholder={t('settings.labels.namePlaceholder')}
                 maxLength={30}
                 autoFocus
                 returnKeyType="done"
@@ -80,7 +79,7 @@ function LabelFormModal({ def, onSave, onClose }) {
             )
           }
 
-          <Text style={[layout.formLabel, { color: theme.textSecondary }]}>Couleur</Text>
+          <Text style={[layout.formLabel, { color: theme.textSecondary }]}>{t('settings.labels.colorLabel')}</Text>
           <View style={layout.palette}>
             {PALETTE.map((c) => (
               <TouchableOpacity
@@ -98,14 +97,14 @@ function LabelFormModal({ def, onSave, onClose }) {
               style={[layout.formCancelBtn, { backgroundColor: theme.surfaceHigh }]}
               onPress={onClose}
             >
-              <Text style={[layout.formCancelText, { color: theme.textSecondary }]}>Annuler</Text>
+              <Text style={[layout.formCancelText, { color: theme.textSecondary }]}>{t('common.cancel')}</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={[layout.formSaveBtn, { backgroundColor: theme.accent }, (!name.trim() && !isDefault) && layout.formSaveBtnDisabled]}
               onPress={handleSave}
               disabled={!name.trim() && !isDefault}
             >
-              <Text style={[layout.formSaveText, { color: theme.bg }]}>Enregistrer</Text>
+              <Text style={[layout.formSaveText, { color: theme.bg }]}>{t('common.save')}</Text>
             </TouchableOpacity>
           </View>
         </Pressable>
@@ -120,9 +119,11 @@ function Section({ title, children }) {
   const { theme } = useTheme();
   return (
     <View style={layout.section}>
-      <Text style={[layout.sectionTitle, { color: theme.textSecondary }]}>
-        {title.toUpperCase()}
-      </Text>
+      {title ? (
+        <Text style={[layout.sectionTitle, { color: theme.textSecondary }]}>
+          {title.toUpperCase()}
+        </Text>
+      ) : null}
       <View style={[layout.card, { backgroundColor: theme.surface, borderColor: theme.border }]}>
         {children}
       </View>
@@ -164,13 +165,16 @@ function Row({ label, hint, trailing, onPress, destructive, action, last, childr
 
 // ─── Écran Réglages ───────────────────────────────────────────────────────────
 
-export default function SettingsScreen() {
+export default function SettingsScreen({ navigation }) {
   const insets = useSafeAreaInsets();
   const { theme, isDark, toggle } = useTheme();
+  const { t } = useTranslation();
   const {
     statusColors, setStatusColor,
     labelDefs, addLabel, updateLabel, deleteLabel,
     mapsApp, setMapsAppPref,
+    language, setLanguage,
+    resetOnboarding,
     resetLabels,
     dataVersion, dataUpdatedAt, checkDataUpdate,
   } = useAppContext();
@@ -187,22 +191,22 @@ export default function SettingsScreen() {
 
   function confirmReset() {
     Alert.alert(
-      'Réinitialiser',
-      'Les étiquettes, couleurs personnalisées et colorisation des Invaders seront remises à zéro. La progression (Invaders flashés) est préservée.',
+      t('settings.labels.resetTitle'),
+      t('settings.labels.resetMsg'),
       [
-        { text: 'Annuler', style: 'cancel' },
-        { text: 'Réinitialiser', style: 'destructive', onPress: resetLabels },
+        { text: t('common.cancel'), style: 'cancel' },
+        { text: t('settings.labels.resetAction'), style: 'destructive', onPress: resetLabels },
       ]
     );
   }
 
   function confirmDelete(def) {
     Alert.alert(
-      `Supprimer « ${def.name} » ?`,
-      'L\'étiquette sera retirée de tous les Invaders.',
+      t('settings.labels.confirmDeleteTitle', { name: def.name }),
+      t('settings.labels.confirmDeleteMsg'),
       [
-        { text: 'Annuler', style: 'cancel' },
-        { text: 'Supprimer', style: 'destructive', onPress: () => deleteLabel(def.id) },
+        { text: t('common.cancel'), style: 'cancel' },
+        { text: t('common.delete'), style: 'destructive', onPress: () => deleteLabel(def.id) },
       ]
     );
   }
@@ -225,12 +229,12 @@ export default function SettingsScreen() {
       contentContainerStyle={{ paddingTop: insets.top + 20, paddingBottom: 40 }}
       keyboardShouldPersistTaps="handled"
     >
-      <Text style={[layout.screenTitle, { color: theme.textPrimary }]}>Réglages</Text>
+      <Text style={[layout.screenTitle, { color: theme.textPrimary }]}>{t('settings.title')}</Text>
 
       {/* ── Apparence ── */}
-      <Section title="Apparence">
+      <Section title={t('settings.appearance.section')}>
         <Row
-          label="Thème sombre"
+          label={t('settings.appearance.darkTheme')}
           trailing={
             <Switch
               value={isDark}
@@ -245,11 +249,11 @@ export default function SettingsScreen() {
       </Section>
 
       {/* ── Couleurs des statuts ── */}
-      <Section title="Couleurs des statuts">
+      <Section title={t('settings.statusColors.section')}>
         {ALL_STATUSES.map((status, i) => (
           <Row
             key={status}
-            label={STATUS_LABEL[status]}
+            label={t(`common.status.${status}`)}
             trailing={<View style={[layout.colorDot, { backgroundColor: statusColors[status] }]} />}
             onPress={() => setColorPickerFor(status)}
             last={i === ALL_STATUSES.length - 1}
@@ -258,16 +262,16 @@ export default function SettingsScreen() {
       </Section>
 
       {/* ── Mes étiquettes ── */}
-      <Section title="Mes étiquettes">
+      <Section title={t('settings.labels.section')}>
         {labelDefs.length === 0 && (
-          <Row label="Aucune étiquette" hint="Créez la première avec le bouton ci-dessous." />
+          <Row label={t('settings.labels.noLabel')} hint={t('settings.labels.noLabelHint')} />
         )}
         {labelDefs.map((def) => (
           <Row key={def.id} last={false}>
             <View style={layout.labelRow}>
               <View style={[layout.colorDot, { backgroundColor: def.color }]} />
               <Text style={[layout.labelName, { color: theme.textPrimary }]} numberOfLines={1}>{def.name}</Text>
-              {def.isDefault && <Text style={[layout.defaultBadge, { color: theme.textSecondary }]}>par défaut</Text>}
+              {def.isDefault && <Text style={[layout.defaultBadge, { color: theme.textSecondary }]}>{t('settings.labels.default')}</Text>}
               <TouchableOpacity onPress={() => setLabelForm(def)} style={layout.labelActionBtn} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
                 <Text style={[layout.labelActionIcon, { color: theme.textSecondary }]}>✎</Text>
               </TouchableOpacity>
@@ -279,14 +283,14 @@ export default function SettingsScreen() {
             </View>
           </Row>
         ))}
-        <Row label="+ Créer une étiquette" onPress={() => setLabelForm(null)} action last />
+        <Row label={t('settings.labels.createLabel')} onPress={() => setLabelForm(null)} action last />
       </Section>
 
       {/* ── Navigation ── */}
-      <Section title="Navigation">
-        <Row label="App de cartes par défaut" hint={mapsApp === null ? 'Sera demandé au premier « Y aller »' : undefined} last>
+      <Section title={t('settings.navigation.section')}>
+        <Row label={t('settings.navigation.mapsApp')} hint={mapsApp === null ? t('settings.navigation.mapsAppHint') : undefined} last>
           <View style={layout.segmented}>
-            {[{ key: 'apple', label: 'Plans' }, { key: 'google', label: 'Google Maps' }].map(({ key, label }) => (
+            {[{ key: 'apple', label: t('common.mapsApp.apple') }, { key: 'google', label: t('common.mapsApp.google') }].map(({ key, label }) => (
               <TouchableOpacity
                 key={key}
                 style={[layout.seg, { backgroundColor: mapsApp === key ? theme.accent : theme.surfaceHigh }]}
@@ -302,10 +306,10 @@ export default function SettingsScreen() {
       </Section>
 
       {/* ── Données ── */}
-      <Section title="Données">
+      <Section title={t('settings.data.section')}>
         {/* Version actuelle */}
         <View style={[layout.row, { borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: theme.border }]}>
-          <Text style={[layout.rowLabel, { color: theme.textSecondary }]}>Version des données</Text>
+          <Text style={[layout.rowLabel, { color: theme.textSecondary }]}>{t('settings.data.dataVersion')}</Text>
           <Text style={[layout.rowHint, { color: theme.textSecondary }]}>
             v{dataVersion} — {dataUpdatedAt || '—'}
           </Text>
@@ -320,7 +324,7 @@ export default function SettingsScreen() {
         >
           <View style={{ flex: 1 }}>
             <Text style={[layout.rowLabel, { color: updateStatus === 'checking' ? theme.textSecondary : theme.textPrimary }]}>
-              {updateStatus === 'checking' ? 'Vérification…' : 'Vérifier les mises à jour'}
+              {updateStatus === 'checking' ? t('settings.data.checking') : t('settings.data.checkUpdates')}
             </Text>
             {updateStatus && updateStatus !== 'checking' && (
               <Text style={[layout.rowHint, {
@@ -328,12 +332,12 @@ export default function SettingsScreen() {
                   ? theme.accent : theme.destructive,
               }]}>
                 {updateStatus === 'up_to_date'
-                  ? 'Données à jour'
+                  ? t('settings.data.upToDate')
                   : updateStatus.startsWith('updated_v')
-                    ? `Nouvelle version installée (${updateStatus.replace('updated_', '')})`
+                    ? t('settings.data.newVersion', { v: updateStatus.replace('updated_', '') })
                     : updateStatus === 'offline'
-                      ? 'Hors ligne — réessaie plus tard'
-                      : 'Erreur de mise à jour'}
+                      ? t('settings.data.offline')
+                      : t('settings.data.updateError')}
               </Text>
             )}
           </View>
@@ -341,10 +345,40 @@ export default function SettingsScreen() {
         </TouchableOpacity>
 
         <Row
-          label="Réinitialiser les étiquettes et couleurs"
-          hint="Préserve la progression (Invaders flashés)."
+          label={t('settings.labels.resetAll')}
+          hint={t('settings.labels.resetHint')}
           onPress={confirmReset}
           destructive
+          last
+        />
+      </Section>
+
+      {/* ── Langue ── */}
+      <Section title={t('settings.language.section')}>
+        {['system', ...SUPPORTED_LANGUAGES].map((lang, i, arr) => (
+          <Row
+            key={lang}
+            label={t(`settings.language.${lang}`)}
+            onPress={() => setLanguage(lang)}
+            trailing={language === lang
+              ? <Ionicons name="checkmark" size={18} color={theme.accent} />
+              : null}
+            last={i === arr.length - 1}
+          />
+        ))}
+      </Section>
+
+      {/* ── À propos & Intro ── */}
+      <Section>
+        <Row
+          label={t('settings.replayOnboarding')}
+          onPress={resetOnboarding}
+          trailing={<Ionicons name="play-outline" size={16} color={theme.textSecondary} />}
+        />
+        <Row
+          label={t('settings.aboutEntry')}
+          onPress={() => navigation.navigate('À propos')}
+          trailing={<Ionicons name="chevron-forward" size={16} color={theme.textSecondary} />}
           last
         />
       </Section>
@@ -352,7 +386,7 @@ export default function SettingsScreen() {
       {/* ── Modaux ── */}
       {colorPickerFor !== null && (
         <ColorPickerModal
-          title={`Couleur — ${STATUS_LABEL[colorPickerFor]}`}
+          title={t('settings.statusColors.colorFor', { status: t(`common.status.${colorPickerFor}`) })}
           value={statusColors[colorPickerFor]}
           onSelect={(color) => setStatusColor(colorPickerFor, color)}
           onClose={() => setColorPickerFor(null)}

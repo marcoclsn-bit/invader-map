@@ -1,8 +1,8 @@
 {
-  "version": 2,
+  "version": 3,
   "updatedAt": "2026-06-23",
   "city": "LSN",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 16,
   "invaders": [
     {
@@ -13,6 +13,7 @@
       "status": "destroyed",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lsn_01/",
       "source": "goguelnikov"
     },
     {
@@ -23,6 +24,7 @@
       "status": "damaged",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lsn_02/",
       "source": "goguelnikov"
     },
     {
@@ -33,6 +35,7 @@
       "status": "ok",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lsn_04/",
       "source": "goguelnikov"
     },
     {
@@ -43,6 +46,7 @@
       "status": "destroyed",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lsn_05/",
       "source": "goguelnikov"
     },
     {
@@ -53,6 +57,7 @@
       "status": "destroyed",
       "points": 0,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lsn_07/",
       "source": "goguelnikov"
     },
     {
@@ -63,6 +68,7 @@
       "status": "damaged",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lsn_08/",
       "source": "goguelnikov"
     },
     {
@@ -73,6 +79,7 @@
       "status": "destroyed",
       "points": 0,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lsn_09/",
       "source": "goguelnikov"
     },
     {
@@ -83,6 +90,7 @@
       "status": "ok",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lsn_10/",
       "source": "goguelnikov"
     },
     {
@@ -93,6 +101,7 @@
       "status": "destroyed",
       "points": 0,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lsn_11/",
       "source": "goguelnikov"
     },
     {
@@ -103,6 +112,7 @@
       "status": "damaged",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lsn_12/",
       "source": "goguelnikov"
     },
     {
@@ -113,6 +123,7 @@
       "status": "destroyed",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lsn_13/",
       "source": "goguelnikov"
     },
     {
@@ -123,6 +134,7 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lsn_14/",
       "source": "goguelnikov"
     },
     {
@@ -133,6 +145,7 @@
       "status": "destroyed",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lsn_15/",
       "source": "goguelnikov"
     },
     {
@@ -143,6 +156,7 @@
       "status": "damaged",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lsn_16/",
       "source": "goguelnikov"
     },
     {
@@ -153,6 +167,7 @@
       "status": "destroyed",
       "points": 0,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lsn_17/",
       "source": "goguelnikov"
     },
     {
@@ -163,6 +178,7 @@
       "status": "ok",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lsn_18/",
       "source": "goguelnikov"
     }
   ]
