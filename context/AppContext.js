@@ -88,7 +88,8 @@ export function AppProvider({ children }) {
     setCurrentCityCode(code);
     AsyncStorage.setItem('@invader_current_city', code);
 
-    // Charge les données de la nouvelle ville (on garde l'ancienne pendant le chargement)
+    // Vide les invaders : la MapView repart de zéro (key=code) avant d'afficher la nouvelle ville
+    setInvaders([]);
     loadCityData(code).then(data => {
       if (data && currentCityCodeRef.current === code) {
         setInvaders(data.invaders);

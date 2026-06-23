@@ -418,14 +418,15 @@ export default function MapScreen({ navigation }) {
 
   function closeAll() { setSelected(null); setShowFilters(false); }
 
-  // Anime vers le centre de la nouvelle ville et ferme tout
+  // Réinitialise l'état local au changement de ville
+  // (initialRegion de la nouvelle MapView positionne la carte, pas besoin d'animateToRegion)
   useEffect(() => {
     setSelected(null);
     setShowFilters(false);
-    mapRef.current?.animateToRegion(
-      { latitude: city.center.lat, longitude: city.center.lng, ...city.mapDelta },
-      600
-    );
+    setRenderedCount(INITIAL);
+    centeredRef.current  = false;
+    gpsSortedRef.current = false;
+    sortCenterRef.current = { lat: city.center.lat, lng: city.center.lng };
   }, [currentCityCode]); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function handleFlashFromMap(id) {
@@ -486,6 +487,7 @@ export default function MapScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <MapView
+        key={currentCityCode}
         ref={mapRef}
         style={styles.map}
         mapType="mutedStandard"
