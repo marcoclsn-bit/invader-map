@@ -15,7 +15,8 @@ export function useAppContext() {
 export function AppProvider({ children }) {
   // ─── Ville courante ───────────────────────────────────────────────────────────
   const [currentCityCode, setCurrentCityCode] = useState(DEFAULT_CITY_CODE);
-  const currentCityCodeRef = useRef(DEFAULT_CITY_CODE);
+  const currentCityCodeRef   = useRef(DEFAULT_CITY_CODE);
+  const changingCityTimer    = useRef(null);
 
   // Index des villes (liste légère depuis index.json, initialisée depuis le registre)
   const [cityIndex, setCityIndex] = useState(
@@ -30,9 +31,10 @@ export function AppProvider({ children }) {
   );
 
   // ─── Données Invaders (ville courante) ────────────────────────────────────────
-  const [invaders,      setInvaders]      = useState(EMBEDDED_PA);
-  const [cityVersion,   setCityVersion]   = useState(INVADERS_VERSION);
-  const [cityUpdatedAt, setCityUpdatedAt] = useState(INVADERS_UPDATED_AT);
+  const [invaders,        setInvaders]        = useState(EMBEDDED_PA);
+  const [cityVersion,     setCityVersion]     = useState(INVADERS_VERSION);
+  const [cityUpdatedAt,   setCityUpdatedAt]   = useState(INVADERS_UPDATED_AT);
+  const [isChangingCity,  setIsChangingCity]  = useState(false);
 
   const [flashed, setFlashed] = useState(new Set());
   const [labels, setLabels] = useState({});
@@ -71,8 +73,13 @@ export function AppProvider({ children }) {
         setInvaders(data);
         setCityVersion(version);
         setCityUpdatedAt(updatedAt);
+        // Données arrivées → masque l'overlay de transition
+        setIsChangingCity(false);
+        if (changingCityTimer.current) {
+          clearTimeout(changingCityTimer.current);
+          changingCityTimer.current = null;
+        }
       }
-      // Met à jour le count dans l'index si disponible
       setCityIndex(prev => prev.map(c =>
         c.code === cityCode ? { ...c, count: data.length, version } : c
       ));
@@ -88,13 +95,36 @@ export function AppProvider({ children }) {
     setCurrentCityCode(code);
     AsyncStorage.setItem('@invader_current_city', code);
 
-    // Vide les invaders : la MapView repart de zéro (key=code) avant d'afficher la nouvelle ville
+    // Overlay de transition : masque le remontage natif de la MapView
+    setIsChangingCity(true);
     setInvaders([]);
+
+    // Fallback : masque l'overlay après 8 s si le réseau est trop lent / échoue
+    if (changingCityTimer.current) clearTimeout(changingCityTimer.current);
+    changingCityTimer.current = setTimeout(() => {
+      setIsChangingCity(false);
+      changingCityTimer.current = null;
+    }, 8000);
+
     loadCityData(code).then(data => {
-      if (data && currentCityCodeRef.current === code) {
+      if (currentCityCodeRef.current !== code) return;
+      if (data) {
         setInvaders(data.invaders);
         setCityVersion(data.version);
         setCityUpdatedAt(data.updatedAt);
+        // Données en cache : overlay masqué immédiatement
+        setIsChangingCity(false);
+        if (changingCityTimer.current) {
+          clearTimeout(changingCityTimer.current);
+          changingCityTimer.current = null;
+        }
+      }
+      // Pas de cache → overlay masqué par onCityUpdate quand le fetch réseau arrive
+    }).catch(() => {
+      setIsChangingCity(false);
+      if (changingCityTimer.current) {
+        clearTimeout(changingCityTimer.current);
+        changingCityTimer.current = null;
       }
     });
   }
@@ -141,19 +171,17 @@ export function AppProvider({ children }) {
       if (!onboardingRaw) setShowOnboarding(true);
 
       // Restaure la ville précédente si elle est dans le registre
-      if (currentCityRaw && CITIES[currentCityRaw]) {
+      if (currentCityRaw && CITIES[currentCityRaw] && currentCityRaw !== DEFAULT_CITY_CODE) {
         currentCityCodeRef.current = currentCityRaw;
         setCurrentCityCode(currentCityRaw);
-        if (currentCityRaw !== 'PA') {
-          setInvaders([]);
-          loadCityData(currentCityRaw).then(data => {
-            if (data && currentCityCodeRef.current === currentCityRaw) {
-              setInvaders(data.invaders);
-              setCityVersion(data.version);
-              setCityUpdatedAt(data.updatedAt);
-            }
-          });
-        }
+        setInvaders([]);
+        loadCityData(currentCityRaw).then(data => {
+          if (data && currentCityCodeRef.current === currentCityRaw) {
+            setInvaders(data.invaders);
+            setCityVersion(data.version);
+            setCityUpdatedAt(data.updatedAt);
+          }
+        });
       }
     }).finally(() => setLoaded(true));
   }, []);
@@ -270,7 +298,7 @@ export function AppProvider({ children }) {
   return (
     <AppContext.Provider value={{
       // Villes
-      currentCityCode, setCurrentCity, cityIndex,
+      currentCityCode, setCurrentCity, cityIndex, isChangingCity,
       // Invaders (ville courante)
       invaders, dataVersion, dataUpdatedAt, checkDataUpdate,
       // Progression

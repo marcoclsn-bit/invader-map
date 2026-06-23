@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
-import { StyleSheet, View, Text, Image, TouchableOpacity, Platform, Linking, Alert, Animated } from 'react-native';
+import { StyleSheet, View, Text, Image, TouchableOpacity, Platform, Linking, Alert, Animated, ActivityIndicator } from 'react-native';
 import MapView from 'react-native-maps';
 import * as Location from 'expo-location';
 import * as Haptics from 'expo-haptics';
@@ -328,7 +328,7 @@ function InvaderPanel({ invader, flashed, onToggleFlash, onNavigate, onClose }) 
 // ─── Écran carte ──────────────────────────────────────────────────────────────
 
 export default function MapScreen({ navigation }) {
-  const { invaders, flashed, labels, labelDefs, statusColors, colorOverrides, filters, setFilters, toggleFlash, mapsApp, setMapsAppPref, currentCityCode } = useAppContext();
+  const { invaders, flashed, labels, labelDefs, statusColors, colorOverrides, filters, setFilters, toggleFlash, mapsApp, setMapsAppPref, currentCityCode, isChangingCity } = useAppContext();
   const city = CITIES[currentCityCode] ?? CITIES.PA;
   const { theme, isDark } = useTheme();
   const { t } = useTranslation();
@@ -576,6 +576,16 @@ export default function MapScreen({ navigation }) {
           onClose={() => setSelected(null)}
         />
       )}
+
+      {/* Overlay de transition ville — couvre le remontage natif de la MapView */}
+      {isChangingCity && (
+        <View style={styles.cityTransitionOverlay} pointerEvents="none">
+          <ActivityIndicator size="large" color={theme.accent} />
+          <Text style={[styles.cityTransitionText, { color: theme.textPrimary }]}>
+            {city.name}
+          </Text>
+        </View>
+      )}
     </View>
   );
 }
@@ -620,6 +630,13 @@ function makeStyles(t) {
     },
     locateBtnDisabled: { opacity: 0.4 },
     locateBtnText: { fontSize: 20, color: t.textPrimary },
+
+    cityTransitionOverlay: {
+      ...StyleSheet.absoluteFillObject,
+      backgroundColor: t.bg,
+      alignItems: 'center', justifyContent: 'center', gap: 14,
+    },
+    cityTransitionText: { fontSize: 18, fontWeight: '700', letterSpacing: 0.5 },
 
     panel: {
       position: 'absolute', bottom: 0, left: 0, right: 0,
