@@ -106,7 +106,8 @@
       "addressNotFoundFor": "Adresse introuvable : « {{text}} »",
       "routeNotFound": "Itinéraire introuvable entre ces deux points",
       "routeCalc": "Erreur lors du calcul de l'itinéraire"
-    }
+    },
+    "searchingInvaders": "Recherche d’Invaders en cours…"
   },
   "hunt": {
     "aroundMe": "Autour de moi",

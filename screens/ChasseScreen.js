@@ -209,6 +209,20 @@ export default function ChasseScreen({ route }) {
       const loc = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.Balanced });
       gpsRef.current = [loc.coords.longitude, loc.coords.latitude];
       setGpsReady(true);
+
+      // Recentre la carte sur l'utilisateur s'il est dans la zone de la ville (comme l'écran Carte).
+      // On ne recentre pas si un preset d'arrondissement (depuis Palmarès) est en cours.
+      if (route?.params?.arPreset) return;
+      const { latitude, longitude } = loc.coords;
+      const b = city.bbox;
+      const nearCity = latitude >= b.minLat && latitude <= b.maxLat &&
+                       longitude >= b.minLng && longitude <= b.maxLng;
+      if (nearCity) {
+        mapRef.current?.animateToRegion(
+          { latitude, longitude, latitudeDelta: 0.01, longitudeDelta: 0.01 },
+          800
+        );
+      }
     })();
   }, []);
 

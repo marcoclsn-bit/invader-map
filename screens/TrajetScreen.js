@@ -234,7 +234,8 @@ function RoutePanel({ allInvaders, displayInvaders, flashed, statusColors, showO
   const { t } = useTranslation();
   const styles = getStyles(theme);
   const total = allInvaders.length;
-  const unflashedCount = allInvaders.filter((inv) => !flashed.has(inv.id)).length;
+  // « À flasher » = ni déjà flashés, ni détruits (les détruits ne sont pas flashables)
+  const unflashedCount = allInvaders.filter((inv) => !flashed.has(inv.id) && inv.status !== 'destroyed').length;
   return (
     <View style={styles.routePanel}>
       <View style={styles.routePanelHeader}>
@@ -289,6 +290,7 @@ export default function TrajetScreen() {
   const insets = useSafeAreaInsets();
   const mapRef = useRef(null);
   const gpsRef = useRef(null);
+  const calcCollapseRef = useRef(false); // replie le volet une fois la recherche terminée
   const depInputRef = useRef(null);
   const arrInputRef = useRef(null);
   const depDebounce = useRef(null);
@@ -351,6 +353,18 @@ export default function TrajetScreen() {
       setGpsAvailable(true);
       setDepCoords(coords);
       setDepText(GPS_LABEL);
+
+      // Recentre la carte sur l'utilisateur s'il est dans la zone de la ville (comme l'écran Carte)
+      const { latitude, longitude } = loc.coords;
+      const b = city.bbox;
+      const nearCity = latitude >= b.minLat && latitude <= b.maxLat &&
+                       longitude >= b.minLng && longitude <= b.maxLng;
+      if (nearCity) {
+        mapRef.current?.animateToRegion(
+          { latitude, longitude, latitudeDelta: 0.01, longitudeDelta: 0.01 },
+          800
+        );
+      }
     })();
   }, []);
 
@@ -384,6 +398,11 @@ export default function TrajetScreen() {
 
   useEffect(() => {
     if (!routeInvaders || !routeCoords) return;
+    // Recherche terminée → on replie totalement le volet du haut
+    if (calcCollapseRef.current) {
+      calcCollapseRef.current = false;
+      setInputCollapsed(true);
+    }
     console.log('[Trajet] Markers rendus sur la carte :', routeInvaders.length);
     const routeLatlngs = routeCoords.map(([lng, lat]) => ({ latitude: lat, longitude: lng }));
     const invLatlngs = routeInvaders.map((inv) => ({ latitude: inv.lat, longitude: inv.lng }));
@@ -447,7 +466,10 @@ export default function TrajetScreen() {
 
   const displayInvaders = useMemo(() => {
     if (!routeInvaders) return null;
-    return showOnlyUnflashed ? routeInvaders.filter((inv) => !flashed.has(inv.id)) : routeInvaders;
+    // Filtre « À faire » : on masque les déjà flashés ET les détruits (non flashables)
+    return showOnlyUnflashed
+      ? routeInvaders.filter((inv) => !flashed.has(inv.id) && inv.status !== 'destroyed')
+      : routeInvaders;
   }, [routeInvaders, showOnlyUnflashed, flashed]);
 
   // ─── Découpe du tracé en portion parcourue (gris) + restante (bleu) ──────
@@ -620,6 +642,7 @@ export default function TrajetScreen() {
     setRouteCoords(null);
     setRoutePolyline(null);
     setSelectedRouteInv(null);
+    calcCollapseRef.current = true; // repli total dès que les Invaders seront trouvés
 
     try {
       // ─ Départ ─
@@ -793,7 +816,13 @@ export default function TrajetScreen() {
         {/* ── Carte flottante d'itinéraire (au-dessus de la carte) ── */}
         {!isChangingCity && !following && (
           <View style={[styles.inputCard, { top: insets.top + 8 }]}>
-            {!inputCollapsed && (
+            {loadingPhase !== null ? (
+              /* Pendant le calcul : volet replié, seul le bandeau de recherche s'affiche */
+              <View style={styles.searchingBanner}>
+                <ActivityIndicator size="small" color={theme.accent} />
+                <Text style={styles.searchingText}>{t('route.searchingInvaders')}</Text>
+              </View>
+            ) : !inputCollapsed ? (
               <ScrollView
                 contentContainerStyle={styles.inputContent}
                 keyboardShouldPersistTaps="handled"
@@ -882,24 +911,14 @@ export default function TrajetScreen() {
                     </View>
                   )}
                 </View>
-                {loadingPhase === 'route' && (
-                  <View style={styles.statusRow}>
-                    <ActivityIndicator size="small" color={theme.accent} />
-                    <Text style={styles.loadingText}>{t('route.loadingRoute')}</Text>
-                  </View>
-                )}
-                {loadingPhase === 'invaders' && (
-                  <View style={styles.statusRow}>
-                    <ActivityIndicator size="small" color={theme.accent} />
-                    <Text style={styles.loadingText}>{t('route.loadingInvaders')}</Text>
-                  </View>
-                )}
-                {!loadingPhase && error ? <Text style={styles.errorText}>{error}</Text> : null}
+                {error ? <Text style={styles.errorText}>{error}</Text> : null}
               </ScrollView>
+            ) : null}
+            {loadingPhase === null && (
+              <TouchableOpacity style={styles.collapseBtn} onPress={() => setInputCollapsed(v => !v)}>
+                <Ionicons name={inputCollapsed ? 'chevron-down' : 'chevron-up'} size={16} color={theme.textSecondary} />
+              </TouchableOpacity>
             )}
-            <TouchableOpacity style={styles.collapseBtn} onPress={() => setInputCollapsed(v => !v)}>
-              <Ionicons name={inputCollapsed ? 'chevron-down' : 'chevron-up'} size={16} color={theme.textSecondary} />
-            </TouchableOpacity>
           </View>
         )}
 
@@ -1016,8 +1035,11 @@ function makeStyles(t) {
     infoCard: { marginTop: 6, backgroundColor: t.surfaceHigh, borderRadius: 10, padding: 12 },
     infoText: { fontSize: 13, color: t.textSecondary, lineHeight: 18 },
 
-    statusRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 10 },
-    loadingText: { fontSize: 13, color: t.textSecondary },
+    searchingBanner: {
+      flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 10,
+      paddingHorizontal: 16, paddingVertical: 16,
+    },
+    searchingText: { fontSize: 14, color: t.textPrimary, fontWeight: '500' },
     errorText: { fontSize: 13, color: t.destructive, marginTop: 10 },
 
     // ── Carte ───────────────────────────────────────────────────────────────

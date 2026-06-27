@@ -106,7 +106,8 @@
       "addressNotFoundFor": "Address not found: \"{{text}}\"",
       "routeNotFound": "Route not found between these two points",
       "routeCalc": "Error calculating route"
-    }
+    },
+    "searchingInvaders": "Searching for Invaders…"
   },
   "hunt": {
     "aroundMe": "Around me",
