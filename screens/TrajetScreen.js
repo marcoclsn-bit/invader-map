@@ -10,7 +10,6 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
 import { useTranslation } from 'react-i18next';
-import { DrawerActions } from '@react-navigation/native';
 import i18n from '../i18n';
 import { STATUS_COLOR } from '../constants';
 import { ORS_API_KEY } from '../config/ors';
@@ -794,14 +793,6 @@ export default function TrajetScreen() {
         {/* ── Carte flottante d'itinéraire (au-dessus de la carte) ── */}
         {!isChangingCity && !following && (
           <View style={[styles.inputCard, { top: insets.top + 8 }]}>
-            {/* Hamburger menu */}
-            <TouchableOpacity
-              style={styles.cardMenuBtn}
-              onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
-              hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
-            >
-              <Ionicons name="menu" size={20} color={theme.textSecondary} />
-            </TouchableOpacity>
             {!inputCollapsed && (
               <ScrollView
                 contentContainerStyle={styles.inputContent}
@@ -979,10 +970,6 @@ function makeStyles(t) {
       borderRadius: 16,
       shadowColor: '#000', shadowOffset: { width: 0, height: 6 },
       shadowOpacity: 0.25, shadowRadius: 14, elevation: 10, zIndex: 20,
-    },
-    cardMenuBtn: {
-      position: 'absolute', top: 10, right: 12, zIndex: 30,
-      width: 30, height: 30, alignItems: 'center', justifyContent: 'center',
     },
     inputContent: { paddingHorizontal: 16, paddingTop: 12, paddingBottom: 12 },
     collapseBtn: {

@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useFonts, Silkscreen_400Regular, Silkscreen_700Bold } from '@expo-google-fonts/silkscreen';
@@ -73,8 +73,16 @@ function DrawerNavigator() {
         overlayColor: 'rgba(0,0,0,0.45)',
       }}
     >
-      {/* "Tabs" = écran par défaut (la tab bar à 3 onglets) */}
-      <Drawer.Screen name="Tabs" component={MainTabs} />
+      {/* "Tabs" = écran par défaut (la tab bar à 3 onglets).
+          Le menu (swipe) n'est accessible que depuis l'onglet Carte. */}
+      <Drawer.Screen
+        name="Tabs"
+        component={MainTabs}
+        options={({ route }) => {
+          const tab = getFocusedRouteNameFromRoute(route) ?? 'Carte';
+          return { swipeEnabled: tab === 'Carte' };
+        }}
+      />
       {/* Écrans accessibles via le menu hamburger */}
       <Drawer.Screen name="Liste" component={ListScreen} />
       <Drawer.Screen name="Palmarès" component={PalmèresScreen} />
