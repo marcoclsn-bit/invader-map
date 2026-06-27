@@ -249,7 +249,9 @@
     },
     "statusColors": {
       "section": "Couleurs des statuts",
-      "colorFor": "Couleur — {{status}}"
+      "colorFor": "Couleur — {{status}}",
+      "flashed": "Flashés",
+      "colorForFlashed": "Couleur — Flashés"
     },
     "labels": {
       "section": "Mes étiquettes",
@@ -265,9 +267,9 @@
       "confirmDeleteTitle": "Supprimer « {{name}} » ?",
       "confirmDeleteMsg": "L'étiquette sera retirée de tous les Invaders.",
       "resetTitle": "Réinitialiser",
-      "resetMsg": "Les étiquettes, couleurs personnalisées et colorisation des Invaders seront remises à zéro. La progression (Invaders flashés) est préservée.",
+      "resetMsg": "Les couleurs personnalisées et la colorisation des Invaders seront remises à zéro. La progression (Invaders flashés) est préservée.",
       "resetAction": "Réinitialiser",
-      "resetAll": "Réinitialiser les étiquettes et couleurs",
+      "resetAll": "Réinitialiser les couleurs",
       "resetHint": "Préserve la progression (Invaders flashés)."
     },
     "navigation": {

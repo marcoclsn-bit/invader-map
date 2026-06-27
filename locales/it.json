@@ -249,7 +249,9 @@
     },
     "statusColors": {
       "section": "Colori degli stati",
-      "colorFor": "Colore — {{status}}"
+      "colorFor": "Colore — {{status}}",
+      "flashed": "Fotografati",
+      "colorForFlashed": "Colore — Fotografati"
     },
     "labels": {
       "section": "Le mie etichette",
@@ -265,9 +267,9 @@
       "confirmDeleteTitle": "Eliminare «{{name}}»?",
       "confirmDeleteMsg": "L'etichetta verrà rimossa da tutti gli Invaders.",
       "resetTitle": "Ripristina",
-      "resetMsg": "Le etichette, i colori personalizzati e la colorazione degli Invaders verranno ripristinati. Il progresso (Invaders fotografati) è conservato.",
+      "resetMsg": "I colori personalizzati e la colorazione degli Invaders verranno azzerati. I progressi (Invaders fotografati) sono preservati.",
       "resetAction": "Ripristina",
-      "resetAll": "Ripristina etichette e colori",
+      "resetAll": "Reimposta i colori",
       "resetHint": "Il progresso dei fotografati è conservato."
     },
     "navigation": {

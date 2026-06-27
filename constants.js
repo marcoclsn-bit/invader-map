@@ -31,10 +31,8 @@ export const PALETTE = [
   '#FF2D55', '#A2845E', '#8E8E93', '#1C1C1E',
 ];
 
-// Étiquettes prédéfinies (recolorables, non supprimables)
-// lbl_flashed : étiquette système — gérée automatiquement via l'état flashé, non assignable manuellement
+// Étiquette système unique : lbl_flashed — gérée automatiquement via l'état flashé
+// (donne sa couleur aux Invaders flashés). Les étiquettes personnalisées ont été retirées.
 export const DEFAULT_LABEL_DEFS = [
   { id: 'lbl_flashed', name: 'Déjà flashé', color: '#3DF96B', isDefault: true, system: true },
-  { id: 'lbl_voir',    name: 'À voir',       color: '#007AFF', isDefault: true },
-  { id: 'lbl_favori',  name: 'Favori',       color: '#FFCC00', isDefault: true },
 ];

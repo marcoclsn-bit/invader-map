@@ -249,7 +249,9 @@
     },
     "statusColors": {
       "section": "Status colours",
-      "colorFor": "Colour — {{status}}"
+      "colorFor": "Colour — {{status}}",
+      "flashed": "Flashed",
+      "colorForFlashed": "Color — Flashed"
     },
     "labels": {
       "section": "My labels",
@@ -265,9 +267,9 @@
       "confirmDeleteTitle": "Delete \"{{name}}\"?",
       "confirmDeleteMsg": "The label will be removed from all Invaders.",
       "resetTitle": "Reset",
-      "resetMsg": "Labels, custom colours, and Invader colouring will be reset to defaults. Flash progress is preserved.",
+      "resetMsg": "Custom colors and Invader coloring will be reset. Your progress (flashed Invaders) is preserved.",
       "resetAction": "Reset",
-      "resetAll": "Reset labels and colours",
+      "resetAll": "Reset colors",
       "resetHint": "Preserves flash progress."
     },
     "navigation": {

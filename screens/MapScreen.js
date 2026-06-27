@@ -31,15 +31,11 @@ function getStyles(theme) {
 
 // ─── Logique de filtrage ──────────────────────────────────────────────────────
 
-function applyFilters(invaders, filters, flashed, labels) {
+function applyFilters(invaders, filters, flashed) {
   return invaders.filter((inv) => {
     if (!filters.statuses.has(inv.status)) return false;
     if (filters.flashedState === 'flashed' && !flashed.has(inv.id)) return false;
     if (filters.flashedState === 'unflashed' && flashed.has(inv.id)) return false;
-    if (filters.activeLabels.size > 0) {
-      const invLabels = labels[inv.id] ?? [];
-      if (!invLabels.some((l) => filters.activeLabels.has(l))) return false;
-    }
     return true;
   });
 }
@@ -138,7 +134,7 @@ function formatCountdown(s) {
 }
 
 function FilterPanel({ filters, onFiltersChange, onClose }) {
-  const { labelDefs, statusColors } = useAppContext();
+  const { statusColors } = useAppContext();
   const { theme } = useTheme();
   const { t } = useTranslation();
   const styles = getStyles(theme);
@@ -149,11 +145,6 @@ function FilterPanel({ filters, onFiltersChange, onClose }) {
     onFiltersChange({ ...filters, statuses: next });
   }
   function setFlashedState(val) { onFiltersChange({ ...filters, flashedState: val }); }
-  function toggleLabelFilter(labelId) {
-    const next = new Set(filters.activeLabels);
-    next.has(labelId) ? next.delete(labelId) : next.add(labelId);
-    onFiltersChange({ ...filters, activeLabels: next });
-  }
 
   return (
     <View style={styles.panel}>
@@ -164,6 +155,7 @@ function FilterPanel({ filters, onFiltersChange, onClose }) {
         </TouchableOpacity>
       </View>
 
+      {/* ── Statut (sélection multiple) ── */}
       <Text style={styles.sectionTitle}>{t('map.filter.conditionSection')}</Text>
       <View style={styles.chipRow}>
         {ALL_STATUSES.map((status) => {
@@ -173,14 +165,20 @@ function FilterPanel({ filters, onFiltersChange, onClose }) {
             <TouchableOpacity
               key={status}
               onPress={() => toggleStatus(status)}
+              activeOpacity={0.7}
               style={[
-                styles.chip,
+                styles.checkChip,
                 active
-                  ? { backgroundColor: color }
-                  : { backgroundColor: theme.surfaceHigh, borderColor: color, borderWidth: 1.5 },
+                  ? { backgroundColor: color, borderColor: color }
+                  : { backgroundColor: 'transparent', borderColor: theme.border },
               ]}
             >
-              <Text style={[styles.chipText, active && styles.chipTextActive]}>
+              <Ionicons
+                name={active ? 'checkmark-circle' : 'ellipse-outline'}
+                size={16}
+                color={active ? theme.bg : theme.textSecondary}
+              />
+              <Text style={[styles.chipText, active ? styles.chipTextActive : { color: theme.textPrimary }]}>
                 {t(`common.status.${status}`)}
               </Text>
             </TouchableOpacity>
@@ -188,49 +186,39 @@ function FilterPanel({ filters, onFiltersChange, onClose }) {
         })}
       </View>
 
+      {/* ── État (sélection unique) ── */}
       <Text style={styles.sectionTitle}>{t('map.filter.flashSection')}</Text>
       <View style={styles.chipRow}>
         {[
           { val: 'all', label: t('map.filter.all') },
           { val: 'flashed', label: t('map.filter.flashed') },
           { val: 'unflashed', label: t('map.filter.unflashed') },
-        ].map(({ val, label }) => (
-          <TouchableOpacity
-            key={val}
-            onPress={() => setFlashedState(val)}
-            style={[styles.chip, filters.flashedState === val && styles.chipActiveNeutral]}
-          >
-            <Text style={[styles.chipText, filters.flashedState === val && styles.chipTextActive]}>
-              {label}
-            </Text>
-          </TouchableOpacity>
-        ))}
+        ].map(({ val, label }) => {
+          const active = filters.flashedState === val;
+          return (
+            <TouchableOpacity
+              key={val}
+              onPress={() => setFlashedState(val)}
+              activeOpacity={0.7}
+              style={[
+                styles.checkChip,
+                active
+                  ? { backgroundColor: theme.accent, borderColor: theme.accent }
+                  : { backgroundColor: 'transparent', borderColor: theme.border },
+              ]}
+            >
+              <Ionicons
+                name={active ? 'checkmark-circle' : 'ellipse-outline'}
+                size={16}
+                color={active ? theme.bg : theme.textSecondary}
+              />
+              <Text style={[styles.chipText, active ? styles.chipTextActive : { color: theme.textPrimary }]}>
+                {label}
+              </Text>
+            </TouchableOpacity>
+          );
+        })}
       </View>
-
-      <Text style={styles.sectionTitle}>{t('map.filter.labelsSection')}</Text>
-      {labelDefs.filter((d) => !d.system).length === 0 ? (
-        <Text style={styles.emptyNote}>{t('map.filter.noLabels')}</Text>
-      ) : (
-        <View style={styles.chipRow}>
-          {labelDefs.filter((d) => !d.system).map((def) => {
-            const active = filters.activeLabels.has(def.id);
-            return (
-              <TouchableOpacity
-                key={def.id}
-                onPress={() => toggleLabelFilter(def.id)}
-                style={[
-                  styles.chip,
-                  active
-                    ? { backgroundColor: def.color }
-                    : { backgroundColor: theme.surfaceHigh, borderColor: def.color, borderWidth: 1.5 },
-                ]}
-              >
-                <Text style={[styles.chipText, active && styles.chipTextActive]}>{def.name}</Text>
-              </TouchableOpacity>
-            );
-          })}
-        </View>
-      )}
     </View>
   );
 }
@@ -388,8 +376,8 @@ export default function MapScreen({ navigation }) {
   }
 
   const filteredInvaders = useMemo(
-    () => applyFilters(invaders, filters, flashed, labels),
-    [invaders, filters, flashed, labels]
+    () => applyFilters(invaders, filters, flashed),
+    [invaders, filters, flashed]
   );
 
   // sortVersion en dep : le useMemo re-tourne quand sortCenterRef est mis à jour
@@ -432,8 +420,7 @@ export default function MapScreen({ navigation }) {
 
   const hasActiveFilters =
     filters.statuses.size < ALL_STATUSES.length ||
-    filters.flashedState !== 'all' ||
-    filters.activeLabels.size > 0;
+    filters.flashedState !== 'all';
 
   return (
     <View style={styles.container}>
@@ -663,10 +650,12 @@ function makeStyles(t) {
       textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 8, marginTop: 14,
     },
     chipRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
-    chip: { borderRadius: 20, paddingHorizontal: 12, paddingVertical: 6, backgroundColor: t.surfaceHigh },
-    chipActiveNeutral: { backgroundColor: t.accent },
-    chipText: { fontSize: 13, fontWeight: '500', color: t.textSecondary },
+    checkChip: {
+      flexDirection: 'row', alignItems: 'center', gap: 6,
+      borderRadius: 20, paddingHorizontal: 12, paddingVertical: 7,
+      borderWidth: 1.5,
+    },
+    chipText: { fontSize: 13, fontWeight: '600' },
     chipTextActive: { color: t.bg },
-    emptyNote: { fontSize: 13, color: t.textSecondary, fontStyle: 'italic' },
   });
 }

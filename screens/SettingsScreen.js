@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import {
   StyleSheet, View, Text, TouchableOpacity, ScrollView, Switch, Alert,
-  Modal, TextInput, Pressable,
+  Modal, Pressable,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
@@ -31,81 +31,6 @@ function ColorPickerModal({ title, value, onSelect, onClose }) {
                 {value === c && <Text style={layout.swatchCheck}>✓</Text>}
               </TouchableOpacity>
             ))}
-          </View>
-        </Pressable>
-      </Pressable>
-    </Modal>
-  );
-}
-
-// ─── Formulaire étiquette ─────────────────────────────────────────────────────
-
-function LabelFormModal({ def, onSave, onClose }) {
-  const { theme } = useTheme();
-  const { t } = useTranslation();
-  const [name, setName] = useState(def?.name ?? '');
-  const [color, setColor] = useState(def?.color ?? PALETTE[5]);
-
-  function handleSave() {
-    const trimmed = name.trim();
-    if (!def?.isDefault && !trimmed) return;
-    onSave(def?.isDefault ? def.name : trimmed, color);
-  }
-
-  const isNew = def === null;
-  const isDefault = def?.isDefault === true;
-
-  return (
-    <Modal transparent animationType="slide" onRequestClose={onClose}>
-      <Pressable style={layout.formOverlay} onPress={onClose}>
-        <Pressable style={[layout.formCard, { backgroundColor: theme.surface }]}>
-          <Text style={[layout.formTitle, { color: theme.textPrimary }]}>
-            {isNew ? t('settings.labels.newLabel') : isDefault ? t('settings.labels.editColor') : t('settings.labels.editLabel')}
-          </Text>
-
-          {isDefault
-            ? <Text style={[layout.formDefaultName, { color: theme.textPrimary }]}>{def.name}</Text>
-            : (
-              <TextInput
-                style={[layout.formInput, { backgroundColor: theme.surfaceHigh, color: theme.textPrimary }]}
-                placeholderTextColor={theme.textSecondary}
-                value={name}
-                onChangeText={setName}
-                placeholder={t('settings.labels.namePlaceholder')}
-                maxLength={30}
-                autoFocus
-                returnKeyType="done"
-              />
-            )
-          }
-
-          <Text style={[layout.formLabel, { color: theme.textSecondary }]}>{t('settings.labels.colorLabel')}</Text>
-          <View style={layout.palette}>
-            {PALETTE.map((c) => (
-              <TouchableOpacity
-                key={c}
-                style={[layout.swatch, { backgroundColor: c }]}
-                onPress={() => setColor(c)}
-              >
-                {color === c && <Text style={layout.swatchCheck}>✓</Text>}
-              </TouchableOpacity>
-            ))}
-          </View>
-
-          <View style={layout.formActions}>
-            <TouchableOpacity
-              style={[layout.formCancelBtn, { backgroundColor: theme.surfaceHigh }]}
-              onPress={onClose}
-            >
-              <Text style={[layout.formCancelText, { color: theme.textSecondary }]}>{t('common.cancel')}</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={[layout.formSaveBtn, { backgroundColor: theme.accent }, (!name.trim() && !isDefault) && layout.formSaveBtnDisabled]}
-              onPress={handleSave}
-              disabled={!name.trim() && !isDefault}
-            >
-              <Text style={[layout.formSaveText, { color: theme.bg }]}>{t('common.save')}</Text>
-            </TouchableOpacity>
           </View>
         </Pressable>
       </Pressable>
@@ -171,7 +96,7 @@ export default function SettingsScreen({ navigation }) {
   const { t } = useTranslation();
   const {
     statusColors, setStatusColor,
-    labelDefs, addLabel, updateLabel, deleteLabel,
+    labelDefs, setFlashedColor,
     mapsApp, setMapsAppPref,
     language, setLanguage,
     resetOnboarding,
@@ -179,8 +104,9 @@ export default function SettingsScreen({ navigation }) {
     dataVersion, dataUpdatedAt, checkDataUpdate,
   } = useAppContext();
 
-  const [colorPickerFor, setColorPickerFor] = useState(null);
-  const [labelForm, setLabelForm] = useState(undefined);
+  const flashedColor = labelDefs.find((d) => d.id === 'lbl_flashed')?.color;
+
+  const [colorPickerFor, setColorPickerFor] = useState(null); // status | 'flashed' | null
   const [updateStatus, setUpdateStatus] = useState(null); // null|'checking'|'up_to_date'|string
 
   async function handleCheckUpdate() {
@@ -198,29 +124,6 @@ export default function SettingsScreen({ navigation }) {
         { text: t('settings.labels.resetAction'), style: 'destructive', onPress: resetLabels },
       ]
     );
-  }
-
-  function confirmDelete(def) {
-    Alert.alert(
-      t('settings.labels.confirmDeleteTitle', { name: def.name }),
-      t('settings.labels.confirmDeleteMsg'),
-      [
-        { text: t('common.cancel'), style: 'cancel' },
-        { text: t('common.delete'), style: 'destructive', onPress: () => deleteLabel(def.id) },
-      ]
-    );
-  }
-
-  function handleSaveLabel(name, color) {
-    if (labelForm === null) {
-      addLabel(name, color);
-    } else {
-      updateLabel(labelForm.id, {
-        ...(labelForm.isDefault ? {} : { name }),
-        color,
-      });
-    }
-    setLabelForm(undefined);
   }
 
   return (
@@ -248,42 +151,22 @@ export default function SettingsScreen({ navigation }) {
         />
       </Section>
 
-      {/* ── Couleurs des statuts ── */}
+      {/* ── Couleurs des statuts + flashés ── */}
       <Section title={t('settings.statusColors.section')}>
-        {ALL_STATUSES.map((status, i) => (
+        {ALL_STATUSES.map((status) => (
           <Row
             key={status}
             label={t(`common.status.${status}`)}
             trailing={<View style={[layout.colorDot, { backgroundColor: statusColors[status] }]} />}
             onPress={() => setColorPickerFor(status)}
-            last={i === ALL_STATUSES.length - 1}
           />
         ))}
-      </Section>
-
-      {/* ── Mes étiquettes ── */}
-      <Section title={t('settings.labels.section')}>
-        {labelDefs.length === 0 && (
-          <Row label={t('settings.labels.noLabel')} hint={t('settings.labels.noLabelHint')} />
-        )}
-        {labelDefs.map((def) => (
-          <Row key={def.id} last={false}>
-            <View style={layout.labelRow}>
-              <View style={[layout.colorDot, { backgroundColor: def.color }]} />
-              <Text style={[layout.labelName, { color: theme.textPrimary }]} numberOfLines={1}>{def.name}</Text>
-              {def.isDefault && <Text style={[layout.defaultBadge, { color: theme.textSecondary }]}>{t('settings.labels.default')}</Text>}
-              <TouchableOpacity onPress={() => setLabelForm(def)} style={layout.labelActionBtn} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
-                <Text style={[layout.labelActionIcon, { color: theme.textSecondary }]}>✎</Text>
-              </TouchableOpacity>
-              {!def.isDefault && (
-                <TouchableOpacity onPress={() => confirmDelete(def)} style={layout.labelActionBtn} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
-                  <Text style={[layout.labelActionIcon, { color: theme.destructive }]}>✕</Text>
-                </TouchableOpacity>
-              )}
-            </View>
-          </Row>
-        ))}
-        <Row label={t('settings.labels.createLabel')} onPress={() => setLabelForm(null)} action last />
+        <Row
+          label={t('settings.statusColors.flashed')}
+          trailing={<View style={[layout.colorDot, { backgroundColor: flashedColor }]} />}
+          onPress={() => setColorPickerFor('flashed')}
+          last
+        />
       </Section>
 
       {/* ── Navigation ── */}
@@ -386,17 +269,14 @@ export default function SettingsScreen({ navigation }) {
       {/* ── Modaux ── */}
       {colorPickerFor !== null && (
         <ColorPickerModal
-          title={t('settings.statusColors.colorFor', { status: t(`common.status.${colorPickerFor}`) })}
-          value={statusColors[colorPickerFor]}
-          onSelect={(color) => setStatusColor(colorPickerFor, color)}
+          title={colorPickerFor === 'flashed'
+            ? t('settings.statusColors.colorForFlashed')
+            : t('settings.statusColors.colorFor', { status: t(`common.status.${colorPickerFor}`) })}
+          value={colorPickerFor === 'flashed' ? flashedColor : statusColors[colorPickerFor]}
+          onSelect={(color) => colorPickerFor === 'flashed'
+            ? setFlashedColor(color)
+            : setStatusColor(colorPickerFor, color)}
           onClose={() => setColorPickerFor(null)}
-        />
-      )}
-      {labelForm !== undefined && (
-        <LabelFormModal
-          def={labelForm}
-          onSave={handleSaveLabel}
-          onClose={() => setLabelForm(undefined)}
         />
       )}
     </ScrollView>
@@ -432,13 +312,6 @@ const layout = StyleSheet.create({
   // Dot de couleur
   colorDot: { width: 24, height: 24, borderRadius: 12 },
 
-  // Étiquettes
-  labelRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
-  labelName: { flex: 1, fontSize: 15 },
-  defaultBadge: { fontSize: 12, fontStyle: 'italic' },
-  labelActionBtn: { padding: 2 },
-  labelActionIcon: { fontSize: 16 },
-
   // Segmented (App de cartes)
   segmented: { flexDirection: 'row', gap: 8, marginTop: 12 },
   seg: { borderRadius: 20, paddingHorizontal: 16, paddingVertical: 7 },
@@ -448,20 +321,6 @@ const layout = StyleSheet.create({
   overlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.55)', justifyContent: 'center', padding: 24 },
   colorCard: { borderRadius: 16, padding: 20 },
   colorTitle: { fontSize: 17, fontWeight: '600', marginBottom: 16 },
-
-  // LabelFormModal
-  formOverlay: { flex: 1, justifyContent: 'flex-end', backgroundColor: 'rgba(0,0,0,0.5)' },
-  formCard: { borderTopLeftRadius: 20, borderTopRightRadius: 20, padding: 24, paddingBottom: 40 },
-  formTitle: { fontSize: 18, fontWeight: '700', marginBottom: 16 },
-  formDefaultName: { fontSize: 16, marginBottom: 16 },
-  formInput: { borderRadius: 10, paddingHorizontal: 14, paddingVertical: 11, fontSize: 16, marginBottom: 16 },
-  formLabel: { fontSize: 13, fontWeight: '600', textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 10 },
-  formActions: { flexDirection: 'row', gap: 12, marginTop: 20 },
-  formCancelBtn: { flex: 1, borderRadius: 12, paddingVertical: 13, alignItems: 'center' },
-  formCancelText: { fontSize: 16, fontWeight: '500' },
-  formSaveBtn: { flex: 1, borderRadius: 12, paddingVertical: 13, alignItems: 'center' },
-  formSaveBtnDisabled: { opacity: 0.4 },
-  formSaveText: { fontSize: 16, fontWeight: '600' },
 
   // Palette partagée
   palette: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },

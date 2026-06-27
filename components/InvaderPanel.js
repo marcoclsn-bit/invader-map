@@ -17,12 +17,11 @@ function getStyles(theme) {
 
 // autoCloseOnAction : ferme le panel après chaque action (utilisé en mode navigation Chasse)
 export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClose, autoCloseOnAction = false }) {
-  const { flashed, labelDefs, statusColors, labels, toggleLabel, dataVersion } = useAppContext();
+  const { flashed, statusColors, dataVersion } = useAppContext();
   const { theme } = useTheme();
   const { t } = useTranslation();
   const styles = getStyles(theme);
   const isFlashed = flashed.has(invader.id);
-  const invLabelIds = labels[invader.id] ?? [];
 
   function handleFlash() {
     onToggleFlash(invader.id);
@@ -123,31 +122,6 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
         <Ionicons name="flag-outline" size={13} color={theme.textSecondary} />
         <Text style={styles.reportBtnText}>{t('feedback.status.button')}</Text>
       </TouchableOpacity>
-
-      {labelDefs.filter((d) => !d.system).length > 0 && (
-        <View style={styles.labelSection}>
-          <Text style={styles.labelSectionTitle}>{t('map.panel.labelsTitle')}</Text>
-          <View style={styles.labelChips}>
-            {labelDefs.filter((d) => !d.system).map((def) => {
-              const applied = invLabelIds.includes(def.id);
-              return (
-                <TouchableOpacity
-                  key={def.id}
-                  style={[
-                    styles.labelChip,
-                    applied ? { backgroundColor: def.color } : { borderColor: def.color, borderWidth: 1.5 },
-                  ]}
-                  onPress={() => toggleLabel(invader.id, def.id)}
-                >
-                  <Text style={[styles.labelChipText, applied && styles.labelChipTextActive]}>
-                    {def.name}
-                  </Text>
-                </TouchableOpacity>
-              );
-            })}
-          </View>
-        </View>
-      )}
     </View>
   );
 }
@@ -188,11 +162,5 @@ function makeStyles(t) {
       gap: 6, paddingVertical: 4,
     },
     reportBtnText: { fontSize: 12, color: t.textSecondary, textDecorationLine: 'underline' },
-    labelSection: { marginTop: 16 },
-    labelSectionTitle: { fontSize: 11, fontWeight: '600', color: t.textSecondary, letterSpacing: 0.5, marginBottom: 8 },
-    labelChips: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
-    labelChip: { borderRadius: 20, paddingHorizontal: 12, paddingVertical: 6, backgroundColor: 'transparent' },
-    labelChipText: { fontSize: 13, fontWeight: '500', color: t.textPrimary },
-    labelChipTextActive: { color: '#fff' },
   });
 }

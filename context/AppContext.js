@@ -3,7 +3,7 @@ import { AppState } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Location from 'expo-location';
 import { INVADERS as EMBEDDED_PA, INVADERS_VERSION, INVADERS_UPDATED_AT } from '../data/invaders';
-import { ALL_STATUSES, DEFAULT_LABELS, STATUS_COLOR, DEFAULT_LABEL_DEFS } from '../constants';
+import { ALL_STATUSES, STATUS_COLOR, DEFAULT_LABEL_DEFS } from '../constants';
 import { initInvaderService, loadCityData, onCityUpdate, checkCityForUpdate, getCityIndex, getCityData } from '../services/invaderData';
 import { applyLanguage, LANGUAGE_STORAGE_KEY } from '../i18n';
 import { ENABLED_CITIES, DEFAULT_CITY_CODE, CITIES } from '../cities/registry';
@@ -72,7 +72,6 @@ export function AppProvider({ children }) {
   const [filters, setFilters] = useState({
     statuses: new Set(ALL_STATUSES),
     flashedState: 'all',
-    activeLabels: new Set(),
   });
   const [mapsApp, setMapsApp] = useState(null);
   const [language, setLanguageState] = useState('system');
@@ -227,16 +226,15 @@ export function AppProvider({ children }) {
       if (flashedRaw)       setFlashed(new Set(JSON.parse(flashedRaw)));
       // Migration douce : les IDs sans date gardent flashedAt: null (absents du Map)
       if (flashedDatesRaw)  setFlashedDates(new Map(Object.entries(JSON.parse(flashedDatesRaw))));
-      if (labelsRaw)        setLabels(JSON.parse(labelsRaw));
+      // Étiquettes personnalisées retirées : on ne conserve que les défs système
+      // (lbl_flashed), en réutilisant la couleur éventuellement personnalisée en stockage.
       if (labelDefsRaw) {
         const parsed = JSON.parse(labelDefsRaw);
         const systemDefs = DEFAULT_LABEL_DEFS.filter(d => d.system);
-        const missing = systemDefs.filter(s => !parsed.find(p => p.id === s.id));
-        const systemWithColor = systemDefs
-          .filter(s => parsed.find(p => p.id === s.id))
-          .map(s => ({ ...s, color: parsed.find(p => p.id === s.id).color }));
-        const nonSystem = parsed.filter(p => !p.system);
-        setLabelDefs([...missing, ...systemWithColor, ...nonSystem]);
+        setLabelDefs(systemDefs.map(s => {
+          const stored = parsed.find(p => p.id === s.id);
+          return stored ? { ...s, color: stored.color } : s;
+        }));
       }
       if (statusColorsRaw)   setStatusColorsState(JSON.parse(statusColorsRaw));
       if (colorOverridesRaw) setColorOverrides(JSON.parse(colorOverridesRaw));
@@ -344,48 +342,15 @@ export function AppProvider({ children }) {
       });
   }
 
-  // ─── Étiquettes ──────────────────────────────────────────────────────────────
-
-  function toggleLabel(invId, labelId) {
-    setLabels(prev => {
-      const current = prev[invId] ?? [];
-      const next = current.includes(labelId)
-        ? current.filter(id => id !== labelId)
-        : [...current, labelId];
-      if (next.length === 0) { const { [invId]: _, ...rest } = prev; return rest; }
-      return { ...prev, [invId]: next };
-    });
-  }
-
-  function addLabel(name, color) {
-    setLabelDefs(prev => [...prev, { id: `lbl_${Date.now()}`, name, color, isDefault: false }]);
-  }
-
-  function updateLabel(id, changes) {
-    setLabelDefs(prev => prev.map(d => d.id === id ? { ...d, ...changes } : d));
-  }
-
-  function deleteLabel(id) {
-    setLabelDefs(prev => prev.filter(d => d.id !== id));
-    setLabels(prev => {
-      const next = { ...prev };
-      for (const invId of Object.keys(next)) {
-        next[invId] = next[invId].filter(lId => lId !== id);
-        if (next[invId].length === 0) delete next[invId];
-      }
-      return next;
-    });
-    setFilters(prev => {
-      const activeLabels = new Set(prev.activeLabels);
-      activeLabels.delete(id);
-      return { ...prev, activeLabels };
-    });
-  }
-
   // ─── Couleurs des statuts ─────────────────────────────────────────────────────
 
   function setStatusColor(status, color) {
     setStatusColorsState(prev => ({ ...prev, [status]: color }));
+  }
+
+  // Couleur des Invaders flashés (étiquette système lbl_flashed)
+  function setFlashedColor(color) {
+    setLabelDefs(prev => prev.map(d => d.id === 'lbl_flashed' ? { ...d, color } : d));
   }
 
   // ─── App de cartes ────────────────────────────────────────────────────────────
@@ -417,12 +382,11 @@ export function AppProvider({ children }) {
 
   // ─── Réinitialisation (préserve flashed) ─────────────────────────────────────
 
+  // Réinitialise l'apparence (couleurs de statut + couleur « flashé » + overrides)
   function resetLabels() {
-    setLabels({ ...DEFAULT_LABELS });
     setLabelDefs([...DEFAULT_LABEL_DEFS]);
     setStatusColorsState({ ...STATUS_COLOR });
     setColorOverrides({});
-    setFilters(prev => ({ ...prev, activeLabels: new Set() }));
   }
 
   // Aliases de compatibilité (utilisés par SettingsScreen)
@@ -441,8 +405,7 @@ export function AppProvider({ children }) {
       labels, labelDefs, statusColors, colorOverrides,
       filters, setFilters,
       toggleFlash, bulkFlash, bulkUnflash,
-      toggleLabel, addLabel, updateLabel, deleteLabel,
-      setStatusColor,
+      setStatusColor, setFlashedColor,
       mapsApp, setMapsAppPref,
       language, setLanguage,
       showOnboarding, completeOnboarding, resetOnboarding,
