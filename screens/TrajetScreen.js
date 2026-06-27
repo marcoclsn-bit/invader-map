@@ -17,6 +17,7 @@ import { useAppContext } from '../context/AppContext';
 import { CITIES } from '../cities/registry';
 import InvaderMarker from '../components/InvaderMarker';
 import HeadingCone from '../components/HeadingCone';
+import InvaderPanel from '../components/InvaderPanel';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import { openInstagramTag, openNavigationApp } from '../utils/navigation';
@@ -226,52 +227,6 @@ function RouteInvaderRow({ inv, isFlashed, statusColors, onPress }) {
 
 // ─── Fiche détail d'un Invader du trajet ─────────────────────────────────────
 
-function RouteInvaderDetail({ inv, isFlashed, onToggleFlash, onNavigate, onBack }) {
-  const { statusColors } = useAppContext();
-  const { theme } = useTheme();
-  const { t } = useTranslation();
-  const styles = getStyles(theme);
-  return (
-    <View style={styles.detailPanel}>
-      <View style={styles.detailHeader}>
-        <TouchableOpacity onPress={onBack} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
-          <Text style={styles.backBtn}>{t('route.backToList')}</Text>
-        </TouchableOpacity>
-        <Text style={styles.detailId}>{inv.id}</Text>
-        <View style={{ width: 52 }} />
-      </View>
-      <View style={styles.detailMeta}>
-        <View style={[styles.statusBadge, { backgroundColor: statusColors[inv.status] ?? STATUS_COLOR[inv.status] }]}>
-          <Text style={styles.statusText}>{t(`common.status.${inv.status}`) ?? inv.status}</Text>
-        </View>
-        <Text style={styles.detailPts}>{inv.points} {t('common.pts')}</Text>
-      </View>
-      {inv.hint ? <Text style={styles.hint}>{inv.hint}</Text> : null}
-      <View style={styles.detailActions}>
-        <TouchableOpacity
-          style={[styles.actionBtn, isFlashed && styles.actionBtnActive]}
-          onPress={() => onToggleFlash(inv.id)}
-        >
-          <Text style={[styles.actionBtnText, isFlashed && styles.actionBtnTextActive]}>
-            {isFlashed ? t('common.flashed') : t('common.markFlashed')}
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.actionBtn} onPress={() => onNavigate(inv.lat, inv.lng)}>
-          <Text style={styles.actionBtnText}>{t('common.navigate')}</Text>
-        </TouchableOpacity>
-      </View>
-      <TouchableOpacity
-        style={styles.igBtn}
-        onPress={() => openInstagramTag(inv.id)}
-        activeOpacity={0.7}
-      >
-        <Ionicons name="logo-instagram" size={16} color="#E1306C" />
-        <Text style={styles.igBtnText}>{t('map.panel.instagram')}</Text>
-      </TouchableOpacity>
-    </View>
-  );
-}
-
 // ─── Panneau résultat : compteur + filtre + liste ─────────────────────────────
 
 function RoutePanel({ allInvaders, displayInvaders, flashed, statusColors, showOnlyUnflashed, onToggleFilter, onSelectInvader }) {
@@ -339,7 +294,7 @@ export default function TrajetScreen() {
   const depDebounce = useRef(null);
   const arrDebounce = useRef(null);
 
-  const { invaders, flashed, toggleFlash, labels, labelDefs, colorOverrides, statusColors, mapsApp, setMapsAppPref, currentCityCode } = useAppContext();
+  const { invaders, flashed, toggleFlash, labels, labelDefs, colorOverrides, statusColors, mapsApp, setMapsAppPref, currentCityCode, isChangingCity } = useAppContext();
   const city = CITIES[currentCityCode] ?? CITIES.PA;
   const { theme, isDark } = useTheme();
   const { t } = useTranslation();
@@ -739,6 +694,7 @@ export default function TrajetScreen() {
 
   function selectRouteInvader(inv) {
     setSelectedRouteInv(inv);
+    if (following) setDrifted(true);
     mapRef.current?.animateToRegion(
       { latitude: inv.lat, longitude: inv.lng, latitudeDelta: 0.005, longitudeDelta: 0.005 },
       400
@@ -830,11 +786,12 @@ export default function TrajetScreen() {
               />
             );
           })}
-          <HeadingCone userLocation={userPos} heading={userHeading} />
+          {!isChangingCity && <HeadingCone userLocation={userPos} heading={userHeading} />}
         </MapView>
+        {isChangingCity && <View style={[StyleSheet.absoluteFillObject, styles.cityTransitionOverlay]} />}
 
         {/* ── Carte flottante d'itinéraire (au-dessus de la carte) ── */}
-        {!following && (
+        {!isChangingCity && !following && (
           <View style={[styles.inputCard, { top: insets.top + 8 }]}>
             {!inputCollapsed && (
               <ScrollView
@@ -946,49 +903,53 @@ export default function TrajetScreen() {
           </View>
         )}
 
-        {/* Boutons flottants sur la carte */}
-        {routePolyline && (
-          <View style={styles.mapOverlay} pointerEvents="box-none">
-            {following ? (
-              <TouchableOpacity style={styles.stopBtn} onPress={stopFollowing}>
-                <Ionicons name="stop-circle-outline" size={18} color="#fff" />
-                <Text style={styles.trackBtnText}>{t('route.quit')}</Text>
-              </TouchableOpacity>
-            ) : (
-              <TouchableOpacity style={styles.startBtn} onPress={startFollowing}>
-                <Text style={styles.trackBtnText}>Démarrer</Text>
-              </TouchableOpacity>
-            )}
-            {(!following || drifted) && (
-              <TouchableOpacity style={styles.recenterBtn} onPress={recenter}>
-                <Ionicons name="locate-outline" size={22} color={theme.accent} />
-              </TouchableOpacity>
-            )}
-          </View>
-        )}
+        {/* ── Zone basse : boutons + panel empilés (boutons toujours au-dessus) ── */}
+        {!isChangingCity && <View style={styles.bottomZone} pointerEvents="box-none">
+          {routePolyline && (
+            <View style={styles.overlayRow} pointerEvents="box-none">
+              {following ? (
+                <TouchableOpacity style={styles.stopBtn} onPress={stopFollowing}>
+                  <Ionicons name="stop-circle-outline" size={18} color="#fff" />
+                  <Text style={styles.trackBtnText}>{t('route.quit')}</Text>
+                </TouchableOpacity>
+              ) : (
+                <TouchableOpacity style={styles.startBtn} onPress={startFollowing}>
+                  <Text style={styles.startBtnText}>Démarrer</Text>
+                </TouchableOpacity>
+              )}
+              {(!following || drifted) && (
+                <TouchableOpacity style={styles.recenterBtn} onPress={recenter}>
+                  <Ionicons name="locate-outline" size={22} color={theme.accent} />
+                </TouchableOpacity>
+              )}
+            </View>
+          )}
+          {selectedRouteInv && (
+            <InvaderPanel
+              invader={selectedRouteInv}
+              onToggleFlash={(id) => { toggleFlash(id); }}
+              onNavigate={(lat, lng) => openNavigationApp(mapsApp ?? 'apple', lat, lng)}
+              onClose={() => {
+                setSelectedRouteInv(null);
+                if (following) setDrifted(false);
+              }}
+              autoCloseOnAction={following}
+            />
+          )}
+        </View>}
         </View>
 
-        {/* ── Panneau de résultat (masqué en navigation) ── */}
-        {!following && routeInvaders !== null && displayInvaders !== null && (
-          selectedRouteInv ? (
-            <RouteInvaderDetail
-              inv={selectedRouteInv}
-              isFlashed={flashed.has(selectedRouteInv.id)}
-              onToggleFlash={toggleFlash}
-              onNavigate={handleNavigate}
-              onBack={() => setSelectedRouteInv(null)}
-            />
-          ) : (
-            <RoutePanel
-              allInvaders={routeInvaders}
-              displayInvaders={displayInvaders}
-              flashed={flashed}
-              statusColors={statusColors}
-              showOnlyUnflashed={showOnlyUnflashed}
-              onToggleFilter={setShowOnlyUnflashed}
-              onSelectInvader={selectRouteInvader}
-            />
-          )
+        {/* ── Panneau de résultat (masqué en navigation ou quand une fiche est ouverte) ── */}
+        {!isChangingCity && !following && !selectedRouteInv && routeInvaders !== null && displayInvaders !== null && (
+          <RoutePanel
+            allInvaders={routeInvaders}
+            displayInvaders={displayInvaders}
+            flashed={flashed}
+            statusColors={statusColors}
+            showOnlyUnflashed={showOnlyUnflashed}
+            onToggleFilter={setShowOnlyUnflashed}
+            onSelectInvader={selectRouteInvader}
+          />
         )}
 
       </View>
@@ -1062,6 +1023,7 @@ function makeStyles(t) {
     // ── Carte ───────────────────────────────────────────────────────────────
     mapContainer: { flex: 1 },
     map: { flex: 1 },
+    cityTransitionOverlay: { backgroundColor: t.bg },
     pinDep: {
       width: 34, height: 34, borderRadius: 17,
       backgroundColor: t.accent, alignItems: 'center', justifyContent: 'center',
@@ -1070,14 +1032,17 @@ function makeStyles(t) {
     },
     pinArr: {
       width: 34, height: 34, borderRadius: 17,
-      backgroundColor: t.textPrimary, alignItems: 'center', justifyContent: 'center',
+      backgroundColor: '#333', alignItems: 'center', justifyContent: 'center',
       borderWidth: 2, borderColor: '#fff',
       shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.3, shadowRadius: 3,
     },
 
-    mapOverlay: {
-      position: 'absolute', bottom: 12, left: 12, right: 12,
+    bottomZone: {
+      position: 'absolute', bottom: 0, left: 0, right: 0,
+    },
+    overlayRow: {
       flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end',
+      paddingHorizontal: 12, paddingBottom: 12, paddingTop: 8,
     },
     startBtn: {
       flexDirection: 'row', alignItems: 'center', gap: 6,
@@ -1094,6 +1059,7 @@ function makeStyles(t) {
       shadowOpacity: 0.2, shadowRadius: 4, elevation: 4,
     },
     trackBtnText: { color: t.textPrimary, fontWeight: '600', fontSize: 14 },
+    startBtnText: { color: '#000', fontWeight: '600', fontSize: 14 },
     recenterBtn: {
       width: 42, height: 42, borderRadius: 21,
       backgroundColor: t.surface, alignItems: 'center', justifyContent: 'center',
@@ -1128,34 +1094,5 @@ function makeStyles(t) {
 
     separator: { height: StyleSheet.hairlineWidth, backgroundColor: t.border, marginLeft: 16 },
 
-    // ── Fiche détail ─────────────────────────────────────────────────────────
-    detailPanel: {
-      backgroundColor: t.surface,
-      borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: t.border,
-      paddingHorizontal: 20, paddingTop: 16, paddingBottom: 32,
-    },
-    detailHeader: {
-      flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14,
-    },
-    backBtn: { fontSize: 16, color: t.link, fontWeight: '500' },
-    detailId: { ...typography.arcadeTitle, color: t.textPrimary },
-    detailMeta: { flexDirection: 'row', alignItems: 'center', gap: 12, marginBottom: 10 },
-    statusBadge: { borderRadius: 6, paddingHorizontal: 10, paddingVertical: 4 },
-    statusText: { color: '#fff', fontWeight: '600', fontSize: 13 },
-    detailPts: { fontSize: 15, color: t.textSecondary },
-    hint: { fontSize: 14, color: t.textSecondary, fontStyle: 'italic', marginBottom: 4 },
-    detailActions: { flexDirection: 'row', gap: 10, marginTop: 14 },
-    igBtn: {
-      marginTop: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
-      gap: 7, paddingVertical: 8, borderRadius: 8, borderWidth: 1, borderColor: '#E1306C',
-    },
-    igBtnText: { fontSize: 14, fontWeight: '500', color: '#E1306C' },
-    actionBtn: {
-      flex: 1, borderRadius: 8, paddingHorizontal: 14, paddingVertical: 8,
-      backgroundColor: t.surfaceHigh, alignItems: 'center',
-    },
-    actionBtnActive: { backgroundColor: t.accent },
-    actionBtnText: { fontSize: 14, fontWeight: '500', color: t.textPrimary },
-    actionBtnTextActive: { color: t.bg },
   });
 }

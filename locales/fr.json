@@ -50,7 +50,12 @@
       "navigate": "Y aller",
       "instagram": "Voir sur Instagram",
       "labelsTitle": "ÉTIQUETTES"
-    }
+    },
+    "loading": {
+      "progress": "CHARGEMENT ({{pct}}%)"
+    },
+    "loadingTitle": "Carte en cours de chargement",
+    "loadingBody": "Le changement de ville et les filtres seront disponibles dans {{countdown}}."
   },
   "list": {
     "title": "Invaders Paris",
@@ -136,7 +141,8 @@
     "villeCard": "{{flashed}}/{{total}} · {{pct}} % · {{pts}} pts",
     "villeCardTotal": "{{count}} invaders",
     "viewByDistrict": "Voir par arrondissement",
-    "paris": "Paris"
+    "paris": "Paris",
+    "loadingBanner": "Chargement en cours · {{countdown}}"
   },
   "onboarding": {
     "skip": "Passer",

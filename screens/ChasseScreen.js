@@ -193,7 +193,7 @@ export default function ChasseScreen({ route }) {
   const debounce = useRef(null);
   const locationSub = useRef(null);
 
-  const { invaders, flashed, statusColors, currentCityCode, toggleFlash, mapsApp } = useAppContext();
+  const { invaders, flashed, statusColors, currentCityCode, toggleFlash, mapsApp, isChangingCity } = useAppContext();
   const city = CITIES[currentCityCode] ?? CITIES.PA;
   const { theme, isDark } = useTheme();
   const { t } = useTranslation();
@@ -474,7 +474,10 @@ export default function ChasseScreen({ route }) {
   }
 
   function selectInvader(inv) {
-    setSelectedInv(prev => (prev?.id === inv.id ? null : inv));
+    const deselect = selectedInv?.id === inv.id;
+    setSelectedInv(deselect ? null : inv);
+    // En mode navigation : pause la caméra pour laisser l'utilisateur interagir avec le panel
+    if (following && !deselect) setDrifted(true);
     mapRef.current?.animateToRegion(
       { latitude: inv.lat, longitude: inv.lng, latitudeDelta: 0.004, longitudeDelta: 0.004 },
       400
@@ -533,21 +536,12 @@ export default function ChasseScreen({ route }) {
                 ))}
               </>
             )}
-            <HeadingCone userLocation={userPos} heading={userHeading} />
+            {!isChangingCity && <HeadingCone userLocation={userPos} heading={userHeading} />}
           </MapView>
-
-          {/* ── Panel invader sélectionné ── */}
-          {selectedInv && (
-            <InvaderPanel
-              invader={selectedInv}
-              onToggleFlash={(id) => { toggleFlash(id); }}
-              onNavigate={(lat, lng) => openNavigationApp(mapsApp ?? 'apple', lat, lng)}
-              onClose={() => setSelectedInv(null)}
-            />
-          )}
+          {isChangingCity && <View style={[StyleSheet.absoluteFillObject, styles.cityTransitionOverlay]} />}
 
           {/* ── Carte flottante formulaire (masquée en navigation) ── */}
-          {!following && (
+          {!isChangingCity && !following && (
             <View style={[styles.inputCard, { top: insets.top + 8 }]}>
               {!inputCollapsed && (
                 <ScrollView
@@ -721,30 +715,45 @@ export default function ChasseScreen({ route }) {
             </View>
           )}
 
-          {/* ── Boutons flottants (Démarrer / Quitter / Recentrer) ── */}
-          {result && (
-            <View style={styles.mapOverlay} pointerEvents="box-none">
-              {following ? (
-                <TouchableOpacity style={styles.stopBtn} onPress={stopFollowing}>
-                  <Ionicons name="stop-circle-outline" size={18} color="#fff" />
-                  <Text style={styles.trackBtnText}>{t('hunt.quit')}</Text>
-                </TouchableOpacity>
-              ) : (
-                <TouchableOpacity style={styles.startBtn} onPress={startFollowing}>
-                  <Text style={styles.trackBtnText}>{t('hunt.start')}</Text>
-                </TouchableOpacity>
-              )}
-              {(!following || drifted) && (
-                <TouchableOpacity style={styles.recenterBtn} onPress={recenter}>
-                  <Ionicons name="locate-outline" size={22} color={theme.accent} />
-                </TouchableOpacity>
-              )}
-            </View>
-          )}
+          {/* ── Zone basse : boutons + panel empilés (boutons toujours au-dessus) ── */}
+          {!isChangingCity && <View style={styles.bottomZone} pointerEvents="box-none">
+
+            {result && (
+              <View style={styles.overlayRow} pointerEvents="box-none">
+                {following ? (
+                  <TouchableOpacity style={styles.stopBtn} onPress={stopFollowing}>
+                    <Ionicons name="stop-circle-outline" size={18} color="#fff" />
+                    <Text style={styles.trackBtnText}>{t('hunt.quit')}</Text>
+                  </TouchableOpacity>
+                ) : (
+                  <TouchableOpacity style={styles.startBtn} onPress={startFollowing}>
+                    <Text style={styles.startBtnText}>{t('hunt.start')}</Text>
+                  </TouchableOpacity>
+                )}
+                {(!following || drifted) && (
+                  <TouchableOpacity style={styles.recenterBtn} onPress={recenter}>
+                    <Ionicons name="locate-outline" size={22} color={theme.accent} />
+                  </TouchableOpacity>
+                )}
+              </View>
+            )}
+            {selectedInv && (
+              <InvaderPanel
+                invader={selectedInv}
+                onToggleFlash={(id) => { toggleFlash(id); }}
+                onNavigate={(lat, lng) => openNavigationApp(mapsApp ?? 'apple', lat, lng)}
+                onClose={() => {
+                  setSelectedInv(null);
+                  if (following) setDrifted(false);
+                }}
+                autoCloseOnAction={following}
+              />
+            )}
+          </View>}
         </View>
 
         {/* ── Panneau résultat (masqué en navigation ET quand le formulaire est ouvert) ── */}
-        {result && !following && inputCollapsed && (
+        {!isChangingCity && result && !following && inputCollapsed && (
           <View style={styles.resultPanel}>
             <View style={styles.resultHeader}>
               <Text style={styles.resultSummary}>
@@ -782,6 +791,7 @@ function makeStyles(t) {
     container: { flex: 1 },
     mapContainer: { flex: 1 },
     map: { flex: 1 },
+    cityTransitionOverlay: { backgroundColor: t.bg },
 
     // ── Carte flottante ──────────────────────────────────────────────────────
     inputCard: {
@@ -861,10 +871,13 @@ function makeStyles(t) {
     },
     arFilterText: { flex: 1, fontSize: 12, color: t.accent, fontWeight: '500' },
 
-    // ── Boutons navigation ───────────────────────────────────────────────────
-    mapOverlay: {
-      position: 'absolute', bottom: 12, left: 12, right: 12,
+    // ── Zone basse : conteneur qui empile boutons puis panel ────────────────
+    bottomZone: {
+      position: 'absolute', bottom: 0, left: 0, right: 0,
+    },
+    overlayRow: {
       flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end',
+      paddingHorizontal: 12, paddingBottom: 12, paddingTop: 8,
     },
     startBtn: {
       flexDirection: 'row', alignItems: 'center', gap: 6,
@@ -879,6 +892,7 @@ function makeStyles(t) {
       shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.2, shadowRadius: 4, elevation: 4,
     },
     trackBtnText: { color: t.textPrimary, fontWeight: '600', fontSize: 14 },
+    startBtnText: { color: '#000', fontWeight: '600', fontSize: 14 },
     recenterBtn: {
       width: 42, height: 42, borderRadius: 21,
       backgroundColor: t.surface, alignItems: 'center', justifyContent: 'center',

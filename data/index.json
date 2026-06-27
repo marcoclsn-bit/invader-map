@@ -1,6 +1,6 @@
 {
-  "version": 2,
-  "updatedAt": "2026-06-23",
+  "version": 3,
+  "updatedAt": "2026-06-27",
   "cities": [
     {
       "code": "AIX",
@@ -224,7 +224,7 @@
     },
     {
       "code": "CAZ",
-      "name": "CAZ",
+      "name": "Côte d'Azur",
       "count": 40,
       "version": 2,
       "center": {
@@ -234,7 +234,7 @@
     },
     {
       "code": "CCU",
-      "name": "CCU",
+      "name": "Cancún",
       "count": 3,
       "version": 2,
       "center": {
@@ -254,7 +254,7 @@
     },
     {
       "code": "CLR",
-      "name": "CLR",
+      "name": "Clermont-Ferrand",
       "count": 47,
       "version": 2,
       "center": {
@@ -290,7 +290,7 @@
     },
     {
       "code": "DJBA",
-      "name": "DJBA",
+      "name": "Djerba",
       "count": 58,
       "version": 2,
       "center": {
@@ -300,7 +300,7 @@
     },
     {
       "code": "DJN",
-      "name": "DJN",
+      "name": "Daejeon",
       "count": 22,
       "version": 3,
       "center": {
@@ -320,7 +320,7 @@
     },
     {
       "code": "FAO",
-      "name": "FAO",
+      "name": "Faro",
       "count": 4,
       "version": 2,
       "center": {
@@ -330,7 +330,7 @@
     },
     {
       "code": "FKF",
-      "name": "FKF",
+      "name": "Francfort",
       "count": 14,
       "version": 2,
       "center": {
@@ -340,7 +340,7 @@
     },
     {
       "code": "FRQ",
-      "name": "FRQ",
+      "name": "Forcalquier",
       "count": 4,
       "version": 3,
       "center": {
@@ -350,7 +350,7 @@
     },
     {
       "code": "FTBL",
-      "name": "FTBL",
+      "name": "Fontainebleau",
       "count": 45,
       "version": 2,
       "center": {
@@ -392,7 +392,7 @@
     },
     {
       "code": "GRU",
-      "name": "Guarulhos",
+      "name": "Grude",
       "count": 3,
       "version": 3,
       "center": {
@@ -460,7 +460,7 @@
     },
     {
       "code": "KLN",
-      "name": "KLN",
+      "name": "Cologne",
       "count": 27,
       "version": 2,
       "center": {
@@ -486,7 +486,7 @@
     },
     {
       "code": "LBR",
-      "name": "Libreville",
+      "name": "Luberon",
       "count": 8,
       "version": 3,
       "center": {
@@ -522,7 +522,7 @@
     },
     {
       "code": "LIL",
-      "name": "LIL",
+      "name": "Lille",
       "count": 6,
       "version": 2,
       "center": {
@@ -622,7 +622,7 @@
     },
     {
       "code": "MEN",
-      "name": "Menton",
+      "name": "Minorque",
       "count": 5,
       "version": 3,
       "center": {
@@ -696,7 +696,7 @@
     },
     {
       "code": "MRAK",
-      "name": "MRAK",
+      "name": "Marrakech",
       "count": 4,
       "version": 2,
       "center": {
@@ -706,7 +706,7 @@
     },
     {
       "code": "MTB",
-      "name": "Montbéliard",
+      "name": "Montauban",
       "count": 11,
       "version": 3,
       "center": {
@@ -732,7 +732,7 @@
     },
     {
       "code": "NA",
-      "name": "Naples",
+      "name": "Nantes",
       "count": 3,
       "version": 3,
       "center": {
@@ -768,7 +768,7 @@
     },
     {
       "code": "NOO",
-      "name": "La Nouvelle-Orléans",
+      "name": "Noordwijk",
       "count": 10,
       "version": 3,
       "center": {
@@ -842,7 +842,7 @@
     },
     {
       "code": "POTI",
-      "name": "POTI",
+      "name": "Potosí",
       "count": 52,
       "version": 2,
       "center": {
@@ -868,7 +868,7 @@
     },
     {
       "code": "PRT",
-      "name": "PRT",
+      "name": "Perth",
       "count": 26,
       "version": 2,
       "center": {
@@ -878,7 +878,7 @@
     },
     {
       "code": "RA",
-      "name": "Roubaix",
+      "name": "Ravenne",
       "count": 40,
       "version": 3,
       "center": {
@@ -930,7 +930,7 @@
     },
     {
       "code": "RN",
-      "name": "RN",
+      "name": "Rennes",
       "count": 4,
       "version": 2,
       "center": {
@@ -988,7 +988,7 @@
     },
     {
       "code": "SL",
-      "name": "Sarajevo",
+      "name": "Séoul",
       "count": 14,
       "version": 2,
       "center": {
@@ -1030,7 +1030,7 @@
     },
     {
       "code": "TLS",
-      "name": "TLS",
+      "name": "Toulouse",
       "count": 11,
       "version": 2,
       "center": {
@@ -1040,7 +1040,7 @@
     },
     {
       "code": "VLMO",
-      "name": "Villemomble",
+      "name": "Valmorel",
       "count": 3,
       "version": 3,
       "center": {
@@ -1050,7 +1050,7 @@
     },
     {
       "code": "VRN",
-      "name": "VRN",
+      "name": "Varanasi",
       "count": 12,
       "version": 2,
       "center": {
@@ -1060,7 +1060,7 @@
     },
     {
       "code": "VRS",
-      "name": "Varsovie",
+      "name": "Versailles",
       "count": 42,
       "version": 3,
       "center": {
@@ -1070,7 +1070,7 @@
     },
     {
       "code": "VSB",
-      "name": "Strasbourg",
+      "name": "Visby",
       "count": 3,
       "version": 3,
       "center": {

@@ -1,5 +1,5 @@
-import { useMemo, useState } from 'react';
-import { StyleSheet, View, Text, FlatList, TouchableOpacity } from 'react-native';
+import { useMemo, useState, useEffect, Fragment } from 'react';
+import { StyleSheet, View, Text, FlatList, ScrollView, TouchableOpacity } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
@@ -8,6 +8,14 @@ import { CITIES, ENABLED_CITIES } from '../cities/registry';
 import { INVADER_DISTRICT, arLabel, ARRONDISSEMENT_CENTERS } from '../utils/arrondissement';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
+
+function formatCountdown(s) {
+  if (s <= 0) return '0 s';
+  const m = Math.floor(s / 60);
+  const sec = s % 60;
+  if (m === 0) return `${sec} s`;
+  return `${m} min ${sec < 10 ? '0' : ''}${sec} s`;
+}
 
 // ─── Cache de styles thémés ───────────────────────────────────────────────────
 let _styleCache = null;
@@ -94,11 +102,31 @@ function ArrondissementsView({ stats, insets, onBack, onSettings, onHuntAr, them
 
 export default function PalmèresScreen({ navigation }) {
   const insets = useSafeAreaInsets();
-  const { invaders, flashed, currentCityCode, setCurrentCity, cityIndex } = useAppContext();
+  const { invaders, flashed, currentCityCode, setCurrentCity, cityIndex, isChangingCity, mapLockUntil } = useAppContext();
   const { theme } = useTheme();
   const { t } = useTranslation();
   const styles = getStyles(theme);
   const [drillVille, setDrillVille] = useState(null);
+
+  // Ville active en premier, puis autres par ordre alphabétique
+  const sortedCities = useMemo(() => {
+    const active = ENABLED_CITIES.filter(c => c.code === currentCityCode);
+    const others = ENABLED_CITIES
+      .filter(c => c.code !== currentCityCode)
+      .sort((a, b) => a.name.localeCompare(b.name));
+    return [...active, ...others];
+  }, [currentCityCode]);
+
+  // Countdown de verrouillage
+  const [now, setNow] = useState(() => Date.now());
+  const isLocked = now < mapLockUntil;
+  const remainingSeconds = Math.max(0, Math.ceil((mapLockUntil - now) / 1000));
+
+  useEffect(() => {
+    if (!isLocked) return;
+    const id = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(id);
+  }, [isLocked, mapLockUntil]);
 
   // Les détruits sont exclus : on ne peut pas les flasher
   const flashable = useMemo(
@@ -175,6 +203,8 @@ export default function PalmèresScreen({ navigation }) {
         </TouchableOpacity>
       </View>
 
+      <ScrollView style={{ flex: 1 }} contentContainerStyle={{ paddingBottom: insets.bottom + 20 }}>
+
       <View style={styles.summaryCard}>
         <Text style={styles.summaryLabel}>
           {t('palmares.flashedSummary', { flashed: stats.flashed, total: stats.total, pts: stats.flashedPts })}
@@ -183,16 +213,34 @@ export default function PalmèresScreen({ navigation }) {
         <Text style={styles.summaryPct}>{stats.pct.toFixed(1)} %</Text>
       </View>
 
-      {ENABLED_CITIES.map(c => {
+      {sortedCities.map((c, idx) => {
         const isActive = c.code === currentCityCode;
         const cityInfo = cityIndex.find(ci => ci.code === c.code);
         const cityTotal = cityInfo?.count ?? null;
         return (
-          <View key={c.code} style={styles.villeBlock}>
+          <Fragment key={c.code}>
+            {/* Bannière entre la ville active (idx 0) et les autres (idx 1+) */}
+            {idx === 1 && isLocked && (
+              <View style={[styles.lockBanner, { backgroundColor: theme.surface, borderColor: theme.border }]}>
+                <Ionicons name="time-outline" size={14} color={theme.textSecondary} />
+                <Text style={[styles.lockBannerText, { color: theme.textSecondary }]}>
+                  {t('palmares.loadingBanner', { countdown: formatCountdown(remainingSeconds) })}
+                </Text>
+              </View>
+            )}
+          <View style={styles.villeBlock}>
             <TouchableOpacity
-              style={[styles.villeCard, isActive && { borderColor: theme.accent, borderWidth: 1.5 }]}
-              onPress={() => setCurrentCity(c.code)}
-              activeOpacity={0.7}
+              style={[
+                styles.villeCard,
+                isActive && { borderColor: theme.accent, borderWidth: 1.5 },
+                !isActive && isLocked && { opacity: 0.5 },
+              ]}
+              onPress={() => {
+                if (isChangingCity || isActive || isLocked) return;
+                setCurrentCity(c.code);
+                navigation.navigate('Carte');
+              }}
+              activeOpacity={!isActive && isLocked ? 1 : 0.7}
             >
               <View style={styles.villeLeft}>
                 <View style={[styles.villeIcon, isActive && { backgroundColor: theme.accent }]}>
@@ -230,8 +278,11 @@ export default function PalmèresScreen({ navigation }) {
               </TouchableOpacity>
             )}
           </View>
+          </Fragment>
         );
       })}
+
+      </ScrollView>
     </View>
   );
 }
@@ -294,5 +345,12 @@ function makeStyles(t) {
     arStat: { fontSize: 12, color: t.textSecondary, marginTop: 6 },
 
     separator: { height: StyleSheet.hairlineWidth, backgroundColor: t.border },
+
+    lockBanner: {
+      flexDirection: 'row', alignItems: 'center', gap: 6,
+      paddingHorizontal: 20, paddingVertical: 10,
+      borderBottomWidth: StyleSheet.hairlineWidth,
+    },
+    lockBannerText: { fontSize: 13 },
   });
 }

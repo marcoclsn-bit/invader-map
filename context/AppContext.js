@@ -1,9 +1,10 @@
 import { createContext, useContext, useState, useEffect, useRef } from 'react';
+import { AppState } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Location from 'expo-location';
 import { INVADERS as EMBEDDED_PA, INVADERS_VERSION, INVADERS_UPDATED_AT } from '../data/invaders';
 import { ALL_STATUSES, DEFAULT_LABELS, STATUS_COLOR, DEFAULT_LABEL_DEFS } from '../constants';
-import { initInvaderService, loadCityData, onCityUpdate, checkCityForUpdate, getCityIndex } from '../services/invaderData';
+import { initInvaderService, loadCityData, onCityUpdate, checkCityForUpdate, getCityIndex, getCityData } from '../services/invaderData';
 import { applyLanguage, LANGUAGE_STORAGE_KEY } from '../i18n';
 import { ENABLED_CITIES, DEFAULT_CITY_CODE, CITIES } from '../cities/registry';
 
@@ -23,11 +24,16 @@ function _nearestCity(lat, lng) {
   }, { city: ENABLED_CITIES[0], d2: Infinity }).city;
 }
 
+// Débit estimé : nombre d'Invaders rendus par seconde sur le pont JS→natif.
+// Paris (1528 inv) → ceil(1528 / 16) = 96 s ≈ 1 min 36 s.
+const INVADERS_PER_SECOND = 16;
+
 export function AppProvider({ children }) {
   // ─── Ville courante ───────────────────────────────────────────────────────────
   const [currentCityCode, setCurrentCityCode] = useState(DEFAULT_CITY_CODE);
   const currentCityCodeRef   = useRef(DEFAULT_CITY_CODE);
   const changingCityTimer    = useRef(null);
+  const cityChangeLock       = useRef(false); // empêche deux changements simultanés
 
   // Index des villes (liste légère depuis index.json, initialisée depuis le registre)
   const [cityIndex, setCityIndex] = useState(
@@ -46,6 +52,15 @@ export function AppProvider({ children }) {
   const [cityVersion,     setCityVersion]     = useState(INVADERS_VERSION);
   const [cityUpdatedAt,   setCityUpdatedAt]   = useState(INVADERS_UPDATED_AT);
   const [isChangingCity,  setIsChangingCity]  = useState(false);
+  // Ville cible pendant la transition (affichée dans l'overlay avant le commit)
+  const [pendingCityCode, setPendingCityCode] = useState(null);
+  // Timestamp (ms) jusqu'auquel le changement de ville est verrouillé.
+  // Initialisé pour Paris au démarrage : ceil(1528 / 16) = 96 s.
+  // mapLockDuration = durée originale du verrou courant (ne change PAS lors d'une extension background).
+  // Permet de calculer la progression : 1 - remainingMs / mapLockDuration.
+  const _initialLockDuration = Math.ceil(EMBEDDED_PA.length / INVADERS_PER_SECOND) * 1000;
+  const [mapLockUntil,    setMapLockUntil]    = useState(() => Date.now() + _initialLockDuration);
+  const [mapLockDuration, setMapLockDuration] = useState(_initialLockDuration);
 
   const [flashed, setFlashed] = useState(new Set());
   const [labels, setLabels] = useState({});
@@ -84,12 +99,9 @@ export function AppProvider({ children }) {
         setInvaders(data);
         setCityVersion(version);
         setCityUpdatedAt(updatedAt);
-        // Données arrivées → masque l'overlay de transition
-        setIsChangingCity(false);
-        if (changingCityTimer.current) {
-          clearTimeout(changingCityTimer.current);
-          changingCityTimer.current = null;
-        }
+        // NE PAS libérer le verrou ici : _fetchCity peut résoudre en <1s depuis le CDN,
+        // ce qui déclencherait RAF + animateToRegion simultanément → crash MKMapView.
+        // Le verrou est exclusivement géré par l'ANIM_GUARD dans setCurrentCity.
       }
       setCityIndex(prev => prev.map(c =>
         c.code === cityCode ? { ...c, count: data.length, version } : c
@@ -100,45 +112,91 @@ export function AppProvider({ children }) {
   }, []);
 
   // ─── Changement de ville ──────────────────────────────────────────────────────
+  function _releaseCityLock() {
+    cityChangeLock.current = false;
+    setIsChangingCity(false);
+    setPendingCityCode(null);
+    if (changingCityTimer.current) {
+      clearTimeout(changingCityTimer.current);
+      changingCityTimer.current = null;
+    }
+  }
+
   function setCurrentCity(code) {
     if (code === currentCityCodeRef.current) return;
+    if (cityChangeLock.current) return;
+    cityChangeLock.current = true;
     currentCityCodeRef.current = code;
-    setCurrentCityCode(code);
     AsyncStorage.setItem('@invader_current_city', code);
 
-    // Overlay de transition : masque le remontage natif de la MapView
+    // Phase 1 : overlay (nom de la ville cible), supprime les marqueurs de l'ancienne ville
     setIsChangingCity(true);
+    setPendingCityCode(code);
     setInvaders([]);
 
-    // Fallback : masque l'overlay après 8 s si le réseau est trop lent / échoue
+    // Fallback de sécurité (10 s)
     if (changingCityTimer.current) clearTimeout(changingCityTimer.current);
-    changingCityTimer.current = setTimeout(() => {
-      setIsChangingCity(false);
-      changingCityTimer.current = null;
-    }, 8000);
+    changingCityTimer.current = setTimeout(() => _releaseCityLock(), 10000);
 
-    loadCityData(code).then(data => {
+    // Déclenche le chargement cache + fetch réseau en arrière-plan
+    // onCityUpdate mettra à jour invaders si une version réseau plus fraîche arrive
+    loadCityData(code).catch(() => {});
+
+    // Phase 2 : 500 ms de drain (le RAF est terminé quand l'utilisateur peut switcher,
+    // mais il reste des suppressions de marqueurs dans le pont → on laisse le temps de drainer)
+    // puis commit atomique avec les données les plus fraîches disponibles
+    setTimeout(() => {
+      if (!cityChangeLock.current) return; // fallback de sécurité déjà déclenché
       if (currentCityCodeRef.current !== code) return;
-      if (data) {
-        setInvaders(data.invaders);
-        setCityVersion(data.version);
-        setCityUpdatedAt(data.updatedAt);
-        // Données en cache : overlay masqué immédiatement
-        setIsChangingCity(false);
-        if (changingCityTimer.current) {
-          clearTimeout(changingCityTimer.current);
-          changingCityTimer.current = null;
+
+      // getCityData() retourne toujours la version la plus récente en mémoire
+      // (soit le cache, soit les données réseau si _fetchCity a déjà résolu)
+      const latest = getCityData(code);
+      setCurrentCityCode(code);        // city.center → useEffect va appeler animateToRegion
+      setInvaders(latest?.invaders ?? []);
+      if (latest) {
+        setCityVersion(latest.version);
+        setCityUpdatedAt(latest.updatedAt);
+      }
+
+      if (changingCityTimer.current) clearTimeout(changingCityTimer.current);
+      changingCityTimer.current = setTimeout(() => {
+        _releaseCityLock();
+        // Verrouille le changement de ville pendant le temps de chargement estimé.
+        // On utilise le nombre réel d'Invaders si déjà en mémoire, sinon cityIndex, sinon 100.
+        const count = getCityData(code)?.invaders?.length
+          ?? cityIndex.find(c => c.code === code)?.count
+          ?? 100;
+        const lockMs = Math.ceil(count / INVADERS_PER_SECOND) * 1000;
+        setMapLockDuration(lockMs);
+        setMapLockUntil(Date.now() + lockMs);
+      }, 500);
+    }, 500);
+  }
+
+  // ─── Pause du timer quand l'app passe en arrière-plan ───────────────────────
+  // Quand l'app revient au premier plan, on ajoute le temps écoulé en arrière-plan
+  // à mapLockUntil pour que le timer ne s'écoule pas pendant que les RAF sont gelés.
+  // À la fermeture complète, AppProvider se démonte → mapLockUntil repart de 0 au relancement.
+  useEffect(() => {
+    let backgroundedAt = null;
+
+    const sub = AppState.addEventListener('change', (nextState) => {
+      if (nextState !== 'active') {
+        // App en arrière-plan ou inactive : mémoriser l'heure
+        if (backgroundedAt === null) backgroundedAt = Date.now();
+      } else {
+        // Retour au premier plan
+        if (backgroundedAt !== null) {
+          const elapsed = Date.now() - backgroundedAt;
+          backgroundedAt = null;
+          setMapLockUntil(prev => (prev > Date.now() ? prev + elapsed : prev));
         }
       }
-      // Pas de cache → overlay masqué par onCityUpdate quand le fetch réseau arrive
-    }).catch(() => {
-      setIsChangingCity(false);
-      if (changingCityTimer.current) {
-        clearTimeout(changingCityTimer.current);
-        changingCityTimer.current = null;
-      }
     });
-  }
+
+    return () => sub.remove();
+  }, []);
 
   // ─── Vérification manuelle (Réglages) ────────────────────────────────────────
   async function checkDataUpdate() {
@@ -200,11 +258,19 @@ export function AppProvider({ children }) {
         currentCityCodeRef.current = cityToLoad;
         setCurrentCityCode(cityToLoad);
         setInvaders([]);
+        // Verrou provisoire (100 inv = ~7 s) en attendant le nombre réel.
+        const provisionalMs = Math.ceil(100 / INVADERS_PER_SECOND) * 1000;
+        setMapLockDuration(provisionalMs);
+        setMapLockUntil(Date.now() + provisionalMs);
         loadCityData(cityToLoad).then(data => {
           if (data && currentCityCodeRef.current === cityToLoad) {
             setInvaders(data.invaders);
             setCityVersion(data.version);
             setCityUpdatedAt(data.updatedAt);
+            // Maintenant qu'on connaît le nombre exact, on corrige le verrou.
+            const realMs = Math.ceil(data.invaders.length / INVADERS_PER_SECOND) * 1000;
+            setMapLockDuration(realMs);
+            setMapLockUntil(Date.now() + realMs);
           }
         });
       }
@@ -325,7 +391,8 @@ export function AppProvider({ children }) {
   return (
     <AppContext.Provider value={{
       // Villes
-      currentCityCode, setCurrentCity, cityIndex, isChangingCity,
+      currentCityCode, setCurrentCity, cityIndex, isChangingCity, pendingCityCode,
+      mapLockUntil, mapLockDuration,
       // Invaders (ville courante)
       invaders, dataVersion, dataUpdatedAt, checkDataUpdate,
       // Progression

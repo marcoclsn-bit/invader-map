@@ -128,6 +128,14 @@ function FlashOverlay({ invader, point, theme, onDone }) {
 
 // ─── Panneau de filtres ───────────────────────────────────────────────────────
 
+function formatCountdown(s) {
+  if (s <= 0) return '0 s';
+  const m = Math.floor(s / 60);
+  const sec = s % 60;
+  if (m === 0) return `${sec} s`;
+  return `${m} min ${sec < 10 ? '0' : ''}${sec} s`;
+}
+
 function FilterPanel({ filters, onFiltersChange, onClose }) {
   const { labelDefs, statusColors } = useAppContext();
   const { theme } = useTheme();
@@ -232,12 +240,21 @@ function FilterPanel({ filters, onFiltersChange, onClose }) {
 // ─── Écran carte ──────────────────────────────────────────────────────────────
 
 export default function MapScreen({ navigation }) {
-  const { invaders, flashed, labels, labelDefs, statusColors, colorOverrides, filters, setFilters, toggleFlash, mapsApp, setMapsAppPref, currentCityCode, isChangingCity } = useAppContext();
+  const { invaders, flashed, labels, labelDefs, statusColors, colorOverrides, filters, setFilters, toggleFlash, mapsApp, setMapsAppPref, currentCityCode, isChangingCity, pendingCityCode, mapLockUntil, mapLockDuration } = useAppContext();
   const city = CITIES[currentCityCode] ?? CITIES.PA;
+  const overlayName = (pendingCityCode ? CITIES[pendingCityCode]?.name : null) ?? city.name;
   const { theme, isDark } = useTheme();
   const { t } = useTranslation();
   const styles = getStyles(theme);
   const insets = useSafeAreaInsets();
+
+  const [now, setNow] = useState(() => Date.now());
+  const isLocked = now < mapLockUntil;
+  useEffect(() => {
+    if (!isLocked) return;
+    const id = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(id);
+  }, [isLocked, mapLockUntil]);
 
   const mapRef = useRef(null);
   const centeredRef = useRef(false);
@@ -327,16 +344,32 @@ export default function MapScreen({ navigation }) {
 
   function closeAll() { setSelected(null); setShowFilters(false); }
 
-  // Réinitialise l'état local au changement de ville
-  // (initialRegion de la nouvelle MapView positionne la carte, pas besoin d'animateToRegion)
+  // Réinitialise l'état local au changement de ville (sans animateToRegion — voir ci-dessous).
   useEffect(() => {
     setSelected(null);
     setShowFilters(false);
     setRenderedCount(INITIAL);
-    centeredRef.current  = false;
     gpsSortedRef.current = false;
     sortCenterRef.current = { lat: city.center.lat, lng: city.center.lng };
   }, [currentCityCode]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Caméra : uniquement quand le verrou se libère (isChangingCity false→true→false).
+  // À ce moment, le pont a eu ~1 s pour drainer removeAnnotation×N + addAnnotation×M.
+  // On attend encore 200 ms pour laisser le premier batch RAF s'installer.
+  const prevChangingRef = useRef(false);
+  useEffect(() => {
+    const wasChanging = prevChangingRef.current;
+    prevChangingRef.current = isChangingCity;
+    if (!isChangingCity && wasChanging) {
+      const timer = setTimeout(() => {
+        mapRef.current?.animateToRegion(
+          { latitude: city.center.lat, longitude: city.center.lng, ...city.mapDelta },
+          800,
+        );
+      }, 200);
+      return () => clearTimeout(timer);
+    }
+  }, [isChangingCity]); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function handleFlashFromMap(id) {
     const willFlash = !flashed.has(id);
@@ -379,14 +412,22 @@ export default function MapScreen({ navigation }) {
   }, [filters, sortVersion]);
 
   useEffect(() => {
+    if (isChangingCity) return;
     if (renderedCount >= sortedInvaders.length) return;
     const id = requestAnimationFrame(() =>
       setRenderedCount(c => Math.min(c + BATCH, sortedInvaders.length))
     );
     return () => cancelAnimationFrame(id);
-  }, [renderedCount, sortedInvaders.length]);
+  }, [renderedCount, sortedInvaders.length, isChangingCity]);
 
   const visibleInvaders = sortedInvaders.slice(0, renderedCount);
+
+  // Pourcentage basé sur le temps restant du verrou (pas sur le rendu, qui est trop rapide).
+  // Formule : 1 - remainingMs/totalDuration → stable même après pause en arrière-plan.
+  const remainingMs = Math.max(0, mapLockUntil - now);
+  const lockProgress = mapLockDuration > 0 ? Math.min(1, 1 - remainingMs / mapLockDuration) : 1;
+  const loadingPct = Math.round(lockProgress * 100);
+  const remainingSeconds = Math.max(0, Math.ceil(remainingMs / 1000));
 
   const hasActiveFilters =
     filters.statuses.size < ALL_STATUSES.length ||
@@ -395,71 +436,96 @@ export default function MapScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      {/* MapView n'est jamais rendu pendant isChangingCity : iOS libère l'ancienne
-          instance MKMapView proprement avant d'en créer une nouvelle */}
+      {/* MapView toujours montée — ne jamais la détruire (crash MKMapView iOS) */}
+      <MapView
+        ref={mapRef}
+        style={styles.map}
+        mapType="mutedStandard"
+        userInterfaceStyle={isDark ? 'dark' : 'light'}
+        showsCompass={false}
+        showsTraffic={false}
+        showsPointsOfInterest={false}
+        showsUserLocation={locationGranted}
+        initialRegion={{ latitude: city.center.lat, longitude: city.center.lng, ...city.mapDelta }}
+        onPress={closeAll}
+      >
+        {!isChangingCity && <HeadingCone userLocation={userLocation} heading={userHeading} />}
+        {/* Marqueurs gelés pendant isChangingCity : évite le churn add/remove sur MKMapView */}
+        {!isChangingCity && visibleInvaders.map((invader) => {
+          const isFlashed = flashed.has(invader.id);
+          return (
+            <InvaderMarker
+              key={`${invader.id}-${isFlashed ? 1 : 0}`}
+              invader={invader}
+              isFlashed={isFlashed}
+              stopPropagation
+              onPress={() => { setSelected(invader); setShowFilters(false); }}
+            />
+          );
+        })}
+      </MapView>
+
+      {/* ── Barre supérieure : chip ville | barre de progression | Filtres ── */}
       {!isChangingCity && (
-        <MapView
-          ref={mapRef}
-          style={styles.map}
-          mapType="mutedStandard"
-          userInterfaceStyle={isDark ? 'dark' : 'light'}
-          showsCompass={false}
-          showsTraffic={false}
-          showsPointsOfInterest={false}
-          showsUserLocation={locationGranted}
-          initialRegion={{ latitude: city.center.lat, longitude: city.center.lng, ...city.mapDelta }}
-          onPress={closeAll}
-        >
-          <HeadingCone userLocation={userLocation} heading={userHeading} />
-          {visibleInvaders.map((invader) => {
-            const isFlashed = flashed.has(invader.id);
-            return (
-              <InvaderMarker
-                key={`${invader.id}-${isFlashed ? 1 : 0}`}
-                invader={invader}
-                isFlashed={isFlashed}
-                stopPropagation
-                onPress={() => { setSelected(invader); setShowFilters(false); }}
-              />
-            );
-          })}
-        </MapView>
-      )}
+        <View style={[styles.topBar, { top: insets.top + 8 }]}>
 
-      {/* Chip ville — visible seulement si plusieurs villes actives */}
-      {ENABLED_CITIES.length > 1 && !isChangingCity && (
-        <TouchableOpacity
-          style={[styles.cityChip, { top: insets.top + 10 }]}
-          onPress={() => navigation.navigate('Palmarès')}
-          activeOpacity={0.75}
-        >
-          <Ionicons name="globe-outline" size={13} color={theme.textPrimary} />
-          <Text style={styles.cityChipText}>{city.name}</Text>
-          <Ionicons name="chevron-down" size={11} color={theme.textSecondary} />
-        </TouchableOpacity>
-      )}
+          {/* Chip ville (gauche) */}
+          <View style={[styles.cityChip, isLocked && styles.chipLocked]}>
+            {isLocked && <ActivityIndicator size="small" color={theme.accent} />}
+            {ENABLED_CITIES.length > 1 ? (
+              <TouchableOpacity style={styles.cityChipInner} onPress={() => navigation.navigate('Palmarès')} activeOpacity={0.75}>
+                <Ionicons name="globe-outline" size={13} color={theme.textPrimary} />
+                <Text style={styles.cityChipText}>{city.name}</Text>
+                <Ionicons name="chevron-down" size={11} color={theme.textSecondary} />
+              </TouchableOpacity>
+            ) : (
+              <View style={styles.cityChipInner}>
+                <Ionicons name="globe-outline" size={13} color={theme.textPrimary} />
+                <Text style={styles.cityChipText}>{city.name}</Text>
+              </View>
+            )}
+          </View>
 
-      {/* Boutons flottants (⚙ en tête de colonne) */}
-      {!isChangingCity && (
-        <View style={[styles.floatingButtons, { top: insets.top + 10 }]}>
+          {/* Texte de chargement pixelisé (centre) */}
+          {isLocked ? (
+            <Text style={styles.loadingText} numberOfLines={1}>
+              {t('map.loading.progress', { pct: loadingPct })}
+            </Text>
+          ) : (
+            <View style={{ flex: 1 }} />
+          )}
+
+          {/* Bouton Filtres (droite) */}
           <TouchableOpacity
-            style={styles.gearBtn}
-            onPress={() => navigation.getParent()?.navigate('Réglages')}
+            style={[styles.filterTopBtn, hasActiveFilters && styles.filterTopBtnActive, isLocked && styles.filterTopBtnLocked]}
+            onPress={() => {
+              if (isLocked) {
+                Alert.alert(
+                  t('map.loadingTitle'),
+                  t('map.loadingBody', { countdown: formatCountdown(remainingSeconds) }),
+                );
+                return;
+              }
+              setShowFilters((v) => !v);
+              setSelected(null);
+            }}
           >
-            <Ionicons name="settings-outline" size={20} color={theme.textPrimary} />
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={[styles.filtersBtn, hasActiveFilters && styles.filtersBtnActive]}
-            onPress={() => { setShowFilters((v) => !v); setSelected(null); }}
-          >
-            <Text style={[styles.filtersBtnText, hasActiveFilters && styles.filtersBtnTextActive]}>
-              {hasActiveFilters ? t('map.filter.titleActive') : t('map.filter.title')}
+            {isLocked && <ActivityIndicator size="small" color={theme.textSecondary} />}
+            <Text style={[styles.filterTopBtnText, hasActiveFilters && !isLocked && styles.filterTopBtnTextActive]}>
+              {hasActiveFilters && !isLocked ? t('map.filter.titleActive') : t('map.filter.title')}
             </Text>
           </TouchableOpacity>
+        </View>
+      )}
 
+      {/* ── Boutons bas-droite : Réglages + Localisation ── */}
+      {!isChangingCity && (
+        <View style={[styles.bottomRight, { bottom: insets.bottom + 16 }]}>
+          <TouchableOpacity style={styles.circleBtn} onPress={() => navigation.getParent()?.navigate('Réglages')}>
+            <Ionicons name="settings-outline" size={20} color={theme.textPrimary} />
+          </TouchableOpacity>
           <TouchableOpacity
-            style={[styles.locateBtn, !userLocation && styles.locateBtnDisabled]}
+            style={[styles.circleBtn, !userLocation && { opacity: 0.4 }]}
             onPress={userLocation ? goToUserLocation : undefined}
           >
             <Text style={styles.locateBtnText}>⊙</Text>
@@ -483,20 +549,22 @@ export default function MapScreen({ navigation }) {
       )}
 
       {selected && !showFilters && !isChangingCity && (
-        <InvaderPanel
-          invader={selected}
-          onToggleFlash={handleFlashFromMap}
-          onNavigate={handleNavigate}
-          onClose={() => setSelected(null)}
-        />
+        <View style={{ position: 'absolute', bottom: 0, left: 0, right: 0 }}>
+          <InvaderPanel
+            invader={selected}
+            onToggleFlash={handleFlashFromMap}
+            onNavigate={handleNavigate}
+            onClose={() => setSelected(null)}
+          />
+        </View>
       )}
 
-      {/* Écran de transition ville — remplace entièrement la carte pendant le chargement */}
+      {/* Overlay de transition ville — masque la MapView (toujours active) pendant le chargement */}
       {isChangingCity && (
         <View style={[StyleSheet.absoluteFillObject, styles.cityTransitionOverlay]}>
           <ActivityIndicator size="large" color={theme.accent} />
           <Text style={[styles.cityTransitionText, { color: theme.textPrimary }]}>
-            {city.name}
+            {overlayName}
           </Text>
         </View>
       )}
@@ -511,45 +579,79 @@ function makeStyles(t) {
     container: { flex: 1 },
     map: { ...StyleSheet.absoluteFillObject },
 
+    // ── Barre supérieure ─────────────────────────────────────────────────────
+    topBar: {
+      position: 'absolute', left: 12, right: 12,
+      flexDirection: 'row', alignItems: 'center', gap: 8,
+    },
+
+    // Chip ville (gauche)
     cityChip: {
-      position: 'absolute', left: 16,
-      flexDirection: 'row', alignItems: 'center', gap: 5,
+      flexDirection: 'row', alignItems: 'center', gap: 6, flexShrink: 0,
       backgroundColor: t.surface,
-      paddingHorizontal: 12, paddingVertical: 8, borderRadius: 20,
+      paddingHorizontal: 10, paddingVertical: 7, borderRadius: 20,
       shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
       shadowOpacity: 0.2, shadowRadius: 4, elevation: 4,
     },
+    chipLocked: { opacity: 0.55 },
+    cityChipInner: { flexDirection: 'row', alignItems: 'center', gap: 4 },
     cityChipText: { fontSize: 13, fontWeight: '600', color: t.textPrimary },
-    floatingButtons: { position: 'absolute', right: 16, alignItems: 'flex-end', gap: 10 },
-    gearBtn: {
+
+    // Texte de chargement pixelisé (centre)
+    loadingText: {
+      flex: 1, textAlign: 'center',
+      fontFamily: 'Silkscreen_400Regular', fontSize: 9,
+      color: t.textPrimary,
+    },
+
+    // Bouton Filtres (droite)
+    filterTopBtn: {
+      flexShrink: 0, flexDirection: 'row', alignItems: 'center', gap: 5,
+      backgroundColor: t.surface,
+      paddingHorizontal: 14, paddingVertical: 7, borderRadius: 20,
+      shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.25, shadowRadius: 6, elevation: 4,
+    },
+    filterTopBtnActive: { backgroundColor: t.accent },
+    filterTopBtnLocked: { opacity: 0.55 },
+    filterTopBtnText: { fontSize: 14, fontWeight: '600', color: t.textPrimary },
+    filterTopBtnTextActive: { color: t.bg },
+
+    // ── Boutons bas-droite ───────────────────────────────────────────────────
+    bottomRight: {
+      position: 'absolute', right: 14,
+      alignItems: 'center', gap: 10,
+    },
+    circleBtn: {
       width: 38, height: 38, borderRadius: 19,
       backgroundColor: t.surface, alignItems: 'center', justifyContent: 'center',
       shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
       shadowOpacity: 0.25, shadowRadius: 4, elevation: 4,
     },
-    filtersBtn: {
-      backgroundColor: t.surface,
-      paddingHorizontal: 16, paddingVertical: 8, borderRadius: 20,
-      shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
-      shadowOpacity: 0.25, shadowRadius: 6, elevation: 4,
-    },
-    filtersBtnActive: { backgroundColor: t.accent },
-    filtersBtnText: { fontSize: 14, fontWeight: '600', color: t.textPrimary },
-    filtersBtnTextActive: { color: t.bg },
-    locateBtn: {
-      width: 40, height: 40, borderRadius: 20,
-      backgroundColor: t.surface, alignItems: 'center', justifyContent: 'center',
-      shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
-      shadowOpacity: 0.25, shadowRadius: 6, elevation: 4,
-    },
-    locateBtnDisabled: { opacity: 0.4 },
     locateBtnText: { fontSize: 20, color: t.textPrimary },
 
+    // ── Transition de ville ──────────────────────────────────────────────────
     cityTransitionOverlay: {
       backgroundColor: t.bg,
       alignItems: 'center', justifyContent: 'center', gap: 14,
     },
     cityTransitionText: { fontSize: 18, fontWeight: '700', letterSpacing: 0.5 },
+
+    // ── FilterPanel (bottom sheet) ───────────────────────────────────────────
+    panel: {
+      position: 'absolute', left: 0, right: 0, bottom: 0,
+      backgroundColor: t.surface,
+      borderTopLeftRadius: 20, borderTopRightRadius: 20,
+      paddingHorizontal: 20, paddingTop: 16, paddingBottom: 36,
+      shadowColor: '#000', shadowOffset: { width: 0, height: -3 },
+      shadowOpacity: 0.14, shadowRadius: 8, elevation: 10,
+    },
+    panelHeader: {
+      flexDirection: 'row', alignItems: 'center',
+      justifyContent: 'space-between', marginBottom: 4,
+    },
+    panelId: { fontSize: 16, fontWeight: '700', color: t.textPrimary },
+    closeButton: { fontSize: 20, color: t.textSecondary, lineHeight: 24 },
 
     sectionTitle: {
       fontSize: 13, fontWeight: '600', color: t.textSecondary,

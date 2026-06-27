@@ -14,13 +14,27 @@ function getStyles(theme) {
   return styles;
 }
 
-export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClose }) {
+// autoCloseOnAction : ferme le panel après chaque action (utilisé en mode navigation Chasse)
+export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClose, autoCloseOnAction = false }) {
   const { flashed, labelDefs, statusColors, labels, toggleLabel } = useAppContext();
   const { theme } = useTheme();
   const { t } = useTranslation();
   const styles = getStyles(theme);
   const isFlashed = flashed.has(invader.id);
   const invLabelIds = labels[invader.id] ?? [];
+
+  function handleFlash() {
+    onToggleFlash(invader.id);
+    if (autoCloseOnAction) onClose();
+  }
+  function handleNavigate() {
+    onNavigate(invader.lat, invader.lng);
+    if (autoCloseOnAction) onClose();
+  }
+  function handleInstagram() {
+    openInstagramTag(invader.id);
+    if (autoCloseOnAction) onClose();
+  }
 
   return (
     <View style={styles.panel}>
@@ -42,21 +56,21 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
 
       <View style={styles.actions}>
         <TouchableOpacity
-          onPress={() => onToggleFlash(invader.id)}
+          onPress={handleFlash}
           style={[styles.actionBtn, isFlashed && styles.actionBtnActive]}
         >
           <Text style={[styles.actionBtnText, isFlashed && styles.actionBtnTextActive]}>
             {isFlashed ? t('map.panel.alreadyFlashed') : t('map.panel.markFlashed')}
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => onNavigate(invader.lat, invader.lng)} style={styles.actionBtn}>
+        <TouchableOpacity onPress={handleNavigate} style={styles.actionBtn}>
           <Text style={styles.actionBtnText}>{t('map.panel.navigate')}</Text>
         </TouchableOpacity>
       </View>
 
       <TouchableOpacity
         style={styles.igBtn}
-        onPress={() => openInstagramTag(invader.id)}
+        onPress={handleInstagram}
         activeOpacity={0.7}
       >
         <Ionicons name="logo-instagram" size={16} color="#E1306C" />
@@ -94,7 +108,6 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
 function makeStyles(t) {
   return StyleSheet.create({
     panel: {
-      position: 'absolute', bottom: 0, left: 0, right: 0,
       backgroundColor: t.surface,
       borderTopLeftRadius: 16, borderTopRightRadius: 16,
       paddingHorizontal: 20, paddingTop: 20, paddingBottom: 40,

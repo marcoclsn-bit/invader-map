@@ -48,12 +48,11 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          if git diff --quiet data/invaders.json 2>/dev/null && \
-             git ls-files --error-unmatch data/invaders.json 2>/dev/null; then
-            echo "Aucun changement détecté dans data/invaders.json — pas de commit."
+          git add data/index.json data/invaders_*.json
+          if git diff --cached --quiet; then
+            echo "Aucun changement détecté dans les données — pas de commit."
           else
-            git add data/invaders.json
-            git commit -m "data: mise à jour automatique Invaders Paris ($(date -u +%Y-%m-%d))"
+            git commit -m "data: mise à jour automatique Invaders ($(date -u +%Y-%m-%d))"
             git push
-            echo "✓ data/invaders.json mis à jour et poussé."
+            echo "✓ Données Invaders mises à jour et poussées."
           fi
