@@ -235,7 +235,9 @@ function RoutePanel({ allInvaders, displayInvaders, flashed, statusColors, showO
   const styles = getStyles(theme);
   const total = allInvaders.length;
   // « À flasher » = ni déjà flashés, ni détruits (les détruits ne sont pas flashables)
-  const unflashedCount = allInvaders.filter((inv) => !flashed.has(inv.id) && inv.status !== 'destroyed').length;
+  const todoInvaders = allInvaders.filter((inv) => !flashed.has(inv.id) && inv.status !== 'destroyed');
+  const unflashedCount = todoInvaders.length;
+  const todoPoints = todoInvaders.reduce((s, inv) => s + (inv.points ?? 0), 0);
   return (
     <View style={styles.routePanel}>
       <View style={styles.routePanelHeader}>
@@ -246,6 +248,7 @@ function RoutePanel({ allInvaders, displayInvaders, flashed, statusColors, showO
             <Text style={styles.routeSummary} numberOfLines={2}>
               {t('route.invadersOnRoute', { count: total })}
               {unflashedCount > 0 ? t('route.unflashedSuffix', { count: unflashedCount }) : ''}
+              {unflashedCount > 0 ? t('route.todoPointsSuffix', { points: todoPoints }) : ''}
             </Text>
           )}
         </View>
@@ -312,6 +315,7 @@ export default function TrajetScreen() {
   const [depFocused, setDepFocused] = useState(false);
   const [depResolving, setDepResolving] = useState(false);
   const [gpsAvailable, setGpsAvailable] = useState(false);
+  const [locationGranted, setLocationGranted] = useState(false);
 
   const [arrText, setArrText] = useState('');
   const [arrCoords, setArrCoords] = useState(null);
@@ -347,6 +351,7 @@ export default function TrajetScreen() {
     (async () => {
       const { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== 'granted') return;
+      setLocationGranted(true); // affiche le curseur bleu dès l'ouverture
       const loc = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.Balanced });
       const coords = [loc.coords.longitude, loc.coords.latitude];
       gpsRef.current = coords;
@@ -374,11 +379,26 @@ export default function TrajetScreen() {
     if (!routeCoords) { setRouteInvaders(null); setSelectedRouteInv(null); return; }
     try {
       const line = turf.lineString(routeCoords);
-      const nearby = invaders.filter((inv) => {
+
+      // ── Pré-filtre par bounding box (rapide) ──────────────────────────────
+      // nearestPointOnLine est coûteux ; on l'évite pour les Invaders manifestement
+      // hors couloir en ne gardant que ceux dans la bbox du trajet élargie de bufferKm.
+      const [minLng0, minLat0, maxLng0, maxLat0] = turf.bbox(line);
+      const midLat = (minLat0 + maxLat0) / 2;
+      const padLat = bufferKm / 111;
+      const padLng = bufferKm / (111 * Math.cos((midLat * Math.PI) / 180));
+      const minLng = minLng0 - padLng, maxLng = maxLng0 + padLng;
+      const minLat = minLat0 - padLat, maxLat = maxLat0 + padLat;
+      const candidates = invaders.filter(
+        (inv) => inv.lng >= minLng && inv.lng <= maxLng && inv.lat >= minLat && inv.lat <= maxLat
+      );
+
+      // ── Mesure précise sur les seuls candidats ────────────────────────────
+      const nearby = candidates.filter((inv) => {
         const nearest = turf.nearestPointOnLine(line, turf.point([inv.lng, inv.lat]), { units: 'kilometers' });
         return nearest.properties.dist <= bufferKm;
       });
-      console.log('[Trajet] Invaders dans le couloir (source liste) :', nearby.length);
+      console.log(`[Trajet] Couloir : ${candidates.length} candidats (bbox) → ${nearby.length} retenus`);
       setRouteInvaders(nearby);
       setSelectedRouteInv(null);
       // fitToCoordinates est déplacé dans l'effect sur routeInvaders (ci-dessous) :
@@ -761,7 +781,7 @@ export default function TrajetScreen() {
           showsCompass={false}
           showsTraffic={false}
           showsPointsOfInterest={false}
-          showsUserLocation={!!routePolyline}
+          showsUserLocation={locationGranted}
           initialRegion={{ latitude: city.center.lat, longitude: city.center.lng, ...city.mapDelta }}
           onPress={() => Keyboard.dismiss()}
           onPanDrag={() => { if (following) setDrifted(true); }}

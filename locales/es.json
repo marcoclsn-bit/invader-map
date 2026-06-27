@@ -107,7 +107,8 @@
       "routeNotFound": "Ruta no encontrada entre estos dos puntos",
       "routeCalc": "Error al calcular la ruta"
     },
-    "searchingInvaders": "Buscando Invaders…"
+    "searchingInvaders": "Buscando Invaders…",
+    "todoPointsSuffix": " ({{points}} pts)"
   },
   "hunt": {
     "aroundMe": "A mi alrededor",

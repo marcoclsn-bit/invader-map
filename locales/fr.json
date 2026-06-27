@@ -107,7 +107,8 @@
       "routeNotFound": "Itinéraire introuvable entre ces deux points",
       "routeCalc": "Erreur lors du calcul de l'itinéraire"
     },
-    "searchingInvaders": "Recherche d’Invaders en cours…"
+    "searchingInvaders": "Recherche d’Invaders en cours…",
+    "todoPointsSuffix": " ({{points}} pts)"
   },
   "hunt": {
     "aroundMe": "Autour de moi",
