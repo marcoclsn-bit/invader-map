@@ -6,6 +6,7 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
+import { DrawerActions } from '@react-navigation/native';
 import { useAppContext } from '../context/AppContext';
 import { STATUS_COLOR } from '../constants';
 import { useTheme } from '../theme/ThemeContext';
@@ -104,16 +105,11 @@ export default function ListScreen({ navigation }) {
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
       <View style={styles.header}>
+        <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
+          <Ionicons name="menu" size={24} color={theme.textPrimary} />
+        </TouchableOpacity>
         <Text style={styles.title}>{t('list.title')}</Text>
-        <View style={styles.headerRight}>
-          <Text style={styles.counter}>{t('list.counter', { flashed: flashed.size, total: invaders.length })}</Text>
-          <TouchableOpacity
-            onPress={() => navigation.getParent()?.navigate('Réglages')}
-            hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
-          >
-            <Ionicons name="settings-outline" size={20} color={theme.textSecondary} />
-          </TouchableOpacity>
-        </View>
+        <Text style={styles.counter}>{t('list.counter', { flashed: flashed.size, total: invaders.length })}</Text>
       </View>
 
       <TextInput

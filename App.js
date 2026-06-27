@@ -2,7 +2,9 @@ import { StyleSheet, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useFonts, Silkscreen_400Regular, Silkscreen_700Bold } from '@expo-google-fonts/silkscreen';
 import { PressStart2P_400Regular } from '@expo-google-fonts/press-start-2p';
@@ -20,9 +22,13 @@ import StatsScreen from './screens/StatsScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import AboutScreen from './screens/AboutScreen';
 import OnboardingScreen from './screens/OnboardingScreen';
+import DrawerContent from './components/DrawerContent';
 
-const Tab = createBottomTabNavigator();
-const Root = createNativeStackNavigator();
+const Tab    = createBottomTabNavigator();
+const Drawer = createDrawerNavigator();
+const Root   = createNativeStackNavigator();
+
+// ─── 3 onglets terrain ───────────────────────────────────────────────────────
 
 function MainTabs() {
   const { theme } = useTheme();
@@ -43,38 +49,51 @@ function MainTabs() {
       <Tab.Screen name="Carte" component={MapScreen}
         options={{ tabBarLabel: t('tabs.map'), tabBarIcon: ({ color, size, focused }) =>
           <Ionicons name={focused ? 'map' : 'map-outline'} size={size} color={color} /> }} />
-      <Tab.Screen name="Liste" component={ListScreen}
-        options={{ tabBarLabel: t('tabs.list'), tabBarIcon: ({ color, size, focused }) =>
-          <Ionicons name={focused ? 'list' : 'list-outline'} size={size} color={color} /> }} />
       <Tab.Screen name="Trajet" component={TrajetScreen}
         options={{ tabBarLabel: t('tabs.route'), tabBarIcon: ({ color, size, focused }) =>
           <Ionicons name={focused ? 'navigate' : 'navigate-outline'} size={size} color={color} /> }} />
       <Tab.Screen name="Chasse" component={ChasseScreen}
         options={{ tabBarLabel: t('tabs.hunt'), tabBarIcon: ({ color, size, focused }) =>
           <Ionicons name={focused ? 'trophy' : 'trophy-outline'} size={size} color={color} /> }} />
-      <Tab.Screen name="Palmarès" component={PalmèresScreen}
-        options={{ tabBarLabel: t('tabs.palmares'), tabBarIcon: ({ color, size, focused }) =>
-          <Ionicons name={focused ? 'ribbon' : 'ribbon-outline'} size={size} color={color} /> }} />
-      <Tab.Screen name="Stats" component={StatsScreen}
-        options={{ tabBarLabel: t('tabs.stats'), tabBarIcon: ({ color, size, focused }) =>
-          <Ionicons name={focused ? 'stats-chart' : 'stats-chart-outline'} size={size} color={color} /> }} />
     </Tab.Navigator>
   );
 }
 
-// ─── AppShell : affiche l'onboarding ou l'app principale ─────────────────────
+// ─── Drawer englobant les onglets + écrans secondaires ───────────────────────
+
+function DrawerNavigator() {
+  const { theme } = useTheme();
+  return (
+    <Drawer.Navigator
+      drawerContent={(props) => <DrawerContent {...props} />}
+      screenOptions={{
+        headerShown: false,
+        drawerType: 'front',
+        drawerStyle: { width: 280, backgroundColor: theme.surface },
+        overlayColor: 'rgba(0,0,0,0.45)',
+      }}
+    >
+      {/* "Tabs" = écran par défaut (la tab bar à 3 onglets) */}
+      <Drawer.Screen name="Tabs" component={MainTabs} />
+      {/* Écrans accessibles via le menu hamburger */}
+      <Drawer.Screen name="Liste" component={ListScreen} />
+      <Drawer.Screen name="Palmarès" component={PalmèresScreen} />
+      <Drawer.Screen name="Stats" component={StatsScreen} />
+    </Drawer.Navigator>
+  );
+}
+
+// ─── AppShell : onboarding ou app principale ─────────────────────────────────
 
 function AppShell() {
   const { theme, isDark } = useTheme();
   const { t } = useTranslation();
   const { showOnboarding, completeOnboarding, loaded } = useAppContext();
 
-  // Pendant le chargement AsyncStorage (très bref)
   if (!loaded) {
     return <View style={{ flex: 1, backgroundColor: theme.bg }} />;
   }
 
-  // Premier lancement (ou replay depuis Réglages)
   if (showOnboarding) {
     return (
       <>
@@ -84,13 +103,14 @@ function AppShell() {
     );
   }
 
-  // App principale
   return (
     <>
       <StatusBar style={isDark ? 'light' : 'dark'} />
       <NavigationContainer>
         <Root.Navigator screenOptions={{ headerShown: false }}>
-          <Root.Screen name="Main" component={MainTabs} />
+          {/* Drawer (+ ses 3 onglets) comme écran principal */}
+          <Root.Screen name="Main" component={DrawerNavigator} />
+          {/* Modales accessibles depuis le drawer et partout */}
           <Root.Screen
             name="Réglages"
             component={SettingsScreen}
@@ -99,11 +119,7 @@ function AppShell() {
               title: t('settings.title'),
               presentation: 'modal',
               headerTintColor: theme.accent,
-              headerTitleStyle: {
-                fontFamily: 'Silkscreen_700Bold',
-                fontSize: 16,
-                color: theme.textPrimary,
-              },
+              headerTitleStyle: { fontFamily: 'Silkscreen_700Bold', fontSize: 16, color: theme.textPrimary },
               headerStyle: { backgroundColor: theme.surface },
               contentStyle: { backgroundColor: theme.bg },
             }}
@@ -115,11 +131,7 @@ function AppShell() {
               headerShown: true,
               title: t('about.title'),
               headerTintColor: theme.accent,
-              headerTitleStyle: {
-                fontFamily: 'Silkscreen_700Bold',
-                fontSize: 16,
-                color: theme.textPrimary,
-              },
+              headerTitleStyle: { fontFamily: 'Silkscreen_700Bold', fontSize: 16, color: theme.textPrimary },
               headerStyle: { backgroundColor: theme.surface },
               contentStyle: { backgroundColor: theme.bg },
             }}
@@ -134,11 +146,8 @@ function AppShell() {
 
 function ThemedApp() {
   const { theme } = useTheme();
-
   const [fontsLoaded, fontError] = useFonts({
-    Silkscreen_400Regular,
-    Silkscreen_700Bold,
-    PressStart2P_400Regular,
+    Silkscreen_400Regular, Silkscreen_700Bold, PressStart2P_400Regular,
   });
 
   if (!fontsLoaded && !fontError) {
@@ -152,12 +161,16 @@ function ThemedApp() {
   );
 }
 
+// ─── Racine ───────────────────────────────────────────────────────────────────
+
 export default function App() {
   return (
-    <ThemeProvider>
-      <SafeAreaProvider>
-        <ThemedApp />
-      </SafeAreaProvider>
-    </ThemeProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <ThemeProvider>
+        <SafeAreaProvider>
+          <ThemedApp />
+        </SafeAreaProvider>
+      </ThemeProvider>
+    </GestureHandlerRootView>
   );
 }

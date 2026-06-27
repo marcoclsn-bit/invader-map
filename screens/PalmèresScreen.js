@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, FlatList, ScrollView, TouchableOpacity } from '
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
+import { DrawerActions } from '@react-navigation/native';
 import { useAppContext } from '../context/AppContext';
 import { CITIES, ENABLED_CITIES } from '../cities/registry';
 import { INVADER_DISTRICT, arLabel, ARRONDISSEMENT_CENTERS } from '../utils/arrondissement';
@@ -63,7 +64,7 @@ function ArRow({ item, onHunt, theme }) {
 
 // ─── Vue arrondissements ──────────────────────────────────────────────────────
 
-function ArrondissementsView({ stats, insets, onBack, onSettings, onHuntAr, theme }) {
+function ArrondissementsView({ stats, insets, onBack, onOpenDrawer, onHuntAr, theme }) {
   const { t } = useTranslation();
   const styles = getStyles(theme);
   return (
@@ -74,8 +75,8 @@ function ArrondissementsView({ stats, insets, onBack, onSettings, onHuntAr, them
           <Text style={styles.backText}>{t('palmares.back')}</Text>
         </TouchableOpacity>
         <Text style={styles.headerTitle}>{t('palmares.paris')}</Text>
-        <TouchableOpacity onPress={onSettings} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
-          <Ionicons name="settings-outline" size={22} color={theme.textSecondary} />
+        <TouchableOpacity onPress={onOpenDrawer} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
+          <Ionicons name="menu" size={24} color={theme.textSecondary} />
         </TouchableOpacity>
       </View>
 
@@ -170,13 +171,15 @@ export default function PalmèresScreen({ navigation }) {
     };
   }, [flashable, totalAllPts, flashed]);
 
-  function openSettings() { navigation.getParent()?.navigate('Réglages'); }
+  function openDrawer() { navigation.dispatch(DrawerActions.openDrawer()); }
 
   function huntAr(ar) {
     const center = ARRONDISSEMENT_CENTERS.get(ar);
     if (!center) return;
-    navigation.navigate('Chasse', {
-      arPreset: { ar, label: arLabel(ar), lon: center.lon, lat: center.lat, _ts: Date.now() },
+    // Palmarès est un écran Drawer ; Chasse est imbriqué dans l'écran "Tabs"
+    navigation.navigate('Tabs', {
+      screen: 'Chasse',
+      params: { arPreset: { ar, label: arLabel(ar), lon: center.lon, lat: center.lat, _ts: Date.now() } },
     });
   }
 
@@ -187,7 +190,7 @@ export default function PalmèresScreen({ navigation }) {
         stats={stats}
         insets={insets}
         onBack={() => setDrillVille(null)}
-        onSettings={openSettings}
+        onOpenDrawer={openDrawer}
         onHuntAr={huntAr}
         theme={theme}
       />
@@ -198,8 +201,8 @@ export default function PalmèresScreen({ navigation }) {
     <View style={[styles.container, { paddingTop: insets.top }]}>
       <View style={styles.header}>
         <Text style={styles.title}>{t('palmares.title')}</Text>
-        <TouchableOpacity onPress={openSettings} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
-          <Ionicons name="settings-outline" size={22} color={theme.textSecondary} />
+        <TouchableOpacity onPress={openDrawer} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
+          <Ionicons name="menu" size={24} color={theme.textSecondary} />
         </TouchableOpacity>
       </View>
 

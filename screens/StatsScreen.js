@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, ScrollView, TouchableOpacity, useWindowDimensio
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
+import { DrawerActions } from '@react-navigation/native';
 import Svg, { Polyline, Polygon, Line, Text as SvgText } from 'react-native-svg';
 import { useAppContext } from '../context/AppContext';
 import { useTheme } from '../theme/ThemeContext';
@@ -304,7 +305,7 @@ export default function StatsScreen({ navigation }) {
       .slice(0, 5);
   }, [currentCityCode, invaders, flashed]);
 
-  function openSettings() { navigation.getParent()?.navigate('Réglages'); }
+  function openDrawer() { navigation.dispatch(DrawerActions.openDrawer()); }
 
   const cityName = CITIES[currentCityCode]?.name ?? currentCityCode;
   const hasDated = stats.datedCount > 0;
@@ -318,8 +319,8 @@ export default function StatsScreen({ navigation }) {
       <View style={[st.container, { backgroundColor: theme.bg, paddingTop: insets.top }]}>
         <View style={[st.header, { backgroundColor: theme.surface, borderBottomColor: theme.border }]}>
           <Text style={[typography.arcadeTitle, { color: theme.textPrimary }]}>{t('stats.title')}</Text>
-          <TouchableOpacity onPress={openSettings} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
-            <Ionicons name="settings-outline" size={22} color={theme.textSecondary} />
+          <TouchableOpacity onPress={openDrawer} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
+            <Ionicons name="menu" size={24} color={theme.textSecondary} />
           </TouchableOpacity>
         </View>
         <View style={st.emptyBody}>
@@ -336,8 +337,8 @@ export default function StatsScreen({ navigation }) {
 
       <View style={[st.header, { backgroundColor: theme.surface, borderBottomColor: theme.border }]}>
         <Text style={[typography.arcadeTitle, { color: theme.textPrimary }]}>{t('stats.title')}</Text>
-        <TouchableOpacity onPress={openSettings} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
-          <Ionicons name="settings-outline" size={22} color={theme.textSecondary} />
+        <TouchableOpacity onPress={openDrawer} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
+          <Ionicons name="menu" size={24} color={theme.textSecondary} />
         </TouchableOpacity>
       </View>
 

@@ -6,6 +6,7 @@ import * as Haptics from 'expo-haptics';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
+import { DrawerActions } from '@react-navigation/native';
 import { useAppContext } from '../context/AppContext';
 import { CITIES, ENABLED_CITIES } from '../cities/registry';
 import { ALL_STATUSES } from '../constants';
@@ -518,11 +519,11 @@ export default function MapScreen({ navigation }) {
         </View>
       )}
 
-      {/* ── Boutons bas-droite : Réglages + Localisation ── */}
+      {/* ── Boutons bas-droite : Menu + Localisation ── */}
       {!isChangingCity && (
         <View style={[styles.bottomRight, { bottom: insets.bottom + 16 }]}>
-          <TouchableOpacity style={styles.circleBtn} onPress={() => navigation.getParent()?.navigate('Réglages')}>
-            <Ionicons name="settings-outline" size={20} color={theme.textPrimary} />
+          <TouchableOpacity style={styles.circleBtn} onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
+            <Ionicons name="menu" size={22} color={theme.textPrimary} />
           </TouchableOpacity>
           <TouchableOpacity
             style={[styles.circleBtn, !userLocation && { opacity: 0.4 }]}
