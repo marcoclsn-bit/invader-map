@@ -466,11 +466,30 @@ export default function MapScreen({ navigation }) {
         })}
       </MapView>
 
-      {/* ── Barre supérieure : chip ville | barre de progression | Filtres ── */}
+      {/* ── Barre supérieure : Menu | barre de progression | chip ville ── */}
       {!isChangingCity && (
         <View style={[styles.topBar, { top: insets.top + 8 }]}>
 
-          {/* Chip ville (gauche) */}
+          {/* Bouton Menu (gauche) */}
+          <TouchableOpacity
+            style={styles.menuTopBtn}
+            onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
+            activeOpacity={0.75}
+          >
+            <Ionicons name="menu" size={18} color={theme.textPrimary} />
+            <Text style={styles.menuTopBtnText}>{t('common.menu')}</Text>
+          </TouchableOpacity>
+
+          {/* Texte de chargement pixelisé (centre) */}
+          {isLocked ? (
+            <Text style={styles.loadingText} numberOfLines={1}>
+              {t('map.loading.progress', { pct: loadingPct })}
+            </Text>
+          ) : (
+            <View style={{ flex: 1 }} />
+          )}
+
+          {/* Chip ville (droite) */}
           <View style={[styles.cityChip, isLocked && styles.chipLocked]}>
             {isLocked && <ActivityIndicator size="small" color={theme.accent} />}
             {ENABLED_CITIES.length > 1 ? (
@@ -486,19 +505,14 @@ export default function MapScreen({ navigation }) {
               </View>
             )}
           </View>
+        </View>
+      )}
 
-          {/* Texte de chargement pixelisé (centre) */}
-          {isLocked ? (
-            <Text style={styles.loadingText} numberOfLines={1}>
-              {t('map.loading.progress', { pct: loadingPct })}
-            </Text>
-          ) : (
-            <View style={{ flex: 1 }} />
-          )}
-
-          {/* Bouton Filtres (droite) */}
+      {/* ── Boutons bas-droite : Filtres + Localisation ── */}
+      {!isChangingCity && (
+        <View style={[styles.bottomRight, { bottom: insets.bottom + 16 }]}>
           <TouchableOpacity
-            style={[styles.filterTopBtn, hasActiveFilters && styles.filterTopBtnActive, isLocked && styles.filterTopBtnLocked]}
+            style={[styles.circleBtn, hasActiveFilters && !isLocked && styles.circleBtnActive, isLocked && { opacity: 0.55 }]}
             onPress={() => {
               if (isLocked) {
                 Alert.alert(
@@ -511,19 +525,11 @@ export default function MapScreen({ navigation }) {
               setSelected(null);
             }}
           >
-            {isLocked && <ActivityIndicator size="small" color={theme.textSecondary} />}
-            <Text style={[styles.filterTopBtnText, hasActiveFilters && !isLocked && styles.filterTopBtnTextActive]}>
-              {hasActiveFilters && !isLocked ? t('map.filter.titleActive') : t('map.filter.title')}
-            </Text>
-          </TouchableOpacity>
-        </View>
-      )}
-
-      {/* ── Boutons bas-droite : Menu + Localisation ── */}
-      {!isChangingCity && (
-        <View style={[styles.bottomRight, { bottom: insets.bottom + 16 }]}>
-          <TouchableOpacity style={styles.circleBtn} onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
-            <Ionicons name="menu" size={22} color={theme.textPrimary} />
+            <Ionicons
+              name={hasActiveFilters && !isLocked ? 'funnel' : 'funnel-outline'}
+              size={19}
+              color={hasActiveFilters && !isLocked ? theme.bg : theme.textPrimary}
+            />
           </TouchableOpacity>
           <TouchableOpacity
             style={[styles.circleBtn, !userLocation && { opacity: 0.4 }]}
@@ -586,7 +592,24 @@ function makeStyles(t) {
       flexDirection: 'row', alignItems: 'center', gap: 8,
     },
 
-    // Chip ville (gauche)
+    // Bouton Menu (gauche)
+    menuTopBtn: {
+      flexShrink: 0, flexDirection: 'row', alignItems: 'center', gap: 5,
+      backgroundColor: t.surface,
+      paddingHorizontal: 12, paddingVertical: 7, borderRadius: 20,
+      shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.25, shadowRadius: 6, elevation: 4,
+    },
+    menuTopBtnText: { fontSize: 14, fontWeight: '600', color: t.textPrimary },
+
+    // Texte de chargement pixelisé (centre)
+    loadingText: {
+      flex: 1, textAlign: 'center',
+      fontFamily: 'Silkscreen_400Regular', fontSize: 9,
+      color: t.textPrimary,
+    },
+
+    // Chip ville (droite)
     cityChip: {
       flexDirection: 'row', alignItems: 'center', gap: 6, flexShrink: 0,
       backgroundColor: t.surface,
@@ -597,26 +620,6 @@ function makeStyles(t) {
     chipLocked: { opacity: 0.55 },
     cityChipInner: { flexDirection: 'row', alignItems: 'center', gap: 4 },
     cityChipText: { fontSize: 13, fontWeight: '600', color: t.textPrimary },
-
-    // Texte de chargement pixelisé (centre)
-    loadingText: {
-      flex: 1, textAlign: 'center',
-      fontFamily: 'Silkscreen_400Regular', fontSize: 9,
-      color: t.textPrimary,
-    },
-
-    // Bouton Filtres (droite)
-    filterTopBtn: {
-      flexShrink: 0, flexDirection: 'row', alignItems: 'center', gap: 5,
-      backgroundColor: t.surface,
-      paddingHorizontal: 14, paddingVertical: 7, borderRadius: 20,
-      shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
-      shadowOpacity: 0.25, shadowRadius: 6, elevation: 4,
-    },
-    filterTopBtnActive: { backgroundColor: t.accent },
-    filterTopBtnLocked: { opacity: 0.55 },
-    filterTopBtnText: { fontSize: 14, fontWeight: '600', color: t.textPrimary },
-    filterTopBtnTextActive: { color: t.bg },
 
     // ── Boutons bas-droite ───────────────────────────────────────────────────
     bottomRight: {
@@ -629,6 +632,7 @@ function makeStyles(t) {
       shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
       shadowOpacity: 0.25, shadowRadius: 4, elevation: 4,
     },
+    circleBtnActive: { backgroundColor: t.accent },
     locateBtnText: { fontSize: 20, color: t.textPrimary },
 
     // ── Transition de ville ──────────────────────────────────────────────────

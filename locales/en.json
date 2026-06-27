@@ -23,7 +23,8 @@
       "msg": "Choose your navigation app. This choice will be saved and can be changed in Settings.",
       "apple": "Maps",
       "google": "Google Maps"
-    }
+    },
+    "menu": "Menu"
   },
   "tabs": {
     "map": "Map",
@@ -212,8 +213,12 @@
       "projectionDone": "{{city}} 100% flashed 🏆",
       "notEnoughData": "Keep going for a few weeks to see your projection."
     },
-    "topCities": { "section": "Top cities" },
-    "topDistricts": { "section": "Top districts" }
+    "topCities": {
+      "section": "Top cities"
+    },
+    "topDistricts": {
+      "section": "Top districts"
+    }
   },
   "about": {
     "title": "About",

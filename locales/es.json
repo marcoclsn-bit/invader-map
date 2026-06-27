@@ -23,7 +23,8 @@
       "msg": "Elige tu app de navegación. La elección se guardará y se puede cambiar en Ajustes.",
       "apple": "Mapas",
       "google": "Google Maps"
-    }
+    },
+    "menu": "Menú"
   },
   "tabs": {
     "map": "Mapa",
@@ -212,8 +213,12 @@
       "projectionDone": "{{city}} 100% fotografiada 🏆",
       "notEnoughData": "Continúa unas semanas para ver tu proyección."
     },
-    "topCities": { "section": "Top ciudades" },
-    "topDistricts": { "section": "Top distritos" }
+    "topCities": {
+      "section": "Top ciudades"
+    },
+    "topDistricts": {
+      "section": "Top distritos"
+    }
   },
   "about": {
     "title": "Acerca de",
