@@ -162,7 +162,7 @@
       },
       "map": {
         "title": "Mapa & Flash",
-        "body": "Encuentra los mosaicos Space Invader a tu alrededor. Marca cada uno que hayas fotografiado y sigue tu progreso en Palmarés."
+        "body": "Encuentra los mosaicos Space Invader a tu alrededor. Marca cada uno que hayas fotografiado y sigue tu progreso en Palmarés. Por defecto, el mapa solo muestra los Invaders que aún te quedan por fotografiar — muestra los fotografiados y los destruidos cuando quieras con los filtros."
       },
       "route": {
         "title": "Ruta & Caza",

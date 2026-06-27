@@ -10,6 +10,15 @@ import { ENABLED_CITIES, DEFAULT_CITY_CODE, CITIES } from '../cities/registry';
 
 const AppContext = createContext(null);
 
+// Filtres « à faire » : tous les statuts visibles SAUF les détruits, et seulement
+// les non-flashés. C'est l'état par défaut de la carte au tout premier lancement.
+function makeTodoFilters() {
+  return {
+    statuses: new Set(ALL_STATUSES.filter((s) => s !== 'destroyed')),
+    flashedState: 'unflashed',
+  };
+}
+
 export function useAppContext() {
   return useContext(AppContext);
 }
@@ -69,10 +78,9 @@ export function AppProvider({ children }) {
   const [labelDefs, setLabelDefs] = useState([...DEFAULT_LABEL_DEFS]);
   const [statusColors, setStatusColorsState] = useState({ ...STATUS_COLOR });
   const [colorOverrides, setColorOverrides] = useState({});
-  const [filters, setFilters] = useState({
-    statuses: new Set(ALL_STATUSES),
-    flashedState: 'all',
-  });
+  // Défaut « à faire » (1er lancement) : on masque les détruits et les flashés.
+  // Les autres statuts non flashés (ok / endommagé / inconnu) restent visibles.
+  const [filters, setFilters] = useState(makeTodoFilters);
   const [mapsApp, setMapsApp] = useState(null);
   const [language, setLanguageState] = useState('system');
   const [showOnboarding, setShowOnboarding] = useState(false);
@@ -209,7 +217,7 @@ export function AppProvider({ children }) {
     (async () => {
       const [
         flashedRaw, flashedDatesRaw, labelsRaw, labelDefsRaw, statusColorsRaw, colorOverridesRaw,
-        mapsAppRaw, langRaw, onboardingRaw, currentCityRaw,
+        mapsAppRaw, langRaw, onboardingRaw, currentCityRaw, filtersRaw,
       ] = await Promise.all([
         AsyncStorage.getItem('invader_flashed'),
         AsyncStorage.getItem('invader_flashed_dates'),
@@ -221,6 +229,7 @@ export function AppProvider({ children }) {
         AsyncStorage.getItem(LANGUAGE_STORAGE_KEY),
         AsyncStorage.getItem('@invader_onboarding_done'),
         AsyncStorage.getItem('@invader_current_city'),
+        AsyncStorage.getItem('invader_filters'),
       ]);
 
       if (flashedRaw)       setFlashed(new Set(JSON.parse(flashedRaw)));
@@ -239,6 +248,17 @@ export function AppProvider({ children }) {
       if (statusColorsRaw)   setStatusColorsState(JSON.parse(statusColorsRaw));
       if (colorOverridesRaw) setColorOverrides(JSON.parse(colorOverridesRaw));
       if (mapsAppRaw)        setMapsApp(mapsAppRaw);
+      // Filtres : on réapplique le dernier état mémorisé. Sinon (1er lancement),
+      // on garde le défaut « à faire » défini à l'initialisation du state.
+      if (filtersRaw) {
+        try {
+          const p = JSON.parse(filtersRaw);
+          setFilters({
+            statuses: new Set(Array.isArray(p.statuses) ? p.statuses : ALL_STATUSES),
+            flashedState: p.flashedState ?? 'all',
+          });
+        } catch (_) {}
+      }
       const storedLang = langRaw ?? 'system';
       setLanguageState(storedLang);
       applyLanguage(storedLang);
@@ -289,6 +309,8 @@ export function AppProvider({ children }) {
   useEffect(() => { if (loaded) AsyncStorage.setItem('invader_label_defs',      JSON.stringify(labelDefs));           }, [labelDefs,      loaded]);
   useEffect(() => { if (loaded) AsyncStorage.setItem('invader_status_colors',   JSON.stringify(statusColors));        }, [statusColors,   loaded]);
   useEffect(() => { if (loaded) AsyncStorage.setItem('invader_color_overrides', JSON.stringify(colorOverrides));      }, [colorOverrides, loaded]);
+  // Dernier état des filtres (Set sérialisé en tableau) — réappliqué à l'ouverture
+  useEffect(() => { if (loaded) AsyncStorage.setItem('invader_filters', JSON.stringify({ statuses: [...filters.statuses], flashedState: filters.flashedState })); }, [filters, loaded]);
 
   // ─── Flashé ──────────────────────────────────────────────────────────────────
 

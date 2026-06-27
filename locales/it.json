@@ -162,7 +162,7 @@
       },
       "map": {
         "title": "Mappa & Flash",
-        "body": "Trova i mosaici Space Invader intorno a te. Segna ogni Invader fotografato e monitora il tuo progresso nel Palmares."
+        "body": "Trova i mosaici Space Invader intorno a te. Segna ogni Invader fotografato e monitora il tuo progresso nel Palmares. Per impostazione predefinita, la mappa mostra solo gli Invaders che ti restano da fotografare — mostra quelli fotografati e distrutti quando vuoi tramite i filtri."
       },
       "route": {
         "title": "Percorso & Caccia",

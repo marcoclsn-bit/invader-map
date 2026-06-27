@@ -162,7 +162,7 @@
       },
       "map": {
         "title": "Carte & Flash",
-        "body": "Repère les mosaïques Space Invader autour de toi. Marque chaque Invader que tu as flashé et suis ta progression dans le Palmarès."
+        "body": "Repère les mosaïques Space Invader autour de toi. Marque chaque Invader que tu as flashé et suis ta progression dans le Palmarès. Par défaut, la carte n’affiche que les Invaders qu’il te reste à flasher — affiche les flashés et les détruits quand tu veux via les filtres."
       },
       "route": {
         "title": "Trajet & Chasse",

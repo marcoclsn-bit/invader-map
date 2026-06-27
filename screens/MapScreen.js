@@ -252,6 +252,9 @@ export default function MapScreen({ navigation }) {
   // sortVersion s'incrémente max 2× : cache iOS puis 1re fix live → retrigge le useMemo
   const [sortVersion, setSortVersion] = useState(0);
   const [flashEffect, setFlashEffect] = useState(null);
+  // Invaders flashés à l'instant : on les garde affichés le temps que l'animation
+  // (pop + « +X PTS ») se joue, avant qu'un filtre « à faire » ne les masque.
+  const [recentlyFlashed, setRecentlyFlashed] = useState(() => new Set());
   const [selected, setSelected] = useState(null);
   const [showFilters, setShowFilters] = useState(false);
   const [locationGranted, setLocationGranted] = useState(false);
@@ -362,23 +365,34 @@ export default function MapScreen({ navigation }) {
 
   async function handleFlashFromMap(id) {
     const willFlash = !flashed.has(id);
+    if (!willFlash) { toggleFlash(id); return; } // dé-flash : silencieux, pas d'animation
+
+    const inv = invaders.find((i) => i.id === id);
+    // On garde l'Invader visible pendant l'animation (sinon un filtre « à faire »
+    // le retire instantanément et l'effet de récompense est coupé).
+    if (inv) setRecentlyFlashed((prev) => new Set(prev).add(id));
     toggleFlash(id);
-    if (!willFlash) return; // dé-flash : silencieux, pas d'animation
 
     Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
 
-    const inv = invaders.find((i) => i.id === id);
     if (!inv || !mapRef.current) return;
     try {
       const point = await mapRef.current.pointForCoordinate({ latitude: inv.lat, longitude: inv.lng });
       setFlashEffect({ invader: inv, point, key: Date.now() });
-    } catch (_) {}
+    } catch (_) {
+      // pas d'animation possible → on retire tout de suite le sursis d'affichage
+      setRecentlyFlashed((prev) => { const n = new Set(prev); n.delete(id); return n; });
+    }
   }
 
-  const filteredInvaders = useMemo(
-    () => applyFilters(invaders, filters, flashed),
-    [invaders, filters, flashed]
-  );
+  const filteredInvaders = useMemo(() => {
+    const base = applyFilters(invaders, filters, flashed);
+    if (recentlyFlashed.size === 0) return base;
+    // Réinjecte les Invaders en cours d'animation s'ils ont été masqués par le filtre
+    const baseIds = new Set(base.map((i) => i.id));
+    const extra = invaders.filter((i) => recentlyFlashed.has(i.id) && !baseIds.has(i.id));
+    return extra.length ? [...base, ...extra] : base;
+  }, [invaders, filters, flashed, recentlyFlashed]);
 
   // sortVersion en dep : le useMemo re-tourne quand sortCenterRef est mis à jour
   // (max 2×). Flash et GPS continus ne touchent ni filteredInvaders ni sortVersion.
@@ -538,7 +552,12 @@ export default function MapScreen({ navigation }) {
           invader={flashEffect.invader}
           point={flashEffect.point}
           theme={theme}
-          onDone={() => setFlashEffect(null)}
+          onDone={() => {
+            const flashedId = flashEffect.invader.id;
+            setFlashEffect(null);
+            // L'animation est finie : on lève le sursis → l'Invader peut être masqué
+            setRecentlyFlashed((prev) => { const n = new Set(prev); n.delete(flashedId); return n; });
+          }}
         />
       )}
 

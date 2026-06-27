@@ -162,7 +162,7 @@
       },
       "map": {
         "title": "Map & Flash",
-        "body": "Find Space Invader mosaics around you. Mark each one you've flashed and track your progress in Scores."
+        "body": "Find Space Invader mosaics around you. Mark each one you've flashed and track your progress in Scores. By default, the map shows only the Invaders you still have to flash — show flashed and destroyed ones anytime via the filters."
       },
       "route": {
         "title": "Route & Hunt",
