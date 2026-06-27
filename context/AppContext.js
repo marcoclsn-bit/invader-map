@@ -62,7 +62,9 @@ export function AppProvider({ children }) {
   const [mapLockUntil,    setMapLockUntil]    = useState(() => Date.now() + _initialLockDuration);
   const [mapLockDuration, setMapLockDuration] = useState(_initialLockDuration);
 
-  const [flashed, setFlashed] = useState(new Set());
+  const [flashed,      setFlashed]      = useState(new Set());
+  // Map<id, isoString> — absente = null (Invader flashé avant cette version)
+  const [flashedDates, setFlashedDates] = useState(new Map());
   const [labels, setLabels] = useState({});
   const [labelDefs, setLabelDefs] = useState([...DEFAULT_LABEL_DEFS]);
   const [statusColors, setStatusColorsState] = useState({ ...STATUS_COLOR });
@@ -207,10 +209,11 @@ export function AppProvider({ children }) {
   useEffect(() => {
     (async () => {
       const [
-        flashedRaw, labelsRaw, labelDefsRaw, statusColorsRaw, colorOverridesRaw,
+        flashedRaw, flashedDatesRaw, labelsRaw, labelDefsRaw, statusColorsRaw, colorOverridesRaw,
         mapsAppRaw, langRaw, onboardingRaw, currentCityRaw,
       ] = await Promise.all([
         AsyncStorage.getItem('invader_flashed'),
+        AsyncStorage.getItem('invader_flashed_dates'),
         AsyncStorage.getItem('invader_labels'),
         AsyncStorage.getItem('invader_label_defs'),
         AsyncStorage.getItem('invader_status_colors'),
@@ -222,6 +225,8 @@ export function AppProvider({ children }) {
       ]);
 
       if (flashedRaw)       setFlashed(new Set(JSON.parse(flashedRaw)));
+      // Migration douce : les IDs sans date gardent flashedAt: null (absents du Map)
+      if (flashedDatesRaw)  setFlashedDates(new Map(Object.entries(JSON.parse(flashedDatesRaw))));
       if (labelsRaw)        setLabels(JSON.parse(labelsRaw));
       if (labelDefsRaw) {
         const parsed = JSON.parse(labelDefsRaw);
@@ -280,7 +285,8 @@ export function AppProvider({ children }) {
   }, []);
 
   // ─── Persistance automatique ──────────────────────────────────────────────────
-  useEffect(() => { if (loaded) AsyncStorage.setItem('invader_flashed',         JSON.stringify([...flashed]));       }, [flashed,        loaded]);
+  useEffect(() => { if (loaded) AsyncStorage.setItem('invader_flashed',         JSON.stringify([...flashed]));                              }, [flashed,        loaded]);
+  useEffect(() => { if (loaded) AsyncStorage.setItem('invader_flashed_dates',   JSON.stringify(Object.fromEntries(flashedDates)));           }, [flashedDates,   loaded]);
   useEffect(() => { if (loaded) AsyncStorage.setItem('invader_labels',          JSON.stringify(labels));              }, [labels,         loaded]);
   useEffect(() => { if (loaded) AsyncStorage.setItem('invader_label_defs',      JSON.stringify(labelDefs));           }, [labelDefs,      loaded]);
   useEffect(() => { if (loaded) AsyncStorage.setItem('invader_status_colors',   JSON.stringify(statusColors));        }, [statusColors,   loaded]);
@@ -289,19 +295,54 @@ export function AppProvider({ children }) {
   // ─── Flashé ──────────────────────────────────────────────────────────────────
 
   function toggleFlash(id) {
+    const removing = flashed.has(id);
     setFlashed(prev => {
       const next = new Set(prev);
-      next.has(id) ? next.delete(id) : next.add(id);
+      removing ? next.delete(id) : next.add(id);
+      return next;
+    });
+    setFlashedDates(prev => {
+      const next = new Map(prev);
+      if (removing) { next.delete(id); } else { next.set(id, new Date().toISOString()); }
       return next;
     });
   }
 
-  function bulkFlash()   { setFlashed(new Set(invaders.map(inv => inv.id))); }
-  function bulkUnflash() { setFlashed(prev => {
-    const next = new Set(prev);
-    invaders.forEach(inv => next.delete(inv.id));
-    return next;
-  }); }
+  function bulkFlash() {
+    const now = new Date().toISOString();
+    setFlashed(new Set(invaders.map(inv => inv.id)));
+    setFlashedDates(prev => {
+      const next = new Map(prev);
+      // Préserve la date existante si l'Invader était déjà flashé
+      for (const inv of invaders) { if (!next.has(inv.id)) next.set(inv.id, now); }
+      return next;
+    });
+  }
+
+  function bulkUnflash() {
+    setFlashed(prev => {
+      const next = new Set(prev);
+      invaders.forEach(inv => next.delete(inv.id));
+      return next;
+    });
+    setFlashedDates(prev => {
+      const next = new Map(prev);
+      invaders.forEach(inv => next.delete(inv.id));
+      return next;
+    });
+  }
+
+  // Sélecteur Stats : liste triée des flashs avec leur date (null = antérieur à cette version)
+  function getFlashHistory() {
+    return [...flashed]
+      .map(id => ({ id, flashedAt: flashedDates.get(id) ?? null }))
+      .sort((a, b) => {
+        if (!a.flashedAt && !b.flashedAt) return 0;
+        if (!a.flashedAt) return 1;  // sans date → après les datés
+        if (!b.flashedAt) return -1;
+        return b.flashedAt.localeCompare(a.flashedAt); // ISO = tri lexicographique = chronologique
+      });
+  }
 
   // ─── Étiquettes ──────────────────────────────────────────────────────────────
 
@@ -396,7 +437,8 @@ export function AppProvider({ children }) {
       // Invaders (ville courante)
       invaders, dataVersion, dataUpdatedAt, checkDataUpdate,
       // Progression
-      flashed, labels, labelDefs, statusColors, colorOverrides,
+      flashed, flashedDates, getFlashHistory,
+      labels, labelDefs, statusColors, colorOverrides,
       filters, setFilters,
       toggleFlash, bulkFlash, bulkUnflash,
       toggleLabel, addLabel, updateLabel, deleteLabel,
