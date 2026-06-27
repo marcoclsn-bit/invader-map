@@ -30,7 +30,8 @@
     "list": "Lista",
     "route": "Percorso",
     "hunt": "Caccia",
-    "palmares": "Palmares"
+    "palmares": "Palmares",
+    "stats": "Stats"
   },
   "map": {
     "filter": {
@@ -169,6 +170,50 @@
         "body": "L'app usa la tua posizione per mostrarti sulla mappa e calcolare percorsi. I dati restano sul tuo dispositivo."
       }
     }
+  },
+  "stats": {
+    "title": "Stats",
+    "empty": {
+      "title": "Pronto a cacciare?",
+      "body": "Fotografa il tuo primo Invader e guarda le tue statistiche prendere vita."
+    },
+    "activity": {
+      "section": "Attività recente",
+      "today": "Oggi",
+      "week": "Questa settimana",
+      "month": "Questo mese",
+      "total": "Totale",
+      "onlyTotal": "Fotografa altri Invaders per vedere la tua attività nel tempo — i progressi esistenti sono conservati, solo senza data."
+    },
+    "chart": {
+      "section": "Progressione",
+      "toggleCount": "Invaders",
+      "togglePts": "Punti",
+      "insufficient": "Continua ancora qualche settimana per vedere la curva di progressione."
+    },
+    "streak": {
+      "section": "Serie & record",
+      "currentLabel": "Serie attuale",
+      "recordLabel": "Record",
+      "days_one": "{{count}} giorno",
+      "days_other": "{{count}} giorni"
+    },
+    "bestDay": {
+      "label": "Miglior giorno",
+      "value_one": "{{count}} foto",
+      "value_other": "{{count}} foto"
+    },
+    "rate": {
+      "section": "Ritmo",
+      "weekly_one": "~{{count}} Invader / settimana",
+      "weekly_other": "~{{count}} Invaders / settimana",
+      "projection": "A questo ritmo, {{city}} sarà completata in ~{{months}} mesi.",
+      "projectionSoon": "Ci siamo quasi — {{city}} in meno di 1 mese!",
+      "projectionDone": "{{city}} 100% fotografata 🏆",
+      "notEnoughData": "Continua qualche settimana per vedere la proiezione."
+    },
+    "topCities": { "section": "Top città" },
+    "topDistricts": { "section": "Top quartieri" }
   },
   "about": {
     "title": "Informazioni",

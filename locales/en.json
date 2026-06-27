@@ -30,7 +30,8 @@
     "list": "List",
     "route": "Route",
     "hunt": "Hunt",
-    "palmares": "Scores"
+    "palmares": "Scores",
+    "stats": "Stats"
   },
   "map": {
     "filter": {
@@ -169,6 +170,50 @@
         "body": "The app uses your location to show you on the map and calculate routes. Your data stays on your device."
       }
     }
+  },
+  "stats": {
+    "title": "Stats",
+    "empty": {
+      "title": "Ready to hunt?",
+      "body": "Flash your first Invader and watch your stats come to life."
+    },
+    "activity": {
+      "section": "Recent activity",
+      "today": "Today",
+      "week": "This week",
+      "month": "This month",
+      "total": "All time",
+      "onlyTotal": "Flash more Invaders to see your activity over time — existing progress is kept, just without timestamps."
+    },
+    "chart": {
+      "section": "Progress",
+      "toggleCount": "Invaders",
+      "togglePts": "Points",
+      "insufficient": "Keep flashing for a few more weeks to see your progress curve."
+    },
+    "streak": {
+      "section": "Streak & records",
+      "currentLabel": "Current streak",
+      "recordLabel": "Record",
+      "days_one": "{{count}} day",
+      "days_other": "{{count}} days"
+    },
+    "bestDay": {
+      "label": "Best day",
+      "value_one": "{{count}} flash",
+      "value_other": "{{count}} flashes"
+    },
+    "rate": {
+      "section": "Pace",
+      "weekly_one": "~{{count}} Invader / week",
+      "weekly_other": "~{{count}} Invaders / week",
+      "projection": "At this pace, {{city}} is done in ~{{months}} months.",
+      "projectionSoon": "Almost there — {{city}} done in under a month!",
+      "projectionDone": "{{city}} 100% flashed 🏆",
+      "notEnoughData": "Keep going for a few weeks to see your projection."
+    },
+    "topCities": { "section": "Top cities" },
+    "topDistricts": { "section": "Top districts" }
   },
   "about": {
     "title": "About",

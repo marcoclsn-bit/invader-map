@@ -16,6 +16,7 @@ import ListScreen from './screens/ListScreen';
 import TrajetScreen from './screens/TrajetScreen';
 import ChasseScreen from './screens/ChasseScreen';
 import PalmèresScreen from './screens/PalmèresScreen';
+import StatsScreen from './screens/StatsScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import AboutScreen from './screens/AboutScreen';
 import OnboardingScreen from './screens/OnboardingScreen';
@@ -54,6 +55,9 @@ function MainTabs() {
       <Tab.Screen name="Palmarès" component={PalmèresScreen}
         options={{ tabBarLabel: t('tabs.palmares'), tabBarIcon: ({ color, size, focused }) =>
           <Ionicons name={focused ? 'ribbon' : 'ribbon-outline'} size={size} color={color} /> }} />
+      <Tab.Screen name="Stats" component={StatsScreen}
+        options={{ tabBarLabel: t('tabs.stats'), tabBarIcon: ({ color, size, focused }) =>
+          <Ionicons name={focused ? 'stats-chart' : 'stats-chart-outline'} size={size} color={color} /> }} />
     </Tab.Navigator>
   );
 }

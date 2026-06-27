@@ -30,7 +30,8 @@
     "list": "Lista",
     "route": "Ruta",
     "hunt": "Caza",
-    "palmares": "Palmarés"
+    "palmares": "Palmarés",
+    "stats": "Stats"
   },
   "map": {
     "filter": {
@@ -169,6 +170,50 @@
         "body": "La app usa tu ubicación para situarte en el mapa y calcular rutas. Tus datos permanecen en tu dispositivo."
       }
     }
+  },
+  "stats": {
+    "title": "Stats",
+    "empty": {
+      "title": "¡Listo para cazar?",
+      "body": "Fotografía tu primer Invader y verás cómo tus estadísticas cobran vida."
+    },
+    "activity": {
+      "section": "Actividad reciente",
+      "today": "Hoy",
+      "week": "Esta semana",
+      "month": "Este mes",
+      "total": "Total",
+      "onlyTotal": "Fotografía más Invaders para ver tu actividad a lo largo del tiempo — el progreso existente se conserva, solo que sin fecha."
+    },
+    "chart": {
+      "section": "Progresión",
+      "toggleCount": "Invaders",
+      "togglePts": "Puntos",
+      "insufficient": "Sigue unas semanas más para ver tu curva de progreso."
+    },
+    "streak": {
+      "section": "Racha & récords",
+      "currentLabel": "Racha actual",
+      "recordLabel": "Récord",
+      "days_one": "{{count}} día",
+      "days_other": "{{count}} días"
+    },
+    "bestDay": {
+      "label": "Mejor día",
+      "value_one": "{{count}} fotografía",
+      "value_other": "{{count}} fotografías"
+    },
+    "rate": {
+      "section": "Ritmo",
+      "weekly_one": "~{{count}} Invader / semana",
+      "weekly_other": "~{{count}} Invaders / semana",
+      "projection": "A este ritmo, {{city}} estará terminada en ~{{months}} meses.",
+      "projectionSoon": "¡Casi listo! — {{city}} en menos de 1 mes.",
+      "projectionDone": "{{city}} 100% fotografiada 🏆",
+      "notEnoughData": "Continúa unas semanas para ver tu proyección."
+    },
+    "topCities": { "section": "Top ciudades" },
+    "topDistricts": { "section": "Top distritos" }
   },
   "about": {
     "title": "Acerca de",

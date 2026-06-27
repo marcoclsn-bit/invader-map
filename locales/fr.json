@@ -30,7 +30,8 @@
     "list": "Liste",
     "route": "Trajet",
     "hunt": "Chasse",
-    "palmares": "Palmarès"
+    "palmares": "Palmarès",
+    "stats": "Stats"
   },
   "map": {
     "filter": {
@@ -169,6 +170,50 @@
         "body": "L'app utilise ta position pour te situer sur la carte et calculer tes itinéraires. Tes données restent sur ton appareil."
       }
     }
+  },
+  "stats": {
+    "title": "Stats",
+    "empty": {
+      "title": "C'est le début !",
+      "body": "Flashe ton premier Invader pour que tes statistiques prennent vie."
+    },
+    "activity": {
+      "section": "Activité récente",
+      "today": "Aujourd'hui",
+      "week": "Cette semaine",
+      "month": "Ce mois",
+      "total": "Total tous tps",
+      "onlyTotal": "Flashe les prochains Invaders pour voir ton activité dans le temps — les anciens flashs sont conservés, juste sans date."
+    },
+    "chart": {
+      "section": "Progression",
+      "toggleCount": "Invaders",
+      "togglePts": "Points",
+      "insufficient": "Flash encore quelques semaines pour voir la courbe se dessiner."
+    },
+    "streak": {
+      "section": "Série & records",
+      "currentLabel": "Série actuelle",
+      "recordLabel": "Record",
+      "days_one": "{{count}} jour",
+      "days_other": "{{count}} jours"
+    },
+    "bestDay": {
+      "label": "Meilleure journée",
+      "value_one": "{{count}} flash",
+      "value_other": "{{count}} flashs"
+    },
+    "rate": {
+      "section": "Rythme",
+      "weekly_one": "~{{count}} Invader / semaine",
+      "weekly_other": "~{{count}} Invaders / semaine",
+      "projection": "À ce rythme, {{city}} est terminée dans ~{{months}} mois.",
+      "projectionSoon": "Plus qu'un dernier sprint — {{city}} se finit en moins d'1 mois !",
+      "projectionDone": "{{city}} 100 % flashée 🏆",
+      "notEnoughData": "Continue quelques semaines pour voir ta projection."
+    },
+    "topCities": { "section": "Top villes" },
+    "topDistricts": { "section": "Top arrondissements" }
   },
   "about": {
     "title": "À propos",
