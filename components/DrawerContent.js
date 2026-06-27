@@ -33,12 +33,17 @@ export default function DrawerContent({ navigation, state }) {
   const currentRoute = state.routes[state.index]?.name;
 
   const mainItems = [
+    { name: 'Tabs',     icon: 'map',         label: t('tabs.map') },
     { name: 'Liste',    icon: 'list',        label: t('tabs.list') },
     { name: 'Palmarès', icon: 'ribbon',      label: t('tabs.palmares') },
     { name: 'Stats',    icon: 'stats-chart', label: t('tabs.stats') },
   ];
 
-  function goTo(screen) { navigation.navigate(screen); }
+  function goTo(screen) {
+    // "Tabs" = retour à l'expérience terrain (onglet Carte par défaut)
+    if (screen === 'Tabs') { navigation.navigate('Tabs', { screen: 'Carte' }); return; }
+    navigation.navigate(screen);
+  }
   function goToModal(screen) {
     navigation.closeDrawer();
     navigation.getParent()?.navigate(screen);

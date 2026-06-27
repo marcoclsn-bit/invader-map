@@ -105,11 +105,13 @@ export default function ListScreen({ navigation }) {
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
       <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
-          <Ionicons name="menu" size={24} color={theme.textPrimary} />
-        </TouchableOpacity>
         <Text style={styles.title}>{t('list.title')}</Text>
-        <Text style={styles.counter}>{t('list.counter', { flashed: flashed.size, total: invaders.length })}</Text>
+        <View style={styles.headerRight}>
+          <Text style={styles.counter}>{t('list.counter', { flashed: flashed.size, total: invaders.length })}</Text>
+          <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
+            <Ionicons name="menu" size={24} color={theme.textPrimary} />
+          </TouchableOpacity>
+        </View>
       </View>
 
       <TextInput
