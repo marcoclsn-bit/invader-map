@@ -295,5 +295,46 @@
     },
     "aboutEntry": "Informazioni",
     "replayOnboarding": "Rivedere l'introduzione"
+  },
+  "feedback": {
+    "noMailTitle": "Nessuna app email",
+    "noMailBody": "Nessuna app email è configurata su questo dispositivo. Aggiungi un account e riprova.",
+    "context": {
+      "title": "Info tecniche (contesto)",
+      "appVersion": "Versione dell'app",
+      "dataVersion": "Versione dei dati",
+      "language": "Lingua",
+      "device": "Dispositivo",
+      "os": "Sistema"
+    },
+    "idea": {
+      "title": "Un'idea?",
+      "intro": "Un suggerimento, un'osservazione, un bug? Scrivimi, si aprirà la tua app email.",
+      "subjectLabel": "Oggetto (facoltativo)",
+      "subjectPlaceholder": "In poche parole…",
+      "messageLabel": "Messaggio",
+      "messagePlaceholder": "La tua idea in dettaglio…",
+      "send": "Invia",
+      "note": "Non viene raccolto alcun dato. Apre semplicemente la tua app email.",
+      "emptyTitle": "Messaggio vuoto",
+      "emptyBody": "Scrivi la tua idea prima di inviare.",
+      "emailSubject": "Idea Invader Map — {{subject}}",
+      "emailSubjectNoTopic": "Idea Invader Map",
+      "sentTitle": "Grazie!",
+      "sentBody": "La tua idea è stata inviata."
+    },
+    "status": {
+      "button": "Segnala un cambio di stato",
+      "pickTitle": "Nuovo stato rilevato",
+      "pickBody": "Qual è lo stato reale dell'Invader {{id}}?",
+      "emailSubject": "Segnalazione stato — {{id}}",
+      "bodyId": "Invader: {{id}}",
+      "bodyCurrent": "Stato attuale nell'app: {{status}}",
+      "bodyReported": "Stato segnalato: {{status}}",
+      "bodyCoords": "Coordinate: {{lat}}, {{lng}}",
+      "bodyDate": "Data: {{date}}",
+      "sentTitle": "Grazie!",
+      "sentBody": "La tua segnalazione è stata inviata."
+    }
   }
 }

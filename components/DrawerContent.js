@@ -79,6 +79,12 @@ export default function DrawerContent({ navigation, state }) {
         <View style={[styles.sep, { backgroundColor: theme.border, marginVertical: 8 }]} />
 
         <NavItem
+          icon="bulb-outline"
+          label={t('feedback.idea.title')}
+          onPress={() => goToModal('Idée')}
+          theme={theme}
+        />
+        <NavItem
           icon="settings-outline"
           label={t('settings.title')}
           onPress={() => goToModal('Réglages')}

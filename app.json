@@ -37,7 +37,8 @@
           "locationWhenInUsePermission": "Invader Map utilise votre position pour vous situer sur la carte et vous aider à trouver les Invaders proches."
         }
       ],
-      "expo-localization"
+      "expo-localization",
+      "expo-mail-composer"
     ]
   }
 }

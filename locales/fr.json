@@ -295,5 +295,46 @@
     },
     "aboutEntry": "À propos",
     "replayOnboarding": "Revoir l'introduction"
+  },
+  "feedback": {
+    "noMailTitle": "Aucune app mail",
+    "noMailBody": "Aucune application e-mail n'est configurée sur cet appareil. Ajoutez un compte mail puis réessayez.",
+    "context": {
+      "title": "Infos techniques (contexte)",
+      "appVersion": "Version de l'app",
+      "dataVersion": "Version des données",
+      "language": "Langue",
+      "device": "Appareil",
+      "os": "Système"
+    },
+    "idea": {
+      "title": "Une idée ?",
+      "intro": "Une suggestion, une remarque, un bug ? Écrivez-moi, ça ouvrira votre app mail.",
+      "subjectLabel": "Sujet (optionnel)",
+      "subjectPlaceholder": "En quelques mots…",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Votre idée en détail…",
+      "send": "Envoyer",
+      "note": "Aucune donnée n'est collectée. Le message ouvre simplement votre application e-mail.",
+      "emptyTitle": "Message vide",
+      "emptyBody": "Écrivez d'abord votre idée avant d'envoyer.",
+      "emailSubject": "Idée Invader Map — {{subject}}",
+      "emailSubjectNoTopic": "Idée Invader Map",
+      "sentTitle": "Merci !",
+      "sentBody": "Votre idée a bien été envoyée."
+    },
+    "status": {
+      "button": "Signaler un changement de statut",
+      "pickTitle": "Nouveau statut constaté",
+      "pickBody": "Quel est l'état réel de l'Invader {{id}} ?",
+      "emailSubject": "Signalement statut — {{id}}",
+      "bodyId": "Invader : {{id}}",
+      "bodyCurrent": "Statut actuel dans l'app : {{status}}",
+      "bodyReported": "Statut signalé : {{status}}",
+      "bodyCoords": "Coordonnées : {{lat}}, {{lng}}",
+      "bodyDate": "Date : {{date}}",
+      "sentTitle": "Merci !",
+      "sentBody": "Votre signalement a bien été envoyé."
+    }
   }
 }

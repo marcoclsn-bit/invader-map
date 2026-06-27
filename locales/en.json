@@ -295,5 +295,46 @@
     },
     "aboutEntry": "About",
     "replayOnboarding": "Replay introduction"
+  },
+  "feedback": {
+    "noMailTitle": "No mail app",
+    "noMailBody": "No email app is set up on this device. Add a mail account and try again.",
+    "context": {
+      "title": "Technical info (context)",
+      "appVersion": "App version",
+      "dataVersion": "Data version",
+      "language": "Language",
+      "device": "Device",
+      "os": "System"
+    },
+    "idea": {
+      "title": "Got an idea?",
+      "intro": "A suggestion, a remark, a bug? Drop me a line — it'll open your mail app.",
+      "subjectLabel": "Subject (optional)",
+      "subjectPlaceholder": "In a few words…",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Your idea in detail…",
+      "send": "Send",
+      "note": "No data is collected. This just opens your email app.",
+      "emptyTitle": "Empty message",
+      "emptyBody": "Write your idea before sending.",
+      "emailSubject": "Invader Map idea — {{subject}}",
+      "emailSubjectNoTopic": "Invader Map idea",
+      "sentTitle": "Thanks!",
+      "sentBody": "Your idea has been sent."
+    },
+    "status": {
+      "button": "Report a status change",
+      "pickTitle": "Newly observed status",
+      "pickBody": "What's the real state of Invader {{id}}?",
+      "emailSubject": "Status report — {{id}}",
+      "bodyId": "Invader: {{id}}",
+      "bodyCurrent": "Current status in app: {{status}}",
+      "bodyReported": "Reported status: {{status}}",
+      "bodyCoords": "Coordinates: {{lat}}, {{lng}}",
+      "bodyDate": "Date: {{date}}",
+      "sentTitle": "Thanks!",
+      "sentBody": "Your report has been sent."
+    }
   }
 }

@@ -1,10 +1,11 @@
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { useAppContext } from '../context/AppContext';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import { openInstagramTag } from '../utils/navigation';
+import { buildContextBlock, sendFeedbackEmail } from '../utils/feedback';
 
 let _styleCache = null;
 function getStyles(theme) {
@@ -16,7 +17,7 @@ function getStyles(theme) {
 
 // autoCloseOnAction : ferme le panel après chaque action (utilisé en mode navigation Chasse)
 export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClose, autoCloseOnAction = false }) {
-  const { flashed, labelDefs, statusColors, labels, toggleLabel } = useAppContext();
+  const { flashed, labelDefs, statusColors, labels, toggleLabel, dataVersion } = useAppContext();
   const { theme } = useTheme();
   const { t } = useTranslation();
   const styles = getStyles(theme);
@@ -33,6 +34,42 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
   }
   function handleInstagram() {
     openInstagramTag(invader.id);
+    if (autoCloseOnAction) onClose();
+  }
+
+  // ── Signalement d'un changement de statut ──────────────────────────────────
+  function reportStatus() {
+    const options = ['ok', 'damaged', 'destroyed'];
+    const buttons = options.map((s) => ({
+      text: t(`common.status.${s}`),
+      onPress: () => submitStatusReport(s),
+    }));
+    buttons.push({ text: t('common.cancel'), style: 'cancel' });
+    Alert.alert(
+      t('feedback.status.pickTitle'),
+      t('feedback.status.pickBody', { id: invader.id }),
+      buttons,
+    );
+  }
+
+  async function submitStatusReport(newStatus) {
+    const subject = t('feedback.status.emailSubject', { id: invader.id });
+    const body = [
+      t('feedback.status.bodyId', { id: invader.id }),
+      t('feedback.status.bodyCurrent', { status: t(`common.status.${invader.status}`) }),
+      t('feedback.status.bodyReported', { status: t(`common.status.${newStatus}`) }),
+      t('feedback.status.bodyCoords', { lat: invader.lat, lng: invader.lng }),
+      t('feedback.status.bodyDate', { date: new Date().toLocaleString() }),
+      '',
+      buildContextBlock(dataVersion),
+    ].join('\n');
+
+    const status = await sendFeedbackEmail({ subject, body }).catch(() => 'no_mail');
+    if (status === 'no_mail') {
+      Alert.alert(t('feedback.noMailTitle'), t('feedback.noMailBody'));
+    } else if (status === 'sent') {
+      Alert.alert(t('feedback.status.sentTitle'), t('feedback.status.sentBody'));
+    }
     if (autoCloseOnAction) onClose();
   }
 
@@ -75,6 +112,16 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
       >
         <Ionicons name="logo-instagram" size={16} color="#E1306C" />
         <Text style={styles.igBtnText}>{t('map.panel.instagram')}</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={styles.reportBtn}
+        onPress={reportStatus}
+        activeOpacity={0.6}
+        hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}
+      >
+        <Ionicons name="flag-outline" size={13} color={theme.textSecondary} />
+        <Text style={styles.reportBtnText}>{t('feedback.status.button')}</Text>
       </TouchableOpacity>
 
       {labelDefs.filter((d) => !d.system).length > 0 && (
@@ -136,6 +183,11 @@ function makeStyles(t) {
       borderWidth: 1, borderColor: '#E1306C',
     },
     igBtnText: { fontSize: 14, fontWeight: '500', color: '#E1306C' },
+    reportBtn: {
+      marginTop: 12, flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
+      gap: 6, paddingVertical: 4,
+    },
+    reportBtnText: { fontSize: 12, color: t.textSecondary, textDecorationLine: 'underline' },
     labelSection: { marginTop: 16 },
     labelSectionTitle: { fontSize: 11, fontWeight: '600', color: t.textSecondary, letterSpacing: 0.5, marginBottom: 8 },
     labelChips: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },

@@ -21,6 +21,7 @@ import PalmèresScreen from './screens/PalmèresScreen';
 import StatsScreen from './screens/StatsScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import AboutScreen from './screens/AboutScreen';
+import IdeaScreen from './screens/IdeaScreen';
 import OnboardingScreen from './screens/OnboardingScreen';
 import DrawerContent from './components/DrawerContent';
 
@@ -138,6 +139,19 @@ function AppShell() {
             options={{
               headerShown: true,
               title: t('about.title'),
+              headerTintColor: theme.accent,
+              headerTitleStyle: { fontFamily: 'Silkscreen_700Bold', fontSize: 16, color: theme.textPrimary },
+              headerStyle: { backgroundColor: theme.surface },
+              contentStyle: { backgroundColor: theme.bg },
+            }}
+          />
+          <Root.Screen
+            name="Idée"
+            component={IdeaScreen}
+            options={{
+              headerShown: true,
+              title: t('feedback.idea.title'),
+              presentation: 'modal',
               headerTintColor: theme.accent,
               headerTitleStyle: { fontFamily: 'Silkscreen_700Bold', fontSize: 16, color: theme.textPrimary },
               headerStyle: { backgroundColor: theme.surface },
