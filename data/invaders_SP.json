@@ -1,8 +1,8 @@
 {
-  "version": 3,
-  "updatedAt": "2026-06-23",
+  "version": 4,
+  "updatedAt": "2026-06-27",
   "city": "SP",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 52,
   "invaders": [
     {
@@ -10,11 +10,12 @@
       "city": "SP",
       "lat": -23.5605971767,
       "lng": -46.6554054672,
-      "status": "ok",
+      "status": "destroyed",
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_01/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_02",
@@ -25,7 +26,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_02/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_03",
@@ -36,7 +38,8 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_03/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_04",
@@ -47,7 +50,8 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_04/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_05",
@@ -58,7 +62,8 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_05/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_06",
@@ -69,40 +74,44 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_06/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_07",
       "city": "SP",
       "lat": -23.5524721443,
       "lng": -46.6536120108,
-      "status": "destroyed",
+      "status": "ok",
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_07/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_08",
       "city": "SP",
       "lat": -23.5200436804,
       "lng": -46.7009740136,
-      "status": "ok",
+      "status": "destroyed",
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_08/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_09",
       "city": "SP",
       "lat": -23.5194439089,
       "lng": -46.7098826693,
-      "status": "ok",
+      "status": "destroyed",
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_09/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_10",
@@ -113,7 +122,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_10/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_11",
@@ -124,18 +134,20 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_11/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_12",
       "city": "SP",
       "lat": -23.5557576618,
       "lng": -46.6905708576,
-      "status": "destroyed",
+      "status": "ok",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_12/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_13",
@@ -146,18 +158,20 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_13/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_14",
       "city": "SP",
       "lat": -23.5520961119,
       "lng": -46.6254337266,
-      "status": "destroyed",
+      "status": "ok",
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_14/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_15",
@@ -168,7 +182,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_15/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_16",
@@ -179,7 +194,8 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_16/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_17",
@@ -190,18 +206,20 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_17/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_18",
       "city": "SP",
       "lat": -23.5644947158,
       "lng": -46.6943517817,
-      "status": "ok",
+      "status": "destroyed",
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_18/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_19",
@@ -212,18 +230,20 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_19/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_20",
       "city": "SP",
       "lat": -23.5540530293,
       "lng": -46.6612796209,
-      "status": "destroyed",
+      "status": "ok",
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_20/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_21",
@@ -234,7 +254,8 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_21/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_22",
@@ -245,18 +266,20 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_22/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_23",
       "city": "SP",
       "lat": -23.5556813614,
       "lng": -46.6634259025,
-      "status": "damaged",
+      "status": "destroyed",
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_23/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_24",
@@ -267,18 +290,20 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_24/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_25",
       "city": "SP",
       "lat": -23.5224907329,
       "lng": -46.6867558034,
-      "status": "destroyed",
+      "status": "ok",
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_25/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_26",
@@ -289,7 +314,8 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_26/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_27",
@@ -300,18 +326,20 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_27/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_28",
       "city": "SP",
       "lat": -23.526865725,
       "lng": -46.6727435927,
-      "status": "ok",
+      "status": "destroyed",
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_28/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_29",
@@ -322,7 +350,8 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_29/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_30",
@@ -333,7 +362,8 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_30/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_31",
@@ -344,7 +374,8 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_31/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_32",
@@ -355,7 +386,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_32/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_33",
@@ -366,18 +398,20 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_33/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_34",
       "city": "SP",
       "lat": -23.5570106914,
       "lng": -46.635068078,
-      "status": "destroyed",
+      "status": "ok",
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_34/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_35",
@@ -388,7 +422,8 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_35/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_36",
@@ -399,7 +434,8 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_36/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_37",
@@ -410,18 +446,20 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_37/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_38",
       "city": "SP",
       "lat": -23.5548333956,
       "lng": -46.6553283745,
-      "status": "destroyed",
+      "status": "ok",
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_38/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_39",
@@ -432,7 +470,8 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_39/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_40",
@@ -443,7 +482,8 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_40/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_41",
@@ -454,7 +494,8 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_41/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_42",
@@ -465,7 +506,8 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_42/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_43",
@@ -476,7 +518,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_43/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_44",
@@ -487,7 +530,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_44/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_45",
@@ -498,7 +542,8 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_45/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_46",
@@ -509,29 +554,32 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_46/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_47",
       "city": "SP",
       "lat": -23.5597953217,
       "lng": -46.6849900561,
-      "status": "destroyed",
+      "status": "ok",
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_47/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_48",
       "city": "SP",
       "lat": -23.5686538319,
       "lng": -46.6951260129,
-      "status": "destroyed",
+      "status": "ok",
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_48/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_49",
@@ -542,7 +590,8 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_49/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_50",
@@ -553,7 +602,8 @@
       "points": 100,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_50/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_51",
@@ -564,18 +614,20 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_51/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SP_52",
       "city": "SP",
       "lat": -23.5575762662,
       "lng": -46.6384085426,
-      "status": "destroyed",
+      "status": "ok",
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sp_52/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     }
   ]
 }

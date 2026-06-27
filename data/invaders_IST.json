@@ -1,8 +1,8 @@
 {
-  "version": 3,
-  "updatedAt": "2026-06-23",
+  "version": 4,
+  "updatedAt": "2026-06-27",
   "city": "IST",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 16,
   "invaders": [
     {
@@ -14,7 +14,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ist_01/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "IST_02",
@@ -25,7 +26,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ist_02/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "IST_04",
@@ -36,7 +38,8 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ist_04/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "IST_05",
@@ -47,7 +50,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ist_05/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "IST_06",
@@ -58,18 +62,20 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ist_06/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "IST_07",
       "city": "IST",
       "lat": 41.029442877,
       "lng": 28.9754998074,
-      "status": "ok",
+      "status": "destroyed",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ist_07/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "IST_08",
@@ -80,7 +86,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ist_08/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "IST_09",
@@ -91,7 +98,8 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ist_09/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "IST_10",
@@ -102,18 +110,20 @@
       "points": 0,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ist_10/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "IST_11",
       "city": "IST",
       "lat": 41.0158940233,
       "lng": 28.9557679471,
-      "status": "ok",
+      "status": "damaged",
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ist_11/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "IST_12",
@@ -124,7 +134,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ist_12/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "IST_13",
@@ -135,7 +146,8 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ist_13/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "IST_14",
@@ -146,7 +158,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ist_14/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "IST_17",
@@ -157,18 +170,20 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ist_17/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "IST_18",
       "city": "IST",
       "lat": 41.03437152,
       "lng": 28.9808750063,
-      "status": "ok",
+      "status": "destroyed",
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ist_18/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "IST_20",
@@ -179,7 +194,8 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ist_20/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
-  "version": 3,
-  "updatedAt": "2026-06-23",
+  "version": 4,
+  "updatedAt": "2026-06-27",
   "city": "RA",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 40,
   "invaders": [
     {
@@ -14,7 +14,8 @@
       "points": 100,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_01/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_02",
@@ -25,7 +26,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_02/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_03",
@@ -36,7 +38,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_03/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_04",
@@ -47,18 +50,20 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_04/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_05",
       "city": "RA",
       "lat": 44.4200090908,
       "lng": 12.1941454988,
-      "status": "ok",
+      "status": "damaged",
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_05/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_06",
@@ -69,7 +74,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_06/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_07",
@@ -80,7 +86,8 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_07/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_08",
@@ -91,7 +98,8 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_08/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_09",
@@ -102,7 +110,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_09/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_10",
@@ -113,7 +122,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_10/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_11",
@@ -124,7 +134,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_11/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_12",
@@ -135,7 +146,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_12/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_13",
@@ -146,7 +158,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_13/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_14",
@@ -157,7 +170,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_14/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_15",
@@ -168,7 +182,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_15/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_16",
@@ -179,18 +194,20 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_16/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_17",
       "city": "RA",
       "lat": 44.4153008871,
       "lng": 12.1883056367,
-      "status": "damaged",
+      "status": "destroyed",
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_17/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_18",
@@ -201,7 +218,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_18/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_19",
@@ -212,7 +230,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_19/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_20",
@@ -223,7 +242,8 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_20/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_21",
@@ -234,7 +254,8 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_21/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_22",
@@ -245,7 +266,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_22/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_23",
@@ -256,7 +278,8 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_23/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_24",
@@ -267,7 +290,8 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_24/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_25",
@@ -278,7 +302,8 @@
       "points": 100,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_25/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_26",
@@ -289,7 +314,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_26/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_27",
@@ -300,7 +326,8 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_27/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_28",
@@ -311,7 +338,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_28/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_29",
@@ -322,18 +350,20 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_29/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_30",
       "city": "RA",
       "lat": 44.4140254372,
       "lng": 12.2055662247,
-      "status": "damaged",
+      "status": "destroyed",
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_30/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_31",
@@ -344,7 +374,8 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_31/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_32",
@@ -355,7 +386,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_32/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_33",
@@ -366,7 +398,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_33/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_34",
@@ -377,7 +410,8 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_34/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_35",
@@ -388,7 +422,8 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_35/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_36",
@@ -399,7 +434,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_36/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_37",
@@ -410,7 +446,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_37/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_38",
@@ -421,7 +458,8 @@
       "points": 100,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_38/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_39",
@@ -432,7 +470,8 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_39/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "RA_40",
@@ -443,7 +482,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ra_40/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     }
   ]
 }

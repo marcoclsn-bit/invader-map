@@ -1,8 +1,8 @@
 {
-  "version": 3,
-  "updatedAt": "2026-06-23",
+  "version": 4,
+  "updatedAt": "2026-06-27",
   "city": "LBR",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 8,
   "invaders": [
     {
@@ -14,7 +14,8 @@
       "points": 40,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/lbr_01/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "LBR_02",
@@ -25,7 +26,8 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/lbr_02/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "LBR_03",
@@ -36,7 +38,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/lbr_03/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "LBR_04",
@@ -47,7 +50,8 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/lbr_04/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "LBR_05",
@@ -58,7 +62,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/lbr_05/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "LBR_06",
@@ -69,7 +74,8 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/lbr_06/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "LBR_07",
@@ -80,18 +86,20 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/lbr_07/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "LBR_08",
       "city": "LBR",
       "lat": 43.7948029034,
       "lng": 5.3441769163,
-      "status": "damaged",
+      "status": "destroyed",
       "points": 40,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/lbr_08/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     }
   ]
 }

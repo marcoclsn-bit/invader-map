@@ -1,8 +1,8 @@
 {
-  "version": 3,
-  "updatedAt": "2026-06-23",
+  "version": 4,
+  "updatedAt": "2026-06-27",
   "city": "GRN",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 57,
   "invaders": [
     {
@@ -10,11 +10,12 @@
       "city": "GRN",
       "lat": 45.1926864574,
       "lng": 5.7241090681,
-      "status": "ok",
+      "status": "damaged",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_01/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_02",
@@ -25,7 +26,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_02/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_03",
@@ -36,7 +38,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_03/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_04",
@@ -47,7 +50,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_04/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_05",
@@ -58,7 +62,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_05/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_06",
@@ -69,7 +74,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_06/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_07",
@@ -80,18 +86,20 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_07/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_08",
       "city": "GRN",
       "lat": 45.1895172935,
       "lng": 5.7222282486,
-      "status": "ok",
+      "status": "damaged",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_08/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_09",
@@ -102,18 +110,20 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_09/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_10",
       "city": "GRN",
       "lat": 45.1844933747,
       "lng": 5.7221173054,
-      "status": "ok",
+      "status": "destroyed",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_10/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_11",
@@ -124,7 +134,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_11/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_12",
@@ -135,7 +146,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_12/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_13",
@@ -146,18 +158,20 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_13/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_14",
       "city": "GRN",
       "lat": 45.1956879141,
       "lng": 5.729512898,
-      "status": "ok",
+      "status": "destroyed",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_14/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_15",
@@ -168,7 +182,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_15/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_16",
@@ -179,7 +194,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_16/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_17",
@@ -190,7 +206,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_17/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_18",
@@ -201,7 +218,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_18/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_19",
@@ -212,18 +230,20 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_19/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_20",
       "city": "GRN",
       "lat": 45.1830608722,
       "lng": 5.7314622802,
-      "status": "ok",
+      "status": "destroyed",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_20/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_21",
@@ -234,7 +254,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_21/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_22",
@@ -245,7 +266,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_22/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_23",
@@ -256,40 +278,44 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_23/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_24",
       "city": "GRN",
       "lat": 45.1902451629,
       "lng": 5.729091019,
-      "status": "ok",
+      "status": "damaged",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_24/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_25",
       "city": "GRN",
       "lat": 45.1811113022,
       "lng": 5.7252670452,
-      "status": "damaged",
+      "status": "ok",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_25/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_26",
       "city": "GRN",
       "lat": 45.1852202484,
       "lng": 5.7223981022,
-      "status": "ok",
+      "status": "destroyed",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_26/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_27",
@@ -300,7 +326,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_27/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_28",
@@ -311,7 +338,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_28/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_29",
@@ -322,7 +350,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_29/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_30",
@@ -333,7 +362,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_30/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_31",
@@ -344,7 +374,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_31/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_32",
@@ -355,7 +386,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_32/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_33",
@@ -366,7 +398,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_33/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_34",
@@ -377,7 +410,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_34/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_35",
@@ -388,7 +422,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_35/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_36",
@@ -399,18 +434,20 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_36/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_37",
       "city": "GRN",
       "lat": 45.1924158901,
       "lng": 5.7200730298,
-      "status": "ok",
+      "status": "destroyed",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_37/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_38",
@@ -421,7 +458,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_38/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_39",
@@ -432,7 +470,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_39/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_40",
@@ -443,7 +482,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_40/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_41",
@@ -454,18 +494,20 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_41/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_42",
       "city": "GRN",
       "lat": 45.1949647998,
       "lng": 5.72851906,
-      "status": "ok",
+      "status": "destroyed",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_42/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_43",
@@ -476,7 +518,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_43/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_44",
@@ -487,7 +530,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_44/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_45",
@@ -498,7 +542,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_45/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_46",
@@ -509,7 +554,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_46/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_47",
@@ -520,7 +566,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_47/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_48",
@@ -531,7 +578,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_48/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_49",
@@ -542,18 +590,20 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_49/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_50",
       "city": "GRN",
       "lat": 45.1936255201,
       "lng": 5.719551555,
-      "status": "ok",
+      "status": "damaged",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_50/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_51",
@@ -564,7 +614,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_51/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_52",
@@ -575,29 +626,32 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_52/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_53",
       "city": "GRN",
       "lat": 45.1944319851,
       "lng": 5.72295012,
-      "status": "ok",
+      "status": "destroyed",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_53/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_54",
       "city": "GRN",
       "lat": 45.2045225911,
       "lng": 5.7408118192,
-      "status": "ok",
+      "status": "destroyed",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_54/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_55",
@@ -608,7 +662,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_55/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_56",
@@ -619,18 +674,20 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_56/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GRN_57",
       "city": "GRN",
       "lat": 45.1559803241,
       "lng": 5.7482502242,
-      "status": "ok",
+      "status": "destroyed",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/grn_57/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     }
   ]
 }

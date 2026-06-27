@@ -1,9 +1,9 @@
 {
-  "version": 2,
-  "updatedAt": "2026-06-23",
+  "version": 3,
+  "updatedAt": "2026-06-27",
   "city": "CAZ",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
-  "_baseCount": 40,
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "_baseCount": 39,
   "invaders": [
     {
       "id": "CAZ_01",
@@ -13,7 +13,9 @@
       "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_01/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_02",
@@ -23,7 +25,9 @@
       "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_02/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_03",
@@ -33,7 +37,9 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_03/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_04",
@@ -43,7 +49,9 @@
       "status": "damaged",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_04/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_05",
@@ -53,7 +61,9 @@
       "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_05/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_06",
@@ -63,7 +73,9 @@
       "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_06/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_07",
@@ -73,7 +85,9 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_07/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_08",
@@ -83,7 +97,9 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_08/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_09",
@@ -93,17 +109,21 @@
       "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_09/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_10",
       "city": "CAZ",
       "lat": 43.5545326706,
       "lng": 7.1223942715,
-      "status": "damaged",
+      "status": "ok",
       "points": 10,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_10/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_11",
@@ -113,17 +133,21 @@
       "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_11/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_12",
       "city": "CAZ",
       "lat": 43.5688825623,
       "lng": 7.1109586542,
-      "status": "damaged",
+      "status": "ok",
       "points": 10,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_12/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_13",
@@ -133,7 +157,9 @@
       "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_13/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_14",
@@ -143,7 +169,9 @@
       "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_14/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_15",
@@ -153,7 +181,9 @@
       "status": "damaged",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_15/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_16",
@@ -163,7 +193,9 @@
       "status": "damaged",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_16/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_17",
@@ -173,7 +205,9 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_17/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_18",
@@ -183,7 +217,9 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_18/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_19",
@@ -193,17 +229,21 @@
       "status": "destroyed",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_19/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_20",
       "city": "CAZ",
       "lat": 43.6843914848,
       "lng": 7.3322738764,
-      "status": "destroyed",
+      "status": "ok",
       "points": 10,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_20/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_21",
@@ -213,7 +253,9 @@
       "status": "destroyed",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_21/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_22",
@@ -223,7 +265,9 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_22/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_23",
@@ -233,17 +277,21 @@
       "status": "damaged",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_23/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_24",
       "city": "CAZ",
       "lat": 43.4376162503,
       "lng": 6.892149185,
-      "status": "ok",
+      "status": "damaged",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_24/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_25",
@@ -253,17 +301,21 @@
       "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_25/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_26",
       "city": "CAZ",
       "lat": 43.2413467013,
       "lng": 6.6497526559,
-      "status": "destroyed",
+      "status": "ok",
       "points": 10,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_26/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_27",
@@ -273,7 +325,9 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_27/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_28",
@@ -283,7 +337,9 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_28/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_29",
@@ -293,7 +349,9 @@
       "status": "destroyed",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_29/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_30",
@@ -303,7 +361,9 @@
       "status": "damaged",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_30/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_31",
@@ -313,7 +373,9 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_31/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_32",
@@ -323,7 +385,9 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_32/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_33",
@@ -333,7 +397,9 @@
       "status": "ok",
       "points": 10,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_33/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_34",
@@ -343,7 +409,9 @@
       "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_34/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_35",
@@ -351,9 +419,11 @@
       "lat": 43.1836291822,
       "lng": 5.6669435925,
       "status": "ok",
-      "points": 50,
+      "points": null,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_35/",
+      "source": "pnote",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_36",
@@ -363,7 +433,9 @@
       "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_36/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_37",
@@ -373,37 +445,45 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_37/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_38",
       "city": "CAZ",
       "lat": 42.9992154111,
       "lng": 6.2019604382,
-      "status": "destroyed",
+      "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_38/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_39",
       "city": "CAZ",
       "lat": 43.0021076234,
       "lng": 6.2029442957,
-      "status": "destroyed",
+      "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_39/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "CAZ_40",
       "city": "CAZ",
       "lat": 43.0000187901,
       "lng": 6.2023053479,
-      "status": "damaged",
+      "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/caz_40/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     }
   ]
 }

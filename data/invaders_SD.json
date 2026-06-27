@@ -1,8 +1,8 @@
 {
-  "version": 3,
-  "updatedAt": "2026-06-23",
+  "version": 4,
+  "updatedAt": "2026-06-27",
   "city": "SD",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 20,
   "invaders": [
     {
@@ -14,7 +14,8 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_01/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SD_02",
@@ -25,7 +26,8 @@
       "points": 0,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_02/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SD_03",
@@ -36,7 +38,8 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_03/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SD_05",
@@ -47,7 +50,8 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_05/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SD_06",
@@ -58,7 +62,8 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_06/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SD_07",
@@ -69,18 +74,20 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_07/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SD_08",
       "city": "SD",
       "lat": 32.7178305699,
       "lng": -117.1637671786,
-      "status": "damaged",
+      "status": "destroyed",
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_08/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SD_09",
@@ -91,7 +98,8 @@
       "points": 0,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_09/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SD_10",
@@ -102,7 +110,8 @@
       "points": 100,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_10/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SD_11",
@@ -113,7 +122,8 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_11/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SD_12",
@@ -124,7 +134,8 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_12/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SD_13",
@@ -135,7 +146,8 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_13/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SD_14",
@@ -146,7 +158,8 @@
       "points": 0,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_14/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SD_15",
@@ -157,7 +170,8 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_15/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SD_16",
@@ -168,7 +182,8 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_16/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SD_17",
@@ -179,7 +194,8 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_17/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SD_18",
@@ -190,7 +206,8 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_18/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SD_19",
@@ -201,7 +218,8 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_19/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SD_20",
@@ -212,7 +230,8 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_20/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "SD_21",
@@ -223,7 +242,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_21/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     }
   ]
 }

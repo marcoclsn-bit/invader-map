@@ -1,8 +1,8 @@
 {
-  "version": 3,
-  "updatedAt": "2026-06-23",
+  "version": 4,
+  "updatedAt": "2026-06-27",
   "city": "GNV",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 33,
   "invaders": [
     {
@@ -10,11 +10,12 @@
       "city": "GNV",
       "lat": 46.2039835668,
       "lng": 6.1364370061,
-      "status": "destroyed",
+      "status": "ok",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_01/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_02",
@@ -25,29 +26,32 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_02/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_03",
       "city": "GNV",
       "lat": 46.2017655504,
       "lng": 6.1396023809,
-      "status": "destroyed",
+      "status": "ok",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_03/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_04",
       "city": "GNV",
       "lat": 46.201205965,
       "lng": 6.1393094177,
-      "status": "destroyed",
+      "status": "ok",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_04/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_05",
@@ -58,18 +62,20 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_05/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_06",
       "city": "GNV",
       "lat": 46.1995606858,
       "lng": 6.1395260603,
-      "status": "destroyed",
+      "status": "ok",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_06/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_07",
@@ -80,18 +86,20 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_07/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_08",
       "city": "GNV",
       "lat": 46.2000603658,
       "lng": 6.1429088043,
-      "status": "damaged",
+      "status": "ok",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_08/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_09",
@@ -102,40 +110,44 @@
       "points": 40,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_09/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_10",
       "city": "GNV",
       "lat": 46.2105019643,
       "lng": 6.1396079779,
-      "status": "destroyed",
+      "status": "ok",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_10/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_11",
       "city": "GNV",
       "lat": 46.2025738952,
       "lng": 6.1404547519,
-      "status": "destroyed",
+      "status": "ok",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_11/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_12",
       "city": "GNV",
       "lat": 46.1986161305,
       "lng": 6.1372005628,
-      "status": "destroyed",
+      "status": "ok",
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_12/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_13",
@@ -146,7 +158,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_13/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_14",
@@ -157,7 +170,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_14/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_15",
@@ -168,29 +182,32 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_15/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_16",
       "city": "GNV",
       "lat": 46.2098866441,
       "lng": 6.1459529589,
-      "status": "ok",
+      "status": "damaged",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_16/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_17",
       "city": "GNV",
       "lat": 46.2100785224,
       "lng": 6.1538899072,
-      "status": "destroyed",
+      "status": "ok",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_17/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_18",
@@ -201,18 +218,20 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_18/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_19",
       "city": "GNV",
       "lat": 46.2064822514,
       "lng": 6.1466454773,
-      "status": "ok",
+      "status": "damaged",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_19/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_20",
@@ -223,7 +242,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_20/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_21",
@@ -234,7 +254,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_21/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_22",
@@ -245,29 +266,32 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_22/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_23",
       "city": "GNV",
       "lat": 46.2063462056,
       "lng": 6.1404649558,
-      "status": "damaged",
+      "status": "ok",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_23/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_24",
       "city": "GNV",
       "lat": 46.2086073661,
       "lng": 6.1372047748,
-      "status": "destroyed",
+      "status": "ok",
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_24/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_25",
@@ -278,7 +302,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_25/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_26",
@@ -289,7 +314,8 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_26/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_27",
@@ -300,7 +326,8 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_27/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_28",
@@ -311,18 +338,20 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_28/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_29",
       "city": "GNV",
       "lat": 46.2030281696,
       "lng": 6.1447428986,
-      "status": "destroyed",
+      "status": "ok",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_29/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_30",
@@ -333,7 +362,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_30/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_31",
@@ -344,7 +374,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_31/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_32",
@@ -355,7 +386,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_32/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "GNV_33",
@@ -366,7 +398,8 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/gnv_33/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     }
   ]
 }

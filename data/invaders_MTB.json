@@ -1,8 +1,8 @@
 {
-  "version": 3,
-  "updatedAt": "2026-06-23",
+  "version": 4,
+  "updatedAt": "2026-06-27",
   "city": "MTB",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 11,
   "invaders": [
     {
@@ -14,7 +14,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mtb_01/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "MTB_02",
@@ -25,18 +26,20 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mtb_02/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "MTB_03",
       "city": "MTB",
       "lat": 44.0195376991,
       "lng": 1.3503840732,
-      "status": "destroyed",
+      "status": "ok",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mtb_03/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "MTB_04",
@@ -47,18 +50,20 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mtb_04/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "MTB_05",
       "city": "MTB",
       "lat": 44.0149656043,
       "lng": 1.3519913984,
-      "status": "destroyed",
+      "status": "ok",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mtb_05/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "MTB_06",
@@ -69,29 +74,32 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mtb_06/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "MTB_07",
       "city": "MTB",
       "lat": 44.0167114462,
       "lng": 1.3519618535,
-      "status": "destroyed",
+      "status": "ok",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mtb_07/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "MTB_08",
       "city": "MTB",
       "lat": 44.0172195385,
       "lng": 1.3513410708,
-      "status": "damaged",
+      "status": "ok",
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mtb_08/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "MTB_09",
@@ -102,7 +110,8 @@
       "points": 100,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mtb_09/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "MTB_10",
@@ -113,7 +122,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mtb_10/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "MTB_11",
@@ -124,7 +134,8 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mtb_11/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     }
   ]
 }

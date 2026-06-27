@@ -1,8 +1,8 @@
 {
-  "version": 3,
-  "updatedAt": "2026-06-23",
+  "version": 4,
+  "updatedAt": "2026-06-27",
   "city": "LCT",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 9,
   "invaders": [
     {
@@ -14,18 +14,20 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/lct_01/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "LCT_02",
       "city": "LCT",
       "lat": 43.191226148,
       "lng": 5.6196333225,
-      "status": "ok",
+      "status": "damaged",
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/lct_02/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "LCT_03",
@@ -36,7 +38,8 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/lct_03/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "LCT_04",
@@ -47,18 +50,20 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/lct_04/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "LCT_05",
       "city": "LCT",
       "lat": 43.1982743346,
       "lng": 5.6332388512,
-      "status": "ok",
+      "status": "destroyed",
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/lct_05/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "LCT_06",
@@ -69,29 +74,32 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/lct_06/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "LCT_07",
       "city": "LCT",
       "lat": 43.1849481656,
       "lng": 5.6200486968,
-      "status": "damaged",
+      "status": "ok",
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/lct_07/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "LCT_08",
       "city": "LCT",
       "lat": 43.1737839415,
       "lng": 5.6059085686,
-      "status": "ok",
+      "status": "destroyed",
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/lct_08/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "LCT_09",
@@ -102,7 +110,8 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/lct_09/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true
     }
   ]
 }

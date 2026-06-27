@@ -1,8 +1,8 @@
 {
-  "version": 2,
-  "updatedAt": "2026-06-23",
+  "version": 3,
+  "updatedAt": "2026-06-27",
   "city": "FTBL",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 45,
   "invaders": [
     {
@@ -10,20 +10,24 @@
       "city": "FTBL",
       "lat": 48.2878626597,
       "lng": 2.5966199066,
-      "status": "destroyed",
+      "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_01/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_02",
       "city": "FTBL",
       "lat": 48.2841547101,
       "lng": 2.5961845464,
-      "status": "destroyed",
+      "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_02/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_03",
@@ -33,7 +37,9 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_03/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_04",
@@ -43,27 +49,33 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_04/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_05",
       "city": "FTBL",
       "lat": 48.4463755252,
       "lng": 2.6016891705,
-      "status": "destroyed",
+      "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_05/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_06",
       "city": "FTBL",
       "lat": 48.2982929994,
       "lng": 2.5739686576,
-      "status": "destroyed",
+      "status": "damaged",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_06/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_07",
@@ -73,7 +85,9 @@
       "status": "ok",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_07/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_08",
@@ -83,7 +97,9 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_08/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_09",
@@ -93,7 +109,9 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_09/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_10",
@@ -103,7 +121,9 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_10/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_11",
@@ -113,7 +133,9 @@
       "status": "damaged",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_11/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_12",
@@ -123,7 +145,9 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_12/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_13",
@@ -133,17 +157,21 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_13/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_14",
       "city": "FTBL",
       "lat": 48.4097156406,
       "lng": 2.7258833715,
-      "status": "destroyed",
+      "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_14/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_15",
@@ -153,17 +181,21 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_15/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_16",
       "city": "FTBL",
       "lat": 48.4429053214,
       "lng": 2.6119269288,
-      "status": "ok",
+      "status": "damaged",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_16/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_17",
@@ -173,7 +205,9 @@
       "status": "destroyed",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_17/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_18",
@@ -183,7 +217,9 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_18/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_19",
@@ -193,7 +229,9 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_19/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_21",
@@ -203,7 +241,9 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_21/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_22",
@@ -213,17 +253,21 @@
       "status": "destroyed",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_22/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_23",
       "city": "FTBL",
       "lat": 48.476466551,
       "lng": 2.6197429469,
-      "status": "destroyed",
+      "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_23/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_24",
@@ -233,7 +277,9 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_24/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_25",
@@ -243,7 +289,9 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_25/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_26",
@@ -253,7 +301,9 @@
       "status": "ok",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_26/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_27",
@@ -263,17 +313,21 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_27/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_28",
       "city": "FTBL",
       "lat": 48.3848922592,
       "lng": 2.7904763603,
-      "status": "destroyed",
+      "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_28/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_29",
@@ -283,7 +337,9 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_29/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_30",
@@ -293,17 +349,21 @@
       "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_30/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_31",
       "city": "FTBL",
       "lat": 48.4093025083,
       "lng": 2.6324460252,
-      "status": "ok",
+      "status": "destroyed",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_31/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_32",
@@ -313,47 +373,57 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_32/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_33",
       "city": "FTBL",
       "lat": 48.3525700503,
       "lng": 2.5685910272,
-      "status": "ok",
+      "status": "damaged",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_33/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_34",
       "city": "FTBL",
       "lat": 48.3215753381,
       "lng": 2.5652939913,
-      "status": "destroyed",
+      "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_34/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_35",
       "city": "FTBL",
       "lat": 48.4121639275,
       "lng": 2.4726522277,
-      "status": "destroyed",
+      "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_35/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_36",
       "city": "FTBL",
       "lat": 48.340796402,
       "lng": 2.7161040152,
-      "status": "ok",
+      "status": "destroyed",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_36/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_37",
@@ -363,7 +433,9 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_37/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_38",
@@ -373,7 +445,9 @@
       "status": "destroyed",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_38/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_39",
@@ -383,7 +457,9 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_39/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_40",
@@ -393,17 +469,21 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_40/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_41",
       "city": "FTBL",
       "lat": 48.333942903,
       "lng": 2.7458685907,
-      "status": "damaged",
+      "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_41/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_42",
@@ -413,7 +493,9 @@
       "status": "ok",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_42/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_43",
@@ -423,7 +505,9 @@
       "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_43/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_44",
@@ -433,7 +517,9 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_44/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_45",
@@ -443,17 +529,21 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_45/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "FTBL_46",
       "city": "FTBL",
       "lat": 48.3162641425,
       "lng": 2.6930271604,
-      "status": "destroyed",
+      "status": "damaged",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/ftbl_46/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     }
   ]
 }

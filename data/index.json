@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 6,
   "updatedAt": "2026-06-27",
   "cities": [
     {
@@ -38,7 +38,7 @@
       "code": "AMS",
       "name": "Amsterdam",
       "count": 26,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 52.3676,
         "lng": 4.9041
@@ -80,7 +80,7 @@
       "code": "AVI",
       "name": "Avignon",
       "count": 41,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 43.9493,
         "lng": 4.8055
@@ -96,7 +96,7 @@
       "code": "BAB",
       "name": "Bab (Algérie)",
       "count": 60,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 43.483143,
         "lng": -1.530272
@@ -106,7 +106,7 @@
       "code": "BBO",
       "name": "Bilbao",
       "count": 40,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 43.261473,
         "lng": -2.930698
@@ -116,7 +116,7 @@
       "code": "BGK",
       "name": "Bangkok",
       "count": 44,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 13.7563,
         "lng": 100.502
@@ -132,7 +132,7 @@
       "code": "BRC",
       "name": "Barcelone",
       "count": 17,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 41.38332,
         "lng": 2.172895
@@ -142,7 +142,7 @@
       "code": "BRL",
       "name": "Berlin",
       "count": 11,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 52.52,
         "lng": 13.405
@@ -158,7 +158,7 @@
       "code": "BRN",
       "name": "Berne",
       "count": 29,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 46.9481,
         "lng": 7.4474
@@ -174,7 +174,7 @@
       "code": "BSL",
       "name": "Bâle",
       "count": 25,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 47.5596,
         "lng": 7.5886
@@ -188,9 +188,9 @@
     },
     {
       "code": "BTA",
-      "name": "Bogotá",
+      "name": "Bastia",
       "count": 34,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 42.700778,
         "lng": 9.45079
@@ -200,7 +200,7 @@
       "code": "BXL",
       "name": "Bruxelles",
       "count": 42,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 50.8503,
         "lng": 4.3517
@@ -216,7 +216,7 @@
       "code": "CAPF",
       "name": "Cap-Ferret",
       "count": 10,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 44.662923,
         "lng": -1.240386
@@ -226,20 +226,32 @@
       "code": "CAZ",
       "name": "Côte d'Azur",
       "count": 40,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 43.407445,
-        "lng": 6.754997
+        "lat": 43.407,
+        "lng": 6.755
+      },
+      "bbox": {
+        "minLat": 42.95,
+        "maxLat": 44,
+        "minLng": 5.7,
+        "maxLng": 7.8
       }
     },
     {
       "code": "CCU",
       "name": "Cancún",
       "count": 3,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 21.163555,
-        "lng": -86.765476
+        "lat": 21.164,
+        "lng": -86.765
+      },
+      "bbox": {
+        "minLat": 20.85,
+        "maxLat": 21.5,
+        "minLng": -87.2,
+        "maxLng": -86.65
       }
     },
     {
@@ -266,7 +278,7 @@
       "code": "CON",
       "name": "Constance",
       "count": 2,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 44.092551,
         "lng": -1.323003
@@ -302,7 +314,7 @@
       "code": "DJN",
       "name": "Daejeon",
       "count": 22,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 36.366028,
         "lng": 127.381718
@@ -332,10 +344,16 @@
       "code": "FKF",
       "name": "Francfort",
       "count": 14,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 49.896913,
-        "lng": 8.617763
+        "lat": 50.115,
+        "lng": 8.682
+      },
+      "bbox": {
+        "minLat": 49.8,
+        "maxLat": 50.25,
+        "minLng": 8.45,
+        "maxLng": 8.85
       }
     },
     {
@@ -352,17 +370,23 @@
       "code": "FTBL",
       "name": "Fontainebleau",
       "count": 45,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 48.396162,
-        "lng": 2.67744
+        "lat": 48.405,
+        "lng": 2.701
+      },
+      "bbox": {
+        "minLat": 48.15,
+        "maxLat": 48.65,
+        "minLng": 2.4,
+        "maxLng": 3
       }
     },
     {
       "code": "GNV",
       "name": "Genève",
       "count": 33,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 46.2044,
         "lng": 6.1432
@@ -378,7 +402,7 @@
       "code": "GRN",
       "name": "Grenoble",
       "count": 57,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 45.1885,
         "lng": 5.7245
@@ -394,7 +418,7 @@
       "code": "GRU",
       "name": "Grude",
       "count": 3,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 43.386892,
         "lng": 17.38041
@@ -414,7 +438,7 @@
       "code": "HK",
       "name": "Hong Kong",
       "count": 130,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 22.3193,
         "lng": 114.169
@@ -430,7 +454,7 @@
       "code": "IST",
       "name": "Istanbul",
       "count": 16,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 41.0082,
         "lng": 28.9784
@@ -446,7 +470,7 @@
       "code": "KAT",
       "name": "Katmandu",
       "count": 21,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 27.7172,
         "lng": 85.324
@@ -472,7 +496,7 @@
       "code": "LA",
       "name": "Los Angeles",
       "count": 214,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 34.0522,
         "lng": -118.243
@@ -488,7 +512,7 @@
       "code": "LBR",
       "name": "Luberon",
       "count": 8,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 43.860304,
         "lng": 5.355548
@@ -498,7 +522,7 @@
       "code": "LCT",
       "name": "Lecce",
       "count": 9,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 43.185047,
         "lng": 5.61956
@@ -508,7 +532,7 @@
       "code": "LDN",
       "name": "London",
       "count": 193,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 51.5074,
         "lng": -0.1278
@@ -534,7 +558,7 @@
       "code": "LJU",
       "name": "Ljubljana",
       "count": 42,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 46.0569,
         "lng": 14.5058
@@ -550,7 +574,7 @@
       "code": "LSN",
       "name": "Lausanne",
       "count": 16,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 46.5197,
         "lng": 6.6323
@@ -598,7 +622,7 @@
       "code": "MARS",
       "name": "Marseille",
       "count": 97,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 43.2965,
         "lng": 5.3698
@@ -624,7 +648,7 @@
       "code": "MEN",
       "name": "Minorque",
       "count": 5,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 40.012279,
         "lng": 3.85219
@@ -634,7 +658,7 @@
       "code": "MIA",
       "name": "Miami",
       "count": 80,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 25.7617,
         "lng": -80.1918
@@ -650,7 +674,7 @@
       "code": "MLB",
       "name": "Melbourne",
       "count": 16,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": -37.814,
         "lng": 144.963
@@ -682,7 +706,7 @@
       "code": "MPL",
       "name": "Montpellier",
       "count": 38,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 43.6117,
         "lng": 3.8777
@@ -698,17 +722,17 @@
       "code": "MRAK",
       "name": "Marrakech",
       "count": 4,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 31.509986,
-        "lng": -8.038369
+        "lat": 31.6295,
+        "lng": -7.9811
       }
     },
     {
       "code": "MTB",
       "name": "Montauban",
       "count": 11,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 44.016693,
         "lng": 1.351914
@@ -718,7 +742,7 @@
       "code": "MUN",
       "name": "Munich",
       "count": 18,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 48.1351,
         "lng": 11.582
@@ -734,7 +758,7 @@
       "code": "NA",
       "name": "Nantes",
       "count": 3,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 47.216183,
         "lng": -1.545731
@@ -744,7 +768,7 @@
       "code": "NCL",
       "name": "Newcastle",
       "count": 25,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 54.969838,
         "lng": -1.608875
@@ -780,7 +804,7 @@
       "code": "NY",
       "name": "New York",
       "count": 192,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 40.7128,
         "lng": -74.006
@@ -812,7 +836,7 @@
       "code": "PA",
       "name": "Paris",
       "count": 1568,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 48.8566,
         "lng": 2.3522
@@ -844,10 +868,16 @@
       "code": "POTI",
       "name": "Potosí",
       "count": 52,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": -19.590711,
-        "lng": -65.75234
+        "lat": -19.591,
+        "lng": -65.752
+      },
+      "bbox": {
+        "minLat": -19.75,
+        "maxLat": -19.45,
+        "minLng": -65.9,
+        "maxLng": -65.65
       }
     },
     {
@@ -870,17 +900,23 @@
       "code": "PRT",
       "name": "Perth",
       "count": 26,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": -31.964293,
-        "lng": 115.829748
+        "lat": -31.964,
+        "lng": 115.83
+      },
+      "bbox": {
+        "minLat": -32.2,
+        "maxLat": -31.7,
+        "minLng": 115.6,
+        "maxLng": 116.05
       }
     },
     {
       "code": "RA",
       "name": "Ravenne",
       "count": 40,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 44.421317,
         "lng": 12.196371
@@ -890,7 +926,7 @@
       "code": "RBA",
       "name": "Rabat",
       "count": 17,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 33.9716,
         "lng": -6.8498
@@ -906,7 +942,7 @@
       "code": "RDU",
       "name": "Raleigh-Durham",
       "count": 6,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 50.002999,
         "lng": 5.1489
@@ -916,7 +952,7 @@
       "code": "REUN",
       "name": "La Réunion",
       "count": 11,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": -20.9,
         "lng": 55.5
@@ -932,17 +968,23 @@
       "code": "RN",
       "name": "Rennes",
       "count": 4,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 48.110806,
-        "lng": -1.679444
+        "lat": 48.111,
+        "lng": -1.679
+      },
+      "bbox": {
+        "minLat": 47.95,
+        "maxLat": 48.2,
+        "minLng": -1.85,
+        "maxLng": -1.5
       }
     },
     {
       "code": "ROM",
       "name": "Rome",
       "count": 75,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 41.9028,
         "lng": 12.4964
@@ -958,7 +1000,7 @@
       "code": "RTD",
       "name": "Rotterdam",
       "count": 25,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 51.9225,
         "lng": 4.4792
@@ -974,7 +1016,7 @@
       "code": "SD",
       "name": "San Diego",
       "count": 20,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 32.7157,
         "lng": -117.161
@@ -1000,7 +1042,7 @@
       "code": "SP",
       "name": "São Paulo",
       "count": 52,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": -23.55,
         "lng": -46.633
@@ -1042,7 +1084,7 @@
       "code": "VLMO",
       "name": "Valmorel",
       "count": 3,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 45.465017,
         "lng": 6.450343
@@ -1052,17 +1094,23 @@
       "code": "VRN",
       "name": "Varanasi",
       "count": 12,
-      "version": 2,
+      "version": 3,
       "center": {
-        "lat": 25.301308,
-        "lng": 83.007892
+        "lat": 25.301,
+        "lng": 83.008
+      },
+      "bbox": {
+        "minLat": 25.15,
+        "maxLat": 25.55,
+        "minLng": 82.85,
+        "maxLng": 83.2
       }
     },
     {
       "code": "VRS",
       "name": "Versailles",
       "count": 42,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 48.80571,
         "lng": 2.128069
@@ -1082,7 +1130,7 @@
       "code": "WN",
       "name": "Vienne",
       "count": 56,
-      "version": 3,
+      "version": 4,
       "center": {
         "lat": 48.2082,
         "lng": 16.3738

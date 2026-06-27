@@ -43,7 +43,7 @@ const MAX_LOSS_PCT = 0.10;
 
 const SOURCE_ATTRIBUTION =
   'Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) ' +
-  "et pnote.eu (avec autorisation de l'auteur). " +
+  "et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). " +
   "Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.";
 
 // ── Métadonnées des villes ────────────────────────────────────────────────────
@@ -68,14 +68,14 @@ const KNOWN_CITIES = {
   BRN:  { name: 'Berne',            bbox: { minLat: 46.85, maxLat: 47.05, minLng: 7.35,  maxLng: 7.60  } },
   BSL:  { name: 'Bâle',             bbox: { minLat: 47.48, maxLat: 47.62, minLng: 7.50,  maxLng: 7.70  } },
   BXL:  { name: 'Bruxelles',        bbox: { minLat: 50.75, maxLat: 50.95, minLng: 4.25,  maxLng: 4.50  } },
-  CAZ:  { name: "Côte d'Azur",      bbox: { minLat: 43.25, maxLat: 43.85, minLng:  6.40, maxLng:  7.65 } },
+  CAZ:  { name: "Côte d'Azur",      bbox: { minLat: 42.95, maxLat: 44.00, minLng:  5.70, maxLng:  7.80 } },
   CCU:  { name: 'Cancún',           bbox: { minLat: 20.85, maxLat: 21.50, minLng: -87.20, maxLng: -86.65} },
   CLR:  { name: 'Clermont-Ferrand', bbox: { minLat: 45.70, maxLat: 45.85, minLng: 3.00,  maxLng: 3.20  } },
   DIJ:  { name: 'Dijon',            bbox: { minLat: 47.25, maxLat: 47.40, minLng: 4.95,  maxLng: 5.15  } },
   DJBA: { name: 'Djerba',           bbox: { minLat: 33.65, maxLat: 33.95, minLng: 10.70, maxLng: 11.00 } },
   FAO:  { name: 'Faro',             bbox: { minLat: 36.95, maxLat: 37.10, minLng: -7.95, maxLng: -7.85 } },
   FKF:  { name: 'Francfort',        bbox: { minLat: 49.80, maxLat: 50.25, minLng:  8.45, maxLng:  8.85 } },
-  FTBL: { name: 'Fontainebleau',    bbox: { minLat: 48.30, maxLat: 48.55, minLng:  2.55, maxLng:  2.85 } },
+  FTBL: { name: 'Fontainebleau',    bbox: { minLat: 48.15, maxLat: 48.65, minLng:  2.40, maxLng:  3.00 } },
   GNV:  { name: 'Genève',           bbox: { minLat: 46.15, maxLat: 46.30, minLng: 6.05,  maxLng: 6.25  } },
   GRN:  { name: 'Grenoble',         bbox: { minLat: 45.10, maxLat: 45.25, minLng: 5.65,  maxLng: 5.80  } },
   IST:  { name: 'Istanbul',         bbox: { minLat: 40.85, maxLat: 41.25, minLng: 28.60, maxLng: 29.20 } },
@@ -91,7 +91,7 @@ const KNOWN_CITIES = {
   MLB:  { name: 'Melbourne',        bbox: { minLat: -37.90,maxLat: -37.70,minLng: 144.8, maxLng: 145.1 } },
   MLGA: { name: 'Malaga',           bbox: { minLat: 36.65, maxLat: 36.80, minLng: -4.55, maxLng: -4.35 } },
   MPL:  { name: 'Montpellier',      bbox: { minLat: 43.55, maxLat: 43.70, minLng: 3.80,  maxLng: 3.95  } },
-  MRAK: { name: 'Marrakech',        bbox: { minLat: 31.55, maxLat: 31.70, minLng: -8.05, maxLng: -7.90 } },
+  MRAK: { name: 'Marrakech' },
   MUN:  { name: 'Munich',           bbox: { minLat: 48.05, maxLat: 48.25, minLng: 11.45, maxLng: 11.70 } },
   NIM:  { name: 'Nîmes',            bbox: { minLat: 43.80, maxLat: 43.90, minLng: 4.30,  maxLng: 4.45  } },
   ORLN: { name: 'Orléans',          bbox: { minLat: 47.85, maxLat: 48.00, minLng: 1.80,  maxLng: 1.98  } },
@@ -348,8 +348,9 @@ async function main() {
           status:       normalizeStatus(e.status),
           points:       Math.max(0, parseInt(String(e.points ?? 0), 10) || 0),
           hint:         String(e.hint ?? '').trim(),
-          instagramUrl: String(e.instagramUrl ?? '').trim() || null,
-          source:       String(e.source ?? 'extras'),
+          instagramUrl:    String(e.instagramUrl ?? '').trim() || null,
+          source:          String(e.source ?? 'extras'),
+          statusFromPnote: false,
         });
       }
       console.log(`      ${extrasPA.size} extras valides, ${skipped} ignorées, ${disabledCnt} désactivées`);
@@ -366,6 +367,7 @@ async function main() {
   // Compteurs globaux pour le résumé
   let gTotal = 0, gGog = 0, gPnote = 0, gExtras = 0;
   let gInstagram = 0, gNullPoints = 0, gDivergences = 0;
+  let gStatusFromPnote = 0, gDestroyedToOk = 0;
   let paTotal = 0, paGog = 0, paPnote = 0, paExtras = 0;
 
   for (const code of sortedCodes) {
@@ -379,7 +381,7 @@ async function main() {
     // ── Base goguelnikov ───────────────────────────────────────────────────
     const baseInvaders = [];
     const baseIds      = new Set();
-    let cityDivergences = 0;
+    let cityDivergences = 0, cityDestroyedToOk = 0;
 
     for (const entry of gogEntries) {
       const lat = parseCoord(entry.lat);
@@ -387,23 +389,28 @@ async function main() {
       if (lat === null || lng === null) continue;
       if (meta?.bbox && !inBbox(lat, lng, meta.bbox)) continue;
 
-      const id         = String(entry.id);
-      const gogStatus  = normalizeStatus(entry.status);
-      const pnoteEntry = pnoteForCity.get(id);
+      const id              = String(entry.id);
+      const gogStatus       = normalizeStatus(entry.status);
+      const pnoteEntry      = pnoteForCity.get(id);
+      const useStatus       = pnoteEntry ? pnoteEntry.status : gogStatus;
+      const statusFromPnote = pnoteEntry != null;
 
-      // Divergence statut (log, pas de modification)
-      if (pnoteEntry && pnoteEntry.status !== gogStatus) cityDivergences++;
+      if (statusFromPnote && pnoteEntry.status !== gogStatus) {
+        cityDivergences++;
+        if (gogStatus === 'destroyed' && pnoteEntry.status === 'ok') cityDestroyedToOk++;
+      }
 
       baseInvaders.push({
         id,
-        city:         code,
+        city:            code,
         lat,
         lng,
-        status:       gogStatus,                        // goguelnikov gagne
-        points:       parseInt(String(entry.points), 10) || 0,
-        hint:         String(entry.hint ?? '').trim(),
-        instagramUrl: pnoteEntry?.instagramUrl ?? null, // pnote enrichit
-        source:       'goguelnikov',
+        status:          useStatus,                     // pnote prioritaire si disponible
+        points:          parseInt(String(entry.points), 10) || 0,
+        hint:            String(entry.hint ?? '').trim(),
+        instagramUrl:    pnoteEntry?.instagramUrl ?? null,
+        source:          'goguelnikov',
+        statusFromPnote,
       });
       baseIds.add(id);
     }
@@ -446,8 +453,9 @@ async function main() {
         status:       pe.status,
         points:       null,                   // inconnu
         hint:         pe.hint || '',
-        instagramUrl: pe.instagramUrl,
-        source:       'pnote',
+        instagramUrl:    pe.instagramUrl,
+        source:          'pnote',
+        statusFromPnote: true,
       });
     }
     pnoteOnlyInvaders.sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
@@ -500,7 +508,9 @@ async function main() {
     gExtras      += extrasAdded;
     gInstagram   += withIg;
     gNullPoints  += withNullPts;
-    gDivergences += cityDivergences;
+    gDivergences     += cityDivergences;
+    gDestroyedToOk   += cityDestroyedToOk;
+    gStatusFromPnote += finalInvaders.filter(i => i.statusFromPnote).length;
     if (code === 'PA') {
       paTotal  = finalInvaders.length; paGog  = baseInvaders.length;
       paPnote  = pnoteOnlyInvaders.length; paExtras = extrasAdded;
@@ -555,7 +565,8 @@ async function main() {
   console.log('');
   console.log(`  Avec instagramUrl     : ${String(gInstagram).padStart(6)} / ${gTotal} (${(gInstagram/gTotal*100).toFixed(1)} %)`);
   console.log(`  Points inconnus (null): ${String(gNullPoints).padStart(6)}  (pnote-only)`);
-  console.log(`  Divergences statuts   : ${String(gDivergences).padStart(6)}  (gog≠pnote, ids communs, statut gog conservé)`);
+  console.log(`  Statuts repris de pnote    : ${String(gStatusFromPnote).padStart(6)}`);
+  console.log(`    dont différents de gog   : ${String(gDivergences).padStart(6)}  (dont destroyed→ok : ${gDestroyedToOk})`);
   console.log('');
   console.log(`  ── Paris ─────────────────────────────────`);
   console.log(`  Base gog              : ${paGog}`);

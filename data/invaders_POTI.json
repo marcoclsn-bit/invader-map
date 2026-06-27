@@ -1,8 +1,8 @@
 {
-  "version": 2,
-  "updatedAt": "2026-06-23",
+  "version": 3,
+  "updatedAt": "2026-06-27",
   "city": "POTI",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 52,
   "invaders": [
     {
@@ -13,7 +13,9 @@
       "status": "ok",
       "points": 100,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_01/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_02",
@@ -23,7 +25,9 @@
       "status": "destroyed",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_02/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_03",
@@ -33,7 +37,9 @@
       "status": "ok",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_03/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_04",
@@ -43,7 +49,9 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_04/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_05",
@@ -53,7 +61,9 @@
       "status": "ok",
       "points": 100,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_05/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_06",
@@ -63,7 +73,9 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_06/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_07",
@@ -73,7 +85,9 @@
       "status": "destroyed",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_07/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_08",
@@ -83,7 +97,9 @@
       "status": "ok",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_08/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_09",
@@ -93,7 +109,9 @@
       "status": "destroyed",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_09/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_10",
@@ -103,7 +121,9 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_10/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_11",
@@ -113,7 +133,9 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_11/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_12",
@@ -123,7 +145,9 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_12/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_13",
@@ -133,7 +157,9 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_13/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_14",
@@ -143,7 +169,9 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_14/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_15",
@@ -153,7 +181,9 @@
       "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_15/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_16",
@@ -163,7 +193,9 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_16/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_17",
@@ -173,7 +205,9 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_17/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_18",
@@ -183,7 +217,9 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_18/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_19",
@@ -193,7 +229,9 @@
       "status": "damaged",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_19/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_20",
@@ -203,7 +241,9 @@
       "status": "ok",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_20/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_21",
@@ -213,7 +253,9 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_21/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_22",
@@ -223,7 +265,9 @@
       "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_22/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_23",
@@ -233,7 +277,9 @@
       "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_23/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_24",
@@ -243,7 +289,9 @@
       "status": "ok",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_24/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_25",
@@ -253,7 +301,9 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_25/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_26",
@@ -263,7 +313,9 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_26/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_27",
@@ -273,7 +325,9 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_27/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_28",
@@ -283,7 +337,9 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_28/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_29",
@@ -293,7 +349,9 @@
       "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_29/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_30",
@@ -303,7 +361,9 @@
       "status": "ok",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_30/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_31",
@@ -313,7 +373,9 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_31/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_32",
@@ -323,7 +385,9 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_32/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_33",
@@ -333,7 +397,9 @@
       "status": "destroyed",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_33/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_34",
@@ -343,7 +409,9 @@
       "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_34/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_35",
@@ -353,7 +421,9 @@
       "status": "destroyed",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_35/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_36",
@@ -363,7 +433,9 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_36/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_37",
@@ -373,7 +445,9 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_37/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_38",
@@ -383,7 +457,9 @@
       "status": "ok",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_38/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_39",
@@ -393,7 +469,9 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_39/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_40",
@@ -403,7 +481,9 @@
       "status": "ok",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_40/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_41",
@@ -413,7 +493,9 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_41/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_42",
@@ -423,7 +505,9 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_42/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_43",
@@ -433,7 +517,9 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_43/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_44",
@@ -443,17 +529,21 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_44/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_45",
       "city": "POTI",
       "lat": -19.5872488586,
       "lng": -65.7538416652,
-      "status": "ok",
+      "status": "destroyed",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_45/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_46",
@@ -463,7 +553,9 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_46/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_47",
@@ -473,7 +565,9 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_47/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_48",
@@ -483,7 +577,9 @@
       "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_48/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_49",
@@ -493,7 +589,9 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_49/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_50",
@@ -503,7 +601,9 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_50/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_51",
@@ -513,7 +613,9 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_51/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     },
     {
       "id": "POTI_52",
@@ -523,7 +625,9 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "instagramUrl": "https://www.instagram.com/explore/tags/poti_52/",
+      "source": "goguelnikov",
+      "statusFromPnote": true
     }
   ]
 }
