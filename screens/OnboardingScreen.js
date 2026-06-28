@@ -8,6 +8,7 @@ import * as Location from 'expo-location';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
+import Logo from '../components/Logo';
 
 // ─── Données des slides ───────────────────────────────────────────────────────
 //
@@ -27,7 +28,8 @@ function buildSlides(t) {
   return [
     {
       key: 'welcome',
-      icons: ['game-controller-outline'],
+      logo: true,
+      icons: ['game-controller-outline'], // repli si le logo est retiré
       title: t('onboarding.slides.welcome.title'),
       subtitle: t('onboarding.slides.welcome.subtitle'),
     },
@@ -72,17 +74,22 @@ function Slide({ slide, slotWidth, illustrationHeight, theme, t, locationDenied,
           />
           (créez le dossier assets/onboarding/ et déposez vos images dedans)
         */}
-        <View style={[styles.iconCircle, { backgroundColor: theme.accentDim }]}>
-          {slide.icons.length === 1 ? (
-            <Ionicons name={slide.icons[0]} size={iconSize} color={theme.accent} />
-          ) : (
-            <View style={styles.iconPair}>
-              {slide.icons.map((name, i) => (
-                <Ionicons key={i} name={name} size={iconSize} color={theme.accent} />
-              ))}
-            </View>
-          )}
-        </View>
+        {slide.logo ? (
+          // Logo InvaderQuest (variante auto selon le thème — jamais invisible)
+          <Logo size={Math.min(140, illustrationHeight * 0.7)} />
+        ) : (
+          <View style={[styles.iconCircle, { backgroundColor: theme.accentDim }]}>
+            {slide.icons.length === 1 ? (
+              <Ionicons name={slide.icons[0]} size={iconSize} color={theme.accent} />
+            ) : (
+              <View style={styles.iconPair}>
+                {slide.icons.map((name, i) => (
+                  <Ionicons key={i} name={name} size={iconSize} color={theme.accent} />
+                ))}
+              </View>
+            )}
+          </View>
+        )}
       </View>
 
       {/* ── Zone texte ── */}

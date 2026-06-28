@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { useTheme } from '../theme/ThemeContext';
 import { useAppContext } from '../context/AppContext';
 import { typography } from '../theme/tokens';
+import Logo from './Logo';
 
 // ─── Élément de navigation ────────────────────────────────────────────────────
 
@@ -59,9 +60,9 @@ export default function DrawerContent({ navigation, state }) {
   return (
     <View style={[styles.container, { backgroundColor: theme.surface, paddingTop: insets.top }]}>
 
-      {/* En-tête */}
+      {/* En-tête : logo (variante auto selon le thème) en haut à gauche */}
       <View style={styles.appHeader}>
-        <Text style={styles.emoji}>👾</Text>
+        <Logo size={44} />
         <Text style={[typography.arcadeTitle, { color: theme.accent, marginTop: 10 }]}>{t('common.appName')}</Text>
         {dataVersion ? (
           <Text style={[styles.version, { color: theme.textSecondary }]}>v{dataVersion}</Text>
