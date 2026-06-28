@@ -115,9 +115,11 @@ export default function ListScreen({ navigation }) {
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
       <View style={styles.header}>
-        <Text style={styles.title}>{t('list.title', { city: cityName })}</Text>
+        <Text style={styles.title} numberOfLines={1} ellipsizeMode="tail">
+          {t('list.title', { city: cityName })}
+        </Text>
         <View style={styles.headerRight}>
-          <Text style={styles.counter}>{t('list.counter', { flashed: flashedHere, total: invaders.length })}</Text>
+          <Text style={styles.counter} numberOfLines={1}>{t('list.counter', { flashed: flashedHere, total: invaders.length })}</Text>
           <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
             <Ionicons name="menu" size={24} color={theme.textPrimary} />
           </TouchableOpacity>
@@ -190,8 +192,8 @@ function makeStyles(t) {
       borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: t.border,
       backgroundColor: t.surface,
     },
-    title: { ...typography.arcadeTitle, color: t.textPrimary },
-    headerRight: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+    title: { ...typography.arcadeTitle, color: t.textPrimary, flexShrink: 1, marginRight: 12 },
+    headerRight: { flexDirection: 'row', alignItems: 'center', gap: 12, flexShrink: 0 },
     counter: { ...typography.arcadeHeading, fontSize: 12, color: t.textSecondary },
 
     searchInput: {
