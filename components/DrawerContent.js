@@ -62,7 +62,7 @@ export default function DrawerContent({ navigation, state }) {
       {/* En-tête */}
       <View style={styles.appHeader}>
         <Text style={styles.emoji}>👾</Text>
-        <Text style={[typography.arcadeTitle, { color: theme.accent, marginTop: 10 }]}>INVADER MAP</Text>
+        <Text style={[typography.arcadeTitle, { color: theme.accent, marginTop: 10 }]}>{t('common.appName')}</Text>
         {dataVersion ? (
           <Text style={[styles.version, { color: theme.textSecondary }]}>v{dataVersion}</Text>
         ) : null}

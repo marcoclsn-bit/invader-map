@@ -24,7 +24,8 @@
       "apple": "Plans",
       "google": "Google Maps"
     },
-    "menu": "Menu"
+    "menu": "Menu",
+    "appName": "InvaderQuest"
   },
   "tabs": {
     "map": "Carte",
@@ -160,7 +161,7 @@
     "locationDenied": "La localisation a été refusée. Vous pourrez l'activer plus tard dans les Réglages de votre téléphone. L'app fonctionne sans GPS (carte et liste disponibles).",
     "slides": {
       "welcome": {
-        "title": "INVADER MAP",
+        "title": "$t(common.appName)",
         "subtitle": "Pars à la chasse aux Space Invaders de Paris."
       },
       "map": {
@@ -242,7 +243,7 @@
     "creditsRoutingLabel": "Itinéraires",
     "creditsFontsLabel": "Polices (SIL OFL)",
     "legalSection": "Mentions légales",
-    "legalText": "Invader Map est un projet de fan indépendant, non officiel et non affilié à l'artiste Invader ni à l'application FlashInvaders. Les mosaïques Space Invader sont l'œuvre et la propriété exclusive de l'artiste Invader. Cette application n'est pas autorisée, sponsorisée ni approuvée par l'artiste."
+    "legalText": "$t(common.appName) est un projet de fan indépendant, non officiel et non affilié à l'artiste Invader ni à l'application FlashInvaders. Les mosaïques Space Invader sont l'œuvre et la propriété exclusive de l'artiste Invader. Cette application n'est pas autorisée, sponsorisée ni approuvée par l'artiste."
   },
   "settings": {
     "title": "Réglages",
@@ -323,8 +324,8 @@
       "note": "Aucune donnée n'est collectée. Le message ouvre simplement votre application e-mail.",
       "emptyTitle": "Message vide",
       "emptyBody": "Écrivez d'abord votre idée avant d'envoyer.",
-      "emailSubject": "Idée Invader Map — {{subject}}",
-      "emailSubjectNoTopic": "Idée Invader Map",
+      "emailSubject": "Idée $t(common.appName) — {{subject}}",
+      "emailSubjectNoTopic": "Idée $t(common.appName)",
       "sentTitle": "Merci !",
       "sentBody": "Votre idée a bien été envoyée."
     },

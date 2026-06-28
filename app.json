@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "invader-map",
-    "slug": "invader-map",
+    "name": "InvaderQuest",
+    "slug": "invaderquest",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -14,6 +14,7 @@
     },
     "ios": {
       "supportsTablet": true,
+      "bundleIdentifier": "com.marco.invaderquest",
       "infoPlist": {
         "LSApplicationQueriesSchemes": [
           "comgooglemaps"
@@ -21,6 +22,7 @@
       }
     },
     "android": {
+      "package": "com.marco.invaderquest",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -34,7 +36,7 @@
       [
         "expo-location",
         {
-          "locationWhenInUsePermission": "Invader Map utilise votre position pour vous situer sur la carte et vous aider à trouver les Invaders proches."
+          "locationWhenInUsePermission": "InvaderQuest utilise votre position pour vous situer sur la carte et vous aider à trouver les Invaders proches."
         }
       ],
       "expo-localization",

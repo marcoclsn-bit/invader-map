@@ -105,7 +105,7 @@ export default function AboutScreen() {
       {/* ── Header ── */}
       <View style={styles.header}>
         <Text style={[typography.arcadeTitle, styles.appName, { color: theme.accent }]}>
-          INVADER MAP
+          {t('common.appName')}
         </Text>
         <Text style={[styles.appVersion, { color: theme.textSecondary }]}>v{APP_VERSION}</Text>
         <Text style={[styles.appPitch, { color: theme.textSecondary }]}>
