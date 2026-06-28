@@ -1,11 +1,5 @@
 {
-  "version": 1,
-  "updatedAt": "2026-06-28",
-  "_note": "Données de DÉMONSTRATION (seed) pour tester l'écran News. À remettre à { \"version\": 0, \"events\": [] } avant publication — le pipeline les écrasera via la version distante.",
-  "events": [
-    { "type": "added", "city": "PA", "date": "2026-06-28", "count": 5, "ids": ["PA_1564", "PA_1565", "PA_1566", "PA_1567", "PA_1568"] },
-    { "type": "destroyed", "id": "PA_1278", "city": "PA", "date": "2026-06-27", "before": "ok", "after": "destroyed" },
-    { "type": "added", "city": "LDN", "date": "2026-06-26", "count": 2, "ids": ["LDN_210", "LDN_211"] },
-    { "type": "reactivated", "id": "PA_254", "city": "PA", "date": "2026-06-20", "before": "destroyed", "after": "ok" }
-  ]
+  "version": 0,
+  "updatedAt": null,
+  "events": []
 }
