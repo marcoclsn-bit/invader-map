@@ -257,6 +257,9 @@ export default function MapScreen({ navigation, route }) {
   const [recentlyFlashed, setRecentlyFlashed] = useState(() => new Set());
   const [selected, setSelected] = useState(null);
   const [showFilters, setShowFilters] = useState(false);
+  // On n'ajoute les marqueurs qu'une fois la MKMapView prête : ajouter des
+  // annotations pendant son initialisation (démarrage à froid) peut la faire crasher.
+  const [mapReady, setMapReady] = useState(false);
   const [locationGranted, setLocationGranted] = useState(false);
   const [userLocation, setUserLocation] = useState(null);
   const [userHeading, setUserHeading] = useState(null);
@@ -328,6 +331,13 @@ export default function MapScreen({ navigation, route }) {
     })();
     return () => { positionSub?.remove(); headingSub?.remove(); };
   }, []);
+
+  // Repli : si onMapReady ne se déclenche pas (rare), on arme les marqueurs après 1,2 s
+  useEffect(() => {
+    if (mapReady) return;
+    const id = setTimeout(() => setMapReady(true), 1200);
+    return () => clearTimeout(id);
+  }, [mapReady]);
 
   function goToUserLocation() {
     if (!userLocation) return;
@@ -482,10 +492,12 @@ export default function MapScreen({ navigation, route }) {
         showsUserLocation={locationGranted}
         initialRegion={{ latitude: city.center.lat, longitude: city.center.lng, ...city.mapDelta }}
         onPress={closeAll}
+        onMapReady={() => setMapReady(true)}
       >
         {!isChangingCity && <HeadingCone userLocation={userLocation} heading={userHeading} />}
-        {/* Marqueurs gelés pendant isChangingCity : évite le churn add/remove sur MKMapView */}
-        {!isChangingCity && visibleInvaders.map((invader) => {
+        {/* Marqueurs montés seulement quand la carte est prête (mapReady) et hors
+            changement de ville — évite le churn/ajout d'annotations sur MKMapView. */}
+        {mapReady && !isChangingCity && visibleInvaders.map((invader) => {
           const isFlashed = flashed.has(invader.id);
           return (
             <InvaderMarker
