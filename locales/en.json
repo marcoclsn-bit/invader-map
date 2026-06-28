@@ -133,7 +133,10 @@
       "routeNotFound": "Route not found",
       "routeCalc": "Unable to calculate route",
       "generation": "Error generating hunt"
-    }
+    },
+    "pickDistricts": "Pick one or more districts",
+    "districtsSelected_one": "{{count}} district selected",
+    "districtsSelected_other": "{{count}} districts selected"
   },
   "palmares": {
     "title": "Scores",

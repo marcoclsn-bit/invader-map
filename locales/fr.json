@@ -133,7 +133,10 @@
       "routeNotFound": "Itinéraire introuvable",
       "routeCalc": "Calcul d'itinéraire impossible",
       "generation": "Erreur lors de la génération"
-    }
+    },
+    "pickDistricts": "Choisis un ou plusieurs arrondissements",
+    "districtsSelected_one": "{{count}} arrondissement sélectionné",
+    "districtsSelected_other": "{{count}} arrondissements sélectionnés"
   },
   "palmares": {
     "title": "Palmarès",

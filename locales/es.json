@@ -133,7 +133,10 @@
       "routeNotFound": "Ruta no encontrada",
       "routeCalc": "Imposible calcular la ruta",
       "generation": "Error al generar la caza"
-    }
+    },
+    "pickDistricts": "Elige uno o varios distritos",
+    "districtsSelected_one": "{{count}} distrito seleccionado",
+    "districtsSelected_other": "{{count}} distritos seleccionados"
   },
   "palmares": {
     "title": "Palmarés",

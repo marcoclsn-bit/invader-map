@@ -15,7 +15,7 @@ import { STATUS_COLOR } from '../constants';
 import { ORS_API_KEY } from '../config/ors';
 import { useAppContext } from '../context/AppContext';
 import { CITIES } from '../cities/registry';
-import { INVADER_DISTRICT, arLabel } from '../utils/arrondissement';
+import { INVADER_DISTRICT, ARRONDISSEMENT_CENTERS } from '../utils/arrondissement';
 import { useTheme } from '../theme/ThemeContext';
 import InvaderPanel from '../components/InvaderPanel';
 import HeadingCone from '../components/HeadingCone';
@@ -238,7 +238,18 @@ export default function ChasseScreen({ route }) {
   const [budgetMin, setBudgetMin] = useState(60);
   const [profile, setProfile] = useState('foot-walking');
   const [unflashedOnly, setUnflashedOnly] = useState(true);
-  const [arFilter, setArFilter] = useState(null); // c_ar (1-20) ou null = tous Paris
+  // Arrondissements sélectionnés (Set de c_ar 1-20). Mode quartier des villes à
+  // arrondissements (Paris). Les villes sans arrondissement gardent l'adresse.
+  const [selectedArs, setSelectedArs] = useState(() => new Set());
+  const hasDistricts = !!city.subdivisionsKey;
+
+  function toggleAr(ar) {
+    setSelectedArs(prev => {
+      const next = new Set(prev);
+      next.has(ar) ? next.delete(ar) : next.add(ar);
+      return next;
+    });
+  }
 
   // ─── Résultat + navigation ─────────────────────────────────────────────────
   const [loading, setLoading] = useState(false);
@@ -259,7 +270,7 @@ export default function ChasseScreen({ route }) {
     setMode('quartier');
     setQText(preset.label);
     setQCoords([preset.lon, preset.lat]);
-    setArFilter(preset.ar);
+    setSelectedArs(new Set([preset.ar]));
     setResult(null);
     setSelectedInv(null);
     setError(null);
@@ -363,7 +374,6 @@ export default function ChasseScreen({ route }) {
   function onQChange(text) {
     setQText(text);
     setQCoords(null);
-    setArFilter(null); // l'utilisateur tape → plus de filtre arrondissement
     clearTimeout(debounce.current);
     if (text.length >= 3) {
       setQSearching(true);
@@ -410,7 +420,14 @@ export default function ChasseScreen({ route }) {
   }
 
   // ─── Génération ───────────────────────────────────────────────────────────
-  const startReady = (mode === 'around' ? gpsReady : qCoords !== null) && !qResolving;
+  // Prêt si : autour de moi → GPS ; quartier (Paris) → ≥1 arrondissement ;
+  // quartier (autres villes) → adresse résolue.
+  const startReady =
+    mode === 'around'
+      ? gpsReady
+      : hasDistricts
+        ? selectedArs.size > 0
+        : (qCoords !== null && !qResolving);
 
   async function generate() {
     Keyboard.dismiss();
@@ -421,11 +438,25 @@ export default function ChasseScreen({ route }) {
     setDrifted(false);
     setLoading(true);
     try {
-      const [startLon, startLat] = mode === 'around' ? gpsRef.current : qCoords;
+      // Point de départ + restriction selon le mode
+      let startLon, startLat;
+      let arSet = null; // null = pas de restriction par arrondissement
+      if (mode === 'around') {
+        [startLon, startLat] = gpsRef.current;
+      } else if (hasDistricts) {
+        arSet = selectedArs;
+        // Départ = centroïde moyen des arrondissements choisis
+        const centers = [...selectedArs].map(ar => ARRONDISSEMENT_CENTERS.get(ar)).filter(Boolean);
+        startLon = centers.reduce((s, c) => s + c.lon, 0) / centers.length;
+        startLat = centers.reduce((s, c) => s + c.lat, 0) / centers.length;
+      } else {
+        [startLon, startLat] = qCoords;
+      }
+
       const candidates = invaders.filter(inv =>
         inv.status !== 'destroyed' &&
         (!unflashedOnly || !flashed.has(inv.id)) &&
-        (arFilter === null || INVADER_DISTRICT.get(inv.id) === arFilter)
+        (arSet === null || arSet.has(INVADER_DISTRICT.get(inv.id)))
       );
 
       const selected = greedyHunt(startLon, startLat, candidates, budgetMin, SPEEDS[profile]);
@@ -572,7 +603,7 @@ export default function ChasseScreen({ route }) {
                     ].map(m => (
                       <TouchableOpacity key={m.key}
                         style={[styles.modeBtn, mode === m.key && styles.modeBtnActive]}
-                        onPress={() => { setMode(m.key); if (m.key === 'around') setArFilter(null); }}
+                        onPress={() => { setMode(m.key); if (m.key === 'around') setSelectedArs(new Set()); }}
                       >
                         <Ionicons name={m.icon} size={13} color={mode === m.key ? theme.bg : theme.textSecondary} />
                         <Text style={[styles.modeBtnText, mode === m.key && styles.modeBtnTextActive]}>
@@ -582,8 +613,34 @@ export default function ChasseScreen({ route }) {
                     ))}
                   </View>
 
-                  {/* Champ quartier */}
-                  {mode === 'quartier' && (
+                  {/* Quartier — villes À arrondissements : grille multi-sélection */}
+                  {mode === 'quartier' && hasDistricts && (
+                    <View style={styles.arSection}>
+                      <Text style={styles.arHint}>
+                        {selectedArs.size === 0
+                          ? t('hunt.pickDistricts')
+                          : t('hunt.districtsSelected', { count: selectedArs.size })}
+                      </Text>
+                      <View style={styles.arGrid}>
+                        {Array.from({ length: 20 }, (_, i) => i + 1).map(ar => {
+                          const on = selectedArs.has(ar);
+                          return (
+                            <TouchableOpacity
+                              key={ar}
+                              style={[styles.arChip, on && styles.arChipActive]}
+                              onPress={() => toggleAr(ar)}
+                              activeOpacity={0.7}
+                            >
+                              <Text style={[styles.arChipText, on && styles.arChipTextActive]}>{ar}</Text>
+                            </TouchableOpacity>
+                          );
+                        })}
+                      </View>
+                    </View>
+                  )}
+
+                  {/* Quartier — villes SANS arrondissement : adresse */}
+                  {mode === 'quartier' && !hasDistricts && (
                     <View style={styles.qWrap}>
                       <View style={styles.qRow}>
                         <Ionicons name="location-outline" size={15} color={theme.textSecondary} style={styles.qIcon} />
@@ -690,19 +747,6 @@ export default function ChasseScreen({ route }) {
                       thumbColor={theme.bg}
                     />
                   </View>
-
-                  {/* Filtre arrondissement actif */}
-                  {arFilter !== null && (
-                    <View style={styles.arFilterBanner}>
-                      <Ionicons name="filter-outline" size={13} color={theme.accent} />
-                      <Text style={styles.arFilterText}>
-                        {t('hunt.filteredTo', { label: arLabel(arFilter) })}
-                      </Text>
-                      <TouchableOpacity onPress={() => setArFilter(null)} hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}>
-                        <Ionicons name="close-circle" size={15} color={theme.textSecondary} />
-                      </TouchableOpacity>
-                    </View>
-                  )}
 
                   {/* Bouton générer */}
                   <TouchableOpacity
@@ -878,12 +922,19 @@ function makeStyles(t) {
     errorText: { fontSize: 13, color: t.destructive, marginTop: 8, textAlign: 'center' },
     hintText: { fontSize: 12, color: t.textSecondary, marginTop: 6, textAlign: 'center' },
 
-    arFilterBanner: {
-      flexDirection: 'row', alignItems: 'center', gap: 6,
-      backgroundColor: t.accentDim, borderRadius: 8,
-      paddingHorizontal: 10, paddingVertical: 7, marginTop: 10,
+    // ── Sélecteur d'arrondissements (mode quartier, Paris) ───────────────────
+    arSection: { marginTop: 4 },
+    arHint: { fontSize: 13, color: t.textSecondary, marginBottom: 10 },
+    arGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+    arChip: {
+      width: 42, height: 38, borderRadius: 10,
+      alignItems: 'center', justifyContent: 'center',
+      backgroundColor: t.surfaceHigh,
+      borderWidth: 1.5, borderColor: t.border,
     },
-    arFilterText: { flex: 1, fontSize: 12, color: t.accent, fontWeight: '500' },
+    arChipActive: { backgroundColor: t.accent, borderColor: t.accent },
+    arChipText: { fontSize: 15, fontWeight: '600', color: t.textPrimary },
+    arChipTextActive: { color: t.bg },
 
     // ── Zone basse : conteneur qui empile boutons puis panel ────────────────
     bottomZone: {

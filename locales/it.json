@@ -133,7 +133,10 @@
       "routeNotFound": "Percorso non trovato",
       "routeCalc": "Impossibile calcolare il percorso",
       "generation": "Errore nella generazione della caccia"
-    }
+    },
+    "pickDistricts": "Scegli uno o più arrondissement",
+    "districtsSelected_one": "{{count}} arrondissement selezionato",
+    "districtsSelected_other": "{{count}} arrondissement selezionati"
   },
   "palmares": {
     "title": "Palmares",
