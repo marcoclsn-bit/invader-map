@@ -406,14 +406,23 @@ export default function MapScreen({ navigation, route }) {
     }
   }
 
+  // Filtres appliqués au RENDU de la carte, débouncés : un toggle rapide ne provoque
+  // pas un add/remove massif d'annotations à chaque pression (cause de crash MKMapView
+  // sous Expo Go). Le panneau de filtres réagit, lui, immédiatement à `filters`.
+  const [renderFilters, setRenderFilters] = useState(filters);
+  useEffect(() => {
+    const id = setTimeout(() => setRenderFilters(filters), 250);
+    return () => clearTimeout(id);
+  }, [filters]);
+
   const filteredInvaders = useMemo(() => {
-    const base = applyFilters(invaders, filters, flashed);
+    const base = applyFilters(invaders, renderFilters, flashed);
     if (recentlyFlashed.size === 0) return base;
     // Réinjecte les Invaders en cours d'animation s'ils ont été masqués par le filtre
     const baseIds = new Set(base.map((i) => i.id));
     const extra = invaders.filter((i) => recentlyFlashed.has(i.id) && !baseIds.has(i.id));
     return extra.length ? [...base, ...extra] : base;
-  }, [invaders, filters, flashed, recentlyFlashed]);
+  }, [invaders, renderFilters, flashed, recentlyFlashed]);
 
   // sortVersion en dep : le useMemo re-tourne quand sortCenterRef est mis à jour
   // (max 2×). Flash et GPS continus ne touchent ni filteredInvaders ni sortVersion.
@@ -430,10 +439,12 @@ export default function MapScreen({ navigation, route }) {
   const BATCH   = 250;
   const [renderedCount, setRenderedCount] = useState(INITIAL);
 
-  // Reset sur changement de filtre OU re-tri intentionnel — jamais sur flash/GPS.
+  // Reset du rendu progressif uniquement sur re-tri (ville/GPS) — PLUS sur les filtres :
+  // changer un filtre ne doit pas retirer tous les marqueurs puis les ré-ajouter par
+  // lots (churn massif → crash MKMapView). React ne diffe alors que le delta du filtre.
   useEffect(() => {
     setRenderedCount(INITIAL);
-  }, [filters, sortVersion]);
+  }, [sortVersion]);
 
   useEffect(() => {
     if (isChangingCity) return;

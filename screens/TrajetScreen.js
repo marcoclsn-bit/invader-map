@@ -484,13 +484,22 @@ export default function TrajetScreen() {
 
   // ─── Invaders affichés selon le filtre ───────────────────────────────────
 
+  // Valeur débouncée du toggle « À faire » : un basculement rapide ne refait pas
+  // l'add/remove des marqueurs à chaque pression (cause de crash MKMapView sous
+  // Expo Go). Le Switch, lui, reste réactif via showOnlyUnflashed.
+  const [renderUnflashed, setRenderUnflashed] = useState(showOnlyUnflashed);
+  useEffect(() => {
+    const id = setTimeout(() => setRenderUnflashed(showOnlyUnflashed), 250);
+    return () => clearTimeout(id);
+  }, [showOnlyUnflashed]);
+
   const displayInvaders = useMemo(() => {
     if (!routeInvaders) return null;
     // Filtre « À faire » : on masque les déjà flashés ET les détruits (non flashables)
-    return showOnlyUnflashed
+    return renderUnflashed
       ? routeInvaders.filter((inv) => !flashed.has(inv.id) && inv.status !== 'destroyed')
       : routeInvaders;
-  }, [routeInvaders, showOnlyUnflashed, flashed]);
+  }, [routeInvaders, renderUnflashed, flashed]);
 
   // ─── Découpe du tracé en portion parcourue (gris) + restante (bleu) ──────
 
