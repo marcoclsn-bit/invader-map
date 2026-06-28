@@ -11,6 +11,16 @@ import { ENABLED_CITIES, DEFAULT_CITY_CODE, CITIES } from '../cities/registry';
 
 const AppContext = createContext(null);
 
+// Réglages « Mode balade » (UI posée maintenant ; moteur de proximité branché au dev build).
+// Persistés tels quels — le futur moteur lira cet objet sans refactor.
+const DEFAULT_STROLL = {
+  enabled:       false,  // toggle principal — éteint par défaut
+  radius:        50,     // rayon d'alerte en mètres (25–150)
+  vibration:     true,   // alerter par vibration
+  notification:  true,   // alerter par notification
+  unflashedOnly: true,   // ne cibler que les Invaders non flashés
+};
+
 // Filtres « à faire » : tous les statuts visibles SAUF les détruits, et seulement
 // les non-flashés. C'est l'état par défaut de la carte au tout premier lancement.
 function makeTodoFilters() {
@@ -88,6 +98,9 @@ export function AppProvider({ children }) {
   const [news, setNews]               = useState({ version: 0, events: [] });
   const [newsCities, setNewsCities]   = useState(null);  // Set<code> ; null = pas encore choisi
   const [newsLastSeen, setNewsLastSeen] = useState(null); // ISO de la dernière ouverture de News
+
+  // ── Mode balade (réglages seulement ; moteur au dev build) ──────────────────
+  const [stroll, setStroll] = useState(DEFAULT_STROLL);
   const [language, setLanguageState] = useState('system');
   const [showOnboarding, setShowOnboarding] = useState(false);
   const [loaded, setLoaded] = useState(false);
@@ -237,9 +250,10 @@ export function AppProvider({ children }) {
         AsyncStorage.getItem('@invader_current_city'),
         AsyncStorage.getItem('invader_filters'),
       ]);
-      const [newsCitiesRaw, newsLastSeenRaw] = await Promise.all([
+      const [newsCitiesRaw, newsLastSeenRaw, strollRaw] = await Promise.all([
         AsyncStorage.getItem('@invader_news_cities'),
         AsyncStorage.getItem('@invader_news_last_seen'),
+        AsyncStorage.getItem('@invader_stroll'),
       ]);
 
       if (flashedRaw)       setFlashed(new Set(JSON.parse(flashedRaw)));
@@ -284,6 +298,14 @@ export function AppProvider({ children }) {
       if (newsLastSeenRaw) setNewsLastSeen(newsLastSeenRaw);
       getCachedNews().then(setNews);                 // instantané (cache)
       fetchNews().then(setNews).catch(() => {});      // arrière-plan (réseau)
+
+      // Mode balade : fusion avec les défauts (tolérant aux clés futures/manquantes)
+      if (strollRaw) {
+        try {
+          const parsed = JSON.parse(strollRaw);
+          if (parsed && typeof parsed === 'object') setStroll({ ...DEFAULT_STROLL, ...parsed });
+        } catch (_) {}
+      }
 
       // Ville de démarrage : GPS > préférence stockée > défaut (PA)
       let cityToLoad = DEFAULT_CITY_CODE;
@@ -335,6 +357,8 @@ export function AppProvider({ children }) {
   // News : abonnement villes (Set→array) + dernière consultation
   useEffect(() => { if (loaded && newsCities) AsyncStorage.setItem('@invader_news_cities', JSON.stringify([...newsCities])); }, [newsCities, loaded]);
   useEffect(() => { if (loaded && newsLastSeen) AsyncStorage.setItem('@invader_news_last_seen', newsLastSeen); }, [newsLastSeen, loaded]);
+  // Mode balade : réglages persistés (lus tels quels par le futur moteur de proximité)
+  useEffect(() => { if (loaded) AsyncStorage.setItem('@invader_stroll', JSON.stringify(stroll)); }, [stroll, loaded]);
 
   // ─── Flashé ──────────────────────────────────────────────────────────────────
 
@@ -397,6 +421,13 @@ export function AppProvider({ children }) {
   // Marque le fil comme consulté (réinitialise le badge « nouveau »)
   function markNewsSeen() {
     setNewsLastSeen(new Date().toISOString());
+  }
+
+  // ─── Mode balade ────────────────────────────────────────────────────────────
+  // Modifie un ou plusieurs réglages (fusion partielle). Le moteur de proximité
+  // (futur dev build) lira simplement l'objet `stroll`.
+  function setStrollPref(partial) {
+    setStroll(prev => ({ ...prev, ...partial }));
   }
 
   // Nombre d'événements non vus pour les villes suivies (badge du menu)
@@ -476,6 +507,8 @@ export function AppProvider({ children }) {
       setStatusColor, setFlashedColor,
       // News
       news, newsCities, setNewsCitiesPref, newsLastSeen, markNewsSeen, newsUnreadCount,
+      // Mode balade (réglages ; moteur au dev build)
+      stroll, setStrollPref,
       mapsApp, setMapsAppPref,
       language, setLanguage,
       showOnboarding, completeOnboarding, resetOnboarding,

@@ -359,5 +359,30 @@
       "validate_one": "Conferma ({{count}} città)",
       "validate_other": "Conferma ({{count}} città)"
     }
+  },
+  "stroll": {
+    "title": "Modalità passeggiata",
+    "comingSoon": {
+      "badge": "Presto disponibile",
+      "body": "Le tue impostazioni vengono salvate fin da ora, ma gli avvisi richiedono la prossima versione dell'app. Per ora non viene inviato alcun avviso."
+    },
+    "aboutSection": "Informazioni",
+    "whatTitle": "Di cosa si tratta?",
+    "whatBody": "Ricevi un avviso quando passi vicino a un Invader non ancora fotografato, anche con il telefono in tasca, mentre passeggi liberamente.",
+    "vsTrajetTitle": "Diverso dal tracciamento del Percorso",
+    "vsTrajetBody": "Il tracciamento del Percorso ti guida lungo un itinerario calcolato. La modalità passeggiata invece controlla in background senza un percorso definito: cammini dove vuoi.",
+    "enableLabel": "Attiva la modalità passeggiata",
+    "enableHint": "Controlla gli Invaders intorno a te mentre ti sposti.",
+    "radiusSection": "Raggio di avviso",
+    "radiusLabel": "Distanza di attivazione",
+    "radiusValue": "{{m}} m",
+    "radiusHint": "Verrai avvisato quando un Invader è più vicino di questa distanza.",
+    "alertsSection": "Come essere avvisato",
+    "vibration": "Vibrazione",
+    "notification": "Notifica",
+    "targetSection": "Filtro",
+    "unflashedOnly": "Solo i non fotografati",
+    "unflashedOnlyHint": "Ignora gli Invaders già fotografati.",
+    "footnote": "La modalità passeggiata userà la posizione in background. Sarà attivata in una prossima versione dell'app."
   }
 }

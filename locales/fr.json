@@ -359,5 +359,30 @@
       "validate_one": "Valider ({{count}} ville)",
       "validate_other": "Valider ({{count}} villes)"
     }
+  },
+  "stroll": {
+    "title": "Mode balade",
+    "comingSoon": {
+      "badge": "Bientôt disponible",
+      "body": "Tes réglages sont enregistrés dès maintenant, mais les alertes nécessitent la prochaine version de l'app. Pour l'instant, aucune alerte n'est encore envoyée."
+    },
+    "aboutSection": "À propos",
+    "whatTitle": "C'est quoi ?",
+    "whatBody": "Sois alerté quand tu passes près d'un Invader non flashé, même téléphone en poche, pendant que tu te balades librement.",
+    "vsTrajetTitle": "Différent du suivi de Trajet",
+    "vsTrajetBody": "Le suivi de Trajet te guide le long d'un itinéraire calculé. Le mode balade, lui, surveille en arrière-plan sans trajet défini : tu marches où tu veux.",
+    "enableLabel": "Activer le mode balade",
+    "enableHint": "Surveille les Invaders autour de toi pendant tes déplacements.",
+    "radiusSection": "Rayon d'alerte",
+    "radiusLabel": "Distance de déclenchement",
+    "radiusValue": "{{m}} m",
+    "radiusHint": "Tu seras alerté lorsqu'un Invader se trouve à moins de cette distance.",
+    "alertsSection": "Comment être alerté",
+    "vibration": "Vibration",
+    "notification": "Notification",
+    "targetSection": "Cibler",
+    "unflashedOnly": "Uniquement les non-flashés",
+    "unflashedOnlyHint": "Ignore les Invaders déjà flashés.",
+    "footnote": "Le mode balade utilisera la localisation en arrière-plan. Il sera activé dans une prochaine version de l'app."
   }
 }

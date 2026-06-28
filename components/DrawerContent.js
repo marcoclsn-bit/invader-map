@@ -41,6 +41,7 @@ export default function DrawerContent({ navigation, state }) {
     { name: 'Tabs',     icon: 'map',          label: t('tabs.map') },
     { name: 'Liste',    icon: 'list',         label: t('tabs.list') },
     { name: 'News',     icon: 'newspaper',    label: t('news.title'), badge: newsUnreadCount },
+    { name: 'Balade',   icon: 'walk',         label: t('stroll.title') },
     { name: 'Palmarès', icon: 'ribbon',       label: t('tabs.palmares') },
     { name: 'Stats',    icon: 'stats-chart',  label: t('tabs.stats') },
   ];

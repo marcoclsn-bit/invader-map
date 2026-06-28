@@ -359,5 +359,30 @@
       "validate_one": "Confirm ({{count}} city)",
       "validate_other": "Confirm ({{count}} cities)"
     }
+  },
+  "stroll": {
+    "title": "Stroll mode",
+    "comingSoon": {
+      "badge": "Coming soon",
+      "body": "Your settings are saved right now, but alerts require the next version of the app. For now, no alert is sent yet."
+    },
+    "aboutSection": "About",
+    "whatTitle": "What is it?",
+    "whatBody": "Get alerted when you walk near an Invader you haven't flashed yet — even with your phone in your pocket — while you roam freely.",
+    "vsTrajetTitle": "Different from Route tracking",
+    "vsTrajetBody": "Route tracking guides you along a calculated itinerary. Stroll mode watches in the background with no set route: walk wherever you like.",
+    "enableLabel": "Enable stroll mode",
+    "enableHint": "Watches for Invaders around you as you move.",
+    "radiusSection": "Alert radius",
+    "radiusLabel": "Trigger distance",
+    "radiusValue": "{{m}} m",
+    "radiusHint": "You'll be alerted when an Invader is closer than this distance.",
+    "alertsSection": "How to be alerted",
+    "vibration": "Vibration",
+    "notification": "Notification",
+    "targetSection": "Target",
+    "unflashedOnly": "Unflashed only",
+    "unflashedOnlyHint": "Ignore Invaders you've already flashed.",
+    "footnote": "Stroll mode will use background location. It will be enabled in a future version of the app."
   }
 }

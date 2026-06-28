@@ -359,5 +359,30 @@
       "validate_one": "Confirmar ({{count}} ciudad)",
       "validate_other": "Confirmar ({{count}} ciudades)"
     }
+  },
+  "stroll": {
+    "title": "Modo paseo",
+    "comingSoon": {
+      "badge": "Próximamente",
+      "body": "Tus ajustes se guardan desde ahora, pero las alertas requieren la próxima versión de la app. Por el momento, no se envía ninguna alerta."
+    },
+    "aboutSection": "Acerca de",
+    "whatTitle": "¿Qué es?",
+    "whatBody": "Recibe un aviso cuando pases cerca de un Invader que aún no has fotografiado, incluso con el teléfono en el bolsillo, mientras paseas libremente.",
+    "vsTrajetTitle": "Distinto del seguimiento de Ruta",
+    "vsTrajetBody": "El seguimiento de Ruta te guía por un itinerario calculado. El modo paseo vigila en segundo plano sin ruta fija: caminas donde quieras.",
+    "enableLabel": "Activar el modo paseo",
+    "enableHint": "Vigila los Invaders a tu alrededor mientras te mueves.",
+    "radiusSection": "Radio de alerta",
+    "radiusLabel": "Distancia de activación",
+    "radiusValue": "{{m}} m",
+    "radiusHint": "Recibirás un aviso cuando un Invader esté a menos de esta distancia.",
+    "alertsSection": "Cómo recibir el aviso",
+    "vibration": "Vibración",
+    "notification": "Notificación",
+    "targetSection": "Filtrar",
+    "unflashedOnly": "Solo los no fotografiados",
+    "unflashedOnlyHint": "Ignora los Invaders ya fotografiados.",
+    "footnote": "El modo paseo usará la ubicación en segundo plano. Se activará en una próxima versión de la app."
   }
 }
