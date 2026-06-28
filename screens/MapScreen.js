@@ -247,10 +247,13 @@ export default function MapScreen({ navigation }) {
 
   const mapRef = useRef(null);
   const centeredRef = useRef(false);
-  const sortCenterRef = useRef({ lat: city.center.lat, lng: city.center.lng });
-  const gpsSortedRef  = useRef(false); // vrai après le 1er tri live (jamais re-triggeré)
-  // sortVersion s'incrémente max 2× : cache iOS puis 1re fix live → retrigge le useMemo
-  const [sortVersion, setSortVersion] = useState(0);
+  // Région visible courante — pilote le rendu par viewport (carte = seuls les
+  // marqueurs visibles + marge sont montés). Mise à jour via onRegionChangeComplete.
+  const [region, setRegion] = useState(() => ({
+    latitude: city.center.lat,
+    longitude: city.center.lng,
+    ...city.mapDelta,
+  }));
   const [flashEffect, setFlashEffect] = useState(null);
   // Invaders flashés à l'instant : on les garde affichés le temps que l'animation
   // (pop + « +X PTS ») se joue, avant qu'un filtre « à faire » ne les masque.
@@ -282,28 +285,13 @@ export default function MapScreen({ navigation }) {
       if (status !== 'granted') return;
       setLocationGranted(true);
 
-      // ── Étape A : position du cache iOS (instantanée, max 5 min) ──────────
-      try {
-        const cached = await Location.getLastKnownPositionAsync({ maxAge: 5 * 60 * 1000 });
-        if (cached && cached.coords.accuracy < 200) {
-          sortCenterRef.current = { lat: cached.coords.latitude, lng: cached.coords.longitude };
-          setSortVersion(1);
-        }
-      } catch (_) {}
-
-      // ── Étape B : watch live (position) ───────────────────────────────────
+      // ── Watch live (position) ─────────────────────────────────────────────
       positionSub = await Location.watchPositionAsync(
         { accuracy: Location.Accuracy.High, distanceInterval: 8 },
         (loc) => {
           if (loc.coords.accuracy > 40) return;
           const { latitude, longitude } = loc.coords;
           setUserLocation({ latitude, longitude });
-
-          if (!gpsSortedRef.current) {
-            gpsSortedRef.current = true;
-            sortCenterRef.current = { lat: latitude, lng: longitude };
-            setSortVersion((v) => v + 1);
-          }
 
           if (!centeredRef.current) {
             centeredRef.current = true;
@@ -340,9 +328,8 @@ export default function MapScreen({ navigation }) {
   useEffect(() => {
     setSelected(null);
     setShowFilters(false);
-    setRenderedCount(INITIAL);
-    gpsSortedRef.current = false;
-    sortCenterRef.current = { lat: city.center.lat, lng: city.center.lng };
+    // Recadre le viewport sur la nouvelle ville (l'animateToRegion affinera ensuite)
+    setRegion({ latitude: city.center.lat, longitude: city.center.lng, ...city.mapDelta });
   }, [currentCityCode]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Caméra : uniquement quand le verrou se libère (isChangingCity false→true→false).
@@ -394,36 +381,21 @@ export default function MapScreen({ navigation }) {
     return extra.length ? [...base, ...extra] : base;
   }, [invaders, filters, flashed, recentlyFlashed]);
 
-  // sortVersion en dep : le useMemo re-tourne quand sortCenterRef est mis à jour
-  // (max 2×). Flash et GPS continus ne touchent ni filteredInvaders ni sortVersion.
-  const sortedInvaders = useMemo(() => {
-    const { lat, lng } = sortCenterRef.current;
-    return [...filteredInvaders].sort((a, b) => {
-      const da = (a.lat - lat) ** 2 + (a.lng - lng) ** 2;
-      const db = (b.lat - lat) ** 2 + (b.lng - lng) ** 2;
-      return da - db;
-    });
-  }, [filteredInvaders, sortVersion]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  const INITIAL = 120;
-  const BATCH   = 250;
-  const [renderedCount, setRenderedCount] = useState(INITIAL);
-
-  // Reset sur changement de filtre OU re-tri intentionnel — jamais sur flash/GPS.
-  useEffect(() => {
-    setRenderedCount(INITIAL);
-  }, [filters, sortVersion]);
-
-  useEffect(() => {
-    if (isChangingCity) return;
-    if (renderedCount >= sortedInvaders.length) return;
-    const id = requestAnimationFrame(() =>
-      setRenderedCount(c => Math.min(c + BATCH, sortedInvaders.length))
+  // ── Rendu par viewport ────────────────────────────────────────────────────
+  // On ne monte que les Invaders dans la zone visible + une marge. La donnée
+  // étant entièrement en mémoire, le filtre est synchrone : une rue visible est
+  // toujours complète (jamais 3/5) et le pan révèle des marqueurs déjà montés
+  // (la marge les pré-rend hors écran → aucune latence perçue).
+  const VIEWPORT_MARGIN = 0.6; // proportion de marge ajoutée de chaque côté
+  const visibleInvaders = useMemo(() => {
+    const latPad = region.latitudeDelta  * (0.5 + VIEWPORT_MARGIN);
+    const lngPad = region.longitudeDelta * (0.5 + VIEWPORT_MARGIN);
+    const minLat = region.latitude  - latPad, maxLat = region.latitude  + latPad;
+    const minLng = region.longitude - lngPad, maxLng = region.longitude + lngPad;
+    return filteredInvaders.filter(
+      (inv) => inv.lat >= minLat && inv.lat <= maxLat && inv.lng >= minLng && inv.lng <= maxLng
     );
-    return () => cancelAnimationFrame(id);
-  }, [renderedCount, sortedInvaders.length, isChangingCity]);
-
-  const visibleInvaders = sortedInvaders.slice(0, renderedCount);
+  }, [filteredInvaders, region]);
 
   // Pourcentage basé sur le temps restant du verrou (pas sur le rendu, qui est trop rapide).
   // Formule : 1 - remainingMs/totalDuration → stable même après pause en arrière-plan.
@@ -450,6 +422,7 @@ export default function MapScreen({ navigation }) {
         showsUserLocation={locationGranted}
         initialRegion={{ latitude: city.center.lat, longitude: city.center.lng, ...city.mapDelta }}
         onPress={closeAll}
+        onRegionChangeComplete={setRegion}
       >
         {!isChangingCity && <HeadingCone userLocation={userLocation} heading={userHeading} />}
         {/* Marqueurs gelés pendant isChangingCity : évite le churn add/remove sur MKMapView */}
