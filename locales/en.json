@@ -338,5 +338,26 @@
       "sentTitle": "Thanks!",
       "sentBody": "Your report has been sent."
     }
+  },
+  "news": {
+    "title": "News",
+    "newBadge": "NEW",
+    "entry": {
+      "added_one": "1 new Invader added in {{city}}",
+      "added_other": "{{count}} new Invaders added in {{city}}",
+      "destroyed": "{{id}} was destroyed",
+      "reactivated": "{{id}} was reactivated"
+    },
+    "empty": {
+      "title": "No news",
+      "body": "No recent changes for your selected cities. Check back later!"
+    },
+    "picker": {
+      "title": "My cities",
+      "subtitle": "Choose which cities to follow in the news feed.",
+      "searchPlaceholder": "Search a city…",
+      "validate_one": "Confirm ({{count}} city)",
+      "validate_other": "Confirm ({{count}} cities)"
+    }
   }
 }

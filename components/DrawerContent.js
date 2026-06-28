@@ -8,7 +8,7 @@ import { typography } from '../theme/tokens';
 
 // ─── Élément de navigation ────────────────────────────────────────────────────
 
-function NavItem({ icon, label, active, onPress, theme }) {
+function NavItem({ icon, label, active, onPress, theme, badge }) {
   const filled = icon.endsWith('-outline') ? icon : (active ? icon : `${icon}-outline`);
   return (
     <TouchableOpacity
@@ -18,6 +18,11 @@ function NavItem({ icon, label, active, onPress, theme }) {
     >
       <Ionicons name={filled} size={20} color={active ? theme.accent : theme.textSecondary} />
       <Text style={[styles.label, { color: active ? theme.accent : theme.textPrimary }]}>{label}</Text>
+      {badge > 0 && (
+        <View style={[styles.badge, { backgroundColor: theme.accent }]}>
+          <Text style={[styles.badgeText, { color: theme.bg }]}>{badge > 99 ? '99+' : badge}</Text>
+        </View>
+      )}
     </TouchableOpacity>
   );
 }
@@ -27,16 +32,17 @@ function NavItem({ icon, label, active, onPress, theme }) {
 export default function DrawerContent({ navigation, state }) {
   const { theme } = useTheme();
   const { t } = useTranslation();
-  const { dataVersion } = useAppContext();
+  const { dataVersion, newsUnreadCount } = useAppContext();
   const insets = useSafeAreaInsets();
 
   const currentRoute = state.routes[state.index]?.name;
 
   const mainItems = [
-    { name: 'Tabs',     icon: 'map',         label: t('tabs.map') },
-    { name: 'Liste',    icon: 'list',        label: t('tabs.list') },
-    { name: 'Palmarès', icon: 'ribbon',      label: t('tabs.palmares') },
-    { name: 'Stats',    icon: 'stats-chart', label: t('tabs.stats') },
+    { name: 'Tabs',     icon: 'map',          label: t('tabs.map') },
+    { name: 'Liste',    icon: 'list',         label: t('tabs.list') },
+    { name: 'News',     icon: 'newspaper',    label: t('news.title'), badge: newsUnreadCount },
+    { name: 'Palmarès', icon: 'ribbon',       label: t('tabs.palmares') },
+    { name: 'Stats',    icon: 'stats-chart',  label: t('tabs.stats') },
   ];
 
   function goTo(screen) {
@@ -73,6 +79,7 @@ export default function DrawerContent({ navigation, state }) {
             active={currentRoute === item.name}
             onPress={() => goTo(item.name)}
             theme={theme}
+            badge={item.badge}
           />
         ))}
 
@@ -120,4 +127,9 @@ const styles = StyleSheet.create({
     marginLeft: 14, fontSize: 14,
     fontFamily: 'Silkscreen_400Regular',
   },
+  badge: {
+    marginLeft: 'auto', minWidth: 20, height: 20, borderRadius: 10,
+    paddingHorizontal: 6, alignItems: 'center', justifyContent: 'center',
+  },
+  badgeText: { fontSize: 11, fontWeight: '700' },
 });

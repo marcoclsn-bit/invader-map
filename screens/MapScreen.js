@@ -228,7 +228,7 @@ function FilterPanel({ filters, onFiltersChange, onClose }) {
 
 // ─── Écran carte ──────────────────────────────────────────────────────────────
 
-export default function MapScreen({ navigation }) {
+export default function MapScreen({ navigation, route }) {
   const { invaders, flashed, labels, labelDefs, statusColors, colorOverrides, filters, setFilters, toggleFlash, mapsApp, setMapsAppPref, currentCityCode, isChangingCity, pendingCityCode, mapLockUntil, mapLockDuration } = useAppContext();
   const city = CITIES[currentCityCode] ?? CITIES.PA;
   const overlayName = (pendingCityCode ? CITIES[pendingCityCode]?.name : null) ?? city.name;
@@ -333,6 +333,27 @@ export default function MapScreen({ navigation }) {
     if (!userLocation) return;
     mapRef.current?.animateToRegion({ ...userLocation, latitudeDelta: 0.01, longitudeDelta: 0.01 }, 600);
   }
+
+  // ── Focus d'un Invader demandé depuis un autre écran (ex. News) ──
+  // route.params.focusId + _ts : on centre la carte et on ouvre sa fiche.
+  // Si la ville vient de changer, l'Invader n'est pas encore chargé → on réessaie
+  // quand `invaders` se met à jour. _ts garantit qu'un nouveau tap re-déclenche.
+  const handledFocusTs = useRef(null);
+  const focusId = route?.params?.focusId;
+  const focusTs = route?.params?._ts;
+  useEffect(() => {
+    if (!focusId || focusTs === handledFocusTs.current) return;
+    if (isChangingCity) return;
+    const inv = invaders.find((i) => i.id === focusId);
+    if (!inv) return; // pas encore chargé → réessaiera (dep invaders)
+    handledFocusTs.current = focusTs;
+    setSelected(inv);
+    setShowFilters(false);
+    mapRef.current?.animateToRegion(
+      { latitude: inv.lat, longitude: inv.lng, latitudeDelta: 0.01, longitudeDelta: 0.01 },
+      600
+    );
+  }, [focusId, focusTs, invaders, isChangingCity]);
 
   function closeAll() { setSelected(null); setShowFilters(false); }
 

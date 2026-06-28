@@ -338,5 +338,26 @@
       "sentTitle": "Merci !",
       "sentBody": "Votre signalement a bien été envoyé."
     }
+  },
+  "news": {
+    "title": "Actus",
+    "newBadge": "NOUVEAU",
+    "entry": {
+      "added_one": "1 nouvel Invader ajouté à {{city}}",
+      "added_other": "{{count}} nouveaux Invaders ajoutés à {{city}}",
+      "destroyed": "{{id}} a été détruit",
+      "reactivated": "{{id}} a été réactivé"
+    },
+    "empty": {
+      "title": "Aucune actu",
+      "body": "Aucun changement récent pour les villes choisies. Reviens plus tard !"
+    },
+    "picker": {
+      "title": "Mes villes",
+      "subtitle": "Choisis les villes à suivre dans le fil d'actus.",
+      "searchPlaceholder": "Rechercher une ville…",
+      "validate_one": "Valider ({{count}} ville)",
+      "validate_other": "Valider ({{count}} villes)"
+    }
   }
 }

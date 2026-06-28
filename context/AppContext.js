@@ -5,6 +5,7 @@ import * as Location from 'expo-location';
 import { INVADERS as EMBEDDED_PA, INVADERS_VERSION, INVADERS_UPDATED_AT } from '../data/invaders';
 import { ALL_STATUSES, STATUS_COLOR, DEFAULT_LABEL_DEFS } from '../constants';
 import { initInvaderService, loadCityData, onCityUpdate, checkCityForUpdate, getCityIndex, getCityData } from '../services/invaderData';
+import { getCachedNews, fetchNews } from '../services/newsData';
 import { applyLanguage, LANGUAGE_STORAGE_KEY } from '../i18n';
 import { ENABLED_CITIES, DEFAULT_CITY_CODE, CITIES } from '../cities/registry';
 
@@ -82,6 +83,11 @@ export function AppProvider({ children }) {
   // Les autres statuts non flashés (ok / endommagé / inconnu) restent visibles.
   const [filters, setFilters] = useState(makeTodoFilters);
   const [mapsApp, setMapsApp] = useState(null);
+
+  // ── News ──────────────────────────────────────────────────────────────────
+  const [news, setNews]               = useState({ version: 0, events: [] });
+  const [newsCities, setNewsCities]   = useState(null);  // Set<code> ; null = pas encore choisi
+  const [newsLastSeen, setNewsLastSeen] = useState(null); // ISO de la dernière ouverture de News
   const [language, setLanguageState] = useState('system');
   const [showOnboarding, setShowOnboarding] = useState(false);
   const [loaded, setLoaded] = useState(false);
@@ -231,6 +237,10 @@ export function AppProvider({ children }) {
         AsyncStorage.getItem('@invader_current_city'),
         AsyncStorage.getItem('invader_filters'),
       ]);
+      const [newsCitiesRaw, newsLastSeenRaw] = await Promise.all([
+        AsyncStorage.getItem('@invader_news_cities'),
+        AsyncStorage.getItem('@invader_news_last_seen'),
+      ]);
 
       if (flashedRaw)       setFlashed(new Set(JSON.parse(flashedRaw)));
       // Migration douce : les IDs sans date gardent flashedAt: null (absents du Map)
@@ -263,6 +273,17 @@ export function AppProvider({ children }) {
       setLanguageState(storedLang);
       applyLanguage(storedLang);
       if (!onboardingRaw) setShowOnboarding(true);
+
+      // ── News : abonnement villes + dernière consultation, puis cache + fetch ──
+      if (newsCitiesRaw) {
+        try {
+          const arr = JSON.parse(newsCitiesRaw);
+          if (Array.isArray(arr)) setNewsCities(new Set(arr));
+        } catch (_) {}
+      }
+      if (newsLastSeenRaw) setNewsLastSeen(newsLastSeenRaw);
+      getCachedNews().then(setNews);                 // instantané (cache)
+      fetchNews().then(setNews).catch(() => {});      // arrière-plan (réseau)
 
       // Ville de démarrage : GPS > préférence stockée > défaut (PA)
       let cityToLoad = DEFAULT_CITY_CODE;
@@ -311,6 +332,9 @@ export function AppProvider({ children }) {
   useEffect(() => { if (loaded) AsyncStorage.setItem('invader_color_overrides', JSON.stringify(colorOverrides));      }, [colorOverrides, loaded]);
   // Dernier état des filtres (Set sérialisé en tableau) — réappliqué à l'ouverture
   useEffect(() => { if (loaded) AsyncStorage.setItem('invader_filters', JSON.stringify({ statuses: [...filters.statuses], flashedState: filters.flashedState })); }, [filters, loaded]);
+  // News : abonnement villes (Set→array) + dernière consultation
+  useEffect(() => { if (loaded && newsCities) AsyncStorage.setItem('@invader_news_cities', JSON.stringify([...newsCities])); }, [newsCities, loaded]);
+  useEffect(() => { if (loaded && newsLastSeen) AsyncStorage.setItem('@invader_news_last_seen', newsLastSeen); }, [newsLastSeen, loaded]);
 
   // ─── Flashé ──────────────────────────────────────────────────────────────────
 
@@ -363,6 +387,28 @@ export function AppProvider({ children }) {
         return b.flashedAt.localeCompare(a.flashedAt); // ISO = tri lexicographique = chronologique
       });
   }
+
+  // ─── News ──────────────────────────────────────────────────────────────────
+
+  // Abonnement villes (alimente le fil ; structuré pour alimenter le push plus tard)
+  function setNewsCitiesPref(codes) {
+    setNewsCities(new Set(codes));
+  }
+  // Marque le fil comme consulté (réinitialise le badge « nouveau »)
+  function markNewsSeen() {
+    setNewsLastSeen(new Date().toISOString());
+  }
+
+  // Nombre d'événements non vus pour les villes suivies (badge du menu)
+  const newsUnreadCount = (() => {
+    if (!newsCities || newsCities.size === 0) return 0;
+    const seenDay = newsLastSeen ? newsLastSeen.slice(0, 10) : null;
+    return news.events.reduce((n, e) => {
+      if (!newsCities.has(e.city)) return n;
+      if (seenDay && e.date <= seenDay) return n;
+      return n + 1;
+    }, 0);
+  })();
 
   // ─── Couleurs des statuts ─────────────────────────────────────────────────────
 
@@ -428,6 +474,8 @@ export function AppProvider({ children }) {
       filters, setFilters,
       toggleFlash, bulkFlash, bulkUnflash,
       setStatusColor, setFlashedColor,
+      // News
+      news, newsCities, setNewsCitiesPref, newsLastSeen, markNewsSeen, newsUnreadCount,
       mapsApp, setMapsAppPref,
       language, setLanguage,
       showOnboarding, completeOnboarding, resetOnboarding,
