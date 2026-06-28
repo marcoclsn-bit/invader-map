@@ -38,8 +38,13 @@ const __dir      = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR   = join(__dir, '..', 'data');
 const INDEX_FILE = join(DATA_DIR, 'index.json');
 const EXTRAS_FILE= join(DATA_DIR, 'invaders_extras.json');
+const NEWS_FILE  = join(DATA_DIR, 'news.json');
 
 const MAX_LOSS_PCT = 0.10;
+
+// Historique d'événements (News) : volume conservé
+const NEWS_MAX_EVENTS = 500;   // nombre max d'événements gardés
+const NEWS_MAX_MONTHS = 6;     // ou fenêtre temporelle (le plus restrictif s'applique)
 
 const SOURCE_ATTRIBUTION =
   'Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) ' +
@@ -327,6 +332,17 @@ async function main() {
   }
   const prevIndexVersion = typeof prevIndex?.version === 'number' ? prevIndex.version : 0;
 
+  // Historique d'événements (news) existant
+  let prevNews = null;
+  if (existsSync(NEWS_FILE)) {
+    try {
+      prevNews = JSON.parse(readFileSync(NEWS_FILE, 'utf8'));
+      console.log(`      news.json : v${prevNews.version ?? '?'}, ${prevNews.events?.length ?? 0} événements`);
+    } catch { console.warn('      news.json illisible — repart de zéro'); }
+  } else {
+    console.log('      Pas de news.json existant — première génération');
+  }
+
   // ── [4/6] Extras ──────────────────────────────────────────────────────────
   console.log('\n[4/6] Extras…');
   const extrasPA = new Map();
@@ -369,6 +385,9 @@ async function main() {
   let gInstagram = 0, gNullPoints = 0, gDivergences = 0;
   let gStatusFromPnote = 0, gDestroyedToOk = 0;
   let paTotal = 0, paGog = 0, paPnote = 0, paExtras = 0;
+
+  // Événements détectés ce run (ajouts groupés par ville, destructions, réactivations)
+  const allNewEvents = [];
 
   for (const code of sortedCodes) {
     const gogEntries   = gogByCity.get(code)   ?? [];
@@ -420,12 +439,14 @@ async function main() {
     let prevVersion   = 1;
     let prevBaseCount = 0;
     let prevHash      = '';
+    let prevInvaders  = null; // null = pas d'état précédent → baseline, pas d'événement « ajout »
     if (existsSync(outFile)) {
       try {
         const prev   = JSON.parse(readFileSync(outFile, 'utf8'));
         prevVersion   = typeof prev.version    === 'number' ? prev.version    : 1;
         prevBaseCount = typeof prev._baseCount === 'number' ? prev._baseCount : 0;
         prevHash      = contentHash(prev.invaders ?? []);
+        prevInvaders  = Array.isArray(prev.invaders) ? prev.invaders : [];
       } catch { /* ignore */ }
     }
 
@@ -483,6 +504,27 @@ async function main() {
         .sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
     }
 
+    // ── Événements (news) : ajout / destruction / réactivation ────────────
+    // Calculé seulement si on a un état précédent pour la ville (sinon baseline).
+    if (prevInvaders) {
+      const prevById = new Map(prevInvaders.map(i => [i.id, i]));
+      const addedIds = [];
+      for (const inv of finalInvaders) {
+        const old = prevById.get(inv.id);
+        if (!old) { addedIds.push(inv.id); continue; }
+        const was = old.status, now = inv.status;
+        if (was !== 'destroyed' && now === 'destroyed') {
+          allNewEvents.push({ type: 'destroyed', id: inv.id, city: code, date: today, before: was, after: 'destroyed' });
+        } else if (was === 'destroyed' && now === 'ok') {
+          allNewEvents.push({ type: 'reactivated', id: inv.id, city: code, date: today, before: 'destroyed', after: 'ok' });
+        }
+      }
+      // Ajouts regroupés par ville/jour : un seul événement (« N nouveaux Invaders »)
+      if (addedIds.length) {
+        allNewEvents.push({ type: 'added', city: code, date: today, count: addedIds.length, ids: addedIds });
+      }
+    }
+
     // ── Hash + écriture si modifié ────────────────────────────────────────
     const newHash    = contentHash(finalInvaders);
     const changed    = newHash !== prevHash;
@@ -536,8 +578,8 @@ async function main() {
     console.log(`${String(finalInvaders.length).padStart(5)} (${parts.join(', ')})  ${flag}  ${meta?.name ?? '?'}`);
   }
 
-  // ── [6/6] Index ───────────────────────────────────────────────────────────
-  console.log('\n[6/6] Index…');
+  // ── [6/7] Index ───────────────────────────────────────────────────────────
+  console.log('\n[6/7] Index…');
   const prevIndexHash  = prevIndex?.cities ? indexHash(prevIndex.cities) : '';
   const newIndexHash   = indexHash(indexCities);
   const indexChanged   = newIndexHash !== prevIndexHash;
@@ -551,6 +593,41 @@ async function main() {
 
   const indexFlag = indexChanged ? `✓ v${newIndexVersion}` : `— v${newIndexVersion}`;
   console.log(`      index.json ${indexFlag}, ${indexCities.length} villes`);
+
+  // ── [7/7] News (append + trim) ─────────────────────────────────────────────
+  console.log('\n[7/7] News…');
+  const prevEvents = Array.isArray(prevNews?.events) ? prevNews.events : [];
+
+  // Fenêtre temporelle : on ne garde que les événements des N derniers mois…
+  const cutoff = new Date();
+  cutoff.setMonth(cutoff.getMonth() - NEWS_MAX_MONTHS);
+  const cutoffStr = cutoff.toISOString().slice(0, 10);
+
+  // …les nouveaux en tête (plus récents d'abord), puis l'historique, filtré + plafonné.
+  let events = [...allNewEvents, ...prevEvents].filter(e => e.date && e.date >= cutoffStr);
+  if (events.length > NEWS_MAX_EVENTS) events = events.slice(0, NEWS_MAX_EVENTS);
+
+  const prevNewsVersion = typeof prevNews?.version === 'number' ? prevNews.version : 0;
+  const newsChanged     = JSON.stringify(events) !== JSON.stringify(prevEvents);
+  const newsVersion     = newsChanged ? prevNewsVersion + 1 : prevNewsVersion;
+
+  if (newsChanged) {
+    writeFileSync(NEWS_FILE, JSON.stringify({
+      version:     newsVersion,
+      updatedAt:   today,
+      attribution: SOURCE_ATTRIBUTION,
+      events,
+    }, null, 2), 'utf8');
+  }
+
+  const nAddedGroups = allNewEvents.filter(e => e.type === 'added').length;
+  const nAdded       = allNewEvents.filter(e => e.type === 'added').reduce((s, e) => s + e.count, 0);
+  const nDestroyed   = allNewEvents.filter(e => e.type === 'destroyed').length;
+  const nReactivated = allNewEvents.filter(e => e.type === 'reactivated').length;
+  const newsFlag     = newsChanged ? `✓ v${newsVersion}` : `— v${newsVersion}`;
+  console.log(`      news.json ${newsFlag}, ${events.length} événements conservés`);
+  console.log(`      nouveaux ce run : ${allNewEvents.length} événements ` +
+    `(${nAdded} ajouts en ${nAddedGroups} groupes, ${nDestroyed} destructions, ${nReactivated} réactivations)`);
 
   // ── Résumé ────────────────────────────────────────────────────────────────
   const bar2 = '═'.repeat(64);
@@ -567,6 +644,8 @@ async function main() {
   console.log(`  Points inconnus (null): ${String(gNullPoints).padStart(6)}  (pnote-only)`);
   console.log(`  Statuts repris de pnote    : ${String(gStatusFromPnote).padStart(6)}`);
   console.log(`    dont différents de gog   : ${String(gDivergences).padStart(6)}  (dont destroyed→ok : ${gDestroyedToOk})`);
+  console.log('');
+  console.log(`  Événements news (ce run)   : ${String(allNewEvents.length).padStart(6)}`);
   console.log('');
   console.log(`  ── Paris ─────────────────────────────────`);
   console.log(`  Base gog              : ${paGog}`);
