@@ -8,6 +8,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
 import { DrawerActions } from '@react-navigation/native';
 import { useAppContext } from '../context/AppContext';
+import { CITIES } from '../cities/registry';
 import { STATUS_COLOR } from '../constants';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
@@ -35,13 +36,15 @@ const InvaderRow = memo(function InvaderRow({ item, isFlashed, onToggle, theme }
         <Text style={styles.rowId}>{item.id}</Text>
         <Text style={styles.rowMeta}>{t(`common.status.${item.status}`)} · {item.points} {t('common.pts')}</Text>
       </View>
-      <Switch
-        value={isFlashed}
-        onValueChange={onToggle}
-        trackColor={{ false: theme.border, true: theme.accent }}
-        thumbColor={theme.bg}
-        ios_backgroundColor={theme.border}
-      />
+      <View style={styles.switchWrap}>
+        <Switch
+          value={isFlashed}
+          onValueChange={onToggle}
+          trackColor={{ false: theme.border, true: theme.accent }}
+          thumbColor={theme.bg}
+          ios_backgroundColor={theme.border}
+        />
+      </View>
     </View>
   );
 });
@@ -49,13 +52,20 @@ const InvaderRow = memo(function InvaderRow({ item, isFlashed, onToggle, theme }
 // ─── Écran liste ──────────────────────────────────────────────────────────────
 
 export default function ListScreen({ navigation }) {
-  const { invaders, flashed, toggleFlash, bulkFlash, bulkUnflash } = useAppContext();
+  const { invaders, flashed, toggleFlash, bulkFlash, bulkUnflash, currentCityCode } = useAppContext();
   const { theme } = useTheme();
   const { t } = useTranslation();
   const styles = getStyles(theme);
   const insets = useSafeAreaInsets();
   const [search, setSearch] = useState('');
   const [filter, setFilter] = useState('all');
+
+  const cityName = CITIES[currentCityCode]?.name ?? currentCityCode;
+  // Compteur de flashés dans LA ville courante (et non le total global, toutes villes)
+  const flashedHere = useMemo(
+    () => invaders.reduce((n, inv) => n + (flashed.has(inv.id) ? 1 : 0), 0),
+    [invaders, flashed]
+  );
 
   const rows = useMemo(() => {
     const q = search.trim().toUpperCase();
@@ -105,9 +115,9 @@ export default function ListScreen({ navigation }) {
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
       <View style={styles.header}>
-        <Text style={styles.title}>{t('list.title')}</Text>
+        <Text style={styles.title}>{t('list.title', { city: cityName })}</Text>
         <View style={styles.headerRight}>
-          <Text style={styles.counter}>{t('list.counter', { flashed: flashed.size, total: invaders.length })}</Text>
+          <Text style={styles.counter}>{t('list.counter', { flashed: flashedHere, total: invaders.length })}</Text>
           <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
             <Ionicons name="menu" size={24} color={theme.textPrimary} />
           </TouchableOpacity>
@@ -215,6 +225,7 @@ function makeStyles(t) {
     },
     statusDot: { width: 10, height: 10, borderRadius: 5, marginRight: 12 },
     rowInfo: { flex: 1 },
+    switchWrap: { alignSelf: 'stretch', justifyContent: 'center' },
     rowId: { fontSize: 15, fontWeight: '600', color: t.textPrimary },
     rowMeta: { fontSize: 12, color: t.textSecondary, marginTop: 1 },
     separator: { height: StyleSheet.hairlineWidth, backgroundColor: t.border, marginLeft: 38 },

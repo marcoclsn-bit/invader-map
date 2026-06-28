@@ -60,7 +60,7 @@
     "loadingBody": "El cambio de ciudad y los filtros estarán disponibles en {{countdown}}."
   },
   "list": {
-    "title": "Invaders París",
+    "title": "Invaders {{city}}",
     "searchPlaceholder": "Buscar (p. ej. 42 o PA_42)",
     "counter": "{{flashed}} / {{total}} fotografiados",
     "all": "Todos",

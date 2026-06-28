@@ -60,7 +60,7 @@
     "loadingBody": "City switching and filters will be available in {{countdown}}."
   },
   "list": {
-    "title": "Paris Invaders",
+    "title": "Invaders {{city}}",
     "searchPlaceholder": "Search (e.g. 42 or PA_42)",
     "counter": "{{flashed}} / {{total}} flashed",
     "all": "All",

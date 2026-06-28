@@ -241,7 +241,8 @@ export default function PalmèresScreen({ navigation }) {
               onPress={() => {
                 if (isChangingCity || isActive || isLocked) return;
                 setCurrentCity(c.code);
-                navigation.navigate('Carte');
+                // Carte est un onglet imbriqué dans "Tabs" (pas une route du Drawer)
+                navigation.navigate('Tabs', { screen: 'Carte' });
               }}
               activeOpacity={!isActive && isLocked ? 1 : 0.7}
             >
