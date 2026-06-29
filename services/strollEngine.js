@@ -15,17 +15,22 @@
  * en dev build. Les appels sont protégés pour ne pas casser Expo Go.
  */
 
-import Constants from 'expo-constants';
 import * as Location from 'expo-location';
 import * as Notifications from 'expo-notifications';
 import * as Haptics from 'expo-haptics';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-// ⚠️ expo-task-manager n'a PAS de module natif dans Expo Go → on ne le charge
-// qu'en build natif (dev/prod). En Expo Go, le moteur de geofencing reste inactif
-// (l'UI et les réglages fonctionnent ; les alertes nécessitent le dev build).
-const IN_EXPO_GO = Constants.executionEnvironment === 'storeClient';
-const TaskManager = IN_EXPO_GO ? null : require('expo-task-manager');
+// ⚠️ expo-task-manager n'a PAS de module natif dans Expo Go → son chargement y
+// lève « Cannot find native module 'ExpoTaskManager' ». On protège le require :
+// s'il échoue (Expo Go), le moteur reste inactif (l'UI/les réglages marchent ;
+// les alertes nécessitent un dev/prod build).
+let TaskManager = null;
+try {
+  TaskManager = require('expo-task-manager');
+} catch (e) {
+  console.log('[Stroll] expo-task-manager indisponible (Expo Go) :', e?.message);
+}
+const ENGINE_AVAILABLE = !!TaskManager;
 
 export const GEOFENCE_TASK = 'invaderquest-stroll-geofencing';
 
@@ -109,7 +114,7 @@ export async function requestStrollPermissions() {
 
 /** (Re)positionne les geofences autour de la position actuelle. */
 export async function refreshGeofences() {
-  if (IN_EXPO_GO) { console.log('[Stroll] geofencing indisponible en Expo Go (dev build requis)'); return false; }
+  if (!ENGINE_AVAILABLE) { console.log('[Stroll] geofencing indisponible (dev build requis)'); return false; }
   const settings = await readJSON(KEY_SETTINGS, null);
   if (!settings?.enabled) return false;
   const candidates = await readJSON(KEY_CANDIDATES, []);
@@ -145,7 +150,7 @@ export async function persistNotifStrings(title, body) {
 export async function startStroll() { return refreshGeofences(); }
 
 export async function stopStroll() {
-  if (IN_EXPO_GO) return;
+  if (!ENGINE_AVAILABLE) return;
   try {
     const started = await Location.hasStartedGeofencingAsync(GEOFENCE_TASK);
     if (started) {
