@@ -401,6 +401,8 @@
     "fallback": {
       "title": "Alertes limitées à l'app ouverte",
       "body": "Sans l'autorisation « Toujours », les alertes ne se déclenchent que lorsque l'app est ouverte. Active « Toujours autoriser » dans les Réglages iOS pour le fonctionnement en poche."
-    }
+    },
+    "statusSectionTitle": "Pour quels statuts être alerté ?",
+    "statusNote": "Les déjà flashés et les détruits sont toujours exclus."
   }
 }

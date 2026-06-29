@@ -401,6 +401,8 @@
     "fallback": {
       "title": "Alerts limited to app open",
       "body": "Without “Always” permission, alerts only fire while the app is open. Enable “Always Allow” in iOS Settings for in-pocket use."
-    }
+    },
+    "statusSectionTitle": "Which statuses to alert for?",
+    "statusNote": "Already flashed and destroyed are always excluded."
   }
 }

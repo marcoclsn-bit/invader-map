@@ -20,11 +20,16 @@ export default function StrollEngine() {
   const dataRef = useRef({ invaders, flashed, stroll, t });
   dataRef.current = { invaders, flashed, stroll, t };
 
-  // Calcule + persiste les candidats (non flashés, non détruits) de la ville courante
+  // Calcule + persiste les candidats de la ville courante.
+  // Règle : statut dans les statuts choisis (défaut ok/endommagé/inconnu),
+  //         JAMAIS détruit, JAMAIS flashé (déjà fait).
   async function syncCandidates() {
     const { invaders: inv, flashed: fl, stroll: s, t: tr } = dataRef.current;
+    const allowed = new Set(
+      Array.isArray(s.alertStatuses) && s.alertStatuses.length ? s.alertStatuses : ['ok', 'damaged', 'unknown']
+    );
     const candidates = inv
-      .filter(i => i.status !== 'destroyed' && (!s.unflashedOnly || !fl.has(i.id)))
+      .filter(i => i.status !== 'destroyed' && allowed.has(i.status) && !fl.has(i.id))
       .map(i => ({ id: i.id, lat: i.lat, lng: i.lng }));
     await persistNotifStrings(tr('stroll.notif.title'), tr('stroll.notif.body', { id: '{id}' }));
     await persistCandidates(candidates);
@@ -35,9 +40,9 @@ export default function StrollEngine() {
   useEffect(() => {
     if (!loaded || !stroll.enabled) return;
     syncCandidates();
-  }, [loaded, stroll.enabled, stroll.unflashedOnly, invaders, flashed, currentCityCode]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [loaded, stroll.enabled, stroll.alertStatuses, invaders, flashed, currentCityCode]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Démarre/arrête le geofencing selon enabled (et le relance si rayon/cible changent)
+  // Démarre/arrête le geofencing selon enabled (et le relance si rayon/statuts changent)
   useEffect(() => {
     if (!loaded) return;
     let cancelled = false;
@@ -50,7 +55,7 @@ export default function StrollEngine() {
       }
     })();
     return () => { cancelled = true; };
-  }, [loaded, stroll.enabled, stroll.radius, stroll.unflashedOnly]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [loaded, stroll.enabled, stroll.radius, stroll.alertStatuses]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return null;
 }

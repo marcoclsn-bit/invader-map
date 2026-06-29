@@ -18,8 +18,13 @@ const DEFAULT_STROLL = {
   radius:        50,     // rayon d'alerte en mètres (25–150)
   vibration:     true,   // alerter par vibration
   notification:  true,   // alerter par notification
-  unflashedOnly: true,   // ne cibler que les Invaders non flashés
+  // Statuts qui déclenchent une alerte. Défaut « à faire » : ok / endommagé / inconnu.
+  // Les flashés sont TOUJOURS exclus ; les détruits ne sont jamais proposés (non flashables).
+  alertStatuses: ['ok', 'damaged', 'unknown'],
 };
+
+// Statuts proposables dans le sélecteur du Mode balade (jamais 'destroyed', jamais 'hidden')
+export const STROLL_STATUS_OPTIONS = ['ok', 'damaged', 'unknown'];
 
 // Filtres « à faire » : tous les statuts visibles SAUF les détruits, et seulement
 // les non-flashés. C'est l'état par défaut de la carte au tout premier lancement.

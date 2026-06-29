@@ -401,6 +401,8 @@
     "fallback": {
       "title": "Avisos solo con la app abierta",
       "body": "Sin el permiso «Siempre», los avisos solo se activan con la app abierta. Activa «Permitir siempre» en Ajustes de iOS para usarlo en el bolsillo."
-    }
+    },
+    "statusSectionTitle": "¿Para qué estados avisar?",
+    "statusNote": "Los ya fotografiados y los destruidos siempre se excluyen."
   }
 }

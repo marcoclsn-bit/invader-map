@@ -7,9 +7,10 @@ import { Ionicons } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
 import { useTranslation } from 'react-i18next';
 import { DrawerActions } from '@react-navigation/native';
-import { useAppContext } from '../context/AppContext';
+import { useAppContext, STROLL_STATUS_OPTIONS } from '../context/AppContext';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
+import { STATUS_COLOR } from '../constants';
 import { requestStrollPermissions } from '../services/strollEngine';
 
 const RADIUS_MIN = 25;
@@ -66,6 +67,15 @@ export default function StrollScreen({ navigation }) {
   const off = !stroll.enabled;
   // true = activé mais sans autorisation « Toujours » → alertes seulement app ouverte
   const [bgDenied, setBgDenied] = useState(false);
+  const [advancedOpen, setAdvancedOpen] = useState(false);
+
+  const alertStatuses = stroll.alertStatuses ?? STROLL_STATUS_OPTIONS;
+  function toggleStatus(code) {
+    const cur = new Set(alertStatuses);
+    cur.has(code) ? cur.delete(code) : cur.add(code);
+    // ordre canonique (ok → endommagé → inconnu)
+    setStrollPref({ alertStatuses: STROLL_STATUS_OPTIONS.filter((s) => cur.has(s)) });
+  }
 
   async function onToggleEnabled(value) {
     if (!value) { setStrollPref({ enabled: false }); setBgDenied(false); return; }
@@ -173,17 +183,44 @@ export default function StrollScreen({ navigation }) {
           />
         </Section>
 
-        {/* ── Cibler ── */}
+        {/* ── Cibler (avancé, repliable) ── */}
         <Section title={t('stroll.targetSection')} theme={theme}>
-          <ToggleRow
-            label={t('stroll.unflashedOnly')}
-            hint={t('stroll.unflashedOnlyHint')}
-            value={stroll.unflashedOnly}
-            onValueChange={(v) => setStrollPref({ unflashedOnly: v })}
+          {/* En-tête repliable */}
+          <TouchableOpacity
+            style={[styles.row, advancedOpen && styles.rowDivider, off && styles.rowDisabled]}
+            onPress={() => setAdvancedOpen(o => !o)}
+            activeOpacity={0.7}
             disabled={off}
-            theme={theme}
-            last
-          />
+          >
+            <View style={styles.rowText}>
+              <Text style={styles.rowLabel}>{t('stroll.statusSectionTitle')}</Text>
+              <Text style={styles.rowHint}>{t('stroll.statusNote')}</Text>
+            </View>
+            <Ionicons name={advancedOpen ? 'chevron-up' : 'chevron-down'} size={18} color={theme.textSecondary} />
+          </TouchableOpacity>
+
+          {/* Cases par statut (jamais détruit ; flashés toujours exclus) */}
+          {advancedOpen && STROLL_STATUS_OPTIONS.map((code, i) => {
+            const on = alertStatuses.includes(code);
+            const last = i === STROLL_STATUS_OPTIONS.length - 1;
+            return (
+              <TouchableOpacity
+                key={code}
+                style={[styles.statusRow, !last && styles.rowDivider, off && styles.rowDisabled]}
+                onPress={() => toggleStatus(code)}
+                activeOpacity={0.7}
+                disabled={off}
+              >
+                <View style={[styles.statusDot, { backgroundColor: STATUS_COLOR[code] }]} />
+                <Text style={[styles.rowLabel, { flex: 1 }]}>{t(`common.status.${code}`)}</Text>
+                <Ionicons
+                  name={on ? 'checkbox' : 'square-outline'}
+                  size={22}
+                  color={on ? theme.accent : theme.textSecondary}
+                />
+              </TouchableOpacity>
+            );
+          })}
         </Section>
 
         <Text style={styles.footnote}>{t('stroll.footnote')}</Text>
@@ -234,6 +271,12 @@ function makeStyles(t) {
     rowText: { flex: 1 },
     rowLabel: { fontSize: 16, color: t.textPrimary },
     rowHint: { fontSize: 13, color: t.textSecondary, marginTop: 3, lineHeight: 18 },
+
+    statusRow: {
+      flexDirection: 'row', alignItems: 'center', gap: 12,
+      paddingHorizontal: 16, paddingVertical: 13,
+    },
+    statusDot: { width: 12, height: 12, borderRadius: 6 },
 
     aboutBlock: { paddingHorizontal: 16, paddingVertical: 14 },
     aboutLabel: { ...typography.arcadeHeading, fontSize: 12, color: t.textPrimary, marginBottom: 6 },

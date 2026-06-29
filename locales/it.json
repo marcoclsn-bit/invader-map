@@ -401,6 +401,8 @@
     "fallback": {
       "title": "Avvisi solo ad app aperta",
       "body": "Senza il permesso «Sempre», gli avvisi scattano solo ad app aperta. Attiva «Consenti sempre» nelle Impostazioni iOS per l'uso in tasca."
-    }
+    },
+    "statusSectionTitle": "Per quali stati avvisare?",
+    "statusNote": "I già fotografati e i distrutti sono sempre esclusi."
   }
 }
