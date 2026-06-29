@@ -27,6 +27,7 @@ import IdeaScreen from './screens/IdeaScreen';
 import OnboardingScreen from './screens/OnboardingScreen';
 import DrawerContent from './components/DrawerContent';
 import StrollEngine from './components/StrollEngine';
+import { navigationRef } from './utils/navigationRef';
 import './services/strollEngine'; // enregistre la tâche de fond + le handler de notif
 
 const Tab    = createBottomTabNavigator();
@@ -122,7 +123,7 @@ function AppShell() {
     <>
       <StatusBar style={isDark ? 'light' : 'dark'} />
       <StrollEngine />
-      <NavigationContainer>
+      <NavigationContainer ref={navigationRef}>
         <Root.Navigator screenOptions={{ headerShown: false }}>
           {/* Drawer (+ ses 3 onglets) comme écran principal */}
           <Root.Screen name="Main" component={DrawerNavigator} />

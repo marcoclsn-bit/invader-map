@@ -240,6 +240,7 @@ async function handleEnter(invId) {
             title: tpl.title,
             body: (tpl.body || '{id}').replace('{id}', invId),
             sound: true,
+            data: { type: 'stroll', invId }, // pour router vers la fiche au tap
           },
           trigger: null, // immédiat
         });
