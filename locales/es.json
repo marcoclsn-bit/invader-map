@@ -387,6 +387,20 @@
     "targetSection": "Filtrar",
     "unflashedOnly": "Solo los no fotografiados",
     "unflashedOnlyHint": "Ignora los Invaders ya fotografiados.",
-    "footnote": "El modo paseo usará la ubicación en segundo plano. Se activará en una próxima versión de la app."
+    "footnote": "El modo paseo usa geofencing: sin GPS continuo, ahorra batería. Requiere el permiso de ubicación «Siempre» para funcionar con la app cerrada.",
+    "notif": {
+      "title": "Invader cerca 👾",
+      "body": "¡{{id}} está muy cerca, ve a fotografiarlo!"
+    },
+    "perm": {
+      "deniedTitle": "Ubicación denegada",
+      "deniedBody": "El modo paseo necesita tu ubicación para avisarte cerca de los Invaders. Actívala en los Ajustes de iOS.",
+      "bgTitle": "Falta permiso en segundo plano",
+      "bgBody": "Para recibir avisos con la app cerrada, elige «Permitir siempre» la ubicación en Ajustes. Por ahora solo recibirás avisos con la app abierta."
+    },
+    "fallback": {
+      "title": "Avisos solo con la app abierta",
+      "body": "Sin el permiso «Siempre», los avisos solo se activan con la app abierta. Activa «Permitir siempre» en Ajustes de iOS para usarlo en el bolsillo."
+    }
   }
 }

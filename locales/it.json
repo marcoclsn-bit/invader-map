@@ -387,6 +387,20 @@
     "targetSection": "Filtro",
     "unflashedOnly": "Solo i non fotografati",
     "unflashedOnlyHint": "Ignora gli Invaders già fotografati.",
-    "footnote": "La modalità passeggiata userà la posizione in background. Sarà attivata in una prossima versione dell'app."
+    "footnote": "La modalità passeggiata usa il geofencing: niente GPS continuo, risparmia batteria. Richiede il permesso di posizione «Sempre» per funzionare ad app chiusa.",
+    "notif": {
+      "title": "Invader nelle vicinanze 👾",
+      "body": "{{id}} è proprio vicino — vai a fotografarlo!"
+    },
+    "perm": {
+      "deniedTitle": "Posizione negata",
+      "deniedBody": "La modalità passeggiata ha bisogno della tua posizione per avvisarti vicino agli Invaders. Attivala nelle Impostazioni iOS.",
+      "bgTitle": "Permesso in background mancante",
+      "bgBody": "Per ricevere avvisi anche ad app chiusa, scegli «Consenti sempre» la posizione nelle Impostazioni. Per ora riceverai avvisi solo ad app aperta."
+    },
+    "fallback": {
+      "title": "Avvisi solo ad app aperta",
+      "body": "Senza il permesso «Sempre», gli avvisi scattano solo ad app aperta. Attiva «Consenti sempre» nelle Impostazioni iOS per l'uso in tasca."
+    }
   }
 }

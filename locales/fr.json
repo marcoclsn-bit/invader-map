@@ -387,6 +387,20 @@
     "targetSection": "Cibler",
     "unflashedOnly": "Uniquement les non-flashés",
     "unflashedOnlyHint": "Ignore les Invaders déjà flashés.",
-    "footnote": "Le mode balade utilisera la localisation en arrière-plan. Il sera activé dans une prochaine version de l'app."
+    "footnote": "Le mode balade s'appuie sur le geofencing : pas de GPS en continu, économe en batterie. Nécessite l'autorisation de localisation « Toujours » pour fonctionner app fermée.",
+    "notif": {
+      "title": "Invader à proximité 👾",
+      "body": "{{id}} est tout près — à toi de le flasher !"
+    },
+    "perm": {
+      "deniedTitle": "Localisation refusée",
+      "deniedBody": "Le mode balade a besoin de ta position pour t'alerter près des Invaders. Active la localisation dans les Réglages iOS.",
+      "bgTitle": "Autorisation arrière-plan manquante",
+      "bgBody": "Pour être alerté même app fermée, choisis « Toujours autoriser » la localisation dans les Réglages. Pour l'instant, tu seras alerté seulement quand l'app est ouverte."
+    },
+    "fallback": {
+      "title": "Alertes limitées à l'app ouverte",
+      "body": "Sans l'autorisation « Toujours », les alertes ne se déclenchent que lorsque l'app est ouverte. Active « Toujours autoriser » dans les Réglages iOS pour le fonctionnement en poche."
+    }
   }
 }

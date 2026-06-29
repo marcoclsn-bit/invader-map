@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import {
-  StyleSheet, View, Text, ScrollView, Switch, TouchableOpacity,
+  StyleSheet, View, Text, ScrollView, Switch, TouchableOpacity, Alert,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
@@ -9,6 +10,7 @@ import { DrawerActions } from '@react-navigation/native';
 import { useAppContext } from '../context/AppContext';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
+import { requestStrollPermissions } from '../services/strollEngine';
 
 const RADIUS_MIN = 25;
 const RADIUS_MAX = 150;
@@ -62,6 +64,23 @@ export default function StrollScreen({ navigation }) {
   const { stroll, setStrollPref } = useAppContext();
 
   const off = !stroll.enabled;
+  // true = activé mais sans autorisation « Toujours » → alertes seulement app ouverte
+  const [bgDenied, setBgDenied] = useState(false);
+
+  async function onToggleEnabled(value) {
+    if (!value) { setStrollPref({ enabled: false }); setBgDenied(false); return; }
+    // Activation : on demande les autorisations
+    const { foreground, background } = await requestStrollPermissions();
+    if (!foreground) {
+      Alert.alert(t('stroll.perm.deniedTitle'), t('stroll.perm.deniedBody'));
+      return; // sans localisation, rien à faire
+    }
+    setBgDenied(!background);
+    setStrollPref({ enabled: true });
+    if (!background) {
+      Alert.alert(t('stroll.perm.bgTitle'), t('stroll.perm.bgBody'));
+    }
+  }
 
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
@@ -77,14 +96,16 @@ export default function StrollScreen({ navigation }) {
       </View>
 
       <ScrollView contentContainerStyle={{ paddingBottom: insets.bottom + 32 }}>
-        {/* ── Bandeau « bientôt disponible » ── */}
-        <View style={styles.banner}>
-          <Ionicons name="construct-outline" size={18} color={theme.accent} />
-          <View style={{ flex: 1 }}>
-            <Text style={styles.bannerTitle}>{t('stroll.comingSoon.badge')}</Text>
-            <Text style={styles.bannerBody}>{t('stroll.comingSoon.body')}</Text>
+        {/* ── Bandeau d'état (repli si autorisation arrière-plan manquante) ── */}
+        {stroll.enabled && bgDenied && (
+          <View style={styles.banner}>
+            <Ionicons name="warning-outline" size={18} color={theme.accent} />
+            <View style={{ flex: 1 }}>
+              <Text style={styles.bannerTitle}>{t('stroll.fallback.title')}</Text>
+              <Text style={styles.bannerBody}>{t('stroll.fallback.body')}</Text>
+            </View>
           </View>
-        </View>
+        )}
 
         {/* ── Explication ── */}
         <Section title={t('stroll.aboutSection')} theme={theme}>
@@ -104,7 +125,7 @@ export default function StrollScreen({ navigation }) {
             label={t('stroll.enableLabel')}
             hint={t('stroll.enableHint')}
             value={stroll.enabled}
-            onValueChange={(v) => setStrollPref({ enabled: v })}
+            onValueChange={onToggleEnabled}
             theme={theme}
             last
           />

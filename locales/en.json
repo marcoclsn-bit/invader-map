@@ -387,6 +387,20 @@
     "targetSection": "Target",
     "unflashedOnly": "Unflashed only",
     "unflashedOnlyHint": "Ignore Invaders you've already flashed.",
-    "footnote": "Stroll mode will use background location. It will be enabled in a future version of the app."
+    "footnote": "Stroll mode uses geofencing: no continuous GPS, battery-friendly. Requires “Always” location permission to work when the app is closed.",
+    "notif": {
+      "title": "Invader nearby 👾",
+      "body": "{{id}} is right next to you — go flash it!"
+    },
+    "perm": {
+      "deniedTitle": "Location denied",
+      "deniedBody": "Stroll mode needs your location to alert you near Invaders. Enable location in iOS Settings.",
+      "bgTitle": "Background permission missing",
+      "bgBody": "To be alerted even when the app is closed, choose “Always Allow” for location in Settings. For now, you'll only be alerted while the app is open."
+    },
+    "fallback": {
+      "title": "Alerts limited to app open",
+      "body": "Without “Always” permission, alerts only fire while the app is open. Enable “Always Allow” in iOS Settings for in-pocket use."
+    }
   }
 }
