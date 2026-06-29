@@ -68,13 +68,16 @@ async function writeJSON(key, val) {
   try { await AsyncStorage.setItem(key, JSON.stringify(val)); } catch {}
 }
 
-// Construit les régions autour d'une position : 19 Invaders proches + 1 périmètre
-function buildRegions(lat, lng, candidates, radius) {
-  const nearest = candidates
+// Les N Invaders candidats les plus proches d'une position (avec distance .d)
+function nearestCandidates(lat, lng, candidates) {
+  return candidates
     .map(c => ({ ...c, d: distM(lat, lng, c.lat, c.lng) }))
     .sort((a, b) => a.d - b.d)
     .slice(0, INVADER_REGIONS);
+}
 
+// Construit les régions : N Invaders proches + 1 périmètre
+function buildRegions(lat, lng, nearest, radius) {
   const regions = nearest.map(c => ({
     identifier: INV_PREFIX + c.id,
     latitude: c.lat,
@@ -126,15 +129,24 @@ export async function refreshGeofences() {
   if (!loc) { console.log('[Stroll] pas de position'); return false; }
 
   const { latitude, longitude } = loc.coords;
-  const regions = buildRegions(latitude, longitude, candidates, settings.radius ?? 50);
+  const radius = settings.radius ?? 50;
+  const nearest = nearestCandidates(latitude, longitude, candidates);
+  const regions = buildRegions(latitude, longitude, nearest, radius);
   try {
     await Location.startGeofencingAsync(GEOFENCE_TASK, regions);
-    console.log(`[Stroll] ${regions.length} geofences posées (rayon ${settings.radius} m) @ ${latitude.toFixed(4)},${longitude.toFixed(4)}`);
-    return true;
+    console.log(`[Stroll] ${regions.length} geofences posées (rayon ${radius} m) @ ${latitude.toFixed(4)},${longitude.toFixed(4)} ; plus proche : ${nearest[0] ? Math.round(nearest[0].d) + ' m' : '—'}`);
   } catch (e) {
-    console.log('[Stroll] startGeofencing erreur (Expo Go ?) :', e?.message);
+    console.log('[Stroll] startGeofencing erreur :', e?.message);
     return false;
   }
+
+  // Piège geofencing : si on est DÉJÀ dans le rayon d'un Invader au moment où l'on
+  // (re)pose les régions, iOS n'émet pas d'« entrée ». On déclenche nous-mêmes.
+  if (nearest[0] && nearest[0].d <= Math.max(radius, 20)) {
+    console.log('[Stroll] déjà à proximité au démarrage → alerte immédiate', nearest[0].id);
+    await handleEnter(nearest[0].id);
+  }
+  return true;
 }
 
 /** Persiste les candidats (Invaders à cibler) pour la tâche de fond. */
