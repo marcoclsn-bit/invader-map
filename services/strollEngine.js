@@ -15,11 +15,17 @@
  * en dev build. Les appels sont protégés pour ne pas casser Expo Go.
  */
 
-import * as TaskManager from 'expo-task-manager';
+import Constants from 'expo-constants';
 import * as Location from 'expo-location';
 import * as Notifications from 'expo-notifications';
 import * as Haptics from 'expo-haptics';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+
+// ⚠️ expo-task-manager n'a PAS de module natif dans Expo Go → on ne le charge
+// qu'en build natif (dev/prod). En Expo Go, le moteur de geofencing reste inactif
+// (l'UI et les réglages fonctionnent ; les alertes nécessitent le dev build).
+const IN_EXPO_GO = Constants.executionEnvironment === 'storeClient';
+const TaskManager = IN_EXPO_GO ? null : require('expo-task-manager');
 
 export const GEOFENCE_TASK = 'invaderquest-stroll-geofencing';
 
@@ -103,6 +109,7 @@ export async function requestStrollPermissions() {
 
 /** (Re)positionne les geofences autour de la position actuelle. */
 export async function refreshGeofences() {
+  if (IN_EXPO_GO) { console.log('[Stroll] geofencing indisponible en Expo Go (dev build requis)'); return false; }
   const settings = await readJSON(KEY_SETTINGS, null);
   if (!settings?.enabled) return false;
   const candidates = await readJSON(KEY_CANDIDATES, []);
@@ -138,6 +145,7 @@ export async function persistNotifStrings(title, body) {
 export async function startStroll() { return refreshGeofences(); }
 
 export async function stopStroll() {
+  if (IN_EXPO_GO) return;
   try {
     const started = await Location.hasStartedGeofencingAsync(GEOFENCE_TASK);
     if (started) {
@@ -149,21 +157,23 @@ export async function stopStroll() {
 
 // ─── Tâche de fond (geofencing) ────────────────────────────────────────────────
 
-TaskManager.defineTask(GEOFENCE_TASK, async ({ data, error }) => {
-  if (error) { console.log('[Stroll] task error :', error.message); return; }
-  const { eventType, region } = data || {};
-  if (!region) return;
-  try {
-    if (eventType === Location.GeofencingEventType.Exit && region.identifier === PERIMETER_ID) {
-      console.log('[Stroll] sortie périmètre → recalcul');
-      await refreshGeofences();
-      return;
-    }
-    if (eventType === Location.GeofencingEventType.Enter && region.identifier.startsWith(INV_PREFIX)) {
-      await handleEnter(region.identifier.slice(INV_PREFIX.length));
-    }
-  } catch (e) { console.log('[Stroll] handle error :', e?.message); }
-});
+if (TaskManager) {
+  TaskManager.defineTask(GEOFENCE_TASK, async ({ data, error }) => {
+    if (error) { console.log('[Stroll] task error :', error.message); return; }
+    const { eventType, region } = data || {};
+    if (!region) return;
+    try {
+      if (eventType === Location.GeofencingEventType.Exit && region.identifier === PERIMETER_ID) {
+        console.log('[Stroll] sortie périmètre → recalcul');
+        await refreshGeofences();
+        return;
+      }
+      if (eventType === Location.GeofencingEventType.Enter && region.identifier.startsWith(INV_PREFIX)) {
+        await handleEnter(region.identifier.slice(INV_PREFIX.length));
+      }
+    } catch (e) { console.log('[Stroll] handle error :', e?.message); }
+  });
+}
 
 async function handleEnter(invId) {
   const settings = await readJSON(KEY_SETTINGS, null);
