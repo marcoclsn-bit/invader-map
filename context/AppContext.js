@@ -106,6 +106,9 @@ export function AppProvider({ children }) {
 
   // ── Mode balade (réglages seulement ; moteur au dev build) ──────────────────
   const [stroll, setStroll] = useState(DEFAULT_STROLL);
+
+  // Légende des couleurs : affichée sur la carte au 1er usage, puis masquée.
+  const [legendSeen, setLegendSeen] = useState(false);
   const [language, setLanguageState] = useState('system');
   const [showOnboarding, setShowOnboarding] = useState(false);
   const [loaded, setLoaded] = useState(false);
@@ -255,11 +258,13 @@ export function AppProvider({ children }) {
         AsyncStorage.getItem('@invader_current_city'),
         AsyncStorage.getItem('invader_filters'),
       ]);
-      const [newsCitiesRaw, newsLastSeenRaw, strollRaw] = await Promise.all([
+      const [newsCitiesRaw, newsLastSeenRaw, strollRaw, legendSeenRaw] = await Promise.all([
         AsyncStorage.getItem('@invader_news_cities'),
         AsyncStorage.getItem('@invader_news_last_seen'),
         AsyncStorage.getItem('@invader_stroll'),
+        AsyncStorage.getItem('@invader_legend_seen'),
       ]);
+      if (legendSeenRaw === '1') setLegendSeen(true);
 
       if (flashedRaw)       setFlashed(new Set(JSON.parse(flashedRaw)));
       // Migration douce : les IDs sans date gardent flashedAt: null (absents du Map)
@@ -428,6 +433,12 @@ export function AppProvider({ children }) {
     setNewsLastSeen(new Date().toISOString());
   }
 
+  // Ferme la légende des couleurs sur la carte (mémorisé)
+  function dismissLegend() {
+    setLegendSeen(true);
+    AsyncStorage.setItem('@invader_legend_seen', '1');
+  }
+
   // ─── Mode balade ────────────────────────────────────────────────────────────
   // Modifie un ou plusieurs réglages (fusion partielle). Le moteur de proximité
   // (futur dev build) lira simplement l'objet `stroll`.
@@ -512,6 +523,8 @@ export function AppProvider({ children }) {
       setStatusColor, setFlashedColor,
       // News
       news, newsCities, setNewsCitiesPref, newsLastSeen, markNewsSeen, newsUnreadCount,
+      // Légende des couleurs
+      legendSeen, dismissLegend,
       // Mode balade (réglages ; moteur au dev build)
       stroll, setStrollPref,
       mapsApp, setMapsAppPref,

@@ -58,7 +58,15 @@
       "progress": "CARICAMENTO ({{pct}}%)"
     },
     "loadingTitle": "Mappa in caricamento",
-    "loadingBody": "Il cambio di città e i filtri saranno disponibili tra {{countdown}}."
+    "loadingBody": "Il cambio di città e i filtri saranno disponibili tra {{countdown}}.",
+    "legend": {
+      "title": "Legenda",
+      "ok": "Buono stato",
+      "damaged": "Danneggiato",
+      "unknown": "Sconosciuto",
+      "destroyed": "Distrutto",
+      "flashed": "Fotografato"
+    }
   },
   "list": {
     "title": "Invaders {{city}}",

@@ -58,7 +58,15 @@
       "progress": "LOADING ({{pct}}%)"
     },
     "loadingTitle": "Map loading",
-    "loadingBody": "City switching and filters will be available in {{countdown}}."
+    "loadingBody": "City switching and filters will be available in {{countdown}}.",
+    "legend": {
+      "title": "Legend",
+      "ok": "Good condition",
+      "damaged": "Damaged",
+      "unknown": "Unknown",
+      "destroyed": "Destroyed",
+      "flashed": "Flashed"
+    }
   },
   "list": {
     "title": "Invaders {{city}}",

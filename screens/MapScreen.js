@@ -11,6 +11,7 @@ import { useAppContext } from '../context/AppContext';
 import { CITIES, ENABLED_CITIES } from '../cities/registry';
 import { ALL_STATUSES } from '../constants';
 import InvaderMarker from '../components/InvaderMarker';
+import Legend from '../components/Legend';
 import InvaderPanel from '../components/InvaderPanel';
 import HeadingCone from '../components/HeadingCone';
 import { useTheme } from '../theme/ThemeContext';
@@ -219,6 +220,11 @@ function FilterPanel({ filters, onFiltersChange, onClose }) {
           );
         })}
       </View>
+
+      {/* ── Légende des couleurs (toujours dispo ici) ── */}
+      <View style={{ marginTop: 14 }}>
+        <Legend inline />
+      </View>
     </View>
   );
 }
@@ -229,7 +235,7 @@ function FilterPanel({ filters, onFiltersChange, onClose }) {
 // ─── Écran carte ──────────────────────────────────────────────────────────────
 
 export default function MapScreen({ navigation, route }) {
-  const { invaders, flashed, labels, labelDefs, statusColors, colorOverrides, filters, setFilters, toggleFlash, mapsApp, setMapsAppPref, currentCityCode, isChangingCity, pendingCityCode, mapLockUntil, mapLockDuration } = useAppContext();
+  const { invaders, flashed, labels, labelDefs, statusColors, colorOverrides, filters, setFilters, toggleFlash, mapsApp, setMapsAppPref, currentCityCode, isChangingCity, pendingCityCode, mapLockUntil, mapLockDuration, legendSeen, dismissLegend } = useAppContext();
   const city = CITIES[currentCityCode] ?? CITIES.PA;
   const overlayName = (pendingCityCode ? CITIES[pendingCityCode]?.name : null) ?? city.name;
   const { theme, isDark } = useTheme();
@@ -585,6 +591,13 @@ export default function MapScreen({ navigation, route }) {
         </View>
       )}
 
+      {/* ── Légende des couleurs (bas-gauche) — au 1er usage uniquement ── */}
+      {!legendSeen && !isChangingCity && !showFilters && !selected && (
+        <View style={[styles.bottomLeft, { bottom: insets.bottom + 16 }]}>
+          <Legend onDismiss={dismissLegend} />
+        </View>
+      )}
+
       {showFilters && !isChangingCity && (
         <FilterPanel filters={filters} onFiltersChange={setFilters} onClose={() => setShowFilters(false)} />
       )}
@@ -676,6 +689,8 @@ function makeStyles(t) {
       position: 'absolute', right: 14,
       alignItems: 'center', gap: 10,
     },
+    // ── Légende bas-gauche ───────────────────────────────────────────────────
+    bottomLeft: { position: 'absolute', left: 12, maxWidth: 180 },
     circleBtn: {
       width: 38, height: 38, borderRadius: 19,
       backgroundColor: t.surface, alignItems: 'center', justifyContent: 'center',
