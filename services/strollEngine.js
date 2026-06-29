@@ -50,6 +50,13 @@ const MAX_SPEED_MPS   = 8;                        // > ~29 km/h → en véhicule
 const PERIMETER_ID    = 'perimeter';
 const INV_PREFIX      = 'inv:';
 
+// Anti-doublon SYNCHRONE en mémoire (même contexte JS) : la vérification de
+// proximité immédiate et l'événement geofence iOS peuvent appeler handleEnter
+// quasi simultanément pour le même Invader → ces gardes empêchent la double notif.
+const inFlight = new Set();          // ids en cours de traitement
+const memAlerts = new Map();         // id -> dernier alerte (ms)
+let memLastGlobal = 0;               // dernière alerte, tous Invaders
+
 // ─── Helpers ───────────────────────────────────────────────────────────────────
 
 function distM(aLat, aLng, bLat, bLng) {
@@ -193,48 +200,59 @@ if (TaskManager) {
 }
 
 async function handleEnter(invId) {
-  const settings = await readJSON(KEY_SETTINGS, null);
-  if (!settings?.enabled) return;
-
+  // ── Verrou synchrone : bloque tout appel concurrent pour le même Invader ──
+  // (avant le moindre await → un seul handleEnter passe à la fois)
+  if (inFlight.has(invId)) { console.log('[Stroll] skip (déjà en cours)', invId); return; }
   const now = Date.now();
+  if (memLastGlobal && now - memLastGlobal < GLOBAL_GAP) { console.log('[Stroll] skip (gap global)'); return; }
+  if (memAlerts.has(invId) && now - memAlerts.get(invId) < PER_ID_COOLDOWN) { console.log('[Stroll] skip (déjà alerté)', invId); return; }
+  inFlight.add(invId);
 
-  // Anti-spam global : un à la fois
-  const lastGlobal = await readJSON(KEY_LAST_ALERT, 0);
-  if (now - lastGlobal < GLOBAL_GAP) { console.log('[Stroll] skip (gap global)'); return; }
-
-  // Anti-spam par Invader
-  const alerts = await readJSON(KEY_ALERTS, {});
-  if (alerts[invId] && now - alerts[invId] < PER_ID_COOLDOWN) { console.log('[Stroll] skip (déjà alerté)', invId); return; }
-
-  // Filtre de vitesse : pas d'alerte si l'utilisateur va trop vite (véhicule)
   try {
-    const loc = await Location.getLastKnownPositionAsync();
-    const sp = loc?.coords?.speed;
-    if (typeof sp === 'number' && sp > MAX_SPEED_MPS) { console.log('[Stroll] skip (vitesse)', sp.toFixed(1)); return; }
-  } catch {}
+    const settings = await readJSON(KEY_SETTINGS, null);
+    if (!settings?.enabled) return;
 
-  // Déclenche selon les réglages
-  if (settings.vibration) {
-    try { await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success); } catch {}
-  }
-  if (settings.notification) {
-    const tpl = await readJSON(KEY_NOTIF, { title: 'Invader à proximité 👾', body: '{id} est tout près !' });
+    // Cooldown persistant (survit à un redémarrage de l'app)
+    const alerts = await readJSON(KEY_ALERTS, {});
+    if (alerts[invId] && now - alerts[invId] < PER_ID_COOLDOWN) { console.log('[Stroll] skip (déjà alerté, disque)', invId); return; }
+
+    // Filtre de vitesse : pas d'alerte si l'utilisateur va trop vite (véhicule)
     try {
-      await Notifications.scheduleNotificationAsync({
-        content: {
-          title: tpl.title,
-          body: (tpl.body || '{id}').replace('{id}', invId),
-          sound: true,
-        },
-        trigger: null, // immédiat
-      });
-    } catch (e) { console.log('[Stroll] notif erreur :', e?.message); }
-  }
+      const loc = await Location.getLastKnownPositionAsync();
+      const sp = loc?.coords?.speed;
+      if (typeof sp === 'number' && sp > MAX_SPEED_MPS) { console.log('[Stroll] skip (vitesse)', sp.toFixed(1)); return; }
+    } catch {}
 
-  alerts[invId] = now;
-  await writeJSON(KEY_ALERTS, alerts);
-  await writeJSON(KEY_LAST_ALERT, now);
-  console.log('[Stroll] ALERTE', invId);
+    // Réserve les cooldowns AVANT de notifier (un appel concurrent qui surviendrait
+    // après le relâchement du verrou sera bloqué par memAlerts/memLastGlobal)
+    memAlerts.set(invId, now);
+    memLastGlobal = now;
+
+    // Déclenche selon les réglages
+    if (settings.vibration) {
+      try { await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success); } catch {}
+    }
+    if (settings.notification) {
+      const tpl = await readJSON(KEY_NOTIF, { title: 'Invader à proximité 👾', body: '{id} est tout près !' });
+      try {
+        await Notifications.scheduleNotificationAsync({
+          content: {
+            title: tpl.title,
+            body: (tpl.body || '{id}').replace('{id}', invId),
+            sound: true,
+          },
+          trigger: null, // immédiat
+        });
+      } catch (e) { console.log('[Stroll] notif erreur :', e?.message); }
+    }
+
+    alerts[invId] = now;
+    await writeJSON(KEY_ALERTS, alerts);
+    await writeJSON(KEY_LAST_ALERT, now);
+    console.log('[Stroll] ALERTE', invId);
+  } finally {
+    inFlight.delete(invId);
+  }
 }
 
 // ─── Affichage des notifications même app au premier plan ───────────────────────
