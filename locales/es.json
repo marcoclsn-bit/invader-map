@@ -547,6 +547,31 @@
       "streak": "Constancia",
       "secret": "Secreto"
     },
-    "locked": "Por desbloquear"
+    "locked": "Por desbloquear",
+    "gallery": {
+      "title": "Trofeos",
+      "empty": "Sal de caza para conseguir tus primeros trofeos 👾"
+    }
+  },
+  "session": {
+    "recap": {
+      "title": "Sesión terminada",
+      "km": "KM",
+      "time": "TIEMPO",
+      "aliens": "ALIENS",
+      "share": "Compartir mi hazaña",
+      "close": "Cerrar",
+      "newBadge_one": "¡Nuevo trofeo!",
+      "newBadge_other": "¡Nuevos trofeos!"
+    }
+  },
+  "share": {
+    "textKm": "Recorrí {{km}} km y flasheé {{count}} Invaders en {{city}} con InvaderQuest 👾",
+    "textNoKm": "Flasheé {{count}} Invaders en {{city}} con InvaderQuest 👾",
+    "url": "invaderquest.app",
+    "unavailable": "Compartir no está disponible en este dispositivo."
+  },
+  "celebration": {
+    "title": "¡Trofeo desbloqueado!"
   }
 }

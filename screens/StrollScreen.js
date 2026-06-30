@@ -7,7 +7,9 @@ import { Ionicons } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
 import { useTranslation } from 'react-i18next';
 import { DrawerActions } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useAppContext, STROLL_STATUS_OPTIONS } from '../context/AppContext';
+import { useGamification } from '../context/GamificationContext';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import { STATUS_COLOR } from '../constants';
@@ -62,7 +64,8 @@ export default function StrollScreen({ navigation }) {
   const { theme } = useTheme();
   const { t } = useTranslation();
   const styles = getStyles(theme);
-  const { stroll, setStrollPref } = useAppContext();
+  const { stroll, setStrollPref, currentCityCode } = useAppContext();
+  const { recordSession } = useGamification();
 
   const off = !stroll.enabled;
   // true = activé mais sans autorisation « Toujours » → alertes seulement app ouverte
@@ -78,7 +81,20 @@ export default function StrollScreen({ navigation }) {
   }
 
   async function onToggleEnabled(value) {
-    if (!value) { setStrollPref({ enabled: false }); setBgDenied(false); return; }
+    if (!value) {
+      setStrollPref({ enabled: false });
+      setBgDenied(false);
+      // Clôt la session « balade » (durée + flashs ; distance non trackée)
+      const startedAt = await AsyncStorage.getItem('@invader_stroll_started');
+      if (startedAt) {
+        await AsyncStorage.removeItem('@invader_stroll_started');
+        recordSession(
+          { source: 'stroll', startedAt, endedAt: new Date().toISOString(), distanceKm: null, city: currentCityCode },
+          { skipIfEmpty: true },
+        );
+      }
+      return;
+    }
     // Activation : on demande les autorisations
     const { foreground, background } = await requestStrollPermissions();
     if (!foreground) {
@@ -87,6 +103,7 @@ export default function StrollScreen({ navigation }) {
     }
     setBgDenied(!background);
     setStrollPref({ enabled: true });
+    AsyncStorage.setItem('@invader_stroll_started', new Date().toISOString());
     if (!background) {
       Alert.alert(t('stroll.perm.bgTitle'), t('stroll.perm.bgBody'));
     }

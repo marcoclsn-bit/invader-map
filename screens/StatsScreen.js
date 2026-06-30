@@ -13,6 +13,7 @@ import ProfileHeader from '../components/profile/ProfileHeader';
 import HunterSlider from '../components/profile/HunterSlider';
 import SegmentDonut from '../components/profile/SegmentDonut';
 import AreaChart from '../components/profile/AreaChart';
+import BadgeGallery from '../components/profile/BadgeGallery';
 
 // ─── Utilitaires de date (cartes « high scores » conservées) ────────────────────
 function startOfDay(d) { const r = new Date(d); r.setHours(0, 0, 0, 0); return r; }
@@ -291,6 +292,9 @@ export default function StatsScreen({ navigation }) {
             <Hint theme={theme}>{t('stats.profile.empty.sliders')}</Hint>
           )}
         </View>
+
+        {/* Galerie de trophées */}
+        <BadgeGallery />
 
         {/* Donut géographie */}
         <View style={[cardStyles.wrap, { backgroundColor: theme.surface, marginHorizontal: 0 }]}>

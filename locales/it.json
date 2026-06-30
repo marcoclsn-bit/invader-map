@@ -547,6 +547,31 @@
       "streak": "Costanza",
       "secret": "Segreto"
     },
-    "locked": "Da sbloccare"
+    "locked": "Da sbloccare",
+    "gallery": {
+      "title": "Trofei",
+      "empty": "Vai a caccia per ottenere i tuoi primi trofei 👾"
+    }
+  },
+  "session": {
+    "recap": {
+      "title": "Sessione completata",
+      "km": "KM",
+      "time": "TEMPO",
+      "aliens": "ALIENS",
+      "share": "Condividi la mia impresa",
+      "close": "Chiudi",
+      "newBadge_one": "Nuovo trofeo!",
+      "newBadge_other": "Nuovi trofei!"
+    }
+  },
+  "share": {
+    "textKm": "Ho percorso {{km}} km e flashato {{count}} Invader a {{city}} con InvaderQuest 👾",
+    "textNoKm": "Ho flashato {{count}} Invader a {{city}} con InvaderQuest 👾",
+    "url": "invaderquest.app",
+    "unavailable": "La condivisione non è disponibile su questo dispositivo."
+  },
+  "celebration": {
+    "title": "Trofeo sbloccato!"
   }
 }

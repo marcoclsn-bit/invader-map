@@ -547,6 +547,31 @@
       "streak": "Régularité",
       "secret": "Secret"
     },
-    "locked": "À débloquer"
+    "locked": "À débloquer",
+    "gallery": {
+      "title": "Trophées",
+      "empty": "Pars en chasse pour décrocher tes premiers trophées 👾"
+    }
+  },
+  "session": {
+    "recap": {
+      "title": "Session terminée",
+      "km": "KM",
+      "time": "TEMPS",
+      "aliens": "ALIENS",
+      "share": "Partager mon exploit",
+      "close": "Fermer",
+      "newBadge_one": "Nouveau trophée !",
+      "newBadge_other": "Nouveaux trophées !"
+    }
+  },
+  "share": {
+    "textKm": "J’ai parcouru {{km}} km et flashé {{count}} Invaders à {{city}} avec InvaderQuest 👾",
+    "textNoKm": "J’ai flashé {{count}} Invaders à {{city}} avec InvaderQuest 👾",
+    "url": "invaderquest.app",
+    "unavailable": "Le partage n’est pas disponible sur cet appareil."
+  },
+  "celebration": {
+    "title": "Trophée débloqué !"
   }
 }

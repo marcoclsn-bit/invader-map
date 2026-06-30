@@ -29,7 +29,9 @@ export function GamificationProvider({ children }) {
     })();
   }, []);
 
-  const applyNewBadges = useCallback((newIds) => {
+  // Débloque des badges. celebrate=true → pousse dans la file de célébration
+  // (pour les déblocages hors session) ; false → silencieux (affichés dans le récap).
+  const unlockIds = useCallback((newIds, { celebrate } = {}) => {
     if (!newIds.length) return;
     const now = new Date().toISOString();
     const nu = { ...unlockedRef.current };
@@ -37,31 +39,36 @@ export function GamificationProvider({ children }) {
     unlockedRef.current = nu;
     setUnlocked(nu);
     saveUnlocked(nu);
-    setQueue((q) => [...q, ...newIds]);
+    if (celebrate) setQueue((q) => [...q, ...newIds]);
   }, []);
 
   /** Enregistre une session terminée, débloque les badges, prépare le récap. */
-  const recordSession = useCallback(async (draft) => {
+  const recordSession = useCallback(async (draft, opts = {}) => {
     const startMs = new Date(draft.startedAt).getTime();
     const endMs = new Date(draft.endedAt).getTime();
     const ids = invaderIdsInRange(flashedDates, startMs, endMs);
     const session = makeSession({ ...draft, invaderIds: ids });
 
+    // Session « vide » (rien flashé, ~aucune distance) → on n'enregistre pas
+    const empty = ids.length === 0 && (!session.distanceKm || session.distanceKm < 0.1);
+    if (opts.skipIfEmpty && empty) return null;
+
     const nextSessions = await addSession(session);
     setSessions(nextSessions);
 
     const ctx = { session, sessions: nextSessions, flashHistory: getFlashHistory() };
-    applyNewBadges(evaluateBadges(ctx, unlockedRef.current));
+    const newBadgeIds = evaluateBadges(ctx, unlockedRef.current);
+    unlockIds(newBadgeIds, { celebrate: false }); // montrés dans le récap
 
-    setPendingRecap(session);
+    setPendingRecap({ session, newBadgeIds });
     return session;
-  }, [flashedDates, getFlashHistory, applyNewBadges]);
+  }, [flashedDates, getFlashHistory, unlockIds]);
 
   /** Vérifie les badges hors session (ex. après un flash : Oiseau de nuit…). */
   const checkBadges = useCallback(() => {
     const ctx = { session: null, sessions, flashHistory: getFlashHistory() };
-    applyNewBadges(evaluateBadges(ctx, unlockedRef.current));
-  }, [sessions, getFlashHistory, applyNewBadges]);
+    unlockIds(evaluateBadges(ctx, unlockedRef.current), { celebrate: true });
+  }, [sessions, getFlashHistory, unlockIds]);
 
   const dismissCelebration = useCallback(() => setQueue((q) => q.slice(1)), []);
   const clearRecap = useCallback(() => setPendingRecap(null), []);

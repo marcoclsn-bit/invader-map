@@ -20,6 +20,8 @@ import { useTheme } from '../theme/ThemeContext';
 import InvaderPanel from '../components/InvaderPanel';
 import HeadingCone from '../components/HeadingCone';
 import { openNavigationApp } from '../utils/navigation';
+import { useSessionRecorder } from '../components/session/useSessionRecorder';
+import { useGamification } from '../context/GamificationContext';
 
 const _PA        = CITIES.PA;
 const PARIS      = { latitude: _PA.center.lat, longitude: _PA.center.lng, ..._PA.mapDelta };
@@ -144,6 +146,10 @@ export default function ChasseScreen({ route }) {
   // Biais de recherche Mapbox : proximité = GPS, pays = ville courante, langue UI
   const geoOpts = { country: countryCodeOf(city), language: i18n.language };
 
+  // Enregistreur de session (distance via le watch GPS de la navigation)
+  const recorder = useSessionRecorder();
+  const { recordSession } = useGamification();
+
   // ─── GPS ──────────────────────────────────────────────────────────────────
   const [gpsReady, setGpsReady] = useState(false);
 
@@ -254,11 +260,14 @@ export default function ChasseScreen({ route }) {
     let cancelled = false;
     Location.watchPositionAsync(
       { accuracy: Location.Accuracy.BestForNavigation, timeInterval: 2000, distanceInterval: 5 },
-      loc => setUserPos({
-        latitude: loc.coords.latitude,
-        longitude: loc.coords.longitude,
-        heading: loc.coords.heading,
-      })
+      loc => {
+        recorder.addPoint(loc.coords.latitude, loc.coords.longitude, loc.coords.accuracy);
+        setUserPos({
+          latitude: loc.coords.latitude,
+          longitude: loc.coords.longitude,
+          heading: loc.coords.heading,
+        });
+      }
     ).then(sub => {
       if (cancelled) sub.remove();
       else locationSub.current = sub;
@@ -439,7 +448,10 @@ export default function ChasseScreen({ route }) {
   function startFollowing() {
     setFollowing(true);
     setDrifted(false);
+    // Démarre l'enregistrement de session (distance + trajet)
+    recorder.begin({ source: 'hunt', city: currentCityCode, routeCoords: result?.routeCoords });
     if (gpsRef.current) {
+      recorder.addPoint(gpsRef.current[1], gpsRef.current[0]);
       mapRef.current?.animateCamera(
         { center: { latitude: gpsRef.current[1], longitude: gpsRef.current[0] }, zoom: 17 },
         { duration: 500 }
@@ -450,6 +462,9 @@ export default function ChasseScreen({ route }) {
   function stopFollowing() {
     setFollowing(false);
     setDrifted(false);
+    // Clôt la session → récap + check badges (ignorée si rien ne s'est passé)
+    const draft = recorder.end();
+    if (draft) recordSession(draft, { skipIfEmpty: true });
   }
 
   async function recenter() {

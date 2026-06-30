@@ -547,6 +547,31 @@
       "streak": "Streak",
       "secret": "Secret"
     },
-    "locked": "Locked"
+    "locked": "Locked",
+    "gallery": {
+      "title": "Trophies",
+      "empty": "Go hunting to earn your first trophies 👾"
+    }
+  },
+  "session": {
+    "recap": {
+      "title": "Session complete",
+      "km": "KM",
+      "time": "TIME",
+      "aliens": "ALIENS",
+      "share": "Share my feat",
+      "close": "Close",
+      "newBadge_one": "New trophy!",
+      "newBadge_other": "New trophies!"
+    }
+  },
+  "share": {
+    "textKm": "I walked {{km}} km and flashed {{count}} Invaders in {{city}} with InvaderQuest 👾",
+    "textNoKm": "I flashed {{count}} Invaders in {{city}} with InvaderQuest 👾",
+    "url": "invaderquest.app",
+    "unavailable": "Sharing is not available on this device."
+  },
+  "celebration": {
+    "title": "Trophy unlocked!"
   }
 }

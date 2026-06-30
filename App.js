@@ -28,6 +28,8 @@ import IdeaScreen from './screens/IdeaScreen';
 import OnboardingScreen from './screens/OnboardingScreen';
 import DrawerContent from './components/DrawerContent';
 import StrollEngine from './components/StrollEngine';
+import SessionRecap from './components/session/SessionRecap';
+import BadgeCelebration from './components/gamification/BadgeCelebration';
 import { navigationRef } from './utils/navigationRef';
 import './services/strollEngine'; // enregistre la tâche de fond + le handler de notif
 
@@ -169,6 +171,9 @@ function AppShell() {
           />
         </Root.Navigator>
       </NavigationContainer>
+      {/* Overlays globaux de gamification */}
+      <SessionRecap />
+      <BadgeCelebration />
     </>
   );
 }
