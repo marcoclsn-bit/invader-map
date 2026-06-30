@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next';
 import { DrawerActions } from '@react-navigation/native';
 import { useAppContext } from '../context/AppContext';
 import { CITIES } from '../cities/registry';
-import { loadCityData } from '../services/invaderData';
+import { loadCityData, getCityData, checkCityForUpdate } from '../services/invaderData';
 import { STATUS_COLOR } from '../constants';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
@@ -194,13 +194,29 @@ export default function ListScreen({ navigation }) {
     AsyncStorage.setItem(KEY_LIST_CITIES, JSON.stringify([...selectedCities]));
   }, [selectedCities]);
 
-  // Charge les villes sélectionnées manquantes (ne recharge pas ce qui est déjà là)
+  // Charge les villes sélectionnées manquantes (ne recharge pas ce qui est déjà là).
+  // loadCityData renvoie le cache immédiatement et fetch en arrière-plan SANS
+  // l'attendre → pour une ville jamais téléchargée, on doit attendre le réseau.
+  async function ensureCityInvaders(c) {
+    try {
+      await loadCityData(c);                 // charge le cache disque (instantané s'il existe)
+      let d = getCityData(c);
+      if (!d || !d.invaders?.length) {        // pas de cache → on attend le fetch réseau
+        await checkCityForUpdate(c);
+        d = getCityData(c);
+      }
+      return [c, d?.invaders ?? []];
+    } catch (_) {
+      return [c, []];
+    }
+  }
+
   useEffect(() => {
     const missing = [...selectedCities].filter(c => c !== currentCityCode && !cityData[c]);
     if (missing.length === 0) return;
     let cancelled = false;
     setLoading(true);
-    Promise.all(missing.map(c => loadCityData(c).then(d => [c, d?.invaders ?? []]).catch(() => [c, []])))
+    Promise.all(missing.map(ensureCityInvaders))
       .then((pairs) => {
         if (cancelled) return;
         setCityData(prev => {
@@ -211,7 +227,7 @@ export default function ListScreen({ navigation }) {
       })
       .finally(() => { if (!cancelled) setLoading(false); });
     return () => { cancelled = true; };
-  }, [selectedCities, currentCityCode, cityData]);
+  }, [selectedCities, currentCityCode, cityData]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const multi = selectedCities.size > 1;
   const allSelected = selectedCities.size === cityIndex.length && cityIndex.length > 0;
