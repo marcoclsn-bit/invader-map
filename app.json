@@ -7,7 +7,9 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
-    "runtimeVersion": { "policy": "fingerprint" },
+    "runtimeVersion": {
+      "policy": "fingerprint"
+    },
     "updates": {
       "url": "https://u.expo.dev/60322774-f3cf-427f-b11f-6b17da413e41"
     },
@@ -64,7 +66,14 @@
         }
       ],
       "expo-localization",
-      "expo-mail-composer"
+      "expo-mail-composer",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "InvaderQuest accède à vos photos pour définir votre avatar de profil.",
+          "cameraPermission": "InvaderQuest utilise l’appareil photo pour prendre votre avatar de profil."
+        }
+      ]
     ],
     "extra": {
       "eas": {

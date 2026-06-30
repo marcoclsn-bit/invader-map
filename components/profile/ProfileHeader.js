@@ -1,35 +1,62 @@
 import { useState } from 'react';
-import { View, Text, TextInput, Image, TouchableOpacity, Modal, StyleSheet, Pressable } from 'react-native';
+import { View, Text, TextInput, Image, TouchableOpacity, Modal, StyleSheet, Pressable, Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
+import * as ImagePicker from 'expo-image-picker';
 import { useTheme } from '../../theme/ThemeContext';
 import { typography } from '../../theme/tokens';
 import { useProfile } from './useProfile';
 import { AVATARS, avatarSource } from './avatars';
 
 /**
- * En-tête « Profil RPG » — 100 % LOCAL (pseudo + avatar sur l'appareil).
+ * En-tête « Profil RPG » — 100 % LOCAL (pseudo + avatar/photo sur l'appareil).
  * @param {{key:string,tier:number,explorer:boolean}} honorific
  * @param {number} total  nb total de flashs (sous-titre)
  */
 export default function ProfileHeader({ honorific, total = 0 }) {
   const { theme } = useTheme();
   const { t } = useTranslation();
-  const { name, avatar, setName, setAvatar } = useProfile();
+  const { name, avatar, photoUri, setName, setAvatar, setPhoto, clearPhoto } = useProfile();
   const [picker, setPicker] = useState(false);
 
   const title = t(`stats.profile.titles.${honorific?.key ?? 'novice'}`);
 
+  async function pickFromLibrary() {
+    const perm = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    if (!perm.granted) {
+      Alert.alert(t('stats.profile.permissionTitle'), t('stats.profile.permissionLibrary'));
+      return;
+    }
+    const res = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ['images'], allowsEditing: true, aspect: [1, 1], quality: 0.6,
+    });
+    if (!res.canceled && res.assets?.[0]?.uri) { setPhoto(res.assets[0].uri); setPicker(false); }
+  }
+
+  async function takePhoto() {
+    const perm = await ImagePicker.requestCameraPermissionsAsync();
+    if (!perm.granted) {
+      Alert.alert(t('stats.profile.permissionTitle'), t('stats.profile.permissionCamera'));
+      return;
+    }
+    const res = await ImagePicker.launchCameraAsync({
+      allowsEditing: true, aspect: [1, 1], quality: 0.6,
+    });
+    if (!res.canceled && res.assets?.[0]?.uri) { setPhoto(res.assets[0].uri); setPicker(false); }
+  }
+
   return (
     <View style={[styles.card, { backgroundColor: theme.surface, borderColor: theme.border }]}>
       <View style={styles.row}>
-        {/* Avatar */}
+        {/* Avatar / photo */}
         <TouchableOpacity onPress={() => setPicker(true)} activeOpacity={0.8}>
           <View style={[styles.avatarRing, { borderColor: theme.accent, backgroundColor: theme.surfaceHigh, shadowColor: theme.accent }]}>
-            <Image source={avatarSource(avatar)} style={styles.avatar} resizeMode="contain" />
+            {photoUri
+              ? <Image source={{ uri: photoUri }} style={styles.photo} />
+              : <Image source={avatarSource(avatar)} style={styles.avatar} resizeMode="contain" />}
           </View>
           <View style={[styles.editBadge, { backgroundColor: theme.accent, borderColor: theme.surface }]}>
-            <Ionicons name="pencil" size={11} color={theme.bg} />
+            <Ionicons name="camera" size={11} color={theme.bg} />
           </View>
         </TouchableOpacity>
 
@@ -59,24 +86,39 @@ export default function ProfileHeader({ honorific, total = 0 }) {
         <Text style={[styles.localText, { color: theme.textSecondary }]}>{t('stats.profile.localBadge')}</Text>
       </View>
 
-      {/* Sélecteur d'avatar */}
+      {/* Sélecteur photo / avatar */}
       <Modal visible={picker} transparent animationType="fade" onRequestClose={() => setPicker(false)}>
         <Pressable style={styles.backdrop} onPress={() => setPicker(false)}>
           <Pressable style={[styles.sheet, { backgroundColor: theme.surface, borderColor: theme.border }]}>
             <Text style={[typography.arcadeTitle, styles.sheetTitle, { color: theme.textPrimary }]}>
               {t('stats.profile.chooseAvatar')}
             </Text>
+
+            {/* Actions photo */}
+            <TouchableOpacity style={[styles.action, { borderColor: theme.border }]} onPress={takePhoto} activeOpacity={0.7}>
+              <Ionicons name="camera-outline" size={18} color={theme.accent} />
+              <Text style={[styles.actionText, { color: theme.textPrimary }]}>{t('stats.profile.takePhoto')}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={[styles.action, { borderColor: theme.border }]} onPress={pickFromLibrary} activeOpacity={0.7}>
+              <Ionicons name="images-outline" size={18} color={theme.accent} />
+              <Text style={[styles.actionText, { color: theme.textPrimary }]}>{t('stats.profile.chooseFromLibrary')}</Text>
+            </TouchableOpacity>
+            {photoUri && (
+              <TouchableOpacity style={[styles.action, { borderColor: theme.border }]} onPress={() => { clearPhoto(); setPicker(false); }} activeOpacity={0.7}>
+                <Ionicons name="trash-outline" size={18} color={theme.destructive} />
+                <Text style={[styles.actionText, { color: theme.destructive }]}>{t('stats.profile.removePhoto')}</Text>
+              </TouchableOpacity>
+            )}
+
+            <Text style={[styles.orLabel, { color: theme.textSecondary }]}>{t('stats.profile.orChooseAvatar')}</Text>
             <View style={styles.grid}>
               {AVATARS.map((a) => {
-                const selected = a.key === avatar;
+                const selected = !photoUri && a.key === avatar;
                 return (
                   <TouchableOpacity
                     key={a.key}
                     onPress={() => { setAvatar(a.key); setPicker(false); }}
-                    style={[
-                      styles.gridItem,
-                      { backgroundColor: theme.surfaceHigh, borderColor: selected ? theme.accent : 'transparent' },
-                    ]}
+                    style={[styles.gridItem, { backgroundColor: theme.surfaceHigh, borderColor: selected ? theme.accent : 'transparent' }]}
                     activeOpacity={0.8}
                   >
                     <Image source={a.source} style={styles.gridImg} resizeMode="contain" />
@@ -96,11 +138,12 @@ const styles = StyleSheet.create({
   card: { borderRadius: 16, borderWidth: StyleSheet.hairlineWidth, padding: 16, marginBottom: 16 },
   row: { flexDirection: 'row', alignItems: 'center' },
   avatarRing: {
-    width: RING, height: RING, borderRadius: RING / 2, borderWidth: 2,
+    width: RING, height: RING, borderRadius: RING / 2, borderWidth: 2, overflow: 'hidden',
     alignItems: 'center', justifyContent: 'center',
     shadowOffset: { width: 0, height: 0 }, shadowOpacity: 0.6, shadowRadius: 10, elevation: 6,
   },
   avatar: { width: RING * 0.62, height: RING * 0.62 },
+  photo: { width: RING, height: RING },
   editBadge: {
     position: 'absolute', right: -2, bottom: -2, width: 22, height: 22, borderRadius: 11,
     alignItems: 'center', justifyContent: 'center', borderWidth: 2,
@@ -115,6 +158,12 @@ const styles = StyleSheet.create({
   backdrop: { flex: 1, backgroundColor: 'rgba(0,0,0,0.6)', alignItems: 'center', justifyContent: 'center', padding: 24 },
   sheet: { width: '100%', maxWidth: 360, borderRadius: 18, borderWidth: StyleSheet.hairlineWidth, padding: 20 },
   sheetTitle: { textAlign: 'center', marginBottom: 16 },
+  action: {
+    flexDirection: 'row', alignItems: 'center', gap: 10,
+    borderWidth: StyleSheet.hairlineWidth, borderRadius: 10, paddingVertical: 12, paddingHorizontal: 14, marginBottom: 8,
+  },
+  actionText: { fontSize: 14, fontWeight: '600' },
+  orLabel: { fontSize: 11, textAlign: 'center', marginTop: 8, marginBottom: 12, letterSpacing: 0.4 },
   grid: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 12 },
   gridItem: { width: 64, height: 64, borderRadius: 14, borderWidth: 2, alignItems: 'center', justifyContent: 'center' },
   gridImg: { width: 40, height: 40 },

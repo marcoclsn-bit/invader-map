@@ -295,7 +295,14 @@
         "dayNight": "Keep flashing to uncover your day/night rhythm.",
         "geo": "Explore more Invaders to draw your zone map.",
         "curve": "Your progress curve will appear with your first dated flashes."
-      }
+      },
+      "takePhoto": "Take a photo",
+      "chooseFromLibrary": "Choose from library",
+      "removePhoto": "Remove photo",
+      "orChooseAvatar": "OR AN AVATAR",
+      "permissionTitle": "Permission required",
+      "permissionLibrary": "Allow photo access in Settings to choose an image.",
+      "permissionCamera": "Allow camera access in Settings to take a photo."
     }
   },
   "about": {

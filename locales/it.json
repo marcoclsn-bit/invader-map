@@ -295,7 +295,14 @@
         "dayNight": "Continua a flashare per scoprire il tuo ritmo giorno/notte.",
         "geo": "Esplora più Invader per disegnare la tua mappa delle zone.",
         "curve": "La tua curva di progressione apparirà con i primi flash con data."
-      }
+      },
+      "takePhoto": "Scatta una foto",
+      "chooseFromLibrary": "Scegli dalla galleria",
+      "removePhoto": "Rimuovi la foto",
+      "orChooseAvatar": "O UN AVATAR",
+      "permissionTitle": "Autorizzazione richiesta",
+      "permissionLibrary": "Consenti l’accesso alle foto nelle Impostazioni per scegliere un’immagine.",
+      "permissionCamera": "Consenti l’accesso alla fotocamera nelle Impostazioni per scattare una foto."
     }
   },
   "about": {
