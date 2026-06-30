@@ -244,6 +244,58 @@
     },
     "topDistricts": {
       "section": "Top distritos"
+    },
+    "profile": {
+      "sectionTitle": "Perfil de cazador",
+      "namePlaceholder": "Cazador",
+      "totalFlashes_one": "{{count}} flash",
+      "totalFlashes_other": "{{count}} flashes",
+      "localBadge": "Perfil local — guardado en este dispositivo",
+      "chooseAvatar": "Elegir un avatar",
+      "locked": "Aún no hay datos suficientes.",
+      "titles": {
+        "novice": "Novato",
+        "scout": "Explorador",
+        "hunter": "Cazador",
+        "veteran": "Veterano",
+        "master": "Maestro",
+        "legend": "Leyenda"
+      },
+      "sliders": {
+        "rarity": {
+          "label": "Rareza",
+          "low": "Coleccionista",
+          "high": "Sniper"
+        },
+        "geography": {
+          "label": "Geografía",
+          "low": "Local",
+          "high": "Explorador"
+        },
+        "assiduity": {
+          "label": "Constancia",
+          "low": "Ocasional",
+          "high": "Constante"
+        }
+      },
+      "dayNight": {
+        "title": "Día / Noche",
+        "day": "Día",
+        "night": "Noche"
+      },
+      "geo": {
+        "title": "Distribución geográfica",
+        "other": "Otros"
+      },
+      "curve": {
+        "title": "Progresión"
+      },
+      "empty": {
+        "sliders": "Flashea algunos Invaders para revelar tu perfil de cazador.",
+        "dayNight": "Sigue flasheando para descubrir tu ritmo día/noche.",
+        "geo": "Explora más Invaders para dibujar tu mapa de zonas.",
+        "curve": "Tu curva de progresión aparecerá con tus primeros flashes con fecha."
+      }
     }
   },
   "about": {

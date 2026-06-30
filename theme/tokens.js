@@ -46,6 +46,9 @@ export const dark = {
 
   // Score arcade (flash +PTS) — jaune chaud, lisible sur n'importe quel fond
   accentScore: '#FFD23F',
+
+  // Nuit — bleu sobre (donut Jour/Nuit). Seule teinte froide de la palette.
+  night: '#5A78C2',
 };
 
 export const light = {
@@ -80,6 +83,9 @@ export const light = {
 
   // Score arcade (flash +PTS) — même jaune, lisible sur fond clair aussi
   accentScore: '#CC9900',
+
+  // Nuit — bleu sobre, lisible sur fond clair
+  night: '#3E5BAA',
 };
 
 export const THEMES = { dark, light };

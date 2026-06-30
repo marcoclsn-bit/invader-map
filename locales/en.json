@@ -244,6 +244,58 @@
     },
     "topDistricts": {
       "section": "Top districts"
+    },
+    "profile": {
+      "sectionTitle": "Hunter profile",
+      "namePlaceholder": "Hunter",
+      "totalFlashes_one": "{{count}} flash",
+      "totalFlashes_other": "{{count}} flashes",
+      "localBadge": "Local profile — stored on this device",
+      "chooseAvatar": "Choose an avatar",
+      "locked": "Not enough data yet.",
+      "titles": {
+        "novice": "Novice",
+        "scout": "Scout",
+        "hunter": "Hunter",
+        "veteran": "Veteran",
+        "master": "Master",
+        "legend": "Legend"
+      },
+      "sliders": {
+        "rarity": {
+          "label": "Rarity",
+          "low": "Collector",
+          "high": "Sniper"
+        },
+        "geography": {
+          "label": "Geography",
+          "low": "Local",
+          "high": "Explorer"
+        },
+        "assiduity": {
+          "label": "Consistency",
+          "low": "Casual",
+          "high": "Regular"
+        }
+      },
+      "dayNight": {
+        "title": "Day / Night",
+        "day": "Day",
+        "night": "Night"
+      },
+      "geo": {
+        "title": "Geographic breakdown",
+        "other": "Other"
+      },
+      "curve": {
+        "title": "Progress"
+      },
+      "empty": {
+        "sliders": "Flash a few Invaders to reveal your hunter profile.",
+        "dayNight": "Keep flashing to uncover your day/night rhythm.",
+        "geo": "Explore more Invaders to draw your zone map.",
+        "curve": "Your progress curve will appear with your first dated flashes."
+      }
     }
   },
   "about": {
