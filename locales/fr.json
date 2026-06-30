@@ -86,6 +86,17 @@
     "bulkUnflash": {
       "title": "Tout démarquer",
       "msg": "Retirer le marquage de tous les Invaders ?"
+    },
+    "titleMulti": "{{count}} villes",
+    "allCities": "Toutes les villes",
+    "citiesSelected": "{{count}} villes",
+    "loadingCities": "Chargement des villes…",
+    "picker": {
+      "title": "Villes à afficher",
+      "searchPlaceholder": "Rechercher une ville…",
+      "selectAll": "Toutes les villes",
+      "validate": "Afficher ({{count}})",
+      "warnLarge": "~{{count}} Invaders — l’affichage peut être plus lent."
     }
   },
   "route": {

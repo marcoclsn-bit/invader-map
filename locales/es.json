@@ -86,6 +86,17 @@
     "bulkUnflash": {
       "title": "Desmarcar todos",
       "msg": "¿Quitar la marca de todos los Invaders?"
+    },
+    "titleMulti": "{{count}} ciudades",
+    "allCities": "Todas las ciudades",
+    "citiesSelected": "{{count}} ciudades",
+    "loadingCities": "Cargando ciudades…",
+    "picker": {
+      "title": "Ciudades a mostrar",
+      "searchPlaceholder": "Buscar una ciudad…",
+      "selectAll": "Todas las ciudades",
+      "validate": "Mostrar ({{count}})",
+      "warnLarge": "~{{count}} Invaders — la visualización puede ser más lenta."
     }
   },
   "route": {

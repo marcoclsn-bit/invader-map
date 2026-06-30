@@ -386,26 +386,33 @@ export function AppProvider({ children }) {
     });
   }
 
-  function bulkFlash() {
+  // Flashe en masse une liste d'ids (défaut : la ville courante). FUSIONNE avec
+  // l'existant → ne touche jamais aux flashés des autres villes.
+  function bulkFlash(ids) {
+    const list = ids ?? invaders.map(inv => inv.id);
     const now = new Date().toISOString();
-    setFlashed(new Set(invaders.map(inv => inv.id)));
+    setFlashed(prev => {
+      const next = new Set(prev);
+      for (const id of list) next.add(id);
+      return next;
+    });
     setFlashedDates(prev => {
       const next = new Map(prev);
-      // Préserve la date existante si l'Invader était déjà flashé
-      for (const inv of invaders) { if (!next.has(inv.id)) next.set(inv.id, now); }
+      for (const id of list) { if (!next.has(id)) next.set(id, now); } // préserve la date existante
       return next;
     });
   }
 
-  function bulkUnflash() {
+  function bulkUnflash(ids) {
+    const list = ids ?? invaders.map(inv => inv.id);
     setFlashed(prev => {
       const next = new Set(prev);
-      invaders.forEach(inv => next.delete(inv.id));
+      for (const id of list) next.delete(id);
       return next;
     });
     setFlashedDates(prev => {
       const next = new Map(prev);
-      invaders.forEach(inv => next.delete(inv.id));
+      for (const id of list) next.delete(id);
       return next;
     });
   }

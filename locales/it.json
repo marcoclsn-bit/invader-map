@@ -86,6 +86,17 @@
     "bulkUnflash": {
       "title": "Deseleziona tutti",
       "msg": "Rimuovere il segno da tutti gli Invaders?"
+    },
+    "titleMulti": "{{count}} città",
+    "allCities": "Tutte le città",
+    "citiesSelected": "{{count}} città",
+    "loadingCities": "Caricamento città…",
+    "picker": {
+      "title": "Città da mostrare",
+      "searchPlaceholder": "Cerca una città…",
+      "selectAll": "Tutte le città",
+      "validate": "Mostra ({{count}})",
+      "warnLarge": "~{{count}} Invaders — la visualizzazione può essere più lenta."
     }
   },
   "route": {

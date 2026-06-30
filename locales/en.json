@@ -86,6 +86,17 @@
     "bulkUnflash": {
       "title": "Unmark all",
       "msg": "Remove the flash mark from all Invaders?"
+    },
+    "titleMulti": "{{count}} cities",
+    "allCities": "All cities",
+    "citiesSelected": "{{count}} cities",
+    "loadingCities": "Loading cities…",
+    "picker": {
+      "title": "Cities to show",
+      "searchPlaceholder": "Search a city…",
+      "selectAll": "All cities",
+      "validate": "Show ({{count}})",
+      "warnLarge": "~{{count}} Invaders — display may be slower."
     }
   },
   "route": {
