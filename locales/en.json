@@ -158,7 +158,8 @@
     "villeCardTotal": "{{count}} invaders",
     "viewByDistrict": "View by district",
     "paris": "Paris",
-    "loadingBanner": "Loading in progress · {{countdown}}"
+    "loadingBanner": "Loading in progress · {{countdown}}",
+    "villeCardProgress": "{{flashed}}/{{total}} flashed"
   },
   "onboarding": {
     "skip": "Skip",

@@ -86,6 +86,24 @@ const OVERRIDES = {
   // Océanie
   MLB:  { orsCountry: 'boundary.country=AU' },
   PRT:  { orsCountry: 'boundary.country=AU' },
+  // ── Complément de couverture pays (pour le classement du Palmarès) ──
+  ANZR: { orsCountry: 'boundary.country=FR' }, // Annecy
+  BTA:  { orsCountry: 'boundary.country=FR' }, // Bastia
+  CHAR: { orsCountry: 'boundary.country=FR' }, // Chartres
+  FRQ:  { orsCountry: 'boundary.country=FR' }, // Forcalquier
+  FTBL: { orsCountry: 'boundary.country=FR' }, // Fontainebleau
+  LBR:  { orsCountry: 'boundary.country=FR' }, // Luberon
+  PRP:  { orsCountry: 'boundary.country=FR' }, // Perpignan
+  BBO:  { orsCountry: 'boundary.country=ES' }, // Bilbao
+  MEN:  { orsCountry: 'boundary.country=ES' }, // Minorque
+  CON:  { orsCountry: 'boundary.country=DE' }, // Constance
+  KLN:  { orsCountry: 'boundary.country=DE' }, // Cologne
+  HALM: { orsCountry: 'boundary.country=SE' }, // Halmstad
+  LCT:  { orsCountry: 'boundary.country=IT' }, // Lecce
+  RBA:  { orsCountry: 'boundary.country=MA' }, // Rabat
+  RDU:  { orsCountry: 'boundary.country=US' }, // Raleigh-Durham
+  BAB:  { orsCountry: 'boundary.country=DZ' }, // Bab (Algérie)
+  MBSA: { orsCountry: 'boundary.country=KE' }, // Mombasa
 };
 
 // ─── Construction des villes ──────────────────────────────────────────────────

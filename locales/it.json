@@ -158,7 +158,8 @@
     "villeCardTotal": "{{count}} invaders",
     "viewByDistrict": "Vedi per quartiere",
     "paris": "Parigi",
-    "loadingBanner": "Caricamento in corso · {{countdown}}"
+    "loadingBanner": "Caricamento in corso · {{countdown}}",
+    "villeCardProgress": "{{flashed}}/{{total}} fotografati"
   },
   "onboarding": {
     "skip": "Salta",

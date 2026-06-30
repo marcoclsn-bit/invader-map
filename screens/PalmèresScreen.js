@@ -6,9 +6,11 @@ import { useTranslation } from 'react-i18next';
 import { DrawerActions } from '@react-navigation/native';
 import { useAppContext } from '../context/AppContext';
 import { CITIES, ENABLED_CITIES } from '../cities/registry';
+import { countryCodeOf, countryName } from '../cities/countries';
 import { INVADER_DISTRICT, arLabel, ARRONDISSEMENT_CENTERS } from '../utils/arrondissement';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
+import DonutChart from '../components/DonutChart';
 
 function formatCountdown(s) {
   if (s <= 0) return '0 s';
@@ -105,18 +107,44 @@ export default function PalmèresScreen({ navigation }) {
   const insets = useSafeAreaInsets();
   const { invaders, flashed, currentCityCode, setCurrentCity, cityIndex, isChangingCity, mapLockUntil } = useAppContext();
   const { theme } = useTheme();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language?.slice(0, 2) || 'fr';
   const styles = getStyles(theme);
   const [drillVille, setDrillVille] = useState(null);
 
-  // Ville active en premier, puis autres par ordre alphabétique
-  const sortedCities = useMemo(() => {
-    const active = ENABLED_CITIES.filter(c => c.code === currentCityCode);
-    const others = ENABLED_CITIES
-      .filter(c => c.code !== currentCityCode)
-      .sort((a, b) => a.name.localeCompare(b.name));
-    return [...active, ...others];
-  }, [currentCityCode]);
+  // Nombre de flashés par ville (déduit du préfixe des ids : PA_649 → PA)
+  const flashedByCity = useMemo(() => {
+    const m = new Map();
+    for (const id of flashed) {
+      const i = id.lastIndexOf('_');
+      const code = i > 0 ? id.slice(0, i) : id;
+      m.set(code, (m.get(code) ?? 0) + 1);
+    }
+    return m;
+  }, [flashed]);
+
+  // Villes groupées par pays : France d'abord, puis pays par nom, « Autres » en dernier
+  const countryGroups = useMemo(() => {
+    const groups = new Map(); // code pays -> villes
+    for (const c of ENABLED_CITIES) {
+      const cc = countryCodeOf(c) || '_OTHER';
+      if (!groups.has(cc)) groups.set(cc, []);
+      groups.get(cc).push(c);
+    }
+    const ordered = [...groups.entries()].map(([code, cities]) => ({
+      code,
+      name: code === '_OTHER' ? countryName(null, lang) : countryName(code, lang),
+      cities: cities.slice().sort((a, b) => a.name.localeCompare(b.name)),
+    }));
+    ordered.sort((a, b) => {
+      if (a.code === 'FR') return -1;            // France toujours en tête
+      if (b.code === 'FR') return 1;
+      if (a.code === '_OTHER') return 1;         // « Autres » en dernier
+      if (b.code === '_OTHER') return -1;
+      return a.name.localeCompare(b.name);
+    });
+    return ordered;
+  }, [lang]);
 
   // Countdown de verrouillage
   const [now, setNow] = useState(() => Date.now());
@@ -216,75 +244,89 @@ export default function PalmèresScreen({ navigation }) {
         <Text style={styles.summaryPct}>{stats.pct.toFixed(1)} %</Text>
       </View>
 
-      {sortedCities.map((c, idx) => {
-        const isActive = c.code === currentCityCode;
-        const cityInfo = cityIndex.find(ci => ci.code === c.code);
-        const cityTotal = cityInfo?.count ?? null;
-        return (
-          <Fragment key={c.code}>
-            {/* Bannière entre la ville active (idx 0) et les autres (idx 1+) */}
-            {idx === 1 && isLocked && (
-              <View style={[styles.lockBanner, { backgroundColor: theme.surface, borderColor: theme.border }]}>
-                <Ionicons name="time-outline" size={14} color={theme.textSecondary} />
-                <Text style={[styles.lockBannerText, { color: theme.textSecondary }]}>
-                  {t('palmares.loadingBanner', { countdown: formatCountdown(remainingSeconds) })}
-                </Text>
-              </View>
-            )}
-          <View style={styles.villeBlock}>
-            <TouchableOpacity
-              style={[
-                styles.villeCard,
-                isActive && { borderColor: theme.accent, borderWidth: 1.5 },
-                !isActive && isLocked && { opacity: 0.5 },
-              ]}
-              onPress={() => {
-                if (isChangingCity || isActive || isLocked) return;
-                setCurrentCity(c.code);
-                // Carte est un onglet imbriqué dans "Tabs" (pas une route du Drawer)
-                navigation.navigate('Tabs', { screen: 'Carte' });
-              }}
-              activeOpacity={!isActive && isLocked ? 1 : 0.7}
-            >
-              <View style={styles.villeLeft}>
-                <View style={[styles.villeIcon, isActive && { backgroundColor: theme.accent }]}>
-                  <Ionicons name="business-outline" size={22} color={isActive ? '#fff' : theme.accent} />
-                </View>
-                <View>
-                  <Text style={styles.villeName}>{c.name}</Text>
-                  <Text style={styles.villeSub}>
-                    {isActive
-                      ? t('palmares.villeCard', { flashed: stats.flashed, total: stats.total, pct: stats.pct.toFixed(0), pts: stats.flashedPts })
-                      : cityTotal !== null
-                        ? t('palmares.villeCardTotal', { count: cityTotal })
-                        : '…'
-                    }
-                  </Text>
-                </View>
-              </View>
-              {isActive
-                ? <Ionicons name="checkmark-circle" size={22} color={theme.accent} />
-                : <Ionicons name="chevron-forward" size={18} color={theme.textSecondary} />
-              }
-            </TouchableOpacity>
+      {/* Bannière de chargement (pendant le verrou de changement de ville) */}
+      {isLocked && (
+        <View style={[styles.lockBanner, { backgroundColor: theme.surface, borderColor: theme.border }]}>
+          <Ionicons name="time-outline" size={14} color={theme.textSecondary} />
+          <Text style={[styles.lockBannerText, { color: theme.textSecondary }]}>
+            {t('palmares.loadingBanner', { countdown: formatCountdown(remainingSeconds) })}
+          </Text>
+        </View>
+      )}
 
-            {isActive && c.subdivisionsKey && (
-              <TouchableOpacity
-                style={styles.districtLink}
-                onPress={() => setDrillVille(c.code)}
-                activeOpacity={0.7}
-              >
-                <Ionicons name="grid-outline" size={14} color={theme.accent} />
-                <Text style={[styles.districtLinkText, { color: theme.accent }]}>
-                  {t('palmares.viewByDistrict')}
-                </Text>
-                <Ionicons name="chevron-forward" size={13} color={theme.accent} />
-              </TouchableOpacity>
-            )}
-          </View>
-          </Fragment>
-        );
-      })}
+      {/* Villes groupées par pays (France d'abord) */}
+      {countryGroups.map((group) => (
+        <Fragment key={group.code}>
+          <Text style={styles.countryHeader}>{group.name.toUpperCase()}</Text>
+          {group.cities.map((c) => {
+            const isActive = c.code === currentCityCode;
+            const cityInfo = cityIndex.find(ci => ci.code === c.code);
+            const cityTotal = cityInfo?.count ?? null;
+            const flashedHere = flashedByCity.get(c.code) ?? 0;
+            const pct = isActive
+              ? stats.pct
+              : (cityTotal ? (flashedHere / cityTotal) * 100 : 0);
+            return (
+              <View key={c.code} style={styles.villeBlock}>
+                <TouchableOpacity
+                  style={[
+                    styles.villeCard,
+                    isActive && { borderColor: theme.accent, borderWidth: 1.5 },
+                    !isActive && isLocked && { opacity: 0.5 },
+                  ]}
+                  onPress={() => {
+                    if (isChangingCity || isActive || isLocked) return;
+                    setCurrentCity(c.code);
+                    // Carte est un onglet imbriqué dans "Tabs" (pas une route du Drawer)
+                    navigation.navigate('Tabs', { screen: 'Carte' });
+                  }}
+                  activeOpacity={!isActive && isLocked ? 1 : 0.7}
+                >
+                  <View style={styles.villeLeft}>
+                    <DonutChart
+                      pct={pct}
+                      size={46}
+                      stroke={5}
+                      color={theme.accent}
+                      trackColor={theme.border}
+                      textColor={theme.textPrimary}
+                    />
+                    <View style={{ flex: 1 }}>
+                      <Text style={styles.villeName}>{c.name}</Text>
+                      <Text style={styles.villeSub}>
+                        {isActive
+                          ? t('palmares.villeCard', { flashed: stats.flashed, total: stats.total, pct: stats.pct.toFixed(0), pts: stats.flashedPts })
+                          : cityTotal !== null
+                            ? t('palmares.villeCardProgress', { flashed: flashedHere, total: cityTotal })
+                            : '…'
+                        }
+                      </Text>
+                    </View>
+                  </View>
+                  {isActive
+                    ? <Ionicons name="checkmark-circle" size={22} color={theme.accent} />
+                    : <Ionicons name="chevron-forward" size={18} color={theme.textSecondary} />
+                  }
+                </TouchableOpacity>
+
+                {isActive && c.subdivisionsKey && (
+                  <TouchableOpacity
+                    style={styles.districtLink}
+                    onPress={() => setDrillVille(c.code)}
+                    activeOpacity={0.7}
+                  >
+                    <Ionicons name="grid-outline" size={14} color={theme.accent} />
+                    <Text style={[styles.districtLinkText, { color: theme.accent }]}>
+                      {t('palmares.viewByDistrict')}
+                    </Text>
+                    <Ionicons name="chevron-forward" size={13} color={theme.accent} />
+                  </TouchableOpacity>
+                )}
+              </View>
+            );
+          })}
+        </Fragment>
+      ))}
 
       </ScrollView>
     </View>
@@ -333,10 +375,10 @@ function makeStyles(t) {
       alignSelf: 'flex-start',
     },
     districtLinkText: { fontSize: 13, fontWeight: '500' },
-    villeLeft: { flexDirection: 'row', alignItems: 'center', gap: 14 },
-    villeIcon: {
-      width: 42, height: 42, borderRadius: 12,
-      backgroundColor: t.accentDim, alignItems: 'center', justifyContent: 'center',
+    villeLeft: { flexDirection: 'row', alignItems: 'center', gap: 14, flex: 1, marginRight: 10 },
+    countryHeader: {
+      ...typography.arcadeHeading, fontSize: 12, color: t.textSecondary,
+      marginHorizontal: 20, marginTop: 18, marginBottom: 8, letterSpacing: 0.5,
     },
     villeName: { ...typography.arcadeHeading, color: t.textPrimary },
     villeSub: { fontSize: 13, color: t.textSecondary, marginTop: 2 },
