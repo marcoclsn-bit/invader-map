@@ -453,7 +453,14 @@ export default function MapScreen({ navigation, route }) {
 
   const INITIAL = 120;
   const BATCH   = 250;
+  // Plafond de marqueurs montés simultanément : borne la mémoire native sur les
+  // très grandes villes (Paris ~1568) → évite le crash MKMapView. On affiche les
+  // N plus proches du centre de tri (centre ville, ou position GPS si sur place).
+  const MAX_MARKERS = 600;
   const [renderedCount, setRenderedCount] = useState(INITIAL);
+
+  // Cible de rendu = min(nombre filtré, plafond)
+  const renderTarget = Math.min(sortedInvaders.length, MAX_MARKERS);
 
   // Reset du rendu progressif uniquement sur re-tri (ville/GPS) — PLUS sur les filtres :
   // changer un filtre ne doit pas retirer tous les marqueurs puis les ré-ajouter par
@@ -464,14 +471,14 @@ export default function MapScreen({ navigation, route }) {
 
   useEffect(() => {
     if (isChangingCity) return;
-    if (renderedCount >= sortedInvaders.length) return;
+    if (renderedCount >= renderTarget) return;
     const id = requestAnimationFrame(() =>
-      setRenderedCount(c => Math.min(c + BATCH, sortedInvaders.length))
+      setRenderedCount(c => Math.min(c + BATCH, renderTarget))
     );
     return () => cancelAnimationFrame(id);
-  }, [renderedCount, sortedInvaders.length, isChangingCity]);
+  }, [renderedCount, renderTarget, isChangingCity]);
 
-  const visibleInvaders = sortedInvaders.slice(0, renderedCount);
+  const visibleInvaders = sortedInvaders.slice(0, Math.min(renderedCount, renderTarget));
 
   // Pourcentage basé sur le temps restant du verrou (pas sur le rendu, qui est trop rapide).
   // Formule : 1 - remainingMs/totalDuration → stable même après pause en arrière-plan.
