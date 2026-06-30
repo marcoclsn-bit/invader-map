@@ -491,5 +491,62 @@
       "routeNotFound": "Route not found between these two points",
       "routeCalc": "Error calculating route"
     }
+  },
+  "badges": {
+    "speedrunner": {
+      "title": "Speedrunner",
+      "desc": "5 Invaders in under 30 minutes"
+    },
+    "combo10": {
+      "title": "Combo x10",
+      "desc": "10 Invaders in one session"
+    },
+    "combo15": {
+      "title": "Combo x15",
+      "desc": "15 Invaders in one session"
+    },
+    "combo30": {
+      "title": "Combo x30",
+      "desc": "30 Invaders in one session"
+    },
+    "explorer": {
+      "title": "Explorer",
+      "desc": "Flash in 3 different cities"
+    },
+    "globetrotter": {
+      "title": "Globetrotter",
+      "desc": "Flash in 5 different cities"
+    },
+    "marathon": {
+      "title": "Marathoner",
+      "desc": "10 km in a single session"
+    },
+    "weekstreak": {
+      "title": "Perfect Week",
+      "desc": "7 consecutive active days"
+    },
+    "sundayritual": {
+      "title": "Sunday Ritual",
+      "desc": "Active 4 weekends in a row"
+    },
+    "nightowl": {
+      "title": "Night Owl",
+      "desc": "A flash between midnight and 4am"
+    },
+    "earlybird": {
+      "title": "Early Bird",
+      "desc": "A flash between 5am and 7am"
+    },
+    "centurion": {
+      "title": "Centurion",
+      "desc": "100 Invaders flashed in total"
+    },
+    "category": {
+      "combo": "Combo",
+      "exploration": "Exploration",
+      "streak": "Streak",
+      "secret": "Secret"
+    },
+    "locked": "Locked"
   }
 }

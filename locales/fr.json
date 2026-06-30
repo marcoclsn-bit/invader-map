@@ -491,5 +491,62 @@
       "routeNotFound": "Itinéraire introuvable entre ces deux points",
       "routeCalc": "Erreur lors du calcul de l'itinéraire"
     }
+  },
+  "badges": {
+    "speedrunner": {
+      "title": "Speedrunner",
+      "desc": "5 Invaders en moins de 30 minutes"
+    },
+    "combo10": {
+      "title": "Combo x10",
+      "desc": "10 Invaders en une session"
+    },
+    "combo15": {
+      "title": "Combo x15",
+      "desc": "15 Invaders en une session"
+    },
+    "combo30": {
+      "title": "Combo x30",
+      "desc": "30 Invaders en une session"
+    },
+    "explorer": {
+      "title": "Explorateur",
+      "desc": "Flashe dans 3 villes différentes"
+    },
+    "globetrotter": {
+      "title": "Globe-trotter",
+      "desc": "Flashe dans 5 villes différentes"
+    },
+    "marathon": {
+      "title": "Marathonien",
+      "desc": "10 km parcourus en une session"
+    },
+    "weekstreak": {
+      "title": "Semaine parfaite",
+      "desc": "7 jours d’activité consécutifs"
+    },
+    "sundayritual": {
+      "title": "Rituel du dimanche",
+      "desc": "Actif 4 week-ends consécutifs"
+    },
+    "nightowl": {
+      "title": "Oiseau de nuit",
+      "desc": "Un flash entre minuit et 4h"
+    },
+    "earlybird": {
+      "title": "Lève-tôt",
+      "desc": "Un flash entre 5h et 7h"
+    },
+    "centurion": {
+      "title": "Centurion",
+      "desc": "100 Invaders flashés au total"
+    },
+    "category": {
+      "combo": "Combo",
+      "exploration": "Exploration",
+      "streak": "Régularité",
+      "secret": "Secret"
+    },
+    "locked": "À débloquer"
   }
 }

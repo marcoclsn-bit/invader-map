@@ -12,6 +12,7 @@ import { useTranslation } from 'react-i18next';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import './i18n';
 import { AppProvider, useAppContext } from './context/AppContext';
+import { GamificationProvider } from './context/GamificationContext';
 import { ThemeProvider, useTheme } from './theme/ThemeContext';
 import MapScreen from './screens/MapScreen';
 import ListScreen from './screens/ListScreen';
@@ -186,7 +187,9 @@ function ThemedApp() {
 
   return (
     <AppProvider>
-      <AppShell />
+      <GamificationProvider>
+        <AppShell />
+      </GamificationProvider>
     </AppProvider>
   );
 }
