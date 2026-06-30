@@ -52,9 +52,6 @@ function _nearestCity(lat, lng) {
 // Débit estimé : nombre d'Invaders rendus par seconde sur le pont JS→natif.
 // Paris (1528 inv) → ceil(1528 / 16) = 96 s ≈ 1 min 36 s.
 const INVADERS_PER_SECOND = 16;
-// Plafond du verrou de changement de ville : sans ça, Paris bloquerait la carte
-// ~98 s (et la re-rendrait chaque seconde avec ~1500 marqueurs → pression mémoire).
-const MAX_LOCK_MS = 8000;
 
 export function AppProvider({ children }) {
   // ─── Ville courante ───────────────────────────────────────────────────────────
@@ -86,7 +83,7 @@ export function AppProvider({ children }) {
   // Initialisé pour Paris au démarrage : ceil(1528 / 16) = 96 s.
   // mapLockDuration = durée originale du verrou courant (ne change PAS lors d'une extension background).
   // Permet de calculer la progression : 1 - remainingMs / mapLockDuration.
-  const _initialLockDuration = Math.min(MAX_LOCK_MS, Math.ceil(EMBEDDED_PA.length / INVADERS_PER_SECOND) * 1000);
+  const _initialLockDuration = Math.ceil(EMBEDDED_PA.length / INVADERS_PER_SECOND) * 1000;
   const [mapLockUntil,    setMapLockUntil]    = useState(() => Date.now() + _initialLockDuration);
   const [mapLockDuration, setMapLockDuration] = useState(_initialLockDuration);
 
@@ -206,7 +203,7 @@ export function AppProvider({ children }) {
         const count = getCityData(code)?.invaders?.length
           ?? cityIndex.find(c => c.code === code)?.count
           ?? 100;
-        const lockMs = Math.min(MAX_LOCK_MS, Math.ceil(count / INVADERS_PER_SECOND) * 1000);
+        const lockMs = Math.ceil(count / INVADERS_PER_SECOND) * 1000;
         setMapLockDuration(lockMs);
         setMapLockUntil(Date.now() + lockMs);
       }, 500);
