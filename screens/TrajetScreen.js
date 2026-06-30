@@ -15,6 +15,8 @@ import { STATUS_COLOR } from '../constants';
 import { ORS_API_KEY } from '../config/ors';
 import { useAppContext } from '../context/AppContext';
 import { CITIES } from '../cities/registry';
+import { countryCodeOf } from '../cities/countries';
+import { geocode, autocomplete, route } from '../services/routing';
 import InvaderMarker from '../components/InvaderMarker';
 import HeadingCone from '../components/HeadingCone';
 import InvaderPanel from '../components/InvaderPanel';
@@ -22,11 +24,8 @@ import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import { openInstagramTag, openNavigationApp } from '../utils/navigation';
 
-// Palier 1 : référence PA — les fonctions ORS accepteront un paramètre ville en Palier 2
 const _PA         = CITIES.PA;
 const PARIS       = { latitude: _PA.center.lat, longitude: _PA.center.lng, ..._PA.mapDelta };
-const ORS_COUNTRY = _PA.orsCountry;
-const _ORS_FOCUS  = `focus.point.lat=${_PA.center.lat}&focus.point.lon=${_PA.center.lng}`;
 const DEBOUNCE_MS = 300;
 const MIN_CHARS   = 3;
 
@@ -48,68 +47,6 @@ async function openInApp(app, lat, lng) {
       : `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=walking`;
     Linking.openURL(url).catch(() => {});
   }
-}
-
-// ─── Appels ORS ──────────────────────────────────────────────────────────────
-
-async function orsAutocomplete(text, focusCoords) {
-  const focus = focusCoords
-    ? `focus.point.lat=${focusCoords[1]}&focus.point.lon=${focusCoords[0]}`
-    : _ORS_FOCUS;
-  const url =
-    `https://api.openrouteservice.org/geocode/autocomplete` +
-    `?api_key=${ORS_API_KEY}&text=${encodeURIComponent(text)}` +
-    `&${focus}&${ORS_COUNTRY}&size=5`;
-  try {
-    const res = await fetch(url);
-    if (!res.ok) return [];
-    const json = await res.json();
-    return (json.features ?? []).map((f) => ({
-      label: f.properties.label,
-      coords: f.geometry.coordinates,
-    }));
-  } catch {
-    return [];
-  }
-}
-
-// Retourne { coords: [lon, lat], label: string }
-async function orsGeocode(text) {
-  const url =
-    `https://api.openrouteservice.org/geocode/search` +
-    `?api_key=${ORS_API_KEY}&text=${encodeURIComponent(text)}` +
-    `&${_ORS_FOCUS}&${ORS_COUNTRY}&size=1`;
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(i18n.t('route.error.addressNotFound'));
-  const json = await res.json();
-  if (!json.features?.length) throw new Error(i18n.t('route.error.addressNotFoundFor', { text }));
-  const f = json.features[0];
-  return { coords: f.geometry.coordinates, label: f.properties.label };
-}
-
-async function orsRoute(from, to, profile) {
-  const res = await fetch(
-    `https://api.openrouteservice.org/v2/directions/${profile}/geojson`,
-    {
-      method: 'POST',
-      headers: { Authorization: ORS_API_KEY, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ coordinates: [from, to] }),
-    }
-  );
-  if (!res.ok) {
-    try {
-      const err = await res.json();
-      const msg = err?.error?.message ?? err?.message;
-      if (msg) throw new Error(msg);
-    } catch (e) {
-      if (e.message && e.message !== i18n.t('route.error.addressNotFound')) throw e;
-    }
-    throw new Error(i18n.t('route.error.routeNotFound'));
-  }
-  const json = await res.json();
-  const coords = json.features?.[0]?.geometry?.coordinates;
-  if (!coords || coords.length < 2) throw new Error(i18n.t('route.error.routeNotFound'));
-  return coords;
 }
 
 // ─── Cache de styles thémés ───────────────────────────────────────────────────
@@ -305,6 +242,8 @@ export default function TrajetScreen() {
   const { t } = useTranslation();
   const styles = getStyles(theme);
   const GPS_LABEL = t('route.gpsLabel');
+  // Biais de recherche Mapbox : proximité = GPS, pays = ville courante, langue UI
+  const geoOpts = { country: countryCodeOf(city), language: i18n.language };
 
   // ─── Champs d'adresse ────────────────────────────────────────────────────
 
@@ -534,7 +473,7 @@ export default function TrajetScreen() {
       setDepSearching(true);
       setDepSugg([]);
       depDebounce.current = setTimeout(async () => {
-        const sugg = await orsAutocomplete(text, gpsRef.current);
+        const sugg = await autocomplete(text, gpsRef.current, geoOpts);
         setDepSugg(sugg);
         setDepSearching(false);
       }, DEBOUNCE_MS);
@@ -577,7 +516,7 @@ export default function TrajetScreen() {
     setDepSearching(false);
     setDepResolving(true);
     try {
-      const result = await orsGeocode(depText);
+      const result = await geocode(depText, { focus: gpsRef.current, ...geoOpts });
       setDepText(result.label);
       setDepCoords(result.coords);
     } catch {
@@ -599,7 +538,7 @@ export default function TrajetScreen() {
       setArrSearching(true);
       setArrSugg([]);
       arrDebounce.current = setTimeout(async () => {
-        const sugg = await orsAutocomplete(text, gpsRef.current);
+        const sugg = await autocomplete(text, gpsRef.current, geoOpts);
         setArrSugg(sugg);
         setArrSearching(false);
       }, DEBOUNCE_MS);
@@ -633,7 +572,7 @@ export default function TrajetScreen() {
     setArrSearching(false);
     setArrResolving(true);
     try {
-      const result = await orsGeocode(arrText);
+      const result = await geocode(arrText, { focus: gpsRef.current, ...geoOpts });
       setArrText(result.label);
       setArrCoords(result.coords);
     } catch {
@@ -681,7 +620,7 @@ export default function TrajetScreen() {
           if (!gpsRef.current) throw new Error(t('route.error.noGps'));
           fromCoords = gpsRef.current;
         } else {
-          const result = await orsGeocode(depText);
+          const result = await geocode(depText, { focus: gpsRef.current, ...geoOpts });
           fromCoords = result.coords;
           setDepText(result.label);
           setDepCoords(result.coords);
@@ -691,13 +630,13 @@ export default function TrajetScreen() {
       // ─ Arrivée ─
       let toCoords = arrCoords;
       if (!toCoords) {
-        const result = await orsGeocode(arrText);
+        const result = await geocode(arrText, { focus: gpsRef.current, ...geoOpts });
         toCoords = result.coords;
         setArrText(result.label);
         setArrCoords(result.coords);
       }
 
-      const coords = await orsRoute(fromCoords, toCoords, 'foot-walking');
+      const coords = await route(fromCoords, toCoords, 'foot-walking');
       const latlngs = coords.map(([lng, lat]) => ({ latitude: lat, longitude: lng }));
       setRoutePolyline(latlngs);
       // Phase 2 : le useEffect([routeCoords]) calcule les Invaders ;

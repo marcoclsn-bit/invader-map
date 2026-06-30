@@ -424,5 +424,13 @@
     },
     "statusSectionTitle": "Which statuses to alert for?",
     "statusNote": "Already flashed and destroyed are always excluded."
+  },
+  "routing": {
+    "error": {
+      "addressNotFound": "Address not found",
+      "addressNotFoundFor": "Address not found: \"{{text}}\"",
+      "routeNotFound": "Route not found between these two points",
+      "routeCalc": "Error calculating route"
+    }
   }
 }

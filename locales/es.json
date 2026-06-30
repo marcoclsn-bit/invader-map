@@ -424,5 +424,13 @@
     },
     "statusSectionTitle": "¿Para qué estados avisar?",
     "statusNote": "Los ya fotografiados y los destruidos siempre se excluyen."
+  },
+  "routing": {
+    "error": {
+      "addressNotFound": "Dirección no encontrada",
+      "addressNotFoundFor": "Dirección no encontrada: «{{text}}»",
+      "routeNotFound": "Ruta no encontrada entre estos dos puntos",
+      "routeCalc": "Error al calcular la ruta"
+    }
   }
 }

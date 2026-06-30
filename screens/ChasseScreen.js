@@ -10,22 +10,19 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
 import { useTranslation } from 'react-i18next';
-import i18n from '../i18n';
 import { STATUS_COLOR } from '../constants';
-import { ORS_API_KEY } from '../config/ors';
 import { useAppContext } from '../context/AppContext';
 import { CITIES } from '../cities/registry';
+import { countryCodeOf } from '../cities/countries';
+import { geocode, autocomplete, multiRoute } from '../services/routing';
 import { INVADER_DISTRICT, ARRONDISSEMENT_CENTERS } from '../utils/arrondissement';
 import { useTheme } from '../theme/ThemeContext';
 import InvaderPanel from '../components/InvaderPanel';
 import HeadingCone from '../components/HeadingCone';
 import { openNavigationApp } from '../utils/navigation';
 
-// Palier 1 : référence PA — les fonctions ORS accepteront un paramètre ville en Palier 2
 const _PA        = CITIES.PA;
 const PARIS      = { latitude: _PA.center.lat, longitude: _PA.center.lng, ..._PA.mapDelta };
-const _ORS_FOCUS = `focus.point.lat=${_PA.center.lat}&focus.point.lon=${_PA.center.lng}`;
-const _ORS_CTY   = _PA.orsCountry;
 const VISIT_MIN = 2;   // minutes par Invader (observation + photo)
 const SPEEDS = { 'foot-walking': 5, 'cycling-regular': 15 }; // km/h
 const DEBOUNCE_MS = 300;
@@ -87,60 +84,6 @@ function greedyHunt(startLon, startLat, candidates, budgetMin, speedKmh) {
   return selected;
 }
 
-// ─── ORS ─────────────────────────────────────────────────────────────────────
-
-async function orsMultiRoute(waypointsLonLat, profile) {
-  const res = await fetch(
-    `https://api.openrouteservice.org/v2/directions/${profile}/geojson`,
-    {
-      method: 'POST',
-      headers: { Authorization: ORS_API_KEY, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ coordinates: waypointsLonLat }),
-    }
-  );
-  if (!res.ok) {
-    let msg = i18n.t('hunt.error.routeCalc');
-    try { const e = await res.json(); msg = e?.error?.message ?? e?.message ?? msg; } catch {}
-    throw new Error(msg);
-  }
-  const json = await res.json();
-  const feature = json.features?.[0];
-  if (!feature) throw new Error(i18n.t('hunt.error.routeNotFound'));
-  return {
-    coords: feature.geometry.coordinates,
-    durationMin: Math.round(feature.properties.summary.duration / 60),
-  };
-}
-
-async function orsAutocomplete(text, focusCoords) {
-  const focus = focusCoords
-    ? `focus.point.lat=${focusCoords[1]}&focus.point.lon=${focusCoords[0]}`
-    : _ORS_FOCUS;
-  try {
-    const res = await fetch(
-      `https://api.openrouteservice.org/geocode/autocomplete` +
-      `?api_key=${ORS_API_KEY}&text=${encodeURIComponent(text)}` +
-      `&${focus}&${_ORS_CTY}&size=5`
-    );
-    if (!res.ok) return [];
-    const json = await res.json();
-    return (json.features ?? []).map(f => ({ label: f.properties.label, coords: f.geometry.coordinates }));
-  } catch { return []; }
-}
-
-async function orsGeocode(text) {
-  const url =
-    `https://api.openrouteservice.org/geocode/search` +
-    `?api_key=${ORS_API_KEY}&text=${encodeURIComponent(text)}` +
-    `&${_ORS_FOCUS}&${_ORS_CTY}&size=1`;
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(i18n.t('hunt.error.addressNotFound'));
-  const json = await res.json();
-  if (!json.features?.length) throw new Error(i18n.t('hunt.error.addressNotFound'));
-  const f = json.features[0];
-  return { coords: f.geometry.coordinates, label: f.properties.label };
-}
-
 // ─── Formatage ────────────────────────────────────────────────────────────────
 
 function formatBudget(min) {
@@ -196,8 +139,10 @@ export default function ChasseScreen({ route }) {
   const { invaders, flashed, statusColors, currentCityCode, toggleFlash, mapsApp, isChangingCity } = useAppContext();
   const city = CITIES[currentCityCode] ?? CITIES.PA;
   const { theme, isDark } = useTheme();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const styles = getStyles(theme);
+  // Biais de recherche Mapbox : proximité = GPS, pays = ville courante, langue UI
+  const geoOpts = { country: countryCodeOf(city), language: i18n.language };
 
   // ─── GPS ──────────────────────────────────────────────────────────────────
   const [gpsReady, setGpsReady] = useState(false);
@@ -379,7 +324,7 @@ export default function ChasseScreen({ route }) {
       setQSearching(true);
       setQSugg([]);
       debounce.current = setTimeout(async () => {
-        const sugg = await orsAutocomplete(text, gpsRef.current);
+        const sugg = await autocomplete(text, gpsRef.current, geoOpts);
         setQSugg(sugg);
         setQSearching(false);
       }, DEBOUNCE_MS);
@@ -407,7 +352,7 @@ export default function ChasseScreen({ route }) {
     setQSearching(false);
     setQResolving(true);
     try {
-      const r = await orsGeocode(qText);
+      const r = await geocode(qText, { focus: gpsRef.current, ...geoOpts });
       setQText(r.label);
       setQCoords(r.coords);
     } catch {
@@ -471,7 +416,7 @@ export default function ChasseScreen({ route }) {
         ...selected.map(inv => [inv.lng, inv.lat]),
         [startLon, startLat],
       ];
-      const { coords, durationMin } = await orsMultiRoute(waypoints, profile);
+      const { coords, durationMin } = await multiRoute(waypoints, profile);
 
       setResult({
         invaders: selected,

@@ -424,5 +424,13 @@
     },
     "statusSectionTitle": "Pour quels statuts être alerté ?",
     "statusNote": "Les déjà flashés et les détruits sont toujours exclus."
+  },
+  "routing": {
+    "error": {
+      "addressNotFound": "Adresse introuvable",
+      "addressNotFoundFor": "Adresse introuvable : « {{text}} »",
+      "routeNotFound": "Itinéraire introuvable entre ces deux points",
+      "routeCalc": "Erreur lors du calcul de l'itinéraire"
+    }
   }
 }
