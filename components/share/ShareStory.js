@@ -8,7 +8,7 @@ import { dark } from '../../theme/tokens';
 export const STORY_W = 360;
 export const STORY_H = 640;
 
-const LOGO = require('../../assets/Logo_Green.png');
+const LOGO = require('../../assets/LogoFinal.png');
 const MAP_W = STORY_W - 56;
 const MAP_H = 260;
 
@@ -88,7 +88,7 @@ const ShareStory = forwardRef(function ShareStory({ session, cityName }, ref) {
 
       {/* Pied : logo + url */}
       <View style={styles.footer}>
-        <Image source={LOGO} style={styles.logo} resizeMode="contain" />
+        <Image source={LOGO} style={styles.logo} resizeMode="cover" />
         <Text style={styles.url}>{t('share.url')}</Text>
       </View>
     </View>
@@ -123,8 +123,8 @@ const styles = StyleSheet.create({
   stat: { flex: 1, alignItems: 'center' },
   statValue: { fontFamily: 'PressStart2P_400Regular', fontSize: 20, color: dark.accent },
   statLabel: { fontFamily: 'Silkscreen_400Regular', fontSize: 10, color: dark.textSecondary, marginTop: 8, letterSpacing: 0.5 },
-  footer: { alignItems: 'center', gap: 6 },
-  logo: { width: 130, height: 34 },
+  footer: { alignItems: 'center', gap: 8 },
+  logo: { width: 48, height: 48, borderRadius: 11 },
   url: { fontFamily: 'Silkscreen_400Regular', fontSize: 11, color: dark.textSecondary },
 });
 
