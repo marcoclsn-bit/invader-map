@@ -471,6 +471,17 @@ export default function ChasseScreen({ route }) {
     if (draft) recordSession(draft, { skipIfEmpty: true });
   }
 
+  // Réinitialise la chasse : efface le résultat et revient au formulaire.
+  // Abandonne une éventuelle session en cours (pas de récap).
+  function resetHunt() {
+    recorder.cancel();
+    setResult(null);
+    setSelectedInv(null);
+    setFollowing(false);
+    setDrifted(false);
+    setError(null);
+  }
+
   async function recenter() {
     if (following) { setDrifted(false); return; }
     try {
@@ -752,11 +763,16 @@ export default function ChasseScreen({ route }) {
                     <Text style={styles.startBtnText}>{t('hunt.start')}</Text>
                   </TouchableOpacity>
                 )}
-                {(!following || drifted) && (
-                  <TouchableOpacity style={styles.recenterBtn} onPress={recenter}>
-                    <Ionicons name="locate-outline" size={22} color={theme.accent} />
+                <View style={styles.rightControls}>
+                  {(!following || drifted) && (
+                    <TouchableOpacity style={styles.recenterBtn} onPress={recenter}>
+                      <Ionicons name="locate-outline" size={22} color={theme.accent} />
+                    </TouchableOpacity>
+                  )}
+                  <TouchableOpacity style={styles.recenterBtn} onPress={resetHunt} accessibilityLabel={t('common.reset')}>
+                    <Ionicons name="refresh" size={20} color={theme.accent} />
                   </TouchableOpacity>
-                )}
+                </View>
               </View>
             )}
             {selectedInv && (
@@ -908,6 +924,7 @@ function makeStyles(t) {
       flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end',
       paddingHorizontal: 12, paddingBottom: 12, paddingTop: 8,
     },
+    rightControls: { flexDirection: 'row', alignItems: 'center', gap: 8 },
     startBtn: {
       flexDirection: 'row', alignItems: 'center', gap: 6,
       backgroundColor: t.accent, borderRadius: 20,

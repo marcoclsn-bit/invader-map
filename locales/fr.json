@@ -25,7 +25,8 @@
       "google": "Google Maps"
     },
     "menu": "Menu",
-    "appName": "InvaderQuest"
+    "appName": "InvaderQuest",
+    "reset": "Réinitialiser"
   },
   "tabs": {
     "map": "Carte",

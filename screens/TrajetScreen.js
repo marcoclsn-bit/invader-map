@@ -671,6 +671,18 @@ export default function TrajetScreen() {
     setDrifted(false);
   }
 
+  // Réinitialise l'itinéraire : efface le trajet calculé et rouvre la saisie.
+  function resetRoute() {
+    setFollowing(false);
+    setDrifted(false);
+    setRouteCoords(null);
+    setRoutePolyline(null);
+    setRouteInvaders(null);
+    setSelectedRouteInv(null);
+    setError(null);
+    setInputCollapsed(false);
+  }
+
   async function recenter() {
     if (following) {
       setDrifted(false);
@@ -908,11 +920,16 @@ export default function TrajetScreen() {
                   <Text style={styles.startBtnText}>Démarrer</Text>
                 </TouchableOpacity>
               )}
-              {(!following || drifted) && (
-                <TouchableOpacity style={styles.recenterBtn} onPress={recenter}>
-                  <Ionicons name="locate-outline" size={22} color={theme.accent} />
+              <View style={styles.rightControls}>
+                {(!following || drifted) && (
+                  <TouchableOpacity style={styles.recenterBtn} onPress={recenter}>
+                    <Ionicons name="locate-outline" size={22} color={theme.accent} />
+                  </TouchableOpacity>
+                )}
+                <TouchableOpacity style={styles.recenterBtn} onPress={resetRoute} accessibilityLabel={t('common.reset')}>
+                  <Ionicons name="refresh" size={20} color={theme.accent} />
                 </TouchableOpacity>
-              )}
+              </View>
             </View>
           )}
           {selectedRouteInv && (
@@ -1038,6 +1055,7 @@ function makeStyles(t) {
       flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end',
       paddingHorizontal: 12, paddingBottom: 12, paddingTop: 8,
     },
+    rightControls: { flexDirection: 'row', alignItems: 'center', gap: 8 },
     startBtn: {
       flexDirection: 'row', alignItems: 'center', gap: 6,
       backgroundColor: t.accent, borderRadius: 20,
