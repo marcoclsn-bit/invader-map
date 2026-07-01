@@ -471,8 +471,8 @@ export default function ChasseScreen({ route }) {
     if (draft) recordSession(draft, { skipIfEmpty: true });
   }
 
-  // Réinitialise la chasse : efface le résultat et revient au formulaire.
-  // Abandonne une éventuelle session en cours (pas de récap).
+  // Réinitialise la chasse : efface le résultat, rouvre le panneau du haut,
+  // recentre la carte et abandonne une éventuelle session en cours (pas de récap).
   function resetHunt() {
     recorder.cancel();
     setResult(null);
@@ -480,6 +480,19 @@ export default function ChasseScreen({ route }) {
     setFollowing(false);
     setDrifted(false);
     setError(null);
+    setInputCollapsed(false); // rouvre le panneau du haut
+    // recentre sur l'utilisateur (ou la ville courante à défaut)
+    if (gpsRef.current) {
+      mapRef.current?.animateToRegion(
+        { latitude: gpsRef.current[1], longitude: gpsRef.current[0], latitudeDelta: 0.02, longitudeDelta: 0.02 },
+        500,
+      );
+    } else {
+      mapRef.current?.animateToRegion(
+        { latitude: city.center.lat, longitude: city.center.lng, ...city.mapDelta },
+        500,
+      );
+    }
   }
 
   async function recenter() {

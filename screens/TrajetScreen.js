@@ -671,7 +671,8 @@ export default function TrajetScreen() {
     setDrifted(false);
   }
 
-  // Réinitialise l'itinéraire : efface le trajet calculé et rouvre la saisie.
+  // Réinitialise l'itinéraire : efface le trajet calculé, rouvre la saisie,
+  // vide le champ d'arrivée et recentre la carte sur l'utilisateur.
   function resetRoute() {
     setFollowing(false);
     setDrifted(false);
@@ -680,7 +681,23 @@ export default function TrajetScreen() {
     setRouteInvaders(null);
     setSelectedRouteInv(null);
     setError(null);
-    setInputCollapsed(false);
+    setInputCollapsed(false); // rouvre le panneau du haut
+    // vide la destination (pas de réécriture par-dessus l'ancienne entrée)
+    setArrText('');
+    setArrCoords(null);
+    setArrSugg([]);
+    // recentre sur l'utilisateur (ou la ville courante à défaut)
+    if (gpsRef.current) {
+      mapRef.current?.animateToRegion(
+        { latitude: gpsRef.current[1], longitude: gpsRef.current[0], latitudeDelta: 0.02, longitudeDelta: 0.02 },
+        500,
+      );
+    } else {
+      mapRef.current?.animateToRegion(
+        { latitude: city.center.lat, longitude: city.center.lng, ...city.mapDelta },
+        500,
+      );
+    }
   }
 
   async function recenter() {
