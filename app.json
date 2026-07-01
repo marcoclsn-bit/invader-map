@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "runtimeVersion": {
       "policy": "fingerprint"
@@ -19,12 +19,13 @@
       "backgroundColor": "#020202"
     },
     "ios": {
-      "supportsTablet": true,
+      "supportsTablet": false,
       "bundleIdentifier": "com.marco.invaderquest",
       "buildNumber": "1",
       "infoPlist": {
         "LSApplicationQueriesSchemes": [
-          "comgooglemaps"
+          "comgooglemaps",
+          "instagram"
         ],
         "ITSAppUsesNonExemptEncryption": false
       }

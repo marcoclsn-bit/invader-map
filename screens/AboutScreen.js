@@ -144,6 +144,7 @@ export default function AboutScreen() {
         <SubHeader label={`${t('about.creditsMapLabel')} & ${t('about.creditsRoutingLabel')}`} theme={theme} />
         <LinkRow label="© OpenStreetMap contributors" url="https://www.openstreetmap.org/copyright" theme={theme} />
         <LinkRow label="OpenRouteService" url="https://openrouteservice.org" theme={theme} />
+        <LinkRow label="© Mapbox" url="https://www.mapbox.com/about/maps/" theme={theme} />
         <Divider theme={theme} />
         <SubHeader label={t('about.creditsFontsLabel')} theme={theme} />
         <LinkRow label="Silkscreen" url="https://fonts.google.com/specimen/Silkscreen" theme={theme} />

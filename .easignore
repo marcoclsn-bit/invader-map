@@ -1,0 +1,44 @@
+# .easignore — utilisé par EAS Build À LA PLACE de .gitignore pour l'upload.
+# Identique à .gitignore MAIS on n'exclut PAS config/ors.js ni config/mapbox.js,
+# afin que les clés API soient présentes dans le build (sinon Trajet/Chasse et la
+# recherche d'adresse seraient cassés dans l'app publiée).
+
+# dependencies
+node_modules/
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# Native
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
+*.pem
+
+# local env files
+.env*.local
+
+# typescript
+*.tsbuildinfo
+
+# generated native folders
+/ios
+/android
