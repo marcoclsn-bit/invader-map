@@ -1,35 +1,22 @@
 import { Image } from 'react-native';
-import { useTheme } from '../theme/ThemeContext';
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Source unique des deux variantes du logo InvaderQuest.
-// Pour les remplacer : écraser ces deux fichiers dans assets/ (même nom).
+// Logo InvaderQuest — une seule source, lisible sur fond clair ET sombre
+// (le logo a son propre fond). Pour le remplacer : écraser ce fichier dans assets/.
 // ─────────────────────────────────────────────────────────────────────────────
-const LOGO_GREEN = require('../assets/Logo_Green.png'); // pour fonds CLAIRS
-const LOGO_WHITE = require('../assets/Logo_White.png'); // pour fonds SOMBRES
+const LOGO = require('../assets/LogoFinal.png');
 
 /**
- * <Logo /> — choisit automatiquement la variante lisible selon le thème, pour ne
- * jamais afficher un logo invisible (blanc sur clair / etc.).
- *   - thème clair  → logo vert  (le blanc serait invisible)
- *   - thème sombre → logo blanc
- * Override possible via `variant="green" | "white"` si le fond est connu
- * (ex. bandeau sombre en thème clair).
- *
+ * <Logo /> — affiche le logo InvaderQuest, indépendant du thème.
  * @param {number} size  côté en px (le logo est carré). Défaut 40.
+ * @param {object} style style additionnel éventuel.
  */
-export default function Logo({ size = 40, variant, style }) {
-  const { isDark } = useTheme();
-  const source =
-    variant === 'green' ? LOGO_GREEN :
-    variant === 'white' ? LOGO_WHITE :
-    (isDark ? LOGO_WHITE : LOGO_GREEN);
-
+export default function Logo({ size = 40, style }) {
   return (
     <Image
-      source={source}
-      style={[{ width: size, height: size }, style]}
-      resizeMode="contain"
+      source={LOGO}
+      style={[{ width: size, height: size, borderRadius: size * 0.22 }, style]}
+      resizeMode="cover"
       fadeDuration={0}
     />
   );
