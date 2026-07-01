@@ -489,7 +489,8 @@
       "addressNotFound": "Dirección no encontrada",
       "addressNotFoundFor": "Dirección no encontrada: «{{text}}»",
       "routeNotFound": "Ruta no encontrada entre estos dos puntos",
-      "routeCalc": "Error al calcular la ruta"
+      "routeCalc": "Error al calcular la ruta",
+      "limit": "Límite temporal alcanzado, inténtalo más tarde."
     }
   },
   "badges": {

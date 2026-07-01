@@ -489,7 +489,8 @@
       "addressNotFound": "Adresse introuvable",
       "addressNotFoundFor": "Adresse introuvable : « {{text}} »",
       "routeNotFound": "Itinéraire introuvable entre ces deux points",
-      "routeCalc": "Erreur lors du calcul de l'itinéraire"
+      "routeCalc": "Erreur lors du calcul de l'itinéraire",
+      "limit": "Limite temporaire atteinte, réessaie plus tard."
     }
   },
   "badges": {

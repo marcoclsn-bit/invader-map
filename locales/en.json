@@ -489,7 +489,8 @@
       "addressNotFound": "Address not found",
       "addressNotFoundFor": "Address not found: \"{{text}}\"",
       "routeNotFound": "Route not found between these two points",
-      "routeCalc": "Error calculating route"
+      "routeCalc": "Error calculating route",
+      "limit": "Temporary limit reached, please try again later."
     }
   },
   "badges": {
