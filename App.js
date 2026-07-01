@@ -24,6 +24,7 @@ import NewsScreen from './screens/NewsScreen';
 import StrollScreen from './screens/StrollScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import AboutScreen from './screens/AboutScreen';
+import GuideScreen from './screens/GuideScreen';
 import PrivacyPolicyScreen from './screens/PrivacyPolicyScreen';
 import IdeaScreen from './screens/IdeaScreen';
 import OnboardingScreen from './screens/OnboardingScreen';
@@ -163,6 +164,18 @@ function AppShell() {
             options={{
               headerShown: true,
               title: t('privacy.title'),
+              headerTintColor: theme.accent,
+              headerTitleStyle: { fontFamily: 'Silkscreen_700Bold', fontSize: 16, color: theme.textPrimary },
+              headerStyle: { backgroundColor: theme.surface },
+              contentStyle: { backgroundColor: theme.bg },
+            }}
+          />
+          <Root.Screen
+            name="Guide"
+            component={GuideScreen}
+            options={{
+              headerShown: true,
+              title: t('guide.title'),
               headerTintColor: theme.accent,
               headerTitleStyle: { fontFamily: 'Silkscreen_700Bold', fontSize: 16, color: theme.textPrimary },
               headerStyle: { backgroundColor: theme.surface },

@@ -576,5 +576,90 @@
   },
   "privacy": {
     "title": "Confidentialité"
+  },
+  "guide": {
+    "title": "Comment ça marche",
+    "flagship": "Fonction phare",
+    "howto": "Comment faire",
+    "intro": "Bienvenue ! InvaderQuest t'aide à repérer et flasher les mosaïques Space Invader. Tout est gratuit et tes données restent sur ton téléphone. Voici comment tirer le meilleur de chaque mode.",
+    "groups": {
+      "field": "Sur le terrain",
+      "progress": "Suivre ta progression",
+      "manage": "Gérer tes flashs"
+    },
+    "sections": {
+      "carte": {
+        "title": "La carte",
+        "benefit": "Ton terrain de jeu : tous les Invaders autour de toi, colorés selon leur état. Par défaut, tu ne vois que ceux qu'il te reste à flasher.",
+        "steps": [
+          "Chaque alien a une couleur selon son état (OK, endommagé, détruit, non vérifié — et « flashé » une fois marqué).",
+          "Touche un Invader pour ouvrir sa fiche (points, indice, lien Instagram) et le marquer comme flashé.",
+          "Ouvre les filtres pour afficher ou masquer les flashés, les détruits, etc."
+        ]
+      },
+      "chasse": {
+        "title": "Chasse",
+        "benefit": "Dis à l'app combien de temps tu as : elle te trace la meilleure boucle pour flasher un max d'Invaders et revenir à ton point de départ.",
+        "steps": [
+          "Choisis ta durée (30 min, 1 h, 2 h…) et ton mode (à pied ou à vélo).",
+          "Choisis une zone : autour de toi, ou un ou plusieurs arrondissements.",
+          "Appuie sur Générer pour obtenir l'itinéraire en boucle, puis Démarrer pour te faire guider."
+        ]
+      },
+      "trajet": {
+        "title": "Trajet",
+        "benefit": "Tu vas d'un point A à un point B ? Découvre tous les Invaders à flasher le long de ton chemin.",
+        "steps": [
+          "Renseigne ton point de départ et ton arrivée (ou pars de ta position).",
+          "Règle la largeur du couloir de recherche autour du trajet.",
+          "Suis la liste des Invaders sur le chemin et flash-les au passage."
+        ]
+      },
+      "balade": {
+        "title": "Mode balade",
+        "benefit": "Laisse l'app veiller pour toi : elle t'alerte quand tu passes près d'un Invader non flashé, même app fermée.",
+        "steps": [
+          "Active le Mode balade depuis le menu.",
+          "Autorise la localisation « Toujours » (indispensable pour les alertes en arrière-plan).",
+          "Balade-toi normalement : tu reçois une notification à proximité d'un Invader."
+        ]
+      },
+      "palmares": {
+        "title": "Palmarès & villes",
+        "benefit": "Visualise ta progression ville par ville, et arrondissement par arrondissement à Paris.",
+        "steps": [
+          "Ouvre le Palmarès depuis le menu.",
+          "Consulte ton pourcentage de complétion par ville et par zone.",
+          "Change de ville pour explorer et flasher ailleurs."
+        ]
+      },
+      "stats": {
+        "title": "Stats & profil",
+        "benefit": "Suis ton évolution dans le temps et façonne ton profil de chasseur.",
+        "steps": [
+          "Ouvre Stats depuis le menu.",
+          "Regarde ta courbe de progression, tes séries et tes trophées.",
+          "Personnalise ton pseudo et ton avatar en haut de la page."
+        ]
+      },
+      "news": {
+        "title": "Actus",
+        "benefit": "Reste au courant des nouveautés et des Invaders récemment ajoutés dans tes villes.",
+        "steps": [
+          "Ouvre Actus depuis le menu (une pastille signale les nouveautés).",
+          "Abonne-toi aux villes qui t'intéressent pour suivre leurs mises à jour.",
+          "Reviens régulièrement : les données sont rafraîchies automatiquement."
+        ]
+      },
+      "flash": {
+        "title": "Marquer tes flashés",
+        "benefit": "Garde la trace de ce que tu as déjà flashé — à la main, ou en masse.",
+        "steps": [
+          "Sur la fiche d'un Invader, appuie sur le bouton pour le marquer comme flashé.",
+          "Dans la Liste, marque plusieurs Invaders d'un coup et filtre par statut.",
+          "Utilise les étiquettes pour organiser tes Invaders à ta façon."
+        ]
+      }
+    }
   }
 }

@@ -576,5 +576,90 @@
   },
   "privacy": {
     "title": "Privacy"
+  },
+  "guide": {
+    "title": "How it works",
+    "flagship": "Flagship feature",
+    "howto": "How to",
+    "intro": "Welcome! InvaderQuest helps you spot and flash Space Invader mosaics. Everything is free and your data stays on your phone. Here's how to get the most out of each mode.",
+    "groups": {
+      "field": "In the field",
+      "progress": "Track your progress",
+      "manage": "Manage your flashes"
+    },
+    "sections": {
+      "carte": {
+        "title": "The map",
+        "benefit": "Your playground: every Invader around you, colored by its state. By default you only see the ones you still have to flash.",
+        "steps": [
+          "Each alien has a color for its state (OK, damaged, destroyed, unverified — and “flashed” once marked).",
+          "Tap an Invader to open its card (points, hint, Instagram link) and mark it as flashed.",
+          "Open the filters to show or hide flashed, destroyed ones, etc."
+        ]
+      },
+      "chasse": {
+        "title": "Hunt",
+        "benefit": "Tell the app how much time you have: it plots the best loop to flash as many Invaders as possible and bring you back to your start.",
+        "steps": [
+          "Pick your duration (30 min, 1 h, 2 h…) and mode (walking or cycling).",
+          "Pick an area: around you, or one or more districts.",
+          "Tap Generate for the loop route, then Start to be guided."
+        ]
+      },
+      "trajet": {
+        "title": "Route",
+        "benefit": "Going from A to B? Discover every Invader to flash along your way.",
+        "steps": [
+          "Enter your start and destination (or start from your location).",
+          "Adjust the width of the search corridor around the route.",
+          "Follow the list of Invaders on the way and flash them as you go."
+        ]
+      },
+      "balade": {
+        "title": "Stroll mode",
+        "benefit": "Let the app watch for you: it alerts you when you pass near an unflashed Invader, even when the app is closed.",
+        "steps": [
+          "Turn on Stroll mode from the menu.",
+          "Allow “Always” location access (required for background alerts).",
+          "Just walk around: you get a notification near an Invader."
+        ]
+      },
+      "palmares": {
+        "title": "Rankings & cities",
+        "benefit": "See your progress city by city, and district by district in Paris.",
+        "steps": [
+          "Open Rankings from the menu.",
+          "Check your completion percentage per city and per area.",
+          "Switch city to explore and flash elsewhere."
+        ]
+      },
+      "stats": {
+        "title": "Stats & profile",
+        "benefit": "Track your progress over time and shape your hunter profile.",
+        "steps": [
+          "Open Stats from the menu.",
+          "Look at your progress curve, streaks and trophies.",
+          "Customize your nickname and avatar at the top of the page."
+        ]
+      },
+      "news": {
+        "title": "News",
+        "benefit": "Stay up to date with what's new and recently added Invaders in your cities.",
+        "steps": [
+          "Open News from the menu (a dot signals what's new).",
+          "Subscribe to the cities you care about to follow their updates.",
+          "Come back regularly: data refreshes automatically."
+        ]
+      },
+      "flash": {
+        "title": "Mark your flashes",
+        "benefit": "Keep track of what you've already flashed — one by one, or in bulk.",
+        "steps": [
+          "On an Invader's card, tap the button to mark it as flashed.",
+          "In the List, mark several Invaders at once and filter by status.",
+          "Use labels to organize your Invaders your way."
+        ]
+      }
+    }
   }
 }

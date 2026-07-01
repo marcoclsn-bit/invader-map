@@ -576,5 +576,90 @@
   },
   "privacy": {
     "title": "Privacidad"
+  },
+  "guide": {
+    "title": "Cómo funciona",
+    "flagship": "Función estrella",
+    "howto": "Cómo hacerlo",
+    "intro": "¡Bienvenido! InvaderQuest te ayuda a localizar y fotografiar los mosaicos Space Invader. Todo es gratis y tus datos se quedan en tu teléfono. Así aprovechas cada modo.",
+    "groups": {
+      "field": "Sobre el terreno",
+      "progress": "Sigue tu progreso",
+      "manage": "Gestiona tus flashes"
+    },
+    "sections": {
+      "carte": {
+        "title": "El mapa",
+        "benefit": "Tu campo de juego: todos los Invaders a tu alrededor, coloreados según su estado. Por defecto solo ves los que te quedan por fotografiar.",
+        "steps": [
+          "Cada alien tiene un color según su estado (OK, dañado, destruido, sin verificar — y «fotografiado» al marcarlo).",
+          "Toca un Invader para abrir su ficha (puntos, pista, enlace de Instagram) y marcarlo como fotografiado.",
+          "Abre los filtros para mostrar u ocultar los fotografiados, los destruidos, etc."
+        ]
+      },
+      "chasse": {
+        "title": "Caza",
+        "benefit": "Dile a la app cuánto tiempo tienes: traza el mejor circuito para fotografiar el máximo de Invaders y volver a tu punto de partida.",
+        "steps": [
+          "Elige tu duración (30 min, 1 h, 2 h…) y tu modo (a pie o en bici).",
+          "Elige una zona: a tu alrededor, o uno o varios distritos.",
+          "Pulsa Generar para obtener el circuito y luego Empezar para que te guíe."
+        ]
+      },
+      "trajet": {
+        "title": "Ruta",
+        "benefit": "¿Vas de un punto A a un punto B? Descubre todos los Invaders para fotografiar por el camino.",
+        "steps": [
+          "Indica tu salida y tu destino (o parte de tu ubicación).",
+          "Ajusta el ancho del corredor de búsqueda alrededor de la ruta.",
+          "Sigue la lista de Invaders del camino y fotografíalos al pasar."
+        ]
+      },
+      "balade": {
+        "title": "Modo paseo",
+        "benefit": "Deja que la app vigile por ti: te avisa cuando pasas cerca de un Invader sin fotografiar, incluso con la app cerrada.",
+        "steps": [
+          "Activa el Modo paseo desde el menú.",
+          "Permite la ubicación «Siempre» (imprescindible para los avisos en segundo plano).",
+          "Pasea con normalidad: recibes una notificación cerca de un Invader."
+        ]
+      },
+      "palmares": {
+        "title": "Clasificación y ciudades",
+        "benefit": "Visualiza tu progreso ciudad por ciudad, y distrito por distrito en París.",
+        "steps": [
+          "Abre la Clasificación desde el menú.",
+          "Consulta tu porcentaje de completado por ciudad y por zona.",
+          "Cambia de ciudad para explorar y fotografiar en otros sitios."
+        ]
+      },
+      "stats": {
+        "title": "Estadísticas y perfil",
+        "benefit": "Sigue tu evolución en el tiempo y da forma a tu perfil de cazador.",
+        "steps": [
+          "Abre Estadísticas desde el menú.",
+          "Mira tu curva de progreso, tus rachas y tus trofeos.",
+          "Personaliza tu apodo y tu avatar en la parte superior de la página."
+        ]
+      },
+      "news": {
+        "title": "Novedades",
+        "benefit": "Mantente al día de las novedades y de los Invaders añadidos recientemente en tus ciudades.",
+        "steps": [
+          "Abre Novedades desde el menú (un punto indica las novedades).",
+          "Suscríbete a las ciudades que te interesan para seguir sus actualizaciones.",
+          "Vuelve con regularidad: los datos se actualizan automáticamente."
+        ]
+      },
+      "flash": {
+        "title": "Marca tus flashes",
+        "benefit": "Lleva el registro de lo que ya has fotografiado — uno a uno o en masa.",
+        "steps": [
+          "En la ficha de un Invader, pulsa el botón para marcarlo como fotografiado.",
+          "En la Lista, marca varios Invaders a la vez y filtra por estado.",
+          "Usa las etiquetas para organizar tus Invaders a tu manera."
+        ]
+      }
+    }
   }
 }

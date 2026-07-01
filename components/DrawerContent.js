@@ -100,6 +100,12 @@ export default function DrawerContent({ navigation, state }) {
           theme={theme}
         />
         <NavItem
+          icon="help-circle-outline"
+          label={t('guide.title')}
+          onPress={() => goToModal('Guide')}
+          theme={theme}
+        />
+        <NavItem
           icon="information-circle-outline"
           label={t('about.title')}
           onPress={() => goToModal('À propos')}

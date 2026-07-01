@@ -576,5 +576,90 @@
   },
   "privacy": {
     "title": "Riservatezza"
+  },
+  "guide": {
+    "title": "Come funziona",
+    "flagship": "Funzione di punta",
+    "howto": "Come fare",
+    "intro": "Benvenuto! InvaderQuest ti aiuta a individuare e flashare i mosaici Space Invader. Tutto è gratuito e i tuoi dati restano sul telefono. Ecco come sfruttare al meglio ogni modalità.",
+    "groups": {
+      "field": "Sul campo",
+      "progress": "Segui i tuoi progressi",
+      "manage": "Gestisci i tuoi flash"
+    },
+    "sections": {
+      "carte": {
+        "title": "La mappa",
+        "benefit": "Il tuo campo di gioco: tutti gli Invader intorno a te, colorati in base al loro stato. Di default vedi solo quelli che ti restano da flashare.",
+        "steps": [
+          "Ogni alieno ha un colore in base allo stato (OK, danneggiato, distrutto, non verificato — e «flashato» una volta segnato).",
+          "Tocca un Invader per aprire la sua scheda (punti, indizio, link Instagram) e segnarlo come flashato.",
+          "Apri i filtri per mostrare o nascondere i flashati, i distrutti, ecc."
+        ]
+      },
+      "chasse": {
+        "title": "Caccia",
+        "benefit": "Di' all'app quanto tempo hai: traccia il miglior giro per flashare più Invader possibile e riportarti al punto di partenza.",
+        "steps": [
+          "Scegli la durata (30 min, 1 h, 2 h…) e la modalità (a piedi o in bici).",
+          "Scegli una zona: intorno a te, o uno o più quartieri.",
+          "Premi Genera per ottenere il percorso ad anello, poi Avvia per farti guidare."
+        ]
+      },
+      "trajet": {
+        "title": "Percorso",
+        "benefit": "Vai da un punto A a un punto B? Scopri tutti gli Invader da flashare lungo la strada.",
+        "steps": [
+          "Inserisci partenza e arrivo (o parti dalla tua posizione).",
+          "Regola la larghezza del corridoio di ricerca attorno al percorso.",
+          "Segui la lista degli Invader sul cammino e flashali al volo."
+        ]
+      },
+      "balade": {
+        "title": "Modalità passeggiata",
+        "benefit": "Lascia che l'app vegli per te: ti avvisa quando passi vicino a un Invader non flashato, anche ad app chiusa.",
+        "steps": [
+          "Attiva la Modalità passeggiata dal menu.",
+          "Consenti la posizione «Sempre» (indispensabile per gli avvisi in background).",
+          "Cammina normalmente: ricevi una notifica vicino a un Invader."
+        ]
+      },
+      "palmares": {
+        "title": "Classifica e città",
+        "benefit": "Visualizza i tuoi progressi città per città, e quartiere per quartiere a Parigi.",
+        "steps": [
+          "Apri la Classifica dal menu.",
+          "Controlla la tua percentuale di completamento per città e per zona.",
+          "Cambia città per esplorare e flashare altrove."
+        ]
+      },
+      "stats": {
+        "title": "Statistiche e profilo",
+        "benefit": "Segui la tua evoluzione nel tempo e plasma il tuo profilo da cacciatore.",
+        "steps": [
+          "Apri Statistiche dal menu.",
+          "Guarda la tua curva di progressione, le serie e i trofei.",
+          "Personalizza nickname e avatar in cima alla pagina."
+        ]
+      },
+      "news": {
+        "title": "Novità",
+        "benefit": "Resta aggiornato sulle novità e sugli Invader aggiunti di recente nelle tue città.",
+        "steps": [
+          "Apri Novità dal menu (un pallino segnala le novità).",
+          "Iscriviti alle città che ti interessano per seguirne gli aggiornamenti.",
+          "Torna regolarmente: i dati si aggiornano automaticamente."
+        ]
+      },
+      "flash": {
+        "title": "Segna i tuoi flash",
+        "benefit": "Tieni traccia di ciò che hai già flashato — uno a uno o in blocco.",
+        "steps": [
+          "Nella scheda di un Invader, tocca il pulsante per segnarlo come flashato.",
+          "Nella Lista, segna più Invader in una volta e filtra per stato.",
+          "Usa le etichette per organizzare i tuoi Invader a modo tuo."
+        ]
+      }
+    }
   }
 }
