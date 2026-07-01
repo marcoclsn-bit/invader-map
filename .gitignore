@@ -30,12 +30,9 @@ yarn-error.*
 .DS_Store
 *.pem
 
-# local env files
+# local env files (contiennent les clés API en dev)
+.env
 .env*.local
-
-# clés API (ne pas committer)
-config/ors.js
-config/mapbox.js
 
 # typescript
 *.tsbuildinfo
