@@ -103,7 +103,7 @@ function ArrondissementsView({ stats, insets, onBack, onOpenDrawer, onHuntAr, th
 
 // ─── Écran Palmarès ───────────────────────────────────────────────────────────
 
-export default function PalmèresScreen({ navigation }) {
+export default function PalmaresScreen({ navigation }) {
   const insets = useSafeAreaInsets();
   const { invaders, flashed, currentCityCode, setCurrentCity, cityIndex, isChangingCity, mapLockUntil } = useAppContext();
   const { theme } = useTheme();

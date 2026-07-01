@@ -18,7 +18,7 @@ import MapScreen from './screens/MapScreen';
 import ListScreen from './screens/ListScreen';
 import TrajetScreen from './screens/TrajetScreen';
 import ChasseScreen from './screens/ChasseScreen';
-import PalmèresScreen from './screens/PalmèresScreen';
+import PalmaresScreen from './screens/PalmaresScreen';
 import StatsScreen from './screens/StatsScreen';
 import NewsScreen from './screens/NewsScreen';
 import StrollScreen from './screens/StrollScreen';
@@ -95,7 +95,7 @@ function DrawerNavigator() {
       />
       {/* Écrans accessibles via le menu hamburger */}
       <Drawer.Screen name="Liste" component={ListScreen} />
-      <Drawer.Screen name="Palmarès" component={PalmèresScreen} />
+      <Drawer.Screen name="Palmarès" component={PalmaresScreen} />
       <Drawer.Screen name="Stats" component={StatsScreen} />
       <Drawer.Screen name="News" component={NewsScreen} />
       <Drawer.Screen name="Balade" component={StrollScreen} />
