@@ -262,6 +262,11 @@ export default function SettingsScreen({ navigation }) {
           label={t('settings.aboutEntry')}
           onPress={() => navigation.navigate('À propos')}
           trailing={<Ionicons name="chevron-forward" size={16} color={theme.textSecondary} />}
+        />
+        <Row
+          label={t('privacy.title')}
+          onPress={() => navigation.navigate('Confidentialité')}
+          trailing={<Ionicons name="chevron-forward" size={16} color={theme.textSecondary} />}
           last
         />
       </Section>

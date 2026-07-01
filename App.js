@@ -24,6 +24,7 @@ import NewsScreen from './screens/NewsScreen';
 import StrollScreen from './screens/StrollScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import AboutScreen from './screens/AboutScreen';
+import PrivacyPolicyScreen from './screens/PrivacyPolicyScreen';
 import IdeaScreen from './screens/IdeaScreen';
 import OnboardingScreen from './screens/OnboardingScreen';
 import DrawerContent from './components/DrawerContent';
@@ -150,6 +151,18 @@ function AppShell() {
             options={{
               headerShown: true,
               title: t('about.title'),
+              headerTintColor: theme.accent,
+              headerTitleStyle: { fontFamily: 'Silkscreen_700Bold', fontSize: 16, color: theme.textPrimary },
+              headerStyle: { backgroundColor: theme.surface },
+              contentStyle: { backgroundColor: theme.bg },
+            }}
+          />
+          <Root.Screen
+            name="Confidentialité"
+            component={PrivacyPolicyScreen}
+            options={{
+              headerShown: true,
+              title: t('privacy.title'),
               headerTintColor: theme.accent,
               headerTitleStyle: { fontFamily: 'Silkscreen_700Bold', fontSize: 16, color: theme.textPrimary },
               headerStyle: { backgroundColor: theme.surface },

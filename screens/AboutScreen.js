@@ -2,6 +2,7 @@ import { ScrollView, View, Text, TouchableOpacity, Linking, StyleSheet } from 'r
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
+import { useNavigation } from '@react-navigation/native';
 import { useAppContext } from '../context/AppContext';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
@@ -90,6 +91,7 @@ function LegalBlock({ text, theme }) {
 export default function AboutScreen() {
   const { t } = useTranslation();
   const { theme } = useTheme();
+  const navigation = useNavigation();
   const { dataVersion, dataUpdatedAt } = useAppContext();
   const insets = useSafeAreaInsets();
 
@@ -149,6 +151,18 @@ export default function AboutScreen() {
         <SubHeader label={t('about.creditsFontsLabel')} theme={theme} />
         <LinkRow label="Silkscreen" url="https://fonts.google.com/specimen/Silkscreen" theme={theme} />
         <LinkRow label="Press Start 2P" url="https://fonts.google.com/specimen/Press+Start+2P" last theme={theme} />
+      </Section>
+
+      {/* ── Confidentialité ── */}
+      <Section title={t('privacy.title')} theme={theme}>
+        <TouchableOpacity
+          style={styles.linkRow}
+          onPress={() => navigation.navigate('Confidentialité')}
+          activeOpacity={0.6}
+        >
+          <Text style={[styles.linkLabel, { color: theme.textPrimary }]}>{t('privacy.title')}</Text>
+          <Ionicons name="chevron-forward" size={16} color={theme.textSecondary} style={styles.linkIcon} />
+        </TouchableOpacity>
       </Section>
 
       {/* ── Mentions légales ── */}

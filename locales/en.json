@@ -573,5 +573,8 @@
   },
   "celebration": {
     "title": "Trophy unlocked!"
+  },
+  "privacy": {
+    "title": "Privacy"
   }
 }
