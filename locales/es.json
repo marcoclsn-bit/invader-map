@@ -129,7 +129,9 @@
       "routeCalc": "Error al calcular la ruta"
     },
     "searchingInvaders": "Buscando Invaders…",
-    "todoPointsSuffix": " ({{points}} pts)"
+    "todoPointsSuffix": " ({{points}} pts)",
+    "noInvadersHint": "Prueba a ampliar el corredor de búsqueda alrededor de la ruta.",
+    "widenCorridor": "Ampliar el corredor"
   },
   "hunt": {
     "aroundMe": "A mi alrededor",
@@ -149,7 +151,7 @@
     "resultCount_one": "{{count}} Invader",
     "resultCount_other": "{{count}} Invaders",
     "error": {
-      "noInvadersReachable": "Ningún Invader alcanzable con este tiempo. Intenta aumentar el tiempo o cambiar el punto de partida.",
+      "noInvadersReachable": "Ningún Invader para fotografiar aquí con tus ajustes. Prueba a aumentar la duración, ampliar la zona o desactivar el filtro «solo sin fotografiar».",
       "addressNotFound": "Dirección no encontrada",
       "routeNotFound": "Ruta no encontrada",
       "routeCalc": "Imposible calcular la ruta",

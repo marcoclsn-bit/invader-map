@@ -167,7 +167,7 @@ function RouteInvaderRow({ inv, isFlashed, statusColors, onPress }) {
 
 // ─── Panneau résultat : compteur + filtre + liste ─────────────────────────────
 
-function RoutePanel({ allInvaders, displayInvaders, flashed, statusColors, showOnlyUnflashed, onToggleFilter, onSelectInvader }) {
+function RoutePanel({ allInvaders, displayInvaders, flashed, statusColors, showOnlyUnflashed, onToggleFilter, onSelectInvader, onWidenCorridor }) {
   const { theme } = useTheme();
   const { t } = useTranslation();
   const styles = getStyles(theme);
@@ -202,7 +202,15 @@ function RoutePanel({ allInvaders, displayInvaders, flashed, statusColors, showO
           </View>
         )}
       </View>
-      {total === 0 ? null : displayInvaders.length === 0 ? (
+      {total === 0 ? (
+        <View style={styles.routeEmpty}>
+          <Text style={styles.routeEmptyHint}>{t('route.noInvadersHint')}</Text>
+          <TouchableOpacity style={styles.widenBtn} onPress={onWidenCorridor} activeOpacity={0.85}>
+            <Ionicons name="expand-outline" size={16} color={theme.bg} />
+            <Text style={styles.widenBtnText}>{t('route.widenCorridor')}</Text>
+          </TouchableOpacity>
+        </View>
+      ) : displayInvaders.length === 0 ? (
         <Text style={styles.listEmpty}>{t('route.allFlashed')}</Text>
       ) : (
         <FlatList
@@ -974,6 +982,7 @@ export default function TrajetScreen() {
             showOnlyUnflashed={showOnlyUnflashed}
             onToggleFilter={setShowOnlyUnflashed}
             onSelectInvader={selectRouteInvader}
+            onWidenCorridor={() => setInputCollapsed(false)}
           />
         )}
 
@@ -1111,6 +1120,13 @@ function makeStyles(t) {
     toggleLabel: { fontSize: 13, color: t.textSecondary },
     routeList: { flex: 1 },
     listEmpty: { fontSize: 14, color: t.textSecondary, textAlign: 'center', marginTop: 24, paddingHorizontal: 16 },
+    routeEmpty: { alignItems: 'center', paddingHorizontal: 20, paddingTop: 18 },
+    routeEmptyHint: { fontSize: 13, color: t.textSecondary, textAlign: 'center', lineHeight: 19, marginBottom: 14 },
+    widenBtn: {
+      flexDirection: 'row', alignItems: 'center', gap: 6,
+      backgroundColor: t.accent, borderRadius: 20, paddingHorizontal: 16, paddingVertical: 9,
+    },
+    widenBtnText: { color: t.bg, fontWeight: '600', fontSize: 14 },
 
     routeRow: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 16, height: 48, gap: 10 },
     routeDot: { width: 10, height: 10, borderRadius: 5, flexShrink: 0 },

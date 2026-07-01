@@ -129,7 +129,9 @@
       "routeCalc": "Erreur lors du calcul de l'itinéraire"
     },
     "searchingInvaders": "Recherche d’Invaders en cours…",
-    "todoPointsSuffix": " ({{points}} pts)"
+    "todoPointsSuffix": " ({{points}} pts)",
+    "noInvadersHint": "Essaie d'élargir le couloir de recherche autour du trajet.",
+    "widenCorridor": "Élargir le couloir"
   },
   "hunt": {
     "aroundMe": "Autour de moi",
@@ -149,7 +151,7 @@
     "resultCount_one": "{{count}} Invader",
     "resultCount_other": "{{count}} Invaders",
     "error": {
-      "noInvadersReachable": "Aucun Invader atteignable avec ce budget. Essaie d'augmenter le temps ou de changer de point de départ.",
+      "noInvadersReachable": "Aucun Invader à flasher ici selon tes réglages. Essaie d'augmenter la durée, d'élargir la zone, ou de désactiver le filtre « non flashés ».",
       "addressNotFound": "Adresse introuvable",
       "routeNotFound": "Itinéraire introuvable",
       "routeCalc": "Calcul d'itinéraire impossible",

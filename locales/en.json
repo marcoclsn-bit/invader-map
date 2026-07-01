@@ -129,7 +129,9 @@
       "routeCalc": "Error calculating route"
     },
     "searchingInvaders": "Searching for Invaders…",
-    "todoPointsSuffix": " ({{points}} pts)"
+    "todoPointsSuffix": " ({{points}} pts)",
+    "noInvadersHint": "Try widening the search corridor around the route.",
+    "widenCorridor": "Widen corridor"
   },
   "hunt": {
     "aroundMe": "Around me",
@@ -149,7 +151,7 @@
     "resultCount_one": "{{count}} Invader",
     "resultCount_other": "{{count}} Invaders",
     "error": {
-      "noInvadersReachable": "No Invaders reachable within this time budget. Try increasing the time or changing your starting point.",
+      "noInvadersReachable": "No Invaders to flash here with your settings. Try increasing the duration, widening the area, or turning off the “unflashed only” filter.",
       "addressNotFound": "Address not found",
       "routeNotFound": "Route not found",
       "routeCalc": "Unable to calculate route",
