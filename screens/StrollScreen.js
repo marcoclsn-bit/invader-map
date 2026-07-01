@@ -10,6 +10,7 @@ import { DrawerActions } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useAppContext, STROLL_STATUS_OPTIONS } from '../context/AppContext';
 import { useGamification } from '../context/GamificationContext';
+import { canUseFeature, FEATURES } from '../services/featureAccess';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import { STATUS_COLOR } from '../constants';
@@ -95,6 +96,9 @@ export default function StrollScreen({ navigation }) {
       }
       return;
     }
+    // Portail d'autorisation (v2 : abonnement + quotas). Aujourd'hui : toujours allowed.
+    const access = await canUseFeature(FEATURES.BALADE);
+    if (!access.allowed) { /* TODO v2: afficher paywall */ return; }
     // Activation : on demande les autorisations
     const { foreground, background } = await requestStrollPermissions();
     if (!foreground) {

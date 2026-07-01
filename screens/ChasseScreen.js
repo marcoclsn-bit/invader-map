@@ -22,6 +22,7 @@ import HeadingCone from '../components/HeadingCone';
 import { openNavigationApp } from '../utils/navigation';
 import { useSessionRecorder } from '../components/session/useSessionRecorder';
 import { useGamification } from '../context/GamificationContext';
+import { canUseFeature, FEATURES } from '../services/featureAccess';
 
 const _PA        = CITIES.PA;
 const PARIS      = { latitude: _PA.center.lat, longitude: _PA.center.lng, ..._PA.mapDelta };
@@ -385,6 +386,9 @@ export default function ChasseScreen({ route }) {
 
   async function generate() {
     Keyboard.dismiss();
+    // Portail d'autorisation (v2 : abonnement + quotas). Aujourd'hui : toujours allowed.
+    const access = await canUseFeature(FEATURES.CHASSE);
+    if (!access.allowed) { /* TODO v2: afficher paywall */ return; }
     setError(null);
     setResult(null);
     setSelectedInv(null);

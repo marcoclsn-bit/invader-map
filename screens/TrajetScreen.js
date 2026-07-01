@@ -17,6 +17,7 @@ import { useAppContext } from '../context/AppContext';
 import { CITIES } from '../cities/registry';
 import { countryCodeOf } from '../cities/countries';
 import { geocode, autocomplete, route } from '../services/routing';
+import { canUseFeature, FEATURES } from '../services/featureAccess';
 import InvaderMarker from '../components/InvaderMarker';
 import HeadingCone from '../components/HeadingCone';
 import InvaderPanel from '../components/InvaderPanel';
@@ -601,6 +602,9 @@ export default function TrajetScreen() {
 
   async function calculate() {
     Keyboard.dismiss();
+    // Portail d'autorisation (v2 : abonnement + quotas). Aujourd'hui : toujours allowed.
+    const access = await canUseFeature(FEATURES.TRAJET);
+    if (!access.allowed) { /* TODO v2: afficher paywall */ return; }
     if (!arrText.trim()) { setError(t('route.error.noArrival')); return; }
     if (!ORS_API_KEY || ORS_API_KEY === 'VOTRE_CLE_API_ORS_ICI') { setError(t('route.error.noApiKey')); return; }
 
