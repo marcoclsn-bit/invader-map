@@ -380,7 +380,14 @@
       "it": "Italiano"
     },
     "aboutEntry": "Informazioni",
-    "replayOnboarding": "Rivedere l'introduzione"
+    "replayOnboarding": "Rivedere l'introduzione",
+    "timeline": {
+      "reset": "Reimposta la cronologia temporale",
+      "resetHint": "Cancella le date dei flash (mantiene i tuoi flash). Le statistiche nel tempo si azzerano; totali e % restano.",
+      "resetTitle": "Reimpostare la cronologia temporale?",
+      "resetMsg": "Le date dei flash verranno cancellate (curva, serie, giorno migliore, giorno/notte si azzerano). I tuoi Invader flashati, totali e percentuali restano.",
+      "resetAction": "Reimposta"
+    }
   },
   "feedback": {
     "noMailTitle": "Nessuna app email",

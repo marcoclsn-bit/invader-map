@@ -100,7 +100,7 @@ export default function SettingsScreen({ navigation }) {
     mapsApp, setMapsAppPref,
     language, setLanguage,
     resetOnboarding,
-    resetLabels,
+    resetLabels, clearFlashDates,
     dataVersion, dataUpdatedAt, checkDataUpdate,
   } = useAppContext();
 
@@ -122,6 +122,17 @@ export default function SettingsScreen({ navigation }) {
       [
         { text: t('common.cancel'), style: 'cancel' },
         { text: t('settings.labels.resetAction'), style: 'destructive', onPress: resetLabels },
+      ]
+    );
+  }
+
+  function confirmClearDates() {
+    Alert.alert(
+      t('settings.timeline.resetTitle'),
+      t('settings.timeline.resetMsg'),
+      [
+        { text: t('common.cancel'), style: 'cancel' },
+        { text: t('settings.timeline.resetAction'), style: 'destructive', onPress: clearFlashDates },
       ]
     );
   }
@@ -227,6 +238,12 @@ export default function SettingsScreen({ navigation }) {
           <Text style={{ color: theme.textSecondary, fontSize: 20 }}>›</Text>
         </TouchableOpacity>
 
+        <Row
+          label={t('settings.timeline.reset')}
+          hint={t('settings.timeline.resetHint')}
+          onPress={confirmClearDates}
+          destructive
+        />
         <Row
           label={t('settings.labels.resetAll')}
           hint={t('settings.labels.resetHint')}

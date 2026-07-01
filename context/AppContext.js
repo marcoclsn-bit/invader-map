@@ -372,7 +372,10 @@ export function AppProvider({ children }) {
 
   // ─── Flashé ──────────────────────────────────────────────────────────────────
 
-  function toggleFlash(id) {
+  // dated=true (Carte/Trajet/Chasse) : flash horodaté → compte dans les stats temporelles.
+  // dated=false (Liste) : flash « historique » sans date → compte dans les totaux/géo
+  // mais PAS dans les stats temporelles (courbe, série, meilleure journée, jour/nuit).
+  function toggleFlash(id, { dated = true } = {}) {
     const removing = flashed.has(id);
     setFlashed(prev => {
       const next = new Set(prev);
@@ -381,26 +384,30 @@ export function AppProvider({ children }) {
     });
     setFlashedDates(prev => {
       const next = new Map(prev);
-      if (removing) { next.delete(id); } else { next.set(id, new Date().toISOString()); }
+      if (removing) next.delete(id);
+      else if (dated) next.set(id, new Date().toISOString());
+      // dated=false : on n'ajoute AUCUNE date (flash hors historique temporel)
       return next;
     });
   }
 
-  // Flashe en masse une liste d'ids (défaut : la ville courante). FUSIONNE avec
-  // l'existant → ne touche jamais aux flashés des autres villes.
+  // Marquage en masse (Liste) = mise à jour de l'historique déjà flashé.
+  // On N'AJOUTE PAS de date → ces flashs comptent dans les totaux/géo mais pas
+  // dans les stats temporelles. FUSIONNE (ne touche pas aux autres villes).
   function bulkFlash(ids) {
     const list = ids ?? invaders.map(inv => inv.id);
-    const now = new Date().toISOString();
     setFlashed(prev => {
       const next = new Set(prev);
       for (const id of list) next.add(id);
       return next;
     });
-    setFlashedDates(prev => {
-      const next = new Map(prev);
-      for (const id of list) { if (!next.has(id)) next.set(id, now); } // préserve la date existante
-      return next;
-    });
+    // volontairement : aucune écriture dans flashedDates (voir commentaire ci-dessus)
+  }
+
+  // Efface tout l'historique temporel (garde les flashés). Utile pour repartir
+  // d'une timeline propre après un import massif daté par erreur.
+  function clearFlashDates() {
+    setFlashedDates(new Map());
   }
 
   function bulkUnflash(ids) {
@@ -526,7 +533,7 @@ export function AppProvider({ children }) {
       flashed, flashedDates, getFlashHistory,
       labels, labelDefs, statusColors, colorOverrides,
       filters, setFilters,
-      toggleFlash, bulkFlash, bulkUnflash,
+      toggleFlash, bulkFlash, bulkUnflash, clearFlashDates,
       setStatusColor, setFlashedColor,
       // News
       news, newsCities, setNewsCitiesPref, newsLastSeen, markNewsSeen, newsUnreadCount,

@@ -380,7 +380,14 @@
       "it": "Italiano"
     },
     "aboutEntry": "À propos",
-    "replayOnboarding": "Revoir l'introduction"
+    "replayOnboarding": "Revoir l'introduction",
+    "timeline": {
+      "reset": "Réinitialiser l’historique temporel",
+      "resetHint": "Efface les dates de flash (garde tes flashés). Les stats dans le temps repartent à zéro ; totaux et % conservés.",
+      "resetTitle": "Réinitialiser l’historique temporel ?",
+      "resetMsg": "Les dates de flash seront effacées (courbe, série, meilleure journée, jour/nuit repartent à zéro). Tes Invaders flashés, totaux et pourcentages sont conservés.",
+      "resetAction": "Réinitialiser"
+    }
   },
   "feedback": {
     "noMailTitle": "Aucune app mail",

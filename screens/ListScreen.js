@@ -265,7 +265,7 @@ export default function ListScreen({ navigation }) {
     <InvaderRow
       item={item}
       isFlashed={flashed.has(item.id)}
-      onToggle={() => toggleFlash(item.id)}
+      onToggle={() => toggleFlash(item.id, { dated: false })}
       cityLabel={multi ? (CITIES[cityCodeOfId(item.id)]?.name ?? null) : null}
       theme={theme}
     />

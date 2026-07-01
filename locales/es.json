@@ -380,7 +380,14 @@
       "it": "Italiano"
     },
     "aboutEntry": "Acerca de",
-    "replayOnboarding": "Ver la introducción de nuevo"
+    "replayOnboarding": "Ver la introducción de nuevo",
+    "timeline": {
+      "reset": "Restablecer el historial temporal",
+      "resetHint": "Borra las fechas de flash (mantiene tus flashes). Las estadísticas en el tiempo se reinician; totales y % se conservan.",
+      "resetTitle": "¿Restablecer el historial temporal?",
+      "resetMsg": "Se borrarán las fechas de flash (curva, racha, mejor día, día/noche se reinician). Tus Invaders flasheados, totales y porcentajes se conservan.",
+      "resetAction": "Restablecer"
+    }
   },
   "feedback": {
     "noMailTitle": "Sin app de correo",

@@ -380,7 +380,14 @@
       "it": "Italiano"
     },
     "aboutEntry": "About",
-    "replayOnboarding": "Replay introduction"
+    "replayOnboarding": "Replay introduction",
+    "timeline": {
+      "reset": "Reset flash timeline",
+      "resetHint": "Clears flash dates (keeps your flashes). Time-based stats reset; totals and % kept.",
+      "resetTitle": "Reset flash timeline?",
+      "resetMsg": "Flash dates will be cleared (curve, streak, best day, day/night reset). Your flashed Invaders, totals and percentages are kept.",
+      "resetAction": "Reset"
+    }
   },
   "feedback": {
     "noMailTitle": "No mail app",
