@@ -2,7 +2,7 @@
 // Adresse de destination des e-mails de feedback (boîte à idées + signalements
 // de statut). Pour changer l'adresse plus tard, modifiez UNIQUEMENT cette ligne.
 // Laissez '' pour ouvrir l'app mail sans destinataire pré-rempli.
-export const FEEDBACK_EMAIL = 'marchenri.colson@gmail.com';
+export const FEEDBACK_EMAIL = 'invader.quest.app@gmail.com';
 // ─────────────────────────────────────────────────────────────────────────────
 
 // Couleurs par défaut des statuts (thème sombre — correspondent aux tokens dark)

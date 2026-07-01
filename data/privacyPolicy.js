@@ -6,7 +6,7 @@
  * App Store Connect). Contact = email du développeur (modifiable).
  */
 
-const CONTACT = 'marchenri.colson@gmail.com';
+const CONTACT = 'invader.quest.app@gmail.com';
 
 export const PRIVACY_POLICY = {
   fr: {
