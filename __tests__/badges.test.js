@@ -34,6 +34,22 @@ describe('combo (par session)', () => {
   });
 });
 
+describe('combo depuis la timeline (hors session, ex. flashs depuis la Carte)', () => {
+  const atMin = (m) => new Date(2024, 0, 1, 12, m, 0);
+  test('speedrunner : 5 flashs datés en ≤ 30 min, sans session', () => {
+    const flashHistory = [0, 5, 10, 15, 20].map((m, i) => flash(`PA_${i}`, atMin(m)));
+    expect(pred('speedrunner', { session: null, flashHistory })).toBe(true);
+  });
+  test('speedrunner : 5 flashs étalés sur > 30 min → non', () => {
+    const flashHistory = [0, 10, 20, 31, 40].map((m, i) => flash(`PA_${i}`, atMin(m)));
+    expect(pred('speedrunner', { session: null, flashHistory })).toBe(false);
+  });
+  test('combo10 : 10 flashs en 60 min, sans session', () => {
+    const flashHistory = Array.from({ length: 10 }, (_, i) => flash(`PA_${i}`, atMin(i * 6)));
+    expect(pred('combo10', { session: null, flashHistory })).toBe(true);
+  });
+});
+
 describe('exploration', () => {
   test('explorer : 3 villes distinctes', () => {
     const flashHistory = [flash('PA_1', day(1)), flash('LY_1', day(1)), flash('MARS_1', day(1))];

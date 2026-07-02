@@ -81,18 +81,38 @@ function maxConsecutiveWeekends(flashHistory) {
 
 const sessionCount = (ctx) => (ctx.session ? ctx.session.invaderIds.length : 0);
 
+// Nombre max de flashs datés dans une fenêtre glissante de `minutes`.
+// Permet aux combos de se déclencher depuis N'IMPORTE QUEL flash (Carte incluse),
+// sans exiger une « session » formelle (Chasse/Balade).
+function maxFlashesInWindow(flashHistory, minutes) {
+  const ts = datedFlashes(flashHistory).map((f) => f.ts).sort((a, b) => a - b);
+  const win = minutes * 60 * 1000;
+  let best = 0, j = 0;
+  for (let i = 0; i < ts.length; i++) {
+    while (ts[i] - ts[j] > win) j++;
+    best = Math.max(best, i - j + 1);
+  }
+  return best;
+}
+// Combo atteint via une session OU via une rafale de flashs dans la fenêtre.
+const combo = (ctx, n, minutes) => sessionCount(ctx) >= n || maxFlashesInWindow(ctx.flashHistory, minutes) >= n;
+
 // ─── Définitions ────────────────────────────────────────────────────────────────
 
 export const BADGES = [
-  // Combo (par session)
+  // Combo — via une session OU une rafale de flashs dans une fenêtre glissante
+  // (fonctionne donc aussi en flashant depuis la Carte, sans mode Chasse).
   { id: 'speedrunner', category: 'combo', iconName: 'flash',
-    predicate: (ctx) => !!ctx.session && sessionCount(ctx) >= 5 && ctx.session.durationSec > 0 && ctx.session.durationSec <= 1800 },
+    // 5 flashs en ≤ 30 min (session courte OU 5 flashs datés dans 30 min)
+    predicate: (ctx) =>
+      (!!ctx.session && sessionCount(ctx) >= 5 && ctx.session.durationSec > 0 && ctx.session.durationSec <= 1800)
+      || maxFlashesInWindow(ctx.flashHistory, 30) >= 5 },
   { id: 'combo10', category: 'combo', iconName: 'albums',
-    predicate: (ctx) => sessionCount(ctx) >= 10 },
+    predicate: (ctx) => combo(ctx, 10, 60) },
   { id: 'combo15', category: 'combo', iconName: 'layers',
-    predicate: (ctx) => sessionCount(ctx) >= 15 },
+    predicate: (ctx) => combo(ctx, 15, 90) },
   { id: 'combo30', category: 'combo', iconName: 'flame',
-    predicate: (ctx) => sessionCount(ctx) >= 30 },
+    predicate: (ctx) => combo(ctx, 30, 180) },
 
   // Exploration
   { id: 'explorer', category: 'exploration', iconName: 'compass',

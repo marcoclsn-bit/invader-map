@@ -8,7 +8,7 @@ import { loadUnlocked, saveUnlocked } from '../services/badgeStore';
 const Ctx = createContext(null);
 
 export function GamificationProvider({ children }) {
-  const { flashedDates, getFlashHistory, loaded: appLoaded } = useAppContext();
+  const { flashed, flashedDates, getFlashHistory, loaded: appLoaded } = useAppContext();
 
   const [sessions, setSessions] = useState([]);
   const [unlocked, setUnlocked] = useState({});      // { id: ISO }
@@ -69,6 +69,20 @@ export function GamificationProvider({ children }) {
     const ctx = { session: null, sessions, flashHistory: getFlashHistory() };
     unlockIds(evaluateBadges(ctx, unlockedRef.current), { celebrate: true });
   }, [sessions, getFlashHistory, unlockIds]);
+
+  // Évaluation AUTOMATIQUE à chaque changement de flashs (Carte, Trajet, Chasse,
+  // Liste…). C'est ce qui débloque les badges hors session (speedrunner, combos,
+  // oiseau de nuit, explorateur, centurion…) sans attendre une fin de session.
+  // 1er passage après chargement = SILENCIEUX (marque les badges déjà mérités par
+  // l'historique sans déclencher une rafale de célébrations au démarrage).
+  const primed = useRef(false);
+  useEffect(() => {
+    if (!(loaded && appLoaded)) return;
+    const ctx = { session: null, sessions, flashHistory: getFlashHistory() };
+    const newIds = evaluateBadges(ctx, unlockedRef.current);
+    unlockIds(newIds, { celebrate: primed.current });
+    primed.current = true;
+  }, [flashed, flashedDates, loaded, appLoaded]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const dismissCelebration = useCallback(() => setQueue((q) => q.slice(1)), []);
   const clearRecap = useCallback(() => setPendingRecap(null), []);
