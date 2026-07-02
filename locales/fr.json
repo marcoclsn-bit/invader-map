@@ -268,17 +268,20 @@
         "rarity": {
           "label": "Rareté",
           "low": "Collecteur",
-          "high": "Sniper"
+          "high": "Sniper",
+          "info": "Points moyens des Invaders que tu as flashés. Plus tu vises des Invaders à forte valeur, plus tu tends vers « Sniper » ; sinon vers « Collecteur »."
         },
         "geography": {
           "label": "Géographie",
           "low": "Local",
-          "high": "Explorateur"
+          "high": "Explorateur",
+          "info": "À quel point tu explores. Basé sur le nombre de villes (et d'arrondissements) différents où tu as flashé. Plus tu bouges, plus tu tends vers « Explorateur »."
         },
         "assiduity": {
           "label": "Assiduité",
           "low": "Occasionnel",
-          "high": "Assidu"
+          "high": "Assidu",
+          "info": "Ta régularité dans le temps : jours d'activité et meilleure série de jours consécutifs. Plus tu joues souvent, plus tu tends vers « Assidu »."
         }
       },
       "dayNight": {

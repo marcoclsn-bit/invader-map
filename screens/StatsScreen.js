@@ -286,6 +286,7 @@ export default function StatsScreen({ navigation }) {
                 lowLabel={t(`stats.profile.sliders.${k}.low`)}
                 highLabel={t(`stats.profile.sliders.${k}.high`)}
                 lockedHint={t('stats.profile.locked')}
+                info={t(`stats.profile.sliders.${k}.info`)}
               />
             ))
           ) : (

@@ -268,17 +268,20 @@
         "rarity": {
           "label": "Rareza",
           "low": "Coleccionista",
-          "high": "Sniper"
+          "high": "Sniper",
+          "info": "Puntos medios de los Invaders que has fotografiado. Apunta a los de alto valor para tender a «Sniper»; si no, a «Coleccionista»."
         },
         "geography": {
           "label": "Geografía",
           "low": "Local",
-          "high": "Explorador"
+          "high": "Explorador",
+          "info": "Cuánto exploras. Según el número de ciudades (y distritos) distintos donde has fotografiado. Cuanto más te mueves, más tiendes a «Explorador»."
         },
         "assiduity": {
           "label": "Constancia",
           "low": "Ocasional",
-          "high": "Constante"
+          "high": "Constante",
+          "info": "Tu constancia en el tiempo: días activos y mejor racha de días seguidos. Cuanto más juegas, más tiendes a «Constante»."
         }
       },
       "dayNight": {

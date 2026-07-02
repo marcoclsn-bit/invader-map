@@ -268,17 +268,20 @@
         "rarity": {
           "label": "Rarità",
           "low": "Collezionista",
-          "high": "Sniper"
+          "high": "Sniper",
+          "info": "Punti medi degli Invader che hai flashato. Punta a quelli di alto valore per tendere a «Sniper»; altrimenti a «Collezionista»."
         },
         "geography": {
           "label": "Geografia",
           "low": "Locale",
-          "high": "Esploratore"
+          "high": "Esploratore",
+          "info": "Quanto esplori. In base al numero di città (e quartieri) diversi dove hai flashato. Più ti muovi, più tendi a «Esploratore»."
         },
         "assiduity": {
           "label": "Costanza",
           "low": "Occasionale",
-          "high": "Costante"
+          "high": "Costante",
+          "info": "La tua costanza nel tempo: giorni attivi e miglior serie di giorni consecutivi. Più giochi spesso, più tendi a «Costante»."
         }
       },
       "dayNight": {

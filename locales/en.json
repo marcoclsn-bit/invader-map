@@ -268,17 +268,20 @@
         "rarity": {
           "label": "Rarity",
           "low": "Collector",
-          "high": "Sniper"
+          "high": "Sniper",
+          "info": "Average points of the Invaders you've flashed. Aim for high-value ones to lean toward “Sniper”; otherwise toward “Collector”."
         },
         "geography": {
           "label": "Geography",
           "low": "Local",
-          "high": "Explorer"
+          "high": "Explorer",
+          "info": "How much you explore. Based on the number of different cities (and districts) where you've flashed. The more you roam, the more you lean toward “Explorer”."
         },
         "assiduity": {
           "label": "Consistency",
           "low": "Casual",
-          "high": "Regular"
+          "high": "Regular",
+          "info": "Your regularity over time: active days and best streak of consecutive days. The more often you play, the more you lean toward “Regular”."
         }
       },
       "dayNight": {
