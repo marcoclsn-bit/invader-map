@@ -582,7 +582,7 @@
   "share": {
     "textKm": "J’ai parcouru {{km}} km et flashé {{count}} Invaders à {{city}} avec InvaderQuest 👾",
     "textNoKm": "J’ai flashé {{count}} Invaders à {{city}} avec InvaderQuest 👾",
-    "url": "invaderquest.app",
+    "url": "apps.apple.com/app/id6786302757",
     "unavailable": "Le partage n’est pas disponible sur cet appareil."
   },
   "celebration": {

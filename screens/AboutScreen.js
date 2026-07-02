@@ -7,9 +7,6 @@ import { useAppContext } from '../context/AppContext';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 
-// ── À remplir quand vous avez une URL : remplacez '' par votre lien ───────────
-const CREATOR_LINK = '';
-
 const PNOTE_ENABLED = true;
 
 const APP_VERSION = require('../app.json')?.expo?.version ?? '1.0.0';
@@ -123,10 +120,7 @@ export default function AboutScreen() {
 
       {/* ── Créateur ── */}
       <Section title={t('about.creatorSection')} theme={theme}>
-        <InfoRow label={t('about.createdBy')} last={!CREATOR_LINK} theme={theme} />
-        {CREATOR_LINK ? (
-          <LinkRow label={CREATOR_LINK} url={CREATOR_LINK} last theme={theme} />
-        ) : null}
+        <InfoRow label={t('about.createdBy')} last theme={theme} />
       </Section>
 
       {/* ── Remerciements ── */}
