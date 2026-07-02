@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, useRef } from 'react';
+import { createContext, useContext, useState, useEffect, useRef, useMemo } from 'react';
 import { AppState } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Location from 'expo-location';
@@ -356,8 +356,18 @@ export function AppProvider({ children }) {
   }, []);
 
   // ─── Persistance automatique ──────────────────────────────────────────────────
-  useEffect(() => { if (loaded) AsyncStorage.setItem('invader_flashed',         JSON.stringify([...flashed]));                              }, [flashed,        loaded]);
-  useEffect(() => { if (loaded) AsyncStorage.setItem('invader_flashed_dates',   JSON.stringify(Object.fromEntries(flashedDates)));           }, [flashedDates,   loaded]);
+  // flashed / flashedDates : gros objets (1500+ ids) → écriture DÉBOUNCÉE (400 ms)
+  // pour ne pas resérialiser tout le Set à chaque flash pendant une chasse.
+  const flashedSaveTimer = useRef(null);
+  useEffect(() => {
+    if (!loaded) return;
+    clearTimeout(flashedSaveTimer.current);
+    flashedSaveTimer.current = setTimeout(() => {
+      AsyncStorage.setItem('invader_flashed', JSON.stringify([...flashed]));
+      AsyncStorage.setItem('invader_flashed_dates', JSON.stringify(Object.fromEntries(flashedDates)));
+    }, 400);
+    return () => clearTimeout(flashedSaveTimer.current);
+  }, [flashed, flashedDates, loaded]);
   useEffect(() => { if (loaded) AsyncStorage.setItem('invader_labels',          JSON.stringify(labels));              }, [labels,         loaded]);
   useEffect(() => { if (loaded) AsyncStorage.setItem('invader_label_defs',      JSON.stringify(labelDefs));           }, [labelDefs,      loaded]);
   useEffect(() => { if (loaded) AsyncStorage.setItem('invader_status_colors',   JSON.stringify(statusColors));        }, [statusColors,   loaded]);
@@ -522,31 +532,48 @@ export function AppProvider({ children }) {
   const dataVersion   = cityVersion;
   const dataUpdatedAt = cityUpdatedAt;
 
+  // value mémoïsé : l'objet n'est recréé que si un état exposé change, sinon
+  // TOUS les consommateurs du contexte re-rendaient à chaque render du provider.
+  // Les fonctions internes lisent uniquement des états présents dans les deps
+  // (flashed, invaders, …) → pas de closure périmée.
+  const value = useMemo(() => ({
+    // Villes
+    currentCityCode, setCurrentCity, cityIndex, isChangingCity, pendingCityCode,
+    mapLockUntil, mapLockDuration,
+    // Invaders (ville courante)
+    invaders, dataVersion, dataUpdatedAt, checkDataUpdate,
+    // Progression
+    flashed, flashedDates, getFlashHistory,
+    labels, labelDefs, statusColors, colorOverrides,
+    filters, setFilters,
+    toggleFlash, bulkFlash, bulkUnflash, clearFlashDates,
+    setStatusColor, setFlashedColor,
+    // News
+    news, newsCities, setNewsCitiesPref, newsLastSeen, markNewsSeen, newsUnreadCount,
+    // Légende des couleurs
+    legendSeen, dismissLegend,
+    // Mode balade (réglages ; moteur au dev build)
+    stroll, setStrollPref,
+    mapsApp, setMapsAppPref,
+    language, setLanguage,
+    showOnboarding, completeOnboarding, resetOnboarding,
+    loaded,
+    resetLabels,
+  }), [ // eslint-disable-line react-hooks/exhaustive-deps
+    currentCityCode, cityIndex, isChangingCity, pendingCityCode,
+    mapLockUntil, mapLockDuration,
+    invaders, dataVersion, dataUpdatedAt,
+    flashed, flashedDates,
+    labels, labelDefs, statusColors, colorOverrides,
+    filters,
+    news, newsCities, newsLastSeen, newsUnreadCount,
+    legendSeen,
+    stroll, mapsApp, language,
+    showOnboarding, loaded,
+  ]);
+
   return (
-    <AppContext.Provider value={{
-      // Villes
-      currentCityCode, setCurrentCity, cityIndex, isChangingCity, pendingCityCode,
-      mapLockUntil, mapLockDuration,
-      // Invaders (ville courante)
-      invaders, dataVersion, dataUpdatedAt, checkDataUpdate,
-      // Progression
-      flashed, flashedDates, getFlashHistory,
-      labels, labelDefs, statusColors, colorOverrides,
-      filters, setFilters,
-      toggleFlash, bulkFlash, bulkUnflash, clearFlashDates,
-      setStatusColor, setFlashedColor,
-      // News
-      news, newsCities, setNewsCitiesPref, newsLastSeen, markNewsSeen, newsUnreadCount,
-      // Légende des couleurs
-      legendSeen, dismissLegend,
-      // Mode balade (réglages ; moteur au dev build)
-      stroll, setStrollPref,
-      mapsApp, setMapsAppPref,
-      language, setLanguage,
-      showOnboarding, completeOnboarding, resetOnboarding,
-      loaded,
-      resetLabels,
-    }}>
+    <AppContext.Provider value={value}>
       {children}
     </AppContext.Provider>
   );

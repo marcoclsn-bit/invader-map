@@ -5,6 +5,7 @@ import {
 } from 'react-native';
 import MapView, { Polyline, Marker, Polygon } from 'react-native-maps';
 import * as Location from 'expo-location';
+import * as Haptics from 'expo-haptics';
 import * as turf from '@turf/turf';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
@@ -791,7 +792,7 @@ export default function ChasseScreen({ route }) {
             {selectedInv && (
               <InvaderPanel
                 invader={selectedInv}
-                onToggleFlash={(id) => { toggleFlash(id); }}
+                onToggleFlash={(id) => { if (!flashed.has(id)) Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success); toggleFlash(id); }}
                 onNavigate={(lat, lng) => openNavigationApp(mapsApp ?? 'apple', lat, lng)}
                 onClose={() => {
                   setSelectedInv(null);

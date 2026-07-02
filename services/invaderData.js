@@ -124,7 +124,7 @@ async function _loadIndexCache() {
       _cityIndex = parsed.cities;
     }
   } catch (e) {
-    console.log('[InvaderData] Index cache error:', e.message);
+    __DEV__ && console.log('[InvaderData] Index cache error:', e.message);
   }
 }
 
@@ -137,7 +137,7 @@ async function _fetchIndex() {
     _cityIndex = json.cities;
     await AsyncStorage.setItem(KEY_INDEX, JSON.stringify(json));
   } catch (e) {
-    console.log('[InvaderData] Index fetch error:', e.message);
+    __DEV__ && console.log('[InvaderData] Index fetch error:', e.message);
   }
 }
 
@@ -163,7 +163,7 @@ async function _loadCityCache(code) {
       updatedAt: meta.updatedAt ?? '',
     });
   } catch (e) {
-    console.log(`[InvaderData] Cache error for ${code}:`, e.message);
+    __DEV__ && console.log(`[InvaderData] Cache error for ${code}:`, e.message);
   }
 }
 
@@ -201,7 +201,7 @@ async function _fetchCity(code) {
 
   } catch (e) {
     const msg = String(e.message ?? '');
-    console.log(`[InvaderData] Fetch error for ${code}:`, msg);
+    __DEV__ && console.log(`[InvaderData] Fetch error for ${code}:`, msg);
     if (/network|fetch|econnrefused|timeout|http/i.test(msg)) return 'offline';
     return 'error';
   }

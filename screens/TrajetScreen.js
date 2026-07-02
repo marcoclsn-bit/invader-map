@@ -5,6 +5,7 @@ import {
 } from 'react-native';
 import MapView, { Polyline, Marker, Polygon } from 'react-native-maps';
 import * as Location from 'expo-location';
+import * as Haptics from 'expo-haptics';
 import * as turf from '@turf/turf';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
@@ -346,7 +347,7 @@ export default function TrajetScreen() {
         const nearest = turf.nearestPointOnLine(line, turf.point([inv.lng, inv.lat]), { units: 'kilometers' });
         return nearest.properties.dist <= bufferKm;
       });
-      console.log(`[Trajet] Couloir : ${candidates.length} candidats (bbox) → ${nearby.length} retenus`);
+      __DEV__ && console.log(`[Trajet] Couloir : ${candidates.length} candidats (bbox) → ${nearby.length} retenus`);
       setRouteInvaders(nearby);
       setSelectedRouteInv(null);
       // fitToCoordinates est déplacé dans l'effect sur routeInvaders (ci-dessous) :
@@ -371,7 +372,7 @@ export default function TrajetScreen() {
       calcCollapseRef.current = false;
       setInputCollapsed(true);
     }
-    console.log('[Trajet] Markers rendus sur la carte :', routeInvaders.length);
+    __DEV__ && console.log('[Trajet] Markers rendus sur la carte :', routeInvaders.length);
     const routeLatlngs = routeCoords.map(([lng, lat]) => ({ latitude: lat, longitude: lng }));
     const invLatlngs = routeInvaders.map((inv) => ({ latitude: inv.lat, longitude: inv.lng }));
     const allCoords = invLatlngs.length > 0 ? [...routeLatlngs, ...invLatlngs] : routeLatlngs;
@@ -942,7 +943,7 @@ export default function TrajetScreen() {
                 </TouchableOpacity>
               ) : (
                 <TouchableOpacity style={styles.startBtn} onPress={startFollowing}>
-                  <Text style={styles.startBtnText}>Démarrer</Text>
+                  <Text style={styles.startBtnText}>{t('hunt.start')}</Text>
                 </TouchableOpacity>
               )}
               <View style={styles.rightControls}>
@@ -960,7 +961,7 @@ export default function TrajetScreen() {
           {selectedRouteInv && (
             <InvaderPanel
               invader={selectedRouteInv}
-              onToggleFlash={(id) => { toggleFlash(id); }}
+              onToggleFlash={(id) => { if (!flashed.has(id)) Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success); toggleFlash(id); }}
               onNavigate={(lat, lng) => openNavigationApp(mapsApp ?? 'apple', lat, lng)}
               onClose={() => {
                 setSelectedRouteInv(null);

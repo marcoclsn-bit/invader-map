@@ -28,7 +28,7 @@ let TaskManager = null;
 try {
   TaskManager = require('expo-task-manager');
 } catch (e) {
-  console.log('[Stroll] expo-task-manager indisponible (Expo Go) :', e?.message);
+  __DEV__ && console.log('[Stroll] expo-task-manager indisponible (Expo Go) :', e?.message);
 }
 const ENGINE_AVAILABLE = !!TaskManager;
 
@@ -124,16 +124,16 @@ export async function requestStrollPermissions() {
 
 /** (Re)positionne les geofences autour de la position actuelle. */
 export async function refreshGeofences() {
-  if (!ENGINE_AVAILABLE) { console.log('[Stroll] geofencing indisponible (dev build requis)'); return false; }
+  if (!ENGINE_AVAILABLE) { __DEV__ && console.log('[Stroll] geofencing indisponible (dev build requis)'); return false; }
   const settings = await readJSON(KEY_SETTINGS, null);
   if (!settings?.enabled) return false;
   const candidates = await readJSON(KEY_CANDIDATES, []);
-  if (!candidates.length) { console.log('[Stroll] aucun candidat'); return false; }
+  if (!candidates.length) { __DEV__ && console.log('[Stroll] aucun candidat'); return false; }
 
   let loc = null;
   try { loc = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.Balanced }); }
   catch { try { loc = await Location.getLastKnownPositionAsync(); } catch {} }
-  if (!loc) { console.log('[Stroll] pas de position'); return false; }
+  if (!loc) { __DEV__ && console.log('[Stroll] pas de position'); return false; }
 
   const { latitude, longitude } = loc.coords;
   const radius = settings.radius ?? 50;
@@ -141,16 +141,16 @@ export async function refreshGeofences() {
   const regions = buildRegions(latitude, longitude, nearest, radius);
   try {
     await Location.startGeofencingAsync(GEOFENCE_TASK, regions);
-    console.log(`[Stroll] ${regions.length} geofences posées (rayon ${radius} m) @ ${latitude.toFixed(4)},${longitude.toFixed(4)} ; plus proche : ${nearest[0] ? Math.round(nearest[0].d) + ' m' : '—'}`);
+    __DEV__ && console.log(`[Stroll] ${regions.length} geofences posées (rayon ${radius} m) @ ${latitude.toFixed(4)},${longitude.toFixed(4)} ; plus proche : ${nearest[0] ? Math.round(nearest[0].d) + ' m' : '—'}`);
   } catch (e) {
-    console.log('[Stroll] startGeofencing erreur :', e?.message);
+    __DEV__ && console.log('[Stroll] startGeofencing erreur :', e?.message);
     return false;
   }
 
   // Piège geofencing : si on est DÉJÀ dans le rayon d'un Invader au moment où l'on
   // (re)pose les régions, iOS n'émet pas d'« entrée ». On déclenche nous-mêmes.
   if (nearest[0] && nearest[0].d <= Math.max(radius, 20)) {
-    console.log('[Stroll] déjà à proximité au démarrage → alerte immédiate', nearest[0].id);
+    __DEV__ && console.log('[Stroll] déjà à proximité au démarrage → alerte immédiate', nearest[0].id);
     await handleEnter(nearest[0].id);
   }
   return true;
@@ -174,38 +174,38 @@ export async function stopStroll() {
     const started = await Location.hasStartedGeofencingAsync(GEOFENCE_TASK);
     if (started) {
       await Location.stopGeofencingAsync(GEOFENCE_TASK);
-      console.log('[Stroll] geofencing arrêté');
+      __DEV__ && console.log('[Stroll] geofencing arrêté');
     }
-  } catch (e) { console.log('[Stroll] stop erreur :', e?.message); }
+  } catch (e) { __DEV__ && console.log('[Stroll] stop erreur :', e?.message); }
 }
 
 // ─── Tâche de fond (geofencing) ────────────────────────────────────────────────
 
 if (TaskManager) {
   TaskManager.defineTask(GEOFENCE_TASK, async ({ data, error }) => {
-    if (error) { console.log('[Stroll] task error :', error.message); return; }
+    if (error) { __DEV__ && console.log('[Stroll] task error :', error.message); return; }
     const { eventType, region } = data || {};
     if (!region) return;
     try {
       if (eventType === Location.GeofencingEventType.Exit && region.identifier === PERIMETER_ID) {
-        console.log('[Stroll] sortie périmètre → recalcul');
+        __DEV__ && console.log('[Stroll] sortie périmètre → recalcul');
         await refreshGeofences();
         return;
       }
       if (eventType === Location.GeofencingEventType.Enter && region.identifier.startsWith(INV_PREFIX)) {
         await handleEnter(region.identifier.slice(INV_PREFIX.length));
       }
-    } catch (e) { console.log('[Stroll] handle error :', e?.message); }
+    } catch (e) { __DEV__ && console.log('[Stroll] handle error :', e?.message); }
   });
 }
 
 async function handleEnter(invId) {
   // ── Verrou synchrone : bloque tout appel concurrent pour le même Invader ──
   // (avant le moindre await → un seul handleEnter passe à la fois)
-  if (inFlight.has(invId)) { console.log('[Stroll] skip (déjà en cours)', invId); return; }
+  if (inFlight.has(invId)) { __DEV__ && console.log('[Stroll] skip (déjà en cours)', invId); return; }
   const now = Date.now();
-  if (memLastGlobal && now - memLastGlobal < GLOBAL_GAP) { console.log('[Stroll] skip (gap global)'); return; }
-  if (memAlerts.has(invId) && now - memAlerts.get(invId) < PER_ID_COOLDOWN) { console.log('[Stroll] skip (déjà alerté)', invId); return; }
+  if (memLastGlobal && now - memLastGlobal < GLOBAL_GAP) { __DEV__ && console.log('[Stroll] skip (gap global)'); return; }
+  if (memAlerts.has(invId) && now - memAlerts.get(invId) < PER_ID_COOLDOWN) { __DEV__ && console.log('[Stroll] skip (déjà alerté)', invId); return; }
   inFlight.add(invId);
 
   try {
@@ -214,13 +214,13 @@ async function handleEnter(invId) {
 
     // Cooldown persistant (survit à un redémarrage de l'app)
     const alerts = await readJSON(KEY_ALERTS, {});
-    if (alerts[invId] && now - alerts[invId] < PER_ID_COOLDOWN) { console.log('[Stroll] skip (déjà alerté, disque)', invId); return; }
+    if (alerts[invId] && now - alerts[invId] < PER_ID_COOLDOWN) { __DEV__ && console.log('[Stroll] skip (déjà alerté, disque)', invId); return; }
 
     // Filtre de vitesse : pas d'alerte si l'utilisateur va trop vite (véhicule)
     try {
       const loc = await Location.getLastKnownPositionAsync();
       const sp = loc?.coords?.speed;
-      if (typeof sp === 'number' && sp > MAX_SPEED_MPS) { console.log('[Stroll] skip (vitesse)', sp.toFixed(1)); return; }
+      if (typeof sp === 'number' && sp > MAX_SPEED_MPS) { __DEV__ && console.log('[Stroll] skip (vitesse)', sp.toFixed(1)); return; }
     } catch {}
 
     // Réserve les cooldowns AVANT de notifier (un appel concurrent qui surviendrait
@@ -244,13 +244,13 @@ async function handleEnter(invId) {
           },
           trigger: null, // immédiat
         });
-      } catch (e) { console.log('[Stroll] notif erreur :', e?.message); }
+      } catch (e) { __DEV__ && console.log('[Stroll] notif erreur :', e?.message); }
     }
 
     alerts[invId] = now;
     await writeJSON(KEY_ALERTS, alerts);
     await writeJSON(KEY_LAST_ALERT, now);
-    console.log('[Stroll] ALERTE', invId);
+    __DEV__ && console.log('[Stroll] ALERTE', invId);
   } finally {
     inFlight.delete(invId);
   }

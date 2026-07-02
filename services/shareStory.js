@@ -19,7 +19,7 @@ export async function captureAndShare(ref) {
     await Sharing.shareAsync(uri, { mimeType: 'image/png', dialogTitle: 'InvaderQuest' });
     return 'shared';
   } catch (e) {
-    console.log('[ShareStory] erreur :', e?.message);
+    __DEV__ && console.log('[ShareStory] erreur :', e?.message);
     return 'error';
   }
 }
