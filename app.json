@@ -63,7 +63,8 @@
       [
         "expo-notifications",
         {
-          "color": "#3DF96B"
+          "color": "#3DF96B",
+          "icon": "./assets/notification-icon.png"
         }
       ],
       "expo-localization",

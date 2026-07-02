@@ -18,6 +18,7 @@ import { countryCodeOf } from '../cities/countries';
 import { geocode, autocomplete, multiRoute } from '../services/routing';
 import { INVADER_DISTRICT, ARRONDISSEMENT_CENTERS } from '../utils/arrondissement';
 import { useTheme } from '../theme/ThemeContext';
+import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
 import InvaderPanel from '../components/InvaderPanel';
 import HeadingCone from '../components/HeadingCone';
 import { openNavigationApp } from '../utils/navigation';
@@ -531,6 +532,7 @@ export default function ChasseScreen({ route }) {
             style={styles.map}
             mapType="mutedStandard"
             userInterfaceStyle={isDark ? 'dark' : 'light'}
+            customMapStyle={Platform.OS === 'android' ? (isDark ? DARK_MAP_STYLE : LIGHT_MAP_STYLE) : undefined}
             showsCompass={false}
             showsTraffic={false}
             showsPointsOfInterest={false}

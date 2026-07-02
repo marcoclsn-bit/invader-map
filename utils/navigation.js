@@ -1,6 +1,13 @@
-import { Linking } from 'react-native';
+import { Linking, Platform } from 'react-native';
 
 export async function openNavigationApp(app, lat, lng) {
+  // Android : « Apple Plans » n'existe pas → Google Maps (natif puis repli web).
+  if (Platform.OS === 'android') {
+    Linking.openURL(`google.navigation:q=${lat},${lng}&mode=w`).catch(() =>
+      Linking.openURL(`https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=walking`).catch(() => {}),
+    );
+    return;
+  }
   if (app === 'apple') {
     Linking.openURL(`maps://?daddr=${lat},${lng}&dirflg=w`).catch(() => {});
   } else {

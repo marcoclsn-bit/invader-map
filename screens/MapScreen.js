@@ -15,6 +15,7 @@ import Legend from '../components/Legend';
 import InvaderPanel from '../components/InvaderPanel';
 import HeadingCone from '../components/HeadingCone';
 import { useTheme } from '../theme/ThemeContext';
+import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
 import { typography } from '../theme/tokens';
 import { openNavigationApp } from '../utils/navigation';
 
@@ -491,6 +492,7 @@ export default function MapScreen({ navigation, route }) {
         style={styles.map}
         mapType="mutedStandard"
         userInterfaceStyle={isDark ? 'dark' : 'light'}
+        customMapStyle={Platform.OS === 'android' ? (isDark ? DARK_MAP_STYLE : LIGHT_MAP_STYLE) : undefined}
         showsCompass={false}
         showsTraffic={false}
         showsPointsOfInterest={false}

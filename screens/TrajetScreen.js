@@ -23,6 +23,7 @@ import InvaderMarker from '../components/InvaderMarker';
 import HeadingCone from '../components/HeadingCone';
 import InvaderPanel from '../components/InvaderPanel';
 import { useTheme } from '../theme/ThemeContext';
+import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
 import { typography } from '../theme/tokens';
 import { openInstagramTag, openNavigationApp } from '../utils/navigation';
 
@@ -40,6 +41,13 @@ const BUFFER_OPTIONS = [
 // ─── Navigation externe ───────────────────────────────────────────────────────
 
 async function openInApp(app, lat, lng) {
+  // Android : Apple Plans indisponible → Google Maps (natif puis repli web).
+  if (Platform.OS === 'android') {
+    Linking.openURL(`google.navigation:q=${lat},${lng}&mode=w`).catch(() =>
+      Linking.openURL(`https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=walking`).catch(() => {}),
+    );
+    return;
+  }
   if (app === 'apple') {
     Linking.openURL(`maps://?daddr=${lat},${lng}&dirflg=w`).catch(() => {});
   } else {
@@ -768,6 +776,7 @@ export default function TrajetScreen() {
           style={styles.map}
           mapType="mutedStandard"
           userInterfaceStyle={isDark ? 'dark' : 'light'}
+          customMapStyle={Platform.OS === 'android' ? (isDark ? DARK_MAP_STYLE : LIGHT_MAP_STYLE) : undefined}
           showsCompass={false}
           showsTraffic={false}
           showsPointsOfInterest={false}
