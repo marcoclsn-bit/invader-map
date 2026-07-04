@@ -1,8 +1,7 @@
-import { memo } from 'react';
+import { memo, useState, useEffect } from 'react';
 import { Image, View, StyleSheet, Platform } from 'react-native';
 import { Marker } from 'react-native-maps';
 
-// iOS : images pleine résolution, affichées dans une vue personnalisée (permet le halo néon).
 const IMAGES = {
   flashed:   require('../assets/markers/alien_flashed.png'),
   ok:        require('../assets/markers/alien_ok.png'),
@@ -11,48 +10,33 @@ const IMAGES = {
   unknown:   require('../assets/markers/alien_unknown.png'),
 };
 
-// Android : versions redimensionnées (~90 px) pour la prop native `image`.
-// Le marqueur natif rend le bitmap tel quel (pas de mise à l'échelle en dp).
-const ANDROID_IMAGES = {
-  flashed:   require('../assets/markers/android/alien_flashed.png'),
-  ok:        require('../assets/markers/android/alien_ok.png'),
-  damaged:   require('../assets/markers/android/alien_damaged.png'),
-  destroyed: require('../assets/markers/android/alien_destroyed.png'),
-  unknown:   require('../assets/markers/android/alien_unknown.png'),
-};
-
 const SIZE = 30;
 const ANCHOR = { x: 0.5, y: 0.5 };
 
 const InvaderMarker = memo(function InvaderMarker({ invader, isFlashed, onPress, stopPropagation }) {
   const statusKey = IMAGES[invader.status] ? invader.status : 'unknown';
-  const key = isFlashed ? 'flashed' : statusKey;
+  const img = isFlashed ? IMAGES.flashed : IMAGES[statusKey];
 
-  // Android : marqueur NATIF via la prop `image` (bitmap direct, pas de vue React).
-  // → pas de capture de vue (donc pas de « pin rouge » par défaut le temps du rendu),
-  //   pas de marqueur vide, pas de doublon, et le changement d'icône au flash est
-  //   atomique côté natif (avec une clé stable, le marqueur est mis à jour en place).
-  //   Le halo néon des flashés n'existe pas sur Android de toute façon.
-  if (Platform.OS === 'android') {
-    return (
-      <Marker
-        coordinate={{ latitude: invader.lat, longitude: invader.lng }}
-        anchor={ANCHOR}
-        image={ANDROID_IMAGES[key]}
-        tracksViewChanges={false}
-        stopPropagation={stopPropagation}
-        onPress={onPress}
-      />
-    );
-  }
+  // Vue dimensionnée en dp (SIZE) → taille cohérente sur TOUS les écrans, identique à
+  // iOS. (La prop `image` native rendait une taille en pixels physiques, donc dépendante
+  // de la densité de l'écran = incohérente d'un téléphone à l'autre.)
+  //
+  // Android : une vue-marqueur doit être « trackée » au moins une fois pour capturer son
+  // bitmap (sinon invisible) ; on re-track à chaque changement d'état flashé (maj d'icône
+  // en place) puis on coupe pour la perf. iOS reste sur false (comportement d'origine).
+  const [tracks, setTracks] = useState(Platform.OS === 'android');
+  useEffect(() => {
+    if (Platform.OS !== 'android') return;
+    setTracks(true);
+    const id = setTimeout(() => setTracks(false), 800);
+    return () => clearTimeout(id);
+  }, [isFlashed]);
 
-  // iOS : vue personnalisée (halo néon sur les flashés). tracksViewChanges=false = OK.
-  const img = IMAGES[key];
   return (
     <Marker
       coordinate={{ latitude: invader.lat, longitude: invader.lng }}
       anchor={ANCHOR}
-      tracksViewChanges={false}
+      tracksViewChanges={tracks}
       stopPropagation={stopPropagation}
       onPress={onPress}
     >
