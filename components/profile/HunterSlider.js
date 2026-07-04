@@ -88,9 +88,11 @@ const styles = StyleSheet.create({
   infoText: { fontSize: 12, lineHeight: 17 },
   track: {
     height: TRACK_H, borderRadius: TRACK_H / 2, borderWidth: StyleSheet.hairlineWidth,
-    justifyContent: 'center',
+    flexDirection: 'row', alignItems: 'stretch',
   },
-  fill: { position: 'absolute', left: 0, top: 0, bottom: 0, borderRadius: TRACK_H / 2 },
+  // Enfant flex à hauteur explicite (comme la ProgressBar du Palmarès) : largeur en %.
+  // L'ancienne version absolue (top/bottom + width %) ne se rendait pas sur Android.
+  fill: { height: TRACK_H, borderRadius: TRACK_H / 2 },
   thumbWrap: { position: 'absolute', width: 0, alignItems: 'center', top: (TRACK_H - THUMB) / 2 },
   thumb: { width: THUMB, height: THUMB, marginLeft: -THUMB / 2 },
   poleRow: { flexDirection: 'row', justifyContent: 'space-between', marginTop: 8 },
