@@ -22,6 +22,7 @@ import { canUseFeature, FEATURES } from '../services/featureAccess';
 import InvaderMarker from '../components/InvaderMarker';
 import HeadingCone from '../components/HeadingCone';
 import InvaderPanel from '../components/InvaderPanel';
+import FlashOverlay from '../components/FlashOverlay';
 import { useTheme } from '../theme/ThemeContext';
 import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
 import { typography } from '../theme/tokens';
@@ -293,6 +294,10 @@ export default function TrajetScreen() {
   const [bufferKm, setBufferKm] = useState(0.1);
   const [showOnlyUnflashed, setShowOnlyUnflashed] = useState(false);
   const [selectedRouteInv, setSelectedRouteInv] = useState(null);
+  const [flashEffect, setFlashEffect] = useState(null);
+  // Invaders flashés à l'instant : gardés affichés le temps que l'animation se joue,
+  // avant qu'un filtre « à faire » ne les masque.
+  const [recentlyFlashed, setRecentlyFlashed] = useState(() => new Set());
   const [showInfo, setShowInfo] = useState(false);
   const [following, setFollowing] = useState(false);
   const [drifted, setDrifted] = useState(false);
@@ -453,10 +458,15 @@ export default function TrajetScreen() {
   const displayInvaders = useMemo(() => {
     if (!routeInvaders) return null;
     // Filtre « À faire » : on masque les déjà flashés ET les détruits (non flashables)
-    return renderUnflashed
+    const base = renderUnflashed
       ? routeInvaders.filter((inv) => !flashed.has(inv.id) && inv.status !== 'destroyed')
       : routeInvaders;
-  }, [routeInvaders, renderUnflashed, flashed]);
+    if (recentlyFlashed.size === 0) return base;
+    // Réinjecte les Invaders en cours d'animation s'ils ont été masqués par le filtre
+    const baseIds = new Set(base.map((i) => i.id));
+    const extra = routeInvaders.filter((i) => recentlyFlashed.has(i.id) && !baseIds.has(i.id));
+    return extra.length ? [...base, ...extra] : base;
+  }, [routeInvaders, renderUnflashed, flashed, recentlyFlashed]);
 
   // ─── Découpe du tracé en portion parcourue (gris) + restante (bleu) ──────
 
@@ -742,6 +752,29 @@ export default function TrajetScreen() {
     );
   }
 
+  // Flash depuis la fiche Trajet, avec l'animation de récompense (pop + « +X PTS »),
+  // identique à l'écran Carte.
+  async function handleFlashRoute(id) {
+    const willFlash = !flashed.has(id);
+    if (!willFlash) { toggleFlash(id); return; } // dé-flash : silencieux, pas d'animation
+
+    const inv = (routeInvaders ?? invaders).find((i) => i.id === id);
+    // On garde l'Invader visible pendant l'animation (sinon le filtre « à faire »
+    // le retire instantanément et coupe l'effet de récompense).
+    if (inv) setRecentlyFlashed((prev) => new Set(prev).add(id));
+    toggleFlash(id);
+
+    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+
+    if (!inv || !mapRef.current) return;
+    try {
+      const point = await mapRef.current.pointForCoordinate({ latitude: inv.lat, longitude: inv.lng });
+      setFlashEffect({ invader: inv, point, key: Date.now() });
+    } catch (_) {
+      setRecentlyFlashed((prev) => { const n = new Set(prev); n.delete(id); return n; });
+    }
+  }
+
   function handleNavigate(lat, lng) {
     if (mapsApp) { openInApp(mapsApp, lat, lng); return; }
     Alert.alert(
@@ -822,6 +855,11 @@ export default function TrajetScreen() {
           )}
           {displayInvaders?.map((inv) => {
             const isFlashed = flashed.has(inv.id);
+            // Android : pendant l'animation de flash, on masque le vrai marqueur natif —
+            // l'alien animé de l'overlay le remplace (sinon doublon décalé).
+            if (Platform.OS === 'android' && flashEffect && flashEffect.invader.id === inv.id) {
+              return null;
+            }
             return (
               <InvaderMarker
                 key={Platform.OS === 'android' ? inv.id : `${inv.id}-${isFlashed ? 1 : 0}`}
@@ -834,6 +872,21 @@ export default function TrajetScreen() {
           {!isChangingCity && <HeadingCone userLocation={userPos} heading={userHeading} />}
         </MapView>
         {isChangingCity && <View style={[StyleSheet.absoluteFillObject, styles.cityTransitionOverlay]} />}
+
+        {/* Overlay animation flash — au-dessus de la carte, transparent aux touches */}
+        {flashEffect && !isChangingCity && (
+          <FlashOverlay
+            key={flashEffect.key}
+            invader={flashEffect.invader}
+            point={flashEffect.point}
+            theme={theme}
+            onDone={() => {
+              const flashedId = flashEffect.invader.id;
+              setFlashEffect(null);
+              setRecentlyFlashed((prev) => { const n = new Set(prev); n.delete(flashedId); return n; });
+            }}
+          />
+        )}
 
         {/* ── Carte flottante d'itinéraire (au-dessus de la carte) ── */}
         {!isChangingCity && !following && (
@@ -973,7 +1026,7 @@ export default function TrajetScreen() {
           {selectedRouteInv && (
             <InvaderPanel
               invader={selectedRouteInv}
-              onToggleFlash={(id) => { if (!flashed.has(id)) Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success); toggleFlash(id); }}
+              onToggleFlash={handleFlashRoute}
               onNavigate={(lat, lng) => openNavigationApp(mapsApp ?? 'apple', lat, lng)}
               onClose={() => {
                 setSelectedRouteInv(null);
