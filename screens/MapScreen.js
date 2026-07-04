@@ -408,6 +408,7 @@ export default function MapScreen({ navigation, route }) {
         showsTraffic={false}
         showsPointsOfInterest={false}
         showsUserLocation={locationGranted}
+        showsMyLocationButton={false}
         initialRegion={{ latitude: city.center.lat, longitude: city.center.lng, ...city.mapDelta }}
         onPress={closeAll}
         onMapReady={() => setMapReady(true)}
