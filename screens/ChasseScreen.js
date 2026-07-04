@@ -530,9 +530,12 @@ export default function ChasseScreen({ route }) {
           <MapView
             ref={mapRef}
             style={styles.map}
-            mapType="mutedStandard"
+            mapType={Platform.OS === 'android' ? 'standard' : 'mutedStandard'}
             userInterfaceStyle={isDark ? 'dark' : 'light'}
             customMapStyle={Platform.OS === 'android' ? (isDark ? DARK_MAP_STYLE : LIGHT_MAP_STYLE) : undefined}
+            loadingEnabled={Platform.OS === 'android'}
+            loadingBackgroundColor={theme.bg}
+            loadingIndicatorColor={theme.accent}
             showsCompass={false}
             showsTraffic={false}
             showsPointsOfInterest={false}

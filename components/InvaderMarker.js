@@ -1,7 +1,8 @@
 import { memo } from 'react';
-import { Image, View, StyleSheet } from 'react-native';
+import { Image, View, StyleSheet, Platform } from 'react-native';
 import { Marker } from 'react-native-maps';
 
+// iOS : images pleine résolution, affichées dans une vue personnalisée (permet le halo néon).
 const IMAGES = {
   flashed:   require('../assets/markers/alien_flashed.png'),
   ok:        require('../assets/markers/alien_ok.png'),
@@ -10,14 +11,43 @@ const IMAGES = {
   unknown:   require('../assets/markers/alien_unknown.png'),
 };
 
+// Android : versions redimensionnées (~90 px) pour la prop native `image`.
+// Le marqueur natif rend le bitmap tel quel (pas de mise à l'échelle en dp).
+const ANDROID_IMAGES = {
+  flashed:   require('../assets/markers/android/alien_flashed.png'),
+  ok:        require('../assets/markers/android/alien_ok.png'),
+  damaged:   require('../assets/markers/android/alien_damaged.png'),
+  destroyed: require('../assets/markers/android/alien_destroyed.png'),
+  unknown:   require('../assets/markers/android/alien_unknown.png'),
+};
+
 const SIZE = 30;
 const ANCHOR = { x: 0.5, y: 0.5 };
 
-// La clé doit inclure l'état flashé (ex. `${id}-${isFlashed?1:0}`) pour forcer
-// un nouveau Marker natif si le statut change — tracksViewChanges=false empêche
-// la mise à jour du snapshot en place.
 const InvaderMarker = memo(function InvaderMarker({ invader, isFlashed, onPress, stopPropagation }) {
-  const img = isFlashed ? IMAGES.flashed : (IMAGES[invader.status] ?? IMAGES.unknown);
+  const statusKey = IMAGES[invader.status] ? invader.status : 'unknown';
+  const key = isFlashed ? 'flashed' : statusKey;
+
+  // Android : marqueur NATIF via la prop `image` (bitmap direct, pas de vue React).
+  // → pas de capture de vue (donc pas de « pin rouge » par défaut le temps du rendu),
+  //   pas de marqueur vide, pas de doublon, et le changement d'icône au flash est
+  //   atomique côté natif (avec une clé stable, le marqueur est mis à jour en place).
+  //   Le halo néon des flashés n'existe pas sur Android de toute façon.
+  if (Platform.OS === 'android') {
+    return (
+      <Marker
+        coordinate={{ latitude: invader.lat, longitude: invader.lng }}
+        anchor={ANCHOR}
+        image={ANDROID_IMAGES[key]}
+        tracksViewChanges={false}
+        stopPropagation={stopPropagation}
+        onPress={onPress}
+      />
+    );
+  }
+
+  // iOS : vue personnalisée (halo néon sur les flashés). tracksViewChanges=false = OK.
+  const img = IMAGES[key];
   return (
     <Marker
       coordinate={{ latitude: invader.lat, longitude: invader.lng }}

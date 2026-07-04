@@ -774,9 +774,12 @@ export default function TrajetScreen() {
         <MapView
           ref={mapRef}
           style={styles.map}
-          mapType="mutedStandard"
+          mapType={Platform.OS === 'android' ? 'standard' : 'mutedStandard'}
           userInterfaceStyle={isDark ? 'dark' : 'light'}
           customMapStyle={Platform.OS === 'android' ? (isDark ? DARK_MAP_STYLE : LIGHT_MAP_STYLE) : undefined}
+          loadingEnabled={Platform.OS === 'android'}
+          loadingBackgroundColor={theme.bg}
+          loadingIndicatorColor={theme.accent}
           showsCompass={false}
           showsTraffic={false}
           showsPointsOfInterest={false}
@@ -821,7 +824,7 @@ export default function TrajetScreen() {
             const isFlashed = flashed.has(inv.id);
             return (
               <InvaderMarker
-                key={`${inv.id}-${isFlashed ? 1 : 0}`}
+                key={Platform.OS === 'android' ? inv.id : `${inv.id}-${isFlashed ? 1 : 0}`}
                 invader={inv}
                 isFlashed={isFlashed}
                 onPress={() => selectRouteInvader(inv)}

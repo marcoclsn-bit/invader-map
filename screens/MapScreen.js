@@ -267,6 +267,11 @@ export default function MapScreen({ navigation, route }) {
   // On n'ajoute les marqueurs qu'une fois la MKMapView prête : ajouter des
   // annotations pendant son initialisation (démarrage à froid) peut la faire crasher.
   const [mapReady, setMapReady] = useState(false);
+  // Android : n'afficher les marqueurs qu'une fois les TUILES rendues (onMapLoaded).
+  // Sinon la capture des 1 528 vues-marqueurs sature le fil graphique et empêche le
+  // rendu des tuiles (écran blanc ~30 s). La carte s'affiche d'abord, les Invaders
+  // se remplissent ensuite. iOS (Apple Maps) n'a pas ce souci → true d'emblée.
+  const [tilesLoaded, setTilesLoaded] = useState(Platform.OS !== 'android');
   const [locationGranted, setLocationGranted] = useState(false);
   const [userLocation, setUserLocation] = useState(null);
   const [userHeading, setUserHeading] = useState(null);
@@ -345,6 +350,14 @@ export default function MapScreen({ navigation, route }) {
     const id = setTimeout(() => setMapReady(true), 1200);
     return () => clearTimeout(id);
   }, [mapReady]);
+
+  // Repli Android : si onMapLoaded ne se déclenche pas, on affiche quand même les
+  // marqueurs après 12 s (au-delà, c'est un vrai souffle réseau, pas un blocage).
+  useEffect(() => {
+    if (tilesLoaded) return;
+    const id = setTimeout(() => setTilesLoaded(true), 12000);
+    return () => clearTimeout(id);
+  }, [tilesLoaded]);
 
   function goToUserLocation() {
     if (!userLocation) return;
@@ -490,9 +503,12 @@ export default function MapScreen({ navigation, route }) {
       <MapView
         ref={mapRef}
         style={styles.map}
-        mapType="mutedStandard"
+        mapType={Platform.OS === 'android' ? 'standard' : 'mutedStandard'}
         userInterfaceStyle={isDark ? 'dark' : 'light'}
         customMapStyle={Platform.OS === 'android' ? (isDark ? DARK_MAP_STYLE : LIGHT_MAP_STYLE) : undefined}
+        loadingEnabled={Platform.OS === 'android'}
+        loadingBackgroundColor={theme.bg}
+        loadingIndicatorColor={theme.accent}
         showsCompass={false}
         showsTraffic={false}
         showsPointsOfInterest={false}
@@ -500,15 +516,23 @@ export default function MapScreen({ navigation, route }) {
         initialRegion={{ latitude: city.center.lat, longitude: city.center.lng, ...city.mapDelta }}
         onPress={closeAll}
         onMapReady={() => setMapReady(true)}
+        onMapLoaded={() => setTilesLoaded(true)}
       >
         {!isChangingCity && <HeadingCone userLocation={userLocation} heading={userHeading} />}
         {/* Marqueurs montés seulement quand la carte est prête (mapReady) et hors
             changement de ville — évite le churn/ajout d'annotations sur MKMapView. */}
-        {mapReady && !isChangingCity && visibleInvaders.map((invader) => {
+        {mapReady && tilesLoaded && !isChangingCity && visibleInvaders.map((invader) => {
           const isFlashed = flashed.has(invader.id);
+          // Android : pendant l'animation de flash, on masque le vrai marqueur natif —
+          // l'alien animé de l'overlay le remplace. Sinon les deux icônes se superposent
+          // avec un léger décalage (effet de doublon). Le marqueur réapparaît (flashé)
+          // dès la fin de l'animation.
+          if (Platform.OS === 'android' && flashEffect && flashEffect.invader.id === invader.id) {
+            return null;
+          }
           return (
             <InvaderMarker
-              key={`${invader.id}-${isFlashed ? 1 : 0}`}
+              key={Platform.OS === 'android' ? invader.id : `${invader.id}-${isFlashed ? 1 : 0}`}
               invader={invader}
               isFlashed={isFlashed}
               stopPropagation
@@ -627,6 +651,13 @@ export default function MapScreen({ navigation, route }) {
             onNavigate={handleNavigate}
             onClose={() => setSelected(null)}
           />
+        </View>
+      )}
+
+      {/* Android : voile sombre tant que les tuiles ne sont pas rendues (anti-écran blanc) */}
+      {Platform.OS === 'android' && !tilesLoaded && !isChangingCity && (
+        <View style={[StyleSheet.absoluteFillObject, styles.cityTransitionOverlay]} pointerEvents="none">
+          <ActivityIndicator size="large" color={theme.accent} />
         </View>
       )}
 
