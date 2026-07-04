@@ -1,7 +1,8 @@
-import { memo, useState, useEffect } from 'react';
+import { memo } from 'react';
 import { Image, View, StyleSheet, Platform } from 'react-native';
 import { Marker } from 'react-native-maps';
 
+// iOS : images pleine résolution dans une vue personnalisée (permet le halo néon).
 const IMAGES = {
   flashed:   require('../assets/markers/alien_flashed.png'),
   ok:        require('../assets/markers/alien_ok.png'),
@@ -10,38 +11,51 @@ const IMAGES = {
   unknown:   require('../assets/markers/alien_unknown.png'),
 };
 
+// Android : marqueur NATIF via la prop `image` (bitmap direct, aucune capture de vue
+// → rendu instantané des 1 528 marqueurs, pas de pin rouge ni de doublon).
+// Chaque image existe en 3 densités (30px @1x, 60px @2x, 90px @3x) : dans un build,
+// React Native les range dans les drawable-*dpi Android → taille rendue = 30 dp
+// partout, identique à iOS, quelle que soit la densité de l'écran.
+// (Un PNG unique sans densité rendait une taille en pixels physiques → incohérente.)
+const ANDROID_IMAGES = {
+  flashed:   require('../assets/markers/android/alien_flashed.png'),
+  ok:        require('../assets/markers/android/alien_ok.png'),
+  damaged:   require('../assets/markers/android/alien_damaged.png'),
+  destroyed: require('../assets/markers/android/alien_destroyed.png'),
+  unknown:   require('../assets/markers/android/alien_unknown.png'),
+};
+
 const SIZE = 30;
 const ANCHOR = { x: 0.5, y: 0.5 };
 
 const InvaderMarker = memo(function InvaderMarker({ invader, isFlashed, onPress, stopPropagation }) {
   const statusKey = IMAGES[invader.status] ? invader.status : 'unknown';
-  const img = isFlashed ? IMAGES.flashed : IMAGES[statusKey];
+  const key = isFlashed ? 'flashed' : statusKey;
 
-  // Vue dimensionnée en dp (SIZE) → taille cohérente sur TOUS les écrans, identique à
-  // iOS. (La prop `image` native rendait une taille en pixels physiques, donc dépendante
-  // de la densité de l'écran = incohérente d'un téléphone à l'autre.)
-  //
-  // Android : une vue-marqueur doit être « trackée » au moins une fois pour capturer son
-  // bitmap (sinon invisible) ; on re-track à chaque changement d'état flashé (maj d'icône
-  // en place) puis on coupe pour la perf. iOS reste sur false (comportement d'origine).
-  const [tracks, setTracks] = useState(Platform.OS === 'android');
-  useEffect(() => {
-    if (Platform.OS !== 'android') return;
-    setTracks(true);
-    const id = setTimeout(() => setTracks(false), 800);
-    return () => clearTimeout(id);
-  }, [isFlashed]);
+  if (Platform.OS === 'android') {
+    return (
+      <Marker
+        coordinate={{ latitude: invader.lat, longitude: invader.lng }}
+        anchor={ANCHOR}
+        image={ANDROID_IMAGES[key]}
+        tracksViewChanges={false}
+        stopPropagation={stopPropagation}
+        onPress={onPress}
+      />
+    );
+  }
 
+  // iOS : vue personnalisée (halo néon sur les flashés). tracksViewChanges=false = OK.
   return (
     <Marker
       coordinate={{ latitude: invader.lat, longitude: invader.lng }}
       anchor={ANCHOR}
-      tracksViewChanges={tracks}
+      tracksViewChanges={false}
       stopPropagation={stopPropagation}
       onPress={onPress}
     >
       <View style={isFlashed ? styles.glowWrap : styles.wrap}>
-        <Image source={img} style={styles.img} resizeMode="contain" fadeDuration={0} />
+        <Image source={IMAGES[key]} style={styles.img} resizeMode="contain" fadeDuration={0} />
       </View>
     </Marker>
   );
