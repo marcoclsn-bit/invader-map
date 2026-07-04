@@ -1,5 +1,4 @@
 import { createContext, useContext, useState, useEffect, useRef, useMemo } from 'react';
-import { AppState } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Location from 'expo-location';
 import { INVADERS as EMBEDDED_PA, INVADERS_VERSION, INVADERS_UPDATED_AT } from '../data/invaders';
@@ -49,9 +48,6 @@ function _nearestCity(lat, lng) {
   }, { city: ENABLED_CITIES[0], d2: Infinity }).city;
 }
 
-// Débit estimé : nombre d'Invaders rendus par seconde sur le pont JS→natif.
-// Paris (1528 inv) → ceil(1528 / 16) = 96 s ≈ 1 min 36 s.
-const INVADERS_PER_SECOND = 16;
 
 export function AppProvider({ children }) {
   // ─── Ville courante ───────────────────────────────────────────────────────────
@@ -79,13 +75,6 @@ export function AppProvider({ children }) {
   const [isChangingCity,  setIsChangingCity]  = useState(false);
   // Ville cible pendant la transition (affichée dans l'overlay avant le commit)
   const [pendingCityCode, setPendingCityCode] = useState(null);
-  // Timestamp (ms) jusqu'auquel le changement de ville est verrouillé.
-  // Initialisé pour Paris au démarrage : ceil(1528 / 16) = 96 s.
-  // mapLockDuration = durée originale du verrou courant (ne change PAS lors d'une extension background).
-  // Permet de calculer la progression : 1 - remainingMs / mapLockDuration.
-  const _initialLockDuration = Math.ceil(EMBEDDED_PA.length / INVADERS_PER_SECOND) * 1000;
-  const [mapLockUntil,    setMapLockUntil]    = useState(() => Date.now() + _initialLockDuration);
-  const [mapLockDuration, setMapLockDuration] = useState(_initialLockDuration);
 
   const [flashed,      setFlashed]      = useState(new Set());
   // Map<id, isoString> — absente = null (Invader flashé avant cette version)
@@ -198,41 +187,9 @@ export function AppProvider({ children }) {
       if (changingCityTimer.current) clearTimeout(changingCityTimer.current);
       changingCityTimer.current = setTimeout(() => {
         _releaseCityLock();
-        // Verrouille le changement de ville pendant le temps de chargement estimé.
-        // On utilise le nombre réel d'Invaders si déjà en mémoire, sinon cityIndex, sinon 100.
-        const count = getCityData(code)?.invaders?.length
-          ?? cityIndex.find(c => c.code === code)?.count
-          ?? 100;
-        const lockMs = Math.ceil(count / INVADERS_PER_SECOND) * 1000;
-        setMapLockDuration(lockMs);
-        setMapLockUntil(Date.now() + lockMs);
       }, 500);
     }, 500);
   }
-
-  // ─── Pause du timer quand l'app passe en arrière-plan ───────────────────────
-  // Quand l'app revient au premier plan, on ajoute le temps écoulé en arrière-plan
-  // à mapLockUntil pour que le timer ne s'écoule pas pendant que les RAF sont gelés.
-  // À la fermeture complète, AppProvider se démonte → mapLockUntil repart de 0 au relancement.
-  useEffect(() => {
-    let backgroundedAt = null;
-
-    const sub = AppState.addEventListener('change', (nextState) => {
-      if (nextState !== 'active') {
-        // App en arrière-plan ou inactive : mémoriser l'heure
-        if (backgroundedAt === null) backgroundedAt = Date.now();
-      } else {
-        // Retour au premier plan
-        if (backgroundedAt !== null) {
-          const elapsed = Date.now() - backgroundedAt;
-          backgroundedAt = null;
-          setMapLockUntil(prev => (prev > Date.now() ? prev + elapsed : prev));
-        }
-      }
-    });
-
-    return () => sub.remove();
-  }, []);
 
   // ─── Vérification manuelle (Réglages) ────────────────────────────────────────
   async function checkDataUpdate() {
@@ -334,19 +291,11 @@ export function AppProvider({ children }) {
         currentCityCodeRef.current = cityToLoad;
         setCurrentCityCode(cityToLoad);
         setInvaders([]);
-        // Verrou provisoire (100 inv = ~7 s) en attendant le nombre réel.
-        const provisionalMs = Math.ceil(100 / INVADERS_PER_SECOND) * 1000;
-        setMapLockDuration(provisionalMs);
-        setMapLockUntil(Date.now() + provisionalMs);
         loadCityData(cityToLoad).then(data => {
           if (data && currentCityCodeRef.current === cityToLoad) {
             setInvaders(data.invaders);
             setCityVersion(data.version);
             setCityUpdatedAt(data.updatedAt);
-            // Maintenant qu'on connaît le nombre exact, on corrige le verrou.
-            const realMs = Math.ceil(data.invaders.length / INVADERS_PER_SECOND) * 1000;
-            setMapLockDuration(realMs);
-            setMapLockUntil(Date.now() + realMs);
           }
         });
       }
@@ -539,7 +488,6 @@ export function AppProvider({ children }) {
   const value = useMemo(() => ({
     // Villes
     currentCityCode, setCurrentCity, cityIndex, isChangingCity, pendingCityCode,
-    mapLockUntil, mapLockDuration,
     // Invaders (ville courante)
     invaders, dataVersion, dataUpdatedAt, checkDataUpdate,
     // Progression
@@ -561,7 +509,6 @@ export function AppProvider({ children }) {
     resetLabels,
   }), [ // eslint-disable-line react-hooks/exhaustive-deps
     currentCityCode, cityIndex, isChangingCity, pendingCityCode,
-    mapLockUntil, mapLockDuration,
     invaders, dataVersion, dataUpdatedAt,
     flashed, flashedDates,
     labels, labelDefs, statusColors, colorOverrides,

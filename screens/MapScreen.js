@@ -45,14 +45,6 @@ function applyFilters(invaders, filters, flashed) {
 
 // ─── Panneau de filtres ───────────────────────────────────────────────────────
 
-function formatCountdown(s) {
-  if (s <= 0) return '0 s';
-  const m = Math.floor(s / 60);
-  const sec = s % 60;
-  if (m === 0) return `${sec} s`;
-  return `${m} min ${sec < 10 ? '0' : ''}${sec} s`;
-}
-
 function FilterPanel({ filters, onFiltersChange, onClose }) {
   const { statusColors } = useAppContext();
   const { theme } = useTheme();
@@ -154,21 +146,13 @@ function FilterPanel({ filters, onFiltersChange, onClose }) {
 // ─── Écran carte ──────────────────────────────────────────────────────────────
 
 export default function MapScreen({ navigation, route }) {
-  const { invaders, flashed, labels, labelDefs, statusColors, colorOverrides, filters, setFilters, toggleFlash, mapsApp, setMapsAppPref, currentCityCode, isChangingCity, pendingCityCode, mapLockUntil, mapLockDuration, legendSeen, dismissLegend } = useAppContext();
+  const { invaders, flashed, labels, labelDefs, statusColors, colorOverrides, filters, setFilters, toggleFlash, mapsApp, setMapsAppPref, currentCityCode, isChangingCity, pendingCityCode, legendSeen, dismissLegend } = useAppContext();
   const city = CITIES[currentCityCode] ?? CITIES.PA;
   const overlayName = (pendingCityCode ? CITIES[pendingCityCode]?.name : null) ?? city.name;
   const { theme, isDark } = useTheme();
   const { t } = useTranslation();
   const styles = getStyles(theme);
   const insets = useSafeAreaInsets();
-
-  const [now, setNow] = useState(() => Date.now());
-  const isLocked = now < mapLockUntil;
-  useEffect(() => {
-    if (!isLocked) return;
-    const id = setInterval(() => setNow(Date.now()), 1000);
-    return () => clearInterval(id);
-  }, [isLocked, mapLockUntil]);
 
   const mapRef = useRef(null);
   const centeredRef = useRef(false);
@@ -404,13 +388,6 @@ export default function MapScreen({ navigation, route }) {
 
   const visibleInvaders = sortedInvaders.slice(0, renderedCount);
 
-  // Pourcentage basé sur le temps restant du verrou (pas sur le rendu, qui est trop rapide).
-  // Formule : 1 - remainingMs/totalDuration → stable même après pause en arrière-plan.
-  const remainingMs = Math.max(0, mapLockUntil - now);
-  const lockProgress = mapLockDuration > 0 ? Math.min(1, 1 - remainingMs / mapLockDuration) : 1;
-  const loadingPct = Math.round(lockProgress * 100);
-  const remainingSeconds = Math.max(0, Math.ceil(remainingMs / 1000));
-
   const hasActiveFilters =
     filters.statuses.size < ALL_STATUSES.length ||
     filters.flashedState !== 'all';
@@ -474,18 +451,10 @@ export default function MapScreen({ navigation, route }) {
             <Text style={styles.menuTopBtnText}>{t('common.menu')}</Text>
           </TouchableOpacity>
 
-          {/* Texte de chargement pixelisé (centre) */}
-          {isLocked ? (
-            <Text style={styles.loadingText} numberOfLines={1}>
-              {t('map.loading.progress', { pct: loadingPct })}
-            </Text>
-          ) : (
-            <View style={{ flex: 1 }} />
-          )}
+          <View style={{ flex: 1 }} />
 
           {/* Chip ville (droite) */}
-          <View style={[styles.cityChip, isLocked && styles.chipLocked]}>
-            {isLocked && <ActivityIndicator size="small" color={theme.accent} />}
+          <View style={styles.cityChip}>
             {ENABLED_CITIES.length > 1 ? (
               <TouchableOpacity style={styles.cityChipInner} onPress={() => navigation.navigate('Palmarès')} activeOpacity={0.75}>
                 <Ionicons name="globe-outline" size={13} color={theme.textPrimary} />
@@ -506,23 +475,16 @@ export default function MapScreen({ navigation, route }) {
       {!isChangingCity && (
         <View style={[styles.bottomRight, { bottom: insets.bottom + 16 }]}>
           <TouchableOpacity
-            style={[styles.circleBtn, hasActiveFilters && !isLocked && styles.circleBtnActive, isLocked && { opacity: 0.55 }]}
+            style={[styles.circleBtn, hasActiveFilters && styles.circleBtnActive]}
             onPress={() => {
-              if (isLocked) {
-                Alert.alert(
-                  t('map.loadingTitle'),
-                  t('map.loadingBody', { countdown: formatCountdown(remainingSeconds) }),
-                );
-                return;
-              }
               setShowFilters((v) => !v);
               setSelected(null);
             }}
           >
             <Ionicons
-              name={hasActiveFilters && !isLocked ? 'funnel' : 'funnel-outline'}
+              name={hasActiveFilters ? 'funnel' : 'funnel-outline'}
               size={19}
-              color={hasActiveFilters && !isLocked ? theme.bg : theme.textPrimary}
+              color={hasActiveFilters ? theme.bg : theme.textPrimary}
             />
           </TouchableOpacity>
           <TouchableOpacity
@@ -615,13 +577,6 @@ function makeStyles(t) {
     },
     menuTopBtnText: { fontSize: 14, fontWeight: '600', color: t.textPrimary },
 
-    // Texte de chargement pixelisé (centre)
-    loadingText: {
-      flex: 1, textAlign: 'center',
-      fontFamily: 'Silkscreen_400Regular', fontSize: 9,
-      color: t.textPrimary,
-    },
-
     // Chip ville (droite)
     cityChip: {
       flexDirection: 'row', alignItems: 'center', gap: 6, flexShrink: 0,
@@ -630,7 +585,6 @@ function makeStyles(t) {
       shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
       shadowOpacity: 0.2, shadowRadius: 4, elevation: 4,
     },
-    chipLocked: { opacity: 0.55 },
     cityChipInner: { flexDirection: 'row', alignItems: 'center', gap: 4 },
     cityChipText: { fontSize: 13, fontWeight: '600', color: t.textPrimary },
 

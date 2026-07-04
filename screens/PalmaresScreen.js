@@ -12,14 +12,6 @@ import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import DonutChart from '../components/DonutChart';
 
-function formatCountdown(s) {
-  if (s <= 0) return '0 s';
-  const m = Math.floor(s / 60);
-  const sec = s % 60;
-  if (m === 0) return `${sec} s`;
-  return `${m} min ${sec < 10 ? '0' : ''}${sec} s`;
-}
-
 // ─── Cache de styles thémés ───────────────────────────────────────────────────
 let _styleCache = null;
 function getStyles(theme) {
@@ -105,7 +97,7 @@ function ArrondissementsView({ stats, insets, onBack, onOpenDrawer, onHuntAr, th
 
 export default function PalmaresScreen({ navigation }) {
   const insets = useSafeAreaInsets();
-  const { invaders, flashed, currentCityCode, setCurrentCity, cityIndex, isChangingCity, mapLockUntil } = useAppContext();
+  const { invaders, flashed, currentCityCode, setCurrentCity, cityIndex, isChangingCity } = useAppContext();
   const { theme } = useTheme();
   const { t, i18n } = useTranslation();
   const lang = i18n.language?.slice(0, 2) || 'fr';
@@ -145,17 +137,6 @@ export default function PalmaresScreen({ navigation }) {
     });
     return ordered;
   }, [lang]);
-
-  // Countdown de verrouillage
-  const [now, setNow] = useState(() => Date.now());
-  const isLocked = now < mapLockUntil;
-  const remainingSeconds = Math.max(0, Math.ceil((mapLockUntil - now) / 1000));
-
-  useEffect(() => {
-    if (!isLocked) return;
-    const id = setInterval(() => setNow(Date.now()), 1000);
-    return () => clearInterval(id);
-  }, [isLocked, mapLockUntil]);
 
   // Les détruits sont exclus : on ne peut pas les flasher
   const flashable = useMemo(
@@ -244,16 +225,6 @@ export default function PalmaresScreen({ navigation }) {
         <Text style={styles.summaryPct}>{stats.pct.toFixed(1)} %</Text>
       </View>
 
-      {/* Bannière de chargement (pendant le verrou de changement de ville) */}
-      {isLocked && (
-        <View style={[styles.lockBanner, { backgroundColor: theme.surface, borderColor: theme.border }]}>
-          <Ionicons name="time-outline" size={14} color={theme.textSecondary} />
-          <Text style={[styles.lockBannerText, { color: theme.textSecondary }]}>
-            {t('palmares.loadingBanner', { countdown: formatCountdown(remainingSeconds) })}
-          </Text>
-        </View>
-      )}
-
       {/* Villes groupées par pays (France d'abord) */}
       {countryGroups.map((group) => (
         <Fragment key={group.code}>
@@ -272,15 +243,14 @@ export default function PalmaresScreen({ navigation }) {
                   style={[
                     styles.villeCard,
                     isActive && { borderColor: theme.accent, borderWidth: 1.5 },
-                    !isActive && isLocked && { opacity: 0.5 },
                   ]}
                   onPress={() => {
-                    if (isChangingCity || isActive || isLocked) return;
+                    if (isChangingCity || isActive) return;
                     setCurrentCity(c.code);
                     // Carte est un onglet imbriqué dans "Tabs" (pas une route du Drawer)
                     navigation.navigate('Tabs', { screen: 'Carte' });
                   }}
-                  activeOpacity={!isActive && isLocked ? 1 : 0.7}
+                  activeOpacity={0.7}
                 >
                   <View style={styles.villeLeft}>
                     <DonutChart
@@ -391,12 +361,5 @@ function makeStyles(t) {
     arStat: { fontSize: 12, color: t.textSecondary, marginTop: 6 },
 
     separator: { height: StyleSheet.hairlineWidth, backgroundColor: t.border },
-
-    lockBanner: {
-      flexDirection: 'row', alignItems: 'center', gap: 6,
-      paddingHorizontal: 20, paddingVertical: 10,
-      borderBottomWidth: StyleSheet.hairlineWidth,
-    },
-    lockBannerText: { fontSize: 13 },
   });
 }
