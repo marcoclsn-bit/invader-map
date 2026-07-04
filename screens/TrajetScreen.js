@@ -20,6 +20,7 @@ import { countryCodeOf } from '../cities/countries';
 import { geocode, autocomplete, route } from '../services/routing';
 import { canUseFeature, FEATURES } from '../services/featureAccess';
 import InvaderMarker from '../components/InvaderMarker';
+import PinMarker from '../components/PinMarker';
 import HeadingCone from '../components/HeadingCone';
 import InvaderPanel from '../components/InvaderPanel';
 import FlashOverlay from '../components/FlashOverlay';
@@ -733,13 +734,18 @@ export default function TrajetScreen() {
       return;
     }
     try {
-      const loc = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.Balanced });
-      mapRef.current?.animateToRegion({
-        latitude: loc.coords.latitude,
-        longitude: loc.coords.longitude,
-        latitudeDelta: 0.003,
-        longitudeDelta: 0.003,
-      }, 400);
+      // Position connue instantanément (position live si suivi, sinon dernier fix connu)
+      // → évite d'attendre un NOUVEAU fix GPS, lent sur Android. Repli sur un fix courant.
+      let loc = userPos ? { coords: userPos } : await Location.getLastKnownPositionAsync();
+      if (!loc) loc = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.Balanced });
+      if (loc) {
+        mapRef.current?.animateToRegion({
+          latitude: loc.coords.latitude,
+          longitude: loc.coords.longitude,
+          latitudeDelta: 0.003,
+          longitudeDelta: 0.003,
+        }, 400);
+      }
     } catch {}
   }
 
@@ -817,6 +823,7 @@ export default function TrajetScreen() {
           showsTraffic={false}
           showsPointsOfInterest={false}
           showsUserLocation={locationGranted}
+          showsMyLocationButton={false}
           initialRegion={{ latitude: city.center.lat, longitude: city.center.lng, ...city.mapDelta }}
           onPress={() => Keyboard.dismiss()}
           onPanDrag={() => { if (following) setDrifted(true); }}
@@ -829,28 +836,26 @@ export default function TrajetScreen() {
               )}
               {/* Repère départ — masqué en suivi et quand le départ est la position GPS */}
               {!following && depText !== GPS_LABEL && (
-              <Marker
+              <PinMarker
                 key="route-dep"
                 coordinate={routePolyline[0]}
                 anchor={{ x: 0.5, y: 0.5 }}
-                tracksViewChanges={false}
               >
                 <View style={styles.pinDep}>
                   <Ionicons name="navigate" size={16} color="#fff" />
                 </View>
-              </Marker>
+              </PinMarker>
               )}
               {/* Repère arrivée */}
-              <Marker
+              <PinMarker
                 key="route-arr"
                 coordinate={routePolyline[routePolyline.length - 1]}
                 anchor={{ x: 0.5, y: 0.5 }}
-                tracksViewChanges={false}
               >
                 <View style={styles.pinArr}>
                   <Ionicons name="flag" size={16} color="#fff" />
                 </View>
-              </Marker>
+              </PinMarker>
             </>
           )}
           {displayInvaders?.map((inv) => {

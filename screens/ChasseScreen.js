@@ -20,6 +20,7 @@ import { INVADER_DISTRICT, ARRONDISSEMENT_CENTERS } from '../utils/arrondissemen
 import { useTheme } from '../theme/ThemeContext';
 import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
 import InvaderPanel from '../components/InvaderPanel';
+import PinMarker from '../components/PinMarker';
 import HeadingCone from '../components/HeadingCone';
 import { openNavigationApp } from '../utils/navigation';
 import { useSessionRecorder } from '../components/session/useSessionRecorder';
@@ -500,11 +501,20 @@ export default function ChasseScreen({ route }) {
   async function recenter() {
     if (following) { setDrifted(false); return; }
     try {
-      const loc = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.Balanced });
-      mapRef.current?.animateToRegion(
-        { latitude: loc.coords.latitude, longitude: loc.coords.longitude, latitudeDelta: 0.003, longitudeDelta: 0.003 },
-        400
-      );
+      // Dernier fix connu du système (tenu à jour par le point bleu actif) : quasi
+      // instantané ET frais — contrairement à un nouveau fix (lent sur Android) ou au
+      // gpsRef figé au démarrage. Replis : fix courant, puis gpsRef en dernier recours.
+      let loc = await Location.getLastKnownPositionAsync();
+      if (!loc) loc = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.Balanced });
+      const coords = loc
+        ? { latitude: loc.coords.latitude, longitude: loc.coords.longitude }
+        : (gpsRef.current ? { latitude: gpsRef.current[1], longitude: gpsRef.current[0] } : null);
+      if (coords) {
+        mapRef.current?.animateToRegion(
+          { ...coords, latitudeDelta: 0.003, longitudeDelta: 0.003 },
+          400
+        );
+      }
     } catch {}
   }
 
@@ -540,6 +550,7 @@ export default function ChasseScreen({ route }) {
             showsTraffic={false}
             showsPointsOfInterest={false}
             showsUserLocation={gpsReady}
+            showsMyLocationButton={false}
             initialRegion={{ latitude: city.center.lat, longitude: city.center.lng, ...city.mapDelta }}
             onPress={() => Keyboard.dismiss()}
             onPanDrag={() => { if (following) setDrifted(true); }}
@@ -558,20 +569,21 @@ export default function ChasseScreen({ route }) {
                 />
                 {/* Point de départ (masqué en mode navigation : on est dessus) */}
                 {!following && (
-                  <Marker key="hunt-start" coordinate={{ latitude: result.startLat, longitude: result.startLon }}
-                    anchor={{ x: 0.5, y: 0.5 }} tracksViewChanges={false}>
+                  <PinMarker key="hunt-start" coordinate={{ latitude: result.startLat, longitude: result.startLon }}
+                    anchor={{ x: 0.5, y: 0.5 }}>
                     <View style={styles.pinStart}>
                       <Ionicons name="locate" size={16} color="#fff" />
                     </View>
-                  </Marker>
+                  </PinMarker>
                 )}
                 {result.invaders.map((inv, i) => (
-                  <Marker key={inv.id} coordinate={{ latitude: inv.lat, longitude: inv.lng }}
-                    anchor={{ x: 0.5, y: 0.5 }} tracksViewChanges={false} onPress={() => selectInvader(inv)}>
+                  <PinMarker key={inv.id} coordinate={{ latitude: inv.lat, longitude: inv.lng }}
+                    anchor={{ x: 0.5, y: 0.5 }} onPress={() => selectInvader(inv)}
+                    redrawKey={selectedInv?.id === inv.id}>
                     <View style={[styles.huntMarker, selectedInv?.id === inv.id && styles.huntMarkerSel]}>
                       <Text style={styles.huntMarkerNum}>{i + 1}</Text>
                     </View>
-                  </Marker>
+                  </PinMarker>
                 ))}
               </>
             )}
