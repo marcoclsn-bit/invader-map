@@ -164,6 +164,18 @@ export default function MapScreen({ navigation, route }) {
   // Invaders flashés à l'instant : on les garde affichés le temps que l'animation
   // (pop + « +X PTS ») se joue, avant qu'un filtre « à faire » ne les masque.
   const [recentlyFlashed, setRecentlyFlashed] = useState(() => new Set());
+  // Ref pour lire l'overlay courant depuis onRegionChange sans closure périmée.
+  const flashEffectRef = useRef(null);
+  flashEffectRef.current = flashEffect;
+  // Retire l'animation de flash + le sursis d'affichage de l'Invader. Appelé à la fin
+  // de l'animation ET dès que la carte bouge (sinon l'alien resterait « collé » à l'écran
+  // pendant que la carte se déplace / se recentre).
+  function dismissFlash() {
+    const cur = flashEffectRef.current;
+    if (!cur) return;
+    setFlashEffect(null);
+    setRecentlyFlashed((prev) => { const n = new Set(prev); n.delete(cur.invader.id); return n; });
+  }
   const [selected, setSelected] = useState(null);
   const [showFilters, setShowFilters] = useState(false);
   // On n'ajoute les marqueurs qu'une fois la MKMapView prête : ajouter des
@@ -413,6 +425,7 @@ export default function MapScreen({ navigation, route }) {
         onPress={closeAll}
         onMapReady={() => setMapReady(true)}
         onMapLoaded={() => setTilesLoaded(true)}
+        onRegionChange={dismissFlash}
       >
         {!isChangingCity && <HeadingCone userLocation={userLocation} heading={userHeading} />}
         {/* Marqueurs montés seulement quand la carte est prête (mapReady) et hors
@@ -515,12 +528,7 @@ export default function MapScreen({ navigation, route }) {
           invader={flashEffect.invader}
           point={flashEffect.point}
           theme={theme}
-          onDone={() => {
-            const flashedId = flashEffect.invader.id;
-            setFlashEffect(null);
-            // L'animation est finie : on lève le sursis → l'Invader peut être masqué
-            setRecentlyFlashed((prev) => { const n = new Set(prev); n.delete(flashedId); return n; });
-          }}
+          onDone={dismissFlash}
         />
       )}
 

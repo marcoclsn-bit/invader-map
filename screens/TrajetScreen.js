@@ -299,6 +299,18 @@ export default function TrajetScreen() {
   // Invaders flashés à l'instant : gardés affichés le temps que l'animation se joue,
   // avant qu'un filtre « à faire » ne les masque.
   const [recentlyFlashed, setRecentlyFlashed] = useState(() => new Set());
+  // Ref pour lire l'overlay courant depuis onRegionChange sans closure périmée.
+  const flashEffectRef = useRef(null);
+  flashEffectRef.current = flashEffect;
+  // Retire l'animation de flash + le sursis d'affichage. Appelé à la fin de l'animation
+  // ET dès que la carte bouge (déplacement manuel ou recentrage auto en navigation) —
+  // sinon l'alien resterait « collé » à l'écran pendant que la carte se déplace.
+  function dismissFlash() {
+    const cur = flashEffectRef.current;
+    if (!cur) return;
+    setFlashEffect(null);
+    setRecentlyFlashed((prev) => { const n = new Set(prev); n.delete(cur.invader.id); return n; });
+  }
   const [showInfo, setShowInfo] = useState(false);
   const [following, setFollowing] = useState(false);
   const [drifted, setDrifted] = useState(false);
@@ -827,6 +839,7 @@ export default function TrajetScreen() {
           initialRegion={{ latitude: city.center.lat, longitude: city.center.lng, ...city.mapDelta }}
           onPress={() => Keyboard.dismiss()}
           onPanDrag={() => { if (following) setDrifted(true); }}
+          onRegionChange={dismissFlash}
         >
           {routePolyline && (
             <>
@@ -885,11 +898,7 @@ export default function TrajetScreen() {
             invader={flashEffect.invader}
             point={flashEffect.point}
             theme={theme}
-            onDone={() => {
-              const flashedId = flashEffect.invader.id;
-              setFlashEffect(null);
-              setRecentlyFlashed((prev) => { const n = new Set(prev); n.delete(flashedId); return n; });
-            }}
+            onDone={dismissFlash}
           />
         )}
 
