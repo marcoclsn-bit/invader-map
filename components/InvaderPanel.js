@@ -25,7 +25,8 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
 
   function handleFlash() {
     onToggleFlash(invader.id);
-    if (autoCloseOnAction) onClose();
+    // fromFlash : permet à l'appelant (Trajet) de fermer sans relancer le recentrage.
+    if (autoCloseOnAction) onClose({ fromFlash: true });
   }
   function handleNavigate() {
     onNavigate(invader.lat, invader.lng);
@@ -76,7 +77,7 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
     <View style={styles.panel}>
       <View style={styles.panelHeader}>
         <Text style={styles.panelId}>{invader.id}</Text>
-        <TouchableOpacity onPress={onClose} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
+        <TouchableOpacity onPress={() => onClose()} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
           <Text style={styles.closeButton}>✕</Text>
         </TouchableOpacity>
       </View>

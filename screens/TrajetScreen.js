@@ -1042,9 +1042,11 @@ export default function TrajetScreen() {
               invader={selectedRouteInv}
               onToggleFlash={handleFlashRoute}
               onNavigate={(lat, lng) => openNavigationApp(mapsApp ?? 'apple', lat, lng)}
-              onClose={() => {
+              onClose={(opts) => {
                 setSelectedRouteInv(null);
-                if (following) setDrifted(false);
+                // Pas de reprise du suivi auto après un FLASH : on marque souvent
+                // plusieurs Invaders d'affilée, un recentrage entre chaque serait une gêne.
+                if (following && !opts?.fromFlash) setDrifted(false);
               }}
               autoCloseOnAction={following}
             />

@@ -811,9 +811,10 @@ export default function ChasseScreen({ route }) {
                 invader={selectedInv}
                 onToggleFlash={(id) => { if (!flashed.has(id)) Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success); toggleFlash(id); }}
                 onNavigate={(lat, lng) => openNavigationApp(mapsApp ?? 'apple', lat, lng)}
-                onClose={() => {
+                onClose={(opts) => {
                   setSelectedInv(null);
-                  if (following) setDrifted(false);
+                  // Pas de reprise du suivi auto après un FLASH (marquage en série).
+                  if (following && !opts?.fromFlash) setDrifted(false);
                 }}
                 autoCloseOnAction={following}
               />
