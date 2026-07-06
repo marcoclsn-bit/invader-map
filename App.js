@@ -63,9 +63,10 @@ function MainTabs() {
       <Tab.Screen name="Trajet" component={TrajetScreen}
         options={{ tabBarLabel: t('tabs.route'), tabBarIcon: ({ color, size, focused }) =>
           <Ionicons name={focused ? 'navigate' : 'navigate-outline'} size={size} color={color} /> }} />
+      {/* Boussole (pas trophée : le trophée évoquerait le Palmarès) */}
       <Tab.Screen name="Chasse" component={ChasseScreen}
         options={{ tabBarLabel: t('tabs.hunt'), tabBarIcon: ({ color, size, focused }) =>
-          <Ionicons name={focused ? 'trophy' : 'trophy-outline'} size={size} color={color} /> }} />
+          <Ionicons name={focused ? 'compass' : 'compass-outline'} size={size} color={color} /> }} />
     </Tab.Navigator>
   );
 }

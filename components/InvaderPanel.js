@@ -111,9 +111,12 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
           <View style={styles.actions}>
             <TouchableOpacity
               onPress={handleFlash}
-              style={[styles.actionBtn, isFlashed && styles.actionBtnActive]}
+              style={[styles.actionBtn, isFlashed ? styles.actionBtnActive : styles.actionBtnPrimary]}
             >
-              <Text style={[styles.actionBtnText, isFlashed && styles.actionBtnTextActive]} numberOfLines={1}>
+              <Text
+                style={[styles.actionBtnText, isFlashed ? styles.actionBtnTextActive : styles.actionBtnTextPrimary]}
+                numberOfLines={1}
+              >
                 {isFlashed ? t('map.panel.alreadyFlashed') : t('map.panel.markFlashed')}
               </Text>
             </TouchableOpacity>
@@ -206,18 +209,22 @@ function makeStyles(t) {
     hint: { marginTop: 12, fontSize: 14, color: t.textSecondary, fontStyle: 'italic' },
     actions: { marginTop: 12, flexDirection: 'row', gap: 8 },
     actionBtn: {
-      flex: 1, borderRadius: 8, paddingHorizontal: 14, paddingVertical: 8,
+      flex: 1, borderRadius: 8, paddingHorizontal: 14, paddingVertical: 9,
       backgroundColor: t.surfaceHigh, alignItems: 'center',
     },
-    actionBtnActive: { backgroundColor: t.accent },
+    // « Flasher » = action n°1 → bouton plein accent tant que non flashé.
+    actionBtnPrimary: { backgroundColor: t.accent },
+    actionBtnTextPrimary: { color: t.bg, fontWeight: '700' },
+    // Déjà flashé → état « fait » : fond neutre, liseré + texte accent.
+    actionBtnActive: { backgroundColor: t.surfaceHigh, borderWidth: 1, borderColor: t.accent },
     actionBtnText: { fontSize: 14, fontWeight: '500', color: t.textPrimary },
-    actionBtnTextActive: { color: t.bg },
+    actionBtnTextActive: { color: t.accent, fontWeight: '600' },
+    // Instagram = action secondaire → lien discret (plus de gros bouton bordé).
     igBtn: {
-      marginTop: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
-      gap: 7, paddingVertical: 8, borderRadius: 8,
-      borderWidth: 1, borderColor: '#E1306C',
+      marginTop: 12, flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
+      gap: 6, paddingVertical: 6,
     },
-    igBtnText: { fontSize: 14, fontWeight: '500', color: '#E1306C' },
+    igBtnText: { fontSize: 13, fontWeight: '500', color: '#E1306C' },
     reportBtn: {
       marginTop: 12, flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
       gap: 6, paddingVertical: 4,

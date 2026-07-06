@@ -505,7 +505,7 @@ export default function MapScreen({ navigation, route }) {
             style={[styles.circleBtn, !userLocation && { opacity: 0.4 }]}
             onPress={userLocation ? goToUserLocation : undefined}
           >
-            <Text style={styles.locateBtnText}>⊙</Text>
+            <Ionicons name="locate" size={19} color={theme.textPrimary} />
           </TouchableOpacity>
         </View>
       )}
@@ -611,7 +611,6 @@ function makeStyles(t) {
       shadowOpacity: 0.25, shadowRadius: 4, elevation: 4,
     },
     circleBtnActive: { backgroundColor: t.accent },
-    locateBtnText: { fontSize: 20, color: t.textPrimary },
 
     // ── Transition de ville ──────────────────────────────────────────────────
     cityTransitionOverlay: {
