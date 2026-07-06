@@ -1,4 +1,5 @@
-import { View, Text, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+import { useState } from 'react';
+import { View, Text, TouchableOpacity, StyleSheet, Alert, Modal } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { useAppContext } from '../context/AppContext';
@@ -23,6 +24,7 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
   const { t } = useTranslation();
   const styles = getStyles(theme);
   const isFlashed = flashed.has(invader.id);
+  const [zoom, setZoom] = useState(false);
 
   function handleFlash() {
     onToggleFlash(invader.id);
@@ -76,18 +78,6 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
 
   return (
     <View style={styles.panel}>
-      {invader.photoUrl ? (
-        <View style={styles.photoWrap}>
-          <InvaderPhoto
-            photoUrl={invader.photoUrl}
-            status={invader.status}
-            style={styles.photo}
-            contentFit="contain"
-          />
-          <Text style={styles.photoCredit}>{t('map.panel.photoCredit')}</Text>
-        </View>
-      ) : null}
-
       <View style={styles.panelHeader}>
         <Text style={styles.panelId}>{invader.id}</Text>
         <TouchableOpacity onPress={() => onClose()} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
@@ -95,14 +85,32 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
         </TouchableOpacity>
       </View>
 
-      <View style={styles.panelRow}>
-        <View style={[styles.statusBadge, { backgroundColor: statusColors[invader.status] }]}>
-          <Text style={styles.statusText}>{t(`common.status.${invader.status}`) ?? invader.status}</Text>
-        </View>
-        <Text style={styles.points}>{invader.points != null ? `${invader.points} pts` : '— pts'}</Text>
-      </View>
+      <View style={styles.topRow}>
+        {invader.photoUrl ? (
+          <TouchableOpacity style={styles.thumbWrap} onPress={() => setZoom(true)} activeOpacity={0.8}>
+            <InvaderPhoto
+              photoUrl={invader.photoUrl}
+              status={invader.status}
+              style={styles.thumb}
+              contentFit="contain"
+            />
+            <View style={styles.zoomBadge}>
+              <Ionicons name="expand" size={12} color="#fff" />
+            </View>
+          </TouchableOpacity>
+        ) : null}
 
-      {invader.hint ? <Text style={styles.hint}>{invader.hint}</Text> : null}
+        <View style={styles.topInfo}>
+          <View style={styles.panelRow}>
+            <View style={[styles.statusBadge, { backgroundColor: statusColors[invader.status] }]}>
+              <Text style={styles.statusText}>{t(`common.status.${invader.status}`) ?? invader.status}</Text>
+            </View>
+            <Text style={styles.points}>{invader.points != null ? `${invader.points} pts` : '— pts'}</Text>
+          </View>
+          {invader.hint ? <Text style={styles.hint}>{invader.hint}</Text> : null}
+          {invader.photoUrl ? <Text style={styles.photoCredit}>{t('map.panel.photoCredit')}</Text> : null}
+        </View>
+      </View>
 
       <View style={styles.actions}>
         <TouchableOpacity
@@ -136,6 +144,33 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
         <Ionicons name="flag-outline" size={13} color={theme.textSecondary} />
         <Text style={styles.reportBtnText}>{t('feedback.status.button')}</Text>
       </TouchableOpacity>
+
+      {invader.photoUrl ? (
+        <Modal
+          visible={zoom}
+          transparent
+          animationType="fade"
+          statusBarTranslucent
+          onRequestClose={() => setZoom(false)}
+        >
+          <TouchableOpacity style={styles.lightbox} activeOpacity={1} onPress={() => setZoom(false)}>
+            <InvaderPhoto
+              photoUrl={invader.photoUrl}
+              status={invader.status}
+              style={styles.lightboxImg}
+              contentFit="contain"
+            />
+            <Text style={styles.lightboxCredit}>{t('map.panel.photoCredit')}</Text>
+            <TouchableOpacity
+              style={styles.lightboxClose}
+              onPress={() => setZoom(false)}
+              hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}
+            >
+              <Ionicons name="close" size={26} color="#fff" />
+            </TouchableOpacity>
+          </TouchableOpacity>
+        </Modal>
+      ) : null}
     </View>
   );
 }
@@ -149,12 +184,23 @@ function makeStyles(t) {
       shadowColor: '#000', shadowOffset: { width: 0, height: -2 },
       shadowOpacity: 0.3, shadowRadius: 8, elevation: 8,
     },
-    photoWrap: { marginBottom: 16, alignItems: 'center' },
-    photo: {
-      width: '100%', height: 190, borderRadius: 12,
-      backgroundColor: t.surfaceHigh,
+    topRow: { flexDirection: 'row', alignItems: 'flex-start', gap: 14, marginBottom: 4 },
+    thumbWrap: { width: 88, height: 88 },
+    thumb: { width: 88, height: 88, borderRadius: 10, backgroundColor: t.surfaceHigh },
+    zoomBadge: {
+      position: 'absolute', right: 4, bottom: 4,
+      backgroundColor: 'rgba(0,0,0,0.55)', borderRadius: 9, padding: 3,
     },
-    photoCredit: { marginTop: 6, fontSize: 11, color: t.textSecondary, alignSelf: 'flex-end' },
+    topInfo: { flex: 1, justifyContent: 'center' },
+    photoCredit: { marginTop: 8, fontSize: 11, color: t.textSecondary },
+    // Lightbox plein écran
+    lightbox: {
+      flex: 1, backgroundColor: 'rgba(0,0,0,0.92)',
+      alignItems: 'center', justifyContent: 'center', padding: 20,
+    },
+    lightboxImg: { width: '100%', height: '80%' },
+    lightboxCredit: { marginTop: 14, fontSize: 12, color: 'rgba(255,255,255,0.75)' },
+    lightboxClose: { position: 'absolute', top: 60, right: 24 },
     panelHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 },
     panelId: { ...typography.arcadeTitle, color: t.textPrimary },
     closeButton: { fontSize: 18, color: t.textSecondary },
