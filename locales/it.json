@@ -443,7 +443,10 @@
       "added_one": "1 nuovo Invader aggiunto a {{city}}",
       "added_other": "{{count}} nuovi Invaders aggiunti a {{city}}",
       "destroyed": "{{id}} è stato distrutto",
-      "reactivated": "{{id}} è stato riattivato"
+      "reactivated": "{{id}} è stato riattivato",
+      "addedOne": "Nuovo {{id}}",
+      "damaged": "{{id}} si è degradato",
+      "updated": "Stato di {{id}} aggiornato"
     },
     "empty": {
       "title": "Nessuna novità",
@@ -455,7 +458,8 @@
       "searchPlaceholder": "Cerca una città…",
       "validate_one": "Conferma ({{count}} città)",
       "validate_other": "Conferma ({{count}} città)"
-    }
+    },
+    "credit": "Novità: invader-spotter.art"
   },
   "stroll": {
     "title": "Modalità passeggiata",

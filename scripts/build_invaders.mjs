@@ -29,7 +29,7 @@ import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { createHash }    from 'crypto';
 import { fileURLToPath } from 'url';
 import { join, dirname } from 'path';
-import { fetchSpotterCity, SPOTTER_SUPPORTED } from './fetch_spotter.mjs';
+import { fetchSpotterCity, fetchSpotterNews, SPOTTER_SUPPORTED } from './fetch_spotter.mjs';
 
 // ── URLs sources ──────────────────────────────────────────────────────────────
 
@@ -369,6 +369,18 @@ async function main() {
     }
   }
 
+  // Fil d'actualité invader-spotter (une seule page, indépendant du scrape des villes
+  // → récupéré même en mode cache). Échec = on conserve le fil précédent.
+  let spotterNews = null;
+  if (!process.env.SKIP_SPOTTER) {
+    try {
+      spotterNews = await fetchSpotterNews();
+      console.log(`      invader-spotter news : ${spotterNews.length} événements`);
+    } catch (e) {
+      console.warn(`      ⚠ news invader-spotter indisponible (${e.message}) — fil précédent conservé`);
+    }
+  }
+
   // ── [2/6] Groupement goguelnikov par ville ────────────────────────────────
   console.log('\n[2/6] Groupement par ville…');
   const gogByCity = new Map();
@@ -469,9 +481,6 @@ async function main() {
   let gStatusFromPnote = 0, gDestroyedToOk = 0;
   let gPtsFilled = 0, gPhotos = 0, gStatusFilled = 0;   // enrichissement invader-spotter
   let paTotal = 0, paGog = 0, paPnote = 0, paExtras = 0;
-
-  // Événements détectés ce run (ajouts groupés par ville, destructions, réactivations)
-  const allNewEvents = [];
 
   for (const code of sortedCodes) {
     const gogEntries   = gogByCity.get(code)   ?? [];
@@ -613,27 +622,6 @@ async function main() {
       gPtsFilled += e.pts; gPhotos += e.photos; gStatusFilled += e.status;
     }
 
-    // ── Événements (news) : ajout / destruction / réactivation ────────────
-    // Calculé seulement si on a un état précédent pour la ville (sinon baseline).
-    if (prevInvaders) {
-      const prevById = new Map(prevInvaders.map(i => [i.id, i]));
-      const addedIds = [];
-      for (const inv of finalInvaders) {
-        const old = prevById.get(inv.id);
-        if (!old) { addedIds.push(inv.id); continue; }
-        const was = old.status, now = inv.status;
-        if (was !== 'destroyed' && now === 'destroyed') {
-          allNewEvents.push({ type: 'destroyed', id: inv.id, city: code, date: today, before: was, after: 'destroyed' });
-        } else if (was === 'destroyed' && now === 'ok') {
-          allNewEvents.push({ type: 'reactivated', id: inv.id, city: code, date: today, before: 'destroyed', after: 'ok' });
-        }
-      }
-      // Ajouts regroupés par ville/jour : un seul événement (« N nouveaux Invaders »)
-      if (addedIds.length) {
-        allNewEvents.push({ type: 'added', city: code, date: today, count: addedIds.length, ids: addedIds });
-      }
-    }
-
     // ── Hash + écriture si modifié ────────────────────────────────────────
     const newHash    = contentHash(finalInvaders);
     const changed    = newHash !== prevHash;
@@ -703,18 +691,29 @@ async function main() {
   const indexFlag = indexChanged ? `✓ v${newIndexVersion}` : `— v${newIndexVersion}`;
   console.log(`      index.json ${indexFlag}, ${indexCities.length} villes`);
 
-  // ── [7/7] News (append + trim) ─────────────────────────────────────────────
+  // ── [7/7] News (fil invader-spotter) ───────────────────────────────────────
   console.log('\n[7/7] News…');
   const prevEvents = Array.isArray(prevNews?.events) ? prevNews.events : [];
 
-  // Fenêtre temporelle : on ne garde que les événements des N derniers mois…
+  // Fenêtre temporelle : on ne garde que les événements des N derniers mois.
   const cutoff = new Date();
   cutoff.setMonth(cutoff.getMonth() - NEWS_MAX_MONTHS);
   const cutoffStr = cutoff.toISOString().slice(0, 10);
 
-  // …les nouveaux en tête (plus récents d'abord), puis l'historique, filtré + plafonné.
-  let events = [...allNewEvents, ...prevEvents].filter(e => e.date && e.date >= cutoffStr);
-  if (events.length > NEWS_MAX_EVENTS) events = events.slice(0, NEWS_MAX_EVENTS);
+  let events;
+  if (spotterNews) {
+    // Source = fil curé d'invader-spotter. Chaque run récupère le fil complet
+    // → dédup (type|id|date) + fenêtre + tri anté-chrono + plafond.
+    const seen = new Set();
+    events = spotterNews
+      .filter(e => e.date && e.date >= cutoffStr)
+      .filter(e => { const k = `${e.type}|${e.id}|${e.date}`; if (seen.has(k)) return false; seen.add(k); return true; })
+      .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+    if (events.length > NEWS_MAX_EVENTS) events = events.slice(0, NEWS_MAX_EVENTS);
+  } else {
+    // Récupération impossible → on conserve le fil précédent tel quel.
+    events = prevEvents;
+  }
 
   const prevNewsVersion = typeof prevNews?.version === 'number' ? prevNews.version : 0;
   const newsChanged     = JSON.stringify(events) !== JSON.stringify(prevEvents);
@@ -725,18 +724,15 @@ async function main() {
       version:     newsVersion,
       updatedAt:   today,
       attribution: SOURCE_ATTRIBUTION,
+      source:      'invader-spotter.art',
       events,
     }, null, 2), 'utf8');
   }
 
-  const nAddedGroups = allNewEvents.filter(e => e.type === 'added').length;
-  const nAdded       = allNewEvents.filter(e => e.type === 'added').reduce((s, e) => s + e.count, 0);
-  const nDestroyed   = allNewEvents.filter(e => e.type === 'destroyed').length;
-  const nReactivated = allNewEvents.filter(e => e.type === 'reactivated').length;
-  const newsFlag     = newsChanged ? `✓ v${newsVersion}` : `— v${newsVersion}`;
-  console.log(`      news.json ${newsFlag}, ${events.length} événements conservés`);
-  console.log(`      nouveaux ce run : ${allNewEvents.length} événements ` +
-    `(${nAdded} ajouts en ${nAddedGroups} groupes, ${nDestroyed} destructions, ${nReactivated} réactivations)`);
+  const byType   = events.reduce((a, e) => { a[e.type] = (a[e.type] || 0) + 1; return a; }, {});
+  const newsFlag = newsChanged ? `✓ v${newsVersion}` : `— v${newsVersion}`;
+  const breakdown = Object.entries(byType).map(([k, v]) => `${k}:${v}`).join(', ') || '—';
+  console.log(`      news.json ${newsFlag}, ${events.length} événements (${breakdown})`);
 
   // ── Résumé ────────────────────────────────────────────────────────────────
   const bar2 = '═'.repeat(64);
@@ -760,7 +756,7 @@ async function main() {
   console.log(`  Photos (photoUrl) ajoutées  : ${String(gPhotos).padStart(6)}`);
   console.log(`  Statuts 'unknown' comblés   : ${String(gStatusFilled).padStart(6)}`);
   console.log('');
-  console.log(`  Événements news (ce run)   : ${String(allNewEvents.length).padStart(6)}`);
+  console.log(`  Événements news (spotter)  : ${String(events.length).padStart(6)}`);
   console.log('');
   console.log(`  ── Paris ─────────────────────────────────`);
   console.log(`  Base gog              : ${paGog}`);

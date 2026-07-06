@@ -26,7 +26,9 @@ function typeVisual(type, theme) {
   switch (type) {
     case 'added':       return { icon: 'add-circle',     color: theme.accent };       // ajout = accent néon
     case 'destroyed':   return { icon: 'close-circle',   color: '#FF4D4D' };          // destruction = rouge
+    case 'damaged':     return { icon: 'warning',        color: '#FFB020' };          // dégradation = ambre
     case 'reactivated': return { icon: 'refresh-circle', color: '#00C7BE' };          // réactivation = teal
+    case 'updated':     return { icon: 'information-circle', color: theme.textSecondary }; // mise à jour statut
     default:            return { icon: 'ellipse',        color: theme.textSecondary };
   }
 }
@@ -50,11 +52,18 @@ function EventRow({ event, isNew, onPress, theme, t }) {
 
   let label;
   if (event.type === 'added') {
-    label = t('news.entry.added', { count: event.count, city: cityName(event.city) });
+    // invader-spotter : ajout d'un Invader précis (id) ; ancien format : ajout groupé (count)
+    label = event.id
+      ? t('news.entry.addedOne', { id: event.id })
+      : t('news.entry.added', { count: event.count, city: cityName(event.city) });
   } else if (event.type === 'destroyed') {
     label = t('news.entry.destroyed', { id: event.id });
+  } else if (event.type === 'damaged') {
+    label = t('news.entry.damaged', { id: event.id });
   } else if (event.type === 'reactivated') {
     label = t('news.entry.reactivated', { id: event.id });
+  } else if (event.type === 'updated') {
+    label = t('news.entry.updated', { id: event.id });
   } else {
     label = event.id ?? event.city;
   }
@@ -255,6 +264,7 @@ export default function NewsScreen({ navigation }) {
           )}
           ItemSeparatorComponent={() => <View style={styles.separator} />}
           contentContainerStyle={{ paddingBottom: insets.bottom + 20 }}
+          ListFooterComponent={<Text style={styles.credit}>{t('news.credit')}</Text>}
         />
       )}
     </View>
@@ -271,6 +281,7 @@ function makeStyles(t) {
       backgroundColor: t.surface,
       borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: t.border,
     },
+    credit: { fontSize: 11, color: t.textSecondary, textAlign: 'center', paddingVertical: 18 },
     title: { ...typography.arcadeTitle, color: t.textPrimary },
 
     row: {

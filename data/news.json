@@ -1,5 +1,386 @@
 {
-  "version": 0,
-  "updatedAt": null,
-  "events": []
+  "version": 1,
+  "updatedAt": "2026-07-06",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "source": "invader-spotter.art",
+  "events": [
+    {
+      "type": "added",
+      "id": "PA_1595",
+      "city": "PA",
+      "date": "2026-07-03"
+    },
+    {
+      "type": "added",
+      "id": "PA_1596",
+      "city": "PA",
+      "date": "2026-07-02"
+    },
+    {
+      "type": "added",
+      "id": "PA_1597",
+      "city": "PA",
+      "date": "2026-07-02"
+    },
+    {
+      "type": "destroyed",
+      "id": "BGK_49",
+      "city": "BGK",
+      "date": "2026-07-01"
+    },
+    {
+      "type": "damaged",
+      "id": "GNV_08",
+      "city": "GNV",
+      "date": "2026-06-28"
+    },
+    {
+      "type": "damaged",
+      "id": "LDN_179",
+      "city": "LDN",
+      "date": "2026-06-27"
+    },
+    {
+      "type": "damaged",
+      "id": "PA_299",
+      "city": "PA",
+      "date": "2026-06-27"
+    },
+    {
+      "type": "destroyed",
+      "id": "HK_88",
+      "city": "HK",
+      "date": "2026-06-27"
+    },
+    {
+      "type": "destroyed",
+      "id": "PA_116",
+      "city": "PA",
+      "date": "2026-06-27"
+    },
+    {
+      "type": "damaged",
+      "id": "PA_1037",
+      "city": "PA",
+      "date": "2026-06-21"
+    },
+    {
+      "type": "updated",
+      "id": "PA_952",
+      "city": "PA",
+      "date": "2026-06-19"
+    },
+    {
+      "type": "destroyed",
+      "id": "PA_254",
+      "city": "PA",
+      "date": "2026-06-19"
+    },
+    {
+      "type": "added",
+      "id": "PA_1594",
+      "city": "PA",
+      "date": "2026-06-18"
+    },
+    {
+      "type": "damaged",
+      "id": "PA_262",
+      "city": "PA",
+      "date": "2026-06-17"
+    },
+    {
+      "type": "destroyed",
+      "id": "VRS_07",
+      "city": "VRS",
+      "date": "2026-06-16"
+    },
+    {
+      "type": "destroyed",
+      "id": "PA_562",
+      "city": "PA",
+      "date": "2026-06-15"
+    },
+    {
+      "type": "damaged",
+      "id": "FTBL_33",
+      "city": "FTBL",
+      "date": "2026-06-14"
+    },
+    {
+      "type": "damaged",
+      "id": "VRS_07",
+      "city": "VRS",
+      "date": "2026-06-14"
+    },
+    {
+      "type": "damaged",
+      "id": "PA_1417",
+      "city": "PA",
+      "date": "2026-06-10"
+    },
+    {
+      "type": "updated",
+      "id": "PA_1318",
+      "city": "PA",
+      "date": "2026-06-08"
+    },
+    {
+      "type": "destroyed",
+      "id": "FTBL_17",
+      "city": "FTBL",
+      "date": "2026-06-07"
+    },
+    {
+      "type": "reactivated",
+      "id": "BRC_12",
+      "city": "BRC",
+      "date": "2026-06-06"
+    },
+    {
+      "type": "damaged",
+      "id": "MUN_15",
+      "city": "MUN",
+      "date": "2026-06-05"
+    },
+    {
+      "type": "damaged",
+      "id": "PA_949",
+      "city": "PA",
+      "date": "2026-06-05"
+    },
+    {
+      "type": "destroyed",
+      "id": "HK_95",
+      "city": "HK",
+      "date": "2026-06-05"
+    },
+    {
+      "type": "updated",
+      "id": "AIX_07",
+      "city": "AIX",
+      "date": "2026-06-03"
+    },
+    {
+      "type": "updated",
+      "id": "PA_1523",
+      "city": "PA",
+      "date": "2026-06-02"
+    },
+    {
+      "type": "reactivated",
+      "id": "BAB_13",
+      "city": "BAB",
+      "date": "2026-06-01"
+    },
+    {
+      "type": "destroyed",
+      "id": "PA_526",
+      "city": "PA",
+      "date": "2026-06-01"
+    },
+    {
+      "type": "added",
+      "id": "PA_1591",
+      "city": "PA",
+      "date": "2026-05-29"
+    },
+    {
+      "type": "added",
+      "id": "PA_1592",
+      "city": "PA",
+      "date": "2026-05-29"
+    },
+    {
+      "type": "added",
+      "id": "PA_1593",
+      "city": "PA",
+      "date": "2026-05-29"
+    },
+    {
+      "type": "reactivated",
+      "id": "LA_109",
+      "city": "LA",
+      "date": "2026-05-28"
+    },
+    {
+      "type": "damaged",
+      "id": "RBA_09",
+      "city": "RBA",
+      "date": "2026-05-28"
+    },
+    {
+      "type": "destroyed",
+      "id": "WN_01",
+      "city": "WN",
+      "date": "2026-05-28"
+    },
+    {
+      "type": "damaged",
+      "id": "DJBA_39",
+      "city": "DJBA",
+      "date": "2026-05-26"
+    },
+    {
+      "type": "added",
+      "id": "PA_1590",
+      "city": "PA",
+      "date": "2026-05-25"
+    },
+    {
+      "type": "destroyed",
+      "id": "BTA_11",
+      "city": "BTA",
+      "date": "2026-05-24"
+    },
+    {
+      "type": "destroyed",
+      "id": "PA_762",
+      "city": "PA",
+      "date": "2026-05-24"
+    },
+    {
+      "type": "added",
+      "id": "PA_1571",
+      "city": "PA",
+      "date": "2026-05-23"
+    },
+    {
+      "type": "added",
+      "id": "PA_1572",
+      "city": "PA",
+      "date": "2026-05-23"
+    },
+    {
+      "type": "added",
+      "id": "PA_1573",
+      "city": "PA",
+      "date": "2026-05-23"
+    },
+    {
+      "type": "added",
+      "id": "PA_1574",
+      "city": "PA",
+      "date": "2026-05-23"
+    },
+    {
+      "type": "added",
+      "id": "PA_1575",
+      "city": "PA",
+      "date": "2026-05-23"
+    },
+    {
+      "type": "damaged",
+      "id": "PA_1099",
+      "city": "PA",
+      "date": "2026-05-20"
+    },
+    {
+      "type": "damaged",
+      "id": "PA_247",
+      "city": "PA",
+      "date": "2026-05-19"
+    },
+    {
+      "type": "updated",
+      "id": "PA_562",
+      "city": "PA",
+      "date": "2026-05-16"
+    },
+    {
+      "type": "damaged",
+      "id": "RTD_07",
+      "city": "RTD",
+      "date": "2026-05-16"
+    },
+    {
+      "type": "destroyed",
+      "id": "PA_559",
+      "city": "PA",
+      "date": "2026-05-16"
+    },
+    {
+      "type": "reactivated",
+      "id": "PA_773",
+      "city": "PA",
+      "date": "2026-05-14"
+    },
+    {
+      "type": "damaged",
+      "id": "RN_02",
+      "city": "RN",
+      "date": "2026-05-11"
+    },
+    {
+      "type": "reactivated",
+      "id": "LA_07",
+      "city": "LA",
+      "date": "2026-05-10"
+    },
+    {
+      "type": "destroyed",
+      "id": "SL_12",
+      "city": "SL",
+      "date": "2026-05-10"
+    },
+    {
+      "type": "updated",
+      "id": "PA_1275",
+      "city": "PA",
+      "date": "2026-05-09"
+    },
+    {
+      "type": "damaged",
+      "id": "BGK_05",
+      "city": "BGK",
+      "date": "2026-05-09"
+    },
+    {
+      "type": "destroyed",
+      "id": "FTBL_36",
+      "city": "FTBL",
+      "date": "2026-05-08"
+    },
+    {
+      "type": "destroyed",
+      "id": "NY_176",
+      "city": "NY",
+      "date": "2026-05-08"
+    },
+    {
+      "type": "added",
+      "id": "PA_1569",
+      "city": "PA",
+      "date": "2026-05-07"
+    },
+    {
+      "type": "added",
+      "id": "PA_1570",
+      "city": "PA",
+      "date": "2026-05-07"
+    },
+    {
+      "type": "damaged",
+      "id": "LDN_129",
+      "city": "LDN",
+      "date": "2026-05-07"
+    },
+    {
+      "type": "updated",
+      "id": "LDN_178",
+      "city": "LDN",
+      "date": "2026-05-04"
+    },
+    {
+      "type": "destroyed",
+      "id": "MLB_19",
+      "city": "MLB",
+      "date": "2026-05-04"
+    },
+    {
+      "type": "destroyed",
+      "id": "PA_1223",
+      "city": "PA",
+      "date": "2026-05-03"
+    }
+  ]
 }

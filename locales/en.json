@@ -443,7 +443,10 @@
       "added_one": "1 new Invader added in {{city}}",
       "added_other": "{{count}} new Invaders added in {{city}}",
       "destroyed": "{{id}} was destroyed",
-      "reactivated": "{{id}} was reactivated"
+      "reactivated": "{{id}} was reactivated",
+      "addedOne": "New {{id}}",
+      "damaged": "{{id}} was damaged",
+      "updated": "{{id}} status updated"
     },
     "empty": {
       "title": "No news",
@@ -455,7 +458,8 @@
       "searchPlaceholder": "Search a city…",
       "validate_one": "Confirm ({{count}} city)",
       "validate_other": "Confirm ({{count}} cities)"
-    }
+    },
+    "credit": "News: invader-spotter.art"
   },
   "stroll": {
     "title": "Stroll mode",

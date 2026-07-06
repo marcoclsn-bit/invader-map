@@ -59,7 +59,10 @@ function cityBoxes(code) {
   return code === 'PA' ? PA_ARRONDISSEMENTS : [code];
 }
 
-const STATUS_ICON = { ok: 'ok', degraded: 'damaged', destroyed: 'destroyed', hidden: 'hidden' };
+const STATUS_ICON = {
+  ok: 'ok', degraded: 'damaged', destroyed: 'destroyed',
+  hidden: 'hidden', neutre: 'hidden',   // « Non visible » sur invader-spotter
+};
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -176,4 +179,91 @@ export async function fetchSpotterCity(cityCode, onProgress, attempt = 1) {
     onProgress?.(p, pages, byNum.size, total);
   }
   return byNum;
+}
+
+// ── Fil d'actualité (news.php) ─────────────────────────────────────────────────
+// Page HTML : blocs par mois (id='moisAAAAMM'), lignes <p class='news'><b>JJ :</b> …
+// avec les Invaders en <a>ID</a>. Une ligne peut contenir plusieurs événements ;
+// chaque ID prend le verbe (Ajout/Destruction/Dégradation/Réactivation/…) qui le
+// précède. On mappe vers les types d'événements de l'app.
+
+const NEWS_URL = `${BASE}/news.php`;
+
+// Verbes invader-spotter → types d'événement de l'app. Le texte est normalisé en
+// ASCII sans accent avant test (les entités HTML accentuées sont converties).
+const NEWS_VERBS = [
+  [/reactiv/i,                       'reactivated'],
+  [/degrad/i,                        'damaged'],
+  [/destruc|detru/i,                 'destroyed'],
+  [/ajout|nouvea|apparition/i,       'added'],
+  [/mise\s*a\s*jour|statut|deplac|renov|restaur/i, 'updated'],
+];
+
+// Retire les balises et convertit les entités accentuées en ASCII (é→e, à→a, …).
+function normalizeText(s) {
+  return String(s)
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&(eacute|egrave|ecirc|euml);/gi, 'e')
+    .replace(/&(agrave|acirc);/gi, 'a')
+    .replace(/&(icirc|iuml);/gi, 'i')
+    .replace(/&ocirc;/gi, 'o')
+    .replace(/&(ucirc|ugrave);/gi, 'u')
+    .replace(/&ccedil;/gi, 'c')
+    .replace(/&[a-z]+;/gi, ' ')
+    .replace(/\s+/g, ' ');
+}
+
+function verbFor(text) {
+  for (const [re, type] of NEWS_VERBS) if (re.test(text)) return type;
+  return null;
+}
+
+// Parse une ligne : renvoie les événements {type, id, city} dans l'ordre.
+function parseNewsEntry(inner, date) {
+  const out = [];
+  const idRe = /<a[^>]*>\s*([A-Z]+_\d+)\s*<\/a>/g;
+  let lastVerb = null, lastIdx = 0, m;
+  while ((m = idRe.exec(inner))) {
+    const seg = normalizeText(inner.slice(lastIdx, m.index));
+    const v = verbFor(seg);
+    if (v) lastVerb = v;
+    lastIdx = idRe.lastIndex;
+    if (!lastVerb) continue;
+    const id = m[1];
+    const city = id.match(/^([A-Z]+)_/)[1];
+    out.push({ type: lastVerb, id, city, date });
+  }
+  return out;
+}
+
+export function parseNews(html) {
+  const events = [];
+  const monthRe = /id=['"]mois(\d{4})(\d{2})['"]\s*>([\s\S]*?)<\/div>/g;
+  let mm;
+  while ((mm = monthRe.exec(html))) {
+    const [, year, month, body] = mm;
+    const pRe = /<p[^>]*class=['"]news['"][^>]*>\s*<b>\s*(\d+)\s*:?\s*<\/b>([\s\S]*?)<\/p>/g;
+    let p;
+    while ((p = pRe.exec(body))) {
+      const day = String(p[1]).padStart(2, '0');
+      events.push(...parseNewsEntry(p[2], `${year}-${month}-${day}`));
+    }
+  }
+  return events;
+}
+
+// Récupère et parse le fil d'actualité. Throw en cas d'échec (l'appelant garde l'ancien).
+export async function fetchSpotterNews() {
+  const ctrl = new AbortController();
+  const to = setTimeout(() => ctrl.abort(), REQUEST_TIMEOUT_MS);
+  try {
+    const res = await fetch(NEWS_URL, {
+      headers: { 'Referer': REFERER, 'User-Agent': UA },
+      signal: ctrl.signal,
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status} sur news.php`);
+    return parseNews(await res.text());
+  } finally {
+    clearTimeout(to);
+  }
 }

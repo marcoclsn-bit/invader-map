@@ -443,7 +443,10 @@
       "added_one": "1 nouvel Invader ajouté à {{city}}",
       "added_other": "{{count}} nouveaux Invaders ajoutés à {{city}}",
       "destroyed": "{{id}} a été détruit",
-      "reactivated": "{{id}} a été réactivé"
+      "reactivated": "{{id}} a été réactivé",
+      "addedOne": "Nouveau {{id}}",
+      "damaged": "{{id}} s'est dégradé",
+      "updated": "Statut de {{id}} mis à jour"
     },
     "empty": {
       "title": "Aucune actu",
@@ -455,7 +458,8 @@
       "searchPlaceholder": "Rechercher une ville…",
       "validate_one": "Valider ({{count}} ville)",
       "validate_other": "Valider ({{count}} villes)"
-    }
+    },
+    "credit": "Actus : invader-spotter.art"
   },
   "stroll": {
     "title": "Mode balade",
