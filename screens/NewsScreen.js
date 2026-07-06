@@ -1,6 +1,6 @@
 import { useState, useMemo, useRef, useCallback } from 'react';
 import {
-  StyleSheet, View, Text, FlatList, TouchableOpacity, TextInput,
+  StyleSheet, View, Text, FlatList, TouchableOpacity, TextInput, Alert,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
@@ -9,6 +9,7 @@ import { DrawerActions, useFocusEffect } from '@react-navigation/native';
 import i18n from '../i18n';
 import { useAppContext } from '../context/AppContext';
 import InvaderPhoto from '../components/InvaderPhoto';
+import { getCityData, loadCityData, checkCityForUpdate } from '../services/invaderData';
 import { CITIES } from '../cities/registry';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
@@ -220,11 +221,30 @@ export default function NewsScreen({ navigation }) {
       .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
   }, [news, newsCities]);
 
-  function onPressEvent(e) {
-    if (e.city !== currentCityCode) setCurrentCity(e.city);
+  function goToMap(city, focusId) {
+    if (city !== currentCityCode) setCurrentCity(city);
     const params = { _ts: Date.now() };
-    if (e.id) params.focusId = e.id; // ouvre la fiche de l'Invader concerné (si chargé)
+    if (focusId) params.focusId = focusId;
     navigation.navigate('Tabs', { screen: 'Carte', params });
+  }
+
+  async function onPressEvent(e) {
+    if (!e.id) return goToMap(e.city, null);
+
+    // Cherche l'Invader dans les données de sa ville (cache → réseau si besoin).
+    let d = getCityData(e.city);
+    if (!d?.invaders?.length) { try { await loadCityData(e.city); } catch {} d = getCityData(e.city); }
+    if (!d?.invaders?.length) { try { await checkCityForUpdate(e.city); } catch {} d = getCityData(e.city); }
+
+    // On ne montre le message QUE si on a bien les données de la ville et que
+    // l'Invader y est absent (= nouveau, coordonnées pas encore renseignées).
+    // Si les données sont indisponibles (hors-ligne), on garde le comportement
+    // historique : on ouvre la carte, qui réessaiera d'ouvrir la fiche.
+    if (d?.invaders?.length && !d.invaders.some(i => i.id === e.id)) {
+      Alert.alert(t('news.comingSoon.title'), t('news.comingSoon.body', { id: e.id }));
+      return;
+    }
+    goToMap(e.city, e.id);
   }
 
   // ── Sélecteur de villes (premier accès ou bouton filtre) ──

@@ -459,7 +459,11 @@
       "validate_one": "Valider ({{count}} ville)",
       "validate_other": "Valider ({{count}} villes)"
     },
-    "credit": "Actus : invader-spotter.art"
+    "credit": "Actus : invader-spotter.art",
+    "comingSoon": {
+      "title": "Bientôt disponible",
+      "body": "Les coordonnées de {{id}} seront ajoutées prochainement."
+    }
   },
   "stroll": {
     "title": "Mode balade",

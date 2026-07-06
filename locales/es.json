@@ -459,7 +459,11 @@
       "validate_one": "Confirmar ({{count}} ciudad)",
       "validate_other": "Confirmar ({{count}} ciudades)"
     },
-    "credit": "Novedades: invader-spotter.art"
+    "credit": "Novedades: invader-spotter.art",
+    "comingSoon": {
+      "title": "Próximamente",
+      "body": "Las coordenadas de {{id}} se añadirán pronto."
+    }
   },
   "stroll": {
     "title": "Modo paseo",
