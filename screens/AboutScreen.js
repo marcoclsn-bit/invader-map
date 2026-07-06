@@ -136,6 +136,7 @@ export default function AboutScreen() {
         {PNOTE_ENABLED && (
           <LinkRow label="pnote.eu" url="https://pnote.eu" theme={theme} />
         )}
+        <LinkRow label="invader-spotter.art" url="https://www.invader-spotter.art" theme={theme} />
         <Divider theme={theme} />
         <SubHeader label={`${t('about.creditsMapLabel')} & ${t('about.creditsRoutingLabel')}`} theme={theme} />
         <LinkRow label="© OpenStreetMap contributors" url="https://www.openstreetmap.org/copyright" theme={theme} />

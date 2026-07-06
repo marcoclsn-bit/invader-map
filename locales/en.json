@@ -53,7 +53,8 @@
       "alreadyFlashed": "✓ Flashed",
       "navigate": "Navigate",
       "instagram": "See on Instagram",
-      "labelsTitle": "LABELS"
+      "labelsTitle": "LABELS",
+      "photoCredit": "Photo: invader-spotter.art"
     },
     "loading": {
       "progress": "LOADING ({{pct}}%)"

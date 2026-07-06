@@ -53,7 +53,8 @@
       "alreadyFlashed": "✓ Fotografiado",
       "navigate": "Navegar",
       "instagram": "Ver en Instagram",
-      "labelsTitle": "ETIQUETAS"
+      "labelsTitle": "ETIQUETAS",
+      "photoCredit": "Foto: invader-spotter.art"
     },
     "loading": {
       "progress": "CARGANDO ({{pct}}%)"

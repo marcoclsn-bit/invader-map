@@ -9,6 +9,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
 import { DrawerActions } from '@react-navigation/native';
 import { useAppContext } from '../context/AppContext';
+import InvaderPhoto from '../components/InvaderPhoto';
 import { CITIES } from '../cities/registry';
 import { loadCityData, getCityData, checkCityForUpdate } from '../services/invaderData';
 import { STATUS_COLOR } from '../constants';
@@ -40,7 +41,10 @@ const InvaderRow = memo(function InvaderRow({ item, isFlashed, onToggle, cityLab
   const meta = `${t(`common.status.${item.status}`)} · ${item.points} ${t('common.pts')}`;
   return (
     <View style={styles.row}>
-      <View style={[styles.statusDot, { backgroundColor: STATUS_COLOR[item.status] }]} />
+      <View style={styles.thumbWrap}>
+        <InvaderPhoto photoUrl={item.photoUrl} status={item.status} style={styles.thumb} />
+        <View style={[styles.statusDotBadge, { backgroundColor: STATUS_COLOR[item.status] }]} />
+      </View>
       <View style={styles.rowInfo}>
         <Text style={styles.rowId}>{item.id}</Text>
         <Text style={styles.rowMeta} numberOfLines={1}>
@@ -454,12 +458,18 @@ function makeStyles(t) {
       paddingHorizontal: 16, height: ROW_HEIGHT,
       backgroundColor: t.surface,
     },
-    statusDot: { width: 10, height: 10, borderRadius: 5, marginRight: 12 },
+    thumbWrap: { width: 40, height: 40, marginRight: 12 },
+    thumb: { width: 40, height: 40, borderRadius: 8, backgroundColor: t.surfaceHigh },
+    statusDotBadge: {
+      position: 'absolute', right: -2, top: -2,
+      width: 12, height: 12, borderRadius: 6,
+      borderWidth: 2, borderColor: t.surface,
+    },
     rowInfo: { flex: 1 },
     switchWrap: { alignSelf: 'stretch', justifyContent: 'center' },
     rowId: { fontSize: 15, fontWeight: '600', color: t.textPrimary },
     rowMeta: { fontSize: 12, color: t.textSecondary, marginTop: 1 },
-    separator: { height: StyleSheet.hairlineWidth, backgroundColor: t.border, marginLeft: 38 },
+    separator: { height: StyleSheet.hairlineWidth, backgroundColor: t.border, marginLeft: 68 },
 
     empty: { flex: 1, alignItems: 'center', justifyContent: 'center' },
     emptyText: { fontSize: 16, color: t.textSecondary },

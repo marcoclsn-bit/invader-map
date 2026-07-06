@@ -2,6 +2,7 @@ import { View, Text, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { useAppContext } from '../context/AppContext';
+import InvaderPhoto from './InvaderPhoto';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import { openInstagramTag } from '../utils/navigation';
@@ -75,6 +76,18 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
 
   return (
     <View style={styles.panel}>
+      {invader.photoUrl ? (
+        <View style={styles.photoWrap}>
+          <InvaderPhoto
+            photoUrl={invader.photoUrl}
+            status={invader.status}
+            style={styles.photo}
+            contentFit="contain"
+          />
+          <Text style={styles.photoCredit}>{t('map.panel.photoCredit')}</Text>
+        </View>
+      ) : null}
+
       <View style={styles.panelHeader}>
         <Text style={styles.panelId}>{invader.id}</Text>
         <TouchableOpacity onPress={() => onClose()} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
@@ -136,6 +149,12 @@ function makeStyles(t) {
       shadowColor: '#000', shadowOffset: { width: 0, height: -2 },
       shadowOpacity: 0.3, shadowRadius: 8, elevation: 8,
     },
+    photoWrap: { marginBottom: 16, alignItems: 'center' },
+    photo: {
+      width: '100%', height: 190, borderRadius: 12,
+      backgroundColor: t.surfaceHigh,
+    },
+    photoCredit: { marginTop: 6, fontSize: 11, color: t.textSecondary, alignSelf: 'flex-end' },
     panelHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 },
     panelId: { ...typography.arcadeTitle, color: t.textPrimary },
     closeButton: { fontSize: 18, color: t.textSecondary },
