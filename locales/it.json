@@ -492,12 +492,12 @@
     "notif": {
       "title": "Invader nelle vicinanze 👾",
       "bodies": [
-        "{{id}} è vicinissimo — vai a fotografarlo! 👾",
+        "{{id}} è vicinissimo - vai a fotografarlo! 👾",
         "C’è un Invader in zona: {{id}} ti aspetta 📸",
         "Occhi aperti! {{id}} è a due passi 👀",
         "Obiettivo in vista: {{id}} è a portata di flash ⚡",
         "Non perderti {{id}}, è proprio lì 🛸",
-        "{{id}} avvistato nelle vicinanze — prepara la fotocamera! 🎯"
+        "{{id}} avvistato nelle vicinanze - prepara la fotocamera! 🎯"
       ]
     },
     "perm": {

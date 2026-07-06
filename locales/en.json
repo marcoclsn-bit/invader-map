@@ -492,12 +492,12 @@
     "notif": {
       "title": "Invader nearby 👾",
       "bodies": [
-        "{{id}} is right nearby — go flash it! 👾",
+        "{{id}} is right nearby - go flash it! 👾",
         "An Invader’s around: {{id}} is waiting for you 📸",
         "Keep your eyes peeled! {{id}} is steps away 👀",
         "Target in sight: {{id}} is within flash range ⚡",
         "Don’t miss {{id}}, it’s right there 🛸",
-        "{{id}} spotted nearby — get your camera ready! 🎯"
+        "{{id}} spotted nearby - get your camera ready! 🎯"
       ]
     },
     "perm": {
