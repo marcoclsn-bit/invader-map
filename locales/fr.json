@@ -49,12 +49,11 @@
       "noLabels": "Aucune étiquette définie"
     },
     "panel": {
-      "markFlashed": "Marquer comme flashé",
+      "markFlashed": "Flasher",
       "alreadyFlashed": "✓ Flashé",
       "navigate": "Y aller",
       "instagram": "Voir sur Instagram",
-      "labelsTitle": "ÉTIQUETTES",
-      "photoCredit": "Photo : invader-spotter.art"
+      "labelsTitle": "ÉTIQUETTES"
     },
     "loading": {
       "progress": "CHARGEMENT ({{pct}}%)"

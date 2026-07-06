@@ -49,12 +49,11 @@
       "noLabels": "No labels defined"
     },
     "panel": {
-      "markFlashed": "Mark as flashed",
+      "markFlashed": "Flash it",
       "alreadyFlashed": "✓ Flashed",
       "navigate": "Navigate",
       "instagram": "See on Instagram",
-      "labelsTitle": "LABELS",
-      "photoCredit": "Photo: invader-spotter.art"
+      "labelsTitle": "LABELS"
     },
     "loading": {
       "progress": "LOADING ({{pct}}%)"

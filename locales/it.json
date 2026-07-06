@@ -49,12 +49,11 @@
       "noLabels": "Nessuna etichetta definita"
     },
     "panel": {
-      "markFlashed": "Segna come fotografato",
-      "alreadyFlashed": "✓ Fotografato",
+      "markFlashed": "Fotografa",
+      "alreadyFlashed": "✓ Fatto",
       "navigate": "Naviga",
       "instagram": "Vedi su Instagram",
-      "labelsTitle": "ETICHETTE",
-      "photoCredit": "Foto: invader-spotter.art"
+      "labelsTitle": "ETICHETTE"
     },
     "loading": {
       "progress": "CARICAMENTO ({{pct}}%)"

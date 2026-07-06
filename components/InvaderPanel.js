@@ -107,23 +107,21 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
             </View>
             <Text style={styles.points}>{invader.points != null ? `${invader.points} pts` : '— pts'}</Text>
           </View>
-          {invader.hint ? <Text style={styles.hint}>{invader.hint}</Text> : null}
-          {invader.photoUrl ? <Text style={styles.photoCredit}>{t('map.panel.photoCredit')}</Text> : null}
-        </View>
-      </View>
 
-      <View style={styles.actions}>
-        <TouchableOpacity
-          onPress={handleFlash}
-          style={[styles.actionBtn, isFlashed && styles.actionBtnActive]}
-        >
-          <Text style={[styles.actionBtnText, isFlashed && styles.actionBtnTextActive]}>
-            {isFlashed ? t('map.panel.alreadyFlashed') : t('map.panel.markFlashed')}
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={handleNavigate} style={styles.actionBtn}>
-          <Text style={styles.actionBtnText}>{t('map.panel.navigate')}</Text>
-        </TouchableOpacity>
+          <View style={styles.actions}>
+            <TouchableOpacity
+              onPress={handleFlash}
+              style={[styles.actionBtn, isFlashed && styles.actionBtnActive]}
+            >
+              <Text style={[styles.actionBtnText, isFlashed && styles.actionBtnTextActive]} numberOfLines={1}>
+                {isFlashed ? t('map.panel.alreadyFlashed') : t('map.panel.markFlashed')}
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={handleNavigate} style={styles.actionBtn}>
+              <Text style={styles.actionBtnText} numberOfLines={1}>{t('map.panel.navigate')}</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
       </View>
 
       <TouchableOpacity
@@ -160,7 +158,6 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
               style={styles.lightboxImg}
               contentFit="contain"
             />
-            <Text style={styles.lightboxCredit}>{t('map.panel.photoCredit')}</Text>
             <TouchableOpacity
               style={styles.lightboxClose}
               onPress={() => setZoom(false)}
@@ -192,14 +189,12 @@ function makeStyles(t) {
       backgroundColor: 'rgba(0,0,0,0.55)', borderRadius: 9, padding: 3,
     },
     topInfo: { flex: 1, justifyContent: 'center' },
-    photoCredit: { marginTop: 8, fontSize: 11, color: t.textSecondary },
     // Lightbox plein écran
     lightbox: {
       flex: 1, backgroundColor: 'rgba(0,0,0,0.92)',
       alignItems: 'center', justifyContent: 'center', padding: 20,
     },
     lightboxImg: { width: '100%', height: '80%' },
-    lightboxCredit: { marginTop: 14, fontSize: 12, color: 'rgba(255,255,255,0.75)' },
     lightboxClose: { position: 'absolute', top: 60, right: 24 },
     panelHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 },
     panelId: { ...typography.arcadeTitle, color: t.textPrimary },
@@ -209,7 +204,7 @@ function makeStyles(t) {
     statusText: { color: '#fff', fontWeight: '600', fontSize: 13 },
     points: { fontSize: 15, color: t.textSecondary },
     hint: { marginTop: 12, fontSize: 14, color: t.textSecondary, fontStyle: 'italic' },
-    actions: { marginTop: 16, flexDirection: 'row', gap: 10 },
+    actions: { marginTop: 12, flexDirection: 'row', gap: 8 },
     actionBtn: {
       flex: 1, borderRadius: 8, paddingHorizontal: 14, paddingVertical: 8,
       backgroundColor: t.surfaceHigh, alignItems: 'center',
