@@ -174,7 +174,10 @@
     "viewByDistrict": "Ver por barrio",
     "paris": "París",
     "loadingBanner": "Cargando · {{countdown}}",
-    "villeCardProgress": "{{flashed}}/{{total}} fotografiados"
+    "villeCardProgress": "{{flashed}}/{{total}} fotografiados",
+    "searchPlaceholder": "Buscar una ciudad…",
+    "currentCity": "MAPA ACTUAL",
+    "noResults": "No se encontró ninguna ciudad"
   },
   "onboarding": {
     "skip": "Saltar",

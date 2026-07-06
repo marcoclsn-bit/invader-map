@@ -1,5 +1,5 @@
 import { useMemo, useState, useEffect, Fragment } from 'react';
-import { StyleSheet, View, Text, FlatList, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, FlatList, ScrollView, TouchableOpacity, TextInput } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
@@ -11,6 +11,9 @@ import { INVADER_DISTRICT, arLabel, ARRONDISSEMENT_CENTERS } from '../utils/arro
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import DonutChart from '../components/DonutChart';
+
+// Normalisation pour la recherche (insensible casse + accents : « Genève » ↔ « geneve »)
+const norm = (s) => String(s ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 
 // ─── Cache de styles thémés ───────────────────────────────────────────────────
 let _styleCache = null;
@@ -103,6 +106,7 @@ export default function PalmaresScreen({ navigation }) {
   const lang = i18n.language?.slice(0, 2) || 'fr';
   const styles = getStyles(theme);
   const [drillVille, setDrillVille] = useState(null);
+  const [search, setSearch] = useState('');
 
   // Nombre de flashés par ville (déduit du préfixe des ids : PA_649 → PA)
   const flashedByCity = useMemo(() => {
@@ -192,6 +196,56 @@ export default function PalmaresScreen({ navigation }) {
     });
   }
 
+  // Carte d'une ville (réutilisée : ville en cours, liste groupée, résultats de recherche)
+  function renderCityCard(c) {
+    const isActive = c.code === currentCityCode;
+    const cityInfo = cityIndex.find(ci => ci.code === c.code);
+    const cityTotal = cityInfo?.count ?? null;
+    const flashedHere = flashedByCity.get(c.code) ?? 0;
+    const pct = isActive ? stats.pct : (cityTotal ? (flashedHere / cityTotal) * 100 : 0);
+    return (
+      <View key={c.code} style={styles.villeBlock}>
+        <TouchableOpacity
+          style={[styles.villeCard, isActive && { borderColor: theme.accent, borderWidth: 1.5 }]}
+          onPress={() => {
+            if (isChangingCity || isActive) return;
+            setCurrentCity(c.code);
+            navigation.navigate('Tabs', { screen: 'Carte' }); // Carte = onglet imbriqué dans "Tabs"
+          }}
+          activeOpacity={0.7}
+        >
+          <View style={styles.villeLeft}>
+            <DonutChart
+              pct={pct} size={46} stroke={5}
+              color={theme.accent} trackColor={theme.border} textColor={theme.textPrimary}
+            />
+            <View style={{ flex: 1 }}>
+              <Text style={styles.villeName}>{c.name}</Text>
+              <Text style={styles.villeSub}>
+                {isActive
+                  ? t('palmares.villeCard', { flashed: stats.flashed, total: stats.total, pct: stats.pct.toFixed(0), pts: stats.flashedPts })
+                  : cityTotal !== null
+                    ? t('palmares.villeCardProgress', { flashed: flashedHere, total: cityTotal })
+                    : '…'}
+              </Text>
+            </View>
+          </View>
+          {isActive
+            ? <Ionicons name="checkmark-circle" size={22} color={theme.accent} />
+            : <Ionicons name="chevron-forward" size={18} color={theme.textSecondary} />}
+        </TouchableOpacity>
+
+        {isActive && c.subdivisionsKey && (
+          <TouchableOpacity style={styles.districtLink} onPress={() => setDrillVille(c.code)} activeOpacity={0.7}>
+            <Ionicons name="grid-outline" size={14} color={theme.accent} />
+            <Text style={[styles.districtLinkText, { color: theme.accent }]}>{t('palmares.viewByDistrict')}</Text>
+            <Ionicons name="chevron-forward" size={13} color={theme.accent} />
+          </TouchableOpacity>
+        )}
+      </View>
+    );
+  }
+
   // Drill-down : ville avec subdivisions (arrondissements pour Paris)
   if (drillVille && CITIES[drillVille]?.subdivisionsKey) {
     return (
@@ -206,6 +260,12 @@ export default function PalmaresScreen({ navigation }) {
     );
   }
 
+  const q = norm(search.trim());
+  const searchResults = q
+    ? ENABLED_CITIES.filter(c => norm(c.name).includes(q)).sort((a, b) => a.name.localeCompare(b.name))
+    : null;
+  const currentCity = ENABLED_CITIES.find(c => c.code === currentCityCode);
+
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
       <View style={styles.header}>
@@ -215,88 +275,64 @@ export default function PalmaresScreen({ navigation }) {
         </TouchableOpacity>
       </View>
 
-      <ScrollView style={{ flex: 1 }} contentContainerStyle={{ paddingBottom: insets.bottom + 20 }}>
-
-      <View style={styles.summaryCard}>
-        <Text style={styles.summaryLabel}>
-          {t('palmares.flashedSummary', { flashed: stats.flashed, total: stats.total, pts: stats.flashedPts })}
-        </Text>
-        <ProgressBar pct={stats.pct} theme={theme} />
-        <Text style={styles.summaryPct}>{stats.pct.toFixed(1)} %</Text>
+      {/* Barre de recherche de ville */}
+      <View style={styles.searchWrap}>
+        <Ionicons name="search" size={16} color={theme.textSecondary} />
+        <TextInput
+          style={styles.searchInput}
+          placeholder={t('palmares.searchPlaceholder')}
+          placeholderTextColor={theme.textSecondary}
+          value={search}
+          onChangeText={setSearch}
+          autoCapitalize="none"
+          autoCorrect={false}
+          returnKeyType="search"
+        />
+        {search.length > 0 && (
+          <TouchableOpacity onPress={() => setSearch('')} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
+            <Ionicons name="close-circle" size={16} color={theme.textSecondary} />
+          </TouchableOpacity>
+        )}
       </View>
 
-      {/* Villes groupées par pays (France d'abord) */}
-      {countryGroups.map((group) => (
-        <Fragment key={group.code}>
-          <Text style={styles.countryHeader}>{group.name.toUpperCase()}</Text>
-          {group.cities.map((c) => {
-            const isActive = c.code === currentCityCode;
-            const cityInfo = cityIndex.find(ci => ci.code === c.code);
-            const cityTotal = cityInfo?.count ?? null;
-            const flashedHere = flashedByCity.get(c.code) ?? 0;
-            const pct = isActive
-              ? stats.pct
-              : (cityTotal ? (flashedHere / cityTotal) * 100 : 0);
-            return (
-              <View key={c.code} style={styles.villeBlock}>
-                <TouchableOpacity
-                  style={[
-                    styles.villeCard,
-                    isActive && { borderColor: theme.accent, borderWidth: 1.5 },
-                  ]}
-                  onPress={() => {
-                    if (isChangingCity || isActive) return;
-                    setCurrentCity(c.code);
-                    // Carte est un onglet imbriqué dans "Tabs" (pas une route du Drawer)
-                    navigation.navigate('Tabs', { screen: 'Carte' });
-                  }}
-                  activeOpacity={0.7}
-                >
-                  <View style={styles.villeLeft}>
-                    <DonutChart
-                      pct={pct}
-                      size={46}
-                      stroke={5}
-                      color={theme.accent}
-                      trackColor={theme.border}
-                      textColor={theme.textPrimary}
-                    />
-                    <View style={{ flex: 1 }}>
-                      <Text style={styles.villeName}>{c.name}</Text>
-                      <Text style={styles.villeSub}>
-                        {isActive
-                          ? t('palmares.villeCard', { flashed: stats.flashed, total: stats.total, pct: stats.pct.toFixed(0), pts: stats.flashedPts })
-                          : cityTotal !== null
-                            ? t('palmares.villeCardProgress', { flashed: flashedHere, total: cityTotal })
-                            : '…'
-                        }
-                      </Text>
-                    </View>
-                  </View>
-                  {isActive
-                    ? <Ionicons name="checkmark-circle" size={22} color={theme.accent} />
-                    : <Ionicons name="chevron-forward" size={18} color={theme.textSecondary} />
-                  }
-                </TouchableOpacity>
+      <ScrollView style={{ flex: 1 }} contentContainerStyle={{ paddingBottom: insets.bottom + 20 }} keyboardShouldPersistTaps="handled">
 
-                {isActive && c.subdivisionsKey && (
-                  <TouchableOpacity
-                    style={styles.districtLink}
-                    onPress={() => setDrillVille(c.code)}
-                    activeOpacity={0.7}
-                  >
-                    <Ionicons name="grid-outline" size={14} color={theme.accent} />
-                    <Text style={[styles.districtLinkText, { color: theme.accent }]}>
-                      {t('palmares.viewByDistrict')}
-                    </Text>
-                    <Ionicons name="chevron-forward" size={13} color={theme.accent} />
-                  </TouchableOpacity>
-                )}
-              </View>
-            );
-          })}
-        </Fragment>
-      ))}
+        {searchResults ? (
+          /* ── Résultats de recherche (liste plate) ── */
+          searchResults.length > 0
+            ? searchResults.map(renderCityCard)
+            : <Text style={styles.noResults}>{t('palmares.noResults')}</Text>
+        ) : (
+          <>
+            <View style={styles.summaryCard}>
+              <Text style={styles.summaryLabel}>
+                {t('palmares.flashedSummary', { flashed: stats.flashed, total: stats.total, pts: stats.flashedPts })}
+              </Text>
+              <ProgressBar pct={stats.pct} theme={theme} />
+              <Text style={styles.summaryPct}>{stats.pct.toFixed(1)} %</Text>
+            </View>
+
+            {/* Carte en cours en tête */}
+            {currentCity && (
+              <>
+                <Text style={styles.countryHeader}>{t('palmares.currentCity')}</Text>
+                {renderCityCard(currentCity)}
+              </>
+            )}
+
+            {/* Villes groupées par pays (France d'abord), sans la ville en cours */}
+            {countryGroups.map((group) => {
+              const cities = group.cities.filter(c => c.code !== currentCityCode);
+              if (cities.length === 0) return null;
+              return (
+                <Fragment key={group.code}>
+                  <Text style={styles.countryHeader}>{group.name.toUpperCase()}</Text>
+                  {cities.map(renderCityCard)}
+                </Fragment>
+              );
+            })}
+          </>
+        )}
 
       </ScrollView>
     </View>
@@ -317,6 +353,15 @@ function makeStyles(t) {
     },
     title: { ...typography.arcadeTitle, color: t.textPrimary },
     headerTitle: { ...typography.arcadeTitle, color: t.textPrimary },
+
+    searchWrap: {
+      flexDirection: 'row', alignItems: 'center', gap: 8,
+      marginHorizontal: 16, marginTop: 12,
+      backgroundColor: t.surfaceHigh, borderRadius: 10,
+      paddingHorizontal: 12, paddingVertical: 9,
+    },
+    searchInput: { flex: 1, fontSize: 15, color: t.textPrimary, padding: 0 },
+    noResults: { fontSize: 15, color: t.textSecondary, textAlign: 'center', marginTop: 32 },
     backBtn: { flexDirection: 'row', alignItems: 'center', gap: 2, minWidth: 70 },
     backText: { fontSize: 16, color: t.accent, fontWeight: '500' },
 

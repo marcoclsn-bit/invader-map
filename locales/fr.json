@@ -174,7 +174,10 @@
     "viewByDistrict": "Voir par arrondissement",
     "paris": "Paris",
     "loadingBanner": "Chargement en cours · {{countdown}}",
-    "villeCardProgress": "{{flashed}}/{{total}} flashés"
+    "villeCardProgress": "{{flashed}}/{{total}} flashés",
+    "searchPlaceholder": "Rechercher une ville…",
+    "currentCity": "CARTE EN COURS",
+    "noResults": "Aucune ville trouvée"
   },
   "onboarding": {
     "skip": "Passer",

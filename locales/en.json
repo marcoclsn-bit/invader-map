@@ -174,7 +174,10 @@
     "viewByDistrict": "View by district",
     "paris": "Paris",
     "loadingBanner": "Loading in progress · {{countdown}}",
-    "villeCardProgress": "{{flashed}}/{{total}} flashed"
+    "villeCardProgress": "{{flashed}}/{{total}} flashed",
+    "searchPlaceholder": "Search for a city…",
+    "currentCity": "CURRENT MAP",
+    "noResults": "No city found"
   },
   "onboarding": {
     "skip": "Skip",

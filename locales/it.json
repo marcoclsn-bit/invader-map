@@ -174,7 +174,10 @@
     "viewByDistrict": "Vedi per quartiere",
     "paris": "Parigi",
     "loadingBanner": "Caricamento in corso · {{countdown}}",
-    "villeCardProgress": "{{flashed}}/{{total}} fotografati"
+    "villeCardProgress": "{{flashed}}/{{total}} fotografati",
+    "searchPlaceholder": "Cerca una città…",
+    "currentCity": "MAPPA ATTUALE",
+    "noResults": "Nessuna città trovata"
   },
   "onboarding": {
     "skip": "Salta",
