@@ -5,6 +5,8 @@
  * Pipeline multi-sources :
  *   Base      : goguelnikov/SpaceInvaders — ids, coordonnées réelles, points, statuts
  *   Enrichit  : pnote.eu — instagramUrl (100 % couverture) + ids absents de gog
+ *   Enrichit  : invader-spotter.art — points manquants + photos (gros plan) + statut de secours
+ *               (comble uniquement les trous, ne écrase jamais gog ; villes couvertes = SPOTTER_CITIES)
  *   Surcharge : data/invaders_extras.json — toujours prioritaire
  *
  * Règles de fusion (par id) :
@@ -27,6 +29,7 @@ import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { createHash }    from 'crypto';
 import { fileURLToPath } from 'url';
 import { join, dirname } from 'path';
+import { fetchSpotterCity, SPOTTER_SUPPORTED } from './fetch_spotter.mjs';
 
 // ── URLs sources ──────────────────────────────────────────────────────────────
 
@@ -148,6 +151,10 @@ const KNOWN_CITIES = {
   VSB:  { name: 'Visby' },
 };
 
+// Villes de notre pipeline effectivement couvertes par invader-spotter
+// (intersection : points manquants + photos + statut de secours).
+const SPOTTER_CITIES = new Set(Object.keys(KNOWN_CITIES).filter((c) => SPOTTER_SUPPORTED.has(c)));
+
 // Centres géographiques précis (carte + index)
 const KNOWN_CENTERS = {
   PA:   { lat: 48.8566, lng: 2.3522   },
@@ -234,10 +241,43 @@ function cityCodeFromId(id) {
   return String(id ?? '').match(/^([A-Za-z]+)/)?.[1]?.toUpperCase() ?? '';
 }
 
+// Numéro entier d'un id ("PA_1529" → 1529) — clé d'appariement avec invader-spotter.
+function numFromId(id) {
+  const m = String(id ?? '').match(/_(\d+)$/);
+  return m ? parseInt(m[1], 10) : null;
+}
+
+// Enrichit une liste d'Invaders (mutée en place) avec les données invader-spotter.
+// On ne comble que des trous, jamais on écrase :
+//   • points   : rempli seulement si null (goguelnikov reste primaire) + pointsSource
+//   • photoUrl : gros plan (URL seule, image jamais téléchargée)
+//   • statut   : comble un 'unknown' uniquement (ne régresse pas un 'hidden' pnote)
+// Renvoie les compteurs { pts, photos, status }.
+function enrichWithSpotter(invaders, spotter) {
+  let pts = 0, photos = 0, status = 0;
+  if (!spotter) return { pts, photos, status };
+  for (const inv of invaders) {
+    const s = spotter.get(numFromId(inv.id));
+    if (!s) continue;
+    if (inv.points == null && s.points != null) {
+      inv.points = s.points;
+      inv.pointsSource = 'invader-spotter';
+      pts++;
+    }
+    if (!inv.photoUrl && s.grosplan) { inv.photoUrl = s.grosplan; photos++; }
+    if (inv.status === 'unknown' && s.status && s.status !== 'unknown') {
+      inv.status = s.status;
+      status++;
+    }
+  }
+  return { pts, photos, status };
+}
+
 function contentHash(invaders) {
   const sorted = [...invaders].sort((a, b) => a.id.localeCompare(b.id));
-  const minimal = sorted.map(({ id, city, lat, lng, status, points, hint, instagramUrl }) =>
-    ({ id, city, lat, lng, status, points: points ?? null, hint, instagramUrl: instagramUrl ?? null })
+  const minimal = sorted.map(({ id, city, lat, lng, status, points, hint, instagramUrl, photoUrl }) =>
+    ({ id, city, lat, lng, status, points: points ?? null, hint,
+       instagramUrl: instagramUrl ?? null, photoUrl: photoUrl ?? null })
   );
   return createHash('sha256').update(JSON.stringify(minimal)).digest('hex').slice(0, 16);
 }
@@ -285,6 +325,49 @@ async function main() {
     fetchJSON(GOG_URL,   'goguelnikov'),
     fetchJSON(PNOTE_URL, 'pnote      '),
   ]);
+
+  // Enrichissement invader-spotter (une seule passe par ville couverte, en lot).
+  // Fournit d'un coup : points manquants + photos (gros plan) + statut de secours.
+  // Robustesse : tout échec est attrapé → on continue sans enrichir cette ville.
+  // SPOTTER_CACHE=<fichier.json> permet de rejouer un scrape sans retaper le serveur.
+  // SKIP_SPOTTER=1 désactive complètement l'enrichissement.
+  const spotterByCity = new Map();   // code → Map<num, {points,status,grosplan,...}>
+  if (process.env.SKIP_SPOTTER) {
+    console.log('      invader-spotter : ignoré (SKIP_SPOTTER)');
+  } else if (process.env.SPOTTER_CACHE) {
+    // Cache multi-villes : { CODE: { num: entry } }
+    try {
+      const raw = JSON.parse(readFileSync(process.env.SPOTTER_CACHE, 'utf8'));
+      for (const [code, obj] of Object.entries(raw)) {
+        spotterByCity.set(code, new Map(Object.entries(obj).map(([k, v]) => [parseInt(k, 10), v])));
+      }
+      console.log(`      invader-spotter (cache) : ${spotterByCity.size} villes`);
+    } catch (e) {
+      console.warn(`      ⚠ cache spotter illisible (${e.message}) — enrichissement ignoré`);
+    }
+  } else {
+    console.log(`      invader-spotter : scraping ${SPOTTER_CITIES.size} villes (plusieurs minutes)…`);
+    let done = 0, failed = 0;
+    for (const code of SPOTTER_CITIES) {
+      try {
+        spotterByCity.set(code, await fetchSpotterCity(code));
+      } catch (e) {
+        failed++;
+        console.warn(`\n      ⚠ spotter ${code} indisponible (${e.message})`);
+      }
+      done++;
+      process.stdout.write(`\r      spotter: ${done}/${SPOTTER_CITIES.size} villes traitées (${failed} échecs)   `);
+      await new Promise((r) => setTimeout(r, 600));   // politesse : espace les villes
+    }
+    console.log('');
+    // Cache optionnel : rejouer un run sans retaper le serveur (SPOTTER_CACHE=<ce fichier>).
+    if (process.env.SPOTTER_DUMP && spotterByCity.size) {
+      const obj = {};
+      for (const [code, m] of spotterByCity) obj[code] = Object.fromEntries(m);
+      writeFileSync(process.env.SPOTTER_DUMP, JSON.stringify(obj));
+      console.log(`      cache spotter écrit → ${process.env.SPOTTER_DUMP}`);
+    }
+  }
 
   // ── [2/6] Groupement goguelnikov par ville ────────────────────────────────
   console.log('\n[2/6] Groupement par ville…');
@@ -384,6 +467,7 @@ async function main() {
   let gTotal = 0, gGog = 0, gPnote = 0, gExtras = 0;
   let gInstagram = 0, gNullPoints = 0, gDivergences = 0;
   let gStatusFromPnote = 0, gDestroyedToOk = 0;
+  let gPtsFilled = 0, gPhotos = 0, gStatusFilled = 0;   // enrichissement invader-spotter
   let paTotal = 0, paGog = 0, paPnote = 0, paExtras = 0;
 
   // Événements détectés ce run (ajouts groupés par ville, destructions, réactivations)
@@ -455,8 +539,26 @@ async function main() {
       const loss = (prevBaseCount - baseInvaders.length) / prevBaseCount;
       if (loss > MAX_LOSS_PCT) {
         console.log(`⚠  SKIP — chute base ${prevBaseCount}→${baseInvaders.length} (−${(loss*100).toFixed(1)}%)`);
-        const prevCity = prevIndex?.cities?.find(c => c.code === code);
-        if (prevCity) indexCities.push(prevCity);
+        // On conserve les données précédentes, MAIS photos/points sont indépendants
+        // du drop de la base : on enrichit quand même l'existant (sinon une baisse
+        // temporaire de goguelnikov priverait la ville de ses photos).
+        let idxEntry = prevIndex?.cities?.find(c => c.code === code);
+        if (prevInvaders?.length) {
+          const e = enrichWithSpotter(prevInvaders, spotterByCity.get(code));
+          gPtsFilled += e.pts; gPhotos += e.photos; gStatusFilled += e.status;
+          const nh = contentHash(prevInvaders);
+          if (nh !== prevHash) {
+            const nv = prevVersion + 1;
+            writeFileSync(outFile, JSON.stringify({
+              version: nv, updatedAt: today, city: code,
+              attribution: SOURCE_ATTRIBUTION, _baseCount: prevBaseCount,
+              invaders: prevInvaders,
+            }, null, 2), 'utf8');
+            if (idxEntry) idxEntry = { ...idxEntry, version: nv };
+            console.log(`         ↳ conservé mais enrichi : +${e.photos} photos, +${e.pts} pts (v${nv})`);
+          }
+        }
+        if (idxEntry) indexCities.push(idxEntry);
         continue;
       }
     }
@@ -502,6 +604,13 @@ async function main() {
       }
       finalInvaders = [...merged.values()]
         .sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
+    }
+
+    // ── Enrichissement invader-spotter ────────────────────────────────────
+    // Appliqué APRÈS les extras (qui restent prioritaires) : ne comble que des trous.
+    {
+      const e = enrichWithSpotter(finalInvaders, spotterByCity.get(code));
+      gPtsFilled += e.pts; gPhotos += e.photos; gStatusFilled += e.status;
     }
 
     // ── Événements (news) : ajout / destruction / réactivation ────────────
@@ -644,6 +753,12 @@ async function main() {
   console.log(`  Points inconnus (null): ${String(gNullPoints).padStart(6)}  (pnote-only)`);
   console.log(`  Statuts repris de pnote    : ${String(gStatusFromPnote).padStart(6)}`);
   console.log(`    dont différents de gog   : ${String(gDivergences).padStart(6)}  (dont destroyed→ok : ${gDestroyedToOk})`);
+  console.log('');
+  console.log(`  ── Enrichissement invader-spotter ─────────`);
+  console.log(`  Points comblés (null→valeur): ${String(gPtsFilled).padStart(6)}`);
+  console.log(`  Points encore inconnus      : ${String(gNullPoints).padStart(6)}`);
+  console.log(`  Photos (photoUrl) ajoutées  : ${String(gPhotos).padStart(6)}`);
+  console.log(`  Statuts 'unknown' comblés   : ${String(gStatusFilled).padStart(6)}`);
   console.log('');
   console.log(`  Événements news (ce run)   : ${String(allNewEvents.length).padStart(6)}`);
   console.log('');
