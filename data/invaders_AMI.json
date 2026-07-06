@@ -1,8 +1,8 @@
 {
-  "version": 2,
-  "updatedAt": "2026-06-23",
+  "version": 3,
+  "updatedAt": "2026-07-06",
   "city": "AMI",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 0,
   "invaders": [
     {
@@ -11,10 +11,13 @@
       "lat": 49.8906437377,
       "lng": 2.2907121966,
       "status": "ok",
-      "points": null,
+      "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ami_01/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_01-grosplan.png"
     },
     {
       "id": "AMI_02",
@@ -22,10 +25,13 @@
       "lat": 49.8943146458,
       "lng": 2.2923065775,
       "status": "ok",
-      "points": null,
+      "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ami_02/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_02-grosplan.png"
     },
     {
       "id": "AMI_03",
@@ -33,10 +39,13 @@
       "lat": 49.8949954048,
       "lng": 2.296167803,
       "status": "ok",
-      "points": null,
+      "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ami_03/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_03-grosplan.png"
     },
     {
       "id": "AMI_04",
@@ -44,10 +53,13 @@
       "lat": 49.8977527806,
       "lng": 2.3017638211,
       "status": "ok",
-      "points": null,
+      "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ami_04/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_04-grosplan.png"
     },
     {
       "id": "AMI_05",
@@ -55,10 +67,13 @@
       "lat": 49.9000610728,
       "lng": 2.3083745514,
       "status": "ok",
-      "points": null,
+      "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ami_05/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_05-grosplan.png"
     },
     {
       "id": "AMI_06",
@@ -66,10 +81,13 @@
       "lat": 49.9009381349,
       "lng": 2.3013826563,
       "status": "ok",
-      "points": null,
+      "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ami_06/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_06-grosplan.png"
     },
     {
       "id": "AMI_07",
@@ -77,10 +95,13 @@
       "lat": 49.9051379403,
       "lng": 2.2979600768,
       "status": "ok",
-      "points": null,
+      "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ami_07/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_07-grosplan.png"
     },
     {
       "id": "AMI_08",
@@ -88,10 +109,13 @@
       "lat": 49.8895353682,
       "lng": 2.3026772462,
       "status": "ok",
-      "points": null,
+      "points": 40,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ami_08/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_08-grosplan.png"
     },
     {
       "id": "AMI_09",
@@ -99,10 +123,13 @@
       "lat": 49.8921540494,
       "lng": 2.3004342177,
       "status": "ok",
-      "points": null,
+      "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ami_09/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_09-grosplan.png"
     },
     {
       "id": "AMI_10",
@@ -110,10 +137,13 @@
       "lat": 49.8921247634,
       "lng": 2.300217801,
       "status": "ok",
-      "points": null,
+      "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ami_10/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_10-grosplan.png"
     },
     {
       "id": "AMI_11",
@@ -121,10 +151,13 @@
       "lat": 49.8947878085,
       "lng": 2.3005426322,
       "status": "ok",
-      "points": null,
+      "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ami_11/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_11-grosplan.png"
     },
     {
       "id": "AMI_12",
@@ -132,10 +165,13 @@
       "lat": 49.8961763348,
       "lng": 2.3049458247,
       "status": "ok",
-      "points": null,
+      "points": 40,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ami_12/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_12-grosplan.png"
     },
     {
       "id": "AMI_13",
@@ -143,10 +179,13 @@
       "lat": 49.8955703362,
       "lng": 2.3033737571,
       "status": "ok",
-      "points": null,
+      "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ami_13/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_13-grosplan.png"
     },
     {
       "id": "AMI_14",
@@ -154,10 +193,13 @@
       "lat": 49.8930734065,
       "lng": 2.2974235204,
       "status": "ok",
-      "points": null,
+      "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ami_14/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_14-grosplan.png"
     },
     {
       "id": "AMI_15",
@@ -165,10 +207,13 @@
       "lat": 49.8936511084,
       "lng": 2.2980545249,
       "status": "ok",
-      "points": null,
+      "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ami_15/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_15-grosplan.png"
     },
     {
       "id": "AMI_16",
@@ -176,10 +221,13 @@
       "lat": 49.8909229936,
       "lng": 2.3063165097,
       "status": "ok",
-      "points": null,
+      "points": 40,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ami_16/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_16-grosplan.png"
     }
   ]
 }

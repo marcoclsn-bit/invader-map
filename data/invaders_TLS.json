@@ -1,8 +1,8 @@
 {
-  "version": 2,
-  "updatedAt": "2026-06-23",
+  "version": 3,
+  "updatedAt": "2026-07-06",
   "city": "TLS",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 11,
   "invaders": [
     {
@@ -13,7 +13,8 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_01-grosplan.png"
     },
     {
       "id": "TLS_02",
@@ -23,7 +24,8 @@
       "status": "destroyed",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_02-grosplan.png"
     },
     {
       "id": "TLS_03",
@@ -33,7 +35,8 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_03-grosplan.png"
     },
     {
       "id": "TLS_04",
@@ -43,7 +46,8 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_04-grosplan.png"
     },
     {
       "id": "TLS_05",
@@ -53,7 +57,8 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_05-grosplan.png"
     },
     {
       "id": "TLS_06",
@@ -63,7 +68,8 @@
       "status": "damaged",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_06-grosplan.png"
     },
     {
       "id": "TLS_07",
@@ -73,7 +79,8 @@
       "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_07-grosplan.png"
     },
     {
       "id": "TLS_08",
@@ -83,7 +90,8 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_08-grosplan.png"
     },
     {
       "id": "TLS_09",
@@ -93,7 +101,8 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_09-grosplan.png"
     },
     {
       "id": "TLS_10",
@@ -103,7 +112,8 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_10-grosplan.png"
     },
     {
       "id": "TLS_11",
@@ -113,7 +123,8 @@
       "status": "hidden",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_11-grosplan.png"
     }
   ]
 }

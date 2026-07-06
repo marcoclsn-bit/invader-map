@@ -1,6 +1,6 @@
 {
-  "version": 3,
-  "updatedAt": "2026-06-27",
+  "version": 4,
+  "updatedAt": "2026-07-06",
   "city": "POTI",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 52,
@@ -15,7 +15,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_01/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_01-grosplan.png"
     },
     {
       "id": "POTI_02",
@@ -27,7 +28,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_02/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_02-grosplan.png"
     },
     {
       "id": "POTI_03",
@@ -39,7 +41,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_03/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_03-grosplan.png"
     },
     {
       "id": "POTI_04",
@@ -51,7 +54,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_04/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_04-grosplan.png"
     },
     {
       "id": "POTI_05",
@@ -63,7 +67,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_05/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_05-grosplan.png"
     },
     {
       "id": "POTI_06",
@@ -75,7 +80,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_06/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_06-grosplan.png"
     },
     {
       "id": "POTI_07",
@@ -87,7 +93,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_07/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_07-grosplan.png"
     },
     {
       "id": "POTI_08",
@@ -99,7 +106,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_08/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_08-grosplan.png"
     },
     {
       "id": "POTI_09",
@@ -111,7 +119,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_09/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_09-grosplan.png"
     },
     {
       "id": "POTI_10",
@@ -123,7 +132,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_10/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_10-grosplan.png"
     },
     {
       "id": "POTI_11",
@@ -135,7 +145,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_11/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_11-grosplan.png"
     },
     {
       "id": "POTI_12",
@@ -147,7 +158,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_12/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_12-grosplan.png"
     },
     {
       "id": "POTI_13",
@@ -159,7 +171,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_13/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_13-grosplan.png"
     },
     {
       "id": "POTI_14",
@@ -171,7 +184,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_14/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_14-grosplan.png"
     },
     {
       "id": "POTI_15",
@@ -183,7 +197,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_15/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_15-grosplan.png"
     },
     {
       "id": "POTI_16",
@@ -195,7 +210,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_16/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_16-grosplan.png"
     },
     {
       "id": "POTI_17",
@@ -207,7 +223,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_17/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_17-grosplan.png"
     },
     {
       "id": "POTI_18",
@@ -219,7 +236,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_18/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_18-grosplan.png"
     },
     {
       "id": "POTI_19",
@@ -231,7 +249,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_19/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_19-grosplan.png"
     },
     {
       "id": "POTI_20",
@@ -243,7 +262,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_20/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_20-grosplan.png"
     },
     {
       "id": "POTI_21",
@@ -255,7 +275,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_21/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_21-grosplan.png"
     },
     {
       "id": "POTI_22",
@@ -267,7 +288,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_22/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_22-grosplan.png"
     },
     {
       "id": "POTI_23",
@@ -279,7 +301,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_23/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_23-grosplan.png"
     },
     {
       "id": "POTI_24",
@@ -291,7 +314,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_24/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_24-grosplan.png"
     },
     {
       "id": "POTI_25",
@@ -303,7 +327,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_25/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_25-grosplan.png"
     },
     {
       "id": "POTI_26",
@@ -315,7 +340,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_26/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_26-grosplan.png"
     },
     {
       "id": "POTI_27",
@@ -327,7 +353,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_27/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_27-grosplan.png"
     },
     {
       "id": "POTI_28",
@@ -339,7 +366,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_28/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_28-grosplan.png"
     },
     {
       "id": "POTI_29",
@@ -351,7 +379,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_29/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_29-grosplan.png"
     },
     {
       "id": "POTI_30",
@@ -363,7 +392,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_30/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_30-grosplan.png"
     },
     {
       "id": "POTI_31",
@@ -375,7 +405,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_31/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_31-grosplan.png"
     },
     {
       "id": "POTI_32",
@@ -387,7 +418,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_32/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_32-grosplan.png"
     },
     {
       "id": "POTI_33",
@@ -399,7 +431,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_33/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_33-grosplan.png"
     },
     {
       "id": "POTI_34",
@@ -411,7 +444,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_34/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_34-grosplan.png"
     },
     {
       "id": "POTI_35",
@@ -423,7 +457,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_35/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_35-grosplan.png"
     },
     {
       "id": "POTI_36",
@@ -435,7 +470,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_36/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_36-grosplan.png"
     },
     {
       "id": "POTI_37",
@@ -447,7 +483,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_37/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_37-grosplan.png"
     },
     {
       "id": "POTI_38",
@@ -459,7 +496,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_38/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_38-grosplan.png"
     },
     {
       "id": "POTI_39",
@@ -471,7 +509,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_39/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_39-grosplan.png"
     },
     {
       "id": "POTI_40",
@@ -483,7 +522,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_40/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_40-grosplan.png"
     },
     {
       "id": "POTI_41",
@@ -495,7 +535,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_41/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_41-grosplan.png"
     },
     {
       "id": "POTI_42",
@@ -507,7 +548,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_42/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_42-grosplan.png"
     },
     {
       "id": "POTI_43",
@@ -519,7 +561,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_43/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_43-grosplan.png"
     },
     {
       "id": "POTI_44",
@@ -531,7 +574,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_44/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_44-grosplan.png"
     },
     {
       "id": "POTI_45",
@@ -543,7 +587,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_45/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_45-grosplan.png"
     },
     {
       "id": "POTI_46",
@@ -555,7 +600,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_46/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_46-grosplan.png"
     },
     {
       "id": "POTI_47",
@@ -567,7 +613,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_47/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_47-grosplan.png"
     },
     {
       "id": "POTI_48",
@@ -579,7 +626,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_48/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_48-grosplan.png"
     },
     {
       "id": "POTI_49",
@@ -591,7 +639,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_49/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_49-grosplan.png"
     },
     {
       "id": "POTI_50",
@@ -603,7 +652,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_50/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_50-grosplan.png"
     },
     {
       "id": "POTI_51",
@@ -615,7 +665,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_51/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_51-grosplan.png"
     },
     {
       "id": "POTI_52",
@@ -627,7 +678,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/poti_52/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/POTI/POTI_52-grosplan.png"
     }
   ]
 }

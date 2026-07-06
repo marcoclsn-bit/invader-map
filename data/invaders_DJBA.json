@@ -1,8 +1,8 @@
 {
-  "version": 2,
-  "updatedAt": "2026-06-23",
+  "version": 3,
+  "updatedAt": "2026-07-06",
   "city": "DJBA",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 58,
   "invaders": [
     {
@@ -13,7 +13,8 @@
       "status": "ok",
       "points": 100,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_01-grosplan.png"
     },
     {
       "id": "DJBA_02",
@@ -23,7 +24,8 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_02-grosplan.png"
     },
     {
       "id": "DJBA_03",
@@ -33,7 +35,8 @@
       "status": "ok",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_03-grosplan.png"
     },
     {
       "id": "DJBA_04",
@@ -43,7 +46,8 @@
       "status": "ok",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_04-grosplan.png"
     },
     {
       "id": "DJBA_05",
@@ -53,7 +57,8 @@
       "status": "destroyed",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_05-grosplan.png"
     },
     {
       "id": "DJBA_06",
@@ -63,7 +68,8 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_06-grosplan.png"
     },
     {
       "id": "DJBA_07",
@@ -73,7 +79,8 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_07-grosplan.png"
     },
     {
       "id": "DJBA_08",
@@ -83,7 +90,8 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_08-grosplan.png"
     },
     {
       "id": "DJBA_09",
@@ -93,7 +101,8 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_09-grosplan.png"
     },
     {
       "id": "DJBA_10",
@@ -103,7 +112,8 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_10-grosplan.png"
     },
     {
       "id": "DJBA_11",
@@ -113,7 +123,8 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_11-grosplan.png"
     },
     {
       "id": "DJBA_12",
@@ -123,7 +134,8 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_12-grosplan.png"
     },
     {
       "id": "DJBA_13",
@@ -133,7 +145,8 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_13-grosplan.png"
     },
     {
       "id": "DJBA_14",
@@ -143,7 +156,8 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_14-grosplan.png"
     },
     {
       "id": "DJBA_15",
@@ -153,7 +167,8 @@
       "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_15-grosplan.png"
     },
     {
       "id": "DJBA_16",
@@ -163,7 +178,8 @@
       "status": "ok",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_16-grosplan.png"
     },
     {
       "id": "DJBA_17",
@@ -173,7 +189,8 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_17-grosplan.png"
     },
     {
       "id": "DJBA_18",
@@ -183,7 +200,8 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_18-grosplan.png"
     },
     {
       "id": "DJBA_19",
@@ -193,7 +211,8 @@
       "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_19-grosplan.png"
     },
     {
       "id": "DJBA_20",
@@ -203,7 +222,8 @@
       "status": "damaged",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_20-grosplan.png"
     },
     {
       "id": "DJBA_21",
@@ -213,7 +233,8 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_21-grosplan.png"
     },
     {
       "id": "DJBA_22",
@@ -223,7 +244,8 @@
       "status": "damaged",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_22-grosplan.png"
     },
     {
       "id": "DJBA_23",
@@ -233,7 +255,8 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_23-grosplan.png"
     },
     {
       "id": "DJBA_24",
@@ -243,7 +266,8 @@
       "status": "destroyed",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_24-grosplan.png"
     },
     {
       "id": "DJBA_25",
@@ -253,7 +277,8 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_25-grosplan.png"
     },
     {
       "id": "DJBA_26",
@@ -263,7 +288,8 @@
       "status": "damaged",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_26-grosplan.png"
     },
     {
       "id": "DJBA_27",
@@ -273,7 +299,8 @@
       "status": "damaged",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_27-grosplan.png"
     },
     {
       "id": "DJBA_28",
@@ -283,7 +310,8 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_28-grosplan.png"
     },
     {
       "id": "DJBA_29",
@@ -293,7 +321,8 @@
       "status": "ok",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_29-grosplan.png"
     },
     {
       "id": "DJBA_30",
@@ -303,7 +332,8 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_30-grosplan.png"
     },
     {
       "id": "DJBA_31",
@@ -313,7 +343,8 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_31-grosplan.png"
     },
     {
       "id": "DJBA_32",
@@ -323,7 +354,8 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_32-grosplan.png"
     },
     {
       "id": "DJBA_33",
@@ -333,7 +365,8 @@
       "status": "damaged",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_33-grosplan.png"
     },
     {
       "id": "DJBA_34",
@@ -343,7 +376,8 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_34-grosplan.png"
     },
     {
       "id": "DJBA_35",
@@ -353,7 +387,8 @@
       "status": "damaged",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_35-grosplan.png"
     },
     {
       "id": "DJBA_36",
@@ -363,7 +398,8 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_36-grosplan.png"
     },
     {
       "id": "DJBA_37",
@@ -373,7 +409,8 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_37-grosplan.png"
     },
     {
       "id": "DJBA_38",
@@ -383,7 +420,8 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_38-grosplan.png"
     },
     {
       "id": "DJBA_39",
@@ -393,7 +431,8 @@
       "status": "damaged",
       "points": 100,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_39-grosplan.png"
     },
     {
       "id": "DJBA_40",
@@ -403,7 +442,8 @@
       "status": "ok",
       "points": 100,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_40-grosplan.png"
     },
     {
       "id": "DJBA_41",
@@ -413,7 +453,8 @@
       "status": "damaged",
       "points": 100,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_41-grosplan.png"
     },
     {
       "id": "DJBA_42",
@@ -423,7 +464,8 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_42-grosplan.png"
     },
     {
       "id": "DJBA_43",
@@ -433,7 +475,8 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_43-grosplan.png"
     },
     {
       "id": "DJBA_44",
@@ -443,7 +486,8 @@
       "status": "damaged",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_44-grosplan.png"
     },
     {
       "id": "DJBA_45",
@@ -453,7 +497,8 @@
       "status": "ok",
       "points": 100,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_45-grosplan.png"
     },
     {
       "id": "DJBA_46",
@@ -463,7 +508,8 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_46-grosplan.png"
     },
     {
       "id": "DJBA_47",
@@ -473,7 +519,8 @@
       "status": "ok",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_47-grosplan.png"
     },
     {
       "id": "DJBA_48",
@@ -483,7 +530,8 @@
       "status": "ok",
       "points": 100,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_48-grosplan.png"
     },
     {
       "id": "DJBA_49",
@@ -493,7 +541,8 @@
       "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_49-grosplan.png"
     },
     {
       "id": "DJBA_50",
@@ -503,7 +552,8 @@
       "status": "ok",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_50-grosplan.png"
     },
     {
       "id": "DJBA_51",
@@ -513,7 +563,8 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_51-grosplan.png"
     },
     {
       "id": "DJBA_52",
@@ -523,7 +574,8 @@
       "status": "ok",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_52-grosplan.png"
     },
     {
       "id": "DJBA_53",
@@ -533,7 +585,8 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_53-grosplan.png"
     },
     {
       "id": "DJBA_54",
@@ -543,7 +596,8 @@
       "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_54-grosplan.png"
     },
     {
       "id": "DJBA_55",
@@ -553,7 +607,8 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_55-grosplan.png"
     },
     {
       "id": "DJBA_56",
@@ -563,7 +618,8 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_56-grosplan.png"
     },
     {
       "id": "DJBA_57",
@@ -573,7 +629,8 @@
       "status": "ok",
       "points": 100,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_57-grosplan.png"
     },
     {
       "id": "DJBA_58",
@@ -583,7 +640,8 @@
       "status": "ok",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_58-grosplan.png"
     }
   ]
 }

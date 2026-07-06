@@ -1,6 +1,6 @@
 {
-  "version": 4,
-  "updatedAt": "2026-06-27",
+  "version": 5,
+  "updatedAt": "2026-07-06",
   "city": "BAB",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 60,
@@ -15,7 +15,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_01/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_01-grosplan.png"
     },
     {
       "id": "BAB_02",
@@ -27,7 +28,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_02/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_02-grosplan.png"
     },
     {
       "id": "BAB_03",
@@ -39,7 +41,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_03/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_03-grosplan.png"
     },
     {
       "id": "BAB_04",
@@ -51,7 +54,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_04/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_04-grosplan.png"
     },
     {
       "id": "BAB_05",
@@ -63,7 +67,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_05/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_05-grosplan.png"
     },
     {
       "id": "BAB_06",
@@ -75,7 +80,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_06/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_06-grosplan.png"
     },
     {
       "id": "BAB_07",
@@ -87,7 +93,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_07/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_07-grosplan.png"
     },
     {
       "id": "BAB_08",
@@ -99,7 +106,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_08/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_08-grosplan.png"
     },
     {
       "id": "BAB_09",
@@ -111,7 +119,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_09/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_09-grosplan.png"
     },
     {
       "id": "BAB_10",
@@ -123,7 +132,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_10/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_10-grosplan.png"
     },
     {
       "id": "BAB_11",
@@ -135,7 +145,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_11/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_11-grosplan.png"
     },
     {
       "id": "BAB_12",
@@ -147,7 +158,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_12/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_12-grosplan.png"
     },
     {
       "id": "BAB_13",
@@ -159,7 +171,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_13/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_13-grosplan.png"
     },
     {
       "id": "BAB_14",
@@ -171,7 +184,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_14/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_14-grosplan.png"
     },
     {
       "id": "BAB_15",
@@ -183,7 +197,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_15/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_15-grosplan.png"
     },
     {
       "id": "BAB_16",
@@ -195,7 +210,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_16/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_16-grosplan.png"
     },
     {
       "id": "BAB_17",
@@ -207,7 +223,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_17/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_17-grosplan.png"
     },
     {
       "id": "BAB_18",
@@ -219,7 +236,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_18/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_18-grosplan.png"
     },
     {
       "id": "BAB_19",
@@ -231,7 +249,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_19/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_19-grosplan.png"
     },
     {
       "id": "BAB_20",
@@ -243,7 +262,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_20/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_20-grosplan.png"
     },
     {
       "id": "BAB_21",
@@ -255,7 +275,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_21/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_21-grosplan.png"
     },
     {
       "id": "BAB_22",
@@ -267,7 +288,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_22/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_22-grosplan.png"
     },
     {
       "id": "BAB_23",
@@ -279,7 +301,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_23/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_23-grosplan.png"
     },
     {
       "id": "BAB_24",
@@ -291,7 +314,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_24/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_24-grosplan.png"
     },
     {
       "id": "BAB_25",
@@ -303,7 +327,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_25/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_25-grosplan.png"
     },
     {
       "id": "BAB_26",
@@ -315,7 +340,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_26/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_26-grosplan.png"
     },
     {
       "id": "BAB_27",
@@ -327,7 +353,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_27/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_27-grosplan.png"
     },
     {
       "id": "BAB_28",
@@ -339,7 +366,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_28/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_28-grosplan.png"
     },
     {
       "id": "BAB_29",
@@ -351,7 +379,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_29/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_29-grosplan.png"
     },
     {
       "id": "BAB_30",
@@ -363,7 +392,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_30/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_30-grosplan.png"
     },
     {
       "id": "BAB_31",
@@ -375,7 +405,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_31/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_31-grosplan.png"
     },
     {
       "id": "BAB_32",
@@ -387,7 +418,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_32/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_32-grosplan.png"
     },
     {
       "id": "BAB_33",
@@ -399,7 +431,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_33/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_33-grosplan.png"
     },
     {
       "id": "BAB_34",
@@ -411,7 +444,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_34/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_34-grosplan.png"
     },
     {
       "id": "BAB_35",
@@ -423,7 +457,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_35/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_35-grosplan.png"
     },
     {
       "id": "BAB_36",
@@ -435,7 +470,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_36/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_36-grosplan.png"
     },
     {
       "id": "BAB_37",
@@ -447,7 +483,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_37/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_37-grosplan.png"
     },
     {
       "id": "BAB_38",
@@ -459,7 +496,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_38/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_38-grosplan.png"
     },
     {
       "id": "BAB_39",
@@ -471,7 +509,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_39/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_39-grosplan.png"
     },
     {
       "id": "BAB_40",
@@ -483,7 +522,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_40/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_40-grosplan.png"
     },
     {
       "id": "BAB_41",
@@ -495,7 +535,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_41/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_41-grosplan.png"
     },
     {
       "id": "BAB_42",
@@ -507,7 +548,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_42/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_42-grosplan.png"
     },
     {
       "id": "BAB_43",
@@ -519,7 +561,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_43/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_43-grosplan.png"
     },
     {
       "id": "BAB_44",
@@ -531,7 +574,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_44/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_44-grosplan.png"
     },
     {
       "id": "BAB_45",
@@ -543,7 +587,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_45/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_45-grosplan.png"
     },
     {
       "id": "BAB_46",
@@ -555,7 +600,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_46/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_46-grosplan.png"
     },
     {
       "id": "BAB_47",
@@ -567,7 +613,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_47/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_47-grosplan.png"
     },
     {
       "id": "BAB_48",
@@ -579,7 +626,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_48/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_48-grosplan.png"
     },
     {
       "id": "BAB_49",
@@ -591,7 +639,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_49/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_49-grosplan.png"
     },
     {
       "id": "BAB_50",
@@ -603,7 +652,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_50/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_50-grosplan.png"
     },
     {
       "id": "BAB_51",
@@ -615,7 +665,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_51/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_51-grosplan.png"
     },
     {
       "id": "BAB_52",
@@ -627,7 +678,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_52/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_52-grosplan.png"
     },
     {
       "id": "BAB_53",
@@ -639,7 +691,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_53/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_53-grosplan.png"
     },
     {
       "id": "BAB_54",
@@ -651,7 +704,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_54/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_54-grosplan.png"
     },
     {
       "id": "BAB_55",
@@ -663,7 +717,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_55/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_55-grosplan.png"
     },
     {
       "id": "BAB_56",
@@ -675,7 +730,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_56/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_56-grosplan.png"
     },
     {
       "id": "BAB_57",
@@ -687,7 +743,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_57/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_57-grosplan.png"
     },
     {
       "id": "BAB_58",
@@ -699,7 +756,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_58/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_58-grosplan.png"
     },
     {
       "id": "BAB_59",
@@ -711,7 +769,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_59/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_59-grosplan.png"
     },
     {
       "id": "BAB_60",
@@ -723,7 +782,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/bab_60/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_60-grosplan.png"
     }
   ]
 }

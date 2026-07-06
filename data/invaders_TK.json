@@ -1,8 +1,8 @@
 {
-  "version": 3,
-  "updatedAt": "2026-06-23",
+  "version": 4,
+  "updatedAt": "2026-07-06",
   "city": "TK",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 123,
   "invaders": [
     {
@@ -14,7 +14,9 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_01/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_001-grosplan.png"
     },
     {
       "id": "TK_02",
@@ -25,7 +27,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_02/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_002-grosplan.png"
     },
     {
       "id": "TK_03",
@@ -36,7 +40,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_03/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_003-grosplan.png"
     },
     {
       "id": "TK_04",
@@ -47,7 +53,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_04/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_004-grosplan.png"
     },
     {
       "id": "TK_06",
@@ -58,7 +66,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_06/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_006-grosplan.png"
     },
     {
       "id": "TK_07",
@@ -69,7 +79,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_07/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_007-grosplan.png"
     },
     {
       "id": "TK_08",
@@ -80,7 +92,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_08/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_008-grosplan.png"
     },
     {
       "id": "TK_09",
@@ -91,7 +105,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_09/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_009-grosplan.png"
     },
     {
       "id": "TK_10",
@@ -102,7 +118,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_10/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_010-grosplan.png"
     },
     {
       "id": "TK_11",
@@ -113,7 +131,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_11/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_011-grosplan.png"
     },
     {
       "id": "TK_12",
@@ -124,7 +144,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_12/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_012-grosplan.png"
     },
     {
       "id": "TK_13",
@@ -135,7 +157,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_13/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_013-grosplan.png"
     },
     {
       "id": "TK_14",
@@ -146,7 +170,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_14/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_014-grosplan.png"
     },
     {
       "id": "TK_15",
@@ -157,7 +183,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_15/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_015-grosplan.png"
     },
     {
       "id": "TK_16",
@@ -168,7 +196,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_16/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_016-grosplan.png"
     },
     {
       "id": "TK_17",
@@ -179,7 +209,9 @@
       "points": 40,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_17/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_017-grosplan.png"
     },
     {
       "id": "TK_18",
@@ -190,7 +222,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_18/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_018-grosplan.png"
     },
     {
       "id": "TK_19",
@@ -201,7 +235,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_19/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_019-grosplan.png"
     },
     {
       "id": "TK_20",
@@ -212,7 +248,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_20/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_020-grosplan.png"
     },
     {
       "id": "TK_21",
@@ -223,7 +261,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_21/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_021-grosplan.png"
     },
     {
       "id": "TK_22",
@@ -234,7 +274,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_22/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_022-grosplan.png"
     },
     {
       "id": "TK_23",
@@ -245,7 +287,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_23/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_023-grosplan.png"
     },
     {
       "id": "TK_25",
@@ -256,7 +300,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_25/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_025-grosplan.png"
     },
     {
       "id": "TK_27",
@@ -267,7 +313,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_27/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_027-grosplan.png"
     },
     {
       "id": "TK_29",
@@ -278,7 +326,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_29/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_029-grosplan.png"
     },
     {
       "id": "TK_30",
@@ -289,7 +339,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_30/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_030-grosplan.png"
     },
     {
       "id": "TK_31",
@@ -300,7 +352,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_31/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_031-grosplan.png"
     },
     {
       "id": "TK_32",
@@ -311,7 +365,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_32/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_032-grosplan.png"
     },
     {
       "id": "TK_33",
@@ -322,7 +378,9 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_33/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_033-grosplan.png"
     },
     {
       "id": "TK_34",
@@ -333,7 +391,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_34/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_034-grosplan.png"
     },
     {
       "id": "TK_35",
@@ -344,7 +404,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_35/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_035-grosplan.png"
     },
     {
       "id": "TK_36",
@@ -355,7 +417,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_36/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_036-grosplan.png"
     },
     {
       "id": "TK_37",
@@ -366,7 +430,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_37/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_037-grosplan.png"
     },
     {
       "id": "TK_38",
@@ -377,7 +443,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_38/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_038-grosplan.png"
     },
     {
       "id": "TK_39",
@@ -388,7 +456,9 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_39/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_039-grosplan.png"
     },
     {
       "id": "TK_40",
@@ -399,7 +469,9 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_40/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_040-grosplan.png"
     },
     {
       "id": "TK_41",
@@ -410,7 +482,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_41/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_041-grosplan.png"
     },
     {
       "id": "TK_42",
@@ -421,7 +495,9 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_42/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_042-grosplan.png"
     },
     {
       "id": "TK_43",
@@ -432,7 +508,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_43/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_043-grosplan.png"
     },
     {
       "id": "TK_45",
@@ -443,7 +521,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_45/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_045-grosplan.png"
     },
     {
       "id": "TK_46",
@@ -454,7 +534,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_46/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_046-grosplan.png"
     },
     {
       "id": "TK_47",
@@ -465,7 +547,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_47/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_047-grosplan.png"
     },
     {
       "id": "TK_48",
@@ -476,7 +560,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_48/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_048-grosplan.png"
     },
     {
       "id": "TK_50",
@@ -487,7 +573,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_50/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_050-grosplan.png"
     },
     {
       "id": "TK_51",
@@ -498,7 +586,9 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_51/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_051-grosplan.png"
     },
     {
       "id": "TK_52",
@@ -509,7 +599,9 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_52/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_052-grosplan.png"
     },
     {
       "id": "TK_53",
@@ -520,7 +612,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_53/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_053-grosplan.png"
     },
     {
       "id": "TK_54",
@@ -531,7 +625,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_54/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_054-grosplan.png"
     },
     {
       "id": "TK_56",
@@ -542,7 +638,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_56/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_056-grosplan.png"
     },
     {
       "id": "TK_57",
@@ -553,7 +651,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_57/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_057-grosplan.png"
     },
     {
       "id": "TK_58",
@@ -564,7 +664,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_58/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_058-grosplan.png"
     },
     {
       "id": "TK_59",
@@ -575,7 +677,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_59/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_059-grosplan.png"
     },
     {
       "id": "TK_62",
@@ -586,7 +690,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_62/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_062-grosplan.png"
     },
     {
       "id": "TK_64",
@@ -597,7 +703,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_64/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_064-grosplan.png"
     },
     {
       "id": "TK_65",
@@ -608,7 +716,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_65/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_065-grosplan.png"
     },
     {
       "id": "TK_68",
@@ -619,7 +729,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_68/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_068-grosplan.png"
     },
     {
       "id": "TK_69",
@@ -630,7 +742,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_69/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_069-grosplan.png"
     },
     {
       "id": "TK_70",
@@ -641,7 +755,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_70/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_070-grosplan.png"
     },
     {
       "id": "TK_72",
@@ -652,7 +768,9 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_72/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_072-grosplan.png"
     },
     {
       "id": "TK_73",
@@ -663,7 +781,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_73/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_073-grosplan.png"
     },
     {
       "id": "TK_74",
@@ -674,7 +794,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_74/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_074-grosplan.png"
     },
     {
       "id": "TK_76",
@@ -685,7 +807,9 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_76/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_076-grosplan.png"
     },
     {
       "id": "TK_77",
@@ -696,7 +820,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_77/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_077-grosplan.png"
     },
     {
       "id": "TK_78",
@@ -707,7 +833,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_78/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_078-grosplan.png"
     },
     {
       "id": "TK_80",
@@ -718,7 +846,9 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_80/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_080-grosplan.png"
     },
     {
       "id": "TK_81",
@@ -729,7 +859,9 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_81/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_081-grosplan.png"
     },
     {
       "id": "TK_82",
@@ -740,7 +872,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_82/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_082-grosplan.png"
     },
     {
       "id": "TK_83",
@@ -751,7 +885,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_83/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_083-grosplan.png"
     },
     {
       "id": "TK_84",
@@ -762,7 +898,9 @@
       "points": 0,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_84/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_084-grosplan.png"
     },
     {
       "id": "TK_85",
@@ -773,7 +911,9 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_85/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_085-grosplan.png"
     },
     {
       "id": "TK_86",
@@ -784,7 +924,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_86/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_086-grosplan.png"
     },
     {
       "id": "TK_87",
@@ -795,7 +937,9 @@
       "points": 0,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_87/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_087-grosplan.png"
     },
     {
       "id": "TK_88",
@@ -806,7 +950,9 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_88/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_088-grosplan.png"
     },
     {
       "id": "TK_89",
@@ -817,7 +963,9 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_89/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_089-grosplan.png"
     },
     {
       "id": "TK_90",
@@ -828,7 +976,9 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_90/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_090-grosplan.png"
     },
     {
       "id": "TK_91",
@@ -839,7 +989,9 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_91/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_091-grosplan.png"
     },
     {
       "id": "TK_92",
@@ -850,7 +1002,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_92/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_092-grosplan.png"
     },
     {
       "id": "TK_93",
@@ -861,7 +1015,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_93/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_093-grosplan.png"
     },
     {
       "id": "TK_94",
@@ -872,7 +1028,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_94/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_094-grosplan.png"
     },
     {
       "id": "TK_95",
@@ -883,7 +1041,9 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_95/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_095-grosplan.png"
     },
     {
       "id": "TK_96",
@@ -894,7 +1054,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_96/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_096-grosplan.png"
     },
     {
       "id": "TK_97",
@@ -905,7 +1067,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_97/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_097-grosplan.png"
     },
     {
       "id": "TK_98",
@@ -916,7 +1080,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_98/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_098-grosplan.png"
     },
     {
       "id": "TK_99",
@@ -927,7 +1093,9 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_99/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_099-grosplan.png"
     },
     {
       "id": "TK_100",
@@ -938,7 +1106,9 @@
       "points": 100,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_100/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_100-grosplan.png"
     },
     {
       "id": "TK_101",
@@ -949,7 +1119,9 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_101/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_101-grosplan.png"
     },
     {
       "id": "TK_102",
@@ -960,7 +1132,9 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_102/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_102-grosplan.png"
     },
     {
       "id": "TK_103",
@@ -971,7 +1145,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_103/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_103-grosplan.png"
     },
     {
       "id": "TK_104",
@@ -982,7 +1158,9 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_104/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_104-grosplan.png"
     },
     {
       "id": "TK_105",
@@ -993,7 +1171,9 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_105/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_105-grosplan.png"
     },
     {
       "id": "TK_106",
@@ -1004,7 +1184,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_106/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_106-grosplan.png"
     },
     {
       "id": "TK_107",
@@ -1015,7 +1197,9 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_107/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_107-grosplan.png"
     },
     {
       "id": "TK_108",
@@ -1026,7 +1210,9 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_108/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_108-grosplan.png"
     },
     {
       "id": "TK_109",
@@ -1037,7 +1223,9 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_109/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_109-grosplan.png"
     },
     {
       "id": "TK_110",
@@ -1048,7 +1236,9 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_110/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_110-grosplan.png"
     },
     {
       "id": "TK_111",
@@ -1059,7 +1249,9 @@
       "points": 100,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_111/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_111-grosplan.png"
     },
     {
       "id": "TK_112",
@@ -1070,7 +1262,9 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_112/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_112-grosplan.png"
     },
     {
       "id": "TK_113",
@@ -1081,7 +1275,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_113/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_113-grosplan.png"
     },
     {
       "id": "TK_114",
@@ -1092,7 +1288,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_114/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_114-grosplan.png"
     },
     {
       "id": "TK_115",
@@ -1103,7 +1301,9 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_115/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_115-grosplan.png"
     },
     {
       "id": "TK_116",
@@ -1114,7 +1314,9 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_116/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_116-grosplan.png"
     },
     {
       "id": "TK_117",
@@ -1125,7 +1327,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_117/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_117-grosplan.png"
     },
     {
       "id": "TK_118",
@@ -1136,7 +1340,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_118/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_118-grosplan.png"
     },
     {
       "id": "TK_119",
@@ -1147,7 +1353,9 @@
       "points": 100,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_119/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_119-grosplan.png"
     },
     {
       "id": "TK_120",
@@ -1158,7 +1366,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_120/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_120-grosplan.png"
     },
     {
       "id": "TK_121",
@@ -1169,7 +1379,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_121/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_121-grosplan.png"
     },
     {
       "id": "TK_122",
@@ -1180,7 +1392,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_122/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_122-grosplan.png"
     },
     {
       "id": "TK_123",
@@ -1191,7 +1405,9 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_123/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_123-grosplan.png"
     },
     {
       "id": "TK_124",
@@ -1202,7 +1418,9 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_124/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_124-grosplan.png"
     },
     {
       "id": "TK_125",
@@ -1213,7 +1431,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_125/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_125-grosplan.png"
     },
     {
       "id": "TK_126",
@@ -1224,7 +1444,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_126/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_126-grosplan.png"
     },
     {
       "id": "TK_127",
@@ -1235,7 +1457,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_127/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_127-grosplan.png"
     },
     {
       "id": "TK_128",
@@ -1246,7 +1470,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_128/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_128-grosplan.png"
     },
     {
       "id": "TK_129",
@@ -1257,7 +1483,9 @@
       "points": 100,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_129/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_129-grosplan.png"
     },
     {
       "id": "TK_130",
@@ -1268,7 +1496,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_130/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_130-grosplan.png"
     },
     {
       "id": "TK_131",
@@ -1279,7 +1509,9 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_131/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_131-grosplan.png"
     },
     {
       "id": "TK_132",
@@ -1290,7 +1522,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_132/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_132-grosplan.png"
     },
     {
       "id": "TK_133",
@@ -1301,7 +1535,9 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_133/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_133-grosplan.png"
     },
     {
       "id": "TK_134",
@@ -1312,7 +1548,9 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_134/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_134-grosplan.png"
     },
     {
       "id": "TK_135",
@@ -1323,7 +1561,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_135/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_135-grosplan.png"
     },
     {
       "id": "TK_136",
@@ -1334,7 +1574,9 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_136/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_136-grosplan.png"
     },
     {
       "id": "TK_137",
@@ -1345,7 +1587,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_137/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_137-grosplan.png"
     },
     {
       "id": "TK_138",
@@ -1356,7 +1600,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/tk_138/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_138-grosplan.png"
     }
   ]
 }

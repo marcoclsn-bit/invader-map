@@ -1,8 +1,8 @@
 {
-  "version": 2,
-  "updatedAt": "2026-06-23",
+  "version": 3,
+  "updatedAt": "2026-07-06",
   "city": "CLR",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 47,
   "invaders": [
     {
@@ -13,7 +13,8 @@
       "status": "ok",
       "points": 10,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_01-grosplan.png"
     },
     {
       "id": "CLR_02",
@@ -23,7 +24,8 @@
       "status": "damaged",
       "points": 10,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_02-grosplan.png"
     },
     {
       "id": "CLR_03",
@@ -33,7 +35,8 @@
       "status": "ok",
       "points": 10,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_03-grosplan.png"
     },
     {
       "id": "CLR_04",
@@ -43,7 +46,8 @@
       "status": "damaged",
       "points": 10,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_04-grosplan.png"
     },
     {
       "id": "CLR_05",
@@ -53,7 +57,8 @@
       "status": "ok",
       "points": 10,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_05-grosplan.png"
     },
     {
       "id": "CLR_06",
@@ -63,7 +68,8 @@
       "status": "ok",
       "points": 10,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_06-grosplan.png"
     },
     {
       "id": "CLR_07",
@@ -73,7 +79,8 @@
       "status": "damaged",
       "points": 10,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_07-grosplan.png"
     },
     {
       "id": "CLR_08",
@@ -83,7 +90,8 @@
       "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_08-grosplan.png"
     },
     {
       "id": "CLR_09",
@@ -93,7 +101,8 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_09-grosplan.png"
     },
     {
       "id": "CLR_10",
@@ -103,7 +112,8 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_10-grosplan.png"
     },
     {
       "id": "CLR_11",
@@ -113,7 +123,8 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_11-grosplan.png"
     },
     {
       "id": "CLR_12",
@@ -123,7 +134,8 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_12-grosplan.png"
     },
     {
       "id": "CLR_13",
@@ -133,7 +145,8 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_13-grosplan.png"
     },
     {
       "id": "CLR_14",
@@ -143,7 +156,8 @@
       "status": "ok",
       "points": 100,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_14-grosplan.png"
     },
     {
       "id": "CLR_15",
@@ -153,7 +167,8 @@
       "status": "ok",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_15-grosplan.png"
     },
     {
       "id": "CLR_16",
@@ -163,7 +178,8 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_16-grosplan.png"
     },
     {
       "id": "CLR_17",
@@ -173,7 +189,8 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_17-grosplan.png"
     },
     {
       "id": "CLR_18",
@@ -183,7 +200,8 @@
       "status": "ok",
       "points": 100,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_18-grosplan.png"
     },
     {
       "id": "CLR_19",
@@ -193,7 +211,8 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_19-grosplan.png"
     },
     {
       "id": "CLR_20",
@@ -203,7 +222,8 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_20-grosplan.png"
     },
     {
       "id": "CLR_21",
@@ -213,7 +233,8 @@
       "status": "ok",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_21-grosplan.png"
     },
     {
       "id": "CLR_22",
@@ -223,7 +244,8 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_22-grosplan.png"
     },
     {
       "id": "CLR_23",
@@ -233,7 +255,8 @@
       "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_23-grosplan.png"
     },
     {
       "id": "CLR_24",
@@ -243,7 +266,8 @@
       "status": "damaged",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_24-grosplan.png"
     },
     {
       "id": "CLR_25",
@@ -253,7 +277,8 @@
       "status": "damaged",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_25-grosplan.png"
     },
     {
       "id": "CLR_26",
@@ -263,7 +288,8 @@
       "status": "ok",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_26-grosplan.png"
     },
     {
       "id": "CLR_27",
@@ -273,7 +299,8 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_27-grosplan.png"
     },
     {
       "id": "CLR_28",
@@ -283,7 +310,8 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_28-grosplan.png"
     },
     {
       "id": "CLR_29",
@@ -293,7 +321,8 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_29-grosplan.png"
     },
     {
       "id": "CLR_30",
@@ -303,7 +332,8 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_30-grosplan.png"
     },
     {
       "id": "CLR_31",
@@ -313,7 +343,8 @@
       "status": "ok",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_31-grosplan.png"
     },
     {
       "id": "CLR_32",
@@ -323,7 +354,8 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_32-grosplan.png"
     },
     {
       "id": "CLR_33",
@@ -333,7 +365,8 @@
       "status": "damaged",
       "points": 100,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_33-grosplan.png"
     },
     {
       "id": "CLR_34",
@@ -343,7 +376,8 @@
       "status": "damaged",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_34-grosplan.png"
     },
     {
       "id": "CLR_35",
@@ -353,7 +387,8 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_35-grosplan.png"
     },
     {
       "id": "CLR_36",
@@ -363,7 +398,8 @@
       "status": "damaged",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_36-grosplan.png"
     },
     {
       "id": "CLR_37",
@@ -373,7 +409,8 @@
       "status": "ok",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_37-grosplan.png"
     },
     {
       "id": "CLR_38",
@@ -383,7 +420,8 @@
       "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_38-grosplan.png"
     },
     {
       "id": "CLR_39",
@@ -393,7 +431,8 @@
       "status": "ok",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_39-grosplan.png"
     },
     {
       "id": "CLR_40",
@@ -403,7 +442,8 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_40-grosplan.png"
     },
     {
       "id": "CLR_41",
@@ -413,7 +453,8 @@
       "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_41-grosplan.png"
     },
     {
       "id": "CLR_42",
@@ -423,7 +464,8 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_42-grosplan.png"
     },
     {
       "id": "CLR_43",
@@ -433,7 +475,8 @@
       "status": "ok",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_43-grosplan.png"
     },
     {
       "id": "CLR_44",
@@ -443,7 +486,8 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_44-grosplan.png"
     },
     {
       "id": "CLR_45",
@@ -453,7 +497,8 @@
       "status": "ok",
       "points": 30,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_45-grosplan.png"
     },
     {
       "id": "CLR_46",
@@ -463,7 +508,8 @@
       "status": "ok",
       "points": 40,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_46-grosplan.png"
     },
     {
       "id": "CLR_47",
@@ -473,7 +519,8 @@
       "status": "ok",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_47-grosplan.png"
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
-  "version": 2,
-  "updatedAt": "2026-06-23",
+  "version": 3,
+  "updatedAt": "2026-07-06",
   "city": "LIL",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 6,
   "invaders": [
     {
@@ -13,7 +13,8 @@
       "status": "damaged",
       "points": 50,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LIL/LIL_00-grosplan.png"
     },
     {
       "id": "LIL_01",
@@ -23,7 +24,8 @@
       "status": "damaged",
       "points": 10,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LIL/LIL_01-grosplan.png"
     },
     {
       "id": "LIL_02",
@@ -33,7 +35,8 @@
       "status": "ok",
       "points": 10,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LIL/LIL_02-grosplan.png"
     },
     {
       "id": "LIL_03",
@@ -43,7 +46,8 @@
       "status": "ok",
       "points": 10,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LIL/LIL_03-grosplan.png"
     },
     {
       "id": "LIL_04",
@@ -53,7 +57,8 @@
       "status": "destroyed",
       "points": 10,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LIL/LIL_04-grosplan.png"
     },
     {
       "id": "LIL_05",
@@ -63,7 +68,8 @@
       "status": "damaged",
       "points": 20,
       "hint": "",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LIL/LIL_05-grosplan.png"
     }
   ]
 }

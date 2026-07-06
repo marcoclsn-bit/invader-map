@@ -1,6 +1,6 @@
 {
-  "version": 4,
-  "updatedAt": "2026-06-27",
+  "version": 5,
+  "updatedAt": "2026-07-06",
   "city": "MARS",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 97,
@@ -15,7 +15,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_01/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_01-grosplan.png"
     },
     {
       "id": "MARS_02",
@@ -27,7 +28,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_02/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_02-grosplan.png"
     },
     {
       "id": "MARS_03",
@@ -39,7 +41,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_03/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_03-grosplan.png"
     },
     {
       "id": "MARS_04",
@@ -51,7 +54,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_04/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_04-grosplan.png"
     },
     {
       "id": "MARS_05",
@@ -63,7 +67,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_05/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_05-grosplan.png"
     },
     {
       "id": "MARS_06",
@@ -75,7 +80,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_06/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_06-grosplan.png"
     },
     {
       "id": "MARS_07",
@@ -87,7 +93,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_07/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_07-grosplan.png"
     },
     {
       "id": "MARS_08",
@@ -99,7 +106,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_08/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_08-grosplan.png"
     },
     {
       "id": "MARS_09",
@@ -111,7 +119,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_09/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_09-grosplan.png"
     },
     {
       "id": "MARS_10",
@@ -123,7 +132,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_10/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_10-grosplan.png"
     },
     {
       "id": "MARS_11",
@@ -135,7 +145,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_11/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_11-grosplan.png"
     },
     {
       "id": "MARS_12",
@@ -147,7 +158,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_12/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_12-grosplan.png"
     },
     {
       "id": "MARS_13",
@@ -159,7 +171,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_13/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_13-grosplan.png"
     },
     {
       "id": "MARS_14",
@@ -171,7 +184,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_14/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_14-grosplan.png"
     },
     {
       "id": "MARS_15",
@@ -183,7 +197,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_15/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_15-grosplan.png"
     },
     {
       "id": "MARS_16",
@@ -195,7 +210,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_16/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_16-grosplan.png"
     },
     {
       "id": "MARS_17",
@@ -207,7 +223,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_17/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_17-grosplan.png"
     },
     {
       "id": "MARS_18",
@@ -219,7 +236,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_18/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_18-grosplan.png"
     },
     {
       "id": "MARS_19",
@@ -231,7 +249,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_19/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_19-grosplan.png"
     },
     {
       "id": "MARS_20",
@@ -243,7 +262,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_20/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_20-grosplan.png"
     },
     {
       "id": "MARS_21",
@@ -255,7 +275,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_21/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_21-grosplan.png"
     },
     {
       "id": "MARS_22",
@@ -267,7 +288,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_22/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_22-grosplan.png"
     },
     {
       "id": "MARS_23",
@@ -279,7 +301,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_23/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_23-grosplan.png"
     },
     {
       "id": "MARS_24",
@@ -291,7 +314,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_24/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_24-grosplan.png"
     },
     {
       "id": "MARS_25",
@@ -303,7 +327,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_25/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_25-grosplan.png"
     },
     {
       "id": "MARS_26",
@@ -315,7 +340,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_26/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_26-grosplan.png"
     },
     {
       "id": "MARS_27",
@@ -327,7 +353,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_27/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_27-grosplan.png"
     },
     {
       "id": "MARS_28",
@@ -339,7 +366,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_28/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_28-grosplan.png"
     },
     {
       "id": "MARS_29",
@@ -351,7 +379,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_29/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_29-grosplan.png"
     },
     {
       "id": "MARS_30",
@@ -363,7 +392,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_30/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_30-grosplan.png"
     },
     {
       "id": "MARS_31",
@@ -375,7 +405,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_31/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_31-grosplan.png"
     },
     {
       "id": "MARS_32",
@@ -387,7 +418,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_32/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_32-grosplan.png"
     },
     {
       "id": "MARS_33",
@@ -399,7 +431,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_33/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_33-grosplan.png"
     },
     {
       "id": "MARS_34",
@@ -411,7 +444,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_34/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_34-grosplan.png"
     },
     {
       "id": "MARS_35",
@@ -423,7 +457,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_35/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_35-grosplan.png"
     },
     {
       "id": "MARS_36",
@@ -435,7 +470,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_36/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_36-grosplan.png"
     },
     {
       "id": "MARS_37",
@@ -447,7 +483,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_37/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_37-grosplan.png"
     },
     {
       "id": "MARS_38",
@@ -459,7 +496,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_38/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_38-grosplan.png"
     },
     {
       "id": "MARS_39",
@@ -471,7 +509,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_39/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_39-grosplan.png"
     },
     {
       "id": "MARS_40",
@@ -483,7 +522,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_40/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_40-grosplan.png"
     },
     {
       "id": "MARS_41",
@@ -495,7 +535,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_41/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_41-grosplan.png"
     },
     {
       "id": "MARS_42",
@@ -507,7 +548,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_42/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_42-grosplan.png"
     },
     {
       "id": "MARS_43",
@@ -519,7 +561,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_43/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_43-grosplan.png"
     },
     {
       "id": "MARS_44",
@@ -531,7 +574,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_44/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_44-grosplan.png"
     },
     {
       "id": "MARS_45",
@@ -543,7 +587,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_45/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_45-grosplan.png"
     },
     {
       "id": "MARS_46",
@@ -555,7 +600,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_46/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_46-grosplan.png"
     },
     {
       "id": "MARS_47",
@@ -567,7 +613,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_47/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_47-grosplan.png"
     },
     {
       "id": "MARS_48",
@@ -579,7 +626,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_48/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_48-grosplan.png"
     },
     {
       "id": "MARS_49",
@@ -591,7 +639,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_49/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_49-grosplan.png"
     },
     {
       "id": "MARS_50",
@@ -603,7 +652,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_50/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_50-grosplan.png"
     },
     {
       "id": "MARS_51",
@@ -615,7 +665,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_51/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_51-grosplan.png"
     },
     {
       "id": "MARS_52",
@@ -627,7 +678,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_52/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_52-grosplan.png"
     },
     {
       "id": "MARS_53",
@@ -639,7 +691,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_53/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_53-grosplan.png"
     },
     {
       "id": "MARS_54",
@@ -651,7 +704,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_54/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_54-grosplan.png"
     },
     {
       "id": "MARS_55",
@@ -663,7 +717,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_55/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_55-grosplan.png"
     },
     {
       "id": "MARS_56",
@@ -675,7 +730,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_56/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_56-grosplan.png"
     },
     {
       "id": "MARS_57",
@@ -687,7 +743,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_57/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_57-grosplan.png"
     },
     {
       "id": "MARS_58",
@@ -699,7 +756,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_58/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_58-grosplan.png"
     },
     {
       "id": "MARS_59",
@@ -711,7 +769,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_59/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_59-grosplan.png"
     },
     {
       "id": "MARS_60",
@@ -723,7 +782,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_60/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_60-grosplan.png"
     },
     {
       "id": "MARS_61",
@@ -735,7 +795,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_61/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_61-grosplan.png"
     },
     {
       "id": "MARS_62",
@@ -747,7 +808,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_62/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_62-grosplan.png"
     },
     {
       "id": "MARS_63",
@@ -759,7 +821,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_63/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_63-grosplan.png"
     },
     {
       "id": "MARS_64",
@@ -771,7 +834,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_64/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_64-grosplan.png"
     },
     {
       "id": "MARS_65",
@@ -783,7 +847,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_65/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_65-grosplan.png"
     },
     {
       "id": "MARS_66",
@@ -795,7 +860,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_66/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_66-grosplan.png"
     },
     {
       "id": "MARS_67",
@@ -807,7 +873,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_67/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_67-grosplan.png"
     },
     {
       "id": "MARS_68",
@@ -819,7 +886,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_68/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_68-grosplan.png"
     },
     {
       "id": "MARS_69",
@@ -831,7 +899,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_69/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_69-grosplan.png"
     },
     {
       "id": "MARS_70",
@@ -843,7 +912,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_70/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_70-grosplan.png"
     },
     {
       "id": "MARS_71",
@@ -855,7 +925,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_71/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_71-grosplan.png"
     },
     {
       "id": "MARS_72",
@@ -867,7 +938,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_72/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_72-grosplan.png"
     },
     {
       "id": "MARS_73",
@@ -879,7 +951,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_73/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_73-grosplan.png"
     },
     {
       "id": "MARS_74",
@@ -891,7 +964,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_74/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_74-grosplan.png"
     },
     {
       "id": "MARS_75",
@@ -903,7 +977,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_75/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_75-grosplan.png"
     },
     {
       "id": "MARS_76",
@@ -915,7 +990,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_76/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_76-grosplan.png"
     },
     {
       "id": "MARS_77",
@@ -927,7 +1003,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_77/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_77-grosplan.png"
     },
     {
       "id": "MARS_78",
@@ -939,7 +1016,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_78/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_78-grosplan.png"
     },
     {
       "id": "MARS_79",
@@ -951,7 +1029,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_79/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_79-grosplan.png"
     },
     {
       "id": "MARS_80",
@@ -963,7 +1042,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_80/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_80-grosplan.png"
     },
     {
       "id": "MARS_81",
@@ -975,7 +1055,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_81/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_81-grosplan.png"
     },
     {
       "id": "MARS_82",
@@ -987,7 +1068,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_82/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_82-grosplan.png"
     },
     {
       "id": "MARS_83",
@@ -999,7 +1081,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_83/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_83-grosplan.png"
     },
     {
       "id": "MARS_84",
@@ -1011,7 +1094,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_84/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_84-grosplan.png"
     },
     {
       "id": "MARS_85",
@@ -1023,7 +1107,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_85/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_85-grosplan.png"
     },
     {
       "id": "MARS_86",
@@ -1035,7 +1120,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_86/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_86-grosplan.png"
     },
     {
       "id": "MARS_87",
@@ -1047,7 +1133,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_87/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_87-grosplan.png"
     },
     {
       "id": "MARS_88",
@@ -1059,7 +1146,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_88/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_88-grosplan.png"
     },
     {
       "id": "MARS_89",
@@ -1071,7 +1159,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_89/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_89-grosplan.png"
     },
     {
       "id": "MARS_90",
@@ -1083,7 +1172,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_90/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_90-grosplan.png"
     },
     {
       "id": "MARS_91",
@@ -1095,7 +1185,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_91/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_91-grosplan.png"
     },
     {
       "id": "MARS_92",
@@ -1107,7 +1198,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_92/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_92-grosplan.png"
     },
     {
       "id": "MARS_93",
@@ -1119,7 +1211,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_93/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_93-grosplan.png"
     },
     {
       "id": "MARS_94",
@@ -1131,7 +1224,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_94/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_94-grosplan.png"
     },
     {
       "id": "MARS_95",
@@ -1143,7 +1237,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_95/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_95-grosplan.png"
     },
     {
       "id": "MARS_96",
@@ -1155,7 +1250,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_96/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_96-grosplan.png"
     },
     {
       "id": "MARS_97",
@@ -1167,7 +1263,8 @@
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mars_97/",
       "source": "goguelnikov",
-      "statusFromPnote": true
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_97-grosplan.png"
     }
   ]
 }

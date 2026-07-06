@@ -1,8 +1,8 @@
 {
-  "version": 3,
-  "updatedAt": "2026-06-23",
+  "version": 4,
+  "updatedAt": "2026-07-06",
   "city": "FRQ",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 4,
   "invaders": [
     {
@@ -14,7 +14,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/frq_01/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/FRQ/FRQ_01-grosplan.png"
     },
     {
       "id": "FRQ_02",
@@ -25,7 +27,9 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/frq_02/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/FRQ/FRQ_02-grosplan.png"
     },
     {
       "id": "FRQ_03",
@@ -36,7 +40,9 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/frq_03/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/FRQ/FRQ_03-grosplan.png"
     },
     {
       "id": "FRQ_04",
@@ -47,7 +53,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/frq_04/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/FRQ/FRQ_04-grosplan.png"
     }
   ]
 }

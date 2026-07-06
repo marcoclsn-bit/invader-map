@@ -1,8 +1,8 @@
 {
-  "version": 3,
-  "updatedAt": "2026-06-23",
+  "version": 4,
+  "updatedAt": "2026-07-06",
   "city": "NIM",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 5,
   "invaders": [
     {
@@ -14,7 +14,9 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/nim_01/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NIM/NIM_01-grosplan.png"
     },
     {
       "id": "NIM_02",
@@ -25,7 +27,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/nim_02/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NIM/NIM_02-grosplan.png"
     },
     {
       "id": "NIM_03",
@@ -36,7 +40,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/nim_03/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NIM/NIM_03-grosplan.png"
     },
     {
       "id": "NIM_04",
@@ -47,7 +53,9 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/nim_04/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NIM/NIM_04-grosplan.png"
     },
     {
       "id": "NIM_05",
@@ -58,7 +66,9 @@
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/nim_05/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NIM/NIM_05-grosplan.png"
     }
   ]
 }

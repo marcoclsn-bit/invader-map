@@ -1,8 +1,8 @@
 {
-  "version": 3,
-  "updatedAt": "2026-06-23",
+  "version": 4,
+  "updatedAt": "2026-07-06",
   "city": "AIX",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 10,
   "invaders": [
     {
@@ -14,7 +14,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/aix_01/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_01-grosplan.png"
     },
     {
       "id": "AIX_02",
@@ -25,7 +27,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/aix_02/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_02-grosplan.png"
     },
     {
       "id": "AIX_03",
@@ -36,7 +40,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/aix_03/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_03-grosplan.png"
     },
     {
       "id": "AIX_04",
@@ -47,7 +53,9 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/aix_04/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_04-grosplan.png"
     },
     {
       "id": "AIX_05",
@@ -58,7 +66,9 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/aix_05/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_05-grosplan.png"
     },
     {
       "id": "AIX_06",
@@ -69,7 +79,9 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/aix_06/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_06-grosplan.png"
     },
     {
       "id": "AIX_07",
@@ -80,7 +92,9 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/aix_07/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_07-grosplan.png"
     },
     {
       "id": "AIX_08",
@@ -91,7 +105,9 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/aix_08/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_08-grosplan.png"
     },
     {
       "id": "AIX_09",
@@ -102,7 +118,9 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/aix_09/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_09-grosplan.png"
     },
     {
       "id": "AIX_10",
@@ -113,7 +131,9 @@
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/aix_10/",
-      "source": "goguelnikov"
+      "source": "goguelnikov",
+      "statusFromPnote": true,
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_10-grosplan.png"
     }
   ]
 }

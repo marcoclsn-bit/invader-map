@@ -1,8 +1,8 @@
 {
-  "version": 2,
-  "updatedAt": "2026-06-23",
+  "version": 3,
+  "updatedAt": "2026-07-06",
   "city": "SL",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 0,
   "invaders": [
     {
@@ -11,10 +11,13 @@
       "lat": 37.5555844325,
       "lng": 126.9209083062,
       "status": "destroyed",
-      "points": null,
+      "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sl_01/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SL/SL_01-grosplan.png"
     },
     {
       "id": "SL_02",
@@ -22,10 +25,13 @@
       "lat": 37.5534896453,
       "lng": 126.9222200187,
       "status": "ok",
-      "points": null,
+      "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sl_02/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SL/SL_02-grosplan.png"
     },
     {
       "id": "SL_03",
@@ -33,10 +39,13 @@
       "lat": 37.5543729572,
       "lng": 126.9305442492,
       "status": "ok",
-      "points": null,
+      "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sl_03/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SL/SL_03-grosplan.png"
     },
     {
       "id": "SL_04",
@@ -44,10 +53,13 @@
       "lat": 37.5515901545,
       "lng": 126.9217726707,
       "status": "ok",
-      "points": null,
+      "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sl_04/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SL/SL_04-grosplan.png"
     },
     {
       "id": "SL_05",
@@ -55,10 +67,13 @@
       "lat": 37.5537379066,
       "lng": 126.9243532591,
       "status": "ok",
-      "points": null,
+      "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sl_05/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SL/SL_05-grosplan.png"
     },
     {
       "id": "SL_06",
@@ -66,10 +81,13 @@
       "lat": 37.5522541052,
       "lng": 126.922479323,
       "status": "ok",
-      "points": null,
+      "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sl_06/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SL/SL_06-grosplan.png"
     },
     {
       "id": "SL_07",
@@ -77,10 +95,13 @@
       "lat": 37.5567569482,
       "lng": 126.9843147346,
       "status": "ok",
-      "points": null,
+      "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sl_07/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SL/SL_07-grosplan.png"
     },
     {
       "id": "SL_08",
@@ -88,10 +109,13 @@
       "lat": 37.5585374899,
       "lng": 126.9846539353,
       "status": "ok",
-      "points": null,
+      "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sl_08/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SL/SL_08-grosplan.png"
     },
     {
       "id": "SL_09",
@@ -99,10 +123,13 @@
       "lat": 37.5718441244,
       "lng": 126.9869816162,
       "status": "ok",
-      "points": null,
+      "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sl_09/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SL/SL_09-grosplan.png"
     },
     {
       "id": "SL_10",
@@ -110,10 +137,13 @@
       "lat": 37.57378057,
       "lng": 126.98540943,
       "status": "ok",
-      "points": null,
+      "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sl_10/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SL/SL_10-grosplan.png"
     },
     {
       "id": "SL_11",
@@ -121,10 +151,13 @@
       "lat": 37.5741676629,
       "lng": 126.9845107701,
       "status": "ok",
-      "points": null,
+      "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sl_11/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SL/SL_11-grosplan.png"
     },
     {
       "id": "SL_12",
@@ -132,10 +165,13 @@
       "lat": 37.5732296012,
       "lng": 126.9864299698,
       "status": "destroyed",
-      "points": null,
+      "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sl_12/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SL/SL_12-grosplan.png"
     },
     {
       "id": "SL_13",
@@ -143,10 +179,13 @@
       "lat": 37.5647978543,
       "lng": 126.9871913909,
       "status": "ok",
-      "points": null,
+      "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sl_13/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SL/SL_13-grosplan.png"
     },
     {
       "id": "SL_14",
@@ -154,10 +193,13 @@
       "lat": 37.5631183941,
       "lng": 126.9913813798,
       "status": "ok",
-      "points": null,
+      "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/sl_14/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SL/SL_14-grosplan.png"
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
-  "version": 2,
-  "updatedAt": "2026-06-23",
+  "version": 3,
+  "updatedAt": "2026-07-06",
   "city": "ORLN",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 0,
   "invaders": [
     {
@@ -11,10 +11,13 @@
       "lat": 47.9050688259,
       "lng": 1.9045905654,
       "status": "ok",
-      "points": null,
+      "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/orln_01/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_01-grosplan.png"
     },
     {
       "id": "ORLN_02",
@@ -22,10 +25,13 @@
       "lat": 47.9019937281,
       "lng": 1.9028980825,
       "status": "ok",
-      "points": null,
+      "points": 40,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/orln_02/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_02-grosplan.png"
     },
     {
       "id": "ORLN_03",
@@ -33,10 +39,13 @@
       "lat": 47.9003825956,
       "lng": 1.9009345197,
       "status": "ok",
-      "points": null,
+      "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/orln_03/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_03-grosplan.png"
     },
     {
       "id": "ORLN_04",
@@ -44,10 +53,13 @@
       "lat": 47.8984714066,
       "lng": 1.9048484765,
       "status": "ok",
-      "points": null,
+      "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/orln_04/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_04-grosplan.png"
     },
     {
       "id": "ORLN_05",
@@ -55,10 +67,13 @@
       "lat": 47.8999558741,
       "lng": 1.9062982053,
       "status": "ok",
-      "points": null,
+      "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/orln_05/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_05-grosplan.png"
     },
     {
       "id": "ORLN_06",
@@ -66,10 +81,13 @@
       "lat": 47.8990089525,
       "lng": 1.9069437907,
       "status": "ok",
-      "points": null,
+      "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/orln_06/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_06-grosplan.png"
     },
     {
       "id": "ORLN_07",
@@ -77,10 +95,13 @@
       "lat": 47.9002205304,
       "lng": 1.9101148343,
       "status": "ok",
-      "points": null,
+      "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/orln_07/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_07-grosplan.png"
     },
     {
       "id": "ORLN_08",
@@ -88,10 +109,13 @@
       "lat": 47.9009032018,
       "lng": 1.909099823,
       "status": "ok",
-      "points": null,
+      "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/orln_08/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_08-grosplan.png"
     },
     {
       "id": "ORLN_09",
@@ -99,10 +123,13 @@
       "lat": 47.898890858,
       "lng": 1.9208100273,
       "status": "ok",
-      "points": null,
+      "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/orln_09/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_09-grosplan.png"
     },
     {
       "id": "ORLN_10",
@@ -110,10 +137,13 @@
       "lat": 47.8990299674,
       "lng": 1.911433323,
       "status": "ok",
-      "points": null,
+      "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/orln_10/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_10-grosplan.png"
     },
     {
       "id": "ORLN_11",
@@ -121,10 +151,13 @@
       "lat": 47.899074935,
       "lng": 1.9094522227,
       "status": "ok",
-      "points": null,
+      "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/orln_11/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_11-grosplan.png"
     },
     {
       "id": "ORLN_12",
@@ -132,10 +165,13 @@
       "lat": 47.8988340469,
       "lng": 1.9032692863,
       "status": "ok",
-      "points": null,
+      "points": 40,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/orln_12/",
-      "source": "pnote"
+      "source": "pnote",
+      "statusFromPnote": true,
+      "pointsSource": "invader-spotter",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_12-grosplan.png"
     }
   ]
 }
