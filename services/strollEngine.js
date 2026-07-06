@@ -161,9 +161,11 @@ export async function persistCandidates(candidates) {
   await writeJSON(KEY_CANDIDATES, Array.isArray(candidates) ? candidates : []);
 }
 
-/** Persiste les textes localisés de notification ({id} = placeholder dans body). */
-export async function persistNotifStrings(title, body) {
-  await writeJSON(KEY_NOTIF, { title, body });
+/** Persiste les textes localisés de notification : titre + variantes de corps
+ *  ({id} = placeholder remplacé par l'id de l'Invader à l'alerte). */
+export async function persistNotifStrings(title, bodies) {
+  const list = (Array.isArray(bodies) ? bodies : [bodies]).filter(Boolean);
+  await writeJSON(KEY_NOTIF, { title, bodies: list });
 }
 
 export async function startStroll() { return refreshGeofences(); }
@@ -233,12 +235,15 @@ async function handleEnter(invId) {
       try { await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success); } catch {}
     }
     if (settings.notification) {
-      const tpl = await readJSON(KEY_NOTIF, { title: 'Invader à proximité 👾', body: '{id} est tout près !' });
+      const tpl = await readJSON(KEY_NOTIF, { title: 'Invader à proximité 👾', bodies: ['{id} est tout près !'] });
+      // Choix aléatoire d'une variante (compat : ancien champ `body` unique).
+      const list = Array.isArray(tpl.bodies) && tpl.bodies.length ? tpl.bodies : [tpl.body || '{id}'];
+      const chosen = list[Math.floor(Math.random() * list.length)];
       try {
         await Notifications.scheduleNotificationAsync({
           content: {
             title: tpl.title,
-            body: (tpl.body || '{id}').replace('{id}', invId),
+            body: chosen.replace('{id}', invId),
             sound: true,
             data: { type: 'stroll', invId }, // pour router vers la fiche au tap
           },

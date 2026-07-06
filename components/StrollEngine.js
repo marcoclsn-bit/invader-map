@@ -33,7 +33,9 @@ export default function StrollEngine() {
     const candidates = inv
       .filter(i => i.status !== 'destroyed' && allowed.has(i.status) && !fl.has(i.id))
       .map(i => ({ id: i.id, lat: i.lat, lng: i.lng }));
-    await persistNotifStrings(tr('stroll.notif.title'), tr('stroll.notif.body', { id: '{id}' }));
+    // Variantes de texte (rotation aléatoire à chaque alerte) — persistées pour la tâche de fond.
+    const bodies = tr('stroll.notif.bodies', { returnObjects: true, id: '{id}' });
+    await persistNotifStrings(tr('stroll.notif.title'), Array.isArray(bodies) ? bodies : [bodies]);
     await persistCandidates(candidates);
     return candidates.length;
   }

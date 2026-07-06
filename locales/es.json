@@ -491,7 +491,14 @@
     "footnote": "El modo paseo usa geofencing: sin GPS continuo, ahorra batería. Requiere el permiso de ubicación «Siempre» para funcionar con la app cerrada.",
     "notif": {
       "title": "Invader cerca 👾",
-      "body": "¡{{id}} está muy cerca, ve a fotografiarlo!"
+      "bodies": [
+        "{{id}} está muy cerca — ¡ve a fotografiarlo! 👾",
+        "Hay un Invader en la zona: {{id}} te espera 📸",
+        "¡Ojo! {{id}} está a dos pasos 👀",
+        "Objetivo a la vista: {{id}} está a tu alcance ⚡",
+        "No te pierdas {{id}}, está justo ahí 🛸",
+        "{{id}} detectado cerca — ¡prepara la cámara! 🎯"
+      ]
     },
     "perm": {
       "deniedTitle": "Ubicación denegada",

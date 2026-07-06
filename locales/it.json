@@ -491,7 +491,14 @@
     "footnote": "La modalità passeggiata usa il geofencing: niente GPS continuo, risparmia batteria. Richiede il permesso di posizione «Sempre» per funzionare ad app chiusa.",
     "notif": {
       "title": "Invader nelle vicinanze 👾",
-      "body": "{{id}} è proprio vicino — vai a fotografarlo!"
+      "bodies": [
+        "{{id}} è vicinissimo — vai a fotografarlo! 👾",
+        "C’è un Invader in zona: {{id}} ti aspetta 📸",
+        "Occhi aperti! {{id}} è a due passi 👀",
+        "Obiettivo in vista: {{id}} è a portata di flash ⚡",
+        "Non perderti {{id}}, è proprio lì 🛸",
+        "{{id}} avvistato nelle vicinanze — prepara la fotocamera! 🎯"
+      ]
     },
     "perm": {
       "deniedTitle": "Posizione negata",

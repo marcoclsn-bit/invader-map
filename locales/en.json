@@ -491,7 +491,14 @@
     "footnote": "Stroll mode uses geofencing: no continuous GPS, battery-friendly. Requires “Always” location permission to work when the app is closed.",
     "notif": {
       "title": "Invader nearby 👾",
-      "body": "{{id}} is right next to you — go flash it!"
+      "bodies": [
+        "{{id}} is right nearby — go flash it! 👾",
+        "An Invader’s around: {{id}} is waiting for you 📸",
+        "Keep your eyes peeled! {{id}} is steps away 👀",
+        "Target in sight: {{id}} is within flash range ⚡",
+        "Don’t miss {{id}}, it’s right there 🛸",
+        "{{id}} spotted nearby — get your camera ready! 🎯"
+      ]
     },
     "perm": {
       "deniedTitle": "Location denied",

@@ -491,7 +491,14 @@
     "footnote": "Le mode balade s'appuie sur le geofencing : pas de GPS en continu, économe en batterie. Nécessite l'autorisation de localisation « Toujours » pour fonctionner app fermée.",
     "notif": {
       "title": "Invader à proximité 👾",
-      "body": "{{id}} est tout près — à toi de le flasher !"
+      "bodies": [
+        "{{id}} est tout près — à toi de le flasher ! 👾",
+        "Un Invader dans le coin : {{id}} n’attend que toi 📸",
+        "Ouvre l’œil ! {{id}} se cache à deux pas 👀",
+        "Cible en vue : {{id}} est à portée de flash ⚡",
+        "Ne rate pas {{id}}, il est juste là 🛸",
+        "{{id}} repéré dans les parages — dégaine ton appareil ! 🎯"
+      ]
     },
     "perm": {
       "deniedTitle": "Localisation refusée",
