@@ -710,6 +710,11 @@ async function main() {
       .filter(e => { const k = `${e.type}|${e.id}|${e.date}`; if (seen.has(k)) return false; seen.add(k); return true; })
       .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
     if (events.length > NEWS_MAX_EVENTS) events = events.slice(0, NEWS_MAX_EVENTS);
+    // Photo (gros plan) de l'Invader concerné, pour l'afficher dans le fil.
+    for (const e of events) {
+      const s = spotterByCity.get(e.city)?.get(numFromId(e.id));
+      if (s?.grosplan) e.photoUrl = s.grosplan;
+    }
   } else {
     // Récupération impossible → on conserve le fil précédent tel quel.
     events = prevEvents;

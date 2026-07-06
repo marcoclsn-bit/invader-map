@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "updatedAt": "2026-07-06",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "source": "invader-spotter.art",
@@ -8,379 +8,442 @@
       "type": "added",
       "id": "PA_1595",
       "city": "PA",
-      "date": "2026-07-03"
+      "date": "2026-07-03",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1595-grosplan.png"
     },
     {
       "type": "added",
       "id": "PA_1596",
       "city": "PA",
-      "date": "2026-07-02"
+      "date": "2026-07-02",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1596-grosplan.png"
     },
     {
       "type": "added",
       "id": "PA_1597",
       "city": "PA",
-      "date": "2026-07-02"
+      "date": "2026-07-02",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1597-grosplan.png"
     },
     {
       "type": "destroyed",
       "id": "BGK_49",
       "city": "BGK",
-      "date": "2026-07-01"
+      "date": "2026-07-01",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_49-grosplan.png"
     },
     {
       "type": "damaged",
       "id": "GNV_08",
       "city": "GNV",
-      "date": "2026-06-28"
+      "date": "2026-06-28",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_08-grosplan.png"
     },
     {
       "type": "damaged",
       "id": "LDN_179",
       "city": "LDN",
-      "date": "2026-06-27"
+      "date": "2026-06-27",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LDN/LDN_179-grosplan.png"
     },
     {
       "type": "damaged",
       "id": "PA_299",
       "city": "PA",
-      "date": "2026-06-27"
+      "date": "2026-06-27",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_0299-grosplan.png"
     },
     {
       "type": "destroyed",
       "id": "HK_88",
       "city": "HK",
-      "date": "2026-06-27"
+      "date": "2026-06-27",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/HK/HK_088-grosplan.png"
     },
     {
       "type": "destroyed",
       "id": "PA_116",
       "city": "PA",
-      "date": "2026-06-27"
+      "date": "2026-06-27",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_0116-grosplan.png"
     },
     {
       "type": "damaged",
       "id": "PA_1037",
       "city": "PA",
-      "date": "2026-06-21"
+      "date": "2026-06-21",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1037-grosplan.png"
     },
     {
       "type": "updated",
       "id": "PA_952",
       "city": "PA",
-      "date": "2026-06-19"
+      "date": "2026-06-19",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_0952-grosplan.png"
     },
     {
       "type": "destroyed",
       "id": "PA_254",
       "city": "PA",
-      "date": "2026-06-19"
+      "date": "2026-06-19",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_0254-grosplan.png"
     },
     {
       "type": "added",
       "id": "PA_1594",
       "city": "PA",
-      "date": "2026-06-18"
+      "date": "2026-06-18",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1594-grosplan.png"
     },
     {
       "type": "damaged",
       "id": "PA_262",
       "city": "PA",
-      "date": "2026-06-17"
+      "date": "2026-06-17",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_0262-grosplan.png"
     },
     {
       "type": "destroyed",
       "id": "VRS_07",
       "city": "VRS",
-      "date": "2026-06-16"
+      "date": "2026-06-16",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_07-grosplan.png"
     },
     {
       "type": "destroyed",
       "id": "PA_562",
       "city": "PA",
-      "date": "2026-06-15"
+      "date": "2026-06-15",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_0562-grosplan.png"
     },
     {
       "type": "damaged",
       "id": "FTBL_33",
       "city": "FTBL",
-      "date": "2026-06-14"
+      "date": "2026-06-14",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/FTBL/FTBL_33-grosplan.png"
     },
     {
       "type": "damaged",
       "id": "VRS_07",
       "city": "VRS",
-      "date": "2026-06-14"
+      "date": "2026-06-14",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_07-grosplan.png"
     },
     {
       "type": "damaged",
       "id": "PA_1417",
       "city": "PA",
-      "date": "2026-06-10"
+      "date": "2026-06-10",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1417-grosplan.png"
     },
     {
       "type": "updated",
       "id": "PA_1318",
       "city": "PA",
-      "date": "2026-06-08"
+      "date": "2026-06-08",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1318-grosplan.png"
     },
     {
       "type": "destroyed",
       "id": "FTBL_17",
       "city": "FTBL",
-      "date": "2026-06-07"
+      "date": "2026-06-07",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/FTBL/FTBL_17-grosplan.png"
     },
     {
       "type": "reactivated",
       "id": "BRC_12",
       "city": "BRC",
-      "date": "2026-06-06"
+      "date": "2026-06-06",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_12-grosplan.png"
     },
     {
       "type": "damaged",
       "id": "MUN_15",
       "city": "MUN",
-      "date": "2026-06-05"
+      "date": "2026-06-05",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_15-grosplan.png"
     },
     {
       "type": "damaged",
       "id": "PA_949",
       "city": "PA",
-      "date": "2026-06-05"
+      "date": "2026-06-05",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_0949-grosplan.png"
     },
     {
       "type": "destroyed",
       "id": "HK_95",
       "city": "HK",
-      "date": "2026-06-05"
+      "date": "2026-06-05",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/HK/HK_095-grosplan.png"
     },
     {
       "type": "updated",
       "id": "AIX_07",
       "city": "AIX",
-      "date": "2026-06-03"
+      "date": "2026-06-03",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_07-grosplan.png"
     },
     {
       "type": "updated",
       "id": "PA_1523",
       "city": "PA",
-      "date": "2026-06-02"
+      "date": "2026-06-02",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1523-grosplan.png"
     },
     {
       "type": "reactivated",
       "id": "BAB_13",
       "city": "BAB",
-      "date": "2026-06-01"
+      "date": "2026-06-01",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_13-grosplan.png"
     },
     {
       "type": "destroyed",
       "id": "PA_526",
       "city": "PA",
-      "date": "2026-06-01"
+      "date": "2026-06-01",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_0526-grosplan.png"
     },
     {
       "type": "added",
       "id": "PA_1591",
       "city": "PA",
-      "date": "2026-05-29"
+      "date": "2026-05-29",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1591-grosplan.png"
     },
     {
       "type": "added",
       "id": "PA_1592",
       "city": "PA",
-      "date": "2026-05-29"
+      "date": "2026-05-29",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1592-grosplan.png"
     },
     {
       "type": "added",
       "id": "PA_1593",
       "city": "PA",
-      "date": "2026-05-29"
+      "date": "2026-05-29",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1593-grosplan.png"
     },
     {
       "type": "reactivated",
       "id": "LA_109",
       "city": "LA",
-      "date": "2026-05-28"
+      "date": "2026-05-28",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_109-grosplan.png"
     },
     {
       "type": "damaged",
       "id": "RBA_09",
       "city": "RBA",
-      "date": "2026-05-28"
+      "date": "2026-05-28",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/RBA/RBA_09-grosplan.png"
     },
     {
       "type": "destroyed",
       "id": "WN_01",
       "city": "WN",
-      "date": "2026-05-28"
+      "date": "2026-05-28",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/WN/WN_01-grosplan.png"
     },
     {
       "type": "damaged",
       "id": "DJBA_39",
       "city": "DJBA",
-      "date": "2026-05-26"
+      "date": "2026-05-26",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_39-grosplan.png"
     },
     {
       "type": "added",
       "id": "PA_1590",
       "city": "PA",
-      "date": "2026-05-25"
+      "date": "2026-05-25",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1590-grosplan.png"
     },
     {
       "type": "destroyed",
       "id": "BTA_11",
       "city": "BTA",
-      "date": "2026-05-24"
+      "date": "2026-05-24",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BTA/BTA_11-grosplan.png"
     },
     {
       "type": "destroyed",
       "id": "PA_762",
       "city": "PA",
-      "date": "2026-05-24"
+      "date": "2026-05-24",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_0762-grosplan.png"
     },
     {
       "type": "added",
       "id": "PA_1571",
       "city": "PA",
-      "date": "2026-05-23"
+      "date": "2026-05-23",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1571-grosplan.png"
     },
     {
       "type": "added",
       "id": "PA_1572",
       "city": "PA",
-      "date": "2026-05-23"
+      "date": "2026-05-23",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1572-grosplan.png"
     },
     {
       "type": "added",
       "id": "PA_1573",
       "city": "PA",
-      "date": "2026-05-23"
+      "date": "2026-05-23",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1573-grosplan.png"
     },
     {
       "type": "added",
       "id": "PA_1574",
       "city": "PA",
-      "date": "2026-05-23"
+      "date": "2026-05-23",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1574-grosplan.png"
     },
     {
       "type": "added",
       "id": "PA_1575",
       "city": "PA",
-      "date": "2026-05-23"
+      "date": "2026-05-23",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1575-grosplan.png"
     },
     {
       "type": "damaged",
       "id": "PA_1099",
       "city": "PA",
-      "date": "2026-05-20"
+      "date": "2026-05-20",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1099-grosplan.png"
     },
     {
       "type": "damaged",
       "id": "PA_247",
       "city": "PA",
-      "date": "2026-05-19"
+      "date": "2026-05-19",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_0247-grosplan.png"
     },
     {
       "type": "updated",
       "id": "PA_562",
       "city": "PA",
-      "date": "2026-05-16"
+      "date": "2026-05-16",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_0562-grosplan.png"
     },
     {
       "type": "damaged",
       "id": "RTD_07",
       "city": "RTD",
-      "date": "2026-05-16"
+      "date": "2026-05-16",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/RTD/RTD_07-grosplan.png"
     },
     {
       "type": "destroyed",
       "id": "PA_559",
       "city": "PA",
-      "date": "2026-05-16"
+      "date": "2026-05-16",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_0559-grosplan.png"
     },
     {
       "type": "reactivated",
       "id": "PA_773",
       "city": "PA",
-      "date": "2026-05-14"
+      "date": "2026-05-14",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_0773-grosplan.png"
     },
     {
       "type": "damaged",
       "id": "RN_02",
       "city": "RN",
-      "date": "2026-05-11"
+      "date": "2026-05-11",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/RN/RN_02-grosplan.png"
     },
     {
       "type": "reactivated",
       "id": "LA_07",
       "city": "LA",
-      "date": "2026-05-10"
+      "date": "2026-05-10",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_007-grosplan.png"
     },
     {
       "type": "destroyed",
       "id": "SL_12",
       "city": "SL",
-      "date": "2026-05-10"
+      "date": "2026-05-10",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SL/SL_12-grosplan.png"
     },
     {
       "type": "updated",
       "id": "PA_1275",
       "city": "PA",
-      "date": "2026-05-09"
+      "date": "2026-05-09",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1275-grosplan.png"
     },
     {
       "type": "damaged",
       "id": "BGK_05",
       "city": "BGK",
-      "date": "2026-05-09"
+      "date": "2026-05-09",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_05-grosplan.png"
     },
     {
       "type": "destroyed",
       "id": "FTBL_36",
       "city": "FTBL",
-      "date": "2026-05-08"
+      "date": "2026-05-08",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/FTBL/FTBL_36-grosplan.png"
     },
     {
       "type": "destroyed",
       "id": "NY_176",
       "city": "NY",
-      "date": "2026-05-08"
+      "date": "2026-05-08",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_176-grosplan.png"
     },
     {
       "type": "added",
       "id": "PA_1569",
       "city": "PA",
-      "date": "2026-05-07"
+      "date": "2026-05-07",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1569-grosplan.png"
     },
     {
       "type": "added",
       "id": "PA_1570",
       "city": "PA",
-      "date": "2026-05-07"
+      "date": "2026-05-07",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1570-grosplan.png"
     },
     {
       "type": "damaged",
       "id": "LDN_129",
       "city": "LDN",
-      "date": "2026-05-07"
+      "date": "2026-05-07",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LDN/LDN_129-grosplan.png"
     },
     {
       "type": "updated",
       "id": "LDN_178",
       "city": "LDN",
-      "date": "2026-05-04"
+      "date": "2026-05-04",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LDN/LDN_178-grosplan.png"
     },
     {
       "type": "destroyed",
       "id": "MLB_19",
       "city": "MLB",
-      "date": "2026-05-04"
+      "date": "2026-05-04",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_19-grosplan.png"
     },
     {
       "type": "destroyed",
       "id": "PA_1223",
       "city": "PA",
-      "date": "2026-05-03"
+      "date": "2026-05-03",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1223-grosplan.png"
     }
   ]
 }

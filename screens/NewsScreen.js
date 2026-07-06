@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { DrawerActions, useFocusEffect } from '@react-navigation/native';
 import i18n from '../i18n';
 import { useAppContext } from '../context/AppContext';
+import InvaderPhoto from '../components/InvaderPhoto';
 import { CITIES } from '../cities/registry';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
@@ -20,6 +21,12 @@ function getStyles(theme) {
   _styleCache = { theme, styles };
   return styles;
 }
+
+// Type d'événement → statut (pour le placeholder pixel-art de la vignette)
+const TYPE_STATUS = {
+  destroyed: 'destroyed', damaged: 'damaged',
+  added: 'ok', reactivated: 'ok', updated: 'unknown',
+};
 
 // Icône + couleur selon le type d'événement
 function typeVisual(type, theme) {
@@ -70,7 +77,12 @@ function EventRow({ event, isNew, onPress, theme, t }) {
 
   return (
     <TouchableOpacity style={styles.row} onPress={onPress} activeOpacity={0.7}>
-      <Ionicons name={icon} size={24} color={color} style={styles.rowIcon} />
+      <View style={styles.thumbWrap}>
+        <InvaderPhoto photoUrl={event.photoUrl} status={TYPE_STATUS[event.type] ?? 'unknown'} style={styles.thumb} />
+        <View style={[styles.typeBadge, { backgroundColor: color }]}>
+          <Ionicons name={icon} size={12} color="#fff" />
+        </View>
+      </View>
       <View style={styles.rowBody}>
         <Text style={styles.rowLabel}>{label}</Text>
         <Text style={styles.rowMeta}>{formatDate(event.date)}</Text>
@@ -211,7 +223,7 @@ export default function NewsScreen({ navigation }) {
   function onPressEvent(e) {
     if (e.city !== currentCityCode) setCurrentCity(e.city);
     const params = { _ts: Date.now() };
-    if (e.type !== 'added' && e.id) params.focusId = e.id; // ajout groupé = pas d'id unique
+    if (e.id) params.focusId = e.id; // ouvre la fiche de l'Invader concerné (si chargé)
     navigation.navigate('Tabs', { screen: 'Carte', params });
   }
 
@@ -288,7 +300,14 @@ function makeStyles(t) {
       flexDirection: 'row', alignItems: 'center', gap: 12,
       paddingHorizontal: 16, paddingVertical: 14, backgroundColor: t.surface,
     },
-    rowIcon: { width: 24 },
+    thumbWrap: { width: 46, height: 46 },
+    thumb: { width: 46, height: 46, borderRadius: 8, backgroundColor: t.surfaceHigh },
+    typeBadge: {
+      position: 'absolute', right: -3, bottom: -3,
+      width: 20, height: 20, borderRadius: 10,
+      alignItems: 'center', justifyContent: 'center',
+      borderWidth: 2, borderColor: t.surface,
+    },
     rowBody: { flex: 1 },
     rowLabel: { fontSize: 15, color: t.textPrimary, fontWeight: '500' },
     rowMeta: { fontSize: 12, color: t.textSecondary, marginTop: 2 },
