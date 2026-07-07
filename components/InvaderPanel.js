@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Alert, Modal } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Alert, Modal, Share } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { useAppContext } from '../context/AppContext';
@@ -7,7 +7,7 @@ import InvaderPhoto from './InvaderPhoto';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import { openInstagramTag } from '../utils/navigation';
-import { buildContextBlock, sendFeedbackEmail } from '../utils/feedback';
+import { buildContextBlock } from '../utils/feedback';
 import { FEEDBACK_EMAIL } from '../constants';
 
 let _styleCache = null;
@@ -70,11 +70,12 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
       buildContextBlock(dataVersion),
     ].join('\n');
 
-    const status = await sendFeedbackEmail({ subject, body }).catch(() => 'no_mail');
-    if (status === 'no_mail') {
+    // Feuille de partage native : s'ouvre toujours (Mail, Gmail, Messages, Copier…).
+    // L'adresse de contact est incluse dans le message.
+    try {
+      await Share.share({ subject, message: `${subject}\n\n${body}\n\n→ ${FEEDBACK_EMAIL}` });
+    } catch {
       Alert.alert(t('feedback.noMailTitle'), t('feedback.noMailBody', { email: FEEDBACK_EMAIL }));
-    } else if (status === 'sent') {
-      Alert.alert(t('feedback.status.sentTitle'), t('feedback.status.sentBody'));
     }
     if (autoCloseOnAction) onClose();
   }
