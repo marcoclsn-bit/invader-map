@@ -1,4 +1,4 @@
-import { Linking, Platform } from 'react-native';
+import { Platform, Share } from 'react-native';
 import * as MailComposer from 'expo-mail-composer';
 import * as Application from 'expo-application';
 import * as Device from 'expo-device';
@@ -29,33 +29,36 @@ export function buildContextBlock(dataVersion) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Ouvre l'app mail pré-remplie. Utilise expo-mail-composer si disponible,
-// sinon repli sur Linking.openURL('mailto:…').
-// Retourne : 'sent' | 'saved' | 'cancelled' | 'opened' | 'no_mail'
+// Transmet un feedback pré-rempli. Deux voies, dans l'ordre :
+//   1. Compositeur mail natif (expo-mail-composer) si dispo → e-mail pré-adressé.
+//   2. Sinon feuille de partage native (Share) — TOUJOURS disponible (Gmail,
+//      Messages, Copier…). L'adresse de contact est incluse dans le message.
+// On abandonne le repli `mailto:` : sur iOS sans app Mail configurée, il ne fait
+// rien silencieusement (cause du « rien ne se passe »).
+// Retourne : 'sent' | 'saved' | 'cancelled' | 'shared' | 'no_mail'
 // ─────────────────────────────────────────────────────────────────────────────
 export async function sendFeedbackEmail({ subject, body }) {
   const available = await MailComposer.isAvailableAsync().catch(() => false);
-
   if (available) {
-    const { status } = await MailComposer.composeAsync({
-      recipients: FEEDBACK_EMAIL ? [FEEDBACK_EMAIL] : [],
-      subject,
-      body,
-    });
-    return status; // 'sent' | 'saved' | 'cancelled' | 'undetermined'
+    try {
+      const { status } = await MailComposer.composeAsync({
+        recipients: FEEDBACK_EMAIL ? [FEEDBACK_EMAIL] : [],
+        subject,
+        body,
+      });
+      return status; // 'sent' | 'saved' | 'cancelled' | 'undetermined'
+    } catch {
+      // échec de présentation → on bascule sur le partage
+    }
   }
 
-  // Repli mailto: (app mail non détectée par MailComposer).
-  // NB : pas de test canOpenURL — il renvoie de faux `false` (iOS sans Apple Mail,
-  // Android 11+ et ses restrictions de visibilité). On tente l'ouverture directement :
-  // si aucune app mail n'existe, openURL rejette → 'no_mail'.
-  const url =
-    `mailto:${encodeURIComponent(FEEDBACK_EMAIL)}` +
-    `?subject=${encodeURIComponent(subject)}` +
-    `&body=${encodeURIComponent(body)}`;
+  // Feuille de partage native (fiable partout). Adresse rappelée dans le texte.
   try {
-    await Linking.openURL(url);
-    return 'opened';
+    await Share.share({
+      subject,
+      message: `${subject}\n\n${body}\n\n→ ${FEEDBACK_EMAIL}`,
+    });
+    return 'shared';
   } catch {
     return 'no_mail';
   }
