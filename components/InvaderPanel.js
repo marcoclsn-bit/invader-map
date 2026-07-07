@@ -8,6 +8,7 @@ import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import { openInstagramTag } from '../utils/navigation';
 import { buildContextBlock, sendFeedbackEmail } from '../utils/feedback';
+import { FEEDBACK_EMAIL } from '../constants';
 
 let _styleCache = null;
 function getStyles(theme) {
@@ -45,7 +46,9 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
     const options = ['ok', 'damaged', 'destroyed'];
     const buttons = options.map((s) => ({
       text: t(`common.status.${s}`),
-      onPress: () => submitStatusReport(s),
+      // Différé : iOS ne présente aucun modal (compositeur mail) tant que l'Alert
+      // n'est pas complètement fermée → sans ce délai, « rien ne se passe ».
+      onPress: () => setTimeout(() => submitStatusReport(s), 400),
     }));
     buttons.push({ text: t('common.cancel'), style: 'cancel' });
     Alert.alert(
@@ -69,7 +72,7 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
 
     const status = await sendFeedbackEmail({ subject, body }).catch(() => 'no_mail');
     if (status === 'no_mail') {
-      Alert.alert(t('feedback.noMailTitle'), t('feedback.noMailBody'));
+      Alert.alert(t('feedback.noMailTitle'), t('feedback.noMailBody', { email: FEEDBACK_EMAIL }));
     } else if (status === 'sent') {
       Alert.alert(t('feedback.status.sentTitle'), t('feedback.status.sentBody'));
     }

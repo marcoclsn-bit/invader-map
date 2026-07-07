@@ -399,7 +399,7 @@
   },
   "feedback": {
     "noMailTitle": "Nessuna app email",
-    "noMailBody": "Nessuna app email è configurata su questo dispositivo. Aggiungi un account e riprova.",
+    "noMailBody": "Nessuna app email rilevata. Scrivici direttamente a {{email}} indicando l'Invader e il suo nuovo stato.",
     "context": {
       "title": "Info tecniche (contesto)",
       "appVersion": "Versione dell'app",

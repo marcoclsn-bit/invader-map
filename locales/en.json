@@ -399,7 +399,7 @@
   },
   "feedback": {
     "noMailTitle": "No mail app",
-    "noMailBody": "No email app is set up on this device. Add a mail account and try again.",
+    "noMailBody": "No email app detected. Write to us directly at {{email}} with the Invader and its new status.",
     "context": {
       "title": "Technical info (context)",
       "appVersion": "App version",
