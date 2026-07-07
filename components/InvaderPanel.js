@@ -184,14 +184,16 @@ function makeStyles(t) {
       shadowColor: '#000', shadowOffset: { width: 0, height: -2 },
       shadowOpacity: 0.3, shadowRadius: 8, elevation: 8,
     },
-    topRow: { flexDirection: 'row', alignItems: 'flex-start', gap: 14, marginBottom: 4 },
+    // stretch + space-between : le badge s'aligne sur le haut de la photo,
+    // les boutons sur le bas → colonne de droite calée sur la vignette.
+    topRow: { flexDirection: 'row', alignItems: 'stretch', gap: 14, marginBottom: 4 },
     thumbWrap: { width: 88, height: 88 },
     thumb: { width: 88, height: 88, borderRadius: 10, backgroundColor: t.surfaceHigh },
     zoomBadge: {
       position: 'absolute', right: 4, bottom: 4,
       backgroundColor: 'rgba(0,0,0,0.55)', borderRadius: 9, padding: 3,
     },
-    topInfo: { flex: 1, justifyContent: 'center' },
+    topInfo: { flex: 1, justifyContent: 'space-between', paddingVertical: 2 },
     // Lightbox plein écran
     lightbox: {
       flex: 1, backgroundColor: 'rgba(0,0,0,0.92)',
@@ -207,7 +209,7 @@ function makeStyles(t) {
     statusText: { color: '#fff', fontWeight: '600', fontSize: 13 },
     points: { fontSize: 15, color: t.textSecondary },
     hint: { marginTop: 12, fontSize: 14, color: t.textSecondary, fontStyle: 'italic' },
-    actions: { marginTop: 12, flexDirection: 'row', gap: 8 },
+    actions: { flexDirection: 'row', gap: 8 },
     actionBtn: {
       flex: 1, borderRadius: 8, paddingHorizontal: 14, paddingVertical: 9,
       backgroundColor: t.surfaceHigh, alignItems: 'center',
@@ -219,12 +221,12 @@ function makeStyles(t) {
     actionBtnActive: { backgroundColor: t.surfaceHigh, borderWidth: 1, borderColor: t.accent },
     actionBtnText: { fontSize: 14, fontWeight: '500', color: t.textPrimary },
     actionBtnTextActive: { color: t.accent, fontWeight: '600' },
-    // Instagram = action secondaire → lien discret (plus de gros bouton bordé).
     igBtn: {
       marginTop: 12, flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
-      gap: 6, paddingVertical: 6,
+      gap: 7, paddingVertical: 8, borderRadius: 8,
+      borderWidth: 1, borderColor: '#E1306C',
     },
-    igBtnText: { fontSize: 13, fontWeight: '500', color: '#E1306C' },
+    igBtnText: { fontSize: 14, fontWeight: '500', color: '#E1306C' },
     reportBtn: {
       marginTop: 12, flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
       gap: 6, paddingVertical: 4,

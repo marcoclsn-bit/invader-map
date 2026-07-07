@@ -45,13 +45,18 @@ export async function sendFeedbackEmail({ subject, body }) {
     return status; // 'sent' | 'saved' | 'cancelled' | 'undetermined'
   }
 
-  // Repli mailto: (app mail non détectée par MailComposer)
+  // Repli mailto: (app mail non détectée par MailComposer).
+  // NB : pas de test canOpenURL — il renvoie de faux `false` (iOS sans Apple Mail,
+  // Android 11+ et ses restrictions de visibilité). On tente l'ouverture directement :
+  // si aucune app mail n'existe, openURL rejette → 'no_mail'.
   const url =
     `mailto:${encodeURIComponent(FEEDBACK_EMAIL)}` +
     `?subject=${encodeURIComponent(subject)}` +
     `&body=${encodeURIComponent(body)}`;
-  const canOpen = await Linking.canOpenURL(url).catch(() => false);
-  if (!canOpen) return 'no_mail';
-  await Linking.openURL(url).catch(() => {});
-  return 'opened';
+  try {
+    await Linking.openURL(url);
+    return 'opened';
+  } catch {
+    return 'no_mail';
+  }
 }
