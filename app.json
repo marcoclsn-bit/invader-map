@@ -57,7 +57,7 @@
         {
           "locationWhenInUsePermission": "InvaderQuest utilise votre position pour vous situer sur la carte et vous aider à trouver les Invaders proches.",
           "locationAlwaysAndWhenInUsePermission": "InvaderQuest peut vous alerter quand vous passez près d'un Invader non flashé, même app fermée (Mode balade).",
-          "isIosBackgroundLocationEnabled": true,
+          "isIosBackgroundLocationEnabled": false,
           "isAndroidBackgroundLocationEnabled": true
         }
       ],
