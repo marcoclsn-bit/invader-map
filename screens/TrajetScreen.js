@@ -24,6 +24,8 @@ import PinMarker from '../components/PinMarker';
 import HeadingCone from '../components/HeadingCone';
 import InvaderPanel from '../components/InvaderPanel';
 import FlashOverlay from '../components/FlashOverlay';
+import { useSessionRecorder } from '../components/session/useSessionRecorder';
+import { useGamification } from '../context/GamificationContext';
 import { useTheme } from '../theme/ThemeContext';
 import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
 import { typography } from '../theme/tokens';
@@ -258,6 +260,8 @@ export default function TrajetScreen() {
 
   const { invaders, flashed, toggleFlash, labels, labelDefs, colorOverrides, statusColors, mapsApp, setMapsAppPref, currentCityCode, isChangingCity } = useAppContext();
   const city = CITIES[currentCityCode] ?? CITIES.PA;
+  const recorder = useSessionRecorder();
+  const { recordSession } = useGamification();
   const { theme, isDark } = useTheme();
   const { t } = useTranslation();
   const styles = getStyles(theme);
@@ -420,7 +424,11 @@ export default function TrajetScreen() {
     let cancelled = false;
     Location.watchPositionAsync(
       { accuracy: Location.Accuracy.BestForNavigation, timeInterval: 2000, distanceInterval: 5 },
-      (loc) => setUserPos({ latitude: loc.coords.latitude, longitude: loc.coords.longitude, heading: loc.coords.heading })
+      (loc) => {
+        setUserPos({ latitude: loc.coords.latitude, longitude: loc.coords.longitude, heading: loc.coords.heading });
+        // Enregistre le tracé réel pour le récap/partage de fin de trajet
+        recorder.addPoint(loc.coords.latitude, loc.coords.longitude, loc.coords.accuracy);
+      }
     ).then(sub => {
       if (cancelled) sub.remove();
       else locationSub.current = sub;
@@ -650,6 +658,7 @@ export default function TrajetScreen() {
 
     setLoadingPhase('route');
     setFollowing(false);
+    recorder.cancel(); // nouveau calcul d'itinéraire → abandonne une session en cours
     setError(null);
     setRouteCoords(null);
     setRoutePolyline(null);
@@ -698,7 +707,10 @@ export default function TrajetScreen() {
   function startFollowing() {
     setFollowing(true);
     setDrifted(false);
+    // Démarre l'enregistrement de session (récap + partage à l'arrêt)
+    recorder.begin({ source: 'route', city: currentCityCode, routeCoords });
     if (gpsRef.current) {
+      recorder.addPoint(gpsRef.current[1], gpsRef.current[0]);
       mapRef.current?.animateCamera(
         { center: { latitude: gpsRef.current[1], longitude: gpsRef.current[0] }, zoom: 17 },
         { duration: 500 }
@@ -709,6 +721,9 @@ export default function TrajetScreen() {
   function stopFollowing() {
     setFollowing(false);
     setDrifted(false);
+    // Clôt la session → récap + partage (ignoré si rien flashé et < 100 m)
+    const draft = recorder.end();
+    if (draft) recordSession(draft, { skipIfEmpty: true });
   }
 
   // Réinitialise l'itinéraire : efface le trajet calculé, rouvre la saisie,
@@ -716,6 +731,7 @@ export default function TrajetScreen() {
   function resetRoute() {
     setFollowing(false);
     setDrifted(false);
+    recorder.cancel(); // abandon : pas de récap
     setRouteCoords(null);
     setRoutePolyline(null);
     setRouteInvaders(null);
