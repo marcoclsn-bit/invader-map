@@ -111,6 +111,32 @@ C'est du **natif** → impossible à tester en OTA seul. Parcours :
 
 ---
 
+## 🎯 `runtimeVersion` — pour que les OTA atteignent bien l'app live
+
+**Règle d'or : on ne change `runtimeVersion` (dans `app.json`) QUE quand on modifie du natif / qu'on fait un nouveau build.**
+Tant qu'on ne fait que du JS/OTA, elle **ne bouge pas** → les `eas update` rejoignent toujours l'app installée.
+
+- Valeur actuelle : une **chaîne fixe** (l'empreinte de la build App Store en cours), pas la policy `fingerprint`.
+- Pourquoi : la policy `fingerprint` calculait une empreinte **différente** selon la machine (serveurs EAS vs local) → les OTA locales rataient l'app live. Une valeur fixe = déterministe, les OTA passent depuis n'importe où.
+
+**Quand tu fais un nouveau build natif** (build 16, 17…) :
+1. Laisse `runtimeVersion` **inchangée** si tu veux que l'OTA couvre l'ancienne ET la nouvelle build.
+2. OU change-la (ex. nouvelle chaîne) si tu veux « couper » l'ancienne build — mais alors seule la nouvelle recevra les OTA.
+3. Après le build : récupère son runtime avec `eas build:view <ID>` et vérifie qu'il correspond à `runtimeVersion`.
+
+**Dépannage — « mon OTA n'arrive pas sur l'app live »** :
+```bash
+# 1. runtime de la build installée (App Store) :
+eas build:view <BUILD_ID> | grep "Runtime Version"
+# 2. runtime des dernières OTA publiées :
+eas update:list --branch production --limit 3
+# → les deux DOIVENT être identiques. Sinon, aligne runtimeVersion dans app.json.
+```
+
+> ⚠️ **Android** : les builds Android existants (APK/Play interne) ont un autre runtime. Le premier build Android de production devra être compilé avec cette même `runtimeVersion` pour que ses OTA passent.
+
+---
+
 ## 🔒 Règles de sécurité (ne jamais oublier)
 
 - **Aucune clé API dans Git.** Elles vivent dans `config/ors.js`, `config/mapbox.js`, `.env.local` (gitignorés) et les **variables d'environnement EAS**.
