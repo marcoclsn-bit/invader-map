@@ -457,7 +457,9 @@ async function main() {
           lat:          e.lat,
           lng:          e.lng,
           status:       normalizeStatus(e.status),
-          points:       Math.max(0, parseInt(String(e.points ?? 0), 10) || 0),
+          // Points absents dans l'extra → null : laisse invader-spotter les combler
+          // (utile pour les Invaders ajoutés à la main dont on n'a que les coordonnées).
+          points:       e.points == null ? null : Math.max(0, parseInt(String(e.points), 10) || 0),
           hint:         String(e.hint ?? '').trim(),
           instagramUrl:    String(e.instagramUrl ?? '').trim() || null,
           source:          String(e.source ?? 'extras'),

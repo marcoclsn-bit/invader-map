@@ -3,7 +3,6 @@
     "titre": "Invaders Paris — ajouts et corrections manuels",
     "description": "Ce fichier complète la source automatique (goguelnikov/SpaceInvaders). Les entrées ici ont PRIORITÉ sur la base : si un id est présent dans les deux, ta version gagne.",
     "note_json": "JSON n'accepte pas de commentaires. Les champs qui commencent par '_' sont ignorés par le script. Les entrées avec 'disabled: true' sont des exemples inactifs.",
-
     "comment_ajouter_un_invader": [
       "── Comment ajouter un Invader ──────────────────────────────",
       "1. Copie un bloc {} du tableau 'invaders' ci-dessous.",
@@ -17,19 +16,17 @@
       "→ La GitHub Action intègre l'entrée dans invaders.json au prochain run.",
       "→ Pour l'appliquer immédiatement : node scripts/build_invaders.mjs"
     ],
-
     "champs": {
-      "id":       "Identifiant unique. Ex : 'PA_1529'. Si l'id existe déjà dans la base goguelnikov, ta version le remplace.",
-      "lat":      "Latitude GPS — nombre décimal avec un POINT (pas une virgule). Ex : 48.8566. Dans Google Maps : appui long sur l'endroit → copie les coordonnées (premier nombre = latitude).",
-      "lng":      "Longitude GPS — nombre décimal avec un POINT. Ex : 2.3522. (second nombre dans Google Maps).",
-      "status":   "État de l'Invader. Valeurs possibles : ok | damaged | destroyed | hidden | unknown",
-      "points":   "Valeur en points. Nombre entier : 10, 20, 30, 40 ou 50.",
-      "hint":     "Indice de localisation (texte libre). Peut être vide : \"\".",
-      "source":   "Origine de l'info (facultatif). Ex : 'perso', 'pnote', 'flashinvaders'. Par défaut : 'extras'.",
+      "id": "Identifiant unique. Ex : 'PA_1529'. Si l'id existe déjà dans la base goguelnikov, ta version le remplace.",
+      "lat": "Latitude GPS — nombre décimal avec un POINT (pas une virgule). Ex : 48.8566. Dans Google Maps : appui long sur l'endroit → copie les coordonnées (premier nombre = latitude).",
+      "lng": "Longitude GPS — nombre décimal avec un POINT. Ex : 2.3522. (second nombre dans Google Maps).",
+      "status": "État de l'Invader. Valeurs possibles : ok | damaged | destroyed | hidden | unknown",
+      "points": "Valeur en points. Nombre entier : 10, 20, 30, 40 ou 50.",
+      "hint": "Indice de localisation (texte libre). Peut être vide : \"\".",
+      "source": "Origine de l'info (facultatif). Ex : 'perso', 'pnote', 'flashinvaders'. Par défaut : 'extras'.",
       "disabled": "Mettre true pour désactiver une entrée sans la supprimer (utile pour les exemples)."
     }
   },
-
   "invaders": [
     {
       "_comment": "EXEMPLE 1 — nouvel Invader absent de la base goguelnikov. Retire la ligne 'disabled' pour l'activer.",
@@ -63,6 +60,180 @@
       "points": 30,
       "hint": "Île de la Cité, derrière Notre-Dame",
       "source": "pnote"
+    },
+    {
+      "id": "PA_1569",
+      "lat": 48.865579,
+      "lng": 2.367197,
+      "source": "invader-spotter"
+    },
+    {
+      "id": "PA_1570",
+      "lat": 48.858157,
+      "lng": 2.352621,
+      "source": "invader-spotter"
+    },
+    {
+      "id": "PA_1571",
+      "lat": 48.895084,
+      "lng": 2.391108,
+      "source": "invader-spotter"
+    },
+    {
+      "id": "PA_1572",
+      "lat": 48.895287,
+      "lng": 2.39006,
+      "source": "invader-spotter"
+    },
+    {
+      "id": "PA_1573",
+      "lat": 48.894642,
+      "lng": 2.389366,
+      "source": "invader-spotter"
+    },
+    {
+      "id": "PA_1574",
+      "lat": 48.895035,
+      "lng": 2.388445,
+      "source": "invader-spotter"
+    },
+    {
+      "id": "PA_1575",
+      "lat": 48.894745,
+      "lng": 2.388607,
+      "source": "invader-spotter"
+    },
+    {
+      "id": "PA_1576",
+      "lat": 48.892204,
+      "lng": 2.387187,
+      "source": "invader-spotter"
+    },
+    {
+      "id": "PA_1577",
+      "lat": 48.894234,
+      "lng": 2.386292,
+      "source": "invader-spotter"
+    },
+    {
+      "id": "PA_1578",
+      "lat": 48.893009,
+      "lng": 2.389592,
+      "source": "invader-spotter"
+    },
+    {
+      "id": "PA_1579",
+      "lat": 48.893593,
+      "lng": 2.390164,
+      "source": "invader-spotter"
+    },
+    {
+      "id": "PA_1580",
+      "lat": 48.892624,
+      "lng": 2.393831,
+      "source": "invader-spotter"
+    },
+    {
+      "id": "PA_1581",
+      "lat": 48.892776,
+      "lng": 2.392883,
+      "source": "invader-spotter"
+    },
+    {
+      "id": "PA_1582",
+      "lat": 48.892216,
+      "lng": 2.387393,
+      "source": "invader-spotter"
+    },
+    {
+      "id": "PA_1583",
+      "lat": 48.891838,
+      "lng": 2.38911,
+      "source": "invader-spotter"
+    },
+    {
+      "id": "PA_1584",
+      "lat": 48.895729,
+      "lng": 2.393475,
+      "source": "invader-spotter"
+    },
+    {
+      "id": "PA_1585",
+      "lat": 48.889732,
+      "lng": 2.390476,
+      "source": "invader-spotter"
+    },
+    {
+      "id": "PA_1586",
+      "lat": 48.890919,
+      "lng": 2.390167,
+      "source": "invader-spotter"
+    },
+    {
+      "id": "PA_1587",
+      "lat": 48.890648,
+      "lng": 2.392018,
+      "source": "invader-spotter"
+    },
+    {
+      "id": "PA_1588",
+      "lat": 48.890141,
+      "lng": 2.392315,
+      "source": "invader-spotter"
+    },
+    {
+      "id": "PA_1589",
+      "lat": 48.892479,
+      "lng": 2.391402,
+      "source": "invader-spotter"
+    },
+    {
+      "id": "PA_1590",
+      "lat": 48.891558,
+      "lng": 2.390186,
+      "source": "invader-spotter"
+    },
+    {
+      "id": "PA_1591",
+      "lat": 48.894666,
+      "lng": 2.388125,
+      "source": "invader-spotter"
+    },
+    {
+      "id": "PA_1592",
+      "lat": 48.889109,
+      "lng": 2.388346,
+      "source": "invader-spotter"
+    },
+    {
+      "id": "PA_1593",
+      "lat": 48.886711,
+      "lng": 2.393807,
+      "source": "invader-spotter"
+    },
+    {
+      "id": "PA_1594",
+      "lat": 48.866313,
+      "lng": 2.314785,
+      "source": "invader-spotter"
+    },
+    {
+      "id": "PA_1595",
+      "lat": 48.893595,
+      "lng": 2.327077,
+      "source": "invader-spotter"
+    },
+    {
+      "id": "PA_1596",
+      "lat": 48.889119,
+      "lng": 2.392965,
+      "source": "invader-spotter"
+    },
+    {
+      "id": "PA_1597",
+      "lat": 48.845937,
+      "lng": 2.385125,
+      "source": "invader-spotter"
     }
   ]
 }

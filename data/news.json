@@ -1,9 +1,44 @@
 {
-  "version": 2,
-  "updatedAt": "2026-07-06",
+  "version": 3,
+  "updatedAt": "2026-07-09",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "source": "invader-spotter.art",
   "events": [
+    {
+      "type": "damaged",
+      "id": "DJBA_44",
+      "city": "DJBA",
+      "date": "2026-07-08",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_44-grosplan.png"
+    },
+    {
+      "type": "destroyed",
+      "id": "LDN_177",
+      "city": "LDN",
+      "date": "2026-07-08",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LDN/LDN_177-grosplan.png"
+    },
+    {
+      "type": "damaged",
+      "id": "FTBL_23",
+      "city": "FTBL",
+      "date": "2026-07-07",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/FTBL/FTBL_23-grosplan.png"
+    },
+    {
+      "type": "damaged",
+      "id": "GNV_13",
+      "city": "GNV",
+      "date": "2026-07-07",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_13-grosplan.png"
+    },
+    {
+      "type": "damaged",
+      "id": "PA_563",
+      "city": "PA",
+      "date": "2026-07-06",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_0563-grosplan.png"
+    },
     {
       "type": "added",
       "id": "PA_1595",
