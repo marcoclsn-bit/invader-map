@@ -459,7 +459,9 @@
       "subtitle": "Scegli le città da seguire nel feed.",
       "searchPlaceholder": "Cerca una città…",
       "validate_one": "Conferma ({{count}} città)",
-      "validate_other": "Conferma ({{count}} città)"
+      "validate_other": "Conferma ({{count}} città)",
+      "selectAll": "Tutte le città",
+      "deselectAll": "Deseleziona tutto"
     },
     "credit": "Novità: invader-spotter.art",
     "comingSoon": {

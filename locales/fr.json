@@ -459,7 +459,9 @@
       "subtitle": "Choisis les villes à suivre dans le fil d'actus.",
       "searchPlaceholder": "Rechercher une ville…",
       "validate_one": "Valider ({{count}} ville)",
-      "validate_other": "Valider ({{count}} villes)"
+      "validate_other": "Valider ({{count}} villes)",
+      "selectAll": "Toutes les villes",
+      "deselectAll": "Tout désélectionner"
     },
     "credit": "Actus : invader-spotter.art",
     "comingSoon": {

@@ -112,12 +112,18 @@ function CityPicker({ initial, onValidate, onCancel, canCancel, theme, t, cityIn
       .sort((a, b) => a.name.localeCompare(b.name));
   }, [cityIndex, search]);
 
+  const allCodes = useMemo(() => cityIndex.map(c => c.code), [cityIndex]);
+  const allSelected = selected.size === allCodes.length && allCodes.length > 0;
+
   function toggle(code) {
     setSelected(prev => {
       const next = new Set(prev);
       next.has(code) ? next.delete(code) : next.add(code);
       return next;
     });
+  }
+  function toggleAll() {
+    setSelected(allSelected ? new Set() : new Set(allCodes));
   }
 
   return (
@@ -144,6 +150,19 @@ function CityPicker({ initial, onValidate, onCancel, canCancel, theme, t, cityIn
         autoCorrect={false}
         clearButtonMode="while-editing"
       />
+
+      {/* Tout suivre / tout désélectionner */}
+      <TouchableOpacity style={styles.cityRow} onPress={toggleAll} activeOpacity={0.7}>
+        <Ionicons
+          name={allSelected ? 'checkbox' : 'square-outline'}
+          size={22}
+          color={allSelected ? theme.accent : theme.textSecondary}
+        />
+        <Text style={[styles.cityName, { fontWeight: '700' }]}>
+          {allSelected ? t('news.picker.deselectAll') : t('news.picker.selectAll')}
+        </Text>
+      </TouchableOpacity>
+      <View style={styles.separator} />
 
       <FlatList
         data={cities}

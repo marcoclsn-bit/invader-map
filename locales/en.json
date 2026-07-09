@@ -459,7 +459,9 @@
       "subtitle": "Choose which cities to follow in the news feed.",
       "searchPlaceholder": "Search a city…",
       "validate_one": "Confirm ({{count}} city)",
-      "validate_other": "Confirm ({{count}} cities)"
+      "validate_other": "Confirm ({{count}} cities)",
+      "selectAll": "All cities",
+      "deselectAll": "Deselect all"
     },
     "credit": "News: invader-spotter.art",
     "comingSoon": {
