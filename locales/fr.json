@@ -188,19 +188,27 @@
     "slides": {
       "welcome": {
         "title": "$t(common.appName)",
-        "subtitle": "Pars à la chasse aux Space Invaders de Paris."
+        "subtitle": "Pars à la chasse aux Space Invaders, à Paris et dans le monde."
       },
       "map": {
         "title": "Carte & Flash",
-        "body": "Repère les mosaïques Space Invader autour de toi. Marque chaque Invader que tu as flashé et suis ta progression dans le Palmarès. Par défaut, la carte n’affiche que les Invaders qu’il te reste à flasher — affiche les flashés et les détruits quand tu veux via les filtres."
-      },
-      "route": {
-        "title": "Trajet & Chasse",
-        "body": "Découvre les Invaders sur ton chemin de A à B. Ou génère une chasse optimisée selon ton temps et ton moyen de transport."
+        "body": "Repère les mosaïques autour de toi et marque celles que tu as flashées. Par défaut, la carte ne montre que les Invaders qu'il te reste à faire — les filtres révèlent les flashés et les détruits."
       },
       "location": {
         "title": "Position GPS",
         "body": "L'app utilise ta position pour te situer sur la carte et calculer tes itinéraires. Tes données restent sur ton appareil."
+      },
+      "trajet": {
+        "title": "Sur ton trajet",
+        "body": "Tu vas d'un point A à un point B ? Découvre tous les Invaders sur ton chemin et laisse-toi guider pour les flasher en route."
+      },
+      "chasse": {
+        "title": "Pars en chasse",
+        "body": "Pas d'itinéraire précis ? Génère une chasse optimisée autour de toi selon ton temps et ton moyen de transport, et pars à l'aventure."
+      },
+      "balade": {
+        "title": "Mode balade",
+        "body": "Sois alerté quand tu passes près d'un Invader pas encore flashé — même l'application fermée. Il te faudra autoriser la localisation « Toujours » au moment de l'activer."
       }
     }
   },

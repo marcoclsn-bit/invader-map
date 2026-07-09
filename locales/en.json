@@ -188,19 +188,27 @@
     "slides": {
       "welcome": {
         "title": "$t(common.appName)",
-        "subtitle": "Hunt Space Invader mosaics across Paris."
+        "subtitle": "Hunt Space Invaders, in Paris and around the world."
       },
       "map": {
         "title": "Map & Flash",
-        "body": "Find Space Invader mosaics around you. Mark each one you've flashed and track your progress in Scores. By default, the map shows only the Invaders you still have to flash — show flashed and destroyed ones anytime via the filters."
-      },
-      "route": {
-        "title": "Route & Hunt",
-        "body": "Discover Invaders along your route from A to B. Or generate an optimised hunt based on your time and transport."
+        "body": "Spot the mosaics around you and mark the ones you've flashed. By default the map only shows the Invaders you still have to find — filters reveal the flashed and destroyed ones."
       },
       "location": {
         "title": "Location",
         "body": "The app uses your location to show you on the map and calculate routes. Your data stays on your device."
+      },
+      "trajet": {
+        "title": "On your way",
+        "body": "Going from A to B? See every Invader along your route and get guided to flash them on the go."
+      },
+      "chasse": {
+        "title": "Go hunting",
+        "body": "No set route? Generate an optimized hunt around you based on your time and travel mode, and set off on an adventure."
+      },
+      "balade": {
+        "title": "Stroll mode",
+        "body": "Get alerted when you walk near an Invader you haven't flashed yet — even with the app closed. You'll need to allow “Always” location when you enable it."
       }
     }
   },

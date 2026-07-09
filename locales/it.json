@@ -188,19 +188,27 @@
     "slides": {
       "welcome": {
         "title": "$t(common.appName)",
-        "subtitle": "Vai a caccia di Space Invaders a Parigi."
+        "subtitle": "Vai a caccia di Space Invaders, a Parigi e nel mondo."
       },
       "map": {
         "title": "Mappa & Flash",
-        "body": "Trova i mosaici Space Invader intorno a te. Segna ogni Invader fotografato e monitora il tuo progresso nel Palmares. Per impostazione predefinita, la mappa mostra solo gli Invaders che ti restano da fotografare — mostra quelli fotografati e distrutti quando vuoi tramite i filtri."
-      },
-      "route": {
-        "title": "Percorso & Caccia",
-        "body": "Scopri gli Invaders sul tuo percorso da A a B. Oppure genera una caccia ottimizzata in base al tempo e al mezzo di trasporto."
+        "body": "Individua i mosaici intorno a te e segna quelli che hai fotografato. Di default la mappa mostra solo gli Invader che ti restano — i filtri rivelano quelli fatti e quelli distrutti."
       },
       "location": {
         "title": "Posizione GPS",
         "body": "L'app usa la tua posizione per mostrarti sulla mappa e calcolare percorsi. I dati restano sul tuo dispositivo."
+      },
+      "trajet": {
+        "title": "Sul tuo percorso",
+        "body": "Vai da un punto A a un punto B? Scopri tutti gli Invader lungo il tragitto e lasciati guidare per fotografarli strada facendo."
+      },
+      "chasse": {
+        "title": "Vai a caccia",
+        "body": "Nessun percorso preciso? Genera una caccia ottimizzata intorno a te in base al tuo tempo e al mezzo di trasporto, e parti all'avventura."
+      },
+      "balade": {
+        "title": "Modalità passeggiata",
+        "body": "Ricevi un avviso quando passi vicino a un Invader non ancora fotografato — anche con l'app chiusa. Dovrai autorizzare la posizione «Sempre» quando la attivi."
       }
     }
   },

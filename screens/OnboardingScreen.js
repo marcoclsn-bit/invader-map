@@ -35,15 +35,27 @@ function buildSlides(t) {
     },
     {
       key: 'map',
-      icons: ['map-outline', 'ribbon-outline'],
+      icons: ['map-outline'],
       title: t('onboarding.slides.map.title'),
       body: t('onboarding.slides.map.body'),
     },
     {
-      key: 'route',
-      icons: ['navigate-outline', 'trophy-outline'],
-      title: t('onboarding.slides.route.title'),
-      body: t('onboarding.slides.route.body'),
+      key: 'trajet',
+      icons: ['navigate-outline'],
+      title: t('onboarding.slides.trajet.title'),
+      body: t('onboarding.slides.trajet.body'),
+    },
+    {
+      key: 'chasse',
+      icons: ['compass-outline'],
+      title: t('onboarding.slides.chasse.title'),
+      body: t('onboarding.slides.chasse.body'),
+    },
+    {
+      key: 'balade',
+      icons: ['walk-outline'],
+      title: t('onboarding.slides.balade.title'),
+      body: t('onboarding.slides.balade.body'),
     },
     {
       key: 'location',
