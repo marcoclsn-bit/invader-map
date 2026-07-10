@@ -119,7 +119,7 @@ const KNOWN_CITIES = {
   WN:   { name: 'Vienne',           bbox: { minLat: 48.15, maxLat: 48.25, minLng: 16.30, maxLng: 16.45 } },
   // ── Noms identifiés, bbox inconnue (pas de validation coords) ─────────────
   ANZR: { name: 'Annecy' },
-  BAB:  { name: 'Bab (Algérie)' },
+  BAB:  { name: 'Biarritz Anglet-Bayonne' },
   BBO:  { name: 'Bilbao' },
   BRC:  { name: 'Barcelone' },
   BT:   { name: 'BT' },
@@ -132,7 +132,7 @@ const KNOWN_CITIES = {
   ELT:  { name: 'Eilat' },
   FRQ:  { name: 'Forcalquier' },
   GRTI: { name: 'GRTI' },
-  GRU:  { name: 'Grude' },
+  GRU:  { name: 'Grumeti (Tanzanie)' },
   HALM: { name: 'Halmstad' },
   LBR:  { name: 'Luberon' },
   LCT:  { name: 'Lecce' },

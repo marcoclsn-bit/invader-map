@@ -102,8 +102,9 @@ const OVERRIDES = {
   LCT:  { orsCountry: 'boundary.country=IT' }, // Lecce
   RBA:  { orsCountry: 'boundary.country=MA' }, // Rabat
   RDU:  { orsCountry: 'boundary.country=US' }, // Raleigh-Durham
-  BAB:  { orsCountry: 'boundary.country=DZ' }, // Bab (Algérie)
+  BAB:  { orsCountry: 'boundary.country=FR' }, // Biarritz Anglet-Bayonne
   MBSA: { orsCountry: 'boundary.country=KE' }, // Mombasa
+  GRU:  { orsCountry: 'boundary.country=TZ' }, // Grumeti (Tanzanie)
 };
 
 // ─── Construction des villes ──────────────────────────────────────────────────
