@@ -48,7 +48,7 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add data/index.json data/invaders_*.json
+          git add data/index.json data/invaders_*.json data/news.json
           if git diff --cached --quiet; then
             echo "Aucun changement détecté dans les données — pas de commit."
           else

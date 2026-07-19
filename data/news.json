@@ -1,9 +1,86 @@
 {
-  "version": 3,
-  "updatedAt": "2026-07-09",
+  "version": 4,
+  "updatedAt": "2026-07-19",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "source": "invader-spotter.art",
   "events": [
+    {
+      "type": "reactivated",
+      "id": "GNV_02",
+      "city": "GNV",
+      "date": "2026-07-18",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_02-grosplan.png"
+    },
+    {
+      "type": "reactivated",
+      "id": "GNV_07",
+      "city": "GNV",
+      "date": "2026-07-18",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_07-grosplan.png"
+    },
+    {
+      "type": "reactivated",
+      "id": "GNV_14",
+      "city": "GNV",
+      "date": "2026-07-18",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_14-grosplan.png"
+    },
+    {
+      "type": "reactivated",
+      "id": "GNV_15",
+      "city": "GNV",
+      "date": "2026-07-18",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_15-grosplan.png"
+    },
+    {
+      "type": "reactivated",
+      "id": "GNV_31",
+      "city": "GNV",
+      "date": "2026-07-18",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_31-grosplan.png"
+    },
+    {
+      "type": "reactivated",
+      "id": "GNV_32",
+      "city": "GNV",
+      "date": "2026-07-18",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_32-grosplan.png"
+    },
+    {
+      "type": "updated",
+      "id": "PA_1397",
+      "city": "PA",
+      "date": "2026-07-18",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1397-grosplan.png"
+    },
+    {
+      "type": "destroyed",
+      "id": "WN_14",
+      "city": "WN",
+      "date": "2026-07-14",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/WN/WN_14-grosplan.png"
+    },
+    {
+      "type": "updated",
+      "id": "LDN_21",
+      "city": "LDN",
+      "date": "2026-07-13",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LDN/LDN_021-grosplan.png"
+    },
+    {
+      "type": "damaged",
+      "id": "PA_179",
+      "city": "PA",
+      "date": "2026-07-13",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_0179-grosplan.png"
+    },
+    {
+      "type": "damaged",
+      "id": "WN_54",
+      "city": "WN",
+      "date": "2026-07-13",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/WN/WN_54-grosplan.png"
+    },
     {
       "type": "damaged",
       "id": "DJBA_44",
