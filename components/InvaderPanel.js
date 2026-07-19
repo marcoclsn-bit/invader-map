@@ -9,13 +9,15 @@ import { typography } from '../theme/tokens';
 import { openInstagramTag } from '../utils/navigation';
 import { buildContextBlock } from '../utils/feedback';
 import { FEEDBACK_EMAIL } from '../constants';
+import i18n from '../i18n';
 
-// « 1998-04-18 » → date lisible selon la langue (ex. « 18 avr. 1998 »).
+// « 1998-04-18 » → date lisible dans la LANGUE DE L'APP (ex. « 18 avr. 1998 »).
+// On passe i18n.language (pas la locale du téléphone) pour rester cohérent avec l'app.
 function formatPosedDate(iso) {
   try {
     const d = new Date(iso + 'T00:00:00');
     if (isNaN(d)) return iso;
-    return d.toLocaleDateString(undefined, { day: 'numeric', month: 'short', year: 'numeric' });
+    return d.toLocaleDateString(i18n.language || 'fr', { day: 'numeric', month: 'short', year: 'numeric' });
   } catch { return iso; }
 }
 
