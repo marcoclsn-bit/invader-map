@@ -276,7 +276,7 @@
     },
     {
       "code": "CON",
-      "name": "Constance",
+      "name": "Contis",
       "count": 2,
       "version": 5,
       "center": {
@@ -520,7 +520,7 @@
     },
     {
       "code": "LCT",
-      "name": "Lecce",
+      "name": "La Ciotat",
       "count": 9,
       "version": 5,
       "center": {
@@ -940,7 +940,7 @@
     },
     {
       "code": "RDU",
-      "name": "Raleigh-Durham",
+      "name": "Redu",
       "count": 6,
       "version": 5,
       "center": {
