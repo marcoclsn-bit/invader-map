@@ -1,6 +1,6 @@
 {
-  "version": 3,
-  "updatedAt": "2026-07-06",
+  "version": 4,
+  "updatedAt": "2026-07-19",
   "city": "KLN",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 27,
@@ -14,7 +14,8 @@
       "points": 20,
       "hint": "",
       "source": "goguelnikov",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_01-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_01-grosplan.png",
+      "datePosed": "2006-10-31"
     },
     {
       "id": "KLN_02",
@@ -25,7 +26,8 @@
       "points": 20,
       "hint": "",
       "source": "goguelnikov",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_02-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_02-grosplan.png",
+      "datePosed": "2006-10-31"
     },
     {
       "id": "KLN_03",
@@ -36,7 +38,8 @@
       "points": 20,
       "hint": "",
       "source": "goguelnikov",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_03-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_03-grosplan.png",
+      "datePosed": "2006-10-31"
     },
     {
       "id": "KLN_04",
@@ -47,7 +50,8 @@
       "points": 10,
       "hint": "",
       "source": "goguelnikov",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_04-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_04-grosplan.png",
+      "datePosed": "2007-02-10"
     },
     {
       "id": "KLN_05",
@@ -58,7 +62,8 @@
       "points": 20,
       "hint": "",
       "source": "goguelnikov",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_05-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_05-grosplan.png",
+      "datePosed": "2007-02-10"
     },
     {
       "id": "KLN_06",
@@ -69,7 +74,8 @@
       "points": 10,
       "hint": "",
       "source": "goguelnikov",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_06-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_06-grosplan.png",
+      "datePosed": "2007-02-10"
     },
     {
       "id": "KLN_07",
@@ -80,7 +86,8 @@
       "points": 10,
       "hint": "",
       "source": "goguelnikov",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_07-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_07-grosplan.png",
+      "datePosed": "2007-02-11"
     },
     {
       "id": "KLN_08",
@@ -91,7 +98,8 @@
       "points": 10,
       "hint": "",
       "source": "goguelnikov",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_08-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_08-grosplan.png",
+      "datePosed": "2007-02-11"
     },
     {
       "id": "KLN_09",
@@ -102,7 +110,8 @@
       "points": 20,
       "hint": "",
       "source": "goguelnikov",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_09-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_09-grosplan.png",
+      "datePosed": "2007-02-11"
     },
     {
       "id": "KLN_10",
@@ -113,7 +122,8 @@
       "points": 20,
       "hint": "",
       "source": "goguelnikov",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_10-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_10-grosplan.png",
+      "datePosed": "2007-02-11"
     },
     {
       "id": "KLN_11",
@@ -124,7 +134,8 @@
       "points": 10,
       "hint": "",
       "source": "goguelnikov",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_11-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_11-grosplan.png",
+      "datePosed": "2007-02-12"
     },
     {
       "id": "KLN_12",
@@ -135,7 +146,8 @@
       "points": 20,
       "hint": "",
       "source": "goguelnikov",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_12-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_12-grosplan.png",
+      "datePosed": "2007-02-12"
     },
     {
       "id": "KLN_13",
@@ -146,7 +158,8 @@
       "points": 10,
       "hint": "",
       "source": "goguelnikov",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_13-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_13-grosplan.png",
+      "datePosed": "2007-02-12"
     },
     {
       "id": "KLN_14",
@@ -157,7 +170,8 @@
       "points": 20,
       "hint": "",
       "source": "goguelnikov",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_14-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_14-grosplan.png",
+      "datePosed": "2007-02-12"
     },
     {
       "id": "KLN_15",
@@ -168,7 +182,8 @@
       "points": 20,
       "hint": "",
       "source": "goguelnikov",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_15-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_15-grosplan.png",
+      "datePosed": "2007-02-12"
     },
     {
       "id": "KLN_16",
@@ -179,7 +194,8 @@
       "points": 10,
       "hint": "",
       "source": "goguelnikov",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_16-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_16-grosplan.png",
+      "datePosed": "2007-02-12"
     },
     {
       "id": "KLN_17",
@@ -190,7 +206,8 @@
       "points": 20,
       "hint": "",
       "source": "goguelnikov",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_17-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_17-grosplan.png",
+      "datePosed": "2007-02-13"
     },
     {
       "id": "KLN_18",
@@ -201,7 +218,8 @@
       "points": 30,
       "hint": "",
       "source": "goguelnikov",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_18-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_18-grosplan.png",
+      "datePosed": "2007-02-13"
     },
     {
       "id": "KLN_19",
@@ -212,7 +230,8 @@
       "points": 20,
       "hint": "",
       "source": "goguelnikov",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_19-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_19-grosplan.png",
+      "datePosed": "2007-02-13"
     },
     {
       "id": "KLN_20",
@@ -223,7 +242,8 @@
       "points": 10,
       "hint": "",
       "source": "goguelnikov",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_20-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_20-grosplan.png",
+      "datePosed": "2007-02-13"
     },
     {
       "id": "KLN_21",
@@ -234,7 +254,8 @@
       "points": 20,
       "hint": "",
       "source": "goguelnikov",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_21-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_21-grosplan.png",
+      "datePosed": "2007-02-13"
     },
     {
       "id": "KLN_22",
@@ -245,7 +266,8 @@
       "points": 20,
       "hint": "",
       "source": "goguelnikov",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_22-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_22-grosplan.png",
+      "datePosed": "2007-02-13"
     },
     {
       "id": "KLN_23",
@@ -256,7 +278,8 @@
       "points": 20,
       "hint": "",
       "source": "goguelnikov",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_23-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_23-grosplan.png",
+      "datePosed": "2007-02-13"
     },
     {
       "id": "KLN_24",
@@ -267,7 +290,8 @@
       "points": 30,
       "hint": "",
       "source": "goguelnikov",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_24-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_24-grosplan.png",
+      "datePosed": "2007-02-14"
     },
     {
       "id": "KLN_25",
@@ -278,7 +302,8 @@
       "points": 50,
       "hint": "",
       "source": "goguelnikov",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_25-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_25-grosplan.png",
+      "datePosed": "2015-01-30"
     },
     {
       "id": "KLN_26",
@@ -289,7 +314,8 @@
       "points": 100,
       "hint": "",
       "source": "goguelnikov",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_26-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_26-grosplan.png",
+      "datePosed": "2015-01-30"
     },
     {
       "id": "KLN_27",
@@ -300,7 +326,8 @@
       "points": 100,
       "hint": "",
       "source": "goguelnikov",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_27-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_27-grosplan.png",
+      "datePosed": "2015-01-30"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-06",
+  "version": 6,
+  "updatedAt": "2026-07-19",
   "city": "NY",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 192,
@@ -16,7 +16,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_01/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_001-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_001-grosplan.png",
+      "datePosed": "2000-02-20"
     },
     {
       "id": "NY_02",
@@ -29,7 +30,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_02/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_002-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_002-grosplan.png",
+      "datePosed": "2000-02-20"
     },
     {
       "id": "NY_03",
@@ -42,7 +44,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_03/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_003-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_003-grosplan.png",
+      "datePosed": "2000-02-20"
     },
     {
       "id": "NY_04",
@@ -55,7 +58,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_04/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_004-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_004-grosplan.png",
+      "datePosed": "2000-02-20"
     },
     {
       "id": "NY_05",
@@ -68,7 +72,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_05/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_005-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_005-grosplan.png",
+      "datePosed": "2000-02-21"
     },
     {
       "id": "NY_06",
@@ -81,7 +86,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_06/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_006-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_006-grosplan.png",
+      "datePosed": "2000-02-21"
     },
     {
       "id": "NY_07",
@@ -94,7 +100,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_07/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_007-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_007-grosplan.png",
+      "datePosed": "2000-02-21"
     },
     {
       "id": "NY_08",
@@ -107,7 +114,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_08/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_008-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_008-grosplan.png",
+      "datePosed": "2000-02-21"
     },
     {
       "id": "NY_09",
@@ -120,7 +128,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_09/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_009-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_009-grosplan.png",
+      "datePosed": "2000-02-22"
     },
     {
       "id": "NY_10",
@@ -133,7 +142,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_10/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_010-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_010-grosplan.png",
+      "datePosed": "2000-02-22"
     },
     {
       "id": "NY_11",
@@ -146,7 +156,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_11/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_011-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_011-grosplan.png",
+      "datePosed": "2000-02-22"
     },
     {
       "id": "NY_12",
@@ -159,7 +170,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_12/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_012-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_012-grosplan.png",
+      "datePosed": "2000-02-22"
     },
     {
       "id": "NY_13",
@@ -172,7 +184,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_13/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_013-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_013-grosplan.png",
+      "datePosed": "2000-02-23"
     },
     {
       "id": "NY_14",
@@ -185,7 +198,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_14/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_014-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_014-grosplan.png",
+      "datePosed": "2000-02-23"
     },
     {
       "id": "NY_15",
@@ -198,7 +212,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_15/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_015-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_015-grosplan.png",
+      "datePosed": "2000-02-23"
     },
     {
       "id": "NY_16",
@@ -211,7 +226,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_16/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_016-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_016-grosplan.png",
+      "datePosed": "2000-02-23"
     },
     {
       "id": "NY_17",
@@ -224,7 +240,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_17/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_017-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_017-grosplan.png",
+      "datePosed": "2000-02-24"
     },
     {
       "id": "NY_18",
@@ -237,7 +254,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_18/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_018-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_018-grosplan.png",
+      "datePosed": "2000-02-24"
     },
     {
       "id": "NY_19",
@@ -250,7 +268,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_19/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_019-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_019-grosplan.png",
+      "datePosed": "2000-02-25"
     },
     {
       "id": "NY_20",
@@ -263,7 +282,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_20/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_020-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_020-grosplan.png",
+      "datePosed": "2000-02-25"
     },
     {
       "id": "NY_21",
@@ -276,7 +296,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_21/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_021-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_021-grosplan.png",
+      "datePosed": "2000-02-25"
     },
     {
       "id": "NY_23",
@@ -289,7 +310,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_23/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_023-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_023-grosplan.png",
+      "datePosed": "2000-02-26"
     },
     {
       "id": "NY_24",
@@ -302,7 +324,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_24/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_024-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_024-grosplan.png",
+      "datePosed": "2000-02-26"
     },
     {
       "id": "NY_25",
@@ -315,7 +338,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_25/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_025-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_025-grosplan.png",
+      "datePosed": "2000-02-26"
     },
     {
       "id": "NY_26",
@@ -328,7 +352,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_26/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_026-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_026-grosplan.png",
+      "datePosed": "2000-02-26"
     },
     {
       "id": "NY_27",
@@ -341,7 +366,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_27/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_027-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_027-grosplan.png",
+      "datePosed": "2000-02-26"
     },
     {
       "id": "NY_28",
@@ -354,7 +380,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_28/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_028-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_028-grosplan.png",
+      "datePosed": "2000-02-26"
     },
     {
       "id": "NY_29",
@@ -367,7 +394,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_29/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_029-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_029-grosplan.png",
+      "datePosed": "2000-02-27"
     },
     {
       "id": "NY_30",
@@ -380,7 +408,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_30/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_030-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_030-grosplan.png",
+      "datePosed": "2000-02-27"
     },
     {
       "id": "NY_31",
@@ -393,7 +422,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_31/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_031-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_031-grosplan.png",
+      "datePosed": "2000-02-27"
     },
     {
       "id": "NY_32",
@@ -406,7 +436,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_32/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_032-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_032-grosplan.png",
+      "datePosed": "2000-02-27"
     },
     {
       "id": "NY_33",
@@ -419,7 +450,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_33/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_033-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_033-grosplan.png",
+      "datePosed": "2000-02-27"
     },
     {
       "id": "NY_34",
@@ -432,7 +464,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_34/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_034-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_034-grosplan.png",
+      "datePosed": "2003-06-20"
     },
     {
       "id": "NY_35",
@@ -445,7 +478,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_35/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_035-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_035-grosplan.png",
+      "datePosed": "2003-06-20"
     },
     {
       "id": "NY_36",
@@ -458,7 +492,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_36/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_036-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_036-grosplan.png",
+      "datePosed": "2003-06-20"
     },
     {
       "id": "NY_37",
@@ -471,7 +506,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_37/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_037-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_037-grosplan.png",
+      "datePosed": "2003-06-20"
     },
     {
       "id": "NY_38",
@@ -484,7 +520,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_38/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_038-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_038-grosplan.png",
+      "datePosed": "2003-06-20"
     },
     {
       "id": "NY_39",
@@ -497,7 +534,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_39/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_039-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_039-grosplan.png",
+      "datePosed": "2003-06-20"
     },
     {
       "id": "NY_40",
@@ -510,7 +548,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_40/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_040-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_040-grosplan.png",
+      "datePosed": "2003-06-21"
     },
     {
       "id": "NY_41",
@@ -523,7 +562,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_41/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_041-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_041-grosplan.png",
+      "datePosed": "2003-06-21"
     },
     {
       "id": "NY_42",
@@ -536,7 +576,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_42/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_042-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_042-grosplan.png",
+      "datePosed": "2003-06-22"
     },
     {
       "id": "NY_43",
@@ -549,7 +590,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_43/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_043-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_043-grosplan.png",
+      "datePosed": "2003-06-22"
     },
     {
       "id": "NY_44",
@@ -562,7 +604,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_44/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_044-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_044-grosplan.png",
+      "datePosed": "2003-06-22"
     },
     {
       "id": "NY_45",
@@ -575,7 +618,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_45/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_045-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_045-grosplan.png",
+      "datePosed": "2003-06-23"
     },
     {
       "id": "NY_46",
@@ -588,7 +632,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_46/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_046-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_046-grosplan.png",
+      "datePosed": "2003-06-23"
     },
     {
       "id": "NY_47",
@@ -601,7 +646,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_47/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_047-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_047-grosplan.png",
+      "datePosed": "2003-06-23"
     },
     {
       "id": "NY_48",
@@ -614,7 +660,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_48/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_048-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_048-grosplan.png",
+      "datePosed": "2003-06-23"
     },
     {
       "id": "NY_49",
@@ -627,7 +674,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_49/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_049-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_049-grosplan.png",
+      "datePosed": "2003-06-23"
     },
     {
       "id": "NY_50",
@@ -640,7 +688,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_50/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_050-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_050-grosplan.png",
+      "datePosed": "2003-06-23"
     },
     {
       "id": "NY_51",
@@ -653,7 +702,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_51/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_051-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_051-grosplan.png",
+      "datePosed": "2003-06-24"
     },
     {
       "id": "NY_52",
@@ -666,7 +716,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_52/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_052-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_052-grosplan.png",
+      "datePosed": "2003-06-24"
     },
     {
       "id": "NY_53",
@@ -679,7 +730,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_53/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_053-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_053-grosplan.png",
+      "datePosed": "2003-06-24"
     },
     {
       "id": "NY_54",
@@ -692,7 +744,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_54/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_054-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_054-grosplan.png",
+      "datePosed": "2003-06-24"
     },
     {
       "id": "NY_55",
@@ -705,7 +758,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_55/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_055-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_055-grosplan.png",
+      "datePosed": "2003-06-25"
     },
     {
       "id": "NY_56",
@@ -718,7 +772,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_56/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_056-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_056-grosplan.png",
+      "datePosed": "2003-06-25"
     },
     {
       "id": "NY_57",
@@ -731,7 +786,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_57/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_057-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_057-grosplan.png",
+      "datePosed": "2003-06-25"
     },
     {
       "id": "NY_58",
@@ -744,7 +800,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_58/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_058-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_058-grosplan.png",
+      "datePosed": "2003-06-25"
     },
     {
       "id": "NY_59",
@@ -757,7 +814,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_59/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_059-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_059-grosplan.png",
+      "datePosed": "2003-06-25"
     },
     {
       "id": "NY_60",
@@ -770,7 +828,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_60/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_060-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_060-grosplan.png",
+      "datePosed": "2003-06-26"
     },
     {
       "id": "NY_61",
@@ -783,7 +842,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_61/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_061-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_061-grosplan.png",
+      "datePosed": "2003-06-26"
     },
     {
       "id": "NY_62",
@@ -796,7 +856,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_62/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_062-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_062-grosplan.png",
+      "datePosed": "2003-06-26"
     },
     {
       "id": "NY_63",
@@ -809,7 +870,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_63/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_063-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_063-grosplan.png",
+      "datePosed": "2003-06-26"
     },
     {
       "id": "NY_64",
@@ -822,7 +884,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_64/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_064-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_064-grosplan.png",
+      "datePosed": "2003-06-26"
     },
     {
       "id": "NY_65",
@@ -835,7 +898,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_65/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_065-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_065-grosplan.png",
+      "datePosed": "2003-06-27"
     },
     {
       "id": "NY_66",
@@ -848,7 +912,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_66/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_066-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_066-grosplan.png",
+      "datePosed": "2003-06-27"
     },
     {
       "id": "NY_67",
@@ -861,7 +926,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_67/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_067-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_067-grosplan.png",
+      "datePosed": "2003-06-27"
     },
     {
       "id": "NY_68",
@@ -874,7 +940,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_68/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_068-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_068-grosplan.png",
+      "datePosed": "2003-06-27"
     },
     {
       "id": "NY_69",
@@ -887,7 +954,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_69/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_069-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_069-grosplan.png",
+      "datePosed": "2003-06-27"
     },
     {
       "id": "NY_70",
@@ -900,7 +968,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_70/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_070-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_070-grosplan.png",
+      "datePosed": "2003-06-28"
     },
     {
       "id": "NY_71",
@@ -913,7 +982,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_71/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_071-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_071-grosplan.png",
+      "datePosed": "2003-06-28"
     },
     {
       "id": "NY_72",
@@ -926,7 +996,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_72/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_072-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_072-grosplan.png",
+      "datePosed": "2003-06-28"
     },
     {
       "id": "NY_73",
@@ -939,7 +1010,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_73/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_073-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_073-grosplan.png",
+      "datePosed": "2003-06-30"
     },
     {
       "id": "NY_74",
@@ -952,7 +1024,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_74/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_074-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_074-grosplan.png",
+      "datePosed": "2003-06-30"
     },
     {
       "id": "NY_75",
@@ -965,7 +1038,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_75/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_075-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_075-grosplan.png",
+      "datePosed": "2003-07-05"
     },
     {
       "id": "NY_76",
@@ -978,7 +1052,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_76/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_076-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_076-grosplan.png",
+      "datePosed": "2003-07-05"
     },
     {
       "id": "NY_77",
@@ -991,7 +1066,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_77/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_077-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_077-grosplan.png",
+      "datePosed": "2003-07-06"
     },
     {
       "id": "NY_78",
@@ -1004,7 +1080,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_78/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_078-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_078-grosplan.png",
+      "datePosed": "2003-07-06"
     },
     {
       "id": "NY_79",
@@ -1017,7 +1094,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_79/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_079-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_079-grosplan.png",
+      "datePosed": "2003-07-06"
     },
     {
       "id": "NY_80",
@@ -1030,7 +1108,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_80/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_080-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_080-grosplan.png",
+      "datePosed": "2003-07-06"
     },
     {
       "id": "NY_81",
@@ -1043,7 +1122,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_81/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_081-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_081-grosplan.png",
+      "datePosed": "2003-07-07"
     },
     {
       "id": "NY_82",
@@ -1056,7 +1136,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_82/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_082-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_082-grosplan.png",
+      "datePosed": "2003-07-07"
     },
     {
       "id": "NY_83",
@@ -1069,7 +1150,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_83/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_083-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_083-grosplan.png",
+      "datePosed": "2003-07-07"
     },
     {
       "id": "NY_84",
@@ -1082,7 +1164,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_84/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_084-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_084-grosplan.png",
+      "datePosed": "2003-07-07"
     },
     {
       "id": "NY_85",
@@ -1095,7 +1178,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_85/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_085-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_085-grosplan.png",
+      "datePosed": "2003-07-08"
     },
     {
       "id": "NY_86",
@@ -1108,7 +1192,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_86/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_086-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_086-grosplan.png",
+      "datePosed": "2007-11-28"
     },
     {
       "id": "NY_87",
@@ -1121,7 +1206,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_87/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_087-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_087-grosplan.png",
+      "datePosed": "2007-11-28"
     },
     {
       "id": "NY_88",
@@ -1134,7 +1220,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_88/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_088-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_088-grosplan.png",
+      "datePosed": "2007-11-29"
     },
     {
       "id": "NY_89",
@@ -1147,7 +1234,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_89/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_089-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_089-grosplan.png",
+      "datePosed": "2007-11-29"
     },
     {
       "id": "NY_90",
@@ -1160,7 +1248,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_90/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_090-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_090-grosplan.png",
+      "datePosed": "2007-11-30"
     },
     {
       "id": "NY_91",
@@ -1173,7 +1262,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_91/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_091-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_091-grosplan.png",
+      "datePosed": "2007-11-30"
     },
     {
       "id": "NY_92",
@@ -1186,7 +1276,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_92/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_092-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_092-grosplan.png",
+      "datePosed": "2007-11-30"
     },
     {
       "id": "NY_93",
@@ -1199,7 +1290,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_93/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_093-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_093-grosplan.png",
+      "datePosed": "2007-12-01"
     },
     {
       "id": "NY_94",
@@ -1212,7 +1304,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_94/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_094-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_094-grosplan.png",
+      "datePosed": "2007-12-02"
     },
     {
       "id": "NY_95",
@@ -1225,7 +1318,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_95/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_095-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_095-grosplan.png",
+      "datePosed": "2007-12-02"
     },
     {
       "id": "NY_96",
@@ -1238,7 +1332,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_96/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_096-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_096-grosplan.png",
+      "datePosed": "2007-12-03"
     },
     {
       "id": "NY_97",
@@ -1251,7 +1346,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_97/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_097-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_097-grosplan.png",
+      "datePosed": "2007-12-03"
     },
     {
       "id": "NY_98",
@@ -1264,7 +1360,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_98/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_098-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_098-grosplan.png",
+      "datePosed": "2007-12-03"
     },
     {
       "id": "NY_99",
@@ -1277,7 +1374,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_99/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_099-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_099-grosplan.png",
+      "datePosed": "2007-12-03"
     },
     {
       "id": "NY_100",
@@ -1290,7 +1388,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_100/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_100-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_100-grosplan.png",
+      "datePosed": "2007-12-03"
     },
     {
       "id": "NY_101",
@@ -1303,7 +1402,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_101/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_101-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_101-grosplan.png",
+      "datePosed": "2007-12-03"
     },
     {
       "id": "NY_102",
@@ -1316,7 +1416,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_102/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_102-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_102-grosplan.png",
+      "datePosed": "2007-12-03"
     },
     {
       "id": "NY_103",
@@ -1329,7 +1430,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_103/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_103-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_103-grosplan.png",
+      "datePosed": "2007-12-04"
     },
     {
       "id": "NY_104",
@@ -1342,7 +1444,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_104/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_104-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_104-grosplan.png",
+      "datePosed": "2007-12-04"
     },
     {
       "id": "NY_105",
@@ -1355,7 +1458,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_105/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_105-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_105-grosplan.png",
+      "datePosed": "2007-12-04"
     },
     {
       "id": "NY_106",
@@ -1368,7 +1472,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_106/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_106-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_106-grosplan.png",
+      "datePosed": "2007-12-04"
     },
     {
       "id": "NY_107",
@@ -1381,7 +1486,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_107/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_107-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_107-grosplan.png",
+      "datePosed": "2007-12-05"
     },
     {
       "id": "NY_108",
@@ -1394,7 +1500,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_108/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_108-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_108-grosplan.png",
+      "datePosed": "2007-12-05"
     },
     {
       "id": "NY_109",
@@ -1407,7 +1514,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_109/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_109-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_109-grosplan.png",
+      "datePosed": "2007-12-05"
     },
     {
       "id": "NY_110",
@@ -1420,7 +1528,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_110/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_110-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_110-grosplan.png",
+      "datePosed": "2007-12-05"
     },
     {
       "id": "NY_111",
@@ -1433,7 +1542,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_111/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_111-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_111-grosplan.png",
+      "datePosed": "2007-12-06"
     },
     {
       "id": "NY_112",
@@ -1446,7 +1556,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_112/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_112-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_112-grosplan.png",
+      "datePosed": "2007-12-06"
     },
     {
       "id": "NY_113",
@@ -1459,7 +1570,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_113/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_113-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_113-grosplan.png",
+      "datePosed": "2007-12-06"
     },
     {
       "id": "NY_114",
@@ -1472,7 +1584,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_114/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_114-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_114-grosplan.png",
+      "datePosed": "2009-06-23"
     },
     {
       "id": "NY_115",
@@ -1485,7 +1598,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_115/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_115-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_115-grosplan.png",
+      "datePosed": "2009-06-25"
     },
     {
       "id": "NY_116",
@@ -1498,7 +1612,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_116/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_116-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_116-grosplan.png",
+      "datePosed": "2009-06-25"
     },
     {
       "id": "NY_117",
@@ -1511,7 +1626,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_117/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_117-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_117-grosplan.png",
+      "datePosed": "2009-06-26"
     },
     {
       "id": "NY_118",
@@ -1524,7 +1640,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_118/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_118-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_118-grosplan.png",
+      "datePosed": "2009-06-27"
     },
     {
       "id": "NY_119",
@@ -1537,7 +1654,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_119/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_119-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_119-grosplan.png",
+      "datePosed": "2009-06-28"
     },
     {
       "id": "NY_120",
@@ -1550,7 +1668,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_120/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_120-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_120-grosplan.png",
+      "datePosed": "2009-06-29"
     },
     {
       "id": "NY_121",
@@ -1563,7 +1682,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_121/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_121-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_121-grosplan.png",
+      "datePosed": "2013-10-27"
     },
     {
       "id": "NY_122",
@@ -1576,7 +1696,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_122/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_122-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_122-grosplan.png",
+      "datePosed": "2013-10-27"
     },
     {
       "id": "NY_123",
@@ -1589,7 +1710,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_123/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_123-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_123-grosplan.png",
+      "datePosed": "2013-10-27"
     },
     {
       "id": "NY_124",
@@ -1602,7 +1724,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_124/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_124-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_124-grosplan.png",
+      "datePosed": "2013-10-27"
     },
     {
       "id": "NY_125",
@@ -1615,7 +1738,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_125/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_125-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_125-grosplan.png",
+      "datePosed": "2013-10-27"
     },
     {
       "id": "NY_126",
@@ -1628,7 +1752,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_126/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_126-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_126-grosplan.png",
+      "datePosed": "2013-10-27"
     },
     {
       "id": "NY_127",
@@ -1641,7 +1766,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_127/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_127-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_127-grosplan.png",
+      "datePosed": "2013-10-27"
     },
     {
       "id": "NY_128",
@@ -1654,7 +1780,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_128/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_128-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_128-grosplan.png",
+      "datePosed": "2013-10-28"
     },
     {
       "id": "NY_129",
@@ -1667,7 +1794,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_129/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_129-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_129-grosplan.png",
+      "datePosed": "2013-10-28"
     },
     {
       "id": "NY_130",
@@ -1680,7 +1808,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_130/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_130-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_130-grosplan.png",
+      "datePosed": "2013-10-28"
     },
     {
       "id": "NY_131",
@@ -1693,7 +1822,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_131/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_131-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_131-grosplan.png",
+      "datePosed": "2013-10-29"
     },
     {
       "id": "NY_132",
@@ -1706,7 +1836,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_132/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_132-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_132-grosplan.png",
+      "datePosed": "2013-10-29"
     },
     {
       "id": "NY_133",
@@ -1719,7 +1850,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_133/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_133-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_133-grosplan.png",
+      "datePosed": "2013-10-29"
     },
     {
       "id": "NY_134",
@@ -1732,7 +1864,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_134/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_134-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_134-grosplan.png",
+      "datePosed": "2013-10-29"
     },
     {
       "id": "NY_135",
@@ -1745,7 +1878,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_135/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_135-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_135-grosplan.png",
+      "datePosed": "2013-10-29"
     },
     {
       "id": "NY_136",
@@ -1758,7 +1892,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_136/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_136-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_136-grosplan.png",
+      "datePosed": "2013-11-01"
     },
     {
       "id": "NY_137",
@@ -1771,7 +1906,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_137/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_137-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_137-grosplan.png",
+      "datePosed": "2013-11-01"
     },
     {
       "id": "NY_138",
@@ -1784,7 +1920,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_138/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_138-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_138-grosplan.png",
+      "datePosed": "2013-11-01"
     },
     {
       "id": "NY_139",
@@ -1797,7 +1934,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_139/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_139-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_139-grosplan.png",
+      "datePosed": "2013-11-01"
     },
     {
       "id": "NY_140",
@@ -1810,7 +1948,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_140/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_140-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_140-grosplan.png",
+      "datePosed": "2013-11-01"
     },
     {
       "id": "NY_141",
@@ -1823,7 +1962,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_141/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_141-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_141-grosplan.png",
+      "datePosed": "2013-11-01"
     },
     {
       "id": "NY_142",
@@ -1836,7 +1976,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_142/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_142-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_142-grosplan.png",
+      "datePosed": "2013-11-03"
     },
     {
       "id": "NY_143",
@@ -1849,7 +1990,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_143/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_143-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_143-grosplan.png",
+      "datePosed": "2013-11-03"
     },
     {
       "id": "NY_144",
@@ -1862,7 +2004,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_144/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_144-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_144-grosplan.png",
+      "datePosed": "2013-11-03"
     },
     {
       "id": "NY_145",
@@ -1875,7 +2018,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_145/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_145-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_145-grosplan.png",
+      "datePosed": "2013-11-03"
     },
     {
       "id": "NY_146",
@@ -1888,7 +2032,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_146/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_146-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_146-grosplan.png",
+      "datePosed": "2013-11-03"
     },
     {
       "id": "NY_147",
@@ -1901,7 +2046,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_147/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_147-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_147-grosplan.png",
+      "datePosed": "2015-08-08"
     },
     {
       "id": "NY_148",
@@ -1914,7 +2060,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_148/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_148-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_148-grosplan.png",
+      "datePosed": "2015-11-07"
     },
     {
       "id": "NY_149",
@@ -1927,7 +2074,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_149/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_149-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_149-grosplan.png",
+      "datePosed": "2015-11-09"
     },
     {
       "id": "NY_150",
@@ -1940,7 +2088,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_150/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_150-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_150-grosplan.png",
+      "datePosed": "2015-11-09"
     },
     {
       "id": "NY_151",
@@ -1953,7 +2102,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_151/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_151-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_151-grosplan.png",
+      "datePosed": "2015-11-10"
     },
     {
       "id": "NY_152",
@@ -1966,7 +2116,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_152/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_152-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_152-grosplan.png",
+      "datePosed": "2015-11-11"
     },
     {
       "id": "NY_153",
@@ -1979,7 +2130,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_153/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_153-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_153-grosplan.png",
+      "datePosed": "2015-11-11"
     },
     {
       "id": "NY_154",
@@ -1992,7 +2144,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_154/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_154-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_154-grosplan.png",
+      "datePosed": "2015-11-12"
     },
     {
       "id": "NY_155",
@@ -2005,7 +2158,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_155/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_155-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_155-grosplan.png",
+      "datePosed": "2015-11-12"
     },
     {
       "id": "NY_156",
@@ -2018,7 +2172,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_156/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_156-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_156-grosplan.png",
+      "datePosed": "2015-11-12"
     },
     {
       "id": "NY_157",
@@ -2031,7 +2186,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_157/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_157-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_157-grosplan.png",
+      "datePosed": "2015-11-12"
     },
     {
       "id": "NY_158",
@@ -2044,7 +2200,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_158/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_158-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_158-grosplan.png",
+      "datePosed": "2015-11-14"
     },
     {
       "id": "NY_159",
@@ -2057,7 +2214,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_159/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_159-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_159-grosplan.png",
+      "datePosed": "2015-11-14"
     },
     {
       "id": "NY_160",
@@ -2070,7 +2228,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_160/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_160-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_160-grosplan.png",
+      "datePosed": "2015-11-14"
     },
     {
       "id": "NY_161",
@@ -2083,7 +2242,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_161/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_161-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_161-grosplan.png",
+      "datePosed": "2015-11-15"
     },
     {
       "id": "NY_162",
@@ -2096,7 +2256,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_162/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_162-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_162-grosplan.png",
+      "datePosed": "2015-11-16"
     },
     {
       "id": "NY_163",
@@ -2109,7 +2270,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_163/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_163-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_163-grosplan.png",
+      "datePosed": "2015-11-17"
     },
     {
       "id": "NY_164",
@@ -2122,7 +2284,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_164/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_164-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_164-grosplan.png",
+      "datePosed": "2015-11-17"
     },
     {
       "id": "NY_165",
@@ -2135,7 +2298,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_165/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_165-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_165-grosplan.png",
+      "datePosed": "2015-11-17"
     },
     {
       "id": "NY_166",
@@ -2148,7 +2312,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_166/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_166-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_166-grosplan.png",
+      "datePosed": "2015-11-17"
     },
     {
       "id": "NY_167",
@@ -2161,7 +2326,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_167/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_167-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_167-grosplan.png",
+      "datePosed": "2015-11-17"
     },
     {
       "id": "NY_168",
@@ -2174,7 +2340,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_168/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_168-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_168-grosplan.png",
+      "datePosed": "2015-11-18"
     },
     {
       "id": "NY_169",
@@ -2187,7 +2354,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_169/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_169-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_169-grosplan.png",
+      "datePosed": "2015-11-18"
     },
     {
       "id": "NY_170",
@@ -2200,7 +2368,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_170/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_170-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_170-grosplan.png",
+      "datePosed": "2015-11-19"
     },
     {
       "id": "NY_171",
@@ -2213,7 +2382,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_171/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_171-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_171-grosplan.png",
+      "datePosed": "2015-11-19"
     },
     {
       "id": "NY_172",
@@ -2226,7 +2396,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_172/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_172-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_172-grosplan.png",
+      "datePosed": "2015-11-19"
     },
     {
       "id": "NY_173",
@@ -2239,7 +2410,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_173/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_173-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_173-grosplan.png",
+      "datePosed": "2015-11-19"
     },
     {
       "id": "NY_174",
@@ -2252,7 +2424,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_174/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_174-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_174-grosplan.png",
+      "datePosed": "2015-11-20"
     },
     {
       "id": "NY_175",
@@ -2265,7 +2438,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_175/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_175-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_175-grosplan.png",
+      "datePosed": "2015-11-20"
     },
     {
       "id": "NY_176",
@@ -2278,7 +2452,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_176/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_176-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_176-grosplan.png",
+      "datePosed": "2015-11-20"
     },
     {
       "id": "NY_177",
@@ -2291,7 +2466,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_177/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_177-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_177-grosplan.png",
+      "datePosed": "2015-11-20"
     },
     {
       "id": "NY_178",
@@ -2304,7 +2480,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_178/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_178-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_178-grosplan.png",
+      "datePosed": "2015-11-20"
     },
     {
       "id": "NY_179",
@@ -2317,7 +2494,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_179/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_179-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_179-grosplan.png",
+      "datePosed": "2015-11-21"
     },
     {
       "id": "NY_180",
@@ -2330,7 +2508,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_180/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_180-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_180-grosplan.png",
+      "datePosed": "2015-11-22"
     },
     {
       "id": "NY_181",
@@ -2343,7 +2522,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_181/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_181-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_181-grosplan.png",
+      "datePosed": "2015-11-22"
     },
     {
       "id": "NY_182",
@@ -2356,7 +2536,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_182/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_182-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_182-grosplan.png",
+      "datePosed": "2015-11-22"
     },
     {
       "id": "NY_183",
@@ -2369,7 +2550,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_183/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_183-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_183-grosplan.png",
+      "datePosed": "2015-11-22"
     },
     {
       "id": "NY_184",
@@ -2382,7 +2564,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_184/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_184-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_184-grosplan.png",
+      "datePosed": "2015-11-22"
     },
     {
       "id": "NY_185",
@@ -2395,7 +2578,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_185/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_185-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_185-grosplan.png",
+      "datePosed": "2015-11-22"
     },
     {
       "id": "NY_186",
@@ -2408,7 +2592,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_186/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_186-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_186-grosplan.png",
+      "datePosed": "2015-11-22"
     },
     {
       "id": "NY_187",
@@ -2421,7 +2606,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_187/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_187-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_187-grosplan.png",
+      "datePosed": "2015-11-23"
     },
     {
       "id": "NY_188",
@@ -2434,7 +2620,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_188/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_188-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_188-grosplan.png",
+      "datePosed": "2015-11-23"
     },
     {
       "id": "NY_189",
@@ -2447,7 +2634,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_189/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_189-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_189-grosplan.png",
+      "datePosed": "2016-05-08"
     },
     {
       "id": "NY_216",
@@ -2460,7 +2648,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_216/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_216-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_216-grosplan.png",
+      "datePosed": "2019-08-09"
     },
     {
       "id": "NY_217",
@@ -2473,7 +2662,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_217/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_217-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_217-grosplan.png",
+      "datePosed": "2019-08-12"
     },
     {
       "id": "NY_218",
@@ -2486,7 +2676,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_218/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_218-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_218-grosplan.png",
+      "datePosed": "2019-08-13"
     },
     {
       "id": "NY_219",
@@ -2499,7 +2690,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ny_219/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_219-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_219-grosplan.png",
+      "datePosed": "2019-08-13"
     }
   ]
 }

@@ -53,7 +53,8 @@
       "alreadyFlashed": "✓ Flashé",
       "navigate": "Itinéraire",
       "instagram": "Voir sur Instagram",
-      "labelsTitle": "ÉTIQUETTES"
+      "labelsTitle": "ÉTIQUETTES",
+      "posedOn": "Posé le {{date}}"
     },
     "loading": {
       "progress": "CHARGEMENT ({{pct}}%)"

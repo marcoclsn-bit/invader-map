@@ -1,6 +1,6 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-06",
+  "version": 6,
+  "updatedAt": "2026-07-19",
   "city": "LBR",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 8,
@@ -16,7 +16,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lbr_01/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LBR/LBR_01-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LBR/LBR_01-grosplan.png",
+      "datePosed": "2018-07-10"
     },
     {
       "id": "LBR_02",
@@ -29,7 +30,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lbr_02/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LBR/LBR_02-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LBR/LBR_02-grosplan.png",
+      "datePosed": "2018-07-15"
     },
     {
       "id": "LBR_03",
@@ -42,7 +44,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lbr_03/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LBR/LBR_03-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LBR/LBR_03-grosplan.png",
+      "datePosed": "2018-07-16"
     },
     {
       "id": "LBR_04",
@@ -55,7 +58,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lbr_04/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LBR/LBR_04-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LBR/LBR_04-grosplan.png",
+      "datePosed": "2018-07-26"
     },
     {
       "id": "LBR_05",
@@ -68,7 +72,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lbr_05/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LBR/LBR_05-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LBR/LBR_05-grosplan.png",
+      "datePosed": "2018-07-26"
     },
     {
       "id": "LBR_06",
@@ -81,7 +86,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lbr_06/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LBR/LBR_06-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LBR/LBR_06-grosplan.png",
+      "datePosed": "2018-07-26"
     },
     {
       "id": "LBR_07",
@@ -94,7 +100,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lbr_07/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LBR/LBR_07-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LBR/LBR_07-grosplan.png",
+      "datePosed": "2018-07-26"
     },
     {
       "id": "LBR_08",
@@ -107,7 +114,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lbr_08/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LBR/LBR_08-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LBR/LBR_08-grosplan.png",
+      "datePosed": "2018-07-27"
     }
   ]
 }

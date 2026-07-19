@@ -53,7 +53,8 @@
       "alreadyFlashed": "✓ Hecho",
       "navigate": "Cómo llegar",
       "instagram": "Ver en Instagram",
-      "labelsTitle": "ETIQUETAS"
+      "labelsTitle": "ETIQUETAS",
+      "posedOn": "Instalado el {{date}}"
     },
     "loading": {
       "progress": "CARGANDO ({{pct}}%)"

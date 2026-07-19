@@ -1,6 +1,6 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-06",
+  "version": 6,
+  "updatedAt": "2026-07-19",
   "city": "KAT",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 20,
@@ -16,7 +16,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/kat_01/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_01-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_01-grosplan.png",
+      "datePosed": "2008-02-27"
     },
     {
       "id": "KAT_03",
@@ -29,7 +30,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/kat_03/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_03-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_03-grosplan.png",
+      "datePosed": "2008-02-28"
     },
     {
       "id": "KAT_05",
@@ -42,7 +44,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/kat_05/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_05-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_05-grosplan.png",
+      "datePosed": "2008-02-28"
     },
     {
       "id": "KAT_07",
@@ -55,7 +58,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/kat_07/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_07-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_07-grosplan.png",
+      "datePosed": "2008-02-29"
     },
     {
       "id": "KAT_08",
@@ -68,7 +72,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/kat_08/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_08-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_08-grosplan.png",
+      "datePosed": "2008-02-29"
     },
     {
       "id": "KAT_09",
@@ -81,7 +86,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/kat_09/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_09-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_09-grosplan.png",
+      "datePosed": "2008-02-29"
     },
     {
       "id": "KAT_10",
@@ -94,7 +100,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/kat_10/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_10-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_10-grosplan.png",
+      "datePosed": "2008-02-29"
     },
     {
       "id": "KAT_11",
@@ -107,7 +114,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/kat_11/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_11-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_11-grosplan.png",
+      "datePosed": "2008-03-01"
     },
     {
       "id": "KAT_12",
@@ -120,7 +128,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/kat_12/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_12-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_12-grosplan.png",
+      "datePosed": "2008-03-01"
     },
     {
       "id": "KAT_13",
@@ -133,7 +142,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/kat_13/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_13-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_13-grosplan.png",
+      "datePosed": "2008-03-01"
     },
     {
       "id": "KAT_15",
@@ -146,7 +156,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/kat_15/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_15-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_15-grosplan.png",
+      "datePosed": "2008-03-01"
     },
     {
       "id": "KAT_16",
@@ -159,7 +170,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/kat_16/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_16-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_16-grosplan.png",
+      "datePosed": "2008-03-01"
     },
     {
       "id": "KAT_17",
@@ -172,7 +184,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/kat_17/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_17-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_17-grosplan.png",
+      "datePosed": "2008-03-01"
     },
     {
       "id": "KAT_18",
@@ -185,7 +198,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/kat_18/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_18-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_18-grosplan.png",
+      "datePosed": "2008-03-02"
     },
     {
       "id": "KAT_19",
@@ -199,7 +213,8 @@
       "source": "pnote",
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_19-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_19-grosplan.png",
+      "datePosed": "2008-03-02"
     },
     {
       "id": "KAT_22",
@@ -212,7 +227,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/kat_22/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_22-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_22-grosplan.png",
+      "datePosed": "2008-03-03"
     },
     {
       "id": "KAT_23",
@@ -225,7 +241,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/kat_23/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_23-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_23-grosplan.png",
+      "datePosed": "2008-03-04"
     },
     {
       "id": "KAT_25",
@@ -238,7 +255,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/kat_25/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_25-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_25-grosplan.png",
+      "datePosed": "2008-03-04"
     },
     {
       "id": "KAT_26",
@@ -251,7 +269,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/kat_26/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_26-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_26-grosplan.png",
+      "datePosed": "2008-03-05"
     },
     {
       "id": "KAT_27",
@@ -264,7 +283,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/kat_27/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_27-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_27-grosplan.png",
+      "datePosed": "2008-03-05"
     },
     {
       "id": "KAT_28",
@@ -277,7 +297,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/kat_28/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_28-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_28-grosplan.png",
+      "datePosed": "2008-03-05"
     }
   ]
 }

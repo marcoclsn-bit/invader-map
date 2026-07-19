@@ -1,6 +1,6 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-06",
+  "version": 6,
+  "updatedAt": "2026-07-19",
   "city": "CON",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 2,
@@ -16,7 +16,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/con_01/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CON/CON_01-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CON/CON_01-grosplan.png",
+      "datePosed": "2010-08-13"
     },
     {
       "id": "CON_02",
@@ -29,7 +30,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/con_02/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CON/CON_02-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CON/CON_02-grosplan.png",
+      "datePosed": "2010-08-13"
     }
   ]
 }

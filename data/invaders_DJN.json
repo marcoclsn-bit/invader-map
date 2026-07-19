@@ -1,6 +1,6 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-06",
+  "version": 6,
+  "updatedAt": "2026-07-19",
   "city": "DJN",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 22,
@@ -16,7 +16,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/djn_01/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_01-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_01-grosplan.png",
+      "datePosed": "2009-09-27"
     },
     {
       "id": "DJN_02",
@@ -29,7 +30,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/djn_02/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_02-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_02-grosplan.png",
+      "datePosed": "2009-09-27"
     },
     {
       "id": "DJN_03",
@@ -42,7 +44,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/djn_03/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_03-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_03-grosplan.png",
+      "datePosed": "2009-09-27"
     },
     {
       "id": "DJN_04",
@@ -55,7 +58,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/djn_04/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_04-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_04-grosplan.png",
+      "datePosed": "2009-09-27"
     },
     {
       "id": "DJN_05",
@@ -68,7 +72,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/djn_05/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_05-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_05-grosplan.png",
+      "datePosed": "2009-09-27"
     },
     {
       "id": "DJN_06",
@@ -81,7 +86,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/djn_06/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_06-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_06-grosplan.png",
+      "datePosed": "2009-09-27"
     },
     {
       "id": "DJN_07",
@@ -94,7 +100,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/djn_07/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_07-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_07-grosplan.png",
+      "datePosed": "2009-09-27"
     },
     {
       "id": "DJN_08",
@@ -107,7 +114,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/djn_08/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_08-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_08-grosplan.png",
+      "datePosed": "2009-09-28"
     },
     {
       "id": "DJN_09",
@@ -120,7 +128,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/djn_09/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_09-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_09-grosplan.png",
+      "datePosed": "2009-09-28"
     },
     {
       "id": "DJN_10",
@@ -133,7 +142,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/djn_10/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_10-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_10-grosplan.png",
+      "datePosed": "2009-09-28"
     },
     {
       "id": "DJN_11",
@@ -146,7 +156,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/djn_11/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_11-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_11-grosplan.png",
+      "datePosed": "2009-09-28"
     },
     {
       "id": "DJN_13",
@@ -159,7 +170,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/djn_13/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_13-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_13-grosplan.png",
+      "datePosed": "2009-09-28"
     },
     {
       "id": "DJN_14",
@@ -172,7 +184,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/djn_14/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_14-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_14-grosplan.png",
+      "datePosed": "2009-09-29"
     },
     {
       "id": "DJN_15",
@@ -185,7 +198,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/djn_15/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_15-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_15-grosplan.png",
+      "datePosed": "2009-09-29"
     },
     {
       "id": "DJN_16",
@@ -198,7 +212,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/djn_16/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_16-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_16-grosplan.png",
+      "datePosed": "2009-09-29"
     },
     {
       "id": "DJN_17",
@@ -211,7 +226,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/djn_17/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_17-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_17-grosplan.png",
+      "datePosed": "2009-09-30"
     },
     {
       "id": "DJN_18",
@@ -224,7 +240,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/djn_18/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_18-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_18-grosplan.png",
+      "datePosed": "2009-10-01"
     },
     {
       "id": "DJN_19",
@@ -237,7 +254,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/djn_19/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_19-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_19-grosplan.png",
+      "datePosed": "2009-10-01"
     },
     {
       "id": "DJN_20",
@@ -250,7 +268,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/djn_20/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_20-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_20-grosplan.png",
+      "datePosed": "2009-10-01"
     },
     {
       "id": "DJN_21",
@@ -263,7 +282,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/djn_21/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_21-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_21-grosplan.png",
+      "datePosed": "2009-10-01"
     },
     {
       "id": "DJN_22",
@@ -276,7 +296,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/djn_22/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_22-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_22-grosplan.png",
+      "datePosed": "2009-10-01"
     },
     {
       "id": "DJN_23",
@@ -289,7 +310,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/djn_23/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_23-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_23-grosplan.png",
+      "datePosed": "2009-10-02"
     }
   ]
 }

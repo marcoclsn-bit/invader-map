@@ -1,6 +1,6 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-06",
+  "version": 6,
+  "updatedAt": "2026-07-19",
   "city": "SD",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 20,
@@ -16,7 +16,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_01/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_01-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_01-grosplan.png",
+      "datePosed": "2010-06-01"
     },
     {
       "id": "SD_02",
@@ -29,7 +30,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_02/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_02-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_02-grosplan.png",
+      "datePosed": "2010-06-03"
     },
     {
       "id": "SD_03",
@@ -42,7 +44,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_03/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_03-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_03-grosplan.png",
+      "datePosed": "2010-06-03"
     },
     {
       "id": "SD_05",
@@ -55,7 +58,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_05/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_05-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_05-grosplan.png",
+      "datePosed": "2010-06-03"
     },
     {
       "id": "SD_06",
@@ -68,7 +72,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_06/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_06-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_06-grosplan.png",
+      "datePosed": "2010-06-03"
     },
     {
       "id": "SD_07",
@@ -81,7 +86,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_07/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_07-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_07-grosplan.png",
+      "datePosed": "2010-06-03"
     },
     {
       "id": "SD_08",
@@ -94,7 +100,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_08/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_08-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_08-grosplan.png",
+      "datePosed": "2010-06-03"
     },
     {
       "id": "SD_09",
@@ -107,7 +114,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_09/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_09-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_09-grosplan.png",
+      "datePosed": "2010-06-04"
     },
     {
       "id": "SD_10",
@@ -120,7 +128,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_10/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_10-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_10-grosplan.png",
+      "datePosed": "2010-06-04"
     },
     {
       "id": "SD_11",
@@ -133,7 +142,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_11/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_11-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_11-grosplan.png",
+      "datePosed": "2010-06-04"
     },
     {
       "id": "SD_12",
@@ -146,7 +156,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_12/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_12-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_12-grosplan.png",
+      "datePosed": "2010-06-04"
     },
     {
       "id": "SD_13",
@@ -159,7 +170,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_13/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_13-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_13-grosplan.png",
+      "datePosed": "2010-06-04"
     },
     {
       "id": "SD_14",
@@ -172,7 +184,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_14/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_14-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_14-grosplan.png",
+      "datePosed": "2010-06-04"
     },
     {
       "id": "SD_15",
@@ -185,7 +198,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_15/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_15-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_15-grosplan.png",
+      "datePosed": "2010-06-05"
     },
     {
       "id": "SD_16",
@@ -198,7 +212,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_16/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_16-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_16-grosplan.png",
+      "datePosed": "2010-06-05"
     },
     {
       "id": "SD_17",
@@ -211,7 +226,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_17/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_17-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_17-grosplan.png",
+      "datePosed": "2010-06-06"
     },
     {
       "id": "SD_18",
@@ -224,7 +240,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_18/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_18-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_18-grosplan.png",
+      "datePosed": "2010-06-06"
     },
     {
       "id": "SD_19",
@@ -237,7 +254,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_19/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_19-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_19-grosplan.png",
+      "datePosed": "2010-06-06"
     },
     {
       "id": "SD_20",
@@ -250,7 +268,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_20/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_20-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_20-grosplan.png",
+      "datePosed": "2010-06-07"
     },
     {
       "id": "SD_21",
@@ -263,7 +282,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/sd_21/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_21-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/SD/SD_21-grosplan.png",
+      "datePosed": "2010-06-07"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-06",
+  "version": 6,
+  "updatedAt": "2026-07-19",
   "city": "BXL",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 42,
@@ -16,7 +16,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_01/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_01-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_01-grosplan.png",
+      "datePosed": "2012-03-08"
     },
     {
       "id": "BXL_02",
@@ -29,7 +30,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_02/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_02-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_02-grosplan.png",
+      "datePosed": "2012-03-08"
     },
     {
       "id": "BXL_03",
@@ -42,7 +44,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_03/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_03-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_03-grosplan.png",
+      "datePosed": "2012-03-08"
     },
     {
       "id": "BXL_04",
@@ -55,7 +58,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_04/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_04-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_04-grosplan.png",
+      "datePosed": "2012-03-08"
     },
     {
       "id": "BXL_05",
@@ -68,7 +72,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_05/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_05-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_05-grosplan.png",
+      "datePosed": "2012-03-08"
     },
     {
       "id": "BXL_06",
@@ -81,7 +86,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_06/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_06-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_06-grosplan.png",
+      "datePosed": "2012-03-09"
     },
     {
       "id": "BXL_07",
@@ -94,7 +100,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_07/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_07-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_07-grosplan.png",
+      "datePosed": "2012-03-09"
     },
     {
       "id": "BXL_08",
@@ -107,7 +114,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_08/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_08-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_08-grosplan.png",
+      "datePosed": "2012-03-09"
     },
     {
       "id": "BXL_09",
@@ -120,7 +128,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_09/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_09-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_09-grosplan.png",
+      "datePosed": "2012-03-09"
     },
     {
       "id": "BXL_10",
@@ -133,7 +142,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_10/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_10-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_10-grosplan.png",
+      "datePosed": "2012-03-09"
     },
     {
       "id": "BXL_11",
@@ -146,7 +156,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_11/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_11-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_11-grosplan.png",
+      "datePosed": "2012-03-09"
     },
     {
       "id": "BXL_12",
@@ -159,7 +170,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_12/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_12-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_12-grosplan.png",
+      "datePosed": "2012-03-10"
     },
     {
       "id": "BXL_13",
@@ -172,7 +184,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_13/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_13-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_13-grosplan.png",
+      "datePosed": "2012-03-10"
     },
     {
       "id": "BXL_14",
@@ -185,7 +198,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_14/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_14-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_14-grosplan.png",
+      "datePosed": "2012-03-10"
     },
     {
       "id": "BXL_15",
@@ -198,7 +212,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_15/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_15-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_15-grosplan.png",
+      "datePosed": "2012-03-10"
     },
     {
       "id": "BXL_16",
@@ -211,7 +226,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_16/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_16-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_16-grosplan.png",
+      "datePosed": "2012-03-10"
     },
     {
       "id": "BXL_17",
@@ -224,7 +240,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_17/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_17-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_17-grosplan.png",
+      "datePosed": "2012-03-10"
     },
     {
       "id": "BXL_18",
@@ -237,7 +254,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_18/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_18-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_18-grosplan.png",
+      "datePosed": "2012-03-10"
     },
     {
       "id": "BXL_19",
@@ -250,7 +268,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_19/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_19-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_19-grosplan.png",
+      "datePosed": "2012-03-11"
     },
     {
       "id": "BXL_20",
@@ -263,7 +282,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_20/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_20-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_20-grosplan.png",
+      "datePosed": "2012-03-11"
     },
     {
       "id": "BXL_21",
@@ -276,7 +296,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_21/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_21-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_21-grosplan.png",
+      "datePosed": "2012-03-11"
     },
     {
       "id": "BXL_22",
@@ -289,7 +310,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_22/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_22-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_22-grosplan.png",
+      "datePosed": "2012-03-11"
     },
     {
       "id": "BXL_23",
@@ -302,7 +324,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_23/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_23-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_23-grosplan.png",
+      "datePosed": "2012-03-11"
     },
     {
       "id": "BXL_24",
@@ -315,7 +338,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_24/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_24-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_24-grosplan.png",
+      "datePosed": "2012-03-11"
     },
     {
       "id": "BXL_25",
@@ -328,7 +352,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_25/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_25-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_25-grosplan.png",
+      "datePosed": "2012-03-11"
     },
     {
       "id": "BXL_26",
@@ -341,7 +366,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_26/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_26-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_26-grosplan.png",
+      "datePosed": "2012-03-12"
     },
     {
       "id": "BXL_27",
@@ -354,7 +380,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_27/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_27-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_27-grosplan.png",
+      "datePosed": "2012-03-12"
     },
     {
       "id": "BXL_28",
@@ -367,7 +394,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_28/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_28-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_28-grosplan.png",
+      "datePosed": "2012-03-12"
     },
     {
       "id": "BXL_29",
@@ -380,7 +408,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_29/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_29-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_29-grosplan.png",
+      "datePosed": "2012-03-12"
     },
     {
       "id": "BXL_30",
@@ -393,7 +422,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_30/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_30-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_30-grosplan.png",
+      "datePosed": "2012-03-12"
     },
     {
       "id": "BXL_31",
@@ -406,7 +436,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_31/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_31-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_31-grosplan.png",
+      "datePosed": "2012-03-12"
     },
     {
       "id": "BXL_32",
@@ -419,7 +450,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_32/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_32-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_32-grosplan.png",
+      "datePosed": "2012-03-12"
     },
     {
       "id": "BXL_33",
@@ -432,7 +464,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_33/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_33-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_33-grosplan.png",
+      "datePosed": "2012-03-12"
     },
     {
       "id": "BXL_34",
@@ -445,7 +478,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_34/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_34-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_34-grosplan.png",
+      "datePosed": "2012-03-12"
     },
     {
       "id": "BXL_35",
@@ -458,7 +492,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_35/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_35-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_35-grosplan.png",
+      "datePosed": "2012-03-13"
     },
     {
       "id": "BXL_36",
@@ -471,7 +506,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_36/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_36-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_36-grosplan.png",
+      "datePosed": "2012-03-13"
     },
     {
       "id": "BXL_37",
@@ -484,7 +520,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_37/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_37-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_37-grosplan.png",
+      "datePosed": "2012-03-13"
     },
     {
       "id": "BXL_38",
@@ -497,7 +534,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_38/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_38-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_38-grosplan.png",
+      "datePosed": "2012-03-14"
     },
     {
       "id": "BXL_39",
@@ -510,7 +548,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_39/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_39-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_39-grosplan.png",
+      "datePosed": "2012-03-14"
     },
     {
       "id": "BXL_40",
@@ -523,7 +562,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_40/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_40-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_40-grosplan.png",
+      "datePosed": "2012-03-15"
     },
     {
       "id": "BXL_41",
@@ -536,7 +576,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_41/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_41-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_41-grosplan.png",
+      "datePosed": "2022-07-05"
     },
     {
       "id": "BXL_42",
@@ -549,7 +590,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bxl_42/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_42-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_42-grosplan.png",
+      "datePosed": "2022-07-05"
     }
   ]
 }

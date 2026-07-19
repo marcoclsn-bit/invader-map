@@ -1,6 +1,6 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-06",
+  "version": 6,
+  "updatedAt": "2026-07-19",
   "city": "VRS",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 42,
@@ -16,7 +16,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_01/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_01-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_01-grosplan.png",
+      "datePosed": "2017-06-06"
     },
     {
       "id": "VRS_02",
@@ -29,7 +30,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_02/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_02-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_02-grosplan.png",
+      "datePosed": "2017-06-06"
     },
     {
       "id": "VRS_03",
@@ -42,7 +44,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_03/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_03-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_03-grosplan.png",
+      "datePosed": "2017-06-13"
     },
     {
       "id": "VRS_04",
@@ -55,7 +58,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_04/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_04-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_04-grosplan.png",
+      "datePosed": "2017-06-13"
     },
     {
       "id": "VRS_05",
@@ -68,7 +72,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_05/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_05-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_05-grosplan.png",
+      "datePosed": "2017-06-13"
     },
     {
       "id": "VRS_06",
@@ -81,7 +86,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_06/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_06-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_06-grosplan.png",
+      "datePosed": "2017-06-28"
     },
     {
       "id": "VRS_07",
@@ -94,7 +100,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_07/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_07-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_07-grosplan.png",
+      "datePosed": "2017-06-28"
     },
     {
       "id": "VRS_08",
@@ -107,7 +114,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_08/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_08-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_08-grosplan.png",
+      "datePosed": "2017-07-11"
     },
     {
       "id": "VRS_09",
@@ -120,7 +128,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_09/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_09-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_09-grosplan.png",
+      "datePosed": "2017-07-11"
     },
     {
       "id": "VRS_10",
@@ -133,7 +142,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_10/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_10-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_10-grosplan.png",
+      "datePosed": "2017-07-11"
     },
     {
       "id": "VRS_11",
@@ -146,7 +156,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_11/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_11-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_11-grosplan.png",
+      "datePosed": "2017-08-14"
     },
     {
       "id": "VRS_12",
@@ -159,7 +170,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_12/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_12-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_12-grosplan.png",
+      "datePosed": "2017-08-14"
     },
     {
       "id": "VRS_13",
@@ -172,7 +184,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_13/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_13-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_13-grosplan.png",
+      "datePosed": "2017-08-14"
     },
     {
       "id": "VRS_14",
@@ -185,7 +198,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_14/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_14-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_14-grosplan.png",
+      "datePosed": "2017-08-14"
     },
     {
       "id": "VRS_15",
@@ -198,7 +212,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_15/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_15-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_15-grosplan.png",
+      "datePosed": "2017-08-24"
     },
     {
       "id": "VRS_16",
@@ -211,7 +226,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_16/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_16-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_16-grosplan.png",
+      "datePosed": "2017-08-24"
     },
     {
       "id": "VRS_17",
@@ -224,7 +240,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_17/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_17-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_17-grosplan.png",
+      "datePosed": "2017-09-05"
     },
     {
       "id": "VRS_18",
@@ -237,7 +254,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_18/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_18-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_18-grosplan.png",
+      "datePosed": "2017-09-05"
     },
     {
       "id": "VRS_19",
@@ -250,7 +268,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_19/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_19-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_19-grosplan.png",
+      "datePosed": "2017-09-05"
     },
     {
       "id": "VRS_20",
@@ -263,7 +282,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_20/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_20-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_20-grosplan.png",
+      "datePosed": "2017-12-20"
     },
     {
       "id": "VRS_21",
@@ -276,7 +296,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_21/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_21-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_21-grosplan.png",
+      "datePosed": "2017-12-20"
     },
     {
       "id": "VRS_22",
@@ -289,7 +310,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_22/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_22-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_22-grosplan.png",
+      "datePosed": "2017-12-20"
     },
     {
       "id": "VRS_23",
@@ -302,7 +324,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_23/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_23-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_23-grosplan.png",
+      "datePosed": "2019-01-22"
     },
     {
       "id": "VRS_24",
@@ -315,7 +338,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_24/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_24-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_24-grosplan.png",
+      "datePosed": "2019-02-11"
     },
     {
       "id": "VRS_25",
@@ -328,7 +352,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_25/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_25-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_25-grosplan.png",
+      "datePosed": "2019-02-11"
     },
     {
       "id": "VRS_26",
@@ -341,7 +366,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_26/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_26-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_26-grosplan.png",
+      "datePosed": "2019-02-11"
     },
     {
       "id": "VRS_27",
@@ -354,7 +380,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_27/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_27-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_27-grosplan.png",
+      "datePosed": "2019-02-11"
     },
     {
       "id": "VRS_28",
@@ -367,7 +394,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_28/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_28-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_28-grosplan.png",
+      "datePosed": "2019-02-11"
     },
     {
       "id": "VRS_29",
@@ -380,7 +408,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_29/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_29-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_29-grosplan.png",
+      "datePosed": "2019-02-11"
     },
     {
       "id": "VRS_30",
@@ -393,7 +422,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_30/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_30-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_30-grosplan.png",
+      "datePosed": "2019-02-11"
     },
     {
       "id": "VRS_31",
@@ -406,7 +436,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_31/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_31-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_31-grosplan.png",
+      "datePosed": "2019-02-11"
     },
     {
       "id": "VRS_32",
@@ -419,7 +450,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_32/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_32-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_32-grosplan.png",
+      "datePosed": "2019-02-11"
     },
     {
       "id": "VRS_33",
@@ -432,7 +464,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_33/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_33-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_33-grosplan.png",
+      "datePosed": "2019-02-11"
     },
     {
       "id": "VRS_34",
@@ -445,7 +478,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_34/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_34-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_34-grosplan.png",
+      "datePosed": "2019-05-13"
     },
     {
       "id": "VRS_35",
@@ -458,7 +492,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_35/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_35-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_35-grosplan.png",
+      "datePosed": "2019-05-13"
     },
     {
       "id": "VRS_36",
@@ -471,7 +506,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_36/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_36-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_36-grosplan.png",
+      "datePosed": "2019-05-13"
     },
     {
       "id": "VRS_37",
@@ -484,7 +520,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_37/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_37-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_37-grosplan.png",
+      "datePosed": "2019-05-13"
     },
     {
       "id": "VRS_38",
@@ -497,7 +534,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_38/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_38-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_38-grosplan.png",
+      "datePosed": "2019-05-13"
     },
     {
       "id": "VRS_39",
@@ -510,7 +548,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_39/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_39-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_39-grosplan.png",
+      "datePosed": "2019-05-13"
     },
     {
       "id": "VRS_40",
@@ -523,7 +562,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_40/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_40-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_40-grosplan.png",
+      "datePosed": "2019-05-13"
     },
     {
       "id": "VRS_41",
@@ -536,7 +576,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_41/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_41-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_41-grosplan.png",
+      "datePosed": "2019-05-13"
     },
     {
       "id": "VRS_42",
@@ -549,7 +590,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_42/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_42-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_42-grosplan.png",
+      "datePosed": "2019-05-13"
     }
   ]
 }

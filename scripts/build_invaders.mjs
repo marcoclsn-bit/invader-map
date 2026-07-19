@@ -265,6 +265,7 @@ function enrichWithSpotter(invaders, spotter) {
       pts++;
     }
     if (!inv.photoUrl && s.grosplan) { inv.photoUrl = s.grosplan; photos++; }
+    if (!inv.datePosed && s.datePosed) { inv.datePosed = s.datePosed; }
     if (inv.status === 'unknown' && s.status && s.status !== 'unknown') {
       inv.status = s.status;
       status++;
@@ -275,9 +276,9 @@ function enrichWithSpotter(invaders, spotter) {
 
 function contentHash(invaders) {
   const sorted = [...invaders].sort((a, b) => a.id.localeCompare(b.id));
-  const minimal = sorted.map(({ id, city, lat, lng, status, points, hint, instagramUrl, photoUrl }) =>
+  const minimal = sorted.map(({ id, city, lat, lng, status, points, hint, instagramUrl, photoUrl, datePosed }) =>
     ({ id, city, lat, lng, status, points: points ?? null, hint,
-       instagramUrl: instagramUrl ?? null, photoUrl: photoUrl ?? null })
+       instagramUrl: instagramUrl ?? null, photoUrl: photoUrl ?? null, datePosed: datePosed ?? null })
   );
   return createHash('sha256').update(JSON.stringify(minimal)).digest('hex').slice(0, 16);
 }

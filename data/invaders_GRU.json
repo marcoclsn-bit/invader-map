@@ -1,6 +1,6 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-06",
+  "version": 6,
+  "updatedAt": "2026-07-19",
   "city": "GRU",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 3,
@@ -16,7 +16,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/gru_01/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/GRU/GRU_01-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/GRU/GRU_01-grosplan.png",
+      "datePosed": "2012-04-03"
     },
     {
       "id": "GRU_02",
@@ -29,7 +30,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/gru_02/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/GRU/GRU_02-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/GRU/GRU_02-grosplan.png",
+      "datePosed": "2012-04-03"
     },
     {
       "id": "GRU_03",
@@ -42,7 +44,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/gru_03/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/GRU/GRU_03-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/GRU/GRU_03-grosplan.png",
+      "datePosed": "2012-04-03"
     }
   ]
 }

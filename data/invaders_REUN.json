@@ -1,6 +1,6 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-06",
+  "version": 6,
+  "updatedAt": "2026-07-19",
   "city": "REUN",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 10,
@@ -16,7 +16,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/reun_01/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_01-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_01-grosplan.png",
+      "datePosed": "2022-12-24"
     },
     {
       "id": "REUN_02",
@@ -29,7 +30,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/reun_02/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_02-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_02-grosplan.png",
+      "datePosed": "2022-12-24"
     },
     {
       "id": "REUN_03",
@@ -42,7 +44,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/reun_03/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_03-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_03-grosplan.png",
+      "datePosed": "2022-12-24"
     },
     {
       "id": "REUN_04",
@@ -55,7 +58,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/reun_04/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_04-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_04-grosplan.png",
+      "datePosed": "2022-12-24"
     },
     {
       "id": "REUN_05",
@@ -68,7 +72,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/reun_05/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_05-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_05-grosplan.png",
+      "datePosed": "2022-12-24"
     },
     {
       "id": "REUN_06",
@@ -81,7 +86,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/reun_06/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_06-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_06-grosplan.png",
+      "datePosed": "2022-12-24"
     },
     {
       "id": "REUN_07",
@@ -94,7 +100,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/reun_07/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_07-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_07-grosplan.png",
+      "datePosed": "2022-12-27"
     },
     {
       "id": "REUN_08",
@@ -107,7 +114,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/reun_08/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_08-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_08-grosplan.png",
+      "datePosed": "2022-12-27"
     },
     {
       "id": "REUN_09",
@@ -121,7 +129,8 @@
       "source": "pnote",
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_09-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_09-grosplan.png",
+      "datePosed": "2022-12-27"
     },
     {
       "id": "REUN_10",
@@ -134,7 +143,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/reun_10/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_10-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_10-grosplan.png",
+      "datePosed": "2022-12-27"
     },
     {
       "id": "REUN_11",
@@ -147,7 +157,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/reun_11/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_11-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_11-grosplan.png",
+      "datePosed": "2022-12-27"
     }
   ]
 }

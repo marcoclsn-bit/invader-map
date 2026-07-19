@@ -1,6 +1,6 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-06",
+  "version": 6,
+  "updatedAt": "2026-07-19",
   "city": "MLB",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 16,
@@ -16,7 +16,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlb_02/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_02-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_02-grosplan.png",
+      "datePosed": "2002-10-29"
     },
     {
       "id": "MLB_05",
@@ -29,7 +30,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlb_05/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_05-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_05-grosplan.png",
+      "datePosed": "2002-10-29"
     },
     {
       "id": "MLB_07",
@@ -42,7 +44,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlb_07/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_07-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_07-grosplan.png",
+      "datePosed": "2002-10-30"
     },
     {
       "id": "MLB_08",
@@ -55,7 +58,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlb_08/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_08-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_08-grosplan.png",
+      "datePosed": "2002-10-30"
     },
     {
       "id": "MLB_09",
@@ -68,7 +72,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlb_09/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_09-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_09-grosplan.png",
+      "datePosed": "2002-10-30"
     },
     {
       "id": "MLB_10",
@@ -81,7 +86,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlb_10/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_10-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_10-grosplan.png",
+      "datePosed": "2002-10-30"
     },
     {
       "id": "MLB_12",
@@ -94,7 +100,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlb_12/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_12-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_12-grosplan.png",
+      "datePosed": "2002-10-30"
     },
     {
       "id": "MLB_13",
@@ -107,7 +114,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlb_13/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_13-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_13-grosplan.png",
+      "datePosed": "2002-10-30"
     },
     {
       "id": "MLB_16",
@@ -120,7 +128,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlb_16/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_16-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_16-grosplan.png",
+      "datePosed": "2002-11-01"
     },
     {
       "id": "MLB_18",
@@ -133,7 +142,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlb_18/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_18-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_18-grosplan.png",
+      "datePosed": "2002-11-02"
     },
     {
       "id": "MLB_19",
@@ -146,7 +156,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlb_19/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_19-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_19-grosplan.png",
+      "datePosed": "2002-11-03"
     },
     {
       "id": "MLB_20",
@@ -159,7 +170,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlb_20/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_20-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_20-grosplan.png",
+      "datePosed": "2002-11-03"
     },
     {
       "id": "MLB_22",
@@ -172,7 +184,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlb_22/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_22-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_22-grosplan.png",
+      "datePosed": "2002-11-03"
     },
     {
       "id": "MLB_23",
@@ -185,7 +198,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlb_23/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_23-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_23-grosplan.png",
+      "datePosed": "2002-11-03"
     },
     {
       "id": "MLB_24",
@@ -198,7 +212,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlb_24/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_24-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_24-grosplan.png",
+      "datePosed": "2002-11-03"
     },
     {
       "id": "MLB_25",
@@ -211,7 +226,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlb_25/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_25-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_25-grosplan.png",
+      "datePosed": "2002-11-04"
     }
   ]
 }

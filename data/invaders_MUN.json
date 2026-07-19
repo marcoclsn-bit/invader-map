@@ -1,6 +1,6 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-06",
+  "version": 6,
+  "updatedAt": "2026-07-19",
   "city": "MUN",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 18,
@@ -16,7 +16,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mun_01/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_01-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_01-grosplan.png",
+      "datePosed": "2023-04-08"
     },
     {
       "id": "MUN_02",
@@ -29,7 +30,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mun_02/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_02-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_02-grosplan.png",
+      "datePosed": "2023-04-09"
     },
     {
       "id": "MUN_03",
@@ -42,7 +44,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mun_03/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_03-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_03-grosplan.png",
+      "datePosed": "2023-04-09"
     },
     {
       "id": "MUN_04",
@@ -55,7 +58,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mun_04/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_04-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_04-grosplan.png",
+      "datePosed": "2023-04-09"
     },
     {
       "id": "MUN_05",
@@ -68,7 +72,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mun_05/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_05-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_05-grosplan.png",
+      "datePosed": "2023-04-09"
     },
     {
       "id": "MUN_06",
@@ -81,7 +86,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mun_06/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_06-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_06-grosplan.png",
+      "datePosed": "2023-04-09"
     },
     {
       "id": "MUN_07",
@@ -94,7 +100,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mun_07/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_07-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_07-grosplan.png",
+      "datePosed": "2023-04-09"
     },
     {
       "id": "MUN_08",
@@ -107,7 +114,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mun_08/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_08-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_08-grosplan.png",
+      "datePosed": "2023-04-09"
     },
     {
       "id": "MUN_09",
@@ -120,7 +128,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mun_09/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_09-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_09-grosplan.png",
+      "datePosed": "2023-04-09"
     },
     {
       "id": "MUN_10",
@@ -133,7 +142,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mun_10/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_10-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_10-grosplan.png",
+      "datePosed": "2023-04-09"
     },
     {
       "id": "MUN_11",
@@ -146,7 +156,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mun_11/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_11-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_11-grosplan.png",
+      "datePosed": "2023-04-09"
     },
     {
       "id": "MUN_12",
@@ -159,7 +170,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mun_12/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_12-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_12-grosplan.png",
+      "datePosed": "2023-04-09"
     },
     {
       "id": "MUN_13",
@@ -172,7 +184,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mun_13/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_13-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_13-grosplan.png",
+      "datePosed": "2023-04-09"
     },
     {
       "id": "MUN_14",
@@ -185,7 +198,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mun_14/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_14-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_14-grosplan.png",
+      "datePosed": "2023-04-10"
     },
     {
       "id": "MUN_15",
@@ -198,7 +212,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mun_15/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_15-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_15-grosplan.png",
+      "datePosed": "2023-04-10"
     },
     {
       "id": "MUN_16",
@@ -211,7 +226,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mun_16/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_16-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_16-grosplan.png",
+      "datePosed": "2023-04-10"
     },
     {
       "id": "MUN_17",
@@ -224,7 +240,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mun_17/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_17-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_17-grosplan.png",
+      "datePosed": "2023-04-11"
     },
     {
       "id": "MUN_18",
@@ -237,7 +254,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mun_18/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_18-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_18-grosplan.png",
+      "datePosed": "2023-04-11"
     }
   ]
 }

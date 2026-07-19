@@ -1,6 +1,6 @@
 {
-  "version": 4,
-  "updatedAt": "2026-07-06",
+  "version": 5,
+  "updatedAt": "2026-07-19",
   "city": "ANZR",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 4,
@@ -16,7 +16,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/anzr_01/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ANZR/ANZR_01-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ANZR/ANZR_01-grosplan.png",
+      "datePosed": "2013-12-30"
     },
     {
       "id": "ANZR_02",
@@ -29,7 +30,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/anzr_02/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ANZR/ANZR_02-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ANZR/ANZR_02-grosplan.png",
+      "datePosed": "2013-12-30"
     },
     {
       "id": "ANZR_03",
@@ -42,7 +44,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/anzr_03/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ANZR/ANZR_03-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ANZR/ANZR_03-grosplan.png",
+      "datePosed": "2013-12-31"
     },
     {
       "id": "ANZR_04",
@@ -55,7 +58,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/anzr_04/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ANZR/ANZR_04-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ANZR/ANZR_04-grosplan.png",
+      "datePosed": "2014-01-02"
     }
   ]
 }

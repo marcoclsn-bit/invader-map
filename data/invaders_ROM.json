@@ -1,6 +1,6 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-06",
+  "version": 6,
+  "updatedAt": "2026-07-19",
   "city": "ROM",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 69,
@@ -16,7 +16,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_01/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_01-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_01-grosplan.png",
+      "datePosed": "2010-07-07"
     },
     {
       "id": "ROM_02",
@@ -29,7 +30,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_02/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_02-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_02-grosplan.png",
+      "datePosed": "2010-07-07"
     },
     {
       "id": "ROM_03",
@@ -42,7 +44,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_03/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_03-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_03-grosplan.png",
+      "datePosed": "2010-07-08"
     },
     {
       "id": "ROM_04",
@@ -55,7 +58,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_04/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_04-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_04-grosplan.png",
+      "datePosed": "2010-07-10"
     },
     {
       "id": "ROM_05",
@@ -68,7 +72,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_05/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_05-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_05-grosplan.png",
+      "datePosed": "2010-07-10"
     },
     {
       "id": "ROM_06",
@@ -81,7 +86,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_06/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_06-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_06-grosplan.png",
+      "datePosed": "2010-07-10"
     },
     {
       "id": "ROM_07",
@@ -94,7 +100,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_07/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_07-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_07-grosplan.png",
+      "datePosed": "2010-07-10"
     },
     {
       "id": "ROM_08",
@@ -107,7 +114,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_08/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_08-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_08-grosplan.png",
+      "datePosed": "2010-07-11"
     },
     {
       "id": "ROM_09",
@@ -120,7 +128,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_09/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_09-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_09-grosplan.png",
+      "datePosed": "2010-07-11"
     },
     {
       "id": "ROM_10",
@@ -133,7 +142,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_10/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_10-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_10-grosplan.png",
+      "datePosed": "2010-07-11"
     },
     {
       "id": "ROM_11",
@@ -146,7 +156,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_11/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_11-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_11-grosplan.png",
+      "datePosed": "2010-07-11"
     },
     {
       "id": "ROM_12",
@@ -159,7 +170,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_12/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_12-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_12-grosplan.png",
+      "datePosed": "2010-07-12"
     },
     {
       "id": "ROM_13",
@@ -172,7 +184,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_13/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_13-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_13-grosplan.png",
+      "datePosed": "2010-07-12"
     },
     {
       "id": "ROM_14",
@@ -185,7 +198,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_14/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_14-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_14-grosplan.png",
+      "datePosed": "2010-07-12"
     },
     {
       "id": "ROM_15",
@@ -198,7 +212,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_15/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_15-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_15-grosplan.png",
+      "datePosed": "2010-07-12"
     },
     {
       "id": "ROM_16",
@@ -211,7 +226,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_16/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_16-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_16-grosplan.png",
+      "datePosed": "2010-07-13"
     },
     {
       "id": "ROM_17",
@@ -224,7 +240,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_17/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_17-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_17-grosplan.png",
+      "datePosed": "2010-07-13"
     },
     {
       "id": "ROM_18",
@@ -237,7 +254,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_18/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_18-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_18-grosplan.png",
+      "datePosed": "2010-07-13"
     },
     {
       "id": "ROM_19",
@@ -250,7 +268,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_19/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_19-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_19-grosplan.png",
+      "datePosed": "2010-07-13"
     },
     {
       "id": "ROM_20",
@@ -263,7 +282,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_20/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_20-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_20-grosplan.png",
+      "datePosed": "2010-07-13"
     },
     {
       "id": "ROM_21",
@@ -276,7 +296,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_21/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_21-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_21-grosplan.png",
+      "datePosed": "2010-07-13"
     },
     {
       "id": "ROM_22",
@@ -289,7 +310,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_22/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_22-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_22-grosplan.png",
+      "datePosed": "2010-07-13"
     },
     {
       "id": "ROM_23",
@@ -302,7 +324,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_23/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_23-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_23-grosplan.png",
+      "datePosed": "2010-07-14"
     },
     {
       "id": "ROM_24",
@@ -315,7 +338,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_24/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_24-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_24-grosplan.png",
+      "datePosed": "2010-07-14"
     },
     {
       "id": "ROM_25",
@@ -328,7 +352,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_25/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_25-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_25-grosplan.png",
+      "datePosed": "2010-07-16"
     },
     {
       "id": "ROM_26",
@@ -341,7 +366,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_26/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_26-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_26-grosplan.png",
+      "datePosed": "2010-07-16"
     },
     {
       "id": "ROM_27",
@@ -354,7 +380,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_27/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_27-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_27-grosplan.png",
+      "datePosed": "2010-07-16"
     },
     {
       "id": "ROM_28",
@@ -367,7 +394,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_28/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_28-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_28-grosplan.png",
+      "datePosed": "2010-07-17"
     },
     {
       "id": "ROM_29",
@@ -380,7 +408,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_29/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_29-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_29-grosplan.png",
+      "datePosed": "2010-07-17"
     },
     {
       "id": "ROM_30",
@@ -393,7 +422,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_30/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_30-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_30-grosplan.png",
+      "datePosed": "2010-07-17"
     },
     {
       "id": "ROM_31",
@@ -406,7 +436,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_31/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_31-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_31-grosplan.png",
+      "datePosed": "2010-07-17"
     },
     {
       "id": "ROM_32",
@@ -419,7 +450,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_32/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_32-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_32-grosplan.png",
+      "datePosed": "2010-07-18"
     },
     {
       "id": "ROM_33",
@@ -432,7 +464,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_33/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_33-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_33-grosplan.png",
+      "datePosed": "2010-07-18"
     },
     {
       "id": "ROM_34",
@@ -445,7 +478,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_34/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_34-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_34-grosplan.png",
+      "datePosed": "2010-07-18"
     },
     {
       "id": "ROM_35",
@@ -458,7 +492,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_35/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_35-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_35-grosplan.png",
+      "datePosed": "2010-07-18"
     },
     {
       "id": "ROM_36",
@@ -471,7 +506,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_36/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_36-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_36-grosplan.png",
+      "datePosed": "2010-07-18"
     },
     {
       "id": "ROM_37",
@@ -484,7 +520,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_37/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_37-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_37-grosplan.png",
+      "datePosed": "2010-07-18"
     },
     {
       "id": "ROM_38",
@@ -497,7 +534,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_38/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_38-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_38-grosplan.png",
+      "datePosed": "2010-07-18"
     },
     {
       "id": "ROM_39",
@@ -510,7 +548,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_39/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_39-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_39-grosplan.png",
+      "datePosed": "2010-07-18"
     },
     {
       "id": "ROM_40",
@@ -523,7 +562,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_40/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_40-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_40-grosplan.png",
+      "datePosed": "2010-07-19"
     },
     {
       "id": "ROM_41",
@@ -536,7 +576,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_41/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_41-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_41-grosplan.png",
+      "datePosed": "2010-07-19"
     },
     {
       "id": "ROM_42",
@@ -549,7 +590,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_42/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_42-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_42-grosplan.png",
+      "datePosed": "2010-07-19"
     },
     {
       "id": "ROM_43",
@@ -562,7 +604,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_43/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_43-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_43-grosplan.png",
+      "datePosed": "2010-07-19"
     },
     {
       "id": "ROM_44",
@@ -575,7 +618,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_44/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_44-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_44-grosplan.png",
+      "datePosed": "2010-07-19"
     },
     {
       "id": "ROM_45",
@@ -588,7 +632,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_45/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_45-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_45-grosplan.png",
+      "datePosed": "2010-07-20"
     },
     {
       "id": "ROM_46",
@@ -601,7 +646,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_46/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_46-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_46-grosplan.png",
+      "datePosed": "2010-07-20"
     },
     {
       "id": "ROM_47",
@@ -614,7 +660,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_47/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_47-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_47-grosplan.png",
+      "datePosed": "2010-07-20"
     },
     {
       "id": "ROM_48",
@@ -627,7 +674,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_48/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_48-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_48-grosplan.png",
+      "datePosed": "2010-07-20"
     },
     {
       "id": "ROM_49",
@@ -640,7 +688,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_49/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_49-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_49-grosplan.png",
+      "datePosed": "2010-07-20"
     },
     {
       "id": "ROM_50",
@@ -653,7 +702,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_50/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_50-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_50-grosplan.png",
+      "datePosed": "2010-07-20"
     },
     {
       "id": "ROM_51",
@@ -666,7 +716,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_51/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_51-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_51-grosplan.png",
+      "datePosed": "2010-07-20"
     },
     {
       "id": "ROM_52",
@@ -679,7 +730,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_52/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_52-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_52-grosplan.png",
+      "datePosed": "2010-07-20"
     },
     {
       "id": "ROM_53",
@@ -692,7 +744,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_53/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_53-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_53-grosplan.png",
+      "datePosed": "2010-07-20"
     },
     {
       "id": "ROM_54",
@@ -705,7 +758,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_54/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_54-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_54-grosplan.png",
+      "datePosed": "2010-07-20"
     },
     {
       "id": "ROM_55",
@@ -718,7 +772,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_55/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_55-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_55-grosplan.png",
+      "datePosed": "2010-07-20"
     },
     {
       "id": "ROM_56",
@@ -731,7 +786,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_56/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_56-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_56-grosplan.png",
+      "datePosed": "2010-07-21"
     },
     {
       "id": "ROM_57",
@@ -744,7 +800,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_57/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_57-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_57-grosplan.png",
+      "datePosed": "2010-07-21"
     },
     {
       "id": "ROM_58",
@@ -757,7 +814,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_58/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_58-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_58-grosplan.png",
+      "datePosed": "2010-07-21"
     },
     {
       "id": "ROM_59",
@@ -770,7 +828,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_59/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_59-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_59-grosplan.png",
+      "datePosed": "2010-07-21"
     },
     {
       "id": "ROM_60",
@@ -783,7 +842,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_60/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_60-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_60-grosplan.png",
+      "datePosed": "2010-07-21"
     },
     {
       "id": "ROM_61",
@@ -796,7 +856,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_61/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_61-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_61-grosplan.png",
+      "datePosed": "2010-07-21"
     },
     {
       "id": "ROM_62",
@@ -809,7 +870,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_62/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_62-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_62-grosplan.png",
+      "datePosed": "2010-07-21"
     },
     {
       "id": "ROM_63",
@@ -822,7 +884,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_63/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_63-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_63-grosplan.png",
+      "datePosed": "2010-07-22"
     },
     {
       "id": "ROM_64",
@@ -835,7 +898,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_64/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_64-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_64-grosplan.png",
+      "datePosed": "2010-07-22"
     },
     {
       "id": "ROM_65",
@@ -848,7 +912,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_65/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_65-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_65-grosplan.png",
+      "datePosed": "2010-07-22"
     },
     {
       "id": "ROM_66",
@@ -861,7 +926,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_66/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_66-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_66-grosplan.png",
+      "datePosed": "2010-07-23"
     },
     {
       "id": "ROM_67",
@@ -874,7 +940,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_67/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_67-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_67-grosplan.png",
+      "datePosed": "2010-10-16"
     },
     {
       "id": "ROM_68",
@@ -887,7 +954,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_68/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_68-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_68-grosplan.png",
+      "datePosed": "2010-10-17"
     },
     {
       "id": "ROM_69",
@@ -900,7 +968,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/rom_69/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_69-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_69-grosplan.png",
+      "datePosed": "2010-10-17"
     },
     {
       "id": "ROM_70",
@@ -914,7 +983,8 @@
       "source": "pnote",
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_70-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_70-grosplan.png",
+      "datePosed": "2015-10-02"
     },
     {
       "id": "ROM_71",
@@ -928,7 +998,8 @@
       "source": "pnote",
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_71-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_71-grosplan.png",
+      "datePosed": "2015-10-02"
     },
     {
       "id": "ROM_72",
@@ -942,7 +1013,8 @@
       "source": "pnote",
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_72-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_72-grosplan.png",
+      "datePosed": "2015-10-02"
     },
     {
       "id": "ROM_73",
@@ -956,7 +1028,8 @@
       "source": "pnote",
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_73-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_73-grosplan.png",
+      "datePosed": "2015-10-02"
     },
     {
       "id": "ROM_74",
@@ -970,7 +1043,8 @@
       "source": "pnote",
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_74-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_74-grosplan.png",
+      "datePosed": "2015-10-02"
     },
     {
       "id": "ROM_75",
@@ -984,7 +1058,8 @@
       "source": "pnote",
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_75-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_75-grosplan.png",
+      "datePosed": "2015-10-02"
     }
   ]
 }

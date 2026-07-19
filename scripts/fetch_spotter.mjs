@@ -132,11 +132,16 @@ export function parseListing(html) {
     const photos = [...block.matchAll(/href=["'](photos\/[A-Z]+\/[A-Z]+_\d+-[^"']+\.(?:jpg|jpeg|png))["']/gi)]
       .map((m) => `${BASE}/${m[1]}`);
 
+    // Date de pose : « Date de pose : JJ/MM/AAAA » → ISO AAAA-MM-JJ (null si absente/inconnue).
+    const mDate = block.match(/Date de pose\s*:\s*(\d{2})\/(\d{2})\/(\d{4})/i);
+    const datePosed = mDate ? `${mDate[3]}-${mDate[2]}-${mDate[1]}` : null;
+
     out.push({
       city, num, id: `${city}_${num}`, points, status,
       grosplan,
       latestPhoto: photos[photos.length - 1] ?? null,
       photoCount:  photos.length,
+      datePosed,
     });
   }
   return out;

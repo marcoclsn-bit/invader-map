@@ -1,6 +1,6 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-06",
+  "version": 6,
+  "updatedAt": "2026-07-19",
   "city": "BGK",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 44,
@@ -16,7 +16,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_01/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_01-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_01-grosplan.png",
+      "datePosed": "2002-10-18"
     },
     {
       "id": "BGK_02",
@@ -29,7 +30,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_02/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_02-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_02-grosplan.png",
+      "datePosed": "2002-10-18"
     },
     {
       "id": "BGK_03",
@@ -42,7 +44,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_03/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_03-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_03-grosplan.png",
+      "datePosed": "2005-07-08"
     },
     {
       "id": "BGK_04",
@@ -55,7 +58,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_04/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_04-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_04-grosplan.png",
+      "datePosed": "2005-07-08"
     },
     {
       "id": "BGK_05",
@@ -68,7 +72,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_05/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_05-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_05-grosplan.png",
+      "datePosed": "2005-07-08"
     },
     {
       "id": "BGK_07",
@@ -81,7 +86,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_07/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_07-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_07-grosplan.png",
+      "datePosed": "2005-07-09"
     },
     {
       "id": "BGK_09",
@@ -94,7 +100,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_09/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_09-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_09-grosplan.png",
+      "datePosed": "2005-07-09"
     },
     {
       "id": "BGK_10",
@@ -107,7 +114,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_10/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_10-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_10-grosplan.png",
+      "datePosed": "2005-07-09"
     },
     {
       "id": "BGK_11",
@@ -120,7 +128,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_11/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_11-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_11-grosplan.png",
+      "datePosed": "2005-07-10"
     },
     {
       "id": "BGK_14",
@@ -133,7 +142,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_14/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_14-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_14-grosplan.png",
+      "datePosed": "2005-07-10"
     },
     {
       "id": "BGK_15",
@@ -146,7 +156,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_15/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_15-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_15-grosplan.png",
+      "datePosed": "2005-07-10"
     },
     {
       "id": "BGK_16",
@@ -159,7 +170,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_16/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_16-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_16-grosplan.png",
+      "datePosed": "2005-07-10"
     },
     {
       "id": "BGK_17",
@@ -172,7 +184,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_17/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_17-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_17-grosplan.png",
+      "datePosed": "2005-07-11"
     },
     {
       "id": "BGK_18",
@@ -185,7 +198,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_18/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_18-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_18-grosplan.png",
+      "datePosed": "2005-07-11"
     },
     {
       "id": "BGK_19",
@@ -198,7 +212,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_19/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_19-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_19-grosplan.png",
+      "datePosed": "2005-07-11"
     },
     {
       "id": "BGK_20",
@@ -211,7 +226,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_20/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_20-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_20-grosplan.png",
+      "datePosed": "2005-07-11"
     },
     {
       "id": "BGK_21",
@@ -224,7 +240,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_21/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_21-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_21-grosplan.png",
+      "datePosed": "2005-07-12"
     },
     {
       "id": "BGK_24",
@@ -237,7 +254,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_24/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_24-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_24-grosplan.png",
+      "datePosed": "2005-07-14"
     },
     {
       "id": "BGK_25",
@@ -250,7 +268,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_25/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_25-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_25-grosplan.png",
+      "datePosed": "2005-07-14"
     },
     {
       "id": "BGK_26",
@@ -263,7 +282,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_26/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_26-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_26-grosplan.png",
+      "datePosed": "2005-07-14"
     },
     {
       "id": "BGK_27",
@@ -276,7 +296,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_27/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_27-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_27-grosplan.png",
+      "datePosed": "2005-07-14"
     },
     {
       "id": "BGK_28",
@@ -289,7 +310,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_28/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_28-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_28-grosplan.png",
+      "datePosed": "2005-07-14"
     },
     {
       "id": "BGK_29",
@@ -302,7 +324,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_29/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_29-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_29-grosplan.png",
+      "datePosed": "2005-07-16"
     },
     {
       "id": "BGK_30",
@@ -315,7 +338,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_30/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_30-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_30-grosplan.png",
+      "datePosed": "2005-07-16"
     },
     {
       "id": "BGK_31",
@@ -328,7 +352,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_31/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_31-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_31-grosplan.png",
+      "datePosed": "2005-07-16"
     },
     {
       "id": "BGK_32",
@@ -341,7 +366,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_32/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_32-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_32-grosplan.png",
+      "datePosed": "2005-07-16"
     },
     {
       "id": "BGK_33",
@@ -354,7 +380,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_33/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_33-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_33-grosplan.png",
+      "datePosed": "2005-07-17"
     },
     {
       "id": "BGK_34",
@@ -367,7 +394,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_34/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_34-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_34-grosplan.png",
+      "datePosed": "2005-07-17"
     },
     {
       "id": "BGK_35",
@@ -380,7 +408,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_35/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_35-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_35-grosplan.png",
+      "datePosed": "2005-07-17"
     },
     {
       "id": "BGK_36",
@@ -393,7 +422,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_36/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_36-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_36-grosplan.png",
+      "datePosed": "2005-07-18"
     },
     {
       "id": "BGK_37",
@@ -406,7 +436,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_37/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_37-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_37-grosplan.png",
+      "datePosed": "2005-07-18"
     },
     {
       "id": "BGK_38",
@@ -419,7 +450,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_38/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_38-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_38-grosplan.png",
+      "datePosed": "2005-07-18"
     },
     {
       "id": "BGK_39",
@@ -432,7 +464,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_39/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_39-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_39-grosplan.png",
+      "datePosed": "2005-07-18"
     },
     {
       "id": "BGK_40",
@@ -445,7 +478,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_40/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_40-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_40-grosplan.png",
+      "datePosed": "2005-07-18"
     },
     {
       "id": "BGK_41",
@@ -458,7 +492,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_41/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_41-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_41-grosplan.png",
+      "datePosed": "2005-07-18"
     },
     {
       "id": "BGK_42",
@@ -471,7 +506,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_42/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_42-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_42-grosplan.png",
+      "datePosed": "2005-07-19"
     },
     {
       "id": "BGK_43",
@@ -484,7 +520,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_43/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_43-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_43-grosplan.png",
+      "datePosed": "2005-07-20"
     },
     {
       "id": "BGK_44",
@@ -497,7 +534,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_44/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_44-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_44-grosplan.png",
+      "datePosed": "2005-07-20"
     },
     {
       "id": "BGK_45",
@@ -510,7 +548,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_45/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_45-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_45-grosplan.png",
+      "datePosed": "2005-07-20"
     },
     {
       "id": "BGK_47",
@@ -523,7 +562,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_47/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_47-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_47-grosplan.png",
+      "datePosed": "2005-07-20"
     },
     {
       "id": "BGK_48",
@@ -536,7 +576,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_48/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_48-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_48-grosplan.png",
+      "datePosed": "2005-07-21"
     },
     {
       "id": "BGK_49",
@@ -549,7 +590,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_49/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_49-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_49-grosplan.png",
+      "datePosed": "2005-07-21"
     },
     {
       "id": "BGK_50",
@@ -562,7 +604,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_50/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_50-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_50-grosplan.png",
+      "datePosed": "2005-07-21"
     },
     {
       "id": "BGK_51",
@@ -575,7 +618,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/bgk_51/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_51-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_51-grosplan.png",
+      "datePosed": "2005-07-21"
     }
   ]
 }

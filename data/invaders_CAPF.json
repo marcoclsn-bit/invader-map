@@ -1,6 +1,6 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-06",
+  "version": 6,
+  "updatedAt": "2026-07-19",
   "city": "CAPF",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 10,
@@ -16,7 +16,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/capf_01/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAPF/CAPF_01-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAPF/CAPF_01-grosplan.png",
+      "datePosed": "2017-12-28"
     },
     {
       "id": "CAPF_02",
@@ -29,7 +30,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/capf_02/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAPF/CAPF_02-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAPF/CAPF_02-grosplan.png",
+      "datePosed": "2017-12-28"
     },
     {
       "id": "CAPF_03",
@@ -42,7 +44,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/capf_03/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAPF/CAPF_03-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAPF/CAPF_03-grosplan.png",
+      "datePosed": "2017-12-29"
     },
     {
       "id": "CAPF_04",
@@ -55,7 +58,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/capf_04/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAPF/CAPF_04-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAPF/CAPF_04-grosplan.png",
+      "datePosed": "2017-12-30"
     },
     {
       "id": "CAPF_05",
@@ -68,7 +72,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/capf_05/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAPF/CAPF_05-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAPF/CAPF_05-grosplan.png",
+      "datePosed": "2017-12-30"
     },
     {
       "id": "CAPF_06",
@@ -81,7 +86,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/capf_06/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAPF/CAPF_06-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAPF/CAPF_06-grosplan.png",
+      "datePosed": "2017-12-30"
     },
     {
       "id": "CAPF_07",
@@ -94,7 +100,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/capf_07/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAPF/CAPF_07-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAPF/CAPF_07-grosplan.png",
+      "datePosed": "2017-12-30"
     },
     {
       "id": "CAPF_08",
@@ -107,7 +114,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/capf_08/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAPF/CAPF_08-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAPF/CAPF_08-grosplan.png",
+      "datePosed": "2017-12-30"
     },
     {
       "id": "CAPF_09",
@@ -120,7 +128,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/capf_09/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAPF/CAPF_09-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAPF/CAPF_09-grosplan.png",
+      "datePosed": "2018-01-01"
     },
     {
       "id": "CAPF_10",
@@ -133,7 +142,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/capf_10/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAPF/CAPF_10-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAPF/CAPF_10-grosplan.png",
+      "datePosed": "2018-01-01"
     }
   ]
 }

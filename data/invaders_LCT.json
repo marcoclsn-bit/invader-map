@@ -1,6 +1,6 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-06",
+  "version": 6,
+  "updatedAt": "2026-07-19",
   "city": "LCT",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 9,
@@ -16,7 +16,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lct_01/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LCT/LCT_01-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LCT/LCT_01-grosplan.png",
+      "datePosed": "2004-08-28"
     },
     {
       "id": "LCT_02",
@@ -29,7 +30,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lct_02/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LCT/LCT_02-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LCT/LCT_02-grosplan.png",
+      "datePosed": "2010-09-02"
     },
     {
       "id": "LCT_03",
@@ -42,7 +44,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lct_03/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LCT/LCT_03-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LCT/LCT_03-grosplan.png",
+      "datePosed": "2010-09-02"
     },
     {
       "id": "LCT_04",
@@ -55,7 +58,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lct_04/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LCT/LCT_04-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LCT/LCT_04-grosplan.png",
+      "datePosed": "2010-09-02"
     },
     {
       "id": "LCT_05",
@@ -68,7 +72,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lct_05/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LCT/LCT_05-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LCT/LCT_05-grosplan.png",
+      "datePosed": "2011-08-23"
     },
     {
       "id": "LCT_06",
@@ -81,7 +86,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lct_06/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LCT/LCT_06-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LCT/LCT_06-grosplan.png",
+      "datePosed": "2014-08-14"
     },
     {
       "id": "LCT_07",
@@ -94,7 +100,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lct_07/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LCT/LCT_07-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LCT/LCT_07-grosplan.png",
+      "datePosed": "2014-08-15"
     },
     {
       "id": "LCT_08",
@@ -107,7 +114,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lct_08/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LCT/LCT_08-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LCT/LCT_08-grosplan.png",
+      "datePosed": "2014-08-17"
     },
     {
       "id": "LCT_09",
@@ -120,7 +128,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lct_09/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LCT/LCT_09-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LCT/LCT_09-grosplan.png",
+      "datePosed": "2015-12-26"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
-  "version": 4,
-  "updatedAt": "2026-07-06",
+  "version": 5,
+  "updatedAt": "2026-07-19",
   "city": "MLGA",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 29,
@@ -16,7 +16,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlga_01/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_01-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_01-grosplan.png",
+      "datePosed": "2017-05-15"
     },
     {
       "id": "MLGA_02",
@@ -29,7 +30,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlga_02/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_02-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_02-grosplan.png",
+      "datePosed": "2017-05-15"
     },
     {
       "id": "MLGA_03",
@@ -42,7 +44,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlga_03/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_03-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_03-grosplan.png",
+      "datePosed": "2017-05-16"
     },
     {
       "id": "MLGA_04",
@@ -55,7 +58,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlga_04/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_04-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_04-grosplan.png",
+      "datePosed": "2017-05-16"
     },
     {
       "id": "MLGA_05",
@@ -68,7 +72,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlga_05/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_05-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_05-grosplan.png",
+      "datePosed": "2017-05-16"
     },
     {
       "id": "MLGA_06",
@@ -81,7 +86,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlga_06/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_06-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_06-grosplan.png",
+      "datePosed": "2017-05-16"
     },
     {
       "id": "MLGA_07",
@@ -94,7 +100,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlga_07/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_07-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_07-grosplan.png",
+      "datePosed": "2017-05-16"
     },
     {
       "id": "MLGA_08",
@@ -107,7 +114,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlga_08/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_08-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_08-grosplan.png",
+      "datePosed": "2017-05-16"
     },
     {
       "id": "MLGA_09",
@@ -120,7 +128,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlga_09/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_09-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_09-grosplan.png",
+      "datePosed": "2017-05-16"
     },
     {
       "id": "MLGA_10",
@@ -133,7 +142,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlga_10/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_10-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_10-grosplan.png",
+      "datePosed": "2017-05-17"
     },
     {
       "id": "MLGA_11",
@@ -146,7 +156,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlga_11/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_11-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_11-grosplan.png",
+      "datePosed": "2017-05-17"
     },
     {
       "id": "MLGA_12",
@@ -159,7 +170,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlga_12/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_12-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_12-grosplan.png",
+      "datePosed": "2017-05-17"
     },
     {
       "id": "MLGA_13",
@@ -172,7 +184,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlga_13/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_13-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_13-grosplan.png",
+      "datePosed": "2017-05-17"
     },
     {
       "id": "MLGA_14",
@@ -185,7 +198,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlga_14/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_14-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_14-grosplan.png",
+      "datePosed": "2017-05-17"
     },
     {
       "id": "MLGA_15",
@@ -198,7 +212,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlga_15/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_15-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_15-grosplan.png",
+      "datePosed": "2017-05-17"
     },
     {
       "id": "MLGA_16",
@@ -211,7 +226,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlga_16/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_16-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_16-grosplan.png",
+      "datePosed": "2017-05-18"
     },
     {
       "id": "MLGA_17",
@@ -224,7 +240,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlga_17/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_17-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_17-grosplan.png",
+      "datePosed": "2017-05-18"
     },
     {
       "id": "MLGA_18",
@@ -237,7 +254,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlga_18/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_18-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_18-grosplan.png",
+      "datePosed": "2017-05-18"
     },
     {
       "id": "MLGA_19",
@@ -250,7 +268,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlga_19/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_19-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_19-grosplan.png",
+      "datePosed": "2017-05-18"
     },
     {
       "id": "MLGA_20",
@@ -263,7 +282,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlga_20/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_20-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_20-grosplan.png",
+      "datePosed": "2017-05-18"
     },
     {
       "id": "MLGA_21",
@@ -276,7 +296,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlga_21/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_21-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_21-grosplan.png",
+      "datePosed": "2017-05-18"
     },
     {
       "id": "MLGA_22",
@@ -289,7 +310,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlga_22/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_22-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_22-grosplan.png",
+      "datePosed": "2017-05-19"
     },
     {
       "id": "MLGA_23",
@@ -302,7 +324,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlga_23/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_23-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_23-grosplan.png",
+      "datePosed": "2017-05-19"
     },
     {
       "id": "MLGA_24",
@@ -315,7 +338,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlga_24/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_24-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_24-grosplan.png",
+      "datePosed": "2017-05-19"
     },
     {
       "id": "MLGA_25",
@@ -328,7 +352,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlga_25/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_25-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_25-grosplan.png",
+      "datePosed": "2017-05-21"
     },
     {
       "id": "MLGA_26",
@@ -341,7 +366,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlga_26/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_26-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_26-grosplan.png",
+      "datePosed": "2017-05-21"
     },
     {
       "id": "MLGA_27",
@@ -354,7 +380,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlga_27/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_27-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_27-grosplan.png",
+      "datePosed": "2017-05-21"
     },
     {
       "id": "MLGA_28",
@@ -367,7 +394,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlga_28/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_28-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_28-grosplan.png",
+      "datePosed": "2017-05-21"
     },
     {
       "id": "MLGA_29",
@@ -380,7 +408,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mlga_29/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_29-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_29-grosplan.png",
+      "datePosed": "2017-05-23"
     }
   ]
 }

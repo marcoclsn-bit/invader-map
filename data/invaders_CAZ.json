@@ -1,6 +1,6 @@
 {
-  "version": 4,
-  "updatedAt": "2026-07-06",
+  "version": 5,
+  "updatedAt": "2026-07-19",
   "city": "CAZ",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 39,
@@ -16,7 +16,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_01/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_01-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_01-grosplan.png",
+      "datePosed": "2007-05-12"
     },
     {
       "id": "CAZ_02",
@@ -29,7 +30,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_02/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_02-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_02-grosplan.png",
+      "datePosed": "2007-05-12"
     },
     {
       "id": "CAZ_03",
@@ -42,7 +44,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_03/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_03-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_03-grosplan.png",
+      "datePosed": "2007-05-14"
     },
     {
       "id": "CAZ_04",
@@ -55,7 +58,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_04/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_04-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_04-grosplan.png",
+      "datePosed": "2007-05-14"
     },
     {
       "id": "CAZ_05",
@@ -68,7 +72,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_05/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_05-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_05-grosplan.png",
+      "datePosed": "2007-05-14"
     },
     {
       "id": "CAZ_06",
@@ -81,7 +86,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_06/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_06-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_06-grosplan.png",
+      "datePosed": "2007-05-15"
     },
     {
       "id": "CAZ_07",
@@ -94,7 +100,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_07/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_07-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_07-grosplan.png",
+      "datePosed": "2007-05-15"
     },
     {
       "id": "CAZ_08",
@@ -107,7 +114,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_08/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_08-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_08-grosplan.png",
+      "datePosed": "2007-05-16"
     },
     {
       "id": "CAZ_09",
@@ -120,7 +128,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_09/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_09-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_09-grosplan.png",
+      "datePosed": "2007-05-16"
     },
     {
       "id": "CAZ_10",
@@ -133,7 +142,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_10/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_10-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_10-grosplan.png",
+      "datePosed": "2007-05-16"
     },
     {
       "id": "CAZ_11",
@@ -146,7 +156,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_11/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_11-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_11-grosplan.png",
+      "datePosed": "2007-05-16"
     },
     {
       "id": "CAZ_12",
@@ -159,7 +170,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_12/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_12-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_12-grosplan.png",
+      "datePosed": "2007-05-17"
     },
     {
       "id": "CAZ_13",
@@ -172,7 +184,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_13/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_13-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_13-grosplan.png",
+      "datePosed": "2007-05-17"
     },
     {
       "id": "CAZ_14",
@@ -185,7 +198,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_14/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_14-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_14-grosplan.png",
+      "datePosed": "2007-05-17"
     },
     {
       "id": "CAZ_15",
@@ -198,7 +212,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_15/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_15-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_15-grosplan.png",
+      "datePosed": "2007-05-18"
     },
     {
       "id": "CAZ_16",
@@ -211,7 +226,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_16/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_16-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_16-grosplan.png",
+      "datePosed": "2007-05-18"
     },
     {
       "id": "CAZ_17",
@@ -224,7 +240,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_17/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_17-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_17-grosplan.png",
+      "datePosed": "2007-05-18"
     },
     {
       "id": "CAZ_18",
@@ -237,7 +254,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_18/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_18-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_18-grosplan.png",
+      "datePosed": "2007-05-19"
     },
     {
       "id": "CAZ_19",
@@ -250,7 +268,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_19/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_19-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_19-grosplan.png",
+      "datePosed": "2007-05-19"
     },
     {
       "id": "CAZ_20",
@@ -263,7 +282,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_20/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_20-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_20-grosplan.png",
+      "datePosed": "2007-05-19"
     },
     {
       "id": "CAZ_21",
@@ -276,7 +296,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_21/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_21-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_21-grosplan.png",
+      "datePosed": "2007-05-19"
     },
     {
       "id": "CAZ_22",
@@ -289,7 +310,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_22/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_22-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_22-grosplan.png",
+      "datePosed": "2007-05-20"
     },
     {
       "id": "CAZ_23",
@@ -302,7 +324,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_23/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_23-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_23-grosplan.png",
+      "datePosed": "2007-05-21"
     },
     {
       "id": "CAZ_24",
@@ -315,7 +338,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_24/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_24-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_24-grosplan.png",
+      "datePosed": "2007-05-21"
     },
     {
       "id": "CAZ_25",
@@ -328,7 +352,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_25/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_25-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_25-grosplan.png",
+      "datePosed": "2007-05-22"
     },
     {
       "id": "CAZ_26",
@@ -341,7 +366,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_26/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_26-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_26-grosplan.png",
+      "datePosed": "2007-05-22"
     },
     {
       "id": "CAZ_27",
@@ -354,7 +380,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_27/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_27-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_27-grosplan.png",
+      "datePosed": "2007-05-22"
     },
     {
       "id": "CAZ_28",
@@ -367,7 +394,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_28/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_28-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_28-grosplan.png",
+      "datePosed": "2007-05-22"
     },
     {
       "id": "CAZ_29",
@@ -380,7 +408,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_29/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_29-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_29-grosplan.png",
+      "datePosed": "2007-05-23"
     },
     {
       "id": "CAZ_30",
@@ -393,7 +422,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_30/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_30-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_30-grosplan.png",
+      "datePosed": "2007-05-23"
     },
     {
       "id": "CAZ_31",
@@ -406,7 +436,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_31/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_31-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_31-grosplan.png",
+      "datePosed": "2007-05-24"
     },
     {
       "id": "CAZ_32",
@@ -419,7 +450,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_32/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_32-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_32-grosplan.png",
+      "datePosed": "2007-05-24"
     },
     {
       "id": "CAZ_33",
@@ -432,7 +464,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_33/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_33-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_33-grosplan.png",
+      "datePosed": "2007-05-24"
     },
     {
       "id": "CAZ_34",
@@ -445,7 +478,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_34/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_34-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_34-grosplan.png",
+      "datePosed": "2007-05-24"
     },
     {
       "id": "CAZ_35",
@@ -459,7 +493,8 @@
       "source": "pnote",
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_35-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_35-grosplan.png",
+      "datePosed": "2007-05-25"
     },
     {
       "id": "CAZ_36",
@@ -472,7 +507,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_36/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_36-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_36-grosplan.png",
+      "datePosed": "2016-09-25"
     },
     {
       "id": "CAZ_37",
@@ -485,7 +521,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_37/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_37-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_37-grosplan.png",
+      "datePosed": "2017-07-08"
     },
     {
       "id": "CAZ_38",
@@ -498,7 +535,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_38/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_38-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_38-grosplan.png",
+      "datePosed": "2017-08-21"
     },
     {
       "id": "CAZ_39",
@@ -511,7 +549,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_39/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_39-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_39-grosplan.png",
+      "datePosed": "2017-08-23"
     },
     {
       "id": "CAZ_40",
@@ -524,7 +563,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_40/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_40-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_40-grosplan.png",
+      "datePosed": "2017-08-23"
     }
   ]
 }

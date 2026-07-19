@@ -1,6 +1,6 @@
 {
-  "version": 3,
-  "updatedAt": "2026-07-06",
+  "version": 4,
+  "updatedAt": "2026-07-19",
   "city": "ORLN",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 0,
@@ -17,7 +17,8 @@
       "source": "pnote",
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_01-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_01-grosplan.png",
+      "datePosed": "2025-03-25"
     },
     {
       "id": "ORLN_02",
@@ -31,7 +32,8 @@
       "source": "pnote",
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_02-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_02-grosplan.png",
+      "datePosed": "2025-03-25"
     },
     {
       "id": "ORLN_03",
@@ -45,7 +47,8 @@
       "source": "pnote",
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_03-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_03-grosplan.png",
+      "datePosed": "2025-03-25"
     },
     {
       "id": "ORLN_04",
@@ -59,7 +62,8 @@
       "source": "pnote",
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_04-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_04-grosplan.png",
+      "datePosed": "2025-03-25"
     },
     {
       "id": "ORLN_05",
@@ -73,7 +77,8 @@
       "source": "pnote",
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_05-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_05-grosplan.png",
+      "datePosed": "2025-03-25"
     },
     {
       "id": "ORLN_06",
@@ -87,7 +92,8 @@
       "source": "pnote",
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_06-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_06-grosplan.png",
+      "datePosed": "2025-03-25"
     },
     {
       "id": "ORLN_07",
@@ -101,7 +107,8 @@
       "source": "pnote",
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_07-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_07-grosplan.png",
+      "datePosed": "2025-03-25"
     },
     {
       "id": "ORLN_08",
@@ -115,7 +122,8 @@
       "source": "pnote",
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_08-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_08-grosplan.png",
+      "datePosed": "2025-03-25"
     },
     {
       "id": "ORLN_09",
@@ -129,7 +137,8 @@
       "source": "pnote",
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_09-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_09-grosplan.png",
+      "datePosed": "2025-03-26"
     },
     {
       "id": "ORLN_10",
@@ -143,7 +152,8 @@
       "source": "pnote",
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_10-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_10-grosplan.png",
+      "datePosed": "2025-03-26"
     },
     {
       "id": "ORLN_11",
@@ -157,7 +167,8 @@
       "source": "pnote",
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_11-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_11-grosplan.png",
+      "datePosed": "2025-03-26"
     },
     {
       "id": "ORLN_12",
@@ -171,7 +182,8 @@
       "source": "pnote",
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_12-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ORLN/ORLN_12-grosplan.png",
+      "datePosed": "2025-03-26"
     }
   ]
 }

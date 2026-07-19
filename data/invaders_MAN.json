@@ -1,6 +1,6 @@
 {
-  "version": 4,
-  "updatedAt": "2026-07-06",
+  "version": 5,
+  "updatedAt": "2026-07-19",
   "city": "MAN",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 47,
@@ -16,7 +16,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_01/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_01-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_01-grosplan.png",
+      "datePosed": "2004-06-21"
     },
     {
       "id": "MAN_02",
@@ -29,7 +30,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_02/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_02-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_02-grosplan.png",
+      "datePosed": "2004-06-21"
     },
     {
       "id": "MAN_03",
@@ -42,7 +44,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_03/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_03-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_03-grosplan.png",
+      "datePosed": "2004-06-21"
     },
     {
       "id": "MAN_04",
@@ -55,7 +58,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_04/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_04-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_04-grosplan.png",
+      "datePosed": "2004-06-21"
     },
     {
       "id": "MAN_05",
@@ -68,7 +72,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_05/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_05-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_05-grosplan.png",
+      "datePosed": "2004-06-21"
     },
     {
       "id": "MAN_06",
@@ -81,7 +86,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_06/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_06-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_06-grosplan.png",
+      "datePosed": "2004-06-21"
     },
     {
       "id": "MAN_07",
@@ -94,7 +100,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_07/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_07-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_07-grosplan.png",
+      "datePosed": "2004-06-21"
     },
     {
       "id": "MAN_08",
@@ -107,7 +114,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_08/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_08-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_08-grosplan.png",
+      "datePosed": "2004-06-22"
     },
     {
       "id": "MAN_09",
@@ -120,7 +128,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_09/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_09-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_09-grosplan.png",
+      "datePosed": "2004-06-22"
     },
     {
       "id": "MAN_10",
@@ -133,7 +142,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_10/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_10-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_10-grosplan.png",
+      "datePosed": "2004-06-22"
     },
     {
       "id": "MAN_11",
@@ -146,7 +156,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_11/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_11-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_11-grosplan.png",
+      "datePosed": "2004-06-22"
     },
     {
       "id": "MAN_12",
@@ -159,7 +170,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_12/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_12-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_12-grosplan.png",
+      "datePosed": "2004-06-22"
     },
     {
       "id": "MAN_13",
@@ -172,7 +184,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_13/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_13-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_13-grosplan.png",
+      "datePosed": "2004-06-23"
     },
     {
       "id": "MAN_14",
@@ -185,7 +198,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_14/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_14-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_14-grosplan.png",
+      "datePosed": "2004-06-23"
     },
     {
       "id": "MAN_15",
@@ -198,7 +212,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_15/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_15-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_15-grosplan.png",
+      "datePosed": "2004-06-23"
     },
     {
       "id": "MAN_16",
@@ -211,7 +226,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_16/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_16-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_16-grosplan.png",
+      "datePosed": "2004-06-23"
     },
     {
       "id": "MAN_17",
@@ -224,7 +240,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_17/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_17-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_17-grosplan.png",
+      "datePosed": "2004-06-24"
     },
     {
       "id": "MAN_18",
@@ -237,7 +254,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_18/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_18-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_18-grosplan.png",
+      "datePosed": "2004-06-24"
     },
     {
       "id": "MAN_19",
@@ -250,7 +268,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_19/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_19-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_19-grosplan.png",
+      "datePosed": "2004-06-24"
     },
     {
       "id": "MAN_20",
@@ -263,7 +282,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_20/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_20-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_20-grosplan.png",
+      "datePosed": "2004-06-24"
     },
     {
       "id": "MAN_21",
@@ -276,7 +296,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_21/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_21-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_21-grosplan.png",
+      "datePosed": "2004-06-24"
     },
     {
       "id": "MAN_22",
@@ -289,7 +310,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_22/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_22-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_22-grosplan.png",
+      "datePosed": "2004-06-24"
     },
     {
       "id": "MAN_23",
@@ -302,7 +324,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_23/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_23-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_23-grosplan.png",
+      "datePosed": "2004-06-24"
     },
     {
       "id": "MAN_24",
@@ -315,7 +338,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_24/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_24-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_24-grosplan.png",
+      "datePosed": "2004-06-24"
     },
     {
       "id": "MAN_25",
@@ -328,7 +352,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_25/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_25-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_25-grosplan.png",
+      "datePosed": "2004-06-25"
     },
     {
       "id": "MAN_26",
@@ -341,7 +366,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_26/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_26-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_26-grosplan.png",
+      "datePosed": "2004-06-25"
     },
     {
       "id": "MAN_27",
@@ -354,7 +380,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_27/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_27-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_27-grosplan.png",
+      "datePosed": "2004-06-25"
     },
     {
       "id": "MAN_28",
@@ -367,7 +394,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_28/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_28-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_28-grosplan.png",
+      "datePosed": "2004-06-25"
     },
     {
       "id": "MAN_29",
@@ -380,7 +408,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_29/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_29-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_29-grosplan.png",
+      "datePosed": "2004-06-25"
     },
     {
       "id": "MAN_30",
@@ -393,7 +422,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_30/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_30-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_30-grosplan.png",
+      "datePosed": "2004-06-26"
     },
     {
       "id": "MAN_31",
@@ -406,7 +436,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_31/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_31-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_31-grosplan.png",
+      "datePosed": "2004-06-26"
     },
     {
       "id": "MAN_32",
@@ -419,7 +450,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_32/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_32-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_32-grosplan.png",
+      "datePosed": "2004-06-26"
     },
     {
       "id": "MAN_33",
@@ -432,7 +464,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_33/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_33-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_33-grosplan.png",
+      "datePosed": "2004-06-27"
     },
     {
       "id": "MAN_34",
@@ -445,7 +478,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_34/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_34-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_34-grosplan.png",
+      "datePosed": "2004-06-27"
     },
     {
       "id": "MAN_35",
@@ -458,7 +492,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_35/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_35-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_35-grosplan.png",
+      "datePosed": "2004-06-27"
     },
     {
       "id": "MAN_36",
@@ -471,7 +506,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_36/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_36-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_36-grosplan.png",
+      "datePosed": "2004-06-27"
     },
     {
       "id": "MAN_37",
@@ -484,7 +520,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_37/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_37-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_37-grosplan.png",
+      "datePosed": "2004-06-27"
     },
     {
       "id": "MAN_38",
@@ -497,7 +534,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_38/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_38-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_38-grosplan.png",
+      "datePosed": "2004-06-27"
     },
     {
       "id": "MAN_39",
@@ -510,7 +548,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_39/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_39-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_39-grosplan.png",
+      "datePosed": "2004-06-27"
     },
     {
       "id": "MAN_40",
@@ -523,7 +562,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_40/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_40-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_40-grosplan.png",
+      "datePosed": "2004-06-27"
     },
     {
       "id": "MAN_41",
@@ -536,7 +576,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_41/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_41-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_41-grosplan.png",
+      "datePosed": "2004-06-27"
     },
     {
       "id": "MAN_42",
@@ -549,7 +590,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_42/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_42-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_42-grosplan.png",
+      "datePosed": "2004-06-27"
     },
     {
       "id": "MAN_43",
@@ -562,7 +604,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_43/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_43-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_43-grosplan.png",
+      "datePosed": "2004-06-27"
     },
     {
       "id": "MAN_44",
@@ -575,7 +618,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_44/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_44-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_44-grosplan.png",
+      "datePosed": "2004-06-27"
     },
     {
       "id": "MAN_45",
@@ -588,7 +632,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_45/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_45-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_45-grosplan.png",
+      "datePosed": "2004-06-28"
     },
     {
       "id": "MAN_46",
@@ -601,7 +646,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_46/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_46-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_46-grosplan.png",
+      "datePosed": "2004-06-28"
     },
     {
       "id": "MAN_47",
@@ -614,7 +660,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/man_47/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_47-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_47-grosplan.png",
+      "datePosed": "2004-06-29"
     }
   ]
 }

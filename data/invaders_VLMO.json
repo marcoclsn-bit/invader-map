@@ -1,6 +1,6 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-06",
+  "version": 6,
+  "updatedAt": "2026-07-19",
   "city": "VLMO",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 3,
@@ -16,7 +16,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vlmo_01/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VLMO/VLMO_01-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VLMO/VLMO_01-grosplan.png",
+      "datePosed": "2017-08-05"
     },
     {
       "id": "VLMO_02",
@@ -29,7 +30,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vlmo_02/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VLMO/VLMO_02-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VLMO/VLMO_02-grosplan.png",
+      "datePosed": "2017-08-08"
     },
     {
       "id": "VLMO_03",
@@ -42,7 +44,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/vlmo_03/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/VLMO/VLMO_03-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VLMO/VLMO_03-grosplan.png",
+      "datePosed": "2017-08-08"
     }
   ]
 }

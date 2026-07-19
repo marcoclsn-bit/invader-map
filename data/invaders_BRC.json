@@ -1,6 +1,6 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-06",
+  "version": 6,
+  "updatedAt": "2026-07-19",
   "city": "BRC",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 17,
@@ -16,7 +16,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/brc_01/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_01-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_01-grosplan.png",
+      "datePosed": "2002-09-18"
     },
     {
       "id": "BRC_02",
@@ -29,7 +30,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/brc_02/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_02-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_02-grosplan.png",
+      "datePosed": "2002-09-18"
     },
     {
       "id": "BRC_03",
@@ -42,7 +44,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/brc_03/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_03-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_03-grosplan.png",
+      "datePosed": "2002-09-19"
     },
     {
       "id": "BRC_04",
@@ -55,7 +58,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/brc_04/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_04-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_04-grosplan.png",
+      "datePosed": "2002-09-19"
     },
     {
       "id": "BRC_05",
@@ -68,7 +72,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/brc_05/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_05-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_05-grosplan.png",
+      "datePosed": "2002-09-19"
     },
     {
       "id": "BRC_06",
@@ -81,7 +86,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/brc_06/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_06-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_06-grosplan.png",
+      "datePosed": "2002-09-19"
     },
     {
       "id": "BRC_07",
@@ -94,7 +100,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/brc_07/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_07-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_07-grosplan.png",
+      "datePosed": "2002-09-19"
     },
     {
       "id": "BRC_08",
@@ -107,7 +114,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/brc_08/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_08-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_08-grosplan.png",
+      "datePosed": "2002-09-20"
     },
     {
       "id": "BRC_09",
@@ -120,7 +128,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/brc_09/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_09-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_09-grosplan.png",
+      "datePosed": "2002-09-20"
     },
     {
       "id": "BRC_10",
@@ -133,7 +142,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/brc_10/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_10-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_10-grosplan.png",
+      "datePosed": "2002-09-20"
     },
     {
       "id": "BRC_11",
@@ -146,7 +156,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/brc_11/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_11-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_11-grosplan.png",
+      "datePosed": "2002-09-20"
     },
     {
       "id": "BRC_12",
@@ -159,7 +170,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/brc_12/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_12-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_12-grosplan.png",
+      "datePosed": "2002-09-21"
     },
     {
       "id": "BRC_13",
@@ -172,7 +184,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/brc_13/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_13-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_13-grosplan.png",
+      "datePosed": "2002-09-21"
     },
     {
       "id": "BRC_14",
@@ -185,7 +198,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/brc_14/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_14-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_14-grosplan.png",
+      "datePosed": "2002-09-21"
     },
     {
       "id": "BRC_15",
@@ -198,7 +212,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/brc_15/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_15-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_15-grosplan.png",
+      "datePosed": "2002-09-21"
     },
     {
       "id": "BRC_16",
@@ -211,7 +226,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/brc_16/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_16-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_16-grosplan.png",
+      "datePosed": "2002-09-21"
     },
     {
       "id": "BRC_17",
@@ -224,7 +240,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/brc_17/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_17-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BRC/BRC_17-grosplan.png",
+      "datePosed": "2002-09-21"
     }
   ]
 }

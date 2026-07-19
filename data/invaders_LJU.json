@@ -1,6 +1,6 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-06",
+  "version": 6,
+  "updatedAt": "2026-07-19",
   "city": "LJU",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 42,
@@ -16,7 +16,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_01/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_01-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_01-grosplan.png",
+      "datePosed": "2006-03-13"
     },
     {
       "id": "LJU_02",
@@ -29,7 +30,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_02/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_02-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_02-grosplan.png",
+      "datePosed": "2006-03-13"
     },
     {
       "id": "LJU_03",
@@ -42,7 +44,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_03/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_03-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_03-grosplan.png",
+      "datePosed": "2006-03-13"
     },
     {
       "id": "LJU_04",
@@ -55,7 +58,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_04/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_04-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_04-grosplan.png",
+      "datePosed": "2006-03-13"
     },
     {
       "id": "LJU_05",
@@ -68,7 +72,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_05/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_05-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_05-grosplan.png",
+      "datePosed": "2006-03-13"
     },
     {
       "id": "LJU_06",
@@ -81,7 +86,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_06/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_06-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_06-grosplan.png",
+      "datePosed": "2006-03-13"
     },
     {
       "id": "LJU_07",
@@ -94,7 +100,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_07/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_07-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_07-grosplan.png",
+      "datePosed": "2006-03-13"
     },
     {
       "id": "LJU_08",
@@ -107,7 +114,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_08/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_08-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_08-grosplan.png",
+      "datePosed": "2006-03-13"
     },
     {
       "id": "LJU_09",
@@ -120,7 +128,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_09/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_09-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_09-grosplan.png",
+      "datePosed": "2006-03-13"
     },
     {
       "id": "LJU_10",
@@ -133,7 +142,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_10/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_10-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_10-grosplan.png",
+      "datePosed": "2006-03-13"
     },
     {
       "id": "LJU_11",
@@ -146,7 +156,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_11/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_11-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_11-grosplan.png",
+      "datePosed": "2006-03-13"
     },
     {
       "id": "LJU_12",
@@ -159,7 +170,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_12/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_12-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_12-grosplan.png",
+      "datePosed": "2006-03-13"
     },
     {
       "id": "LJU_13",
@@ -172,7 +184,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_13/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_13-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_13-grosplan.png",
+      "datePosed": "2006-03-14"
     },
     {
       "id": "LJU_14",
@@ -185,7 +198,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_14/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_14-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_14-grosplan.png",
+      "datePosed": "2006-03-14"
     },
     {
       "id": "LJU_15",
@@ -198,7 +212,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_15/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_15-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_15-grosplan.png",
+      "datePosed": "2006-03-14"
     },
     {
       "id": "LJU_16",
@@ -211,7 +226,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_16/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_16-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_16-grosplan.png",
+      "datePosed": "2006-03-14"
     },
     {
       "id": "LJU_17",
@@ -224,7 +240,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_17/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_17-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_17-grosplan.png",
+      "datePosed": "2006-03-15"
     },
     {
       "id": "LJU_18",
@@ -237,7 +254,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_18/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_18-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_18-grosplan.png",
+      "datePosed": "2006-03-15"
     },
     {
       "id": "LJU_19",
@@ -250,7 +268,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_19/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_19-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_19-grosplan.png",
+      "datePosed": "2006-03-15"
     },
     {
       "id": "LJU_20",
@@ -263,7 +282,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_20/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_20-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_20-grosplan.png",
+      "datePosed": "2006-03-16"
     },
     {
       "id": "LJU_21",
@@ -276,7 +296,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_21/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_21-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_21-grosplan.png",
+      "datePosed": "2021-03-09"
     },
     {
       "id": "LJU_22",
@@ -289,7 +310,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_22/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_22-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_22-grosplan.png",
+      "datePosed": "2021-03-09"
     },
     {
       "id": "LJU_23",
@@ -302,7 +324,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_23/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_23-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_23-grosplan.png",
+      "datePosed": "2021-03-09"
     },
     {
       "id": "LJU_24",
@@ -315,7 +338,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_24/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_24-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_24-grosplan.png",
+      "datePosed": "2021-03-10"
     },
     {
       "id": "LJU_25",
@@ -328,7 +352,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_25/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_25-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_25-grosplan.png",
+      "datePosed": "2021-03-10"
     },
     {
       "id": "LJU_26",
@@ -341,7 +366,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_26/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_26-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_26-grosplan.png",
+      "datePosed": "2021-03-10"
     },
     {
       "id": "LJU_27",
@@ -354,7 +380,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_27/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_27-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_27-grosplan.png",
+      "datePosed": "2021-03-10"
     },
     {
       "id": "LJU_28",
@@ -367,7 +394,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_28/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_28-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_28-grosplan.png",
+      "datePosed": "2021-03-10"
     },
     {
       "id": "LJU_29",
@@ -380,7 +408,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_29/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_29-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_29-grosplan.png",
+      "datePosed": "2021-03-10"
     },
     {
       "id": "LJU_30",
@@ -393,7 +422,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_30/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_30-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_30-grosplan.png",
+      "datePosed": "2021-03-10"
     },
     {
       "id": "LJU_31",
@@ -406,7 +436,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_31/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_31-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_31-grosplan.png",
+      "datePosed": "2021-03-11"
     },
     {
       "id": "LJU_32",
@@ -419,7 +450,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_32/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_32-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_32-grosplan.png",
+      "datePosed": "2021-03-11"
     },
     {
       "id": "LJU_33",
@@ -432,7 +464,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_33/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_33-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_33-grosplan.png",
+      "datePosed": "2021-03-11"
     },
     {
       "id": "LJU_34",
@@ -445,7 +478,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_34/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_34-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_34-grosplan.png",
+      "datePosed": "2021-03-11"
     },
     {
       "id": "LJU_35",
@@ -458,7 +492,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_35/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_35-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_35-grosplan.png",
+      "datePosed": "2021-03-11"
     },
     {
       "id": "LJU_36",
@@ -471,7 +506,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_36/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_36-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_36-grosplan.png",
+      "datePosed": "2021-03-11"
     },
     {
       "id": "LJU_37",
@@ -484,7 +520,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_37/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_37-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_37-grosplan.png",
+      "datePosed": "2021-03-11"
     },
     {
       "id": "LJU_38",
@@ -497,7 +534,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_38/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_38-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_38-grosplan.png",
+      "datePosed": "2021-03-11"
     },
     {
       "id": "LJU_39",
@@ -510,7 +548,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_39/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_39-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_39-grosplan.png",
+      "datePosed": "2021-03-11"
     },
     {
       "id": "LJU_40",
@@ -523,7 +562,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_40/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_40-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_40-grosplan.png",
+      "datePosed": "2021-03-11"
     },
     {
       "id": "LJU_41",
@@ -536,7 +576,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_41/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_41-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_41-grosplan.png",
+      "datePosed": "2021-03-12"
     },
     {
       "id": "LJU_42",
@@ -549,7 +590,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/lju_42/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_42-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_42-grosplan.png",
+      "datePosed": "2021-03-14"
     }
   ]
 }

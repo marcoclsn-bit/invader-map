@@ -1,6 +1,6 @@
 {
-  "version": 4,
-  "updatedAt": "2026-07-06",
+  "version": 5,
+  "updatedAt": "2026-07-19",
   "city": "LY",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 48,
@@ -16,7 +16,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_01/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_01-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_01-grosplan.png",
+      "datePosed": "2001-04-09"
     },
     {
       "id": "LY_02",
@@ -29,7 +30,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_02/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_02-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_02-grosplan.png",
+      "datePosed": "2001-04-09"
     },
     {
       "id": "LY_03",
@@ -42,7 +44,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_03/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_03-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_03-grosplan.png",
+      "datePosed": "2001-04-09"
     },
     {
       "id": "LY_04",
@@ -55,7 +58,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_04/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_04-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_04-grosplan.png",
+      "datePosed": "2001-04-09"
     },
     {
       "id": "LY_05",
@@ -68,7 +72,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_05/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_05-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_05-grosplan.png",
+      "datePosed": "2001-04-09"
     },
     {
       "id": "LY_06",
@@ -81,7 +86,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_06/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_06-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_06-grosplan.png",
+      "datePosed": "2001-04-09"
     },
     {
       "id": "LY_07",
@@ -94,7 +100,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_07/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_07-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_07-grosplan.png",
+      "datePosed": "2001-04-09"
     },
     {
       "id": "LY_08",
@@ -107,7 +114,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_08/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_08-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_08-grosplan.png",
+      "datePosed": "2001-04-10"
     },
     {
       "id": "LY_09",
@@ -120,7 +128,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_09/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_09-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_09-grosplan.png",
+      "datePosed": "2001-04-10"
     },
     {
       "id": "LY_10",
@@ -133,7 +142,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_10/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_10-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_10-grosplan.png",
+      "datePosed": "2001-04-10"
     },
     {
       "id": "LY_11",
@@ -146,7 +156,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_11/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_11-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_11-grosplan.png",
+      "datePosed": "2001-04-10"
     },
     {
       "id": "LY_12",
@@ -159,7 +170,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_12/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_12-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_12-grosplan.png",
+      "datePosed": "2001-04-10"
     },
     {
       "id": "LY_13",
@@ -172,7 +184,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_13/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_13-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_13-grosplan.png",
+      "datePosed": "2001-04-10"
     },
     {
       "id": "LY_14",
@@ -185,7 +198,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_14/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_14-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_14-grosplan.png",
+      "datePosed": "2001-04-10"
     },
     {
       "id": "LY_15",
@@ -198,7 +212,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_15/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_15-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_15-grosplan.png",
+      "datePosed": "2001-04-10"
     },
     {
       "id": "LY_16",
@@ -211,7 +226,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_16/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_16-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_16-grosplan.png",
+      "datePosed": "2001-04-10"
     },
     {
       "id": "LY_17",
@@ -224,7 +240,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_17/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_17-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_17-grosplan.png",
+      "datePosed": "2001-04-10"
     },
     {
       "id": "LY_18",
@@ -237,7 +254,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_18/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_18-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_18-grosplan.png",
+      "datePosed": "2001-04-10"
     },
     {
       "id": "LY_19",
@@ -250,7 +268,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_19/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_19-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_19-grosplan.png",
+      "datePosed": "2001-04-11"
     },
     {
       "id": "LY_20",
@@ -263,7 +282,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_20/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_20-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_20-grosplan.png",
+      "datePosed": "2001-04-11"
     },
     {
       "id": "LY_21",
@@ -276,7 +296,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_21/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_21-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_21-grosplan.png",
+      "datePosed": "2001-04-11"
     },
     {
       "id": "LY_22",
@@ -289,7 +310,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_22/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_22-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_22-grosplan.png",
+      "datePosed": "2001-04-11"
     },
     {
       "id": "LY_23",
@@ -302,7 +324,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_23/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_23-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_23-grosplan.png",
+      "datePosed": "2001-04-11"
     },
     {
       "id": "LY_24",
@@ -315,7 +338,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_24/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_24-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_24-grosplan.png",
+      "datePosed": "2001-04-11"
     },
     {
       "id": "LY_25",
@@ -328,7 +352,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_25/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_25-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_25-grosplan.png",
+      "datePosed": "2001-04-11"
     },
     {
       "id": "LY_26",
@@ -341,7 +366,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_26/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_26-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_26-grosplan.png",
+      "datePosed": "2001-04-11"
     },
     {
       "id": "LY_27",
@@ -354,7 +380,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_27/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_27-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_27-grosplan.png",
+      "datePosed": "2001-04-11"
     },
     {
       "id": "LY_28",
@@ -367,7 +394,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_28/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_28-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_28-grosplan.png",
+      "datePosed": "2001-04-11"
     },
     {
       "id": "LY_29",
@@ -380,7 +408,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_29/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_29-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_29-grosplan.png",
+      "datePosed": "2001-04-12"
     },
     {
       "id": "LY_30",
@@ -393,7 +422,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_30/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_30-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_30-grosplan.png",
+      "datePosed": "2001-04-12"
     },
     {
       "id": "LY_31",
@@ -406,7 +436,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_31/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_31-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_31-grosplan.png",
+      "datePosed": "2001-04-12"
     },
     {
       "id": "LY_32",
@@ -419,7 +450,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_32/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_32-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_32-grosplan.png",
+      "datePosed": "2001-04-12"
     },
     {
       "id": "LY_33",
@@ -432,7 +464,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_33/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_33-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_33-grosplan.png",
+      "datePosed": "2001-04-12"
     },
     {
       "id": "LY_34",
@@ -445,7 +478,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_34/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_34-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_34-grosplan.png",
+      "datePosed": "2001-04-12"
     },
     {
       "id": "LY_35",
@@ -458,7 +492,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_35/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_35-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_35-grosplan.png",
+      "datePosed": "2001-04-12"
     },
     {
       "id": "LY_36",
@@ -471,7 +506,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_36/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_36-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_36-grosplan.png",
+      "datePosed": "2001-04-12"
     },
     {
       "id": "LY_37",
@@ -484,7 +520,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_37/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_37-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_37-grosplan.png",
+      "datePosed": "2001-04-12"
     },
     {
       "id": "LY_38",
@@ -497,7 +534,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_38/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_38-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_38-grosplan.png",
+      "datePosed": "2001-04-12"
     },
     {
       "id": "LY_39",
@@ -510,7 +548,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_39/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_39-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_39-grosplan.png",
+      "datePosed": "2001-04-13"
     },
     {
       "id": "LY_40",
@@ -523,7 +562,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_40/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_40-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_40-grosplan.png",
+      "datePosed": "2001-05-08"
     },
     {
       "id": "LY_41",
@@ -536,7 +576,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_41/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_41-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_41-grosplan.png",
+      "datePosed": "2001-05-08"
     },
     {
       "id": "LY_42",
@@ -549,7 +590,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_42/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_42-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_42-grosplan.png",
+      "datePosed": "2001-05-08"
     },
     {
       "id": "LY_43",
@@ -562,7 +604,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_43/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_43-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_43-grosplan.png",
+      "datePosed": "2005-08-02"
     },
     {
       "id": "LY_44",
@@ -575,7 +618,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_44/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_44-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_44-grosplan.png",
+      "datePosed": "2005-09-14"
     },
     {
       "id": "LY_45",
@@ -588,7 +632,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_45/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_45-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_45-grosplan.png",
+      "datePosed": "2005-09-14"
     },
     {
       "id": "LY_46",
@@ -601,7 +646,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_46/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_46-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_46-grosplan.png",
+      "datePosed": "2005-09-14"
     },
     {
       "id": "LY_47",
@@ -614,7 +660,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_47/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_47-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_47-grosplan.png",
+      "datePosed": "2005-09-14"
     },
     {
       "id": "LY_48",
@@ -627,7 +674,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/ly_48/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_48-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LY/LY_48-grosplan.png",
+      "datePosed": "2005-09-14"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-06",
+  "version": 6,
+  "updatedAt": "2026-07-19",
   "city": "MTB",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 11,
@@ -16,7 +16,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mtb_01/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MTB/MTB_01-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MTB/MTB_01-grosplan.png",
+      "datePosed": "2008-08-23"
     },
     {
       "id": "MTB_02",
@@ -29,7 +30,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mtb_02/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MTB/MTB_02-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MTB/MTB_02-grosplan.png",
+      "datePosed": "2008-08-23"
     },
     {
       "id": "MTB_03",
@@ -42,7 +44,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mtb_03/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MTB/MTB_03-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MTB/MTB_03-grosplan.png",
+      "datePosed": "2008-08-23"
     },
     {
       "id": "MTB_04",
@@ -55,7 +58,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mtb_04/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MTB/MTB_04-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MTB/MTB_04-grosplan.png",
+      "datePosed": "2008-08-24"
     },
     {
       "id": "MTB_05",
@@ -68,7 +72,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mtb_05/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MTB/MTB_05-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MTB/MTB_05-grosplan.png",
+      "datePosed": "2008-08-24"
     },
     {
       "id": "MTB_06",
@@ -81,7 +86,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mtb_06/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MTB/MTB_06-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MTB/MTB_06-grosplan.png",
+      "datePosed": "2008-08-24"
     },
     {
       "id": "MTB_07",
@@ -94,7 +100,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mtb_07/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MTB/MTB_07-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MTB/MTB_07-grosplan.png",
+      "datePosed": "2008-08-24"
     },
     {
       "id": "MTB_08",
@@ -107,7 +114,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mtb_08/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MTB/MTB_08-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MTB/MTB_08-grosplan.png",
+      "datePosed": "2008-08-24"
     },
     {
       "id": "MTB_09",
@@ -120,7 +128,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mtb_09/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MTB/MTB_09-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MTB/MTB_09-grosplan.png",
+      "datePosed": "2008-08-25"
     },
     {
       "id": "MTB_10",
@@ -133,7 +142,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mtb_10/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MTB/MTB_10-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MTB/MTB_10-grosplan.png",
+      "datePosed": "2008-08-26"
     },
     {
       "id": "MTB_11",
@@ -146,7 +156,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/mtb_11/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/MTB/MTB_11-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MTB/MTB_11-grosplan.png",
+      "datePosed": "2008-08-27"
     }
   ]
 }

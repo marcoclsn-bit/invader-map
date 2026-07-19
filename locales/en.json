@@ -53,7 +53,8 @@
       "alreadyFlashed": "✓ Flashed",
       "navigate": "Directions",
       "instagram": "See on Instagram",
-      "labelsTitle": "LABELS"
+      "labelsTitle": "LABELS",
+      "posedOn": "Installed on {{date}}"
     },
     "loading": {
       "progress": "LOADING ({{pct}}%)"

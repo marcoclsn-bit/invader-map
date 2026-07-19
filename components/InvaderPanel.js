@@ -10,6 +10,15 @@ import { openInstagramTag } from '../utils/navigation';
 import { buildContextBlock } from '../utils/feedback';
 import { FEEDBACK_EMAIL } from '../constants';
 
+// « 1998-04-18 » → date lisible selon la langue (ex. « 18 avr. 1998 »).
+function formatPosedDate(iso) {
+  try {
+    const d = new Date(iso + 'T00:00:00');
+    if (isNaN(d)) return iso;
+    return d.toLocaleDateString(undefined, { day: 'numeric', month: 'short', year: 'numeric' });
+  } catch { return iso; }
+}
+
 let _styleCache = null;
 function getStyles(theme) {
   if (_styleCache?.theme === theme) return _styleCache.styles;
@@ -131,6 +140,14 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
         </View>
       </View>
 
+      {invader.datePosed ? (
+        <View style={styles.metaRow}>
+          <Ionicons name="calendar-outline" size={14} color={theme.textSecondary} />
+          <Text style={styles.metaText}>{t('map.panel.posedOn', { date: formatPosedDate(invader.datePosed) })}</Text>
+        </View>
+      ) : null}
+      {invader.hint ? <Text style={styles.hint}>{invader.hint}</Text> : null}
+
       <TouchableOpacity
         style={styles.igBtn}
         onPress={handleInstagram}
@@ -212,7 +229,9 @@ function makeStyles(t) {
     statusBadge: { borderRadius: 6, paddingHorizontal: 10, paddingVertical: 4 },
     statusText: { color: '#fff', fontWeight: '600', fontSize: 13 },
     points: { fontSize: 15, color: t.textSecondary },
-    hint: { marginTop: 12, fontSize: 14, color: t.textSecondary, fontStyle: 'italic' },
+    metaRow: { flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 14 },
+    metaText: { fontSize: 13, color: t.textSecondary },
+    hint: { marginTop: 10, fontSize: 14, color: t.textSecondary, fontStyle: 'italic' },
     actions: { flexDirection: 'row', gap: 8 },
     actionBtn: {
       flex: 1, borderRadius: 8, paddingHorizontal: 14, paddingVertical: 9,

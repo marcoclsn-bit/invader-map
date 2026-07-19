@@ -1,6 +1,6 @@
 {
-  "version": 4,
-  "updatedAt": "2026-07-06",
+  "version": 5,
+  "updatedAt": "2026-07-19",
   "city": "AIX",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 10,
@@ -16,7 +16,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/aix_01/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_01-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_01-grosplan.png",
+      "datePosed": "1999-06-26"
     },
     {
       "id": "AIX_02",
@@ -29,7 +30,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/aix_02/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_02-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_02-grosplan.png",
+      "datePosed": "1999-06-26"
     },
     {
       "id": "AIX_03",
@@ -42,7 +44,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/aix_03/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_03-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_03-grosplan.png",
+      "datePosed": "1999-06-26"
     },
     {
       "id": "AIX_04",
@@ -55,7 +58,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/aix_04/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_04-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_04-grosplan.png",
+      "datePosed": "1999-06-26"
     },
     {
       "id": "AIX_05",
@@ -68,7 +72,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/aix_05/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_05-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_05-grosplan.png",
+      "datePosed": "1999-06-26"
     },
     {
       "id": "AIX_06",
@@ -81,7 +86,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/aix_06/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_06-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_06-grosplan.png",
+      "datePosed": "1999-06-26"
     },
     {
       "id": "AIX_07",
@@ -94,7 +100,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/aix_07/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_07-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_07-grosplan.png",
+      "datePosed": "1999-06-26"
     },
     {
       "id": "AIX_08",
@@ -107,7 +114,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/aix_08/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_08-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_08-grosplan.png",
+      "datePosed": "1999-06-26"
     },
     {
       "id": "AIX_09",
@@ -120,7 +128,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/aix_09/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_09-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_09-grosplan.png",
+      "datePosed": "1999-06-26"
     },
     {
       "id": "AIX_10",
@@ -133,7 +142,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/aix_10/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_10-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/AIX/AIX_10-grosplan.png",
+      "datePosed": "1999-06-26"
     }
   ]
 }

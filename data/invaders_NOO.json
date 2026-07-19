@@ -1,6 +1,6 @@
 {
-  "version": 4,
-  "updatedAt": "2026-07-06",
+  "version": 5,
+  "updatedAt": "2026-07-19",
   "city": "NOO",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "_baseCount": 10,
@@ -16,7 +16,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/noo_01/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NOO/NOO_01-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NOO/NOO_01-grosplan.png",
+      "datePosed": "2015-06-03"
     },
     {
       "id": "NOO_02",
@@ -29,7 +30,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/noo_02/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NOO/NOO_02-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NOO/NOO_02-grosplan.png",
+      "datePosed": "2015-06-03"
     },
     {
       "id": "NOO_03",
@@ -42,7 +44,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/noo_03/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NOO/NOO_03-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NOO/NOO_03-grosplan.png",
+      "datePosed": "2015-06-03"
     },
     {
       "id": "NOO_04",
@@ -55,7 +58,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/noo_04/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NOO/NOO_04-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NOO/NOO_04-grosplan.png",
+      "datePosed": "2015-06-03"
     },
     {
       "id": "NOO_05",
@@ -68,7 +72,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/noo_05/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NOO/NOO_05-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NOO/NOO_05-grosplan.png",
+      "datePosed": "2015-06-03"
     },
     {
       "id": "NOO_06",
@@ -81,7 +86,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/noo_06/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NOO/NOO_06-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NOO/NOO_06-grosplan.png",
+      "datePosed": "2015-06-03"
     },
     {
       "id": "NOO_07",
@@ -94,7 +100,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/noo_07/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NOO/NOO_07-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NOO/NOO_07-grosplan.png",
+      "datePosed": "2015-06-03"
     },
     {
       "id": "NOO_08",
@@ -107,7 +114,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/noo_08/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NOO/NOO_08-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NOO/NOO_08-grosplan.png",
+      "datePosed": "2015-06-03"
     },
     {
       "id": "NOO_09",
@@ -120,7 +128,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/noo_09/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NOO/NOO_09-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NOO/NOO_09-grosplan.png",
+      "datePosed": "2015-06-03"
     },
     {
       "id": "NOO_10",
@@ -133,7 +142,8 @@
       "instagramUrl": "https://www.instagram.com/explore/tags/noo_10/",
       "source": "goguelnikov",
       "statusFromPnote": true,
-      "photoUrl": "https://www.invader-spotter.art/grosplan/NOO/NOO_10-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NOO/NOO_10-grosplan.png",
+      "datePosed": "2015-06-03"
     }
   ]
 }
