@@ -710,6 +710,15 @@
           "Vuelve cuando quieras: los datos se actualizan automáticamente."
         ]
       },
+      "partage": {
+        "title": "Comparte tus hazañas",
+        "benefit": "Al final de una caza o de una ruta, convierte tu sesión en una bonita imagen «neón» para compartir con tus amigos.",
+        "steps": [
+          "Termina una sesión de Caza o de Ruta para ver el resumen.",
+          "Toca Compartir: la app crea una imagen con tu mapa, tu distancia, tu tiempo y tus puntos.",
+          "Envíala donde quieras — la app no publica nada en tu nombre, y tus puntos de salida/llegada quedan difuminados."
+        ]
+      },
       "flash": {
         "title": "Marca tus flashes",
         "benefit": "Lleva el registro de lo que ya has fotografiado — uno a uno o en masa.",

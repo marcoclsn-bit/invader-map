@@ -710,6 +710,15 @@
           "Reviens quand tu veux : les données sont rafraîchies automatiquement."
         ]
       },
+      "partage": {
+        "title": "Partager tes exploits",
+        "benefit": "À la fin d'une chasse ou d'un trajet, transforme ta session en une belle image « néon » à partager avec tes potes.",
+        "steps": [
+          "Termine une session de Chasse ou de Trajet pour afficher le récapitulatif.",
+          "Appuie sur Partager : l'app crée une image avec ta carte, ta distance, ton temps et tes points.",
+          "Envoie-la où tu veux — l'app ne publie rien en ton nom, et tes points de départ/arrivée restent flous."
+        ]
+      },
       "flash": {
         "title": "Marquer tes flashés",
         "benefit": "Garde la trace de ce que tu as déjà flashé — à la main, ou en masse.",

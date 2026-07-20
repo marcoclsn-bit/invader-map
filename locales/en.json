@@ -710,6 +710,15 @@
           "Come back whenever you like: data refreshes automatically."
         ]
       },
+      "partage": {
+        "title": "Share your feats",
+        "benefit": "At the end of a hunt or a route, turn your session into a slick \"neon\" image to share with your friends.",
+        "steps": [
+          "Finish a Hunt or Route session to see the recap.",
+          "Tap Share: the app builds an image with your map, distance, time and points.",
+          "Send it wherever you like — the app posts nothing on your behalf, and your start/end points stay blurred."
+        ]
+      },
       "flash": {
         "title": "Mark your flashes",
         "benefit": "Keep track of what you've already flashed — one by one, or in bulk.",

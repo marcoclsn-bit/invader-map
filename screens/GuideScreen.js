@@ -19,6 +19,7 @@ const GROUPS = [
     { id: 'palmares', icon: 'ribbon' },
     { id: 'stats', icon: 'stats-chart' },
     { id: 'news', icon: 'newspaper' },
+    { id: 'partage', icon: 'share-social' },
   ] },
   { key: 'manage', sections: [
     { id: 'flash', icon: 'flash' },

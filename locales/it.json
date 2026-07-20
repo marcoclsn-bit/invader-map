@@ -710,6 +710,15 @@
           "Torna quando vuoi: i dati si aggiornano automaticamente."
         ]
       },
+      "partage": {
+        "title": "Condividi le tue imprese",
+        "benefit": "Alla fine di una caccia o di un percorso, trasforma la tua sessione in una bella immagine «neon» da condividere con gli amici.",
+        "steps": [
+          "Concludi una sessione di Caccia o di Percorso per vedere il riepilogo.",
+          "Tocca Condividi: l'app crea un'immagine con la tua mappa, la distanza, il tempo e i punti.",
+          "Inviala dove vuoi — l'app non pubblica nulla a tuo nome e i punti di partenza/arrivo restano sfocati."
+        ]
+      },
       "flash": {
         "title": "Segna i tuoi flash",
         "benefit": "Tieni traccia di ciò che hai già flashato — uno a uno o in blocco.",
