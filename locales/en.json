@@ -610,8 +610,8 @@
     }
   },
   "share": {
-    "textKm": "I walked {{km}} km and flashed {{count}} Invaders in {{city}} with InvaderQuest 👾",
-    "textNoKm": "I flashed {{count}} Invaders in {{city}} with InvaderQuest 👾",
+    "textKm": "Today, I walked {{km}} km and flashed {{count}} Invaders in {{city}} 👾",
+    "textNoKm": "Today, I flashed {{count}} Invaders in {{city}} 👾",
     "url": "@invaderquest.app",
     "unavailable": "Sharing is not available on this device."
   },

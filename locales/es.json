@@ -610,8 +610,8 @@
     }
   },
   "share": {
-    "textKm": "Recorrí {{km}} km y flasheé {{count}} Invaders en {{city}} con InvaderQuest 👾",
-    "textNoKm": "Flasheé {{count}} Invaders en {{city}} con InvaderQuest 👾",
+    "textKm": "Hoy recorrí {{km}} km y flasheé {{count}} Invaders en {{city}} 👾",
+    "textNoKm": "Hoy flasheé {{count}} Invaders en {{city}} 👾",
     "url": "@invaderquest.app",
     "unavailable": "Compartir no está disponible en este dispositivo."
   },
