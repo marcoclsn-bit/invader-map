@@ -74,6 +74,14 @@ function bump(api) {
 }
 const RATE_LIMIT = 'RATE_LIMIT'; // marqueur d'erreur interne
 
+// Réserve un appel Mapbox (ex. carte statique du partage) : compte dans le même
+// plafond quotidien que le géocodage. Renvoie true si sous le plafond (et incrémente).
+export async function reserveMapboxCall() {
+  if (!(await underCap('mapbox'))) return false;
+  bump('mapbox');
+  return true;
+}
+
 // ─── MAPBOX : géocodage / autocomplétion ────────────────────────────────────────
 
 const MAPBOX_FORWARD = 'https://api.mapbox.com/search/geocode/v6/forward';

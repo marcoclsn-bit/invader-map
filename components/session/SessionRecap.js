@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { Modal, View, Text, TouchableOpacity, StyleSheet, ActivityIndicator, Alert, ScrollView } from 'react-native';
+import { Modal, View, Text, TouchableOpacity, StyleSheet, ActivityIndicator, Alert, ScrollView, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../theme/ThemeContext';
@@ -8,8 +8,12 @@ import { CITIES } from '../../cities/registry';
 import { getBadge } from '../../data/badges';
 import { useGamification } from '../../context/GamificationContext';
 import { useAppContext } from '../../context/AppContext';
-import ShareStory, { STORY_W, STORY_H } from '../share/ShareStory';
+import ShareStory, { STORY_W, STORY_H, buildStaticMap } from '../share/ShareStory';
 import { captureAndShare } from '../../services/shareStory';
+import { reserveMapboxCall } from '../../services/routing';
+import { MAPBOX_TOKEN } from '../../config/mapbox';
+
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 function fmtDuration(sec) {
   const m = Math.round((sec ?? 0) / 60);
@@ -24,6 +28,7 @@ export default function SessionRecap() {
   const { invaders } = useAppContext();
   const storyRef = useRef(null);
   const [busy, setBusy] = useState(false);
+  const [shareMap, setShareMap] = useState(null); // carte réelle Mapbox pour la capture (null = stylisé)
 
   const session = pendingRecap?.session ?? null;
   const newBadgeIds = pendingRecap?.newBadgeIds ?? [];
@@ -44,7 +49,21 @@ export default function SessionRecap() {
 
   async function onShare() {
     setBusy(true);
+    // Carte réelle Mapbox en fond (1 appel, compté dans le plafond quotidien).
+    // Si pas de token / plafond atteint / hors-ligne → repli sur le fond stylisé.
+    let map = null;
+    if (session.routeCoords?.length >= 2 || pins.length > 0) {
+      try {
+        if (MAPBOX_TOKEN && (await reserveMapboxCall())) {
+          const m = buildStaticMap(session.routeCoords, pins, MAPBOX_TOKEN);
+          if (m) { await Image.prefetch(m.url); map = m; }
+        }
+      } catch { map = null; } // hors-ligne / erreur → stylisé
+    }
+    setShareMap(map);
+    await sleep(map ? 450 : 120); // laisse le rendu hors-écran se stabiliser (image chargée)
     const r = await captureAndShare(storyRef);
+    setShareMap(null);
     setBusy(false);
     if (r === 'unavailable') Alert.alert('InvaderQuest', t('share.unavailable'));
   }
@@ -103,7 +122,7 @@ export default function SessionRecap() {
 
         {/* Visuel de partage rendu hors écran pour la capture */}
         <View style={styles.offscreen} pointerEvents="none">
-          <ShareStory ref={storyRef} session={session} cityName={cityName} pins={pins} />
+          <ShareStory ref={storyRef} session={session} cityName={cityName} pins={pins} map={shareMap} />
         </View>
       </View>
     </Modal>
