@@ -48,6 +48,30 @@ describe('combo depuis la timeline (hors session, ex. flashs depuis la Carte)', 
     const flashHistory = Array.from({ length: 10 }, (_, i) => flash(`PA_${i}`, atMin(i * 6)));
     expect(pred('combo10', { session: null, flashHistory })).toBe(true);
   });
+
+  // Anti-catalogage : cocher sa collection depuis la Liste (quelques secondes
+  // d'écart) ne doit débloquer AUCUN trophée de vitesse/combo.
+  test('catalogage : 35 flashs à 8 s d’écart → ni combo ni speedrunner', () => {
+    const atSec = (s) => new Date(2024, 0, 1, 12, 0, s);
+    const flashHistory = Array.from({ length: 35 }, (_, i) => flash(`PA_${i}`, atSec(i * 8)));
+    expect(pred('speedrunner', { session: null, flashHistory })).toBe(false);
+    expect(pred('combo10', { session: null, flashHistory })).toBe(false);
+    expect(pred('combo30', { session: null, flashHistory })).toBe(false);
+    expect(pred('eclair', { session: null, flashHistory })).toBe(false);
+  });
+
+  test('session + catalogage : 15 ids cochés en rafale pendant une session → non', () => {
+    const atSec = (s) => new Date(2024, 0, 1, 12, 0, s);
+    const flashHistory = Array.from({ length: 15 }, (_, i) => flash(`PA_${i}`, atSec(i * 10)));
+    const s = session({ invaderIds: ids(15) });
+    expect(pred('combo15', { session: s, flashHistory })).toBe(false);
+  });
+
+  test('terrain réel : 10 flashs espacés de 5 min pendant une session → oui', () => {
+    const flashHistory = Array.from({ length: 10 }, (_, i) => flash(`PA_${i + 1}`, atMin(i * 5)));
+    const s = session({ invaderIds: ids(10) });
+    expect(pred('combo10', { session: s, flashHistory })).toBe(true);
+  });
 });
 
 describe('exploration', () => {
@@ -100,10 +124,12 @@ describe('secret / horaires / paliers', () => {
 
 describe('evaluateBadges', () => {
   test('renvoie les nouveaux déblocages et ignore ceux déjà obtenus', () => {
+    // 15 flashs espacés de 2 min (terrain réel) sur une session de 30 min :
+    // 5 premiers dans les 10 premières minutes → speedrunner ; 10/15 → combos.
     const ctx = {
       session: session({ invaderIds: ids(15), durationSec: 1200 }),
       sessions: [],
-      flashHistory: ids(15).map((id) => flash(id, day(1))),
+      flashHistory: ids(15).map((id, i) => flash(id, new Date(2024, 0, 1, 12, i * 2, 0))),
     };
     const first = evaluateBadges(ctx, {});
     expect(first).toEqual(expect.arrayContaining(['speedrunner', 'combo10', 'combo15']));

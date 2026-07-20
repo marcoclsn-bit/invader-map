@@ -84,11 +84,26 @@ function maxConsecutiveWeekends(flashHistory) {
 
 const sessionCount = (ctx) => (ctx.session ? ctx.session.invaderIds.length : 0);
 
+// ── Anti-catalogage ─────────────────────────────────────────────────────────────
+// Sur le terrain on MARCHE entre deux mosaïques (minutes d'écart) ; cocher sa
+// collection depuis la Liste produit des flashs espacés de quelques secondes.
+// Pour les trophées de vitesse/combo, les flashs à moins de 2 min d'écart ne
+// comptent que pour 1 : le catalogage ne débloque pas les exploits de terrain.
+const MIN_COMBO_GAP_MS = 2 * 60 * 1000;
+
+function collapseBursts(tsSorted) {
+  const out = [];
+  for (const t of tsSorted) {
+    if (!out.length || t - out[out.length - 1] >= MIN_COMBO_GAP_MS) out.push(t);
+  }
+  return out;
+}
+
 // Nombre max de flashs datés dans une fenêtre glissante de `minutes`.
 // Permet aux combos de se déclencher depuis N'IMPORTE QUEL flash (Carte incluse),
-// sans exiger une « session » formelle (Chasse/Balade).
+// sans exiger une « session » formelle (Chasse/Balade). Rafales fusionnées.
 function maxFlashesInWindow(flashHistory, minutes) {
-  const ts = datedFlashes(flashHistory).map((f) => f.ts).sort((a, b) => a - b);
+  const ts = collapseBursts(datedFlashes(flashHistory).map((f) => f.ts).sort((a, b) => a - b));
   const win = minutes * 60 * 1000;
   let best = 0, j = 0;
   for (let i = 0; i < ts.length; i++) {
@@ -97,8 +112,27 @@ function maxFlashesInWindow(flashHistory, minutes) {
   }
   return best;
 }
+
+// Flashs d'une session comptés avec la même règle d'espacement (sinon on pourrait
+// lancer une Chasse puis tout cocher depuis la Liste). Sans flashHistory fourni
+// (tests / robustesse), on retombe sur le compte brut.
+function sessionComboCount(ctx) {
+  if (!ctx.session) return 0;
+  if (ctx.flashHistory == null) return sessionCount(ctx);
+  const dates = new Map(
+    ctx.flashHistory
+      .filter((f) => f.flashedAt != null)
+      .map((f) => [f.id, new Date(f.flashedAt).getTime()])
+  );
+  const ts = ctx.session.invaderIds
+    .map((id) => dates.get(id))
+    .filter((t) => Number.isFinite(t))
+    .sort((a, b) => a - b);
+  return collapseBursts(ts).length;
+}
+
 // Combo atteint via une session OU via une rafale de flashs dans la fenêtre.
-const combo = (ctx, n, minutes) => sessionCount(ctx) >= n || maxFlashesInWindow(ctx.flashHistory, minutes) >= n;
+const combo = (ctx, n, minutes) => sessionComboCount(ctx) >= n || maxFlashesInWindow(ctx.flashHistory, minutes) >= n;
 
 // ─── Helpers du ctx étendu (invaders ville active, registre villes, actus…) ─────
 // Tous défensifs : un champ absent → false, jamais d'exception.
@@ -272,12 +306,12 @@ export const BADGES = [
   { id: 'speedrunner', category: 'combo', iconName: 'flash',
     // 5 flashs en ≤ 30 min (session courte OU 5 flashs datés dans 30 min)
     predicate: (ctx) =>
-      (!!ctx.session && sessionCount(ctx) >= 5 && ctx.session.durationSec > 0 && ctx.session.durationSec <= 1800)
+      (!!ctx.session && sessionComboCount(ctx) >= 5 && ctx.session.durationSec > 0 && ctx.session.durationSec <= 1800)
       || maxFlashesInWindow(ctx.flashHistory, 30) >= 5 },
   { id: 'eclair', category: 'combo', iconName: 'thunderstorm',
     // 10 flashs en ≤ 45 min
     predicate: (ctx) =>
-      (!!ctx.session && sessionCount(ctx) >= 10 && ctx.session.durationSec > 0 && ctx.session.durationSec <= 2700)
+      (!!ctx.session && sessionComboCount(ctx) >= 10 && ctx.session.durationSec > 0 && ctx.session.durationSec <= 2700)
       || maxFlashesInWindow(ctx.flashHistory, 45) >= 10 },
   { id: 'combo10', category: 'combo', iconName: 'albums',
     predicate: (ctx) => combo(ctx, 10, 60) },
