@@ -13,6 +13,7 @@ import ProfileHeader from '../components/profile/ProfileHeader';
 import HunterSlider from '../components/profile/HunterSlider';
 import SegmentDonut from '../components/profile/SegmentDonut';
 import AreaChart from '../components/profile/AreaChart';
+import BarChart from '../components/profile/BarChart';
 import BadgeGallery from '../components/profile/BadgeGallery';
 
 // ─── Utilitaires de date (cartes « high scores » conservées) ────────────────────
@@ -177,8 +178,8 @@ export default function StatsScreen({ navigation }) {
   const { width } = useWindowDimensions();
   const { theme } = useTheme();
   const { t, i18n } = useTranslation();
-  const { flashed, flashedDates, getFlashHistory, invaders, currentCityCode, cityIndex } = useAppContext();
-  const [chartMode, setChartMode] = useState('count');
+  const { flashed, flashedDates, getFlashHistory, invaders, currentCityCode, cityIndex, cityProgress } = useAppContext();
+  const [chartMode, setChartMode] = useState('daily');
 
   const flashHistory = useMemo(() => getFlashHistory(), [flashed, flashedDates]);
 
@@ -187,17 +188,68 @@ export default function StatsScreen({ navigation }) {
     [flashHistory, invaders, currentCityCode]
   );
   const profile = useMemo(
-    () => computeHunterProfile({ flashHistory, invaders, cityIndex, currentCityCode }),
-    [flashHistory, invaders, cityIndex, currentCityCode]
+    () => computeHunterProfile({ flashHistory, invaders, cityIndex, currentCityCode, cityProgress }),
+    [flashHistory, invaders, cityIndex, currentCityCode, cityProgress]
   );
+
+  // ── Statistiques GLOBALES (toutes villes) — ce sont TES stats de joueur,
+  // pas celles de la carte affichée.
+  const globalStats = useMemo(() => {
+    // Flashs par ville (préfixe de l'id)
+    const byCity = new Map();
+    for (const f of flashHistory) {
+      const i = f.id.lastIndexOf('_');
+      const code = i > 0 ? f.id.slice(0, i) : f.id;
+      byCity.set(code, (byCity.get(code) ?? 0) + 1);
+    }
+    let totalPts = 0;
+    for (const e of Object.values(cityProgress)) totalPts += e?.flashedPts ?? 0;
+    // Progression sur les villes COMMENCÉES (formule « juste » : registre exact,
+    // sinon approximation via l'index comme au Palmarès)
+    let sumFlashed = 0, sumDenom = 0;
+    for (const [code, flashedHere] of byCity) {
+      const reg = cityProgress[code];
+      if (reg?.denominator > 0) {
+        sumFlashed += reg.flashedCount;
+        sumDenom += reg.denominator;
+      } else {
+        const info = cityIndex.find((c) => c.code === code);
+        const flashables = info ? Math.max(0, (info.count ?? 0) - (info.destroyed ?? 0)) : 0;
+        sumFlashed += flashedHere;
+        sumDenom += Math.max(flashables, flashedHere);
+      }
+    }
+    return { totalPts, sumFlashed, sumDenom, citiesStarted: byCity.size };
+  }, [flashHistory, cityProgress, cityIndex]);
+
+  // ── Flashs par jour — semaine glissante (7 derniers jours, flashs datés)
+  const dailyBars = useMemo(() => {
+    const counts = new Map();
+    for (const f of flashHistory) {
+      if (!f.flashedAt) continue;
+      const d = new Date(f.flashedAt);
+      if (Number.isNaN(d.getTime())) continue;
+      const k = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+      counts.set(k, (counts.get(k) ?? 0) + 1);
+    }
+    const lang = i18n.language || 'fr';
+    const out = [];
+    for (let i = 6; i >= 0; i--) {
+      const d = new Date();
+      d.setDate(d.getDate() - i);
+      const k = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+      out.push({
+        label: d.toLocaleDateString(lang, { weekday: 'short' }).replace('.', ''),
+        value: counts.get(k) ?? 0,
+      });
+    }
+    return out;
+  }, [flashHistory, i18n.language]);
 
   function openDrawer() { navigation.dispatch(DrawerActions.openDrawer()); }
 
-  const cityName = CITIES[currentCityCode]?.name ?? currentCityCode;
+  const cityName = CITIES[currentCityCode]?.name ?? currentCityCode; // projections (carte « rythme »)
   const hasDated = stats.datedCount > 0;
-  const cityPct = stats.cityFlashable > 0
-    ? Math.min(100, (stats.cityFlashedHere / stats.cityFlashable) * 100).toFixed(0)
-    : '0';
   const chartWidth = width - 64; // marges (16×2) + padding carte (16×2)
 
   const Header = (
@@ -244,7 +296,7 @@ export default function StatsScreen({ navigation }) {
 
   // ── Courbe ──
   const series = profile.series;
-  const curvePoints = series.points.map(p => ({ key: p.key, cum: chartMode === 'count' ? p.cum : p.cumPts }));
+  const curvePoints = series.points.map(p => ({ key: p.key, cum: p.cum }));
 
   const sliderDefs = [
     { k: 'rarity', d: profile.sliders.rarity },
@@ -266,13 +318,15 @@ export default function StatsScreen({ navigation }) {
           <View style={st.summaryRow}>
             <BigStat label={t('stats.activity.total')} value={stats.total} accent={theme.accent} textSec={theme.textSecondary} />
             <View style={[st.vDivider, { backgroundColor: theme.border }]} />
-            <BigStat label={cityName} value={`${cityPct} %`} accent={theme.accentScore} textSec={theme.textSecondary} />
+            <BigStat label={t('stats.pointsLabel')} value={globalStats.totalPts} accent={theme.accentScore} textSec={theme.textSecondary} />
           </View>
-          {stats.cityFlashable > 0 && (
+          {globalStats.sumDenom > 0 && (
             <>
-              <ProgressBar pct={(stats.cityFlashedHere / stats.cityFlashable) * 100} theme={theme} />
+              <ProgressBar pct={Math.min(100, (globalStats.sumFlashed / globalStats.sumDenom) * 100)} theme={theme} />
               <Text style={[st.progressSub, { color: theme.textSecondary }]}>
-                {stats.cityFlashedHere} / {stats.cityFlashable} · {cityName}
+                {t(globalStats.citiesStarted === 1 ? 'stats.globalProgress_one' : 'stats.globalProgress_other', {
+                  flashed: globalStats.sumFlashed, total: globalStats.sumDenom, count: globalStats.citiesStarted,
+                })}
               </Text>
             </>
           )}
@@ -311,7 +365,7 @@ export default function StatsScreen({ navigation }) {
                 <SegmentDonut
                   segments={geoSegs.map(s => ({ value: s.count, color: s.color }))}
                   size={140} stroke={18} trackColor={theme.border}
-                  centerLabel={`${geoSegs[0]?.pct ?? 0}%`} centerSub={geoSegs[0]?.label}
+                  centerLabel={String(profile.geoBreakdown.total)} centerSub={t('stats.profile.geo.center')}
                   textColor={theme.textPrimary} subColor={theme.textSecondary}
                 />
               </View>
@@ -357,15 +411,15 @@ export default function StatsScreen({ navigation }) {
           )}
         </View>
 
-        {/* Courbe cumulative */}
+        {/* Progression : barres par jour (7 j glissants) + cumul long terme */}
         <View style={[cardStyles.wrap, { backgroundColor: theme.surface, marginHorizontal: 0 }]}>
           <Text style={[cardStyles.title, { color: theme.textSecondary }]}>{t('stats.profile.curve.title').toUpperCase()}</Text>
-          {series.available ? (
+          {hasDated ? (
             <>
               <View style={st.toggleRow}>
                 {[
-                  { key: 'count', label: t('stats.chart.toggleCount') },
-                  { key: 'pts', label: `${t('stats.chart.togglePts')} (${cityName})` },
+                  { key: 'daily', label: t('stats.chart.toggleDaily') },
+                  { key: 'cum', label: t('stats.chart.toggleCum') },
                 ].map(({ key, label }) => (
                   <TouchableOpacity
                     key={key}
@@ -377,14 +431,26 @@ export default function StatsScreen({ navigation }) {
                   </TouchableOpacity>
                 ))}
               </View>
-              <AreaChart
-                points={curvePoints}
-                width={chartWidth}
-                accent={theme.accent}
-                textSec={theme.textSecondary}
-                border={theme.border}
-                unit={series.unit}
-              />
+              {chartMode === 'daily' ? (
+                <BarChart
+                  bars={dailyBars}
+                  width={chartWidth}
+                  accent={theme.accent}
+                  textSec={theme.textSecondary}
+                  border={theme.border}
+                />
+              ) : series.available ? (
+                <AreaChart
+                  points={curvePoints}
+                  width={chartWidth}
+                  accent={theme.accent}
+                  textSec={theme.textSecondary}
+                  border={theme.border}
+                  unit={series.unit}
+                />
+              ) : (
+                <Hint theme={theme}>{t('stats.profile.empty.curve')}</Hint>
+              )}
             </>
           ) : (
             <Hint theme={theme}>{t('stats.profile.empty.curve')}</Hint>

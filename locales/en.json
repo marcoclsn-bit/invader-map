@@ -238,7 +238,9 @@
       "section": "Progress",
       "toggleCount": "Invaders",
       "togglePts": "Points",
-      "insufficient": "Keep flashing for a few more weeks to see your progress curve."
+      "insufficient": "Keep flashing for a few more weeks to see your progress curve.",
+      "toggleDaily": "Daily (7 d)",
+      "toggleCum": "All-time"
     },
     "streak": {
       "section": "Streak & records",
@@ -311,7 +313,8 @@
       },
       "geo": {
         "title": "Geographic breakdown",
-        "other": "Other"
+        "other": "Other",
+        "center": "flashes"
       },
       "curve": {
         "title": "Progress"
@@ -329,7 +332,10 @@
       "permissionTitle": "Permission required",
       "permissionLibrary": "Allow photo access in Settings to choose an image.",
       "permissionCamera": "Allow camera access in Settings to take a photo."
-    }
+    },
+    "pointsLabel": "Points",
+    "globalProgress_one": "{{flashed}} / {{total}} · {{count}} city started",
+    "globalProgress_other": "{{flashed}} / {{total}} · {{count}} cities started"
   },
   "about": {
     "title": "About",

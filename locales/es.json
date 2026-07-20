@@ -238,7 +238,9 @@
       "section": "Progresión",
       "toggleCount": "Invaders",
       "togglePts": "Puntos",
-      "insufficient": "Sigue unas semanas más para ver tu curva de progreso."
+      "insufficient": "Sigue unas semanas más para ver tu curva de progreso.",
+      "toggleDaily": "Por día (7 d)",
+      "toggleCum": "Acumulado"
     },
     "streak": {
       "section": "Racha & récords",
@@ -311,7 +313,8 @@
       },
       "geo": {
         "title": "Distribución geográfica",
-        "other": "Otros"
+        "other": "Otros",
+        "center": "flashes"
       },
       "curve": {
         "title": "Progresión"
@@ -329,7 +332,10 @@
       "permissionTitle": "Permiso necesario",
       "permissionLibrary": "Permite el acceso a las fotos en Ajustes para elegir una imagen.",
       "permissionCamera": "Permite el acceso a la cámara en Ajustes para tomar una foto."
-    }
+    },
+    "pointsLabel": "Puntos",
+    "globalProgress_one": "{{flashed}} / {{total}} · {{count}} ciudad empezada",
+    "globalProgress_other": "{{flashed}} / {{total}} · {{count}} ciudades empezadas"
   },
   "about": {
     "title": "Acerca de",

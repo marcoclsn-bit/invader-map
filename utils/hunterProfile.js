@@ -54,7 +54,7 @@ export function isDaytime(ts) {
 }
 
 // ─── Calcul principal ───────────────────────────────────────────────────────────
-export function computeHunterProfile({ flashHistory = [], invaders = [], cityIndex = [], currentCityCode } = {}) {
+export function computeHunterProfile({ flashHistory = [], invaders = [], cityIndex = [], currentCityCode, cityProgress = {} } = {}) {
   const now = new Date();
   const todayStart = startOfDay(now).getTime();
   const weekStart = startOfWeek(now).getTime();
@@ -114,26 +114,28 @@ export function computeHunterProfile({ flashHistory = [], invaders = [], cityInd
   const distinctCities = cityCount.size;
   const distinctDistricts = districtCount.size;
 
-  // ── Points moyens (Rareté) — uniquement sur les flashés à points connus ──
+  // ── Points moyens (Rareté) — GLOBAL via le registre par ville (toutes tes
+  // villes visitées), pas seulement la ville courante.
   let ptsSum = 0, ptsN = 0;
-  for (const f of flashHistory) {
-    const p = invPts.get(f.id);
-    if (p != null && p > 0) { ptsSum += p; ptsN++; }
+  for (const e of Object.values(cityProgress)) {
+    if (e?.flashedPts > 0 && e?.flashedCount > 0) { ptsSum += e.flashedPts; ptsN += e.flashedCount; }
+  }
+  // Repli : registre vide (jamais alimenté) → points de la ville courante
+  if (ptsN === 0) {
+    for (const f of flashHistory) {
+      const p = invPts.get(f.id);
+      if (p != null && p > 0) { ptsSum += p; ptsN++; }
+    }
   }
   const avgPoints = ptsN > 0 ? ptsSum / ptsN : 0;
-  // Échelle relative au catalogue de la ville courante
-  let minPts = Infinity, maxPts = 0;
-  for (const inv of invaders) {
-    const p = inv.points ?? 0;
-    if (p > 0) { if (p < minPts) minPts = p; if (p > maxPts) maxPts = p; }
-  }
-  if (!Number.isFinite(minPts)) minPts = 0;
+  // Échelle FIXE du jeu : les Invaders valent de 10 à 100 points.
+  const minPts = 10, maxPts = 100;
 
   // ─── SLIDERS ──────────────────────────────────────────────────────────────
   const sideOf = (v) => (v < 40 ? 'low' : v > 60 ? 'high' : 'mid');
 
   // Rareté : Collecteur (bas) ↔ Sniper (haut)
-  const rarityValue = maxPts > minPts ? clamp(((avgPoints - minPts) / (maxPts - minPts)) * 100) : 50;
+  const rarityValue = clamp(((avgPoints - minPts) / (maxPts - minPts)) * 100);
   const rarity = {
     available: ptsN >= THRESHOLDS.RARITY,
     value: Math.round(rarityValue),
