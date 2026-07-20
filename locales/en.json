@@ -455,6 +455,7 @@
   },
   "news": {
     "title": "News",
+    "bellHint": "Turn on the bell to get alerted about new Invaders.",
     "newBadge": "NEW",
     "entry": {
       "added_one": "1 new Invader added in {{city}}",

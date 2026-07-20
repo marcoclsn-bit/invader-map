@@ -199,10 +199,12 @@ export default function StatsScreen({ navigation }) {
 
   const Header = (
     <View style={[st.header, { backgroundColor: theme.surface, borderBottomColor: theme.border }]}>
-      <Text style={[typography.arcadeTitle, { color: theme.textPrimary }]}>{t('stats.title')}</Text>
-      <TouchableOpacity onPress={openDrawer} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
-        <Ionicons name="menu" size={24} color={theme.textSecondary} />
-      </TouchableOpacity>
+      <View style={st.headerLeft}>
+        <TouchableOpacity onPress={openDrawer} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
+          <Ionicons name="menu" size={24} color={theme.textSecondary} />
+        </TouchableOpacity>
+        <Text style={[typography.arcadeTitle, { color: theme.textPrimary }]}>{t('stats.title')}</Text>
+      </View>
     </View>
   );
 
@@ -478,6 +480,7 @@ const st = StyleSheet.create({
     flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
     paddingHorizontal: 20, paddingVertical: 14, borderBottomWidth: StyleSheet.hairlineWidth,
   },
+  headerLeft: { flexDirection: 'row', alignItems: 'center', gap: 12, flexShrink: 1 },
 
   emptyBody: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 40 },
   emptyEmoji: { fontSize: 56, marginBottom: 20 },

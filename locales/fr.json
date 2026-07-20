@@ -455,6 +455,7 @@
   },
   "news": {
     "title": "Actus",
+    "bellHint": "Active la cloche pour être prévenu des nouveaux Invaders.",
     "newBadge": "NOUVEAU",
     "entry": {
       "added_one": "1 nouvel Invader ajouté à {{city}}",

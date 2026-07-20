@@ -269,10 +269,12 @@ export default function PalmaresScreen({ navigation }) {
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
       <View style={styles.header}>
-        <Text style={styles.title}>{t('palmares.title')}</Text>
-        <TouchableOpacity onPress={openDrawer} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
-          <Ionicons name="menu" size={24} color={theme.textSecondary} />
-        </TouchableOpacity>
+        <View style={styles.headerLeft}>
+          <TouchableOpacity onPress={openDrawer} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
+            <Ionicons name="menu" size={24} color={theme.textSecondary} />
+          </TouchableOpacity>
+          <Text style={styles.title}>{t('palmares.title')}</Text>
+        </View>
       </View>
 
       {/* Barre de recherche de ville */}
@@ -351,6 +353,7 @@ function makeStyles(t) {
       backgroundColor: t.surface,
       borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: t.border,
     },
+    headerLeft: { flexDirection: 'row', alignItems: 'center', gap: 12, flexShrink: 1 },
     title: { ...typography.arcadeTitle, color: t.textPrimary },
     headerTitle: { ...typography.arcadeTitle, color: t.textPrimary },
 

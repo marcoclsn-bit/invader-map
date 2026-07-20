@@ -1,7 +1,8 @@
-import { useState, useMemo, useRef, useCallback } from 'react';
+import { useState, useMemo, useRef, useCallback, useEffect } from 'react';
 import {
   StyleSheet, View, Text, FlatList, TouchableOpacity, TextInput, Alert,
 } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
@@ -13,6 +14,8 @@ import { getCityData, loadCityData, checkCityForUpdate } from '../services/invad
 import { CITIES } from '../cities/registry';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
+
+const BELL_HINT_KEY = '@invader_news_bell_hint'; // '1' une fois l'infobulle vue
 
 // ─── Cache de styles thémés ───────────────────────────────────────────────────
 let _styleCache = null;
@@ -232,6 +235,20 @@ export default function NewsScreen({ navigation }) {
   const [pickerOpen, setPickerOpen] = useState(false);
   const needsInitialChoice = !newsCities;
 
+  // Infobulle « cloche » : montrée une seule fois, puis mémorisée.
+  const [showBellHint, setShowBellHint] = useState(false);
+  useEffect(() => {
+    let alive = true;
+    AsyncStorage.getItem(BELL_HINT_KEY)
+      .then((v) => { if (alive && v !== '1') setShowBellHint(true); })
+      .catch(() => {});
+    return () => { alive = false; };
+  }, []);
+  const dismissBellHint = useCallback(() => {
+    setShowBellHint(false);
+    AsyncStorage.setItem(BELL_HINT_KEY, '1').catch(() => {});
+  }, []);
+
   // Événements filtrés par villes suivies, plus récents d'abord
   const feed = useMemo(() => {
     if (!newsCities) return [];
@@ -286,24 +303,42 @@ export default function NewsScreen({ navigation }) {
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
       <View style={styles.header}>
-        <TouchableOpacity onPress={() => setPickerOpen(true)} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
-          <Ionicons name="options-outline" size={22} color={theme.textPrimary} />
-        </TouchableOpacity>
-        <Text style={styles.title}>{t('news.title')}</Text>
+        <View style={styles.headerLeft}>
+          <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
+            <Ionicons name="menu" size={24} color={theme.textPrimary} />
+          </TouchableOpacity>
+          <Text style={styles.title}>{t('news.title')}</Text>
+        </View>
         <View style={styles.headerRight}>
           {/* Cloche : active/désactive les alertes de nouveautés */}
-          <TouchableOpacity onPress={() => setNewsNotifyPref(!newsNotify)} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
+          <TouchableOpacity
+            onPress={() => { dismissBellHint(); setNewsNotifyPref(!newsNotify); }}
+            hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+          >
             <Ionicons
               name={newsNotify ? 'notifications' : 'notifications-off-outline'}
               size={22}
               color={newsNotify ? theme.accent : theme.textSecondary}
             />
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
-            <Ionicons name="menu" size={24} color={theme.textPrimary} />
+          <TouchableOpacity onPress={() => setPickerOpen(true)} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
+            <Ionicons name="options-outline" size={22} color={theme.textPrimary} />
           </TouchableOpacity>
         </View>
       </View>
+
+      {showBellHint && (
+        <TouchableOpacity
+          style={[styles.bellHint, { top: 50 }]}
+          activeOpacity={0.9}
+          onPress={dismissBellHint}
+        >
+          <View style={styles.bellHintArrow} />
+          <Ionicons name="notifications" size={16} color={theme.accent} style={{ marginRight: 8 }} />
+          <Text style={styles.bellHintText}>{t('news.bellHint')}</Text>
+          <Ionicons name="close" size={14} color={theme.textSecondary} style={{ marginLeft: 8 }} />
+        </TouchableOpacity>
+      )}
 
       {feed.length === 0 ? (
         <View style={styles.empty}>
@@ -345,7 +380,23 @@ function makeStyles(t) {
     },
     credit: { fontSize: 11, color: t.textSecondary, textAlign: 'center', paddingVertical: 18 },
     title: { ...typography.arcadeTitle, color: t.textPrimary },
+    headerLeft: { flexDirection: 'row', alignItems: 'center', gap: 12, flexShrink: 1 },
     headerRight: { flexDirection: 'row', alignItems: 'center', gap: 16 },
+    // Infobulle « cloche » (affichée une seule fois)
+    bellHint: {
+      position: 'absolute', right: 14, maxWidth: 250, zIndex: 30,
+      flexDirection: 'row', alignItems: 'center',
+      backgroundColor: t.surface, borderColor: t.accent, borderWidth: 1,
+      borderRadius: 12, paddingVertical: 10, paddingHorizontal: 12,
+      shadowColor: '#000', shadowOpacity: 0.25, shadowRadius: 10, shadowOffset: { width: 0, height: 4 },
+      elevation: 8,
+    },
+    bellHintArrow: {
+      position: 'absolute', top: -6, right: 46, width: 12, height: 12,
+      backgroundColor: t.surface, borderTopWidth: 1, borderLeftWidth: 1, borderColor: t.accent,
+      transform: [{ rotate: '45deg' }],
+    },
+    bellHintText: { flex: 1, fontSize: 12, lineHeight: 16, color: t.textPrimary },
 
     row: {
       flexDirection: 'row', alignItems: 'center', gap: 12,

@@ -118,13 +118,15 @@ export default function StrollScreen({ navigation }) {
     <View style={[styles.container, { paddingTop: insets.top }]}>
       {/* Header */}
       <View style={styles.header}>
-        <Text style={styles.title}>{t('stroll.title')}</Text>
-        <TouchableOpacity
-          onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
-          hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
-        >
-          <Ionicons name="menu" size={24} color={theme.textPrimary} />
-        </TouchableOpacity>
+        <View style={styles.headerLeft}>
+          <TouchableOpacity
+            onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
+            hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+          >
+            <Ionicons name="menu" size={24} color={theme.textPrimary} />
+          </TouchableOpacity>
+          <Text style={styles.title}>{t('stroll.title')}</Text>
+        </View>
       </View>
 
       <ScrollView contentContainerStyle={{ paddingBottom: insets.bottom + 32 }}>
@@ -261,6 +263,7 @@ function makeStyles(t) {
       backgroundColor: t.surface,
       borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: t.border,
     },
+    headerLeft: { flexDirection: 'row', alignItems: 'center', gap: 12, flexShrink: 1 },
     title: { ...typography.arcadeTitle, color: t.textPrimary },
 
     banner: {

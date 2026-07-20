@@ -455,6 +455,7 @@
   },
   "news": {
     "title": "Novedades",
+    "bellHint": "Activa la campana para recibir avisos de nuevos Invaders.",
     "newBadge": "NUEVO",
     "entry": {
       "added_one": "1 nuevo Invader añadido en {{city}}",
