@@ -2,12 +2,12 @@
   "expo": {
     "name": "InvaderQuest",
     "slug": "invaderquest",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
-    "runtimeVersion": "60aff38bce9afd351ca5a5fd5165c16c1426c496",
+    "runtimeVersion": "1.1.0",
     "updates": {
       "url": "https://u.expo.dev/60322774-f3cf-427f-b11f-6b17da413e41"
     },
@@ -74,7 +74,8 @@
           "photosPermission": "InvaderQuest accède à vos photos pour définir votre avatar de profil.",
           "cameraPermission": "InvaderQuest utilise l’appareil photo pour prendre votre avatar de profil."
         }
-      ]
+      ],
+      "expo-background-task"
     ],
     "extra": {
       "eas": {

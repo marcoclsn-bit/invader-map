@@ -99,6 +99,7 @@ export default function SettingsScreen({ navigation }) {
     labelDefs, setFlashedColor,
     mapsApp, setMapsAppPref,
     language, setLanguage,
+    newsNotify, setNewsNotifyPref,
     resetOnboarding,
     resetLabels, clearFlashDates,
     dataVersion, dataUpdatedAt, checkDataUpdate,
@@ -153,6 +154,24 @@ export default function SettingsScreen({ navigation }) {
             <Switch
               value={isDark}
               onValueChange={toggle}
+              trackColor={{ false: theme.border, true: theme.accent }}
+              thumbColor={theme.bg}
+              ios_backgroundColor={theme.border}
+            />
+          }
+          last
+        />
+      </Section>
+
+      {/* ── Notifications ── */}
+      <Section title={t('settings.notifs.section')}>
+        <Row
+          label={t('settings.notifs.news')}
+          hint={t('settings.notifs.newsHint')}
+          trailing={
+            <Switch
+              value={newsNotify}
+              onValueChange={setNewsNotifyPref}
               trackColor={{ false: theme.border, true: theme.accent }}
               thumbColor={theme.bg}
               ios_backgroundColor={theme.border}

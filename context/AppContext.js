@@ -5,6 +5,7 @@ import { INVADERS as EMBEDDED_PA, INVADERS_VERSION, INVADERS_UPDATED_AT } from '
 import { ALL_STATUSES, STATUS_COLOR, DEFAULT_LABEL_DEFS } from '../constants';
 import { initInvaderService, loadCityData, onCityUpdate, checkCityForUpdate, getCityIndex, getCityData } from '../services/invaderData';
 import { getCachedNews, fetchNews } from '../services/newsData';
+import { enableNewsNotify, disableNewsNotify, syncNewsNotify } from '../services/newsNotify';
 import { applyLanguage, LANGUAGE_STORAGE_KEY } from '../i18n';
 import { ENABLED_CITIES, DEFAULT_CITY_CODE, CITIES } from '../cities/registry';
 
@@ -92,6 +93,7 @@ export function AppProvider({ children }) {
   const [news, setNews]               = useState({ version: 0, events: [] });
   const [newsCities, setNewsCities]   = useState(null);  // Set<code> ; null = pas encore choisi
   const [newsLastSeen, setNewsLastSeen] = useState(null); // ISO de la dernière ouverture de News
+  const [newsNotify, setNewsNotifyState] = useState(true); // notifs d'actualité (défaut ON)
 
   // ── Mode balade (réglages seulement ; moteur au dev build) ──────────────────
   const [stroll, setStroll] = useState(DEFAULT_STROLL);
@@ -215,13 +217,18 @@ export function AppProvider({ children }) {
         AsyncStorage.getItem('@invader_current_city'),
         AsyncStorage.getItem('invader_filters'),
       ]);
-      const [newsCitiesRaw, newsLastSeenRaw, strollRaw, legendSeenRaw] = await Promise.all([
+      const [newsCitiesRaw, newsLastSeenRaw, strollRaw, legendSeenRaw, newsNotifyRaw] = await Promise.all([
         AsyncStorage.getItem('@invader_news_cities'),
         AsyncStorage.getItem('@invader_news_last_seen'),
         AsyncStorage.getItem('@invader_stroll'),
         AsyncStorage.getItem('@invader_legend_seen'),
+        AsyncStorage.getItem('@invader_news_notify'),
       ]);
       if (legendSeenRaw === '1') setLegendSeen(true);
+      // Notifs d'actualité : défaut ON (sauf si l'utilisateur a explicitement désactivé).
+      const notifyOn = newsNotifyRaw !== '0';
+      setNewsNotifyState(notifyOn);
+      syncNewsNotify(notifyOn); // (ré)planifie la tâche de fond, sans prompt
 
       if (flashedRaw)       setFlashed(new Set(JSON.parse(flashedRaw)));
       // Migration douce : les IDs sans date gardent flashedAt: null (absents du Map)
@@ -424,6 +431,12 @@ export function AppProvider({ children }) {
     setStroll(prev => ({ ...prev, ...partial }));
   }
 
+  // Notifs d'actualité : bascule (persiste + planifie/retire la tâche + prompt à l'activation).
+  function setNewsNotifyPref(on) {
+    setNewsNotifyState(on);
+    if (on) enableNewsNotify(); else disableNewsNotify();
+  }
+
   // Nombre d'événements non vus pour les villes suivies (badge du menu)
   const newsUnreadCount = (() => {
     if (!newsCities || newsCities.size === 0) return 0;
@@ -503,6 +516,7 @@ export function AppProvider({ children }) {
     setStatusColor, setFlashedColor,
     // News
     news, newsCities, setNewsCitiesPref, newsLastSeen, markNewsSeen, newsUnreadCount,
+    newsNotify, setNewsNotifyPref,
     // Légende des couleurs
     legendSeen, dismissLegend,
     // Mode balade (réglages ; moteur au dev build)
@@ -518,7 +532,7 @@ export function AppProvider({ children }) {
     flashed, flashedDates,
     labels, labelDefs, statusColors, colorOverrides,
     filters,
-    news, newsCities, newsLastSeen, newsUnreadCount,
+    news, newsCities, newsLastSeen, newsUnreadCount, newsNotify,
     legendSeen,
     stroll, mapsApp, language,
     showOnboarding, loaded,

@@ -404,6 +404,11 @@
       "resetTitle": "Reimpostare la cronologia temporale?",
       "resetMsg": "Le date dei flash verranno cancellate (curva, serie, giorno migliore, giorno/notte si azzerano). I tuoi Invader flashati, totali e percentuali restano.",
       "resetAction": "Reimposta"
+    },
+    "notifs": {
+      "section": "Notifiche",
+      "news": "Avvisi novità",
+      "newsHint": "Ricevi un avviso quando compaiono o cambiano stato Invader nelle tue città seguite."
     }
   },
   "feedback": {
@@ -476,6 +481,11 @@
     "comingSoon": {
       "title": "Presto disponibile",
       "body": "Le coordinate di {{id}} saranno aggiunte a breve."
+    },
+    "notify": {
+      "title": "Invasione 👾",
+      "body_one": "1 novità nell’invasione!",
+      "body_other": "{{count}} novità nell’invasione!"
     }
   },
   "stroll": {

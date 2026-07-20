@@ -404,6 +404,11 @@
       "resetTitle": "Réinitialiser l’historique temporel ?",
       "resetMsg": "Les dates de flash seront effacées (courbe, série, meilleure journée, jour/nuit repartent à zéro). Tes Invaders flashés, totaux et pourcentages sont conservés.",
       "resetAction": "Réinitialiser"
+    },
+    "notifs": {
+      "section": "Notifications",
+      "news": "Alertes des nouveautés",
+      "newsHint": "Sois prévenu quand de nouveaux Invaders apparaissent ou changent d’état dans tes villes suivies."
     }
   },
   "feedback": {
@@ -476,6 +481,11 @@
     "comingSoon": {
       "title": "Bientôt disponible",
       "body": "Les coordonnées de {{id}} seront ajoutées prochainement."
+    },
+    "notify": {
+      "title": "Invasion 👾",
+      "body_one": "1 nouveauté dans l’invasion !",
+      "body_other": "{{count}} nouveautés dans l’invasion !"
     }
   },
   "stroll": {

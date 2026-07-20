@@ -116,7 +116,7 @@ C'est du **natif** → impossible à tester en OTA seul. Parcours :
 **Règle d'or : on ne change `runtimeVersion` (dans `app.json`) QUE quand on modifie du natif / qu'on fait un nouveau build.**
 Tant qu'on ne fait que du JS/OTA, elle **ne bouge pas** → les `eas update` rejoignent toujours l'app installée.
 
-- Valeur actuelle : une **chaîne fixe** (l'empreinte de la build App Store en cours), pas la policy `fingerprint`.
+- Valeur actuelle : une **chaîne fixe** (actuellement « 1.1.0 » depuis le build 16 ; avant : l'empreinte de la build 15), pas la policy `fingerprint`.
 - Pourquoi : la policy `fingerprint` calculait une empreinte **différente** selon la machine (serveurs EAS vs local) → les OTA locales rataient l'app live. Une valeur fixe = déterministe, les OTA passent depuis n'importe où.
 
 **Quand tu fais un nouveau build natif** (build 16, 17…) :

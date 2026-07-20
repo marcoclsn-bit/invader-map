@@ -404,6 +404,11 @@
       "resetTitle": "Reset flash timeline?",
       "resetMsg": "Flash dates will be cleared (curve, streak, best day, day/night reset). Your flashed Invaders, totals and percentages are kept.",
       "resetAction": "Reset"
+    },
+    "notifs": {
+      "section": "Notifications",
+      "news": "New activity alerts",
+      "newsHint": "Get notified when Invaders appear or change status in the cities you follow."
     }
   },
   "feedback": {
@@ -476,6 +481,11 @@
     "comingSoon": {
       "title": "Coming soon",
       "body": "The coordinates for {{id}} will be added soon."
+    },
+    "notify": {
+      "title": "Invasion 👾",
+      "body_one": "1 update in the invasion!",
+      "body_other": "{{count}} updates in the invasion!"
     }
   },
   "stroll": {
