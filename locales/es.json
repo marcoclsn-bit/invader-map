@@ -605,13 +605,14 @@
       "share": "Compartir mi hazaña",
       "close": "Cerrar",
       "newBadge_one": "¡Nuevo trofeo!",
-      "newBadge_other": "¡Nuevos trofeos!"
+      "newBadge_other": "¡Nuevos trofeos!",
+      "points": "PUNTOS"
     }
   },
   "share": {
     "textKm": "Recorrí {{km}} km y flasheé {{count}} Invaders en {{city}} con InvaderQuest 👾",
     "textNoKm": "Flasheé {{count}} Invaders en {{city}} con InvaderQuest 👾",
-    "url": "apps.apple.com/app/id6786302757",
+    "url": "@invaderquest.app",
     "unavailable": "Compartir no está disponible en este dispositivo."
   },
   "celebration": {

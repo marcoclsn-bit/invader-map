@@ -28,8 +28,10 @@ export const STORY_W = 360;
 export const STORY_H = 640;
 
 const LOGO = require('../../assets/LogoFinal.png');
+const ALIEN = require('../../assets/markers/alien_flashed.png'); // pins = Invaders flashés (cohérent carte)
 const MAP_W = STORY_W - 48;
 const MAP_H = 300;
+const PIN_SIZE = 20;
 
 // Couleur d'un pin selon la valeur en points (donne le côté « coloré » de la story).
 function pinColor(points) {
@@ -91,32 +93,17 @@ function linearProject(coords, pins) {
   return (lng, lat) => ({ x: offX + (lng - mnX) * scale, y: MAP_H - (offY + (lat - mnY) * scale) });
 }
 
-// Dessine le tracé néon + les pins (start/end sont des icônes gérées à part).
-function RouteAndPins({ coords, pins, project }) {
+// Dessine le tracé néon (halo + trait). Les pins/repères sont des images à part.
+function RouteLine({ coords, project }) {
   const pts = Array.isArray(coords) ? coords : [];
-  const routeStr = pts.length >= 2
-    ? pts.map(([lng, lat]) => { const p = project(lng, lat); return `${p.x.toFixed(1)},${p.y.toFixed(1)}`; }).join(' ')
-    : null;
+  if (pts.length < 2) return null;
+  const routeStr = pts.map(([lng, lat]) => { const p = project(lng, lat); return `${p.x.toFixed(1)},${p.y.toFixed(1)}`; }).join(' ');
   return (
     <>
-      {routeStr && (
-        <>
-          <Polyline points={routeStr} fill="none" stroke={dark.accent} strokeOpacity="0.28"
-            strokeWidth={9} strokeLinejoin="round" strokeLinecap="round" />
-          <Polyline points={routeStr} fill="none" stroke={dark.accent}
-            strokeWidth={3} strokeLinejoin="round" strokeLinecap="round" />
-        </>
-      )}
-      {(pins ?? []).map((p, i) => {
-        const c = pinColor(p.points ?? 0);
-        const xy = project(p.lng, p.lat);
-        return (
-          <G key={i}>
-            <Circle cx={xy.x} cy={xy.y} r={6} fill={c} opacity={0.22} />
-            <Circle cx={xy.x} cy={xy.y} r={3} fill={c} stroke={dark.bg} strokeWidth={0.8} />
-          </G>
-        );
-      })}
+      <Polyline points={routeStr} fill="none" stroke={dark.accent} strokeOpacity="0.28"
+        strokeWidth={9} strokeLinejoin="round" strokeLinecap="round" />
+      <Polyline points={routeStr} fill="none" stroke={dark.accent}
+        strokeWidth={3} strokeLinejoin="round" strokeLinecap="round" />
     </>
   );
 }
@@ -132,9 +119,21 @@ function StylizedMap({ coords, pins, project }) {
       <Defs><LinearGradient id="glow" x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor={dark.accent} stopOpacity="0.12" /><Stop offset="1" stopColor={dark.accent} stopOpacity="0" /></LinearGradient></Defs>
       <Rect x="0" y="0" width={MAP_W} height={MAP_H} fill="url(#glow)" />
       {grid}
-      <RouteAndPins coords={coords} pins={pins} project={project} />
+      <RouteLine coords={coords} project={project} />
     </Svg>
   );
+}
+
+// Pins = images alien flashé, posées aux coordonnées projetées (cohérent avec la carte).
+function PinImages({ pins, project }) {
+  return (pins ?? []).map((p, i) => {
+    const xy = project(p.lng, p.lat);
+    return (
+      <Image key={i} source={ALIEN}
+        style={{ position: 'absolute', width: PIN_SIZE, height: PIN_SIZE, left: xy.x - PIN_SIZE / 2, top: xy.y - PIN_SIZE / 2 }}
+        resizeMode="contain" />
+    );
+  });
 }
 
 /**
@@ -144,9 +143,10 @@ function StylizedMap({ coords, pins, project }) {
  * @param pins array de { lng, lat, points } — Invaders attrapés
  * @param map { url, project } de buildStaticMap (carte réelle) ; null → fond stylisé
  */
-const ShareStory = forwardRef(function ShareStory({ session, cityName, pins, map, route }, ref) {
+const ShareStory = forwardRef(function ShareStory({ session, cityName, pins, map, route, sessionPoints }, ref) {
   const { t } = useTranslation();
   const aliens = session?.invaderIds?.length ?? 0;
+  const pts = sessionPoints ?? 0;
   const km = session?.distanceKm;
   const hasKm = km != null && km > 0;
   const mins = Math.round((session?.durationSec ?? 0) / 60);
@@ -177,12 +177,16 @@ const ShareStory = forwardRef(function ShareStory({ session, cityName, pins, map
         {hasGeo && map && (
           <>
             <Image source={{ uri: map.url }} style={styles.mapImg} resizeMode="cover" />
+            <View style={styles.mapScrim} />
             <Svg width={MAP_W} height={MAP_H} style={StyleSheet.absoluteFill}>
-              <RouteAndPins coords={routeCoords} pins={pins} project={map.project} />
+              <RouteLine coords={routeCoords} project={map.project} />
             </Svg>
           </>
         )}
         {hasGeo && !map && <StylizedMap coords={routeCoords} pins={pins} project={project} />}
+
+        {/* Pins = Invaders flashés (image alien) */}
+        {hasGeo && project && <PinImages pins={pins} project={project} />}
 
         {/* Repères départ / arrivée — mêmes icônes que le mode Trajet */}
         {startXY && (
@@ -203,7 +207,8 @@ const ShareStory = forwardRef(function ShareStory({ session, cityName, pins, map
       <View style={styles.stats}>
         <Stat value={kmStr} label={t('session.recap.km')} />
         <Stat value={timeStr} label={t('session.recap.time')} />
-        <Stat value={String(aliens)} label={t('session.recap.aliens')} accent={dark.accentScore} />
+        <Stat value={String(aliens)} label={t('session.recap.aliens')} />
+        <Stat value={`+${pts}`} label={t('session.recap.points')} accent={dark.accentScore} />
       </View>
 
       <View style={styles.footer}>
@@ -239,6 +244,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#0D1426', alignItems: 'center', justifyContent: 'center', overflow: 'hidden',
   },
   mapImg: { position: 'absolute', width: MAP_W, height: MAP_H },
+  // Voile sombre sur la carte : assombrit le fond et fait ressortir le tracé néon.
+  mapScrim: { position: 'absolute', width: MAP_W, height: MAP_H, backgroundColor: 'rgba(0,0,0,0.35)' },
   bigAlien: { fontSize: 96 },
   // Repères départ/arrivée — style repris du mode Trajet (rond bordé blanc + icône)
   pin: {
@@ -257,8 +264,8 @@ const styles = StyleSheet.create({
   badgeText: { fontSize: 14, fontWeight: '800', color: dark.textPrimary },
   stats: { flexDirection: 'row', justifyContent: 'space-between', width: '100%' },
   stat: { flex: 1, alignItems: 'center' },
-  statValue: { fontFamily: 'PressStart2P_400Regular', fontSize: 20, color: dark.accent },
-  statLabel: { fontFamily: 'Silkscreen_400Regular', fontSize: 10, color: dark.textSecondary, marginTop: 8, letterSpacing: 0.5 },
+  statValue: { fontFamily: 'PressStart2P_400Regular', fontSize: 15, color: dark.accent },
+  statLabel: { fontFamily: 'Silkscreen_400Regular', fontSize: 9, color: dark.textSecondary, marginTop: 8, letterSpacing: 0.3 },
   footer: { alignItems: 'center', gap: 8 },
   logo: { width: 46, height: 46, borderRadius: 11 },
   url: { fontFamily: 'Silkscreen_400Regular', fontSize: 11, color: dark.textSecondary },

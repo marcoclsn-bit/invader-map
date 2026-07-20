@@ -44,6 +44,9 @@ export default function SessionRecap() {
     .filter(Boolean)
     .map((i) => ({ lng: i.lng, lat: i.lat, points: i.points ?? 0 }));
 
+  // Points accumulés pendant la session (somme des Invaders flashés).
+  const sessionPoints = pins.reduce((s, p) => s + (p.points ?? 0), 0);
+
   // Tracé rogné (confidentialité : masque le départ/arrivée près du domicile).
   const shareRoute = trimRouteEnds(session.routeCoords);
   const km = session.distanceKm;
@@ -86,7 +89,9 @@ export default function SessionRecap() {
             <View style={[styles.vsep, { backgroundColor: theme.border }]} />
             <Stat value={fmtDuration(session.durationSec)} label={t('session.recap.time')} theme={theme} />
             <View style={[styles.vsep, { backgroundColor: theme.border }]} />
-            <Stat value={String(aliens)} label={t('session.recap.aliens')} theme={theme} accent={theme.accentScore} />
+            <Stat value={String(aliens)} label={t('session.recap.aliens')} theme={theme} />
+            <View style={[styles.vsep, { backgroundColor: theme.border }]} />
+            <Stat value={`+${sessionPoints}`} label={t('session.recap.points')} theme={theme} accent={theme.accentScore} />
           </View>
 
           {/* Trophées débloqués */}
@@ -125,7 +130,7 @@ export default function SessionRecap() {
 
         {/* Visuel de partage rendu hors écran pour la capture */}
         <View style={styles.offscreen} pointerEvents="none">
-          <ShareStory ref={storyRef} session={session} cityName={cityName} pins={pins} map={shareMap} route={shareRoute} />
+          <ShareStory ref={storyRef} session={session} cityName={cityName} pins={pins} map={shareMap} route={shareRoute} sessionPoints={sessionPoints} />
         </View>
       </View>
     </Modal>

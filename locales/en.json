@@ -605,13 +605,14 @@
       "share": "Share my feat",
       "close": "Close",
       "newBadge_one": "New trophy!",
-      "newBadge_other": "New trophies!"
+      "newBadge_other": "New trophies!",
+      "points": "POINTS"
     }
   },
   "share": {
     "textKm": "I walked {{km}} km and flashed {{count}} Invaders in {{city}} with InvaderQuest 👾",
     "textNoKm": "I flashed {{count}} Invaders in {{city}} with InvaderQuest 👾",
-    "url": "apps.apple.com/app/id6786302757",
+    "url": "@invaderquest.app",
     "unavailable": "Sharing is not available on this device."
   },
   "celebration": {

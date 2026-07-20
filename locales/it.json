@@ -605,13 +605,14 @@
       "share": "Condividi la mia impresa",
       "close": "Chiudi",
       "newBadge_one": "Nuovo trofeo!",
-      "newBadge_other": "Nuovi trofei!"
+      "newBadge_other": "Nuovi trofei!",
+      "points": "PUNTI"
     }
   },
   "share": {
     "textKm": "Ho percorso {{km}} km e flashato {{count}} Invader a {{city}} con InvaderQuest 👾",
     "textNoKm": "Ho flashato {{count}} Invader a {{city}} con InvaderQuest 👾",
-    "url": "apps.apple.com/app/id6786302757",
+    "url": "@invaderquest.app",
     "unavailable": "La condivisione non è disponibile su questo dispositivo."
   },
   "celebration": {
