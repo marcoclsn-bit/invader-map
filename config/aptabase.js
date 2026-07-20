@@ -9,4 +9,4 @@
 //
 // Tant que cette valeur est vide, l'analytics est totalement désactivé (aucun envoi,
 // aucun crash) — pratique pour builder sans encore avoir de compte.
-export const APTABASE_KEY = ''; // ← coller la clé A-EU-… ici
+export const APTABASE_KEY = 'A-EU-4047131131'; // hébergement Europe (RGPD)
