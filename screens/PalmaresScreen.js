@@ -35,25 +35,79 @@ function ProgressBar({ pct, theme }) {
   );
 }
 
+// Barre segmentée : vert = flashés · gris = restants · rouge sombre = détruits
+// jamais flashés (façon barre de stockage iPhone).
+function SegmentedBar({ flashed, remaining, destroyed, theme, height = 10 }) {
+  const styles = getStyles(theme);
+  const total = flashed + remaining + destroyed;
+  if (total <= 0) return <View style={[styles.track, { height }]} />;
+  return (
+    <View style={[styles.track, { height, flexDirection: 'row' }]}>
+      {flashed > 0 && <View style={{ flex: flashed, backgroundColor: theme.accent }} />}
+      {remaining > 0 && <View style={{ flex: remaining }} />}
+      {destroyed > 0 && <View style={{ flex: destroyed, backgroundColor: `${theme.destructive}66` }} />}
+    </View>
+  );
+}
+
+// Légende à pastilles sous la barre segmentée.
+function ProgressLegend({ flashed, remaining, destroyed, theme }) {
+  const { t } = useTranslation();
+  const styles = getStyles(theme);
+  return (
+    <View style={styles.legendRow}>
+      <View style={styles.legendItem}>
+        <View style={[styles.legendDot, { backgroundColor: theme.accent }]} />
+        <Text style={styles.legendText}><Text style={styles.legendNum}>{flashed}</Text> {t('palmares.legendFlashed')}</Text>
+      </View>
+      <View style={styles.legendItem}>
+        <View style={[styles.legendDot, { backgroundColor: theme.border }]} />
+        <Text style={styles.legendText}><Text style={styles.legendNum}>{remaining}</Text> {t('palmares.legendRemaining')}</Text>
+      </View>
+      <View style={styles.legendItem}>
+        <View style={[styles.legendDot, { backgroundColor: `${theme.destructive}66` }]} />
+        <Text style={styles.legendText}><Text style={styles.legendNum}>{destroyed}</Text> {t('palmares.legendDestroyed')}</Text>
+      </View>
+    </View>
+  );
+}
+
+// Badge « ✓ Complète » (100 % du flashable).
+function CompleteBadge({ theme }) {
+  const { t } = useTranslation();
+  const styles = getStyles(theme);
+  return (
+    <View style={styles.completePill}>
+      <Ionicons name="checkmark" size={11} color={theme.accent} />
+      <Text style={styles.completePillText}>{t('palmares.completeBadge')}</Text>
+    </View>
+  );
+}
+
 // ─── Ligne arrondissement ─────────────────────────────────────────────────────
 
 function ArRow({ item, onHunt, theme }) {
   const { t } = useTranslation();
   const styles = getStyles(theme);
-  const pct = item.total > 0 ? (item.flashed / item.total) * 100 : 0;
 
   return (
     <TouchableOpacity style={styles.arRow} onPress={onHunt} activeOpacity={0.7}>
       <View style={styles.arTitleRow}>
-        <Text style={styles.arName}>{arLabel(item.ar)}</Text>
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8, flexShrink: 1 }}>
+          <Text style={styles.arName}>{arLabel(item.ar)}</Text>
+          {item.complete && <CompleteBadge theme={theme} />}
+        </View>
         <View style={styles.chasserCTA}>
           <Text style={styles.chasserText}>{t('palmares.huntHere')}</Text>
           <Ionicons name="chevron-forward" size={13} color={theme.accent} />
         </View>
       </View>
-      <ProgressBar pct={pct} theme={theme} />
+      <SegmentedBar
+        flashed={item.flashed} remaining={item.remaining} destroyed={item.destroyedLost}
+        theme={theme} height={8}
+      />
       <Text style={styles.arStat}>
-        {t('palmares.arStat', { flashed: item.flashed, total: item.total, pct: pct.toFixed(0), pts: item.totalPts })}
+        {t('palmares.arStat', { flashed: item.flashed, total: item.denominator, pct: item.pct.toFixed(0), pts: item.denomPts })}
       </Text>
     </TouchableOpacity>
   );
@@ -78,11 +132,24 @@ function ArrondissementsView({ stats, insets, onBack, onOpenDrawer, onHuntAr, th
       </View>
 
       <View style={styles.summaryCard}>
-        <Text style={styles.summaryLabel}>
-          {t('palmares.detailSummary', { flashed: stats.flashed, total: stats.total, pts: `${stats.flashedPts} / ${stats.totalPts}` })}
-        </Text>
-        <ProgressBar pct={stats.pct} theme={theme} />
-        <Text style={styles.summaryPct}>{stats.pct.toFixed(1)} %</Text>
+        <View style={styles.summaryTopRow}>
+          <Text style={[styles.summaryLabel, { flex: 1, marginBottom: 0 }]}>
+            {t('palmares.detailSummary', { flashed: stats.flashed, total: stats.denominator, pts: `${stats.flashedPts} / ${stats.denomPts}` })}
+          </Text>
+          {stats.complete && <CompleteBadge theme={theme} />}
+        </View>
+        <SegmentedBar
+          flashed={stats.flashed} remaining={stats.remaining} destroyed={stats.destroyedLost}
+          theme={theme}
+        />
+        <ProgressLegend
+          flashed={stats.flashed} remaining={stats.remaining} destroyed={stats.destroyedLost}
+          theme={theme}
+        />
+        <View style={styles.summaryFootRow}>
+          <Text style={styles.totalPosed}>{t('palmares.totalPosed', { count: stats.posed })}</Text>
+          <Text style={[styles.summaryPct, { marginTop: 0 }]}>{stats.pct.toFixed(1)} %</Text>
+        </View>
       </View>
 
       <FlatList
@@ -142,47 +209,52 @@ export default function PalmaresScreen({ navigation }) {
     return ordered;
   }, [lang]);
 
-  // Les détruits sont exclus : on ne peut pas les flasher
-  const flashable = useMemo(
-    () => invaders.filter(inv => inv.status !== 'destroyed'),
-    [invaders]
-  );
-  const totalAllPts = useMemo(
-    () => flashable.reduce((s, inv) => s + (inv.points ?? 0), 0),
-    [flashable]
-  );
-
+  // Progression « juste » : un détruit jamais flashé ne compte pas contre toi,
+  // mais un détruit que TU avais flashé reste acquis (collection + points).
+  //   % = flashés ÷ (flashables + détruits que tu avais flashés)
   const stats = useMemo(() => {
-    let totalFlashed = 0;
-    let totalFlashedPts = 0;
+    const mkZone = () => ({ posed: 0, destroyed: 0, flashed: 0, flashedDestroyed: 0, flashedPts: 0, denomPts: 0 });
+    const g = mkZone();
     const byAr = new Map();
-    for (let ar = 1; ar <= 20; ar++) {
-      byAr.set(ar, { ar, total: 0, flashed: 0, totalPts: 0, flashedPts: 0 });
-    }
-    for (const inv of flashable) {
+    for (let ar = 1; ar <= 20; ar++) byAr.set(ar, { ar, ...mkZone() });
+
+    for (const inv of invaders) {
       const isFlashed = flashed.has(inv.id);
+      const isDestroyed = inv.status === 'destroyed';
       const pts = inv.points ?? 0;
-      if (isFlashed) { totalFlashed++; totalFlashedPts += pts; }
       const ar = INVADER_DISTRICT.get(inv.id);
-      if (ar) {
-        const s = byAr.get(ar);
-        if (s) {
-          s.total++;
-          s.totalPts += pts;
-          if (isFlashed) { s.flashed++; s.flashedPts += pts; }
+      const arZone = ar ? byAr.get(ar) : null;
+      for (const z of arZone ? [g, arZone] : [g]) {
+        z.posed++;
+        if (isDestroyed) z.destroyed++;
+        if (isFlashed) {
+          z.flashed++;
+          z.flashedPts += pts;
+          if (isDestroyed) z.flashedDestroyed++;
         }
+        if (!isDestroyed || isFlashed) z.denomPts += pts; // points du dénominateur
       }
     }
-    const pct = flashable.length > 0 ? (totalFlashed / flashable.length) * 100 : 0;
-    return {
-      total: flashable.length,
-      flashed: totalFlashed,
-      totalPts: totalAllPts,
-      flashedPts: totalFlashedPts,
-      pct,
-      arrondissements: Array.from(byAr.values()).sort((a, b) => a.ar - b.ar),
+
+    const finish = (z) => {
+      const flashables = z.posed - z.destroyed;
+      const denominator = flashables + z.flashedDestroyed;
+      const remaining = Math.max(0, denominator - z.flashed);
+      const destroyedLost = z.destroyed - z.flashedDestroyed; // jamais flashés → hors calcul
+      const pct = denominator > 0 ? (z.flashed / denominator) * 100 : 0;
+      const complete = denominator > 0 && remaining === 0;
+      return { ...z, flashables, denominator, remaining, destroyedLost, pct, complete };
     };
-  }, [flashable, totalAllPts, flashed]);
+
+    const global = finish(g);
+    return {
+      ...global,
+      // alias rétro-compatibles pour les libellés existants
+      total: global.denominator,
+      totalPts: global.denomPts,
+      arrondissements: Array.from(byAr.values()).map(finish).sort((a, b) => a.ar - b.ar),
+    };
+  }, [invaders, flashed]);
 
   function openDrawer() { navigation.dispatch(DrawerActions.openDrawer()); }
 
@@ -202,7 +274,18 @@ export default function PalmaresScreen({ navigation }) {
     const cityInfo = cityIndex.find(ci => ci.code === c.code);
     const cityTotal = cityInfo?.count ?? null;
     const flashedHere = flashedByCity.get(c.code) ?? 0;
-    const pct = isActive ? stats.pct : (cityTotal ? (flashedHere / cityTotal) * 100 : 0);
+    // Villes non actives : même philosophie que la formule exacte, à partir de
+    // l'index (count/destroyed). Les « détruits que tu avais flashés » ne sont
+    // connus que pour la ville active → max() évite tout dépassement de 100 %.
+    const cityDenominator = cityTotal !== null
+      ? Math.max(Math.max(0, cityTotal - (cityInfo?.destroyed ?? 0)), flashedHere)
+      : null;
+    const pct = isActive
+      ? stats.pct
+      : (cityDenominator ? Math.min(100, (flashedHere / cityDenominator) * 100) : 0);
+    const complete = isActive
+      ? stats.complete
+      : (cityDenominator !== null && cityDenominator > 0 && flashedHere >= cityDenominator);
     return (
       <View key={c.code} style={styles.villeBlock}>
         <TouchableOpacity
@@ -220,12 +303,15 @@ export default function PalmaresScreen({ navigation }) {
               color={theme.accent} trackColor={theme.border} textColor={theme.textPrimary}
             />
             <View style={{ flex: 1 }}>
-              <Text style={styles.villeName}>{c.name}</Text>
+              <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+                <Text style={styles.villeName}>{c.name}</Text>
+                {complete && <CompleteBadge theme={theme} />}
+              </View>
               <Text style={styles.villeSub}>
                 {isActive
-                  ? t('palmares.villeCard', { flashed: stats.flashed, total: stats.total, pct: stats.pct.toFixed(0), pts: stats.flashedPts })
-                  : cityTotal !== null
-                    ? t('palmares.villeCardProgress', { flashed: flashedHere, total: cityTotal })
+                  ? t('palmares.villeCard', { flashed: stats.flashed, total: stats.denominator, pct: stats.pct.toFixed(0), pts: stats.flashedPts })
+                  : cityDenominator !== null
+                    ? t('palmares.villeCardProgress', { flashed: flashedHere, total: cityDenominator })
                     : '…'}
               </Text>
             </View>
@@ -307,11 +393,27 @@ export default function PalmaresScreen({ navigation }) {
         ) : (
           <>
             <View style={styles.summaryCard}>
-              <Text style={styles.summaryLabel}>
-                {t('palmares.flashedSummary', { flashed: stats.flashed, total: stats.total, pts: stats.flashedPts })}
-              </Text>
-              <ProgressBar pct={stats.pct} theme={theme} />
-              <Text style={styles.summaryPct}>{stats.pct.toFixed(1)} %</Text>
+              <View style={styles.summaryTopRow}>
+                <Text style={[styles.summaryLabel, { flex: 1, marginBottom: 0 }]}>
+                  {t('palmares.flashedSummary', { flashed: stats.flashed, total: stats.denominator, pts: stats.flashedPts })}
+                </Text>
+                {stats.complete && <CompleteBadge theme={theme} />}
+              </View>
+              <SegmentedBar
+                flashed={stats.flashed} remaining={stats.remaining} destroyed={stats.destroyedLost}
+                theme={theme}
+              />
+              <ProgressLegend
+                flashed={stats.flashed} remaining={stats.remaining} destroyed={stats.destroyedLost}
+                theme={theme}
+              />
+              <View style={styles.summaryFootRow}>
+                <Text style={styles.totalPosed}>{t('palmares.totalPosed', { count: stats.posed })}</Text>
+                <Text style={[styles.summaryPct, { marginTop: 0 }]}>{stats.pct.toFixed(1)} %</Text>
+              </View>
+              {stats.destroyedLost > 0 && (
+                <Text style={styles.calcHint}>{t('palmares.calcHint')}</Text>
+              )}
             </View>
 
             {/* Carte en cours en tête */}
@@ -375,9 +477,26 @@ function makeStyles(t) {
     },
     summaryLabel: { fontSize: 14, color: t.textSecondary, marginBottom: 10 },
     summaryPct: { ...typography.arcadeScore, color: t.accent, marginTop: 8, textAlign: 'right' },
+    summaryTopRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 10 },
+    summaryFootRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: 10 },
 
     track: { height: 8, borderRadius: 4, backgroundColor: t.border, overflow: 'hidden' },
     fill: { height: 8, borderRadius: 4 },
+
+    legendRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 14, marginTop: 10 },
+    legendItem: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+    legendDot: { width: 9, height: 9, borderRadius: 5 },
+    legendText: { fontSize: 12.5, color: t.textSecondary },
+    legendNum: { color: t.textPrimary, fontWeight: '600' },
+    totalPosed: { fontSize: 12, color: t.textSecondary },
+    calcHint: { fontSize: 11.5, color: t.textSecondary, marginTop: 8, fontStyle: 'italic', lineHeight: 15 },
+
+    completePill: {
+      flexDirection: 'row', alignItems: 'center', gap: 3,
+      backgroundColor: t.accentDim, borderColor: t.accent, borderWidth: 1,
+      borderRadius: 999, paddingHorizontal: 7, paddingVertical: 2,
+    },
+    completePillText: { fontSize: 10, fontWeight: '700', letterSpacing: 0.4, color: t.accent, textTransform: 'uppercase' },
 
     villeBlock: { marginHorizontal: 16, marginBottom: 12 },
     villeCard: {

@@ -16,7 +16,8 @@
         "maxLat": 43.65,
         "minLng": 5.3,
         "maxLng": 5.6
-      }
+      },
+      "destroyed": 0
     },
     {
       "code": "AMI",
@@ -32,7 +33,8 @@
         "maxLat": 49.95,
         "minLng": 2.22,
         "maxLng": 2.35
-      }
+      },
+      "destroyed": 0
     },
     {
       "code": "AMS",
@@ -48,7 +50,8 @@
         "maxLat": 52.45,
         "minLng": 4.72,
         "maxLng": 5.1
-      }
+      },
+      "destroyed": 6
     },
     {
       "code": "ANVR",
@@ -64,7 +67,8 @@
         "maxLat": 51.35,
         "minLng": 4.3,
         "maxLng": 4.55
-      }
+      },
+      "destroyed": 1
     },
     {
       "code": "ANZR",
@@ -74,7 +78,8 @@
       "center": {
         "lat": 46.304457,
         "lng": 7.391638
-      }
+      },
+      "destroyed": 0
     },
     {
       "code": "AVI",
@@ -90,7 +95,8 @@
         "maxLat": 44.05,
         "minLng": 4.75,
         "maxLng": 4.95
-      }
+      },
+      "destroyed": 11
     },
     {
       "code": "BAB",
@@ -100,7 +106,8 @@
       "center": {
         "lat": 43.483143,
         "lng": -1.530272
-      }
+      },
+      "destroyed": 6
     },
     {
       "code": "BBO",
@@ -110,7 +117,8 @@
       "center": {
         "lat": 43.261473,
         "lng": -2.930698
-      }
+      },
+      "destroyed": 9
     },
     {
       "code": "BGK",
@@ -126,7 +134,8 @@
         "maxLat": 14,
         "minLng": 100.3,
         "maxLng": 100.8
-      }
+      },
+      "destroyed": 22
     },
     {
       "code": "BRC",
@@ -136,7 +145,8 @@
       "center": {
         "lat": 41.38332,
         "lng": 2.172895
-      }
+      },
+      "destroyed": 15
     },
     {
       "code": "BRL",
@@ -152,7 +162,8 @@
         "maxLat": 52.7,
         "minLng": 13.1,
         "maxLng": 13.8
-      }
+      },
+      "destroyed": 1
     },
     {
       "code": "BRN",
@@ -168,7 +179,8 @@
         "maxLat": 47.05,
         "minLng": 7.35,
         "maxLng": 7.6
-      }
+      },
+      "destroyed": 10
     },
     {
       "code": "BSL",
@@ -184,7 +196,8 @@
         "maxLat": 47.62,
         "minLng": 7.5,
         "maxLng": 7.7
-      }
+      },
+      "destroyed": 6
     },
     {
       "code": "BTA",
@@ -194,7 +207,8 @@
       "center": {
         "lat": 42.700778,
         "lng": 9.45079
-      }
+      },
+      "destroyed": 3
     },
     {
       "code": "BXL",
@@ -210,7 +224,8 @@
         "maxLat": 50.95,
         "minLng": 4.25,
         "maxLng": 4.5
-      }
+      },
+      "destroyed": 7
     },
     {
       "code": "CAPF",
@@ -220,7 +235,8 @@
       "center": {
         "lat": 44.662923,
         "lng": -1.240386
-      }
+      },
+      "destroyed": 4
     },
     {
       "code": "CAZ",
@@ -236,7 +252,8 @@
         "maxLat": 44,
         "minLng": 5.7,
         "maxLng": 7.8
-      }
+      },
+      "destroyed": 9
     },
     {
       "code": "CCU",
@@ -252,7 +269,8 @@
         "maxLat": 21.5,
         "minLng": -87.2,
         "maxLng": -86.65
-      }
+      },
+      "destroyed": 0
     },
     {
       "code": "CHAR",
@@ -262,7 +280,8 @@
       "center": {
         "lat": 50.405413,
         "lng": 4.449921
-      }
+      },
+      "destroyed": 0
     },
     {
       "code": "CLR",
@@ -272,7 +291,8 @@
       "center": {
         "lat": 45.800334,
         "lng": 3.090138
-      }
+      },
+      "destroyed": 2
     },
     {
       "code": "CON",
@@ -282,7 +302,8 @@
       "center": {
         "lat": 44.092551,
         "lng": -1.323003
-      }
+      },
+      "destroyed": 0
     },
     {
       "code": "DIJ",
@@ -298,7 +319,8 @@
         "maxLat": 47.4,
         "minLng": 4.95,
         "maxLng": 5.15
-      }
+      },
+      "destroyed": 0
     },
     {
       "code": "DJBA",
@@ -308,7 +330,8 @@
       "center": {
         "lat": 33.807735,
         "lng": 10.891873
-      }
+      },
+      "destroyed": 4
     },
     {
       "code": "DJN",
@@ -318,7 +341,8 @@
       "center": {
         "lat": 36.366028,
         "lng": 127.381718
-      }
+      },
+      "destroyed": 4
     },
     {
       "code": "ELT",
@@ -328,7 +352,8 @@
       "center": {
         "lat": 29.531915,
         "lng": 34.939717
-      }
+      },
+      "destroyed": 0
     },
     {
       "code": "FAO",
@@ -338,7 +363,8 @@
       "center": {
         "lat": 37.018078,
         "lng": -7.956933
-      }
+      },
+      "destroyed": 3
     },
     {
       "code": "FKF",
@@ -354,7 +380,8 @@
         "maxLat": 50.25,
         "minLng": 8.45,
         "maxLng": 8.85
-      }
+      },
+      "destroyed": 0
     },
     {
       "code": "FRQ",
@@ -364,7 +391,8 @@
       "center": {
         "lat": 43.959362,
         "lng": 5.780969
-      }
+      },
+      "destroyed": 0
     },
     {
       "code": "FTBL",
@@ -380,7 +408,8 @@
         "maxLat": 48.65,
         "minLng": 2.4,
         "maxLng": 3
-      }
+      },
+      "destroyed": 11
     },
     {
       "code": "GNV",
@@ -396,7 +425,8 @@
         "maxLat": 46.3,
         "minLng": 6.05,
         "maxLng": 6.25
-      }
+      },
+      "destroyed": 9
     },
     {
       "code": "GRN",
@@ -412,7 +442,8 @@
         "maxLat": 45.25,
         "minLng": 5.65,
         "maxLng": 5.8
-      }
+      },
+      "destroyed": 15
     },
     {
       "code": "GRU",
@@ -422,7 +453,8 @@
       "center": {
         "lat": 43.386892,
         "lng": 17.38041
-      }
+      },
+      "destroyed": 0
     },
     {
       "code": "HALM",
@@ -432,7 +464,8 @@
       "center": {
         "lat": 56.679103,
         "lng": 12.773971
-      }
+      },
+      "destroyed": 0
     },
     {
       "code": "HK",
@@ -448,7 +481,8 @@
         "maxLat": 22.55,
         "minLng": 113.8,
         "maxLng": 114.4
-      }
+      },
+      "destroyed": 107
     },
     {
       "code": "IST",
@@ -464,7 +498,8 @@
         "maxLat": 41.25,
         "minLng": 28.6,
         "maxLng": 29.2
-      }
+      },
+      "destroyed": 6
     },
     {
       "code": "KAT",
@@ -480,7 +515,8 @@
         "maxLat": 27.8,
         "minLng": 85.2,
         "maxLng": 85.45
-      }
+      },
+      "destroyed": 7
     },
     {
       "code": "KLN",
@@ -490,7 +526,8 @@
       "center": {
         "lat": 50.928348,
         "lng": 6.972527
-      }
+      },
+      "destroyed": 4
     },
     {
       "code": "LA",
@@ -506,7 +543,8 @@
         "maxLat": 34.35,
         "minLng": -118.7,
         "maxLng": -117.6
-      }
+      },
+      "destroyed": 189
     },
     {
       "code": "LBR",
@@ -516,7 +554,8 @@
       "center": {
         "lat": 43.860304,
         "lng": 5.355548
-      }
+      },
+      "destroyed": 2
     },
     {
       "code": "LCT",
@@ -526,7 +565,8 @@
       "center": {
         "lat": 43.185047,
         "lng": 5.61956
-      }
+      },
+      "destroyed": 5
     },
     {
       "code": "LDN",
@@ -542,7 +582,8 @@
         "maxLat": 51.7,
         "minLng": -0.55,
         "maxLng": 0.35
-      }
+      },
+      "destroyed": 67
     },
     {
       "code": "LIL",
@@ -552,7 +593,8 @@
       "center": {
         "lat": 50.59408,
         "lng": 3.046499
-      }
+      },
+      "destroyed": 1
     },
     {
       "code": "LJU",
@@ -568,7 +610,8 @@
         "maxLat": 46.12,
         "minLng": 14.45,
         "maxLng": 14.6
-      }
+      },
+      "destroyed": 4
     },
     {
       "code": "LSN",
@@ -584,7 +627,8 @@
         "maxLat": 46.58,
         "minLng": 6.58,
         "maxLng": 6.72
-      }
+      },
+      "destroyed": 9
     },
     {
       "code": "LY",
@@ -600,7 +644,8 @@
         "maxLat": 45.85,
         "minLng": 4.75,
         "maxLng": 5
-      }
+      },
+      "destroyed": 26
     },
     {
       "code": "MAN",
@@ -616,7 +661,8 @@
         "maxLat": 53.55,
         "minLng": -2.35,
         "maxLng": -2.1
-      }
+      },
+      "destroyed": 11
     },
     {
       "code": "MARS",
@@ -632,7 +678,8 @@
         "maxLat": 43.4,
         "minLng": 5.3,
         "maxLng": 5.55
-      }
+      },
+      "destroyed": 24
     },
     {
       "code": "MBSA",
@@ -642,7 +689,8 @@
       "center": {
         "lat": -3.977181,
         "lng": 39.706815
-      }
+      },
+      "destroyed": 5
     },
     {
       "code": "MEN",
@@ -652,7 +700,8 @@
       "center": {
         "lat": 40.012279,
         "lng": 3.85219
-      }
+      },
+      "destroyed": 1
     },
     {
       "code": "MIA",
@@ -668,7 +717,8 @@
         "maxLat": 25.9,
         "minLng": -80.3,
         "maxLng": -80.1
-      }
+      },
+      "destroyed": 63
     },
     {
       "code": "MLB",
@@ -684,7 +734,8 @@
         "maxLat": -37.7,
         "minLng": 144.8,
         "maxLng": 145.1
-      }
+      },
+      "destroyed": 3
     },
     {
       "code": "MLGA",
@@ -700,7 +751,8 @@
         "maxLat": 36.8,
         "minLng": -4.55,
         "maxLng": -4.35
-      }
+      },
+      "destroyed": 24
     },
     {
       "code": "MPL",
@@ -716,7 +768,8 @@
         "maxLat": 43.7,
         "minLng": 3.8,
         "maxLng": 3.95
-      }
+      },
+      "destroyed": 1
     },
     {
       "code": "MRAK",
@@ -726,7 +779,8 @@
       "center": {
         "lat": 31.6295,
         "lng": -7.9811
-      }
+      },
+      "destroyed": 0
     },
     {
       "code": "MTB",
@@ -736,7 +790,8 @@
       "center": {
         "lat": 44.016693,
         "lng": 1.351914
-      }
+      },
+      "destroyed": 2
     },
     {
       "code": "MUN",
@@ -752,7 +807,8 @@
         "maxLat": 48.25,
         "minLng": 11.45,
         "maxLng": 11.7
-      }
+      },
+      "destroyed": 1
     },
     {
       "code": "NA",
@@ -762,7 +818,8 @@
       "center": {
         "lat": 47.216183,
         "lng": -1.545731
-      }
+      },
+      "destroyed": 2
     },
     {
       "code": "NCL",
@@ -772,7 +829,8 @@
       "center": {
         "lat": 54.969838,
         "lng": -1.608875
-      }
+      },
+      "destroyed": 3
     },
     {
       "code": "NIM",
@@ -788,7 +846,8 @@
         "maxLat": 43.9,
         "minLng": 4.3,
         "maxLng": 4.45
-      }
+      },
+      "destroyed": 0
     },
     {
       "code": "NOO",
@@ -798,7 +857,8 @@
       "center": {
         "lat": 52.218211,
         "lng": 4.419613
-      }
+      },
+      "destroyed": 0
     },
     {
       "code": "NY",
@@ -814,7 +874,8 @@
         "maxLat": 40.93,
         "minLng": -74.3,
         "maxLng": -73.6
-      }
+      },
+      "destroyed": 173
     },
     {
       "code": "ORLN",
@@ -830,7 +891,8 @@
         "maxLat": 48,
         "minLng": 1.8,
         "maxLng": 1.98
-      }
+      },
+      "destroyed": 0
     },
     {
       "code": "PA",
@@ -846,7 +908,8 @@
         "maxLat": 49.1,
         "minLng": 1.9,
         "maxLng": 3
-      }
+      },
+      "destroyed": 244
     },
     {
       "code": "PAU",
@@ -862,7 +925,8 @@
         "maxLat": 43.35,
         "minLng": -0.45,
         "maxLng": -0.3
-      }
+      },
+      "destroyed": 1
     },
     {
       "code": "POTI",
@@ -878,7 +942,8 @@
         "maxLat": -19.45,
         "minLng": -65.9,
         "maxLng": -65.65
-      }
+      },
+      "destroyed": 13
     },
     {
       "code": "PRP",
@@ -894,7 +959,8 @@
         "maxLat": 42.75,
         "minLng": 2.85,
         "maxLng": 3
-      }
+      },
+      "destroyed": 0
     },
     {
       "code": "PRT",
@@ -910,7 +976,8 @@
         "maxLat": -31.7,
         "minLng": 115.6,
         "maxLng": 116.05
-      }
+      },
+      "destroyed": 17
     },
     {
       "code": "RA",
@@ -920,7 +987,8 @@
       "center": {
         "lat": 44.421317,
         "lng": 12.196371
-      }
+      },
+      "destroyed": 10
     },
     {
       "code": "RBA",
@@ -936,7 +1004,8 @@
         "maxLat": 34.1,
         "minLng": -6.9,
         "maxLng": -6.75
-      }
+      },
+      "destroyed": 8
     },
     {
       "code": "RDU",
@@ -946,7 +1015,8 @@
       "center": {
         "lat": 50.002999,
         "lng": 5.1489
-      }
+      },
+      "destroyed": 2
     },
     {
       "code": "REUN",
@@ -962,7 +1032,8 @@
         "maxLat": -20.85,
         "minLng": 55.2,
         "maxLng": 55.85
-      }
+      },
+      "destroyed": 0
     },
     {
       "code": "RN",
@@ -978,7 +1049,8 @@
         "maxLat": 48.2,
         "minLng": -1.85,
         "maxLng": -1.5
-      }
+      },
+      "destroyed": 0
     },
     {
       "code": "ROM",
@@ -994,7 +1066,8 @@
         "maxLat": 41.95,
         "minLng": 12.4,
         "maxLng": 12.6
-      }
+      },
+      "destroyed": 16
     },
     {
       "code": "RTD",
@@ -1010,7 +1083,8 @@
         "maxLat": 52,
         "minLng": 4.35,
         "maxLng": 4.55
-      }
+      },
+      "destroyed": 3
     },
     {
       "code": "SD",
@@ -1026,7 +1100,8 @@
         "maxLat": 32.85,
         "minLng": -117.3,
         "maxLng": -117
-      }
+      },
+      "destroyed": 20
     },
     {
       "code": "SL",
@@ -1036,7 +1111,8 @@
       "center": {
         "lat": 37.561233,
         "lng": 126.959511
-      }
+      },
+      "destroyed": 2
     },
     {
       "code": "SP",
@@ -1052,7 +1128,8 @@
         "maxLat": -23.45,
         "minLng": -46.8,
         "maxLng": -46.5
-      }
+      },
+      "destroyed": 36
     },
     {
       "code": "TK",
@@ -1068,7 +1145,8 @@
         "maxLat": 35.85,
         "minLng": 139.4,
         "maxLng": 139.9
-      }
+      },
+      "destroyed": 109
     },
     {
       "code": "TLS",
@@ -1078,7 +1156,8 @@
       "center": {
         "lat": 43.695205,
         "lng": 1.353076
-      }
+      },
+      "destroyed": 3
     },
     {
       "code": "VLMO",
@@ -1088,7 +1167,8 @@
       "center": {
         "lat": 45.465017,
         "lng": 6.450343
-      }
+      },
+      "destroyed": 1
     },
     {
       "code": "VRN",
@@ -1104,7 +1184,8 @@
         "maxLat": 25.55,
         "minLng": 82.85,
         "maxLng": 83.2
-      }
+      },
+      "destroyed": 7
     },
     {
       "code": "VRS",
@@ -1114,7 +1195,8 @@
       "center": {
         "lat": 48.80571,
         "lng": 2.128069
-      }
+      },
+      "destroyed": 15
     },
     {
       "code": "VSB",
@@ -1124,7 +1206,8 @@
       "center": {
         "lat": 57.638922,
         "lng": 18.291373
-      }
+      },
+      "destroyed": 0
     },
     {
       "code": "WN",
@@ -1140,7 +1223,8 @@
         "maxLat": 48.25,
         "minLng": 16.3,
         "maxLng": 16.45
-      }
+      },
+      "destroyed": 4
     }
   ]
 }

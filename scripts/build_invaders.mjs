@@ -569,6 +569,8 @@ async function main() {
             if (idxEntry) idxEntry = { ...idxEntry, version: nv };
             console.log(`         ↳ conservé mais enrichi : +${e.photos} photos, +${e.pts} pts (v${nv})`);
           }
+          // Maintient le compteur de détruits même quand la base est conservée.
+          if (idxEntry) idxEntry = { ...idxEntry, destroyed: prevInvaders.filter(i => i.status === 'destroyed').length };
         }
         if (idxEntry) indexCities.push(idxEntry);
         continue;
@@ -665,6 +667,9 @@ async function main() {
       code,
       name:    meta?.name ?? code,
       count:   finalInvaders.length,
+      // Détruits : sert au Palmarès pour la progression « juste » (les détruits
+      // jamais flashés ne comptent pas contre l'utilisateur).
+      destroyed: finalInvaders.filter(i => i.status === 'destroyed').length,
       version: newVersion,
       center:  cityCenter,
       ...(meta?.bbox ? { bbox: meta.bbox } : {}),
