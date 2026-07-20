@@ -371,6 +371,52 @@ export function AppProvider({ children }) {
     }, 500);
     return () => clearTimeout(cityProgressTimer.current);
   }, [flashed, invaders, currentCityCode, loaded]);
+
+  // Remplissage initial du registre : les villes où tu as des flashs mais aucune
+  // entrée (ex. 1er lancement après l'arrivée du registre). On charge leurs
+  // données en arrière-plan (cache disque, puis réseau) SANS changer de ville —
+  // sinon les points cumulés affichent 0 tant que chaque ville n'a pas été rouverte.
+  const backfillRun = useRef(false);
+  useEffect(() => {
+    if (!loaded || backfillRun.current || flashed.size === 0) return;
+    backfillRun.current = true;
+    (async () => {
+      const codes = new Set();
+      for (const id of flashed) {
+        const i = id.lastIndexOf('_');
+        if (i > 0) codes.add(id.slice(0, i));
+      }
+      for (const code of codes) {
+        if (code === currentCityCode || cityProgress[code]) continue;
+        try {
+          const data = getCityData(code) ?? await loadCityData(code);
+          const invs = data?.invaders ?? [];
+          if (!invs.length) continue;
+          let posed = 0, destroyed = 0, flashedCount = 0, flashedDestroyed = 0, flashedPts = 0;
+          for (const inv of invs) {
+            posed++;
+            const isDestroyed = inv.status === 'destroyed';
+            if (isDestroyed) destroyed++;
+            if (flashed.has(inv.id)) {
+              flashedCount++;
+              flashedPts += inv.points ?? 0;
+              if (isDestroyed) flashedDestroyed++;
+            }
+          }
+          const denominator = (posed - destroyed) + flashedDestroyed;
+          const entry = {
+            flashedCount, flashedPts, denominator, posed,
+            completed: denominator > 0 && flashedCount >= denominator,
+          };
+          setCityProgress(prev => {
+            const next = { ...prev, [code]: entry };
+            AsyncStorage.setItem('@invader_city_progress', JSON.stringify(next));
+            return next;
+          });
+        } catch {} // hors-ligne / ville inconnue → réessaiera au prochain démarrage
+      }
+    })();
+  }, [loaded, flashed]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => { if (loaded) AsyncStorage.setItem('invader_labels',          JSON.stringify(labels));              }, [labels,         loaded]);
   useEffect(() => { if (loaded) AsyncStorage.setItem('invader_label_defs',      JSON.stringify(labelDefs));           }, [labelDefs,      loaded]);
   useEffect(() => { if (loaded) AsyncStorage.setItem('invader_status_colors',   JSON.stringify(statusColors));        }, [statusColors,   loaded]);
