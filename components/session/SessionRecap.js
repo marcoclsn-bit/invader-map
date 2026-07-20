@@ -7,6 +7,7 @@ import { typography } from '../../theme/tokens';
 import { CITIES } from '../../cities/registry';
 import { getBadge } from '../../data/badges';
 import { useGamification } from '../../context/GamificationContext';
+import { useAppContext } from '../../context/AppContext';
 import ShareStory, { STORY_W, STORY_H } from '../share/ShareStory';
 import { captureAndShare } from '../../services/shareStory';
 
@@ -20,6 +21,7 @@ export default function SessionRecap() {
   const { theme } = useTheme();
   const { t } = useTranslation();
   const { pendingRecap, clearRecap } = useGamification();
+  const { invaders } = useAppContext();
   const storyRef = useRef(null);
   const [busy, setBusy] = useState(false);
 
@@ -28,6 +30,14 @@ export default function SessionRecap() {
   if (!session) return null;
 
   const cityName = CITIES[session.city]?.name ?? session.city ?? '—';
+
+  // Pins des Invaders attrapés : coordonnées + points, retrouvés dans les données
+  // de la ville courante (la session se déroule dans cette ville).
+  const invById = new Map((invaders ?? []).map((i) => [i.id, i]));
+  const pins = (session.invaderIds ?? [])
+    .map((id) => invById.get(id))
+    .filter(Boolean)
+    .map((i) => ({ lng: i.lng, lat: i.lat, points: i.points ?? 0 }));
   const km = session.distanceKm;
   const hasKm = km != null && km > 0;
   const aliens = session.invaderIds?.length ?? 0;
@@ -93,7 +103,7 @@ export default function SessionRecap() {
 
         {/* Visuel de partage rendu hors écran pour la capture */}
         <View style={styles.offscreen} pointerEvents="none">
-          <ShareStory ref={storyRef} session={session} cityName={cityName} />
+          <ShareStory ref={storyRef} session={session} cityName={cityName} pins={pins} />
         </View>
       </View>
     </Modal>
