@@ -52,6 +52,16 @@ export async function checkNewsAndNotify(opts = {}) {
     } catch {}
 
     const upTo = (await AsyncStorage.getItem(KEY_UPTO)) || '';
+    const latestDate = events.reduce((m, e) => (e?.date && e.date > m ? e.date : m), '');
+
+    // Première fois (pas de ligne de base) : on la POSE, sans notifier le backlog
+    // existant — sinon un nouvel utilisateur recevrait « 79 nouveautés » le jour 1.
+    if (!upTo) {
+      if (latestDate) await AsyncStorage.setItem(KEY_UPTO, latestDate);
+      if (force) await notifyTest();
+      return;
+    }
+
     // Nouveautés = événements plus récents que la dernière date notifiée, dans les villes suivies.
     const fresh = events.filter((e) =>
       e?.date && e.date > upTo && (!cities || cities.has(e.city))
@@ -62,7 +72,6 @@ export async function checkNewsAndNotify(opts = {}) {
       return;
     }
 
-    const latestDate = fresh.reduce((m, e) => (e.date > m ? e.date : m), upTo);
     const count = fresh.length;
     await Notifications.scheduleNotificationAsync({
       content: {
