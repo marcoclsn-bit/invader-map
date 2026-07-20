@@ -638,6 +638,7 @@
     "title": "Cómo funciona",
     "flagship": "Función estrella",
     "howto": "Cómo hacerlo",
+    "replayIntro": "Volver a ver la introducción",
     "intro": "¡Bienvenido! InvaderQuest te ayuda a localizar y fotografiar los mosaicos Space Invader. Todo es gratis y tus datos se quedan en tu teléfono. Así aprovechas cada modo.",
     "groups": {
       "field": "Sobre el terreno",
@@ -701,11 +702,12 @@
       },
       "news": {
         "title": "Novedades",
-        "benefit": "Mantente al día de las novedades y de los Invaders añadidos recientemente en tus ciudades.",
+        "benefit": "Mantente al día de las novedades y de los Invaders añadidos recientemente en tus ciudades — y recibe un aviso cuando los haya.",
         "steps": [
           "Abre Novedades desde el menú (un punto indica las novedades).",
-          "Suscríbete a las ciudades que te interesan para seguir sus actualizaciones.",
-          "Vuelve con regularidad: los datos se actualizan automáticamente."
+          "Toca la campana 🔔 arriba para recibir avisos de nuevos Invaders en tus ciudades.",
+          "Suscríbete a las ciudades que te interesan para filtrar las actualizaciones.",
+          "Vuelve cuando quieras: los datos se actualizan automáticamente."
         ]
       },
       "flash": {

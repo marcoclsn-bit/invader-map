@@ -1,8 +1,9 @@
-import { ScrollView, View, Text, StyleSheet } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../theme/ThemeContext';
+import { useAppContext } from '../context/AppContext';
 import { typography } from '../theme/tokens';
 
 // Structure de la page (ordre + icônes cohérentes avec le reste de l'app).
@@ -69,6 +70,7 @@ export default function GuideScreen() {
   const { theme } = useTheme();
   const { t } = useTranslation();
   const insets = useSafeAreaInsets();
+  const { resetOnboarding } = useAppContext();
 
   return (
     <ScrollView
@@ -76,6 +78,17 @@ export default function GuideScreen() {
       contentContainerStyle={[styles.container, { paddingBottom: insets.bottom + 40 }]}
       showsVerticalScrollIndicator={false}
     >
+      {/* Revoir l'intro — à sa place naturelle, en tête du guide */}
+      <TouchableOpacity
+        style={[styles.replayBtn, { backgroundColor: theme.accentDim, borderColor: theme.accent }]}
+        onPress={resetOnboarding}
+        activeOpacity={0.8}
+      >
+        <Ionicons name="play-circle" size={22} color={theme.accent} />
+        <Text style={[styles.replayText, { color: theme.accent }]}>{t('guide.replayIntro')}</Text>
+        <Ionicons name="chevron-forward" size={18} color={theme.accent} />
+      </TouchableOpacity>
+
       <Text style={[styles.intro, { color: theme.textSecondary }]}>{t('guide.intro')}</Text>
 
       {GROUPS.map((group) => (
@@ -94,6 +107,8 @@ export default function GuideScreen() {
 
 const styles = StyleSheet.create({
   container: { paddingHorizontal: 16, paddingTop: 16 },
+  replayBtn: { flexDirection: 'row', alignItems: 'center', gap: 10, borderWidth: 1, borderRadius: 12, paddingVertical: 12, paddingHorizontal: 14, marginBottom: 18 },
+  replayText: { flex: 1, fontSize: 15, fontWeight: '700' },
   intro: { fontSize: 15, lineHeight: 22, marginBottom: 20 },
 
   group: { marginBottom: 8 },

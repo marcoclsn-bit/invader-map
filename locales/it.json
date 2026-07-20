@@ -638,6 +638,7 @@
     "title": "Come funziona",
     "flagship": "Funzione di punta",
     "howto": "Come fare",
+    "replayIntro": "Rivedi l'introduzione",
     "intro": "Benvenuto! InvaderQuest ti aiuta a individuare e flashare i mosaici Space Invader. Tutto è gratuito e i tuoi dati restano sul telefono. Ecco come sfruttare al meglio ogni modalità.",
     "groups": {
       "field": "Sul campo",
@@ -701,11 +702,12 @@
       },
       "news": {
         "title": "Novità",
-        "benefit": "Resta aggiornato sulle novità e sugli Invader aggiunti di recente nelle tue città.",
+        "benefit": "Resta aggiornato sulle novità e sugli Invader aggiunti di recente nelle tue città — e ricevi un avviso quando ce ne sono.",
         "steps": [
           "Apri Novità dal menu (un pallino segnala le novità).",
-          "Iscriviti alle città che ti interessano per seguirne gli aggiornamenti.",
-          "Torna regolarmente: i dati si aggiornano automaticamente."
+          "Tocca la campana 🔔 in alto per ricevere avvisi sui nuovi Invader nelle tue città.",
+          "Iscriviti alle città che ti interessano per filtrare gli aggiornamenti.",
+          "Torna quando vuoi: i dati si aggiornano automaticamente."
         ]
       },
       "flash": {

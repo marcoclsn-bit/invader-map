@@ -638,6 +638,7 @@
     "title": "Comment ça marche",
     "flagship": "Fonction phare",
     "howto": "Comment faire",
+    "replayIntro": "Revoir l'introduction",
     "intro": "Bienvenue ! InvaderQuest t'aide à repérer et flasher les mosaïques Space Invader. Tout est gratuit et tes données restent sur ton téléphone. Voici comment tirer le meilleur de chaque mode.",
     "groups": {
       "field": "Sur le terrain",
@@ -701,11 +702,12 @@
       },
       "news": {
         "title": "Actus",
-        "benefit": "Reste au courant des nouveautés et des Invaders récemment ajoutés dans tes villes.",
+        "benefit": "Reste au courant des nouveautés et des Invaders récemment ajoutés dans tes villes — et reçois une alerte quand il y en a.",
         "steps": [
           "Ouvre Actus depuis le menu (une pastille signale les nouveautés).",
-          "Abonne-toi aux villes qui t'intéressent pour suivre leurs mises à jour.",
-          "Reviens régulièrement : les données sont rafraîchies automatiquement."
+          "Touche la cloche 🔔 en haut pour être alerté des nouveaux Invaders dans tes villes.",
+          "Abonne-toi aux villes qui t'intéressent pour filtrer les mises à jour.",
+          "Reviens quand tu veux : les données sont rafraîchies automatiquement."
         ]
       },
       "flash": {

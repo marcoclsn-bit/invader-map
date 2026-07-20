@@ -104,7 +104,6 @@ export default function SettingsScreen({ navigation }) {
     mapsApp, setMapsAppPref,
     language, setLanguage,
     newsNotify, setNewsNotifyPref,
-    resetOnboarding,
     resetLabels, clearFlashDates,
     dataVersion, dataUpdatedAt, checkDataUpdate,
   } = useAppContext();
@@ -297,13 +296,8 @@ export default function SettingsScreen({ navigation }) {
         ))}
       </Section>
 
-      {/* ── À propos & Intro ── */}
+      {/* ── À propos ── */}
       <Section>
-        <Row
-          label={t('settings.replayOnboarding')}
-          onPress={resetOnboarding}
-          trailing={<Ionicons name="play-outline" size={16} color={theme.textSecondary} />}
-        />
         <Row
           label={t('settings.aboutEntry')}
           onPress={() => navigation.navigate('À propos')}
