@@ -85,11 +85,15 @@ function maxConsecutiveWeekends(flashHistory) {
 const sessionCount = (ctx) => (ctx.session ? ctx.session.invaderIds.length : 0);
 
 // ── Anti-catalogage ─────────────────────────────────────────────────────────────
-// Sur le terrain on MARCHE entre deux mosaïques (minutes d'écart) ; cocher sa
-// collection depuis la Liste produit des flashs espacés de quelques secondes.
-// Pour les trophées de vitesse/combo, les flashs à moins de 2 min d'écart ne
-// comptent que pour 1 : le catalogage ne débloque pas les exploits de terrain.
-const MIN_COMBO_GAP_MS = 2 * 60 * 1000;
+// Sur le terrain on MARCHE entre deux mosaïques ; cocher sa collection depuis la
+// Liste produit des flashs espacés de quelques secondes. Règle à deux niveaux
+// pour les trophées de vitesse/combo :
+//   1. deux flashs à moins de 45 s d'écart comptent pour 1 (mais deux Invaders
+//      voisins — deux coins d'une rue — restent comptés) ;
+//   2. le RYTHME MOYEN du combo doit rester ≥ 90 s/flash : une paire rapprochée
+//      passe, une chaîne de rafales non.
+const MIN_COMBO_GAP_MS = 45 * 1000;
+const MIN_AVG_GAP_MS = 90 * 1000;
 
 function collapseBursts(tsSorted) {
   const out = [];
@@ -99,22 +103,26 @@ function collapseBursts(tsSorted) {
   return out;
 }
 
-// Nombre max de flashs datés dans une fenêtre glissante de `minutes`.
+// Nombre de flashs « crédités » sur un intervalle : borné par le rythme moyen.
+const effectiveCount = (count, spanMs) =>
+  Math.min(count, Math.floor(spanMs / MIN_AVG_GAP_MS) + 1);
+
+// Nombre max de flashs crédités dans une fenêtre glissante de `minutes`.
 // Permet aux combos de se déclencher depuis N'IMPORTE QUEL flash (Carte incluse),
-// sans exiger une « session » formelle (Chasse/Balade). Rafales fusionnées.
+// sans exiger une « session » formelle (Chasse/Balade).
 function maxFlashesInWindow(flashHistory, minutes) {
   const ts = collapseBursts(datedFlashes(flashHistory).map((f) => f.ts).sort((a, b) => a - b));
   const win = minutes * 60 * 1000;
   let best = 0, j = 0;
   for (let i = 0; i < ts.length; i++) {
     while (ts[i] - ts[j] > win) j++;
-    best = Math.max(best, i - j + 1);
+    best = Math.max(best, effectiveCount(i - j + 1, ts[i] - ts[j]));
   }
   return best;
 }
 
-// Flashs d'une session comptés avec la même règle d'espacement (sinon on pourrait
-// lancer une Chasse puis tout cocher depuis la Liste). Sans flashHistory fourni
+// Flashs d'une session comptés avec les mêmes règles (sinon on pourrait lancer
+// une Chasse puis tout cocher depuis la Liste). Sans flashHistory fourni
 // (tests / robustesse), on retombe sur le compte brut.
 function sessionComboCount(ctx) {
   if (!ctx.session) return 0;
@@ -124,11 +132,14 @@ function sessionComboCount(ctx) {
       .filter((f) => f.flashedAt != null)
       .map((f) => [f.id, new Date(f.flashedAt).getTime()])
   );
-  const ts = ctx.session.invaderIds
-    .map((id) => dates.get(id))
-    .filter((t) => Number.isFinite(t))
-    .sort((a, b) => a - b);
-  return collapseBursts(ts).length;
+  const ts = collapseBursts(
+    ctx.session.invaderIds
+      .map((id) => dates.get(id))
+      .filter((t) => Number.isFinite(t))
+      .sort((a, b) => a - b)
+  );
+  if (ts.length <= 1) return ts.length;
+  return effectiveCount(ts.length, ts[ts.length - 1] - ts[0]);
 }
 
 // Combo atteint via une session OU via une rafale de flashs dans la fenêtre.

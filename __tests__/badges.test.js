@@ -72,6 +72,14 @@ describe('combo depuis la timeline (hors session, ex. flashs depuis la Carte)', 
     const s = session({ invaderIds: ids(10) });
     expect(pred('combo10', { session: s, flashHistory })).toBe(true);
   });
+
+  test('deux Invaders voisins (45 s d’écart) comptent tous les deux', () => {
+    // 0s, 45s (coins d'une même rue), puis 6, 12 et 20 min → speedrunner OK
+    const at = (min, sec = 0) => new Date(2024, 0, 1, 12, min, sec);
+    const flashHistory = [at(0), at(0, 45), at(6), at(12), at(20)]
+      .map((d, i) => flash(`PA_${i}`, d));
+    expect(pred('speedrunner', { session: null, flashHistory })).toBe(true);
+  });
 });
 
 describe('exploration', () => {
