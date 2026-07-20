@@ -11,6 +11,7 @@
     "postinstall": "patch-package"
   },
   "dependencies": {
+    "@aptabase/react-native": "^0.5.0",
     "@expo-google-fonts/press-start-2p": "^0.4.1",
     "@expo-google-fonts/silkscreen": "^0.4.2",
     "@expo/ngrok": "^4.1.0",

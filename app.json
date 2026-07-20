@@ -2,12 +2,12 @@
   "expo": {
     "name": "InvaderQuest",
     "slug": "invaderquest",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
-    "runtimeVersion": "1.1.0",
+    "runtimeVersion": "1.2.0",
     "updates": {
       "url": "https://u.expo.dev/60322774-f3cf-427f-b11f-6b17da413e41"
     },
@@ -38,6 +38,7 @@
       },
       "edgeToEdgeEnabled": true,
       "permissions": [
+        "android.permission.INTERNET",
         "android.permission.ACCESS_COARSE_LOCATION",
         "android.permission.ACCESS_FINE_LOCATION",
         "android.permission.ACCESS_BACKGROUND_LOCATION",

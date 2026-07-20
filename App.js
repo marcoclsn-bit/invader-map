@@ -34,6 +34,11 @@ import SessionRecap from './components/session/SessionRecap';
 import BadgeCelebration from './components/gamification/BadgeCelebration';
 import { navigationRef } from './utils/navigationRef';
 import './services/strollEngine'; // enregistre la tâche de fond + le handler de notif
+import { initAnalytics, track } from './services/analytics';
+
+// Analytics (Aptabase) : démarré une fois au chargement du module, avant l'app.
+// Sans clé configurée (config/aptabase.js) → totalement inactif.
+initAnalytics();
 
 const Tab    = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
@@ -129,7 +134,14 @@ function AppShell() {
     <>
       <StatusBar style={isDark ? 'light' : 'dark'} />
       <StrollEngine />
-      <NavigationContainer ref={navigationRef}>
+      <NavigationContainer
+        ref={navigationRef}
+        onStateChange={() => {
+          // Suit l'écran affiché (le plus profond) → « pages les plus visitées ».
+          const route = navigationRef.getCurrentRoute();
+          if (route?.name) track('screen_view', { screen: route.name });
+        }}
+      >
         <Root.Navigator screenOptions={{ headerShown: false }}>
           {/* Drawer (+ ses 3 onglets) comme écran principal */}
           <Root.Screen name="Main" component={DrawerNavigator} />
