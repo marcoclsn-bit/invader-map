@@ -35,6 +35,9 @@ const SPEEDS = { 'foot-walking': 5, 'cycling-regular': 15 }; // km/h
 // grappes → on en attrape bien plus). Réglages validés sur données réelles Paris.
 const DENSITY_ALPHA = 0.15;      // poids des points voisins dans le score glouton
 const DENSITY_RADIUS_KM = 0.25;  // rayon de voisinage (~250 m à pied)
+// Facteur de détour : le vol d'oiseau sous-estime la distance réelle par les rues.
+// Appliqué au calcul de temps interne pour que la durée réelle colle au budget.
+const STREET_DETOUR = 1.2;
 const DEBOUNCE_MS = 300;
 
 // ─── Haversine ────────────────────────────────────────────────────────────────
@@ -63,10 +66,10 @@ function haversineKm(lat1, lon1, lat2, lon2) {
 function tourTotalMin(order, startLat, startLon, speedKmPerMin) {
   let t = 0, curLat = startLat, curLon = startLon;
   for (const inv of order) {
-    t += haversineKm(curLat, curLon, inv.lat, inv.lng) / speedKmPerMin + VISIT_MIN;
+    t += (haversineKm(curLat, curLon, inv.lat, inv.lng) / speedKmPerMin) * STREET_DETOUR + VISIT_MIN;
     curLat = inv.lat; curLon = inv.lng;
   }
-  t += haversineKm(curLat, curLon, startLat, startLon) / speedKmPerMin; // retour au départ
+  t += (haversineKm(curLat, curLon, startLat, startLon) / speedKmPerMin) * STREET_DETOUR; // retour
   return t;
 }
 
@@ -96,8 +99,8 @@ function greedySelect(startLat, startLon, pool, budgetMin, speedKmPerMin, nbrPoi
     let bestIdx = -1, bestScore = -Infinity;
     for (let i = 0; i < available.length; i++) {
       const inv = available[i];
-      const tToInv  = haversineKm(curLat, curLon, inv.lat, inv.lng) / speedKmPerMin;
-      const tReturn = haversineKm(inv.lat, inv.lng, startLat, startLon) / speedKmPerMin;
+      const tToInv  = (haversineKm(curLat, curLon, inv.lat, inv.lng) / speedKmPerMin) * STREET_DETOUR;
+      const tReturn = (haversineKm(inv.lat, inv.lng, startLat, startLon) / speedKmPerMin) * STREET_DETOUR;
       if (tToInv + VISIT_MIN + tReturn <= timeLeft) {
         const weighted = inv.points + DENSITY_ALPHA * (nbrPoints.get(inv.id) ?? 0);
         const score = weighted / (tToInv + VISIT_MIN);
@@ -106,7 +109,7 @@ function greedySelect(startLat, startLon, pool, budgetMin, speedKmPerMin, nbrPoi
     }
     if (bestIdx === -1) break;
     const best = available[bestIdx];
-    timeLeft -= haversineKm(curLat, curLon, best.lat, best.lng) / speedKmPerMin + VISIT_MIN;
+    timeLeft -= (haversineKm(curLat, curLon, best.lat, best.lng) / speedKmPerMin) * STREET_DETOUR + VISIT_MIN;
     curLat = best.lat; curLon = best.lng;
     selected.push(best);
     available.splice(bestIdx, 1);
@@ -525,12 +528,15 @@ export default function ChasseScreen({ route }) {
         [startLon, startLat],
       ];
       const { coords, durationMin } = await multiRoute(waypoints, profile);
+      // Durée AFFICHÉE = marche réelle (ORS) + temps passé à flasher chaque Invader.
+      // (durationMin d'ORS ne compte que la marche → sans les visites, ça paraissait trop court.)
+      const totalDurationMin = durationMin + VISIT_MIN * selected.length;
 
       setResult({
         invaders: selected,
         routeCoords: coords,
         polyline: coords.map(([lng, lat]) => ({ latitude: lat, longitude: lng })),
-        durationMin,
+        durationMin: totalDurationMin,
         totalPts: selected.reduce((s, inv) => s + inv.points, 0),
         startLat,
         startLon,
