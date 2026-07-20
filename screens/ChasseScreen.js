@@ -31,6 +31,10 @@ const _PA        = CITIES.PA;
 const PARIS      = { latitude: _PA.center.lat, longitude: _PA.center.lng, ..._PA.mapDelta };
 const VISIT_MIN = 2;   // minutes par Invader (observation + photo)
 const SPEEDS = { 'foot-walking': 5, 'cycling-regular': 15 }; // km/h
+// Pondération densité : bonus aux Invaders entourés d'autres Invaders (favorise les
+// grappes → on en attrape bien plus). Réglages validés sur données réelles Paris.
+const DENSITY_ALPHA = 0.15;      // poids des points voisins dans le score glouton
+const DENSITY_RADIUS_KM = 0.25;  // rayon de voisinage (~250 m à pied)
 const DEBOUNCE_MS = 300;
 
 // ─── Haversine ────────────────────────────────────────────────────────────────
@@ -66,8 +70,24 @@ function tourTotalMin(order, startLat, startLon, speedKmPerMin) {
   return t;
 }
 
-// 1. Sélection gloutonne (l'ancien greedyHunt), sur un pool déjà filtré par rayon.
-function greedySelect(startLat, startLon, pool, budgetMin, speedKmPerMin) {
+// Points des Invaders voisins (dans DENSITY_RADIUS_KM) pour chaque Invader du pool.
+// Sert à favoriser les grappes : un Invader entouré vaut « plus » dans le glouton.
+function neighborPointsMap(pool) {
+  const m = new Map();
+  for (const a of pool) {
+    let sum = 0;
+    for (const b of pool) {
+      if (a === b) continue;
+      if (haversineKm(a.lat, a.lng, b.lat, b.lng) <= DENSITY_RADIUS_KM) sum += b.points;
+    }
+    m.set(a.id, sum);
+  }
+  return m;
+}
+
+// 1. Sélection gloutonne, pondérée par la densité locale (points voisins).
+//    score = (points + α × points des voisins) / (temps d'accès + visite).
+function greedySelect(startLat, startLon, pool, budgetMin, speedKmPerMin, nbrPoints) {
   const available = pool.slice();
   const selected = [];
   let curLat = startLat, curLon = startLon, timeLeft = budgetMin;
@@ -79,7 +99,8 @@ function greedySelect(startLat, startLon, pool, budgetMin, speedKmPerMin) {
       const tToInv  = haversineKm(curLat, curLon, inv.lat, inv.lng) / speedKmPerMin;
       const tReturn = haversineKm(inv.lat, inv.lng, startLat, startLon) / speedKmPerMin;
       if (tToInv + VISIT_MIN + tReturn <= timeLeft) {
-        const score = inv.points / (tToInv + VISIT_MIN);
+        const weighted = inv.points + DENSITY_ALPHA * (nbrPoints.get(inv.id) ?? 0);
+        const score = weighted / (tToInv + VISIT_MIN);
         if (score > bestScore) { bestScore = score; bestIdx = i; }
       }
     }
@@ -152,7 +173,8 @@ function planHunt(startLon, startLat, candidates, budgetMin, speedKmh) {
     haversineKm(startLat, startLon, inv.lat, inv.lng) <= maxRadiusKm
   );
 
-  let selected = greedySelect(startLat, startLon, pool, budgetMin, speedKmPerMin);
+  const nbrPoints = neighborPointsMap(pool);
+  let selected = greedySelect(startLat, startLon, pool, budgetMin, speedKmPerMin, nbrPoints);
   selected = twoOpt(selected, startLat, startLon, speedKmPerMin);
   const remaining = pool.filter(inv => !selected.includes(inv));
   selected = refill(selected, remaining, startLat, startLon, budgetMin, speedKmPerMin);
