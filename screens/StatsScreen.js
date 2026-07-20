@@ -345,6 +345,12 @@ export default function StatsScreen({ navigation }) {
                 ]}
                 theme={theme}
               />
+              {/* Les flashs sans date (« Tout flasher ») ne peuvent pas être classés jour/nuit */}
+              {dn.total < stats.total && (
+                <Text style={{ fontSize: 11.5, color: theme.textSecondary, fontStyle: 'italic', marginTop: 10, textAlign: 'center' }}>
+                  {t('stats.profile.dayNight.basedOn', { count: dn.total })}
+                </Text>
+              )}
             </>
           ) : (
             <Hint theme={theme}>{t('stats.profile.empty.dayNight')}</Hint>

@@ -306,7 +306,8 @@
       "dayNight": {
         "title": "Giorno / Notte",
         "day": "Giorno",
-        "night": "Notte"
+        "night": "Notte",
+        "basedOn": "Basato su {{count}} flash con orario — la selezione in blocco non registra l'ora."
       },
       "geo": {
         "title": "Distribuzione geografica",

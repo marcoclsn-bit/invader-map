@@ -306,7 +306,8 @@
       "dayNight": {
         "title": "Día / Noche",
         "day": "Día",
-        "night": "Noche"
+        "night": "Noche",
+        "basedOn": "Basado en {{count}} flashes con hora — el marcado masivo no registra la hora."
       },
       "geo": {
         "title": "Distribución geográfica",

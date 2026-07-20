@@ -306,7 +306,8 @@
       "dayNight": {
         "title": "Day / Night",
         "day": "Day",
-        "night": "Night"
+        "night": "Night",
+        "basedOn": "Based on {{count}} time-stamped flashes — bulk marking doesn't record the time."
       },
       "geo": {
         "title": "Geographic breakdown",
