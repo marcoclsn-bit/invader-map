@@ -46,47 +46,117 @@ function haversineKm(lat1, lon1, lat2, lon2) {
   return R * 2 * Math.asin(Math.sqrt(a));
 }
 
-// ─── Algorithme glouton ───────────────────────────────────────────────────────
+// ─── Planification de la chasse ─────────────────────────────────────────────
+// Objectif : attraper un max d'Invaders (pondérés par points) dans un budget
+// temps donné — variante du « voyageur de commerce avec profits » (NP-difficile).
+// Approche pragmatique en 3 temps, 100 % locale (distances à vol d'oiseau) :
+//   1. Glouton : à chaque pas, l'Invader au meilleur ratio points / temps.
+//   2. 2-opt   : on dénoue les croisements pour raccourcir la boucle.
+//   3. Re-remplissage : le temps gagné sert à insérer d'autres Invaders.
+// (Le vrai tracé par les rues est calculé ensuite par ORS via multiRoute.)
 
-function greedyHunt(startLon, startLat, candidates, budgetMin, speedKmh) {
-  const speedKmPerMin = speedKmh / 60;
-  const maxRadiusKm = (budgetMin * speedKmPerMin) / 2;
+// Temps total (min) d'une boucle fermée départ → order… → départ (visites incluses).
+function tourTotalMin(order, startLat, startLon, speedKmPerMin) {
+  let t = 0, curLat = startLat, curLon = startLon;
+  for (const inv of order) {
+    t += haversineKm(curLat, curLon, inv.lat, inv.lng) / speedKmPerMin + VISIT_MIN;
+    curLat = inv.lat; curLon = inv.lng;
+  }
+  t += haversineKm(curLat, curLon, startLat, startLon) / speedKmPerMin; // retour au départ
+  return t;
+}
 
-  let available = candidates.filter(inv => {
-    const d = haversineKm(startLat, startLon, inv.lat, inv.lng);
-    return d <= maxRadiusKm && inv.status !== 'destroyed';
-  });
-
+// 1. Sélection gloutonne (l'ancien greedyHunt), sur un pool déjà filtré par rayon.
+function greedySelect(startLat, startLon, pool, budgetMin, speedKmPerMin) {
+  const available = pool.slice();
   const selected = [];
-  let curLat = startLat;
-  let curLon = startLon;
-  let timeLeft = budgetMin;
+  let curLat = startLat, curLon = startLon, timeLeft = budgetMin;
 
   while (available.length > 0) {
-    let bestIdx = -1;
-    let bestScore = -Infinity;
-
+    let bestIdx = -1, bestScore = -Infinity;
     for (let i = 0; i < available.length; i++) {
       const inv = available[i];
-      const tToInv = haversineKm(curLat, curLon, inv.lat, inv.lng) / speedKmPerMin;
+      const tToInv  = haversineKm(curLat, curLon, inv.lat, inv.lng) / speedKmPerMin;
       const tReturn = haversineKm(inv.lat, inv.lng, startLat, startLon) / speedKmPerMin;
       if (tToInv + VISIT_MIN + tReturn <= timeLeft) {
         const score = inv.points / (tToInv + VISIT_MIN);
         if (score > bestScore) { bestScore = score; bestIdx = i; }
       }
     }
-
     if (bestIdx === -1) break;
-
     const best = available[bestIdx];
-    const tToInv = haversineKm(curLat, curLon, best.lat, best.lng) / speedKmPerMin;
-    timeLeft -= tToInv + VISIT_MIN;
-    curLat = best.lat;
-    curLon = best.lng;
+    timeLeft -= haversineKm(curLat, curLon, best.lat, best.lng) / speedKmPerMin + VISIT_MIN;
+    curLat = best.lat; curLon = best.lng;
     selected.push(best);
     available.splice(bestIdx, 1);
   }
+  return selected;
+}
 
+// 2. 2-opt : inverse des segments tant que ça raccourcit la boucle (retire les croisements).
+function twoOpt(order, startLat, startLon, speedKmPerMin) {
+  if (order.length < 3) return order;
+  let best = order.slice();
+  let bestT = tourTotalMin(best, startLat, startLon, speedKmPerMin);
+  let improved = true;
+  while (improved) {
+    improved = false;
+    for (let i = 0; i < best.length - 1; i++) {
+      for (let k = i + 1; k < best.length; k++) {
+        const cand = best.slice(0, i)
+          .concat(best.slice(i, k + 1).reverse(), best.slice(k + 1));
+        const t = tourTotalMin(cand, startLat, startLon, speedKmPerMin);
+        if (t < bestT - 1e-9) { best = cand; bestT = t; improved = true; }
+      }
+    }
+  }
+  return best;
+}
+
+// 3. Re-remplissage : insère d'autres Invaders là où ça coûte le moins de temps,
+//    tant qu'on reste dans le budget (insertion la moins chère, priorité aux points).
+function refill(order, remaining, startLat, startLon, budgetMin, speedKmPerMin) {
+  let selected = order.slice();
+  const pool = remaining.slice();
+
+  while (pool.length > 0) {
+    let bestCand = -1, bestPos = -1, bestGain = -Infinity;
+    const baseTime = tourTotalMin(selected, startLat, startLon, speedKmPerMin);
+
+    for (let c = 0; c < pool.length; c++) {
+      const inv = pool[c];
+      // teste chaque position d'insertion (0 = avant le 1er, n = après le dernier)
+      for (let p = 0; p <= selected.length; p++) {
+        const trial = selected.slice(0, p).concat(inv, selected.slice(p));
+        const tTotal = tourTotalMin(trial, startLat, startLon, speedKmPerMin);
+        if (tTotal <= budgetMin) {
+          const added = tTotal - baseTime;               // temps ajouté par l'insertion
+          const gain  = inv.points / Math.max(added, 0.1); // points par minute ajoutée
+          if (gain > bestGain) { bestGain = gain; bestCand = c; bestPos = p; }
+        }
+      }
+    }
+    if (bestCand === -1) break; // plus rien n'entre dans le budget
+    selected = selected.slice(0, bestPos).concat(pool[bestCand], selected.slice(bestPos));
+    pool.splice(bestCand, 1);
+  }
+  return selected;
+}
+
+// Orchestrateur : glouton → 2-opt → re-remplissage → 2-opt final.
+function planHunt(startLon, startLat, candidates, budgetMin, speedKmh) {
+  const speedKmPerMin = speedKmh / 60;
+  const maxRadiusKm = (budgetMin * speedKmPerMin) / 2;
+  const pool = candidates.filter(inv =>
+    inv.status !== 'destroyed' &&
+    haversineKm(startLat, startLon, inv.lat, inv.lng) <= maxRadiusKm
+  );
+
+  let selected = greedySelect(startLat, startLon, pool, budgetMin, speedKmPerMin);
+  selected = twoOpt(selected, startLat, startLon, speedKmPerMin);
+  const remaining = pool.filter(inv => !selected.includes(inv));
+  selected = refill(selected, remaining, startLat, startLon, budgetMin, speedKmPerMin);
+  selected = twoOpt(selected, startLat, startLon, speedKmPerMin);
   return selected;
 }
 
@@ -420,7 +490,7 @@ export default function ChasseScreen({ route }) {
         (arSet === null || arSet.has(INVADER_DISTRICT.get(inv.id)))
       );
 
-      const selected = greedyHunt(startLon, startLat, candidates, budgetMin, SPEEDS[profile]);
+      const selected = planHunt(startLon, startLat, candidates, budgetMin, SPEEDS[profile]);
 
       if (selected.length === 0) {
         setError(t('hunt.error.noInvadersReachable'));
