@@ -30,17 +30,19 @@ const todayKey = () => new Date().toISOString().slice(0, 10);
 
 // Cœur : télécharge les news, calcule les nouveautés, notifie si besoin.
 // Exporté pour pouvoir le déclencher manuellement (test / au démarrage).
-export async function checkNewsAndNotify() {
+// opts.force (bouton de test) : ignore le plafond 1/jour et notifie même sans
+// nouveauté (message de test), sans consommer le suivi des dates.
+export async function checkNewsAndNotify(opts = {}) {
+  const force = !!opts.force;
   try {
-    if ((await AsyncStorage.getItem(KEY_ENABLED)) === '0') return; // désactivé
-    // Plafond : une seule notification par jour.
-    if ((await AsyncStorage.getItem(KEY_LAST_DAY)) === todayKey()) return;
+    if (!force && (await AsyncStorage.getItem(KEY_ENABLED)) === '0') return; // désactivé
+    // Plafond : une seule notification par jour (ignoré en test).
+    if (!force && (await AsyncStorage.getItem(KEY_LAST_DAY)) === todayKey()) return;
 
     const res = await fetch(NEWS_URL, { headers: { 'Cache-Control': 'no-cache' } });
-    if (!res.ok) return;
+    if (!res.ok) { if (force) await notifyTest(); return; }
     const json = await res.json();
     const events = Array.isArray(json?.events) ? json.events : [];
-    if (events.length === 0) return;
 
     // Villes suivies (null/absent = toutes).
     let cities = null;
@@ -54,23 +56,37 @@ export async function checkNewsAndNotify() {
     const fresh = events.filter((e) =>
       e?.date && e.date > upTo && (!cities || cities.has(e.city))
     );
-    if (fresh.length === 0) return;
+
+    if (fresh.length === 0) {
+      if (force) await notifyTest(); // en test, on montre quand même quelque chose
+      return;
+    }
 
     const latestDate = fresh.reduce((m, e) => (e.date > m ? e.date : m), upTo);
     const count = fresh.length;
-    const title = i18n.t('news.notify.title');
-    const body = i18n.t(count === 1 ? 'news.notify.body_one' : 'news.notify.body_other', { count });
-
     await Notifications.scheduleNotificationAsync({
-      content: { title, body, sound: true, data: { type: 'news' } },
-      trigger: null, // immédiat
+      content: {
+        title: i18n.t('news.notify.title'),
+        body: i18n.t(count === 1 ? 'news.notify.body_one' : 'news.notify.body_other', { count }),
+        sound: true, data: { type: 'news' },
+      },
+      trigger: null,
     });
 
-    await AsyncStorage.multiSet([[KEY_UPTO, latestDate], [KEY_LAST_DAY, todayKey()]]);
+    // En test, on ne consomme pas le suivi (pour pouvoir retester).
+    if (!force) await AsyncStorage.multiSet([[KEY_UPTO, latestDate], [KEY_LAST_DAY, todayKey()]]);
   } catch (e) {
-    // headless : on n'échoue jamais bruyamment.
     if (__DEV__) console.log('[newsNotify] erreur :', e?.message);
+    if (force) { try { await notifyTest(); } catch {} }
   }
+}
+
+// Notification de test (aucune nouveauté / hors-ligne) — sert au bouton caché.
+async function notifyTest() {
+  await Notifications.scheduleNotificationAsync({
+    content: { title: i18n.t('news.notify.title'), body: i18n.t('news.notify.test'), sound: true, data: { type: 'news' } },
+    trigger: null,
+  });
 }
 
 // ─── Tâche de fond ──────────────────────────────────────────────────────────────

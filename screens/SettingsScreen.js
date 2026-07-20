@@ -6,7 +6,9 @@ import {
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
 import { Ionicons } from '@expo/vector-icons';
+import * as Notifications from 'expo-notifications';
 import { useAppContext } from '../context/AppContext';
+import { checkNewsAndNotify } from '../services/newsNotify';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import { PALETTE, ALL_STATUSES } from '../constants';
@@ -56,13 +58,15 @@ function Section({ title, children }) {
   );
 }
 
-function Row({ label, hint, trailing, onPress, destructive, action, last, children }) {
+function Row({ label, hint, trailing, onPress, onLongPress, destructive, action, last, children }) {
   const { theme } = useTheme();
-  const Wrapper = onPress ? TouchableOpacity : View;
+  const Wrapper = (onPress || onLongPress) ? TouchableOpacity : View;
   return (
     <Wrapper
       style={[layout.row, !last && { borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: theme.border }]}
       onPress={onPress}
+      onLongPress={onLongPress}
+      delayLongPress={600}
       activeOpacity={0.6}
     >
       {(label !== undefined || trailing) && (
@@ -164,10 +168,16 @@ export default function SettingsScreen({ navigation }) {
       </Section>
 
       {/* ── Notifications ── */}
+      {/* Appui long (caché) sur cette ligne → notification de test. */}
       <Section title={t('settings.notifs.section')}>
         <Row
           label={t('settings.notifs.news')}
           hint={t('settings.notifs.newsHint')}
+          onLongPress={async () => {
+            try { await Notifications.requestPermissionsAsync(); } catch {}
+            await checkNewsAndNotify({ force: true });
+            Alert.alert('InvaderQuest', t('settings.notifs.testSent'));
+          }}
           trailing={
             <Switch
               value={newsNotify}

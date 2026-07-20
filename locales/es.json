@@ -408,7 +408,8 @@
     "notifs": {
       "section": "Notificaciones",
       "news": "Alertas de novedades",
-      "newsHint": "Recibe un aviso cuando aparezcan o cambien de estado Invaders en tus ciudades seguidas."
+      "newsHint": "Recibe un aviso cuando aparezcan o cambien de estado Invaders en tus ciudades seguidas.",
+      "testSent": "Notificación de prueba enviada. Si no la ves, comprueba que las notificaciones están permitidas en Ajustes de iOS."
     }
   },
   "feedback": {
@@ -485,7 +486,8 @@
     "notify": {
       "title": "Invasión 👾",
       "body_one": "¡1 novedad en la invasión!",
-      "body_other": "¡{{count}} novedades en la invasión!"
+      "body_other": "¡{{count}} novedades en la invasión!",
+      "test": "Prueba: las alertas funcionan 👾"
     }
   },
   "stroll": {

@@ -408,7 +408,8 @@
     "notifs": {
       "section": "Notifications",
       "news": "New activity alerts",
-      "newsHint": "Get notified when Invaders appear or change status in the cities you follow."
+      "newsHint": "Get notified when Invaders appear or change status in the cities you follow.",
+      "testSent": "Test notification sent. If you don’t see it, check that notifications are allowed in iOS Settings."
     }
   },
   "feedback": {
@@ -485,7 +486,8 @@
     "notify": {
       "title": "Invasion 👾",
       "body_one": "1 update in the invasion!",
-      "body_other": "{{count}} updates in the invasion!"
+      "body_other": "{{count}} updates in the invasion!",
+      "test": "Test: alerts are working 👾"
     }
   },
   "stroll": {
