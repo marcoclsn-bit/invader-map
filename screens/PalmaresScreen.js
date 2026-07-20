@@ -10,7 +10,6 @@ import { countryCodeOf, countryName } from '../cities/countries';
 import { INVADER_DISTRICT, arLabel, ARRONDISSEMENT_CENTERS } from '../utils/arrondissement';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
-import DonutChart from '../components/DonutChart';
 
 // Normalisation pour la recherche (insensible casse + accents : « Genève » ↔ « geneve »)
 const norm = (s) => String(s ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
@@ -286,6 +285,12 @@ export default function PalmaresScreen({ navigation }) {
     const complete = isActive
       ? stats.complete
       : (cityDenominator !== null && cityDenominator > 0 && flashedHere >= cityDenominator);
+    // Détail pour la barre segmentée (ville active = chiffres exacts, sinon index)
+    const barFlashed = isActive ? stats.flashed : flashedHere;
+    const barRemaining = isActive
+      ? stats.remaining
+      : (cityDenominator !== null ? Math.max(0, cityDenominator - flashedHere) : 0);
+    const barDestroyed = isActive ? stats.destroyedLost : (cityInfo?.destroyed ?? 0);
     return (
       <View key={c.code} style={styles.villeBlock}>
         <TouchableOpacity
@@ -297,28 +302,31 @@ export default function PalmaresScreen({ navigation }) {
           }}
           activeOpacity={0.7}
         >
-          <View style={styles.villeLeft}>
-            <DonutChart
-              pct={pct} size={46} stroke={5}
-              color={theme.accent} trackColor={theme.border} textColor={theme.textPrimary}
-            />
-            <View style={{ flex: 1 }}>
-              <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
-                <Text style={styles.villeName}>{c.name}</Text>
-                {complete && <CompleteBadge theme={theme} />}
-              </View>
-              <Text style={styles.villeSub}>
-                {isActive
-                  ? t('palmares.villeCard', { flashed: stats.flashed, total: stats.denominator, pct: stats.pct.toFixed(0), pts: stats.flashedPts })
-                  : cityDenominator !== null
-                    ? t('palmares.villeCardProgress', { flashed: flashedHere, total: cityDenominator })
-                    : '…'}
-              </Text>
+          <View style={{ flex: 1 }}>
+            <View style={styles.villeNameRow}>
+              <Text style={styles.villeName} numberOfLines={1}>{c.name}</Text>
+              {complete && <CompleteBadge theme={theme} />}
+              <View style={{ flex: 1 }} />
+              <Text style={styles.villePct}>{pct.toFixed(0)} %</Text>
+              {isActive
+                ? <Ionicons name="checkmark-circle" size={20} color={theme.accent} />
+                : <Ionicons name="chevron-forward" size={16} color={theme.textSecondary} />}
             </View>
+            {cityDenominator !== null || isActive ? (
+              <>
+                <SegmentedBar
+                  flashed={barFlashed} remaining={barRemaining} destroyed={barDestroyed}
+                  theme={theme} height={8}
+                />
+                <ProgressLegend
+                  flashed={barFlashed} remaining={barRemaining} destroyed={barDestroyed}
+                  theme={theme}
+                />
+              </>
+            ) : (
+              <Text style={styles.villeSub}>…</Text>
+            )}
           </View>
-          {isActive
-            ? <Ionicons name="checkmark-circle" size={22} color={theme.accent} />
-            : <Ionicons name="chevron-forward" size={18} color={theme.textSecondary} />}
         </TouchableOpacity>
 
         {isActive && c.subdivisionsKey && (
@@ -512,12 +520,13 @@ function makeStyles(t) {
       alignSelf: 'flex-start',
     },
     districtLinkText: { fontSize: 13, fontWeight: '500' },
-    villeLeft: { flexDirection: 'row', alignItems: 'center', gap: 14, flex: 1, marginRight: 10 },
+    villeNameRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+    villePct: { ...typography.arcadeHeading, fontSize: 13, color: t.accent, marginRight: 2 },
     countryHeader: {
       ...typography.arcadeHeading, fontSize: 12, color: t.textSecondary,
       marginHorizontal: 20, marginTop: 18, marginBottom: 8, letterSpacing: 0.5,
     },
-    villeName: { ...typography.arcadeHeading, color: t.textPrimary },
+    villeName: { ...typography.arcadeHeading, color: t.textPrimary, flexShrink: 1 },
     villeSub: { fontSize: 13, color: t.textSecondary, marginTop: 2 },
 
     arRow: { backgroundColor: t.surface, paddingHorizontal: 20, paddingVertical: 14 },

@@ -172,7 +172,7 @@
     "legendRemaining": "rimanenti",
     "legendDestroyed": "distrutti",
     "totalPosed": "{{count}} Invaders posati in totale",
-    "completeBadge": "Completa",
+    "completeBadge": "Completata",
     "calcHint": "Gli Invader distrutti che non hai mai fotografato non contano nei tuoi progressi.",
     "arStat": "{{flashed}}/{{total}} fotografati · {{pct}} % · {{pts}} pts",
     "detailSummary": "{{flashed}} / {{total}} fotografati · {{pts}} pts",
