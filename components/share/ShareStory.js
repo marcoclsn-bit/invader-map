@@ -1,8 +1,27 @@
 import { forwardRef } from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import Svg, { Polyline, Circle, Line, Defs, LinearGradient, Stop, Rect, G } from 'react-native-svg';
 import { useTranslation } from 'react-i18next';
+import { haversineKm } from '../../utils/session';
 import { dark } from '../../theme/tokens';
+
+// Rayon de confidentialité (km) : on masque le tracé près du départ et de l'arrivée
+// (façon Strava) pour ne pas révéler l'adresse exacte de l'utilisateur.
+const PRIVACY_KM = 0.12;
+
+// Rogne le début/la fin du tracé dans un rayon de confidentialité autour des extrémités.
+export function trimRouteEnds(coords) {
+  if (!Array.isArray(coords) || coords.length < 3) return coords ?? null;
+  const [fLng, fLat] = coords[0];
+  const [lLng, lLat] = coords[coords.length - 1];
+  let a = 0;
+  while (a < coords.length - 1 && haversineKm(fLat, fLng, coords[a][1], coords[a][0]) < PRIVACY_KM) a++;
+  let b = coords.length - 1;
+  while (b > a && haversineKm(lLat, lLng, coords[b][1], coords[b][0]) < PRIVACY_KM) b--;
+  const out = coords.slice(a, b + 1);
+  return out.length >= 2 ? out : coords; // garde-fou : trajet trop court → pas de rognage
+}
 
 // Format fixe 9:16 (capturé puis upscalé ×3 par react-native-view-shot → ~1080×1920)
 export const STORY_W = 360;
@@ -57,7 +76,22 @@ export function buildStaticMap(coords, pins, token) {
   return { url, project };
 }
 
-// Dessine le tracé néon + les pins (utilisé sur carte réelle OU fond stylisé).
+// Projection linéaire (repli stylisé sans carte réelle). Renvoie project(lon,lat)->{x,y}.
+function linearProject(coords, pins) {
+  const geo = [];
+  if (Array.isArray(coords)) for (const c of coords) geo.push(c);
+  if (Array.isArray(pins)) for (const p of pins) geo.push([p.lng, p.lat]);
+  if (geo.length === 0) return null;
+  let mnX = Infinity, mnY = Infinity, mxX = -Infinity, mxY = -Infinity;
+  for (const [lng, lat] of geo) { if (lng < mnX) mnX = lng; if (lng > mxX) mxX = lng; if (lat < mnY) mnY = lat; if (lat > mxY) mxY = lat; }
+  const pad = 26;
+  const spanX = Math.max(mxX - mnX, 1e-6), spanY = Math.max(mxY - mnY, 1e-6);
+  const scale = Math.min((MAP_W - 2 * pad) / spanX, (MAP_H - 2 * pad) / spanY);
+  const offX = (MAP_W - spanX * scale) / 2, offY = (MAP_H - spanY * scale) / 2;
+  return (lng, lat) => ({ x: offX + (lng - mnX) * scale, y: MAP_H - (offY + (lat - mnY) * scale) });
+}
+
+// Dessine le tracé néon + les pins (start/end sont des icônes gérées à part).
 function RouteAndPins({ coords, pins, project }) {
   const pts = Array.isArray(coords) ? coords : [];
   const routeStr = pts.length >= 2
@@ -83,33 +117,13 @@ function RouteAndPins({ coords, pins, project }) {
           </G>
         );
       })}
-      {pts.length >= 2 && (() => {
-        const s = project(pts[0][0], pts[0][1]);
-        const e = project(pts[pts.length - 1][0], pts[pts.length - 1][1]);
-        return (
-          <>
-            <Circle cx={s.x} cy={s.y} r={5} fill={dark.accent} stroke={dark.bg} strokeWidth={1.5} />
-            <Circle cx={e.x} cy={e.y} r={6} fill={dark.accentScore} stroke={dark.bg} strokeWidth={1.5} />
-          </>
-        );
-      })()}
     </>
   );
 }
 
 // Fond stylisé (repli sans réseau) : projection linéaire + grille façon « rues ».
-function StylizedMap({ coords, pins }) {
-  const geo = [];
-  if (Array.isArray(coords)) for (const c of coords) geo.push(c);
-  if (Array.isArray(pins)) for (const p of pins) geo.push([p.lng, p.lat]);
-  if (geo.length === 0) return null;
-  let mnX = Infinity, mnY = Infinity, mxX = -Infinity, mxY = -Infinity;
-  for (const [lng, lat] of geo) { if (lng < mnX) mnX = lng; if (lng > mxX) mxX = lng; if (lat < mnY) mnY = lat; if (lat > mxY) mxY = lat; }
-  const pad = 26;
-  const spanX = Math.max(mxX - mnX, 1e-6), spanY = Math.max(mxY - mnY, 1e-6);
-  const scale = Math.min((MAP_W - 2 * pad) / spanX, (MAP_H - 2 * pad) / spanY);
-  const offX = (MAP_W - spanX * scale) / 2, offY = (MAP_H - spanY * scale) / 2;
-  const project = (lng, lat) => ({ x: offX + (lng - mnX) * scale, y: MAP_H - (offY + (lat - mnY) * scale) });
+function StylizedMap({ coords, pins, project }) {
+  if (!project) return null;
   const grid = [];
   for (let i = 1; i < 7; i++) { const y = (MAP_H / 7) * i; grid.push(<Line key={`h${i}`} x1="0" y1={y} x2={MAP_W} y2={y - 14} stroke={dark.border} strokeWidth="0.5" opacity="0.5" />); }
   for (let i = 1; i < 8; i++) { const x = (MAP_W / 8) * i; grid.push(<Line key={`v${i}`} x1={x} y1="0" x2={x + 12} y2={MAP_H} stroke={dark.border} strokeWidth="0.5" opacity="0.5" />); }
@@ -130,7 +144,7 @@ function StylizedMap({ coords, pins }) {
  * @param pins array de { lng, lat, points } — Invaders attrapés
  * @param map { url, project } de buildStaticMap (carte réelle) ; null → fond stylisé
  */
-const ShareStory = forwardRef(function ShareStory({ session, cityName, pins, map }, ref) {
+const ShareStory = forwardRef(function ShareStory({ session, cityName, pins, map, route }, ref) {
   const { t } = useTranslation();
   const aliens = session?.invaderIds?.length ?? 0;
   const km = session?.distanceKm;
@@ -143,8 +157,15 @@ const ShareStory = forwardRef(function ShareStory({ session, cityName, pins, map
     ? t('share.textKm', { km: kmStr, count: aliens, city: cityName })
     : t('share.textNoKm', { count: aliens, city: cityName });
 
-  const hasGeo = (Array.isArray(session?.routeCoords) && session.routeCoords.length >= 2)
-    || (Array.isArray(pins) && pins.length > 0);
+  // Tracé déjà rogné (confidentialité) fourni par l'appelant ; repli sur le brut.
+  const routeCoords = Array.isArray(route) ? route : session?.routeCoords;
+  const hasRoute = Array.isArray(routeCoords) && routeCoords.length >= 2;
+  const hasGeo = hasRoute || (Array.isArray(pins) && pins.length > 0);
+
+  // Projection : carte réelle (mercator) ou repli linéaire — partagée par l'overlay et les repères.
+  const project = hasGeo ? (map?.project ?? linearProject(routeCoords, pins)) : null;
+  const startXY = hasRoute && project ? project(routeCoords[0][0], routeCoords[0][1]) : null;
+  const endXY = hasRoute && project ? project(routeCoords[routeCoords.length - 1][0], routeCoords[routeCoords.length - 1][1]) : null;
 
   return (
     <View ref={ref} collapsable={false} style={styles.root}>
@@ -157,11 +178,23 @@ const ShareStory = forwardRef(function ShareStory({ session, cityName, pins, map
           <>
             <Image source={{ uri: map.url }} style={styles.mapImg} resizeMode="cover" />
             <Svg width={MAP_W} height={MAP_H} style={StyleSheet.absoluteFill}>
-              <RouteAndPins coords={session.routeCoords} pins={pins} project={map.project} />
+              <RouteAndPins coords={routeCoords} pins={pins} project={map.project} />
             </Svg>
           </>
         )}
-        {hasGeo && !map && <StylizedMap coords={session.routeCoords} pins={pins} />}
+        {hasGeo && !map && <StylizedMap coords={routeCoords} pins={pins} project={project} />}
+
+        {/* Repères départ / arrivée — mêmes icônes que le mode Trajet */}
+        {startXY && (
+          <View style={[styles.pin, styles.pinStart, { left: startXY.x - 13, top: startXY.y - 13 }]}>
+            <Ionicons name="navigate" size={13} color="#fff" />
+          </View>
+        )}
+        {endXY && (
+          <View style={[styles.pin, styles.pinEnd, { left: endXY.x - 13, top: endXY.y - 13 }]}>
+            <Ionicons name="flag" size={13} color="#fff" />
+          </View>
+        )}
 
         {hasKm && <View style={[styles.badge, styles.badgeTL]}><Text style={styles.badgeText}>🚶 {kmStr} km</Text></View>}
         <View style={[styles.badge, styles.badgeTR]}><Text style={styles.badgeText}>👾 {aliens}</Text></View>
@@ -207,6 +240,13 @@ const styles = StyleSheet.create({
   },
   mapImg: { position: 'absolute', width: MAP_W, height: MAP_H },
   bigAlien: { fontSize: 96 },
+  // Repères départ/arrivée — style repris du mode Trajet (rond bordé blanc + icône)
+  pin: {
+    position: 'absolute', width: 26, height: 26, borderRadius: 13,
+    alignItems: 'center', justifyContent: 'center', borderWidth: 2, borderColor: '#fff',
+  },
+  pinStart: { backgroundColor: dark.accent },
+  pinEnd: { backgroundColor: '#333' },
   badge: {
     position: 'absolute', backgroundColor: 'rgba(11,15,14,0.82)',
     borderWidth: 1, borderColor: dark.accent, borderRadius: 20, paddingHorizontal: 12, paddingVertical: 6,

@@ -8,7 +8,7 @@ import { CITIES } from '../../cities/registry';
 import { getBadge } from '../../data/badges';
 import { useGamification } from '../../context/GamificationContext';
 import { useAppContext } from '../../context/AppContext';
-import ShareStory, { STORY_W, STORY_H, buildStaticMap } from '../share/ShareStory';
+import ShareStory, { STORY_W, STORY_H, buildStaticMap, trimRouteEnds } from '../share/ShareStory';
 import { captureAndShare } from '../../services/shareStory';
 import { reserveMapboxCall } from '../../services/routing';
 import { MAPBOX_TOKEN } from '../../config/mapbox';
@@ -43,6 +43,9 @@ export default function SessionRecap() {
     .map((id) => invById.get(id))
     .filter(Boolean)
     .map((i) => ({ lng: i.lng, lat: i.lat, points: i.points ?? 0 }));
+
+  // Tracé rogné (confidentialité : masque le départ/arrivée près du domicile).
+  const shareRoute = trimRouteEnds(session.routeCoords);
   const km = session.distanceKm;
   const hasKm = km != null && km > 0;
   const aliens = session.invaderIds?.length ?? 0;
@@ -52,10 +55,10 @@ export default function SessionRecap() {
     // Carte réelle Mapbox en fond (1 appel, compté dans le plafond quotidien).
     // Si pas de token / plafond atteint / hors-ligne → repli sur le fond stylisé.
     let map = null;
-    if (session.routeCoords?.length >= 2 || pins.length > 0) {
+    if (shareRoute?.length >= 2 || pins.length > 0) {
       try {
         if (MAPBOX_TOKEN && (await reserveMapboxCall())) {
-          const m = buildStaticMap(session.routeCoords, pins, MAPBOX_TOKEN);
+          const m = buildStaticMap(shareRoute, pins, MAPBOX_TOKEN);
           if (m) { await Image.prefetch(m.url); map = m; }
         }
       } catch { map = null; } // hors-ligne / erreur → stylisé
@@ -122,7 +125,7 @@ export default function SessionRecap() {
 
         {/* Visuel de partage rendu hors écran pour la capture */}
         <View style={styles.offscreen} pointerEvents="none">
-          <ShareStory ref={storyRef} session={session} cityName={cityName} pins={pins} map={shareMap} />
+          <ShareStory ref={storyRef} session={session} cityName={cityName} pins={pins} map={shareMap} route={shareRoute} />
         </View>
       </View>
     </Modal>
