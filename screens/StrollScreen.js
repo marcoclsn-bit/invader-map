@@ -16,9 +16,10 @@ import { typography } from '../theme/tokens';
 import { STATUS_COLOR } from '../constants';
 import { requestStrollPermissions } from '../services/strollEngine';
 
-const RADIUS_MIN = 25;
+// 50 / 100 / 150 m uniquement : en dessous de ~50 m le geofencing iOS n'est pas fiable.
+const RADIUS_MIN = 50;
 const RADIUS_MAX = 150;
-const RADIUS_STEP = 5;
+const RADIUS_STEP = 50;
 
 // ─── Cache de styles thémés ───────────────────────────────────────────────────
 let _styleCache = null;

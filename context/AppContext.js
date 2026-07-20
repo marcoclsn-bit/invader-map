@@ -14,7 +14,7 @@ const AppContext = createContext(null);
 // Persistés tels quels — le futur moteur lira cet objet sans refactor.
 const DEFAULT_STROLL = {
   enabled:       false,  // toggle principal — éteint par défaut
-  radius:        50,     // rayon d'alerte en mètres (25–150)
+  radius:        50,     // rayon d'alerte en mètres (50 / 100 / 150)
   vibration:     true,   // alerter par vibration
   notification:  true,   // alerter par notification
   // Statuts qui déclenchent une alerte. Défaut « à faire » : ok / endommagé / inconnu.
@@ -270,7 +270,12 @@ export function AppProvider({ children }) {
       if (strollRaw) {
         try {
           const parsed = JSON.parse(strollRaw);
-          if (parsed && typeof parsed === 'object') setStroll({ ...DEFAULT_STROLL, ...parsed });
+          if (parsed && typeof parsed === 'object') {
+            const merged = { ...DEFAULT_STROLL, ...parsed };
+            // Rayons hérités < 50 m (peu fiables) → ramenés à 50 m.
+            if (!(merged.radius >= 50)) merged.radius = 50;
+            setStroll(merged);
+          }
         } catch (_) {}
       }
 
