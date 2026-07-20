@@ -588,7 +588,7 @@
       "desc": "Flashe dans 5 villes différentes"
     },
     "marathon": {
-      "title": "Marathonien",
+      "title": "Randonneur",
       "desc": "10 km parcourus en une session"
     },
     "weekstreak": {
@@ -783,6 +783,10 @@
     },
     "citiesDone": {
       "title": "Salle des trophées"
+    },
+    "marathon42": {
+      "title": "Marathonien",
+      "desc": "42 km parcourus en une session"
     }
   },
   "session": {

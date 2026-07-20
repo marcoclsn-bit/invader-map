@@ -588,7 +588,7 @@
       "desc": "Flashea en 5 ciudades distintas"
     },
     "marathon": {
-      "title": "Maratoniano",
+      "title": "Excursionista",
       "desc": "10 km en una sola sesión"
     },
     "weekstreak": {
@@ -783,6 +783,10 @@
     },
     "citiesDone": {
       "title": "Sala de trofeos"
+    },
+    "marathon42": {
+      "title": "Maratoniano",
+      "desc": "42 km en una sola sesión"
     }
   },
   "session": {

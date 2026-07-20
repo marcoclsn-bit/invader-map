@@ -336,6 +336,8 @@ export const BADGES = [
     predicate: (ctx) => !!ctx.session && (ctx.session.distanceKm ?? 0) >= 10 },
   { id: 'semi21', category: 'combo', iconName: 'fitness',
     predicate: (ctx) => !!ctx.session && (ctx.session.distanceKm ?? 0) >= 21 },
+  { id: 'marathon42', category: 'combo', iconName: 'medal',
+    predicate: (ctx) => !!ctx.session && (ctx.session.distanceKm ?? 0) >= 42 },
   { id: 'pelerin100', category: 'combo', iconName: 'trail-sign',
     predicate: (ctx) => totalSessionKm(ctx) >= 100 },
   { id: 'habitue10', category: 'combo', iconName: 'checkmark-done',

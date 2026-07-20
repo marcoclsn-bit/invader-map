@@ -588,7 +588,7 @@
       "desc": "Flash in 5 different cities"
     },
     "marathon": {
-      "title": "Marathoner",
+      "title": "Hiker",
       "desc": "10 km in a single session"
     },
     "weekstreak": {
@@ -783,6 +783,10 @@
     },
     "citiesDone": {
       "title": "Trophy room"
+    },
+    "marathon42": {
+      "title": "Marathoner",
+      "desc": "42 km in a single session"
     }
   },
   "session": {
