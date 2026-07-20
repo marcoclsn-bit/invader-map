@@ -606,15 +606,177 @@
       "desc": "100 Invaders flashed in total"
     },
     "category": {
-      "combo": "Combo",
+      "combo": "Sessions & combos",
       "exploration": "Exploration",
       "streak": "Streak",
-      "secret": "Secret"
+      "secret": "Secret",
+      "collection": "Collection",
+      "points": "Points",
+      "cities": "Completed cities"
     },
     "locked": "Locked",
     "gallery": {
       "title": "Trophies",
       "empty": "Go hunting to earn your first trophies 👾"
+    },
+    "first1": {
+      "title": "First Catch",
+      "desc": "Your first flashed Invader"
+    },
+    "squad25": {
+      "title": "Squad",
+      "desc": "25 Invaders flashed"
+    },
+    "battalion250": {
+      "title": "Battalion",
+      "desc": "250 Invaders flashed"
+    },
+    "army500": {
+      "title": "Invasion Army",
+      "desc": "500 Invaders flashed"
+    },
+    "legend1000": {
+      "title": "Urban Legend",
+      "desc": "1,000 Invaders flashed"
+    },
+    "spacemaster2000": {
+      "title": "Space Master",
+      "desc": "2,000 Invaders flashed"
+    },
+    "loot500": {
+      "title": "First Loot",
+      "desc": "500 points earned"
+    },
+    "treasurer2500": {
+      "title": "Treasurer",
+      "desc": "2,500 points earned"
+    },
+    "vault10000": {
+      "title": "Vault",
+      "desc": "10,000 points earned"
+    },
+    "jackpot25000": {
+      "title": "Jackpot",
+      "desc": "25,000 points earned"
+    },
+    "bounty100": {
+      "title": "Bounty Hunter",
+      "desc": "Flash a 100-point Invader"
+    },
+    "sniper10x50": {
+      "title": "Elite Sniper",
+      "desc": "10 Invaders worth 50+ points"
+    },
+    "eclair": {
+      "title": "Lightning",
+      "desc": "10 Invaders in under 45 minutes"
+    },
+    "combo50": {
+      "title": "Combo x50",
+      "desc": "50 Invaders in one session"
+    },
+    "semi21": {
+      "title": "Half Marathon",
+      "desc": "21 km in one session"
+    },
+    "pelerin100": {
+      "title": "Pilgrim",
+      "desc": "100 km across all sessions"
+    },
+    "habitue10": {
+      "title": "Regular",
+      "desc": "10 recorded sessions"
+    },
+    "nomade10": {
+      "title": "Nomad",
+      "desc": "Flash in 10 different cities"
+    },
+    "conquerant20": {
+      "title": "Conqueror",
+      "desc": "Flash in 20 different cities"
+    },
+    "sansfrontieres": {
+      "title": "Borderless",
+      "desc": "Flash in 2 different countries"
+    },
+    "international4": {
+      "title": "International",
+      "desc": "Flash in 4 different countries"
+    },
+    "touristeparis": {
+      "title": "Paris Tourist",
+      "desc": "At least 1 flash in all 20 arrondissements"
+    },
+    "quartiermaitre": {
+      "title": "District Master",
+      "desc": "Complete a Paris arrondissement"
+    },
+    "conquete1": {
+      "title": "First Conquest",
+      "desc": "1 city completed"
+    },
+    "triple3": {
+      "title": "Hat-trick",
+      "desc": "3 cities completed"
+    },
+    "pantheon5": {
+      "title": "Pantheon",
+      "desc": "5 cities completed"
+    },
+    "hegemonie10": {
+      "title": "Hegemony",
+      "desc": "10 cities completed"
+    },
+    "metropole": {
+      "title": "Metropolis",
+      "desc": "Complete a city with 100+ Invaders"
+    },
+    "roideparis": {
+      "title": "King of Paris",
+      "desc": "Complete Paris. Yes, all of it"
+    },
+    "month30": {
+      "title": "Full Month",
+      "desc": "30 consecutive active days"
+    },
+    "metronome12": {
+      "title": "Metronome",
+      "desc": "At least 1 flash a week for 12 weeks"
+    },
+    "seasons4": {
+      "title": "Four Seasons",
+      "desc": "Flash in spring, summer, autumn and winter"
+    },
+    "yearfull12": {
+      "title": "Full Year",
+      "desc": "Flash in every month of the year"
+    },
+    "lastmetro": {
+      "title": "Last Train",
+      "desc": "A flash between 11pm and midnight"
+    },
+    "lunchbreak": {
+      "title": "Lunch Break",
+      "desc": "A weekday flash between noon and 2pm"
+    },
+    "newyear": {
+      "title": "Happy New Year",
+      "desc": "A flash on January 1st"
+    },
+    "fresh7": {
+      "title": "Fresh Catch",
+      "desc": "Flash an Invader within 7 days of it appearing in News"
+    },
+    "savior": {
+      "title": "Rescuer",
+      "desc": "Flash a damaged Invader"
+    },
+    "extreme": {
+      "title": "Extreme Collector",
+      "desc": "An Invader you flashed was later destroyed"
+    },
+    "citiesDone": {
+      "title": "Trophy room"
     }
   },
   "session": {

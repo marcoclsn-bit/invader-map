@@ -80,6 +80,11 @@ export function AppProvider({ children }) {
   const [flashed,      setFlashed]      = useState(new Set());
   // Map<id, isoString> — absente = null (Invader flashé avant cette version)
   const [flashedDates, setFlashedDates] = useState(new Map());
+  // Registre persistant de progression par ville — alimenté par la ville ACTIVE
+  // (points exacts, complétion « juste »). Sert aux trophées (points cumulés,
+  // villes terminées) sans devoir charger les données de toutes les villes.
+  // { [code]: { flashedCount, flashedPts, denominator, posed, completed } }
+  const [cityProgress, setCityProgress] = useState({});
   const [labels, setLabels] = useState({});
   const [labelDefs, setLabelDefs] = useState([...DEFAULT_LABEL_DEFS]);
   const [statusColors, setStatusColorsState] = useState({ ...STATUS_COLOR });
@@ -217,13 +222,15 @@ export function AppProvider({ children }) {
         AsyncStorage.getItem('@invader_current_city'),
         AsyncStorage.getItem('invader_filters'),
       ]);
-      const [newsCitiesRaw, newsLastSeenRaw, strollRaw, legendSeenRaw, newsNotifyRaw] = await Promise.all([
+      const [newsCitiesRaw, newsLastSeenRaw, strollRaw, legendSeenRaw, newsNotifyRaw, cityProgressRaw] = await Promise.all([
         AsyncStorage.getItem('@invader_news_cities'),
         AsyncStorage.getItem('@invader_news_last_seen'),
         AsyncStorage.getItem('@invader_stroll'),
         AsyncStorage.getItem('@invader_legend_seen'),
         AsyncStorage.getItem('@invader_news_notify'),
+        AsyncStorage.getItem('@invader_city_progress'),
       ]);
+      if (cityProgressRaw) { try { setCityProgress(JSON.parse(cityProgressRaw)); } catch {} }
       if (legendSeenRaw === '1') setLegendSeen(true);
       // Notifs d'actualité : défaut ON (sauf si l'utilisateur a explicitement désactivé).
       const notifyOn = newsNotifyRaw !== '0';
@@ -329,6 +336,41 @@ export function AppProvider({ children }) {
     }, 400);
     return () => clearTimeout(flashedSaveTimer.current);
   }, [flashed, flashedDates, loaded]);
+
+  // Registre de progression par ville (trophées) : recalculé pour la ville ACTIVE
+  // avec la formule « juste » du Palmarès (un détruit jamais flashé ne compte pas ;
+  // un détruit flashé reste acquis). Débouncé comme les flashs.
+  const cityProgressTimer = useRef(null);
+  useEffect(() => {
+    if (!loaded || !currentCityCode || invaders.length === 0) return;
+    clearTimeout(cityProgressTimer.current);
+    cityProgressTimer.current = setTimeout(() => {
+      let posed = 0, destroyed = 0, flashedCount = 0, flashedDestroyed = 0, flashedPts = 0;
+      for (const inv of invaders) {
+        posed++;
+        const isDestroyed = inv.status === 'destroyed';
+        if (isDestroyed) destroyed++;
+        if (flashed.has(inv.id)) {
+          flashedCount++;
+          flashedPts += inv.points ?? 0;
+          if (isDestroyed) flashedDestroyed++;
+        }
+      }
+      const denominator = (posed - destroyed) + flashedDestroyed;
+      const entry = {
+        flashedCount, flashedPts, denominator, posed,
+        completed: denominator > 0 && flashedCount >= denominator,
+      };
+      setCityProgress(prev => {
+        const cur = prev[currentCityCode];
+        if (cur && JSON.stringify(cur) === JSON.stringify(entry)) return prev; // inchangé
+        const next = { ...prev, [currentCityCode]: entry };
+        AsyncStorage.setItem('@invader_city_progress', JSON.stringify(next));
+        return next;
+      });
+    }, 500);
+    return () => clearTimeout(cityProgressTimer.current);
+  }, [flashed, invaders, currentCityCode, loaded]);
   useEffect(() => { if (loaded) AsyncStorage.setItem('invader_labels',          JSON.stringify(labels));              }, [labels,         loaded]);
   useEffect(() => { if (loaded) AsyncStorage.setItem('invader_label_defs',      JSON.stringify(labelDefs));           }, [labelDefs,      loaded]);
   useEffect(() => { if (loaded) AsyncStorage.setItem('invader_status_colors',   JSON.stringify(statusColors));        }, [statusColors,   loaded]);
@@ -509,7 +551,7 @@ export function AppProvider({ children }) {
     // Invaders (ville courante)
     invaders, dataVersion, dataUpdatedAt, checkDataUpdate,
     // Progression
-    flashed, flashedDates, getFlashHistory,
+    flashed, flashedDates, getFlashHistory, cityProgress,
     labels, labelDefs, statusColors, colorOverrides,
     filters, setFilters,
     toggleFlash, bulkFlash, bulkUnflash, clearFlashDates,
@@ -529,7 +571,7 @@ export function AppProvider({ children }) {
   }), [ // eslint-disable-line react-hooks/exhaustive-deps
     currentCityCode, cityIndex, isChangingCity, pendingCityCode,
     invaders, dataVersion, dataUpdatedAt,
-    flashed, flashedDates,
+    flashed, flashedDates, cityProgress,
     labels, labelDefs, statusColors, colorOverrides,
     filters,
     news, newsCities, newsLastSeen, newsUnreadCount, newsNotify,

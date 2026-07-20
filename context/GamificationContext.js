@@ -8,7 +8,15 @@ import { loadUnlocked, saveUnlocked } from '../services/badgeStore';
 const Ctx = createContext(null);
 
 export function GamificationProvider({ children }) {
-  const { flashed, flashedDates, getFlashHistory, loaded: appLoaded } = useAppContext();
+  const {
+    flashed, flashedDates, getFlashHistory, loaded: appLoaded,
+    invaders, currentCityCode, cityIndex, news, cityProgress,
+  } = useAppContext();
+
+  // Contexte étendu passé aux prédicats (points, villes terminées, statuts de la
+  // ville active, actus…). Via ref pour éviter des closures périmées.
+  const extraCtxRef = useRef({});
+  extraCtxRef.current = { invaders, currentCityCode, cityIndex, news, cityProgress };
 
   const [sessions, setSessions] = useState([]);
   const [unlocked, setUnlocked] = useState({});      // { id: ISO }
@@ -56,7 +64,7 @@ export function GamificationProvider({ children }) {
     const nextSessions = await addSession(session);
     setSessions(nextSessions);
 
-    const ctx = { session, sessions: nextSessions, flashHistory: getFlashHistory() };
+    const ctx = { session, sessions: nextSessions, flashHistory: getFlashHistory(), ...extraCtxRef.current };
     const newBadgeIds = evaluateBadges(ctx, unlockedRef.current);
     unlockIds(newBadgeIds, { celebrate: false }); // montrés dans le récap
 
@@ -66,7 +74,7 @@ export function GamificationProvider({ children }) {
 
   /** Vérifie les badges hors session (ex. après un flash : Oiseau de nuit…). */
   const checkBadges = useCallback(() => {
-    const ctx = { session: null, sessions, flashHistory: getFlashHistory() };
+    const ctx = { session: null, sessions, flashHistory: getFlashHistory(), ...extraCtxRef.current };
     unlockIds(evaluateBadges(ctx, unlockedRef.current), { celebrate: true });
   }, [sessions, getFlashHistory, unlockIds]);
 
@@ -78,11 +86,13 @@ export function GamificationProvider({ children }) {
   const primed = useRef(false);
   useEffect(() => {
     if (!(loaded && appLoaded)) return;
-    const ctx = { session: null, sessions, flashHistory: getFlashHistory() };
+    const ctx = { session: null, sessions, flashHistory: getFlashHistory(), ...extraCtxRef.current };
     const newIds = evaluateBadges(ctx, unlockedRef.current);
     unlockIds(newIds, { celebrate: primed.current });
     primed.current = true;
-  }, [flashed, flashedDates, loaded, appLoaded]); // eslint-disable-line react-hooks/exhaustive-deps
+    // cityProgress dans les deps : les trophées points/villes dépendent du registre
+    // (qui se met à jour ~500 ms après un flash).
+  }, [flashed, flashedDates, cityProgress, loaded, appLoaded]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const dismissCelebration = useCallback(() => setQueue((q) => q.slice(1)), []);
   const clearRecap = useCallback(() => setPendingRecap(null), []);

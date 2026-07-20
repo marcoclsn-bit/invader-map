@@ -606,15 +606,177 @@
       "desc": "100 Invader flashati in totale"
     },
     "category": {
-      "combo": "Combo",
+      "combo": "Sessioni e combo",
       "exploration": "Esplorazione",
       "streak": "Costanza",
-      "secret": "Segreto"
+      "secret": "Segreto",
+      "collection": "Collezione",
+      "points": "Punti",
+      "cities": "Città completate"
     },
     "locked": "Da sbloccare",
     "gallery": {
       "title": "Trofei",
       "empty": "Vai a caccia per ottenere i tuoi primi trofei 👾"
+    },
+    "first1": {
+      "title": "Prima cattura",
+      "desc": "Il tuo primo Invader fotografato"
+    },
+    "squad25": {
+      "title": "Squadra",
+      "desc": "25 Invaders fotografati"
+    },
+    "battalion250": {
+      "title": "Battaglione",
+      "desc": "250 Invaders fotografati"
+    },
+    "army500": {
+      "title": "Esercito d'invasione",
+      "desc": "500 Invaders fotografati"
+    },
+    "legend1000": {
+      "title": "Leggenda urbana",
+      "desc": "1 000 Invaders fotografati"
+    },
+    "spacemaster2000": {
+      "title": "Space Master",
+      "desc": "2 000 Invaders fotografati"
+    },
+    "loot500": {
+      "title": "Primo bottino",
+      "desc": "500 punti accumulati"
+    },
+    "treasurer2500": {
+      "title": "Tesoriere",
+      "desc": "2 500 punti accumulati"
+    },
+    "vault10000": {
+      "title": "Cassaforte",
+      "desc": "10 000 punti accumulati"
+    },
+    "jackpot25000": {
+      "title": "Jackpot",
+      "desc": "25 000 punti accumulati"
+    },
+    "bounty100": {
+      "title": "Cacciatore di taglie",
+      "desc": "Fotografa un Invader da 100 punti"
+    },
+    "sniper10x50": {
+      "title": "Cecchino d'élite",
+      "desc": "10 Invaders da 50 punti o più"
+    },
+    "eclair": {
+      "title": "Fulmine",
+      "desc": "10 Invaders in meno di 45 minuti"
+    },
+    "combo50": {
+      "title": "Combo x50",
+      "desc": "50 Invaders in una sessione"
+    },
+    "semi21": {
+      "title": "Mezza maratona",
+      "desc": "21 km in una sessione"
+    },
+    "pelerin100": {
+      "title": "Pellegrino",
+      "desc": "100 km totali in sessione"
+    },
+    "habitue10": {
+      "title": "Habitué",
+      "desc": "10 sessioni registrate"
+    },
+    "nomade10": {
+      "title": "Nomade",
+      "desc": "Fotografa in 10 città diverse"
+    },
+    "conquerant20": {
+      "title": "Conquistatore",
+      "desc": "Fotografa in 20 città diverse"
+    },
+    "sansfrontieres": {
+      "title": "Senza frontiere",
+      "desc": "Fotografa in 2 paesi diversi"
+    },
+    "international4": {
+      "title": "Internazionale",
+      "desc": "Fotografa in 4 paesi diversi"
+    },
+    "touristeparis": {
+      "title": "Turista parigino",
+      "desc": "Almeno 1 flash in ognuno dei 20 arrondissement"
+    },
+    "quartiermaitre": {
+      "title": "Maestro di quartiere",
+      "desc": "Completa un arrondissement di Parigi"
+    },
+    "conquete1": {
+      "title": "Prima conquista",
+      "desc": "1 città completata"
+    },
+    "triple3": {
+      "title": "Tripletta",
+      "desc": "3 città completate"
+    },
+    "pantheon5": {
+      "title": "Pantheon",
+      "desc": "5 città completate"
+    },
+    "hegemonie10": {
+      "title": "Egemonia",
+      "desc": "10 città completate"
+    },
+    "metropole": {
+      "title": "Metropoli",
+      "desc": "Completa una città con oltre 100 Invaders"
+    },
+    "roideparis": {
+      "title": "Re di Parigi",
+      "desc": "Completa Parigi, semplicemente"
+    },
+    "month30": {
+      "title": "Mese pieno",
+      "desc": "30 giorni di attività consecutivi"
+    },
+    "metronome12": {
+      "title": "Metronomo",
+      "desc": "Almeno 1 flash a settimana per 12 settimane"
+    },
+    "seasons4": {
+      "title": "Quattro stagioni",
+      "desc": "Fotografa in primavera, estate, autunno e inverno"
+    },
+    "yearfull12": {
+      "title": "Anno pieno",
+      "desc": "Fotografa in ognuno dei 12 mesi dell’anno"
+    },
+    "lastmetro": {
+      "title": "Ultima metro",
+      "desc": "Un flash tra le 23 e mezzanotte"
+    },
+    "lunchbreak": {
+      "title": "Pausa pranzo",
+      "desc": "Un flash nei giorni feriali tra le 12 e le 14"
+    },
+    "newyear": {
+      "title": "Buon anno",
+      "desc": "Un flash il 1º gennaio"
+    },
+    "fresh7": {
+      "title": "Fresco di giornata",
+      "desc": "Fotografa un Invader entro 7 giorni dalla comparsa nelle Novità"
+    },
+    "savior": {
+      "title": "Salvatore",
+      "desc": "Fotografa un Invader danneggiato"
+    },
+    "extreme": {
+      "title": "Collezionista estremo",
+      "desc": "Un Invader che avevi fotografato è stato poi distrutto"
+    },
+    "citiesDone": {
+      "title": "Sala dei trofei"
     }
   },
   "session": {

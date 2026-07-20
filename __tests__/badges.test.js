@@ -5,7 +5,7 @@ jest.mock('../utils/arrondissement', () => ({
   arLabel: (n) => String(n),
 }));
 
-import { BADGES, evaluateBadges, getBadge } from '../data/badges';
+import { BADGES, BADGE_CATEGORIES, evaluateBadges, getBadge } from '../data/badges';
 
 // Helpers de construction de contexte
 const pred = (id, ctx) => getBadge(id).predicate(ctx);
@@ -124,7 +124,7 @@ describe('evaluateBadges', () => {
     for (const b of BADGES) {
       expect(typeof b.id).toBe('string');
       expect(typeof b.iconName).toBe('string');
-      expect(['combo', 'exploration', 'streak', 'secret']).toContain(b.category);
+      expect(BADGE_CATEGORIES).toContain(b.category);
       expect(typeof b.predicate).toBe('function');
     }
   });
