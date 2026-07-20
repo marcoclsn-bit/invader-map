@@ -49,5 +49,4 @@ Alerte de proximité, cartes hors-ligne, stats de progression, multi-villes, "In
 
 ## À compléter (TODO)
 - Étiquettes : UI pour créer / renommer / supprimer des étiquettes personnalisées (pour l'instant, seules les étiquettes par défaut existent).
-- Marquage « déjà flashé » / « reste à faire » par l'utilisateur (toggle sur la fiche d'un Invader).
 - Faisceau de direction (cône heading) — reporté, à reprendre avec un test en extérieur.
