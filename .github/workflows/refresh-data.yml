@@ -53,6 +53,18 @@ jobs:
             echo "Aucun changement détecté dans les données — pas de commit."
           else
             git commit -m "data: mise à jour automatique Invaders ($(date -u +%Y-%m-%d))"
-            git push
-            echo "✓ Données Invaders mises à jour et poussées."
+            # Robustesse : le scrape dure ~10 min ; le remote a pu bouger entre-temps
+            # (commits manuels). On rebase sur origin/main avant de pousser, avec réessais.
+            pushed=false
+            for i in 1 2 3; do
+              git pull --rebase --autostash origin main || true
+              if git push; then pushed=true; break; fi
+              echo "⚠ Push refusé (remote a bougé) — nouvelle tentative $i…"
+              sleep 5
+            done
+            if [ "$pushed" = true ]; then
+              echo "✓ Données Invaders mises à jour et poussées."
+            else
+              echo "✗ Échec du push après 3 tentatives."; exit 1
+            fi
           fi
