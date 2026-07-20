@@ -211,6 +211,7 @@ export default function NewsScreen({ navigation }) {
   const {
     news, newsCities, setNewsCitiesPref, newsLastSeen, markNewsSeen,
     cityIndex, currentCityCode, setCurrentCity,
+    newsNotify, setNewsNotifyPref,
   } = useAppContext();
 
   // Date de dernière consultation, gardée à jour dans un ref pour la lire au focus
@@ -289,9 +290,19 @@ export default function NewsScreen({ navigation }) {
           <Ionicons name="options-outline" size={22} color={theme.textPrimary} />
         </TouchableOpacity>
         <Text style={styles.title}>{t('news.title')}</Text>
-        <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
-          <Ionicons name="menu" size={24} color={theme.textPrimary} />
-        </TouchableOpacity>
+        <View style={styles.headerRight}>
+          {/* Cloche : active/désactive les alertes de nouveautés */}
+          <TouchableOpacity onPress={() => setNewsNotifyPref(!newsNotify)} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
+            <Ionicons
+              name={newsNotify ? 'notifications' : 'notifications-off-outline'}
+              size={22}
+              color={newsNotify ? theme.accent : theme.textSecondary}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
+            <Ionicons name="menu" size={24} color={theme.textPrimary} />
+          </TouchableOpacity>
+        </View>
       </View>
 
       {feed.length === 0 ? (
@@ -334,6 +345,7 @@ function makeStyles(t) {
     },
     credit: { fontSize: 11, color: t.textSecondary, textAlign: 'center', paddingVertical: 18 },
     title: { ...typography.arcadeTitle, color: t.textPrimary },
+    headerRight: { flexDirection: 'row', alignItems: 'center', gap: 16 },
 
     row: {
       flexDirection: 'row', alignItems: 'center', gap: 12,
