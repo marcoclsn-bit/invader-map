@@ -205,9 +205,14 @@ export async function multiRoute(waypointsLonLat, profile) {
   const json = await res.json();
   const feature = json.features?.[0];
   if (!feature) throw new Error(i18n.t('routing.error.routeNotFound'));
+  // Durée par tronçon (leg entre 2 waypoints consécutifs) — sert à ajuster une
+  // boucle de chasse au budget sans multiplier les appels ORS.
+  const segs = feature.properties.segments;
+  const legsMin = Array.isArray(segs) ? segs.map(s => s.duration / 60) : null;
   const result = {
     coords: feature.geometry.coordinates,
     durationMin: Math.round(feature.properties.summary.duration / 60),
+    legsMin,
   };
 
   cacheSet(key, result, TTL_STABLE);

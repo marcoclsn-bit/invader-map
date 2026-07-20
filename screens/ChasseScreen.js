@@ -185,6 +185,78 @@ function planHunt(startLon, startLat, candidates, budgetMin, speedKmh) {
   return selected;
 }
 
+// Tolérance de dépassement acceptée (le budget est une cible, pas une limite dure).
+const BUDGET_TOLERANCE_MIN = 10;
+// Plafond d'appels ORS par génération (respecte le quota).
+const MAX_ROUTE_CALLS = 4;
+// Retrait max par passe (évite de s'effondrer si le 1er trajet dépasse énormément).
+const MAX_TRIM_FRACTION = 0.45;
+
+// Route la boucle avec ORS, puis — si la VRAIE durée de marche dépasse trop le
+// budget — retire les Invaders les moins rentables et re-route, borné à quelques
+// appels. Le modèle interne (haversine) sous-estime les rues (parcs, sens uniques) :
+// on calibre donc le détour sur la durée réelle ORS pour élaguer juste ce qu'il faut.
+// Renvoie { sel, coords, walkMin }.
+async function routeWithinBudget(sel, startLon, startLat, budgetMin, speedKmPerMin, profile) {
+  const build = (list) => [
+    [startLon, startLat],
+    ...list.map(inv => [inv.lng, inv.lat]),
+    [startLon, startLat],
+  ];
+  // Marche « à vol d'oiseau » de la boucle (min) — sert à calibrer le détour réel.
+  const straightWalkMin = (list) => {
+    let d = 0, pLat = startLat, pLon = startLon;
+    for (const inv of list) { d += haversineKm(pLat, pLon, inv.lat, inv.lng); pLat = inv.lat; pLon = inv.lng; }
+    d += haversineKm(pLat, pLon, startLat, startLon);
+    return d / speedKmPerMin;
+  };
+
+  let route = await multiRoute(build(sel), profile);
+  let calls = 1;
+
+  while (
+    calls < MAX_ROUTE_CALLS &&
+    sel.length > 1 &&
+    route.durationMin + VISIT_MIN * sel.length > budgetMin + BUDGET_TOLERANCE_MIN
+  ) {
+    const over = (route.durationMin + VISIT_MIN * sel.length) - budgetMin;
+    const legs = route.legsMin; // [start→0, 0→1, …, n-1→start]
+    if (!legs || legs.length !== sel.length + 1) break; // pas de détail fiable → on s'arrête
+
+    // Détour réel calibré sur ce trajet (routes/parc) → estimation d'élagage fidèle.
+    const detour = Math.max(1, route.durationMin / Math.max(straightWalkMin(sel), 0.1));
+
+    // Pour chaque Invader, estime le temps gagné en le retirant (2 legs réels
+    // remplacés par un tronçon direct approché) + sa visite. On retire en priorité
+    // les moins « rentables » (peu de points par minute gagnée) jusqu'à couvrir l'excès.
+    const scored = sel.map((inv, i) => {
+      const prev = i === 0 ? [startLat, startLon] : [sel[i - 1].lat, sel[i - 1].lng];
+      const next = i === sel.length - 1 ? [startLat, startLon] : [sel[i + 1].lat, sel[i + 1].lng];
+      const directMin = (haversineKm(prev[0], prev[1], next[0], next[1]) / speedKmPerMin) * detour;
+      const saved = Math.max(0, legs[i] + legs[i + 1] - directMin) + VISIT_MIN;
+      return { i, saved, ratio: inv.points / Math.max(saved, 0.1) };
+    });
+    scored.sort((a, b) => a.ratio - b.ratio); // les moins rentables d'abord
+
+    const maxRemove = Math.max(1, Math.floor(sel.length * MAX_TRIM_FRACTION));
+    const remove = new Set();
+    let shed = 0;
+    for (const s of scored) {
+      if (shed >= over || remove.size >= maxRemove || sel.length - remove.size <= 1) break;
+      remove.add(s.i);
+      shed += s.saved;
+    }
+    if (remove.size === 0) break;
+
+    sel = sel.filter((_, i) => !remove.has(i));
+    sel = twoOpt(sel, startLat, startLon, speedKmPerMin); // resserre l'ordre après retrait
+    route = await multiRoute(build(sel), profile);
+    calls += 1;
+  }
+
+  return { sel, coords: route.coords, walkMin: route.durationMin };
+}
+
 // ─── Formatage ────────────────────────────────────────────────────────────────
 
 function formatBudget(min) {
@@ -522,22 +594,21 @@ export default function ChasseScreen({ route }) {
         return;
       }
 
-      const waypoints = [
-        [startLon, startLat],
-        ...selected.map(inv => [inv.lng, inv.lat]),
-        [startLon, startLat],
-      ];
-      const { coords, durationMin } = await multiRoute(waypoints, profile);
+      // Route la boucle puis l'ajuste au budget en se calant sur la VRAIE durée de
+      // marche ORS (le modèle interne haversine sous-estime les rues / détours de parc).
+      const speedKmPerMin = SPEEDS[profile] / 60;
+      const { sel, coords, walkMin } = await routeWithinBudget(
+        selected, startLon, startLat, budgetMin, speedKmPerMin, profile
+      );
       // Durée AFFICHÉE = marche réelle (ORS) + temps passé à flasher chaque Invader.
-      // (durationMin d'ORS ne compte que la marche → sans les visites, ça paraissait trop court.)
-      const totalDurationMin = durationMin + VISIT_MIN * selected.length;
+      const totalDurationMin = walkMin + VISIT_MIN * sel.length;
 
       setResult({
-        invaders: selected,
+        invaders: sel,
         routeCoords: coords,
         polyline: coords.map(([lng, lat]) => ({ latitude: lat, longitude: lng })),
         durationMin: totalDurationMin,
-        totalPts: selected.reduce((s, inv) => s + inv.points, 0),
+        totalPts: sel.reduce((s, inv) => s + inv.points, 0),
         startLat,
         startLon,
       });
