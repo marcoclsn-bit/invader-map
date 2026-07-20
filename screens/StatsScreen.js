@@ -77,7 +77,10 @@ function computeStats({ flashHistory, invaders, currentCityCode }) {
 
   let projectionMonths = null;
   const cityFlashedHere = flashHistory.filter(f => extractCityCode(f.id) === currentCityCode).length;
-  const cityFlashable = invaders.filter(inv => inv.status !== 'destroyed').length;
+  // Formule unifiée (cf. Palmarès) : un détruit jamais flashé ne compte pas contre
+  // toi, mais un détruit que TU avais flashé reste acquis → jamais plus de 100 %.
+  const flashedIds = new Set(flashHistory.map(f => f.id));
+  const cityFlashable = invaders.filter(inv => inv.status !== 'destroyed' || flashedIds.has(inv.id)).length;
   if (weeklyRate > 0 && cityFlashable > 0) {
     const remaining = Math.max(0, cityFlashable - cityFlashedHere);
     projectionMonths = remaining === 0 ? 0 : Math.ceil(remaining / weeklyRate / 4.33);
@@ -193,7 +196,7 @@ export default function StatsScreen({ navigation }) {
   const cityName = CITIES[currentCityCode]?.name ?? currentCityCode;
   const hasDated = stats.datedCount > 0;
   const cityPct = stats.cityFlashable > 0
-    ? ((stats.cityFlashedHere / stats.cityFlashable) * 100).toFixed(0)
+    ? Math.min(100, (stats.cityFlashedHere / stats.cityFlashable) * 100).toFixed(0)
     : '0';
   const chartWidth = width - 64; // marges (16×2) + padding carte (16×2)
 

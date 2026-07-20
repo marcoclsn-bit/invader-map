@@ -71,15 +71,17 @@ function ProgressLegend({ flashed, remaining, destroyed, theme }) {
   );
 }
 
-// Badge « ✓ Complète » (100 % du flashable).
+// Badge « ville terminée » : trophée seul (une coche ferait doublon avec
+// l'indicateur de ville active). Libellé complet réservé au lecteur d'écran.
 function CompleteBadge({ theme }) {
   const { t } = useTranslation();
-  const styles = getStyles(theme);
   return (
-    <View style={styles.completePill}>
-      <Ionicons name="checkmark" size={11} color={theme.accent} />
-      <Text style={styles.completePillText}>{t('palmares.completeBadge')}</Text>
-    </View>
+    <Ionicons
+      name="trophy"
+      size={14}
+      color={theme.accent}
+      accessibilityLabel={t('palmares.completeBadge')}
+    />
   );
 }
 
@@ -285,12 +287,18 @@ export default function PalmaresScreen({ navigation }) {
     const complete = isActive
       ? stats.complete
       : (cityDenominator !== null && cityDenominator > 0 && flashedHere >= cityDenominator);
-    // Détail pour la barre segmentée (ville active = chiffres exacts, sinon index)
+    // Détail pour la barre segmentée (ville active = chiffres exacts, sinon index).
+    // Non active : si flashés > flashables, l'excédent vient forcément de détruits
+    // flashés avant destruction → on les retire du rouge (acquis, pas perdus).
+    const cityFlashables = cityTotal !== null ? Math.max(0, cityTotal - (cityInfo?.destroyed ?? 0)) : 0;
+    const inferredFlashedDestroyed = Math.max(0, flashedHere - cityFlashables);
     const barFlashed = isActive ? stats.flashed : flashedHere;
     const barRemaining = isActive
       ? stats.remaining
       : (cityDenominator !== null ? Math.max(0, cityDenominator - flashedHere) : 0);
-    const barDestroyed = isActive ? stats.destroyedLost : (cityInfo?.destroyed ?? 0);
+    const barDestroyed = isActive
+      ? stats.destroyedLost
+      : Math.max(0, (cityInfo?.destroyed ?? 0) - inferredFlashedDestroyed);
     return (
       <View key={c.code} style={styles.villeBlock}>
         <TouchableOpacity
@@ -499,12 +507,6 @@ function makeStyles(t) {
     totalPosed: { fontSize: 12, color: t.textSecondary },
     calcHint: { fontSize: 11.5, color: t.textSecondary, marginTop: 8, fontStyle: 'italic', lineHeight: 15 },
 
-    completePill: {
-      flexDirection: 'row', alignItems: 'center', gap: 3,
-      backgroundColor: t.accentDim, borderColor: t.accent, borderWidth: 1,
-      borderRadius: 999, paddingHorizontal: 7, paddingVertical: 2,
-    },
-    completePillText: { fontSize: 10, fontWeight: '700', letterSpacing: 0.4, color: t.accent, textTransform: 'uppercase' },
 
     villeBlock: { marginHorizontal: 16, marginBottom: 12 },
     villeCard: {
