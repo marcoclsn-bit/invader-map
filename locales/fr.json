@@ -146,6 +146,7 @@
     "unflashedOnly": "Non flashés uniquement",
     "filteredTo": "Limité au {{label}}",
     "generate": "Générer la chasse",
+    "generating": "Calcul de l'itinéraire…",
     "start": "Démarrer",
     "quit": "Quitter",
     "waitingGps": "En attente de la position GPS…",

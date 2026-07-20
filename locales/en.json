@@ -146,6 +146,7 @@
     "unflashedOnly": "Unflashed only",
     "filteredTo": "Limited to {{label}}",
     "generate": "Generate hunt",
+    "generating": "Building your route…",
     "start": "Start",
     "quit": "Quit",
     "waitingGps": "Waiting for GPS signal…",

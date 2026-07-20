@@ -146,6 +146,7 @@
     "unflashedOnly": "Solo no fotografiados",
     "filteredTo": "Limitado al {{label}}",
     "generate": "Generar caza",
+    "generating": "Calculando la ruta…",
     "start": "Iniciar",
     "quit": "Salir",
     "waitingGps": "Esperando señal GPS…",

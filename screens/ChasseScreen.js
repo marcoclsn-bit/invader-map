@@ -930,7 +930,12 @@ export default function ChasseScreen({ route }) {
                     disabled={!startReady || loading}
                   >
                     {loading
-                      ? <ActivityIndicator color="#fff" />
+                      ? (
+                        <View style={styles.genBtnLoading}>
+                          <ActivityIndicator color={theme.bg} />
+                          <Text style={styles.genBtnText}>{t('hunt.generating')}</Text>
+                        </View>
+                      )
                       : <Text style={styles.genBtnText}>{t('hunt.generate')}</Text>
                     }
                   </TouchableOpacity>
@@ -1099,6 +1104,7 @@ function makeStyles(t) {
       borderRadius: 20, paddingVertical: 12, alignItems: 'center',
     },
     genBtnDisabled: { opacity: 0.45 },
+    genBtnLoading: { flexDirection: 'row', alignItems: 'center', gap: 10 },
     genBtnText: { color: t.bg, fontWeight: '600', fontSize: 15 },
     errorText: { fontSize: 13, color: t.destructive, marginTop: 8, textAlign: 'center' },
     hintText: { fontSize: 12, color: t.textSecondary, marginTop: 6, textAlign: 'center' },
