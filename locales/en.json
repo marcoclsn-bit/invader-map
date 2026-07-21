@@ -405,6 +405,18 @@
       "trendNight": "Night ({{pct}}%)",
       "lastTrophy": "Latest trophy",
       "lastTrophyValue": "{{title}} · {{date}}"
+    },
+    "path": {
+      "title": "Hunter's journey",
+      "info": "Lv {{next}} in {{remaining}} XP · {{tier}} at Lv {{tierLevel}}",
+      "infoNoTier": "Lv {{next}} in {{remaining}} XP",
+      "maxed": "Max level reached — Legend ✦"
+    },
+    "objectives": {
+      "title": "Next goals",
+      "level": "Level {{level}}",
+      "xpLeft": "{{count}} XP",
+      "finishCity": "Finish {{city}}"
     }
   },
   "about": {

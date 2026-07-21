@@ -405,6 +405,18 @@
       "trendNight": "Nocturne ({{pct}} %)",
       "lastTrophy": "Dernier trophée",
       "lastTrophyValue": "{{title}} · {{date}}"
+    },
+    "path": {
+      "title": "Parcours du chasseur",
+      "info": "Nv {{next}} dans {{remaining}} XP · {{tier}} au Nv {{tierLevel}}",
+      "infoNoTier": "Nv {{next}} dans {{remaining}} XP",
+      "maxed": "Niveau maximum atteint — Légende ✦"
+    },
+    "objectives": {
+      "title": "Prochains objectifs",
+      "level": "Niveau {{level}}",
+      "xpLeft": "{{count}} XP",
+      "finishCity": "Terminer {{city}}"
     }
   },
   "about": {

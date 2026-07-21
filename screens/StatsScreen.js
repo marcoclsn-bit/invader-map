@@ -10,6 +10,8 @@ import { typography } from '../theme/tokens';
 import { CITIES } from '../cities/registry';
 import { computeHunterProfile, computeXpLevel, computeArchetype } from '../utils/hunterProfile';
 import { useGamification } from '../context/GamificationContext';
+import { completedCityCodes } from '../data/badges';
+import LevelPath from '../components/profile/LevelPath';
 import ProfileHeader from '../components/profile/ProfileHeader';
 import HunterSlider from '../components/profile/HunterSlider';
 import SegmentDonut from '../components/profile/SegmentDonut';
@@ -303,6 +305,62 @@ export default function StatsScreen({ navigation }) {
     return out;
   }, [stats, flashHistory, profile, badges, i18n.language, t]);
 
+  // ── Prochains objectifs : les cibles atteignables les plus proches.
+  // Ville : formule « juste » (registre) + pertinence (ville active OU activité
+  // < 30 jours) — pas d'objectif frustrant sur une ville de vacances.
+  const objectives = useMemo(() => {
+    const out = [];
+    const nextTier = (tiers, cur) => tiers.find(([v]) => cur < v);
+    const push = (icon, label, cur, target) =>
+      out.push({ icon, label, pct: Math.min(1, cur / target), valueText: `${cur}/${target}` });
+
+    if (!hunterLevel.isMax) {
+      out.push({
+        icon: 'star', label: t('stats.objectives.level', { level: hunterLevel.level + 1 }),
+        pct: hunterLevel.progress, valueText: t('stats.objectives.xpLeft', { count: hunterLevel.xpRemaining }),
+      });
+    }
+    const col = nextTier([[25, 'squad25'], [100, 'centurion'], [250, 'battalion250'], [500, 'army500'], [1000, 'legend1000'], [2000, 'spacemaster2000']], stats.total);
+    if (col && stats.total > 0) push('albums', t(`badges.${col[1]}.title`), stats.total, col[0]);
+    const pts = nextTier([[500, 'loot500'], [2500, 'treasurer2500'], [10000, 'vault10000'], [25000, 'jackpot25000']], globalStats.totalPts);
+    if (pts && globalStats.totalPts > 0) push('cash', t(`badges.${pts[1]}.title`), globalStats.totalPts, pts[0]);
+    const exp = nextTier([[3, 'explorer'], [5, 'globetrotter'], [10, 'nomade10'], [20, 'conquerant20']], profile.distinctCities);
+    if (exp && profile.distinctCities > 0) push('compass', t(`badges.${exp[1]}.title`), profile.distinctCities, exp[0]);
+    const doneCount = completedCityCodes({ flashHistory, cityIndex, cityProgress }).size;
+    const cd = nextTier([[1, 'conquete1'], [3, 'triple3'], [5, 'pantheon5'], [10, 'hegemonie10']], doneCount);
+    if (cd && doneCount > 0) push('trophy', t(`badges.${cd[1]}.title`), doneCount, cd[0]);
+
+    // Terminer une ville PERTINENTE (active, ou flashée dans les 30 derniers jours)
+    const lastByCity = new Map();
+    for (const f of flashHistory) {
+      if (!f.flashedAt) continue;
+      const i2 = f.id.lastIndexOf('_');
+      const code = i2 > 0 ? f.id.slice(0, i2) : f.id;
+      const ts = Date.parse(f.flashedAt);
+      if (Number.isFinite(ts) && ts > (lastByCity.get(code) ?? 0)) lastByCity.set(code, ts);
+    }
+    const recentSince = Date.now() - 30 * 86400000;
+    const cityCandidates = [];
+    for (const [code, e] of Object.entries(cityProgress)) {
+      if (!e || e.denominator <= 0 || e.completed || e.flashedCount <= 0) continue;
+      const relevant = code === currentCityCode || (lastByCity.get(code) ?? 0) >= recentSince;
+      if (!relevant) continue;
+      cityCandidates.push({ code, pct: e.flashedCount / e.denominator, e });
+    }
+    cityCandidates.sort((a, b) => b.pct - a.pct);
+    const cg = cityCandidates[0];
+    if (cg) {
+      out.push({
+        icon: 'business',
+        label: t('stats.objectives.finishCity', { city: CITIES[cg.code]?.name ?? cg.code }),
+        pct: cg.pct, valueText: `${cg.e.flashedCount}/${cg.e.denominator}`,
+      });
+    }
+
+    // Les plus proches d'aboutir d'abord, 4 max
+    return out.sort((a, b) => b.pct - a.pct).slice(0, 4);
+  }, [hunterLevel, stats.total, globalStats.totalPts, profile.distinctCities, flashHistory, cityIndex, cityProgress, currentCityCode, t]);
+
   function openDrawer() { navigation.dispatch(DrawerActions.openDrawer()); }
 
   const cityName = CITIES[currentCityCode]?.name ?? currentCityCode; // projections (carte « rythme »)
@@ -393,6 +451,31 @@ export default function StatsScreen({ navigation }) {
           level={hunterLevel}
           archetype={archetype}
         />
+
+        {/* Parcours du chasseur : le niveau comme un chemin à travers les rangs */}
+        <View style={[cardStyles.wrap, { backgroundColor: theme.surface, marginHorizontal: 0 }]}>
+          <Text style={[cardStyles.title, { color: theme.textSecondary }]}>{t('stats.path.title').toUpperCase()}</Text>
+          <LevelPath level={hunterLevel} />
+        </View>
+
+        {/* Prochains objectifs : les cibles atteignables les plus proches */}
+        {objectives.length > 0 && (
+          <View style={[cardStyles.wrap, { backgroundColor: theme.surface, marginHorizontal: 0 }]}>
+            <Text style={[cardStyles.title, { color: theme.textSecondary }]}>{t('stats.objectives.title').toUpperCase()}</Text>
+            {objectives.map((o, i) => (
+              <View key={i} style={[st.objRow, i > 0 && { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: theme.border }]}>
+                <View style={st.objTop}>
+                  <View style={[st.hlIcon, { backgroundColor: theme.accentDim }]}>
+                    <Ionicons name={o.icon} size={15} color={theme.accent} />
+                  </View>
+                  <Text style={[st.objLabel, { color: theme.textPrimary }]} numberOfLines={1}>{o.label}</Text>
+                  <Text style={[st.objValue, { color: theme.textSecondary }]}>{o.valueText}</Text>
+                </View>
+                <ProgressBar pct={o.pct * 100} theme={theme} />
+              </View>
+            ))}
+          </View>
+        )}
 
         {/* Profil de chasseur — sliders */}
         <View style={[cardStyles.wrap, { backgroundColor: theme.surface, marginHorizontal: 0 }]}>
@@ -671,6 +754,11 @@ const st = StyleSheet.create({
   },
   tabBtn: { flex: 1, alignItems: 'center', paddingVertical: 8, borderRadius: 9 },
   tabLabel: { fontSize: 13, fontWeight: '700', letterSpacing: 0.3 },
+
+  objRow: { paddingVertical: 10 },
+  objTop: { flexDirection: 'row', alignItems: 'center', gap: 10, marginBottom: 8 },
+  objLabel: { fontSize: 13.5, fontWeight: '600', flex: 1 },
+  objValue: { fontSize: 12.5, fontWeight: '600', fontVariant: ['tabular-nums'] },
 
   hlRow: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 10 },
   hlIcon: { width: 28, height: 28, borderRadius: 14, alignItems: 'center', justifyContent: 'center' },

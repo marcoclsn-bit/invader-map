@@ -405,6 +405,18 @@
       "trendNight": "Nocturno ({{pct}} %)",
       "lastTrophy": "Último trofeo",
       "lastTrophyValue": "{{title}} · {{date}}"
+    },
+    "path": {
+      "title": "Camino del cazador",
+      "info": "Nv {{next}} en {{remaining}} XP · {{tier}} en Nv {{tierLevel}}",
+      "infoNoTier": "Nv {{next}} en {{remaining}} XP",
+      "maxed": "Nivel máximo alcanzado — Leyenda ✦"
+    },
+    "objectives": {
+      "title": "Próximos objetivos",
+      "level": "Nivel {{level}}",
+      "xpLeft": "{{count}} XP",
+      "finishCity": "Terminar {{city}}"
     }
   },
   "about": {

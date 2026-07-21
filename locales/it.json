@@ -405,6 +405,18 @@
       "trendNight": "Notturno ({{pct}} %)",
       "lastTrophy": "Ultimo trofeo",
       "lastTrophyValue": "{{title}} · {{date}}"
+    },
+    "path": {
+      "title": "Cammino del cacciatore",
+      "info": "Lv {{next}} tra {{remaining}} XP · {{tier}} al Lv {{tierLevel}}",
+      "infoNoTier": "Lv {{next}} tra {{remaining}} XP",
+      "maxed": "Livello massimo raggiunto — Leggenda ✦"
+    },
+    "objectives": {
+      "title": "Prossimi obiettivi",
+      "level": "Livello {{level}}",
+      "xpLeft": "{{count}} XP",
+      "finishCity": "Completare {{city}}"
     }
   },
   "about": {
