@@ -30,10 +30,10 @@
   },
   "tabs": {
     "map": "Map",
-    "list": "List",
+    "list": "Flashes",
     "route": "Route",
     "hunt": "Hunt",
-    "palmares": "Scores",
+    "palmares": "Cities",
     "stats": "Stats"
   },
   "map": {
@@ -164,7 +164,7 @@
     "districtsSelected_other": "{{count}} districts selected"
   },
   "palmares": {
-    "title": "Scores",
+    "title": "Cities",
     "back": "Back",
     "huntHere": "Hunt here",
     "flashedSummary": "{{flashed}} / {{total}} Invaders flashed · {{pts}} pts",
@@ -215,7 +215,7 @@
         "body": "No set route? Generate an optimized hunt around you based on your time and travel mode, and set off on an adventure."
       },
       "balade": {
-        "title": "Stroll mode",
+        "title": "Walk Alerts",
         "body": "Get alerted when you walk near an Invader you haven't flashed yet — even with the app closed. You'll need to allow “Always” location when you enable it."
       }
     }
@@ -590,7 +590,7 @@
     }
   },
   "stroll": {
-    "title": "Stroll mode",
+    "title": "Walk Alerts",
     "comingSoon": {
       "badge": "Coming soon",
       "body": "Your settings are saved right now, but alerts require the next version of the app. For now, no alert is sent yet."
@@ -599,8 +599,8 @@
     "whatTitle": "What is it?",
     "whatBody": "Get alerted when you walk near an Invader you haven't flashed yet — even with your phone in your pocket — while you roam freely.",
     "vsTrajetTitle": "Different from Route tracking",
-    "vsTrajetBody": "Route tracking guides you along a calculated itinerary. Stroll mode watches in the background with no set route: walk wherever you like.",
-    "enableLabel": "Enable stroll mode",
+    "vsTrajetBody": "Route tracking guides you along a calculated itinerary. Walk Alerts watch in the background with no set route: walk wherever you like.",
+    "enableLabel": "Enable walk alerts",
     "enableHint": "Watches for Invaders around you as you move.",
     "radiusSection": "Alert radius",
     "radiusLabel": "Trigger distance",
@@ -612,7 +612,7 @@
     "targetSection": "Target",
     "unflashedOnly": "Unflashed only",
     "unflashedOnlyHint": "Ignore Invaders you've already flashed.",
-    "footnote": "Stroll mode uses geofencing: no continuous GPS, battery-friendly. Requires “Always” location permission to work when the app is closed.",
+    "footnote": "Walk Alerts use geofencing: no continuous GPS, battery-friendly. Requires “Always” location permission to work when the app is closed.",
     "notif": {
       "title": "Invader nearby 👾",
       "bodies": [
@@ -626,7 +626,7 @@
     },
     "perm": {
       "deniedTitle": "Location denied",
-      "deniedBody": "Stroll mode needs your location to alert you near Invaders. Enable location in iOS Settings.",
+      "deniedBody": "Walk Alerts need your location to alert you near Invaders. Enable location in iOS Settings.",
       "bgTitle": "Background permission missing",
       "bgBody": "To be alerted even when the app is closed, choose “Always Allow” for location in Settings. For now, you'll only be alerted while the app is open."
     },
@@ -938,19 +938,19 @@
         ]
       },
       "balade": {
-        "title": "Stroll mode",
+        "title": "Walk Alerts",
         "benefit": "Let the app watch for you: it alerts you when you pass near an unflashed Invader, even when the app is closed.",
         "steps": [
-          "Turn on Stroll mode from the menu.",
+          "Turn on Walk Alerts from the menu.",
           "Allow “Always” location access (required for background alerts).",
           "Just walk around: you get a notification near an Invader."
         ]
       },
       "palmares": {
-        "title": "Rankings & cities",
+        "title": "Cities",
         "benefit": "See your progress city by city, and district by district in Paris.",
         "steps": [
-          "Open Rankings from the menu.",
+          "Open Cities from the menu.",
           "Check your completion percentage per city and per area.",
           "Switch city to explore and flash elsewhere."
         ]

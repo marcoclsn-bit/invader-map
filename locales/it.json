@@ -30,10 +30,10 @@
   },
   "tabs": {
     "map": "Mappa",
-    "list": "Lista",
+    "list": "Flash",
     "route": "Percorso",
     "hunt": "Caccia",
-    "palmares": "Palmares",
+    "palmares": "Città",
     "stats": "Stats"
   },
   "map": {
@@ -164,7 +164,7 @@
     "districtsSelected_other": "{{count}} arrondissement selezionati"
   },
   "palmares": {
-    "title": "Palmares",
+    "title": "Città",
     "back": "Indietro",
     "huntHere": "Caccia qui",
     "flashedSummary": "{{flashed}} / {{total}} Invaders fotografati · {{pts}} pts",
@@ -215,7 +215,7 @@
         "body": "Nessun percorso preciso? Genera una caccia ottimizzata intorno a te in base al tuo tempo e al mezzo di trasporto, e parti all'avventura."
       },
       "balade": {
-        "title": "Modalità passeggiata",
+        "title": "Avvisi Passeggiata",
         "body": "Ricevi un avviso quando passi vicino a un Invader non ancora fotografato — anche con l'app chiusa. Dovrai autorizzare la posizione «Sempre» quando la attivi."
       }
     }
@@ -590,7 +590,7 @@
     }
   },
   "stroll": {
-    "title": "Modalità passeggiata",
+    "title": "Avvisi Passeggiata",
     "comingSoon": {
       "badge": "Presto disponibile",
       "body": "Le tue impostazioni vengono salvate fin da ora, ma gli avvisi richiedono la prossima versione dell'app. Per ora non viene inviato alcun avviso."
@@ -599,8 +599,8 @@
     "whatTitle": "Di cosa si tratta?",
     "whatBody": "Ricevi un avviso quando passi vicino a un Invader non ancora fotografato, anche con il telefono in tasca, mentre passeggi liberamente.",
     "vsTrajetTitle": "Diverso dal tracciamento del Percorso",
-    "vsTrajetBody": "Il tracciamento del Percorso ti guida lungo un itinerario calcolato. La modalità passeggiata invece controlla in background senza un percorso definito: cammini dove vuoi.",
-    "enableLabel": "Attiva la modalità passeggiata",
+    "vsTrajetBody": "Il tracciamento del Percorso ti guida lungo un itinerario calcolato. Gli Avvisi Passeggiata invece controllano in background senza un percorso definito: cammini dove vuoi.",
+    "enableLabel": "Attiva gli avvisi passeggiata",
     "enableHint": "Controlla gli Invaders intorno a te mentre ti sposti.",
     "radiusSection": "Raggio di avviso",
     "radiusLabel": "Distanza di attivazione",
@@ -612,7 +612,7 @@
     "targetSection": "Filtro",
     "unflashedOnly": "Solo i non fotografati",
     "unflashedOnlyHint": "Ignora gli Invaders già fotografati.",
-    "footnote": "La modalità passeggiata usa il geofencing: niente GPS continuo, risparmia batteria. Richiede il permesso di posizione «Sempre» per funzionare ad app chiusa.",
+    "footnote": "Gli avvisi passeggiata usano il geofencing: niente GPS continuo, risparmia batteria. Richiede il permesso di posizione «Sempre» per funzionare ad app chiusa.",
     "notif": {
       "title": "Invader nelle vicinanze 👾",
       "bodies": [
@@ -626,7 +626,7 @@
     },
     "perm": {
       "deniedTitle": "Posizione negata",
-      "deniedBody": "La modalità passeggiata ha bisogno della tua posizione per avvisarti vicino agli Invaders. Attivala nelle Impostazioni iOS.",
+      "deniedBody": "Gli avvisi passeggiata hanno bisogno della tua posizione per avvisarti vicino agli Invaders. Attivala nelle Impostazioni iOS.",
       "bgTitle": "Permesso in background mancante",
       "bgBody": "Per ricevere avvisi anche ad app chiusa, scegli «Consenti sempre» la posizione nelle Impostazioni. Per ora riceverai avvisi solo ad app aperta."
     },
@@ -938,19 +938,19 @@
         ]
       },
       "balade": {
-        "title": "Modalità passeggiata",
+        "title": "Avvisi Passeggiata",
         "benefit": "Lascia che l'app vegli per te: ti avvisa quando passi vicino a un Invader non flashato, anche ad app chiusa.",
         "steps": [
-          "Attiva la Modalità passeggiata dal menu.",
+          "Attiva gli Avvisi Passeggiata dal menu.",
           "Consenti la posizione «Sempre» (indispensabile per gli avvisi in background).",
           "Cammina normalmente: ricevi una notifica vicino a un Invader."
         ]
       },
       "palmares": {
-        "title": "Classifica e città",
+        "title": "Città",
         "benefit": "Visualizza i tuoi progressi città per città, e quartiere per quartiere a Parigi.",
         "steps": [
-          "Apri la Classifica dal menu.",
+          "Apri Città dal menu.",
           "Controlla la tua percentuale di completamento per città e per zona.",
           "Cambia città per esplorare e flashare altrove."
         ]

@@ -30,10 +30,10 @@
   },
   "tabs": {
     "map": "Carte",
-    "list": "Liste",
+    "list": "Flashs",
     "route": "Trajet",
     "hunt": "Chasse",
-    "palmares": "Palmarès",
+    "palmares": "Villes",
     "stats": "Stats"
   },
   "map": {
@@ -164,7 +164,7 @@
     "districtsSelected_other": "{{count}} arrondissements sélectionnés"
   },
   "palmares": {
-    "title": "Palmarès",
+    "title": "Villes",
     "back": "Retour",
     "huntHere": "Chasser ici",
     "flashedSummary": "{{flashed}} / {{total}} Invaders flashés · {{pts}} pts",
@@ -215,7 +215,7 @@
         "body": "Pas d'itinéraire précis ? Génère une chasse optimisée autour de toi selon ton temps et ton moyen de transport, et pars à l'aventure."
       },
       "balade": {
-        "title": "Mode balade",
+        "title": "Alertes Balade",
         "body": "Sois alerté quand tu passes près d'un Invader pas encore flashé — même l'application fermée. Il te faudra autoriser la localisation « Toujours » au moment de l'activer."
       }
     }
@@ -590,7 +590,7 @@
     }
   },
   "stroll": {
-    "title": "Mode balade",
+    "title": "Alertes Balade",
     "comingSoon": {
       "badge": "Bientôt disponible",
       "body": "Tes réglages sont enregistrés dès maintenant, mais les alertes nécessitent la prochaine version de l'app. Pour l'instant, aucune alerte n'est encore envoyée."
@@ -599,8 +599,8 @@
     "whatTitle": "C'est quoi ?",
     "whatBody": "Sois alerté quand tu passes près d'un Invader non flashé, même téléphone en poche, pendant que tu te balades librement.",
     "vsTrajetTitle": "Différent du suivi de Trajet",
-    "vsTrajetBody": "Le suivi de Trajet te guide le long d'un itinéraire calculé. Le mode balade, lui, surveille en arrière-plan sans trajet défini : tu marches où tu veux.",
-    "enableLabel": "Activer le mode balade",
+    "vsTrajetBody": "Le suivi de Trajet te guide le long d'un itinéraire calculé. Les alertes balade, elles, surveillent en arrière-plan sans trajet défini : tu marches où tu veux.",
+    "enableLabel": "Activer les alertes balade",
     "enableHint": "Surveille les Invaders autour de toi pendant tes déplacements.",
     "radiusSection": "Rayon d'alerte",
     "radiusLabel": "Distance de déclenchement",
@@ -612,7 +612,7 @@
     "targetSection": "Cibler",
     "unflashedOnly": "Uniquement les non-flashés",
     "unflashedOnlyHint": "Ignore les Invaders déjà flashés.",
-    "footnote": "Le mode balade s'appuie sur le geofencing : pas de GPS en continu, économe en batterie. Nécessite l'autorisation de localisation « Toujours » pour fonctionner app fermée.",
+    "footnote": "Les alertes balade s'appuient sur le geofencing : pas de GPS en continu, économe en batterie. Nécessite l'autorisation de localisation « Toujours » pour fonctionner app fermée.",
     "notif": {
       "title": "Invader à proximité 👾",
       "bodies": [
@@ -626,7 +626,7 @@
     },
     "perm": {
       "deniedTitle": "Localisation refusée",
-      "deniedBody": "Le mode balade a besoin de ta position pour t'alerter près des Invaders. Active la localisation dans les Réglages iOS.",
+      "deniedBody": "Les alertes balade ont besoin de ta position pour t'alerter près des Invaders. Active la localisation dans les Réglages iOS.",
       "bgTitle": "Autorisation arrière-plan manquante",
       "bgBody": "Pour être alerté même app fermée, choisis « Toujours autoriser » la localisation dans les Réglages. Pour l'instant, tu seras alerté seulement quand l'app est ouverte."
     },
@@ -938,19 +938,19 @@
         ]
       },
       "balade": {
-        "title": "Mode balade",
+        "title": "Alertes Balade",
         "benefit": "Laisse l'app veiller pour toi : elle t'alerte quand tu passes près d'un Invader non flashé, même app fermée.",
         "steps": [
-          "Active le Mode balade depuis le menu.",
+          "Active les Alertes Balade depuis le menu.",
           "Autorise la localisation « Toujours » (indispensable pour les alertes en arrière-plan).",
           "Balade-toi normalement : tu reçois une notification à proximité d'un Invader."
         ]
       },
       "palmares": {
-        "title": "Palmarès & villes",
+        "title": "Villes",
         "benefit": "Visualise ta progression ville par ville, et arrondissement par arrondissement à Paris.",
         "steps": [
-          "Ouvre le Palmarès depuis le menu.",
+          "Ouvre Villes depuis le menu.",
           "Consulte ton pourcentage de complétion par ville et par zone.",
           "Change de ville pour explorer et flasher ailleurs."
         ]

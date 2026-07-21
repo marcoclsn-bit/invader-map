@@ -39,12 +39,13 @@ export default function DrawerContent({ navigation, state }) {
   const currentRoute = state.routes[state.index]?.name;
 
   const mainItems = [
+    // Ordre : Carte → Villes → Flashs → Actus → Stats → Alertes Balade
     { name: 'Tabs',     icon: 'map',          label: t('tabs.map') },
-    { name: 'Liste',    icon: 'list',         label: t('tabs.list') },
+    { name: 'Palmarès', icon: 'business',     label: t('tabs.palmares') },  // « Villes »
+    { name: 'Liste',    icon: 'flash',        label: t('tabs.list') },      // « Flashs »
     { name: 'News',     icon: 'newspaper',    label: t('news.title'), badge: newsUnreadCount },
-    { name: 'Balade',   icon: 'walk',         label: t('stroll.title') },
-    { name: 'Palmarès', icon: 'ribbon',       label: t('tabs.palmares') },
     { name: 'Stats',    icon: 'stats-chart',  label: t('tabs.stats') },
+    { name: 'Balade',   icon: 'radio',        label: t('stroll.title') },   // « Alertes Balade »
   ];
 
   function goTo(screen) {
@@ -94,12 +95,6 @@ export default function DrawerContent({ navigation, state }) {
           theme={theme}
         />
         <NavItem
-          icon="settings-outline"
-          label={t('settings.title')}
-          onPress={() => goToModal('Réglages')}
-          theme={theme}
-        />
-        <NavItem
           icon="help-circle-outline"
           label={t('guide.title')}
           onPress={() => goToModal('Guide')}
@@ -109,6 +104,12 @@ export default function DrawerContent({ navigation, state }) {
           icon="information-circle-outline"
           label={t('about.title')}
           onPress={() => goToModal('À propos')}
+          theme={theme}
+        />
+        <NavItem
+          icon="settings-outline"
+          label={t('settings.title')}
+          onPress={() => goToModal('Réglages')}
           theme={theme}
         />
       </ScrollView>

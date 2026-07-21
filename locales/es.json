@@ -30,10 +30,10 @@
   },
   "tabs": {
     "map": "Mapa",
-    "list": "Lista",
+    "list": "Flashes",
     "route": "Ruta",
     "hunt": "Caza",
-    "palmares": "Palmarés",
+    "palmares": "Ciudades",
     "stats": "Stats"
   },
   "map": {
@@ -164,7 +164,7 @@
     "districtsSelected_other": "{{count}} distritos seleccionados"
   },
   "palmares": {
-    "title": "Palmarés",
+    "title": "Ciudades",
     "back": "Volver",
     "huntHere": "Cazar aquí",
     "flashedSummary": "{{flashed}} / {{total}} Invaders fotografiados · {{pts}} pts",
@@ -215,7 +215,7 @@
         "body": "¿Sin ruta fija? Genera una caza optimizada a tu alrededor según tu tiempo y tu medio de transporte, y lánzate a la aventura."
       },
       "balade": {
-        "title": "Modo paseo",
+        "title": "Alertas de paseo",
         "body": "Recibe un aviso cuando pases cerca de un Invader que aún no has hecho — incluso con la app cerrada. Deberás permitir la ubicación «Siempre» al activarlo."
       }
     }
@@ -590,7 +590,7 @@
     }
   },
   "stroll": {
-    "title": "Modo paseo",
+    "title": "Alertas de paseo",
     "comingSoon": {
       "badge": "Próximamente",
       "body": "Tus ajustes se guardan desde ahora, pero las alertas requieren la próxima versión de la app. Por el momento, no se envía ninguna alerta."
@@ -599,8 +599,8 @@
     "whatTitle": "¿Qué es?",
     "whatBody": "Recibe un aviso cuando pases cerca de un Invader que aún no has fotografiado, incluso con el teléfono en el bolsillo, mientras paseas libremente.",
     "vsTrajetTitle": "Distinto del seguimiento de Ruta",
-    "vsTrajetBody": "El seguimiento de Ruta te guía por un itinerario calculado. El modo paseo vigila en segundo plano sin ruta fija: caminas donde quieras.",
-    "enableLabel": "Activar el modo paseo",
+    "vsTrajetBody": "El seguimiento de Ruta te guía por un itinerario calculado. Las alertas de paseo vigilan en segundo plano sin ruta fija: caminas donde quieras.",
+    "enableLabel": "Activar las alertas de paseo",
     "enableHint": "Vigila los Invaders a tu alrededor mientras te mueves.",
     "radiusSection": "Radio de alerta",
     "radiusLabel": "Distancia de activación",
@@ -612,7 +612,7 @@
     "targetSection": "Filtrar",
     "unflashedOnly": "Solo los no fotografiados",
     "unflashedOnlyHint": "Ignora los Invaders ya fotografiados.",
-    "footnote": "El modo paseo usa geofencing: sin GPS continuo, ahorra batería. Requiere el permiso de ubicación «Siempre» para funcionar con la app cerrada.",
+    "footnote": "Las alertas de paseo usan geofencing: sin GPS continuo, ahorra batería. Requiere el permiso de ubicación «Siempre» para funcionar con la app cerrada.",
     "notif": {
       "title": "Invader cerca 👾",
       "bodies": [
@@ -626,7 +626,7 @@
     },
     "perm": {
       "deniedTitle": "Ubicación denegada",
-      "deniedBody": "El modo paseo necesita tu ubicación para avisarte cerca de los Invaders. Actívala en los Ajustes de iOS.",
+      "deniedBody": "Las alertas de paseo necesitan tu ubicación para avisarte cerca de los Invaders. Actívala en los Ajustes de iOS.",
       "bgTitle": "Falta permiso en segundo plano",
       "bgBody": "Para recibir avisos con la app cerrada, elige «Permitir siempre» la ubicación en Ajustes. Por ahora solo recibirás avisos con la app abierta."
     },
@@ -938,19 +938,19 @@
         ]
       },
       "balade": {
-        "title": "Modo paseo",
+        "title": "Alertas de paseo",
         "benefit": "Deja que la app vigile por ti: te avisa cuando pasas cerca de un Invader sin fotografiar, incluso con la app cerrada.",
         "steps": [
-          "Activa el Modo paseo desde el menú.",
+          "Activa las Alertas de paseo desde el menú.",
           "Permite la ubicación «Siempre» (imprescindible para los avisos en segundo plano).",
           "Pasea con normalidad: recibes una notificación cerca de un Invader."
         ]
       },
       "palmares": {
-        "title": "Clasificación y ciudades",
+        "title": "Ciudades",
         "benefit": "Visualiza tu progreso ciudad por ciudad, y distrito por distrito en París.",
         "steps": [
-          "Abre la Clasificación desde el menú.",
+          "Abre Ciudades desde el menú.",
           "Consulta tu porcentaje de completado por ciudad y por zona.",
           "Cambia de ciudad para explorar y fotografiar en otros sitios."
         ]
