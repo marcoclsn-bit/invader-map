@@ -417,7 +417,8 @@
       "title": "Prochains objectifs",
       "level": "Niveau {{level}}",
       "xpLeft": "{{count}} XP",
-      "finishCity": "Terminer {{city}}"
+      "finishCity": "Terminer {{city}}",
+      "info": "Tes 4 objectifs les plus proches d'aboutir, choisis automatiquement : prochain niveau, prochain trophée de collection, de points ou d'exploration, et ville en cours de complétion (ta carte active ou une ville flashée dans les 30 derniers jours — les Invaders détruits jamais flashés ne comptent pas)."
     }
   },
   "about": {

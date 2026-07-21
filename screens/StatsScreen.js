@@ -185,6 +185,7 @@ export default function StatsScreen({ navigation }) {
   const { badges, unlockedCount } = useGamification();
   const [chartMode, setChartMode] = useState('daily');
   const [tab, setTab] = useState('profile'); // 'profile' | 'stats'
+  const [showObjInfo, setShowObjInfo] = useState(false);
 
   const flashHistory = useMemo(() => getFlashHistory(), [flashed, flashedDates]);
 
@@ -461,7 +462,21 @@ export default function StatsScreen({ navigation }) {
         {/* Prochains objectifs : les cibles atteignables les plus proches */}
         {objectives.length > 0 && (
           <View style={[cardStyles.wrap, { backgroundColor: theme.surface, marginHorizontal: 0 }]}>
-            <Text style={[cardStyles.title, { color: theme.textSecondary }]}>{t('stats.objectives.title').toUpperCase()}</Text>
+            <View style={st.objTitleRow}>
+              <Text style={[cardStyles.title, { color: theme.textSecondary, marginBottom: 0 }]}>{t('stats.objectives.title').toUpperCase()}</Text>
+              <TouchableOpacity onPress={() => setShowObjInfo(!showObjInfo)} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
+                <Ionicons
+                  name={showObjInfo ? 'information-circle' : 'information-circle-outline'}
+                  size={16}
+                  color={theme.textSecondary}
+                />
+              </TouchableOpacity>
+            </View>
+            {showObjInfo && (
+              <View style={[st.objInfoBox, { backgroundColor: theme.surfaceHigh, borderColor: theme.border }]}>
+                <Text style={[st.objInfoText, { color: theme.textSecondary }]}>{t('stats.objectives.info')}</Text>
+              </View>
+            )}
             {objectives.map((o, i) => (
               <View key={i} style={[st.objRow, i > 0 && { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: theme.border }]}>
                 <View style={st.objTop}>
@@ -755,6 +770,9 @@ const st = StyleSheet.create({
   tabBtn: { flex: 1, alignItems: 'center', paddingVertical: 8, borderRadius: 9 },
   tabLabel: { fontSize: 13, fontWeight: '700', letterSpacing: 0.3 },
 
+  objTitleRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 },
+  objInfoBox: { borderRadius: 10, borderWidth: StyleSheet.hairlineWidth, padding: 10, marginBottom: 6 },
+  objInfoText: { fontSize: 12, lineHeight: 17 },
   objRow: { paddingVertical: 10 },
   objTop: { flexDirection: 'row', alignItems: 'center', gap: 10, marginBottom: 8 },
   objLabel: { fontSize: 13.5, fontWeight: '600', flex: 1 },
