@@ -312,8 +312,9 @@ export default function StatsScreen({ navigation }) {
   const objectives = useMemo(() => {
     const out = [];
     const nextTier = (tiers, cur) => tiers.find(([v]) => cur < v);
-    const push = (icon, label, cur, target) =>
-      out.push({ icon, label, pct: Math.min(1, cur / target), valueText: `${cur}/${target}` });
+    // label = nom du trophée (motivant) ; sub = sa condition (compréhensible)
+    const push = (icon, label, cur, target, sub) =>
+      out.push({ icon, label, sub, pct: Math.min(1, cur / target), valueText: `${cur}/${target}` });
 
     if (!hunterLevel.isMax) {
       out.push({
@@ -321,15 +322,16 @@ export default function StatsScreen({ navigation }) {
         pct: hunterLevel.progress, valueText: t('stats.objectives.xpLeft', { count: hunterLevel.xpRemaining }),
       });
     }
+    const badgeText = (id) => ({ title: t(`badges.${id}.title`), desc: t(`badges.${id}.desc`) });
     const col = nextTier([[25, 'squad25'], [100, 'centurion'], [250, 'battalion250'], [500, 'army500'], [1000, 'legend1000'], [2000, 'spacemaster2000']], stats.total);
-    if (col && stats.total > 0) push('albums', t(`badges.${col[1]}.title`), stats.total, col[0]);
+    if (col && stats.total > 0) { const b = badgeText(col[1]); push('albums', b.title, stats.total, col[0], b.desc); }
     const pts = nextTier([[500, 'loot500'], [2500, 'treasurer2500'], [10000, 'vault10000'], [25000, 'jackpot25000']], globalStats.totalPts);
-    if (pts && globalStats.totalPts > 0) push('cash', t(`badges.${pts[1]}.title`), globalStats.totalPts, pts[0]);
+    if (pts && globalStats.totalPts > 0) { const b = badgeText(pts[1]); push('cash', b.title, globalStats.totalPts, pts[0], b.desc); }
     const exp = nextTier([[3, 'explorer'], [5, 'globetrotter'], [10, 'nomade10'], [20, 'conquerant20']], profile.distinctCities);
-    if (exp && profile.distinctCities > 0) push('compass', t(`badges.${exp[1]}.title`), profile.distinctCities, exp[0]);
+    if (exp && profile.distinctCities > 0) { const b = badgeText(exp[1]); push('compass', b.title, profile.distinctCities, exp[0], b.desc); }
     const doneCount = completedCityCodes({ flashHistory, cityIndex, cityProgress }).size;
     const cd = nextTier([[1, 'conquete1'], [3, 'triple3'], [5, 'pantheon5'], [10, 'hegemonie10']], doneCount);
-    if (cd && doneCount > 0) push('trophy', t(`badges.${cd[1]}.title`), doneCount, cd[0]);
+    if (cd && doneCount > 0) { const b = badgeText(cd[1]); push('trophy', b.title, doneCount, cd[0], b.desc); }
 
     // Terminer une ville PERTINENTE (active, ou flashée dans les 30 derniers jours)
     const lastByCity = new Map();
@@ -483,7 +485,10 @@ export default function StatsScreen({ navigation }) {
                   <View style={[st.hlIcon, { backgroundColor: theme.accentDim }]}>
                     <Ionicons name={o.icon} size={15} color={theme.accent} />
                   </View>
-                  <Text style={[st.objLabel, { color: theme.textPrimary }]} numberOfLines={1}>{o.label}</Text>
+                  <View style={{ flex: 1 }}>
+                    <Text style={[st.objLabel, { color: theme.textPrimary }]} numberOfLines={1}>{o.label}</Text>
+                    {o.sub ? <Text style={[st.objSub, { color: theme.textSecondary }]} numberOfLines={1}>{o.sub}</Text> : null}
+                  </View>
                   <Text style={[st.objValue, { color: theme.textSecondary }]}>{o.valueText}</Text>
                 </View>
                 <ProgressBar pct={o.pct * 100} theme={theme} />
@@ -775,7 +780,8 @@ const st = StyleSheet.create({
   objInfoText: { fontSize: 12, lineHeight: 17 },
   objRow: { paddingVertical: 10 },
   objTop: { flexDirection: 'row', alignItems: 'center', gap: 10, marginBottom: 8 },
-  objLabel: { fontSize: 13.5, fontWeight: '600', flex: 1 },
+  objLabel: { fontSize: 13.5, fontWeight: '700' },
+  objSub: { fontSize: 11, marginTop: 1 },
   objValue: { fontSize: 12.5, fontWeight: '600', fontVariant: ['tabular-nums'] },
 
   hlRow: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 10 },
