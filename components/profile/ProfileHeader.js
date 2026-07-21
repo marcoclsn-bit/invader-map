@@ -30,16 +30,28 @@ export default function ProfileHeader({ honorific, total = 0, level = null, arch
   const CIRC = 2 * Math.PI * RR;
   const dash = level ? CIRC * Math.min(1, Math.max(0, level.progress)) : 0;
 
+  // La photo est stockée en data-URI base64 (dans le profil AsyncStorage) : l'URI
+  // renvoyée par ImagePicker pointe vers le cache temporaire, que le système peut
+  // purger — la photo disparaissait. Repli sur l'URI si le base64 est trop lourd.
+  const MAX_B64 = 1_400_000; // ~1 Mo binaire, sous la limite d'entrée d'AsyncStorage
+  function applyPicked(res) {
+    if (res.canceled || !res.assets?.[0]) return;
+    const a = res.assets[0];
+    const dataUri = a.base64 && a.base64.length <= MAX_B64
+      ? `data:image/jpeg;base64,${a.base64}`
+      : a.uri;
+    if (dataUri) { setPhoto(dataUri); setPicker(false); }
+  }
+
   async function pickFromLibrary() {
     const perm = await ImagePicker.requestMediaLibraryPermissionsAsync();
     if (!perm.granted) {
       Alert.alert(t('stats.profile.permissionTitle'), t('stats.profile.permissionLibrary'));
       return;
     }
-    const res = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ['images'], allowsEditing: true, aspect: [1, 1], quality: 0.6,
-    });
-    if (!res.canceled && res.assets?.[0]?.uri) { setPhoto(res.assets[0].uri); setPicker(false); }
+    applyPicked(await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ['images'], allowsEditing: true, aspect: [1, 1], quality: 0.5, base64: true,
+    }));
   }
 
   async function takePhoto() {
@@ -48,10 +60,9 @@ export default function ProfileHeader({ honorific, total = 0, level = null, arch
       Alert.alert(t('stats.profile.permissionTitle'), t('stats.profile.permissionCamera'));
       return;
     }
-    const res = await ImagePicker.launchCameraAsync({
-      allowsEditing: true, aspect: [1, 1], quality: 0.6,
-    });
-    if (!res.canceled && res.assets?.[0]?.uri) { setPhoto(res.assets[0].uri); setPicker(false); }
+    applyPicked(await ImagePicker.launchCameraAsync({
+      allowsEditing: true, aspect: [1, 1], quality: 0.5, base64: true,
+    }));
   }
 
   return (
