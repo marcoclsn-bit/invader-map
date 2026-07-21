@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { View, Text, TextInput, Image, TouchableOpacity, Modal, StyleSheet, Pressable, Alert } from 'react-native';
+import Svg, { Circle } from 'react-native-svg';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import * as ImagePicker from 'expo-image-picker';
@@ -12,14 +13,22 @@ import { AVATARS, avatarSource } from './avatars';
  * En-tête « Profil RPG » — 100 % LOCAL (pseudo + avatar/photo sur l'appareil).
  * @param {{key:string,tier:number,explorer:boolean}} honorific
  * @param {number} total  nb total de flashs (sous-titre)
+ * @param {{xp:number,level:number,progress:number,xpRemaining:number,isMax:boolean}} [level]
+ * @param {string} [archetype]  clé stats.profile.archetypes.<key>
  */
-export default function ProfileHeader({ honorific, total = 0 }) {
+export default function ProfileHeader({ honorific, total = 0, level = null, archetype = null }) {
   const { theme } = useTheme();
   const { t } = useTranslation();
   const { name, avatar, photoUri, setName, setAvatar, setPhoto, clearPhoto } = useProfile();
   const [picker, setPicker] = useState(false);
 
   const title = t(`stats.profile.titles.${honorific?.key ?? 'novice'}`);
+
+  // Anneau de progression du niveau (autour de l'avatar)
+  const RS = RING + 14;                    // taille du Svg
+  const RR = (RS - 6) / 2;                 // rayon de l'anneau
+  const CIRC = 2 * Math.PI * RR;
+  const dash = level ? CIRC * Math.min(1, Math.max(0, level.progress)) : 0;
 
   async function pickFromLibrary() {
     const perm = await ImagePicker.requestMediaLibraryPermissionsAsync();
@@ -48,12 +57,32 @@ export default function ProfileHeader({ honorific, total = 0 }) {
   return (
     <View style={[styles.card, { backgroundColor: theme.surface, borderColor: theme.border }]}>
       <View style={styles.row}>
-        {/* Avatar / photo */}
+        {/* Avatar / photo + anneau de niveau */}
         <TouchableOpacity onPress={() => setPicker(true)} activeOpacity={0.8}>
-          <View style={[styles.avatarRing, { borderColor: theme.accent, backgroundColor: theme.surfaceHigh, shadowColor: theme.accent }]}>
-            {photoUri
-              ? <Image source={{ uri: photoUri }} style={styles.photo} />
-              : <Image source={avatarSource(avatar)} style={styles.avatar} resizeMode="contain" />}
+          <View style={{ width: RS, height: RS, alignItems: 'center', justifyContent: 'center' }}>
+            {level && (
+              <Svg width={RS} height={RS} style={StyleSheet.absoluteFill}>
+                <Circle cx={RS / 2} cy={RS / 2} r={RR} stroke={theme.border} strokeWidth={3} fill="none" />
+                <Circle
+                  cx={RS / 2} cy={RS / 2} r={RR}
+                  stroke={theme.accent} strokeWidth={3} fill="none" strokeLinecap="round"
+                  strokeDasharray={`${dash} ${CIRC}`}
+                  transform={`rotate(-90 ${RS / 2} ${RS / 2})`}
+                />
+              </Svg>
+            )}
+            <View style={[styles.avatarRing, { borderColor: theme.accent, backgroundColor: theme.surfaceHigh, shadowColor: theme.accent }]}>
+              {photoUri
+                ? <Image source={{ uri: photoUri }} style={styles.photo} />
+                : <Image source={avatarSource(avatar)} style={styles.avatar} resizeMode="contain" />}
+            </View>
+            {level && (
+              <View style={[styles.levelPill, { backgroundColor: theme.accent, borderColor: theme.surface }]}>
+                <Text style={[styles.levelPillText, { color: theme.bg }]}>
+                  {t('stats.profile.levelChip', { level: level.level })}
+                </Text>
+              </View>
+            )}
           </View>
           <View style={[styles.editBadge, { backgroundColor: theme.accent, borderColor: theme.surface }]}>
             <Ionicons name="camera" size={11} color={theme.bg} />
@@ -74,11 +103,26 @@ export default function ProfileHeader({ honorific, total = 0 }) {
           <Text style={[typography.arcadeHeading, styles.title, { color: theme.accent }]} numberOfLines={1}>
             {title}{honorific?.explorer ? ' ✦' : ''}
           </Text>
+          {archetype && (
+            <Text style={[styles.archetype, { color: theme.textPrimary }]} numberOfLines={1}>
+              {t(`stats.profile.archetypes.${archetype}.name`)}
+            </Text>
+          )}
           <Text style={[styles.subtitle, { color: theme.textSecondary }]}>
             {t('stats.profile.totalFlashes', { count: total })}
+            {level ? `  ·  ${level.isMax
+              ? t('stats.profile.levelMax')
+              : t('stats.profile.levelLine', { next: level.level + 1, remaining: level.xpRemaining })}` : ''}
           </Text>
         </View>
       </View>
+
+      {/* Flavor text de l'archétype */}
+      {archetype && (
+        <Text style={[styles.flavor, { color: theme.textSecondary }]} numberOfLines={2}>
+          « {t(`stats.profile.archetypes.${archetype}.flavor`)} »
+        </Text>
+      )}
 
       {/* Badge « profil local » */}
       <View style={styles.localRow}>
@@ -151,7 +195,14 @@ const styles = StyleSheet.create({
   identity: { flex: 1, marginLeft: 16 },
   name: { fontSize: 20, fontWeight: '800', paddingVertical: 2 },
   title: { marginTop: 2 },
+  archetype: { fontSize: 13, fontWeight: '700', marginTop: 3 },
   subtitle: { fontSize: 12, marginTop: 3 },
+  flavor: { fontSize: 12, fontStyle: 'italic', marginTop: 10, lineHeight: 16 },
+  levelPill: {
+    position: 'absolute', bottom: -4, alignSelf: 'center',
+    borderRadius: 999, borderWidth: 2, paddingHorizontal: 7, paddingVertical: 1,
+  },
+  levelPillText: { fontSize: 10, fontWeight: '800', letterSpacing: 0.5 },
   localRow: { flexDirection: 'row', alignItems: 'center', gap: 5, marginTop: 12 },
   localText: { fontSize: 11 },
 

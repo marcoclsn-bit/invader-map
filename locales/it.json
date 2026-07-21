@@ -331,11 +331,81 @@
       "orChooseAvatar": "O UN AVATAR",
       "permissionTitle": "Autorizzazione richiesta",
       "permissionLibrary": "Consenti l’accesso alle foto nelle Impostazioni per scegliere un’immagine.",
-      "permissionCamera": "Consenti l’accesso alla fotocamera nelle Impostazioni per scattare una foto."
+      "permissionCamera": "Consenti l’accesso alla fotocamera nelle Impostazioni per scattare una foto.",
+      "levelChip": "LV {{level}}",
+      "levelMax": "Livello massimo",
+      "levelLine": "Lv {{next}} tra {{remaining}} XP",
+      "archetypes": {
+        "recrue": {
+          "name": "La Recluta",
+          "flavor": "Ogni leggenda inizia con un primo flash."
+        },
+        "noctambule": {
+          "name": "Il Nottambulo",
+          "flavor": "La città è tua quando dorme."
+        },
+        "mercenaire": {
+          "name": "Il Mercenario",
+          "flavor": "Nessuna taglia ti sfugge, ovunque sia."
+        },
+        "tireur": {
+          "name": "Il Tiratore scelto",
+          "flavor": "Il tuo quartiere, i tuoi bersagli, zero errori."
+        },
+        "gardien": {
+          "name": "Il Guardiano del quartiere",
+          "flavor": "Qui non si posa nulla a tua insaputa."
+        },
+        "cartographe": {
+          "name": "Il Cartografo",
+          "flavor": "Setacci la mappa, mosaico dopo mosaico."
+        },
+        "globetrotteur": {
+          "name": "Il Giramondo",
+          "flavor": "Sempre una città in più sul contatore."
+        },
+        "infatigable": {
+          "name": "L'Instancabile",
+          "flavor": "Pioggia o sole, tu fotografi."
+        },
+        "sniper": {
+          "name": "Il Cecchino",
+          "flavor": "Pochi flash, solo punti grossi."
+        },
+        "collectionneur": {
+          "name": "Il Collezionista",
+          "flavor": "Ogni alien conta, dal più piccolo al più raro."
+        },
+        "aventurier": {
+          "name": "L'Avventuriero",
+          "flavor": "Il tuo terreno di caccia non ha confini."
+        },
+        "chasseur": {
+          "name": "Il Cacciatore urbano",
+          "flavor": "Sempre un occhio sui muri."
+        }
+      }
     },
     "pointsLabel": "Punti",
     "globalProgress_one": "{{flashed}} / {{total}} · {{count}} città iniziata",
-    "globalProgress_other": "{{flashed}} / {{total}} · {{count}} città iniziate"
+    "globalProgress_other": "{{flashed}} / {{total}} · {{count}} città iniziate",
+    "tabs": {
+      "profile": "Profilo",
+      "stats": "Stats"
+    },
+    "highlights": {
+      "title": "Imprese",
+      "bestDay": "Giornata migliore",
+      "bestDayValue": "{{count}} flash · {{date}}",
+      "favCity": "Città preferita",
+      "favCityValue": "{{city}} · {{count}} flash",
+      "first": "Prima cattura",
+      "trend": "Tendenza",
+      "trendDay": "Diurno ({{pct}} %)",
+      "trendNight": "Notturno ({{pct}} %)",
+      "lastTrophy": "Ultimo trofeo",
+      "lastTrophyValue": "{{title}} · {{date}}"
+    }
   },
   "about": {
     "title": "Informazioni",

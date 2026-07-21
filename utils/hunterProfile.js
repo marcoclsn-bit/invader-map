@@ -53,6 +53,63 @@ export function isDaytime(ts) {
   return m >= 361 && m <= 1260;
 }
 
+// ─── Niveau de chasseur (XP) ────────────────────────────────────────────────────
+// XP = flashs ×10 + points ÷10 + trophées ×50. Seuil cumulé du niveau n :
+// T(n) = 8n² + 30n — étalonné pour qu'un « finisseur de Paris » soit ~Nv 45+
+// et que le cap (50) demande une collection Space Master. L'import d'historique
+// compte : c'est ta vraie collection.
+export const MAX_LEVEL = 50;
+const xpForLevel = (n) => 8 * n * n + 30 * n;
+
+export function computeXpLevel({ flashes = 0, points = 0, trophies = 0 } = {}) {
+  const xp = Math.round(flashes * 10 + points / 10 + trophies * 50);
+  let level = 1;
+  while (level < MAX_LEVEL && xp >= xpForLevel(level + 1)) level++;
+  const cur = xpForLevel(level);
+  const next = level >= MAX_LEVEL ? cur : xpForLevel(level + 1);
+  const progress = level >= MAX_LEVEL ? 1 : (xp - cur) / Math.max(1, next - cur);
+  // Titre honorifique aligné sur le niveau (clé i18n stats.profile.titles.<key>)
+  const titleKey =
+    level >= 47 ? 'legend' :
+    level >= 40 ? 'master' :
+    level >= 30 ? 'veteran' :
+    level >= 20 ? 'hunter' :
+    level >= 10 ? 'scout' : 'novice';
+  return {
+    xp, level,
+    progress: clamp(progress * 100) / 100, // 0..1
+    xpRemaining: level >= MAX_LEVEL ? 0 : next - xp,
+    isMax: level >= MAX_LEVEL,
+    titleKey,
+  };
+}
+
+// ─── Archétype de chasseur ──────────────────────────────────────────────────────
+// Croise les curseurs (Rareté / Géographie / Assiduité) + Jour/Nuit pour nommer
+// un style de jeu. Clé i18n : stats.profile.archetypes.<key>.{name,flavor}.
+export function computeArchetype(profile) {
+  if (!profile || (profile.total ?? 0) < 10) return 'recrue';
+  const { rarity: r, geography: g, assiduity: a } = profile.sliders;
+  const dn = profile.dayNight;
+  const sniper = r.available && r.side === 'high';
+  const collector = r.available && r.side === 'low';
+  const explorer = g.available && g.side === 'high';
+  const local = g.available && g.side === 'low';
+  const assidu = a.available && a.side === 'high';
+
+  if (dn.available && dn.nightPct >= 50) return 'noctambule';
+  if (sniper && explorer) return 'mercenaire';
+  if (sniper && local) return 'tireur';
+  if (collector && assidu && local) return 'gardien';
+  if (collector && explorer) return 'cartographe';
+  if (explorer && assidu) return 'globetrotteur';
+  if (assidu) return 'infatigable';
+  if (sniper) return 'sniper';
+  if (collector) return 'collectionneur';
+  if (explorer) return 'aventurier';
+  return 'chasseur';
+}
+
 // ─── Calcul principal ───────────────────────────────────────────────────────────
 export function computeHunterProfile({ flashHistory = [], invaders = [], cityIndex = [], currentCityCode, cityProgress = {} } = {}) {
   const now = new Date();

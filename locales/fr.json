@@ -331,11 +331,81 @@
       "orChooseAvatar": "OU UN AVATAR",
       "permissionTitle": "Autorisation requise",
       "permissionLibrary": "Autorise l’accès aux photos dans les Réglages pour choisir une image.",
-      "permissionCamera": "Autorise l’accès à l’appareil photo dans les Réglages pour prendre une photo."
+      "permissionCamera": "Autorise l’accès à l’appareil photo dans les Réglages pour prendre une photo.",
+      "levelChip": "NV {{level}}",
+      "levelMax": "Niveau max",
+      "levelLine": "Nv {{next}} dans {{remaining}} XP",
+      "archetypes": {
+        "recrue": {
+          "name": "La Recrue",
+          "flavor": "Chaque légende commence par un premier flash."
+        },
+        "noctambule": {
+          "name": "Le Noctambule",
+          "flavor": "La ville t'appartient quand elle dort."
+        },
+        "mercenaire": {
+          "name": "Le Mercenaire",
+          "flavor": "Aucune prime ne t'échappe, où qu'elle soit."
+        },
+        "tireur": {
+          "name": "Le Tireur d'élite",
+          "flavor": "Ton quartier, tes cibles, zéro raté."
+        },
+        "gardien": {
+          "name": "Le Gardien du quartier",
+          "flavor": "Rien ne se pose ici sans que tu le saches."
+        },
+        "cartographe": {
+          "name": "Le Cartographe",
+          "flavor": "Tu ratisses la carte, mosaïque par mosaïque."
+        },
+        "globetrotteur": {
+          "name": "Le Globe-trotteur",
+          "flavor": "Une ville de plus au compteur, toujours."
+        },
+        "infatigable": {
+          "name": "L'Infatigable",
+          "flavor": "Beau temps ou pluie, tu flashes."
+        },
+        "sniper": {
+          "name": "Le Sniper",
+          "flavor": "Peu de flashs, mais que des gros points."
+        },
+        "collectionneur": {
+          "name": "Le Collectionneur",
+          "flavor": "Chaque alien compte, du plus petit au plus rare."
+        },
+        "aventurier": {
+          "name": "L'Aventurier",
+          "flavor": "Ton terrain de chasse n'a pas de frontières."
+        },
+        "chasseur": {
+          "name": "Le Chasseur urbain",
+          "flavor": "Un œil sur les murs, toujours."
+        }
+      }
     },
     "pointsLabel": "Points",
     "globalProgress_one": "{{flashed}} / {{total}} · {{count}} ville commencée",
-    "globalProgress_other": "{{flashed}} / {{total}} · {{count}} villes commencées"
+    "globalProgress_other": "{{flashed}} / {{total}} · {{count}} villes commencées",
+    "tabs": {
+      "profile": "Profil",
+      "stats": "Stats"
+    },
+    "highlights": {
+      "title": "Faits d'armes",
+      "bestDay": "Plus grosse journée",
+      "bestDayValue": "{{count}} flashs · {{date}}",
+      "favCity": "Ville fétiche",
+      "favCityValue": "{{city}} · {{count}} flashs",
+      "first": "Première capture",
+      "trend": "Tendance",
+      "trendDay": "Diurne ({{pct}} %)",
+      "trendNight": "Nocturne ({{pct}} %)",
+      "lastTrophy": "Dernier trophée",
+      "lastTrophyValue": "{{title}} · {{date}}"
+    }
   },
   "about": {
     "title": "À propos",

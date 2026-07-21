@@ -331,11 +331,81 @@
       "orChooseAvatar": "O UN AVATAR",
       "permissionTitle": "Permiso necesario",
       "permissionLibrary": "Permite el acceso a las fotos en Ajustes para elegir una imagen.",
-      "permissionCamera": "Permite el acceso a la cámara en Ajustes para tomar una foto."
+      "permissionCamera": "Permite el acceso a la cámara en Ajustes para tomar una foto.",
+      "levelChip": "NV {{level}}",
+      "levelMax": "Nivel máximo",
+      "levelLine": "Nv {{next}} en {{remaining}} XP",
+      "archetypes": {
+        "recrue": {
+          "name": "El Novato",
+          "flavor": "Toda leyenda empieza con un primer flash."
+        },
+        "noctambule": {
+          "name": "El Noctámbulo",
+          "flavor": "La ciudad es tuya cuando duerme."
+        },
+        "mercenaire": {
+          "name": "El Mercenario",
+          "flavor": "Ninguna recompensa se te escapa, esté donde esté."
+        },
+        "tireur": {
+          "name": "El Tirador",
+          "flavor": "Tu barrio, tus objetivos, cero fallos."
+        },
+        "gardien": {
+          "name": "El Guardián del barrio",
+          "flavor": "Aquí no se coloca nada sin que lo sepas."
+        },
+        "cartographe": {
+          "name": "El Cartógrafo",
+          "flavor": "Peinas el mapa, mosaico a mosaico."
+        },
+        "globetrotteur": {
+          "name": "El Trotamundos",
+          "flavor": "Siempre una ciudad más en el marcador."
+        },
+        "infatigable": {
+          "name": "El Incansable",
+          "flavor": "Con lluvia o con sol, tú fotografías."
+        },
+        "sniper": {
+          "name": "El Francotirador",
+          "flavor": "Pocos flashes, solo puntos gordos."
+        },
+        "collectionneur": {
+          "name": "El Coleccionista",
+          "flavor": "Cada alien cuenta, del más pequeño al más raro."
+        },
+        "aventurier": {
+          "name": "El Aventurero",
+          "flavor": "Tu territorio de caza no tiene fronteras."
+        },
+        "chasseur": {
+          "name": "El Cazador urbano",
+          "flavor": "Siempre con un ojo en las paredes."
+        }
+      }
     },
     "pointsLabel": "Puntos",
     "globalProgress_one": "{{flashed}} / {{total}} · {{count}} ciudad empezada",
-    "globalProgress_other": "{{flashed}} / {{total}} · {{count}} ciudades empezadas"
+    "globalProgress_other": "{{flashed}} / {{total}} · {{count}} ciudades empezadas",
+    "tabs": {
+      "profile": "Perfil",
+      "stats": "Stats"
+    },
+    "highlights": {
+      "title": "Hazañas",
+      "bestDay": "Mejor día",
+      "bestDayValue": "{{count}} flashes · {{date}}",
+      "favCity": "Ciudad favorita",
+      "favCityValue": "{{city}} · {{count}} flashes",
+      "first": "Primera captura",
+      "trend": "Tendencia",
+      "trendDay": "Diurno ({{pct}} %)",
+      "trendNight": "Nocturno ({{pct}} %)",
+      "lastTrophy": "Último trofeo",
+      "lastTrophyValue": "{{title}} · {{date}}"
+    }
   },
   "about": {
     "title": "Acerca de",

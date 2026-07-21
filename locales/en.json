@@ -331,11 +331,81 @@
       "orChooseAvatar": "OR AN AVATAR",
       "permissionTitle": "Permission required",
       "permissionLibrary": "Allow photo access in Settings to choose an image.",
-      "permissionCamera": "Allow camera access in Settings to take a photo."
+      "permissionCamera": "Allow camera access in Settings to take a photo.",
+      "levelChip": "LV {{level}}",
+      "levelMax": "Max level",
+      "levelLine": "Lv {{next}} in {{remaining}} XP",
+      "archetypes": {
+        "recrue": {
+          "name": "The Rookie",
+          "flavor": "Every legend starts with a first flash."
+        },
+        "noctambule": {
+          "name": "The Night Owl",
+          "flavor": "The city is yours when it sleeps."
+        },
+        "mercenaire": {
+          "name": "The Mercenary",
+          "flavor": "No bounty escapes you, wherever it is."
+        },
+        "tireur": {
+          "name": "The Marksman",
+          "flavor": "Your turf, your targets, no misses."
+        },
+        "gardien": {
+          "name": "The Neighbourhood Keeper",
+          "flavor": "Nothing goes up here without you knowing."
+        },
+        "cartographe": {
+          "name": "The Cartographer",
+          "flavor": "You sweep the map, mosaic by mosaic."
+        },
+        "globetrotteur": {
+          "name": "The Globetrotter",
+          "flavor": "Always one more city on the clock."
+        },
+        "infatigable": {
+          "name": "The Relentless",
+          "flavor": "Rain or shine, you flash."
+        },
+        "sniper": {
+          "name": "The Sniper",
+          "flavor": "Few flashes, only big points."
+        },
+        "collectionneur": {
+          "name": "The Collector",
+          "flavor": "Every alien counts, from smallest to rarest."
+        },
+        "aventurier": {
+          "name": "The Adventurer",
+          "flavor": "Your hunting ground has no borders."
+        },
+        "chasseur": {
+          "name": "The Urban Hunter",
+          "flavor": "Always an eye on the walls."
+        }
+      }
     },
     "pointsLabel": "Points",
     "globalProgress_one": "{{flashed}} / {{total}} · {{count}} city started",
-    "globalProgress_other": "{{flashed}} / {{total}} · {{count}} cities started"
+    "globalProgress_other": "{{flashed}} / {{total}} · {{count}} cities started",
+    "tabs": {
+      "profile": "Profile",
+      "stats": "Stats"
+    },
+    "highlights": {
+      "title": "Feats",
+      "bestDay": "Biggest day",
+      "bestDayValue": "{{count}} flashes · {{date}}",
+      "favCity": "Favourite city",
+      "favCityValue": "{{city}} · {{count}} flashes",
+      "first": "First catch",
+      "trend": "Tendency",
+      "trendDay": "Daytime ({{pct}}%)",
+      "trendNight": "Night ({{pct}}%)",
+      "lastTrophy": "Latest trophy",
+      "lastTrophyValue": "{{title}} · {{date}}"
+    }
   },
   "about": {
     "title": "About",

@@ -8,7 +8,8 @@ import { useAppContext } from '../context/AppContext';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import { CITIES } from '../cities/registry';
-import { computeHunterProfile } from '../utils/hunterProfile';
+import { computeHunterProfile, computeXpLevel, computeArchetype } from '../utils/hunterProfile';
+import { useGamification } from '../context/GamificationContext';
 import ProfileHeader from '../components/profile/ProfileHeader';
 import HunterSlider from '../components/profile/HunterSlider';
 import SegmentDonut from '../components/profile/SegmentDonut';
@@ -179,7 +180,9 @@ export default function StatsScreen({ navigation }) {
   const { theme } = useTheme();
   const { t, i18n } = useTranslation();
   const { flashed, flashedDates, getFlashHistory, invaders, currentCityCode, cityIndex, cityProgress } = useAppContext();
+  const { badges, unlockedCount } = useGamification();
   const [chartMode, setChartMode] = useState('daily');
+  const [tab, setTab] = useState('profile'); // 'profile' | 'stats'
 
   const flashHistory = useMemo(() => getFlashHistory(), [flashed, flashedDates]);
 
@@ -246,6 +249,60 @@ export default function StatsScreen({ navigation }) {
     return out;
   }, [flashHistory, i18n.language]);
 
+  // ── Niveau (XP) + archétype de chasseur
+  const hunterLevel = useMemo(
+    () => computeXpLevel({ flashes: stats.total, points: globalStats.totalPts, trophies: unlockedCount }),
+    [stats.total, globalStats.totalPts, unlockedCount]
+  );
+  const archetype = useMemo(() => computeArchetype(profile), [profile]);
+
+  // ── Faits d'armes (highlights auto-générés, uniquement ceux qui ont des données)
+  const highlights = useMemo(() => {
+    const lang = i18n.language || 'fr';
+    const fmt = (d) => new Date(d).toLocaleDateString(lang, { day: 'numeric', month: 'long', year: 'numeric' });
+    const out = [];
+    // Plus grosse journée
+    if (stats.bestDayCount > 0 && stats.bestDay) {
+      out.push({ icon: 'flame', label: t('stats.highlights.bestDay'),
+        value: t('stats.highlights.bestDayValue', { count: stats.bestDayCount, date: fmt(stats.bestDay) }) });
+    }
+    // Ville fétiche
+    const byCity = new Map();
+    for (const f of flashHistory) {
+      const i2 = f.id.lastIndexOf('_');
+      const code = i2 > 0 ? f.id.slice(0, i2) : f.id;
+      byCity.set(code, (byCity.get(code) ?? 0) + 1);
+    }
+    let favCode = null, favCount = 0;
+    for (const [code, n] of byCity) if (n > favCount) { favCode = code; favCount = n; }
+    if (favCode) {
+      out.push({ icon: 'heart', label: t('stats.highlights.favCity'),
+        value: t('stats.highlights.favCityValue', { city: CITIES[favCode]?.name ?? favCode, count: favCount }) });
+    }
+    // Première capture (datée)
+    const datedTs = flashHistory
+      .filter((f) => f.flashedAt).map((f) => new Date(f.flashedAt).getTime())
+      .filter(Number.isFinite);
+    if (datedTs.length) {
+      out.push({ icon: 'sparkles', label: t('stats.highlights.first'), value: fmt(Math.min(...datedTs)) });
+    }
+    // Tendance jour/nuit
+    const dn = profile.dayNight;
+    if (dn.available) {
+      out.push({ icon: dn.dayPct >= dn.nightPct ? 'sunny' : 'moon', label: t('stats.highlights.trend'),
+        value: dn.dayPct >= dn.nightPct
+          ? t('stats.highlights.trendDay', { pct: dn.dayPct })
+          : t('stats.highlights.trendNight', { pct: dn.nightPct }) });
+    }
+    // Dernier trophée
+    const last = badges.filter((b) => b.unlockedAt).sort((a, b) => b.unlockedAt.localeCompare(a.unlockedAt))[0];
+    if (last) {
+      out.push({ icon: 'trophy', label: t('stats.highlights.lastTrophy'),
+        value: t('stats.highlights.lastTrophyValue', { title: t(`badges.${last.id}.title`), date: fmt(last.unlockedAt) }) });
+    }
+    return out;
+  }, [stats, flashHistory, profile, badges, i18n.language, t]);
+
   function openDrawer() { navigation.dispatch(DrawerActions.openDrawer()); }
 
   const cityName = CITIES[currentCityCode]?.name ?? currentCityCode; // projections (carte « rythme »)
@@ -310,27 +367,32 @@ export default function StatsScreen({ navigation }) {
 
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: insets.bottom + 24, paddingTop: 16, paddingHorizontal: 16 }}>
 
-        {/* En-tête profil (local) */}
-        <ProfileHeader honorific={profile.honorific} total={stats.total} />
-
-        {/* Résumé global */}
-        <View style={[cardStyles.wrap, { backgroundColor: theme.surface, marginHorizontal: 0 }]}>
-          <View style={st.summaryRow}>
-            <BigStat label={t('stats.activity.total')} value={stats.total} accent={theme.accent} textSec={theme.textSecondary} />
-            <View style={[st.vDivider, { backgroundColor: theme.border }]} />
-            <BigStat label={t('stats.pointsLabel')} value={globalStats.totalPts} accent={theme.accentScore} textSec={theme.textSecondary} />
-          </View>
-          {globalStats.sumDenom > 0 && (
-            <>
-              <ProgressBar pct={Math.min(100, (globalStats.sumFlashed / globalStats.sumDenom) * 100)} theme={theme} />
-              <Text style={[st.progressSub, { color: theme.textSecondary }]}>
-                {t(globalStats.citiesStarted === 1 ? 'stats.globalProgress_one' : 'stats.globalProgress_other', {
-                  flashed: globalStats.sumFlashed, total: globalStats.sumDenom, count: globalStats.citiesStarted,
-                })}
-              </Text>
-            </>
-          )}
+        {/* Sélecteur de volet : Profil | Stats */}
+        <View style={[st.tabRow, { backgroundColor: theme.surfaceHigh, borderColor: theme.border }]}>
+          {[
+            { k: 'profile', label: t('stats.tabs.profile') },
+            { k: 'stats', label: t('stats.tabs.stats') },
+          ].map(({ k, label }) => (
+            <TouchableOpacity
+              key={k}
+              style={[st.tabBtn, tab === k && { backgroundColor: theme.accentDim, borderColor: theme.accent, borderWidth: 1 }]}
+              onPress={() => setTab(k)}
+              activeOpacity={0.8}
+            >
+              <Text style={[st.tabLabel, { color: tab === k ? theme.accent : theme.textSecondary }]}>{label}</Text>
+            </TouchableOpacity>
+          ))}
         </View>
+
+        {tab === 'profile' && (
+        <>
+        {/* En-tête profil (local) : niveau + archétype */}
+        <ProfileHeader
+          honorific={{ key: hunterLevel.titleKey, explorer: profile.honorific.explorer }}
+          total={stats.total}
+          level={hunterLevel}
+          archetype={archetype}
+        />
 
         {/* Profil de chasseur — sliders */}
         <View style={[cardStyles.wrap, { backgroundColor: theme.surface, marginHorizontal: 0 }]}>
@@ -353,8 +415,47 @@ export default function StatsScreen({ navigation }) {
           )}
         </View>
 
+        {/* Faits d'armes */}
+        {highlights.length > 0 && (
+          <View style={[cardStyles.wrap, { backgroundColor: theme.surface, marginHorizontal: 0 }]}>
+            <Text style={[cardStyles.title, { color: theme.textSecondary }]}>{t('stats.highlights.title').toUpperCase()}</Text>
+            {highlights.map((h, i) => (
+              <View key={i} style={[st.hlRow, i > 0 && { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: theme.border }]}>
+                <View style={[st.hlIcon, { backgroundColor: theme.accentDim }]}>
+                  <Ionicons name={h.icon} size={15} color={theme.accent} />
+                </View>
+                <Text style={[st.hlLabel, { color: theme.textSecondary }]}>{h.label}</Text>
+                <Text style={[st.hlValue, { color: theme.textPrimary }]} numberOfLines={1}>{h.value}</Text>
+              </View>
+            ))}
+          </View>
+        )}
+
         {/* Galerie de trophées */}
         <BadgeGallery />
+        </>
+        )}
+
+        {tab === 'stats' && (
+        <>
+        {/* Résumé global */}
+        <View style={[cardStyles.wrap, { backgroundColor: theme.surface, marginHorizontal: 0 }]}>
+          <View style={st.summaryRow}>
+            <BigStat label={t('stats.activity.total')} value={stats.total} accent={theme.accent} textSec={theme.textSecondary} />
+            <View style={[st.vDivider, { backgroundColor: theme.border }]} />
+            <BigStat label={t('stats.pointsLabel')} value={globalStats.totalPts} accent={theme.accentScore} textSec={theme.textSecondary} />
+          </View>
+          {globalStats.sumDenom > 0 && (
+            <>
+              <ProgressBar pct={Math.min(100, (globalStats.sumFlashed / globalStats.sumDenom) * 100)} theme={theme} />
+              <Text style={[st.progressSub, { color: theme.textSecondary }]}>
+                {t(globalStats.citiesStarted === 1 ? 'stats.globalProgress_one' : 'stats.globalProgress_other', {
+                  flashed: globalStats.sumFlashed, total: globalStats.sumDenom, count: globalStats.citiesStarted,
+                })}
+              </Text>
+            </>
+          )}
+        </View>
 
         {/* Donut géographie */}
         <View style={[cardStyles.wrap, { backgroundColor: theme.surface, marginHorizontal: 0 }]}>
@@ -541,6 +642,8 @@ export default function StatsScreen({ navigation }) {
             </Text>
           </View>
         )}
+        </>
+        )}
 
       </ScrollView>
     </View>
@@ -561,6 +664,18 @@ const st = StyleSheet.create({
   emptyEmoji: { fontSize: 56, marginBottom: 20 },
   emptyTitle: { textAlign: 'center', marginBottom: 12 },
   emptyDesc: { fontSize: 14, textAlign: 'center', lineHeight: 22 },
+
+  tabRow: {
+    flexDirection: 'row', gap: 6, borderRadius: 12, borderWidth: StyleSheet.hairlineWidth,
+    padding: 4, marginBottom: 16,
+  },
+  tabBtn: { flex: 1, alignItems: 'center', paddingVertical: 8, borderRadius: 9 },
+  tabLabel: { fontSize: 13, fontWeight: '700', letterSpacing: 0.3 },
+
+  hlRow: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 10 },
+  hlIcon: { width: 28, height: 28, borderRadius: 14, alignItems: 'center', justifyContent: 'center' },
+  hlLabel: { fontSize: 12.5, flexShrink: 0 },
+  hlValue: { fontSize: 13, fontWeight: '600', flex: 1, textAlign: 'right' },
 
   summaryRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 4 },
   vDivider: { width: StyleSheet.hairlineWidth, height: 56, marginHorizontal: 8 },
