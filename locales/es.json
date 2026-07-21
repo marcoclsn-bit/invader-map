@@ -410,7 +410,8 @@
       "title": "Camino del cazador",
       "info": "Nv {{next}} en {{remaining}} XP · {{tier}} en Nv {{tierLevel}}",
       "infoNoTier": "Nv {{next}} en {{remaining}} XP",
-      "maxed": "Nivel máximo alcanzado — Leyenda ✦"
+      "maxed": "Nivel máximo alcanzado — Leyenda ✦",
+      "xpInfo": "La XP mide tu progresión global de cazador:\n• +10 XP por Invader fotografiado\n• +1 XP por cada 10 puntos (un Invader de 100 pts da 10 + 10 = 20 XP)\n• +50 XP por trofeo desbloqueado"
     },
     "objectives": {
       "title": "Próximos objetivos",

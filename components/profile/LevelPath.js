@@ -1,9 +1,9 @@
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { useState } from 'react';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../theme/ThemeContext';
 import { MAX_LEVEL } from '../../utils/hunterProfile';
-
-const ALIEN = require('../../assets/markers/alien_flashed.png');
 
 // Rangs (mêmes seuils que computeXpLevel) : nœud = début du rang.
 const TIERS = [
@@ -17,25 +17,25 @@ const TIERS = [
 
 /**
  * « Parcours du chasseur » : le niveau vu comme un chemin à travers les 6 rangs.
- * Rangs passés remplis, alien positionné sur le rang courant, rangs futurs grisés.
+ * Rangs passés remplis, position courante marquée d'un point lumineux, rangs
+ * futurs grisés. Un « i » explique comment l'XP se gagne.
  * @param {{level:number,progress:number,xpRemaining:number,isMax:boolean}} level
  */
 export default function LevelPath({ level }) {
   const { theme } = useTheme();
   const { t } = useTranslation();
+  const [showInfo, setShowInfo] = useState(false);
   if (!level) return null;
 
   const n = TIERS.length;
   const tierIdx = TIERS.reduce((acc, tr, i) => (level.level >= tr.from ? i : acc), 0);
-  // Position de l'alien : interpolation à l'intérieur du segment du rang courant
   const from = TIERS[tierIdx].from;
   const to = tierIdx + 1 < n ? TIERS[tierIdx + 1].from : MAX_LEVEL + 1;
   const within = Math.min(1, (level.level - from + level.progress) / (to - from));
-  // Position sur la piste : les nœuds sont répartis uniformément (0 → n-1) ;
-  // l'alien avance à l'intérieur du segment [rang courant → rang suivant].
-  const posPct = ((tierIdx + within) / (n - 1)) * 100;
+  // Position sur la piste : nœuds répartis uniformément (0 → n-1) ;
+  // le marqueur avance à l'intérieur du segment [rang courant → rang suivant].
+  const posPct = Math.min(100, ((tierIdx + within) / (n - 1)) * 100);
 
-  // Prochain rang (pour la ligne d'info)
   const nextTier = tierIdx + 1 < n ? TIERS[tierIdx + 1] : null;
 
   return (
@@ -43,12 +43,11 @@ export default function LevelPath({ level }) {
       {/* Piste + nœuds */}
       <View style={styles.trackWrap}>
         <View style={[styles.track, { backgroundColor: theme.border }]} />
-        <View style={[styles.track, styles.fill, { backgroundColor: theme.accent, width: `${Math.min(100, posPct)}%` }]} />
+        <View style={[styles.track, { backgroundColor: theme.accent, width: `${posPct}%` }]} />
         {TIERS.map((tr, i) => {
           const reached = level.level >= tr.from;
-          const x = (i / (n - 1)) * 100;
           return (
-            <View key={tr.key} style={[styles.node, { left: `${x}%` }]}>
+            <View key={tr.key} style={[styles.node, { left: `${(i / (n - 1)) * 100}%` }]}>
               <View style={[
                 styles.dot,
                 reached
@@ -58,9 +57,10 @@ export default function LevelPath({ level }) {
             </View>
           );
         })}
-        {/* Alien sur la position courante */}
-        <View style={[styles.alienWrap, { left: `${Math.min(100, posPct)}%` }]}>
-          <Image source={ALIEN} style={styles.alien} resizeMode="contain" />
+        {/* Marqueur de position : point lumineux (halo néon) */}
+        <View style={[styles.marker, { left: `${posPct}%` }]}>
+          <View style={[styles.markerHalo, { backgroundColor: theme.accentDim, borderColor: theme.accentGlow }]} />
+          <View style={[styles.markerDot, { backgroundColor: theme.accent, borderColor: theme.bg, shadowColor: theme.accent }]} />
         </View>
       </View>
 
@@ -87,30 +87,51 @@ export default function LevelPath({ level }) {
         })}
       </View>
 
-      {/* Ligne d'info : prochain niveau + prochain rang */}
-      <Text style={[styles.info, { color: theme.textSecondary }]}>
-        {level.isMax
-          ? t('stats.path.maxed')
-          : nextTier
-            ? t('stats.path.info', {
-                next: level.level + 1, remaining: level.xpRemaining,
-                tier: t(`stats.profile.titles.${nextTier.key}`), tierLevel: nextTier.from,
-              })
-            : t('stats.path.infoNoTier', { next: level.level + 1, remaining: level.xpRemaining })}
-      </Text>
+      {/* Ligne d'info : prochain niveau + prochain rang, et « c'est quoi l'XP ? » */}
+      <View style={styles.infoRow}>
+        <Text style={[styles.info, { color: theme.textSecondary }]}>
+          {level.isMax
+            ? t('stats.path.maxed')
+            : nextTier
+              ? t('stats.path.info', {
+                  next: level.level + 1, remaining: level.xpRemaining,
+                  tier: t(`stats.profile.titles.${nextTier.key}`), tierLevel: nextTier.from,
+                })
+              : t('stats.path.infoNoTier', { next: level.level + 1, remaining: level.xpRemaining })}
+        </Text>
+        <TouchableOpacity onPress={() => setShowInfo(!showInfo)} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
+          <Ionicons
+            name={showInfo ? 'information-circle' : 'information-circle-outline'}
+            size={16}
+            color={theme.textSecondary}
+          />
+        </TouchableOpacity>
+      </View>
+
+      {showInfo && (
+        <View style={[styles.infoBox, { backgroundColor: theme.surfaceHigh, borderColor: theme.border }]}>
+          <Text style={[styles.infoText, { color: theme.textSecondary }]}>{t('stats.path.xpInfo')}</Text>
+        </View>
+      )}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  trackWrap: { height: 34, justifyContent: 'center', marginHorizontal: 10, marginTop: 6 },
-  track: { position: 'absolute', left: 0, right: 0, height: 5, borderRadius: 3 },
-  fill: { right: undefined },
+  trackWrap: { height: 26, justifyContent: 'center', marginHorizontal: 10, marginTop: 6 },
+  track: { position: 'absolute', left: 0, right: undefined, height: 5, borderRadius: 3, width: '100%' },
   node: { position: 'absolute', marginLeft: -6 },
   dot: { width: 12, height: 12, borderRadius: 6, borderWidth: 2 },
-  alienWrap: { position: 'absolute', marginLeft: -13, top: -4 },
-  alien: { width: 26, height: 26 },
-  labels: { flexDirection: 'row', marginTop: 2 },
+  marker: { position: 'absolute', marginLeft: -11, width: 22, height: 22, alignItems: 'center', justifyContent: 'center' },
+  markerHalo: { position: 'absolute', width: 22, height: 22, borderRadius: 11, borderWidth: 1 },
+  markerDot: {
+    width: 14, height: 14, borderRadius: 7, borderWidth: 2,
+    shadowOffset: { width: 0, height: 0 }, shadowOpacity: 0.9, shadowRadius: 6, elevation: 4,
+  },
+  labels: { flexDirection: 'row', marginTop: 6 },
   label: { flex: 1, fontSize: 8.5, textAlign: 'center', letterSpacing: 0.2 },
-  info: { fontSize: 12, marginTop: 10, textAlign: 'center' },
+  infoRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, marginTop: 10 },
+  info: { fontSize: 12, textAlign: 'center' },
+  infoBox: { borderRadius: 10, borderWidth: StyleSheet.hairlineWidth, padding: 10, marginTop: 8 },
+  infoText: { fontSize: 12, lineHeight: 17 },
 });

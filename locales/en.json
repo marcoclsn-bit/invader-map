@@ -410,7 +410,8 @@
       "title": "Hunter's journey",
       "info": "Lv {{next}} in {{remaining}} XP · {{tier}} at Lv {{tierLevel}}",
       "infoNoTier": "Lv {{next}} in {{remaining}} XP",
-      "maxed": "Max level reached — Legend ✦"
+      "maxed": "Max level reached — Legend ✦",
+      "xpInfo": "XP measures your overall hunter progression:\n• +10 XP per flashed Invader\n• +1 XP per 10 points (a 100-pt Invader earns 10 + 10 = 20 XP)\n• +50 XP per unlocked trophy"
     },
     "objectives": {
       "title": "Next goals",

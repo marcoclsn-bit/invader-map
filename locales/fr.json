@@ -410,7 +410,8 @@
       "title": "Parcours du chasseur",
       "info": "Nv {{next}} dans {{remaining}} XP · {{tier}} au Nv {{tierLevel}}",
       "infoNoTier": "Nv {{next}} dans {{remaining}} XP",
-      "maxed": "Niveau maximum atteint — Légende ✦"
+      "maxed": "Niveau maximum atteint — Légende ✦",
+      "xpInfo": "L'XP mesure ta progression globale de chasseur :\n• +10 XP par Invader flashé\n• +1 XP par tranche de 10 points (un Invader à 100 pts rapporte 10 + 10 = 20 XP)\n• +50 XP par trophée débloqué"
     },
     "objectives": {
       "title": "Prochains objectifs",

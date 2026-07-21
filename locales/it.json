@@ -410,7 +410,8 @@
       "title": "Cammino del cacciatore",
       "info": "Lv {{next}} tra {{remaining}} XP · {{tier}} al Lv {{tierLevel}}",
       "infoNoTier": "Lv {{next}} tra {{remaining}} XP",
-      "maxed": "Livello massimo raggiunto — Leggenda ✦"
+      "maxed": "Livello massimo raggiunto — Leggenda ✦",
+      "xpInfo": "L'XP misura la tua progressione globale di cacciatore:\n• +10 XP per Invader fotografato\n• +1 XP ogni 10 punti (un Invader da 100 pt vale 10 + 10 = 20 XP)\n• +50 XP per trofeo sbloccato"
     },
     "objectives": {
       "title": "Prossimi obiettivi",
