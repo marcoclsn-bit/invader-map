@@ -1,9 +1,7 @@
-import { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Alert, Modal, Share } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Alert, Share } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { useAppContext } from '../context/AppContext';
-import InvaderPhoto from './InvaderPhoto';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import { openInstagramTag } from '../utils/navigation';
@@ -36,7 +34,6 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
   const { t } = useTranslation();
   const styles = getStyles(theme);
   const isFlashed = flashed.has(invader.id);
-  const [zoom, setZoom] = useState(false);
 
   function handleFlash() {
     onToggleFlash(invader.id);
@@ -101,20 +98,6 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
       </View>
 
       <View style={styles.topRow}>
-        {invader.photoUrl ? (
-          <TouchableOpacity style={styles.thumbWrap} onPress={() => setZoom(true)} activeOpacity={0.8}>
-            <InvaderPhoto
-              photoUrl={invader.photoUrl}
-              status={invader.status}
-              style={styles.thumb}
-              contentFit="contain"
-            />
-            <View style={styles.zoomBadge}>
-              <Ionicons name="expand" size={12} color="#fff" />
-            </View>
-          </TouchableOpacity>
-        ) : null}
-
         <View style={styles.topInfo}>
           <View style={styles.panelRow}>
             <View style={[styles.statusBadge, { backgroundColor: statusColors[invader.status] }]}>
@@ -169,31 +152,6 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
         <Text style={styles.reportBtnText}>{t('feedback.status.button')}</Text>
       </TouchableOpacity>
 
-      {invader.photoUrl ? (
-        <Modal
-          visible={zoom}
-          transparent
-          animationType="fade"
-          statusBarTranslucent
-          onRequestClose={() => setZoom(false)}
-        >
-          <TouchableOpacity style={styles.lightbox} activeOpacity={1} onPress={() => setZoom(false)}>
-            <InvaderPhoto
-              photoUrl={invader.photoUrl}
-              status={invader.status}
-              style={styles.lightboxImg}
-              contentFit="contain"
-            />
-            <TouchableOpacity
-              style={styles.lightboxClose}
-              onPress={() => setZoom(false)}
-              hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}
-            >
-              <Ionicons name="close" size={26} color="#fff" />
-            </TouchableOpacity>
-          </TouchableOpacity>
-        </Modal>
-      ) : null}
     </View>
   );
 }
@@ -207,23 +165,8 @@ function makeStyles(t) {
       shadowColor: '#000', shadowOffset: { width: 0, height: -2 },
       shadowOpacity: 0.3, shadowRadius: 8, elevation: 8,
     },
-    // stretch + space-between : le badge s'aligne sur le haut de la photo,
-    // les boutons sur le bas → colonne de droite calée sur la vignette.
     topRow: { flexDirection: 'row', alignItems: 'stretch', gap: 14, marginBottom: 4 },
-    thumbWrap: { width: 88, height: 88 },
-    thumb: { width: 88, height: 88, borderRadius: 10, backgroundColor: t.surfaceHigh },
-    zoomBadge: {
-      position: 'absolute', right: 4, bottom: 4,
-      backgroundColor: 'rgba(0,0,0,0.55)', borderRadius: 9, padding: 3,
-    },
     topInfo: { flex: 1, justifyContent: 'space-between', paddingVertical: 2 },
-    // Lightbox plein écran
-    lightbox: {
-      flex: 1, backgroundColor: 'rgba(0,0,0,0.92)',
-      alignItems: 'center', justifyContent: 'center', padding: 20,
-    },
-    lightboxImg: { width: '100%', height: '80%' },
-    lightboxClose: { position: 'absolute', top: 60, right: 24 },
     panelHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 },
     panelId: { ...typography.arcadeTitle, color: t.textPrimary },
     closeButton: { fontSize: 18, color: t.textSecondary },

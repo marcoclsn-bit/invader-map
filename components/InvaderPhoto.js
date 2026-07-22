@@ -1,7 +1,13 @@
 import { memo } from 'react';
 import { Image } from 'expo-image';
 
-// Placeholder / fallback pixel-art : l'alien du statut (assets locaux, toujours dispos).
+// Vignette d'un Invader = alien pixel-art du statut (nos propres assets locaux).
+//
+// NB : on n'affiche plus les photos réelles des mosaïques (gros plans
+// invader-spotter) par prudence — reproduction de l'œuvre d'Invader. Le composant
+// garde la prop `photoUrl` pour compat des appelants mais l'ignore : aucune
+// requête réseau, aucune image tierce affichée. Pour réactiver un jour, restaurer
+// la version précédente (git).
 const ALIEN = {
   ok:        require('../assets/markers/alien_ok.png'),
   damaged:   require('../assets/markers/alien_damaged.png'),
@@ -11,33 +17,8 @@ const ALIEN = {
 };
 const alienFor = (status) => ALIEN[status] ?? ALIEN.unknown;
 
-/**
- * Photo d'un Invader (gros plan invader-spotter), avec :
- *   - placeholder pixel-art (alien du statut) pendant le chargement,
- *   - cache disque agressif (une image chargée n'est pas rechargée),
- *   - fallback gracieux si pas de photoUrl ou hors-ligne → l'alien du statut.
- * `style` porte les dimensions (carré en Liste, large sur la fiche).
- */
-const InvaderPhoto = memo(function InvaderPhoto({ photoUrl, status, style, contentFit = 'contain' }) {
-  const placeholder = alienFor(status);
-
-  // Pas d'URL → on affiche directement l'alien local (aucune requête réseau).
-  if (!photoUrl) {
-    return <Image source={placeholder} style={style} contentFit={contentFit} transition={0} />;
-  }
-
-  return (
-    <Image
-      source={{ uri: photoUrl }}
-      placeholder={placeholder}
-      placeholderContentFit="contain"
-      contentFit={contentFit}
-      cachePolicy="disk"        // cache disque persistant entre sessions
-      recyclingKey={photoUrl}   // évite les images fantômes lors du recyclage FlatList
-      transition={150}
-      style={style}
-    />
-  );
+const InvaderPhoto = memo(function InvaderPhoto({ status, style, contentFit = 'contain' }) {
+  return <Image source={alienFor(status)} style={style} contentFit={contentFit} transition={0} />;
 });
 
 export default InvaderPhoto;
