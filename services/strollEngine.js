@@ -44,8 +44,8 @@ const KEY_LAST_ALERT = '@stroll_last_alert_at';  // epochMs — espacement globa
 // Réglages du moteur
 const MAX_REGIONS     = 20;                       // limite iOS (region monitoring)
 const INVADER_REGIONS = MAX_REGIONS - 1;          // 19 Invaders + 1 périmètre
-const PER_ID_COOLDOWN = 6 * 60 * 60 * 1000;       // même Invader : pas de ré-alerte avant 6 h
-const GLOBAL_GAP      = 45 * 1000;                // un à la fois : 45 s entre deux alertes
+const PER_ID_COOLDOWN = 2 * 60 * 60 * 1000;       // même Invader : pas de ré-alerte avant 2 h
+const GLOBAL_GAP      = 10 * 1000;                // un à la fois : 10 s entre deux alertes
 const MAX_SPEED_MPS   = 8;                        // > ~29 km/h → en véhicule → on n'alerte pas
 const PERIMETER_ID    = 'perimeter';
 const INV_PREFIX      = 'inv:';
