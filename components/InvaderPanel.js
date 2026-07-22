@@ -91,46 +91,44 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
   return (
     <View style={styles.panel}>
       <View style={styles.panelHeader}>
-        <Text style={styles.panelId}>{invader.id}</Text>
+        <View style={{ flex: 1 }}>
+          <Text style={styles.panelId} numberOfLines={1} adjustsFontSizeToFit>{invader.id}</Text>
+          {invader.datePosed ? (
+            <View style={styles.metaRow}>
+              <Ionicons name="calendar-outline" size={13} color={theme.textSecondary} />
+              <Text style={styles.metaText}>{t('map.panel.posedOn', { date: formatPosedDate(invader.datePosed) })}</Text>
+            </View>
+          ) : null}
+        </View>
         <TouchableOpacity onPress={() => onClose()} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
           <Text style={styles.closeButton}>✕</Text>
         </TouchableOpacity>
       </View>
 
-      <View style={styles.topRow}>
-        <View style={styles.topInfo}>
-          <View style={styles.panelRow}>
-            <View style={[styles.statusBadge, { backgroundColor: statusColors[invader.status] }]}>
-              <Text style={styles.statusText}>{t(`common.status.${invader.status}`) ?? invader.status}</Text>
-            </View>
-            <Text style={styles.points}>{invader.points != null ? `${invader.points} pts` : '— pts'}</Text>
-          </View>
-
-          <View style={styles.actions}>
-            <TouchableOpacity
-              onPress={handleFlash}
-              style={[styles.actionBtn, isFlashed ? styles.actionBtnActive : styles.actionBtnPrimary]}
-            >
-              <Text
-                style={[styles.actionBtnText, isFlashed ? styles.actionBtnTextActive : styles.actionBtnTextPrimary]}
-                numberOfLines={1}
-              >
-                {isFlashed ? t('map.panel.alreadyFlashed') : t('map.panel.markFlashed')}
-              </Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={handleNavigate} style={styles.actionBtn}>
-              <Text style={styles.actionBtnText} numberOfLines={1}>{t('map.panel.navigate')}</Text>
-            </TouchableOpacity>
-          </View>
+      <View style={styles.panelRow}>
+        <View style={[styles.statusBadge, { backgroundColor: statusColors[invader.status] }]}>
+          <Text style={styles.statusText}>{t(`common.status.${invader.status}`) ?? invader.status}</Text>
         </View>
+        <Text style={styles.points}>{invader.points != null ? `${invader.points} pts` : '— pts'}</Text>
       </View>
 
-      {invader.datePosed ? (
-        <View style={styles.metaRow}>
-          <Ionicons name="calendar-outline" size={14} color={theme.textSecondary} />
-          <Text style={styles.metaText}>{t('map.panel.posedOn', { date: formatPosedDate(invader.datePosed) })}</Text>
-        </View>
-      ) : null}
+      <View style={styles.actions}>
+        <TouchableOpacity
+          onPress={handleFlash}
+          style={[styles.actionBtn, isFlashed ? styles.actionBtnActive : styles.actionBtnPrimary]}
+        >
+          <Text
+            style={[styles.actionBtnText, isFlashed ? styles.actionBtnTextActive : styles.actionBtnTextPrimary]}
+            numberOfLines={1}
+          >
+            {isFlashed ? t('map.panel.alreadyFlashed') : t('map.panel.markFlashed')}
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={handleNavigate} style={styles.actionBtn}>
+          <Text style={styles.actionBtnText} numberOfLines={1}>{t('map.panel.navigate')}</Text>
+        </TouchableOpacity>
+      </View>
+
       {invader.hint ? <Text style={styles.hint}>{invader.hint}</Text> : null}
 
       <TouchableOpacity
@@ -165,18 +163,16 @@ function makeStyles(t) {
       shadowColor: '#000', shadowOffset: { width: 0, height: -2 },
       shadowOpacity: 0.3, shadowRadius: 8, elevation: 8,
     },
-    topRow: { flexDirection: 'row', alignItems: 'stretch', gap: 14, marginBottom: 4 },
-    topInfo: { flex: 1, justifyContent: 'space-between', paddingVertical: 2 },
-    panelHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 },
-    panelId: { ...typography.arcadeTitle, color: t.textPrimary },
-    closeButton: { fontSize: 18, color: t.textSecondary },
-    panelRow: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+    panelHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 18 },
+    panelId: { ...typography.arcadeTitle, color: t.textPrimary, fontSize: 26, lineHeight: 32 },
+    closeButton: { fontSize: 18, color: t.textSecondary, paddingTop: 4 },
+    panelRow: { flexDirection: 'row', alignItems: 'center', gap: 12, marginBottom: 16 },
     statusBadge: { borderRadius: 6, paddingHorizontal: 10, paddingVertical: 4 },
     statusText: { color: '#fff', fontWeight: '600', fontSize: 13 },
     points: { fontSize: 15, color: t.textSecondary },
-    metaRow: { flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 14 },
+    metaRow: { flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 6 },
     metaText: { fontSize: 13, color: t.textSecondary },
-    hint: { marginTop: 10, fontSize: 14, color: t.textSecondary, fontStyle: 'italic' },
+    hint: { marginTop: 14, fontSize: 14, color: t.textSecondary, fontStyle: 'italic' },
     actions: { flexDirection: 'row', gap: 8 },
     actionBtn: {
       flex: 1, borderRadius: 8, paddingHorizontal: 14, paddingVertical: 9,
