@@ -57,6 +57,17 @@ const inFlight = new Set();          // ids en cours de traitement
 const memAlerts = new Map();         // id -> dernier alerte (ms)
 let memLastGlobal = 0;               // dernière alerte, tous Invaders
 
+// File d'attente : sérialise les lectures/écritures de KEY_ALERTS entre plusieurs
+// handleEnter concurrents (zone dense = rafale d'événements). Sans elle, chaque
+// appel réécrivait TOUT le fichier depuis son instantané → cooldowns perdus →
+// re-notifications au prochain lancement de l'app.
+let alertsQueue = Promise.resolve();
+function withAlertsLock(fn) {
+  const run = alertsQueue.then(fn, fn);
+  alertsQueue = run.catch(() => {});
+  return run;
+}
+
 // ─── Helpers ───────────────────────────────────────────────────────────────────
 
 function distM(aLat, aLng, bLat, bLng) {
@@ -214,9 +225,13 @@ async function handleEnter(invId) {
     const settings = await readJSON(KEY_SETTINGS, null);
     if (!settings?.enabled) return;
 
-    // Cooldown persistant (survit à un redémarrage de l'app)
-    const alerts = await readJSON(KEY_ALERTS, {});
-    if (alerts[invId] && now - alerts[invId] < PER_ID_COOLDOWN) { __DEV__ && console.log('[Stroll] skip (déjà alerté, disque)', invId); return; }
+    // Gap global PERSISTANT : au relancement de l'app, iOS ré-émet « Enter » pour
+    // toutes les zones où l'on se trouve déjà → sans relire le disque, memLastGlobal
+    // vaut 0 et toute la rafale passait d'un coup.
+    if (!memLastGlobal) {
+      const last = await readJSON(KEY_LAST_ALERT, 0);
+      if (last && now - last < GLOBAL_GAP) { memLastGlobal = last; __DEV__ && console.log('[Stroll] skip (gap global, disque)'); return; }
+    }
 
     // Filtre de vitesse : pas d'alerte si l'utilisateur va trop vite (véhicule)
     try {
@@ -225,8 +240,23 @@ async function handleEnter(invId) {
       if (typeof sp === 'number' && sp > MAX_SPEED_MPS) { __DEV__ && console.log('[Stroll] skip (vitesse)', sp.toFixed(1)); return; }
     } catch {}
 
-    // Réserve les cooldowns AVANT de notifier (un appel concurrent qui surviendrait
-    // après le relâchement du verrou sera bloqué par memAlerts/memLastGlobal)
+    // Cooldown persistant : lecture + réservation + écriture SÉRIALISÉES (section
+    // critique) → plus d'écritures concurrentes qui se perdent mutuellement.
+    const allowed = await withAlertsLock(async () => {
+      const alerts = await readJSON(KEY_ALERTS, {});
+      if (alerts[invId] && now - alerts[invId] < PER_ID_COOLDOWN) return false;
+      alerts[invId] = now;
+      // Ménage : purge les entrées de plus de 7 jours (fichier borné)
+      for (const k of Object.keys(alerts)) {
+        if (now - alerts[k] > 7 * 86400000) delete alerts[k];
+      }
+      await writeJSON(KEY_ALERTS, alerts);
+      await writeJSON(KEY_LAST_ALERT, now);
+      return true;
+    });
+    if (!allowed) { __DEV__ && console.log('[Stroll] skip (déjà alerté, disque)', invId); return; }
+
+    // Réserve aussi les gardes mémoire AVANT de notifier
     memAlerts.set(invId, now);
     memLastGlobal = now;
 
@@ -252,9 +282,6 @@ async function handleEnter(invId) {
       } catch (e) { __DEV__ && console.log('[Stroll] notif erreur :', e?.message); }
     }
 
-    alerts[invId] = now;
-    await writeJSON(KEY_ALERTS, alerts);
-    await writeJSON(KEY_LAST_ALERT, now);
     __DEV__ && console.log('[Stroll] ALERTE', invId);
   } finally {
     inFlight.delete(invId);
