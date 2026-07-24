@@ -1,9 +1,16 @@
 {
-  "version": 7,
-  "updatedAt": "2026-07-23",
+  "version": 8,
+  "updatedAt": "2026-07-24",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "source": "invader-spotter.art",
   "events": [
+    {
+      "type": "destroyed",
+      "id": "LJU_19",
+      "city": "LJU",
+      "date": "2026-07-23",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_19-grosplan.png"
+    },
     {
       "type": "destroyed",
       "id": "PA_497",
