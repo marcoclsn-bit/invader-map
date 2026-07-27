@@ -1,9 +1,23 @@
 {
-  "version": 8,
-  "updatedAt": "2026-07-24",
+  "version": 9,
+  "updatedAt": "2026-07-27",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
   "source": "invader-spotter.art",
   "events": [
+    {
+      "type": "damaged",
+      "id": "PA_299",
+      "city": "PA",
+      "date": "2026-07-26",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_0299-grosplan.png"
+    },
+    {
+      "type": "destroyed",
+      "id": "ROM_06",
+      "city": "ROM",
+      "date": "2026-07-26",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/ROM/ROM_06-grosplan.png"
+    },
     {
       "type": "destroyed",
       "id": "LJU_19",
