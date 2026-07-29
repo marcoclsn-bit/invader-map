@@ -1,13 +1,13 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { StyleSheet, View, Text, Image, TouchableOpacity, Platform, Alert, Animated, ActivityIndicator, Switch } from 'react-native';
-import MapView, { Polygon, Marker } from 'react-native-maps';
+import MapView, { Polygon } from 'react-native-maps';
 import * as Location from 'expo-location';
 import * as Haptics from 'expo-haptics';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { DrawerActions } from '@react-navigation/native';
-import { useAppContext, MAX_POI_MARKERS } from '../context/AppContext';
+import { useAppContext } from '../context/AppContext';
 import { CITIES, ENABLED_CITIES } from '../cities/registry';
 import { ALL_STATUSES } from '../constants';
 import { POI_FAMILIES, familyOf } from '../data/poiFamilies';
@@ -18,6 +18,7 @@ import InvaderPanel from '../components/InvaderPanel';
 import HeadingCone from '../components/HeadingCone';
 import FlashOverlay from '../components/FlashOverlay';
 import PoiSheet from '../components/PoiSheet';
+import PoiMarker from '../components/PoiMarker';
 import { useTheme } from '../theme/ThemeContext';
 import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
 import { typography } from '../theme/tokens';
@@ -458,23 +459,22 @@ export default function MapScreen({ navigation, route }) {
   }
   useEffect(() => () => clearTimeout(poiRegionTimer.current), []);
 
-  // Plafond dur : les MAX_POI_MARKERS lieux les plus notoires de la zone visible.
-  // Sans ce plafond, cocher deux familles suffirait à ajouter 200 marqueurs à des
-  // Invaders déjà tous montés — le fil graphique ne suit pas.
+  // Tous les lieux des familles cochées présents dans la zone visible, sans
+  // plafond. Le tri par notoriété ne réduit rien : il fixe seulement l'ordre de
+  // montage, de sorte que les lieux majeurs apparaissent en premier.
   const visiblePois = useMemo(() => {
     if (!poiPrefs.enabled || isChangingCity) return [];
     const all = getPois(currentCityCode);
     if (!all.length) return [];
     const inFamily = all.filter(p => poiPrefs.families.has(familyOf(p)));
-    if (!poiRegion) return [...inFamily].sort((a, b) => b.fame - a.fame).slice(0, MAX_POI_MARKERS);
+    if (!poiRegion) return [...inFamily].sort((a, b) => b.fame - a.fame);
     const latMin = poiRegion.latitude  - poiRegion.latitudeDelta  / 2;
     const latMax = poiRegion.latitude  + poiRegion.latitudeDelta  / 2;
     const lngMin = poiRegion.longitude - poiRegion.longitudeDelta / 2;
     const lngMax = poiRegion.longitude + poiRegion.longitudeDelta / 2;
     return inFamily
       .filter(p => p.lat >= latMin && p.lat <= latMax && p.lng >= lngMin && p.lng <= lngMax)
-      .sort((a, b) => b.fame - a.fame)
-      .slice(0, MAX_POI_MARKERS);
+      .sort((a, b) => b.fame - a.fame);
   }, [poiPrefs.enabled, poiPrefs.families, poiRegion, currentCityCode, isChangingCity]);
 
   const hasActiveFilters =
@@ -528,19 +528,16 @@ export default function MapScreen({ navigation, route }) {
           );
         })}
 
-        {/* Lieux à voir : losange doré, même signe que dans la Chasse. Plafonné
-            à MAX_POI_MARKERS, on ne monte donc jamais plus de 40 annotations ici. */}
+        {/* Lieux à voir : losange doré, même signe que dans la Chasse. Aucun
+            plafond — tous les lieux visibles des familles cochées sont montés. */}
         {mapReady && tilesLoaded && !isChangingCity && visiblePois.map((poi) => (
-          <Marker
+          <PoiMarker
             key={`poi-${poi.id}`}
-            coordinate={{ latitude: poi.lat, longitude: poi.lng }}
-            anchor={{ x: 0.5, y: 0.5 }}
-            tracksViewChanges={false}
-            stopPropagation
+            poi={poi}
+            color={theme.accentScore}
+            borderColor={theme.bg}
             onPress={() => { setSelectedPoi(poi); setSelected(null); setShowFilters(false); }}
-          >
-            <View style={styles.poiDot} />
-          </Marker>
+          />
         ))}
       </MapView>
 
@@ -741,12 +738,6 @@ function makeStyles(t) {
       textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 8, marginTop: 14,
     },
     chipRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
-    // Lieux à voir : même losange doré que dans la Chasse, pour que le signe
-    // soit reconnu d'un écran à l'autre.
-    poiDot: {
-      width: 13, height: 13, borderRadius: 3, backgroundColor: t.accentScore,
-      borderWidth: 1.5, borderColor: t.bg, transform: [{ rotate: '45deg' }],
-    },
     poiHeaderRow: {
       flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
       marginTop: 16, marginBottom: 8,

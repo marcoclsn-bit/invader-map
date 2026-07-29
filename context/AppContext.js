@@ -38,11 +38,10 @@ const DEFAULT_POI_PREFS = {
   objective: 'balanced',                // pure | balanced | visit (partagé Trajet/Chasse)
 };
 
-// Nombre maximum de lieux dessinés simultanément sur la carte, toutes familles
-// confondues. La carte monte déjà jusqu'à 1 528 marqueurs d'Invaders sans
-// clustering ; au-delà de ce plafond, on sature le fil graphique (cf. les
-// commentaires de MapScreen). On garde les plus notoires de la zone visible.
-export const MAX_POI_MARKERS = 40;
+// Pas de plafond : quand la couche est active, on affiche tous les lieux des
+// familles cochées présents dans la zone visible. À Paris, au zoom « ville
+// entière », cela peut faire 689 marqueurs qui s'ajoutent aux 1 528 Invaders.
+// C'est volontaire, pour mesurer le comportement réel plutôt que de le supposer.
 
 // Filtres « à faire » : tous les statuts visibles SAUF les détruits, et seulement
 // les non-flashés. C'est l'état par défaut de la carte au tout premier lancement.
