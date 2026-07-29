@@ -1,8 +1,8 @@
 {
- "version": 1,
+ "version": 2,
  "updatedAt": "2026-07-29",
  "city": "PA",
- "attribution": "Lieux : Wikidata (CC0) · Résumés d’après Wikipédia (CC BY-SA)",
+ "attribution": "Lieux : Wikidata (CC0) · Résumés d’après Wikipédia (CC BY-SA) · Photos : Wikimedia Commons",
  "pois": [
   {
    "id": "Q243",
@@ -12,7 +12,10 @@
    "theme": "monuments",
    "fame": 189,
    "summary": "Construite en deux ans à peine pour l'Exposition universelle de 1889, elle célébrait le centenaire de la Révolution et s'appelait alors simplement « la tour de 300 mètres ». Devenue le symbole de Paris, elle a accueilli plus de 300 millions de visiteurs depuis son ouverture.",
-   "wiki": "Tour Eiffel"
+   "wiki": "Tour Eiffel",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg/960px-Tour_Eiffel_Wikimedia_Commons.jpg",
+   "photoBy": "Benh LIEU SONG",
+   "photoLic": "Public domain"
   },
   {
    "id": "Q23402",
@@ -22,7 +25,10 @@
    "theme": "museums",
    "fame": 122,
    "summary": "Une gare devenue musée. Édifiée par Victor Laloux entre 1898 et 1900, la gare d'Orsay est sauvée de la démolition et rouvre en 1986 en musée national. On y parcourt l'art occidental de 1848 à 1914, avec la plus grande collection impressionniste au monde : près de 1 100 toiles.",
-   "wiki": "Musée d'Orsay"
+   "wiki": "Musée d'Orsay",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/MuseeDOrsay.jpg/960px-MuseeDOrsay.jpg",
+   "photoBy": "Sanchezn",
+   "photoLic": "CC BY-SA 3.0"
   },
   {
    "id": "Q550",
@@ -32,7 +38,10 @@
    "theme": "streets",
    "fame": 93,
    "summary": "1 910 mètres en ligne droite entre la Concorde et l'Arc de Triomphe. L'avenue naît d'une percée dessinée par André Le Nôtre, le jardinier de Louis XIV, et tire son nom des Champs Élysées de la mythologie grecque — le séjour des âmes vertueuses. Sacrée « plus belle avenue du monde », elle est pourtant boudée des Parisiens.",
-   "wiki": "Avenue des Champs-Élysées"
+   "wiki": "Avenue des Champs-Élysées",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Avenue_des_Champs-%C3%89lys%C3%A9es%2C_Paris_3_October_2010.jpg/960px-Avenue_des_Champs-%C3%89lys%C3%A9es%2C_Paris_3_October_2010.jpg",
+   "photoBy": "SoWhat",
+   "photoLic": "CC BY-SA 2.0"
   },
   {
    "id": "Q193563",
@@ -42,7 +51,10 @@
    "theme": "culture",
    "fame": 90,
    "summary": "Héritière des collections royales rassemblées depuis le Moyen Âge, elle conserve l'un des fonds les plus riches du monde : tout ce qui se publie en France y est déposé. Le site actuel a été inauguré par François Mitterrand en 1995.",
-   "wiki": "Bibliothèque nationale de France"
+   "wiki": "Bibliothèque nationale de France",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Biblioth%C3%A8que_Mitterrand_Mai_2022.jpg/960px-Biblioth%C3%A8que_Mitterrand_Mai_2022.jpg",
+   "photoBy": "Arthur Weidmann",
+   "photoLic": "CC BY-SA 4.0"
   },
   {
    "id": "Q64436",
@@ -52,7 +64,10 @@
    "theme": "monuments",
    "fame": 85,
    "summary": "Décidé par Napoléon en 1806, il ne sera achevé qu'en 1836 sous Louis-Philippe : trente ans de chantier. Haut de 49,5 mètres, il s'inscrit dans le grand axe parisien qui relie la pyramide du Louvre à la Grande Arche de la Défense, en passant par l'obélisque de la Concorde.",
-   "wiki": "Arc de triomphe de l'Étoile"
+   "wiki": "Arc de triomphe de l'Étoile",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Arc_de_Triomphe%2C_Paris_21_October_2010.jpg/960px-Arc_de_Triomphe%2C_Paris_21_October_2010.jpg",
+   "photoBy": "Jiuguang Wang",
+   "photoLic": "CC BY-SA 2.0"
   },
   {
    "id": "Q311",
@@ -62,7 +77,10 @@
    "theme": "parks",
    "fame": 70,
    "summary": "Le cimetière le plus visité au monde : 3,5 millions de personnes viennent chaque année parcourir ses 70 000 sépultures. Plus grand cimetière intra-muros de Paris, il reste en activité et s'explore comme un parc arboré autant que comme un panthéon à ciel ouvert.",
-   "wiki": "Cimetière du Père-Lachaise"
+   "wiki": "Cimetière du Père-Lachaise",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Main_gate_of_the_P%C3%A8re-Lachaise_Cemetery%2C_Paris_13_June_2014.jpg/960px-Main_gate_of_the_P%C3%A8re-Lachaise_Cemetery%2C_Paris_13_June_2014.jpg",
+   "photoBy": "Connie Ma from Chicago, United States of America",
+   "photoLic": "CC BY-SA 2.0"
   },
   {
    "id": "Q193431",
@@ -72,7 +90,10 @@
    "theme": "other",
    "fame": 70,
    "summary": "Inauguré en 1897 comme stade vélodrome, c'est le plus ancien stade de France encore en activité. L'enceinte actuelle, signée Roger Taillibert, date de 1972 et accueille le PSG depuis 1974 — 48 583 places posées en partie au-dessus du périphérique.",
-   "wiki": "Parc des Princes"
+   "wiki": "Parc des Princes",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Paris_Parc_des_Princes_1.jpg/960px-Paris_Parc_des_Princes_1.jpg",
+   "photoBy": "Валерий Дед",
+   "photoLic": "CC BY 3.0"
   },
   {
    "id": "Q188190",
@@ -82,7 +103,10 @@
    "theme": "palaces",
    "fame": 66,
    "summary": "Construit en 1720 pour le comte d'Évreux, l'hôtel devient en 1753 la demeure de la marquise de Pompadour, offerte par Louis XV, puis la résidence impériale de Napoléon en 1805. Il est le siège de la présidence de la République depuis la IIe République.",
-   "wiki": "Palais de l'Élysée"
+   "wiki": "Palais de l'Élysée",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Secretary_Pompeo_Arrives_to_Meet_with_French_Foreign_Minister_Le_Drian_in_Paris_%2850610423656%29_%28cropped%29.jpg/960px-Secretary_Pompeo_Arrives_to_Meet_with_French_Foreign_Minister_Le_Drian_in_Paris_%2850610423656%29_%28cropped%29.jpg",
+   "photoBy": "U.S. Department of State from United States",
+   "photoLic": "Public domain"
   },
   {
    "id": "Q186115",
@@ -92,7 +116,10 @@
    "theme": "streets",
    "fame": 64,
    "summary": "Village indépendant jusqu'en 1860, Montmartre a gardé son air de campagne au cœur de la ville. Dominé par le Sacré-Cœur, il a accueilli Picasso et Modigliani, et reste le symbole d'un Paris rural et bohème.",
-   "wiki": "Montmartre"
+   "wiki": "Montmartre",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Montmarte_2_%28pixinn.net%29.jpg/960px-Montmarte_2_%28pixinn.net%29.jpg",
+   "photoBy": "Christophe Meneboeuf",
+   "photoLic": "CC BY-SA 3.0"
   },
   {
    "id": "Q188856",
@@ -102,7 +129,10 @@
    "theme": "religious",
    "fame": 60,
    "summary": "Voulu par Louis XV comme une église dédiée à sainte Geneviève, le bâtiment devient à la Révolution le tombeau des grands hommes. Son premier hôte, Mirabeau, en fut expulsé quelques mois plus tard : on venait de découvrir ses accords secrets avec la royauté.",
-   "wiki": "Panthéon (Paris)"
+   "wiki": "Panthéon (Paris)",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Panth%C3%A9on%2C_Paris_25_March_2012.jpg/960px-Panth%C3%A9on%2C_Paris_25_March_2012.jpg",
+   "photoBy": "Camille Gévaudan",
+   "photoLic": "CC BY-SA 3.0"
   },
   {
    "id": "Q28785",
@@ -112,7 +142,10 @@
    "theme": "religious",
    "fame": 58,
    "summary": "Érigée après la défaite de 1870 comme « vœu national », sa construction aura duré cinquante ans : décidée en 1873, la basilique n'est achevée qu'en 1923. Perchée au sommet de la butte, elle domine tout Paris.",
-   "wiki": "Basilique du Sacré-Cœur de Montmartre"
+   "wiki": "Basilique du Sacré-Cœur de Montmartre",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Le_sacre_coeur.jpg/960px-Le_sacre_coeur.jpg",
+   "photoBy": "Tonchino",
+   "photoLic": "CC BY-SA 3.0"
   },
   {
    "id": "Q217925",
@@ -122,7 +155,10 @@
    "theme": "parks",
    "fame": 56,
    "summary": "Vingt-quatre hectares entre la tour Eiffel et l'École militaire, sur un ancien terrain de manœuvres qui doit son nom au dieu romain de la guerre. Classé depuis 1956, le jardin fait partie du site des rives de la Seine inscrit à l'Unesco.",
-   "wiki": "Champ-de-Mars (Paris)"
+   "wiki": "Champ-de-Mars (Paris)",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/MG-Paris-Champ_de_Mars.jpg/960px-MG-Paris-Champ_de_Mars.jpg",
+   "photoBy": "Mattgirling",
+   "photoLic": "CC BY-SA 3.0"
   },
   {
    "id": "Q151030",
@@ -132,7 +168,10 @@
    "theme": "stages",
    "fame": 54,
    "summary": "Fondé en 1889 par Joseph Oller et Charles Zidler — déjà propriétaires de l'Olympia — au pied de la butte Montmartre. Le cabaret a inventé la légende du French cancan et attire 600 000 spectateurs par an ; son nom a été copié dans le monde entier.",
-   "wiki": "Moulin-Rouge"
+   "wiki": "Moulin-Rouge",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Moulin_Rouge%2C_17_April_2011.jpg/960px-Moulin_Rouge%2C_17_April_2011.jpg",
+   "photoBy": "Juanedc from Zaragoza, España",
+   "photoLic": "CC BY 2.0"
   },
   {
    "id": "Q309458",
@@ -142,7 +181,10 @@
    "theme": "parks",
    "fame": 51,
    "summary": "Créé en 1612 pour Marie de Médicis, il appartient aujourd'hui au Sénat et déploie 23 hectares de parterres et de sculptures. Un classement international de 2022 l'a désigné plus beau jardin d'Europe.",
-   "wiki": "Jardin du Luxembourg"
+   "wiki": "Jardin du Luxembourg",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/LuxembourgMontparnasse_2.jpg/960px-LuxembourgMontparnasse_2.jpg",
+   "photoBy": "Kirua",
+   "photoLic": "Public domain"
   },
   {
    "id": "Q209626",
@@ -152,7 +194,10 @@
    "theme": "parks",
    "fame": 49,
    "summary": "846 hectares à l'ouest de Paris — deux fois et demie Central Park. Vestige de l'ancienne forêt de Rouvray, ce « poumon » de la capitale abrite le parc de Bagatelle et le jardin du Pré-Catelan.",
-   "wiki": "Bois de Boulogne"
+   "wiki": "Bois de Boulogne",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/La_D%C3%A9fense_and_Bois_de_Boulogne_from_the_Eiffel_Tower%2C_11_June_2017_001.jpg/960px-La_D%C3%A9fense_and_Bois_de_Boulogne_from_the_Eiffel_Tower%2C_11_June_2017_001.jpg",
+   "photoBy": "Guilhem Vellut from Paris, France",
+   "photoLic": "CC BY 2.0"
   },
   {
    "id": "Q377066",
@@ -162,7 +207,10 @@
    "theme": "culture",
    "fame": 48,
    "summary": "Sous la coupole du quai de Conti siègent cinq académies, dont l'Académie française et ses quarante « immortels » en habit vert. Créée en 1795, l'institution est surnommée le « Parlement du monde savant ».",
-   "wiki": "Institut de France"
+   "wiki": "Institut de France",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Institut_de_France_%40_Saint-Germain-des-Pr%C3%A8s_%40_Paris_%2833424956443%29.jpg/960px-Institut_de_France_%40_Saint-Germain-des-Pr%C3%A8s_%40_Paris_%2833424956443%29.jpg",
+   "photoBy": "Guilhem Vellut from Paris, France",
+   "photoLic": "CC BY 2.0"
   },
   {
    "id": "Q323767",
@@ -172,7 +220,10 @@
    "theme": "monuments",
    "fame": 48,
    "summary": "209 mètres de haut, inaugurée en 1973 : elle fut pendant près de quarante ans le plus haut immeuble de France, jusqu'à la tour First en 2011. Son belvédère vitré domine toute la ville.",
-   "wiki": "Tour Montparnasse"
+   "wiki": "Tour Montparnasse",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Remote_view_of_the_Tour_Montparnasse_%26_Eiffel_Tower_in_2005.jpg/960px-Remote_view_of_the_Tour_Montparnasse_%26_Eiffel_Tower_in_2005.jpg",
+   "photoBy": "User:Thbz",
+   "photoLic": "CC BY-SA 3.0"
   },
   {
    "id": "Q271639",
@@ -182,7 +233,10 @@
    "theme": "parks",
    "fame": 47,
    "summary": "Le plus grand espace vert de Paris avec 995 hectares, devant le bois de Boulogne. Quatre lacs reliés par des ruisseaux y sont posés sur un plateau qui domine la confluence de la Seine et de la Marne.",
-   "wiki": "Bois de Vincennes"
+   "wiki": "Bois de Vincennes",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Bois_de_Vincennes_DSC03761.JPG/960px-Bois_de_Vincennes_DSC03761.JPG",
+   "photoBy": null,
+   "photoLic": "CC BY-SA 3.0"
   },
   {
    "id": "Q330564",
@@ -192,7 +246,10 @@
    "theme": "religious",
    "fame": 47,
    "summary": "Quatre-vingts ans de chantier et autant d'hésitations : temple à la gloire de la Grande Armée voulu par Napoléon en 1806, l'édifice manque de devenir la première gare de Paris en 1837, avant d'être consacré église en 1845. Cinquante-deux colonnes corinthiennes l'entourent.",
-   "wiki": "Église de la Madeleine"
+   "wiki": "Église de la Madeleine",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Eglise_de_la_Madeleine_2024.jpg/960px-Eglise_de_la_Madeleine_2024.jpg",
+   "photoBy": "Callaway Kosine – de Suzannet",
+   "photoLic": "CC BY 3.0"
   },
   {
    "id": "Q392564",
@@ -202,7 +259,10 @@
    "theme": "religious",
    "fame": 47,
    "summary": "Inaugurée en 1926, c'est la plus ancienne mosquée de France métropolitaine encore en activité. Bâtie dans le style hispano-mauresque, elle dresse un minaret de 33 mètres et peut accueillir un millier de fidèles.",
-   "wiki": "Grande mosquée de Paris"
+   "wiki": "Grande mosquée de Paris",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Grande_Mosqu%C3%A9e_de_Paris.JPG/960px-Grande_Mosqu%C3%A9e_de_Paris.JPG",
+   "photoBy": "LPLT",
+   "photoLic": "CC BY-SA 4.0"
   },
   {
    "id": "Q820892",
@@ -212,7 +272,10 @@
    "theme": "museums",
    "fame": 47,
    "summary": "Bâti par Charles Girault pour l'Exposition universelle de 1900, face au Grand Palais, il abrite le musée des Beaux-Arts de la Ville de Paris. Il occupe l'emplacement du palais de l'Industrie, démoli en 1896.",
-   "wiki": "Petit Palais"
+   "wiki": "Petit Palais",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Petit_Palais_Paris_2.jpg/960px-Petit_Palais_Paris_2.jpg",
+   "photoBy": "Chabe01",
+   "photoLic": "CC BY-SA 4.0"
   },
   {
    "id": "Q28924",
@@ -222,7 +285,10 @@
    "theme": "museums",
    "fame": 46,
    "summary": "Six millions de Parisiens reposent dans ces anciennes carrières, vidées des cimetières de la ville à partir de la fin du XVIIIe siècle pour raisons de salubrité. Vingt mètres sous terre, 1,7 kilomètre se visite — le nom de « catacombes » est un emprunt à Rome, le lieu n'ayant jamais été une nécropole.",
-   "wiki": "Catacombes de Paris"
+   "wiki": "Catacombes de Paris",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Catacumbas%2C_Par%C3%ADs%2C_Francia%2C_2022-11-01%2C_DD_117-119_HDR.jpg/960px-Catacumbas%2C_Par%C3%ADs%2C_Francia%2C_2022-11-01%2C_DD_117-119_HDR.jpg",
+   "photoBy": "Diego Delso",
+   "photoLic": "CC BY-SA 4.0"
   },
   {
    "id": "Q390418",
@@ -232,7 +298,10 @@
    "theme": "water",
    "fame": 45,
    "summary": "Le plus fastueux des ponts parisiens, inauguré pour l'Exposition universelle de 1900. Il célèbre l'alliance franco-russe scellée en 1891 : sa première pierre fut posée en 1896 par le tsar Nicolas II en personne, et il porte le nom de son père, Alexandre III.",
-   "wiki": "Pont Alexandre-III"
+   "wiki": "Pont Alexandre-III",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Pont_Alexandre_III_from_pont_de_la_Concorde%2C_Paris_17_May_2012.jpg/960px-Pont_Alexandre_III_from_pont_de_la_Concorde%2C_Paris_17_May_2012.jpg",
+   "photoBy": "Jebulon",
+   "photoLic": "CC0"
   },
   {
    "id": "Q335277",
@@ -242,7 +311,10 @@
    "theme": "water",
    "fame": 45,
    "summary": "Le plus ancien pont de Paris, malgré son nom. Achevé au début du XVIIe siècle, il était « neuf » par son audace : pas de maisons sur le tablier, et des trottoirs pour protéger les piétons de la boue et des chevaux — une première.",
-   "wiki": "Pont Neuf"
+   "wiki": "Pont Neuf",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/The_western_sides_of_the_%C3%8Ele_de_la_Cit%C3%A9_and_the_Pont_Neuf%2C_14_July_2008.jpg/960px-The_western_sides_of_the_%C3%8Ele_de_la_Cit%C3%A9_and_the_Pont_Neuf%2C_14_July_2008.jpg",
+   "photoBy": "Rmrfstar",
+   "photoLic": "CC BY-SA 3.0"
   },
   {
    "id": "Q32979361",
@@ -252,7 +324,10 @@
    "theme": "streets",
    "fame": 45,
    "summary": "Le plus grand campus de startups au monde : 34 000 m² installés depuis 2017 dans l'ancienne halle ferroviaire Freyssinet, rachetée par Xavier Niel.",
-   "wiki": "Station F"
+   "wiki": "Station F",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Int%C3%A9rieur_de_la_Station_F_juin_2022_3.jpg/960px-Int%C3%A9rieur_de_la_Station_F_juin_2022_3.jpg",
+   "photoBy": "Artvill",
+   "photoLic": "CC BY-SA 4.0"
   },
   {
    "id": "Q61460498",
@@ -262,7 +337,10 @@
    "theme": "culture",
    "fame": 44,
    "summary": "Fondée en 1680, c'est le seul théâtre national à posséder une troupe permanente. On la surnomme la « Maison de Molière » alors que le dramaturge était mort depuis sept ans à sa création : sa veuve et son ancien secrétaire se sont battus pour perpétuer son répertoire. Elle occupe la salle Richelieu depuis 1799.",
-   "wiki": "Comédie-Française"
+   "wiki": "Comédie-Française",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Com%C3%A9die_Fran%C3%A7aise_colonnes.jpg/960px-Com%C3%A9die_Fran%C3%A7aise_colonnes.jpg",
+   "photoBy": "Jebulon",
+   "photoLic": "Public domain"
   },
   {
    "id": "Q321621",
@@ -272,7 +350,10 @@
    "theme": "streets",
    "fame": 44,
    "summary": "Bâti sur la Lutèce gallo-romaine, il abrite le cœur universitaire de Paris depuis plus de huit siècles : l'université y est reconnue en 1200, le collège de Sorbonne fondé vers 1257, et la première imprimerie de France y ouvre en 1470. Son nom rappelle le latin, langue de l'université d'alors.",
-   "wiki": "Quartier latin (Paris)"
+   "wiki": "Quartier latin (Paris)",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Street_market_rue_Mouffetard_St_Medard_dsc00727.jpg/960px-Street_market_rue_Mouffetard_St_Medard_dsc00727.jpg",
+   "photoBy": "David Monniaux",
+   "photoLic": "CC BY-SA 3.0"
   },
   {
    "id": "Q662976",
@@ -282,7 +363,10 @@
    "theme": "culture",
    "fame": 43,
    "summary": "Née en 1970 de l'éclatement de l'université de Paris après Mai 68, elle est considérée comme la meilleure faculté de droit et de science politique du pays. Son nom vient de ses deux centres historiques, le Panthéon et la rue d'Assas.",
-   "wiki": "Université Paris-Panthéon-Assas"
+   "wiki": "Université Paris-Panthéon-Assas",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Pantheon-Assas_University_-_Panth%C3%A9on.jpg",
+   "photoBy": "Bryan P. C. C.",
+   "photoLic": "CC BY-SA 3.0"
   },
   {
    "id": "Q746647",
@@ -292,7 +376,10 @@
    "theme": "parks",
    "fame": 42,
    "summary": "Onze hectares dans le 18e, troisième plus grand cimetière de Paris après le Père-Lachaise et Montparnasse. Sa singularité : un pont routier, le pont Caulaincourt, l'enjambe littéralement.",
-   "wiki": "Cimetière de Montmartre"
+   "wiki": "Cimetière de Montmartre",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Monmartre_Cemetery.JPG/960px-Monmartre_Cemetery.JPG",
+   "photoBy": "Elisabetta Cipolla, Tantalas",
+   "photoLic": "Public domain"
   },
   {
    "id": "Q936633",
@@ -302,7 +389,10 @@
    "theme": "palaces",
    "fame": 41,
    "summary": "Commandé au XVIIIe siècle par une fille légitimée de Louis XIV, Mademoiselle de Nantes, ce palais princier abrite l'Assemblée nationale depuis 1879. Il ferme la perspective du pont et de la place de la Concorde.",
-   "wiki": "Palais Bourbon"
+   "wiki": "Palais Bourbon",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Concorde_Assembl%C3%A9e_Nationale.jpg/960px-Concorde_Assembl%C3%A9e_Nationale.jpg",
+   "photoBy": "Jebulon",
+   "photoLic": "CC0"
   },
   {
    "id": "Q778784",
@@ -312,7 +402,10 @@
    "theme": "streets",
    "fame": 41,
    "summary": "Ici se dressait la forteresse prise le 14 juillet 1789 : sa démolition, commencée le jour même, s'acheva jour pour jour un an plus tard. La place en a gardé le nom, la charge symbolique et sa colonne surmontée d'un ange doré.",
-   "wiki": "Place de la Bastille"
+   "wiki": "Place de la Bastille",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Place_de_la_Bastille%2C_avril_2021.jpg/960px-Place_de_la_Bastille%2C_avril_2021.jpg",
+   "photoBy": "Guillaume Flament",
+   "photoLic": "CC BY-SA 4.0"
   },
   {
    "id": "Q41497113",
@@ -322,7 +415,10 @@
    "theme": "culture",
    "fame": 41,
    "summary": "Née en 2018 de la fusion de Paris-Sorbonne et de Pierre-et-Marie-Curie, elle réunit lettres, sciences et santé — près de 58 000 étudiants. Son cœur bat dans le Quartier latin, mais elle possède aussi un campus à Abou Dhabi.",
-   "wiki": "Sorbonne Université"
+   "wiki": "Sorbonne Université",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Chapelle_Sainte-Ursule_de_la_Sorbonne%2C_Paris_001.jpg/960px-Chapelle_Sainte-Ursule_de_la_Sorbonne%2C_Paris_001.jpg",
+   "photoBy": "Moonik",
+   "photoLic": "CC BY-SA 3.0"
   },
   {
    "id": "Q857276",
@@ -332,7 +428,10 @@
    "theme": "museums",
    "fame": 40,
    "summary": "Installé dans l'aile est du palais de Tokyo, il conserve la collection d'art moderne de la Ville de Paris : plus de 16 000 œuvres, du fauvisme à la scène contemporaine. Il a été inauguré en 1961.",
-   "wiki": "Musée d'Art moderne de Paris"
+   "wiki": "Musée d'Art moderne de Paris",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Mus%C3%A9e_d%27Art_moderne_de_la_Ville_de_Paris.jpg/960px-Mus%C3%A9e_d%27Art_moderne_de_la_Ville_de_Paris.jpg",
+   "photoBy": "Maciej Zgadzaj",
+   "photoLic": "CC BY 2.0"
   },
   {
    "id": "Q838691",
@@ -342,7 +441,10 @@
    "theme": "museums",
    "fame": 40,
    "summary": "Fondé en 1793 par la Révolution, il succède au Jardin royal des plantes médicinales créé en 1626 — ce qui en fait l'un des plus anciens établissements scientifiques au monde consacrés à l'étude de la nature.",
-   "wiki": "Muséum national d'histoire naturelle"
+   "wiki": "Muséum national d'histoire naturelle",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Grande_galerie_de_l%27%C3%A9volution%2C_Paris_10_April_2014.jpg/960px-Grande_galerie_de_l%27%C3%A9volution%2C_Paris_10_April_2014.jpg",
+   "photoBy": "Ken and Nyetta",
+   "photoLic": "CC BY 2.0"
   },
   {
    "id": "Q330375",
@@ -352,7 +454,10 @@
    "theme": "stages",
    "fame": 39,
    "summary": "Ouvertes en 1869 dans un ancien magasin de literie, les Folies s'appelaient d'abord « Folies Trévise ». Avec ses 1 200 places dès l'inauguration, c'est l'une des plus anciennes scènes de spectacle encore en activité à Paris.",
-   "wiki": "Folies Bergère"
+   "wiki": "Folies Bergère",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Folies_Berg%C3%A8re%2C_Paris_6_February_2016.jpg/960px-Folies_Berg%C3%A8re%2C_Paris_6_February_2016.jpg",
+   "photoBy": "Guilhem Vellut from Paris, France",
+   "photoLic": "CC BY 2.0"
   },
   {
    "id": "Q1327886",
@@ -362,7 +467,10 @@
    "theme": "museums",
    "fame": 39,
    "summary": "La plus grande collection d'œuvres de Claude Monet au monde, dans un hôtel particulier du 16e arrondissement. Née du don d'un collectionneur, elle mêle impressionnisme et objets d'art du Premier Empire.",
-   "wiki": "Musée Marmottan Monet"
+   "wiki": "Musée Marmottan Monet",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Paris.-_Mus%C3%A9e_Marmottan_Monet.jpg/960px-Paris.-_Mus%C3%A9e_Marmottan_Monet.jpg",
+   "photoBy": "PIERRE ANDRE LECLERCQ",
+   "photoLic": "CC BY-SA 4.0"
   },
   {
    "id": "Q334186",
@@ -372,7 +480,10 @@
    "theme": "religious",
    "fame": 38,
    "summary": "Fondée au milieu du VIe siècle par le roi mérovingien Childebert Ier, sa première église est consacrée en 558. Abbaye royale, elle ne relevait que du pape — un privilège rare qui fit sa puissance.",
-   "wiki": "Abbaye de Saint-Germain-des-Prés"
+   "wiki": "Abbaye de Saint-Germain-des-Prés",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Paris_St-Germain-des-Pr%C3%A9s.jpg/960px-Paris_St-Germain-des-Pr%C3%A9s.jpg",
+   "photoBy": "Axel Brocke",
+   "photoLic": "CC BY-SA 3.0"
   },
   {
    "id": "Q860172",
@@ -382,7 +493,10 @@
    "theme": "water",
    "fame": 38,
    "summary": "Creusé pour apporter l'eau potable dans la capitale et inauguré en 1825, il descend 25 mètres en neuf écluses sur 4,55 kilomètres, du bassin de la Villette au port de l'Arsenal. Ses ponts tournants sont classés.",
-   "wiki": "Canal Saint-Martin"
+   "wiki": "Canal Saint-Martin",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Paris_Canal_St-Martin_%C3%A9cluses_R%C3%A9collets_2013.jpg/960px-Paris_Canal_St-Martin_%C3%A9cluses_R%C3%A9collets_2013.jpg",
+   "photoBy": "JLPC",
+   "photoLic": "CC BY-SA 3.0"
   },
   {
    "id": "Q640968",
@@ -392,7 +506,10 @@
    "theme": "tables",
    "fame": 38,
    "summary": "Siège des institutions municipales depuis 1357, il a vu passer toutes les révoltes parisiennes : Étienne Marcel, la Fronde, la Révolution, 1830, 1848, la Commune, la Libération. Peu de bâtiments concentrent autant d'histoire politique.",
-   "wiki": "Hôtel de ville de Paris"
+   "wiki": "Hôtel de ville de Paris",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Paris%2C_H%C3%B4tel_de_Ville_--_2014_--_1714.jpg/960px-Paris%2C_H%C3%B4tel_de_Ville_--_2014_--_1714.jpg",
+   "photoBy": "Dietmar Rabich",
+   "photoLic": "CC BY-SA 4.0"
   },
   {
    "id": "Q743206",
@@ -402,7 +519,10 @@
    "theme": "museums",
    "fame": 38,
    "summary": "Le musée national consacré à Picasso occupe l'hôtel Salé, l'un des grands hôtels particuliers baroques du Marais, bâti à partir de 1656 pour un seigneur de Fontenay.",
-   "wiki": "Musée Picasso (Paris)"
+   "wiki": "Musée Picasso (Paris)",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Paris_3e_H%C3%B4tel_Sal%C3%A9_640.jpg/960px-Paris_3e_H%C3%B4tel_Sal%C3%A9_640.jpg",
+   "photoBy": "GFreihalter",
+   "photoLic": "CC BY-SA 3.0"
   },
   {
    "id": "Q650519",
@@ -412,7 +532,10 @@
    "theme": "museums",
    "fame": 38,
    "summary": "Depuis 1919, l'hôtel de Biron conserve l'œuvre d'Auguste Rodin : près de 6 800 sculptures, 8 000 dessins et autant de photographies anciennes. Avec 700 000 visiteurs par an, c'est l'un des musées les plus fréquentés de France.",
-   "wiki": "Musée Rodin"
+   "wiki": "Musée Rodin",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/L%27h%C3%B4tel_Biron_%28mus%C3%A9e_Rodin%29_%C3%A0_Paris%2C_13_juin_2021_01.jpg/960px-L%27h%C3%B4tel_Biron_%28mus%C3%A9e_Rodin%29_%C3%A0_Paris%2C_13_juin_2021_01.jpg",
+   "photoBy": "Jean-Pierre Dalbéra",
+   "photoLic": "CC BY 2.0"
   },
   {
    "id": "Q295844",
@@ -422,7 +545,10 @@
    "theme": "religious",
    "fame": 37,
    "summary": "Sa paroisse dépendait au XIIe siècle de l'abbaye voisine de Saint-Germain-des-Prés. L'église domine aujourd'hui la place Saint-Sulpice, dans le quartier de l'Odéon.",
-   "wiki": "Église Saint-Sulpice de Paris"
+   "wiki": "Église Saint-Sulpice de Paris",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Paris_Saint-Sulpice_Fassade_4-5_A.jpg/960px-Paris_Saint-Sulpice_Fassade_4-5_A.jpg",
+   "photoBy": "Zairon",
+   "photoLic": "CC BY-SA 4.0"
   },
   {
    "id": "Q3075489",
@@ -432,7 +558,10 @@
    "theme": "museums",
    "fame": 37,
    "summary": "Un vaisseau de verre signé Frank Gehry, posé dans le bois de Boulogne au cœur du Jardin d'acclimatation. Consacré à l'art moderne et contemporain, il est né d'une rivalité célèbre entre Bernard Arnault et François Pinault, installé lui à Venise.",
-   "wiki": "Fondation d'entreprise Louis-Vuitton"
+   "wiki": "Fondation d'entreprise Louis-Vuitton",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Fondation_Louis_Vuitton_5.jpg/960px-Fondation_Louis_Vuitton_5.jpg",
+   "photoBy": "Moktarama",
+   "photoLic": "CC BY 3.0"
   },
   {
    "id": "Q167863",
@@ -442,7 +571,10 @@
    "theme": "museums",
    "fame": 36,
    "summary": "Voulu par Jacques Chirac et dessiné par Jean Nouvel, il a ouvert en 2006 au pied de la tour Eiffel pour présenter les arts d'Afrique, d'Asie, d'Océanie et des Amériques. Vingt millions de visiteurs depuis son inauguration.",
-   "wiki": "Musée du Quai Branly - Jacques-Chirac"
+   "wiki": "Musée du Quai Branly - Jacques-Chirac",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Mus%C3%A9e_du_quai_Branly_-_20150801_16h07_%2810629%29.jpg/960px-Mus%C3%A9e_du_quai_Branly_-_20150801_16h07_%2810629%29.jpg",
+   "photoBy": "Another one of my pictures: This photograph was taken by Med",
+   "photoLic": "CC BY-SA 4.0"
   },
   {
    "id": "Q730948",
@@ -452,7 +584,10 @@
    "theme": "parks",
    "fame": 35,
    "summary": "À la fois jardin botanique, ménagerie et campus scientifique, il est le siège du Muséum national d'histoire naturelle. Serres, parterres à la française et galeries d'exposition en font un parc et un musée à ciel ouvert.",
-   "wiki": "Jardin des plantes de Paris"
+   "wiki": "Jardin des plantes de Paris",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Paris_75005_Grande_Galerie_de_l%27Evolution_20070804.jpg/960px-Paris_75005_Grande_Galerie_de_l%27Evolution_20070804.jpg",
+   "photoBy": "Benh LIEU SONG",
+   "photoLic": "CC BY 3.0"
   },
   {
    "id": "Q860994",
@@ -462,7 +597,10 @@
    "theme": "museums",
    "fame": 35,
    "summary": "Né de la collection d'un industriel lyonnais, Émile Guimet, il ouvre en 1889 sous le nom de « musée des Religions », dans un bâtiment construit exprès pour lui. Il est consacré aux arts de toute l'Asie.",
-   "wiki": "Musée national des Arts asiatiques - Guimet"
+   "wiki": "Musée national des Arts asiatiques - Guimet",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Le_mus%C3%A9e_Guimet_November_20%2C_2011.jpg/960px-Le_mus%C3%A9e_Guimet_November_20%2C_2011.jpg",
+   "photoBy": "Jean-Pierre Dalbéra",
+   "photoLic": "CC BY 2.0"
   },
   {
    "id": "Q218613",
@@ -472,7 +610,10 @@
    "theme": "streets",
    "fame": 34,
    "summary": "Le plus vaste grand magasin d'Europe et le deuxième du monde après Macy's à New York. Trente-sept millions de visiteurs s'y pressent chaque année.",
-   "wiki": "Galeries Lafayette Haussmann"
+   "wiki": "Galeries Lafayette Haussmann",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Galeries_Lafayette_Haussmann_1.jpg/960px-Galeries_Lafayette_Haussmann_1.jpg",
+   "photoBy": "Arthur Weidmann",
+   "photoLic": "CC BY-SA 4.0"
   },
   {
    "id": "Q13360213",
@@ -482,7 +623,10 @@
    "theme": "palaces",
    "fame": 34,
    "summary": "Construit pour l'Exposition universelle de 1937 en lieu et place du palais du Trocadéro, il est l'un des trois édifices permanents qu'a laissés cette exposition, avec le palais de Tokyo et le palais d'Iéna. Son parvis fait face à la tour Eiffel.",
-   "wiki": "Palais de Chaillot"
+   "wiki": "Palais de Chaillot",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Trocadero_pic1.jpg/960px-Trocadero_pic1.jpg",
+   "photoBy": "AlfvanBeem",
+   "photoLic": "CC0"
   },
   {
    "id": "Q537720",
@@ -492,7 +636,10 @@
    "theme": "stages",
    "fame": 34,
    "summary": "Inaugurée en 1984, cette salle modulable accueille aussi bien le Masters de tennis et le Grand Chelem de judo que les plus grands concerts. Elle a hébergé le basket et la gymnastique des Jeux olympiques de 2024.",
-   "wiki": "Palais omnisports de Paris-Bercy"
+   "wiki": "Palais omnisports de Paris-Bercy",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Palais_Omnisports_de_Paris-Bercy_2007.jpg/960px-Palais_Omnisports_de_Paris-Bercy_2007.jpg",
+   "photoBy": "Jan Zubíček",
+   "photoLic": "CC BY-SA 2.0"
   },
   {
    "id": "Q939883",
@@ -502,7 +649,10 @@
    "theme": "other",
    "fame": 33,
    "summary": "Né en 1964 de la fusion de l'hôpital de la Pitié et de celui de la Salpêtrière, c'est aujourd'hui l'un des plus grands hôpitaux de France.",
-   "wiki": "Hôpital de la Salpêtrière"
+   "wiki": "Hôpital de la Salpêtrière",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Salp%C3%A9tri%C3%A8re-Piti%C3%A9.jpg/960px-Salp%C3%A9tri%C3%A8re-Piti%C3%A9.jpg",
+   "photoBy": "BAUFLE Pascal",
+   "photoLic": "CC BY-SA 3.0"
   },
   {
    "id": "Q1138922",
@@ -512,7 +662,10 @@
    "theme": "stages",
    "fame": 33,
    "summary": "Fondé en 1881 par Rodolphe Salis, il fut le grand lieu de rencontre du Tout-Paris et le symbole de la bohème de la fin du XIXe siècle. Erik Satie y composa l'une de ses pièces majeures. Le cabaret connut trois adresses successives.",
-   "wiki": "Le Chat noir"
+   "wiki": "Le Chat noir",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Le_Chat_noir_1929.jpg/960px-Le_Chat_noir_1929.jpg",
+   "photoBy": "Agence de presse Meurisse",
+   "photoLic": "Public domain"
   },
   {
    "id": "Q1781591",
@@ -522,7 +675,10 @@
    "theme": "palaces",
    "fame": 33,
    "summary": "Centre de congrès et salle de spectacles à la porte Maillot, en lisière du bois de Boulogne. L'ensemble comprend aussi une tour-hôtel, le Hyatt Regency Paris Étoile.",
-   "wiki": "Palais des congrès de Paris"
+   "wiki": "Palais des congrès de Paris",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/L%27escalier_du_Palais_des_Congr%C3%A9s_%C3%A0_Paris.jpg/960px-L%27escalier_du_Palais_des_Congr%C3%A9s_%C3%A0_Paris.jpg",
+   "photoBy": "besopha",
+   "photoLic": "CC BY-SA 2.0"
   },
   {
    "id": "Q915451",
@@ -532,7 +688,10 @@
    "theme": "stages",
    "fame": 32,
    "summary": "Le plus ancien music-hall de Paris encore en activité. À l'origine, Joseph Oller — déjà fondateur du Moulin-Rouge — y avait monté des montagnes russes en bois : le préfet de police, craignant l'incendie, le força à les démolir. Il bâtit une salle de spectacle à la place.",
-   "wiki": "Olympia (Paris)"
+   "wiki": "Olympia (Paris)",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Olympia_Paris_6.jpg/960px-Olympia_Paris_6.jpg",
+   "photoBy": "Chabe01",
+   "photoLic": "CC BY-SA 4.0"
   },
   {
    "id": "Q175055",
@@ -542,7 +701,10 @@
    "theme": "streets",
    "fame": 32,
    "summary": "3,4 hectares où convergent sept rues et cinq lignes de métro — l'un des plus grands nœuds de Paris. Au début du XXe siècle, un tramway à câble en partait pour grimper la colline de Belleville.",
-   "wiki": "Place de la République (Paris)"
+   "wiki": "Place de la République (Paris)",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Paris_-_2017-12-01_-_Place_de_la_R%C3%A9publique_-_5517.jpg/960px-Paris_-_2017-12-01_-_Place_de_la_R%C3%A9publique_-_5517.jpg",
+   "photoBy": "Pierre-Selim Huard",
+   "photoLic": "CC BY 4.0"
   },
   {
    "id": "Q1200698",
@@ -552,7 +714,10 @@
    "theme": "shops",
    "fame": 31,
    "summary": "Fondé en 1838, il s'est appelé « Au Bon Marché » pendant 151 ans. Son bâtiment actuel, élevé à partir de 1869, doit sa charpente métallique à l'ingénieur Armand Moisant — Gustave Eiffel n'y intervint qu'à la marge, contrairement à la légende.",
-   "wiki": "Le Bon Marché"
+   "wiki": "Le Bon Marché",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Le_Bon_March%C3%A9%2C_Paris_27_May_2012.jpg/960px-Le_Bon_March%C3%A9%2C_Paris_27_May_2012.jpg",
+   "photoBy": "Guillaume Speurt from Vilnius, Lithuania",
+   "photoLic": "CC BY-SA 2.0"
   },
   {
    "id": "Q1124095",
@@ -562,7 +727,10 @@
    "theme": "museums",
    "fame": 31,
    "summary": "Un hôtel particulier du XVe siècle bâti sur des thermes gallo-romains : le musée national du Moyen Âge conserve l'une des plus importantes collections d'art médiéval au monde, face à la Sorbonne.",
-   "wiki": "Musée de Cluny"
+   "wiki": "Musée de Cluny",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/H%C3%B4tel_de_Cluny%2C_Paris_24_April_2012.jpg/960px-H%C3%B4tel_de_Cluny%2C_Paris_24_April_2012.jpg",
+   "photoBy": "ctj71081",
+   "photoLic": "CC BY-SA 2.0"
   },
   {
    "id": "Q1503331",
@@ -572,7 +740,10 @@
    "theme": "monuments",
    "fame": 31,
    "summary": "Le plus ancien monument de Paris : taillé au XIIIe siècle avant notre ère pour le temple d'Amon à Louxor, il est antérieur à la fondation même de la ville. Offert par l'Égypte, il se dresse au centre de la Concorde depuis 1836.",
-   "wiki": "Obélisque de Louxor"
+   "wiki": "Obélisque de Louxor",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Luxor_Obelisk%2C_Place_de_la_Concorde%2C_Paris_June_2014_002.jpg/960px-Luxor_Obelisk%2C_Place_de_la_Concorde%2C_Paris_June_2014_002.jpg",
+   "photoBy": "daryl_mitchell from Saskatoon, Saskatchewan, Canada",
+   "photoLic": "CC BY-SA 2.0"
   },
   {
    "id": "Q860166",
@@ -582,7 +753,10 @@
    "theme": "museums",
    "fame": 30,
    "summary": "Signé Jean Nouvel, le bâtiment tente une synthèse entre culture arabe et culture occidentale. Décidé sous Giscard d'Estaing pour rapprocher la France des pays arabes, il est inauguré en 1987 par François Mitterrand.",
-   "wiki": "Institut du monde arabe"
+   "wiki": "Institut du monde arabe",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Institut_du_Monde_Arabe_au_bord_de_la_Seine.jpg/960px-Institut_du_Monde_Arabe_au_bord_de_la_Seine.jpg",
+   "photoBy": "Guilhem Vellut from Paris, France",
+   "photoLic": "CC BY 2.0"
   },
   {
    "id": "Q1133501",
@@ -592,7 +766,10 @@
    "theme": "stages",
    "fame": 30,
    "summary": "Inauguré en 1782, il a vu la création publique du Mariage de Figaro deux ans plus tard. Deux fois ravagé par les flammes, en 1799 puis en 1818, ce théâtre à l'italienne est aujourd'hui l'un des six théâtres nationaux.",
-   "wiki": "Théâtre de l'Odéon"
+   "wiki": "Théâtre de l'Odéon",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Th%C3%A9%C3%A2tre_de_l%27Od%C3%A9on_-_facade_-_photo_Thierry_Depagne.jpg/960px-Th%C3%A9%C3%A2tre_de_l%27Od%C3%A9on_-_facade_-_photo_Thierry_Depagne.jpg",
+   "photoBy": "Jcmorgane",
+   "photoLic": "CC BY-SA 4.0"
   },
   {
    "id": "Q1996069",
@@ -602,7 +779,10 @@
    "theme": "museums",
    "fame": 29,
    "summary": "Installé aux Invalides, il retrace l'histoire de France par ses conflits. Né en 1905 de la fusion de deux musées militaires, il conserve notamment les collections d'armes du garde-meuble de la Couronne et des princes de Condé.",
-   "wiki": "Musée de l'Armée (Paris)"
+   "wiki": "Musée de l'Armée (Paris)",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Mus%C3%A9e_de_l%27Arm%C3%A9e%2C_Paris_4_May_2019.jpg/960px-Mus%C3%A9e_de_l%27Arm%C3%A9e%2C_Paris_4_May_2019.jpg",
+   "photoBy": "xiquinhosilva from Cacau",
+   "photoLic": "CC BY 2.0"
   },
   {
    "id": "Q1621256",
@@ -612,7 +792,10 @@
    "theme": "water",
    "fame": 29,
    "summary": "Son nom commémore la bataille de l'Alma, remportée en 1854 pendant la guerre de Crimée. Le pont relie le quai Branly à l'avenue de New-York, au pied de la tour Eiffel.",
-   "wiki": "Pont de l'Alma"
+   "wiki": "Pont de l'Alma",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Pont_de_l%27Alma_%40_Paris_%2828191838505%29.jpg/960px-Pont_de_l%27Alma_%40_Paris_%2828191838505%29.jpg",
+   "photoBy": "Guilhem Vellut from Paris, France",
+   "photoLic": "CC BY 2.0"
   },
   {
    "id": "Q48748155",
@@ -622,7 +805,10 @@
    "theme": "other",
    "fame": 28,
    "summary": "Construite pour les Jeux olympiques de 2024 et inaugurée en février de la même année, cette salle modulable de 8 000 places est la résidence du Paris Basketball.",
-   "wiki": "Arena Porte de la Chapelle"
+   "wiki": "Arena Porte de la Chapelle",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Site_Olympique_Arena_Porte_Chapelle_Esplanade_Alice_Milliat_-_Paris_XVIII_%28FR75%29_-_2024-07-28_-_3.jpg/960px-Site_Olympique_Arena_Porte_Chapelle_Esplanade_Alice_Milliat_-_Paris_XVIII_%28FR75%29_-_2024-07-28_-_3.jpg",
+   "photoBy": "Chabe01",
+   "photoLic": "CC BY-SA 4.0"
   },
   {
    "id": "Q292258",
@@ -632,7 +818,10 @@
    "theme": "water",
    "fame": 28,
    "summary": "Une digue artificielle de 890 mètres de long sur onze de large seulement, posée au milieu de la Seine. Une allée plantée d'arbres la parcourt sur toute sa longueur, depuis le belvédère qui domine le pont de Bir-Hakeim.",
-   "wiki": "Île aux Cygnes (Paris)"
+   "wiki": "Île aux Cygnes (Paris)",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Paris_View_from_the_Eiffel_Tower_third_floor_Ile_aux_Cygnes.jpg/960px-Paris_View_from_the_Eiffel_Tower_third_floor_Ile_aux_Cygnes.jpg",
+   "photoBy": "Taken by Adrian Pingstone in June 2002 and released to the p",
+   "photoLic": "Public domain"
   },
   {
    "id": "Q3090513",
@@ -642,7 +831,10 @@
    "theme": "parks",
    "fame": 28,
    "summary": "Créé dans les années 1850 à l'initiative d'une société savante, ce jardin devait « acclimater » des animaux venus du monde entier. Devenu parc de loisirs, il déploie 19 hectares en lisière du bois de Boulogne.",
-   "wiki": "Jardin d'acclimatation (Paris)"
+   "wiki": "Jardin d'acclimatation (Paris)",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Jardin_d%27acclimatation_-_Fondation_Louis_Vuitton.jpg/960px-Jardin_d%27acclimatation_-_Fondation_Louis_Vuitton.jpg",
+   "photoBy": "Moktarama",
+   "photoLic": "CC BY 3.0"
   },
   {
    "id": "Q1265070",
@@ -652,7 +844,10 @@
    "theme": "museums",
    "fame": 28,
    "summary": "Ouvert en 1882, il aligne deux cents personnages de cire, d'Albert Einstein au Mahatma Gandhi. Ses décors baroques d'origine sont intacts, et son Palais des Mirages joue de l'illusion d'optique depuis plus d'un siècle.",
-   "wiki": "Musée Grévin"
+   "wiki": "Musée Grévin",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Mus%C3%A9e_Gr%C3%A9vin%2C_Paris_30_July_2016.jpg/960px-Mus%C3%A9e_Gr%C3%A9vin%2C_Paris_30_July_2016.jpg",
+   "photoBy": "Guilhem Vellut from Paris, France",
+   "photoLic": "CC BY 2.0"
   }
  ]
 }

@@ -3,6 +3,7 @@ import {
   StyleSheet, View, Text, TextInput, TouchableOpacity, ActivityIndicator,
   FlatList, Switch, ScrollView, Keyboard, Platform, KeyboardAvoidingView, Linking,
 } from 'react-native';
+import { Image } from 'expo-image';
 import MapView, { Polyline, Marker, Polygon } from 'react-native-maps';
 import * as Location from 'expo-location';
 import * as Haptics from 'expo-haptics';
@@ -1149,6 +1150,22 @@ export default function ChasseScreen({ route }) {
         {/* ── Fiche « lieu d'intérêt » ── */}
         {selectedPoi && (
           <View style={styles.poiSheet}>
+            {selectedPoi.photo && (
+              <View style={styles.poiPhotoWrap}>
+                <Image
+                  source={{ uri: selectedPoi.photo }}
+                  style={styles.poiPhoto}
+                  contentFit="cover"
+                  cachePolicy="disk"
+                  transition={150}
+                />
+                {selectedPoi.photoBy && (
+                  <Text style={styles.poiPhotoCredit} numberOfLines={1}>
+                    {selectedPoi.photoBy} · {selectedPoi.photoLic}
+                  </Text>
+                )}
+              </View>
+            )}
             <View style={styles.poiSheetHead}>
               <View style={styles.poiSheetDiamond} />
               <Text style={styles.poiSheetTitle} numberOfLines={2}>{selectedPoi.name}</Text>
@@ -1360,6 +1377,16 @@ function makeStyles(t) {
       backgroundColor: t.surface, borderRadius: 16, padding: 16,
       borderWidth: 1, borderColor: t.border,
       shadowColor: '#000', shadowOffset: { width: 0, height: -2 }, shadowOpacity: 0.35, shadowRadius: 10, elevation: 10,
+    },
+    poiPhotoWrap: {
+      height: 132, borderRadius: 11, overflow: 'hidden', marginBottom: 13,
+      backgroundColor: t.surfaceHigh,
+    },
+    poiPhoto: { width: '100%', height: '100%' },
+    poiPhotoCredit: {
+      position: 'absolute', right: 7, bottom: 5,
+      fontSize: 9, color: 'rgba(255,255,255,0.85)',
+      backgroundColor: 'rgba(0,0,0,0.42)', borderRadius: 4, paddingHorizontal: 5, paddingVertical: 1,
     },
     poiSheetHead: { flexDirection: 'row', alignItems: 'center', gap: 10 },
     poiSheetDiamond: {
