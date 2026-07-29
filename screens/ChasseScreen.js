@@ -18,6 +18,7 @@ import { countryCodeOf } from '../cities/countries';
 import { geocode, autocomplete, multiRoute } from '../services/routing';
 import { INVADER_DISTRICT, ARRONDISSEMENT_CENTERS } from '../utils/arrondissement';
 import { useTheme } from '../theme/ThemeContext';
+import { typography } from '../theme/tokens';
 import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
 import InvaderPanel from '../components/InvaderPanel';
 import PinMarker from '../components/PinMarker';
@@ -1160,7 +1161,7 @@ export default function ChasseScreen({ route }) {
             <View style={styles.poiSheetActions}>
               <TouchableOpacity
                 style={styles.poiSheetBtnPrimary}
-                onPress={() => openNavigationApp(selectedPoi.lat, selectedPoi.lng, mapsApp, selectedPoi.name)}
+                onPress={() => openNavigationApp(mapsApp ?? 'apple', selectedPoi.lat, selectedPoi.lng)}
                 activeOpacity={0.85}
               >
                 <Text style={styles.poiSheetBtnPrimaryText}>{t('map.panel.navigate')}</Text>
