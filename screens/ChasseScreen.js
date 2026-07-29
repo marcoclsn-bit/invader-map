@@ -36,8 +36,11 @@ const PARIS      = { latitude: _PA.center.lat, longitude: _PA.center.lng, ..._PA
 // Temps d'arrêt par étape. C'est la constante la plus lourde du planificateur :
 // dans une zone dense, elle pèse les deux tiers d'une chasse d'une heure, bien
 // devant le choix du mode de transport.
-const VISIT_MIN = 1;       // minutes par Invader (sortir le téléphone, viser, flasher)
-const VISIT_MIN_POI = 1.5; // minutes par lieu d'intérêt (on s'arrête, on lève les yeux)
+// Les deux valent 1,5 : repérer puis flasher un Invader coûte à peu près autant
+// que s'arrêter devant un monument. Elles restent deux constantes distinctes pour
+// pouvoir les régler séparément le jour où on les mesurera sur de vraies sessions.
+const VISIT_MIN = 1.5;     // minutes par Invader (repérer, viser, flasher)
+const VISIT_MIN_POI = 1.5; // minutes par lieu d'intérêt (s'arrêter, lever les yeux)
 const visitMinOf = (step) => (step.isPoi ? VISIT_MIN_POI : VISIT_MIN);
 // Temps d'arrêt cumulé d'une liste d'étapes.
 const visitTotalMin = (list) => list.reduce((s, x) => s + visitMinOf(x), 0);
