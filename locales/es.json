@@ -161,7 +161,35 @@
     },
     "pickDistricts": "Elige uno o varios distritos",
     "districtsSelected_one": "{{count}} distrito seleccionado",
-    "districtsSelected_other": "{{count}} distritos seleccionados"
+    "districtsSelected_other": "{{count}} distritos seleccionados",
+    "objective": {
+      "label": "Objetivo",
+      "pure": "Caza pura",
+      "balanced": "Equilibrado",
+      "visit": "Caza y visita",
+      "hint_pure": "Solo Invaders: los máximos posibles en tu tiempo.",
+      "hint_balanced": "Invaders ante todo, con algunos lugares notables por el camino.",
+      "hint_visit": "La caza en modo descubrimiento: más lugares, algunos Invaders menos."
+    },
+    "poiCount_one": "{{count}} lugar",
+    "poiCount_other": "{{count}} lugares",
+    "poiBadge": "Parada extra",
+    "poiMore": "Ver más",
+    "poiCredit": "Resumen basado en Wikipedia (CC BY-SA) · Lugares: Wikidata",
+    "poiTheme": {
+      "museums": "Arte y museos",
+      "religious": "Edificio religioso",
+      "palaces": "Palacio y mansión",
+      "monuments": "Monumento",
+      "water": "Puentes y orillas",
+      "parks": "Parque y jardín",
+      "streets": "Calle y plaza",
+      "stages": "Escena y cabaré",
+      "tables": "Mesa legendaria",
+      "shops": "Tienda y pasaje",
+      "culture": "Lugar cultural",
+      "other": "Lugar destacado"
+    }
   },
   "palmares": {
     "title": "Ciudades",

@@ -161,7 +161,35 @@
     },
     "pickDistricts": "Scegli uno o più arrondissement",
     "districtsSelected_one": "{{count}} arrondissement selezionato",
-    "districtsSelected_other": "{{count}} arrondissement selezionati"
+    "districtsSelected_other": "{{count}} arrondissement selezionati",
+    "objective": {
+      "label": "Obiettivo",
+      "pure": "Caccia pura",
+      "balanced": "Equilibrato",
+      "visit": "Caccia e visita",
+      "hint_pure": "Solo Invaders: il massimo nel tuo tempo.",
+      "hint_balanced": "Invaders prima di tutto, con qualche luogo notevole lungo il cammino.",
+      "hint_visit": "La caccia in modalità scoperta: più luoghi da vedere, qualche Invader in meno."
+    },
+    "poiCount_one": "{{count}} luogo",
+    "poiCount_other": "{{count}} luoghi",
+    "poiBadge": "Tappa bonus",
+    "poiMore": "Scopri di più",
+    "poiCredit": "Riassunto basato su Wikipedia (CC BY-SA) · Luoghi: Wikidata",
+    "poiTheme": {
+      "museums": "Arte e musei",
+      "religious": "Edificio religioso",
+      "palaces": "Palazzo e dimora",
+      "monuments": "Monumento",
+      "water": "Ponti e lungosenna",
+      "parks": "Parco e giardino",
+      "streets": "Via e piazza",
+      "stages": "Scena e cabaret",
+      "tables": "Tavola leggendaria",
+      "shops": "Bottega e passaggio",
+      "culture": "Luogo di cultura",
+      "other": "Luogo notevole"
+    }
   },
   "palmares": {
     "title": "Città",

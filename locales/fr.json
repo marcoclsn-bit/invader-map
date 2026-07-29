@@ -161,7 +161,35 @@
     },
     "pickDistricts": "Choisis un ou plusieurs arrondissements",
     "districtsSelected_one": "{{count}} arrondissement sélectionné",
-    "districtsSelected_other": "{{count}} arrondissements sélectionnés"
+    "districtsSelected_other": "{{count}} arrondissements sélectionnés",
+    "objective": {
+      "label": "Objectif",
+      "pure": "Chasse pure",
+      "balanced": "Équilibré",
+      "visit": "Chasse & visite",
+      "hint_pure": "Uniquement des Invaders : le maximum dans ton temps.",
+      "hint_balanced": "Des Invaders avant tout, avec quelques lieux remarquables sur le chemin.",
+      "hint_visit": "La chasse en mode découverte : plus de lieux à voir, un peu moins d’Invaders."
+    },
+    "poiCount_one": "{{count}} lieu",
+    "poiCount_other": "{{count}} lieux",
+    "poiBadge": "Étape bonus",
+    "poiMore": "Voir plus",
+    "poiCredit": "Résumé d’après Wikipédia (CC BY-SA) · Lieux : Wikidata",
+    "poiTheme": {
+      "museums": "Art & musées",
+      "religious": "Édifice religieux",
+      "palaces": "Palais & demeure",
+      "monuments": "Monument",
+      "water": "Ponts & bords de Seine",
+      "parks": "Parc & jardin",
+      "streets": "Rue & place",
+      "stages": "Scène & cabaret",
+      "tables": "Table mythique",
+      "shops": "Boutique & passage",
+      "culture": "Lieu de culture",
+      "other": "Lieu remarquable"
+    }
   },
   "palmares": {
     "title": "Villes",

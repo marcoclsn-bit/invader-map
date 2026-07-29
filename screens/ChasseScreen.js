@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useMemo } from 'react';
 import {
   StyleSheet, View, Text, TextInput, TouchableOpacity, ActivityIndicator,
-  FlatList, Switch, ScrollView, Keyboard, Platform, KeyboardAvoidingView,
+  FlatList, Switch, ScrollView, Keyboard, Platform, KeyboardAvoidingView, Linking,
 } from 'react-native';
 import MapView, { Polyline, Marker, Polygon } from 'react-native-maps';
 import * as Location from 'expo-location';
@@ -26,10 +26,15 @@ import { openNavigationApp } from '../utils/navigation';
 import { useSessionRecorder } from '../components/session/useSessionRecorder';
 import { useGamification } from '../context/GamificationContext';
 import { canUseFeature, FEATURES } from '../services/featureAccess';
+import { getPois, hasPois, wikiUrl } from '../services/poiData';
 
 const _PA        = CITIES.PA;
 const PARIS      = { latitude: _PA.center.lat, longitude: _PA.center.lng, ..._PA.mapDelta };
-const VISIT_MIN = 2;   // minutes par Invader (observation + photo)
+const VISIT_MIN = 2;       // minutes par Invader (observation + photo)
+const VISIT_MIN_POI = 1.5; // minutes par lieu d'intérêt (pause photo, pas une visite)
+const visitMinOf = (step) => (step.isPoi ? VISIT_MIN_POI : VISIT_MIN);
+// Limite de l'API d'itinéraires (~50 points) : départ + étapes + retour.
+const MAX_STEPS = 46;
 const SPEEDS = { 'foot-walking': 5, 'cycling-regular': 15 }; // km/h
 // Pondération densité : bonus aux Invaders entourés d'autres Invaders (favorise les
 // grappes → on en attrape bien plus). Réglages validés sur données réelles Paris.
@@ -66,7 +71,7 @@ function haversineKm(lat1, lon1, lat2, lon2) {
 function tourTotalMin(order, startLat, startLon, speedKmPerMin) {
   let t = 0, curLat = startLat, curLon = startLon;
   for (const inv of order) {
-    t += (haversineKm(curLat, curLon, inv.lat, inv.lng) / speedKmPerMin) * STREET_DETOUR + VISIT_MIN;
+    t += (haversineKm(curLat, curLon, inv.lat, inv.lng) / speedKmPerMin) * STREET_DETOUR + visitMinOf(inv);
     curLat = inv.lat; curLon = inv.lng;
   }
   t += (haversineKm(curLat, curLon, startLat, startLon) / speedKmPerMin) * STREET_DETOUR; // retour
@@ -167,8 +172,47 @@ function refill(order, remaining, startLat, startLon, budgetMin, speedKmPerMin) 
   return selected;
 }
 
-// Orchestrateur : glouton → 2-opt → re-remplissage → 2-opt final.
-function planHunt(startLon, startLat, candidates, budgetMin, speedKmh) {
+// 4. Insertion des lieux d'intérêt (mode « Chasse & visite »).
+//    Les POI n'entrent JAMAIS dans la sélection des Invaders : ils ne s'insèrent
+//    qu'ensuite, dans le temps laissé libre, à la place la moins coûteuse.
+//    Les plus notables et les mieux placés passent en premier.
+function insertPois(order, pois, startLat, startLon, budgetMin, speedKmPerMin, alpha) {
+  if (!alpha || !pois.length || !order.length) return order;
+  let selected = order.slice();
+  // Part d'étapes « visite » autorisée : ~20 % en Équilibré, ~40 % en Chasse & visite.
+  const maxPois = Math.max(1, Math.round(order.length * alpha * 0.5));
+  const pool = pois.slice();
+  let added = 0;
+
+  while (pool.length > 0 && added < maxPois && selected.length < MAX_STEPS) {
+    let bestCand = -1, bestPos = -1, bestGain = -Infinity;
+    const baseTime = tourTotalMin(selected, startLat, startLon, speedKmPerMin);
+
+    for (let c = 0; c < pool.length; c++) {
+      const poi = pool[c];
+      for (let p = 0; p <= selected.length; p++) {
+        const trial = selected.slice(0, p).concat(poi, selected.slice(p));
+        const tTotal = tourTotalMin(trial, startLat, startLon, speedKmPerMin);
+        if (tTotal <= budgetMin) {
+          const addedMin = tTotal - baseTime;
+          // notoriété par minute de détour (fame ~ nb de Wikipédias : 18 → 189)
+          const gain = (poi.fame ?? 10) / Math.max(addedMin, 0.1);
+          if (gain > bestGain) { bestGain = gain; bestCand = c; bestPos = p; }
+        }
+      }
+    }
+    if (bestCand === -1) break; // plus aucun lieu n'entre dans le temps restant
+    selected = selected.slice(0, bestPos).concat(pool[bestCand], selected.slice(bestPos));
+    pool.splice(bestCand, 1);
+    added++;
+  }
+  return selected;
+}
+
+// Orchestrateur : glouton → 2-opt → re-remplissage → 2-opt → lieux d'intérêt.
+// `alpha` (0 · 0,4 · 0,8) = curseur Chasse ↔ Balade.
+function planHunt(startLon, startLat, candidates, budgetMin, speedKmh, opts = {}) {
+  const { pois = [], alpha = 0 } = opts;
   const speedKmPerMin = speedKmh / 60;
   const maxRadiusKm = (budgetMin * speedKmPerMin) / 2;
   const pool = candidates.filter(inv =>
@@ -176,12 +220,23 @@ function planHunt(startLon, startLat, candidates, budgetMin, speedKmh) {
     haversineKm(startLat, startLon, inv.lat, inv.lng) <= maxRadiusKm
   );
 
+  // On réserve une part du budget aux visites, sinon le refill le consomme entièrement
+  // et plus aucun lieu ne peut s'insérer. Les Invaders gardent toujours la majeure part.
+  const invaderBudget = budgetMin * (1 - alpha * 0.25);
+
   const nbrPoints = neighborPointsMap(pool);
-  let selected = greedySelect(startLat, startLon, pool, budgetMin, speedKmPerMin, nbrPoints);
+  let selected = greedySelect(startLat, startLon, pool, invaderBudget, speedKmPerMin, nbrPoints);
   selected = twoOpt(selected, startLat, startLon, speedKmPerMin);
   const remaining = pool.filter(inv => !selected.includes(inv));
-  selected = refill(selected, remaining, startLat, startLon, budgetMin, speedKmPerMin);
+  selected = refill(selected, remaining, startLat, startLon, invaderBudget, speedKmPerMin);
   selected = twoOpt(selected, startLat, startLon, speedKmPerMin);
+
+  if (alpha > 0 && pois.length) {
+    const nearPois = pois
+      .filter(p => haversineKm(startLat, startLon, p.lat, p.lng) <= maxRadiusKm)
+      .map(p => ({ ...p, isPoi: true }));
+    selected = insertPois(selected, nearPois, startLat, startLon, budgetMin, speedKmPerMin, alpha);
+  }
   return selected;
 }
 
@@ -360,6 +415,10 @@ export default function ChasseScreen({ route }) {
   const [budgetMin, setBudgetMin] = useState(60);
   const [profile, setProfile] = useState('foot-walking');
   const [unflashedOnly, setUnflashedOnly] = useState(true);
+  // Objectif : chasse pure ↔ chasse & visite (0 = aucun lieu d'intérêt)
+  const [objective, setObjective] = useState('pure');
+  const poiEnabled = hasPois(currentCityCode);
+  const POI_ALPHA = { pure: 0, balanced: 0.4, visit: 0.8 };
   // Arrondissements sélectionnés (Set de c_ar 1-20). Mode quartier des villes à
   // arrondissements (Paris). Les villes sans arrondissement gardent l'adresse.
   const [selectedArs, setSelectedArs] = useState(() => new Set());
@@ -378,6 +437,7 @@ export default function ChasseScreen({ route }) {
   const [error, setError] = useState(null);
   const [result, setResult] = useState(null);
   const [selectedInv, setSelectedInv] = useState(null);
+  const [selectedPoi, setSelectedPoi] = useState(null); // fiche « lieu d'intérêt »
   const [inputCollapsed, setInputCollapsed] = useState(false);
   const [following, setFollowing] = useState(false);
   const [drifted, setDrifted] = useState(false);
@@ -587,7 +647,11 @@ export default function ChasseScreen({ route }) {
         (arSet === null || arSet.has(INVADER_DISTRICT.get(inv.id)))
       );
 
-      const selected = planHunt(startLon, startLat, candidates, budgetMin, SPEEDS[profile]);
+      const alpha = poiEnabled ? (POI_ALPHA[objective] ?? 0) : 0;
+      const selected = planHunt(startLon, startLat, candidates, budgetMin, SPEEDS[profile], {
+        pois: alpha > 0 ? getPois(currentCityCode) : [],
+        alpha,
+      });
 
       if (selected.length === 0) {
         setError(t('hunt.error.noInvadersReachable'));
@@ -600,15 +664,19 @@ export default function ChasseScreen({ route }) {
       const { sel, coords, walkMin } = await routeWithinBudget(
         selected, startLon, startLat, budgetMin, speedKmPerMin, profile
       );
-      // Durée AFFICHÉE = marche réelle (ORS) + temps passé à flasher chaque Invader.
-      const totalDurationMin = walkMin + VISIT_MIN * sel.length;
+      // Durée AFFICHÉE = marche réelle (ORS) + temps passé à chaque étape
+      // (2 min pour flasher un Invader, 1,5 min pour une pause devant un lieu).
+      const totalDurationMin = walkMin + sel.reduce((s, x) => s + visitMinOf(x), 0);
 
       setResult({
         invaders: sel,
         routeCoords: coords,
         polyline: coords.map(([lng, lat]) => ({ latitude: lat, longitude: lng })),
         durationMin: totalDurationMin,
-        totalPts: sel.reduce((s, inv) => s + inv.points, 0),
+        // Les lieux d'intérêt ne rapportent aucun point : le score reste 100 % Invaders.
+        totalPts: sel.reduce((s, x) => s + (x.isPoi ? 0 : x.points), 0),
+        invaderCount: sel.filter(x => !x.isPoi).length,
+        poiCount: sel.filter(x => x.isPoi).length,
         startLat,
         startLon,
       });
@@ -747,11 +815,20 @@ export default function ChasseScreen({ route }) {
                 )}
                 {result.invaders.map((inv, i) => (
                   <PinMarker key={inv.id} coordinate={{ latitude: inv.lat, longitude: inv.lng }}
-                    anchor={{ x: 0.5, y: 0.5 }} onPress={() => selectInvader(inv)}
-                    redrawKey={selectedInv?.id === inv.id}>
-                    <View style={[styles.huntMarker, selectedInv?.id === inv.id && styles.huntMarkerSel]}>
-                      <Text style={styles.huntMarkerNum}>{i + 1}</Text>
-                    </View>
+                    anchor={{ x: 0.5, y: 0.5 }}
+                    onPress={() => (inv.isPoi ? setSelectedPoi(inv) : selectInvader(inv))}
+                    redrawKey={selectedInv?.id === inv.id || selectedPoi?.id === inv.id}>
+                    {inv.isPoi ? (
+                      // Lieu d'intérêt : losange doré, impossible à confondre avec un alien
+                      <View style={styles.poiMarkerWrap}>
+                        <View style={[styles.poiMarker, selectedPoi?.id === inv.id && styles.poiMarkerSel]} />
+                        <Text style={styles.poiMarkerNum}>{i + 1}</Text>
+                      </View>
+                    ) : (
+                      <View style={[styles.huntMarker, selectedInv?.id === inv.id && styles.huntMarkerSel]}>
+                        <Text style={styles.huntMarkerNum}>{i + 1}</Text>
+                      </View>
+                    )}
                   </PinMarker>
                 ))}
               </>
@@ -912,6 +989,34 @@ export default function ChasseScreen({ route }) {
                     </View>
                   </View>
 
+                  {/* Objectif : chasse pure ↔ chasse & visite (villes avec lieux d'intérêt) */}
+                  {poiEnabled && (
+                    <View style={styles.objectiveBlock}>
+                      <Text style={styles.fieldLabel}>{t('hunt.objective.label')}</Text>
+                      <View style={styles.objRow}>
+                        {[
+                          { key: 'pure',     icon: 'game-controller-outline' },
+                          { key: 'balanced', icon: 'swap-horizontal-outline' },
+                          { key: 'visit',    icon: 'business-outline' },
+                        ].map(o => (
+                          <TouchableOpacity key={o.key}
+                            style={[styles.objBtn, objective === o.key && styles.objBtnActive]}
+                            onPress={() => setObjective(o.key)}
+                            activeOpacity={0.8}
+                          >
+                            <Ionicons name={o.icon} size={16}
+                              color={objective === o.key ? theme.accentScore : theme.textSecondary} />
+                            <Text style={[styles.objBtnText, objective === o.key && styles.objBtnTextActive]}
+                              numberOfLines={1}>
+                              {t(`hunt.objective.${o.key}`)}
+                            </Text>
+                          </TouchableOpacity>
+                        ))}
+                      </View>
+                      <Text style={styles.objHint}>{t(`hunt.objective.hint_${objective}`)}</Text>
+                    </View>
+                  )}
+
                   {/* Toggle */}
                   <View style={styles.toggleRow}>
                     <Text style={styles.toggleLabel}>{t('hunt.unflashedOnly')}</Text>
@@ -1001,7 +1106,12 @@ export default function ChasseScreen({ route }) {
           <View style={styles.resultPanel}>
             <View style={styles.resultHeader}>
               <Text style={styles.resultSummary}>
-                {t('hunt.resultCount', { count: result.invaders.length })}
+                {t('hunt.resultCount', { count: result.invaderCount ?? result.invaders.length })}
+                {result.poiCount > 0 && (
+                  <Text style={{ color: theme.accentScore }}>
+                    {' · '}{t('hunt.poiCount', { count: result.poiCount })}
+                  </Text>
+                )}
                 {' · '}{result.totalPts} {t('common.pts')}{' · '}~{formatBudget(result.durationMin)}
               </Text>
             </View>
@@ -1009,18 +1119,63 @@ export default function ChasseScreen({ route }) {
               data={result.invaders}
               keyExtractor={inv => inv.id}
               style={styles.resultList}
-              renderItem={({ item: inv, index }) => (
-                <HuntRow
-                  inv={inv}
-                  index={index}
-                  isFlashed={flashed.has(inv.id)}
-                  statusColors={statusColors}
-                  onPress={() => selectInvader(inv)}
-                />
-              )}
+              renderItem={({ item: inv, index }) =>
+                inv.isPoi ? (
+                  <TouchableOpacity style={styles.poiRow} onPress={() => setSelectedPoi(inv)} activeOpacity={0.7}>
+                    <View style={styles.poiRowDiamond} />
+                    <Text style={styles.poiRowNum}>{index + 1}</Text>
+                    <View style={{ flex: 1, marginLeft: 6 }}>
+                      <Text style={styles.poiRowName} numberOfLines={1}>{inv.name}</Text>
+                      <Text style={styles.poiRowSub} numberOfLines={1}>{t('hunt.poiBadge')}</Text>
+                    </View>
+                    <Ionicons name="chevron-forward" size={15} color={theme.textSecondary} />
+                  </TouchableOpacity>
+                ) : (
+                  <HuntRow
+                    inv={inv}
+                    index={index}
+                    isFlashed={flashed.has(inv.id)}
+                    statusColors={statusColors}
+                    onPress={() => selectInvader(inv)}
+                  />
+                )
+              }
               ItemSeparatorComponent={() => <View style={styles.separator} />}
-              getItemLayout={(_, i) => ({ length: 48, offset: 48 * i, index: i })}
             />
+          </View>
+        )}
+
+        {/* ── Fiche « lieu d'intérêt » ── */}
+        {selectedPoi && (
+          <View style={styles.poiSheet}>
+            <View style={styles.poiSheetHead}>
+              <View style={styles.poiSheetDiamond} />
+              <Text style={styles.poiSheetTitle} numberOfLines={2}>{selectedPoi.name}</Text>
+              <TouchableOpacity onPress={() => setSelectedPoi(null)} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
+                <Ionicons name="close" size={22} color={theme.textSecondary} />
+              </TouchableOpacity>
+            </View>
+            <Text style={styles.poiSheetChip}>{t(`hunt.poiTheme.${selectedPoi.theme}`)}</Text>
+            <Text style={styles.poiSheetText}>{selectedPoi.summary}</Text>
+            <View style={styles.poiSheetActions}>
+              <TouchableOpacity
+                style={styles.poiSheetBtnPrimary}
+                onPress={() => openNavigationApp(selectedPoi.lat, selectedPoi.lng, mapsApp, selectedPoi.name)}
+                activeOpacity={0.85}
+              >
+                <Text style={styles.poiSheetBtnPrimaryText}>{t('map.panel.navigate')}</Text>
+              </TouchableOpacity>
+              {wikiUrl(selectedPoi) && (
+                <TouchableOpacity
+                  style={styles.poiSheetBtn}
+                  onPress={() => Linking.openURL(wikiUrl(selectedPoi)).catch(() => {})}
+                  activeOpacity={0.85}
+                >
+                  <Text style={styles.poiSheetBtnText}>{t('hunt.poiMore')} ↗</Text>
+                </TouchableOpacity>
+              )}
+            </View>
+            <Text style={styles.poiSheetCredit}>{t('hunt.poiCredit')}</Text>
           </View>
         )}
       </View>
@@ -1167,6 +1322,67 @@ function makeStyles(t) {
     },
     huntMarkerSel: { backgroundColor: t.textPrimary, borderColor: t.accent },
     huntMarkerNum: { color: t.bg, fontSize: 11, fontWeight: '700' },
+
+    // ── Lieux d'intérêt (or, jamais vert : on ne confond pas avec un Invader) ──
+    poiMarkerWrap: { width: 28, height: 28, alignItems: 'center', justifyContent: 'center' },
+    poiMarker: {
+      position: 'absolute', width: 24, height: 24, borderRadius: 6,
+      backgroundColor: t.accentScore, borderWidth: 2, borderColor: '#fff',
+      transform: [{ rotate: '45deg' }],
+      shadowColor: '#000', shadowOffset: { width: 0, height: 1 }, shadowOpacity: 0.25, shadowRadius: 2,
+    },
+    poiMarkerSel: { backgroundColor: t.textPrimary, borderColor: t.accentScore },
+    poiMarkerNum: { color: '#221A00', fontSize: 11, fontWeight: '800' },
+
+    objectiveBlock: { marginTop: 14 },
+    objRow: { flexDirection: 'row', gap: 6, marginTop: 8 },
+    objBtn: {
+      flex: 1, alignItems: 'center', gap: 3, paddingVertical: 8, paddingHorizontal: 4,
+      borderRadius: 10, backgroundColor: t.surfaceHigh, borderWidth: 1, borderColor: 'transparent',
+    },
+    objBtnActive: { borderColor: t.accentScore, backgroundColor: `${t.accentScore}1A` },
+    objBtnText: { fontSize: 10.5, fontWeight: '600', color: t.textSecondary, textAlign: 'center' },
+    objBtnTextActive: { color: t.accentScore, fontWeight: '800' },
+    objHint: { fontSize: 11, color: t.textSecondary, marginTop: 7, lineHeight: 15 },
+
+    poiRow: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 14, height: 52 },
+    poiRowDiamond: {
+      position: 'absolute', left: 14, width: 22, height: 22, borderRadius: 5,
+      backgroundColor: t.accentScore, transform: [{ rotate: '45deg' }],
+    },
+    poiRowNum: { width: 22, textAlign: 'center', fontSize: 11, fontWeight: '800', color: '#221A00' },
+    poiRowName: { fontSize: 14, fontWeight: '700', color: t.accentScore },
+    poiRowSub: { fontSize: 11, color: t.textSecondary, marginTop: 1 },
+
+    poiSheet: {
+      position: 'absolute', left: 12, right: 12, bottom: 16,
+      backgroundColor: t.surface, borderRadius: 16, padding: 16,
+      borderWidth: 1, borderColor: t.border,
+      shadowColor: '#000', shadowOffset: { width: 0, height: -2 }, shadowOpacity: 0.35, shadowRadius: 10, elevation: 10,
+    },
+    poiSheetHead: { flexDirection: 'row', alignItems: 'center', gap: 10 },
+    poiSheetDiamond: {
+      width: 15, height: 15, borderRadius: 4, backgroundColor: t.accentScore,
+      transform: [{ rotate: '45deg' }],
+    },
+    poiSheetTitle: { flex: 1, ...typography.arcadeHeading, fontSize: 15, color: t.textPrimary },
+    poiSheetChip: {
+      alignSelf: 'flex-start', marginTop: 9, fontSize: 10, fontWeight: '800', letterSpacing: 0.4,
+      color: t.accentScore, borderWidth: 1, borderColor: t.accentScore, borderRadius: 999,
+      paddingHorizontal: 8, paddingVertical: 2, textTransform: 'uppercase',
+    },
+    poiSheetText: { marginTop: 11, fontSize: 13.5, lineHeight: 19, color: t.textPrimary },
+    poiSheetActions: { flexDirection: 'row', gap: 8, marginTop: 14 },
+    poiSheetBtnPrimary: {
+      flex: 1, alignItems: 'center', paddingVertical: 11, borderRadius: 10, backgroundColor: t.accentScore,
+    },
+    poiSheetBtnPrimaryText: { fontSize: 14, fontWeight: '800', color: '#221A00' },
+    poiSheetBtn: {
+      flex: 1, alignItems: 'center', paddingVertical: 11, borderRadius: 10,
+      backgroundColor: t.surfaceHigh, borderWidth: 1, borderColor: t.border,
+    },
+    poiSheetBtnText: { fontSize: 14, fontWeight: '600', color: t.textPrimary },
+    poiSheetCredit: { fontSize: 10, color: t.textSecondary, textAlign: 'center', marginTop: 10 },
 
     // ── Panneau résultat ─────────────────────────────────────────────────────
     resultPanel: {

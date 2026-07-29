@@ -161,7 +161,35 @@
     },
     "pickDistricts": "Pick one or more districts",
     "districtsSelected_one": "{{count}} district selected",
-    "districtsSelected_other": "{{count}} districts selected"
+    "districtsSelected_other": "{{count}} districts selected",
+    "objective": {
+      "label": "Goal",
+      "pure": "Pure hunt",
+      "balanced": "Balanced",
+      "visit": "Hunt & sights",
+      "hint_pure": "Invaders only: as many as your time allows.",
+      "hint_balanced": "Invaders first, with a few notable places along the way.",
+      "hint_visit": "Hunting in discovery mode: more sights, slightly fewer Invaders."
+    },
+    "poiCount_one": "{{count}} place",
+    "poiCount_other": "{{count}} places",
+    "poiBadge": "Bonus stop",
+    "poiMore": "Read more",
+    "poiCredit": "Summary based on Wikipedia (CC BY-SA) · Places: Wikidata",
+    "poiTheme": {
+      "museums": "Art & museums",
+      "religious": "Place of worship",
+      "palaces": "Palace & mansion",
+      "monuments": "Monument",
+      "water": "Bridges & riverside",
+      "parks": "Park & garden",
+      "streets": "Street & square",
+      "stages": "Stage & cabaret",
+      "tables": "Legendary table",
+      "shops": "Shop & arcade",
+      "culture": "Cultural landmark",
+      "other": "Notable place"
+    }
   },
   "palmares": {
     "title": "Cities",
