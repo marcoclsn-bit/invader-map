@@ -1,5 +1,5 @@
 {
- "version": 11,
+ "version": 12,
  "updatedAt": "2026-07-29",
  "city": "PA",
  "attribution": "Lieux : Wikidata (CC0) · Résumés d’après Wikipédia (CC BY-SA) · Photos : Wikimedia Commons",
@@ -16,6 +16,32 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg/960px-Tour_Eiffel_Wikimedia_Commons.jpg",
    "photoBy": "Benh LIEU SONG",
    "photoLic": "Public domain"
+  },
+  {
+   "id": "Q19675",
+   "name": "Musée du Louvre",
+   "lat": 48.861111111,
+   "lng": 2.335833333,
+   "theme": "museums",
+   "fame": 168,
+   "summary": "Le plus grand musée d'art du monde, avec 73 000 m2 de salles, installé dans une résidence royale de huit siècles. François Ier en fait l'emblème de la Renaissance ; quand Louis XIV part pour Versailles, le palais se remplit peu à peu des collections royales et devient musée en 1793. Neuf départements y couvrent l'art occidental du Moyen Âge à 1848 et les civilisations antiques. La pyramide de Pei, ouverte en 1989, en est l'entrée.",
+   "wiki": "Musée du Louvre",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Cour_Napol%C3%A9on_at_night_-_Louvre.jpg/960px-Cour_Napol%C3%A9on_at_night_-_Louvre.jpg",
+   "photoBy": "Benh LIEU SONG",
+   "photoLic": "CC BY 2.5"
+  },
+  {
+   "id": "Q2981",
+   "name": "cathédrale Notre-Dame de Paris",
+   "lat": 48.853,
+   "lng": 2.3498,
+   "theme": "religious",
+   "fame": 124,
+   "summary": "Chantier lancé en 1163 par l'évêque Maurice de Sully, achevé vers 1345 : près de deux siècles, ce qui explique qu'elle mêle gothique primitif et gothique rayonnant. Ses deux rosaces de transept comptent parmi les plus grandes d'Europe. Viollet-le-Duc la restaure entre 1845 et 1867 et lui invente une flèche qui n'avait jamais existé. Ravagée par l'incendie du 15 avril 2019, elle a rouvert en décembre 2024 après cinq ans de travaux.",
+   "wiki": "Cathédrale Notre-Dame de Paris",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Notre-Dame_de_Paris_2013-07-24.jpg/960px-Notre-Dame_de_Paris_2013-07-24.jpg",
+   "photoBy": "P e z i",
+   "photoLic": "CC BY-SA 3.0"
   },
   {
    "id": "Q23402",
@@ -70,6 +96,19 @@
    "photoLic": "CC BY-SA 2.0"
   },
   {
+   "id": "Q202660",
+   "name": "Collège de France",
+   "lat": 48.849167,
+   "lng": 2.345556,
+   "theme": "culture",
+   "fame": 71,
+   "summary": "Fondé par François Ier en 1530 pour enseigner ce que la Sorbonne refusait d'aborder, il applique depuis une règle unique au monde : tous les cours sont gratuits, ouverts à tous, sans inscription ni diplôme à la clé. Sa devise, Docet omnia, promet d'enseigner toutes choses. Une cinquantaine de chaires y sont créées et supprimées au gré de l'avancée des savoirs ; y être élu professeur reste l'une des plus hautes distinctions françaises.",
+   "wiki": "Collège de France",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Coll%C3%A8ge_de_France%2C_place_Marcelin-Berthelot%2C_Paris_5e.jpg/960px-Coll%C3%A8ge_de_France%2C_place_Marcelin-Berthelot%2C_Paris_5e.jpg",
+   "photoBy": "Celette",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
    "id": "Q311",
    "name": "cimetière du Père-Lachaise",
    "lat": 48.861111,
@@ -122,6 +161,45 @@
    "photoLic": "CC BY-SA 3.0"
   },
   {
+   "id": "Q178065",
+   "name": "Centre national d'art et de culture Georges-Pompidou",
+   "lat": 48.860642,
+   "lng": 2.352245,
+   "theme": "museums",
+   "fame": 63,
+   "summary": "Le bâtiment qui a retourné son architecture comme un gant : Renzo Piano et Richard Rogers ont rejeté à l'extérieur la structure, les tuyaux et les escaliers pour libérer les plateaux intérieurs, et codé les gaines par couleur (bleu pour l'air, vert pour l'eau, jaune pour l'électricité, rouge pour la circulation). Inauguré en 1977 au grand scandale des Parisiens, il abrite la première collection d'art moderne d'Europe. Sa chenille de verre offre l'une des plus belles vues sur la ville.",
+   "wiki": "Centre national d'art et de culture Georges-Pompidou",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Paris_Montmartre_Blick_aufs_Centre_Georges-Pompidou.jpg/960px-Paris_Montmartre_Blick_aufs_Centre_Georges-Pompidou.jpg",
+   "photoBy": "Zairon",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q187840",
+   "name": "palais Garnier",
+   "lat": 48.871944444,
+   "lng": 2.331666666,
+   "theme": "stages",
+   "fame": 62,
+   "summary": "Charles Garnier, 35 ans et parfait inconnu, remporte en 1861 le concours lancé par Napoléon III. Quand l'impératrice lui demande dans quel style il construit, il répond : le style Napoléon III. Le chantier bute sur une nappe d'eau souterraine qu'il faut emprisonner dans une cuve, à l'origine de la légende du lac sous l'Opéra qu'exploitera Gaston Leroux. Inauguré en 1875, l'édifice cache 11 000 m2 de scène et d'ateliers derrière son grand escalier de marbre ; le plafond de Chagall date de 1964.",
+   "wiki": "Opéra Garnier",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Paris_Opera_full_frontal_architecture%2C_May_2009.jpg/960px-Paris_Opera_full_frontal_architecture%2C_May_2009.jpg",
+   "photoBy": "Peter Rivera",
+   "photoLic": "CC BY 2.0"
+  },
+  {
+   "id": "Q189503",
+   "name": "place de la Concorde",
+   "lat": 48.8656331,
+   "lng": 2.3212357,
+   "theme": "streets",
+   "fame": 62,
+   "summary": "La plus grande place de Paris, 7,5 hectares, et la plus chargée d'histoire : conçue pour porter une statue de Louis XV, elle devient place de la Révolution et voit tomber 1 119 têtes sous la guillotine, dont celles de Louis XVI et de Marie-Antoinette. Rebaptisée Concorde en signe d'apaisement, elle reçoit en 1836 l'obélisque de Louxor, offert par le vice-roi d'Égypte, seul monument parisien à n'avoir jamais changé de camp politique. Il a 3 300 ans.",
+   "wiki": "Place de la Concorde",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Place_de_la_Concorde_from_the_Eiffel_Tower%2C_Paris_April_2011.jpg/960px-Place_de_la_Concorde_from_the_Eiffel_Tower%2C_Paris_April_2011.jpg",
+   "photoBy": "Cristian Bortes from Cluj-Napoca, Romania",
+   "photoLic": "CC BY 2.0"
+  },
+  {
    "id": "Q188856",
    "name": "Panthéon",
    "lat": 48.846198,
@@ -132,6 +210,19 @@
    "wiki": "Panthéon (Paris)",
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Panth%C3%A9on%2C_Paris_25_March_2012.jpg/960px-Panth%C3%A9on%2C_Paris_25_March_2012.jpg",
    "photoBy": "Camille Gévaudan",
+   "photoLic": "CC BY-SA 3.0"
+  },
+  {
+   "id": "Q190063",
+   "name": "île de la Cité",
+   "lat": 48.854722222,
+   "lng": 2.3475,
+   "theme": "water",
+   "fame": 60,
+   "summary": "Le berceau de Paris. C'est là que s'installe la tribu des Parisii, là que Lutèce se fortifie en 308, là que Clovis établit sa capitale. Un chroniqueur la décrivait en 1190 comme la tête, le cœur et la moelle de Paris. Ses 22 hectares portent Notre-Dame, la Sainte-Chapelle et la Conciergerie, mais aussi, à la pointe ouest, la place Dauphine et le square du Vert-Galant, restés étonnamment calmes.",
+   "wiki": "Île de la Cité",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Paris_Notre_Dame_DSC00732.jpg/960px-Paris_Notre_Dame_DSC00732.jpg",
+   "photoBy": "David Monniaux",
    "photoLic": "CC BY-SA 3.0"
   },
   {
@@ -148,6 +239,32 @@
    "photoLic": "CC BY-SA 3.0"
   },
   {
+   "id": "Q214654",
+   "name": "Sorbonne",
+   "lat": 48.84864,
+   "lng": 2.34356,
+   "theme": "culture",
+   "fame": 58,
+   "summary": "Le bâtiment actuel date de 1885, mais l'institution remonte aux années 1250, quand Robert de Sorbon, chapelain de Saint Louis, fonde un collège pour permettre aux étudiants pauvres en théologie de vivre décemment. Devenue synonyme d'orthodoxie doctrinale, la Sorbonne condamna Jeanne d'Arc et fit brûler des livres avant d'être dissoute en 1793. La chapelle de Richelieu, seul vestige du XVIIe siècle, abrite son tombeau.",
+   "wiki": "Sorbonne",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/P1300735_Paris_V_chapelle_La_Sorbonne_rwk.jpg/960px-P1300735_Paris_V_chapelle_La_Sorbonne_rwk.jpg",
+   "photoBy": "Mbzt",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q193193",
+   "name": "Sainte-Chapelle",
+   "lat": 48.855369,
+   "lng": 2.345028,
+   "theme": "religious",
+   "fame": 57,
+   "summary": "Saint Louis la fait bâtir en sept ans, entre 1242 et 1248, pour un motif unique : abriter la Couronne d'épines qu'il vient d'acheter à l'empereur de Constantinople pour une somme supérieure au coût de la chapelle elle-même. L'architecte a supprimé presque tous les murs pour ne laisser que 1 113 scènes de vitrail sur 600 m2, dont les deux tiers sont d'origine. La chapelle basse était réservée aux serviteurs, la haute au roi, qui y accédait directement depuis son palais.",
+   "wiki": "Sainte-Chapelle",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/3/33/Szensapel.jpg",
+   "photoBy": "Mathae",
+   "photoLic": "CC BY 2.5"
+  },
+  {
    "id": "Q217925",
    "name": "Champ-de-Mars",
    "lat": 48.85613,
@@ -159,6 +276,19 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/MG-Paris-Champ_de_Mars.jpg/960px-MG-Paris-Champ_de_Mars.jpg",
    "photoBy": "Mattgirling",
    "photoLic": "CC BY-SA 3.0"
+  },
+  {
+   "id": "Q188977",
+   "name": "hôtel des Invalides",
+   "lat": 48.855,
+   "lng": 2.3125,
+   "theme": "monuments",
+   "fame": 56,
+   "summary": "Louis XIV le fait construire en 1670 pour loger ses soldats blessés, qui jusque-là mendiaient sur les routes ; jusqu'à 4 000 pensionnaires y vécurent. Libéral Bruand dessine les bâtiments, Jules Hardouin-Mansart le dôme doré à la feuille d'or, l'un des sommets de l'architecture classique française. Napoléon y repose depuis 1861 dans un sarcophage de quartzite rouge, emboîté comme une poupée russe dans six cercueils successifs.",
+   "wiki": "Hôtel des Invalides",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/H%C3%B4tel_des_Invalides_-_20150801_16h09_%2810630%29.jpg/960px-H%C3%B4tel_des_Invalides_-_20150801_16h09_%2810630%29.jpg",
+   "photoBy": "Another one of my pictures: This photograph was taken by Med",
+   "photoLic": "CC BY-SA 4.0"
   },
   {
    "id": "Q151030",
@@ -174,6 +304,32 @@
    "photoLic": "CC BY 2.0"
   },
   {
+   "id": "Q329852",
+   "name": "palais du Luxembourg",
+   "lat": 48.848333333,
+   "lng": 2.3375,
+   "theme": "palaces",
+   "fame": 53,
+   "summary": "Marie de Médicis, veuve d'Henri IV et lassée du Louvre, se fait bâtir à partir de 1615 un palais qui rappelle le Palazzo Pitti de son enfance florentine, jusqu'aux bossages rustiques de la façade. Elle n'y vivra que cinq ans avant d'être exilée par Richelieu. Prison sous la Terreur, siège du Sénat depuis 1799, il conserve une bibliothèque décorée par Delacroix. La visite se fait sur inscription ou pendant les Journées du patrimoine.",
+   "wiki": "Palais du Luxembourg",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2017_-_Le_palais_du_Luxembourg%2C_dans_le_jardin_du_Luxembourg%2C_Paris_-_3.jpg/960px-2017_-_Le_palais_du_Luxembourg%2C_dans_le_jardin_du_Luxembourg%2C_Paris_-_3.jpg",
+   "photoBy": "Luis Miguel Bugallo Sánchez (Lmbuga)",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q1538826",
+   "name": "musée des Arts et Métiers",
+   "lat": 48.866111111,
+   "lng": 2.355277777,
+   "theme": "museums",
+   "fame": 53,
+   "summary": "Le plus ancien musée technique du monde, fondé en 1794 sur une idée de l'abbé Grégoire : rassembler les machines pour former les ingénieurs par l'exemple. Il occupe l'ancien prieuré Saint-Martin-des-Champs, dont l'église romane sert d'écrin au pendule de Foucault et à l'avion de Clément Ader. On y voit aussi la première machine à calculer de Pascal et le laboratoire de Lavoisier reconstitué.",
+   "wiki": "Musée des Arts et Métiers",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Mus%C3%A9e_des_Arts_et_M%C3%A9tiers_337.jpg/960px-Mus%C3%A9e_des_Arts_et_M%C3%A9tiers_337.jpg",
+   "photoBy": "Arnaud 25",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
    "id": "Q309458",
    "name": "jardin du Luxembourg",
    "lat": 48.846944,
@@ -185,6 +341,32 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/LuxembourgMontparnasse_2.jpg/960px-LuxembourgMontparnasse_2.jpg",
    "photoBy": "Kirua",
    "photoLic": "Public domain"
+  },
+  {
+   "id": "Q329948",
+   "name": "Palais-Royal",
+   "lat": 48.863333333,
+   "lng": 2.336944444,
+   "theme": "palaces",
+   "fame": 51,
+   "summary": "Richelieu se fait bâtir ce palais en 1628 et le lègue à Louis XIII. En 1780, le duc d'Orléans, à court d'argent, entoure le jardin de galeries à louer : cafés, tripots, libraires et filles de joie y attirent tout Paris, et la police n'ayant pas le droit d'entrer chez un prince, l'endroit devient le foyer des idées séditieuses. C'est là que Camille Desmoulins appelle aux armes le 12 juillet 1789. Les colonnes rayées de Buren y sont installées en 1986.",
+   "wiki": "Palais-Royal",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Conseil_d%27Etat_Paris_WA.jpg/960px-Conseil_d%27Etat_Paris_WA.jpg",
+   "photoBy": "Marie-Lan Nguyen",
+   "photoLic": "Public domain"
+  },
+  {
+   "id": "Q457318",
+   "name": "Grand Palais",
+   "lat": 48.866111,
+   "lng": 2.3125,
+   "theme": "palaces",
+   "fame": 51,
+   "summary": "Bâti pour l'Exposition universelle de 1900 en remplacement du palais de l'Industrie, il porte sur son fronton la formule qui le résume : monument consacré par la République à la gloire de l'art français. Sa nef couvre 13 500 m2 sous 6 000 tonnes de verre et d'acier, la plus grande verrière d'Europe. Le Corbusier proposa de le démolir en 1965 ; sa mort la même année a sauvé le bâtiment, rouvert en 2024 après restauration.",
+   "wiki": "Grand Palais (Paris)",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Grand_and_Petit_Palais_from_the_Eiffel_Tower%2C_Paris_June_2014.jpg/960px-Grand_and_Petit_Palais_from_the_Eiffel_Tower%2C_Paris_June_2014.jpg",
+   "photoBy": "daryl_mitchell from Saskatoon, Saskatchewan, Canada",
+   "photoLic": "CC BY-SA 2.0"
   },
   {
    "id": "Q209626",
@@ -224,6 +406,19 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Remote_view_of_the_Tour_Montparnasse_%26_Eiffel_Tower_in_2005.jpg/960px-Remote_view_of_the_Tour_Montparnasse_%26_Eiffel_Tower_in_2005.jpg",
    "photoBy": "User:Thbz",
    "photoLic": "CC BY-SA 3.0"
+  },
+  {
+   "id": "Q818517",
+   "name": "jardin des Tuileries",
+   "lat": 48.863888888,
+   "lng": 2.326111111,
+   "theme": "parks",
+   "fame": 48,
+   "summary": "Le plus ancien et le plus vaste jardin à la française de Paris, créé en 1564 pour Catherine de Médicis sur d'anciennes fabriques de tuiles, puis redessiné par Le Nôtre en 1664 dans la perspective qui file jusqu'à l'Arc de triomphe. Le palais qu'il desservait a brûlé pendant la Commune en 1871 et n'a jamais été relevé. Ses bassins, ses statues de Maillol et ses chaises métalliques en font le salon en plein air des Parisiens.",
+   "wiki": "Jardin des Tuileries",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Grande_Roue_de_Paris_-_Louvre_et_Jardins_des_Tuileries.jpg/960px-Grande_Roue_de_Paris_-_Louvre_et_Jardins_des_Tuileries.jpg",
+   "photoBy": "Tangopaso",
+   "photoLic": "Public domain"
   },
   {
    "id": "Q271639",
@@ -276,6 +471,32 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Petit_Palais_Paris_2.jpg/960px-Petit_Palais_Paris_2.jpg",
    "photoBy": "Chabe01",
    "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q272208",
+   "name": "cimetière du Montparnasse",
+   "lat": 48.83778,
+   "lng": 2.32833,
+   "theme": "parks",
+   "fame": 47,
+   "summary": "Ouvert en 1824 hors des limites de Paris, il occupe 19 hectares et abrite 35 000 concessions. On y trouve Baudelaire, Maupassant, Sartre et Beauvoir dans la même tombe, Serge Gainsbourg dont la sépulture est couverte de tickets de métro et de choux, Jean Seberg, Julio Cortázar et Samuel Beckett. Un moulin du XVIIe siècle, vestige d'une ferme, subsiste dans l'enceinte.",
+   "wiki": "Cimetière du Montparnasse",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Cimeti%C3%A8re_du_Montparnasse%2C_3_boulevard_Edgar-Quinet%2C_Paris_14e.jpg/960px-Cimeti%C3%A8re_du_Montparnasse%2C_3_boulevard_Edgar-Quinet%2C_Paris_14e.jpg",
+   "photoBy": "Celette",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q745942",
+   "name": "Paris-Nord",
+   "lat": 48.881111111,
+   "lng": 2.355277777,
+   "theme": "other",
+   "fame": 47,
+   "summary": "La gare la plus fréquentée d'Europe, avec près de 300 millions de voyageurs par an. La façade actuelle, achevée en 1866 par Jacques Hittorff, est un arc de triomphe ferroviaire : 23 statues y personnifient les villes desservies, les neuf plus grandes au sommet pour les destinations internationales, Londres et Bruxelles en tête. La charpente métallique de la halle fut commandée en Écosse, faute de fournisseur français capable de la fabriquer.",
+   "wiki": "Gare de Paris-Nord",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Paris_gare_du_nord_4_bis.JPG/960px-Paris_gare_du_nord_4_bis.JPG",
+   "photoBy": "Velvet",
+   "photoLic": "CC BY-SA 3.0"
   },
   {
    "id": "Q28924",
@@ -369,6 +590,45 @@
    "photoLic": "CC BY-SA 3.0"
   },
   {
+   "id": "Q138101",
+   "name": "conciergerie de Paris",
+   "lat": 48.856388888,
+   "lng": 2.345555555,
+   "theme": "palaces",
+   "fame": 43,
+   "summary": "Ce qui reste du palais des rois de France sur l'île de la Cité, avant que Charles V ne s'installe au Louvre. La salle des Gens d'armes, immense vaisseau gothique de 1302, est la plus grande salle civile médiévale d'Europe. Devenue prison, la Conciergerie voit passer 2 780 détenus pendant la Terreur, dont Marie-Antoinette, Danton et Robespierre ; la plupart n'en sortaient que pour l'échafaud. Sa tour de l'Horloge porte depuis 1371 la première horloge publique de Paris.",
+   "wiki": "Conciergerie de Paris",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Paris_Conciergerie_265.jpg/960px-Paris_Conciergerie_265.jpg",
+   "photoBy": "xandru",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q211034",
+   "name": "île Saint-Louis",
+   "lat": 48.851666666,
+   "lng": 2.356388888,
+   "theme": "water",
+   "fame": 43,
+   "summary": "Deux îlots à vaches réunis et lotis d'un seul tenant au XVIIe siècle, ce qui donne à l'île son unité rare : un damier de six rues bordées d'hôtels particuliers construits en trente ans. Onze hectares, 2 300 habitants, aucune station de métro, aucun grand monument. On y vient pour la promenade sur les quais et pour la glace Berthillon, fabriquée sur place depuis 1954.",
+   "wiki": "Île Saint-Louis",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Quai_d%27Orl%C3%A9ans_Paris_004.JPG/960px-Quai_d%27Orl%C3%A9ans_Paris_004.JPG",
+   "photoBy": "Moonik",
+   "photoLic": "CC BY-SA 3.0"
+  },
+  {
+   "id": "Q810700",
+   "name": "Bataclan",
+   "lat": 48.863055555,
+   "lng": 2.370833333,
+   "theme": "stages",
+   "fame": 43,
+   "summary": "Une salle de 1865 dont l'architecte avait donné à la façade l'allure d'une pagode chinoise, en écho à l'opérette Ba-ta-clan d'Offenbach dont elle tire son nom. Café-concert, dancing, cinéma puis salle de rock, elle a accueilli Édith Piaf comme les Grateful Dead et Prince. Inscrite aux monuments historiques depuis 1991, elle porte le souvenir du 13 novembre 2015, où 90 personnes y ont été assassinées. Elle a rouvert un an plus tard, jour pour jour.",
+   "wiki": "Bataclan",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Bataclan%2C_50_boulevard_Voltaire%2C_Paris_18_July_2015_-_panoramio_1.jpg/960px-Bataclan%2C_50_boulevard_Voltaire%2C_Paris_18_July_2015_-_panoramio_1.jpg",
+   "photoBy": "Patrick Nouhailler",
+   "photoLic": "CC BY-SA 3.0"
+  },
+  {
    "id": "Q746647",
    "name": "cimetière de Montmartre",
    "lat": 48.887778,
@@ -380,6 +640,42 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Monmartre_Cemetery.JPG/960px-Monmartre_Cemetery.JPG",
    "photoBy": "Elisabetta Cipolla, Tantalas",
    "photoLic": "Public domain"
+  },
+  {
+   "id": "Q638423",
+   "name": "opéra Bastille",
+   "lat": 48.851944444,
+   "lng": 2.370555555,
+   "theme": "stages",
+   "fame": 42,
+   "summary": "Voulu par François Mitterrand pour offrir un opéra populaire face au Garnier jugé trop mondain, il est confié en 1983 à l'architecte uruguayen Carlos Ott, choisi par erreur selon une légende tenace qui voulait que le jury ait cru sélectionner Richard Meier. Inauguré le 13 juillet 1989 pour le bicentenaire de la Révolution, il aligne 2 745 places, l'une des plus grandes salles lyriques du monde, et des dessous de scène qui descendent à 30 mètres.",
+   "wiki": "Opéra Bastille"
+  },
+  {
+   "id": "Q643520",
+   "name": "place Vendôme",
+   "lat": 48.8675,
+   "lng": 2.329444444,
+   "theme": "streets",
+   "fame": 42,
+   "summary": "Jules Hardouin-Mansart dessine en 1699 des façades avant même de savoir qui bâtira derrière : les acquéreurs devaient s'y conformer, ce qui donne à la place son unité parfaite. La statue de Louis XIV fut fondue à la Révolution, remplacée par la colonne Vendôme, coulée dans le bronze de 1 200 canons pris à Austerlitz. Les communards l'abattirent en 1871 sur l'initiative de Courbet, qui fut condamné à la payer ; elle fut relevée cinq ans plus tard.",
+   "wiki": "Place Vendôme",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/The_Place_Vend%C3%B4me_Column-Paris.jpg/960px-The_Place_Vend%C3%B4me_Column-Paris.jpg",
+   "photoBy": "Yair Haklai",
+   "photoLic": "CC BY-SA 3.0"
+  },
+  {
+   "id": "Q273593",
+   "name": "École nationale supérieure des beaux-arts",
+   "lat": 48.856805555,
+   "lng": 2.333277777,
+   "theme": "culture",
+   "fame": 42,
+   "summary": "Les Beaux-Arts de Paris occupent depuis 1817 l'ancien couvent des Petits-Augustins, quai Malaquais. Le lieu avait servi de dépôt aux sculptures sauvées des églises pendant la Révolution, et cette collection de fragments encastrés dans les murs de la cour donne encore à l'endroit son étrangeté. Delacroix, Monet, Degas, Seurat et Matisse y ont étudié. Les expositions du Palais des études sont ouvertes au public.",
+   "wiki": "Beaux-Arts de Paris",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Paris_6_-_ENSBA_01.jpg/960px-Paris_6_-_ENSBA_01.jpg",
+   "photoBy": "Selbymay",
+   "photoLic": "CC BY-SA 3.0"
   },
   {
    "id": "Q936633",
@@ -447,6 +743,32 @@
    "photoLic": "CC BY 2.0"
   },
   {
+   "id": "Q631104",
+   "name": "arc de triomphe du Carrousel",
+   "lat": 48.861666666,
+   "lng": 2.332777777,
+   "theme": "monuments",
+   "fame": 40,
+   "summary": "Élevé de 1806 à 1810 pour célébrer la capitulation d'Ulm, il servait d'entrée d'honneur au palais des Tuileries, aujourd'hui disparu. Napoléon le fit couronner par les quatre chevaux de bronze volés à la basilique Saint-Marc de Venise ; ils furent rendus en 1815 et remplacés par une copie. Trois fois plus petit que son grand frère de l'Étoile, il ouvre la perspective de l'axe historique qui file jusqu'à La Défense.",
+   "wiki": "Arc de triomphe du Carrousel",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Paris_-_Jardin_des_Tuileries_-_Arc_de_Triomphe_du_Carrousel_-_PA00085992_-_003.jpg/960px-Paris_-_Jardin_des_Tuileries_-_Arc_de_Triomphe_du_Carrousel_-_PA00085992_-_003.jpg",
+   "photoBy": "Thesupermat",
+   "photoLic": "CC BY-SA 3.0"
+  },
+  {
+   "id": "Q898629",
+   "name": "place des Vosges",
+   "lat": 48.855555555,
+   "lng": 2.365555555,
+   "theme": "streets",
+   "fame": 40,
+   "summary": "La plus ancienne place de Paris, achevée en 1612 sur ordre d'Henri IV, à l'emplacement de l'hôtel des Tournelles que Catherine de Médicis avait fait raser après la mort accidentelle de son mari en tournoi. Trente-six pavillons de brique et de pierre identiques encadrent un square parfaitement carré. Victor Hugo y vécut seize ans au numéro 6, aujourd'hui musée. Le nom actuel récompense le département des Vosges, premier à avoir payé ses impôts en 1800.",
+   "wiki": "Place des Vosges",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Place_des_Vosges_vue_a%C3%A9rienne.png/960px-Place_des_Vosges_vue_a%C3%A9rienne.png",
+   "photoBy": "Des Racines et des Ailes",
+   "photoLic": "CC BY 3.0"
+  },
+  {
    "id": "Q330375",
    "name": "Folies Bergère",
    "lat": 48.874167,
@@ -471,6 +793,19 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Paris.-_Mus%C3%A9e_Marmottan_Monet.jpg/960px-Paris.-_Mus%C3%A9e_Marmottan_Monet.jpg",
    "photoBy": "PIERRE ANDRE LECLERCQ",
    "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q757180",
+   "name": "Paris-Est",
+   "lat": 48.876944444,
+   "lng": 2.359166666,
+   "theme": "other",
+   "fame": 39,
+   "summary": "Ouverte en 1849 sous le nom de gare de Strasbourg, elle ferme la perspective du boulevard qui porte ce nom. Son grand pignon vitré est surmonté d'une statue allégorique de Strasbourg, doublée depuis 1931 par celle de Verdun sur l'aile ajoutée en symétrie. C'est d'ici que sont partis les soldats de 1914 vers le front de l'Est ; une immense toile de l'Américain Albert Herter, offerte en mémoire de son fils tué au combat, le rappelle dans le hall.",
+   "wiki": "Gare de Paris-Est",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Paris-Gare_de_l%27Est-2009.jpg/960px-Paris-Gare_de_l%27Est-2009.jpg",
+   "photoBy": "Gilbert Bochenek",
+   "photoLic": "CC BY 3.0"
   },
   {
    "id": "Q334186",
@@ -538,6 +873,32 @@
    "photoLic": "CC BY 2.0"
   },
   {
+   "id": "Q1414059",
+   "name": "parc Monceau",
+   "lat": 48.8794,
+   "lng": 2.30923,
+   "theme": "parks",
+   "fame": 38,
+   "summary": "Le duc de Chartres se fait aménager en 1778 un jardin de fantaisie peuplé de fausses ruines : pyramide égyptienne, colonnade en hémicycle au bord d'un bassin, tombeaux, pont vénitien. Le peintre Carmontelle voulait y réunir tous les temps et tous les lieux. Haussmann le transforme en parc public en 1861 ; Monet y a peint cinq toiles. Une rotonde de Ledoux, ancien pavillon d'octroi du mur des Fermiers généraux, en garde l'entrée.",
+   "wiki": "Parc Monceau",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Parc_Monceau_20060812_35.jpg/960px-Parc_Monceau_20060812_35.jpg",
+   "photoBy": "Guillaume Jacquet",
+   "photoLic": "CC BY-SA 3.0"
+  },
+  {
+   "id": "Q1094338",
+   "name": "Cité des sciences et de l'industrie",
+   "lat": 48.895555555,
+   "lng": 2.388055555,
+   "theme": "museums",
+   "fame": 38,
+   "summary": "Le plus grand musée scientifique d'Europe, ouvert en 1986 dans la carcasse d'une salle des ventes aux enchères de viande jamais achevée, vestige des abattoirs de la Villette. Le bâtiment de 100 000 m2 est ceint de douves et coiffé de deux coupoles orientables. Explora, le planétarium, le sous-marin Argonaute et la Cité des enfants en font une sortie familiale à part entière.",
+   "wiki": "Cité des sciences et de l'industrie",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Machines_%C3%A0_la_Cit%C3%A9_des_Sciences_et_de_l%27Industrie.jpg/960px-Machines_%C3%A0_la_Cit%C3%A9_des_Sciences_et_de_l%27Industrie.jpg",
+   "photoBy": "Syced",
+   "photoLic": "CC0"
+  },
+  {
    "id": "Q295844",
    "name": "église Saint-Sulpice de Paris",
    "lat": 48.851002,
@@ -577,6 +938,19 @@
    "photoLic": "CC BY-SA 4.0"
   },
   {
+   "id": "Q747506",
+   "name": "Paris-Saint-Lazare",
+   "lat": 48.876944444,
+   "lng": 2.324444444,
+   "theme": "other",
+   "fame": 36,
+   "summary": "La première gare construite en Île-de-France, en 1837, pour la ligne de Paris au Pecq. Sa halle de verre et de fonte a fasciné les impressionnistes : Monet y planta son chevalet en 1877 et en tira douze toiles, obtenant du directeur qu'il fasse charger les locomotives de charbon pour produire davantage de vapeur. Deuxième gare de France par le trafic, elle est inscrite aux monuments historiques depuis 1984.",
+   "wiki": "Gare de Paris-Saint-Lazare",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Gare_de_Paris-Saint-Lazare_001.jpg/960px-Gare_de_Paris-Saint-Lazare_001.jpg",
+   "photoBy": "Moonik",
+   "photoLic": "CC BY-SA 3.0"
+  },
+  {
    "id": "Q730948",
    "name": "jardin des plantes de Paris",
    "lat": 48.843889,
@@ -601,6 +975,19 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Le_mus%C3%A9e_Guimet_November_20%2C_2011.jpg/960px-Le_mus%C3%A9e_Guimet_November_20%2C_2011.jpg",
    "photoBy": "Jean-Pierre Dalbéra",
    "photoLic": "CC BY 2.0"
+  },
+  {
+   "id": "Q726781",
+   "name": "musée de l'Orangerie",
+   "lat": 48.863845351,
+   "lng": 2.322538337,
+   "theme": "museums",
+   "fame": 35,
+   "summary": "L'ancienne serre à orangers des Tuileries, construite en 1852, transformée en 1927 pour accueillir un don de Monet à l'État : huit panneaux de Nymphéas installés dans deux salles ovales, sous lumière naturelle, selon un accrochage que le peintre a lui-même dicté. Il exigea que rien ne vienne rompre le cycle, pas même un angle. Le sous-sol présente la collection Walter-Guillaume, avec Renoir, Cézanne, Soutine et Modigliani.",
+   "wiki": "Musée de l'Orangerie",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/2011-12-Musee_de_lorangerie.jpg/960px-2011-12-Musee_de_lorangerie.jpg",
+   "photoBy": "Traktorminze",
+   "photoLic": "CC BY-SA 3.0"
   },
   {
    "id": "Q218613",
@@ -640,6 +1027,84 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Palais_Omnisports_de_Paris-Bercy_2007.jpg/960px-Palais_Omnisports_de_Paris-Bercy_2007.jpg",
    "photoBy": "Jan Zubíček",
    "photoLic": "CC BY-SA 2.0"
+  },
+  {
+   "id": "Q1613027",
+   "name": "stade Roland-Garros",
+   "lat": 48.846282,
+   "lng": 2.249374,
+   "theme": "other",
+   "fame": 34,
+   "summary": "Construit en hâte durant l'hiver 1927 pour accueillir la Coupe Davis que les Quatre Mousquetaires venaient de ramener en France, sur un terrain cédé par le Stade français à condition qu'il porte le nom d'un ancien membre : l'aviateur Roland Garros, mort au combat en 1918. Il n'avait jamais joué au tennis. Le stade compte aujourd'hui 18 courts, dont le Philippe-Chatrier et sa terre battue arrosée chaque soir.",
+   "wiki": "Stade Roland-Garros",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/ND_DN_2006FO.jpg/960px-ND_DN_2006FO.jpg",
+   "photoBy": "sk4t",
+   "photoLic": "CC BY-SA 2.0"
+  },
+  {
+   "id": "Q420494",
+   "name": "Vélodrome Jacques-Anquetil",
+   "lat": 48.82596,
+   "lng": 2.41173,
+   "theme": "other",
+   "fame": 34,
+   "summary": "La Cipale, pour piste municipale, inaugurée en 1896 dans le bois de Vincennes. Site olympique en 1900 puis en 1924, elle a accueilli l'arrivée du Tour de France de 1968 à 1974, pendant la reconstruction du Parc des Princes : c'est ici qu'Eddy Merckx a levé les bras. Rebaptisée en 1987 du nom de Jacques Anquetil, elle sert toujours aux courses sur piste et aux entraînements.",
+   "wiki": "Vélodrome Jacques-Anquetil",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Velodrome_de_Vincennes.jpg",
+   "photoBy": "Unknown authorUnknown author",
+   "photoLic": "Public domain"
+  },
+  {
+   "id": "Q1535247",
+   "name": "palais de Tokyo",
+   "lat": 48.86408,
+   "lng": 2.29713,
+   "theme": "museums",
+   "fame": 34,
+   "summary": "Bâti pour l'Exposition internationale de 1937, entièrement revêtu de marbre, il tire son nom du quai de Tokio qui longeait alors la Seine. Son aile ouest est devenue en 2002 un centre d'art contemporain volontairement laissé à l'état brut, béton nu et gaines apparentes, ouvert jusqu'à minuit. L'aile est abrite le musée d'Art moderne de la Ville de Paris.",
+   "wiki": "Palais de Tokyo",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Palais_de_Tokyo_20030101w.JPG/960px-Palais_de_Tokyo_20030101w.JPG",
+   "photoBy": "Strobilomyces",
+   "photoLic": "CC BY-SA 3.0"
+  },
+  {
+   "id": "Q1338207",
+   "name": "église Saint-Eustache de Paris",
+   "lat": 48.863333333,
+   "lng": 2.345,
+   "theme": "religious",
+   "fame": 34,
+   "summary": "Troisième plus grande église de Paris après Notre-Dame et Saint-Sulpice, bâtie de 1532 à 1640, ce qui explique son hybridation : structure gothique flamboyant et décor Renaissance. Elle est dédiée à un général romain converti après avoir vu une croix entre les bois d'un cerf. Richelieu, Molière et Madame de Pompadour y furent baptisés, Lully s'y maria, Mozart y enterra sa mère. Son orgue de 8 000 tuyaux est le plus grand de France.",
+   "wiki": "Église Saint-Eustache de Paris",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/St.-Eustache.jpg/960px-St.-Eustache.jpg",
+   "photoBy": "Pavel Krok",
+   "photoLic": "CC BY-SA 2.5"
+  },
+  {
+   "id": "Q246448",
+   "name": "parc de la Villette",
+   "lat": 48.89306,
+   "lng": 2.39056,
+   "theme": "parks",
+   "fame": 34,
+   "summary": "Le plus grand espace vert de Paris, 55 hectares ouverts en 1987 sur le site des abattoirs de Napoléon III. Bernard Tschumi y a réparti 26 folies de métal rouge sur une grille régulière, points de repère volontairement dépourvus de fonction fixe. Le canal de l'Ourcq le traverse, la Grande Halle de 1867 y subsiste, et l'ensemble concentre la Cité des sciences, la Philharmonie et le Zénith.",
+   "wiki": "Parc de la Villette",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Parc_de_la_Villette%2C_Paris_2010.jpg/960px-Parc_de_la_Villette%2C_Paris_2010.jpg",
+   "photoBy": "Jean-Marie Hullot from France",
+   "photoLic": "CC BY-SA 2.0"
+  },
+  {
+   "id": "Q734017",
+   "name": "Paris-Austerlitz",
+   "lat": 48.842222222,
+   "lng": 2.365833333,
+   "theme": "other",
+   "fame": 34,
+   "summary": "L'ancienne gare d'Orléans, ouverte en 1840, dont la halle métallique de 51 mètres de portée abrite la particularité rare d'accueillir les trains sous une verrière de 280 mètres de long, restée intacte. C'est d'ici que le gouvernement s'est enfui vers Bordeaux en 1914 et 1940. Sa jumelle, la gare d'Orsay, construite plus en aval pour rapprocher les voyageurs du centre, est devenue le musée que l'on sait.",
+   "wiki": "Gare de Paris-Austerlitz",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Gare_d%27Austerlitz_Fa%C3%A7ade_Seine.jpg/960px-Gare_d%27Austerlitz_Fa%C3%A7ade_Seine.jpg",
+   "photoBy": "Arthur Weidmann",
+   "photoLic": "CC BY-SA 4.0"
   },
   {
    "id": "Q939883",
@@ -707,6 +1172,19 @@
    "photoLic": "CC BY 4.0"
   },
   {
+   "id": "Q640447",
+   "name": "musée Carnavalet",
+   "lat": 48.857375,
+   "lng": 2.362745,
+   "theme": "museums",
+   "fame": 32,
+   "summary": "Le musée de l'histoire de Paris, installé dans deux hôtels particuliers du Marais reliés par une galerie. L'hôtel Carnavalet, du XVIe siècle, fut la demeure de Madame de Sévigné pendant vingt ans. Les collections vont des pirogues néolithiques repêchées à Bercy aux enseignes de boutiques, en passant par la chambre de Proust et la cellule de Louis XVI au Temple. L'entrée des collections permanentes est gratuite.",
+   "wiki": "Musée Carnavalet",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Carnavalet_Par%C3%ADs_10.JPG/960px-Carnavalet_Par%C3%ADs_10.JPG",
+   "photoBy": "Miguel Hermoso Cuesta",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
    "id": "Q1200698",
    "name": "Le Bon Marché",
    "lat": 48.851183,
@@ -733,17 +1211,43 @@
    "photoLic": "CC BY-SA 2.0"
   },
   {
-   "id": "Q1503331",
-   "name": "obélisque de Louxor",
-   "lat": 48.865475,
-   "lng": 2.321133,
-   "theme": "monuments",
+   "id": "Q726531",
+   "name": "théâtre des Champs-Élysées",
+   "lat": 48.865833333,
+   "lng": 2.303055555,
+   "theme": "stages",
    "fame": 31,
-   "summary": "Le plus ancien monument de Paris : taillé au XIIIe siècle avant notre ère pour le temple d'Amon à Louxor, il est antérieur à la fondation même de la ville. Offert par l'Égypte, il se dresse au centre de la Concorde depuis 1836.",
-   "wiki": "Obélisque de Louxor",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Luxor_Obelisk%2C_Place_de_la_Concorde%2C_Paris_June_2014_002.jpg/960px-Luxor_Obelisk%2C_Place_de_la_Concorde%2C_Paris_June_2014_002.jpg",
-   "photoBy": "daryl_mitchell from Saskatoon, Saskatchewan, Canada",
+   "summary": "L'un des premiers bâtiments Art déco de Paris, inauguré en 1913 avenue Montaigne, avec une structure en béton armé dessinée par Auguste Perret et des bas-reliefs de Bourdelle. Six semaines après l'ouverture, la création du Sacre du printemps de Stravinsky par les Ballets russes y provoque l'une des plus célèbres batailles rangées de l'histoire de la musique. Joséphine Baker y créa la Revue nègre en 1925.",
+   "wiki": "Théâtre des Champs-Élysées",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Le_th%C3%A9%C3%A2tre_des_Champs-%C3%89lys%C3%A9es_%C3%A0_Paris%2C_2022.jpg/960px-Le_th%C3%A9%C3%A2tre_des_Champs-%C3%89lys%C3%A9es_%C3%A0_Paris%2C_2022.jpg",
+   "photoBy": "Jean-Pierre Dalbéra",
+   "photoLic": "CC BY 2.0"
+  },
+  {
+   "id": "Q1583780",
+   "name": "La Samaritaine",
+   "lat": 48.85889,
+   "lng": 2.34208,
+   "theme": "shops",
+   "fame": 31,
+   "summary": "Fondée en 1870 par Ernest Cognacq, qui vendait ses cravates sur le Pont-Neuf avant d'ouvrir boutique. Le nom vient d'une pompe à eau ornée d'une Samaritaine qui alimentait le Louvre depuis le pont. Frantz Jourdain lui donne en 1907 une charpente Art nouveau à ossature d'acier apparente, ornée de fer forgé et de céramiques ; Henri Sauvage ajoute en 1928 la façade Art déco sur la Seine. Fermée en 2005, rouverte en 2021 après seize ans de chantier.",
+   "wiki": "La Samaritaine",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/La_Samaritaine_and_Statue_of_Henri_IV.jpg/960px-La_Samaritaine_and_Statue_of_Henri_IV.jpg",
+   "photoBy": "Adrian Scottow",
    "photoLic": "CC BY-SA 2.0"
+  },
+  {
+   "id": "Q141747",
+   "name": "rue de Rivoli",
+   "lat": 48.856916666,
+   "lng": 2.353672222,
+   "theme": "streets",
+   "fame": 31,
+   "summary": "Trois kilomètres percés à partir de 1802 sur ordre de Napoléon, qui donne à la rue le nom de sa victoire de 1797 en Italie. Sa partie ouest impose des arcades continues et des façades identiques, avec interdiction faite aux commerçants d'y installer boulangeries ou boucheries jugées peu élégantes. Elle longe le Louvre et les Tuileries, et fait partie de l'axe historique qui court de Vincennes à La Défense. Depuis 2020, c'est l'un des grands axes cyclables de la capitale.",
+   "wiki": "Rue de Rivoli",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Tuileries_Rivoli.jpg/960px-Tuileries_Rivoli.jpg",
+   "photoBy": "Pascal3012",
+   "photoLic": "CC BY-SA 3.0"
   },
   {
    "id": "Q860166",
@@ -770,6 +1274,19 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Th%C3%A9%C3%A2tre_de_l%27Od%C3%A9on_-_facade_-_photo_Thierry_Depagne.jpg/960px-Th%C3%A9%C3%A2tre_de_l%27Od%C3%A9on_-_facade_-_photo_Thierry_Depagne.jpg",
    "photoBy": "Jcmorgane",
    "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q872222",
+   "name": "théâtre national de l'Opéra-Comique",
+   "lat": 48.870861111,
+   "lng": 2.337511111,
+   "theme": "stages",
+   "fame": 30,
+   "summary": "La salle Favart, troisième du nom sur ce site après deux incendies, dont celui de 1887 qui fit 84 morts et força la France à revoir la sécurité de ses théâtres. La troupe, née en 1714 des spectacles de foire, avait le droit de chanter et de parler, contrairement à l'Opéra qui détenait le monopole du chant. C'est ici qu'ont été créés Carmen, Manon, Lakmé et Pelléas et Mélisande.",
+   "wiki": "Théâtre national de l'Opéra-Comique",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Op%C3%A9ra_comique_Par%C3%A4is1.JPG/960px-Op%C3%A9ra_comique_Par%C3%A4is1.JPG",
+   "photoBy": "Zinneke",
+   "photoLic": "CC BY-SA 3.0"
   },
   {
    "id": "Q1996069",
@@ -863,6 +1380,45 @@
    "photoLic": "CC BY-SA 3.0"
   },
   {
+   "id": "Q641548",
+   "name": "arènes de Lutèce",
+   "lat": 48.845,
+   "lng": 2.35306,
+   "theme": "monuments",
+   "fame": 28,
+   "summary": "Un amphithéâtre gallo-romain du IIe siècle, capable d'accueillir 15 000 spectateurs, à la fois arène de gladiateurs et scène de théâtre, ce qui est rare. Oublié pendant quinze siècles sous les remblais, il est redécouvert en 1869 lors du percement de la rue Monge, et sauvé de la destruction grâce à une campagne où s'engage Victor Hugo. On y joue aujourd'hui à la pétanque et au football, gratuitement, sur les gradins antiques.",
+   "wiki": "Arènes de Lutèce",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Roman_arena_in_Paris.jpg/960px-Roman_arena_in_Paris.jpg",
+   "photoBy": "Joi Ito from Inbamura, Japan",
+   "photoLic": "CC BY 2.0"
+  },
+  {
+   "id": "Q1092107",
+   "name": "cimetière de Passy",
+   "lat": 48.8625,
+   "lng": 2.285277777,
+   "theme": "parks",
+   "fame": 28,
+   "summary": "Le cimetière le plus chic de Paris, créé en 1802 et longtemps réservé aux familles fortunées du 16e, à tel point qu'il est le seul de la ville doté d'une salle d'attente chauffée. Ses allées abritent Debussy, Manet, Berthe Morisot, Fernandel, Jean Giraudoux et la famille Renault. Il domine le Trocadéro et offre une vue inattendue sur la tour Eiffel.",
+   "wiki": "Cimetière de Passy",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Aerial_view_of_Cimeti%C3%A8re_de_Passy.jpg/960px-Aerial_view_of_Cimeti%C3%A8re_de_Passy.jpg",
+   "photoBy": "Paige from Canada",
+   "photoLic": "CC BY 2.0"
+  },
+  {
+   "id": "Q1429394",
+   "name": "église Saint-Germain-l'Auxerrois",
+   "lat": 48.859444,
+   "lng": 2.341111,
+   "theme": "religious",
+   "fame": 28,
+   "summary": "L'église des rois, juste en face de la colonnade du Louvre, mêlant roman, gothique et Renaissance sur huit siècles de chantiers. C'est de son clocher qu'a sonné, dans la nuit du 24 août 1572, le tocsin donnant le signal du massacre de la Saint-Barthélemy. Paroisse des artistes du Louvre, elle abrite les tombes de Chardin, Boucher et Le Vau. Son porche à cinq arcades, du XVe siècle, est unique à Paris.",
+   "wiki": "Église Saint-Germain-l'Auxerrois de Paris",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Saint-Germain_l%27Auxerrois_edit.jpg/960px-Saint-Germain_l%27Auxerrois_edit.jpg",
+   "photoBy": "Saint-Germain_l'Auxerrois.jpg: Pline derivative work: Maedin",
+   "photoLic": "CC BY-SA 3.0"
+  },
+  {
    "id": "Q1025686",
    "name": "café de Flore",
    "lat": 48.853889,
@@ -935,6 +1491,32 @@
    "wiki": "Shakespeare and Company",
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Shakespeare_and_Company%2C_Paris.jpg/960px-Shakespeare_and_Company%2C_Paris.jpg",
    "photoBy": "Photograph by Mike Peel (www.mikepeel.net).",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q1469315",
+   "name": "théâtre du Châtelet",
+   "lat": 48.857777777,
+   "lng": 2.346388888,
+   "theme": "stages",
+   "fame": 27,
+   "summary": "Construit par Gabriel Davioud en 1862 pour Haussmann, en même temps que le théâtre de la Ville qui lui fait face de l'autre côté de la place, dans une symétrie parfaite. Avec 2 000 places, c'était la plus grande salle de Paris, longtemps vouée aux féeries à grand spectacle. Les Ballets russes de Diaghilev y firent leurs débuts parisiens en 1909. Le théâtre a accueilli les César de 2002 à 2016.",
+   "wiki": "Théâtre du Châtelet",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Th%C3%A9%C3%A2tre_du_Ch%C3%A2telet_Fa%C3%A7ade_%28cropped%29.jpg/960px-Th%C3%A9%C3%A2tre_du_Ch%C3%A2telet_Fa%C3%A7ade_%28cropped%29.jpg",
+   "photoBy": "Arthur Weidmann",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q684594",
+   "name": "porte Saint-Denis",
+   "lat": 48.869722,
+   "lng": 2.3525,
+   "theme": "monuments",
+   "fame": 27,
+   "summary": "Un arc de triomphe de 1673, élevé par François Blondel à la gloire de Louis XIV et de sa campagne du Rhin, à l'emplacement d'une porte de l'enceinte de Charles V. Ses obélisques sculptés de trophées et de pyramides d'armes en font l'un des modèles de l'art officiel du Grand Siècle. Les murailles qui l'encadraient ont disparu : l'arc est resté seul au milieu du carrefour, sans plus rien à défendre.",
+   "wiki": "Porte Saint-Denis",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Porte_Saint_Denis_-_Paris_X_%28FR75%29_-_2023-06-14_-_2.jpg/960px-Porte_Saint_Denis_-_Paris_X_%28FR75%29_-_2023-06-14_-_2.jpg",
+   "photoBy": "Chabe01",
    "photoLic": "CC BY-SA 4.0"
   },
   {
@@ -1029,19 +1611,6 @@
    "photoLic": "CC BY-SA 3.0"
   },
   {
-   "id": "Q2723969",
-   "name": "place du Carrousel",
-   "lat": 48.861443,
-   "lng": 2.334117,
-   "theme": "streets",
-   "fame": 25,
-   "summary": "Son nom vient d'un « grand carrousel », spectacle d'équitation militaire donné ici par Louis XIV en juin 1662 pour célébrer la naissance de son fils. La place s'étend aujourd'hui entre les ailes du Louvre, à l'ouest de la pyramide.",
-   "wiki": "Place du Carrousel",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Place_du_Carrousel_%282%29.jpg/960px-Place_du_Carrousel_%282%29.jpg",
-   "photoBy": "Mister No",
-   "photoLic": "CC BY 3.0"
-  },
-  {
    "id": "Q644398",
    "name": "pont de la Concorde",
    "lat": 48.86333,
@@ -1053,6 +1622,19 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Pont_de_la_Concorde_2009-06-02_Paris_01.jpg/960px-Pont_de_la_Concorde_2009-06-02_Paris_01.jpg",
    "photoBy": "Szilas",
    "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q656296",
+   "name": "Jeu de Paume",
+   "lat": 48.865833333,
+   "lng": 2.323888888,
+   "theme": "museums",
+   "fame": 25,
+   "summary": "Une salle de jeu de paume construite en 1861 dans l'angle des Tuileries, sur autorisation de Napoléon III. Elle devint musée de l'impressionnisme jusqu'au transfert des collections vers Orsay en 1986, puis centre d'art consacré à la photographie et à l'image. Pendant l'Occupation, elle servit de dépôt de tri aux œuvres pillées par les nazis, que la conservatrice Rose Valland inventoria secrètement, permettant d'en récupérer des milliers après la guerre.",
+   "wiki": "Jeu de paume (centre d'art)",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Le_Jeu_de_Paume%2C_1_place_de_la_Concorde_%C3%A0_Paris%2C_juillet_2021.jpg/960px-Le_Jeu_de_Paume%2C_1_place_de_la_Concorde_%C3%A0_Paris%2C_juillet_2021.jpg",
+   "photoBy": "Jean-Pierre Dalbéra",
+   "photoLic": "CC BY 2.0"
   },
   {
    "id": "Q99562",
@@ -2038,19 +2620,6 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Notre-Dame-de-Lorette-Paris-DSC_6121.jpg/960px-Notre-Dame-de-Lorette-Paris-DSC_6121.jpg",
    "photoBy": "Pline",
    "photoLic": "CC BY-SA 3.0"
-  },
-  {
-   "id": "Q2047247",
-   "name": "palais de la Cité",
-   "lat": 48.856389,
-   "lng": 2.345556,
-   "theme": "palaces",
-   "fame": 16,
-   "summary": "Résidence des rois de France du Xe au XIVe siècle, sur la pointe ouest de l'île de la Cité. Après le départ de Charles V, une partie devint la prison de la Conciergerie ; le site abrite toujours le Palais de justice.",
-   "wiki": "Palais de la Cité",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Palais_de_la_Cite.jpg/960px-Palais_de_la_Cite.jpg",
-   "photoBy": "Limbourg Brothers",
-   "photoLic": "Public domain"
   },
   {
    "id": "Q614450",
@@ -3042,19 +3611,6 @@
    "photoLic": "CC BY-SA 3.0"
   },
   {
-   "id": "Q3390637",
-   "name": "place du Louvre",
-   "lat": 48.86,
-   "lng": 2.3405,
-   "theme": "streets",
-   "fame": 11,
-   "summary": "Devant la colonnade du Louvre, à l'emplacement du camp romain qui gardait le fleuve. L'église Saint-Germain-l'Auxerrois, paroisse des rois, borde la place.",
-   "wiki": "Place du Louvre",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/P1070100_Paris_Ier_place_du_Louvre_rwk.jpg/960px-P1070100_Paris_Ier_place_du_Louvre_rwk.jpg",
-   "photoBy": "Mbzt",
-   "photoLic": "CC BY 3.0"
-  },
-  {
    "id": "Q1027719",
    "name": "rue Royale",
    "lat": 48.868056,
@@ -3469,16 +4025,6 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Jardin_Atlantique_2010-04-23.jpg/960px-Jardin_Atlantique_2010-04-23.jpg",
    "photoBy": "Jim Linwood from London",
    "photoLic": "CC BY 2.0"
-  },
-  {
-   "id": "Q856640",
-   "name": "La Contemporaine",
-   "lat": 48.901721,
-   "lng": 2.211277,
-   "theme": "museums",
-   "fame": 9,
-   "summary": "Bibliothèque, archives et musée consacrés aux XXe et XXIe siècles, nés pendant la Grande Guerre pour documenter le conflit. L'institution a rouvert dans un nouveau bâtiment en 2021.",
-   "wiki": "La Contemporaine"
   },
   {
    "id": "Q2090916",
@@ -4086,19 +4632,6 @@
    "photoLic": "CC BY-SA 3.0"
   },
   {
-   "id": "Q2942462",
-   "name": "cathédrale Saint-Étienne de Paris",
-   "lat": 48.8531,
-   "lng": 2.34972,
-   "theme": "religious",
-   "fame": 7,
-   "summary": "La cathédrale de Paris avant Notre-Dame, dédiée à saint Étienne dès le IVe ou VIe siècle. Elle fut démolie vers 1160 pour laisser place à l'actuelle ; ses fondations dorment sous le parvis.",
-   "wiki": "Cathédrale Saint-Étienne de Paris",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/P1300712_Paris_IV_parvis_ND_emplacement_porche_St-Etienne_rwk.jpg/960px-P1300712_Paris_IV_parvis_ND_emplacement_porche_St-Etienne_rwk.jpg",
-   "photoBy": "Mbzt",
-   "photoLic": "CC BY-SA 4.0"
-  },
-  {
    "id": "Q2956582",
    "name": "chapelle Notre-Dame-de-Consolation de Paris",
    "lat": 48.865556,
@@ -4656,19 +5189,6 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/H%C3%B4tel_d%27Espeyran_Paris.jpg/960px-H%C3%B4tel_d%27Espeyran_Paris.jpg",
    "photoBy": "CVB",
    "photoLic": "CC BY-SA 4.0"
-  },
-  {
-   "id": "Q2717848",
-   "name": "bibliothèque-musée de l'Opéra",
-   "lat": 48.871944,
-   "lng": 2.331111,
-   "theme": "museums",
-   "fame": 6,
-   "summary": "Cachée dans le Palais Garnier, elle conserve trois siècles d'archives de l'Opéra : maquettes de décors, costumes, partitions et affiches. Elle dépend de la Bibliothèque nationale, pas de l'Opéra.",
-   "wiki": "Bibliothèque-musée de l'Opéra",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/2011_Biblioth%C3%A8que-Mus%C3%A9e_de_l%27Op%C3%A9ra_Paris_5336594777.jpg/960px-2011_Biblioth%C3%A8que-Mus%C3%A9e_de_l%27Op%C3%A9ra_Paris_5336594777.jpg",
-   "photoBy": "vincent desjardins from Paris, France",
-   "photoLic": "CC BY 2.0"
   },
   {
    "id": "Q47686171",
@@ -5809,19 +6329,6 @@
    "photoLic": "CC BY 2.0"
   },
   {
-   "id": "Q3451377",
-   "name": "rue de la Cité",
-   "lat": 48.8546,
-   "lng": 2.34771,
-   "theme": "streets",
-   "fame": 5,
-   "summary": "La rue qui traverse l'île de la Cité du nord au sud, entre le pont Notre-Dame et le Petit-Pont. Elle longe le marché aux fleurs et l'Hôtel-Dieu.",
-   "wiki": "Rue de la Cité (Paris)",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Rue_Cit%C3%A9_-_Paris_IV_%28FR75%29_-_2021-06-05_-_1.jpg/960px-Rue_Cit%C3%A9_-_Paris_IV_%28FR75%29_-_2021-06-05_-_1.jpg",
-   "photoBy": "Chabe01",
-   "photoLic": "CC BY-SA 4.0"
-  },
-  {
    "id": "Q1496833",
    "name": "rue de la Harpe",
    "lat": 48.85222222,
@@ -6314,19 +6821,6 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Galerie_de_Botanique_rue_Buffon_%C3%A0_Paris_le_22_f%C3%A9vrier_2018_-_4.jpg/960px-Galerie_de_Botanique_rue_Buffon_%C3%A0_Paris_le_22_f%C3%A9vrier_2018_-_4.jpg",
    "photoBy": "Lionel Allorge",
    "photoLic": "CC BY-SA 3.0"
-  },
-  {
-   "id": "Q3094695",
-   "name": "Galeries nationales du Grand Palais",
-   "lat": 48.86656667,
-   "lng": 2.311561111,
-   "theme": "palaces",
-   "fame": 4,
-   "summary": "Les grandes expositions temporaires de Paris se tiennent ici depuis 1964, quand André Malraux fit aménager une partie de l'aile nord du Grand Palais. La programmation s'ouvre en 1966 par une rétrospective Picasso, suivie par des décennies de blockbusters, de Rubens à Toutânkhamon. Les salles ont rouvert en 2024 après le grand chantier de rénovation du Grand Palais.",
-   "wiki": "Galeries nationales du Grand Palais",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Grand_Palais_from_the_northeast%2C_Paris_5_August_2014.jpg/960px-Grand_Palais_from_the_northeast%2C_Paris_5_August_2014.jpg",
-   "photoBy": "Stéphane D from Kyoto, Japon",
-   "photoLic": "CC BY-SA 2.0"
   },
   {
    "id": "Q1543030",
