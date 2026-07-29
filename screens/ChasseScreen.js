@@ -35,6 +35,8 @@ const PARIS      = { latitude: _PA.center.lat, longitude: _PA.center.lng, ..._PA
 const VISIT_MIN = 2;       // minutes par Invader (observation + photo)
 const VISIT_MIN_POI = 1.5; // minutes par lieu d'intérêt (pause photo, pas une visite)
 const visitMinOf = (step) => (step.isPoi ? VISIT_MIN_POI : VISIT_MIN);
+// Temps de visite cumulé d'une liste d'étapes (un lieu coûte moins qu'un Invader).
+const visitTotalMin = (list) => list.reduce((s, x) => s + visitMinOf(x), 0);
 // Limite de l'API d'itinéraires (~50 points) : départ + étapes + retour.
 const MAX_STEPS = 46;
 const SPEEDS = { 'foot-walking': 5, 'cycling-regular': 15 }; // km/h
@@ -254,7 +256,18 @@ const MAX_TRIM_FRACTION = 0.45;
 // appels. Le modèle interne (haversine) sous-estime les rues (parcs, sens uniques) :
 // on calibre donc le détour sur la durée réelle ORS pour élaguer juste ce qu'il faut.
 // Renvoie { sel, coords, walkMin }.
-async function routeWithinBudget(sel, startLon, startLat, budgetMin, speedKmPerMin, profile) {
+// Valeur d'une étape pour l'élagage. Les Invaders rapportent 10 à 100 points
+// (27,5 en moyenne) ; les lieux n'en rapportent aucun. Sans valeur explicite,
+// `inv.points` valait `undefined` pour un lieu, le ratio devenait NaN, et le tri
+// « les moins rentables d'abord » plaçait les lieux à une position arbitraire :
+// ils étaient sacrifiés au hasard. « Chasse & visite » en insérant davantage en
+// perdait donc plus qu'« Équilibré ». On leur donne une valeur qui suit
+// l'objectif choisi : au-dessus de l'Invader moyen en mode visite.
+function stepValue(step, alpha) {
+  return step.isPoi ? 15 + alpha * 45 : step.points;
+}
+
+async function routeWithinBudget(sel, startLon, startLat, budgetMin, speedKmPerMin, profile, alpha = 0) {
   const build = (list) => [
     [startLon, startLat],
     ...list.map(inv => [inv.lng, inv.lat]),
@@ -274,9 +287,9 @@ async function routeWithinBudget(sel, startLon, startLat, budgetMin, speedKmPerM
   while (
     calls < MAX_ROUTE_CALLS &&
     sel.length > 1 &&
-    route.durationMin + VISIT_MIN * sel.length > budgetMin + BUDGET_TOLERANCE_MIN
+    route.durationMin + visitTotalMin(sel) > budgetMin + BUDGET_TOLERANCE_MIN
   ) {
-    const over = (route.durationMin + VISIT_MIN * sel.length) - budgetMin;
+    const over = (route.durationMin + visitTotalMin(sel)) - budgetMin;
     const legs = route.legsMin; // [start→0, 0→1, …, n-1→start]
     if (!legs || legs.length !== sel.length + 1) break; // pas de détail fiable → on s'arrête
 
@@ -290,8 +303,8 @@ async function routeWithinBudget(sel, startLon, startLat, budgetMin, speedKmPerM
       const prev = i === 0 ? [startLat, startLon] : [sel[i - 1].lat, sel[i - 1].lng];
       const next = i === sel.length - 1 ? [startLat, startLon] : [sel[i + 1].lat, sel[i + 1].lng];
       const directMin = (haversineKm(prev[0], prev[1], next[0], next[1]) / speedKmPerMin) * detour;
-      const saved = Math.max(0, legs[i] + legs[i + 1] - directMin) + VISIT_MIN;
-      return { i, saved, ratio: inv.points / Math.max(saved, 0.1) };
+      const saved = Math.max(0, legs[i] + legs[i + 1] - directMin) + visitMinOf(inv);
+      return { i, saved, ratio: stepValue(inv, alpha) / Math.max(saved, 0.1) };
     });
     scored.sort((a, b) => a.ratio - b.ratio); // les moins rentables d'abord
 
@@ -664,11 +677,11 @@ export default function ChasseScreen({ route }) {
       // marche ORS (le modèle interne haversine sous-estime les rues / détours de parc).
       const speedKmPerMin = SPEEDS[profile] / 60;
       const { sel, coords, walkMin } = await routeWithinBudget(
-        selected, startLon, startLat, budgetMin, speedKmPerMin, profile
+        selected, startLon, startLat, budgetMin, speedKmPerMin, profile, alpha
       );
       // Durée AFFICHÉE = marche réelle (ORS) + temps passé à chaque étape
       // (2 min pour flasher un Invader, 1,5 min pour une pause devant un lieu).
-      const totalDurationMin = walkMin + sel.reduce((s, x) => s + visitMinOf(x), 0);
+      const totalDurationMin = walkMin + visitTotalMin(sel);
 
       setResult({
         invaders: sel,

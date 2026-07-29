@@ -16,10 +16,14 @@ import { STATUS_COLOR } from '../constants';
 import { ORS_API_KEY } from '../config/ors';
 import { useAppContext } from '../context/AppContext';
 import { CITIES } from '../cities/registry';
+import { familyOf } from '../data/poiFamilies';
+import { getPois, hasPois } from '../services/poiData';
 import { countryCodeOf } from '../cities/countries';
 import { geocode, autocomplete, route } from '../services/routing';
 import { canUseFeature, FEATURES } from '../services/featureAccess';
 import InvaderMarker from '../components/InvaderMarker';
+import PoiMarker from '../components/PoiMarker';
+import PoiSheet from '../components/PoiSheet';
 import PinMarker from '../components/PinMarker';
 import HeadingCone from '../components/HeadingCone';
 import InvaderPanel from '../components/InvaderPanel';
@@ -35,6 +39,11 @@ const _PA         = CITIES.PA;
 const PARIS       = { latitude: _PA.center.lat, longitude: _PA.center.lng, ..._PA.mapDelta };
 const DEBOUNCE_MS = 300;
 const MIN_CHARS   = 3;
+
+// Le couloir est une distance, pas un budget : l'objectif ne peut donc pas
+// répartir du temps comme dans la Chasse. Il fixe seulement combien de lieux on
+// retient dans le couloir, en gardant les plus notoires.
+const ROUTE_POI_CAP = { pure: 0, balanced: 5, visit: 15 };
 
 const BUFFER_OPTIONS = [
   { label: '50 m',  value: 0.05 },
@@ -180,7 +189,7 @@ function RouteInvaderRow({ inv, isFlashed, statusColors, onPress }) {
 
 // ─── Panneau résultat : compteur + filtre + liste ─────────────────────────────
 
-function RoutePanel({ allInvaders, displayInvaders, flashed, statusColors, showOnlyUnflashed, onToggleFilter, onSelectInvader, onWidenCorridor }) {
+function RoutePanel({ allInvaders, displayInvaders, flashed, statusColors, showOnlyUnflashed, onToggleFilter, onSelectInvader, onWidenCorridor, poiCount = 0 }) {
   const { theme } = useTheme();
   const { t } = useTranslation();
   const styles = getStyles(theme);
@@ -200,6 +209,7 @@ function RoutePanel({ allInvaders, displayInvaders, flashed, statusColors, showO
               {t('route.invadersOnRoute', { count: total })}
               {unflashedCount > 0 ? t('route.unflashedSuffix', { count: unflashedCount }) : ''}
               {unflashedCount > 0 ? t('route.todoPointsSuffix', { points: todoPoints }) : ''}
+              {poiCount > 0 ? <Text style={styles.routePoiCount}>{t('route.poiSuffix', { count: poiCount })}</Text> : null}
             </Text>
           )}
         </View>
@@ -258,7 +268,7 @@ export default function TrajetScreen() {
   const depDebounce = useRef(null);
   const arrDebounce = useRef(null);
 
-  const { invaders, flashed, toggleFlash, labels, labelDefs, colorOverrides, statusColors, mapsApp, setMapsAppPref, currentCityCode, isChangingCity } = useAppContext();
+  const { invaders, flashed, toggleFlash, labels, labelDefs, colorOverrides, statusColors, mapsApp, setMapsAppPref, currentCityCode, isChangingCity, poiPrefs, setPoiPref } = useAppContext();
   const city = CITIES[currentCityCode] ?? CITIES.PA;
   const recorder = useSessionRecorder();
   const { recordSession } = useGamification();
@@ -296,6 +306,8 @@ export default function TrajetScreen() {
   const [routeCoords, setRouteCoords] = useState(null);
   const [routePolyline, setRoutePolyline] = useState(null);
   const [routeInvaders, setRouteInvaders] = useState(null);
+  const [routePois, setRoutePois] = useState([]);
+  const [selectedRoutePoi, setSelectedRoutePoi] = useState(null);
   const [bufferKm, setBufferKm] = useState(0.1);
   const [showOnlyUnflashed, setShowOnlyUnflashed] = useState(false);
   const [selectedRouteInv, setSelectedRouteInv] = useState(null);
@@ -380,6 +392,25 @@ export default function TrajetScreen() {
       __DEV__ && console.log(`[Trajet] Couloir : ${candidates.length} candidats (bbox) → ${nearby.length} retenus`);
       setRouteInvaders(nearby);
       setSelectedRouteInv(null);
+
+      // ── Lieux à voir dans le même couloir ──────────────────────────────────
+      // Le couloir est une distance, pas un budget : l'objectif ne répartit donc
+      // pas du temps comme dans la Chasse, il fixe seulement combien de lieux on
+      // retient. On garde les plus notoires, pour ne pas noyer le trajet.
+      const poiCap = ROUTE_POI_CAP[poiPrefs.objective] ?? 0;
+      if (!poiPrefs.enabled || poiCap === 0) {
+        setRoutePois([]);
+      } else {
+        const near = getPois(currentCityCode)
+          .filter(p => poiPrefs.families.has(familyOf(p)))
+          .filter(p => p.lng >= minLng && p.lng <= maxLng && p.lat >= minLat && p.lat <= maxLat)
+          .filter(p => turf.nearestPointOnLine(line, turf.point([p.lng, p.lat]), { units: 'kilometers' })
+                           .properties.dist <= bufferKm)
+          .sort((a, b) => b.fame - a.fame)
+          .slice(0, poiCap);
+        setRoutePois(near);
+      }
+      setSelectedRoutePoi(null);
       // fitToCoordinates est déplacé dans l'effect sur routeInvaders (ci-dessous) :
       // il doit s'exécuter APRÈS que le panneau résultat (260 px) soit apparu,
       // sinon la région est calculée pour une MapView trop haute et des markers
@@ -903,8 +934,20 @@ export default function TrajetScreen() {
               />
             );
           })}
+          {/* Lieux du couloir : même losange doré que sur la Carte et la Chasse */}
+          {!isChangingCity && routePois.map((poi) => (
+            <PoiMarker
+              key={`poi-${poi.id}`}
+              poi={poi}
+              onPress={() => { setSelectedRoutePoi(poi); setSelectedRouteInv(null); }}
+            />
+          ))}
           {!isChangingCity && <HeadingCone userLocation={userPos} heading={userHeading} />}
         </MapView>
+
+        {selectedRoutePoi && !isChangingCity && (
+          <PoiSheet poi={selectedRoutePoi} onClose={() => setSelectedRoutePoi(null)} />
+        )}
         {isChangingCity && <View style={[StyleSheet.absoluteFillObject, styles.cityTransitionOverlay]} />}
 
         {/* Overlay animation flash — au-dessus de la carte, transparent aux touches */}
@@ -1016,6 +1059,37 @@ export default function TrajetScreen() {
                     </View>
                   )}
                 </View>
+
+                {/* ── Objectif : mêmes trois modes que la Chasse ── */}
+                {hasPois(currentCityCode) && (
+                  <View style={styles.bufferSection}>
+                    <Text style={styles.bufferLabel}>{t('hunt.objective.label')}</Text>
+                    <View style={styles.objRow}>
+                      {[
+                        { key: 'pure',     icon: 'game-controller-outline' },
+                        { key: 'balanced', icon: 'swap-horizontal-outline' },
+                        { key: 'visit',    icon: 'business-outline' },
+                      ].map(({ key, icon }) => {
+                        const active = poiPrefs.objective === key;
+                        return (
+                          <TouchableOpacity
+                            key={key}
+                            style={[styles.objBtn, active && styles.objBtnActive]}
+                            onPress={() => setPoiPref({ objective: key, enabled: key !== 'pure' || poiPrefs.enabled })}
+                            activeOpacity={0.8}
+                          >
+                            <Ionicons name={icon} size={17} color={active ? theme.bg : theme.textSecondary} />
+                            <Text style={[styles.objText, active && styles.objTextActive]} numberOfLines={1}>
+                              {t(`hunt.objective.${key}`)}
+                            </Text>
+                          </TouchableOpacity>
+                        );
+                      })}
+                    </View>
+                    <Text style={styles.objHint}>{t(`route.objectiveHint_${poiPrefs.objective}`)}</Text>
+                  </View>
+                )}
+
                 {error ? <Text style={styles.errorText}>{error}</Text> : null}
               </ScrollView>
             ) : null}
@@ -1081,6 +1155,7 @@ export default function TrajetScreen() {
             onToggleFilter={setShowOnlyUnflashed}
             onSelectInvader={selectRouteInvader}
             onWidenCorridor={() => setInputCollapsed(false)}
+            poiCount={routePois.length}
           />
         )}
 
@@ -1214,6 +1289,18 @@ function makeStyles(t) {
       borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: t.border,
     },
     routeSummary: { fontSize: 14, fontWeight: '600', color: t.textPrimary, lineHeight: 20 },
+    routePoiCount: { color: t.accentScore, fontWeight: '700' },
+    // Objectif : mêmes trois modes que la Chasse, même vocabulaire
+    objRow: { flexDirection: 'row', gap: 6, marginTop: 8 },
+    objBtn: {
+      flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 5,
+      paddingVertical: 9, paddingHorizontal: 6, borderRadius: 10,
+      borderWidth: 1, borderColor: t.border, backgroundColor: t.surfaceHigh,
+    },
+    objBtnActive: { backgroundColor: t.accentScore, borderColor: t.accentScore },
+    objText: { fontSize: 11.5, fontWeight: '600', color: t.textSecondary },
+    objTextActive: { color: t.bg },
+    objHint: { marginTop: 8, fontSize: 12, lineHeight: 17, color: t.textSecondary },
     toggleWrap: { flexDirection: 'row', alignItems: 'center', gap: 6 },
     toggleLabel: { fontSize: 13, color: t.textSecondary },
     routeList: { flex: 1 },

@@ -132,7 +132,12 @@
     "searchingInvaders": "Ricerca Invaders in corso…",
     "todoPointsSuffix": " ({{points}} pts)",
     "noInvadersHint": "Prova ad allargare il corridoio di ricerca attorno al percorso.",
-    "widenCorridor": "Allarga il corridoio"
+    "widenCorridor": "Allarga il corridoio",
+    "poiSuffix_one": " · {{count}} luogo da vedere",
+    "poiSuffix_other": " · {{count}} luoghi da vedere",
+    "objectiveHint_pure": "Solo Invader sul percorso.",
+    "objectiveHint_balanced": "Gli Invader del corridoio, più qualche luogo notevole.",
+    "objectiveHint_visit": "Gli Invader del corridoio e il massimo di luoghi da vedere lungo la strada."
   },
   "hunt": {
     "aroundMe": "Intorno a me",

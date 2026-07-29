@@ -132,7 +132,12 @@
     "searchingInvaders": "Searching for Invaders…",
     "todoPointsSuffix": " ({{points}} pts)",
     "noInvadersHint": "Try widening the search corridor around the route.",
-    "widenCorridor": "Widen corridor"
+    "widenCorridor": "Widen corridor",
+    "poiSuffix_one": " · {{count}} place to see",
+    "poiSuffix_other": " · {{count}} places to see",
+    "objectiveHint_pure": "Invaders on the route only.",
+    "objectiveHint_balanced": "Invaders in the corridor, plus a few notable places.",
+    "objectiveHint_visit": "Invaders in the corridor and as many places to see as possible."
   },
   "hunt": {
     "aroundMe": "Around me",

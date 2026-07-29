@@ -132,7 +132,12 @@
     "searchingInvaders": "Recherche d’Invaders en cours…",
     "todoPointsSuffix": " ({{points}} pts)",
     "noInvadersHint": "Essaie d'élargir le couloir de recherche autour du trajet.",
-    "widenCorridor": "Élargir le couloir"
+    "widenCorridor": "Élargir le couloir",
+    "poiSuffix_one": " · {{count}} lieu à voir",
+    "poiSuffix_other": " · {{count}} lieux à voir",
+    "objectiveHint_pure": "Uniquement des Invaders sur le trajet.",
+    "objectiveHint_balanced": "Les Invaders du couloir, plus quelques lieux remarquables.",
+    "objectiveHint_visit": "Les Invaders du couloir et un maximum de lieux à voir en chemin."
   },
   "hunt": {
     "aroundMe": "Autour de moi",
