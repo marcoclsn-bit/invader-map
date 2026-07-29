@@ -2,7 +2,7 @@
 // Extraite de ChasseScreen pour éviter trois copies du même bloc : photo
 // Wikimedia créditée, thème, résumé, « Y aller » et « Voir plus ».
 
-import { StyleSheet, View, Text, TouchableOpacity, Linking } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, Linking, ScrollView, useWindowDimensions } from 'react-native';
 import { Image } from 'expo-image';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
@@ -20,18 +20,29 @@ function getStyles(theme) {
   return styles;
 }
 
-export default function PoiSheet({ poi, onClose, style }) {
+// `inline` : la fiche s'insère dans le flux au lieu de flotter. Le Trajet
+// empile déjà ses boutons au-dessus du panneau Invader dans un conteneur
+// dédié ; en absolu, la fiche passait DERRIÈRE « Démarrer » et le crédit
+// Wikipédia se retrouvait masqué.
+export default function PoiSheet({ poi, onClose, style, inline = false }) {
   const { theme } = useTheme();
   const { t } = useTranslation();
   const { mapsApp } = useAppContext();
+  const { height } = useWindowDimensions();
   const styles = getStyles(theme);
   if (!poi) return null;
   const url = wikiUrl(poi);
+  // Les résumés vont de 3 à 12 lignes. Sans plafond, une fiche comme
+  // Saint-Eustache grandit vers le haut jusqu'à passer sous la barre d'état.
+  // Seul le texte défile : photo, titre, boutons et crédit restent visibles.
+  // En flux (Trajet), la fiche partage la hauteur de la carte avec les boutons :
+  // on serre davantage pour ne pas déborder sur le panneau de résultat.
+  const textMaxHeight = Math.max(84, Math.round(height * (inline ? 0.15 : 0.26)));
 
   return (
-    <View style={[styles.sheet, style]}>
+    <View style={[inline ? styles.sheetInline : styles.sheet, style]}>
       {poi.photo && (
-        <View style={styles.photoWrap}>
+        <View style={[styles.photoWrap, inline && styles.photoWrapInline]}>
           <Image source={{ uri: poi.photo }} style={styles.photo} contentFit="cover" cachePolicy="disk" transition={150} />
           {poi.photoBy && (
             <Text style={styles.photoCredit} numberOfLines={1}>
@@ -50,7 +61,14 @@ export default function PoiSheet({ poi, onClose, style }) {
       </View>
 
       <Text style={styles.chip}>{t(`hunt.poiTheme.${poi.theme}`)}</Text>
-      <Text style={styles.text}>{poi.summary}</Text>
+      <ScrollView
+        style={{ maxHeight: textMaxHeight }}
+        contentContainerStyle={styles.textWrap}
+        showsVerticalScrollIndicator
+        bounces={false}
+      >
+        <Text style={styles.text}>{poi.summary}</Text>
+      </ScrollView>
 
       <View style={styles.actions}>
         <TouchableOpacity
@@ -84,7 +102,14 @@ function makeStyles(t) {
       borderWidth: 1, borderColor: t.border,
       shadowColor: '#000', shadowOffset: { width: 0, height: -2 }, shadowOpacity: 0.35, shadowRadius: 10, elevation: 10,
     },
+    sheetInline: {
+      marginHorizontal: 12, marginBottom: 12,
+      backgroundColor: t.surface, borderRadius: 16, padding: 16,
+      borderWidth: 1, borderColor: t.border,
+      shadowColor: '#000', shadowOffset: { width: 0, height: -2 }, shadowOpacity: 0.35, shadowRadius: 10, elevation: 10,
+    },
     photoWrap: { height: 132, borderRadius: 11, overflow: 'hidden', marginBottom: 13, backgroundColor: t.surfaceHigh },
+    photoWrapInline: { height: 104, marginBottom: 11 },
     photo: { width: '100%', height: '100%' },
     photoCredit: {
       position: 'absolute', right: 7, bottom: 5,
@@ -99,7 +124,8 @@ function makeStyles(t) {
       color: t.accentScore, borderWidth: 1, borderColor: t.accentScore, borderRadius: 999,
       paddingHorizontal: 8, paddingVertical: 2, textTransform: 'uppercase',
     },
-    text: { marginTop: 11, fontSize: 13.5, lineHeight: 19, color: t.textPrimary },
+    textWrap: { paddingTop: 11, paddingBottom: 2 },
+    text: { fontSize: 13.5, lineHeight: 19, color: t.textPrimary },
     actions: { flexDirection: 'row', gap: 8, marginTop: 14 },
     btnPrimary: { flex: 1, alignItems: 'center', paddingVertical: 11, borderRadius: 10, backgroundColor: t.accentScore },
     btnPrimaryText: { fontSize: 14, fontWeight: '800', color: '#221A00' },

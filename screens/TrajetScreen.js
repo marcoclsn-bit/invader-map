@@ -981,9 +981,6 @@ export default function TrajetScreen() {
           {!isChangingCity && <HeadingCone userLocation={userPos} heading={userHeading} />}
         </MapView>
 
-        {selectedRoutePoi && !isChangingCity && (
-          <PoiSheet poi={selectedRoutePoi} onClose={() => setSelectedRoutePoi(null)} />
-        )}
         {isChangingCity && <View style={[StyleSheet.absoluteFillObject, styles.cityTransitionOverlay]} />}
 
         {/* Overlay animation flash — au-dessus de la carte, transparent aux touches */}
@@ -1162,6 +1159,9 @@ export default function TrajetScreen() {
                 </TouchableOpacity>
               </View>
             </View>
+          )}
+          {selectedRoutePoi && (
+            <PoiSheet inline poi={selectedRoutePoi} onClose={() => setSelectedRoutePoi(null)} />
           )}
           {selectedRouteInv && (
             <InvaderPanel
