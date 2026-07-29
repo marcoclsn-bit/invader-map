@@ -151,7 +151,11 @@ export async function geocode(text, opts = {}) {
 export async function route(from, to, profile) {
   const key = `rt|${profile}|${roundPt(from)}|${roundPt(to)}`;
   const cached = cacheGet(key);
-  if (cached !== undefined) return cached;
+  // Copie volontaire. Rendre la référence du cache telle quelle faisait que
+  // recalculer deux fois le même trajet reposait dans le state la valeur déjà
+  // présente : React n'avait rien à re-rendre, les effets qui en dépendent ne
+  // se relançaient pas, et le spinner « Recherche d'Invaders » tournait sans fin.
+  if (cached !== undefined) return cached.slice();
 
   if (!(await underCap('ors'))) throw new Error(i18n.t('routing.error.limit'));
 

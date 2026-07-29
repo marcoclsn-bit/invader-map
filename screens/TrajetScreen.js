@@ -327,6 +327,9 @@ export default function TrajetScreen() {
 
   // 'route' = appel ORS en cours  |  'invaders' = calcul turf en cours  |  null = inactif
   const [loadingPhase, setLoadingPhase] = useState(null);
+  // Incrémenté à chaque calcul : garantit que l'effet du couloir se relance même
+  // si la polyligne retournée est identique à la précédente (trajet en cache).
+  const [calcNonce, setCalcNonce] = useState(0);
   const [error, setError] = useState(null);
 
   // ─── Résultat de l'itinéraire ─────────────────────────────────────────────
@@ -424,29 +427,6 @@ export default function TrajetScreen() {
       __DEV__ && console.log(`[Trajet] Couloir : ${candidates.length} candidats (bbox) → ${nearby.length} retenus`);
       setRouteInvaders(nearby);
       setSelectedRouteInv(null);
-
-      // ── Lieux à voir dans le même couloir ──────────────────────────────────
-      // Le couloir est une distance, pas un budget : l'objectif ne répartit donc
-      // pas du temps comme dans la Chasse, il fixe seulement combien de lieux on
-      // retient. On garde les plus notoires, pour ne pas noyer le trajet.
-      const poiCap = ROUTE_POI_CAP[poiPrefs.objective] ?? 0;
-      if (poiCap === 0) {
-        setRoutePois([]);
-      } else {
-        const inCorridor = [];
-        for (const p of getPois(currentCityCode)) {
-          if (!poiPrefs.families.has(familyOf(p))) continue;
-          if (p.lng < minLng || p.lng > maxLng || p.lat < minLat || p.lat > maxLat) continue;
-          const near = turf.nearestPointOnLine(line, turf.point([p.lng, p.lat]), { units: 'kilometers' });
-          if (near.properties.dist <= bufferKm) inCorridor.push({ ...p, along: near.properties.location });
-        }
-        // On sélectionne par notoriété (les plus remarquables), puis on remet
-        // dans le sens de la marche pour l'affichage.
-        const kept = inCorridor.sort((a, b) => b.fame - a.fame).slice(0, poiCap);
-        kept.sort((a, b) => a.along - b.along);
-        setRoutePois(kept);
-      }
-      setSelectedRoutePoi(null);
       // fitToCoordinates est déplacé dans l'effect sur routeInvaders (ci-dessous) :
       // il doit s'exécuter APRÈS que le panneau résultat (260 px) soit apparu,
       // sinon la région est calculée pour une MapView trop haute et des markers
@@ -456,7 +436,46 @@ export default function TrajetScreen() {
     } finally {
       setLoadingPhase(null);
     }
-  }, [routeCoords, bufferKm]);
+    // `calcNonce` en dépendance : recalculer DEUX FOIS le même trajet renvoyait
+    // la même polyligne (cache de routing.js) et l'effet ne se relançait pas, donc
+    // rien n'éteignait le spinner. Le compteur garantit une relance à chaque calcul.
+  }, [routeCoords, bufferKm, calcNonce]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // ─── Lieux à voir dans le même couloir ──────────────────────────────────────
+  // Effet séparé, qui dépend AUSSI des préférences : changer d'objectif met à
+  // jour les lieux immédiatement, sans relancer le calcul d'itinéraire. Le
+  // couloir est une distance, pas un budget : l'objectif ne répartit donc pas du
+  // temps comme dans la Chasse, il fixe seulement combien de lieux on retient.
+  useEffect(() => {
+    if (!routeCoords) { setRoutePois([]); setSelectedRoutePoi(null); return; }
+    const poiCap = ROUTE_POI_CAP[poiPrefs.objective] ?? 0;
+    if (poiCap === 0) { setRoutePois([]); setSelectedRoutePoi(null); return; }
+    try {
+      const line = turf.lineString(routeCoords);
+      const [minLng0, minLat0, maxLng0, maxLat0] = turf.bbox(line);
+      const midLat = (minLat0 + maxLat0) / 2;
+      const padLat = bufferKm / 111;
+      const padLng = bufferKm / (111 * Math.cos((midLat * Math.PI) / 180));
+      const minLng = minLng0 - padLng, maxLng = maxLng0 + padLng;
+      const minLat = minLat0 - padLat, maxLat = maxLat0 + padLat;
+
+      const inCorridor = [];
+      for (const p of getPois(currentCityCode)) {
+        if (!poiPrefs.families.has(familyOf(p))) continue;
+        if (p.lng < minLng || p.lng > maxLng || p.lat < minLat || p.lat > maxLat) continue;
+        const near = turf.nearestPointOnLine(line, turf.point([p.lng, p.lat]), { units: 'kilometers' });
+        if (near.properties.dist <= bufferKm) inCorridor.push({ ...p, along: near.properties.location });
+      }
+      // Sélection par notoriété (les plus remarquables du couloir), puis remise
+      // dans le sens de la marche pour l'affichage.
+      const kept = inCorridor.sort((a, b) => b.fame - a.fame).slice(0, poiCap);
+      kept.sort((a, b) => a.along - b.along);
+      setRoutePois(kept);
+    } catch {
+      setRoutePois([]);
+    }
+    setSelectedRoutePoi(null);
+  }, [routeCoords, bufferKm, poiPrefs, currentCityCode]);
 
   // ─── Cadrage carte — déclenché après que routeInvaders est commité ────────
   // À ce stade le panneau résultat (260 px) est déjà rendu, donc la MapView a
@@ -724,6 +743,7 @@ export default function TrajetScreen() {
     if (!ORS_API_KEY || ORS_API_KEY === 'VOTRE_CLE_API_ORS_ICI') { setError(t('route.error.noApiKey')); return; }
 
     setLoadingPhase('route');
+    setCalcNonce((n) => n + 1);
     setFollowing(false);
     recorder.cancel(); // nouveau calcul d'itinéraire → abandonne une session en cours
     setError(null);
