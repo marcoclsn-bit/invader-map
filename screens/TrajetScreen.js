@@ -189,11 +189,34 @@ function RouteInvaderRow({ inv, isFlashed, statusColors, onPress }) {
 
 // ─── Panneau résultat : compteur + filtre + liste ─────────────────────────────
 
-function RoutePanel({ allInvaders, displayInvaders, flashed, statusColors, showOnlyUnflashed, onToggleFilter, onSelectInvader, onWidenCorridor, poiCount = 0 }) {
+// Ligne d'un lieu dans la liste du trajet. Même hauteur (48) qu'une ligne
+// d'Invader, sans quoi le getItemLayout de la FlatList deviendrait faux.
+function RoutePoiRow({ poi, onPress }) {
+  const { theme } = useTheme();
+  const { t } = useTranslation();
+  const styles = getStyles(theme);
+  return (
+    <TouchableOpacity style={styles.routeRow} onPress={onPress} activeOpacity={0.7}>
+      <View style={styles.routePoiDiamond} />
+      <Text style={styles.routePoiName} numberOfLines={1}>{poi.name}</Text>
+      <Text style={styles.routePoiTheme} numberOfLines={1}>{t(`hunt.poiTheme.${poi.theme}`)}</Text>
+      <Ionicons name="chevron-forward" size={16} color={theme.textSecondary} />
+    </TouchableOpacity>
+  );
+}
+
+function RoutePanel({ allInvaders, displayInvaders, flashed, statusColors, showOnlyUnflashed, onToggleFilter, onSelectInvader, onWidenCorridor, pois = [], onSelectPoi }) {
   const { theme } = useTheme();
   const { t } = useTranslation();
   const styles = getStyles(theme);
   const total = allInvaders.length;
+  const poiCount = pois.length;
+  // Les lieux ouvrent la liste : peu nombreux, et ils ne sont pas concernés par
+  // le filtre « À faire », qui ne parle que de flashs.
+  const rows = [
+    ...pois.map((p) => ({ __poi: true, ...p })),
+    ...displayInvaders,
+  ];
   // « À flasher » = ni déjà flashés, ni détruits (les détruits ne sont pas flashables)
   const todoInvaders = allInvaders.filter((inv) => !flashed.has(inv.id) && inv.status !== 'destroyed');
   const unflashedCount = todoInvaders.length;
@@ -225,7 +248,7 @@ function RoutePanel({ allInvaders, displayInvaders, flashed, statusColors, showO
           </View>
         )}
       </View>
-      {total === 0 ? (
+      {total === 0 && poiCount === 0 ? (
         <View style={styles.routeEmpty}>
           <Text style={styles.routeEmptyHint}>{t('route.noInvadersHint')}</Text>
           <TouchableOpacity style={styles.widenBtn} onPress={onWidenCorridor} activeOpacity={0.85}>
@@ -233,21 +256,25 @@ function RoutePanel({ allInvaders, displayInvaders, flashed, statusColors, showO
             <Text style={styles.widenBtnText}>{t('route.widenCorridor')}</Text>
           </TouchableOpacity>
         </View>
-      ) : displayInvaders.length === 0 ? (
+      ) : rows.length === 0 ? (
         <Text style={styles.listEmpty}>{t('route.allFlashed')}</Text>
       ) : (
         <FlatList
-          data={displayInvaders}
-          keyExtractor={(inv) => inv.id}
+          data={rows}
+          keyExtractor={(item) => (item.__poi ? `poi-${item.id}` : item.id)}
           style={styles.routeList}
-          renderItem={({ item: inv }) => (
-            <RouteInvaderRow
-              inv={inv}
-              isFlashed={flashed.has(inv.id)}
-              statusColors={statusColors}
-              onPress={() => onSelectInvader(inv)}
-            />
-          )}
+          renderItem={({ item }) =>
+            item.__poi ? (
+              <RoutePoiRow poi={item} onPress={() => onSelectPoi?.(item)} />
+            ) : (
+              <RouteInvaderRow
+                inv={item}
+                isFlashed={flashed.has(item.id)}
+                statusColors={statusColors}
+                onPress={() => onSelectInvader(item)}
+              />
+            )
+          }
           ItemSeparatorComponent={() => <View style={styles.separator} />}
           getItemLayout={(_, index) => ({ length: 48, offset: 48 * index, index })}
         />
@@ -1155,7 +1182,8 @@ export default function TrajetScreen() {
             onToggleFilter={setShowOnlyUnflashed}
             onSelectInvader={selectRouteInvader}
             onWidenCorridor={() => setInputCollapsed(false)}
-            poiCount={routePois.length}
+            pois={routePois}
+            onSelectPoi={(poi) => { setSelectedRoutePoi(poi); setSelectedRouteInv(null); }}
           />
         )}
 
@@ -1290,6 +1318,13 @@ function makeStyles(t) {
     },
     routeSummary: { fontSize: 14, fontWeight: '600', color: t.textPrimary, lineHeight: 20 },
     routePoiCount: { color: t.accentScore, fontWeight: '700' },
+    // Ligne « lieu » : même hauteur que routeRow, losange doré au lieu du point
+    routePoiDiamond: {
+      width: 10, height: 10, borderRadius: 2, flexShrink: 0,
+      backgroundColor: t.accentScore, transform: [{ rotate: '45deg' }],
+    },
+    routePoiName:  { flex: 1, fontWeight: '600', fontSize: 14, color: t.accentScore },
+    routePoiTheme: { fontSize: 12, color: t.textSecondary, maxWidth: 120 },
     // Objectif : mêmes trois modes que la Chasse, même vocabulaire
     objRow: { flexDirection: 'row', gap: 6, marginTop: 8 },
     objBtn: {
