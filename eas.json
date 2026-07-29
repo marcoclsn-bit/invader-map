@@ -25,6 +25,11 @@
       "env": {
         "NODE_OPTIONS": "--max-old-space-size=4096"
       }
+    },
+    "beta": {
+      "extends": "production",
+      "channel": "preview",
+      "environment": "preview"
     }
   },
   "submit": {
