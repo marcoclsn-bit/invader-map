@@ -448,34 +448,44 @@ export default function MapScreen({ navigation, route }) {
   const visibleInvaders = sortedInvaders.slice(0, renderedCount);
 
   // ─── Lieux à voir ──────────────────────────────────────────────────────────
-  // Région suivie UNIQUEMENT pour cette couche, et débouncée : on ne veut pas
-  // toucher au rendu des Invaders, qui n'observe pas la région (cf. plus haut).
-  const [poiRegion, setPoiRegion] = useState(null);
-  const poiRegionTimer = useRef(null);
-  function onRegionSettled(region) {
-    if (!poiPrefs.enabled) return;
-    clearTimeout(poiRegionTimer.current);
-    poiRegionTimer.current = setTimeout(() => setPoiRegion(region), 400);
-  }
-  useEffect(() => () => clearTimeout(poiRegionTimer.current), []);
+  // Aucun filtrage par zone visible, et donc AUCUN suivi de région. C'est le
+  // point important : recalculer la liste à chaque déplacement provoquait un
+  // ajout/retrait massif d'annotations, soit exactement la cause de crash
+  // MKMapView documentée plus haut pour les filtres. Les Invaders ne plantent
+  // jamais précisément parce qu'ils sont montés une fois et jamais retirés ;
+  // les lieux suivent désormais la même règle.
+  // La liste ne change donc que si l'utilisateur touche aux familles.
+  // Préférences appliquées au RENDU, débouncées — même raison que renderFilters :
+  // cocher/décocher trois familles d'affilée provoquerait sinon trois vagues
+  // d'ajout/retrait d'annotations.
+  const [renderPoi, setRenderPoi] = useState(poiPrefs);
+  useEffect(() => {
+    const id = setTimeout(() => setRenderPoi(poiPrefs), 250);
+    return () => clearTimeout(id);
+  }, [poiPrefs]);
 
-  // Tous les lieux des familles cochées présents dans la zone visible, sans
-  // plafond. Le tri par notoriété ne réduit rien : il fixe seulement l'ordre de
-  // montage, de sorte que les lieux majeurs apparaissent en premier.
-  const visiblePois = useMemo(() => {
-    if (!poiPrefs.enabled || isChangingCity) return [];
-    const all = getPois(currentCityCode);
-    if (!all.length) return [];
-    const inFamily = all.filter(p => poiPrefs.families.has(familyOf(p)));
-    if (!poiRegion) return [...inFamily].sort((a, b) => b.fame - a.fame);
-    const latMin = poiRegion.latitude  - poiRegion.latitudeDelta  / 2;
-    const latMax = poiRegion.latitude  + poiRegion.latitudeDelta  / 2;
-    const lngMin = poiRegion.longitude - poiRegion.longitudeDelta / 2;
-    const lngMax = poiRegion.longitude + poiRegion.longitudeDelta / 2;
-    return inFamily
-      .filter(p => p.lat >= latMin && p.lat <= latMax && p.lng >= lngMin && p.lng <= lngMax)
-      .sort((a, b) => b.fame - a.fame);
-  }, [poiPrefs.enabled, poiPrefs.families, poiRegion, currentCityCode, isChangingCity]);
+  const allPois = useMemo(() => {
+    if (!renderPoi.enabled) return [];
+    return getPois(currentCityCode)
+      .filter(p => renderPoi.families.has(familyOf(p)))
+      .sort((a, b) => b.fame - a.fame);   // les plus notoires montés en premier
+  }, [renderPoi, currentCityCode]);
+
+  // Révélation progressive, comme pour les Invaders : on étale le montage sur
+  // plusieurs frames au lieu d'en bloquer une seule. Le compteur n'est jamais
+  // remis à zéro — le remettre retirerait des marqueurs déjà posés pour les
+  // reposer aussitôt, soit exactement le churn qu'on cherche à éviter.
+  const POI_BATCH = 150;
+  const [poiRendered, setPoiRendered] = useState(POI_BATCH);
+  useEffect(() => {
+    if (isChangingCity || poiRendered >= allPois.length) return;
+    const id = requestAnimationFrame(() =>
+      setPoiRendered(c => Math.min(c + POI_BATCH, allPois.length))
+    );
+    return () => cancelAnimationFrame(id);
+  }, [poiRendered, allPois.length, isChangingCity]);
+
+  const visiblePois = isChangingCity ? [] : allPois.slice(0, poiRendered);
 
   const hasActiveFilters =
     filters.statuses.size < ALL_STATUSES.length ||
@@ -503,7 +513,6 @@ export default function MapScreen({ navigation, route }) {
         onMapReady={() => setMapReady(true)}
         onMapLoaded={() => setTilesLoaded(true)}
         onRegionChange={dismissFlash}
-        onRegionChangeComplete={onRegionSettled}
       >
         {!isChangingCity && <HeadingCone userLocation={userLocation} heading={userHeading} />}
         {/* Marqueurs montés seulement quand la carte est prête (mapReady) et hors
@@ -534,8 +543,6 @@ export default function MapScreen({ navigation, route }) {
           <PoiMarker
             key={`poi-${poi.id}`}
             poi={poi}
-            color={theme.accentScore}
-            borderColor={theme.bg}
             onPress={() => { setSelectedPoi(poi); setSelected(null); setShowFilters(false); }}
           />
         ))}

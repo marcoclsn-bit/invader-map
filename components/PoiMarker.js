@@ -1,22 +1,22 @@
 // Marqueur d'un lieu d'intérêt : losange doré, même signe que dans la Chasse.
 //
-// Android : bitmap NATIF via la prop `image`, comme InvaderMarker. Une vue React
-// obligerait react-native-maps à capturer chaque marqueur, ce qui sature le fil
-// graphique et bloque le rendu des tuiles (le problème déjà rencontré avec les
-// 1 528 Invaders). Trois densités fournies → 30 dp rendus partout.
-//
-// iOS : vue personnalisée, MKMapView la gère sans capture dès lors que
-// tracksViewChanges vaut false.
+// Le losange est une IMAGE aux 3 densités, pas une vue stylée. Deux raisons :
+//   • iOS — une vue avec `transform: rotate` laissait apparaître le pin rouge
+//     par défaut de MKMapView tant que la vue n'était pas capturée. Une image
+//     statique est résolue dès la première mise en page, comme InvaderMarker.
+//   • Android — la prop `image` donne un marqueur natif : aucune capture de vue,
+//     donc pas de saturation du fil graphique quand plusieurs centaines de
+//     marqueurs arrivent d'un coup.
 
 import { memo } from 'react';
-import { View, StyleSheet, Platform } from 'react-native';
+import { Image, View, StyleSheet, Platform } from 'react-native';
 import { Marker } from 'react-native-maps';
 
-const ANDROID_IMAGE = require('../assets/markers/android/poi.png');
-const SIZE = 13;
+const IMAGE = require('../assets/markers/poi.png');
+const SIZE = 15;
 const ANCHOR = { x: 0.5, y: 0.5 };
 
-const PoiMarker = memo(function PoiMarker({ poi, color, borderColor, onPress }) {
+const PoiMarker = memo(function PoiMarker({ poi, onPress }) {
   const coordinate = { latitude: poi.lat, longitude: poi.lng };
 
   if (Platform.OS === 'android') {
@@ -24,7 +24,7 @@ const PoiMarker = memo(function PoiMarker({ poi, color, borderColor, onPress }) 
       <Marker
         coordinate={coordinate}
         anchor={ANCHOR}
-        image={ANDROID_IMAGE}
+        image={IMAGE}
         tracksViewChanges={false}
         stopPropagation
         onPress={onPress}
@@ -34,7 +34,9 @@ const PoiMarker = memo(function PoiMarker({ poi, color, borderColor, onPress }) 
 
   return (
     <Marker coordinate={coordinate} anchor={ANCHOR} tracksViewChanges={false} stopPropagation onPress={onPress}>
-      <View style={[styles.diamond, { backgroundColor: color, borderColor }]} />
+      <View style={styles.wrap}>
+        <Image source={IMAGE} style={styles.img} resizeMode="contain" fadeDuration={0} />
+      </View>
     </Marker>
   );
 });
@@ -42,8 +44,6 @@ const PoiMarker = memo(function PoiMarker({ poi, color, borderColor, onPress }) 
 export default PoiMarker;
 
 const styles = StyleSheet.create({
-  diamond: {
-    width: SIZE, height: SIZE, borderRadius: 3, borderWidth: 1.5,
-    transform: [{ rotate: '45deg' }],
-  },
+  wrap: { width: SIZE, height: SIZE, alignItems: 'center', justifyContent: 'center' },
+  img:  { width: SIZE, height: SIZE },
 });
