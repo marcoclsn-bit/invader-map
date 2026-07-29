@@ -106,6 +106,7 @@ export default function SettingsScreen({ navigation }) {
     newsNotify, setNewsNotifyPref,
     resetLabels, clearFlashDates,
     dataVersion, dataUpdatedAt, checkDataUpdate,
+    resetPoiIntro,
   } = useAppContext();
 
   const flashedColor = labelDefs.find((d) => d.id === 'lbl_flashed')?.color;
@@ -265,6 +266,13 @@ export default function SettingsScreen({ navigation }) {
           </View>
           <Text style={{ color: theme.textSecondary, fontSize: 20 }}>›</Text>
         </TouchableOpacity>
+
+        {/* Rejoue l'invitation « Lieux à voir » (elle ne s'affiche qu'une fois) */}
+        <Row
+          label={t('settings.data.replayPoiIntro')}
+          onPress={resetPoiIntro}
+          trailing={<Text style={{ color: theme.textSecondary, fontSize: 20 }}>›</Text>}
+        />
 
         <Row
           label={t('settings.timeline.reset')}

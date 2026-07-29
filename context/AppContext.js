@@ -32,10 +32,15 @@ export const STROLL_STATUS_OPTIONS = ['ok', 'damaged', 'unknown'];
 // `families` est un Set en mémoire, sérialisé en tableau au stockage (même motif
 // que `filters`). Défaut : couche éteinte, pour ne rien changer à l'expérience
 // existante tant que l'utilisateur n'a pas répondu à l'invitation sur la carte.
+// Rôle de chaque champ, pour qu'ils ne se marchent pas dessus :
+//   enabled   → affichage de la couche sur la CARTE seulement.
+//   objective → quantité de lieux proposés dans le TRAJET et la CHASSE
+//               (pure = aucun). Indépendant de `enabled`.
+//   families  → filtre commun aux TROIS écrans.
 const DEFAULT_POI_PREFS = {
   enabled:   false,
   families:  ALL_POI_FAMILIES,          // tableau ici ; converti en Set dans le state
-  objective: 'balanced',                // pure | balanced | visit (partagé Trajet/Chasse)
+  objective: 'balanced',                // pure | balanced | visit
 };
 
 // Pas de plafond : quand la couche est active, on affiche tous les lieux des

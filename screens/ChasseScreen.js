@@ -29,6 +29,7 @@ import { useSessionRecorder } from '../components/session/useSessionRecorder';
 import { useGamification } from '../context/GamificationContext';
 import { canUseFeature, FEATURES } from '../services/featureAccess';
 import { getPois, hasPois, wikiUrl } from '../services/poiData';
+import { POI_FAMILIES, familyOf } from '../data/poiFamilies';
 
 const _PA        = CITIES.PA;
 const PARIS      = { latitude: _PA.center.lat, longitude: _PA.center.lng, ..._PA.mapDelta };
@@ -379,7 +380,7 @@ export default function ChasseScreen({ route }) {
   const debounce = useRef(null);
   const locationSub = useRef(null);
 
-  const { invaders, flashed, statusColors, currentCityCode, toggleFlash, mapsApp, isChangingCity } = useAppContext();
+  const { invaders, flashed, statusColors, currentCityCode, toggleFlash, mapsApp, isChangingCity, poiPrefs, setPoiPref, togglePoiFamily } = useAppContext();
   const city = CITIES[currentCityCode] ?? CITIES.PA;
   const { theme, isDark } = useTheme();
   const { t, i18n } = useTranslation();
@@ -430,8 +431,12 @@ export default function ChasseScreen({ route }) {
   const [budgetMin, setBudgetMin] = useState(60);
   const [profile, setProfile] = useState('foot-walking');
   const [unflashedOnly, setUnflashedOnly] = useState(true);
-  // Objectif : chasse pure ↔ chasse & visite (0 = aucun lieu d'intérêt)
-  const [objective, setObjective] = useState('pure');
+  // Objectif : chasse pure ↔ chasse & visite (0 = aucun lieu d'intérêt).
+  // Lu dans le contexte, PAS en état local : c'est le même réglage que sur la
+  // Carte et le Trajet. Le garder ici en local faisait qu'un choix fait dans le
+  // Trajet n'était pas repris par la Chasse, alors que le libellé est le même.
+  const objective = poiPrefs.objective;
+  const setObjective = (key) => setPoiPref({ objective: key });
   const poiEnabled = hasPois(currentCityCode);
   const POI_ALPHA = { pure: 0, balanced: 0.4, visit: 0.8 };
   // Arrondissements sélectionnés (Set de c_ar 1-20). Mode quartier des villes à
@@ -664,7 +669,7 @@ export default function ChasseScreen({ route }) {
 
       const alpha = poiEnabled ? (POI_ALPHA[objective] ?? 0) : 0;
       const selected = planHunt(startLon, startLat, candidates, budgetMin, SPEEDS[profile], {
-        pois: alpha > 0 ? getPois(currentCityCode) : [],
+        pois: alpha > 0 ? getPois(currentCityCode).filter(p => poiPrefs.families.has(familyOf(p))) : [],
         alpha,
       });
 
@@ -1029,6 +1034,33 @@ export default function ChasseScreen({ route }) {
                         ))}
                       </View>
                       <Text style={styles.objHint}>{t(`hunt.objective.hint_${objective}`)}</Text>
+
+                      {/* Familles de lieux — même réglage que la Carte et le Trajet */}
+                      {objective !== 'pure' && (
+                        <View style={styles.famRow}>
+                          {POI_FAMILIES.map(({ key, icon }) => {
+                            const active = poiPrefs.families.has(key);
+                            return (
+                              <TouchableOpacity
+                                key={key}
+                                onPress={() => togglePoiFamily(key)}
+                                activeOpacity={0.7}
+                                style={[
+                                  styles.famChip,
+                                  active
+                                    ? { backgroundColor: theme.accentScore, borderColor: theme.accentScore }
+                                    : { backgroundColor: 'transparent', borderColor: theme.border },
+                                ]}
+                              >
+                                <Ionicons name={icon} size={13} color={active ? theme.bg : theme.textSecondary} />
+                                <Text style={[styles.famChipText, { color: active ? theme.bg : theme.textPrimary }]}>
+                                  {t(`poi.family.${key}`)}
+                                </Text>
+                              </TouchableOpacity>
+                            );
+                          })}
+                        </View>
+                      )}
                     </View>
                   )}
 
@@ -1366,6 +1398,12 @@ function makeStyles(t) {
     poiMarkerNum: { color: '#221A00', fontSize: 11, fontWeight: '800' },
 
     objectiveBlock: { marginTop: 14 },
+    famRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 6, marginTop: 10 },
+    famChip: {
+      flexDirection: 'row', alignItems: 'center', gap: 5,
+      borderRadius: 20, paddingHorizontal: 9, paddingVertical: 5, borderWidth: 1.5,
+    },
+    famChipText: { fontSize: 11.5, fontWeight: '600' },
     objRow: { flexDirection: 'row', gap: 6, marginTop: 8 },
     objBtn: {
       flex: 1, alignItems: 'center', gap: 3, paddingVertical: 8, paddingHorizontal: 4,

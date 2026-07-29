@@ -517,7 +517,8 @@
       "upToDate": "Up to date",
       "newVersion": "New version installed ({{v}})",
       "offline": "Offline — try again later",
-      "updateError": "Update error"
+      "updateError": "Update error",
+      "replayPoiIntro": "Show the “Places to see” invitation again"
     },
     "language": {
       "section": "Language",
@@ -1048,6 +1049,13 @@
       "streets": "Royal squares, historic streets, covered arcades",
       "nightlife": "Theatres, cabarets, literary cafés, department stores",
       "misc": "Stadiums, stations, schools, hospitals and curiosities"
+    },
+    "intro": {
+      "title": "New",
+      "body": "{{count}} notable places are now available: monuments, museums, covered arcades, historic cafés and more.",
+      "question": "What are you interested in?",
+      "enable": "Show on the map",
+      "later": "Later"
     }
   }
 }

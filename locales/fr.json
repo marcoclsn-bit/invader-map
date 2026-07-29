@@ -517,7 +517,8 @@
       "upToDate": "Données à jour",
       "newVersion": "Nouvelle version installée ({{v}})",
       "offline": "Hors ligne — réessaie plus tard",
-      "updateError": "Erreur de mise à jour"
+      "updateError": "Erreur de mise à jour",
+      "replayPoiIntro": "Revoir l'invitation « Lieux à voir »"
     },
     "language": {
       "section": "Langue",
@@ -1048,6 +1049,13 @@
       "streets": "Places royales, rues historiques, passages couverts",
       "nightlife": "Théâtres, cabarets, cafés littéraires, grands magasins",
       "misc": "Stades, gares, écoles, hôpitaux et curiosités"
+    },
+    "intro": {
+      "title": "Nouveau",
+      "body": "{{count}} lieux remarquables sont désormais disponibles : monuments, musées, passages couverts, cafés historiques…",
+      "question": "Qu'est-ce qui t'intéresse ?",
+      "enable": "Afficher sur la carte",
+      "later": "Plus tard"
     }
   }
 }

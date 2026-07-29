@@ -517,7 +517,8 @@
       "upToDate": "Datos actualizados",
       "newVersion": "Nueva versión instalada ({{v}})",
       "offline": "Sin conexión — inténtalo más tarde",
-      "updateError": "Error de actualización"
+      "updateError": "Error de actualización",
+      "replayPoiIntro": "Volver a ver la invitación «Lugares que ver»"
     },
     "language": {
       "section": "Idioma",
@@ -1048,6 +1049,13 @@
       "streets": "Plazas reales, calles históricas, pasajes cubiertos",
       "nightlife": "Teatros, cabarets, cafés literarios, grandes almacenes",
       "misc": "Estadios, estaciones, escuelas, hospitales y curiosidades"
+    },
+    "intro": {
+      "title": "Nuevo",
+      "body": "{{count}} lugares notables ya están disponibles: monumentos, museos, pasajes cubiertos, cafés históricos…",
+      "question": "¿Qué te interesa?",
+      "enable": "Mostrar en el mapa",
+      "later": "Más tarde"
     }
   }
 }

@@ -19,6 +19,7 @@ import HeadingCone from '../components/HeadingCone';
 import FlashOverlay from '../components/FlashOverlay';
 import PoiSheet from '../components/PoiSheet';
 import PoiMarker from '../components/PoiMarker';
+import PoiIntroCard from '../components/PoiIntroCard';
 import { useTheme } from '../theme/ThemeContext';
 import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
 import { typography } from '../theme/tokens';
@@ -191,7 +192,7 @@ function FilterPanel({ filters, onFiltersChange, onClose }) {
 // ─── Écran carte ──────────────────────────────────────────────────────────────
 
 export default function MapScreen({ navigation, route }) {
-  const { invaders, flashed, labels, labelDefs, statusColors, colorOverrides, filters, setFilters, toggleFlash, mapsApp, setMapsAppPref, currentCityCode, isChangingCity, pendingCityCode, legendSeen, dismissLegend, poiPrefs } = useAppContext();
+  const { invaders, flashed, labels, labelDefs, statusColors, colorOverrides, filters, setFilters, toggleFlash, mapsApp, setMapsAppPref, currentCityCode, isChangingCity, pendingCityCode, legendSeen, dismissLegend, poiPrefs, poiIntroSeen } = useAppContext();
   const city = CITIES[currentCityCode] ?? CITIES.PA;
   const overlayName = (pendingCityCode ? CITIES[pendingCityCode]?.name : null) ?? city.name;
   const { theme, isDark } = useTheme();
@@ -638,6 +639,12 @@ export default function MapScreen({ navigation, route }) {
             onClose={() => setSelected(null)}
           />
         </View>
+      )}
+
+      {/* Invitation « Lieux à voir » — une seule fois, carte visible derrière */}
+      {!poiIntroSeen && hasPois(currentCityCode) && mapReady && !isChangingCity
+        && !selected && !selectedPoi && !showFilters && (
+        <PoiIntroCard cityCode={currentCityCode} style={{ bottom: insets.bottom + 84 }} />
       )}
 
       {selectedPoi && !showFilters && !isChangingCity && (

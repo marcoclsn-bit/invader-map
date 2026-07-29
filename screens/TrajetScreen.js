@@ -425,7 +425,7 @@ export default function TrajetScreen() {
       // pas du temps comme dans la Chasse, il fixe seulement combien de lieux on
       // retient. On garde les plus notoires, pour ne pas noyer le trajet.
       const poiCap = ROUTE_POI_CAP[poiPrefs.objective] ?? 0;
-      if (!poiPrefs.enabled || poiCap === 0) {
+      if (poiCap === 0) {
         setRoutePois([]);
       } else {
         const near = getPois(currentCityCode)
@@ -1102,7 +1102,7 @@ export default function TrajetScreen() {
                           <TouchableOpacity
                             key={key}
                             style={[styles.objBtn, active && styles.objBtnActive]}
-                            onPress={() => setPoiPref({ objective: key, enabled: key !== 'pure' || poiPrefs.enabled })}
+                            onPress={() => setPoiPref({ objective: key })}
                             activeOpacity={0.8}
                           >
                             <Ionicons name={icon} size={17} color={active ? theme.bg : theme.textSecondary} />

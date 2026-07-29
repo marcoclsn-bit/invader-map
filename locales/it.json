@@ -517,7 +517,8 @@
       "upToDate": "Dati aggiornati",
       "newVersion": "Nuova versione installata ({{v}})",
       "offline": "Offline — riprova più tardi",
-      "updateError": "Errore di aggiornamento"
+      "updateError": "Errore di aggiornamento",
+      "replayPoiIntro": "Rivedi l'invito «Luoghi da vedere»"
     },
     "language": {
       "section": "Lingua",
@@ -1048,6 +1049,13 @@
       "streets": "Piazze reali, vie storiche, passaggi coperti",
       "nightlife": "Teatri, cabaret, caffè letterari, grandi magazzini",
       "misc": "Stadi, stazioni, scuole, ospedali e curiosità"
+    },
+    "intro": {
+      "title": "Novità",
+      "body": "{{count}} luoghi notevoli sono ora disponibili: monumenti, musei, gallerie coperte, caffè storici…",
+      "question": "Che cosa ti interessa?",
+      "enable": "Mostra sulla mappa",
+      "later": "Più tardi"
     }
   }
 }
