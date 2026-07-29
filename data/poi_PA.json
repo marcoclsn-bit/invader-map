@@ -1,5 +1,5 @@
 {
- "version": 10,
+ "version": 11,
  "updatedAt": "2026-07-29",
  "city": "PA",
  "attribution": "Lieux : Wikidata (CC0) · Résumés d’après Wikipédia (CC BY-SA) · Photos : Wikimedia Commons",
@@ -321,7 +321,7 @@
    "name": "Station F",
    "lat": 48.834495,
    "lng": 2.370844,
-   "theme": "streets",
+   "theme": "other",
    "fame": 45,
    "summary": "Le plus grand campus de startups au monde : 34 000 m² installés depuis 2017 dans l'ancienne halle ferroviaire Freyssinet, rachetée par Xavier Niel.",
    "wiki": "Station F",
@@ -503,7 +503,7 @@
    "name": "hôtel de ville de Paris",
    "lat": 48.856389,
    "lng": 2.352222,
-   "theme": "tables",
+   "theme": "palaces",
    "fame": 38,
    "summary": "Siège des institutions municipales depuis 1357, il a vu passer toutes les révoltes parisiennes : Étienne Marcel, la Fronde, la Révolution, 1830, 1848, la Commune, la Libération. Peu de bâtiments concentrent autant d'histoire politique.",
    "wiki": "Hôtel de ville de Paris",
@@ -607,7 +607,7 @@
    "name": "Galeries Lafayette Haussmann",
    "lat": 48.87363,
    "lng": 2.33215,
-   "theme": "streets",
+   "theme": "shops",
    "fame": 34,
    "summary": "Le plus vaste grand magasin d'Europe et le deuxième du monde après Macy's à New York. Trente-sept millions de visiteurs s'y pressent chaque année.",
    "wiki": "Galeries Lafayette Haussmann",
@@ -1293,7 +1293,7 @@
    "name": "quai d'Orsay",
    "lat": 48.862778,
    "lng": 2.31,
-   "theme": "other",
+   "theme": "water",
    "fame": 22,
    "summary": "Le quai qui longe la Seine du pont de la Concorde au pont de l'Alma. Son nom désigne aussi, par métonymie, le ministère des Affaires étrangères qui s'y trouve, voisin du palais Bourbon.",
    "wiki": "Quai d'Orsay",
@@ -1482,19 +1482,6 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/France_Paris_Cite_Universitaire_Maison_internationale.jpg/960px-France_Paris_Cite_Universitaire_Maison_internationale.jpg",
    "photoBy": null,
    "photoLic": "CC BY 2.5"
-  },
-  {
-   "id": "Q3152161",
-   "name": "Institut des hautes études de défense nationale",
-   "lat": 48.852438,
-   "lng": 2.303648,
-   "theme": "culture",
-   "fame": 20,
-   "summary": "Fondé en 1936 et placé sous l'autorité directe du Premier ministre, il forme et sensibilise aux questions de défense. Il siège à l'École militaire.",
-   "wiki": "Institut des hautes études de défense nationale",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/M%C3%A9daille_IHEDN.jpg/960px-M%C3%A9daille_IHEDN.jpg",
-   "photoBy": "Epeac",
-   "photoLic": "CC BY-SA 4.0"
   },
   {
    "id": "Q945251",
@@ -1692,19 +1679,6 @@
    "photoLic": "CC BY 2.0"
   },
   {
-   "id": "Q8405",
-   "name": "bateau-mouche",
-   "lat": 48.864014,
-   "lng": 2.306112,
-   "theme": "monuments",
-   "fame": 18,
-   "summary": "Les bateaux de promenade de la Seine tirent leur nom du quartier lyonnais de la Mouche, où ils furent construits, et non d'un insecte. La marque est déposée depuis 1950.",
-   "wiki": "Bateau-mouche",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Bateaux_Mouches_Paris_2011.jpg/960px-Bateaux_Mouches_Paris_2011.jpg",
-   "photoBy": "Daniel Stockman",
-   "photoLic": "CC BY-SA 2.0"
-  },
-  {
    "id": "Q1187828",
    "name": "casino de Paris",
    "lat": 48.878358,
@@ -1774,7 +1748,7 @@
    "name": "musée national Eugène-Delacroix",
    "lat": 48.8546,
    "lng": 2.3354,
-   "theme": "other",
+   "theme": "museums",
    "fame": 18,
    "summary": "Le dernier appartement et atelier d'Eugène Delacroix, où il vécut de 1857 à sa mort en 1863. Sauvé par une société d'amis du peintre dans les années 1920, il est devenu musée national en 1971.",
    "wiki": "Musée national Eugène-Delacroix",
@@ -1783,24 +1757,11 @@
    "photoLic": "CC BY 2.0"
   },
   {
-   "id": "Q123256",
-   "name": "palais du Trocadéro",
-   "lat": 48.862778,
-   "lng": 2.287222,
-   "theme": "other",
-   "fame": 18,
-   "summary": "Bâti pour l'Exposition universelle de 1878 dans un style mêlant inspirations mauresque et byzantine, ce palais à la grande salle de 4 600 places et aux ailes courbes a été démoli en 1937 pour laisser place au palais de Chaillot.",
-   "wiki": "Palais du Trocadéro",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/The_Trocadero%2C_Exposition_Universal%2C_1900%2C_Paris%2C_France.jpg/960px-The_Trocadero%2C_Exposition_Universal%2C_1900%2C_Paris%2C_France.jpg",
-   "photoBy": "Unknown authorUnknown author",
-   "photoLic": "Public domain"
-  },
-  {
    "id": "Q956826",
    "name": "parc de Bagatelle",
    "lat": 48.871389,
    "lng": 2.247222,
-   "theme": "other",
+   "theme": "parks",
    "fame": 18,
    "summary": "Un pavillon né d'un pari : le comte d'Artois promit à Marie-Antoinette de le bâtir en moins de trois mois. Son parc, l'un des quatre pôles du jardin botanique de Paris, est célèbre pour sa roseraie.",
    "wiki": "Parc de Bagatelle",
@@ -1813,7 +1774,7 @@
    "name": "pont d'Arcole",
    "lat": 48.855833,
    "lng": 2.350833,
-   "theme": "other",
+   "theme": "water",
    "fame": 18,
    "summary": "Le premier pont de Paris entièrement en fer, large de 20 mètres et franchi d'une seule arche. Il relie l'Hôtel de Ville à l'île de la Cité.",
    "wiki": "Pont d'Arcole",
@@ -1826,7 +1787,7 @@
    "name": "pont de Bercy",
    "lat": 48.838056,
    "lng": 2.375,
-   "theme": "other",
+   "theme": "water",
    "fame": 18,
    "summary": "Un pont à deux niveaux : la circulation en bas, le métro aérien de la ligne 6 sur les arcades du dessus. Il relie Bercy au 13e arrondissement.",
    "wiki": "Pont de Bercy",
@@ -1839,7 +1800,7 @@
    "name": "pont de la Tournelle",
    "lat": 48.850664,
    "lng": 2.355522,
-   "theme": "other",
+   "theme": "water",
    "fame": 18,
    "summary": "Il prolonge la rue des Deux-Ponts qui traverse l'île Saint-Louis et rejoint la rive gauche. À son extrémité se dresse la statue de sainte Geneviève, patronne de Paris, veillant sur le fleuve.",
    "wiki": "Pont de la Tournelle",
@@ -1878,7 +1839,7 @@
    "name": "Dalí Paris",
    "lat": 48.886528,
    "lng": 2.339722,
-   "theme": "other",
+   "theme": "museums",
    "fame": 17,
    "summary": "Plus de 300 œuvres originales de Salvador Dalí, surtout des sculptures et des gravures, dans un espace niché au cœur de Montmartre, à l'emplacement de l'ancien Historial du quartier.",
    "wiki": "Dalí Paris",
@@ -1900,24 +1861,11 @@
    "photoLic": "CC BY-SA 3.0"
   },
   {
-   "id": "Q2601262",
-   "name": "église du Val-de-Grâce",
-   "lat": 48.840556,
-   "lng": 2.341944,
-   "theme": "other",
-   "fame": 17,
-   "summary": "Anne d'Autriche en posa la première pierre en 1645 avec Louis XIV, alors âgé de sept ans : la reine avait fait vœu d'élever une église si elle donnait un héritier au trône. Son dôme baroque est l'un des plus beaux de Paris.",
-   "wiki": "Église Notre-Dame du Val-de-Grâce",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Paris-Eglise_du_Val-de-Grace-104-2017-gje.jpg/960px-Paris-Eglise_du_Val-de-Grace-104-2017-gje.jpg",
-   "photoBy": "Gerd Eichmann",
-   "photoLic": "CC BY-SA 4.0"
-  },
-  {
    "id": "Q1358886",
    "name": "grande synagogue de Paris",
    "lat": 48.8756,
    "lng": 2.33639,
-   "theme": "other",
+   "theme": "religious",
    "fame": 17,
    "summary": "Principale synagogue de la capitale et siège du grand rabbin de Paris, elle est la deuxième plus grande d'Europe après celle de Budapest. Elle fut bâtie sous le Second Empire.",
    "wiki": "Grande synagogue de Paris",
@@ -1930,7 +1878,7 @@
    "name": "jardin des serres d'Auteuil",
    "lat": 48.846944,
    "lng": 2.252222,
-   "theme": "other",
+   "theme": "parks",
    "fame": 17,
    "summary": "Des serres monumentales en fonte peinte en bleu turquoise, élevées en 1898 par Jean-Camille Formigé, avec palmeraie et jardins à la française. C'est l'un des quatre pôles du jardin botanique de Paris.",
    "wiki": "Jardin des serres d'Auteuil",
@@ -2015,19 +1963,6 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Paris_boulevard_du_temple.jpg/960px-Paris_boulevard_du_temple.jpg",
    "photoBy": "Ralf.treinen",
    "photoLic": "CC BY-SA 3.0"
-  },
-  {
-   "id": "Q3413160",
-   "name": "Chaillot",
-   "lat": 48.869167,
-   "lng": 2.291667,
-   "theme": "streets",
-   "fame": 16,
-   "summary": "Ancien village de la colline, absorbé par Paris et devenu le 64e quartier administratif. Il occupe les hauteurs du 16e arrondissement, entre le Trocadéro et l'Étoile.",
-   "wiki": "Quartier de Chaillot",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/View_from_the_Eiffel_Tower%2C_April_2011_001.jpg/960px-View_from_the_Eiffel_Tower%2C_April_2011_001.jpg",
-   "photoBy": "Cristian Bortes from Cluj-Napoca, Romania",
-   "photoLic": "CC BY 2.0"
   },
   {
    "id": "Q2971342",
@@ -2135,7 +2070,7 @@
    "name": "piscine Molitor de Paris",
    "lat": 48.845172,
    "lng": 2.253088,
-   "theme": "tables",
+   "theme": "other",
    "fame": 16,
    "summary": "Inaugurée en 1929 par Johnny Weissmuller, le futur Tarzan du cinéma, cette piscine Art déco surnommée « le paquebot blanc » a vu la première présentation du bikini en 1946. Laissée à l'abandon puis couverte de graffitis, elle a rouvert en hôtel-piscine.",
    "wiki": "Piscine Molitor",
@@ -2235,19 +2170,6 @@
    "photoLic": "CC BY 2.0"
   },
   {
-   "id": "Q800620",
-   "name": "Champ de Mars - Tour Eiffel",
-   "lat": 48.85667,
-   "lng": 2.28973,
-   "theme": "water",
-   "fame": 15,
-   "summary": "Une gare posée au pied de la tour Eiffel, héritière de plusieurs stations qui se sont succédé ici depuis 1867. La gare actuelle, sur la ligne C du RER, date de 1979.",
-   "wiki": "Gare du Champ de Mars - Tour Eiffel",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Champs_de_Mars_-_RER_27-02-06.jpg",
-   "photoBy": "Gregory Deryckère",
-   "photoLic": "CC BY 2.5"
-  },
-  {
    "id": "Q1062732",
    "name": "chapelle expiatoire",
    "lat": 48.8737,
@@ -2274,24 +2196,11 @@
    "photoLic": "CC BY 4.0"
   },
   {
-   "id": "Q1591802",
-   "name": "Haxo",
-   "lat": 48.878611,
-   "lng": 2.401667,
-   "theme": "other",
-   "fame": 15,
-   "summary": "Une station de métro fantôme : construite sous le boulevard Sérurier sur une voie de raccordement, elle n'a jamais été ouverte au public. Elle n'a d'ailleurs aucun accès depuis la rue.",
-   "wiki": "Haxo (métro de Paris)",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Haxo_station_fantome.jpg/960px-Haxo_station_fantome.jpg",
-   "photoBy": "Billy69150",
-   "photoLic": "CC BY-SA 4.0"
-  },
-  {
    "id": "Q2280550",
    "name": "La Géode",
    "lat": 48.894444,
    "lng": 2.388611,
-   "theme": "other",
+   "theme": "museums",
    "fame": 15,
    "summary": "Une sphère de 36 mètres couverte de 6 433 triangles d'acier poli, posée devant la Cité des sciences depuis 1985. À l'intérieur, un écran hémisphérique de 1 000 m² enveloppe le spectateur.",
    "wiki": "La Géode"
@@ -2440,19 +2349,6 @@
    "photoLic": "CC BY-SA 4.0"
   },
   {
-   "id": "Q3151916",
-   "name": "Institut d'astrophysique de Paris",
-   "lat": 48.834961,
-   "lng": 2.335316,
-   "theme": "other",
-   "fame": 14,
-   "summary": "Observatoire des sciences de l'univers rattaché à Sorbonne Université, boulevard Arago, à deux pas de l'Observatoire de Paris. On y étudie la cosmologie et la formation des galaxies.",
-   "wiki": "Institut d'astrophysique de Paris",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Entr%C3%A9e_de_l%27Institut_d%27astrophysique_de_Paris.JPG/960px-Entr%C3%A9e_de_l%27Institut_d%27astrophysique_de_Paris.JPG",
-   "photoBy": "LPLT",
-   "photoLic": "CC BY-SA 3.0"
-  },
-  {
    "id": "Q2654419",
    "name": "musée des Égouts de Paris",
    "lat": 48.862611,
@@ -2477,19 +2373,6 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Mus%C3%A9e_Galliera%2C_Paris_21_July_2017.jpg/960px-Mus%C3%A9e_Galliera%2C_Paris_21_July_2017.jpg",
    "photoBy": "Joe deSousa",
    "photoLic": "CC0"
-  },
-  {
-   "id": "Q3249117",
-   "name": "opéra Le Peletier",
-   "lat": 48.873056,
-   "lng": 2.338889,
-   "theme": "stages",
-   "fame": 14,
-   "summary": "L'Opéra de Paris de 1821 à 1873, jusqu'à l'incendie qui le détruisit en une nuit. Ce sinistre précipita l'achèvement du Palais Garnier, inauguré deux ans plus tard.",
-   "wiki": "Opéra Le Peletier",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Vue_de_la_nouvelle_salle_de_l%27Op%C3%A9ra_prise_de_la_rue_de_Provence_-_NYPL_Digital_Collections.jpg/960px-Vue_de_la_nouvelle_salle_de_l%27Op%C3%A9ra_prise_de_la_rue_de_Provence_-_NYPL_Digital_Collections.jpg",
-   "photoBy": null,
-   "photoLic": "Public domain"
   },
   {
    "id": "Q2707132",
@@ -2746,24 +2629,11 @@
    "photoLic": "CC BY 2.0"
   },
   {
-   "id": "Q843059",
-   "name": "Grande roue de Paris",
-   "lat": 48.851809,
-   "lng": 2.299223,
-   "theme": "other",
-   "fame": 12,
-   "summary": "Cent mètres de diamètre : cette roue construite pour l'Exposition universelle de 1900 domina l'avenue de Suffren avant d'être démontée. Le Village suisse occupe aujourd'hui son emplacement.",
-   "wiki": "Grande roue de Paris (Exposition universelle de 1900)",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/La_grande_roue%2C_Paris%2C_France%2C_ca._1890-1900.jpg/960px-La_grande_roue%2C_Paris%2C_France%2C_ca._1890-1900.jpg",
-   "photoBy": "Unknown authorUnknown author",
-   "photoLic": "Public domain"
-  },
-  {
    "id": "Q3145483",
    "name": "Hôtel Drouot",
    "lat": 48.872778,
    "lng": 2.340556,
-   "theme": "streets",
+   "theme": "shops",
    "fame": 12,
    "summary": "Le principal hôtel des ventes de Paris, avec ses quinze salles rue Drouot. Chaque après-midi, on peut y assister gratuitement aux enchères, du tableau de maître à la brocante.",
    "wiki": "Hôtel Drouot",
@@ -2815,7 +2685,7 @@
    "name": "maison La Roche",
    "lat": 48.8519,
    "lng": 2.2653,
-   "theme": "streets",
+   "theme": "museums",
    "fame": 12,
    "summary": "Construite entre 1923 et 1925 par Le Corbusier et son cousin Pierre Jeanneret, elle applique pour la première fois les « cinq points » de l'architecture moderne : pilotis, toit-terrasse, plan libre, fenêtre en longueur, façade libre.",
    "wiki": "Maison La Roche"
@@ -2858,19 +2728,6 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Le_mus%C3%A9e_national_de_la_Marine_%28Paris%29_%2815883293736%29.jpg/960px-Le_mus%C3%A9e_national_de_la_Marine_%28Paris%29_%2815883293736%29.jpg",
    "photoBy": "Jean-Pierre Dalbéra from Paris, France",
    "photoLic": "CC BY 2.0"
-  },
-  {
-   "id": "Q1858826",
-   "name": "Pont de l'Alma",
-   "lat": 48.86253,
-   "lng": 2.3,
-   "theme": "other",
-   "fame": 12,
-   "summary": "Une gare ouverte en 1900 pour l'Exposition universelle, aujourd'hui desservie par le RER C au pied du musée du quai Branly.",
-   "wiki": "Gare du Pont de l'Alma",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Gare_RER_C_-_Pont_de_l%27Alma.jpg/960px-Gare_RER_C_-_Pont_de_l%27Alma.jpg",
-   "photoBy": "Olivier92",
-   "photoLic": "CC BY 3.0"
   },
   {
    "id": "Q1787799",
@@ -2936,19 +2793,6 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/The_Dome_Church_at_Les_Invalides_-_July_2006.jpg/960px-The_Dome_Church_at_Les_Invalides_-_July_2006.jpg",
    "photoBy": "Diliff",
    "photoLic": "CC BY 2.5"
-  },
-  {
-   "id": "Q2687093",
-   "name": "Champ de Mars",
-   "lat": 48.851297,
-   "lng": 2.301053,
-   "theme": "water",
-   "fame": 11,
-   "summary": "Une station fantôme de la ligne 8, ouverte en 1913 puis fermée au début de la Seconde Guerre mondiale et jamais rouverte. Les rames passent devant ses quais déserts sans s'arrêter.",
-   "wiki": "Champ de Mars (métro de Paris)",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Ancien_Acc%C3%A8s_Station_M%C3%A9tro_Champ_Mars_Place_Joffre_-_Paris_VII_%28FR75%29_-_2022-01-22_-_4.jpg/960px-Ancien_Acc%C3%A8s_Station_M%C3%A9tro_Champ_Mars_Place_Joffre_-_Paris_VII_%28FR75%29_-_2022-01-22_-_4.jpg",
-   "photoBy": "Chabe01",
-   "photoLic": "CC BY-SA 4.0"
   },
   {
    "id": "Q769842",
@@ -3029,32 +2873,6 @@
    "photoLic": "CC BY-SA 4.0"
   },
   {
-   "id": "Q2426877",
-   "name": "Épinettes",
-   "lat": 48.8939,
-   "lng": 2.32249,
-   "theme": "streets",
-   "fame": 11,
-   "summary": "Un quartier populaire du 17e arrondissement, coincé entre les avenues de Clichy et de Saint-Ouen. Ses ruelles pavillonnaires et ses ateliers gardent l'allure des faubourgs d'avant l'annexion.",
-   "wiki": "Quartier des Épinettes",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Rue_Guy_Moquet%2C_%C3%A0_l%27angle_de_la_rue_Davy.jpg/960px-Rue_Guy_Moquet%2C_%C3%A0_l%27angle_de_la_rue_Davy.jpg",
-   "photoBy": "Contrepoints.Org",
-   "photoLic": "CC BY-SA 3.0"
-  },
-  {
-   "id": "Q3067308",
-   "name": "faubourg Saint-Antoine",
-   "lat": 48.8505,
-   "lng": 2.3792,
-   "theme": "streets",
-   "fame": 11,
-   "summary": "Le faubourg des ébénistes : depuis le XVe siècle, les artisans du bois y travaillaient hors des règles corporatives de la ville. Ses cours et ses passages, encore visibles, servaient d'ateliers.",
-   "wiki": "Faubourg Saint-Antoine",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Cour_du_faubourg_Saint_Antoine%2C_Paris_February_2015.jpg/960px-Cour_du_faubourg_Saint_Antoine%2C_Paris_February_2015.jpg",
-   "photoBy": "Jean-François Gornet from Paris, France",
-   "photoLic": "CC BY-SA 2.0"
-  },
-  {
    "id": "Q1457391",
    "name": "galerie de Paléontologie et d'Anatomie comparée",
    "lat": 48.841086,
@@ -3081,24 +2899,11 @@
    "photoLic": "CC BY-SA 3.0"
   },
   {
-   "id": "Q1643043",
-   "name": "hôpital de la Charité",
-   "lat": 48.850795,
-   "lng": 2.34127,
-   "theme": "other",
-   "fame": 11,
-   "summary": "Fondé au début du XVIIe siècle par les Frères de Saint-Jean-de-Dieu, il fut l'un des grands hôpitaux de la rive gauche. Démoli vers 1935, il a laissé place à la faculté de médecine, rue des Saints-Pères.",
-   "wiki": "Hôpital de la Charité de Paris",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Herminie_Waternau_-_Cour_principale_de_lhopital_de_la_charite.jpg/960px-Herminie_Waternau_-_Cour_principale_de_lhopital_de_la_charite.jpg",
-   "photoBy": "Hermine Waterneau",
-   "photoLic": "Public domain"
-  },
-  {
    "id": "Q2059518",
    "name": "hôtel de la Marine",
    "lat": 48.866778,
    "lng": 2.323083,
-   "theme": "streets",
+   "theme": "palaces",
    "fame": 11,
    "summary": "Bâti par Gabriel pour abriter le Garde-Meuble de la Couronne, puis siège de la Marine pendant deux siècles. Restauré et ouvert au public en 2021, il offre depuis sa loggia la plus belle vue sur la place de la Concorde.",
    "wiki": "Hôtel de la Marine",
@@ -3150,7 +2955,7 @@
    "name": "musée des Plans-reliefs",
    "lat": 48.856459,
    "lng": 2.313239,
-   "theme": "tables",
+   "theme": "museums",
    "fame": 11,
    "summary": "Une collection unique au monde : les maquettes des places fortes du royaume, constituée à partir de 1668 pour Louvois, ministre de la Guerre de Louis XIV. Ces plans-reliefs servaient à préparer les sièges.",
    "wiki": "Musée des Plans-reliefs",
@@ -3341,19 +3146,6 @@
    "photoLic": "CC BY 3.0"
   },
   {
-   "id": "Q3413229",
-   "name": "Champs-Élysées",
-   "lat": 48.8678,
-   "lng": 2.30473,
-   "theme": "streets",
-   "fame": 10,
-   "summary": "Le 29e quartier administratif, tout entier organisé autour de « la plus belle avenue du monde ». Il englobe le triangle d'or, l'Élysée et le Grand Palais.",
-   "wiki": "Quartier des Champs-Élysées",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Avenue_des_Champs-%C3%89lys%C3%A9es_July_24%2C_2009_N1.jpg/960px-Avenue_des_Champs-%C3%89lys%C3%A9es_July_24%2C_2009_N1.jpg",
-   "photoBy": "Josh Hallett",
-   "photoLic": "CC BY-SA 2.0"
-  },
-  {
    "id": "Q1093108",
    "name": "cirque d'Hiver",
    "lat": 48.863369,
@@ -3391,19 +3183,6 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/FontaineQuatrePartiesDuMonde02.jpg/960px-FontaineQuatrePartiesDuMonde02.jpg",
    "photoBy": "User Kmlz on fr.wikipedia",
    "photoLic": "CC BY-SA 3.0"
-  },
-  {
-   "id": "Q64956350",
-   "name": "Hôtel de Rambouillet",
-   "lat": 48.8621,
-   "lng": 2.335,
-   "theme": "palaces",
-   "fame": 10,
-   "summary": "Le salon littéraire le plus célèbre du XVIIe siècle : la marquise de Rambouillet y recevait dans sa « chambre bleue », inventant la conversation mondaine et la préciosité. L'hôtel se dressait à l'emplacement du pavillon Turgot du Louvre.",
-   "wiki": "Hôtel de Rambouillet",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/The_exterior_of_Marquise_de_Rambouillet%27s_house.png/960px-The_exterior_of_Marquise_de_Rambouillet%27s_house.png",
-   "photoBy": "Unknown authorUnknown author",
-   "photoLic": "CC0"
   },
   {
    "id": "Q2915167",
@@ -3445,19 +3224,6 @@
    "photoLic": "CC BY 2.0"
   },
   {
-   "id": "Q15260427",
-   "name": "Musée d'Orsay",
-   "lat": 48.860556,
-   "lng": 2.325556,
-   "theme": "other",
-   "fame": 10,
-   "summary": "La gare souterraine du RER C, sous le musée d'Orsay, héritière de la gare terminus construite pour l'Exposition de 1900.",
-   "wiki": "Gare du Musée d'Orsay",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Gare_d%27Orsay_-_Les_Quais.JPG/960px-Gare_d%27Orsay_-_Les_Quais.JPG",
-   "photoBy": "Claude villetaneuse",
-   "photoLic": "CC BY-SA 3.0"
-  },
-  {
    "id": "Q2024100",
    "name": "One-Two-Two",
    "lat": 48.874186,
@@ -3469,19 +3235,6 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/One-two-two%2C_122_rue_de_Provence%2C_Paris_8e_2.jpg/960px-One-two-two%2C_122_rue_de_Provence%2C_Paris_8e_2.jpg",
    "photoBy": "Thank you to indicate this credit line next to the image in ",
    "photoLic": "CC BY-SA 4.0"
-  },
-  {
-   "id": "Q3088872",
-   "name": "palais de l'Industrie",
-   "lat": 48.866944,
-   "lng": 2.314167,
-   "theme": "parks",
-   "fame": 10,
-   "summary": "Immense halle de fer et de verre bâtie pour l'Exposition universelle de 1855, elle accueillit les Salons artistiques pendant quarante ans. Démolie en 1896, elle a laissé place au Grand et au Petit Palais.",
-   "wiki": "Palais de l'Industrie",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Palais_de_l%27Industrie_-_%C3%89douard_Baldus.jpg/960px-Palais_de_l%27Industrie_-_%C3%89douard_Baldus.jpg",
-   "photoBy": "Édouard Baldus",
-   "photoLic": "Public domain"
   },
   {
    "id": "Q2739499",
@@ -3523,19 +3276,6 @@
    "photoLic": "CC BY-SA 2.0"
   },
   {
-   "id": "Q583914",
-   "name": "Porte Molitor",
-   "lat": 48.84298,
-   "lng": 2.25634,
-   "theme": "other",
-   "fame": 10,
-   "summary": "Station fantôme construite en 1923 et jamais ouverte : elle devait desservir le stade de Roland-Garros mais n'a jamais vu un seul voyageur. Ses quais servent aujourd'hui d'atelier d'essais.",
-   "wiki": "Porte Molitor (métro de Paris)",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/8/82/Porte_Molitor2.jpg",
-   "photoBy": "No machine-readable author provided. Gonioul assumed (based ",
-   "photoLic": "CC BY-SA 3.0"
-  },
-  {
    "id": "Q1641986",
    "name": "prison Sainte-Pélagie",
    "lat": 48.842581,
@@ -3559,19 +3299,6 @@
    "wiki": "Rue Montorgueil",
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Paris_-_Rue_Montorgueil.JPG/960px-Paris_-_Rue_Montorgueil.JPG",
    "photoBy": "Jean-Christophe BENOIST",
-   "photoLic": "CC BY-SA 3.0"
-  },
-  {
-   "id": "Q3413213",
-   "name": "Sorbonne",
-   "lat": 48.8492,
-   "lng": 2.3444,
-   "theme": "streets",
-   "fame": 10,
-   "summary": "Le 20e quartier administratif, cœur du Quartier latin : la Sorbonne, les grandes écoles et les instituts s'y concentrent sur la montagne Sainte-Geneviève.",
-   "wiki": "Quartier de la Sorbonne",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Paris_75005_Rue_Saint-Jacques_La_Sorbonne_facade_01a.jpg/960px-Paris_75005_Rue_Saint-Jacques_La_Sorbonne_facade_01a.jpg",
-   "photoBy": "Pline",
    "photoLic": "CC BY-SA 3.0"
   },
   {
@@ -3612,32 +3339,6 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Th%C3%A9%C3%A2tre_Historique_on_the_Boulevard_du_Temple_-_L%27illustration_12_April_1862_-_Levin_p380.jpg/960px-Th%C3%A9%C3%A2tre_Historique_on_the_Boulevard_du_Temple_-_L%27illustration_12_April_1862_-_Levin_p380.jpg",
    "photoBy": "Artist and engraver have not been identified",
    "photoLic": "Public domain"
-  },
-  {
-   "id": "Q2901379",
-   "name": "Bibliothèque de la Sorbonne",
-   "lat": 48.848611,
-   "lng": 2.343333,
-   "theme": "culture",
-   "fame": 9,
-   "summary": "Héritière des collections rassemblées depuis le Moyen Âge autour du collège de Sorbonne, elle occupe des salles de lecture monumentales rue de la Sorbonne. L'une des plus riches bibliothèques universitaires de France.",
-   "wiki": "Bibliothèque de la Sorbonne",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Salle_Jacqueline_de_Romilly_de_la_Biblioth%C3%A8que_de_la_Sorbonne_en_2013.jpg/960px-Salle_Jacqueline_de_Romilly_de_la_Biblioth%C3%A8que_de_la_Sorbonne_en_2013.jpg",
-   "photoBy": "Lise Hébuterne",
-   "photoLic": "CC BY-SA 4.0"
-  },
-  {
-   "id": "Q2901548",
-   "name": "bibliothèque universitaire des langues et civilisations",
-   "lat": 48.829167,
-   "lng": 2.379722,
-   "theme": "culture",
-   "fame": 9,
-   "summary": "Ouverte en 2011 rue des Grands-Moulins, elle rassemble les fonds consacrés aux langues et civilisations du monde entier, aux côtés de l'Inalco. Plus de 350 langues y sont représentées.",
-   "wiki": "Bibliothèque universitaire des langues et civilisations",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Inalco_Bulac_%40_Paris_Rive_Gauche_%40_Paris_%2828410443482%29.jpg/960px-Inalco_Bulac_%40_Paris_Rive_Gauche_%40_Paris_%2828410443482%29.jpg",
-   "photoBy": "Guilhem Vellut from Paris, France",
-   "photoLic": "CC BY 2.0"
   },
   {
    "id": "Q3491901",
@@ -3731,19 +3432,6 @@
    "photoLic": "CC BY 3.0"
   },
   {
-   "id": "Q544740",
-   "name": "Hexagone Balard",
-   "lat": 48.835556,
-   "lng": 2.276111,
-   "theme": "culture",
-   "fame": 9,
-   "summary": "Le « pentagone français » : depuis 2015, les états-majors des armées sont regroupés sur ce site du 15e arrondissement, décidé en 2007.",
-   "wiki": "Hexagone Balard",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Hexagone_Balard_%40_Centre_Sportif_Suzanne_Lenglen_%40_Paris_%2823500764723%29.jpg/960px-Hexagone_Balard_%40_Centre_Sportif_Suzanne_Lenglen_%40_Paris_%2823500764723%29.jpg",
-   "photoBy": "Guilhem Vellut from Paris, France",
-   "photoLic": "CC BY 2.0"
-  },
-  {
    "id": "Q1165249",
    "name": "hôtel de Lassay",
    "lat": 48.862222,
@@ -3791,19 +3479,6 @@
    "fame": 9,
    "summary": "Bibliothèque, archives et musée consacrés aux XXe et XXIe siècles, nés pendant la Grande Guerre pour documenter le conflit. L'institution a rouvert dans un nouveau bâtiment en 2021.",
    "wiki": "La Contemporaine"
-  },
-  {
-   "id": "Q1895301",
-   "name": "Martin Nadaud",
-   "lat": 48.864898,
-   "lng": 2.39812,
-   "theme": "water",
-   "fame": 9,
-   "summary": "Station fantôme de la ligne 3, ouverte en 1905 et fermée en 1969 lorsque la station Gambetta voisine fut réaménagée et l'absorba.",
-   "wiki": "Martin Nadaud (métro de Paris)",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Metro_de_Paris_-_Ligne_3_-_Gambetta_02.jpg/960px-Metro_de_Paris_-_Ligne_3_-_Gambetta_02.jpg",
-   "photoBy": "Clicsouris",
-   "photoLic": "CC BY-SA 3.0"
   },
   {
    "id": "Q2090916",
@@ -3875,26 +3550,13 @@
    "name": "pagode de Vincennes",
    "lat": 48.828464,
    "lng": 2.415367,
-   "theme": "other",
+   "theme": "religious",
    "fame": 9,
    "summary": "Vestige des pavillons du Togo et du Cameroun de l'Exposition coloniale de 1931, devenu le siège de l'Union bouddhiste de France. Elle abrite le plus haut Bouddha d'Europe et des reliques offertes par la Thaïlande.",
    "wiki": "Pagode de Vincennes",
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Pagode_de_Vincennes_02.jpg/960px-Pagode_de_Vincennes_02.jpg",
    "photoBy": "Poulpy",
    "photoLic": "CC BY-SA 4.0"
-  },
-  {
-   "id": "Q3413285",
-   "name": "Parc-de-Montsouris",
-   "lat": 48.8264,
-   "lng": 2.33807,
-   "theme": "streets",
-   "fame": 9,
-   "summary": "Le 54e quartier administratif, organisé autour de son parc. Résidentiel et calme, il borde la Cité universitaire au sud du 14e arrondissement.",
-   "wiki": "Quartier du Parc-de-Montsouris",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Parc_Montsouris_2.JPG/960px-Parc_Montsouris_2.JPG",
-   "photoBy": "The original uploader was NicoNico at French Wikipedia.",
-   "photoLic": "CC BY-SA 3.0"
   },
   {
    "id": "Q2055773",
@@ -3940,7 +3602,7 @@
    "name": "quai Branly",
    "lat": 48.8614,
    "lng": 2.29704,
-   "theme": "other",
+   "theme": "water",
    "fame": 9,
    "summary": "Le quai qui longe la Seine au pied de la tour Eiffel, du pont de l'Alma à la passerelle Debilly. Il a donné son nom au musée des arts premiers qui le borde.",
    "wiki": "Quai Branly",
@@ -3986,19 +3648,6 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Th%C3%A9%C3%A2tre_de_l%27Atelier_%28mars_2010%29.JPG/960px-Th%C3%A9%C3%A2tre_de_l%27Atelier_%28mars_2010%29.JPG",
    "photoBy": "Benchaum",
    "photoLic": "CC BY-SA 3.0"
-  },
-  {
-   "id": "Q7799925",
-   "name": "théâtre du Palais-Royal",
-   "lat": 48.862996,
-   "lng": 2.337373,
-   "theme": "palaces",
-   "fame": 9,
-   "summary": "Inauguré en 1641 dans l'aile est du Palais-Royal, il fut le théâtre de la troupe de Molière de 1660 à sa mort en 1673, puis celui de l'Opéra. C'est ici que le dramaturge s'effondra en scène.",
-   "wiki": "Théâtre du Palais-Royal (1641–1781)",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Palais-Royal_-_view_1679_-_V_Johnson_2008_p88.jpg/960px-Palais-Royal_-_view_1679_-_V_Johnson_2008_p88.jpg",
-   "photoBy": "Gilles Jodelet de La Boissière",
-   "photoLic": "Public domain"
   },
   {
    "id": "Q3527480",
@@ -4050,45 +3699,6 @@
    "photoLic": "CC BY-SA 4.0"
   },
   {
-   "id": "Q15992417",
-   "name": "château du Louvre",
-   "lat": 48.8602,
-   "lng": 2.338,
-   "theme": "palaces",
-   "fame": 8,
-   "summary": "La forteresse de Philippe Auguste, élevée entre 1190 et 1202 pour garder l'ouest de Paris. Démolie par étapes pour laisser place au palais, son donjon et ses fossés ont été redécouverts lors des travaux du Grand Louvre : on les visite sous la cour Carrée.",
-   "wiki": "Château du Louvre",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Louvre_-_Les_Tr%C3%A8s_Riches_Heures.jpg/960px-Louvre_-_Les_Tr%C3%A8s_Riches_Heures.jpg",
-   "photoBy": "Limbourg brothers / Barthélemy d'Eyck",
-   "photoLic": "Public domain"
-  },
-  {
-   "id": "Q1552859",
-   "name": "couvent des Jacobins de Paris de la rue Saint-Honoré",
-   "lat": 48.866944,
-   "lng": 2.331944,
-   "theme": "streets",
-   "fame": 8,
-   "summary": "Le couvent dominicain de la rue Saint-Honoré donna son nom au club politique le plus célèbre de la Révolution, celui de Robespierre : les « Jacobins ». La place du Marché-Saint-Honoré occupe son emplacement.",
-   "wiki": "Couvent des Jacobins (rue Saint-Honoré)",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/f/f5/JacobinClubDoor.jpg",
-   "photoBy": "Illegible",
-   "photoLic": "Public domain"
-  },
-  {
-   "id": "Q1641000",
-   "name": "couvent des Madelonnettes",
-   "lat": 48.866389,
-   "lng": 2.358889,
-   "theme": "religious",
-   "fame": 8,
-   "summary": "Un couvent fondé pour accueillir les anciennes prostituées, devenu prison sous la Révolution. Son nom, tiré de Marie-Madeleine, a donné le mot « madelonnettes ».",
-   "wiki": "Couvent des Madelonnettes (Paris)",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Louis_L%C3%A9opold_Boilly_-_La_prison_des_Madelonnettes%2C_rue_des_Fontaines_-_P1310_-_Mus%C3%A9e_Carnavalet_%28cropped%29.jpg/960px-Louis_L%C3%A9opold_Boilly_-_La_prison_des_Madelonnettes%2C_rue_des_Fontaines_-_P1310_-_Mus%C3%A9e_Carnavalet_%28cropped%29.jpg",
-   "photoBy": "Louis-Léopold Boilly",
-   "photoLic": "Public domain"
-  },
-  {
    "id": "Q3058455",
    "name": "esplanade des Invalides",
    "lat": 48.86,
@@ -4119,7 +3729,7 @@
    "name": "grande halle de la Villette",
    "lat": 48.890833,
    "lng": 2.390833,
-   "theme": "shops",
+   "theme": "stages",
    "fame": 8,
    "summary": "Immense halle de fonte et de verre des anciens abattoirs de la Villette, sauvée de la démolition et reconvertie en salle d'expositions et de concerts. Un vaisseau de 20 000 m² à l'entrée du parc.",
    "wiki": "Grande halle de la Villette",
@@ -4385,19 +3995,6 @@
    "photoLic": "CC BY-SA 3.0"
   },
   {
-   "id": "Q3413107",
-   "name": "Saint-Fargeau",
-   "lat": 48.8716,
-   "lng": 2.40403,
-   "theme": "streets",
-   "fame": 8,
-   "summary": "Le 78e quartier administratif, dans le triangle entre la mairie du 20e, la porte des Lilas et la porte de Bagnolet. Son nom vient du parc d'un ancien château de Ménilmontant.",
-   "wiki": "Quartier Saint-Fargeau",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Paris_square_emmanuel_fleury2.jpg/960px-Paris_square_emmanuel_fleury2.jpg",
-   "photoBy": "Ralf.treinen",
-   "photoLic": "CC BY-SA 3.0"
-  },
-  {
    "id": "Q2292251",
    "name": "théâtre de l'Œuvre",
    "lat": 48.881,
@@ -4658,24 +4255,11 @@
    "photoLic": "CC BY-SA 3.0"
   },
   {
-   "id": "Q3145819",
-   "name": "hôtel de Condé",
-   "lat": 48.85062,
-   "lng": 2.33853,
-   "theme": "palaces",
-   "fame": 7,
-   "summary": "L'hôtel des princes de Condé occupait presque tout le quadrilatère de l'actuel théâtre de l'Odéon. Démoli à la fin du XVIIIe siècle, il a laissé son nom à une rue et son terrain au quartier.",
-   "wiki": "Hôtel de Condé",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Hotel_de_Cond%C3%A92_%28adjusted%29.jpg/960px-Hotel_de_Cond%C3%A92_%28adjusted%29.jpg",
-   "photoBy": "Not identified",
-   "photoLic": "Public domain"
-  },
-  {
    "id": "Q2411384",
    "name": "hôtel de la Monnaie",
    "lat": 48.856674,
    "lng": 2.339104,
-   "theme": "other",
+   "theme": "museums",
    "fame": 7,
    "summary": "Chef-d'œuvre néoclassique de Denis Antoine, quai de Conti, où l'on frappe encore la monnaie française. Sa façade de 117 mètres est l'une des plus longues de la rive gauche ; ateliers et musée se visitent.",
    "wiki": "Hôtel de la Monnaie (Paris)",
@@ -4684,24 +4268,11 @@
    "photoLic": "CC BY-SA 3.0"
   },
   {
-   "id": "Q1476769",
-   "name": "hôtel des Tournelles",
-   "lat": 48.854444,
-   "lng": 2.365,
-   "theme": "palaces",
-   "fame": 7,
-   "summary": "Résidence royale au nord de l'actuelle place des Vosges, où moururent Louis XII puis Henri II, blessé en tournoi. Catherine de Médicis, sa veuve, fit raser l'ensemble par chagrin.",
-   "wiki": "Hôtel des Tournelles",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Hotel_des_Tournelles.jpg/960px-Hotel_des_Tournelles.jpg",
-   "photoBy": "fr:User:Licorne37",
-   "photoLic": "Public domain"
-  },
-  {
    "id": "Q3146282",
    "name": "hôtel du Châtelet",
    "lat": 48.8575,
    "lng": 2.315833,
-   "theme": "streets",
+   "theme": "palaces",
    "fame": 7,
    "summary": "Bâti entre 1770 et 1776 pour le duc du Châtelet, il a servi tour à tour d'école des Ponts et Chaussées, de résidence impériale, d'ambassade ottomane, puis d'archevêché de Paris.",
    "wiki": "Hôtel du Châtelet",
@@ -4805,7 +4376,7 @@
    "name": "Le Splendid",
    "lat": 48.870833,
    "lng": 2.356667,
-   "theme": "tables",
+   "theme": "stages",
    "fame": 7,
    "summary": "Café-théâtre fondé en 1974 dans l'arrière-salle d'un bistrot de Montparnasse. C'est là que la bande de Jugnot, Balasko, Clavier et Lhermitte a créé les spectacles qui deviendront Le Père Noël est une ordure et Les Bronzés.",
    "wiki": "Le Splendid",
@@ -4831,7 +4402,7 @@
    "name": "musée de l'Ordre de la Libération",
    "lat": 48.85572,
    "lng": 2.311344,
-   "theme": "tables",
+   "theme": "museums",
    "fame": 7,
    "summary": "Aux Invalides, il retrace l'histoire de l'ordre créé par de Gaulle en 1940 pour distinguer les compagnons de la Libération. Objets de résistants, de déportés et de combattants des Forces françaises libres.",
    "wiki": "Musée de l'ordre de la Libération",
@@ -4879,19 +4450,6 @@
    "photoLic": "Public domain"
   },
   {
-   "id": "Q3348395",
-   "name": "Observatoire de la Sorbonne",
-   "lat": 48.8486,
-   "lng": 2.34417,
-   "theme": "other",
-   "fame": 7,
-   "summary": "Une coupole d'observatoire posée sur le toit de la Sorbonne, avec sa lunette de 1935 appartenant à la Société astronomique de France. Des soirées d'observation y sont organisées au-dessus des toits du Quartier latin.",
-   "wiki": "Observatoire de la Sorbonne",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Observatoire_de_la_Sorbonne%2C_Paris_2014.jpg/960px-Observatoire_de_la_Sorbonne%2C_Paris_2014.jpg",
-   "photoBy": "Dennis G. Jarvis",
-   "photoLic": "CC BY-SA 2.0"
-  },
-  {
    "id": "Q3364196",
    "name": "parc de la Butte du Chapeau-Rouge",
    "lat": 48.8814,
@@ -4916,19 +4474,6 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Mus%C3%A9e_des_Arts_forains_Paris_12e_001.jpg/960px-Mus%C3%A9e_des_Arts_forains_Paris_12e_001.jpg",
    "photoBy": "Moonik",
    "photoLic": "CC BY-SA 3.0"
-  },
-  {
-   "id": "Q3377026",
-   "name": "Petit-Bourbon",
-   "lat": 48.8595,
-   "lng": 2.3397,
-   "theme": "palaces",
-   "fame": 7,
-   "summary": "L'hôtel des ducs de Bourbon, face au Louvre médiéval, dont la grande salle servit de théâtre à la troupe de Molière avant le Palais-Royal. Il fut rasé au XVIIe siècle pour dégager la colonnade.",
-   "wiki": "Petit-Bourbon",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/4/40/Petit-Bourbon_on_1615_Paris_map_of_by_M%C3%A9rian.jpg",
-   "photoBy": "Matthäus Merian",
-   "photoLic": "Public domain"
   },
   {
    "id": "Q3390301",
@@ -5035,24 +4580,11 @@
    "photoLic": "CC BY-SA 4.0"
   },
   {
-   "id": "Q3469891",
-   "name": "salle Ventadour",
-   "lat": 48.8677,
-   "lng": 2.33485,
-   "theme": "stages",
-   "fame": 7,
-   "summary": "C'est ici qu'eut lieu en 1838 la première de Ruy Blas de Victor Hugo. Devenue Théâtre-Italien puis Opéra, la salle a été convertie en bureaux de la Banque de France.",
-   "wiki": "Salle Ventadour",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Salle_Ventadour_-_Levin_p390.jpg/960px-Salle_Ventadour_-_Levin_p390.jpg",
-   "photoBy": "F. A. Tilly",
-   "photoLic": "Public domain"
-  },
-  {
    "id": "Q528218",
    "name": "square Montholon",
    "lat": 48.876944,
    "lng": 2.346389,
-   "theme": "streets",
+   "theme": "parks",
    "fame": 7,
    "summary": "Un square de 1863 entouré de grilles dessinées par Davioud, dans le 9e arrondissement. Ses grands arbres et son aire de jeux en font une respiration entre les boulevards.",
    "wiki": "Square Montholon",
@@ -5104,7 +4636,7 @@
    "name": "tombe de Frédéric Chopin",
    "lat": 48.86,
    "lng": 2.392778,
-   "theme": "parks",
+   "theme": "monuments",
    "fame": 7,
    "summary": "La Muse de la musique en pleurs, sculptée par Auguste Clésinger et inaugurée en 1850. Chopin repose ici, mais son cœur est resté à Varsovie, scellé dans un pilier de l'église Sainte-Croix.",
    "wiki": "Tombe de Frédéric Chopin",
@@ -5117,7 +4649,7 @@
    "name": "Artcurial",
    "lat": 48.86858,
    "lng": 2.30876,
-   "theme": "other",
+   "theme": "shops",
    "fame": 6,
    "summary": "Maison de ventes aux enchères installée dans un hôtel particulier du rond-point des Champs-Élysées. Voitures de collection, bandes dessinées et art contemporain y passent sous le marteau.",
    "wiki": "Artcurial",
@@ -5166,7 +4698,7 @@
    "name": "cheminée du Front-de-Seine",
    "lat": 48.850556,
    "lng": 2.286111,
-   "theme": "streets",
+   "theme": "monuments",
    "fame": 6,
    "summary": "Une cheminée de 145 mètres, l'une des structures les plus hautes de Paris, qui évacue les fumées d'une chaufferie urbaine. Elle domine les tours du Front de Seine depuis les années 1970.",
    "wiki": "Cheminée du Front de Seine",
@@ -5179,7 +4711,7 @@
    "name": "cour Saint-Émilion",
    "lat": 48.8332,
    "lng": 2.3854,
-   "theme": "other",
+   "theme": "shops",
    "fame": 6,
    "summary": "Une rue pavée bordée d'anciens chais à vin transformés en boutiques et restaurants. Les rails du chemin de fer qui apportait les tonneaux courent encore entre les pavés.",
    "wiki": "Cour Saint-Émilion",
@@ -5212,19 +4744,6 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Halle_Saint_Pierre_In_Montmartre_-_Paris_2013.jpg/960px-Halle_Saint_Pierre_In_Montmartre_-_Paris_2013.jpg",
    "photoBy": "Jim Linwood from London",
    "photoLic": "CC BY 2.0"
-  },
-  {
-   "id": "Q3145813",
-   "name": "hôtel de Cluny",
-   "lat": 48.8505,
-   "lng": 2.34422,
-   "theme": "palaces",
-   "fame": 6,
-   "summary": "Les abbés de Cluny en firent leur résidence parisienne dès le XIIIe siècle. Ce rare hôtel particulier médiéval, bâti sur des thermes romains, abrite aujourd'hui le musée du Moyen Âge.",
-   "wiki": "Hôtel de Cluny",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/H%C3%B4tel_de_Cluny_square_Painlev%C3%A9.jpg/960px-H%C3%B4tel_de_Cluny_square_Painlev%C3%A9.jpg",
-   "photoBy": "Jebulon",
-   "photoLic": "CC0"
   },
   {
    "id": "Q3145924",
@@ -5263,19 +4782,6 @@
    "wiki": "Hôtel Fouquet's Barrière",
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Entr%C3%A9e_de_l%27h%C3%B4tel_Fouquet%27s.jpg/960px-Entr%C3%A9e_de_l%27h%C3%B4tel_Fouquet%27s.jpg",
    "photoBy": "Sophiecharra1",
-   "photoLic": "CC BY-SA 4.0"
-  },
-  {
-   "id": "Q175164",
-   "name": "île Louviers",
-   "lat": 48.848889,
-   "lng": 2.363056,
-   "theme": "water",
-   "fame": 6,
-   "summary": "Une île de la Seine disparue : rattachée à la rive droite au XIXe siècle par comblement du bras qui la séparait de la ville. Le boulevard Morland en suit aujourd'hui le tracé.",
-   "wiki": "Île Louviers",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/9/92/Plan_de_Paris_vers_1550_color_tour_de_Billy_disparue.jpg",
-   "photoBy": "Truschet and Hoyau ; Mbzt",
    "photoLic": "CC BY-SA 4.0"
   },
   {
@@ -5370,32 +4876,6 @@
    "photoLic": "CC BY-SA 3.0"
   },
   {
-   "id": "Q3279639",
-   "name": "maison de l'Art nouveau",
-   "lat": 48.874167,
-   "lng": 2.339722,
-   "theme": "museums",
-   "fame": 6,
-   "summary": "C'est la galerie ouverte par Siegfried Bing en 1895 qui donna son nom à tout un mouvement : l'Art nouveau. Il y exposait meubles, verreries et estampes japonaises qui allaient bouleverser les arts décoratifs.",
-   "wiki": "Maison de l'Art nouveau",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/5/58/H%C3%B4tel_Bing_en_1895.jpg",
-   "photoBy": "Édouard Pourchet (1848-1907)",
-   "photoLic": "Public domain"
-  },
-  {
-   "id": "Q3280257",
-   "name": "maison professe de Paris",
-   "lat": 48.854167,
-   "lng": 2.360278,
-   "theme": "other",
-   "fame": 6,
-   "summary": "La maison des jésuites du Marais, accolée à l'église Saint-Paul-Saint-Louis. Ses bâtiments abritent aujourd'hui le lycée Charlemagne.",
-   "wiki": "Maison professe de Paris",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Maison_professe_de_Paris_fromTurgot_map_of_Paris%2C_sheet_6_-_Norman_B._Leventhal_Map_Center_%28cropped%29.jpg/960px-Maison_professe_de_Paris_fromTurgot_map_of_Paris%2C_sheet_6_-_Norman_B._Leventhal_Map_Center_%28cropped%29.jpg",
-   "photoBy": "Louis Bretez / Claude Lucas",
-   "photoLic": "Public domain"
-  },
-  {
    "id": "Q29645460",
    "name": "Maison Souquet",
    "lat": 48.883604,
@@ -5422,19 +4902,6 @@
    "photoLic": "CC BY-SA 3.0"
   },
   {
-   "id": "Q107304799",
-   "name": "mosquée du bois de Vincennes",
-   "lat": 48.834855,
-   "lng": 2.467806,
-   "theme": "religious",
-   "fame": 6,
-   "summary": "La première mosquée construite en France métropolitaine, élevée en 1916 dans le bois de Vincennes pour les soldats musulmans blessés de la Grande Guerre, dix ans avant la Grande Mosquée de Paris.",
-   "wiki": "Mosquée du bois de Vincennes",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/9/95/La_mosqu%C3%A9e_du_Jardin_Colonial_-Nogent-sur-Marne.jpg",
-   "photoBy": "Unknown authorUnknown author",
-   "photoLic": "CC BY-SA 4.0"
-  },
-  {
    "id": "Q3329119",
    "name": "musée Clemenceau",
    "lat": 48.859167,
@@ -5448,19 +4915,6 @@
    "photoLic": "CC BY-SA 4.0"
   },
   {
-   "id": "Q3062726",
-   "name": "musée d'Ethnographie du Trocadéro",
-   "lat": 48.862778,
-   "lng": 2.288611,
-   "theme": "museums",
-   "fame": 6,
-   "summary": "Premier musée ethnographique de Paris, ouvert en 1878 dans le palais du Trocadéro. Picasso y découvrit les masques africains en 1907, choc à l'origine des Demoiselles d'Avignon.",
-   "wiki": "Musée d'Ethnographie du Trocadéro",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Palais_du_Trocadero_1890s.jpg/960px-Palais_du_Trocadero_1890s.jpg",
-   "photoBy": "Unknown authorUnknown author",
-   "photoLic": "Public domain"
-  },
-  {
    "id": "Q7700501",
    "name": "musée de Roland-Garros",
    "lat": 48.8472,
@@ -5472,32 +4926,6 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/French_Tennis_Federation_Museum%2C_Roland_Garros%2C_Paris_03.jpg/960px-French_Tennis_Federation_Museum%2C_Roland_Garros%2C_Paris_03.jpg",
    "photoBy": "Ank kumar",
    "photoLic": "CC BY-SA 4.0"
-  },
-  {
-   "id": "Q3330260",
-   "name": "musée des Monuments français",
-   "lat": 48.8576,
-   "lng": 2.3345,
-   "theme": "museums",
-   "fame": 6,
-   "summary": "Ouvert en 1795 par Alexandre Lenoir pour sauver les sculptures arrachées aux églises pendant la Révolution. En les exposant par siècles, il a inventé l'idée même de monument historique. Fermé en 1816.",
-   "wiki": "Musée des Monuments français (1795)",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Charles_Marie_Bouton_-_La_salle_des_sculptures_du_XIVe_si%C3%A8cle_au_mus%C3%A9e_des_Monuments_fran%C3%A7ais_-_P1372_-_Mus%C3%A9e_Carnavalet.jpg/960px-Charles_Marie_Bouton_-_La_salle_des_sculptures_du_XIVe_si%C3%A8cle_au_mus%C3%A9e_des_Monuments_fran%C3%A7ais_-_P1372_-_Mus%C3%A9e_Carnavalet.jpg",
-   "photoBy": "Charles-Marie Bouton",
-   "photoLic": "Public domain"
-  },
-  {
-   "id": "Q3098220",
-   "name": "Nord USFRT",
-   "lat": 48.879287,
-   "lng": 2.354368,
-   "theme": "other",
-   "fame": 6,
-   "summary": "L'ancien terminus de la ligne 5 à Gare du Nord, abandonné en 1942 lors du prolongement de la ligne. Ses quais servent aujourd'hui de centre de formation pour les conducteurs.",
-   "wiki": "Gare du Nord USFRT (métro de Paris)",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Gare_du_Nord_USFRT_patrimoine.jpg/960px-Gare_du_Nord_USFRT_patrimoine.jpg",
-   "photoBy": "Thomas Claveirole",
-   "photoLic": "CC BY-SA 2.0"
   },
   {
    "id": "Q3361034",
@@ -5734,43 +5162,17 @@
    "photoLic": "CC BY 3.0"
   },
   {
-   "id": "Q3527756",
-   "name": "théâtre des Jeunes-Artistes",
-   "lat": 48.86875,
-   "lng": 2.35976,
-   "theme": "stages",
-   "fame": 6,
-   "summary": "Salle inaugurée en 1790 rue de Bondy, dans les premières années de la Révolution. Elle formait de jeunes acteurs et a aujourd'hui disparu.",
-   "wiki": "Théâtre des Jeunes-Artistes",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Th%C3%A9%C3%A2tre_des_Jeunes_Artistes_-_Kaufmann_1837_plate5_%28elevation%29.jpg",
-   "photoBy": "Alexis Donnet / J. Alexis Orgiazzi",
-   "photoLic": "Public domain"
-  },
-  {
    "id": "Q2430641",
    "name": "théâtre des Nouveautés",
    "lat": 48.871389,
    "lng": 2.345,
-   "theme": "streets",
+   "theme": "stages",
    "fame": 6,
    "summary": "Un théâtre qui a changé plusieurs fois d'adresse depuis 1827, spécialisé dans le vaudeville et la comédie. La salle actuelle se trouve boulevard Poissonnière.",
    "wiki": "Théâtre des Nouveautés",
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Th%C3%A9%C3%A2tre_des_Nouveaut%C3%A9s.JPG/960px-Th%C3%A9%C3%A2tre_des_Nouveaut%C3%A9s.JPG",
    "photoBy": "Trissotin",
    "photoLic": "CC BY-SA 3.0"
-  },
-  {
-   "id": "Q3527535",
-   "name": "théâtre Pigalle",
-   "lat": 48.8787,
-   "lng": 2.3328,
-   "theme": "stages",
-   "fame": 6,
-   "summary": "Construit en 1929 par le baron Henri de Rothschild en hommage à sa maîtresse comédienne, avec une machinerie scénique révolutionnaire pour l'époque. Il a disparu en 1949.",
-   "wiki": "Théâtre Pigalle",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Th%C3%A9%C3%A2tre_Pigalle_-_btv1b53226771f.jpg/960px-Th%C3%A9%C3%A2tre_Pigalle_-_btv1b53226771f.jpg",
-   "photoBy": "Agence Rol. Agence photographique (commanditaire)",
-   "photoLic": "Public domain"
   },
   {
    "id": "Q3498678",
@@ -5842,7 +5244,7 @@
    "name": "Bercy Village",
    "lat": 48.8331,
    "lng": 2.3865,
-   "theme": "other",
+   "theme": "shops",
    "fame": 5,
    "summary": "Une rue pavée bordée d'anciens chais à vin classés, reconvertis en boutiques et restaurants en 2000. Les rails du train qui apportait les tonneaux affleurent encore entre les pavés.",
    "wiki": "Bercy Village",
@@ -5859,19 +5261,6 @@
    "fame": 5,
    "summary": "Fondée en 1875 sous le parrainage d'Ivan Tourgueniev pour les exilés russes de Paris. Pillée par les nazis en 1940, elle a patiemment reconstitué ses collections en langue russe.",
    "wiki": "Bibliothèque russe Tourguenev"
-  },
-  {
-   "id": "Q24970318",
-   "name": "Bureau de représentation de Taipei en France",
-   "lat": 48.858984,
-   "lng": 2.324613,
-   "theme": "culture",
-   "fame": 5,
-   "summary": "La représentation de Taïwan en France, qui fonctionne de fait comme une ambassade malgré l'absence de relations diplomatiques officielles.",
-   "wiki": "Bureau de représentation de Taipei en France",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/78_rue_de_l%27Universit%C3%A9%2C_Paris_7e_1.jpg/960px-78_rue_de_l%27Universit%C3%A9%2C_Paris_7e_1.jpg",
-   "photoBy": "Celette",
-   "photoLic": "CC BY-SA 4.0"
   },
   {
    "id": "Q28946738",
@@ -5897,45 +5286,6 @@
    "wiki": "Cours la Reine",
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Paris_cours_la_reine.jpg/960px-Paris_cours_la_reine.jpg",
    "photoBy": "Ralf.treinen",
-   "photoLic": "CC BY-SA 3.0"
-  },
-  {
-   "id": "Q547549",
-   "name": "Court Suzanne-Lenglen",
-   "lat": 48.84732,
-   "lng": 2.24647,
-   "theme": "other",
-   "fame": 5,
-   "summary": "Le deuxième court de Roland-Garros, inauguré en 1994 et rebaptisé en 1997 en hommage à la championne des années 1920, première star mondiale du tennis féminin.",
-   "wiki": "Court Suzanne-Lenglen",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Roland_Garros_02.JPG",
-   "photoBy": "User:Arnaud 25",
-   "photoLic": "Public domain"
-  },
-  {
-   "id": "Q335453",
-   "name": "Délégation générale du Québec à Paris",
-   "lat": 48.873031,
-   "lng": 2.280577,
-   "theme": "other",
-   "fame": 5,
-   "summary": "La représentation du Québec en France, rue Pergolèse, chargée de faire connaître la culture québécoise en Europe.",
-   "wiki": "Délégation générale du Québec à Paris",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/D%C3%A9l%C3%A9gation_g%C3%A9n%C3%A9rale_du_Qu%C3%A9bec_%C3%A0_Paris%2C_66_rue_Pergol%C3%A8se%2C_Paris_16e_4-2.jpg/960px-D%C3%A9l%C3%A9gation_g%C3%A9n%C3%A9rale_du_Qu%C3%A9bec_%C3%A0_Paris%2C_66_rue_Pergol%C3%A8se%2C_Paris_16e_4-2.jpg",
-   "photoBy": "Polymagou",
-   "photoLic": "CC BY-SA 4.0"
-  },
-  {
-   "id": "Q273460",
-   "name": "École Du Breuil",
-   "lat": 48.823466,
-   "lng": 2.460294,
-   "theme": "parks",
-   "fame": 5,
-   "summary": "L'école d'horticulture de la Ville de Paris, dans le bois de Vincennes, qui forme depuis 1867 les jardiniers de la capitale. Ses jardins d'application se visitent.",
-   "wiki": "École Du Breuil",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Ecole_du_Breuil.jpg/960px-Ecole_du_Breuil.jpg",
-   "photoBy": "This illustration was made by Citron You must credit this : ",
    "photoLic": "CC BY-SA 3.0"
   },
   {
@@ -6095,19 +5445,6 @@
    "photoLic": "CC BY-SA 3.0"
   },
   {
-   "id": "Q16642865",
-   "name": "hôtel de Choiseul",
-   "lat": 48.87092,
-   "lng": 2.33873,
-   "theme": "palaces",
-   "fame": 5,
-   "summary": "L'hôtel du financier Pierre Crozat, bâti au début du XVIIIe siècle rue de Richelieu, où était rassemblée l'une des plus belles collections de peintures d'Europe. Démoli au XIXe siècle.",
-   "wiki": "Hôtel de Choiseul (Paris)",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/H%C3%B4tel_de_Choiseul_%28rue_de_Richelieu%29%2C_Turgot_Map_%E2%80%93_Kyoto_University_Library_%2814%2C_18%29.jpg/960px-H%C3%B4tel_de_Choiseul_%28rue_de_Richelieu%29%2C_Turgot_Map_%E2%80%93_Kyoto_University_Library_%2814%2C_18%29.jpg",
-   "photoBy": "Jean-Sylvain Cartaud / Louis Bretez / Claude Lucas",
-   "photoLic": "Public domain"
-  },
-  {
    "id": "Q19904532",
    "name": "Hôtel de Montesson",
    "lat": 48.873333,
@@ -6173,19 +5510,6 @@
    "photoLic": "CC BY-SA 3.0"
   },
   {
-   "id": "Q2399873",
-   "name": "île des Cygnes",
-   "lat": 48.8617,
-   "lng": 2.29604,
-   "theme": "water",
-   "fame": 5,
-   "summary": "Une île disparue de la Seine, dite aussi île Maquerelle, rattachée à la rive gauche à la fin du XVIIIe siècle. Le quartier du Gros-Caillou, entre les Invalides et le Champ-de-Mars, occupe son ancien emplacement.",
-   "wiki": "Île des Cygnes (ancienne île de Paris)",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Isle_Maquerelle_ou_des_Cignes.jpg/960px-Isle_Maquerelle_ou_des_Cignes.jpg",
-   "photoBy": "Seigneur Roussel, Capitaine Ingenieur par Ordre du Roy, Chev",
-   "photoLic": "Public domain"
-  },
-  {
    "id": "Q3509682",
    "name": "île du Belvédère",
    "lat": 48.8808,
@@ -6203,7 +5527,7 @@
    "name": "immeuble Lavirotte",
    "lat": 48.8591,
    "lng": 2.30094,
-   "theme": "streets",
+   "theme": "monuments",
    "fame": 5,
    "summary": "La façade Art nouveau la plus exubérante de Paris, avenue Rapp : grès flammés, sculptures et une porte au symbolisme si osé qu'elle fit scandale en 1901. Elle a valu à son architecte le prix de la plus belle façade de la ville.",
    "wiki": "Immeuble Lavirotte",
@@ -6437,7 +5761,7 @@
    "name": "quai de Bercy",
    "lat": 48.8344,
    "lng": 2.38121,
-   "theme": "other",
+   "theme": "water",
    "fame": 5,
    "summary": "Le quai qui longe la Seine au pied du parc de Bercy et du ministère des Finances, jusqu'à la sortie est de Paris.",
    "wiki": "Quai de Bercy",
@@ -6450,7 +5774,7 @@
    "name": "quai de Jemmapes",
    "lat": 48.8748,
    "lng": 2.36369,
-   "theme": "other",
+   "theme": "water",
    "fame": 5,
    "summary": "Le quai du canal Saint-Martin, célèbre pour ses passerelles de fer et ses écluses. C'est ici que se dressait l'Hôtel du Nord, immortalisé par Marcel Carné et sa réplique « Atmosphère ! ».",
    "wiki": "Quai de Jemmapes",
@@ -6463,7 +5787,7 @@
    "name": "quai de la Seine",
    "lat": 48.8868,
    "lng": 2.37481,
-   "theme": "other",
+   "theme": "water",
    "fame": 5,
    "summary": "Le quai qui borde le bassin de la Villette, entre la rotonde de Ledoux et le pont levant de la rue de Crimée. Guinguettes et cinémas en plein air s'y installent l'été.",
    "wiki": "Quai de la Seine",
@@ -6695,11 +6019,11 @@
   {
    "id": "Q4724424",
    "name": "Alhambra",
-   "lat": 48.8671,
-   "lng": 2.3667,
+   "lat": 48.870654,
+   "lng": 2.363084,
    "theme": "stages",
    "fame": 4,
-   "summary": "Le nom couvre deux salles distinctes. La première, ouverte en 1866 comme Cirque-Impérial et devenue en 1904 l'Alhambra music-hall, fut la plus grande scène de variétés de Paris avant d'être démolie en 1967 ; Maurice Chevalier, Édith Piaf et les Beatles y sont passés. Un nouvel Alhambra a rouvert en 2008 rue Yves-Toudic, à trois cents mètres de l'ancienne, et perpétue la programmation chanson et humour.",
+   "summary": "Ouvert en 2008 au 21 rue Yves-Toudic, ce théâtre de 600 places reprend le nom et le répertoire du légendaire Alhambra music-hall, la plus grande scène de variétés de Paris, qui se dressait à trois cents mètres de là rue de Malte avant sa démolition en 1967. Maurice Chevalier, Édith Piaf et les Beatles étaient passés par l'ancienne salle ; la nouvelle programme chanson et humour.",
    "wiki": "Alhambra (Paris)",
    "photo": "https://upload.wikimedia.org/wikipedia/commons/5/54/Th%C3%A9%C3%A2tre_de_l%27Alhambra-1925.jpg",
    "photoBy": "Agence de presse Meurisse",
@@ -6723,38 +6047,12 @@
    "name": "Aquarium de Paris",
    "lat": 48.86222,
    "lng": 2.29083,
-   "theme": "other",
+   "theme": "museums",
    "fame": 4,
    "summary": "Le premier aquarium public au monde, creusé en 1867 dans les anciennes carrières de la colline de Chaillot pour l'Exposition universelle et ouvert en 1878. Fermé en 1985, il a rouvert en 2006 après un chantier complet : 43 bassins, 5,3 millions de litres d'eau, 10 000 animaux et un grand bassin où évoluent 38 requins derrière une vitre de 34 centimètres d'épaisseur. Les galeries souterraines avaient autrefois servi d'écurie à la cavalerie impériale.",
    "wiki": "Aquarium de Paris - Cinéaqua",
    "photo": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Tunnel_aquarium_trocadero.jpg",
    "photoBy": "Albin Denooz",
-   "photoLic": "CC BY-SA 3.0"
-  },
-  {
-   "id": "Q867925",
-   "name": "bibliothèque interuniversitaire de santé",
-   "lat": 48.8512,
-   "lng": 2.3407,
-   "theme": "culture",
-   "fame": 4,
-   "summary": "L'héritière directe de la bibliothèque de la faculté de médecine de Paris, dont les origines remontent au XIIIe siècle : le premier prêt d'ouvrage y est enregistré en 1391 et le premier inventaire, en 1395, recense treize manuscrits. Fusionnée en 2011 avec la bibliothèque de pharmacie fondée au XVIe siècle, elle conserve l'un des plus riches fonds d'histoire de la médecine au monde, avec des estampes, des instruments et des manuscrits accessibles en ligne.",
-   "wiki": "Bibliothèque interuniversitaire de santé",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/P1020078_Paris_VI_Rue_ecole_de_m%C3%A9decine_n%C2%B012_reductwk.JPG/960px-P1020078_Paris_VI_Rue_ecole_de_m%C3%A9decine_n%C2%B012_reductwk.JPG",
-   "photoBy": "Jacques Gondouin",
-   "photoLic": "Public domain"
-  },
-  {
-   "id": "Q284001",
-   "name": "bibliothèque Saint-Germain-des-Prés",
-   "lat": 48.8556,
-   "lng": 2.3325,
-   "theme": "culture",
-   "fame": 4,
-   "summary": "Une bibliothèque universitaire de Paris-Cité née de la bibliothèque de sociologie fondée en 1946, l'une des plus fournies de France en sociologie, linguistique et sciences de l'éducation. Ses fonds ont été labellisés collections d'excellence en 2018 dans le cadre du dispositif national CollEx-Persée. Elle occupe le campus Saint-Germain-des-Prés, installé dans l'ancienne École des arts décoratifs.",
-   "wiki": "Bibliothèque Saint-Germain-des-Prés",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Social_sciences_library_Paris_Descartes_University-CNRS.JPG",
-   "photoBy": "Remi Mathis",
    "photoLic": "CC BY-SA 3.0"
   },
   {
@@ -6808,19 +6106,6 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Le_Cent_Quatre_%C3%A0_Paris%2C_juin_2012.jpg/960px-Le_Cent_Quatre_%C3%A0_Paris%2C_juin_2012.jpg",
    "photoBy": "Jean-Pierre Dalbéra",
    "photoLic": "CC BY 2.0"
-  },
-  {
-   "id": "Q2945681",
-   "name": "centre hospitalier Sainte-Anne",
-   "lat": 48.8287,
-   "lng": 2.33845,
-   "theme": "other",
-   "fame": 4,
-   "summary": "Le grand hôpital psychiatrique parisien, héritier d'une maison de santé fondée en 1651 par Anne d'Autriche pour les pestiférés et rebâtie sous Napoléon III. C'est ici qu'ont enseigné Valentin Magnan puis Jean Delay et Pierre Deniker, qui découvrent en 1952 l'effet du premier neuroleptique et bouleversent le traitement de la psychose. Le site abrite un musée d'art et d'histoire consacré aux œuvres réalisées par les patients.",
-   "wiki": "Centre hospitalier Sainte-Anne",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Pavillon_Magnan_de_l%27h%C3%B4pital_Sainte-Anne.JPG/960px-Pavillon_Magnan_de_l%27h%C3%B4pital_Sainte-Anne.JPG",
-   "photoBy": "LPLT",
-   "photoLic": "CC BY-SA 3.0"
   },
   {
    "id": "Q2957470",
@@ -6940,19 +6225,6 @@
    "photoLic": "CC BY-SA 4.0"
   },
   {
-   "id": "Q3016587",
-   "name": "darse du fond de Rouvray",
-   "lat": 48.8903,
-   "lng": 2.38734,
-   "theme": "other",
-   "fame": 4,
-   "summary": "Un petit canal en impasse de 250 mètres, greffé sur le canal de l'Ourcq en lisière du parc de la Villette. Une darse est un bassin où les péniches viennent charger et manœuvrer : celle-ci desservait les ateliers du service municipal des canaux, encore visibles sur la rive est. Son nom rappellerait la ferme de Rouvray, présente sur les plans de 1730. Un pont tournant en garde l'entrée.",
-   "wiki": "Darse du fond de Rouvray",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Darse_du_fond_de_Rouvray%2C_Paris_-_05.jpg/960px-Darse_du_fond_de_Rouvray%2C_Paris_-_05.jpg",
-   "photoBy": "Poulpy",
-   "photoLic": "CC BY-SA 3.0"
-  },
-  {
    "id": "Q3494303",
    "name": "église Notre-Dame-de-Nazareth",
    "lat": 48.83614695,
@@ -7067,19 +6339,6 @@
    "wiki": "Grands Magasins Dufayel",
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Grands_Magasins_Dufayel_-_Paris_XVIII_%28FR75%29_-_2022-02-12_-_2.jpg/960px-Grands_Magasins_Dufayel_-_Paris_XVIII_%28FR75%29_-_2022-02-12_-_2.jpg",
    "photoBy": "Chabe01",
-   "photoLic": "CC BY-SA 4.0"
-  },
-  {
-   "id": "Q3145140",
-   "name": "hôpital Bretonneau",
-   "lat": 48.89,
-   "lng": 2.33061,
-   "theme": "other",
-   "fame": 4,
-   "summary": "Un hôpital pédiatrique ouvert le 1er mars 1901 au pied de Montmartre, conçu par l'architecte Paul Héneux en pavillons séparés pour limiter la contagion. Après la fermeture de la pédiatrie en 1988, ses murs ont abrité pendant dix ans un centre de création artistique. Rouvert en 2001, il est aujourd'hui spécialisé dans la gériatrie.",
-   "wiki": "Hôpital Bretonneau",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/H%C3%B4pital_Bretonneau_entr%C3%A9e.jpg/960px-H%C3%B4pital_Bretonneau_entr%C3%A9e.jpg",
-   "photoBy": "VVVCFFrance",
    "photoLic": "CC BY-SA 4.0"
   },
   {
