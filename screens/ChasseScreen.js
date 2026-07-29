@@ -33,10 +33,13 @@ import { POI_FAMILIES, familyOf } from '../data/poiFamilies';
 
 const _PA        = CITIES.PA;
 const PARIS      = { latitude: _PA.center.lat, longitude: _PA.center.lng, ..._PA.mapDelta };
-const VISIT_MIN = 2;       // minutes par Invader (observation + photo)
-const VISIT_MIN_POI = 1.5; // minutes par lieu d'intérêt (pause photo, pas une visite)
+// Temps d'arrêt par étape. C'est la constante la plus lourde du planificateur :
+// dans une zone dense, elle pèse les deux tiers d'une chasse d'une heure, bien
+// devant le choix du mode de transport.
+const VISIT_MIN = 1;       // minutes par Invader (sortir le téléphone, viser, flasher)
+const VISIT_MIN_POI = 1.5; // minutes par lieu d'intérêt (on s'arrête, on lève les yeux)
 const visitMinOf = (step) => (step.isPoi ? VISIT_MIN_POI : VISIT_MIN);
-// Temps de visite cumulé d'une liste d'étapes (un lieu coûte moins qu'un Invader).
+// Temps d'arrêt cumulé d'une liste d'étapes.
 const visitTotalMin = (list) => list.reduce((s, x) => s + visitMinOf(x), 0);
 // Limite de l'API d'itinéraires (~50 points) : départ + étapes + retour.
 const MAX_STEPS = 46;
@@ -100,12 +103,16 @@ function neighborPointsMap(pool) {
 
 // 1. Sélection gloutonne, pondérée par la densité locale (points voisins).
 //    score = (points + α × points des voisins) / (temps d'accès + visite).
-function greedySelect(startLat, startLon, pool, budgetMin, speedKmPerMin, nbrPoints) {
+function greedySelect(startLat, startLon, pool, budgetMin, speedKmPerMin, nbrPoints, maxSteps = MAX_STEPS) {
   const available = pool.slice();
   const selected = [];
   let curLat = startLat, curLon = startLon, timeLeft = budgetMin;
 
-  while (available.length > 0) {
+  // MAX_STEPS borne la sélection : l'API d'itinéraires refuse au-delà d'une
+  // cinquantaine de points, et rien ne l'appliquait ici. Avec des arrêts d'une
+  // minute, une chasse longue en zone dense dépassait couramment la limite et
+  // le calcul échouait sur une erreur de l'API.
+  while (available.length > 0 && selected.length < maxSteps) {
     let bestIdx = -1, bestScore = -Infinity;
     for (let i = 0; i < available.length; i++) {
       const inv = available[i];
@@ -149,11 +156,11 @@ function twoOpt(order, startLat, startLon, speedKmPerMin) {
 
 // 3. Re-remplissage : insère d'autres Invaders là où ça coûte le moins de temps,
 //    tant qu'on reste dans le budget (insertion la moins chère, priorité aux points).
-function refill(order, remaining, startLat, startLon, budgetMin, speedKmPerMin) {
+function refill(order, remaining, startLat, startLon, budgetMin, speedKmPerMin, maxSteps = MAX_STEPS) {
   let selected = order.slice();
   const pool = remaining.slice();
 
-  while (pool.length > 0) {
+  while (pool.length > 0 && selected.length < maxSteps) {
     let bestCand = -1, bestPos = -1, bestGain = -Infinity;
     const baseTime = tourTotalMin(selected, startLat, startLon, speedKmPerMin);
 
@@ -229,11 +236,16 @@ function planHunt(startLon, startLat, candidates, budgetMin, speedKmh, opts = {}
   // et plus aucun lieu ne peut s'insérer. Les Invaders gardent toujours la majeure part.
   const invaderBudget = budgetMin * (1 - alpha * 0.25);
 
+  // Place réservée aux lieux dans les MAX_STEPS points admis par l'API : sans
+  // cela, une chasse longue remplissait les 46 places d'Invaders et « Chasse &
+  // visite » ne pouvait plus insérer un seul lieu.
+  const invaderSteps = Math.max(1, Math.floor(MAX_STEPS / (1 + alpha * 0.5)));
+
   const nbrPoints = neighborPointsMap(pool);
-  let selected = greedySelect(startLat, startLon, pool, invaderBudget, speedKmPerMin, nbrPoints);
+  let selected = greedySelect(startLat, startLon, pool, invaderBudget, speedKmPerMin, nbrPoints, invaderSteps);
   selected = twoOpt(selected, startLat, startLon, speedKmPerMin);
   const remaining = pool.filter(inv => !selected.includes(inv));
-  selected = refill(selected, remaining, startLat, startLon, invaderBudget, speedKmPerMin);
+  selected = refill(selected, remaining, startLat, startLon, invaderBudget, speedKmPerMin, invaderSteps);
   selected = twoOpt(selected, startLat, startLon, speedKmPerMin);
 
   if (alpha > 0 && pois.length) {
