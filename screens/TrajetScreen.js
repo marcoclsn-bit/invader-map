@@ -211,12 +211,13 @@ function RoutePanel({ allInvaders, displayInvaders, flashed, statusColors, showO
   const styles = getStyles(theme);
   const total = allInvaders.length;
   const poiCount = pois.length;
-  // Les lieux ouvrent la liste : peu nombreux, et ils ne sont pas concernés par
-  // le filtre « À faire », qui ne parle que de flashs.
+  // Liste dans le SENS DE LA MARCHE : Invaders et lieux mélangés, triés par leur
+  // distance parcourue le long du tracé (`along`, calculée par nearestPointOnLine).
+  // On suit ainsi l'ordre dans lequel on les rencontrera réellement.
   const rows = [
     ...pois.map((p) => ({ __poi: true, ...p })),
     ...displayInvaders,
-  ];
+  ].sort((a, b) => (a.along ?? 0) - (b.along ?? 0));
   // « À flasher » = ni déjà flashés, ni détruits (les détruits ne sont pas flashables)
   const todoInvaders = allInvaders.filter((inv) => !flashed.has(inv.id) && inv.status !== 'destroyed');
   const unflashedCount = todoInvaders.length;
@@ -412,10 +413,14 @@ export default function TrajetScreen() {
       );
 
       // ── Mesure précise sur les seuls candidats ────────────────────────────
-      const nearby = candidates.filter((inv) => {
-        const nearest = turf.nearestPointOnLine(line, turf.point([inv.lng, inv.lat]), { units: 'kilometers' });
-        return nearest.properties.dist <= bufferKm;
-      });
+      // On retient aussi `location` : la distance parcourue le long du tracé au
+      // point le plus proche. C'est ce qui permet d'ordonner la liste dans le
+      // sens de la marche, Invaders et lieux mélangés.
+      const nearby = [];
+      for (const inv of candidates) {
+        const near = turf.nearestPointOnLine(line, turf.point([inv.lng, inv.lat]), { units: 'kilometers' });
+        if (near.properties.dist <= bufferKm) nearby.push({ ...inv, along: near.properties.location });
+      }
       __DEV__ && console.log(`[Trajet] Couloir : ${candidates.length} candidats (bbox) → ${nearby.length} retenus`);
       setRouteInvaders(nearby);
       setSelectedRouteInv(null);
@@ -428,14 +433,18 @@ export default function TrajetScreen() {
       if (poiCap === 0) {
         setRoutePois([]);
       } else {
-        const near = getPois(currentCityCode)
-          .filter(p => poiPrefs.families.has(familyOf(p)))
-          .filter(p => p.lng >= minLng && p.lng <= maxLng && p.lat >= minLat && p.lat <= maxLat)
-          .filter(p => turf.nearestPointOnLine(line, turf.point([p.lng, p.lat]), { units: 'kilometers' })
-                           .properties.dist <= bufferKm)
-          .sort((a, b) => b.fame - a.fame)
-          .slice(0, poiCap);
-        setRoutePois(near);
+        const inCorridor = [];
+        for (const p of getPois(currentCityCode)) {
+          if (!poiPrefs.families.has(familyOf(p))) continue;
+          if (p.lng < minLng || p.lng > maxLng || p.lat < minLat || p.lat > maxLat) continue;
+          const near = turf.nearestPointOnLine(line, turf.point([p.lng, p.lat]), { units: 'kilometers' });
+          if (near.properties.dist <= bufferKm) inCorridor.push({ ...p, along: near.properties.location });
+        }
+        // On sélectionne par notoriété (les plus remarquables), puis on remet
+        // dans le sens de la marche pour l'affichage.
+        const kept = inCorridor.sort((a, b) => b.fame - a.fame).slice(0, poiCap);
+        kept.sort((a, b) => a.along - b.along);
+        setRoutePois(kept);
       }
       setSelectedRoutePoi(null);
       // fitToCoordinates est déplacé dans l'effect sur routeInvaders (ci-dessous) :
