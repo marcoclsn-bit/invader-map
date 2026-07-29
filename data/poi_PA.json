@@ -1,5 +1,5 @@
 {
- "version": 13,
+ "version": 14,
  "updatedAt": "2026-07-29",
  "city": "PA",
  "attribution": "Lieux : Wikidata (CC0) · Résumés d’après Wikipédia (CC BY-SA) · Photos : Wikimedia Commons",
@@ -805,6 +805,19 @@
    "photoLic": "CC BY-SA 3.0"
   },
   {
+   "id": "Q280413",
+   "name": "Centre national de la recherche scientifique",
+   "lat": 48.8477,
+   "lng": 2.264,
+   "theme": "culture",
+   "fame": 41,
+   "summary": "Le plus grand organisme public de recherche français, créé par décret en octobre 1939, à la veille de la guerre, pour coordonner les laboratoires du pays. Il emploie aujourd'hui plus de 30 000 personnes dans toutes les disciplines et a produit une vingtaine de prix Nobel. Son siège occupe un immeuble de la rue Michel-Ange, à Auteuil ; ses laboratoires sont dispersés dans toute la France.",
+   "wiki": "Centre national de la recherche scientifique",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Si%C3%A8ge_du_CNRS_rue_Michel-Ange_Paris_6.jpg/960px-Si%C3%A8ge_du_CNRS_rue_Michel-Ange_Paris_6.jpg",
+   "photoBy": "Polymagou",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
    "id": "Q857276",
    "name": "musée d'Art moderne de Paris",
    "lat": 48.8643,
@@ -857,6 +870,19 @@
    "photoLic": "CC BY 3.0"
   },
   {
+   "id": "Q806950",
+   "name": "Banque de France",
+   "lat": 48.864469444,
+   "lng": 2.339280555,
+   "theme": "other",
+   "fame": 40,
+   "summary": "Fondée par Bonaparte en 1800 pour redonner une monnaie stable à un pays ruiné par les assignats, nationalisée par de Gaulle en 1946, indépendante depuis 1994. Elle occupe l'hôtel de Toulouse, près de la place des Victoires, et garde dans un souterrain blindé creusé à 27 mètres sous la rue une partie des réserves d'or de la France, accessible par un puits que seule une machinerie d'époque commande.",
+   "wiki": "Banque de France",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Paris_BdF.jpg/960px-Paris_BdF.jpg",
+   "photoBy": "Boubloub",
+   "photoLic": "CC0"
+  },
+  {
    "id": "Q330375",
    "name": "Folies Bergère",
    "lat": 48.874167,
@@ -894,6 +920,19 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Paris-Gare_de_l%27Est-2009.jpg/960px-Paris-Gare_de_l%27Est-2009.jpg",
    "photoBy": "Gilbert Bochenek",
    "photoLic": "CC BY 3.0"
+  },
+  {
+   "id": "Q463055",
+   "name": "Conservatoire de Paris",
+   "lat": 48.888888888,
+   "lng": 2.390833333,
+   "theme": "other",
+   "fame": 39,
+   "summary": "Héritier de l'école royale de chant de 1784 et fondé sous sa forme actuelle en 1795, il a formé Berlioz, Bizet, Debussy, Ravel et Messiaen. Longtemps installé rue Bergère puis rue de Madrid, il a rejoint en 1990 un bâtiment de Christian de Portzamparc à la Villette, aux volumes déconstruits et aux salles insonorisées les unes des autres. Ses concerts d'élèves sont souvent gratuits.",
+   "wiki": "Conservatoire national supérieur de musique et de danse de Paris",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/CNSMDP.jpg/960px-CNSMDP.jpg",
+   "photoBy": "Gegeours",
+   "photoLic": "CC BY-SA 4.0"
   },
   {
    "id": "Q334186",
@@ -1270,6 +1309,19 @@
    "wiki": "Hôtel de Matignon"
   },
   {
+   "id": "Q523312",
+   "name": "tombe du Soldat inconnu",
+   "lat": 48.873752,
+   "lng": 2.29513,
+   "theme": "other",
+   "fame": 33,
+   "summary": "Le 11 novembre 1920, un soldat non identifié tombé à Verdun est inhumé sous l'Arc de triomphe, choisi parmi huit cercueils par un jeune combattant à qui l'on avait tendu un bouquet à déposer. La flamme, ajoutée en 1923, est ravivée chaque soir à 18 h 30 sans une seule interruption depuis, y compris pendant l'Occupation. L'épitaphe tient en une ligne : ici repose un soldat français mort pour la Patrie.",
+   "wiki": "Tombe du Soldat inconnu (France)",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Paris_Arc_de_Triomphe_de_l%27%C3%89toile_Grabmal_des_Unbekannten_Soldaten_2.jpg/960px-Paris_Arc_de_Triomphe_de_l%27%C3%89toile_Grabmal_des_Unbekannten_Soldaten_2.jpg",
+   "photoBy": "Zairon",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
    "id": "Q915451",
    "name": "Olympia",
    "lat": 48.870278,
@@ -1374,6 +1426,19 @@
    "photoLic": "CC BY-SA 3.0"
   },
   {
+   "id": "Q273480",
+   "name": "École militaire",
+   "lat": 48.8525,
+   "lng": 2.303611111,
+   "theme": "other",
+   "fame": 31,
+   "summary": "Louis XV la fait bâtir en 1751 sur une idée de Madame de Pompadour, pour offrir aux fils de nobles désargentés une formation d'officier. Ange-Jacques Gabriel, l'architecte du Petit Trianon et de la place de la Concorde, lui donne sa façade à colonnes et son dôme quadrangulaire, qui ferme la perspective du Champ-de-Mars. Un élève boursier corse de quinze ans y est passé en 1784 : Napoléon Bonaparte.",
+   "wiki": "École militaire (France)",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/%C3%89cole_militaire_from_the_Eiffel_Tower%2C_August_2008.jpg/960px-%C3%89cole_militaire_from_the_Eiffel_Tower%2C_August_2008.jpg",
+   "photoBy": "Albertus teolog",
+   "photoLic": "Public domain"
+  },
+  {
    "id": "Q860166",
    "name": "Institut du monde arabe",
    "lat": 48.848903,
@@ -1413,6 +1478,19 @@
    "photoLic": "CC BY-SA 3.0"
   },
   {
+   "id": "Q526595",
+   "name": "place du Tertre",
+   "lat": 48.886666666,
+   "lng": 2.340833333,
+   "theme": "streets",
+   "fame": 30,
+   "summary": "Le cœur de l'ancien village de Montmartre, à 130 mètres d'altitude, place principale de la commune indépendante jusqu'à son annexion à Paris en 1860. Une centaine de peintres y plantent leur chevalet chaque jour, sur des emplacements attribués par la Ville et si convoités qu'il faut parfois attendre des années. Utrillo et Picasso y ont vécu ; c'est aujourd'hui l'un des lieux les plus visités de France.",
+   "wiki": "Place du Tertre",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Place_Tertre_-_Paris_XVIII_%28FR75%29_-_2026-04-10_-_1.jpg/960px-Place_Tertre_-_Paris_XVIII_%28FR75%29_-_2026-04-10_-_1.jpg",
+   "photoBy": "Chabe01",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
    "id": "Q1996069",
    "name": "musée de l'Armée",
    "lat": 48.856944,
@@ -1437,6 +1515,16 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Pont_de_l%27Alma_%40_Paris_%2828191838505%29.jpg/960px-Pont_de_l%27Alma_%40_Paris_%2828191838505%29.jpg",
    "photoBy": "Guilhem Vellut from Paris, France",
    "photoLic": "CC BY 2.0"
+  },
+  {
+   "id": "Q2963665",
+   "name": "École nationale supérieure de chimie de Paris",
+   "lat": 48.843859166,
+   "lng": 2.343599444,
+   "theme": "other",
+   "fame": 29,
+   "summary": "Fondée en 1896 sur la montagne Sainte-Geneviève, dans le quartier des laboratoires qui deviendra le campus Curie. Marie Curie y enseigna, et c'est là qu'André Debierne, son collaborateur, isola l'actinium. L'école forme moins de cent ingénieurs par an et occupe des bâtiments de brique rouge typiques de l'architecture scolaire de la Troisième République.",
+   "wiki": "École nationale supérieure de chimie de Paris"
   },
   {
    "id": "Q48748155",
@@ -1556,6 +1644,32 @@
    "photoLic": "CC BY-SA 3.0"
   },
   {
+   "id": "Q1294736",
+   "name": "hôtel-Dieu de Paris",
+   "lat": 48.85463889,
+   "lng": 2.34880556,
+   "theme": "other",
+   "fame": 28,
+   "summary": "Le plus vieil hôpital de la capitale, fondé vers 650 par l'évêque Landry, à l'origine autant auberge de pèlerins qu'infirmerie. Pendant des siècles, on y entassait les malades à quatre ou six par lit, sans distinction de maladie, avec une mortalité effroyable. Reconstruit de 1867 à 1878 en pavillons aérés selon les principes hygiénistes, il occupe désormais le côté nord du parvis de Notre-Dame.",
+   "wiki": "Hôtel-Dieu de Paris",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/H%C3%B4tel-Dieu_de_Paris_from_Notre-Dame_de_Paris%2C_April_2011_001.jpg/960px-H%C3%B4tel-Dieu_de_Paris_from_Notre-Dame_de_Paris%2C_April_2011_001.jpg",
+   "photoBy": "Cristian Bortes from Cluj-Napoca, Romania",
+   "photoLic": "CC BY 2.0"
+  },
+  {
+   "id": "Q1025693",
+   "name": "café de la Régence",
+   "lat": 48.859863,
+   "lng": 2.342579,
+   "theme": "tables",
+   "fame": 28,
+   "summary": "Pendant cent vingt ans, la capitale mondiale des échecs. Ouvert en 1681 près du Palais-Royal, il attirait dès 1740 tous les grands joueurs d'Europe, à commencer par Philidor, le meilleur de son siècle. Diderot y situe une partie du Neveu de Rameau. Rousseau, Voltaire, Napoléon et, en 1844, Marx et Engels lors de leur première rencontre y ont joué. Le café a fermé en 1910 ; l'emplacement est aujourd'hui banal.",
+   "wiki": "Café de la Régence",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/L%27Illustration_24_janvier_1851.jpg/960px-L%27Illustration_24_janvier_1851.jpg",
+   "photoBy": "Jules Noel",
+   "photoLic": "Public domain"
+  },
+  {
    "id": "Q1025686",
    "name": "café de Flore",
    "lat": 48.853889,
@@ -1657,6 +1771,32 @@
    "photoLic": "CC BY-SA 4.0"
   },
   {
+   "id": "Q269641",
+   "name": "colonne de Juillet",
+   "lat": 48.853055555,
+   "lng": 2.369166666,
+   "theme": "monuments",
+   "fame": 27,
+   "summary": "Cinquante-deux mètres de bronze élevés de 1835 à 1840 en mémoire des Trois Glorieuses, ces trois journées de juillet 1830 qui renversèrent Charles X. Les noms des 504 combattants tués y sont gravés en lettres d'or, et leurs restes reposent dans le soubassement, avec ceux des morts de 1848. Au sommet, le Génie de la Liberté d'Auguste Dumont s'envole une chaîne brisée à la main. La colonne se visite rarement.",
+   "wiki": "Colonne de Juillet",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Colonne_de_Juillet_972.jpg/960px-Colonne_de_Juillet_972.jpg",
+   "photoBy": "Vassil",
+   "photoLic": "Public domain"
+  },
+  {
+   "id": "Q143080",
+   "name": "palais de justice de Paris",
+   "lat": 48.855722,
+   "lng": 2.345051,
+   "theme": "palaces",
+   "fame": 27,
+   "summary": "Quatre hectares sur l'île de la Cité, soit un sixième de sa surface : l'ensemble occupe l'emplacement du palais des rois de France, dont il a conservé la Conciergerie et la Sainte-Chapelle. La façade actuelle et la cour du Mai datent du XVIIIe siècle, le reste d'une reconstruction après les incendies de la Commune. Il abrite la cour d'appel et la Cour de cassation depuis le départ du tribunal en 2018.",
+   "wiki": "Palais de justice de Paris",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Palais_de_Justice_%28Paris%29_June_2010.jpg/960px-Palais_de_Justice_%28Paris%29_June_2010.jpg",
+   "photoBy": "King of Hearts",
+   "photoLic": "CC BY-SA 3.0"
+  },
+  {
    "id": "Q926749",
    "name": "lycée Condorcet",
    "lat": 48.874803,
@@ -1735,6 +1875,19 @@
    "photoLic": "CC BY 2.0"
   },
   {
+   "id": "Q1111051",
+   "name": "colonne Vendôme",
+   "lat": 48.867469,
+   "lng": 2.329414,
+   "theme": "monuments",
+   "fame": 26,
+   "summary": "Quarante-quatre mètres, coulés de 1806 à 1810 dans le bronze des canons pris à Austerlitz, avec une spirale de bas-reliefs qui imite la colonne Trajane de Rome. Les communards l'abattirent le 16 mai 1871 sur un lit de fumier et de fagots, à l'initiative du peintre Courbet, qui fut condamné à en payer la reconstruction et mourut en exil avant d'avoir soldé la dette. Elle fut relevée dès 1875.",
+   "wiki": "Colonne Vendôme",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Vendome_Column_A.jpg/960px-Vendome_Column_A.jpg",
+   "photoBy": "Benh LIEU SONG",
+   "photoLic": "CC BY-SA 3.0"
+  },
+  {
    "id": "Q1514062",
    "name": "basilique Sainte-Clotilde",
    "lat": 48.858333,
@@ -1785,6 +1938,32 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Le_Jeu_de_Paume%2C_1_place_de_la_Concorde_%C3%A0_Paris%2C_juillet_2021.jpg/960px-Le_Jeu_de_Paume%2C_1_place_de_la_Concorde_%C3%A0_Paris%2C_juillet_2021.jpg",
    "photoBy": "Jean-Pierre Dalbéra",
    "photoLic": "CC BY 2.0"
+  },
+  {
+   "id": "Q1147912",
+   "name": "Les Deux Magots",
+   "lat": 48.853889,
+   "lng": 2.333056,
+   "theme": "tables",
+   "fame": 25,
+   "summary": "Le nom vient d'un magasin de soieries qui occupait les lieux avant 1884 et dont l'enseigne portait deux figurines chinoises, toujours accrochées à un pilier de la salle. Devenu café en 1885, il fut le quartier général de Verlaine et Rimbaud, puis des surréalistes autour de Breton, puis de Sartre et Beauvoir qui y écrivaient chaque matin. Il décerne son propre prix littéraire depuis 1933, en réaction au Goncourt.",
+   "wiki": "Les Deux Magots",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Les_Deux_Magots%2C_25_September_2019.jpg/960px-Les_Deux_Magots%2C_25_September_2019.jpg",
+   "photoBy": "Cheng-en Cheng from Taichung City, Taiwan",
+   "photoLic": "CC BY-SA 2.0"
+  },
+  {
+   "id": "Q1878600",
+   "name": "lycée Henri-IV",
+   "lat": 48.846358,
+   "lng": 2.347385,
+   "theme": "culture",
+   "fame": 25,
+   "summary": "Installé dans les bâtiments de l'ancienne abbaye Sainte-Geneviève, dont subsistent le clocher roman du XIIe siècle, le réfectoire gothique et l'escalier à vis, le tout dissimulé derrière une façade discrète de la rue Clovis. Réputé pour ses classes préparatoires littéraires, il a formé Musset, Mérimée, Sartre et Modiano. La cour d'honneur s'ouvre lors des Journées du patrimoine.",
+   "wiki": "Lycée Henri-IV",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/LYCEEH4.JPG/960px-LYCEEH4.JPG",
+   "photoBy": "Myself",
+   "photoLic": "CC BY-SA 3.0"
   },
   {
    "id": "Q99562",
@@ -1876,6 +2055,19 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/%C3%89glise_Saint-Gervais.jpg/960px-%C3%89glise_Saint-Gervais.jpg",
    "photoBy": "Arthur Weidmann",
    "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q774570",
+   "name": "bibliothèque Mazarine",
+   "lat": 48.85722222,
+   "lng": 2.33694444,
+   "theme": "culture",
+   "fame": 24,
+   "summary": "La plus ancienne bibliothèque publique de France : dès 1643, Mazarin ouvre sa collection personnelle aux savants un jour par semaine, geste alors inouï. Dispersée pendant la Fronde puis reconstituée, elle compte aujourd'hui 600 000 volumes dans une salle du XVIIe siècle restée intacte, colonnes corinthiennes et bustes antiques compris. On peut y travailler librement, sur simple pièce d'identité.",
+   "wiki": "Bibliothèque Mazarine",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Courtyard_of_Institut_de_France_001.jpg/960px-Courtyard_of_Institut_de_France_001.jpg",
+   "photoBy": "Moonik",
+   "photoLic": "CC BY-SA 3.0"
   },
   {
    "id": "Q337454",
@@ -2307,6 +2499,45 @@
    "photoLic": "CC BY-SA 4.0"
   },
   {
+   "id": "Q1250541",
+   "name": "Monnaie de Paris",
+   "lat": 48.856666666,
+   "lng": 2.339166666,
+   "theme": "other",
+   "fame": 21,
+   "summary": "La plus ancienne institution française encore en activité, créée en 864 par un édit de Charles le Chauve, et l'une des plus vieilles entreprises du monde. Elle frappe la monnaie nationale depuis onze siècles, dans un palais néoclassique du quai de Conti bâti en 1775 par Jacques-Denis Antoine. Les ateliers d'art y travaillent toujours le métal ; le musée et la cour d'honneur sont ouverts au public.",
+   "wiki": "Monnaie de Paris",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Monnaie_de_Paris.jpg/960px-Monnaie_de_Paris.jpg",
+   "photoBy": "PHGCOM",
+   "photoLic": "CC BY-SA 3.0"
+  },
+  {
+   "id": "Q1319378",
+   "name": "musée des Arts décoratifs",
+   "lat": 48.863033562,
+   "lng": 2.333716397,
+   "theme": "museums",
+   "fame": 21,
+   "summary": "Une des plus importantes collections d'arts décoratifs au monde, un million d'objets, installée dans l'aile Marsan du Louvre depuis 1905. Fondé par des industriels et des collectionneurs qui voulaient réconcilier le beau et l'utile après les défaites françaises aux expositions universelles, il déroule dix siècles de mobilier, de bijoux et de design, avec des period rooms entières remontées pièce par pièce.",
+   "wiki": "Musée des Arts décoratifs (Paris)",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Mus%C3%A9e_des_Arts_D%C3%A9coratifs_2009_001.jpg/960px-Mus%C3%A9e_des_Arts_D%C3%A9coratifs_2009_001.jpg",
+   "photoBy": "Gaël Chardon from Paris, France",
+   "photoLic": "CC BY-SA 2.0"
+  },
+  {
+   "id": "Q384602",
+   "name": "ministère de la Culture",
+   "lat": 48.8623913,
+   "lng": 2.3388968,
+   "theme": "other",
+   "fame": 21,
+   "summary": "Créé en 1959 par de Gaulle pour André Malraux, il occupe depuis 2004 un immeuble de la rue de Valois habillé d'une résille métallique tressée par Francis Soler, posée comme un voile sur des façades du XIXe siècle. Cette dentelle d'acier, très commentée à sa livraison, est devenue un repère du quartier du Palais-Royal. On dit la rue de Valois comme on dit Matignon.",
+   "wiki": "Ministère de la Culture (France)",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/P1100879_Paris_Ier_rue_de_Valois_n%C2%B07_minist%C3%A8re_de_la_culture_rwk.JPG/960px-P1100879_Paris_Ier_rue_de_Valois_n%C2%B07_minist%C3%A8re_de_la_culture_rwk.JPG",
+   "photoBy": "Mbzt",
+   "photoLic": "CC BY 3.0"
+  },
+  {
    "id": "Q1094300",
    "name": "Cité internationale universitaire de Paris",
    "lat": 48.8187,
@@ -2409,6 +2640,32 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/GraphyArchy_-_Wiki00006.jpg/960px-GraphyArchy_-_Wiki00006.jpg",
    "photoBy": "GraphyArchy",
    "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q1339583",
+   "name": "hôpital d'instruction des armées du Val-de-Grâce",
+   "lat": 48.839166666,
+   "lng": 2.344444444,
+   "theme": "other",
+   "fame": 20,
+   "summary": "L'hôpital militaire installé en 1796 dans l'abbaye du Val-de-Grâce désaffectée par la Révolution, puis transféré en 1979 dans un bâtiment neuf construit sur l'ancien potager des bénédictines. Il soignait les militaires mais aussi les présidents de la République en exercice, dont Mitterrand et Chirac. Fermé en 2016 pour raisons budgétaires, le site abrite l'École du Val-de-Grâce et un musée du service de santé.",
+   "wiki": "Hôpital d'instruction des armées du Val-de-Grâce",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Val_de_Grace_dsc04631.jpg/960px-Val_de_Grace_dsc04631.jpg",
+   "photoBy": "David Monniaux",
+   "photoLic": "CC BY-SA 3.0"
+  },
+  {
+   "id": "Q3279650",
+   "name": "maison de l'UNESCO",
+   "lat": 48.8494,
+   "lng": 2.30611,
+   "theme": "streets",
+   "fame": 20,
+   "summary": "Le siège de l'agence culturelle des Nations unies, ouvert en 1958 place de Fontenoy : un bâtiment en Y sur pilotis, dessiné par Marcel Breuer, Pier Luigi Nervi et Bernard Zehrfuss, sous le regard d'un comité où siégeaient Le Corbusier et Gropius. L'intérieur est un musée à ciel ouvert avec un mobile de Calder, des céramiques de Miró et un jardin japonais d'Isamu Noguchi. Visites guidées sur inscription.",
+   "wiki": "Maison de l'UNESCO",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Paris_-_UNESCO_%2829775501630%29.jpg/960px-Paris_-_UNESCO_%2829775501630%29.jpg",
+   "photoBy": "Fred Romero from Paris, France",
+   "photoLic": "CC BY 2.0"
   },
   {
    "id": "Q1139243",
@@ -2591,6 +2848,55 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Paris_Saint-Vincent-de-Paul_Fassade_3.jpg/960px-Paris_Saint-Vincent-de-Paul_Fassade_3.jpg",
    "photoBy": "Zairon",
    "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q1243760",
+   "name": "église Saint-Julien-le-Pauvre",
+   "lat": 48.852037387,
+   "lng": 2.347128183,
+   "theme": "religious",
+   "fame": 19,
+   "summary": "L'une des plus anciennes églises de Paris, bâtie vers 1170 en même temps que Notre-Dame, sur un site de culte remontant au VIe siècle. Un hospice y accueillait les pèlerins, d'où le nom de Julien l'Hospitalier. L'université de Paris y tint ses assemblées jusqu'en 1524, où une émeute étudiante saccagea l'édifice. Confiée depuis 1889 au rite grec-melkite, elle abrite une iconostase. Le square voisin garde le plus vieil arbre de Paris.",
+   "wiki": "Église Saint-Julien-le-Pauvre de Paris",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/1/18/Saint_Julien_le_Pauvre_02.jpg",
+   "photoBy": "Baldiri",
+   "photoLic": "CC BY-SA 3.0"
+  },
+  {
+   "id": "Q1577630",
+   "name": "église Saint-Nicolas-du-Chardonnet",
+   "lat": 48.849166666,
+   "lng": 2.350277777,
+   "theme": "religious",
+   "fame": 19,
+   "summary": "Reconstruite au XVIIe siècle à l'emplacement d'un édifice du XIIIe, avec un portail latéral dessiné d'après Le Brun, qui y est enterré avec sa mère sous un mausolée de sa propre composition. L'église est surtout connue pour avoir été occupée le 27 février 1977 par des fidèles de la Fraternité Saint-Pie-X, qui ne l'ont jamais quittée : c'est depuis le principal lieu de culte traditionaliste de Paris.",
+   "wiki": "Église Saint-Nicolas-du-Chardonnet",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Facade_Saint-Nicolas-du-Chardonnet_Paris.jpg/960px-Facade_Saint-Nicolas-du-Chardonnet_Paris.jpg",
+   "photoBy": "Jastrow",
+   "photoLic": "Public domain"
+  },
+  {
+   "id": "Q1518496",
+   "name": "ministère de l'Intérieur",
+   "lat": 48.871944444,
+   "lng": 2.316944444,
+   "theme": "other",
+   "fame": 19,
+   "summary": "Installé depuis 1861 place Beauvau, dans un hôtel particulier bâti en 1770 pour le prince de Beauvau-Craon, ce qui vaut au ministère d'être désigné par le nom de la place. Ministère régalien chargé de la police, des préfectures et de l'organisation des élections, il annonce depuis ce bâtiment les résultats des scrutins nationaux. La cour d'honneur et le grand escalier s'ouvrent aux Journées du patrimoine.",
+   "wiki": "Ministère de l'Intérieur (France)",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Minist%C3%A8re_fran%C3%A7ais_de_l%27Int%C3%A9rieur%2C_rue_des_Saussaies.jpg/960px-Minist%C3%A8re_fran%C3%A7ais_de_l%27Int%C3%A9rieur%2C_rue_des_Saussaies.jpg",
+   "photoBy": "Thibault Taillandier",
+   "photoLic": "CC BY-SA 3.0"
+  },
+  {
+   "id": "Q1010517",
+   "name": "Bureau des longitudes",
+   "lat": 48.8572,
+   "lng": 2.33806,
+   "theme": "other",
+   "fame": 19,
+   "summary": "Créé en 1795 pour rattraper le retard français en navigation, cette académie d'astronomes a joué un rôle décisif dans l'adoption du système métrique, dans le calcul des éphémérides et dans la mesure du méridien. Laplace, Lagrange, Delambre et Arago en furent membres. Il siège toujours à l'Observatoire de Paris et publie chaque année la Connaissance des temps, parue sans interruption depuis 1679.",
+   "wiki": "Bureau des longitudes"
   },
   {
    "id": "Q1423353",
@@ -2827,6 +3133,19 @@
    "photoLic": "CC BY-SA 4.0"
   },
   {
+   "id": "Q1138599",
+   "name": "Cour de cassation",
+   "lat": 48.856694444,
+   "lng": 2.344194444,
+   "theme": "streets",
+   "fame": 18,
+   "summary": "La plus haute juridiction de l'ordre judiciaire, héritière du tribunal de cassation créé en 1790. Elle ne rejuge pas les faits mais vérifie que le droit a été correctement appliqué, ce qui en fait le juge du droit. Elle siège au palais de justice de l'île de la Cité, dans la grand-chambre au décor doré du Second Empire, où les audiences solennelles se tiennent en robe rouge et hermine.",
+   "wiki": "Cour de cassation (France)",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Cour_de_Cassation%2C_Paris_2_April_2014.jpg/960px-Cour_de_Cassation%2C_Paris_2_April_2014.jpg",
+   "photoBy": "DXR",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
    "id": "Q973216",
    "name": "Dalí Paris",
    "lat": 48.886528,
@@ -2993,6 +3312,45 @@
    "wiki": "Basilique Notre-Dame-des-Victoires de Paris",
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Basilique_Notre_Dame_Victoires_-_Paris_II_%28FR75%29_-_2021-06-16_-_2.jpg/960px-Basilique_Notre_Dame_Victoires_-_Paris_II_%28FR75%29_-_2021-06-16_-_2.jpg",
    "photoBy": "Chabe01",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q3036228",
+   "name": "Flamme de la Liberté",
+   "lat": 48.864194444,
+   "lng": 2.300888888,
+   "theme": "monuments",
+   "fame": 17,
+   "summary": "Une réplique grandeur nature, en cuivre doré, de la torche que porte la statue de la Liberté à New York, offerte à la France en 1989 par des donateurs américains en remerciement de la restauration de la statue. Placée au débouché du tunnel de l'Alma, elle est devenue spontanément le mémorial de Diana après sa mort au même endroit en 1997 : les visiteurs continuent d'y déposer messages et fleurs.",
+   "wiki": "Flamme de la Liberté",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Paris_Flamme_de_la_Libert%C3%A9_1.jpg/960px-Paris_Flamme_de_la_Libert%C3%A9_1.jpg",
+   "photoBy": "Zairon",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q2352779",
+   "name": "théâtre de la Ville",
+   "lat": 48.857222222,
+   "lng": 2.348055555,
+   "theme": "stages",
+   "fame": 17,
+   "summary": "Bâti en 1862 par Davioud en symétrie parfaite avec le théâtre du Châtelet qui lui fait face, il a changé de nom huit fois. Sarah Bernhardt le dirigea de 1899 à 1923 et lui donna son nom pendant un demi-siècle, avant que l'épuration de 1945 ne l'efface pour cause d'antisémitisme municipal, puis qu'il ne le retrouve en 2016. Devenu depuis 1980 l'une des grandes scènes mondiales de la danse contemporaine.",
+   "wiki": "Théâtre de la Ville - Sarah-Bernhardt",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Th%C3%A9%C3%A2tre_Sarah-Bernhardt_1.jpg/960px-Th%C3%A9%C3%A2tre_Sarah-Bernhardt_1.jpg",
+   "photoBy": "ZeusUpsistos",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q917337",
+   "name": "hôtel de Soubise",
+   "lat": 48.860555555,
+   "lng": 2.358333333,
+   "theme": "palaces",
+   "fame": 17,
+   "summary": "Sous la façade du XVIIIe siècle et sa cour en fer à cheval bordée de 56 colonnes se cache un hôtel médiéval : le portail à tourelles de la rue des Archives date de 1375 et appartenait au connétable de Clisson, seul vestige d'architecture privée du XIVe siècle à Paris. Les appartements rocaille de la princesse de Soubise comptent parmi les plus beaux intérieurs français. Il abrite les Archives nationales.",
+   "wiki": "Hôtel de Soubise",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/H%C3%B4tel_de_Soubise%2C_Paris_9_June_2017.jpg/960px-H%C3%B4tel_de_Soubise%2C_Paris_9_June_2017.jpg",
+   "photoBy": "Guilhem Vellut from Paris, France",
    "photoLic": "CC BY-SA 4.0"
   },
   {
@@ -3227,6 +3585,42 @@
    "photoLic": "CC BY 2.0"
   },
   {
+   "id": "Q2348104",
+   "name": "bouquinistes de Paris",
+   "lat": 48.85296,
+   "lng": 2.34728,
+   "theme": "shops",
+   "fame": 16,
+   "summary": "Plus de 200 libraires et 900 boîtes vert wagon alignées sur trois kilomètres de quais, de part et d'autre des îles. Le métier remonte au XVIe siècle, quand des colporteurs vendaient à la sauvette sur le Pont-Neuf, pourchassés par les libraires patentés ; ils obtiennent le droit de s'installer à demeure en 1859. La boîte est concédée gratuitement, mais le titulaire doit ouvrir au moins quatre jours par semaine. Le savoir-faire est inscrit au patrimoine culturel immatériel.",
+   "wiki": "Bouquinistes de Paris",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Paris_75006_Quai_de_Conti_Bouquinistes_20150902_%282%29.jpg/960px-Paris_75006_Quai_de_Conti_Bouquinistes_20150902_%282%29.jpg",
+   "photoBy": "Ninara from Helsinki, Finland",
+   "photoLic": "CC BY 2.0"
+  },
+  {
+   "id": "Q1416512",
+   "name": "ministère de l'Économie et des Finances",
+   "lat": 48.839166666,
+   "lng": 2.375833333,
+   "theme": "other",
+   "fame": 16,
+   "summary": "Bercy, un bâtiment de 1988 dessiné par Paul Chemetov et Borja Huidobro, qui enjambe le quai avec une immense arche posée dans la Seine, comme un viaduc de 70 mètres. Le ministère a quitté le Louvre en 1989 après cent cinquante ans d'occupation de l'aile Richelieu, libérant enfin le palais pour le musée. Les ministres arrivent parfois en vedette fluviale depuis le débarcadère privé.",
+   "wiki": "Ministère de l'Économie et des Finances (France)"
+  },
+  {
+   "id": "Q1435791",
+   "name": "fontaine des Innocents",
+   "lat": 48.86065,
+   "lng": 2.348011111,
+   "theme": "monuments",
+   "fame": 16,
+   "summary": "Le seul monument Renaissance conservé à Paris, sculpté en 1549 par Jean Goujon pour l'entrée d'Henri II dans la ville. Elle était adossée au mur du cimetière des Innocents, la plus grande fosse commune de Paris, dont deux millions d'ossements furent transférés aux catacombes en 1786. Déplacée deux fois, elle a dû recevoir une quatrième face sculptée pour devenir autonome. Son parvis de marbre est un haut lieu du skate depuis les années 1990.",
+   "wiki": "Fontaine des Innocents",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Fontaine_des_Innocents%2C_2011.JPG/960px-Fontaine_des_Innocents%2C_2011.JPG",
+   "photoBy": "Cancre",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
    "id": "Q1766069",
    "name": "abbaye Sainte-Geneviève de Paris",
    "lat": 48.845889,
@@ -3378,6 +3772,58 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Pont_National_Paris_FRA_001.JPG/960px-Pont_National_Paris_FRA_001.JPG",
    "photoBy": "ignis",
    "photoLic": "CC BY-SA 3.0"
+  },
+  {
+   "id": "Q2933008",
+   "name": "café de la Paix",
+   "lat": 48.870780555,
+   "lng": 2.331672222,
+   "theme": "tables",
+   "fame": 15,
+   "summary": "Ouvert en 1862 avec le Grand Hôtel, à l'angle de la place de l'Opéra, dans un décor de Charles Garnier lui-même, classé depuis 1975. Sa terrasse fut le poste d'observation de Maupassant, Zola, Tchaïkovski et Oscar Wilde. On y projeta des films dès 1896, un an après les frères Lumière. Une légende parisienne veut qu'en s'y asseyant assez longtemps, on finisse par voir passer toutes ses connaissances.",
+   "wiki": "Café de la Paix (Paris)",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Caf%C3%A9_de_la_Paix_1.jpg/960px-Caf%C3%A9_de_la_Paix_1.jpg",
+   "photoBy": "Arthur Weidmann",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q1284688",
+   "name": "Fondation Cartier pour l'art contemporain",
+   "lat": 48.863055555,
+   "lng": 2.336944444,
+   "theme": "museums",
+   "fame": 15,
+   "summary": "Créée en 1984, pionnière du mécénat d'entreprise en France, elle a longtemps occupé boulevard Raspail un bâtiment de verre de Jean Nouvel où les façades transparentes se dédoublaient autour d'un cèdre planté par Chateaubriand. Elle a rouvert en octobre 2025 place du Palais-Royal, dans un immeuble haussmannien réaménagé par Nouvel avec cinq plateaux mobiles qui montent et descendent pour recomposer l'espace à chaque exposition.",
+   "wiki": "Fondation Cartier pour l'art contemporain",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/La_Fondation_Cartier_pour_l%27art_contemporain_%2815907035710%29.jpg/960px-La_Fondation_Cartier_pour_l%27art_contemporain_%2815907035710%29.jpg",
+   "photoBy": "Jean-Pierre Dalbéra from Paris, France",
+   "photoLic": "CC BY 2.0"
+  },
+  {
+   "id": "Q3268619",
+   "name": "lycée Chaptal",
+   "lat": 48.881738,
+   "lng": 2.319689,
+   "theme": "culture",
+   "fame": 15,
+   "summary": "Un lycée de 1876 construit par Eugène Train dans un style néo-Renaissance en brique et pierre, considéré comme un modèle d'architecture scolaire de la Troisième République : cour d'honneur monumentale, préau vitré, et une chapelle transformée en salle des fêtes. Il a formé Marcel Pagnol, Boris Vian et Claude Chabrol. Ses classes préparatoires scientifiques et commerciales sont réputées.",
+   "wiki": "Lycée Chaptal",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Lyc%C3%A9e_Chaptal.jpg/960px-Lyc%C3%A9e_Chaptal.jpg",
+   "photoBy": "Lemaitredesmots",
+   "photoLic": "CC BY-SA 3.0"
+  },
+  {
+   "id": "Q1069316",
+   "name": "ligne de Petite Ceinture",
+   "lat": 48.8965347,
+   "lng": 2.3745313,
+   "theme": "other",
+   "fame": 15,
+   "summary": "Trente-deux kilomètres de voie ferrée bouclant Paris à l'intérieur des boulevards des Maréchaux, ouverts par tronçons de 1852 à 1869 pour que les marchandises contournent la ville. Le trafic voyageurs cesse en 1934, concurrencé par le métro. La ligne appartient toujours au réseau ferré national mais dort sous les ronces, les renards et les orchidées sauvages ; une dizaine de tronçons ont été ouverts en promenade.",
+   "wiki": "Ligne de Petite Ceinture",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/9/99/Pc_20eme.JPG",
+   "photoBy": "kaiivin",
+   "photoLic": "Public domain"
   },
   {
    "id": "Q851372",
@@ -3562,6 +4008,45 @@
    "photoLic": "Public domain"
   },
   {
+   "id": "Q1247969",
+   "name": "église Saint-Paul-Saint-Louis de Paris",
+   "lat": 48.854672222,
+   "lng": 2.361558333,
+   "theme": "religious",
+   "fame": 14,
+   "summary": "L'église des jésuites, bâtie de 1627 à 1641 sur ordre de Louis XIII qui en posa la première pierre, et premier édifice parisien à adopter le modèle romain du Gesù : plan à nef unique, façade à trois niveaux, coupole de 55 mètres. Les cœurs embaumés de Louis XIII et Louis XIV y furent conservés jusqu'à la Révolution. Delacroix y a peint un Christ au jardin des Oliviers. Victor Hugo y maria sa fille Léopoldine.",
+   "wiki": "Église Saint-Paul-Saint-Louis",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Paris_Saint-Paul-Saint-Louis_2023-04-04.jpg/960px-Paris_Saint-Paul-Saint-Louis_2023-04-04.jpg",
+   "photoBy": "Drycker",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q281309",
+   "name": "fontaine Stravinsky",
+   "lat": 48.859444,
+   "lng": 2.351389,
+   "theme": "monuments",
+   "fame": 14,
+   "summary": "Seize sculptures mobiles qui crachent, tournent et s'aspergent dans un bassin peu profond, réalisées en 1983 par le couple Jean Tinguely et Niki de Saint Phalle : à lui les mécaniques noires de ferraille, à elle les figures de couleur en polyester. Chaque élément renvoie à une œuvre de Stravinsky, de L'Oiseau de feu au Sacre du printemps. Le bassin repose sur le toit de l'Ircam, enfoui sous la place.",
+   "wiki": "Fontaine Stravinsky",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Paris_75004_Place_Igor-Stravinsky_Fountain_01b.jpg/960px-Paris_75004_Place_Igor-Stravinsky_Fountain_01b.jpg",
+   "photoBy": "ChrisSampson87",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q2714932",
+   "name": "musée de la Vie romantique",
+   "lat": 48.881119,
+   "lng": 2.33352,
+   "theme": "museums",
+   "fame": 14,
+   "summary": "L'hôtel où vécut le peintre Ary Scheffer de 1830 à 1858, au fond d'une allée pavée du quartier de la Nouvelle Athènes. Il y recevait tous les vendredis Chopin, Liszt, Delacroix, Rossini et George Sand, dont le musée conserve les bijoux, les moulages de la main et le portrait. Le jardin de roses et sa serre transformée en salon de thé en font l'un des endroits les plus paisibles de Paris. Collections permanentes gratuites.",
+   "wiki": "Musée de la Vie romantique",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Paris_Mus%C3%A9e_vie_romantique_2012.jpg/960px-Paris_Mus%C3%A9e_vie_romantique_2012.jpg",
+   "photoBy": "JLPC",
+   "photoLic": "CC BY-SA 3.0"
+  },
+  {
    "id": "Q3076041",
    "name": "fontaine Médicis",
    "lat": 48.848056,
@@ -3726,6 +4211,71 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Temple_Sainte-Marie_du_Marais_%C3%A0_Paris_75004.jpg/960px-Temple_Sainte-Marie_du_Marais_%C3%A0_Paris_75004.jpg",
    "photoBy": "Anne-Sophie Jessel",
    "photoLic": "CC BY 4.0"
+  },
+  {
+   "id": "Q2357520",
+   "name": "bibliothèque polonaise de Paris",
+   "lat": 48.8513,
+   "lng": 2.3557,
+   "theme": "museums",
+   "fame": 13,
+   "summary": "Fondée en 1838 par les exilés de l'insurrection manquée de 1830, sur le quai d'Orléans, elle fut le foyer de la Grande Émigration polonaise et le lieu où se maintint une culture interdite dans son propre pays. Elle abrite le musée Adam Mickiewicz et un salon Chopin où sont conservés son masque mortuaire et un moulage de sa main. Ses collections sont inscrites au registre Mémoire du monde de l'UNESCO.",
+   "wiki": "Bibliothèque polonaise de Paris",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Biblioth%C3%A8que_polonaise_de_Paris%2C_30_June_2011.jpg/960px-Biblioth%C3%A8que_polonaise_de_Paris%2C_30_June_2011.jpg",
+   "photoBy": "Cancre",
+   "photoLic": "CC BY-SA 2.5"
+  },
+  {
+   "id": "Q479218",
+   "name": "mémorial de la Shoah",
+   "lat": 48.854846,
+   "lng": 2.356196,
+   "theme": "museums",
+   "fame": 13,
+   "summary": "Le lieu de mémoire du génocide des Juifs de France, ouvert en 2005 dans le Marais autour du tombeau du martyr juif inconnu, érigé dès 1956. Le Mur des Noms grave les 76 000 Juifs déportés de France, dont 11 000 enfants ; le Mur des Justes honore ceux qui en ont sauvé. Il abrite le Centre de documentation juive contemporaine, dont les archives furent constituées clandestinement pendant la guerre. Entrée libre.",
+   "wiki": "Mémorial de la Shoah",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Crypte_au_m%C3%A9morial_de_la_Shoah_%C3%A0_Paris.jpg/960px-Crypte_au_m%C3%A9morial_de_la_Shoah_%C3%A0_Paris.jpg",
+   "photoBy": "BrnGrby",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q3268614",
+   "name": "lycée Carnot",
+   "lat": 48.884477,
+   "lng": 2.307843,
+   "theme": "other",
+   "fame": 13,
+   "summary": "Ouvert en 1869 comme collège privé Chaptal avant de devenir lycée public, il occupe boulevard Malesherbes un vaste ensemble à deux cours, dites cour des sciences et cour Villiers. Il a formé Roland Barthes, Simone Signoret et Jean Rostand. Ses classes préparatoires économiques comptent parmi les plus recherchées de Paris.",
+   "wiki": "Lycée Carnot (Paris)",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Facade_lyc%C3%A9e_Carnot.jpg",
+   "photoBy": "Plaqueminier",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q279151",
+   "name": "église Notre-Dame-de-Bonne-Nouvelle",
+   "lat": 48.86954,
+   "lng": 2.34999,
+   "theme": "religious",
+   "fame": 13,
+   "summary": "Troisième édifice sur ce site, bâti de 1823 à 1830 dans un néoclassicisme sobre, avec une entrée décalée sur le côté et un clocher isolé, seul vestige de l'église précédente. Anne d'Autriche avait posé la première pierre de celle du XVIIe siècle. Le quartier, le boulevard et la station de métro lui doivent leur nom, tiré du titre marial de Notre-Dame de Bonne Nouvelle, c'est-à-dire l'Annonciation.",
+   "wiki": "Église Notre-Dame-de-Bonne-Nouvelle de Paris",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/%C3%89glise_Notre-Dame-de-Bonne-Nouvelle%2C_vue_g%C3%A9n%C3%A9rale.jpg/960px-%C3%89glise_Notre-Dame-de-Bonne-Nouvelle%2C_vue_g%C3%A9n%C3%A9rale.jpg",
+   "photoBy": "Benchaum",
+   "photoLic": "CC BY-SA 3.0"
+  },
+  {
+   "id": "Q3578476",
+   "name": "École Duperré",
+   "lat": 48.864906944,
+   "lng": 2.362000833,
+   "theme": "other",
+   "fame": 13,
+   "summary": "Née en 1856 de l'action d'Élisa Lemonnier, qui créa les premières écoles professionnelles pour filles afin de leur donner un métier et donc une indépendance. Devenue école supérieure d'arts appliqués, elle forme aujourd'hui à la mode, au textile, à la céramique et au design graphique dans un bâtiment du Marais. Ses expositions de fin d'année sont ouvertes au public.",
+   "wiki": "École Duperré",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/1/18/DUP_EXT_DSC3666.jpg",
+   "photoBy": "école duperré",
+   "photoLic": "CC BY-SA 4.0"
   },
   {
    "id": "Q337586",
@@ -4019,6 +4569,45 @@
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/H%C3%B4tel_de_Bourgogne%2C_si%C3%A8ge_de_la_Com%C3%A9die_Italienne_-_Parouty_1998_p14.jpg/960px-H%C3%B4tel_de_Bourgogne%2C_si%C3%A8ge_de_la_Com%C3%A9die_Italienne_-_Parouty_1998_p14.jpg",
    "photoBy": "Unknown authorUnknown author",
    "photoLic": "Public domain"
+  },
+  {
+   "id": "Q3005760",
+   "name": "crypte archéologique de l'île de la Cité",
+   "lat": 48.853611111,
+   "lng": 2.3475,
+   "theme": "museums",
+   "fame": 12,
+   "summary": "Sous le parvis de Notre-Dame, 1 800 m2 de vestiges découverts par hasard en 1965 lors du creusement d'un parking : un quai gallo-romain, des hypocaustes, des caves médiévales, les fondations de l'hospice des Enfants-Trouvés et de la rue Neuve-Notre-Dame rasée par Haussmann. On y lit vingt siècles d'urbanisme empilés au même endroit. C'est le plus grand site archéologique urbain d'Europe.",
+   "wiki": "Crypte archéologique de l'île de la Cité",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Archeological_crypt_of_the_%C3%AEle_de_la_Cit%C3%A9%2C_Paris_2_June_2006.jpg/960px-Archeological_crypt_of_the_%C3%AEle_de_la_Cit%C3%A9%2C_Paris_2_June_2006.jpg",
+   "photoBy": "Kurt Raschke",
+   "photoLic": "CC BY 2.0"
+  },
+  {
+   "id": "Q1131080",
+   "name": "hôpital Cochin",
+   "lat": 48.836944444,
+   "lng": 2.340277777,
+   "theme": "other",
+   "fame": 12,
+   "summary": "Fondé en 1780 par Jean-Denis Cochin, curé de Saint-Jacques-du-Haut-Pas, qui vendit ses biens pour ouvrir un hospice de quarante lits aux ouvriers carriers du quartier, alors sans aucun secours. La chapelle et le pavillon d'origine subsistent au milieu des bâtiments modernes. C'est ici que fut pratiquée en 1954 la première greffe de rein réussie en France.",
+   "wiki": "Hôpital Cochin",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/P1010424_Paris_XIV_Rue_du_Faubourg-Saint-Jacques_H%C3%B4pital_Cochin_reductwk.JPG/960px-P1010424_Paris_XIV_Rue_du_Faubourg-Saint-Jacques_H%C3%B4pital_Cochin_reductwk.JPG",
+   "photoBy": "Mbzt",
+   "photoLic": "CC BY-SA 3.0"
+  },
+  {
+   "id": "Q1629790",
+   "name": "église Sainte-Élisabeth-de-Hongrie",
+   "lat": 48.86611,
+   "lng": 2.36052,
+   "theme": "religious",
+   "fame": 12,
+   "summary": "Chapelle du couvent des Filles de Sainte-Élisabeth, fondée en 1628 par Marie de Médicis, devenue paroisse en 1802. Elle conserve un ensemble exceptionnel de cent panneaux de bois sculptés du XVIIe siècle, rapportés d'une abbaye des Flandres, qui courent tout autour du chœur. Elle est depuis 1938 l'église parisienne de l'ordre souverain de Malte.",
+   "wiki": "Église Sainte-Élisabeth-de-Hongrie de Paris",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Paris_3e_%C3%89glise_Sainte-%C3%89lisabeth-de-Hongrie_665.jpg/960px-Paris_3e_%C3%89glise_Sainte-%C3%89lisabeth-de-Hongrie_665.jpg",
+   "photoBy": "GFreihalter",
+   "photoLic": "CC BY-SA 3.0"
   },
   {
    "id": "Q2942927",
@@ -4463,6 +5052,45 @@
    "photoLic": "CC BY-SA 2.0 fr"
   },
   {
+   "id": "Q263359",
+   "name": "Lipp",
+   "lat": 48.854122,
+   "lng": 2.332628,
+   "theme": "tables",
+   "fame": 11,
+   "summary": "Une brasserie alsacienne ouverte en 1880 par un couple de Lorrains ayant fui l'annexion allemande, d'où la choucroute et le décor de céramiques peintes de 1900, classé depuis 1989. Elle décerne le prix Cazes depuis 1935. Les habitués s'appelaient Proust, Malraux, Camus, Gide, puis Mitterrand, qui y avait sa table. La règle non écrite veut que le rez-de-chaussée soit réservé aux familiers et l'étage aux inconnus.",
+   "wiki": "Lipp",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Brasserie_Lipp%2C_151_boulevard_Saint-Germain%2C_Paris_6e.jpg/960px-Brasserie_Lipp%2C_151_boulevard_Saint-Germain%2C_Paris_6e.jpg",
+   "photoBy": "Celette",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q2982896",
+   "name": "fontaine des Quatre-Saisons",
+   "lat": 48.854680555,
+   "lng": 2.325111111,
+   "theme": "monuments",
+   "fame": 11,
+   "summary": "Un chantier considérable mené de 1739 à 1745 par Edme Bouchardon, rue de Grenelle : une façade monumentale en hémicycle, avec la Ville de Paris trônant entre la Seine et la Marne, encadrée de bas-reliefs des quatre saisons. Voltaire s'en moqua vertement, trouvant absurde de dépenser tant pour une fontaine coincée dans une rue étroite, sans recul pour l'admirer, et qui ne donnait que deux maigres filets d'eau.",
+   "wiki": "Fontaine des Quatre-Saisons",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/4_saisons_vue_d%27ensembleG.jpg/960px-4_saisons_vue_d%27ensembleG.jpg",
+   "photoBy": "Siren-Com",
+   "photoLic": "CC BY-SA 3.0"
+  },
+  {
+   "id": "Q3268987",
+   "name": "lycée Voltaire",
+   "lat": 48.8638,
+   "lng": 2.38496,
+   "theme": "other",
+   "fame": 11,
+   "summary": "Inauguré en 1891 par le président Sadi Carnot, œuvre d'Eugène Train, il fut longtemps le seul lycée du nord-est parisien et un symbole de l'école républicaine portée dans les quartiers populaires. Son immense cour et sa façade de brique en font l'un des plus vastes lycées de Paris. Il n'accueille des filles que depuis 1973.",
+   "wiki": "Lycée Voltaire (Paris)",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Entr%C3%A9e_lyc%C3%A9e_Voltaire.JPG/960px-Entr%C3%A9e_lyc%C3%A9e_Voltaire.JPG",
+   "photoBy": "LPLT",
+   "photoLic": "CC BY-SA 3.0"
+  },
+  {
    "id": "Q2638057",
    "name": "Argonaute",
    "lat": 48.894514,
@@ -4684,19 +5312,6 @@
    "photoLic": "CC BY-SA 3.0"
   },
   {
-   "id": "Q2601319",
-   "name": "Théâtre-Lyrique",
-   "lat": 48.857211,
-   "lng": 2.348119,
-   "theme": "stages",
-   "fame": 10,
-   "summary": "Sous ce nom se sont succédé plusieurs salles au XIXe siècle, dont la première boulevard du Temple. On y créa des opéras que l'Opéra de Paris jugeait trop audacieux, avant que les percées haussmanniennes ne les fassent disparaître.",
-   "wiki": "Théâtre-Lyrique",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Th%C3%A9%C3%A2tre_Historique_on_the_Boulevard_du_Temple_-_L%27illustration_12_April_1862_-_Levin_p380.jpg/960px-Th%C3%A9%C3%A2tre_Historique_on_the_Boulevard_du_Temple_-_L%27illustration_12_April_1862_-_Levin_p380.jpg",
-   "photoBy": "Artist and engraver have not been identified",
-   "photoLic": "Public domain"
-  },
-  {
    "id": "Q839251",
    "name": "maison de verre",
    "lat": 48.85391,
@@ -4850,6 +5465,84 @@
    "wiki": "Basilique Notre-Dame-du-Perpétuel-Secours de Paris",
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Paris_Notre-Dame-du-Perp%C3%A9tuel-Secours_au%C3%9Fen82.JPG/960px-Paris_Notre-Dame-du-Perp%C3%A9tuel-Secours_au%C3%9Fen82.JPG",
    "photoBy": "GFreihalter",
+   "photoLic": "CC BY-SA 3.0"
+  },
+  {
+   "id": "Q2669368",
+   "name": "thermes de Cluny",
+   "lat": 48.850833333,
+   "lng": 2.343333333,
+   "theme": "other",
+   "fame": 10,
+   "summary": "Les plus importants vestiges romains conservés au nord de la Loire : des thermes de la fin du Ier siècle, dont subsiste le frigidarium, une salle voûtée de 14 mètres sous clé, intacte depuis dix-neuf siècles. Les murs de deux mètres d'épaisseur alternent moellons et chaînages de brique. On y voit la Nef des Nautes, pilier offert par les bateliers de Lutèce sous Tibère, plus vieux monument sculpté de Paris.",
+   "wiki": "Thermes de Cluny",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/CLUNY-Maquette_thermes_2.JPG/960px-CLUNY-Maquette_thermes_2.JPG",
+   "photoBy": "anonymous",
+   "photoLic": "CC BY 2.5"
+  },
+  {
+   "id": "Q3280855",
+   "name": "square René-Viviani",
+   "lat": 48.852222222,
+   "lng": 2.3475,
+   "theme": "parks",
+   "fame": 10,
+   "summary": "Un jardin en terrasses ouvert en 1928 face à Notre-Dame, à l'emplacement d'une annexe de l'Hôtel-Dieu. Il abrite le plus vieil arbre de Paris, un robinier faux-acacia planté en 1601 par le botaniste Jean Robin, aujourd'hui creux, penché et soutenu par une béquille de béton, mais qui fleurit encore. Des fragments de Notre-Dame sont disposés dans les allées.",
+   "wiki": "Square René-Viviani",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Square_Ren%C3%A9-Viviani-Montebello_depuis_la_tour_sud_de_Notre-Dame_de_Paris.jpg/960px-Square_Ren%C3%A9-Viviani-Montebello_depuis_la_tour_sud_de_Notre-Dame_de_Paris.jpg",
+   "photoBy": "A.Schneider83",
+   "photoLic": "CC BY-SA 3.0"
+  },
+  {
+   "id": "Q888776",
+   "name": "Théâtre Bobino",
+   "lat": 48.83968889,
+   "lng": 2.32358889,
+   "theme": "stages",
+   "fame": 10,
+   "summary": "Une guinguette de 1873 devenue café-concert puis grand music-hall, qui doit son nom à un clown marionnettiste du XIXe siècle. Piaf, Brassens, Barbara et Brel y ont chanté ; Joséphine Baker y donna son dernier spectacle en avril 1975, quatre jours avant sa mort. La salle historique a été démolie en 1985, remplacée par une discothèque, avant de retrouver sa vocation de scène en 2010.",
+   "wiki": "Bobino",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Th%C3%A9%C3%A2tre_Bobino.JPG/960px-Th%C3%A9%C3%A2tre_Bobino.JPG",
+   "photoBy": "Papagon",
+   "photoLic": "CC BY 4.0"
+  },
+  {
+   "id": "Q3076336",
+   "name": "fontaines de la Concorde",
+   "lat": 48.8655,
+   "lng": 2.3211,
+   "theme": "monuments",
+   "fame": 10,
+   "summary": "Deux fontaines jumelles installées en 1840 par Jacques Hittorff de part et d'autre de l'obélisque, la fontaine des Mers au sud et la fontaine des Fleuves au nord, inspirées de celles de la place Saint-Pierre de Rome. Elles avaient une fonction politique : occuper une place dont le souvenir de la guillotine restait insoutenable, en la remplissant d'eau, de bronze doré et de couleur.",
+   "wiki": "Fontaines de la Concorde",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Fontaine_des_Fleuves.jpg/960px-Fontaine_des_Fleuves.jpg",
+   "photoBy": "Pierre-Louis FERRER",
+   "photoLic": "CC BY-SA 3.0"
+  },
+  {
+   "id": "Q3076281",
+   "name": "fontaine du Palmier",
+   "lat": 48.85749722,
+   "lng": 2.34726944,
+   "theme": "monuments",
+   "fame": 10,
+   "summary": "Commandée par Napoléon en 1806 pour donner de l'eau potable gratuite aux Parisiens tout en célébrant ses victoires, dont les noms sont gravés sur la colonne : Lodi, Arcole, Rivoli, les Pyramides, Marengo, Austerlitz, Iéna. Elle est surmontée d'une Victoire dorée aux ailes déployées. En 1858, on la déplaça de douze mètres sans la démonter, en la faisant glisser d'un bloc sur des rails.",
+   "wiki": "Fontaine du Palmier",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Paris_Fontaine_du_Palmier_20160822_resting.jpg/960px-Paris_Fontaine_du_Palmier_20160822_resting.jpg",
+   "photoBy": "Guilhem Vellut from Paris, France",
+   "photoLic": "CC BY 2.0"
+  },
+  {
+   "id": "Q656302",
+   "name": "prieuré Saint-Martin-des-Champs",
+   "lat": 48.865833333,
+   "lng": 2.355,
+   "theme": "religious",
+   "fame": 10,
+   "summary": "Fondé en 1059, confié aux moines de Cluny en 1079, il devint la plus riche dépendance parisienne de l'abbaye bourguignonne, avec son enceinte fortifiée et sa foire annuelle. Son chœur à déambulatoire, vers 1135, compte parmi les tout premiers essais d'architecture gothique. Le réfectoire des moines, chef-d'œuvre de Pierre de Montreuil, sert de bibliothèque au Conservatoire ; l'église abrite le pendule de Foucault.",
+   "wiki": "Prieuré Saint-Martin-des-Champs",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Saint-Martin-des-Champs_Chapelle_01.jpg",
+   "photoBy": "SRombauts at French Wikipedia",
    "photoLic": "CC BY-SA 3.0"
   },
   {
@@ -5741,19 +6434,6 @@
    "wiki": "Hôtel de Brienne",
    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Jielbeaumadier_hotel_de_brienne_exterieur_paris_2008.jpg/960px-Jielbeaumadier_hotel_de_brienne_exterieur_paris_2008.jpg",
    "photoBy": "Jiel Beaumadier",
-   "photoLic": "CC BY-SA 3.0"
-  },
-  {
-   "id": "Q2411384",
-   "name": "hôtel de la Monnaie",
-   "lat": 48.856674,
-   "lng": 2.339104,
-   "theme": "museums",
-   "fame": 7,
-   "summary": "Chef-d'œuvre néoclassique de Denis Antoine, quai de Conti, où l'on frappe encore la monnaie française. Sa façade de 117 mètres est l'une des plus longues de la rive gauche ; ateliers et musée se visitent.",
-   "wiki": "Hôtel de la Monnaie (Paris)",
-   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Monnaie_de_Paris.jpg/960px-Monnaie_de_Paris.jpg",
-   "photoBy": "PHGCOM",
    "photoLic": "CC BY-SA 3.0"
   },
   {
