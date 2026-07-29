@@ -1,20 +1,23 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
-import { StyleSheet, View, Text, Image, TouchableOpacity, Platform, Alert, Animated, ActivityIndicator } from 'react-native';
-import MapView, { Polygon } from 'react-native-maps';
+import { StyleSheet, View, Text, Image, TouchableOpacity, Platform, Alert, Animated, ActivityIndicator, Switch } from 'react-native';
+import MapView, { Polygon, Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
 import * as Haptics from 'expo-haptics';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { DrawerActions } from '@react-navigation/native';
-import { useAppContext } from '../context/AppContext';
+import { useAppContext, MAX_POI_MARKERS } from '../context/AppContext';
 import { CITIES, ENABLED_CITIES } from '../cities/registry';
 import { ALL_STATUSES } from '../constants';
+import { POI_FAMILIES, familyOf } from '../data/poiFamilies';
+import { getPois, hasPois } from '../services/poiData';
 import InvaderMarker from '../components/InvaderMarker';
 import Legend from '../components/Legend';
 import InvaderPanel from '../components/InvaderPanel';
 import HeadingCone from '../components/HeadingCone';
 import FlashOverlay from '../components/FlashOverlay';
+import PoiSheet from '../components/PoiSheet';
 import { useTheme } from '../theme/ThemeContext';
 import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
 import { typography } from '../theme/tokens';
@@ -46,10 +49,11 @@ function applyFilters(invaders, filters, flashed) {
 // ─── Panneau de filtres ───────────────────────────────────────────────────────
 
 function FilterPanel({ filters, onFiltersChange, onClose }) {
-  const { statusColors } = useAppContext();
+  const { statusColors, poiPrefs, setPoiPref, togglePoiFamily, currentCityCode } = useAppContext();
   const { theme } = useTheme();
   const { t } = useTranslation();
   const styles = getStyles(theme);
+  const poiAvailable = hasPois(currentCityCode);
 
   function toggleStatus(status) {
     const next = new Set(filters.statuses);
@@ -132,6 +136,46 @@ function FilterPanel({ filters, onFiltersChange, onClose }) {
         })}
       </View>
 
+      {/* ── Lieux à voir (couche indépendante des Invaders) ── */}
+      {poiAvailable && (
+        <>
+          <View style={styles.poiHeaderRow}>
+            <Text style={[styles.sectionTitle, { marginTop: 0 }]}>{t('poi.section')}</Text>
+            <Switch
+              value={poiPrefs.enabled}
+              onValueChange={(v) => setPoiPref({ enabled: v })}
+              trackColor={{ false: theme.border, true: theme.accentScore }}
+              thumbColor={theme.bg}
+            />
+          </View>
+          {poiPrefs.enabled && (
+            <View style={styles.chipRow}>
+              {POI_FAMILIES.map(({ key, icon }) => {
+                const active = poiPrefs.families.has(key);
+                return (
+                  <TouchableOpacity
+                    key={key}
+                    onPress={() => togglePoiFamily(key)}
+                    activeOpacity={0.7}
+                    style={[
+                      styles.checkChip,
+                      active
+                        ? { backgroundColor: theme.accentScore, borderColor: theme.accentScore }
+                        : { backgroundColor: 'transparent', borderColor: theme.border },
+                    ]}
+                  >
+                    <Ionicons name={icon} size={15} color={active ? theme.bg : theme.textSecondary} />
+                    <Text style={[styles.chipText, active ? styles.chipTextActive : { color: theme.textPrimary }]}>
+                      {t(`poi.family.${key}`)}
+                    </Text>
+                  </TouchableOpacity>
+                );
+              })}
+            </View>
+          )}
+        </>
+      )}
+
       {/* ── Légende des couleurs (toujours dispo ici) ── */}
       <View style={{ marginTop: 14 }}>
         <Legend inline />
@@ -146,7 +190,7 @@ function FilterPanel({ filters, onFiltersChange, onClose }) {
 // ─── Écran carte ──────────────────────────────────────────────────────────────
 
 export default function MapScreen({ navigation, route }) {
-  const { invaders, flashed, labels, labelDefs, statusColors, colorOverrides, filters, setFilters, toggleFlash, mapsApp, setMapsAppPref, currentCityCode, isChangingCity, pendingCityCode, legendSeen, dismissLegend } = useAppContext();
+  const { invaders, flashed, labels, labelDefs, statusColors, colorOverrides, filters, setFilters, toggleFlash, mapsApp, setMapsAppPref, currentCityCode, isChangingCity, pendingCityCode, legendSeen, dismissLegend, poiPrefs } = useAppContext();
   const city = CITIES[currentCityCode] ?? CITIES.PA;
   const overlayName = (pendingCityCode ? CITIES[pendingCityCode]?.name : null) ?? city.name;
   const { theme, isDark } = useTheme();
@@ -177,6 +221,7 @@ export default function MapScreen({ navigation, route }) {
     setRecentlyFlashed((prev) => { const n = new Set(prev); n.delete(cur.invader.id); return n; });
   }
   const [selected, setSelected] = useState(null);
+  const [selectedPoi, setSelectedPoi] = useState(null);
   const [showFilters, setShowFilters] = useState(false);
   // On n'ajoute les marqueurs qu'une fois la MKMapView prête : ajouter des
   // annotations pendant son initialisation (démarrage à froid) peut la faire crasher.
@@ -299,11 +344,12 @@ export default function MapScreen({ navigation, route }) {
     );
   }, [focusId, focusTs, invaders, isChangingCity]);
 
-  function closeAll() { setSelected(null); setShowFilters(false); }
+  function closeAll() { setSelected(null); setSelectedPoi(null); setShowFilters(false); }
 
   // Réinitialise l'état local au changement de ville (sans animateToRegion — voir ci-dessous).
   useEffect(() => {
     setSelected(null);
+    setSelectedPoi(null);
     setShowFilters(false);
     setRenderedCount(INITIAL);
     gpsSortedRef.current = false;
@@ -400,6 +446,37 @@ export default function MapScreen({ navigation, route }) {
 
   const visibleInvaders = sortedInvaders.slice(0, renderedCount);
 
+  // ─── Lieux à voir ──────────────────────────────────────────────────────────
+  // Région suivie UNIQUEMENT pour cette couche, et débouncée : on ne veut pas
+  // toucher au rendu des Invaders, qui n'observe pas la région (cf. plus haut).
+  const [poiRegion, setPoiRegion] = useState(null);
+  const poiRegionTimer = useRef(null);
+  function onRegionSettled(region) {
+    if (!poiPrefs.enabled) return;
+    clearTimeout(poiRegionTimer.current);
+    poiRegionTimer.current = setTimeout(() => setPoiRegion(region), 400);
+  }
+  useEffect(() => () => clearTimeout(poiRegionTimer.current), []);
+
+  // Plafond dur : les MAX_POI_MARKERS lieux les plus notoires de la zone visible.
+  // Sans ce plafond, cocher deux familles suffirait à ajouter 200 marqueurs à des
+  // Invaders déjà tous montés — le fil graphique ne suit pas.
+  const visiblePois = useMemo(() => {
+    if (!poiPrefs.enabled || isChangingCity) return [];
+    const all = getPois(currentCityCode);
+    if (!all.length) return [];
+    const inFamily = all.filter(p => poiPrefs.families.has(familyOf(p)));
+    if (!poiRegion) return [...inFamily].sort((a, b) => b.fame - a.fame).slice(0, MAX_POI_MARKERS);
+    const latMin = poiRegion.latitude  - poiRegion.latitudeDelta  / 2;
+    const latMax = poiRegion.latitude  + poiRegion.latitudeDelta  / 2;
+    const lngMin = poiRegion.longitude - poiRegion.longitudeDelta / 2;
+    const lngMax = poiRegion.longitude + poiRegion.longitudeDelta / 2;
+    return inFamily
+      .filter(p => p.lat >= latMin && p.lat <= latMax && p.lng >= lngMin && p.lng <= lngMax)
+      .sort((a, b) => b.fame - a.fame)
+      .slice(0, MAX_POI_MARKERS);
+  }, [poiPrefs.enabled, poiPrefs.families, poiRegion, currentCityCode, isChangingCity]);
+
   const hasActiveFilters =
     filters.statuses.size < ALL_STATUSES.length ||
     filters.flashedState !== 'all';
@@ -426,6 +503,7 @@ export default function MapScreen({ navigation, route }) {
         onMapReady={() => setMapReady(true)}
         onMapLoaded={() => setTilesLoaded(true)}
         onRegionChange={dismissFlash}
+        onRegionChangeComplete={onRegionSettled}
       >
         {!isChangingCity && <HeadingCone userLocation={userLocation} heading={userHeading} />}
         {/* Marqueurs montés seulement quand la carte est prête (mapReady) et hors
@@ -449,6 +527,21 @@ export default function MapScreen({ navigation, route }) {
             />
           );
         })}
+
+        {/* Lieux à voir : losange doré, même signe que dans la Chasse. Plafonné
+            à MAX_POI_MARKERS, on ne monte donc jamais plus de 40 annotations ici. */}
+        {mapReady && tilesLoaded && !isChangingCity && visiblePois.map((poi) => (
+          <Marker
+            key={`poi-${poi.id}`}
+            coordinate={{ latitude: poi.lat, longitude: poi.lng }}
+            anchor={{ x: 0.5, y: 0.5 }}
+            tracksViewChanges={false}
+            stopPropagation
+            onPress={() => { setSelectedPoi(poi); setSelected(null); setShowFilters(false); }}
+          >
+            <View style={styles.poiDot} />
+          </Marker>
+        ))}
       </MapView>
 
       {/* ── Barre supérieure : Menu | barre de progression | chip ville ── */}
@@ -541,6 +634,14 @@ export default function MapScreen({ navigation, route }) {
             onClose={() => setSelected(null)}
           />
         </View>
+      )}
+
+      {selectedPoi && !showFilters && !isChangingCity && (
+        <PoiSheet
+          poi={selectedPoi}
+          onClose={() => setSelectedPoi(null)}
+          style={{ bottom: insets.bottom + 16 }}
+        />
       )}
 
       {/* Android : voile sombre tant que les tuiles ne sont pas rendues (anti-écran blanc) */}
@@ -640,6 +741,16 @@ function makeStyles(t) {
       textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 8, marginTop: 14,
     },
     chipRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+    // Lieux à voir : même losange doré que dans la Chasse, pour que le signe
+    // soit reconnu d'un écran à l'autre.
+    poiDot: {
+      width: 13, height: 13, borderRadius: 3, backgroundColor: t.accentScore,
+      borderWidth: 1.5, borderColor: t.bg, transform: [{ rotate: '45deg' }],
+    },
+    poiHeaderRow: {
+      flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
+      marginTop: 16, marginBottom: 8,
+    },
     checkChip: {
       flexDirection: 'row', alignItems: 'center', gap: 6,
       borderRadius: 20, paddingHorizontal: 12, paddingVertical: 7,

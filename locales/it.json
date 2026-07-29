@@ -1021,5 +1021,28 @@
         ]
       }
     }
+  },
+  "poi": {
+    "section": "Luoghi da vedere",
+    "enable": "Mostra i luoghi",
+    "hint": "{{n}} luoghi notevoli a Parigi",
+    "family": {
+      "museums": "Musei e mostre",
+      "monuments": "Monumenti e palazzi",
+      "religious": "Chiese e luoghi di culto",
+      "nature": "Parchi e rive della Senna",
+      "streets": "Vie, piazze e passaggi",
+      "nightlife": "Palcoscenici, tavole e negozi",
+      "misc": "Varie"
+    },
+    "familyHint": {
+      "museums": "Grandi collezioni, case d'artista, biblioteche",
+      "monuments": "Archi, colonne, fontane, palazzi nobiliari",
+      "religious": "Cattedrali, chiese, sinagoghe, moschee",
+      "nature": "Giardini, cimiteri, ponti, banchine e canali",
+      "streets": "Piazze reali, vie storiche, passaggi coperti",
+      "nightlife": "Teatri, cabaret, caffè letterari, grandi magazzini",
+      "misc": "Stadi, stazioni, scuole, ospedali e curiosità"
+    }
   }
 }

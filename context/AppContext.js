@@ -8,6 +8,7 @@ import { getCachedNews, fetchNews } from '../services/newsData';
 import { enableNewsNotify, disableNewsNotify, syncNewsNotify } from '../services/newsNotify';
 import { applyLanguage, LANGUAGE_STORAGE_KEY } from '../i18n';
 import { ENABLED_CITIES, DEFAULT_CITY_CODE, CITIES } from '../cities/registry';
+import { ALL_POI_FAMILIES } from '../data/poiFamilies';
 
 const AppContext = createContext(null);
 
@@ -25,6 +26,23 @@ const DEFAULT_STROLL = {
 
 // Statuts proposables dans le sélecteur du Mode balade (jamais 'destroyed', jamais 'hidden')
 export const STROLL_STATUS_OPTIONS = ['ok', 'damaged', 'unknown'];
+
+// Lieux d'intérêt — préférence UNIQUE partagée par la Carte, le Trajet et la Chasse :
+// on choisit une fois, les trois écrans obéissent.
+// `families` est un Set en mémoire, sérialisé en tableau au stockage (même motif
+// que `filters`). Défaut : couche éteinte, pour ne rien changer à l'expérience
+// existante tant que l'utilisateur n'a pas répondu à l'invitation sur la carte.
+const DEFAULT_POI_PREFS = {
+  enabled:   false,
+  families:  ALL_POI_FAMILIES,          // tableau ici ; converti en Set dans le state
+  objective: 'balanced',                // pure | balanced | visit (partagé Trajet/Chasse)
+};
+
+// Nombre maximum de lieux dessinés simultanément sur la carte, toutes familles
+// confondues. La carte monte déjà jusqu'à 1 528 marqueurs d'Invaders sans
+// clustering ; au-delà de ce plafond, on sature le fil graphique (cf. les
+// commentaires de MapScreen). On garde les plus notoires de la zone visible.
+export const MAX_POI_MARKERS = 40;
 
 // Filtres « à faire » : tous les statuts visibles SAUF les détruits, et seulement
 // les non-flashés. C'est l'état par défaut de la carte au tout premier lancement.
@@ -102,6 +120,14 @@ export function AppProvider({ children }) {
 
   // ── Mode balade (réglages seulement ; moteur au dev build) ──────────────────
   const [stroll, setStroll] = useState(DEFAULT_STROLL);
+
+  // ── Lieux d'intérêt (Carte + Trajet + Chasse) ───────────────────────────────
+  const [poiPrefs, setPoiPrefs] = useState(() => ({
+    ...DEFAULT_POI_PREFS,
+    families: new Set(DEFAULT_POI_PREFS.families),
+  }));
+  // Invitation « nouveaux lieux » : proposée une seule fois sur la carte.
+  const [poiIntroSeen, setPoiIntroSeen] = useState(false);
 
   // Légende des couleurs : affichée sur la carte au 1er usage, puis masquée.
   const [legendSeen, setLegendSeen] = useState(false);
@@ -222,13 +248,16 @@ export function AppProvider({ children }) {
         AsyncStorage.getItem('@invader_current_city'),
         AsyncStorage.getItem('invader_filters'),
       ]);
-      const [newsCitiesRaw, newsLastSeenRaw, strollRaw, legendSeenRaw, newsNotifyRaw, cityProgressRaw] = await Promise.all([
+      const [newsCitiesRaw, newsLastSeenRaw, strollRaw, legendSeenRaw, newsNotifyRaw, cityProgressRaw,
+             poiPrefsRaw, poiIntroRaw] = await Promise.all([
         AsyncStorage.getItem('@invader_news_cities'),
         AsyncStorage.getItem('@invader_news_last_seen'),
         AsyncStorage.getItem('@invader_stroll'),
         AsyncStorage.getItem('@invader_legend_seen'),
         AsyncStorage.getItem('@invader_news_notify'),
         AsyncStorage.getItem('@invader_city_progress'),
+        AsyncStorage.getItem('@invader_poi_prefs'),
+        AsyncStorage.getItem('@invader_poi_intro_seen'),
       ]);
       if (cityProgressRaw) { try { setCityProgress(JSON.parse(cityProgressRaw)); } catch {} }
       if (legendSeenRaw === '1') setLegendSeen(true);
@@ -289,6 +318,24 @@ export function AppProvider({ children }) {
             // Rayons hérités < 50 m (peu fiables) → ramenés à 50 m.
             if (!(merged.radius >= 50)) merged.radius = 50;
             setStroll(merged);
+          }
+        } catch (_) {}
+      }
+
+      // Lieux d'intérêt : fusion avec les défauts (tolérant aux familles ajoutées
+      // plus tard par une mise à jour de données — elles arrivent alors cochées).
+      if (poiIntroRaw === '1') setPoiIntroSeen(true);
+      if (poiPrefsRaw) {
+        try {
+          const p = JSON.parse(poiPrefsRaw);
+          if (p && typeof p === 'object') {
+            const stored = Array.isArray(p.families) ? p.families : null;
+            const known  = stored ? stored.filter(f => ALL_POI_FAMILIES.includes(f)) : null;
+            setPoiPrefs({
+              enabled:   p.enabled === true,
+              families:  new Set(known?.length ? known : ALL_POI_FAMILIES),
+              objective: ['pure', 'balanced', 'visit'].includes(p.objective) ? p.objective : 'balanced',
+            });
           }
         } catch (_) {}
       }
@@ -428,6 +475,13 @@ export function AppProvider({ children }) {
   useEffect(() => { if (loaded && newsLastSeen) AsyncStorage.setItem('@invader_news_last_seen', newsLastSeen); }, [newsLastSeen, loaded]);
   // Mode balade : réglages persistés (lus tels quels par le futur moteur de proximité)
   useEffect(() => { if (loaded) AsyncStorage.setItem('@invader_stroll', JSON.stringify(stroll)); }, [stroll, loaded]);
+  // Lieux d'intérêt : Set sérialisé en tableau, comme les filtres de statut
+  useEffect(() => {
+    if (!loaded) return;
+    AsyncStorage.setItem('@invader_poi_prefs', JSON.stringify({
+      enabled: poiPrefs.enabled, families: [...poiPrefs.families], objective: poiPrefs.objective,
+    }));
+  }, [poiPrefs, loaded]);
 
   // ─── Flashé ──────────────────────────────────────────────────────────────────
 
@@ -517,6 +571,39 @@ export function AppProvider({ children }) {
   // (futur dev build) lira simplement l'objet `stroll`.
   function setStrollPref(partial) {
     setStroll(prev => ({ ...prev, ...partial }));
+  }
+
+  // ─── Lieux d'intérêt ────────────────────────────────────────────────────────
+  // Fusion partielle, comme le Mode balade. `families` accepte un Set ou un tableau.
+  function setPoiPref(partial) {
+    setPoiPrefs(prev => ({
+      ...prev,
+      ...partial,
+      families: partial.families ? new Set(partial.families) : prev.families,
+    }));
+  }
+
+  // Coche / décoche une famille. On refuse de tout décocher : une couche active
+  // et vide n'aurait aucun sens visible, on éteint plutôt la couche.
+  function togglePoiFamily(key) {
+    setPoiPrefs(prev => {
+      const families = new Set(prev.families);
+      if (families.has(key)) families.delete(key); else families.add(key);
+      if (families.size === 0) return { ...prev, families: new Set(prev.families), enabled: false };
+      return { ...prev, families };
+    });
+  }
+
+  // Invitation « nouveaux lieux » vue (ou refusée) : ne plus la proposer.
+  function dismissPoiIntro() {
+    setPoiIntroSeen(true);
+    AsyncStorage.setItem('@invader_poi_intro_seen', '1');
+  }
+
+  // Rejouer l'invitation (bouton de test dans les Réglages)
+  function resetPoiIntro() {
+    setPoiIntroSeen(false);
+    AsyncStorage.removeItem('@invader_poi_intro_seen');
   }
 
   // Notifs d'actualité : bascule (persiste + planifie/retire la tâche + prompt à l'activation).
@@ -609,6 +696,9 @@ export function AppProvider({ children }) {
     legendSeen, dismissLegend,
     // Mode balade (réglages ; moteur au dev build)
     stroll, setStrollPref,
+    // Lieux d'intérêt (Carte + Trajet + Chasse)
+    poiPrefs, setPoiPref, togglePoiFamily,
+    poiIntroSeen, dismissPoiIntro, resetPoiIntro,
     mapsApp, setMapsAppPref,
     language, setLanguage,
     showOnboarding, completeOnboarding, resetOnboarding,
@@ -623,6 +713,7 @@ export function AppProvider({ children }) {
     news, newsCities, newsLastSeen, newsUnreadCount, newsNotify,
     legendSeen,
     stroll, mapsApp, language,
+    poiPrefs, poiIntroSeen,
     showOnboarding, loaded,
   ]);
 

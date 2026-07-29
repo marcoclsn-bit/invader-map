@@ -1021,5 +1021,28 @@
         ]
       }
     }
+  },
+  "poi": {
+    "section": "Places to see",
+    "enable": "Show places",
+    "hint": "{{n}} notable places in Paris",
+    "family": {
+      "museums": "Museums & exhibitions",
+      "monuments": "Monuments & palaces",
+      "religious": "Churches & places of worship",
+      "nature": "Parks & the Seine",
+      "streets": "Streets, squares & arcades",
+      "nightlife": "Stages, tables & shops",
+      "misc": "Other"
+    },
+    "familyHint": {
+      "museums": "Major collections, artists' homes, libraries",
+      "monuments": "Arches, columns, fountains, mansions",
+      "religious": "Cathedrals, churches, synagogues, mosques",
+      "nature": "Gardens, cemeteries, bridges, quays and canals",
+      "streets": "Royal squares, historic streets, covered arcades",
+      "nightlife": "Theatres, cabarets, literary cafés, department stores",
+      "misc": "Stadiums, stations, schools, hospitals and curiosities"
+    }
   }
 }

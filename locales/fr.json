@@ -1021,5 +1021,28 @@
         ]
       }
     }
+  },
+  "poi": {
+    "section": "Lieux à voir",
+    "enable": "Afficher les lieux",
+    "hint": "{{n}} lieux remarquables à Paris",
+    "family": {
+      "museums": "Musées & expositions",
+      "monuments": "Monuments & palais",
+      "religious": "Églises & lieux de culte",
+      "nature": "Parcs & bords de Seine",
+      "streets": "Rues, places & passages",
+      "nightlife": "Scènes, tables & boutiques",
+      "misc": "Divers"
+    },
+    "familyHint": {
+      "museums": "Grandes collections, maisons d'artistes, bibliothèques",
+      "monuments": "Arcs, colonnes, fontaines, hôtels particuliers",
+      "religious": "Cathédrales, églises, synagogues, mosquées",
+      "nature": "Jardins, cimetières, ponts, quais et canaux",
+      "streets": "Places royales, rues historiques, passages couverts",
+      "nightlife": "Théâtres, cabarets, cafés littéraires, grands magasins",
+      "misc": "Stades, gares, écoles, hôpitaux et curiosités"
+    }
   }
 }
