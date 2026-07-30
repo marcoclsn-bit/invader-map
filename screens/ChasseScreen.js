@@ -33,6 +33,7 @@ import { canUseFeature, FEATURES } from '../services/featureAccess';
 import { getPois, hasPois, wikiUrl, summaryOf } from '../services/poiData';
 import { POI_FAMILIES, familyOf } from '../data/poiFamilies';
 import { track, failureReason } from '../services/analytics';
+import ObjectivePicker from '../components/ObjectivePicker';
 
 const _PA        = CITIES.PA;
 const PARIS      = { latitude: _PA.center.lat, longitude: _PA.center.lng, ..._PA.mapDelta };
@@ -1156,31 +1157,7 @@ export default function ChasseScreen({ route }) {
                   {/* Objectif : chasse pure ↔ chasse & visite (villes avec lieux d'intérêt) */}
                   {poiEnabled && (
                     <View style={styles.objectiveBlock}>
-                      <Text style={styles.fieldLabel}>{t('hunt.objective.label')}</Text>
-                      <View style={styles.objRow}>
-                        {[
-                          { key: 'pure',     icon: 'game-controller-outline' },
-                          { key: 'balanced', icon: 'swap-horizontal-outline' },
-                          { key: 'visit',    icon: 'business-outline' },
-                        ].map(o => (
-                          <TouchableOpacity key={o.key}
-                            style={[styles.objBtn, objective === o.key && styles.objBtnActive]}
-                            onPress={() => setObjective(o.key)}
-                            activeOpacity={0.8}
-                            accessibilityRole="radio"
-                            accessibilityState={{ selected: objective === o.key }}
-                            accessibilityLabel={t(`hunt.objective.${o.key}`)}
-                          >
-                            <Ionicons name={o.icon} size={16}
-                              color={objective === o.key ? theme.accentScore : theme.textSecondary} />
-                            <Text style={[styles.objBtnText, objective === o.key && styles.objBtnTextActive]}
-                              numberOfLines={1}>
-                              {t(`hunt.objective.${o.key}`)}
-                            </Text>
-                          </TouchableOpacity>
-                        ))}
-                      </View>
-                      <Text style={styles.objHint}>{t(`hunt.objective.hint_${objective}`)}</Text>
+                      <ObjectivePicker value={objective} onChange={setObjective} style={{ marginTop: 0 }} />
 
                       {/* Familles de lieux — même réglage que la Carte et le Trajet */}
                       {objective !== 'pure' && (
@@ -1578,15 +1555,6 @@ function makeStyles(t) {
       borderRadius: 20, paddingHorizontal: 9, paddingVertical: 5, borderWidth: 1.5,
     },
     famChipText: { fontSize: 11.5, fontWeight: '600' },
-    objRow: { flexDirection: 'row', gap: 6, marginTop: 8 },
-    objBtn: {
-      flex: 1, alignItems: 'center', gap: 3, paddingVertical: 8, paddingHorizontal: 4,
-      borderRadius: 10, backgroundColor: t.surfaceHigh, borderWidth: 1, borderColor: 'transparent',
-    },
-    objBtnActive: { borderColor: t.accentScore, backgroundColor: `${t.accentScore}1A` },
-    objBtnText: { fontSize: 10.5, fontWeight: '600', color: t.textSecondary, textAlign: 'center' },
-    objBtnTextActive: { color: t.accentScore, fontWeight: '800' },
-    objHint: { fontSize: 11, color: t.textSecondary, marginTop: 7, lineHeight: 15 },
 
     poiRow: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 14, height: 52 },
     poiRowDiamond: {

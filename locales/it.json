@@ -173,13 +173,15 @@
     "districtsSelected_one": "{{count}} arrondissement selezionato",
     "districtsSelected_other": "{{count}} arrondissement selezionati",
     "objective": {
-      "label": "Obiettivo",
-      "pure": "Caccia pura",
-      "balanced": "Equilibrato",
-      "visit": "Caccia e visita",
+      "label": "Sei più…",
+      "pure": "Cacciatore",
+      "balanced": "Curioso",
+      "visit": "Turista",
       "hint_pure": "Solo Invaders: il massimo nel tuo tempo.",
       "hint_balanced": "Invaders prima di tutto, con qualche luogo notevole lungo il cammino.",
-      "hint_visit": "La caccia in modalità scoperta: più luoghi da vedere, qualche Invader in meno."
+      "hint_visit": "La caccia in modalità scoperta: più luoghi da vedere, qualche Invader in meno.",
+      "poleInvaders": "INVADER",
+      "polePlaces": "LUOGHI"
     },
     "poiCount_one": "{{count}} luogo",
     "poiCount_other": "{{count}} luoghi",

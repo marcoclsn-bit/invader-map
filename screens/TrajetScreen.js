@@ -36,6 +36,7 @@ import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
 import { typography } from '../theme/tokens';
 import { openInstagramTag, openNavigationApp } from '../utils/navigation';
 import { track, failureReason } from '../services/analytics';
+import ObjectivePicker from '../components/ObjectivePicker';
 
 const _PA         = CITIES.PA;
 const PARIS       = { latitude: _PA.center.lat, longitude: _PA.center.lng, ..._PA.mapDelta };
@@ -1166,33 +1167,12 @@ export default function TrajetScreen() {
                 {/* ── Objectif : mêmes trois modes que la Chasse ── */}
                 {hasPois(currentCityCode) && (
                   <View style={styles.bufferSection}>
-                    <Text style={styles.bufferLabel}>{t('hunt.objective.label')}</Text>
-                    <View style={styles.objRow}>
-                      {[
-                        { key: 'pure',     icon: 'game-controller-outline' },
-                        { key: 'balanced', icon: 'swap-horizontal-outline' },
-                        { key: 'visit',    icon: 'business-outline' },
-                      ].map(({ key, icon }) => {
-                        const active = poiPrefs.objective === key;
-                        return (
-                          <TouchableOpacity
-                            key={key}
-                            style={[styles.objBtn, active && styles.objBtnActive]}
-                            onPress={() => setPoiPref({ objective: key })}
-                            activeOpacity={0.8}
-                            accessibilityRole="radio"
-                            accessibilityState={{ selected: active }}
-                            accessibilityLabel={t(`hunt.objective.${key}`)}
-                          >
-                            <Ionicons name={icon} size={17} color={active ? theme.bg : theme.textSecondary} />
-                            <Text style={[styles.objText, active && styles.objTextActive]} numberOfLines={1}>
-                              {t(`hunt.objective.${key}`)}
-                            </Text>
-                          </TouchableOpacity>
-                        );
-                      })}
-                    </View>
-                    <Text style={styles.objHint}>{t(`route.objectiveHint_${poiPrefs.objective}`)}</Text>
+                    <ObjectivePicker
+                      value={poiPrefs.objective}
+                      onChange={(key) => setPoiPref({ objective: key })}
+                      hintPrefix="route.objectiveHint_"
+                      style={{ marginTop: 0 }}
+                    />
                   </View>
                 )}
 
@@ -1425,16 +1405,6 @@ function makeStyles(t) {
     routePoiName:  { flex: 1, fontWeight: '600', fontSize: 14, color: t.accentScore },
     routePoiTheme: { fontSize: 12, color: t.textSecondary, maxWidth: 120 },
     // Objectif : mêmes trois modes que la Chasse, même vocabulaire
-    objRow: { flexDirection: 'row', gap: 6, marginTop: 8 },
-    objBtn: {
-      flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 5,
-      paddingVertical: 9, paddingHorizontal: 6, borderRadius: 10,
-      borderWidth: 1, borderColor: t.border, backgroundColor: t.surfaceHigh,
-    },
-    objBtnActive: { backgroundColor: t.accentScore, borderColor: t.accentScore },
-    objText: { fontSize: 11.5, fontWeight: '600', color: t.textSecondary },
-    objTextActive: { color: t.bg },
-    objHint: { marginTop: 8, fontSize: 12, lineHeight: 17, color: t.textSecondary },
     toggleWrap: { flexDirection: 'row', alignItems: 'center', gap: 6 },
     toggleLabel: { fontSize: 13, color: t.textSecondary },
     routeList: { flex: 1 },

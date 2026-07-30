@@ -173,13 +173,15 @@
     "districtsSelected_one": "{{count}} arrondissement sélectionné",
     "districtsSelected_other": "{{count}} arrondissements sélectionnés",
     "objective": {
-      "label": "Objectif",
-      "pure": "Chasse pure",
-      "balanced": "Équilibré",
-      "visit": "Chasse & visite",
+      "label": "Tu es plutôt…",
+      "pure": "Chasseur",
+      "balanced": "Curieux",
+      "visit": "Touriste",
       "hint_pure": "Uniquement des Invaders : le maximum dans ton temps.",
       "hint_balanced": "Des Invaders avant tout, avec quelques lieux remarquables sur le chemin.",
-      "hint_visit": "La chasse en mode découverte : plus de lieux à voir, un peu moins d’Invaders."
+      "hint_visit": "La chasse en mode découverte : plus de lieux à voir, un peu moins d’Invaders.",
+      "poleInvaders": "INVADERS",
+      "polePlaces": "LIEUX"
     },
     "poiCount_one": "{{count}} lieu",
     "poiCount_other": "{{count}} lieux",

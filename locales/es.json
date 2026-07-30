@@ -173,13 +173,15 @@
     "districtsSelected_one": "{{count}} distrito seleccionado",
     "districtsSelected_other": "{{count}} distritos seleccionados",
     "objective": {
-      "label": "Objetivo",
-      "pure": "Caza pura",
-      "balanced": "Equilibrado",
-      "visit": "Caza y visita",
+      "label": "Eres más bien…",
+      "pure": "Cazador",
+      "balanced": "Curioso",
+      "visit": "Turista",
       "hint_pure": "Solo Invaders: los máximos posibles en tu tiempo.",
       "hint_balanced": "Invaders ante todo, con algunos lugares notables por el camino.",
-      "hint_visit": "La caza en modo descubrimiento: más lugares, algunos Invaders menos."
+      "hint_visit": "La caza en modo descubrimiento: más lugares, algunos Invaders menos.",
+      "poleInvaders": "INVADERS",
+      "polePlaces": "SITIOS"
     },
     "poiCount_one": "{{count}} lugar",
     "poiCount_other": "{{count}} lugares",
