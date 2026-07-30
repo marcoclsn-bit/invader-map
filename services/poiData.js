@@ -39,6 +39,10 @@ const _fresh = new Map();   // code -> { version, updatedAt, pois }
 
 // Résumés traduits, par ville et par langue.
 const _trad = new Map();    // `${code}:${lang}` -> { version, summaries }
+// Téléchargements en cours, pour ne pas lancer deux fois le même : setPoiLanguage
+// est appelé au démarrage par l'initialisation ET par l'effet qui suit la langue.
+// Sans ce garde, un utilisateur non francophone téléchargeait le paquet en double.
+const _enCours = new Map(); // `${code}:${lang}` -> Promise
 
 let _notify = null;
 let _lang = 'fr';
@@ -135,7 +139,7 @@ export async function checkPoiUpdate(cityCode = null) {
       const attendue = index?.cities?.[code]?.langs?.[_lang];
       const enPlace = _trad.get(`${code}:${_lang}`)?.version ?? 0;
       if (attendue && attendue > enPlace) {
-        try { await fetchTranslations(code, _lang); bougé = true; } catch (_) { /* on garde */ }
+        try { await prefetchTranslations(code, _lang); bougé = true; } catch (_) { /* on garde */ }
       }
     }
   }
@@ -165,9 +169,23 @@ export async function setPoiLanguage(lang) {
         if (cached?.summaries) { _trad.set(key, cached); continue; }
       }
     } catch (_) { /* cache illisible */ }
-    fetchTranslations(city, _lang).catch(() => {});
+    prefetchTranslations(city, _lang);
   }
   _notify?.();
+}
+
+/** Lance le téléchargement d'une langue, ou rejoint celui déjà en cours. */
+function prefetchTranslations(city, lang) {
+  const key = `${city}:${lang}`;
+  if (_trad.has(key)) return Promise.resolve();
+  let p = _enCours.get(key);
+  if (!p) {
+    p = fetchTranslations(city, lang)
+      .catch(() => {})
+      .finally(() => _enCours.delete(key));
+    _enCours.set(key, p);
+  }
+  return p;
 }
 
 /** Télécharge et met en cache les résumés traduits d'une ville. */
