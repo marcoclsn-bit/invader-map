@@ -406,10 +406,18 @@ async function routeWithinBudget(sel, startLon, startLat, budgetMin, speedKmPerM
 
 // ─── Formatage ────────────────────────────────────────────────────────────────
 
+// L'arrondi se fait ICI, en entrée, et non chez l'appelant : la durée d'un
+// résultat vaut marche + visites, et chaque étape coûte 1,5 min — un nombre
+// impair d'étapes donne donc un total à virgule. On affichait « 2 h 31.5 »,
+// et « 45.5 min » sous l'heure.
+//
+// L'ordre compte : arrondir AVANT de comparer à 60, sinon 59,7 min resterait
+// sous le seuil et s'afficherait « 60 min » au lieu de « 1 h ».
 function formatBudget(min) {
-  if (min < 60) return `${min} min`;
-  const h = Math.floor(min / 60);
-  const m = min % 60;
+  const total = Math.round(min ?? 0);
+  if (total < 60) return `${total} min`;
+  const h = Math.floor(total / 60);
+  const m = total % 60;
   return m === 0 ? `${h} h` : `${h} h ${String(m).padStart(2, '0')}`;
 }
 
