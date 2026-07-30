@@ -1,13 +1,13 @@
 # Politique de confidentialité — InvaderQuest
 
-**Dernière mise à jour : [DATE]**
+**Dernière mise à jour : 30 juillet 2026**
 
 InvaderQuest (« l'application », « nous ») est une application mobile indépendante
 permettant de repérer et de suivre les mosaïques *Space Invader*. Cette politique
 explique quelles données l'application manipule et comment.
 
 > **Résumé en une phrase :** InvaderQuest n'a **pas de compte utilisateur**, **pas de
-> serveur**, **pas de publicité** et **pas de suivi (tracking)**. Vos données (Invaders
+> serveur**, **pas de publicité** et **pas de profilage**. Vos données (Invaders
 > flashés, profil, badges, statistiques) restent **sur votre appareil**. Les seules
 > données qui quittent votre téléphone sont celles nécessaires au calcul d'itinéraire
 > et à la recherche d'adresse, transmises à nos prestataires de cartographie.
@@ -16,8 +16,8 @@ explique quelles données l'application manipule et comment.
 
 ## 1. Responsable du traitement
 
-Cette application est éditée par **[NOM / ÉDITEUR]**.
-Contact : **[EMAIL DE CONTACT]**
+Cette application est éditée par **Marc-Henri Colson**.
+Contact : **invader.quest.app@gmail.com**
 
 ---
 
@@ -25,8 +25,10 @@ Contact : **[EMAIL DE CONTACT]**
 
 InvaderQuest **ne crée pas de compte** et **ne dispose d'aucun serveur** vous
 concernant. Nous ne collectons, ne stockons et ne vendons **aucune** donnée
-personnelle sur nos propres infrastructures. Il n'y a **ni publicité, ni traceur
-publicitaire, ni outil d'analyse d'audience**.
+personnelle sur nos propres infrastructures. Il n'y a **ni publicité, ni traceur publicitaire, ni profilage**. L'application
+effectue en revanche une **mesure d'usage anonyme et agrégée**, décrite à la
+section 5 : elle ne permet ni de vous identifier, ni de vous suivre d'une
+application à l'autre.
 
 ---
 
@@ -83,6 +85,18 @@ Nous vous invitons à consulter leurs propres politiques de confidentialité.
 - **GitHub** — l'application télécharge la base de données publique des Invaders
   (fichiers de données). Aucune information personnelle n'est envoyée ; il s'agit
   d'un simple téléchargement de fichiers.
+- **Aptabase** — mesure d'usage anonyme et agrégée, hébergée en Europe.
+  Sont transmis : l'écran affiché, l'usage des fonctions (chasse ou trajet calculé,
+  démarré, terminé, partagé), les réglages choisis (durée, mode de déplacement,
+  objectif), la ville sélectionnée, les erreurs rencontrées, et des indicateurs
+  chiffrés agrégés (nombre d'étapes, distance et durée d'une session, nombre
+  d'Invaders flashés pendant celle-ci).
+  **Ne sont jamais transmis** : votre position, les adresses que vous saisissez,
+  l'identité des Invaders ou des lieux concernés, votre pseudonyme, votre photo,
+  ni aucun identifiant publicitaire ou d'appareil. Aptabase n'utilise pas de
+  cookie ni d'identifiant persistant : ces mesures ne permettent ni de vous
+  identifier, ni de reconstituer votre parcours.
+  <https://aptabase.com/legal/privacy>
 - **Expo / EAS Update** — l'application peut télécharger des mises à jour logicielles.
   Des données techniques minimales (type d'appareil, version) peuvent être traitées à
   cette fin. <https://expo.dev/privacy>
@@ -153,7 +167,7 @@ signalées au sein de l'application ou de sa fiche sur l'App Store.
 ## 13. Contact
 
 Pour toute question relative à cette politique ou à vos données :
-**[EMAIL DE CONTACT]**
+**invader.quest.app@gmail.com**
 
 ---
 

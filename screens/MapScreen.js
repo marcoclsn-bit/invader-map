@@ -147,7 +147,10 @@ function FilterPanel({ filters, onFiltersChange, onClose }) {
             <Text style={[styles.sectionTitle, { marginTop: 0 }]}>{t('poi.section')}</Text>
             <Switch
               value={poiPrefs.enabled}
-              onValueChange={(v) => { setPoiPref({ enabled: v }); track('poi_layer', { on: v }); }}
+              // Aptabase n'accepte que des chaînes et des nombres en propriétés :
+              // le booléen était perdu, l'événement ne disait donc pas si la
+              // couche avait été activée ou désactivée.
+              onValueChange={(v) => { setPoiPref({ enabled: v }); track('poi_layer', { state: v ? 'on' : 'off' }); }}
               accessibilityLabel={t('poi.a11y.layer')}
               trackColor={{ false: theme.border, true: theme.accentScore }}
               thumbColor={theme.bg}
