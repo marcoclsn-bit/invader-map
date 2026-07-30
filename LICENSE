@@ -1,0 +1,135 @@
+# Licence — InvaderQuest
+
+Ce dépôt réunit des éléments soumis à **trois régimes différents**. Lisez la
+section correspondant à ce que vous voulez réutiliser.
+
+---
+
+## 1. Code source et création originale — tous droits réservés
+
+Copyright © 2026 Marc-Henri Colson. Tous droits réservés.
+
+Cela couvre **tout le dépôt à l'exception des fichiers de données listés aux
+sections 2 et 3** : le code source, y compris `data/badges.js`,
+`data/poiFamilies.js` et `data/privacyPolicy.js` qui sont du code malgré leur
+emplacement ; les traductions de l'interface (`locales/`) ; les éléments
+graphiques originaux (`assets/`, dont les marqueurs et le logo) ; la
+documentation du projet.
+
+Aucune autorisation n'est accordée de copier, modifier, distribuer, publier ni
+créer une œuvre dérivée de ces éléments, en tout ou partie, sous quelque forme
+que ce soit, sans accord écrit préalable du titulaire des droits.
+
+Le dépôt est public pour permettre à l'application de télécharger ses données et
+pour la transparence du traitement. **Sa consultation ne vaut pas licence de
+réutilisation.**
+
+Contact : marchenri.colson@gmail.com
+
+---
+
+## 2. Données Invaders et géographiques — ODbL
+
+Fichiers concernés :
+
+- `data/invaders.js`, `data/invaders*.json`, `data/index.json`, `data/news.json`
+- `data/paris-arrondissements.json`
+
+Ces données dérivent de la base communautaire
+[goguelnikov/SpaceInvaders](https://github.com/goguelnikov/SpaceInvaders), de
+pnote.eu (statuts et identifiants complémentaires, avec l'autorisation de son
+auteur), d'[OpenStreetMap](https://www.openstreetmap.org/copyright) et, pour les
+contours d'arrondissements, de [Paris Data](https://opendata.paris.fr)
+(Direction de l'urbanisme, Ville de Paris).
+
+Elles sont distribuées sous
+[Open Database License (ODbL) v1.0](https://opendatacommons.org/licenses/odbl/1-0/).
+
+En pratique : citez les sources ci-dessus, et **toute base dérivée que vous
+publiez doit l'être sous ODbL**.
+
+---
+
+## 3. Lieux d'intérêt — CC0 et CC BY-SA
+
+Fichiers concernés : `data/poi_PA.json`, `data/poi_PA_*.json`, `data/poi_index.json`.
+
+- **Coordonnées, identifiants, notoriété** : issus de
+  [Wikidata](https://www.wikidata.org), sous
+  [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) (domaine public).
+- **Résumés** (français, anglais, espagnol, italien) : rédigés d'après les
+  articles de [Wikipédia](https://fr.wikipedia.org), donc sous
+  [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+- **Photographies** : non distribuées ici. Les fichiers ne contiennent que des
+  liens vers [Wikimedia Commons](https://commons.wikimedia.org), avec l'auteur et
+  la licence propres à chaque image, affichés dans l'application.
+
+---
+
+## 4. Marques et contenu tiers
+
+« Space Invader » désigne l'œuvre de l'artiste Invader. Ce projet est un outil
+indépendant, sans lien ni affiliation avec l'artiste. **Aucune photographie de
+mosaïque n'est distribuée par cette application.**
+
+« InvaderQuest », le logo et l'identité visuelle appartiennent à l'auteur du
+projet.
+
+---
+---
+
+# License — InvaderQuest (English)
+
+This repository contains material under **three different regimes**. Read the
+section matching what you intend to reuse.
+
+## 1. Source code and original work — all rights reserved
+
+Copyright © 2026 Marc-Henri Colson. All rights reserved.
+
+This covers **the whole repository except the data files listed in sections 2
+and 3**, including `data/badges.js`, `data/poiFamilies.js` and
+`data/privacyPolicy.js`, which are code despite their location, as well as
+interface translations (`locales/`) and original artwork (`assets/`).
+
+No permission is granted to copy, modify, distribute, publish or create
+derivative works from these files, in whole or in part, in any form, without
+prior written consent from the copyright holder.
+
+The repository is public so that the application can download its data, and for
+transparency. **Being able to read it does not grant a licence to reuse it.**
+
+Contact: marchenri.colson@gmail.com
+
+## 2. Invader and geographic data — ODbL
+
+Files: `data/invaders.js`, `data/invaders*.json`, `data/index.json`,
+`data/news.json`, `data/paris-arrondissements.json`.
+
+Derived from the community database goguelnikov/SpaceInvaders, from pnote.eu
+(statuses and additional identifiers, with the author's permission), from
+[OpenStreetMap](https://www.openstreetmap.org/copyright) and, for the
+arrondissement boundaries, from [Paris Data](https://opendata.paris.fr).
+Distributed under the
+[Open Database License (ODbL) v1.0](https://opendatacommons.org/licenses/odbl/1-0/).
+
+Credit the sources above, and **any derived database you publish must also be
+under ODbL**.
+
+## 3. Points of interest — CC0 and CC BY-SA
+
+Files: `data/poi_PA.json`, `data/poi_PA_*.json`, `data/poi_index.json`.
+
+Coordinates, identifiers and notability come from Wikidata, under
+[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). Summaries, in
+French, English, Spanish and Italian, are written after Wikipedia articles and
+are therefore under
+[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Photographs are
+not distributed here: the files only carry links to Wikimedia Commons, each
+image's own author and licence being shown in the app.
+
+## 4. Trademarks and third-party content
+
+"Space Invader" refers to the work of the artist Invader. This project is an
+independent tool, unaffiliated with the artist. **No mosaic photograph is
+distributed by this application.**
