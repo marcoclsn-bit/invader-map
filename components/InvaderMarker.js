@@ -28,7 +28,7 @@ const ANDROID_IMAGES = {
 const SIZE = 30;
 const ANCHOR = { x: 0.5, y: 0.5 };
 
-const InvaderMarker = memo(function InvaderMarker({ invader, isFlashed, onPress, stopPropagation }) {
+const InvaderMarker = memo(function InvaderMarker({ invader, isFlashed, onPress, stopPropagation, label, hint }) {
   const statusKey = IMAGES[invader.status] ? invader.status : 'unknown';
   const key = isFlashed ? 'flashed' : statusKey;
 
@@ -41,6 +41,10 @@ const InvaderMarker = memo(function InvaderMarker({ invader, isFlashed, onPress,
         tracksViewChanges={false}
         stopPropagation={stopPropagation}
         onPress={onPress}
+        accessible
+        accessibilityRole="button"
+        accessibilityLabel={label}
+        accessibilityHint={hint}
       />
     );
   }
@@ -53,6 +57,10 @@ const InvaderMarker = memo(function InvaderMarker({ invader, isFlashed, onPress,
       tracksViewChanges={false}
       stopPropagation={stopPropagation}
       onPress={onPress}
+      accessible
+      accessibilityRole="button"
+      accessibilityLabel={label}
+      accessibilityHint={hint}
     >
       <View style={isFlashed ? styles.glowWrap : styles.wrap}>
         <Image source={IMAGES[key]} style={styles.img} resizeMode="contain" fadeDuration={0} />

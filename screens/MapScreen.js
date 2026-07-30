@@ -147,6 +147,7 @@ function FilterPanel({ filters, onFiltersChange, onClose }) {
             <Switch
               value={poiPrefs.enabled}
               onValueChange={(v) => { setPoiPref({ enabled: v }); track('poi_layer', { on: v }); }}
+              accessibilityLabel={t('poi.a11y.layer')}
               trackColor={{ false: theme.border, true: theme.accentScore }}
               thumbColor={theme.bg}
             />
@@ -160,6 +161,9 @@ function FilterPanel({ filters, onFiltersChange, onClose }) {
                     key={key}
                     onPress={() => togglePoiFamily(key)}
                     activeOpacity={0.7}
+                    accessibilityRole="checkbox"
+                    accessibilityState={{ checked: active }}
+                    accessibilityLabel={t(`poi.family.${key}`)}
                     style={[
                       styles.checkChip,
                       active
@@ -534,6 +538,8 @@ export default function MapScreen({ navigation, route }) {
               invader={invader}
               isFlashed={isFlashed}
               stopPropagation
+              label={`${invader.id}, ${t(`common.status.${invader.status}`)}, ${t(isFlashed ? 'map.a11y.flashed' : 'map.a11y.todo')}`}
+              hint={t('map.a11y.invaderHint')}
               onPress={() => { setSelected(invader); setShowFilters(false); }}
             />
           );
@@ -545,6 +551,8 @@ export default function MapScreen({ navigation, route }) {
           <PoiMarker
             key={`poi-${poi.id}`}
             poi={poi}
+            label={`${poi.name}, ${t(`hunt.poiTheme.${poi.theme}`)}`}
+            hint={t('poi.a11y.openHint')}
             onPress={() => {
               setSelectedPoi(poi); setSelected(null); setShowFilters(false);
               track('poi_open', { from: 'map', theme: poi.theme });

@@ -987,6 +987,8 @@ export default function TrajetScreen() {
                 key={Platform.OS === 'android' ? inv.id : `${inv.id}-${isFlashed ? 1 : 0}`}
                 invader={inv}
                 isFlashed={isFlashed}
+                label={`${inv.id}, ${t(`common.status.${inv.status}`)}, ${t(isFlashed ? 'map.a11y.flashed' : 'map.a11y.todo')}`}
+                hint={t('map.a11y.invaderHint')}
                 onPress={() => selectRouteInvader(inv)}
               />
             );
@@ -996,6 +998,8 @@ export default function TrajetScreen() {
             <PoiMarker
               key={`poi-${poi.id}`}
               poi={poi}
+              label={`${poi.name}, ${t(`hunt.poiTheme.${poi.theme}`)}`}
+              hint={t('poi.a11y.openHint')}
               onPress={() => { setSelectedRoutePoi(poi); setSelectedRouteInv(null); track('poi_open', { from: 'route', theme: poi.theme }); }}
             />
           ))}
@@ -1131,6 +1135,9 @@ export default function TrajetScreen() {
                             style={[styles.objBtn, active && styles.objBtnActive]}
                             onPress={() => setPoiPref({ objective: key })}
                             activeOpacity={0.8}
+                            accessibilityRole="radio"
+                            accessibilityState={{ selected: active }}
+                            accessibilityLabel={t(`hunt.objective.${key}`)}
                           >
                             <Ionicons name={icon} size={17} color={active ? theme.bg : theme.textSecondary} />
                             <Text style={[styles.objText, active && styles.objTextActive]} numberOfLines={1}>

@@ -68,6 +68,11 @@
       "unknown": "Inconnu",
       "destroyed": "Détruit",
       "flashed": "Flashé"
+    },
+    "a11y": {
+      "invaderHint": "Ouvre la fiche de l'Invader",
+      "flashed": "flashé",
+      "todo": "à flasher"
     }
   },
   "list": {
@@ -1058,6 +1063,13 @@
       "question": "Qu'est-ce qui t'intéresse ?",
       "enable": "Afficher sur la carte",
       "later": "Plus tard"
+    },
+    "a11y": {
+      "openHint": "Ouvre la fiche du lieu",
+      "close": "Fermer la fiche",
+      "photo": "Photo de {{name}}",
+      "layer": "Afficher les lieux sur la carte",
+      "more": "Lire l'article Wikipédia"
     }
   }
 }

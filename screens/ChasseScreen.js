@@ -1039,6 +1039,9 @@ export default function ChasseScreen({ route }) {
                             style={[styles.objBtn, objective === o.key && styles.objBtnActive]}
                             onPress={() => setObjective(o.key)}
                             activeOpacity={0.8}
+                            accessibilityRole="radio"
+                            accessibilityState={{ selected: objective === o.key }}
+                            accessibilityLabel={t(`hunt.objective.${o.key}`)}
                           >
                             <Ionicons name={o.icon} size={16}
                               color={objective === o.key ? theme.accentScore : theme.textSecondary} />
@@ -1061,6 +1064,9 @@ export default function ChasseScreen({ route }) {
                                 key={key}
                                 onPress={() => togglePoiFamily(key)}
                                 activeOpacity={0.7}
+                                accessibilityRole="checkbox"
+                                accessibilityState={{ checked: active }}
+                                accessibilityLabel={t(`poi.family.${key}`)}
                                 style={[
                                   styles.famChip,
                                   active

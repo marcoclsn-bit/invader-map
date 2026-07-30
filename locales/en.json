@@ -68,6 +68,11 @@
       "unknown": "Unknown",
       "destroyed": "Destroyed",
       "flashed": "Flashed"
+    },
+    "a11y": {
+      "invaderHint": "Opens the Invader details",
+      "flashed": "flashed",
+      "todo": "to flash"
     }
   },
   "list": {
@@ -1058,6 +1063,13 @@
       "question": "What are you interested in?",
       "enable": "Show on the map",
       "later": "Later"
+    },
+    "a11y": {
+      "openHint": "Opens the place details",
+      "close": "Close details",
+      "photo": "Photo of {{name}}",
+      "layer": "Show places on the map",
+      "more": "Read the Wikipedia article"
     }
   }
 }

@@ -68,6 +68,11 @@
       "unknown": "Desconocido",
       "destroyed": "Destruido",
       "flashed": "Fotografiado"
+    },
+    "a11y": {
+      "invaderHint": "Abre la ficha del Invader",
+      "flashed": "flasheado",
+      "todo": "por flashear"
     }
   },
   "list": {
@@ -1058,6 +1063,13 @@
       "question": "¿Qué te interesa?",
       "enable": "Mostrar en el mapa",
       "later": "Más tarde"
+    },
+    "a11y": {
+      "openHint": "Abre la ficha del lugar",
+      "close": "Cerrar la ficha",
+      "photo": "Foto de {{name}}",
+      "layer": "Mostrar los lugares en el mapa",
+      "more": "Leer el artículo de Wikipedia"
     }
   }
 }

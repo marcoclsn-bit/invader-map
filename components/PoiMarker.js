@@ -21,7 +21,7 @@ const IMAGE = require('../assets/markers/poi.png');
 const SIZE = 30;
 const ANCHOR = { x: 0.5, y: 0.5 };
 
-const PoiMarker = memo(function PoiMarker({ poi, onPress }) {
+const PoiMarker = memo(function PoiMarker({ poi, onPress, label, hint }) {
   const coordinate = { latitude: poi.lat, longitude: poi.lng };
 
   if (Platform.OS === 'android') {
@@ -33,13 +33,27 @@ const PoiMarker = memo(function PoiMarker({ poi, onPress }) {
         tracksViewChanges={false}
         stopPropagation
         onPress={onPress}
+        accessible
+        accessibilityRole="button"
+        accessibilityLabel={label}
+        accessibilityHint={hint}
       />
     );
   }
 
   return (
-    <Marker coordinate={coordinate} anchor={ANCHOR} tracksViewChanges={false} stopPropagation onPress={onPress}>
-      <View style={styles.wrap}>
+    <Marker
+      coordinate={coordinate}
+      anchor={ANCHOR}
+      tracksViewChanges={false}
+      stopPropagation
+      onPress={onPress}
+      accessible
+      accessibilityRole="button"
+      accessibilityLabel={label}
+      accessibilityHint={hint}
+    >
+      <View style={styles.wrap} importantForAccessibility="no-hide-descendants">
         <Image source={IMAGE} style={styles.img} resizeMode="contain" fadeDuration={0} />
       </View>
     </Marker>

@@ -44,7 +44,15 @@ export default function PoiSheet({ poi, onClose, style, inline = false }) {
     <View style={[inline ? styles.sheetInline : styles.sheet, style]}>
       {poi.photo && (
         <View style={[styles.photoWrap, inline && styles.photoWrapInline]}>
-          <Image source={{ uri: poi.photo }} style={styles.photo} contentFit="cover" cachePolicy="disk" transition={150} />
+          <Image
+            source={{ uri: poi.photo }}
+            style={styles.photo}
+            contentFit="cover"
+            cachePolicy="disk"
+            transition={150}
+            accessible
+            accessibilityLabel={t('poi.a11y.photo', { name: poi.name })}
+          />
           {poi.photoBy && (
             <Text style={styles.photoCredit} numberOfLines={1}>
               {poi.photoBy} · {poi.photoLic}
@@ -54,9 +62,14 @@ export default function PoiSheet({ poi, onClose, style, inline = false }) {
       )}
 
       <View style={styles.head}>
-        <View style={styles.diamond} />
-        <Text style={styles.title} numberOfLines={2}>{poi.name}</Text>
-        <TouchableOpacity onPress={onClose} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
+        <View style={styles.diamond} accessible={false} importantForAccessibility="no" />
+        <Text style={styles.title} numberOfLines={2} accessibilityRole="header">{poi.name}</Text>
+        <TouchableOpacity
+          onPress={onClose}
+          hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+          accessibilityRole="button"
+          accessibilityLabel={t('poi.a11y.close')}
+        >
           <Ionicons name="close" size={22} color={theme.textSecondary} />
         </TouchableOpacity>
       </View>
@@ -84,6 +97,8 @@ export default function PoiSheet({ poi, onClose, style, inline = false }) {
             style={styles.btn}
             onPress={() => { track('poi_wiki'); Linking.openURL(url).catch(() => {}); }}
             activeOpacity={0.85}
+            accessibilityRole="link"
+            accessibilityLabel={t('poi.a11y.more')}
           >
             <Text style={styles.btnText}>{t('hunt.poiMore')} ↗</Text>
           </TouchableOpacity>
