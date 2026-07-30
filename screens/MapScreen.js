@@ -30,6 +30,20 @@ import { track } from '../services/analytics';
 // Refus de localisation déjà signalé pour ce lancement de l'app (voir plus bas).
 let _deniedReported = false;
 
+// Photographie de la configuration d'affichage, pour la mesure d'usage.
+// Uniquement des chaînes et des nombres : Aptabase rejette tout le reste.
+// Les listes sont triées, sinon deux configurations identiques produiraient
+// des valeurs différentes selon l'ordre des clics.
+function filtersSignature(filters, poiPrefs) {
+  return {
+    statuses: [...filters.statuses].sort().join(',') || 'none',
+    flashed: filters.flashedState,
+    poi: poiPrefs.enabled ? 'on' : 'off',
+    poiFamilies: [...poiPrefs.families].sort().join(',') || 'none',
+    poiFamilyCount: poiPrefs.families.size,
+  };
+}
+
 
 // ─── Cache de styles thémés (un seul StyleSheet par thème) ───────────────────
 let _styleCache = null;
@@ -237,6 +251,29 @@ export default function MapScreen({ navigation, route }) {
   const [selected, setSelected] = useState(null);
   const [selectedPoi, setSelectedPoi] = useState(null);
   const [showFilters, setShowFilters] = useState(false);
+  // Configuration des filtres au moment de l'ouverture du panneau, pour ne
+  // mesurer QUE la configuration retenue à la fermeture. Un événement par
+  // bascule aurait produit cinq lignes pour une seule intention (« je veux voir
+  // les non flashés et masquer les détruits »), et brouillé la lecture autant
+  // qu'il aurait coûté de quota.
+  const filtersAtOpen = useRef(null);
+
+  // Le panneau se ferme par SIX chemins différents (bouton, tap sur un marqueur,
+  // sélection d'un lieu…). On surveille donc la transition ouvert → fermé plutôt
+  // que de patcher chaque appelant, sinon la mesure manquerait la moitié des cas.
+  useEffect(() => {
+    if (showFilters) {
+      filtersAtOpen.current = filtersSignature(filters, poiPrefs);
+      return;
+    }
+    const avant = filtersAtOpen.current;
+    filtersAtOpen.current = null;
+    if (!avant) return;
+    const apres = filtersSignature(filters, poiPrefs);
+    // Rien touché → rien à dire. Ouvrir et refermer le panneau n'est pas un choix.
+    if (JSON.stringify(avant) === JSON.stringify(apres)) return;
+    track('filters_applied', apres);
+  }, [showFilters]); // eslint-disable-line react-hooks/exhaustive-deps
   // On n'ajoute les marqueurs qu'une fois la MKMapView prête : ajouter des
   // annotations pendant son initialisation (démarrage à froid) peut la faire crasher.
   const [mapReady, setMapReady] = useState(false);

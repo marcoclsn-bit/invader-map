@@ -14,6 +14,7 @@ import { getCityData, loadCityData, checkCityForUpdate } from '../services/invad
 import { CITIES } from '../cities/registry';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
+import { track } from '../services/analytics';
 
 const BELL_HINT_KEY = '@invader_news_bell_hint'; // '1' une fois l'infobulle vue
 
@@ -312,7 +313,13 @@ export default function NewsScreen({ navigation }) {
         <View style={styles.headerRight}>
           {/* Cloche : active/désactive les alertes de nouveautés */}
           <TouchableOpacity
-            onPress={() => { dismissBellHint(); setNewsNotifyPref(!newsNotify); }}
+            onPress={() => {
+              dismissBellHint();
+              // `from` distingue les deux entrées : si la cloche l'emporte
+              // largement, le réglage des Actus n'est pas trouvé dans Réglages.
+              track('news_notify', { state: newsNotify ? 'off' : 'on', from: 'news' });
+              setNewsNotifyPref(!newsNotify);
+            }}
             hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
           >
             <Ionicons

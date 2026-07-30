@@ -200,14 +200,14 @@ export default function StrollScreen({ navigation }) {
           <ToggleRow
             label={t('stroll.vibration')}
             value={stroll.vibration}
-            onValueChange={(v) => setStrollPref({ vibration: v })}
+            onValueChange={(v) => { track('stroll_setting', { setting: 'vibration', state: v ? 'on' : 'off' }); setStrollPref({ vibration: v }); }}
             disabled={off}
             theme={theme}
           />
           <ToggleRow
             label={t('stroll.notification')}
             value={stroll.notification}
-            onValueChange={(v) => setStrollPref({ notification: v })}
+            onValueChange={(v) => { track('stroll_setting', { setting: 'notification', state: v ? 'on' : 'off' }); setStrollPref({ notification: v }); }}
             disabled={off}
             theme={theme}
             last

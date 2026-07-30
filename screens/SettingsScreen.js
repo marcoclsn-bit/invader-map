@@ -13,6 +13,7 @@ import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import { PALETTE, ALL_STATUSES } from '../constants';
 import { SUPPORTED_LANGUAGES } from '../i18n';
+import { track } from '../services/analytics';
 
 // ─── Sélecteur de couleur ─────────────────────────────────────────────────────
 
@@ -187,7 +188,7 @@ export default function SettingsScreen({ navigation }) {
           trailing={
             <Switch
               value={newsNotify}
-              onValueChange={setNewsNotifyPref}
+              onValueChange={(v) => { track('news_notify', { state: v ? 'on' : 'off', from: 'settings' }); setNewsNotifyPref(v); }}
               trackColor={{ false: theme.border, true: theme.accent }}
               thumbColor={theme.bg}
               ios_backgroundColor={theme.border}

@@ -25,10 +25,10 @@ Contact : **invader.quest.app@gmail.com**
 
 InvaderQuest **ne crée pas de compte** et **ne dispose d'aucun serveur** vous
 concernant. Nous ne collectons, ne stockons et ne vendons **aucune** donnée
-personnelle sur nos propres infrastructures. Il n'y a **ni publicité, ni traceur publicitaire, ni profilage**. L'application
-effectue en revanche une **mesure d'usage anonyme et agrégée**, décrite à la
-section 5 : elle ne permet ni de vous identifier, ni de vous suivre d'une
-application à l'autre.
+personnelle sur nos propres infrastructures. Il n'y a **ni publicité, ni traceur
+publicitaire, ni profilage**. L'application effectue en revanche une **mesure
+d'usage anonyme et agrégée**, décrite à la section 5 : elle ne permet ni de vous
+identifier, ni de vous suivre d'une application à l'autre.
 
 ---
 
@@ -130,6 +130,11 @@ Lorsque vous utilisez la fonction de partage, l'application génère une image
 récapitulative **sur votre appareil** et l'ouvre dans la feuille de partage de votre
 téléphone. Vous seul(e) décidez si et où vous la partagez. L'application ne publie
 rien en votre nom.
+
+Le visuel d'une chasse ou d'un trajet peut inclure une **carte du secteur parcouru**
+(fond fourni par Mapbox / OpenStreetMap). Le tracé affiché est volontairement
+**rogné à ses deux extrémités** afin de ne pas révéler votre point de départ ni
+votre point d'arrivée exacts.
 
 ---
 
