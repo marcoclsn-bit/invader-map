@@ -1120,10 +1120,37 @@ export default function ChasseScreen({ route }) {
 
                   <View style={styles.divider} />
 
-                  {/* Budget temps */}
-                  {/* Intitulé en capitales, valeur en casse normale : sans cette
-                      séparation, « TEMPS : 1 H » mettait l'unité en majuscule. */}
-                  <View style={styles.labelRow}>
+                  {/* Transport d'abord : c'est lui qui donne son sens au temps.
+                      Une heure ne veut pas dire la même chose à pied qu'à vélo,
+                      et on choisissait la durée avant de savoir comment on se
+                      déplaçait. L'intitulé passe au-dessus de ses options, comme
+                      « Tu es plutôt… » — les réglages se lisent alors tous de la
+                      même façon : un titre, puis ses choix sur toute la largeur. */}
+                  <Text style={styles.fieldLabel}>{t('hunt.transport')}</Text>
+                  <View style={styles.segmented}>
+                    {[
+                      { key: 'foot-walking',    label: t('hunt.walking'),  icon: 'walk-outline' },
+                      { key: 'cycling-regular', label: t('hunt.cycling'),  icon: 'bicycle-outline' },
+                    ].map(p => (
+                      <TouchableOpacity key={p.key}
+                        style={[styles.segBtn, profile === p.key && styles.segBtnActive]}
+                        onPress={() => setProfile(p.key)}
+                        accessibilityRole="radio"
+                        accessibilityState={{ selected: profile === p.key }}
+                        accessibilityLabel={p.label}
+                      >
+                        <Ionicons name={p.icon} size={15} color={profile === p.key ? theme.bg : theme.textSecondary} />
+                        <Text style={[styles.segBtnText, profile === p.key && styles.segBtnTextActive]}>
+                          {p.label}
+                        </Text>
+                      </TouchableOpacity>
+                    ))}
+                  </View>
+
+                  {/* Budget temps. Intitulé en capitales, valeur en casse normale :
+                      sans cette séparation, « TEMPS : 1 H » mettait l'unité en
+                      majuscule. */}
+                  <View style={[styles.labelRow, { marginTop: 14 }]}>
                     <Text style={styles.fieldLabel}>{t('hunt.timeLabelBare')}</Text>
                     <Text style={styles.labelValue}>{formatBudget(budgetMin)}</Text>
                   </View>
@@ -1138,27 +1165,6 @@ export default function ChasseScreen({ route }) {
                     maximumTrackTintColor={theme.border}
                     thumbTintColor={theme.accent}
                   />
-
-                  {/* Transport */}
-                  <View style={styles.transportRow}>
-                    <Text style={styles.fieldLabel}>{t('hunt.transport')}</Text>
-                    <View style={styles.segmented}>
-                      {[
-                        { key: 'foot-walking',    label: t('hunt.walking'),  icon: 'walk-outline' },
-                        { key: 'cycling-regular', label: t('hunt.cycling'),  icon: 'bicycle-outline' },
-                      ].map(p => (
-                        <TouchableOpacity key={p.key}
-                          style={[styles.segBtn, profile === p.key && styles.segBtnActive]}
-                          onPress={() => setProfile(p.key)}
-                        >
-                          <Ionicons name={p.icon} size={15} color={profile === p.key ? theme.bg : theme.textSecondary} />
-                          <Text style={[styles.segBtnText, profile === p.key && styles.segBtnTextActive]}>
-                            {p.label}
-                          </Text>
-                        </TouchableOpacity>
-                      ))}
-                    </View>
-                  </View>
 
                   {/* Objectif : chasse pure ↔ chasse & visite (villes avec lieux d'intérêt) */}
                   {poiEnabled && (
@@ -1426,11 +1432,13 @@ function makeStyles(t) {
     labelValue: { fontSize: 13, fontWeight: '700', color: t.textPrimary },
     slider: { width: '100%', height: 32, marginBottom: 2 },
 
-    transportRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: 2 },
-    segmented: { flexDirection: 'row', gap: 6 },
+    // Les deux modes occupent toute la largeur, comme les trois segments
+    // d'objectif : un réglage n'a pas de raison d'être serré à droite quand son
+    // voisin s'étale. `flex: 1` sur chaque bouton, pas de largeur fixe.
+    segmented: { flexDirection: 'row', gap: 6, marginTop: 8 },
     segBtn: {
-      flexDirection: 'row', alignItems: 'center', gap: 5,
-      paddingHorizontal: 12, paddingVertical: 7,
+      flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6,
+      paddingHorizontal: 12, paddingVertical: 10,
       borderRadius: 10, backgroundColor: t.surfaceHigh,
     },
     segBtnActive: { backgroundColor: t.accent },
