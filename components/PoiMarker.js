@@ -12,8 +12,13 @@ import { memo } from 'react';
 import { Image, View, StyleSheet, Platform } from 'react-native';
 import { Marker } from 'react-native-maps';
 
+// L'image fait 30 dp de côté sur les deux plateformes, mais le losange n'en
+// occupe que 60 % : la marge transparente sert de zone tactile. Sans elle, le
+// signe était trop petit pour être touché avec précision.
+// (Auparavant iOS rendait l'image à 15 pt et Android à 30 dp, via le même
+// fichier : le losange était deux fois plus gros sur Android.)
 const IMAGE = require('../assets/markers/poi.png');
-const SIZE = 15;
+const SIZE = 30;
 const ANCHOR = { x: 0.5, y: 0.5 };
 
 const PoiMarker = memo(function PoiMarker({ poi, onPress }) {
