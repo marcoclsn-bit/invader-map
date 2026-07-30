@@ -925,6 +925,11 @@
       "newBadge_one": "¡Nuevo trofeo!",
       "newBadge_other": "¡Nuevos trofeos!",
       "points": "PUNTOS"
+    },
+    "noGps": {
+      "title": "Ubicación no disponible",
+      "body": "InvaderQuest necesita tu ubicación para registrar tu recorrido. Sin ella, tu tarjeta final estaría vacía.",
+      "settings": "Abrir ajustes"
     }
   },
   "share": {

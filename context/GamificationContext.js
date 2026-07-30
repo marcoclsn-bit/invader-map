@@ -4,6 +4,7 @@ import { makeSession, invaderIdsInRange } from '../utils/session';
 import { BADGES, evaluateBadges, getBadge } from '../data/badges';
 import { loadSessions, addSession } from '../services/sessionStore';
 import { loadUnlocked, saveUnlocked } from '../services/badgeStore';
+import { track } from '../services/analytics';
 
 const Ctx = createContext(null);
 
@@ -59,7 +60,17 @@ export function GamificationProvider({ children }) {
 
     // Session « vide » (rien flashé, ~aucune distance) → on n'enregistre pas
     const empty = ids.length === 0 && (!session.distanceKm || session.distanceKm < 0.1);
-    if (opts.skipIfEmpty && empty) return null;
+    if (opts.skipIfEmpty && empty) {
+      // Événement le plus révélateur du tunnel : l'utilisateur a bien démarré et
+      // terminé, mais rien n'a été capté. Distingue « personne ne démarre » de
+      // « on démarre mais l'enregistrement ne marche pas ».
+      track('recap_skipped', {
+        source: session.source ?? 'unknown',
+        distanceKm: Math.round((session.distanceKm ?? 0) * 100) / 100,
+        durationMin: Math.round((session.durationSec ?? 0) / 60),
+      });
+      return null;
+    }
 
     const nextSessions = await addSession(session);
     setSessions(nextSessions);
@@ -69,6 +80,13 @@ export function GamificationProvider({ children }) {
     unlockIds(newBadgeIds, { celebrate: false }); // montrés dans le récap
 
     setPendingRecap({ session, newBadgeIds });
+    track('recap_shown', {
+      source: session.source ?? 'unknown',
+      invaders: ids.length,
+      distanceKm: Math.round((session.distanceKm ?? 0) * 10) / 10,
+      durationMin: Math.round((session.durationSec ?? 0) / 60),
+      badges: newBadgeIds.length,
+    });
     return session;
   }, [flashedDates, getFlashHistory, unlockIds]);
 

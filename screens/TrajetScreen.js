@@ -29,6 +29,7 @@ import HeadingCone from '../components/HeadingCone';
 import InvaderPanel from '../components/InvaderPanel';
 import FlashOverlay from '../components/FlashOverlay';
 import { useSessionRecorder } from '../components/session/useSessionRecorder';
+import useKeepScreenOn from '../components/session/useKeepScreenOn';
 import { useGamification } from '../context/GamificationContext';
 import { useTheme } from '../theme/ThemeContext';
 import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
@@ -301,6 +302,9 @@ export default function TrajetScreen() {
   const city = CITIES[currentCityCode] ?? CITIES.PA;
   const recorder = useSessionRecorder();
   const { recordSession } = useGamification();
+  // Écran maintenu allumé pendant le suivi : sans ça, iOS suspend l'app dès
+  // l'extinction de l'écran et la distance parcourue cesse d'être enregistrée.
+  useKeepScreenOn(following);
   const { theme, isDark } = useTheme();
   const { t } = useTranslation();
   const styles = getStyles(theme);
@@ -792,11 +796,23 @@ export default function TrajetScreen() {
 
   // ─── Sélection / navigation ───────────────────────────────────────────────
 
-  function startFollowing() {
+  async function startFollowing() {
+    // Sans permission, watchPositionAsync échoue et son .catch() avale l'erreur :
+    // le suivi était mort en silence et la session enregistrait 0 km. On le dit.
+    const perm = await Location.getForegroundPermissionsAsync().catch(() => null);
+    if (perm && !perm.granted) {
+      Alert.alert(t('session.noGps.title'), t('session.noGps.body'), [
+        { text: t('common.cancel'), style: 'cancel' },
+        { text: t('session.noGps.settings'), onPress: () => Linking.openSettings().catch(() => {}) },
+      ]);
+      track('run_start_blocked', { source: 'route', reason: 'no_gps' });
+      return;
+    }
     setFollowing(true);
     setDrifted(false);
     // Démarre l'enregistrement de session (récap + partage à l'arrêt)
     recorder.begin({ source: 'route', city: currentCityCode, routeCoords });
+    track('run_start', { source: 'route', city: currentCityCode });
     if (gpsRef.current) {
       recorder.addPoint(gpsRef.current[1], gpsRef.current[0]);
       mapRef.current?.animateCamera(
@@ -811,6 +827,11 @@ export default function TrajetScreen() {
     setDrifted(false);
     // Clôt la session → récap + partage (ignoré si rien flashé et < 100 m)
     const draft = recorder.end();
+    track('run_stop', {
+      source: 'route',
+      distanceKm: draft ? Math.round((draft.distanceKm ?? 0) * 10) / 10 : 0,
+      durationMin: draft ? Math.round((Date.now() - new Date(draft.startedAt).getTime()) / 60000) : 0,
+    });
     if (draft) recordSession(draft, { skipIfEmpty: true });
   }
 

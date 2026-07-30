@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useMemo } from 'react';
 import {
   StyleSheet, View, Text, TextInput, TouchableOpacity, ActivityIndicator,
-  FlatList, Switch, ScrollView, Keyboard, Platform, KeyboardAvoidingView, Linking,
+  FlatList, Switch, ScrollView, Keyboard, Platform, KeyboardAvoidingView, Linking, Alert,
 } from 'react-native';
 import { Image } from 'expo-image';
 import MapView, { Polyline, Marker, Polygon } from 'react-native-maps';
@@ -27,6 +27,7 @@ import PinMarker from '../components/PinMarker';
 import HeadingCone from '../components/HeadingCone';
 import { openNavigationApp } from '../utils/navigation';
 import { useSessionRecorder } from '../components/session/useSessionRecorder';
+import useKeepScreenOn from '../components/session/useKeepScreenOn';
 import { useGamification } from '../context/GamificationContext';
 import { canUseFeature, FEATURES } from '../services/featureAccess';
 import { getPois, hasPois, wikiUrl, summaryOf } from '../services/poiData';
@@ -479,6 +480,9 @@ export default function ChasseScreen({ route }) {
   // Enregistreur de session (distance via le watch GPS de la navigation)
   const recorder = useSessionRecorder();
   const { recordSession } = useGamification();
+  // Écran maintenu allumé pendant le suivi : sans ça, iOS suspend l'app dès
+  // l'extinction de l'écran et la distance parcourue cesse d'être enregistrée.
+  useKeepScreenOn(following);
 
   // ─── GPS ──────────────────────────────────────────────────────────────────
   const [gpsReady, setGpsReady] = useState(false);
@@ -797,11 +801,26 @@ export default function ChasseScreen({ route }) {
   }
 
   // ─── Navigation ───────────────────────────────────────────────────────────
-  function startFollowing() {
+  async function startFollowing() {
+    // Sans permission, watchPositionAsync échoue et son .catch() avale l'erreur :
+    // le suivi était mort en silence et la session enregistrait 0 km. On le dit.
+    const perm = await Location.getForegroundPermissionsAsync().catch(() => null);
+    if (perm && !perm.granted) {
+      Alert.alert(t('session.noGps.title'), t('session.noGps.body'), [
+        { text: t('common.cancel'), style: 'cancel' },
+        { text: t('session.noGps.settings'), onPress: () => Linking.openSettings().catch(() => {}) },
+      ]);
+      track('run_start_blocked', { source: 'hunt', reason: 'no_gps' });
+      return;
+    }
     setFollowing(true);
     setDrifted(false);
     // Démarre l'enregistrement de session (distance + trajet)
     recorder.begin({ source: 'hunt', city: currentCityCode, routeCoords: result?.routeCoords });
+    track('run_start', {
+      source: 'hunt', city: currentCityCode,
+      objective: poiPrefs.objective, budgetMin, steps: result?.invaders?.length ?? 0,
+    });
     if (gpsRef.current) {
       recorder.addPoint(gpsRef.current[1], gpsRef.current[0]);
       mapRef.current?.animateCamera(
@@ -816,6 +835,11 @@ export default function ChasseScreen({ route }) {
     setDrifted(false);
     // Clôt la session → récap + check badges (ignorée si rien ne s'est passé)
     const draft = recorder.end();
+    track('run_stop', {
+      source: 'hunt',
+      distanceKm: draft ? Math.round((draft.distanceKm ?? 0) * 10) / 10 : 0,
+      durationMin: draft ? Math.round((Date.now() - new Date(draft.startedAt).getTime()) / 60000) : 0,
+    });
     if (draft) recordSession(draft, { skipIfEmpty: true });
   }
 

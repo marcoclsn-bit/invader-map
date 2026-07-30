@@ -925,6 +925,11 @@
       "newBadge_one": "Nouveau trophée !",
       "newBadge_other": "Nouveaux trophées !",
       "points": "POINTS"
+    },
+    "noGps": {
+      "title": "Position indisponible",
+      "body": "InvaderQuest a besoin de votre position pour enregistrer votre parcours. Sans elle, votre carte de fin serait vide.",
+      "settings": "Ouvrir les réglages"
     }
   },
   "share": {

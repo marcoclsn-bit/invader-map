@@ -12,6 +12,7 @@ import ShareStory, { STORY_W, STORY_H, buildStaticMap, trimRouteEnds } from '../
 import { captureAndShare } from '../../services/shareStory';
 import { reserveMapboxCall } from '../../services/routing';
 import { MAPBOX_TOKEN } from '../../config/mapbox';
+import { track } from '../../services/analytics';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -55,6 +56,7 @@ export default function SessionRecap() {
 
   async function onShare() {
     setBusy(true);
+    track('share_tap', { source: session.source ?? 'unknown', invaders: session.invaderIds?.length ?? 0 });
     // Carte réelle Mapbox en fond (1 appel, compté dans le plafond quotidien).
     // Si pas de token / plafond atteint / hors-ligne → repli sur le fond stylisé.
     let map = null;
@@ -71,6 +73,9 @@ export default function SessionRecap() {
     const r = await captureAndShare(storyRef);
     setShareMap(null);
     setBusy(false);
+    // `map` distingue la carte Mapbox réelle du repli stylisé : si le repli
+    // domine, c'est que le plafond quotidien ou le réseau posent problème.
+    track('share_done', { result: r ?? 'ok', background: map ? 'mapbox' : 'fallback' });
     if (r === 'unavailable') Alert.alert('InvaderQuest', t('share.unavailable'));
   }
 

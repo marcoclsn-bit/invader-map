@@ -925,6 +925,11 @@
       "newBadge_one": "New trophy!",
       "newBadge_other": "New trophies!",
       "points": "POINTS"
+    },
+    "noGps": {
+      "title": "Location unavailable",
+      "body": "InvaderQuest needs your location to record your route. Without it, your summary card would be empty.",
+      "settings": "Open settings"
     }
   },
   "share": {
