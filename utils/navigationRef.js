@@ -24,3 +24,16 @@ export function focusInvaderOnMap(invId, { onCity } = {}, attempt = 0) {
     setTimeout(() => focusInvaderOnMap(invId, { onCity }, attempt + 1), 150);
   }
 }
+
+/**
+ * Ouvre l'écran Actus (tiroir latéral, pas un onglet).
+ * Même réessai que ci-dessus : au démarrage à froid depuis une notification, la
+ * navigation n'est pas encore montée et l'app resterait sur la Carte.
+ */
+export function openNews(attempt = 0) {
+  if (navigationRef.isReady()) {
+    navigationRef.navigate('Main', { screen: 'News' });
+  } else if (attempt < 20) {
+    setTimeout(() => openNews(attempt + 1), 150);
+  }
+}

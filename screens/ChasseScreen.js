@@ -56,6 +56,18 @@ const DENSITY_RADIUS_KM = 0.25;  // rayon de voisinage (~250 m à pied)
 // Facteur de détour : le vol d'oiseau sous-estime la distance réelle par les rues.
 // Appliqué au calcul de temps interne pour que la durée réelle colle au budget.
 const STREET_DETOUR = 1.2;
+// Aucune étape ne peut à elle seule ajouter plus que cette fraction du budget.
+// Sans ce plafond, le remplissage final acceptait n'importe quoi tant qu'il
+// « restait du temps » : un Invader à 10 points pour 12 min de détour passait.
+const DETOUR_CAP_FRACTION = 0.08;
+const maxDetourMin = (budgetMin) => Math.max(4, budgetMin * DETOUR_CAP_FRACTION);
+// Nettoyage final : une étape dont le rendement (valeur ÷ minutes qu'elle coûte)
+// tombe sous ce ratio de la médiane de la chasse, ET qui coûte au moins ce
+// temps, est un « éperon » — un aller-retour isolé loin du reste du parcours.
+// Seuil RELATIF à chaque chasse, donc valable aussi bien dans le Marais dense
+// qu'en périphérie, et sur 30 min comme sur 3 h.
+const OUTLIER_RATIO = 0.25;
+const OUTLIER_MIN_MIN = 6;
 const DEBOUNCE_MS = 300;
 
 // ─── Haversine ────────────────────────────────────────────────────────────────
@@ -89,6 +101,38 @@ function tourTotalMin(order, startLat, startLon, speedKmPerMin) {
   }
   t += (haversineKm(curLat, curLon, startLat, startLon) / speedKmPerMin) * STREET_DETOUR; // retour
   return t;
+}
+
+// Valeur d'une étape pour le nettoyage. Les lieux valent 30, milieu de la plage
+// que leur donne stepValue selon l'objectif (15 en Chasse pure → 51 en Visite).
+const outlierValue = (step) => (step.isPoi ? 30 : step.points);
+
+// Retire les « éperons » : les étapes dont le retrait libère beaucoup de temps
+// pour peu de valeur perdue. Le coût d'une étape est mesuré par son coût
+// MARGINAL réel — ce que la boucle gagnerait sans elle — et non par sa distance
+// au départ : un point éloigné mais sur le chemin ne coûte presque rien, alors
+// qu'un point proche mais à contresens peut coûter très cher.
+// Passe locale, sans appel réseau (0,3 ms au pire sur 46 étapes).
+function dropOutliers(order, startLat, startLon, speedKmPerMin) {
+  let cur = order;
+  for (let pass = 0; pass < 6 && cur.length > 3; pass++) {
+    const base = tourTotalMin(cur, startLat, startLon, speedKmPerMin);
+    const marg = cur.map((step, i) => {
+      const without = cur.slice(0, i).concat(cur.slice(i + 1));
+      const saved = base - tourTotalMin(without, startLat, startLon, speedKmPerMin);
+      return { i, saved, yield: outlierValue(step) / Math.max(saved, 0.1) };
+    });
+    const sorted = marg.map(m => m.yield).sort((a, b) => a - b);
+    const mid = sorted.length >> 1;
+    const median = sorted.length % 2 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
+    const bad = marg.filter(m => m.yield < OUTLIER_RATIO * median && m.saved >= OUTLIER_MIN_MIN);
+    if (!bad.length) break;
+    // Un seul retrait par passe : enlever l'éperon change les coûts marginaux
+    // de ses voisins, il faut donc tout recalculer avant d'en retirer un autre.
+    const worst = bad.reduce((a, b) => (a.saved > b.saved ? a : b));
+    cur = cur.slice(0, worst.i).concat(cur.slice(worst.i + 1));
+  }
+  return cur;
 }
 
 // Points des Invaders voisins (dans DENSITY_RADIUS_KM) pour chaque Invader du pool.
@@ -177,6 +221,7 @@ function refill(order, remaining, startLat, startLon, budgetMin, speedKmPerMin, 
         const tTotal = tourTotalMin(trial, startLat, startLon, speedKmPerMin);
         if (tTotal <= budgetMin) {
           const added = tTotal - baseTime;               // temps ajouté par l'insertion
+          if (added > maxDetourMin(budgetMin)) continue; // détour disproportionné pour une seule étape
           const gain  = inv.points / Math.max(added, 0.1); // points par minute ajoutée
           if (gain > bestGain) { bestGain = gain; bestCand = c; bestPos = p; }
         }
@@ -212,6 +257,7 @@ function insertPois(order, pois, startLat, startLon, budgetMin, speedKmPerMin, a
         const tTotal = tourTotalMin(trial, startLat, startLon, speedKmPerMin);
         if (tTotal <= budgetMin) {
           const addedMin = tTotal - baseTime;
+          if (addedMin > maxDetourMin(budgetMin)) continue; // un monument ne vaut pas 30 min de marche
           // notoriété par minute de détour (fame ~ nb de Wikipédias : 18 → 189)
           const gain = (poi.fame ?? 10) / Math.max(addedMin, 0.1);
           if (gain > bestGain) { bestGain = gain; bestCand = c; bestPos = p; }
@@ -231,7 +277,12 @@ function insertPois(order, pois, startLat, startLon, budgetMin, speedKmPerMin, a
 function planHunt(startLon, startLat, candidates, budgetMin, speedKmh, opts = {}) {
   const { pois = [], alpha = 0 } = opts;
   const speedKmPerMin = speedKmh / 60;
-  const maxRadiusKm = (budgetMin * speedKmPerMin) / 2;
+  // Rayon d'admission. L'ancienne formule — (budget × vitesse) / 2 — autorisait
+  // des points dont le SEUL aller-retour dépassait le budget entier : 2,5 km pour
+  // une heure de marche, soit 72 min rien qu'en trajet, détour de rues compris.
+  // On ne consacre donc que la moitié du budget à l'éloignement, et on paie le
+  // détour : l'autre moitié reste pour la boucle et les visites.
+  const maxRadiusKm = (budgetMin * 0.5 * speedKmPerMin) / (2 * STREET_DETOUR);
   const pool = candidates.filter(inv =>
     inv.status !== 'destroyed' &&
     haversineKm(startLat, startLon, inv.lat, inv.lng) <= maxRadiusKm
@@ -259,7 +310,12 @@ function planHunt(startLon, startLat, candidates, budgetMin, speedKmh, opts = {}
       .map(p => ({ ...p, isPoi: true }));
     selected = insertPois(selected, nearPois, startLat, startLon, budgetMin, speedKmPerMin, alpha);
   }
-  return selected;
+
+  // Dernier mot : on retire les éperons. Le plafond ci-dessus protège le
+  // remplissage, mais pas le glouton initial, qui peut partir loin dès son
+  // premier choix. Cette passe voit la boucle entière et ne peut jamais tout
+  // vider (elle s'arrête à 3 étapes).
+  return dropOutliers(selected, startLat, startLon, speedKmPerMin);
 }
 
 // Tolérance de dépassement acceptée (le budget est une cible, pas une limite dure).
@@ -366,18 +422,33 @@ function getStyles(theme) {
 
 // ─── Ligne de résultat ────────────────────────────────────────────────────────
 
+// Une fois flashée, la ligne s'éteint : pastille grise, ✓ à la place du rang.
+// On la garde en place plutôt que de la retirer — voir ce qu'on a accompli fait
+// partie du plaisir, et la numérotation reste alignée avec celle de la carte.
 function HuntRow({ inv, index, isFlashed, statusColors, onPress }) {
   const { theme } = useTheme();
   const { t } = useTranslation();
   const styles = getStyles(theme);
   return (
-    <TouchableOpacity style={styles.huntRow} onPress={onPress} activeOpacity={0.7}>
-      <View style={styles.orderBadge}>
-        <Text style={styles.orderNum}>{index + 1}</Text>
+    <TouchableOpacity
+      style={styles.huntRow}
+      onPress={onPress}
+      activeOpacity={0.7}
+      accessibilityRole="button"
+      accessibilityLabel={`${index + 1}. ${inv.id}, ${inv.points} ${t('common.pts')}`}
+      accessibilityState={{ checked: isFlashed }}
+    >
+      <View style={[styles.orderBadge, isFlashed && styles.orderBadgeDone]}>
+        <Text style={[styles.orderNum, isFlashed && styles.orderNumDone]}>
+          {isFlashed ? '✓' : index + 1}
+        </Text>
       </View>
-      <View style={[styles.huntDot, { backgroundColor: statusColors[inv.status] ?? STATUS_COLOR[inv.status] }]} />
-      <Text style={styles.huntId}>{inv.id}</Text>
-      <Text style={styles.huntPts}>{inv.points} {t('common.pts')}</Text>
+      <View style={[
+        styles.huntDot,
+        { backgroundColor: isFlashed ? theme.textSecondary : (statusColors[inv.status] ?? STATUS_COLOR[inv.status]) },
+      ]} />
+      <Text style={[styles.huntId, isFlashed && styles.huntTextDone]}>{inv.id}</Text>
+      <Text style={[styles.huntPts, isFlashed && styles.huntTextDone]}>{inv.points} {t('common.pts')}</Text>
       {isFlashed && (
         <View style={styles.flashedBadge}>
           <Text style={styles.flashedBadgeText}>✓</Text>
@@ -850,11 +921,17 @@ export default function ChasseScreen({ route }) {
                     </View>
                   </PinMarker>
                 )}
-                {result.invaders.map((inv, i) => (
+                {result.invaders.map((inv, i) => {
+                  // Un Invader flashé s'éteint : pastille grise et ✓ au lieu du rang.
+                  // `done` DOIT entrer dans redrawKey, sinon le bitmap du marqueur
+                  // n'est jamais recapturé et le changement reste invisible.
+                  const done = !inv.isPoi && flashed.has(inv.id);
+                  const sel  = selectedInv?.id === inv.id || selectedPoi?.id === inv.id;
+                  return (
                   <PinMarker key={inv.id} coordinate={{ latitude: inv.lat, longitude: inv.lng }}
                     anchor={{ x: 0.5, y: 0.5 }}
                     onPress={() => (inv.isPoi ? (setSelectedPoi(inv), track('poi_open', { from: 'hunt', theme: inv.theme, lang: i18n.language })) : selectInvader(inv))}
-                    redrawKey={selectedInv?.id === inv.id || selectedPoi?.id === inv.id}>
+                    redrawKey={`${sel}|${done}`}>
                     {inv.isPoi ? (
                       // Lieu d'intérêt : losange doré, impossible à confondre avec un alien
                       <View style={styles.poiMarkerWrap}>
@@ -862,12 +939,15 @@ export default function ChasseScreen({ route }) {
                         <Text style={styles.poiMarkerNum}>{i + 1}</Text>
                       </View>
                     ) : (
-                      <View style={[styles.huntMarker, selectedInv?.id === inv.id && styles.huntMarkerSel]}>
-                        <Text style={styles.huntMarkerNum}>{i + 1}</Text>
+                      <View style={[styles.huntMarker, done && styles.huntMarkerDone, sel && styles.huntMarkerSel]}>
+                        <Text style={[styles.huntMarkerNum, done && styles.huntMarkerNumDone]}>
+                          {done ? '✓' : i + 1}
+                        </Text>
                       </View>
                     )}
                   </PinMarker>
-                ))}
+                  );
+                })}
               </>
             )}
             {!isChangingCity && <HeadingCone userLocation={userPos} heading={userHeading} />}
@@ -1188,6 +1268,9 @@ export default function ChasseScreen({ route }) {
             <FlatList
               data={result.invaders}
               keyExtractor={inv => inv.id}
+              // Sans extraData, une ligne déjà rendue ne se rafraîchit pas quand
+              // `flashed` change : le ✓ n'apparaîtrait qu'au prochain recyclage.
+              extraData={flashed}
               style={styles.resultList}
               renderItem={({ item: inv, index }) =>
                 inv.isPoi ? (
@@ -1407,7 +1490,11 @@ function makeStyles(t) {
       shadowColor: '#000', shadowOffset: { width: 0, height: 1 }, shadowOpacity: 0.2, shadowRadius: 2,
     },
     huntMarkerSel: { backgroundColor: t.textPrimary, borderColor: t.accent },
+    // Flashé : la pastille s'éteint sans disparaître. Bordure conservée pour
+    // rester lisible sur un fond de carte clair comme sur un fond sombre.
+    huntMarkerDone: { backgroundColor: t.textSecondary, borderColor: t.surface, opacity: 0.75 },
     huntMarkerNum: { color: t.bg, fontSize: 11, fontWeight: '700' },
+    huntMarkerNumDone: { color: t.surface, fontSize: 13 },
 
     // ── Lieux d'intérêt (or, jamais vert : on ne confond pas avec un Invader) ──
     poiMarkerWrap: { width: 28, height: 28, alignItems: 'center', justifyContent: 'center' },
@@ -1504,6 +1591,9 @@ function makeStyles(t) {
       alignItems: 'center', justifyContent: 'center', flexShrink: 0,
     },
     orderNum: { color: t.bg, fontSize: 11, fontWeight: '700' },
+    orderBadgeDone: { backgroundColor: t.textSecondary },
+    orderNumDone: { color: t.surface, fontSize: 12 },
+    huntTextDone: { color: t.textSecondary, textDecorationLine: 'line-through' },
     huntDot: { width: 10, height: 10, borderRadius: 5, flexShrink: 0 },
     huntId: { fontWeight: '600', fontSize: 14, color: t.textPrimary, width: 80 },
     huntPts: { fontSize: 13, color: t.textSecondary, flex: 1 },

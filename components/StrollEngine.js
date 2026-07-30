@@ -5,7 +5,7 @@ import { useAppContext } from '../context/AppContext';
 import {
   persistCandidates, persistNotifStrings, startStroll, stopStroll,
 } from '../services/strollEngine';
-import { focusInvaderOnMap } from '../utils/navigationRef';
+import { focusInvaderOnMap, openNews } from '../utils/navigationRef';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Pont React → moteur de proximité (services/strollEngine).
@@ -61,10 +61,14 @@ export default function StrollEngine() {
     return () => { cancelled = true; };
   }, [loaded, stroll.enabled, stroll.radius, stroll.alertStatuses]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Tap sur une notification de proximité → carte + fiche de l'Invader
+  // Routeur de notifications de l'app. Ce composant est monté sans condition
+  // (App.js), c'est donc ici que TOUS les types de notification sont aiguillés,
+  // pas seulement celles de la Balade.
   useEffect(() => {
     function handleResponse(response) {
       const data = response?.notification?.request?.content?.data;
+      // Actus (services/newsNotify.js) → écran Actus du tiroir
+      if (data?.type === 'news') { openNews(); return; }
       if (data?.type !== 'stroll' || !data.invId) return;
       const { currentCityCode: cc, setCurrentCity: setCity } = dataRef.current;
       focusInvaderOnMap(data.invId, {
