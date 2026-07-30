@@ -518,7 +518,9 @@
       "newVersion": "Nueva versión instalada ({{v}})",
       "offline": "Sin conexión — inténtalo más tarde",
       "updateError": "Error de actualización",
-      "replayPoiIntro": "Volver a ver la invitación «Lugares que ver»"
+      "replayPoiIntro": "Volver a ver la invitación «Lugares que ver»",
+      "poiVersion": "Lugares que ver",
+      "newPoiVersion": "Lugares actualizados"
     },
     "language": {
       "section": "Idioma",

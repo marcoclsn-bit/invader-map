@@ -518,7 +518,9 @@
       "newVersion": "New version installed ({{v}})",
       "offline": "Offline — try again later",
       "updateError": "Update error",
-      "replayPoiIntro": "Show the “Places to see” invitation again"
+      "replayPoiIntro": "Show the “Places to see” invitation again",
+      "poiVersion": "Places to see",
+      "newPoiVersion": "Places updated"
     },
     "language": {
       "section": "Language",

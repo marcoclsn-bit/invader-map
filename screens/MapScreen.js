@@ -24,6 +24,7 @@ import { useTheme } from '../theme/ThemeContext';
 import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
 import { typography } from '../theme/tokens';
 import { openNavigationApp } from '../utils/navigation';
+import { track } from '../services/analytics';
 
 
 // ─── Cache de styles thémés (un seul StyleSheet par thème) ───────────────────
@@ -145,7 +146,7 @@ function FilterPanel({ filters, onFiltersChange, onClose }) {
             <Text style={[styles.sectionTitle, { marginTop: 0 }]}>{t('poi.section')}</Text>
             <Switch
               value={poiPrefs.enabled}
-              onValueChange={(v) => setPoiPref({ enabled: v })}
+              onValueChange={(v) => { setPoiPref({ enabled: v }); track('poi_layer', { on: v }); }}
               trackColor={{ false: theme.border, true: theme.accentScore }}
               thumbColor={theme.bg}
             />
@@ -192,7 +193,7 @@ function FilterPanel({ filters, onFiltersChange, onClose }) {
 // ─── Écran carte ──────────────────────────────────────────────────────────────
 
 export default function MapScreen({ navigation, route }) {
-  const { invaders, flashed, labels, labelDefs, statusColors, colorOverrides, filters, setFilters, toggleFlash, mapsApp, setMapsAppPref, currentCityCode, isChangingCity, pendingCityCode, legendSeen, dismissLegend, poiPrefs, poiIntroSeen } = useAppContext();
+  const { invaders, flashed, labels, labelDefs, statusColors, colorOverrides, filters, setFilters, toggleFlash, mapsApp, setMapsAppPref, currentCityCode, isChangingCity, pendingCityCode, legendSeen, dismissLegend, poiPrefs, poiIntroSeen, poiDataVersion } = useAppContext();
   const city = CITIES[currentCityCode] ?? CITIES.PA;
   const overlayName = (pendingCityCode ? CITIES[pendingCityCode]?.name : null) ?? city.name;
   const { theme, isDark } = useTheme();
@@ -470,7 +471,7 @@ export default function MapScreen({ navigation, route }) {
     return getPois(currentCityCode)
       .filter(p => renderPoi.families.has(familyOf(p)))
       .sort((a, b) => b.fame - a.fame);   // les plus notoires montés en premier
-  }, [renderPoi, currentCityCode]);
+  }, [renderPoi, currentCityCode, poiDataVersion]);
 
   // Révélation progressive, comme pour les Invaders : on étale le montage sur
   // plusieurs frames au lieu d'en bloquer une seule. Le compteur n'est jamais
@@ -544,7 +545,10 @@ export default function MapScreen({ navigation, route }) {
           <PoiMarker
             key={`poi-${poi.id}`}
             poi={poi}
-            onPress={() => { setSelectedPoi(poi); setSelected(null); setShowFilters(false); }}
+            onPress={() => {
+              setSelectedPoi(poi); setSelected(null); setShowFilters(false);
+              track('poi_open', { from: 'map', theme: poi.theme });
+            }}
           />
         ))}
       </MapView>

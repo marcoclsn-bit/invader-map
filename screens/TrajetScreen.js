@@ -34,6 +34,7 @@ import { useTheme } from '../theme/ThemeContext';
 import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
 import { typography } from '../theme/tokens';
 import { openInstagramTag, openNavigationApp } from '../utils/navigation';
+import { track } from '../services/analytics';
 
 const _PA         = CITIES.PA;
 const PARIS       = { latitude: _PA.center.lat, longitude: _PA.center.lng, ..._PA.mapDelta };
@@ -296,7 +297,7 @@ export default function TrajetScreen() {
   const depDebounce = useRef(null);
   const arrDebounce = useRef(null);
 
-  const { invaders, flashed, toggleFlash, labels, labelDefs, colorOverrides, statusColors, mapsApp, setMapsAppPref, currentCityCode, isChangingCity, poiPrefs, setPoiPref } = useAppContext();
+  const { invaders, flashed, toggleFlash, labels, labelDefs, colorOverrides, statusColors, mapsApp, setMapsAppPref, currentCityCode, isChangingCity, poiPrefs, setPoiPref, poiDataVersion } = useAppContext();
   const city = CITIES[currentCityCode] ?? CITIES.PA;
   const recorder = useSessionRecorder();
   const { recordSession } = useGamification();
@@ -475,7 +476,7 @@ export default function TrajetScreen() {
       setRoutePois([]);
     }
     setSelectedRoutePoi(null);
-  }, [routeCoords, bufferKm, poiPrefs, currentCityCode]);
+  }, [routeCoords, bufferKm, poiPrefs, currentCityCode, poiDataVersion]);
 
   // ─── Cadrage carte — déclenché après que routeInvaders est commité ────────
   // À ce stade le panneau résultat (260 px) est déjà rendu, donc la MapView a
@@ -995,7 +996,7 @@ export default function TrajetScreen() {
             <PoiMarker
               key={`poi-${poi.id}`}
               poi={poi}
-              onPress={() => { setSelectedRoutePoi(poi); setSelectedRouteInv(null); }}
+              onPress={() => { setSelectedRoutePoi(poi); setSelectedRouteInv(null); track('poi_open', { from: 'route', theme: poi.theme }); }}
             />
           ))}
           {!isChangingCity && <HeadingCone userLocation={userPos} heading={userHeading} />}
@@ -1212,7 +1213,7 @@ export default function TrajetScreen() {
             onSelectInvader={selectRouteInvader}
             onWidenCorridor={() => setInputCollapsed(false)}
             pois={routePois}
-            onSelectPoi={(poi) => { setSelectedRoutePoi(poi); setSelectedRouteInv(null); }}
+            onSelectPoi={(poi) => { setSelectedRoutePoi(poi); setSelectedRouteInv(null); track('poi_open', { from: 'route_list', theme: poi.theme }); }}
           />
         )}
 

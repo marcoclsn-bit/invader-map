@@ -106,7 +106,7 @@ export default function SettingsScreen({ navigation }) {
     newsNotify, setNewsNotifyPref,
     resetLabels, clearFlashDates,
     dataVersion, dataUpdatedAt, checkDataUpdate,
-    resetPoiIntro,
+    resetPoiIntro, checkPoiUpdate, getPoiVersion, poiDataVersion,
   } = useAppContext();
 
   const flashedColor = labelDefs.find((d) => d.id === 'lbl_flashed')?.color;
@@ -116,8 +116,14 @@ export default function SettingsScreen({ navigation }) {
 
   async function handleCheckUpdate() {
     setUpdateStatus('checking');
-    const status = await checkDataUpdate();
-    setUpdateStatus(status);
+    // Le bouton couvre les deux jeux de données : Invaders et lieux à voir.
+    // On garde le statut le plus « parlant » : une mise à jour l'emporte sur
+    // « à jour », qui l'emporte sur une erreur réseau.
+    const [inv, poi] = await Promise.all([
+      checkDataUpdate(),
+      checkPoiUpdate().catch(() => 'offline'),
+    ]);
+    setUpdateStatus(inv.startsWith?.('updated') ? inv : poi === 'updated' ? 'updated_poi' : inv);
   }
 
   function confirmReset() {
@@ -230,6 +236,14 @@ export default function SettingsScreen({ navigation }) {
 
       {/* ── Données ── */}
       <Section title={t('settings.data.section')}>
+        {/* Version des lieux à voir */}
+        <View style={[layout.row, { borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: theme.border }]}>
+          <Text style={[layout.rowLabel, { color: theme.textSecondary }]}>{t('settings.data.poiVersion')}</Text>
+          <Text style={[layout.rowHint, { color: theme.textSecondary }]}>
+            v{getPoiVersion('PA') ?? '—'}
+          </Text>
+        </View>
+
         {/* Version actuelle */}
         <View style={[layout.row, { borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: theme.border }]}>
           <Text style={[layout.rowLabel, { color: theme.textSecondary }]}>{t('settings.data.dataVersion')}</Text>
@@ -256,6 +270,8 @@ export default function SettingsScreen({ navigation }) {
               }]}>
                 {updateStatus === 'up_to_date'
                   ? t('settings.data.upToDate')
+                  : updateStatus === 'updated_poi'
+                  ? t('settings.data.newPoiVersion')
                   : updateStatus.startsWith('updated_v')
                     ? t('settings.data.newVersion', { v: updateStatus.replace('updated_', '') })
                     : updateStatus === 'offline'

@@ -9,6 +9,7 @@ import { enableNewsNotify, disableNewsNotify, syncNewsNotify } from '../services
 import { applyLanguage, LANGUAGE_STORAGE_KEY } from '../i18n';
 import { ENABLED_CITIES, DEFAULT_CITY_CODE, CITIES } from '../cities/registry';
 import { ALL_POI_FAMILIES } from '../data/poiFamilies';
+import { initPoiService, checkPoiUpdate, getPoiVersion } from '../services/poiData';
 
 const AppContext = createContext(null);
 
@@ -132,12 +133,20 @@ export function AppProvider({ children }) {
   }));
   // Invitation « nouveaux lieux » : proposée une seule fois sur la carte.
   const [poiIntroSeen, setPoiIntroSeen] = useState(false);
+  // Incrémenté quand une version plus récente des lieux prend le relais : les
+  // écrans lisent getPois() de façon synchrone, il leur faut ce signal.
+  const [poiDataVersion, setPoiDataVersion] = useState(0);
 
   // Légende des couleurs : affichée sur la carte au 1er usage, puis masquée.
   const [legendSeen, setLegendSeen] = useState(false);
   const [language, setLanguageState] = useState('system');
   const [showOnboarding, setShowOnboarding] = useState(false);
   const [loaded, setLoaded] = useState(false);
+
+  // ─── Lieux d'intérêt : cache + mise à jour distante ──────────────────────────
+  useEffect(() => {
+    initPoiService(() => setPoiDataVersion((v) => v + 1)).catch(() => {});
+  }, []);
 
   // ─── Initialisation du service de données ────────────────────────────────────
   useEffect(() => {
@@ -703,6 +712,7 @@ export function AppProvider({ children }) {
     // Lieux d'intérêt (Carte + Trajet + Chasse)
     poiPrefs, setPoiPref, togglePoiFamily,
     poiIntroSeen, dismissPoiIntro, resetPoiIntro,
+    poiDataVersion, checkPoiUpdate, getPoiVersion,
     mapsApp, setMapsAppPref,
     language, setLanguage,
     showOnboarding, completeOnboarding, resetOnboarding,
@@ -717,7 +727,7 @@ export function AppProvider({ children }) {
     news, newsCities, newsLastSeen, newsUnreadCount, newsNotify,
     legendSeen,
     stroll, mapsApp, language,
-    poiPrefs, poiIntroSeen,
+    poiPrefs, poiIntroSeen, poiDataVersion,
     showOnboarding, loaded,
   ]);
 

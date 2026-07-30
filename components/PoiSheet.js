@@ -11,6 +11,7 @@ import { typography } from '../theme/tokens';
 import { useAppContext } from '../context/AppContext';
 import { wikiUrl } from '../services/poiData';
 import { openNavigationApp } from '../utils/navigation';
+import { track } from '../services/analytics';
 
 let _cache = null;
 function getStyles(theme) {
@@ -81,7 +82,7 @@ export default function PoiSheet({ poi, onClose, style, inline = false }) {
         {url && (
           <TouchableOpacity
             style={styles.btn}
-            onPress={() => Linking.openURL(url).catch(() => {})}
+            onPress={() => { track('poi_wiki'); Linking.openURL(url).catch(() => {}); }}
             activeOpacity={0.85}
           >
             <Text style={styles.btnText}>{t('hunt.poiMore')} ↗</Text>
