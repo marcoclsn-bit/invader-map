@@ -845,6 +845,18 @@ export default function ChasseScreen({ route }) {
 
   // Réinitialise la chasse : efface le résultat, rouvre le panneau du haut,
   // recentre la carte et abandonne une éventuelle session en cours (pas de récap).
+  // Le bouton de recalcul reste accessible PENDANT un parcours, et il détruit la
+  // session sans récap ni carte. C'est la seule perte réelle du parcours : elle
+  // mérite une confirmation, contrairement à « Terminer » qui, lui, produit la carte.
+  function askResetHunt() {
+    if (!recorder.isActive()) { resetHunt(); return; }
+    Alert.alert(t('session.reset.title'), t('session.reset.body'), [
+      { text: t('common.cancel'), style: 'cancel' },
+      { text: t('session.reset.confirm'), style: 'destructive',
+        onPress: () => { track('run_discard', { source: 'hunt' }); resetHunt(); } },
+    ]);
+  }
+
   function resetHunt() {
     recorder.cancel();
     setResult(null);
@@ -1235,11 +1247,18 @@ export default function ChasseScreen({ route }) {
           {/* ── Zone basse : boutons + panel empilés (boutons toujours au-dessus) ── */}
           {!isChangingCity && <View style={styles.bottomZone} pointerEvents="box-none">
 
+            {/* Le bénéfice de « Démarrer » est invisible au moment du choix : on
+                l'annonce, sinon personne ne devine qu'il prépare la carte de fin. */}
+            {result && !following && (
+              <View style={styles.startHintWrap} pointerEvents="none">
+                <Text style={styles.startHint} numberOfLines={2}>{t('session.startHint')}</Text>
+              </View>
+            )}
             {result && (
               <View style={styles.overlayRow} pointerEvents="box-none">
                 {following ? (
                   <TouchableOpacity style={styles.stopBtn} onPress={stopFollowing}>
-                    <Ionicons name="stop-circle-outline" size={18} color="#fff" />
+                    <Ionicons name="flag-outline" size={18} color="#fff" />
                     <Text style={styles.trackBtnText}>{t('hunt.quit')}</Text>
                   </TouchableOpacity>
                 ) : (
@@ -1253,7 +1272,7 @@ export default function ChasseScreen({ route }) {
                       <Ionicons name="locate-outline" size={22} color={theme.accent} />
                     </TouchableOpacity>
                   )}
-                  <TouchableOpacity style={styles.recenterBtn} onPress={resetHunt} accessibilityLabel={t('common.reset')}>
+                  <TouchableOpacity style={styles.recenterBtn} onPress={askResetHunt} accessibilityLabel={t('common.reset')}>
                     <Ionicons name="refresh" size={20} color={theme.accent} />
                   </TouchableOpacity>
                 </View>
@@ -1480,6 +1499,16 @@ function makeStyles(t) {
       paddingHorizontal: 12, paddingBottom: 12, paddingTop: 8,
     },
     rightControls: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+    // Pastille d'annonce au-dessus de « Démarrer ». Fond opaque obligatoire :
+    // posée sur la carte, une simple ligne de texte devient illisible dès qu'elle
+    // passe sur un bâtiment clair ou un parc.
+    startHintWrap: { paddingHorizontal: 12, paddingBottom: 6, alignItems: 'flex-start' },
+    startHint: {
+      fontSize: 11, color: t.textSecondary, backgroundColor: t.surface,
+      borderWidth: 1, borderColor: t.border, borderRadius: 10,
+      paddingHorizontal: 9, paddingVertical: 4, maxWidth: '82%',
+      shadowColor: '#000', shadowOffset: { width: 0, height: 1 }, shadowOpacity: 0.15, shadowRadius: 3, elevation: 2,
+    },
     startBtn: {
       flexDirection: 'row', alignItems: 'center', gap: 6,
       backgroundColor: t.accent, borderRadius: 20,

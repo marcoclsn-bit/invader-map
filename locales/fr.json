@@ -124,7 +124,7 @@
     "corridorInfo": "Le couloir est la distance maximale autour de ton itinéraire dans laquelle l'app cherche des Invaders. Plus il est large, plus tu en vois — mais certains seront un peu plus loin de ton chemin.",
     "loadingRoute": "Recherche de l'itinéraire…",
     "loadingInvaders": "Recherche des Invaders sur le trajet…",
-    "quit": "Quitter",
+    "quit": "Terminer",
     "error": {
       "noArrival": "Saisissez une adresse d'arrivée",
       "noApiKey": "Clé API ORS manquante",
@@ -158,7 +158,7 @@
     "generate": "Générer la chasse",
     "generating": "Calcul de l'itinéraire…",
     "start": "Démarrer",
-    "quit": "Quitter",
+    "quit": "Terminer",
     "waitingGps": "En attente de la position GPS…",
     "resultCount_one": "{{count}} Invader",
     "resultCount_other": "{{count}} Invaders",
@@ -930,6 +930,12 @@
       "title": "Position indisponible",
       "body": "InvaderQuest a besoin de votre position pour enregistrer votre parcours. Sans elle, votre carte de fin serait vide.",
       "settings": "Ouvrir les réglages"
+    },
+    "startHint": "Enregistre ton parcours pour ta carte de fin",
+    "reset": {
+      "title": "Abandonner le parcours ?",
+      "body": "Ton parcours en cours sera perdu, sans carte de fin. Pour la garder, appuie plutôt sur « Terminer ».",
+      "confirm": "Abandonner"
     }
   },
   "share": {

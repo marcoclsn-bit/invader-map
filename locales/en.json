@@ -124,7 +124,7 @@
     "corridorInfo": "The corridor is the maximum distance around your route in which the app searches for Invaders. The wider it is, the more you see — but some will be a bit further from your path.",
     "loadingRoute": "Calculating route…",
     "loadingInvaders": "Finding Invaders on route…",
-    "quit": "Quit",
+    "quit": "Finish",
     "error": {
       "noArrival": "Enter a destination address",
       "noApiKey": "ORS API key missing",
@@ -158,7 +158,7 @@
     "generate": "Generate hunt",
     "generating": "Building your route…",
     "start": "Start",
-    "quit": "Quit",
+    "quit": "Finish",
     "waitingGps": "Waiting for GPS signal…",
     "resultCount_one": "{{count}} Invader",
     "resultCount_other": "{{count}} Invaders",
@@ -930,6 +930,12 @@
       "title": "Location unavailable",
       "body": "InvaderQuest needs your location to record your route. Without it, your summary card would be empty.",
       "settings": "Open settings"
+    },
+    "startHint": "Records your walk for your end-of-run card",
+    "reset": {
+      "title": "Discard this run?",
+      "body": "Your run in progress will be lost, with no summary card. To keep it, tap “Finish” instead.",
+      "confirm": "Discard"
     }
   },
   "share": {

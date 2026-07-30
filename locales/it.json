@@ -124,7 +124,7 @@
     "corridorInfo": "Il corridoio è la distanza massima attorno al tuo percorso in cui l'app cerca Invaders. Più è ampio, più ne vedi — ma alcuni saranno un po' più lontani dal tuo cammino.",
     "loadingRoute": "Calcolo del percorso…",
     "loadingInvaders": "Ricerca Invaders sul percorso…",
-    "quit": "Esci",
+    "quit": "Termina",
     "error": {
       "noArrival": "Inserisci un indirizzo di destinazione",
       "noApiKey": "Chiave API ORS mancante",
@@ -158,7 +158,7 @@
     "generate": "Genera caccia",
     "generating": "Calcolo del percorso…",
     "start": "Avvia",
-    "quit": "Esci",
+    "quit": "Termina",
     "waitingGps": "In attesa del segnale GPS…",
     "resultCount_one": "{{count}} Invader",
     "resultCount_other": "{{count}} Invaders",
@@ -930,6 +930,12 @@
       "title": "Posizione non disponibile",
       "body": "InvaderQuest ha bisogno della tua posizione per registrare il percorso. Senza, la tua scheda finale sarebbe vuota.",
       "settings": "Apri impostazioni"
+    },
+    "startHint": "Registra il percorso per la tua scheda finale",
+    "reset": {
+      "title": "Abbandonare il percorso?",
+      "body": "Il percorso in corso andrà perso, senza scheda finale. Per conservarla, tocca «Termina».",
+      "confirm": "Abbandona"
     }
   },
   "share": {

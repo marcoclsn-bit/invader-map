@@ -124,7 +124,7 @@
     "corridorInfo": "El corredor es la distancia máxima alrededor de tu ruta donde la app busca Invaders. Cuanto más amplio, más ves — pero algunos estarán un poco más lejos de tu camino.",
     "loadingRoute": "Calculando ruta…",
     "loadingInvaders": "Buscando Invaders en la ruta…",
-    "quit": "Salir",
+    "quit": "Terminar",
     "error": {
       "noArrival": "Introduce una dirección de destino",
       "noApiKey": "Clave API ORS no configurada",
@@ -158,7 +158,7 @@
     "generate": "Generar caza",
     "generating": "Calculando la ruta…",
     "start": "Iniciar",
-    "quit": "Salir",
+    "quit": "Terminar",
     "waitingGps": "Esperando señal GPS…",
     "resultCount_one": "{{count}} Invader",
     "resultCount_other": "{{count}} Invaders",
@@ -930,6 +930,12 @@
       "title": "Ubicación no disponible",
       "body": "InvaderQuest necesita tu ubicación para registrar tu recorrido. Sin ella, tu tarjeta final estaría vacía.",
       "settings": "Abrir ajustes"
+    },
+    "startHint": "Graba tu recorrido para tu tarjeta final",
+    "reset": {
+      "title": "¿Abandonar el recorrido?",
+      "body": "Se perderá el recorrido en curso, sin tarjeta final. Para conservarla, pulsa «Terminar».",
+      "confirm": "Abandonar"
     }
   },
   "share": {
