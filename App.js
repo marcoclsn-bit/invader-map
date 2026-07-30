@@ -110,6 +110,12 @@ function DrawerNavigator() {
   );
 }
 
+// Dernier écran mesuré, pour ne pas répéter le même (voir onStateChange).
+// Variable de module plutôt que useRef : AppShell fait deux retours anticipés
+// avant son rendu principal, un hook déclaré après serait conditionnel — et il
+// n'existe de toute façon qu'un seul NavigationContainer.
+let _lastScreen = null;
+
 // ─── AppShell : onboarding ou app principale ─────────────────────────────────
 
 function AppShell() {
@@ -138,8 +144,21 @@ function AppShell() {
         ref={navigationRef}
         onStateChange={() => {
           // Suit l'écran affiché (le plus profond) → « pages les plus visitées ».
+          //
+          // onStateChange se déclenche à chaque changement d'ÉTAT de navigation,
+          // pas d'écran : ouvrir le tiroir, le refermer, mettre à jour des
+          // paramètres (focusId depuis une notification) déclenchaient chacun un
+          // événement répétant l'écran courant. Comme le tiroir est le seul accès
+          // à Liste, Palmarès, Stats, Actus et Balade, ces doublons formaient une
+          // part importante du quota mensuel — sans rien apprendre.
+          //
+          // On ne garde donc que les CHANGEMENTS d'écran. Deux visites distinctes
+          // de la Carte séparées par un autre écran restent bien comptées : seuls
+          // les doublons consécutifs disparaissent.
           const route = navigationRef.getCurrentRoute();
-          if (route?.name) track('screen_view', { screen: route.name });
+          if (!route?.name || route.name === _lastScreen) return;
+          _lastScreen = route.name;
+          track('screen_view', { screen: route.name });
         }}
       >
         <Root.Navigator screenOptions={{ headerShown: false }}>
