@@ -27,6 +27,75 @@ export const DAILY_CAPS = {
   ors: 300,    // itinéraires (déclenchés par action utilisateur, volume faible)
 };
 
+// ─── Repli d'itinéraire : ORS → Mapbox ──────────────────────────────────────────
+//
+// ORS BLOQUE au-delà de son quota (2 000 itinéraires/jour pour la clé entière,
+// tous utilisateurs confondus) au lieu de facturer. Un pic de trafic couperait
+// donc Trajet ET Chasse pour tout le monde, jusqu'à la remise à zéro — et
+// changer de clé par OTA ne répondrait pas au problème : une mise à jour n'est
+// prise qu'au prochain lancement de l'app, bien après la fin du pic.
+//
+// D'où ce repli : quand ORS refuse POUR CAUSE DE QUOTA, on bascule sur Mapbox
+// Directions (100 000 requêtes/mois incluses, et facturé plutôt que bloqué).
+// On ne bascule PAS sur une erreur de calcul ordinaire — « aucun itinéraire
+// trouvé » est une vraie réponse, la masquer cacherait de vrais défauts.
+const QUOTA = 'QUOTA'; // marqueur interne, jamais affiché
+
+// Mapbox n'accepte que 25 points par requête, ORS en accepte 50 : une chasse de
+// 48 étapes doit donc être découpée. Les tronçons se chevauchent d'un point
+// pour que les segments se raccordent sans trou.
+const MAPBOX_MAX_POINTS = 25;
+
+const MAPBOX_PROFILE = { 'foot-walking': 'walking', 'cycling-regular': 'cycling' };
+
+// Découpe [a,b,c,…] en tronçons de 25 max, chaque tronçon reprenant le dernier
+// point du précédent : [0..24], [24..48], …
+export function chunkWaypoints(pts) {
+  if (pts.length <= MAPBOX_MAX_POINTS) return [pts];
+  const out = [];
+  for (let i = 0; i < pts.length - 1; i += MAPBOX_MAX_POINTS - 1) {
+    out.push(pts.slice(i, i + MAPBOX_MAX_POINTS));
+  }
+  return out;
+}
+
+/**
+ * Itinéraire Mapbox à N points. Même forme de retour que multiRoute côté ORS :
+ * { coords, durationMin, legsMin } — `legsMin` est indispensable, c'est lui qui
+ * permet à la Chasse d'ajuster la boucle au budget sans rappeler l'API.
+ */
+async function mapboxDirections(waypointsLonLat, profile) {
+  const prof = MAPBOX_PROFILE[profile] ?? 'walking';
+  const coords = [];
+  const legsMin = [];
+  let totalSec = 0;
+
+  for (const chunk of chunkWaypoints(waypointsLonLat)) {
+    if (!(await underCap('mapbox'))) throw new Error(i18n.t('routing.error.limit'));
+    const path = chunk.map(([lon, lat]) => `${lon.toFixed(6)},${lat.toFixed(6)}`).join(';');
+    const url = `https://api.mapbox.com/directions/v5/mapbox/${prof}/${path}`
+      + `?geometries=geojson&overview=full&access_token=${MAPBOX_TOKEN}`;
+    const res = await fetch(url);
+    bump('mapbox');
+    if (!res.ok) throw new Error(i18n.t('routing.error.routeNotFound'));
+    const json = await res.json();
+    const r = json.routes?.[0];
+    if (!r?.geometry?.coordinates?.length) throw new Error(i18n.t('routing.error.routeNotFound'));
+
+    // Le premier point d'un tronçon suivant duplique le dernier du précédent.
+    const geo = r.geometry.coordinates;
+    coords.push(...(coords.length ? geo.slice(1) : geo));
+    for (const leg of r.legs ?? []) legsMin.push(leg.duration / 60);
+    totalSec += r.duration ?? 0;
+  }
+
+  return {
+    coords,
+    durationMin: Math.round(totalSec / 60),
+    legsMin: legsMin.length ? legsMin : null,
+  };
+}
+
 // ─── Cache mémoire (TTL) ────────────────────────────────────────────────────────
 const TTL_AUTOCOMPLETE = 10 * 60 * 1000;      // 10 min (suggestions volatiles)
 const TTL_STABLE = 24 * 60 * 60 * 1000;       // 24 h (géocode exact / itinéraires)
@@ -157,40 +226,26 @@ export async function route(from, to, profile) {
   // se relançaient pas, et le spinner « Recherche d'Invaders » tournait sans fin.
   if (cached !== undefined) return cached.slice();
 
-  if (!(await underCap('ors'))) throw new Error(i18n.t('routing.error.limit'));
-
-  const res = await fetch(
-    `https://api.openrouteservice.org/v2/directions/${profile}/geojson`,
-    {
-      method: 'POST',
-      headers: { Authorization: ORS_API_KEY, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ coordinates: [from, to] }),
-    }
-  );
-  bump('ors');
-  if (!res.ok) {
-    try {
-      const err = await res.json();
-      const msg = err?.error?.message ?? err?.message;
-      if (msg) throw new Error(msg);
-    } catch (_) { /* ignore parse */ }
-    throw new Error(i18n.t('routing.error.routeNotFound'));
+  let coords;
+  try {
+    coords = await orsRoute([from, to], profile);
+  } catch (e) {
+    if (e.message !== QUOTA) throw e;   // vraie erreur → on la remonte telle quelle
+    coords = (await mapboxDirections([from, to], profile)).coords;
   }
-  const json = await res.json();
-  const coords = json.features?.[0]?.geometry?.coordinates;
   if (!coords || coords.length < 2) throw new Error(i18n.t('routing.error.routeNotFound'));
 
   cacheSet(key, coords, TTL_STABLE);
   return coords;
 }
 
-/** Itinéraire à arrêts multiples (boucle de chasse). { coords, durationMin }. */
-export async function multiRoute(waypointsLonLat, profile) {
-  const key = `mr|${profile}|${waypointsLonLat.map(roundPt).join(';')}`;
-  const cached = cacheGet(key);
-  if (cached !== undefined) return cached;
-
-  if (!(await underCap('ors'))) throw new Error(i18n.t('routing.error.limit'));
+/**
+ * Appel ORS brut. Lève QUOTA — et seulement QUOTA — quand le refus vient du
+ * plafond : plafond local par appareil, ou 429/403 renvoyé par leur serveur.
+ * Toute autre erreur remonte telle quelle, pour ne pas masquer un vrai défaut.
+ */
+async function orsRoute(waypointsLonLat, profile) {
+  if (!(await underCap('ors'))) throw new Error(QUOTA);
 
   const res = await fetch(
     `https://api.openrouteservice.org/v2/directions/${profile}/geojson`,
@@ -201,23 +256,56 @@ export async function multiRoute(waypointsLonLat, profile) {
     }
   );
   bump('ors');
-  if (!res.ok) {
-    let msg = i18n.t('routing.error.routeCalc');
-    try { const e = await res.json(); msg = e?.error?.message ?? e?.message ?? msg; } catch (_) {}
-    throw new Error(msg);
+  if (res.status === 429 || res.status === 403) throw new Error(QUOTA);
+  // Message d'ORS volontairement non repris : il est en anglais et technique.
+  // (Le code d'origine tentait de l'extraire, mais son `throw` était à
+  // l'intérieur du `try` et donc avalé par son propre `catch` — il n'a jamais
+  // été affiché. On garde ce comportement plutôt que de le changer ici.)
+  if (!res.ok) throw new Error(i18n.t('routing.error.routeNotFound'));
+  return (await res.json()).features?.[0]?.geometry?.coordinates;
+}
+
+/** Itinéraire à arrêts multiples (boucle de chasse). { coords, durationMin }. */
+export async function multiRoute(waypointsLonLat, profile) {
+  const key = `mr|${profile}|${waypointsLonLat.map(roundPt).join(';')}`;
+  const cached = cacheGet(key);
+  if (cached !== undefined) return cached;
+
+  let result;
+  try {
+    if (!(await underCap('ors'))) throw new Error(QUOTA);
+
+    const res = await fetch(
+      `https://api.openrouteservice.org/v2/directions/${profile}/geojson`,
+      {
+        method: 'POST',
+        headers: { Authorization: ORS_API_KEY, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ coordinates: waypointsLonLat }),
+      }
+    );
+    bump('ors');
+    if (res.status === 429 || res.status === 403) throw new Error(QUOTA);
+    if (!res.ok) {
+      let msg = i18n.t('routing.error.routeCalc');
+      try { const e = await res.json(); msg = e?.error?.message ?? e?.message ?? msg; } catch (_) {}
+      throw new Error(msg);
+    }
+    const json = await res.json();
+    const feature = json.features?.[0];
+    if (!feature) throw new Error(i18n.t('routing.error.routeNotFound'));
+    // Durée par tronçon (leg entre 2 waypoints consécutifs) — sert à ajuster une
+    // boucle de chasse au budget sans multiplier les appels ORS.
+    const segs = feature.properties.segments;
+    result = {
+      coords: feature.geometry.coordinates,
+      durationMin: Math.round(feature.properties.summary.duration / 60),
+      legsMin: Array.isArray(segs) ? segs.map(s => s.duration / 60) : null,
+    };
+  } catch (e) {
+    if (e.message !== QUOTA) throw e;   // vraie erreur de calcul → on la remonte
+    // Quota ORS épuisé : Mapbox prend le relais, en découpant si nécessaire.
+    result = await mapboxDirections(waypointsLonLat, profile);
   }
-  const json = await res.json();
-  const feature = json.features?.[0];
-  if (!feature) throw new Error(i18n.t('routing.error.routeNotFound'));
-  // Durée par tronçon (leg entre 2 waypoints consécutifs) — sert à ajuster une
-  // boucle de chasse au budget sans multiplier les appels ORS.
-  const segs = feature.properties.segments;
-  const legsMin = Array.isArray(segs) ? segs.map(s => s.duration / 60) : null;
-  const result = {
-    coords: feature.geometry.coordinates,
-    durationMin: Math.round(feature.properties.summary.duration / 60),
-    legsMin,
-  };
 
   cacheSet(key, result, TTL_STABLE);
   return result;
