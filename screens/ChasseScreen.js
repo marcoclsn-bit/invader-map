@@ -1455,8 +1455,10 @@ function makeStyles(t) {
     toggleLabel: { fontSize: 13, color: t.textPrimary },
 
     genBtn: {
-      marginTop: 12, backgroundColor: t.accent,
-      borderRadius: 20, paddingVertical: 12, alignItems: 'center',
+      // Même rayon que « Calculer l'itinéraire » et que les segments d'objectif,
+      // pour que les deux écrans parlent la même langue graphique.
+      marginTop: 16, backgroundColor: t.accent,
+      borderRadius: 12, paddingVertical: 13, alignItems: 'center',
     },
     genBtnDisabled: { opacity: 0.45 },
     genBtnLoading: { flexDirection: 'row', alignItems: 'center', gap: 10 },

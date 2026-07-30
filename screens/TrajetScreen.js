@@ -1127,13 +1127,6 @@ export default function TrajetScreen() {
                   gpsOption={false}
                   onSelectGps={null}
                 />
-                <TouchableOpacity
-                  style={[styles.goBtn, styles.goBtnFull, (loadingPhase || !depCoords || !arrCoords) && styles.goBtnDisabled]}
-                  onPress={calculate}
-                  disabled={loadingPhase !== null || !depCoords || !arrCoords}
-                >
-                  <Text style={styles.goBtnText}>{t('route.calculate')}</Text>
-                </TouchableOpacity>
                 <View style={styles.bufferSection}>
                   <View style={styles.bufferHeader}>
                     <Text style={styles.bufferLabel}>
@@ -1175,6 +1168,19 @@ export default function TrajetScreen() {
                     />
                   </View>
                 )}
+
+                {/* L'action vient APRÈS ses réglages. Placée juste sous l'adresse
+                    d'arrivée, elle se lisait comme la dernière étape alors que le
+                    couloir et l'objectif restaient à choisir en dessous — et tous
+                    deux modifient le résultat. La Chasse plaçait déjà « Générer »
+                    en fin de panneau : c'est le Trajet qui faisait exception. */}
+                <TouchableOpacity
+                  style={[styles.goBtn, styles.goBtnFull, (loadingPhase || !depCoords || !arrCoords) && styles.goBtnDisabled]}
+                  onPress={calculate}
+                  disabled={loadingPhase !== null || !depCoords || !arrCoords}
+                >
+                  <Text style={styles.goBtnText}>{t('route.calculate')}</Text>
+                </TouchableOpacity>
 
                 {error ? <Text style={styles.errorText}>{error}</Text> : null}
               </ScrollView>
@@ -1306,10 +1312,12 @@ function makeStyles(t) {
 
     controlRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 10 },
     goBtn: {
-      backgroundColor: t.accent, borderRadius: 20,
+      // Rayon 12 et non 20 : à 20 le bouton devenait une pilule, en désaccord
+      // avec les segments d'objectif (rayon 10) posés juste au-dessus.
+      backgroundColor: t.accent, borderRadius: 12,
       paddingHorizontal: 18, paddingVertical: 8, alignItems: 'center',
     },
-    goBtnFull: { marginTop: 10, paddingVertical: 12 },
+    goBtnFull: { marginTop: 16, paddingVertical: 13 },
     goBtnDisabled: { opacity: 0.55 },
     goBtnText: { color: t.bg, fontWeight: '600', fontSize: 14 },
 
