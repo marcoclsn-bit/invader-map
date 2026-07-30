@@ -204,7 +204,8 @@
       "culture": "Luogo di cultura",
       "other": "Luogo notevole"
     },
-    "timeLabelBare": "Tempo"
+    "timeLabelBare": "Tempo",
+    "startSub": "Registra la tua scheda finale"
   },
   "palmares": {
     "title": "Città",
@@ -936,7 +937,6 @@
       "body": "InvaderQuest ha bisogno della tua posizione per registrare il percorso. Senza, la tua scheda finale sarebbe vuota.",
       "settings": "Apri impostazioni"
     },
-    "startHint": "Registra il percorso per la tua scheda finale",
     "reset": {
       "title": "Abbandonare il percorso?",
       "body": "Il percorso in corso andrà perso, senza scheda finale. Per conservarla, tocca «Termina».",

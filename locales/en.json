@@ -204,7 +204,8 @@
       "culture": "Cultural landmark",
       "other": "Notable place"
     },
-    "timeLabelBare": "Time"
+    "timeLabelBare": "Time",
+    "startSub": "Records your end-of-run card"
   },
   "palmares": {
     "title": "Cities",
@@ -936,7 +937,6 @@
       "body": "InvaderQuest needs your location to record your route. Without it, your summary card would be empty.",
       "settings": "Open settings"
     },
-    "startHint": "Records your walk for your end-of-run card",
     "reset": {
       "title": "Discard this run?",
       "body": "Your run in progress will be lost, with no summary card. To keep it, tap “Finish” instead.",

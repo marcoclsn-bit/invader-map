@@ -204,7 +204,8 @@
       "culture": "Lieu de culture",
       "other": "Lieu remarquable"
     },
-    "timeLabelBare": "Temps"
+    "timeLabelBare": "Temps",
+    "startSub": "Enregistre ta carte de fin"
   },
   "palmares": {
     "title": "Villes",
@@ -936,7 +937,6 @@
       "body": "InvaderQuest a besoin de votre position pour enregistrer votre parcours. Sans elle, votre carte de fin serait vide.",
       "settings": "Ouvrir les réglages"
     },
-    "startHint": "Enregistre ton parcours pour ta carte de fin",
     "reset": {
       "title": "Abandonner le parcours ?",
       "body": "Ton parcours en cours sera perdu, sans carte de fin. Pour la garder, appuie plutôt sur « Terminer ».",

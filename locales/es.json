@@ -204,7 +204,8 @@
       "culture": "Lugar cultural",
       "other": "Lugar destacado"
     },
-    "timeLabelBare": "Tiempo"
+    "timeLabelBare": "Tiempo",
+    "startSub": "Graba tu tarjeta final"
   },
   "palmares": {
     "title": "Ciudades",
@@ -936,7 +937,6 @@
       "body": "InvaderQuest necesita tu ubicación para registrar tu recorrido. Sin ella, tu tarjeta final estaría vacía.",
       "settings": "Abrir ajustes"
     },
-    "startHint": "Graba tu recorrido para tu tarjeta final",
     "reset": {
       "title": "¿Abandonar el recorrido?",
       "body": "Se perderá el recorrido en curso, sin tarjeta final. Para conservarla, pulsa «Terminar».",

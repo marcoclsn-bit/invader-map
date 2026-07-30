@@ -1233,11 +1233,6 @@ export default function ChasseScreen({ route }) {
 
             {/* Le bénéfice de « Démarrer » est invisible au moment du choix : on
                 l'annonce, sinon personne ne devine qu'il prépare la carte de fin. */}
-            {result && !following && (
-              <View style={styles.startHintWrap} pointerEvents="none">
-                <Text style={styles.startHint} numberOfLines={2}>{t('session.startHint')}</Text>
-              </View>
-            )}
             {result && (
               <View style={styles.overlayRow} pointerEvents="box-none">
                 {following ? (
@@ -1246,8 +1241,19 @@ export default function ChasseScreen({ route }) {
                     <Text style={styles.trackBtnText}>{t('hunt.quit')}</Text>
                   </TouchableOpacity>
                 ) : (
-                  <TouchableOpacity style={styles.startBtn} onPress={startFollowing}>
+                  // Le bénéfice est DANS le bouton, pas au-dessus. Une pastille
+                  // flottante n'était reliée à lui que par la proximité, et on ne
+                  // faisait pas le lien. Un « i » aurait été pire : cette phrase
+                  // existe pour donner envie d'appuyer sur Démarrer, la cacher
+                  // derrière une icône la rend invisible à ceux qu'elle vise.
+                  <TouchableOpacity
+                    style={styles.startBtn}
+                    onPress={startFollowing}
+                    accessibilityRole="button"
+                    accessibilityLabel={`${t('hunt.start')}. ${t('hunt.startSub')}`}
+                  >
                     <Text style={styles.startBtnText}>{t('hunt.start')}</Text>
+                    <Text style={styles.startBtnSub}>{t('hunt.startSub')}</Text>
                   </TouchableOpacity>
                 )}
                 <View style={styles.rightControls}>
@@ -1491,20 +1497,10 @@ function makeStyles(t) {
       paddingHorizontal: 12, paddingBottom: 12, paddingTop: 8,
     },
     rightControls: { flexDirection: 'row', alignItems: 'center', gap: 8 },
-    // Pastille d'annonce au-dessus de « Démarrer ». Fond opaque obligatoire :
-    // posée sur la carte, une simple ligne de texte devient illisible dès qu'elle
-    // passe sur un bâtiment clair ou un parc.
-    startHintWrap: { paddingHorizontal: 12, paddingBottom: 6, alignItems: 'flex-start' },
-    startHint: {
-      fontSize: 11, color: t.textSecondary, backgroundColor: t.surface,
-      borderWidth: 1, borderColor: t.border, borderRadius: 10,
-      paddingHorizontal: 9, paddingVertical: 4, maxWidth: '82%',
-      shadowColor: '#000', shadowOffset: { width: 0, height: 1 }, shadowOpacity: 0.15, shadowRadius: 3, elevation: 2,
-    },
     startBtn: {
-      flexDirection: 'row', alignItems: 'center', gap: 6,
-      backgroundColor: t.accent, borderRadius: 20,
-      paddingHorizontal: 16, paddingVertical: 10,
+      // Colonne et non rangée : le bouton porte un titre et son bénéfice.
+      alignItems: 'flex-start', backgroundColor: t.accent, borderRadius: 14,
+      paddingHorizontal: 16, paddingVertical: 9,
       shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.2, shadowRadius: 4, elevation: 4,
     },
     stopBtn: {
@@ -1514,7 +1510,9 @@ function makeStyles(t) {
       shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.2, shadowRadius: 4, elevation: 4,
     },
     trackBtnText: { color: t.textPrimary, fontWeight: '600', fontSize: 14 },
-    startBtnText: { color: '#000', fontWeight: '600', fontSize: 14 },
+    startBtnText: { color: '#000', fontWeight: '800', fontSize: 15 },
+    // Même encre que le titre, atténuée : un gris franc sur fond vif se lit mal.
+    startBtnSub: { color: '#000', opacity: 0.68, fontSize: 11, marginTop: 1 },
     recenterBtn: {
       width: 42, height: 42, borderRadius: 21,
       backgroundColor: t.surface, alignItems: 'center', justifyContent: 'center',
