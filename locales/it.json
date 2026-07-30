@@ -142,7 +142,8 @@
     "poiSuffix_other": " · {{count}} luoghi da vedere",
     "objectiveHint_pure": "Solo Invader sul percorso.",
     "objectiveHint_balanced": "Gli Invader del corridoio, più qualche luogo notevole.",
-    "objectiveHint_visit": "Gli Invader del corridoio e il massimo di luoghi da vedere lungo la strada."
+    "objectiveHint_visit": "Gli Invader del corridoio e il massimo di luoghi da vedere lungo la strada.",
+    "corridorLabel": "Corridoio"
   },
   "hunt": {
     "aroundMe": "Intorno a me",
@@ -201,7 +202,8 @@
       "shops": "Bottega e passaggio",
       "culture": "Luogo di cultura",
       "other": "Luogo notevole"
-    }
+    },
+    "timeLabelBare": "Tempo"
   },
   "palmares": {
     "title": "Città",

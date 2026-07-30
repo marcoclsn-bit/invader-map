@@ -142,7 +142,8 @@
     "poiSuffix_other": " · {{count}} lieux à voir",
     "objectiveHint_pure": "Uniquement des Invaders sur le trajet.",
     "objectiveHint_balanced": "Les Invaders du couloir, plus quelques lieux remarquables.",
-    "objectiveHint_visit": "Les Invaders du couloir et un maximum de lieux à voir en chemin."
+    "objectiveHint_visit": "Les Invaders du couloir et un maximum de lieux à voir en chemin.",
+    "corridorLabel": "Couloir"
   },
   "hunt": {
     "aroundMe": "Autour de moi",
@@ -201,7 +202,8 @@
       "shops": "Boutique & passage",
       "culture": "Lieu de culture",
       "other": "Lieu remarquable"
-    }
+    },
+    "timeLabelBare": "Temps"
   },
   "palmares": {
     "title": "Villes",

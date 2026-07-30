@@ -142,7 +142,8 @@
     "poiSuffix_other": " · {{count}} places to see",
     "objectiveHint_pure": "Invaders on the route only.",
     "objectiveHint_balanced": "Invaders in the corridor, plus a few notable places.",
-    "objectiveHint_visit": "Invaders in the corridor and as many places to see as possible."
+    "objectiveHint_visit": "Invaders in the corridor and as many places to see as possible.",
+    "corridorLabel": "Corridor"
   },
   "hunt": {
     "aroundMe": "Around me",
@@ -201,7 +202,8 @@
       "shops": "Shop & arcade",
       "culture": "Cultural landmark",
       "other": "Notable place"
-    }
+    },
+    "timeLabelBare": "Time"
   },
   "palmares": {
     "title": "Cities",

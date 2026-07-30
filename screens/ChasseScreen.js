@@ -1120,7 +1120,12 @@ export default function ChasseScreen({ route }) {
                   <View style={styles.divider} />
 
                   {/* Budget temps */}
-                  <Text style={styles.fieldLabel}>{t('hunt.timeLabel', { duration: formatBudget(budgetMin) })}</Text>
+                  {/* Intitulé en capitales, valeur en casse normale : sans cette
+                      séparation, « TEMPS : 1 H » mettait l'unité en majuscule. */}
+                  <View style={styles.labelRow}>
+                    <Text style={styles.fieldLabel}>{t('hunt.timeLabelBare')}</Text>
+                    <Text style={styles.labelValue}>{formatBudget(budgetMin)}</Text>
+                  </View>
                   <Slider
                     style={styles.slider}
                     minimumValue={1}
@@ -1437,7 +1442,11 @@ function makeStyles(t) {
 
     // ── Champs formulaire ────────────────────────────────────────────────────
     divider: { height: StyleSheet.hairlineWidth, backgroundColor: t.border, marginVertical: 10 },
-    fieldLabel: { fontSize: 13, color: t.textSecondary },
+    fieldLabel: { ...typography.fieldLabel, color: t.textSecondary },
+    // Intitulé + valeur sur une ligne : la valeur garde sa casse et se détache
+    // en couleur pleine, l'intitulé reste discret.
+    labelRow: { flexDirection: 'row', alignItems: 'baseline', gap: 7 },
+    labelValue: { fontSize: 13, fontWeight: '700', color: t.textPrimary },
     slider: { width: '100%', height: 32, marginBottom: 2 },
 
     transportRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: 2 },
@@ -1462,7 +1471,7 @@ function makeStyles(t) {
     },
     genBtnDisabled: { opacity: 0.45 },
     genBtnLoading: { flexDirection: 'row', alignItems: 'center', gap: 10 },
-    genBtnText: { color: t.bg, fontWeight: '600', fontSize: 15 },
+    genBtnText: { ...typography.actionLabel, color: t.bg },
     errorText: { fontSize: 13, color: t.destructive, marginTop: 8, textAlign: 'center' },
     hintText: { fontSize: 12, color: t.textSecondary, marginTop: 6, textAlign: 'center' },
 

@@ -19,6 +19,7 @@ import { memo } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../theme/ThemeContext';
+import { typography } from '../theme/tokens';
 
 const CHOIX = ['pure', 'balanced', 'visit'];
 const NUANCES = 22; // assez pour que la bande paraisse continue sur 4 dp de haut
@@ -106,10 +107,7 @@ export default memo(ObjectivePicker);
 function makeStyles(t) {
   return StyleSheet.create({
     bloc: { marginTop: 14 },
-    label: {
-      fontSize: 11, fontWeight: '700', letterSpacing: 0.5,
-      color: t.textSecondary, textTransform: 'uppercase', marginBottom: 8,
-    },
+    label: { ...typography.fieldLabel, color: t.textSecondary, marginBottom: 8 },
     segments: { flexDirection: 'row', gap: 6 },
     segment: {
       flex: 1, alignItems: 'center', paddingVertical: 10, paddingHorizontal: 4,

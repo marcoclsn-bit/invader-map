@@ -99,8 +99,19 @@ export const THEMES = { dark, light };
 //   arcadeHeading → identifiants Invader dans les panneaux, compteurs (Silkscreen Regular)
 //   arcadeScore   → grand score unique (%, total pts) — Press Start 2P, UNE occurrence max par écran
 //
+//   fieldLabel    → intitulé d'un réglage (« TU ES PLUTÔT… », « COULOIR »)
+//   actionLabel   → texte d'un bouton d'action principal
+//
+// Les deux derniers existent parce que chaque écran redéfinissait son propre
+// libellé de champ — 13 pt ici, 11 pt en capitales là — et l'écart finissait par
+// se voir dans un même panneau. Un intitulé de réglage n'est pas une phrase : le
+// distinguer typographiquement évite de le confondre avec le contenu qu'il
+// annonce, à condition de le faire partout pareil.
 export const typography = {
   arcadeTitle:   { fontFamily: 'Silkscreen_700Bold',      fontSize: 17, lineHeight: 26 },
   arcadeHeading: { fontFamily: 'Silkscreen_400Regular',   fontSize: 14, lineHeight: 22 },
   arcadeScore:   { fontFamily: 'PressStart2P_400Regular', fontSize: 15, lineHeight: 28 },
+
+  fieldLabel:  { fontSize: 11, fontWeight: '700', letterSpacing: 0.5,  textTransform: 'uppercase' },
+  actionLabel: { fontSize: 14, fontWeight: '800', letterSpacing: 0.55, textTransform: 'uppercase' },
 };

@@ -142,7 +142,8 @@
     "poiSuffix_other": " · {{count}} lugares que ver",
     "objectiveHint_pure": "Solo Invaders en el trayecto.",
     "objectiveHint_balanced": "Los Invaders del corredor, más algunos lugares notables.",
-    "objectiveHint_visit": "Los Invaders del corredor y el máximo de lugares que ver por el camino."
+    "objectiveHint_visit": "Los Invaders del corredor y el máximo de lugares que ver por el camino.",
+    "corridorLabel": "Corredor"
   },
   "hunt": {
     "aroundMe": "A mi alrededor",
@@ -201,7 +202,8 @@
       "shops": "Tienda y pasaje",
       "culture": "Lugar cultural",
       "other": "Lugar destacado"
-    }
+    },
+    "timeLabelBare": "Tiempo"
   },
   "palmares": {
     "title": "Ciudades",

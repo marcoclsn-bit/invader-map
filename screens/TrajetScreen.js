@@ -1129,9 +1129,14 @@ export default function TrajetScreen() {
                 />
                 <View style={styles.bufferSection}>
                   <View style={styles.bufferHeader}>
-                    <Text style={styles.bufferLabel}>
-                      {t('route.corridor', { label: BUFFER_OPTIONS.find(o => o.value === bufferKm)?.label })}
-                    </Text>
+                    {/* Intitulé et valeur séparés : l'intitulé passe en capitales,
+                        la valeur non — « COULOIR : 100 M » rendait l'unité illisible. */}
+                    <View style={styles.labelRow}>
+                      <Text style={styles.bufferLabel}>{t('route.corridorLabel')}</Text>
+                      <Text style={styles.labelValue}>
+                        {BUFFER_OPTIONS.find(o => o.value === bufferKm)?.label}
+                      </Text>
+                    </View>
                     <TouchableOpacity
                       onPress={() => setShowInfo(v => !v)}
                       hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
@@ -1319,11 +1324,15 @@ function makeStyles(t) {
     },
     goBtnFull: { marginTop: 16, paddingVertical: 13 },
     goBtnDisabled: { opacity: 0.55 },
-    goBtnText: { color: t.bg, fontWeight: '600', fontSize: 14 },
+    goBtnText: { ...typography.actionLabel, color: t.bg },
 
     bufferSection: { marginTop: 10 },
     bufferHeader: { flexDirection: 'row', alignItems: 'center', gap: 6 },
-    bufferLabel: { fontSize: 13, color: t.textSecondary },
+    bufferLabel: { ...typography.fieldLabel, color: t.textSecondary },
+    // Intitulé + valeur sur une ligne : la valeur garde sa casse et se détache
+    // en couleur pleine, l'intitulé reste discret.
+    labelRow: { flexDirection: 'row', alignItems: 'baseline', gap: 7 },
+    labelValue: { fontSize: 13, fontWeight: '700', color: t.textPrimary },
     bufferSlider: { width: '100%', height: 32, marginTop: 2 },
     infoCard: { marginTop: 6, backgroundColor: t.surfaceHigh, borderRadius: 10, padding: 12 },
     infoText: { fontSize: 13, color: t.textSecondary, lineHeight: 18 },
