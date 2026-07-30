@@ -171,9 +171,6 @@
       "routeCalc": "Unable to calculate route",
       "generation": "Error generating hunt"
     },
-    "pickDistricts": "Pick one or more districts",
-    "districtsSelected_one": "{{count}} district selected",
-    "districtsSelected_other": "{{count}} districts selected",
     "objective": {
       "label": "You're more…",
       "pure": "Hunter",
@@ -205,7 +202,9 @@
       "other": "Notable place"
     },
     "timeLabelBare": "Time",
-    "startSub": "Records your end-of-run card"
+    "startSub": "Records your end-of-run card",
+    "pickDistrict": "Pick a district",
+    "districtSelected": "District {{ar}}"
   },
   "palmares": {
     "title": "Cities",

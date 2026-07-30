@@ -546,12 +546,19 @@ export default function ChasseScreen({ route }) {
   const [selectedArs, setSelectedArs] = useState(() => new Set());
   const hasDistricts = !!city.subdivisionsKey;
 
+  // UN SEUL arrondissement à la fois. La multi-sélection produisait des chasses
+  // vides ou dégradées, parce que le point de départ est le centroïde des zones
+  // choisies : sur deux arrondissements non limitrophes, il tombe entre les deux
+  // et le rayon d'admission (≈1 km pour une heure) n'atteint plus rien. Mesuré
+  // sur les données réelles : 19e + 7e → 0 Invader retenu sur 80 disponibles,
+  // 16e + 20e → 0 sur 142. Même en limitrophe, le multi nuisait : 11e seul donne
+  // 18 Invaders, 11e + 12e en donne 12, le centroïde tombant dans le 20e.
+  //
+  // On garde un Set plutôt qu'un scalaire : le filtre `arSet.has(...)` et le
+  // calcul du centroïde restent inchangés, et le mode « quartier » des villes
+  // sans arrondissement n'est pas touché.
   function toggleAr(ar) {
-    setSelectedArs(prev => {
-      const next = new Set(prev);
-      next.has(ar) ? next.delete(ar) : next.add(ar);
-      return next;
-    });
+    setSelectedArs(prev => (prev.has(ar) ? new Set() : new Set([ar])));
   }
 
   // ─── Résultat + navigation ─────────────────────────────────────────────────
@@ -1039,15 +1046,15 @@ export default function ChasseScreen({ route }) {
                     ))}
                   </View>
 
-                  {/* Quartier — villes À arrondissements : grille multi-sélection */}
+                  {/* Quartier — villes À arrondissements : un seul à la fois */}
                   {mode === 'quartier' && hasDistricts && (
                     <View style={styles.arSection}>
                       <Text style={styles.arHint}>
                         {selectedArs.size === 0
-                          ? t('hunt.pickDistricts')
-                          : t('hunt.districtsSelected', { count: selectedArs.size })}
+                          ? t('hunt.pickDistrict')
+                          : t('hunt.districtSelected', { ar: [...selectedArs][0] })}
                       </Text>
-                      <View style={styles.arGrid}>
+                      <View style={styles.arGrid} accessibilityRole="radiogroup">
                         {Array.from({ length: 20 }, (_, i) => i + 1).map(ar => {
                           const on = selectedArs.has(ar);
                           return (
@@ -1056,6 +1063,9 @@ export default function ChasseScreen({ route }) {
                               style={[styles.arChip, on && styles.arChipActive]}
                               onPress={() => toggleAr(ar)}
                               activeOpacity={0.7}
+                              accessibilityRole="radio"
+                              accessibilityState={{ selected: on }}
+                              accessibilityLabel={t('hunt.districtSelected', { ar })}
                             >
                               <Text style={[styles.arChipText, on && styles.arChipTextActive]}>{ar}</Text>
                             </TouchableOpacity>

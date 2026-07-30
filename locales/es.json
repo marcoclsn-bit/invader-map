@@ -171,9 +171,6 @@
       "routeCalc": "Imposible calcular la ruta",
       "generation": "Error al generar la caza"
     },
-    "pickDistricts": "Elige uno o varios distritos",
-    "districtsSelected_one": "{{count}} distrito seleccionado",
-    "districtsSelected_other": "{{count}} distritos seleccionados",
     "objective": {
       "label": "Eres más bien…",
       "pure": "Cazador",
@@ -205,7 +202,9 @@
       "other": "Lugar destacado"
     },
     "timeLabelBare": "Tiempo",
-    "startSub": "Graba tu tarjeta final"
+    "startSub": "Graba tu tarjeta final",
+    "pickDistrict": "Elige un distrito",
+    "districtSelected": "Distrito {{ar}}"
   },
   "palmares": {
     "title": "Ciudades",
