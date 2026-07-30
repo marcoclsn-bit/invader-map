@@ -20,8 +20,16 @@ import PA from '../data/poi_PA.json';
 const BASE_URL  = 'https://raw.githubusercontent.com/marcoclsn-bit/invader-map/main/data';
 const INDEX_URL = `${BASE_URL}/poi_index.json`;
 const cityUrl   = (code) => `${BASE_URL}/poi_${code}.json`;
+const langUrl   = (code, lang) => `${BASE_URL}/poi_${code}_${lang}.json`;
 
-const KEY = (code) => `@invader_poi_${code}`;
+const KEY      = (code) => `@invader_poi_${code}`;
+const KEY_LANG = (code, lang) => `@invader_poi_${code}_${lang}`;
+
+// Les résumés traduits ne sont PAS embarqués : ils pèsent environ 196 Ko par
+// langue, et le fichier de base part déjà dans chaque mise à jour par-dessus
+// les airs. Un francophone ne doit pas porter le poids de l'italien. Ils sont
+// donc téléchargés à la première ouverture dans une langue non française, puis
+// gardés en cache. Tant qu'ils ne sont pas là, on affiche le français.
 
 // Version embarquée, immuable, toujours disponible.
 const BUNDLED = { PA };
@@ -29,7 +37,11 @@ const BUNDLED = { PA };
 // Versions plus récentes chargées depuis le cache ou le réseau.
 const _fresh = new Map();   // code -> { version, updatedAt, pois }
 
+// Résumés traduits, par ville et par langue.
+const _trad = new Map();    // `${code}:${lang}` -> { version, summaries }
+
 let _notify = null;
+let _lang = 'fr';
 
 /** Liste des POI d'une ville (tableau vide si la ville n'en a pas). */
 export function getPois(cityCode) {
@@ -39,6 +51,20 @@ export function getPois(cityCode) {
 /** true si la ville dispose d'assez de lieux pour proposer le mode visite. */
 export function hasPois(cityCode) {
   return getPois(cityCode).length >= 10;
+}
+
+/**
+ * Résumé d'un lieu dans la langue de l'app, avec repli sur le français.
+ * Les écrans doivent passer par ici plutôt que de lire `poi.summary`.
+ */
+export function summaryOf(poi, cityCode = 'PA') {
+  if (_lang === 'fr') return poi?.summary ?? '';
+  return _trad.get(`${cityCode}:${_lang}`)?.summaries?.[poi?.id] ?? poi?.summary ?? '';
+}
+
+/** true si les résumés sont affichés dans une autre langue que le français. */
+export function isTranslated(cityCode = 'PA') {
+  return _lang !== 'fr' && !!_trad.get(`${cityCode}:${_lang}`);
 }
 
 /** Version actuellement servie (affichée dans les Réglages). */
@@ -67,6 +93,7 @@ export async function initPoiService(onUpdate) {
       }
     } catch (_) { /* cache illisible → on reste sur le bundle */ }
   }
+  await setPoiLanguage(i18n.language);
   checkPoiUpdate().catch(() => {});
 }
 
@@ -104,6 +131,44 @@ export async function checkPoiUpdate(cityCode = null) {
 
   if (bougé) _notify?.();
   return bougé ? 'updated' : 'up_to_date';
+}
+
+/**
+ * Fixe la langue des résumés. À appeler au démarrage et à chaque changement de
+ * langue dans les Réglages. Restaure le cache si présent, sinon télécharge en
+ * arrière-plan sans bloquer l'affichage : d'ici là, le français fait office de
+ * repli. `onUpdate` est rappelé quand les traductions arrivent.
+ */
+export async function setPoiLanguage(lang) {
+  const code = (lang || 'fr').split('-')[0];
+  _lang = ['en', 'es', 'it'].includes(code) ? code : 'fr';
+  if (_lang === 'fr') { _notify?.(); return; }
+
+  for (const city of Object.keys(BUNDLED)) {
+    const key = `${city}:${_lang}`;
+    if (_trad.has(key)) continue;             // déjà en mémoire
+    try {
+      const raw = await AsyncStorage.getItem(KEY_LANG(city, _lang));
+      if (raw) {
+        const cached = JSON.parse(raw);
+        if (cached?.summaries) { _trad.set(key, cached); continue; }
+      }
+    } catch (_) { /* cache illisible */ }
+    fetchTranslations(city, _lang).catch(() => {});
+  }
+  _notify?.();
+}
+
+/** Télécharge et met en cache les résumés traduits d'une ville. */
+async function fetchTranslations(city, lang) {
+  const r = await fetch(langUrl(city, lang), { cache: 'no-store' });
+  if (!r.ok) return;
+  const json = await r.json();
+  if (!json?.summaries || Object.keys(json.summaries).length < 10) return;  // garde-fou
+  const payload = { version: json.version ?? 1, summaries: json.summaries };
+  _trad.set(`${city}:${lang}`, payload);
+  await AsyncStorage.setItem(KEY_LANG(city, lang), JSON.stringify(payload));
+  if (lang === _lang) _notify?.();            // la langue n'a pas changé entre-temps
 }
 
 /**

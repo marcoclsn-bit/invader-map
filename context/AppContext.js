@@ -6,10 +6,10 @@ import { ALL_STATUSES, STATUS_COLOR, DEFAULT_LABEL_DEFS } from '../constants';
 import { initInvaderService, loadCityData, onCityUpdate, checkCityForUpdate, getCityIndex, getCityData } from '../services/invaderData';
 import { getCachedNews, fetchNews } from '../services/newsData';
 import { enableNewsNotify, disableNewsNotify, syncNewsNotify } from '../services/newsNotify';
-import { applyLanguage, LANGUAGE_STORAGE_KEY } from '../i18n';
+import i18n, { applyLanguage, LANGUAGE_STORAGE_KEY } from '../i18n';
 import { ENABLED_CITIES, DEFAULT_CITY_CODE, CITIES } from '../cities/registry';
 import { ALL_POI_FAMILIES } from '../data/poiFamilies';
-import { initPoiService, checkPoiUpdate, getPoiVersion } from '../services/poiData';
+import { initPoiService, checkPoiUpdate, getPoiVersion, setPoiLanguage } from '../services/poiData';
 
 const AppContext = createContext(null);
 
@@ -147,6 +147,13 @@ export function AppProvider({ children }) {
   useEffect(() => {
     initPoiService(() => setPoiDataVersion((v) => v + 1)).catch(() => {});
   }, []);
+
+  // Changement de langue : les résumés traduits sont téléchargés à la demande,
+  // le français servant de repli tant qu'ils ne sont pas arrivés.
+  useEffect(() => {
+    if (!loaded) return;
+    setPoiLanguage(i18n.language).catch(() => {});
+  }, [language, loaded]);
 
   // ─── Initialisation du service de données ────────────────────────────────────
   useEffect(() => {

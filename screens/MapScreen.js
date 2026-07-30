@@ -6,6 +6,7 @@ import * as Haptics from 'expo-haptics';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
+import i18n from '../i18n';
 import { DrawerActions } from '@react-navigation/native';
 import { useAppContext } from '../context/AppContext';
 import { CITIES, ENABLED_CITIES } from '../cities/registry';
@@ -555,7 +556,7 @@ export default function MapScreen({ navigation, route }) {
             hint={t('poi.a11y.openHint')}
             onPress={() => {
               setSelectedPoi(poi); setSelected(null); setShowFilters(false);
-              track('poi_open', { from: 'map', theme: poi.theme });
+              track('poi_open', { from: 'map', theme: poi.theme, lang: i18n.language });
             }}
           />
         ))}

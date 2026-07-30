@@ -12,6 +12,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
 import { useTranslation } from 'react-i18next';
+import i18n from '../i18n';
 import { STATUS_COLOR } from '../constants';
 import { useAppContext } from '../context/AppContext';
 import { CITIES } from '../cities/registry';
@@ -28,7 +29,7 @@ import { openNavigationApp } from '../utils/navigation';
 import { useSessionRecorder } from '../components/session/useSessionRecorder';
 import { useGamification } from '../context/GamificationContext';
 import { canUseFeature, FEATURES } from '../services/featureAccess';
-import { getPois, hasPois, wikiUrl } from '../services/poiData';
+import { getPois, hasPois, wikiUrl, summaryOf } from '../services/poiData';
 import { POI_FAMILIES, familyOf } from '../data/poiFamilies';
 import { track } from '../services/analytics';
 
@@ -852,7 +853,7 @@ export default function ChasseScreen({ route }) {
                 {result.invaders.map((inv, i) => (
                   <PinMarker key={inv.id} coordinate={{ latitude: inv.lat, longitude: inv.lng }}
                     anchor={{ x: 0.5, y: 0.5 }}
-                    onPress={() => (inv.isPoi ? (setSelectedPoi(inv), track('poi_open', { from: 'hunt', theme: inv.theme })) : selectInvader(inv))}
+                    onPress={() => (inv.isPoi ? (setSelectedPoi(inv), track('poi_open', { from: 'hunt', theme: inv.theme, lang: i18n.language })) : selectInvader(inv))}
                     redrawKey={selectedInv?.id === inv.id || selectedPoi?.id === inv.id}>
                     {inv.isPoi ? (
                       // Lieu d'intérêt : losange doré, impossible à confondre avec un alien
@@ -1190,7 +1191,7 @@ export default function ChasseScreen({ route }) {
               style={styles.resultList}
               renderItem={({ item: inv, index }) =>
                 inv.isPoi ? (
-                  <TouchableOpacity style={styles.poiRow} onPress={() => { setSelectedPoi(inv); track('poi_open', { from: 'hunt_list', theme: inv.theme }); }} activeOpacity={0.7}>
+                  <TouchableOpacity style={styles.poiRow} onPress={() => { setSelectedPoi(inv); track('poi_open', { from: 'hunt_list', theme: inv.theme, lang: i18n.language }); }} activeOpacity={0.7}>
                     <View style={styles.poiRowDiamond} />
                     <Text style={styles.poiRowNum}>{index + 1}</Text>
                     <View style={{ flex: 1, marginLeft: 6 }}>
@@ -1241,7 +1242,7 @@ export default function ChasseScreen({ route }) {
               </TouchableOpacity>
             </View>
             <Text style={styles.poiSheetChip}>{t(`hunt.poiTheme.${selectedPoi.theme}`)}</Text>
-            <Text style={styles.poiSheetText}>{selectedPoi.summary}</Text>
+            <Text style={styles.poiSheetText}>{summaryOf(selectedPoi)}</Text>
             <View style={styles.poiSheetActions}>
               <TouchableOpacity
                 style={styles.poiSheetBtnPrimary}

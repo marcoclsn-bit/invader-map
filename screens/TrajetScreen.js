@@ -1000,7 +1000,7 @@ export default function TrajetScreen() {
               poi={poi}
               label={`${poi.name}, ${t(`hunt.poiTheme.${poi.theme}`)}`}
               hint={t('poi.a11y.openHint')}
-              onPress={() => { setSelectedRoutePoi(poi); setSelectedRouteInv(null); track('poi_open', { from: 'route', theme: poi.theme }); }}
+              onPress={() => { setSelectedRoutePoi(poi); setSelectedRouteInv(null); track('poi_open', { from: 'route', theme: poi.theme, lang: i18n.language }); }}
             />
           ))}
           {!isChangingCity && <HeadingCone userLocation={userPos} heading={userHeading} />}
@@ -1220,7 +1220,7 @@ export default function TrajetScreen() {
             onSelectInvader={selectRouteInvader}
             onWidenCorridor={() => setInputCollapsed(false)}
             pois={routePois}
-            onSelectPoi={(poi) => { setSelectedRoutePoi(poi); setSelectedRouteInv(null); track('poi_open', { from: 'route_list', theme: poi.theme }); }}
+            onSelectPoi={(poi) => { setSelectedRoutePoi(poi); setSelectedRouteInv(null); track('poi_open', { from: 'route_list', theme: poi.theme, lang: i18n.language }); }}
           />
         )}
 

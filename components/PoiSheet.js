@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import { useAppContext } from '../context/AppContext';
-import { wikiUrl } from '../services/poiData';
+import { wikiUrl, summaryOf } from '../services/poiData';
 import { openNavigationApp } from '../utils/navigation';
 import { track } from '../services/analytics';
 
@@ -81,7 +81,7 @@ export default function PoiSheet({ poi, onClose, style, inline = false }) {
         showsVerticalScrollIndicator
         bounces={false}
       >
-        <Text style={styles.text}>{poi.summary}</Text>
+        <Text style={styles.text}>{summaryOf(poi)}</Text>
       </ScrollView>
 
       <View style={styles.actions}>
