@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import { useAppContext } from '../context/AppContext';
-import { wikiUrl, summaryOf } from '../services/poiData';
+import { wikiUrl, summaryOf, licenceUrl } from '../services/poiData';
 import { openNavigationApp } from '../utils/navigation';
 import { track } from '../services/analytics';
 
@@ -33,6 +33,7 @@ export default function PoiSheet({ poi, onClose, style, inline = false }) {
   const styles = getStyles(theme);
   if (!poi) return null;
   const url = wikiUrl(poi);
+  const licUrl = licenceUrl(poi.photoLic);
   // Les résumés vont de 3 à 12 lignes. Sans plafond, une fiche comme
   // Saint-Eustache grandit vers le haut jusqu'à passer sous la barre d'état.
   // Seul le texte défile : photo, titre, boutons et crédit restent visibles.
@@ -54,9 +55,18 @@ export default function PoiSheet({ poi, onClose, style, inline = false }) {
             accessibilityLabel={t('poi.a11y.photo', { name: poi.name })}
           />
           {poi.photoBy && (
-            <Text style={styles.photoCredit} numberOfLines={1}>
-              {poi.photoBy} · {poi.photoLic}
-            </Text>
+            <TouchableOpacity
+              style={styles.photoCreditWrap}
+              onPress={licUrl ? () => Linking.openURL(licUrl).catch(() => {}) : undefined}
+              disabled={!licUrl}
+              activeOpacity={0.7}
+              accessibilityRole={licUrl ? 'link' : 'text'}
+              accessibilityLabel={`${poi.photoBy}, ${poi.photoLic}`}
+            >
+              <Text style={styles.photoCredit} numberOfLines={1}>
+                {poi.photoBy} · {poi.photoLic}{licUrl ? ' ↗' : ''}
+              </Text>
+            </TouchableOpacity>
           )}
         </View>
       )}
@@ -127,8 +137,10 @@ function makeStyles(t) {
     photoWrap: { height: 132, borderRadius: 11, overflow: 'hidden', marginBottom: 13, backgroundColor: t.surfaceHigh },
     photoWrapInline: { height: 104, marginBottom: 11 },
     photo: { width: '100%', height: '100%' },
+    // Le conteneur porte le positionnement, le texte seulement l'apparence :
+    // laisser les deux en absolu ferait sortir le crédit de son cadre.
+    photoCreditWrap: { position: 'absolute', right: 7, bottom: 5 },
     photoCredit: {
-      position: 'absolute', right: 7, bottom: 5,
       fontSize: 9, color: 'rgba(255,255,255,0.85)',
       backgroundColor: 'rgba(0,0,0,0.42)', borderRadius: 4, paddingHorizontal: 5, paddingVertical: 1,
     },

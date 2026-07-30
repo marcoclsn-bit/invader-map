@@ -201,6 +201,25 @@ async function fetchTranslations(city, lang) {
 }
 
 /**
+ * Adresse du texte de la licence d'une photo, à partir du nom court renvoyé par
+ * Commons (« CC BY-SA 3.0 », « CC BY 2.0 fr », « CC0 »…).
+ *
+ * Une attribution complète en Creative Commons demande de pouvoir remonter au
+ * texte de la licence, pas seulement d'en citer le nom. Renvoie null pour le
+ * domaine public, qui n'est pas une licence.
+ */
+export function licenceUrl(lic) {
+  if (!lic) return null;
+  const s = String(lic).trim();
+  if (/^cc0/i.test(s)) return 'https://creativecommons.org/publicdomain/zero/1.0/';
+  if (/^public domain|^pd/i.test(s)) return null;
+  const m = s.match(/^cc[ -]by(?:[ -](sa))?(?:[ -](\d(?:\.\d)?))?(?:[ -]([a-z]{2}))?/i);
+  if (!m) return null;
+  const juri = m[3] ? `${m[3].toLowerCase()}/` : '';
+  return `https://creativecommons.org/licenses/${m[1] ? 'by-sa' : 'by'}/${m[2] ?? '4.0'}/${juri}`;
+}
+
+/**
  * URL de l'article Wikipédia (bouton « Voir plus »), dans la langue de l'app.
  *
  * Les résumés sont en français, mais l'article complet existe souvent dans la
