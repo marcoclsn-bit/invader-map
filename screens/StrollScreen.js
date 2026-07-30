@@ -15,6 +15,7 @@ import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import { STATUS_COLOR } from '../constants';
 import { requestStrollPermissions } from '../services/strollEngine';
+import { track } from '../services/analytics';
 
 // 50 / 100 / 150 m uniquement : en dessous de ~50 m le geofencing iOS n'est pas fiable.
 const RADIUS_MIN = 50;
@@ -84,6 +85,7 @@ export default function StrollScreen({ navigation }) {
 
   async function onToggleEnabled(value) {
     if (!value) {
+      track('stroll_toggle', { state: 'off' });
       setStrollPref({ enabled: false });
       setBgDenied(false);
       // Clôt la session « balade » (durée + flashs ; distance non trackée)
@@ -103,9 +105,14 @@ export default function StrollScreen({ navigation }) {
     // Activation : on demande les autorisations
     const { foreground, background } = await requestStrollPermissions();
     if (!foreground) {
+      track('stroll_toggle', { state: 'blocked', reason: 'no_foreground' });
       Alert.alert(t('stroll.perm.deniedTitle'), t('stroll.perm.deniedBody'));
       return; // sans localisation, rien à faire
     }
+    // `mode` distingue la Balade pleinement fonctionnelle du mode dégradé
+    // (alertes seulement app ouverte). Si le dégradé domine, la fonctionnalité
+    // ne tient pas sa promesse et il faudra revoir la façon de la demander.
+    track('stroll_toggle', { state: 'on', mode: background ? 'background' : 'foreground_only' });
     setBgDenied(!background);
     setStrollPref({ enabled: true });
     AsyncStorage.setItem('@invader_stroll_started', new Date().toISOString());

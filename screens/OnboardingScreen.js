@@ -9,6 +9,7 @@ import { useTranslation } from 'react-i18next';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import Logo from '../components/Logo';
+import { track } from '../services/analytics';
 
 // ─── Données des slides ───────────────────────────────────────────────────────
 //
@@ -185,12 +186,18 @@ export default function OnboardingScreen({ onComplete }) {
       if (existing.status === 'granted') { onComplete(); return; }
 
       const { status } = await Location.requestForegroundPermissionsAsync();
+      // Mesuré ici et nulle part ailleurs quand c'est accordé : c'est le seul
+      // endroit où la question est posée, une fois par installation — donc un
+      // événement par utilisateur, pas un par ouverture. Sans GPS, la Chasse,
+      // le Trajet et la Balade sont inutilisables : ce taux conditionne tout.
+      track('location_permission', { result: status === 'granted' ? 'granted' : 'denied', from: 'onboarding' });
       if (status === 'granted') {
         onComplete();
       } else {
         setLocationDenied(true);
       }
     } catch {
+      track('location_permission', { result: 'error', from: 'onboarding' });
       setLocationDenied(true);
     } finally {
       setRequesting(false);

@@ -27,6 +27,9 @@ import { typography } from '../theme/tokens';
 import { openNavigationApp } from '../utils/navigation';
 import { track } from '../services/analytics';
 
+// Refus de localisation déjà signalé pour ce lancement de l'app (voir plus bas).
+let _deniedReported = false;
+
 
 // ─── Cache de styles thémés (un seul StyleSheet par thème) ───────────────────
 let _styleCache = null;
@@ -264,7 +267,15 @@ export default function MapScreen({ navigation, route }) {
     let headingSub  = null;
     (async () => {
       const { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== 'granted') return;
+      if (status !== 'granted') {
+        // Signalé UNE SEULE FOIS par lancement, et uniquement en cas de refus :
+        // l'octroi est déjà mesuré à l'onboarding, et un événement à chaque
+        // montage de la carte coûterait cher pour ne rien apprendre de neuf.
+        // Ce qu'on cherche ici, c'est le nombre de gens qui continuent d'utiliser
+        // l'app sans GPS — donc sans Chasse, ni Trajet, ni Balade.
+        if (!_deniedReported) { _deniedReported = true; track('location_permission', { result: 'denied', from: 'map' }); }
+        return;
+      }
       setLocationGranted(true);
 
       // ── Étape A : position du cache iOS (instantanée, max 5 min) ──────────

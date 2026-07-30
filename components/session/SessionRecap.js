@@ -128,7 +128,13 @@ export default function SessionRecap() {
               ? <ActivityIndicator color={theme.bg} />
               : <><Ionicons name="share-social" size={18} color={theme.bg} /><Text style={[styles.shareText, { color: theme.bg }]}>{t('session.recap.share')}</Text></>}
           </TouchableOpacity>
-          <TouchableOpacity style={styles.closeBtn} onPress={clearRecap} activeOpacity={0.7}>
+          {/* Pendant négatif de share_tap : sans lui, un faible taux de partage
+              serait indistinguable d'un récap qui ne s'affiche jamais. */}
+          <TouchableOpacity
+            style={styles.closeBtn}
+            onPress={() => { track('recap_closed', { source: session.source ?? 'unknown' }); clearRecap(); }}
+            activeOpacity={0.7}
+          >
             <Text style={[styles.closeText, { color: theme.textSecondary }]}>{t('session.recap.close')}</Text>
           </TouchableOpacity>
         </ScrollView>

@@ -35,7 +35,7 @@ import { useTheme } from '../theme/ThemeContext';
 import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
 import { typography } from '../theme/tokens';
 import { openInstagramTag, openNavigationApp } from '../utils/navigation';
-import { track } from '../services/analytics';
+import { track, failureReason } from '../services/analytics';
 
 const _PA         = CITIES.PA;
 const PARIS       = { latitude: _PA.center.lat, longitude: _PA.center.lng, ..._PA.mapDelta };
@@ -430,6 +430,15 @@ export default function TrajetScreen() {
         if (near.properties.dist <= bufferKm) nearby.push({ ...inv, along: near.properties.location });
       }
       __DEV__ && console.log(`[Trajet] Couloir : ${candidates.length} candidats (bbox) → ${nearby.length} retenus`);
+      // Le trajet n'est vraiment « généré » qu'ici, une fois le couloir appliqué :
+      // c'est le nombre d'Invaders retenus qui décide si le résultat est utile.
+      // `found: 0` avec un couloir étroit orientera vers un défaut de largeur.
+      track(nearby.length === 0 ? 'plan_failed' : 'plan_generated', {
+        source: 'route',
+        ...(nearby.length === 0
+          ? { reason: 'no_invaders_in_corridor', corridorKm: bufferKm }
+          : { steps: nearby.length, corridorKm: bufferKm, objective: poiPrefs.objective }),
+      });
       setRouteInvaders(nearby);
       setSelectedRouteInv(null);
       // fitToCoordinates est déplacé dans l'effect sur routeInvaders (ci-dessous) :
@@ -789,6 +798,9 @@ export default function TrajetScreen() {
       setLoadingPhase('invaders');
       setRouteCoords(coords);
     } catch (e) {
+      // Motif normalisé : `api_limit` est le seul vrai quota de l'app (ORS et
+      // Mapbox) et il était jusqu'ici totalement invisible.
+      track('plan_failed', { source: 'route', reason: failureReason(e) });
       setLoadingPhase(null);
       setError(e.message ?? t('route.error.routeCalc'));
     }

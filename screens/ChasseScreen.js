@@ -32,7 +32,7 @@ import { useGamification } from '../context/GamificationContext';
 import { canUseFeature, FEATURES } from '../services/featureAccess';
 import { getPois, hasPois, wikiUrl, summaryOf } from '../services/poiData';
 import { POI_FAMILIES, familyOf } from '../data/poiFamilies';
-import { track } from '../services/analytics';
+import { track, failureReason } from '../services/analytics';
 
 const _PA        = CITIES.PA;
 const PARIS      = { latitude: _PA.center.lat, longitude: _PA.center.lng, ..._PA.mapDelta };
@@ -766,6 +766,9 @@ export default function ChasseScreen({ route }) {
       });
 
       if (selected.length === 0) {
+        // Échec « produit » le plus parlant : les réglages ne donnent rien ici.
+        // Trop fréquent = le filtre « non flashés » ou le budget sont trop stricts.
+        track('plan_failed', { source: 'hunt', reason: 'no_invaders', budget: budgetMin, objective: poiPrefs.objective });
         setError(t('hunt.error.noInvadersReachable'));
         return;
       }
@@ -793,7 +796,15 @@ export default function ChasseScreen({ route }) {
         startLon,
       });
       setInputCollapsed(true);
+      // Complète le tunnel EN AMONT de run_start : l'écart entre les deux mesure
+      // combien de chasses sont calculées puis jamais démarrées.
+      track('plan_generated', {
+        source: 'hunt', budget: budgetMin, objective: poiPrefs.objective, mode: profile,
+        steps: sel.length, invaders: sel.filter(x => !x.isPoi).length,
+        durationMin: Math.round(totalDurationMin),
+      });
     } catch (e) {
+      track('plan_failed', { source: 'hunt', reason: failureReason(e), budget: budgetMin });
       setError(e.message ?? t('hunt.error.generation'));
     } finally {
       setLoading(false);

@@ -10,6 +10,7 @@ import i18n, { applyLanguage, LANGUAGE_STORAGE_KEY } from '../i18n';
 import { ENABLED_CITIES, DEFAULT_CITY_CODE, CITIES } from '../cities/registry';
 import { ALL_POI_FAMILIES } from '../data/poiFamilies';
 import { initPoiService, checkPoiUpdate, getPoiVersion, setPoiLanguage } from '../services/poiData';
+import { track } from '../services/analytics';
 
 const AppContext = createContext(null);
 
@@ -204,6 +205,10 @@ export function AppProvider({ children }) {
     if (code === currentCityCodeRef.current) return;
     if (cityChangeLock.current) return;
     cityChangeLock.current = true;
+    // Placé APRÈS les deux gardes : sinon chaque tentative redondante ou bloquée
+    // compterait comme un changement. C'est la mesure qui décidera d'étendre les
+    // lieux d'intérêt hors de Paris.
+    track('city_change', { city: code });
     currentCityCodeRef.current = code;
     AsyncStorage.setItem('@invader_current_city', code);
 

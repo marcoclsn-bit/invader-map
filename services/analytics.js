@@ -12,6 +12,7 @@
 
 import Aptabase, { trackEvent } from '@aptabase/react-native';
 import { APTABASE_KEY } from '../config/aptabase';
+import i18n from '../i18n';
 
 let enabled = false;
 
@@ -34,4 +35,37 @@ export function track(name, props) {
   } catch (e) {
     if (__DEV__) console.log('[analytics] track :', e?.message);
   }
+}
+
+// Motifs d'échec normalisés.
+const REASONS = [
+  ['routing.error.limit',            'api_limit'],
+  ['routing.error.routeNotFound',    'route_not_found'],
+  ['routing.error.addressNotFound',  'address_not_found'],
+  ['route.error.noGps',              'no_gps'],
+  ['route.error.noArrival',          'no_arrival'],
+  ['route.error.noApiKey',           'no_api_key'],
+  ['hunt.error.noInvadersReachable', 'no_invaders'],
+];
+
+/**
+ * Réduit une erreur à un motif stable et anonyme.
+ *
+ * Deux raisons de ne JAMAIS envoyer `e.message` tel quel :
+ *   - les erreurs sont levées DÉJÀ TRADUITES (services/routing.js), donc un même
+ *     échec produirait quatre valeurs distinctes et aucun regroupement lisible ;
+ *   - `routing.error.addressNotFoundFor` interpole l'adresse saisie par
+ *     l'utilisateur, qui n'a rien à faire dans une mesure d'audience.
+ */
+export function failureReason(e) {
+  const msg = String(e?.message ?? '').trim();
+  if (!msg) return 'unknown';
+  for (const [key, slug] of REASONS) {
+    if (msg === i18n.t(key)) return slug;
+  }
+  // Variante interpolée : on compare le début du gabarit, jamais le texte saisi.
+  const prefix = i18n.t('routing.error.addressNotFoundFor', { text: '' }).slice(0, 12).trim();
+  if (prefix.length > 4 && msg.startsWith(prefix)) return 'address_not_found';
+  if (/^HTTP \d+$/.test(msg)) return 'http_error';
+  return 'other';
 }
