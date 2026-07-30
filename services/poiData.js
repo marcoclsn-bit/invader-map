@@ -129,6 +129,17 @@ export async function checkPoiUpdate(cityCode = null) {
     } catch (_) { /* on garde ce qu'on a */ }
   }
 
+  // Traductions : une correction doit atteindre ceux qui ont déjà téléchargé.
+  if (_lang !== 'fr') {
+    for (const code of codes) {
+      const attendue = index?.cities?.[code]?.langs?.[_lang];
+      const enPlace = _trad.get(`${code}:${_lang}`)?.version ?? 0;
+      if (attendue && attendue > enPlace) {
+        try { await fetchTranslations(code, _lang); bougé = true; } catch (_) { /* on garde */ }
+      }
+    }
+  }
+
   if (bougé) _notify?.();
   return bougé ? 'updated' : 'up_to_date';
 }

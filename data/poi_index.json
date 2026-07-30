@@ -5,7 +5,12 @@
   "PA": {
    "version": 17,
    "updatedAt": "2026-07-30",
-   "count": 689
+   "count": 689,
+   "langs": {
+    "en": 17,
+    "es": 17,
+    "it": 17
+   }
   }
  }
 }
