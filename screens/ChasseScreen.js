@@ -1486,17 +1486,23 @@ function makeStyles(t) {
 
     // ── Sélecteur d'arrondissements (mode quartier, Paris) ───────────────────
     arSection: { marginTop: 4 },
-    arHint: { fontSize: 13, color: t.textSecondary, marginBottom: 10 },
+    arHint: { ...typography.fieldLabel, color: t.textSecondary, marginBottom: 10 },
     arGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+    // Pastilles RONDES et non carrées : un carré aligné en grille se lit comme
+    // une case à cocher — « prends-en autant que tu veux » —, un cercle comme un
+    // bouton radio. La sélection étant désormais unique, la forme doit le dire
+    // avant qu'on ait touché quoi que ce soit.
     arChip: {
-      width: 42, height: 38, borderRadius: 10,
+      width: 40, height: 40, borderRadius: 20,
       alignItems: 'center', justifyContent: 'center',
       backgroundColor: t.surfaceHigh,
       borderWidth: 1.5, borderColor: t.border,
     },
     arChipActive: { backgroundColor: t.accent, borderColor: t.accent },
     arChipText: { fontSize: 15, fontWeight: '600', color: t.textPrimary },
-    arChipTextActive: { color: t.bg },
+    // Le choix retenu passe en gras : sur vingt pastilles, la seule couleur ne
+    // suffit pas à le retrouver du coin de l'œil.
+    arChipTextActive: { color: t.bg, fontWeight: '800' },
 
     // ── Zone basse : conteneur qui empile boutons puis panel ────────────────
     bottomZone: {
