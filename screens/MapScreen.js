@@ -11,7 +11,7 @@ import { DrawerActions } from '@react-navigation/native';
 import { useAppContext } from '../context/AppContext';
 import { CITIES, ENABLED_CITIES } from '../cities/registry';
 import { ALL_STATUSES } from '../constants';
-import { POI_FAMILIES, familyOf } from '../data/poiFamilies';
+import { familyOf } from '../data/poiFamilies';
 import { getPois, hasPois } from '../services/poiData';
 import InvaderMarker from '../components/InvaderMarker';
 import Legend from '../components/Legend';
@@ -26,6 +26,7 @@ import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
 import { typography } from '../theme/tokens';
 import { openNavigationApp } from '../utils/navigation';
 import { track } from '../services/analytics';
+import PoiFamilyChips from '../components/PoiFamilyChips';
 
 // Refus de localisation déjà signalé pour ce lancement de l'app (voir plus bas).
 let _deniedReported = false;
@@ -70,7 +71,7 @@ function applyFilters(invaders, filters, flashed) {
 // ─── Panneau de filtres ───────────────────────────────────────────────────────
 
 function FilterPanel({ filters, onFiltersChange, onClose }) {
-  const { statusColors, poiPrefs, setPoiPref, togglePoiFamily, currentCityCode } = useAppContext();
+  const { statusColors, poiPrefs, setPoiPref, currentCityCode } = useAppContext();
   const { theme } = useTheme();
   const { t } = useTranslation();
   const styles = getStyles(theme);
@@ -173,34 +174,10 @@ function FilterPanel({ filters, onFiltersChange, onClose }) {
               thumbColor={theme.bg}
             />
           </View>
-          {poiPrefs.enabled && (
-            <View style={styles.chipRow}>
-              {POI_FAMILIES.map(({ key, icon }) => {
-                const active = poiPrefs.families.has(key);
-                return (
-                  <TouchableOpacity
-                    key={key}
-                    onPress={() => togglePoiFamily(key)}
-                    activeOpacity={0.7}
-                    accessibilityRole="checkbox"
-                    accessibilityState={{ checked: active }}
-                    accessibilityLabel={t(`poi.family.${key}`)}
-                    style={[
-                      styles.checkChip,
-                      active
-                        ? { backgroundColor: theme.accentScore, borderColor: theme.accentScore }
-                        : { backgroundColor: 'transparent', borderColor: theme.border },
-                    ]}
-                  >
-                    <Ionicons name={icon} size={15} color={active ? theme.bg : theme.textSecondary} />
-                    <Text style={[styles.chipText, active ? styles.chipTextActive : { color: theme.textPrimary }]}>
-                      {t(`poi.family.${key}`)}
-                    </Text>
-                  </TouchableOpacity>
-                );
-              })}
-            </View>
-          )}
+          {/* Même composant que la feuille ouverte depuis le Trajet et la Chasse :
+              `poiPrefs.families` est un réglage unique, il n'a aucune raison
+              d'exister en trois exemplaires de code. */}
+          {poiPrefs.enabled && <PoiFamilyChips style={{ marginTop: 8 }} />}
         </>
       )}
 

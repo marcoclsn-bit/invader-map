@@ -37,6 +37,7 @@ import { typography } from '../theme/tokens';
 import { openInstagramTag, openNavigationApp } from '../utils/navigation';
 import { track, failureReason } from '../services/analytics';
 import ObjectivePicker from '../components/ObjectivePicker';
+import PoiFamiliesRow from '../components/PoiFamiliesRow';
 
 const _PA         = CITIES.PA;
 const PARIS       = { latitude: _PA.center.lat, longitude: _PA.center.lng, ..._PA.mapDelta };
@@ -1171,6 +1172,11 @@ export default function TrajetScreen() {
                       hintPrefix="route.objectiveHint_"
                       style={{ marginTop: 0 }}
                     />
+                    {/* Le Trajet n'affichait AUCUNE indication sur les familles
+                        retenues : le filtre réglé depuis la Carte s'y appliquait
+                        en silence. C'était le pire des trois écrans, pas le plus
+                        sobre — on subissait un réglage sans pouvoir le voir. */}
+                    {poiPrefs.objective !== 'pure' && <PoiFamiliesRow style={{ marginTop: 12 }} />}
                   </View>
                 )}
 

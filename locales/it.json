@@ -26,7 +26,8 @@
     },
     "menu": "Menu",
     "appName": "InvaderQuest",
-    "reset": "Reimposta"
+    "reset": "Reimposta",
+    "close": "Chiudi"
   },
   "tabs": {
     "map": "Mappa",
@@ -1085,6 +1086,14 @@
       "photo": "Foto di {{name}}",
       "layer": "Mostra i luoghi sulla mappa",
       "more": "Leggi l'articolo di Wikipedia"
+    },
+    "families": {
+      "all": "Tutte",
+      "none": "Nessuna!",
+      "some": "{{count}} su {{total}}",
+      "selectAll": "Seleziona tutto",
+      "edit": "Apri impostazioni famiglie",
+      "shared": "Questa impostazione è la stessa su Mappa, Percorso e Caccia."
     }
   }
 }

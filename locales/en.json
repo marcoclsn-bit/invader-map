@@ -26,7 +26,8 @@
     },
     "menu": "Menu",
     "appName": "InvaderQuest",
-    "reset": "Reset"
+    "reset": "Reset",
+    "close": "Close"
   },
   "tabs": {
     "map": "Map",
@@ -1085,6 +1086,14 @@
       "photo": "Photo of {{name}}",
       "layer": "Show places on the map",
       "more": "Read the Wikipedia article"
+    },
+    "families": {
+      "all": "All",
+      "none": "None!",
+      "some": "{{count}} of {{total}}",
+      "selectAll": "Select all",
+      "edit": "Open family settings",
+      "shared": "This setting is shared by the Map, Route and Hunt."
     }
   }
 }

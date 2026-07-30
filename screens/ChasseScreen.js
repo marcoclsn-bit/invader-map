@@ -31,9 +31,10 @@ import useKeepScreenOn from '../components/session/useKeepScreenOn';
 import { useGamification } from '../context/GamificationContext';
 import { canUseFeature, FEATURES } from '../services/featureAccess';
 import { getPois, hasPois, wikiUrl, summaryOf } from '../services/poiData';
-import { POI_FAMILIES, familyOf } from '../data/poiFamilies';
+import { familyOf } from '../data/poiFamilies';
 import { track, failureReason } from '../services/analytics';
 import ObjectivePicker from '../components/ObjectivePicker';
+import PoiFamiliesRow from '../components/PoiFamiliesRow';
 
 const _PA        = CITIES.PA;
 const PARIS      = { latitude: _PA.center.lat, longitude: _PA.center.lng, ..._PA.mapDelta };
@@ -470,7 +471,7 @@ export default function ChasseScreen({ route }) {
   const debounce = useRef(null);
   const locationSub = useRef(null);
 
-  const { invaders, flashed, statusColors, currentCityCode, toggleFlash, mapsApp, isChangingCity, poiPrefs, setPoiPref, togglePoiFamily } = useAppContext();
+  const { invaders, flashed, statusColors, currentCityCode, toggleFlash, mapsApp, isChangingCity, poiPrefs, setPoiPref } = useAppContext();
   const city = CITIES[currentCityCode] ?? CITIES.PA;
   const { theme, isDark } = useTheme();
   const { t, i18n } = useTranslation();
@@ -1164,35 +1165,11 @@ export default function ChasseScreen({ route }) {
                     <View style={styles.objectiveBlock}>
                       <ObjectivePicker value={objective} onChange={setObjective} style={{ marginTop: 0 }} />
 
-                      {/* Familles de lieux — même réglage que la Carte et le Trajet */}
-                      {objective !== 'pure' && (
-                        <View style={styles.famRow}>
-                          {POI_FAMILIES.map(({ key, icon }) => {
-                            const active = poiPrefs.families.has(key);
-                            return (
-                              <TouchableOpacity
-                                key={key}
-                                onPress={() => togglePoiFamily(key)}
-                                activeOpacity={0.7}
-                                accessibilityRole="checkbox"
-                                accessibilityState={{ checked: active }}
-                                accessibilityLabel={t(`poi.family.${key}`)}
-                                style={[
-                                  styles.famChip,
-                                  active
-                                    ? { backgroundColor: theme.accentScore, borderColor: theme.accentScore }
-                                    : { backgroundColor: 'transparent', borderColor: theme.border },
-                                ]}
-                              >
-                                <Ionicons name={icon} size={13} color={active ? theme.bg : theme.textSecondary} />
-                                <Text style={[styles.famChipText, { color: active ? theme.bg : theme.textPrimary }]}>
-                                  {t(`poi.family.${key}`)}
-                                </Text>
-                              </TouchableOpacity>
-                            );
-                          })}
-                        </View>
-                      )}
+                      {/* Les sept pastilles de familles pesaient autant que le budget
+                          temps pour un filtre secondaire. Une ligne récapitulative les
+                          remplace : elle allège le panneau tout en gardant le réglage
+                          VISIBLE, ce que leur simple suppression aurait perdu. */}
+                      {objective !== 'pure' && <PoiFamiliesRow style={{ marginTop: 12 }} />}
                     </View>
                   )}
 
@@ -1560,12 +1537,6 @@ function makeStyles(t) {
     poiMarkerNum: { color: '#221A00', fontSize: 11, fontWeight: '800' },
 
     objectiveBlock: { marginTop: 14 },
-    famRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 6, marginTop: 10 },
-    famChip: {
-      flexDirection: 'row', alignItems: 'center', gap: 5,
-      borderRadius: 20, paddingHorizontal: 9, paddingVertical: 5, borderWidth: 1.5,
-    },
-    famChipText: { fontSize: 11.5, fontWeight: '600' },
 
     poiRow: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 14, height: 52 },
     poiRowDiamond: {
