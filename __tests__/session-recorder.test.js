@@ -36,8 +36,15 @@ describe('comblerDepuisItineraire', () => {
     expect(r.points[r.points.length - 1]).toEqual(route[3]);
   });
 
-  test('s’abstient si l’utilisateur n’était pas sur l’itinéraire', () => {
-    // 2 km au nord : on ne peut rien déduire du chemin prévu
+  test('comble encore après un détour ordinaire', () => {
+    // ~250 m au nord de l'itinéraire : un café, une rue barrée. On préfère un
+    // tracé plausible à une ligne droite traversant les immeubles.
+    const detour = { lat: 48.8622, lng: 2.3530 };
+    expect(comblerDepuisItineraire(route, detour, sur(8))).not.toBeNull();
+  });
+
+  test('s’abstient quand l’utilisateur s’est franchement éloigné', () => {
+    // 2 km au nord : reprendre l'itinéraire raconterait une balade qui n'a pas eu lieu
     const loin = { lat: 48.8800, lng: 2.3520 };
     expect(comblerDepuisItineraire(route, loin, sur(7))).toBeNull();
     expect(comblerDepuisItineraire(route, sur(1), loin)).toBeNull();

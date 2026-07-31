@@ -21,9 +21,14 @@ const TROU_KM = 0.08;
 // annoncer 6 km parce que l'utilisateur a pris le métro serait faux.
 const VITESSE_MAX_KMH = 22;
 
-// Distance maximale entre un point GPS et l'itinéraire prévu pour considérer que
-// l'utilisateur le suivait. Au-delà, on ne peut rien déduire de ce tracé.
-const PROCHE_ITI_KM = 0.15;
+// Distance maximale entre un point GPS et l'itinéraire prévu pour reprendre ce
+// dernier. Volontairement large : entre deux erreurs possibles, on préfère celle
+// qui ne se voit pas. Une ligne droite traversant un pâté de maisons saute aux
+// yeux ; un tracé plausible passant une rue à côté, non. À 400 m on couvre les
+// détours ordinaires — un café, une rue barrée, un aller-retour — tout en
+// écartant le cas où l'utilisateur s'est franchement éloigné du parcours, où
+// reprendre l'itinéraire raconterait une balade qui n'a pas eu lieu.
+const PROCHE_ITI_KM = 0.40;
 
 // Indice du point de l'itinéraire le plus proche d'une position donnée.
 function plusProche(route, lat, lng) {
