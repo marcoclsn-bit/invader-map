@@ -78,6 +78,12 @@ describe('plafond de vitesse par mode', () => {
     expect(VITESSE_MAX_KMH['foot-walking']).toBeLessThan(25); // vitesse commerciale du métro
   });
 
+  test('la course en mode marche reste comptée', () => {
+    // Rien n'empêche de courir avec le profil piéton. À 12 km/h, la distance
+    // d'un coureur était effacée — l'inverse du but recherché.
+    expect(VITESSE_MAX_KMH['foot-walking']).toBeGreaterThanOrEqual(16);
+  });
+
   test('un cycliste rapide en ville reste sous le plafond', () => {
     expect(VITESSE_MAX_KMH['cycling-regular']).toBeGreaterThanOrEqual(30);
   });

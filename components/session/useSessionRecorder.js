@@ -22,10 +22,13 @@ const TROU_KM = 0.08;
 // faux. Le mode est connu de l'app, il n'y a donc aucune raison de se rabattre
 // sur une valeur unique : 30 km/h laisserait passer le métro pour un marcheur,
 // 12 km/h amputerait un cycliste rapide.
-//   à pied  : 12 — couvre la marche vive et même le petit trot
+//   à pied  : 18 — la COURSE comprise. Rien n'empêche de courir avec le profil
+//              piéton, et 12 km/h effaçait la distance d'un coureur ordinaire —
+//              exactement ce que ce garde-fou est censé éviter. 18 km/h de
+//              moyenne sur plusieurs minutes relève déjà du niveau national.
 //   à vélo  : 30 — pointe en ville sur une courte distance
-export const VITESSE_MAX_KMH = { 'foot-walking': 12, 'cycling-regular': 30 };
-export const VITESSE_DEFAUT = 12;
+export const VITESSE_MAX_KMH = { 'foot-walking': 18, 'cycling-regular': 30 };
+export const VITESSE_DEFAUT = 18;
 
 // Distance maximale entre un point GPS et l'itinéraire prévu pour reprendre ce
 // dernier. Volontairement large : entre deux erreurs possibles, on préfère celle
