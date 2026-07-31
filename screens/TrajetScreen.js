@@ -1164,6 +1164,11 @@ export default function TrajetScreen() {
                 </View>
 
                 {/* ── Objectif : mêmes trois modes que la Chasse ── */}
+                {!hasPois(currentCityCode) && (
+                  <Text style={styles.poiUnavailable}>
+                    {t('route.poiUnavailable', { city: city.name })}
+                  </Text>
+                )}
                 {hasPois(currentCityCode) && (
                   <View style={styles.bufferSection}>
                     <ObjectivePicker
@@ -1334,6 +1339,7 @@ function makeStyles(t) {
     goBtnText: { ...typography.actionLabel, color: t.bg },
 
     bufferSection: { marginTop: 10 },
+    poiUnavailable: { marginTop: 12, fontSize: 12, lineHeight: 17, color: t.textSecondary },
     bufferHeader: { flexDirection: 'row', alignItems: 'center', gap: 6 },
     bufferLabel: { ...typography.fieldLabel, color: t.textSecondary },
     // Intitulé + valeur sur une ligne : la valeur garde sa casse et se détache

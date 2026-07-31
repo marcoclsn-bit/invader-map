@@ -1281,7 +1281,14 @@ export default function ChasseScreen({ route }) {
                     thumbTintColor={theme.accent}
                   />
 
-                  {/* Objectif : chasse pure ↔ chasse & visite (villes avec lieux d'intérêt) */}
+                  {/* Objectif : chasse pure ↔ chasse & visite (villes avec lieux d'intérêt).
+                      Hors Paris, le bloc disparaissait sans un mot : quelqu'un venu pour
+                      les lieux racontés croyait à une panne. On le dit. */}
+                  {!poiEnabled && (
+                    <Text style={styles.poiUnavailable}>
+                      {t('hunt.poiUnavailable', { city: city.name })}
+                    </Text>
+                  )}
                   {poiEnabled && (
                     <View style={styles.objectiveBlock}>
                       <ObjectivePicker value={objective} onChange={setObjective} style={{ marginTop: 0 }} />
@@ -1724,6 +1731,7 @@ function makeStyles(t) {
     poiMarkerNum: { color: '#221A00', fontSize: 11, fontWeight: '800' },
 
     objectiveBlock: { marginTop: 14 },
+    poiUnavailable: { marginTop: 14, fontSize: 12, lineHeight: 17, color: t.textSecondary },
 
     poiRow: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 14, height: 52 },
     poiRowDiamond: {

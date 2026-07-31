@@ -144,7 +144,8 @@
     "objectiveHint_pure": "Solo Invaders en el trayecto.",
     "objectiveHint_balanced": "Los Invaders del corredor, más algunos lugares notables.",
     "objectiveHint_visit": "Los Invaders del corredor y el máximo de lugares que ver por el camino.",
-    "corridorLabel": "Corredor"
+    "corridorLabel": "Corredor",
+    "poiUnavailable": "Los lugares por descubrir aún no están disponibles en {{city}}, así que la ruta solo incluye Invaders. París es la única ciudad documentada por ahora."
   },
   "hunt": {
     "aroundMe": "A mi alrededor",
@@ -211,7 +212,8 @@
       "poi": "Lugar que ver (parada extra)",
       "near": "Invader cercano, fuera de ruta",
       "done": "Ya flasheado"
-    }
+    },
+    "poiUnavailable": "Los lugares por descubrir aún no están disponibles en {{city}}, así que la ruta solo incluye Invaders. París es la única ciudad documentada por ahora."
   },
   "palmares": {
     "title": "Ciudades",
