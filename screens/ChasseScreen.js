@@ -35,7 +35,6 @@ import { familyOf } from '../data/poiFamilies';
 import { track, failureReason } from '../services/analytics';
 import ObjectivePicker from '../components/ObjectivePicker';
 import PoiFamiliesRow from '../components/PoiFamiliesRow';
-import InvaderMarker from '../components/InvaderMarker';
 
 const _PA        = CITIES.PA;
 const PARIS      = { latitude: _PA.center.lat, longitude: _PA.center.lng, ..._PA.mapDelta };
@@ -1036,19 +1035,22 @@ export default function ChasseScreen({ route }) {
                     la chasse doit rester lisible, ces marqueurs sont un bonus. */}
                 {voisins.map(inv => {
                   const flash = flashed.has(inv.id);
+                  const selv  = selectedInv?.id === inv.id;
                   return (
-                    <InvaderMarker
-                      // Sur iOS la clé porte l'état flashé : sans ça le marqueur
-                      // garderait son ancien bitmap après un flash — même raison
-                      // que le redrawKey des pastilles de parcours.
-                      key={Platform.OS === 'android' ? `v-${inv.id}` : `v-${inv.id}-${flash ? 1 : 0}`}
-                      invader={inv}
-                      isFlashed={flash}
+                    <PinMarker
+                      key={`v-${inv.id}`}
+                      coordinate={{ latitude: inv.lat, longitude: inv.lng }}
+                      anchor={{ x: 0.5, y: 0.5 }}
                       onPress={() => selectInvader(inv)}
+                      redrawKey={`${flash}|${selv}`}
                       stopPropagation
-                      label={`${inv.id}, ${t(`common.status.${inv.status}`)}, ${t(flash ? 'map.a11y.flashed' : 'map.a11y.todo')}`}
-                      hint={t('map.a11y.invaderHint')}
-                    />
+                      accessible
+                      accessibilityRole="button"
+                      accessibilityLabel={`${inv.id}, ${t(`common.status.${inv.status}`)}, ${t(flash ? 'map.a11y.flashed' : 'map.a11y.todo')}`}
+                      accessibilityHint={t('map.a11y.invaderHint')}
+                    >
+                      <View style={[styles.nearMarker, flash && styles.nearMarkerDone, selv && styles.nearMarkerSel]} />
+                    </PinMarker>
                   );
                 })}
                 {result.invaders.map((inv, i) => {
@@ -1620,6 +1622,25 @@ function makeStyles(t) {
     huntMarkerDone: { backgroundColor: t.textSecondary, borderColor: t.surface, opacity: 0.75 },
     huntMarkerNum: { color: t.bg, fontSize: 11, fontWeight: '700' },
     huntMarkerNumDone: { color: t.surface, fontSize: 13 },
+
+    // ── Invaders hors parcours ────────────────────────────────────────────
+    // Même famille que les pastilles d'étape — un sprite alien au milieu de
+    // pastilles numérotées faisait deux langages sur la même carte — mais sans
+    // rang et deux fois plus petites : elles situent ce qu'il y a autour sans
+    // entrer dans la lecture du parcours.
+    //
+    // La distinction flashé / à trouver passe par la FORME, pas la couleur :
+    // ici le gris plein signifie déjà « étape faite » (huntMarkerDone), une
+    // pastille grise pleine pour un Invader hors parcours non flashé aurait dit
+    // l'inverse de ce qu'elle montre. Anneau creux = à trouver, disque plein =
+    // déjà pris, ce qui reste lisible à 15 px là où un ✓ ne l'est pas.
+    nearMarker: {
+      width: 15, height: 15, borderRadius: 8,
+      borderWidth: 2.5, borderColor: t.textSecondary, backgroundColor: t.surface,
+      shadowColor: '#000', shadowOffset: { width: 0, height: 1 }, shadowOpacity: 0.25, shadowRadius: 2,
+    },
+    nearMarkerDone: { backgroundColor: t.textSecondary },
+    nearMarkerSel:  { borderColor: t.accent, backgroundColor: t.textPrimary },
 
     // ── Lieux d'intérêt (or, jamais vert : on ne confond pas avec un Invader) ──
     poiMarkerWrap: { width: 28, height: 28, alignItems: 'center', justifyContent: 'center' },
