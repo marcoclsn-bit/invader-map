@@ -204,7 +204,14 @@
     "timeLabelBare": "Tempo",
     "startSub": "Registra la tua scheda finale",
     "pickDistrict": "Scegli un arrondissement",
-    "districtSelected": "{{ar}}° arrondissement"
+    "districtSelected": "{{ar}}° arrondissement",
+    "legend": {
+      "title": "Legenda",
+      "step": "Tappa del percorso",
+      "poi": "Luogo da vedere (tappa bonus)",
+      "near": "Invader vicino, fuori percorso",
+      "done": "Già flashato"
+    }
   },
   "palmares": {
     "title": "Città",

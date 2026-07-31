@@ -204,7 +204,14 @@
     "timeLabelBare": "Time",
     "startSub": "Records your end-of-run card",
     "pickDistrict": "Pick a district",
-    "districtSelected": "District {{ar}}"
+    "districtSelected": "District {{ar}}",
+    "legend": {
+      "title": "Legend",
+      "step": "Route stop",
+      "poi": "Place to see (bonus stop)",
+      "near": "Invader nearby, off route",
+      "done": "Already flashed"
+    }
   },
   "palmares": {
     "title": "Cities",

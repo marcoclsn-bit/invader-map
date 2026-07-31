@@ -204,7 +204,14 @@
     "timeLabelBare": "Tiempo",
     "startSub": "Graba tu tarjeta final",
     "pickDistrict": "Elige un distrito",
-    "districtSelected": "Distrito {{ar}}"
+    "districtSelected": "Distrito {{ar}}",
+    "legend": {
+      "title": "Leyenda",
+      "step": "Parada del recorrido",
+      "poi": "Lugar que ver (parada extra)",
+      "near": "Invader cercano, fuera de ruta",
+      "done": "Ya flasheado"
+    }
   },
   "palmares": {
     "title": "Ciudades",

@@ -469,6 +469,18 @@ function HuntRow({ inv, index, isFlashed, statusColors, onPress }) {
   );
 }
 
+// Une entrée de légende : le repère tel qu'il apparaît sur la carte, et son sens.
+// Les styles sont passés en paramètre — ils dépendent du thème, construit dans
+// l'écran.
+function LegendRow({ children, label, styles }) {
+  return (
+    <View style={styles.legendRow}>
+      <View style={styles.legendIcon}>{children}</View>
+      <Text style={styles.legendLabel}>{label}</Text>
+    </View>
+  );
+}
+
 // ─── Écran Chasse ─────────────────────────────────────────────────────────────
 
 export default function ChasseScreen({ route }) {
@@ -533,6 +545,7 @@ export default function ChasseScreen({ route }) {
   const [budgetMin, setBudgetMin] = useState(60);
   const [profile, setProfile] = useState('foot-walking');
   const [unflashedOnly, setUnflashedOnly] = useState(true);
+  const [legendOpen,    setLegendOpen]    = useState(false);
   // Objectif : chasse pure ↔ chasse & visite (0 = aucun lieu d'intérêt).
   // Lu dans le contexte, PAS en état local : c'est le même réglage que sur la
   // Carte et le Trajet. Le garder ici en local faisait qu'un choix fait dans le
@@ -1382,15 +1395,51 @@ export default function ChasseScreen({ route }) {
         {!isChangingCity && result && !following && inputCollapsed && (
           <View style={styles.resultPanel}>
             <View style={styles.resultHeader}>
-              <Text style={styles.resultSummary}>
-                {t('hunt.resultCount', { count: result.invaderCount ?? result.invaders.length })}
-                {result.poiCount > 0 && (
-                  <Text style={{ color: theme.accentScore }}>
-                    {' · '}{t('hunt.poiCount', { count: result.poiCount })}
-                  </Text>
-                )}
-                {' · '}{result.totalPts} {t('common.pts')}{' · '}~{formatBudget(result.durationMin)}
-              </Text>
+              <View style={styles.resultHeaderRow}>
+                <Text style={[styles.resultSummary, { flex: 1 }]}>
+                  {t('hunt.resultCount', { count: result.invaderCount ?? result.invaders.length })}
+                  {result.poiCount > 0 && (
+                    <Text style={{ color: theme.accentScore }}>
+                      {' · '}{t('hunt.poiCount', { count: result.poiCount })}
+                    </Text>
+                  )}
+                  {' · '}{result.totalPts} {t('common.pts')}{' · '}~{formatBudget(result.durationMin)}
+                </Text>
+                {/* Repliée par défaut : la carte reste l'écran principal, la
+                    légende n'est utile qu'à la première rencontre d'un symbole. */}
+                <TouchableOpacity
+                  onPress={() => setLegendOpen(o => !o)}
+                  style={styles.legendToggle}
+                  activeOpacity={0.7}
+                  accessibilityRole="button"
+                  accessibilityState={{ expanded: legendOpen }}
+                  accessibilityLabel={t('hunt.legend.title')}
+                >
+                  <Ionicons name={legendOpen ? 'chevron-up' : 'information-circle-outline'} size={16} color={theme.textSecondary} />
+                  <Text style={styles.legendToggleText}>{t('hunt.legend.title')}</Text>
+                </TouchableOpacity>
+              </View>
+              {legendOpen && (
+                <View style={styles.legendBox}>
+                  <LegendRow label={t('hunt.legend.step')} styles={styles}>
+                    <View style={styles.legendStep}><Text style={styles.legendStepNum}>1</Text></View>
+                  </LegendRow>
+                  <LegendRow label={t('hunt.legend.poi')} styles={styles}>
+                    <View style={styles.legendPoiWrap}>
+                      <View style={styles.legendPoi} />
+                      <Text style={styles.legendPoiNum}>2</Text>
+                    </View>
+                  </LegendRow>
+                  <LegendRow label={t('hunt.legend.near')} styles={styles}>
+                    <View style={styles.nearMarker} />
+                  </LegendRow>
+                  <LegendRow label={t('hunt.legend.done')} styles={styles}>
+                    <View style={[styles.nearMarker, styles.nearMarkerDone]}>
+                      <Text style={styles.nearMarkerCheck}>✓</Text>
+                    </View>
+                  </LegendRow>
+                </View>
+              )}
             </View>
             <FlatList
               data={result.invaders}
@@ -1735,6 +1784,25 @@ function makeStyles(t) {
       borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: t.border,
     },
     resultSummary: { fontSize: 14, fontWeight: '600', color: t.textPrimary },
+    resultHeaderRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
+    legendToggle: { flexDirection: 'row', alignItems: 'center', gap: 4, paddingVertical: 4, paddingLeft: 6 },
+    legendToggleText: { fontSize: 12, color: t.textSecondary },
+    legendBox: { marginTop: 10, gap: 8 },
+    legendRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
+    legendIcon: { width: 24, alignItems: 'center', justifyContent: 'center' },
+    legendLabel: { fontSize: 12, color: t.textSecondary, flex: 1 },
+    legendStep: {
+      width: 20, height: 20, borderRadius: 10, backgroundColor: t.accent,
+      alignItems: 'center', justifyContent: 'center', borderWidth: 1.5, borderColor: '#fff',
+    },
+    legendStepNum: { color: t.bg, fontSize: 9, fontWeight: '700' },
+    legendPoiWrap: { width: 20, height: 20, alignItems: 'center', justifyContent: 'center' },
+    legendPoi: {
+      position: 'absolute', width: 17, height: 17, borderRadius: 4,
+      backgroundColor: t.accentScore, borderWidth: 1.5, borderColor: '#fff',
+      transform: [{ rotate: '45deg' }],
+    },
+    legendPoiNum: { color: '#221A00', fontSize: 9, fontWeight: '800' },
     resultList: { flex: 1 },
 
     huntRow: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 16, height: 48, gap: 10 },

@@ -204,7 +204,14 @@
     "timeLabelBare": "Temps",
     "startSub": "Enregistre ta carte de fin",
     "pickDistrict": "Choisis un arrondissement",
-    "districtSelected": "{{ar}}e arrondissement"
+    "districtSelected": "{{ar}}e arrondissement",
+    "legend": {
+      "title": "Légende",
+      "step": "Étape du parcours",
+      "poi": "Lieu à voir (étape bonus)",
+      "near": "Invader alentour, hors parcours",
+      "done": "Déjà flashé"
+    }
   },
   "palmares": {
     "title": "Villes",
