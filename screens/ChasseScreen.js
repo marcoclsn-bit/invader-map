@@ -1033,23 +1033,25 @@ export default function ChasseScreen({ route }) {
                 )}
                 {/* Rendus AVANT les étapes du parcours pour passer dessous :
                     la chasse doit rester lisible, ces marqueurs sont un bonus. */}
-                {voisins.map(inv => {
-                  const flash = flashed.has(inv.id);
-                  const selv  = selectedInv?.id === inv.id;
+                {/* Filtré ici et non dans le useMemo des voisins : celui-ci projette
+                    les candidats sur l'itinéraire (turf), le refaire à chaque flash
+                    coûterait cher pour un simple retrait d'affichage. */}
+                {voisins.filter(inv => !flashed.has(inv.id)).map(inv => {
+                  const selv = selectedInv?.id === inv.id;
                   return (
                     <PinMarker
                       key={`v-${inv.id}`}
                       coordinate={{ latitude: inv.lat, longitude: inv.lng }}
                       anchor={{ x: 0.5, y: 0.5 }}
                       onPress={() => selectInvader(inv)}
-                      redrawKey={`${flash}|${selv}`}
+                      redrawKey={`${selv}`}
                       stopPropagation
                       accessible
                       accessibilityRole="button"
-                      accessibilityLabel={`${inv.id}, ${t(`common.status.${inv.status}`)}, ${t(flash ? 'map.a11y.flashed' : 'map.a11y.todo')}`}
+                      accessibilityLabel={`${inv.id}, ${t(`common.status.${inv.status}`)}, ${t('map.a11y.todo')}`}
                       accessibilityHint={t('map.a11y.invaderHint')}
                     >
-                      <View style={[styles.nearMarker, flash && styles.nearMarkerDone, selv && styles.nearMarkerSel]} />
+                      <View style={[styles.nearMarker, selv && styles.nearMarkerSel]} />
                     </PinMarker>
                   );
                 })}
@@ -1629,17 +1631,15 @@ function makeStyles(t) {
     // rang et deux fois plus petites : elles situent ce qu'il y a autour sans
     // entrer dans la lecture du parcours.
     //
-    // La distinction flashé / à trouver passe par la FORME, pas la couleur :
-    // ici le gris plein signifie déjà « étape faite » (huntMarkerDone), une
-    // pastille grise pleine pour un Invader hors parcours non flashé aurait dit
-    // l'inverse de ce qu'elle montre. Anneau creux = à trouver, disque plein =
-    // déjà pris, ce qui reste lisible à 15 px là où un ✓ ne l'est pas.
+    // Seuls les NON flashés sont affichés : une pastille grise pleine pour un
+    // Invader déjà pris ne disait rien d'utile pendant une chasse, et le gris
+    // plein signifie déjà « étape faite » ailleurs sur cette carte
+    // (huntMarkerDone). L'anneau creux ne porte donc plus qu'un sens : à trouver.
     nearMarker: {
       width: 15, height: 15, borderRadius: 8,
       borderWidth: 2.5, borderColor: t.textSecondary, backgroundColor: t.surface,
       shadowColor: '#000', shadowOffset: { width: 0, height: 1 }, shadowOpacity: 0.25, shadowRadius: 2,
     },
-    nearMarkerDone: { backgroundColor: t.textSecondary },
     nearMarkerSel:  { borderColor: t.accent, backgroundColor: t.textPrimary },
 
     // ── Lieux d'intérêt (or, jamais vert : on ne confond pas avec un Invader) ──
