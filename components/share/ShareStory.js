@@ -35,8 +35,8 @@ const MAP_H = STORY_H;
 // Le parcours se cadre dans les 62 % supérieurs, son centre ancré à 34 % de la
 // hauteur : le bas appartient au score. Centrer le tracé dans l'image entière
 // en enterrait la moitié sous le voile.
-const ZONE_H = 0.62;
-const ANCRE_Y = 0.34;
+const ZONE_H = 0.56;
+const ANCRE_Y = 0.31;
 const PIN_SIZE = 20;
 
 // ─── Projection Web Mercator (pour aligner le tracé sur la carte Mapbox statique) ──
@@ -78,8 +78,14 @@ export function buildStaticMap(coords, pins, token) {
     x: MAP_W / 2 + (_mercX(lon) - _mercX(cLon)) * worldSize,
     y: MAP_H / 2 + (_mercY(lat) - _mercY(cLat)) * worldSize,
   });
+  // La vue est capturée en ×3 (1080×1920) par captureAndShare, alors que la
+  // carte était demandée en 360×640@2x, soit 720×1280 : elle se retrouvait
+  // étirée d'une fois et demie dans l'image partagée. On demande donc 540×960@2x
+  // — exactement la résolution finale. Le plafond Mapbox est à 1280 avant le @2x,
+  // 960 passe. La projection, elle, reste dans l'espace 360×640 de la vue.
   const url = `https://api.mapbox.com/styles/v1/mapbox/dark-v11/static/`
-    + `${cLon.toFixed(6)},${cLat.toFixed(6)},${zoom.toFixed(4)},0/${MAP_W}x${MAP_H}@2x?access_token=${token}`;
+    + `${cLon.toFixed(6)},${cLat.toFixed(6)},${zoom.toFixed(4)},0/`
+    + `${Math.round(MAP_W * 1.5)}x${Math.round(MAP_H * 1.5)}@2x?access_token=${token}`;
   return { url, project };
 }
 
@@ -180,9 +186,9 @@ const ShareStory = forwardRef(function ShareStory({ session, cityName, pins, map
         <Defs>
           <LinearGradient id="voile" x1="0" y1="0" x2="0" y2="1">
             <Stop offset="0"    stopColor={dark.bg} stopOpacity="0.88" />
-            <Stop offset="0.16" stopColor={dark.bg} stopOpacity="0.06" />
-            <Stop offset="0.55" stopColor={dark.bg} stopOpacity="0.06" />
-            <Stop offset="0.74" stopColor={dark.bg} stopOpacity="0.94" />
+            <Stop offset="0.15" stopColor={dark.bg} stopOpacity="0.06" />
+            <Stop offset="0.50" stopColor={dark.bg} stopOpacity="0.06" />
+            <Stop offset="0.70" stopColor={dark.bg} stopOpacity="0.95" />
             <Stop offset="1"    stopColor={dark.bg} stopOpacity="1" />
           </LinearGradient>
         </Defs>
@@ -229,9 +235,9 @@ const styles = StyleSheet.create({
   wordmarkAccent: { color: dark.accent },
 
   // Bloc du score, ancré en bas : c'est lui qu'on doit lire en vignette.
-  bloc: { position: 'absolute', left: 0, right: 0, bottom: 74, alignItems: 'center' },
+  bloc: { position: 'absolute', left: 0, right: 0, bottom: 62, alignItems: 'center' },
   chiffre: {
-    fontFamily: MONO, fontSize: 104, lineHeight: 112, color: dark.accent,
+    fontFamily: MONO, fontSize: 96, lineHeight: 104, color: dark.accent,
     textShadowColor: dark.accentGlow, textShadowOffset: { width: 0, height: 0 }, textShadowRadius: 18,
   },
   legende: { fontFamily: MONO, fontSize: 15, color: dark.textPrimary, letterSpacing: 3.5, marginTop: 4 },
