@@ -1,7 +1,6 @@
 import { forwardRef } from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import Svg, { Polyline, Circle, Line, Defs, LinearGradient, Stop, Rect, G } from 'react-native-svg';
+import Svg, { Polyline, Line, Defs, LinearGradient, Stop, Rect, G } from 'react-native-svg';
 import { useTranslation } from 'react-i18next';
 import { haversineKm } from '../../utils/session';
 import { dark } from '../../theme/tokens';
@@ -27,18 +26,18 @@ export function trimRouteEnds(coords) {
 export const STORY_W = 360;
 export const STORY_H = 640;
 
-const LOGO = require('../../assets/LogoFinal.png');
 const ALIEN = require('../../assets/markers/alien_flashed.png'); // pins = Invaders flashés (cohérent carte)
-const MAP_W = STORY_W - 48;
-const MAP_H = 300;
+// Plein cadre : la carte n'est plus une vignette encadrée mais le fond de
+// l'image. La boîte arrondie isolait le fond de carte et soulignait son vide ;
+// en fond, il donne une texture et une couleur sans réclamer d'attention.
+const MAP_W = STORY_W;
+const MAP_H = STORY_H;
+// Le parcours se cadre dans les 62 % supérieurs, son centre ancré à 34 % de la
+// hauteur : le bas appartient au score. Centrer le tracé dans l'image entière
+// en enterrait la moitié sous le voile.
+const ZONE_H = 0.62;
+const ANCRE_Y = 0.34;
 const PIN_SIZE = 20;
-
-// Couleur d'un pin selon la valeur en points (donne le côté « coloré » de la story).
-function pinColor(points) {
-  if (points >= 50) return '#FFD23F'; // or — rares / haute valeur
-  if (points >= 30) return '#4CE0FF'; // cyan — valeur moyenne
-  return dark.accent;                  // vert — valeur standard
-}
 
 // ─── Projection Web Mercator (pour aligner le tracé sur la carte Mapbox statique) ──
 const _mercX = (lon) => (lon + 180) / 360;
@@ -64,10 +63,16 @@ export function buildStaticMap(coords, pins, token) {
   const pad = 30;
   const fracX = Math.max(_mercX(mxLon) - _mercX(mnLon), 1e-9);
   const fracY = Math.max(_mercY(mnLat) - _mercY(mxLat), 1e-9);
-  let zoom = Math.log2(Math.min((MAP_W - 2 * pad) / (fracX * 512), (MAP_H - 2 * pad) / (fracY * 512)));
-  zoom = Math.max(1, Math.min(zoom, 18));
+  let zoom = Math.log2(Math.min((MAP_W - 2 * pad) / (fracX * 512), (ZONE_H * MAP_H - 2 * pad) / (fracY * 512)));
+  // Plafond bas quand il n'y a qu'une poignée de points très proches : sans lui,
+  // une session sans marche cadrerait au ras du trottoir.
+  zoom = Math.max(1, Math.min(zoom, geo.length < 4 ? 15.5 : 18));
   const cLon = (mnLon + mxLon) / 2;
-  const cLat = _latFromMercY((_mercY(mnLat) + _mercY(mxLat)) / 2);
+  const worldSizeTmp = 512 * Math.pow(2, zoom);
+  // On décale le centre de la CARTE vers le sud pour que le centre du TRACÉ
+  // remonte à ANCRE_Y — écran_y = H/2 + (mercY - mercY(centre)) × worldSize.
+  const mC = (_mercY(mnLat) + _mercY(mxLat)) / 2;
+  const cLat = _latFromMercY(mC + (0.5 - ANCRE_Y) * MAP_H / worldSizeTmp);
   const worldSize = 512 * Math.pow(2, zoom);
   const project = (lon, lat) => ({
     x: MAP_W / 2 + (_mercX(lon) - _mercX(cLon)) * worldSize,
@@ -108,22 +113,6 @@ function RouteLine({ coords, project }) {
   );
 }
 
-// Fond stylisé (repli sans réseau) : projection linéaire + grille façon « rues ».
-function StylizedMap({ coords, pins, project }) {
-  if (!project) return null;
-  const grid = [];
-  for (let i = 1; i < 7; i++) { const y = (MAP_H / 7) * i; grid.push(<Line key={`h${i}`} x1="0" y1={y} x2={MAP_W} y2={y - 14} stroke={dark.border} strokeWidth="0.5" opacity="0.5" />); }
-  for (let i = 1; i < 8; i++) { const x = (MAP_W / 8) * i; grid.push(<Line key={`v${i}`} x1={x} y1="0" x2={x + 12} y2={MAP_H} stroke={dark.border} strokeWidth="0.5" opacity="0.5" />); }
-  return (
-    <Svg width={MAP_W} height={MAP_H}>
-      <Defs><LinearGradient id="glow" x1="0" y1="0" x2="0" y2="1"><Stop offset="0" stopColor={dark.accent} stopOpacity="0.12" /><Stop offset="1" stopColor={dark.accent} stopOpacity="0" /></LinearGradient></Defs>
-      <Rect x="0" y="0" width={MAP_W} height={MAP_H} fill="url(#glow)" />
-      {grid}
-      <RouteLine coords={coords} project={project} />
-    </Svg>
-  );
-}
-
 // Pins = images alien flashé, posées aux coordonnées projetées (cohérent avec la carte).
 function PinImages({ pins, project }) {
   return (pins ?? []).map((p, i) => {
@@ -153,122 +142,108 @@ const ShareStory = forwardRef(function ShareStory({ session, cityName, pins, map
   const kmStr = hasKm ? km.toFixed(1).replace('.', ',') : '—';
   const timeStr = mins >= 60 ? `${Math.floor(mins / 60)}h${String(mins % 60).padStart(2, '0')}` : `${mins}′`;
 
-  const headline = hasKm
-    ? t('share.textKm', { km: kmStr, count: aliens, city: cityName })
-    : t('share.textNoKm', { count: aliens, city: cityName });
 
   // Tracé déjà rogné (confidentialité) fourni par l'appelant ; repli sur le brut.
   const routeCoords = Array.isArray(route) ? route : session?.routeCoords;
-  const hasRoute = Array.isArray(routeCoords) && routeCoords.length >= 2;
-  const hasGeo = hasRoute || (Array.isArray(pins) && pins.length > 0);
+  const hasGeo = (Array.isArray(routeCoords) && routeCoords.length >= 2)
+    || (Array.isArray(pins) && pins.length > 0);
 
   // Projection : carte réelle (mercator) ou repli linéaire — partagée par l'overlay et les repères.
   const project = hasGeo ? (map?.project ?? linearProject(routeCoords, pins)) : null;
-  const startXY = hasRoute && project ? project(routeCoords[0][0], routeCoords[0][1]) : null;
-  const endXY = hasRoute && project ? project(routeCoords[routeCoords.length - 1][0], routeCoords[routeCoords.length - 1][1]) : null;
+
+  // Ligne de contexte : n'énonce QUE ce qui existe. « 0,0 km » est l'inverse
+  // d'une vantardise, et « 0′ » ne vaut pas mieux — c'étaient pourtant les deux
+  // premières choses qu'on remarquait après une sortie courte.
+  const contexte = [cityName, hasKm ? `${kmStr} KM` : null, mins > 0 ? timeStr.toUpperCase() : null]
+    .filter(Boolean).join('  ·  ');
 
   return (
     <View ref={ref} collapsable={false} style={styles.root}>
+      {/* ── Fond : carte réelle plein cadre, ou repli stylisé ── */}
+      {map
+        ? <Image source={{ uri: map.url }} style={StyleSheet.absoluteFill} resizeMode="cover" />
+        : <View style={[StyleSheet.absoluteFill, { backgroundColor: '#0D1426' }]} />}
+
+      {hasGeo && project && (
+        <Svg width={MAP_W} height={MAP_H} style={StyleSheet.absoluteFill}>
+          {!map && <StylizedGrid />}
+          <RouteLine coords={routeCoords} project={project} />
+        </Svg>
+      )}
+
+      {hasGeo && project && <PinImages pins={pins} project={project} />}
+
+      {/* ── Voile : assombrit le sommet pour le logotype et le pied pour le
+             score, en laissant le parcours respirer au milieu. Dégradé SVG et
+             non expo-linear-gradient, qui embarquerait du code natif. ── */}
+      <Svg width={MAP_W} height={MAP_H} style={StyleSheet.absoluteFill} pointerEvents="none">
+        <Defs>
+          <LinearGradient id="voile" x1="0" y1="0" x2="0" y2="1">
+            <Stop offset="0"    stopColor={dark.bg} stopOpacity="0.88" />
+            <Stop offset="0.16" stopColor={dark.bg} stopOpacity="0.06" />
+            <Stop offset="0.55" stopColor={dark.bg} stopOpacity="0.06" />
+            <Stop offset="0.74" stopColor={dark.bg} stopOpacity="0.94" />
+            <Stop offset="1"    stopColor={dark.bg} stopOpacity="1" />
+          </LinearGradient>
+        </Defs>
+        <Rect x="0" y="0" width={MAP_W} height={MAP_H} fill="url(#voile)" />
+      </Svg>
+
       <Text style={styles.wordmark}>INVADER<Text style={styles.wordmarkAccent}>QUEST</Text></Text>
-      <Text style={styles.headline}>{headline}</Text>
 
-      <View style={styles.mapZone}>
-        {!hasGeo && <Text style={styles.bigAlien}>👾</Text>}
-        {hasGeo && map && (
-          <>
-            <Image source={{ uri: map.url }} style={styles.mapImg} resizeMode="cover" />
-            <View style={styles.mapScrim} />
-            <Svg width={MAP_W} height={MAP_H} style={StyleSheet.absoluteFill}>
-              <RouteLine coords={routeCoords} project={map.project} />
-            </Svg>
-          </>
-        )}
-        {hasGeo && !map && <StylizedMap coords={routeCoords} pins={pins} project={project} />}
-
-        {/* Pins = Invaders flashés (image alien) */}
-        {hasGeo && project && <PinImages pins={pins} project={project} />}
-
-        {/* Repères départ / arrivée — mêmes icônes que le mode Trajet */}
-        {startXY && (
-          <View style={[styles.pin, styles.pinStart, { left: startXY.x - 13, top: startXY.y - 13 }]}>
-            <Ionicons name="navigate" size={13} color="#fff" />
-          </View>
-        )}
-        {endXY && (
-          <View style={[styles.pin, styles.pinEnd, { left: endXY.x - 13, top: endXY.y - 13 }]}>
-            <Ionicons name="flag" size={13} color="#fff" />
-          </View>
-        )}
-
-        {hasKm && <View style={[styles.badge, styles.badgeTL]}><Text style={styles.badgeText}>🚶 {kmStr} km</Text></View>}
-        <View style={[styles.badge, styles.badgeTR]}><Text style={styles.badgeText}>👾 {aliens}</Text></View>
+      {/* ── Le score domine : chaque fait n'apparaît qu'UNE fois ── */}
+      <View style={styles.bloc}>
+        <Text style={styles.chiffre}>{aliens}</Text>
+        <Text style={styles.legende}>{t('share.flashed')}</Text>
+        <Text style={styles.contexte}>{contexte}</Text>
+        <Text style={styles.points}>+{pts} {t('session.recap.points')}</Text>
       </View>
 
-      <View style={styles.stats}>
-        <Stat value={kmStr} label={t('session.recap.km')} />
-        <Stat value={timeStr} label={t('session.recap.time')} />
-        <Stat value={String(aliens)} label={t('session.recap.aliens')} />
-        <Stat value={`+${pts}`} label={t('session.recap.points')} accent={dark.accentScore} />
-      </View>
-
-      <View style={styles.footer}>
-        <Image source={LOGO} style={styles.logo} resizeMode="cover" />
-        <Text style={styles.url}>{t('share.url')}</Text>
-      </View>
+      <Text style={styles.url}>{t('share.url')}</Text>
+      <Text style={styles.attrib}>© Mapbox © OpenStreetMap</Text>
     </View>
   );
 });
 
-function Stat({ value, label, accent }) {
-  return (
-    <View style={styles.stat}>
-      <Text style={[styles.statValue, accent && { color: accent }]}>{value}</Text>
-      <Text style={styles.statLabel}>{label}</Text>
-    </View>
-  );
+// Grille façon « rues » du repli sans réseau (le fond Mapbox la remplace).
+function StylizedGrid() {
+  const g = [];
+  for (let i = 1; i < 12; i++) { const y = (MAP_H / 12) * i; g.push(<Line key={`h${i}`} x1="0" y1={y} x2={MAP_W} y2={y - 18} stroke={dark.border} strokeWidth="0.5" opacity="0.5" />); }
+  for (let i = 1; i < 8; i++)  { const x = (MAP_W / 8) * i;  g.push(<Line key={`v${i}`} x1={x} y1="0" x2={x + 16} y2={MAP_H} stroke={dark.border} strokeWidth="0.5" opacity="0.5" />); }
+  return <G>{g}</G>;
 }
 
+// Roboto Mono partout plutôt que Silkscreen : à 70 points, un pixel-art devient
+// un empilement de blocs qu'on déchiffre au lieu de le lire. La monospace garde
+// le caractère technique du sujet sans ce coût.
+const MONO = 'RobotoMono_700Bold';
+const MONO_R = 'RobotoMono_400Regular';
+
 const styles = StyleSheet.create({
-  root: {
-    width: STORY_W, height: STORY_H, backgroundColor: dark.bg,
-    paddingHorizontal: 24, paddingVertical: 30, alignItems: 'center', justifyContent: 'space-between',
+  root: { width: STORY_W, height: STORY_H, backgroundColor: dark.bg, overflow: 'hidden' },
+
+  wordmark: {
+    position: 'absolute', top: 32, left: 0, right: 0, textAlign: 'center',
+    fontFamily: MONO, fontSize: 17, color: dark.textPrimary, letterSpacing: 2.5,
   },
-  wordmark: { fontFamily: 'Silkscreen_700Bold', fontSize: 18, color: dark.textPrimary, letterSpacing: 1 },
   wordmarkAccent: { color: dark.accent },
-  headline: {
-    fontFamily: 'Silkscreen_400Regular', fontSize: 15, lineHeight: 24, color: dark.textPrimary,
-    textAlign: 'center', paddingHorizontal: 4,
+
+  // Bloc du score, ancré en bas : c'est lui qu'on doit lire en vignette.
+  bloc: { position: 'absolute', left: 0, right: 0, bottom: 74, alignItems: 'center' },
+  chiffre: {
+    fontFamily: MONO, fontSize: 104, lineHeight: 112, color: dark.accent,
+    textShadowColor: dark.accentGlow, textShadowOffset: { width: 0, height: 0 }, textShadowRadius: 18,
   },
-  mapZone: {
-    width: MAP_W, height: MAP_H, borderRadius: 16, borderWidth: 1, borderColor: dark.border,
-    backgroundColor: '#0D1426', alignItems: 'center', justifyContent: 'center', overflow: 'hidden',
+  legende: { fontFamily: MONO, fontSize: 15, color: dark.textPrimary, letterSpacing: 3.5, marginTop: 4 },
+  contexte: { fontFamily: MONO_R, fontSize: 13, color: dark.textSecondary, letterSpacing: 0.6, marginTop: 18 },
+  points: { fontFamily: MONO, fontSize: 14, color: dark.accentScore, letterSpacing: 0.6, marginTop: 8 },
+
+  url: {
+    position: 'absolute', bottom: 30, left: 0, right: 0, textAlign: 'center',
+    fontFamily: MONO_R, fontSize: 11, color: dark.textSecondary, letterSpacing: 1,
   },
-  mapImg: { position: 'absolute', width: MAP_W, height: MAP_H },
-  // Voile sombre sur la carte : assombrit le fond et fait ressortir le tracé néon.
-  mapScrim: { position: 'absolute', width: MAP_W, height: MAP_H, backgroundColor: 'rgba(0,0,0,0.35)' },
-  bigAlien: { fontSize: 96 },
-  // Repères départ/arrivée — style repris du mode Trajet (rond bordé blanc + icône)
-  pin: {
-    position: 'absolute', width: 26, height: 26, borderRadius: 13,
-    alignItems: 'center', justifyContent: 'center', borderWidth: 2, borderColor: '#fff',
-  },
-  pinStart: { backgroundColor: dark.accent },
-  pinEnd: { backgroundColor: '#333' },
-  badge: {
-    position: 'absolute', backgroundColor: 'rgba(11,15,14,0.82)',
-    borderWidth: 1, borderColor: dark.accent, borderRadius: 20, paddingHorizontal: 12, paddingVertical: 6,
-  },
-  badgeTL: { top: 12, left: 12 },
-  badgeTR: { top: 12, right: 12, borderColor: dark.accentScore },
-  // Police système (pas pixel) : « 4,2 km » doit rester lisible dans la carte.
-  badgeText: { fontSize: 14, fontWeight: '800', color: dark.textPrimary },
-  stats: { flexDirection: 'row', justifyContent: 'space-between', width: '100%' },
-  stat: { flex: 1, alignItems: 'center' },
-  statValue: { fontFamily: 'PressStart2P_400Regular', fontSize: 15, color: dark.accent },
-  statLabel: { fontFamily: 'Silkscreen_400Regular', fontSize: 9, color: dark.textSecondary, marginTop: 8, letterSpacing: 0.3 },
-  footer: { alignItems: 'center', gap: 8 },
-  logo: { width: 46, height: 46, borderRadius: 11 },
-  url: { fontFamily: 'Silkscreen_400Regular', fontSize: 11, color: dark.textSecondary },
+  // Attribution obligatoire du fond de carte, discrète mais présente.
+  attrib: { position: 'absolute', bottom: 8, left: 10, fontSize: 7, color: '#697871' },
 });
 
 export default ShareStory;

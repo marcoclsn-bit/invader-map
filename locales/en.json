@@ -943,10 +943,9 @@
     }
   },
   "share": {
-    "textKm": "Today, I walked {{km}} km and flashed {{count}} Invaders in {{city}} 👾",
-    "textNoKm": "Today, I flashed {{count}} Invaders in {{city}} 👾",
     "url": "@invaderquest.app",
-    "unavailable": "Sharing is not available on this device."
+    "unavailable": "Sharing is not available on this device.",
+    "flashed": "INVADERS FLASHED"
   },
   "celebration": {
     "title": "Trophy unlocked!"

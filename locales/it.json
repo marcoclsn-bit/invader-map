@@ -943,10 +943,9 @@
     }
   },
   "share": {
-    "textKm": "Oggi ho percorso {{km}} km e flashato {{count}} Invader a {{city}} 👾",
-    "textNoKm": "Oggi ho flashato {{count}} Invader a {{city}} 👾",
     "url": "@invaderquest.app",
-    "unavailable": "La condivisione non è disponibile su questo dispositivo."
+    "unavailable": "La condivisione non è disponibile su questo dispositivo.",
+    "flashed": "INVADER FLASHATI"
   },
   "celebration": {
     "title": "Trofeo sbloccato!"

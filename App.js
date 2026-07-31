@@ -8,6 +8,12 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useFonts, Silkscreen_400Regular, Silkscreen_700Bold } from '@expo-google-fonts/silkscreen';
 import { PressStart2P_400Regular } from '@expo-google-fonts/press-start-2p';
+// Roboto Mono : uniquement pour la carte de partage. Embarquée plutôt que de
+// s'en remettre à `fontFamily: 'monospace'`, qui donne Menlo sur iOS et Roboto
+// Mono sur Android — deux dessins aux chasses différentes. Une image destinée à
+// être partagée est le dernier endroit où accepter une surprise de rendu.
+// Aucun code natif : ce sont des .ttf chargés par expo-font, déjà lié. OTA sûr.
+import { RobotoMono_400Regular, RobotoMono_700Bold } from '@expo-google-fonts/roboto-mono';
 import { useTranslation } from 'react-i18next';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import './i18n';
@@ -242,6 +248,7 @@ function ThemedApp() {
   const { theme } = useTheme();
   const [fontsLoaded, fontError] = useFonts({
     Silkscreen_400Regular, Silkscreen_700Bold, PressStart2P_400Regular,
+    RobotoMono_400Regular, RobotoMono_700Bold,
   });
 
   if (!fontsLoaded && !fontError) {
