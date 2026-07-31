@@ -673,7 +673,12 @@ export default function ChasseScreen({ route }) {
   // On affiche donc ceux qui bordent l'itinéraire, avec le marqueur de la Carte :
   // aucun langage visuel nouveau à apprendre, et ils se distinguent d'eux-mêmes
   // des pastilles numérotées du parcours.
-  const VOISINS_KM = 0.12;
+  //
+  // 200 m : à 120 m on ratait encore des Invaders pourtant visibles depuis la
+  // rue empruntée. C'est à peu près la portée du regard dans une rue parisienne,
+  // façades comprises. Le Trajet n'a pas besoin de l'équivalent, sa largeur de
+  // couloir étant déjà réglable par l'utilisateur.
+  const VOISINS_KM = 0.20;
   const voisins = useMemo(() => {
     if (!result?.routeCoords || result.routeCoords.length < 2) return [];
     const dansLaChasse = new Set(result.invaders.filter(s => !s.isPoi).map(s => s.id));
