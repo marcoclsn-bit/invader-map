@@ -929,7 +929,12 @@
       "close": "Chiudi",
       "newBadge_one": "Nuovo trofeo!",
       "newBadge_other": "Nuovi trofei!",
-      "points": "PUNTI"
+      "points": "PUNTI",
+      "format": {
+        "story": "Storia",
+        "post": "Post",
+        "square": "Quadrato"
+      }
     },
     "noGps": {
       "title": "Posizione non disponibile",

@@ -22,21 +22,31 @@ export function trimRouteEnds(coords) {
   return out.length >= 2 ? out : coords; // garde-fou : trajet trop court → pas de rognage
 }
 
-// Format fixe 9:16 (capturé puis upscalé ×3 par react-native-view-shot → ~1080×1920)
-export const STORY_W = 360;
-export const STORY_H = 640;
+// Trois formats, capturés ×3 par react-native-view-shot.
+//
+// Chacun a sa propre mise en page, pas un simple redimensionnement : sur un
+// carré, la carte dispose de moins de hauteur, le parcours doit donc occuper une
+// bande plus étroite et le chiffre rétrécir davantage que la proportion ne le
+// voudrait. Un visuel de story réduit aurait donné un chiffre écrasant et un
+// tracé illisible.
+//
+//   zone  → part de la hauteur réservée au parcours
+//   ancre → où se pose le centre du parcours, en fraction de hauteur
+//   bloc  → distance du bloc de score au bas de l'image
+//   num   → corps du chiffre
+export const FORMATS = {
+  story:  { w: 360, h: 640, zone: 0.56, ancre: 0.31, bloc: 62, num: 96, wm: 32, url: 30, voile: 0.70 },
+  post:   { w: 360, h: 450, zone: 0.48, ancre: 0.29, bloc: 44, num: 74, wm: 24, url: 22, voile: 0.62 },
+  square: { w: 360, h: 360, zone: 0.42, ancre: 0.27, bloc: 34, num: 60, wm: 20, url: 18, voile: 0.56 },
+};
+export const FORMAT_DEFAUT = 'story';
 
 const ALIEN = require('../../assets/markers/alien_flashed.png'); // pins = Invaders flashés (cohérent carte)
 // Plein cadre : la carte n'est plus une vignette encadrée mais le fond de
 // l'image. La boîte arrondie isolait le fond de carte et soulignait son vide ;
 // en fond, il donne une texture et une couleur sans réclamer d'attention.
-const MAP_W = STORY_W;
-const MAP_H = STORY_H;
-// Le parcours se cadre dans les 62 % supérieurs, son centre ancré à 34 % de la
-// hauteur : le bas appartient au score. Centrer le tracé dans l'image entière
-// en enterrait la moitié sous le voile.
-const ZONE_H = 0.56;
-const ANCRE_Y = 0.31;
+
+
 const PIN_SIZE = 20;
 
 // ─── Projection Web Mercator (pour aligner le tracé sur la carte Mapbox statique) ──
@@ -48,7 +58,8 @@ const _latFromMercY = (y) => Math.atan(Math.sinh(Math.PI * (1 - 2 * y))) * 180 /
  * Construit la carte statique Mapbox (fond réel) + la projection pour l'overlay.
  * Renvoie { url, project(lon,lat)->{x,y} } ou null si géométrie/token manquants.
  */
-export function buildStaticMap(coords, pins, token) {
+export function buildStaticMap(coords, pins, token, fmt = FORMATS[FORMAT_DEFAUT]) {
+  const { w: MAP_W, h: MAP_H, zone: ZONE_H, ancre: ANCRE_Y } = fmt;
   if (!token) return null;
   const geo = [];
   if (Array.isArray(coords)) for (const c of coords) geo.push(c);
@@ -90,7 +101,7 @@ export function buildStaticMap(coords, pins, token) {
 }
 
 // Projection linéaire (repli stylisé sans carte réelle). Renvoie project(lon,lat)->{x,y}.
-function linearProject(coords, pins) {
+function linearProject(coords, pins, MAP_W, MAP_H) {
   const geo = [];
   if (Array.isArray(coords)) for (const c of coords) geo.push(c);
   if (Array.isArray(pins)) for (const p of pins) geo.push([p.lng, p.lat]);
@@ -138,8 +149,11 @@ function PinImages({ pins, project }) {
  * @param pins array de { lng, lat, points } — Invaders attrapés
  * @param map { url, project } de buildStaticMap (carte réelle) ; null → fond stylisé
  */
-const ShareStory = forwardRef(function ShareStory({ session, cityName, pins, map, route, sessionPoints }, ref) {
+const ShareStory = forwardRef(function ShareStory({ session, cityName, pins, map, route, sessionPoints, format = FORMAT_DEFAUT }, ref) {
   const { t } = useTranslation();
+  const fmt = FORMATS[format] ?? FORMATS[FORMAT_DEFAUT];
+  const { w: W, h: H } = fmt;
+  const styles = getStyles(fmt);
   const aliens = session?.invaderIds?.length ?? 0;
   const pts = sessionPoints ?? 0;
   const km = session?.distanceKm;
@@ -155,7 +169,7 @@ const ShareStory = forwardRef(function ShareStory({ session, cityName, pins, map
     || (Array.isArray(pins) && pins.length > 0);
 
   // Projection : carte réelle (mercator) ou repli linéaire — partagée par l'overlay et les repères.
-  const project = hasGeo ? (map?.project ?? linearProject(routeCoords, pins)) : null;
+  const project = hasGeo ? (map?.project ?? linearProject(routeCoords, pins, W, H)) : null;
 
   // Ligne de contexte : n'énonce QUE ce qui existe. « 0,0 km » est l'inverse
   // d'une vantardise, et « 0′ » ne vaut pas mieux — c'étaient pourtant les deux
@@ -171,8 +185,8 @@ const ShareStory = forwardRef(function ShareStory({ session, cityName, pins, map
         : <View style={[StyleSheet.absoluteFill, { backgroundColor: '#0D1426' }]} />}
 
       {hasGeo && project && (
-        <Svg width={MAP_W} height={MAP_H} style={StyleSheet.absoluteFill}>
-          {!map && <StylizedGrid />}
+        <Svg width={W} height={H} style={StyleSheet.absoluteFill}>
+          {!map && <StylizedGrid MAP_W={W} MAP_H={H} />}
           <RouteLine coords={routeCoords} project={project} />
         </Svg>
       )}
@@ -182,17 +196,17 @@ const ShareStory = forwardRef(function ShareStory({ session, cityName, pins, map
       {/* ── Voile : assombrit le sommet pour le logotype et le pied pour le
              score, en laissant le parcours respirer au milieu. Dégradé SVG et
              non expo-linear-gradient, qui embarquerait du code natif. ── */}
-      <Svg width={MAP_W} height={MAP_H} style={StyleSheet.absoluteFill} pointerEvents="none">
+      <Svg width={W} height={H} style={StyleSheet.absoluteFill} pointerEvents="none">
         <Defs>
           <LinearGradient id="voile" x1="0" y1="0" x2="0" y2="1">
             <Stop offset="0"    stopColor={dark.bg} stopOpacity="0.88" />
             <Stop offset="0.15" stopColor={dark.bg} stopOpacity="0.06" />
-            <Stop offset="0.50" stopColor={dark.bg} stopOpacity="0.06" />
-            <Stop offset="0.70" stopColor={dark.bg} stopOpacity="0.95" />
+            <Stop offset={fmt.voile - 0.20} stopColor={dark.bg} stopOpacity="0.06" />
+            <Stop offset={fmt.voile} stopColor={dark.bg} stopOpacity="0.95" />
             <Stop offset="1"    stopColor={dark.bg} stopOpacity="1" />
           </LinearGradient>
         </Defs>
-        <Rect x="0" y="0" width={MAP_W} height={MAP_H} fill="url(#voile)" />
+        <Rect x="0" y="0" width={W} height={H} fill="url(#voile)" />
       </Svg>
 
       <Text style={styles.wordmark}>INVADER<Text style={styles.wordmarkAccent}>QUEST</Text></Text>
@@ -212,7 +226,7 @@ const ShareStory = forwardRef(function ShareStory({ session, cityName, pins, map
 });
 
 // Grille façon « rues » du repli sans réseau (le fond Mapbox la remplace).
-function StylizedGrid() {
+function StylizedGrid({ MAP_W, MAP_H }) {
   const g = [];
   for (let i = 1; i < 12; i++) { const y = (MAP_H / 12) * i; g.push(<Line key={`h${i}`} x1="0" y1={y} x2={MAP_W} y2={y - 18} stroke={dark.border} strokeWidth="0.5" opacity="0.5" />); }
   for (let i = 1; i < 8; i++)  { const x = (MAP_W / 8) * i;  g.push(<Line key={`v${i}`} x1={x} y1="0" x2={x + 16} y2={MAP_H} stroke={dark.border} strokeWidth="0.5" opacity="0.5" />); }
@@ -225,33 +239,43 @@ function StylizedGrid() {
 const MONO = 'RobotoMono_700Bold';
 const MONO_R = 'RobotoMono_400Regular';
 
-const styles = StyleSheet.create({
-  root: { width: STORY_W, height: STORY_H, backgroundColor: dark.bg, overflow: 'hidden' },
+// Un StyleSheet par format, construit une fois puis réutilisé.
+const _cache = {};
+function getStyles(fmt) {
+  const cle = `${fmt.w}x${fmt.h}`;
+  if (!_cache[cle]) _cache[cle] = makeStyles(fmt);
+  return _cache[cle];
+}
+
+function makeStyles(fmt) {
+  return StyleSheet.create({
+  root: { width: fmt.w, height: fmt.h, backgroundColor: dark.bg, overflow: 'hidden' },
 
   wordmark: {
-    position: 'absolute', top: 32, left: 0, right: 0, textAlign: 'center',
+    position: 'absolute', top: fmt.wm, left: 0, right: 0, textAlign: 'center',
     fontFamily: MONO, fontSize: 17, color: dark.textPrimary, letterSpacing: 2.5,
   },
   wordmarkAccent: { color: dark.accent },
 
   // Bloc du score, ancré en bas : c'est lui qu'on doit lire en vignette.
-  bloc: { position: 'absolute', left: 0, right: 0, bottom: 62, alignItems: 'center' },
+  bloc: { position: 'absolute', left: 0, right: 0, bottom: fmt.bloc, alignItems: 'center' },
   // Sans ombre portée : sur iOS, textShadowRadius rend un halo RECTANGULAIRE
   // autour de la boîte du texte, pas autour des glyphes — un carré plus clair
   // bien visible derrière le chiffre. Le contraste du voile suffit largement.
   chiffre: {
-    fontFamily: MONO, fontSize: 96, lineHeight: 104, color: dark.accent,
+    fontFamily: MONO, fontSize: fmt.num, lineHeight: Math.round(fmt.num * 1.08), color: dark.accent,
   },
   legende: { fontFamily: MONO, fontSize: 15, color: dark.textPrimary, letterSpacing: 3.5, marginTop: 4 },
   contexte: { fontFamily: MONO_R, fontSize: 13, color: dark.textSecondary, letterSpacing: 0.6, marginTop: 18 },
   points: { fontFamily: MONO, fontSize: 14, color: dark.accentScore, letterSpacing: 0.6, marginTop: 8 },
 
   url: {
-    position: 'absolute', bottom: 30, left: 0, right: 0, textAlign: 'center',
+    position: 'absolute', bottom: fmt.url, left: 0, right: 0, textAlign: 'center',
     fontFamily: MONO_R, fontSize: 11, color: dark.textSecondary, letterSpacing: 1,
   },
   // Attribution obligatoire du fond de carte, discrète mais présente.
   attrib: { position: 'absolute', bottom: 8, left: 10, fontSize: 7, color: '#697871' },
-});
+  });
+}
 
 export default ShareStory;
