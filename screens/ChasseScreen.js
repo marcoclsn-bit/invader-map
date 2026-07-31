@@ -35,6 +35,7 @@ import { familyOf } from '../data/poiFamilies';
 import { track, failureReason } from '../services/analytics';
 import ObjectivePicker from '../components/ObjectivePicker';
 import PoiFamiliesRow from '../components/PoiFamiliesRow';
+import InvaderMarker from '../components/InvaderMarker';
 
 const _PA        = CITIES.PA;
 const PARIS      = { latitude: _PA.center.lat, longitude: _PA.center.lng, ..._PA.mapDelta };
@@ -662,6 +663,45 @@ export default function ChasseScreen({ route }) {
     );
   }, [userPos, following, drifted]);
 
+  // ─── Invaders croisés en chemin, hors chasse ────────────────────────────
+  //
+  // La carte de la Chasse ne montrait QUE les étapes du parcours. Croiser un
+  // Invader qui n'en faisait pas partie obligeait donc à passer par l'onglet
+  // Carte pour le flasher, alors qu'on l'avait sous les yeux — et le plus
+  // souvent on ne le voyait même pas.
+  //
+  // On affiche donc ceux qui bordent l'itinéraire, avec le marqueur de la Carte :
+  // aucun langage visuel nouveau à apprendre, et ils se distinguent d'eux-mêmes
+  // des pastilles numérotées du parcours.
+  const VOISINS_KM = 0.12;
+  const voisins = useMemo(() => {
+    if (!result?.routeCoords || result.routeCoords.length < 2) return [];
+    const dansLaChasse = new Set(result.invaders.filter(s => !s.isPoi).map(s => s.id));
+    try {
+      const line = turf.lineString(result.routeCoords);
+      // Pré-filtre par boîte englobante avant la mesure exacte : sans lui, on
+      // projetterait les 1 528 Invaders de Paris sur une ligne de 400 points.
+      const [mnLng, mnLat, mxLng, mxLat] = turf.bbox(line);
+      const padLat = VOISINS_KM / 111;
+      const padLng = VOISINS_KM / (111 * Math.cos((((mnLat + mxLat) / 2) * Math.PI) / 180));
+      const proches = invaders.filter(inv =>
+        !dansLaChasse.has(inv.id) &&
+        inv.status !== 'destroyed' &&
+        inv.lng >= mnLng - padLng && inv.lng <= mxLng + padLng &&
+        inv.lat >= mnLat - padLat && inv.lat <= mxLat + padLat
+      );
+      const out = [];
+      for (const inv of proches) {
+        const near = turf.nearestPointOnLine(line, turf.point([inv.lng, inv.lat]), { units: 'kilometers' });
+        if (near.properties.dist <= VOISINS_KM) out.push(inv);
+      }
+      __DEV__ && console.log(`[Chasse] Voisins : ${proches.length} candidats (bbox) → ${out.length} retenus`);
+      return out;
+    } catch {
+      return [];
+    }
+  }, [result, invaders]);
+
   // ─── Portion déjà parcourue (gris) vs restante (orange) ──────────────────
   const { walkedPolyline, remainingPolyline } = useMemo(() => {
     if (!result?.polyline || !result?.routeCoords || !following || !userPos) {
@@ -987,6 +1027,25 @@ export default function ChasseScreen({ route }) {
                     </View>
                   </PinMarker>
                 )}
+                {/* Rendus AVANT les étapes du parcours pour passer dessous :
+                    la chasse doit rester lisible, ces marqueurs sont un bonus. */}
+                {voisins.map(inv => {
+                  const flash = flashed.has(inv.id);
+                  return (
+                    <InvaderMarker
+                      // Sur iOS la clé porte l'état flashé : sans ça le marqueur
+                      // garderait son ancien bitmap après un flash — même raison
+                      // que le redrawKey des pastilles de parcours.
+                      key={Platform.OS === 'android' ? `v-${inv.id}` : `v-${inv.id}-${flash ? 1 : 0}`}
+                      invader={inv}
+                      isFlashed={flash}
+                      onPress={() => selectInvader(inv)}
+                      stopPropagation
+                      label={`${inv.id}, ${t(`common.status.${inv.status}`)}, ${t(flash ? 'map.a11y.flashed' : 'map.a11y.todo')}`}
+                      hint={t('map.a11y.invaderHint')}
+                    />
+                  );
+                })}
                 {result.invaders.map((inv, i) => {
                   // Un Invader flashé s'éteint : pastille grise et ✓ au lieu du rang.
                   // `done` DOIT entrer dans redrawKey, sinon le bitmap du marqueur
