@@ -20,10 +20,16 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const ORDRE = ['story', 'post', 'square'];
 const RATIOS = { story: '9:16', post: '4:5', square: '1:1' };
 
-// Encombrement maximal de l'aperçu. La story est le format le plus haut ; à
-// 300 px elle laisse la place au tableau de score et aux boutons sans imposer
-// de défilement sur un petit écran.
+// Encombrement de l'aperçu. Il prend la place qui RESTE, dans ces bornes : le
+// bouton de partage doit rester visible sans défiler, sinon l'aperçu dessert
+// l'action qu'il est censé encourager. Sur un petit écran on descend jusqu'à
+// 170 px, en dessous duquel le visuel ne se lit plus.
 const APERCU_H_MAX = 300;
+const APERCU_H_MIN = 170;
+// Hauteur cumulée du reste : titre, ville, tableau de score, sélecteur de
+// format, boutons, marges — plus une réserve pour les encoches.
+const RESTE_H = 545;
+const RESTE_TROPHEES = 85;
 
 function fmtDuration(sec) {
   const m = Math.round((sec ?? 0) / 60);
@@ -49,7 +55,7 @@ function RecapBody({ session, newBadgeIds, onClose }) {
   const { theme } = useTheme();
   const { t } = useTranslation();
   const { invaders } = useAppContext();
-  const { width: screenW } = useWindowDimensions();
+  const { width: screenW, height: screenH } = useWindowDimensions();
   const storyRef = useRef(null);
   const [busy, setBusy] = useState(false);
   const [shareMap, setShareMap] = useState(null); // carte réelle Mapbox (null = fond stylisé)
@@ -83,7 +89,9 @@ function RecapBody({ session, newBadgeIds, onClose }) {
   const fmt = FORMATS[format];
   // L'aperçu est le visuel réel, simplement réduit : ce que l'utilisateur voit
   // est exactement ce qu'il partagera.
-  const echelle = Math.min(APERCU_H_MAX / fmt.h, (screenW - 96) / fmt.w);
+  const dispo = screenH - RESTE_H - (newBadgeIds.length > 0 ? RESTE_TROPHEES : 0);
+  const hMax = Math.max(APERCU_H_MIN, Math.min(APERCU_H_MAX, dispo));
+  const echelle = Math.min(hMax / fmt.h, (screenW - 96) / fmt.w);
   const apercuW = Math.round(fmt.w * echelle);
   const apercuH = Math.round(fmt.h * echelle);
 
