@@ -681,6 +681,16 @@ export default function ChasseScreen({ route }) {
   const voisins = useMemo(() => {
     if (!result?.routeCoords || result.routeCoords.length < 2) return [];
     const dansLaChasse = new Set(result.invaders.filter(s => !s.isPoi).map(s => s.id));
+    // Invaders déjà flashés AU MOMENT du calcul : ils n'appartiennent pas à
+    // l'histoire de cette sortie, et le planificateur les a écartés du parcours
+    // pour exactement la même raison. Sans ce filtre, un voisin flashé l'an
+    // dernier s'affichait d'emblée avec son ✓, là où le ✓ d'une étape signale
+    // une prise du jour — deux sens pour un même signe.
+    //
+    // La photographie est prise ici et ne bouge plus : les dépendances du memo
+    // excluent volontairement `flashed`, sinon un voisin flashé EN COURS de
+    // chasse sortirait de la liste au lieu de s'éteindre avec son ✓.
+    const dejaFlashes = unflashedOnly ? new Set(flashed) : null;
     try {
       const line = turf.lineString(result.routeCoords);
       // Pré-filtre par boîte englobante avant la mesure exacte : sans lui, on
@@ -690,6 +700,7 @@ export default function ChasseScreen({ route }) {
       const padLng = VOISINS_KM / (111 * Math.cos((((mnLat + mxLat) / 2) * Math.PI) / 180));
       const proches = invaders.filter(inv =>
         !dansLaChasse.has(inv.id) &&
+        !dejaFlashes?.has(inv.id) &&
         inv.status !== 'destroyed' &&
         inv.lng >= mnLng - padLng && inv.lng <= mxLng + padLng &&
         inv.lat >= mnLat - padLat && inv.lat <= mxLat + padLat
@@ -704,6 +715,9 @@ export default function ChasseScreen({ route }) {
     } catch {
       return [];
     }
+    // `flashed` et `unflashedOnly` sont lus à dessein sans figurer en dépendance :
+    // ils servent de photographie à l'instant du calcul (voir dejaFlashes).
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [result, invaders]);
 
   // ─── Portion déjà parcourue (gris) vs restante (orange) ──────────────────
