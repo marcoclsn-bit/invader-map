@@ -16,10 +16,16 @@ import { haversineKm } from '../../utils/session';
 // (téléphone verrouillé), pas un déplacement observé.
 const TROU_KM = 0.08;
 
-// Au-delà, l'écart n'a pas pu être parcouru à pied ou à vélo : bond GPS, ou
-// trajet en transport. On raccorde le tracé mais on ne compte pas la distance —
-// annoncer 6 km parce que l'utilisateur a pris le métro serait faux.
-const VITESSE_MAX_KMH = 22;
+// Plafond de vraisemblance, PAR MODE : au-delà, l'écart n'a pas été parcouru par
+// l'utilisateur — bond GPS, ou trajet en transport. On raccorde le tracé mais on
+// ne compte pas la distance ; annoncer 6 km parce qu'on a pris le métro serait
+// faux. Le mode est connu de l'app, il n'y a donc aucune raison de se rabattre
+// sur une valeur unique : 30 km/h laisserait passer le métro pour un marcheur,
+// 12 km/h amputerait un cycliste rapide.
+//   à pied  : 12 — couvre la marche vive et même le petit trot
+//   à vélo  : 30 — pointe en ville sur une courte distance
+export const VITESSE_MAX_KMH = { 'foot-walking': 12, 'cycling-regular': 30 };
+export const VITESSE_DEFAUT = 12;
 
 // Distance maximale entre un point GPS et l'itinéraire prévu pour reprendre ce
 // dernier. Volontairement large : entre deux erreurs possibles, on préfère celle
@@ -88,6 +94,9 @@ export function useSessionRecorder() {
       // Itinéraire prévu : sert de repli d'affichage ET de patron pour combler
       // les interruptions de suivi.
       fallbackRoute: meta.routeCoords ?? null,
+      // Mode de déplacement : fixe le plafond de vraisemblance de la distance.
+      // Absent (Trajet, Balade) → à pied, qui est le cas de ces écrans.
+      vitesseMax: VITESSE_MAX_KMH[meta.profile] ?? VITESSE_DEFAUT,
       startedAt: new Date().toISOString(),
       distanceKm: 0,
       last: null,
@@ -114,9 +123,9 @@ export function useSessionRecorder() {
         const comble = comblerDepuisItineraire(s.fallbackRoute, s.last, { lat, lng });
         const heures = Math.max((now - (s.lastAt ?? now)) / 3600000, 1 / 3600);
         const parcourue = comble ? comble.km : d;
-        // Vraisemblance : au-delà de VITESSE_MAX_KMH, l'écart n'a pas été
+        // Vraisemblance : au-delà du plafond du mode, l'écart n'a pas été
         // parcouru par l'utilisateur. On raccorde le tracé sans gonfler le total.
-        if (parcourue / heures <= VITESSE_MAX_KMH) s.distanceKm += parcourue;
+        if (parcourue / heures <= s.vitesseMax) s.distanceKm += parcourue;
         if (comble) s.coords.push(...comble.points);
       }
     }

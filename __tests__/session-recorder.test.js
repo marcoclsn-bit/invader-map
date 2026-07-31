@@ -61,3 +61,28 @@ describe('comblerDepuisItineraire', () => {
     for (const p of r.points) expect(route).toContainEqual(p);
   });
 });
+
+// ── Plafond de vraisemblance de la distance ─────────────────────────────────
+// Le tracé et le compteur obéissent à deux règles distinctes : le premier
+// privilégie le chemin plausible, le second refuse de compter ce qui n'a pas pu
+// être parcouru. Un trajet en métro doit apparaître sur la carte sans gonfler
+// les kilomètres.
+import { VITESSE_MAX_KMH, VITESSE_DEFAUT } from '../components/session/useSessionRecorder';
+
+describe('plafond de vitesse par mode', () => {
+  test('le vélo est plus permissif que la marche', () => {
+    expect(VITESSE_MAX_KMH['cycling-regular']).toBeGreaterThan(VITESSE_MAX_KMH['foot-walking']);
+  });
+
+  test('un marcheur ne peut pas valider une vitesse de métro', () => {
+    expect(VITESSE_MAX_KMH['foot-walking']).toBeLessThan(25); // vitesse commerciale du métro
+  });
+
+  test('un cycliste rapide en ville reste sous le plafond', () => {
+    expect(VITESSE_MAX_KMH['cycling-regular']).toBeGreaterThanOrEqual(30);
+  });
+
+  test('un mode inconnu retombe sur la marche, le plus strict', () => {
+    expect(VITESSE_DEFAUT).toBe(VITESSE_MAX_KMH['foot-walking']);
+  });
+});
