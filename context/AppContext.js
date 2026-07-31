@@ -40,7 +40,11 @@ export const STROLL_STATUS_OPTIONS = ['ok', 'damaged', 'unknown'];
 //               (pure = aucun). Indépendant de `enabled`.
 //   families  → filtre commun aux TROIS écrans.
 const DEFAULT_POI_PREFS = {
-  enabled:   false,
+  // Allumée d'emblée : les lieux sont devenus la promesse de l'app, et quelqu'un
+  // qui l'installe après avoir vu cette promesse ouvrait une carte qui n'en
+  // montrait aucun. N'affecte QUE les nouvelles installations — au chargement,
+  // `enabled: p.enabled === true` fait primer la valeur déjà mémorisée.
+  enabled:   true,
   families:  ALL_POI_FAMILIES,          // tableau ici ; converti en Set dans le state
   objective: 'balanced',                // pure | balanced | visit
 };
@@ -50,12 +54,18 @@ const DEFAULT_POI_PREFS = {
 // entière », cela peut faire 689 marqueurs qui s'ajoutent aux 1 528 Invaders.
 // C'est volontaire, pour mesurer le comportement réel plutôt que de le supposer.
 
-// Filtres « à faire » : tous les statuts visibles SAUF les détruits, et seulement
-// les non-flashés. C'est l'état par défaut de la carte au tout premier lancement.
-function makeTodoFilters() {
+// État de la carte au tout premier lancement : tous les statuts SAUF les
+// détruits, et les Invaders flashés RESTENT visibles.
+//
+// Auparavant on masquait les flashés. Le retour du terrain a été net : voir
+// disparaître ce qu'on vient d'accomplir agit comme une punition. La carte se
+// vidait à mesure qu'on progressait, alors que c'est précisément la progression
+// qu'on a envie de contempler. Le filtre « Reste à faire » existe toujours pour
+// qui le veut, il n'est simplement plus imposé.
+function makeDefaultFilters() {
   return {
     statuses: new Set(ALL_STATUSES.filter((s) => s !== 'destroyed')),
-    flashedState: 'unflashed',
+    flashedState: 'all',
   };
 }
 
@@ -115,7 +125,7 @@ export function AppProvider({ children }) {
   const [colorOverrides, setColorOverrides] = useState({});
   // Défaut « à faire » (1er lancement) : on masque les détruits et les flashés.
   // Les autres statuts non flashés (ok / endommagé / inconnu) restent visibles.
-  const [filters, setFilters] = useState(makeTodoFilters);
+  const [filters, setFilters] = useState(makeDefaultFilters);
   const [mapsApp, setMapsApp] = useState(null);
 
   // ── News ──────────────────────────────────────────────────────────────────

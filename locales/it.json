@@ -1077,7 +1077,9 @@
       "body": "{{count}} luoghi notevoli sono ora disponibili: monumenti, musei, gallerie coperte, caffè storici…",
       "question": "Che cosa ti interessa?",
       "enable": "Mostra sulla mappa",
-      "later": "Più tardi"
+      "later": "Più tardi",
+      "bodyOn": "{{count}} luoghi notevoli sono sulla tua mappa: monumenti, musei, passaggi coperti, caffè storici…",
+      "gotIt": "Capito"
     },
     "a11y": {
       "openHint": "Apre la scheda del luogo",

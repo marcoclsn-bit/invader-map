@@ -1077,7 +1077,9 @@
       "body": "{{count}} lugares notables ya están disponibles: monumentos, museos, pasajes cubiertos, cafés históricos…",
       "question": "¿Qué te interesa?",
       "enable": "Mostrar en el mapa",
-      "later": "Más tarde"
+      "later": "Más tarde",
+      "bodyOn": "{{count}} lugares destacados están en tu mapa: monumentos, museos, pasajes cubiertos, cafés históricos…",
+      "gotIt": "Entendido"
     },
     "a11y": {
       "openHint": "Abre la ficha del lugar",

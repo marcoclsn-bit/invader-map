@@ -1077,7 +1077,9 @@
       "body": "{{count}} notable places are now available: monuments, museums, covered arcades, historic cafés and more.",
       "question": "What are you interested in?",
       "enable": "Show on the map",
-      "later": "Later"
+      "later": "Later",
+      "bodyOn": "{{count}} notable places are on your map: monuments, museums, covered passages, historic cafés…",
+      "gotIt": "Got it"
     },
     "a11y": {
       "openHint": "Opens the place details",

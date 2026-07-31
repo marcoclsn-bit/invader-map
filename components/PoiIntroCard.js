@@ -29,18 +29,26 @@ export default function PoiIntroCard({ cityCode, style }) {
   const { poiPrefs, setPoiPref, togglePoiFamily, dismissPoiIntro } = useAppContext();
   const styles = getStyles(theme);
   const count = getPois(cityCode).length;
+  // La couche est allumée par défaut depuis que les lieux sont notre promesse.
+  // Deux publics voient donc cette carte, et il faut leur parler différemment :
+  //   • nouvelle installation → les lieux sont DÉJÀ là, on les présente ;
+  //   • mise à jour d'un ancien utilisateur → la couche est éteinte, on la propose.
+  // Sans cette distinction, un nouveau venu lisait « Afficher sur la carte » pour
+  // quelque chose qu'il avait déjà sous les yeux, et « Nouveau » pour une
+  // fonctionnalité qu'il n'avait jamais connue autrement.
+  const dejaActive = poiPrefs.enabled;
 
   return (
     <View style={[styles.card, style]}>
       <View style={styles.head}>
         <View style={styles.diamond} />
-        <Text style={styles.title}>{t('poi.intro.title')}</Text>
+        <Text style={styles.title}>{dejaActive ? t('poi.section') : t('poi.intro.title')}</Text>
         <TouchableOpacity onPress={dismissPoiIntro} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
           <Ionicons name="close" size={20} color={theme.textSecondary} />
         </TouchableOpacity>
       </View>
 
-      <Text style={styles.body}>{t('poi.intro.body', { count })}</Text>
+      <Text style={styles.body}>{t(dejaActive ? 'poi.intro.bodyOn' : 'poi.intro.body', { count })}</Text>
       <Text style={styles.question}>{t('poi.intro.question')}</Text>
 
       <ScrollView style={styles.famScroll} contentContainerStyle={styles.famRow} showsVerticalScrollIndicator={false}>
@@ -68,15 +76,22 @@ export default function PoiIntroCard({ cityCode, style }) {
       </ScrollView>
 
       <View style={styles.actions}>
-        <TouchableOpacity style={styles.btn} onPress={dismissPoiIntro} activeOpacity={0.85}>
-          <Text style={styles.btnText}>{t('poi.intro.later')}</Text>
-        </TouchableOpacity>
+        {/* « Plus tard » n'a de sens que s'il reste quelque chose à activer.
+            La couche étant déjà visible, le proposer laisserait croire qu'on
+            peut l'éteindre ici — ce que ce bouton ne fait pas. */}
+        {!dejaActive && (
+          <TouchableOpacity style={styles.btn} onPress={dismissPoiIntro} activeOpacity={0.85}>
+            <Text style={styles.btnText}>{t('poi.intro.later')}</Text>
+          </TouchableOpacity>
+        )}
         <TouchableOpacity
           style={styles.btnPrimary}
-          onPress={() => { setPoiPref({ enabled: true }); dismissPoiIntro(); }}
+          onPress={() => { if (!dejaActive) setPoiPref({ enabled: true }); dismissPoiIntro(); }}
           activeOpacity={0.85}
         >
-          <Text style={styles.btnPrimaryText}>{t('poi.intro.enable')}</Text>
+          <Text style={styles.btnPrimaryText}>
+            {t(dejaActive ? 'poi.intro.gotIt' : 'poi.intro.enable')}
+          </Text>
         </TouchableOpacity>
       </View>
     </View>

@@ -1077,7 +1077,9 @@
       "body": "{{count}} lieux remarquables sont désormais disponibles : monuments, musées, passages couverts, cafés historiques…",
       "question": "Qu'est-ce qui t'intéresse ?",
       "enable": "Afficher sur la carte",
-      "later": "Plus tard"
+      "later": "Plus tard",
+      "bodyOn": "{{count}} lieux remarquables sont sur ta carte : monuments, musées, passages couverts, cafés historiques…",
+      "gotIt": "Compris"
     },
     "a11y": {
       "openHint": "Ouvre la fiche du lieu",
