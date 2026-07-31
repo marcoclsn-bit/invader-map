@@ -104,7 +104,7 @@
       "searchPlaceholder": "Search a city…",
       "selectAll": "All cities",
       "validate": "Show ({{count}})",
-      "warnLarge": "~{{count}} Invaders — display may be slower."
+      "warnLarge": "~{{count}} Invaders: display may be slower."
     }
   },
   "route": {
@@ -122,7 +122,7 @@
     "allFlashed": "All Invaders on this route are flashed!",
     "calculate": "Calculate route",
     "corridor": "Corridor: {{label}}",
-    "corridorInfo": "The corridor is the maximum distance around your route in which the app searches for Invaders. The wider it is, the more you see — but some will be a bit further from your path.",
+    "corridorInfo": "The corridor is the maximum distance around your route in which the app searches for Invaders. The wider it is, the more you see, but some will be a bit further from your path.",
     "loadingRoute": "Calculating route…",
     "loadingInvaders": "Finding Invaders on route…",
     "quit": "Finish",
@@ -250,7 +250,7 @@
       },
       "map": {
         "title": "Map & Flash",
-        "body": "Spot the mosaics around you and mark the ones you've flashed. By default the map only shows the Invaders you still have to find — filters reveal the flashed and destroyed ones."
+        "body": "Spot the mosaics around you and mark the ones you've flashed. By default the map only shows the Invaders you still have to find; filters reveal the flashed and destroyed ones."
       },
       "location": {
         "title": "Location",
@@ -266,7 +266,7 @@
       },
       "balade": {
         "title": "Walk Alerts",
-        "body": "Get alerted when you walk near an Invader you haven't flashed yet — even with the app closed. You'll need to allow “Always” location when you enable it."
+        "body": "Get alerted when you walk near an Invader you haven't flashed yet, even with the app closed. You'll need to allow “Always” location when you enable it."
       }
     }
   },
@@ -282,7 +282,7 @@
       "week": "This week",
       "month": "This month",
       "total": "All time",
-      "onlyTotal": "Flash more Invaders to see your activity over time — existing progress is kept, just without timestamps."
+      "onlyTotal": "Flash more Invaders to see your activity over time; existing progress is kept, just without timestamps."
     },
     "chart": {
       "section": "Progress",
@@ -309,7 +309,7 @@
       "weekly_one": "~{{count}} Invader / week",
       "weekly_other": "~{{count}} Invaders / week",
       "projection": "At this pace, {{city}} is done in ~{{months}} months.",
-      "projectionSoon": "Almost there — {{city}} done in under a month!",
+      "projectionSoon": "Almost there: {{city}} done in under a month!",
       "projectionDone": "{{city}} 100% flashed 🏆",
       "notEnoughData": "Keep going for a few weeks to see your projection."
     },
@@ -324,7 +324,7 @@
       "namePlaceholder": "Hunter",
       "totalFlashes_one": "{{count}} flash",
       "totalFlashes_other": "{{count}} flashes",
-      "localBadge": "Local profile — stored on this device",
+      "localBadge": "Local profile, stored on this device",
       "chooseAvatar": "Choose an avatar",
       "locked": "Not enough data yet.",
       "titles": {
@@ -359,7 +359,7 @@
         "title": "Day / Night",
         "day": "Day",
         "night": "Night",
-        "basedOn": "Based on {{count}} time-stamped flashes — bulk marking doesn't record the time."
+        "basedOn": "Based on {{count}} time-stamped flashes; bulk marking doesn't record the time."
       },
       "geo": {
         "title": "Geographic breakdown",
@@ -460,7 +460,7 @@
       "title": "Hunter's journey",
       "info": "Lv {{next}} in {{remaining}} XP · {{tier}} at Lv {{tierLevel}}",
       "infoNoTier": "Lv {{next}} in {{remaining}} XP",
-      "maxed": "Max level reached — Legend ✦",
+      "maxed": "Max level reached: Legend ✦",
       "xpInfo": "XP measures your overall hunter progression:\n• +10 XP per flashed Invader\n• +1 XP per 10 points (a 100-pt Invader earns 10 + 10 = 20 XP)\n• +50 XP per unlocked trophy"
     },
     "objectives": {
@@ -468,7 +468,7 @@
       "level": "Level {{level}}",
       "xpLeft": "{{count}} XP",
       "finishCity": "Finish {{city}}",
-      "info": "Your 4 goals closest to completion, picked automatically: next level, next collection, points or exploration trophy, and a city you're finishing (your active map or a city flashed in the last 30 days — destroyed Invaders you never flashed don't count)."
+      "info": "Your 4 goals closest to completion, picked automatically: next level, next collection, points or exploration trophy, and a city you're finishing (your active map or a city flashed in the last 30 days; destroyed Invaders you never flashed don't count)."
     }
   },
   "about": {
@@ -498,9 +498,9 @@
     },
     "statusColors": {
       "section": "Status colours",
-      "colorFor": "Colour — {{status}}",
+      "colorFor": "Colour: {{status}}",
       "flashed": "Flashed",
-      "colorForFlashed": "Color — Flashed"
+      "colorForFlashed": "Color: Flashed"
     },
     "labels": {
       "section": "My labels",
@@ -533,7 +533,7 @@
       "checking": "Checking…",
       "upToDate": "Up to date",
       "newVersion": "New version installed ({{v}})",
-      "offline": "Offline — try again later",
+      "offline": "Offline, try again later",
       "updateError": "Update error",
       "replayPoiIntro": "Show the “Places to see” invitation again",
       "poiVersion": "Places to see",
@@ -576,7 +576,7 @@
     },
     "idea": {
       "title": "Got an idea?",
-      "intro": "A suggestion, a remark, a bug? Drop me a line — it'll open your mail app.",
+      "intro": "A suggestion, a remark, a bug? Drop me a line, it'll open your mail app.",
       "subjectLabel": "Subject (optional)",
       "subjectPlaceholder": "In a few words…",
       "messageLabel": "Message",
@@ -585,7 +585,7 @@
       "note": "No data is collected. This just opens your email app.",
       "emptyTitle": "Empty message",
       "emptyBody": "Write your idea before sending.",
-      "emailSubject": "$t(common.appName) idea — {{subject}}",
+      "emailSubject": "$t(common.appName) idea: {{subject}}",
       "emailSubjectNoTopic": "$t(common.appName) idea",
       "sentTitle": "Thanks!",
       "sentBody": "Your idea has been sent."
@@ -594,7 +594,7 @@
       "button": "Report a status change",
       "pickTitle": "Newly observed status",
       "pickBody": "What's the real state of Invader {{id}}?",
-      "emailSubject": "Status report — {{id}}",
+      "emailSubject": "Status report: {{id}}",
       "bodyId": "Invader: {{id}}",
       "bodyCurrent": "Current status in app: {{status}}",
       "bodyReported": "Reported status: {{status}}",
@@ -650,7 +650,7 @@
     },
     "aboutSection": "About",
     "whatTitle": "What is it?",
-    "whatBody": "Get alerted when you walk near an Invader you haven't flashed yet — even with your phone in your pocket — while you roam freely.",
+    "whatBody": "Get alerted when you walk near an Invader you haven't flashed yet, even with your phone in your pocket, while you roam freely.",
     "vsTrajetTitle": "Different from Route tracking",
     "vsTrajetBody": "Route tracking guides you along a calculated itinerary. Walk Alerts watch in the background with no set route: walk wherever you like.",
     "enableLabel": "Enable walk alerts",
@@ -981,7 +981,7 @@
         "title": "The map",
         "benefit": "Your playground: every Invader around you, colored by its state. By default you only see the ones you still have to flash.",
         "steps": [
-          "Each alien has a color for its state (OK, damaged, destroyed, unverified — and “flashed” once marked).",
+          "Each alien has a color for its state (OK, damaged, destroyed, unverified, and “flashed” once marked).",
           "Tap an Invader to open its card (points, hint, Instagram link) and mark it as flashed.",
           "Open the filters to show or hide flashed, destroyed ones, etc."
         ]
@@ -1033,7 +1033,7 @@
       },
       "news": {
         "title": "News",
-        "benefit": "Stay up to date with what's new and recently added Invaders in your cities — and get an alert when there is.",
+        "benefit": "Stay up to date with what's new and recently added Invaders in your cities, and get an alert when there is.",
         "steps": [
           "Open News from the menu (a dot signals what's new).",
           "Tap the bell 🔔 at the top to get alerted about new Invaders in your cities.",
@@ -1047,12 +1047,12 @@
         "steps": [
           "Finish a Hunt or Route session to see the recap.",
           "Tap Share: the app builds an image with your map, distance, time and points.",
-          "Send it wherever you like — the app posts nothing on your behalf, and your start/end points stay blurred."
+          "Send it wherever you like: the app posts nothing on your behalf, and your start/end points stay blurred."
         ]
       },
       "flash": {
         "title": "Mark your flashes",
-        "benefit": "Keep track of what you've already flashed — one by one, or in bulk.",
+        "benefit": "Keep track of what you've already flashed, one by one or in bulk.",
         "steps": [
           "On an Invader's card, tap the button to mark it as flashed.",
           "In the List, mark several Invaders at once and filter by status.",

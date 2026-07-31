@@ -104,7 +104,7 @@
       "searchPlaceholder": "Cerca una città…",
       "selectAll": "Tutte le città",
       "validate": "Mostra ({{count}})",
-      "warnLarge": "~{{count}} Invaders — la visualizzazione può essere più lenta."
+      "warnLarge": "~{{count}} Invaders: la visualizzazione può essere più lenta."
     }
   },
   "route": {
@@ -122,7 +122,7 @@
     "allFlashed": "Tutti gli Invaders di questo percorso sono fotografati!",
     "calculate": "Calcola percorso",
     "corridor": "Corridoio: {{label}}",
-    "corridorInfo": "Il corridoio è la distanza massima attorno al tuo percorso in cui l'app cerca Invaders. Più è ampio, più ne vedi — ma alcuni saranno un po' più lontani dal tuo cammino.",
+    "corridorInfo": "Il corridoio è la distanza massima attorno al tuo percorso in cui l'app cerca Invaders. Più è ampio, più ne vedi, ma alcuni saranno un po' più lontani dal tuo cammino.",
     "loadingRoute": "Calcolo del percorso…",
     "loadingInvaders": "Ricerca Invaders sul percorso…",
     "quit": "Termina",
@@ -250,7 +250,7 @@
       },
       "map": {
         "title": "Mappa & Flash",
-        "body": "Individua i mosaici intorno a te e segna quelli che hai fotografato. Di default la mappa mostra solo gli Invader che ti restano — i filtri rivelano quelli fatti e quelli distrutti."
+        "body": "Individua i mosaici intorno a te e segna quelli che hai fotografato. Di default la mappa mostra solo gli Invader che ti restano; i filtri rivelano quelli fatti e quelli distrutti."
       },
       "location": {
         "title": "Posizione GPS",
@@ -266,7 +266,7 @@
       },
       "balade": {
         "title": "Avvisi Passeggiata",
-        "body": "Ricevi un avviso quando passi vicino a un Invader non ancora fotografato — anche con l'app chiusa. Dovrai autorizzare la posizione «Sempre» quando la attivi."
+        "body": "Ricevi un avviso quando passi vicino a un Invader non ancora fotografato, anche con l'app chiusa. Dovrai autorizzare la posizione «Sempre» quando la attivi."
       }
     }
   },
@@ -282,7 +282,7 @@
       "week": "Questa settimana",
       "month": "Questo mese",
       "total": "Totale",
-      "onlyTotal": "Fotografa altri Invaders per vedere la tua attività nel tempo — i progressi esistenti sono conservati, solo senza data."
+      "onlyTotal": "Fotografa altri Invaders per vedere la tua attività nel tempo; i progressi esistenti sono conservati, solo senza data."
     },
     "chart": {
       "section": "Progressione",
@@ -309,7 +309,7 @@
       "weekly_one": "~{{count}} Invader / settimana",
       "weekly_other": "~{{count}} Invaders / settimana",
       "projection": "A questo ritmo, {{city}} sarà completata in ~{{months}} mesi.",
-      "projectionSoon": "Ci siamo quasi — {{city}} in meno di 1 mese!",
+      "projectionSoon": "Ci siamo quasi: {{city}} in meno di 1 mese!",
       "projectionDone": "{{city}} 100% fotografata 🏆",
       "notEnoughData": "Continua qualche settimana per vedere la proiezione."
     },
@@ -324,7 +324,7 @@
       "namePlaceholder": "Cacciatore",
       "totalFlashes_one": "{{count}} flash",
       "totalFlashes_other": "{{count}} flash",
-      "localBadge": "Profilo locale — salvato su questo dispositivo",
+      "localBadge": "Profilo locale, salvato su questo dispositivo",
       "chooseAvatar": "Scegli un avatar",
       "locked": "Dati ancora insufficienti.",
       "titles": {
@@ -359,7 +359,7 @@
         "title": "Giorno / Notte",
         "day": "Giorno",
         "night": "Notte",
-        "basedOn": "Basato su {{count}} flash con orario — la selezione in blocco non registra l'ora."
+        "basedOn": "Basato su {{count}} flash con orario; la selezione in blocco non registra l'ora."
       },
       "geo": {
         "title": "Distribuzione geografica",
@@ -460,7 +460,7 @@
       "title": "Cammino del cacciatore",
       "info": "Lv {{next}} tra {{remaining}} XP · {{tier}} al Lv {{tierLevel}}",
       "infoNoTier": "Lv {{next}} tra {{remaining}} XP",
-      "maxed": "Livello massimo raggiunto — Leggenda ✦",
+      "maxed": "Livello massimo raggiunto: Leggenda ✦",
       "xpInfo": "L'XP misura la tua progressione globale di cacciatore:\n• +10 XP per Invader fotografato\n• +1 XP ogni 10 punti (un Invader da 100 pt vale 10 + 10 = 20 XP)\n• +50 XP per trofeo sbloccato"
     },
     "objectives": {
@@ -468,7 +468,7 @@
       "level": "Livello {{level}}",
       "xpLeft": "{{count}} XP",
       "finishCity": "Completare {{city}}",
-      "info": "I tuoi 4 obiettivi più vicini al traguardo, scelti automaticamente: prossimo livello, prossimo trofeo di collezione, punti o esplorazione, e una città in corso (la tua mappa attiva o una città fotografata negli ultimi 30 giorni — gli Invader distrutti mai fotografati non contano)."
+      "info": "I tuoi 4 obiettivi più vicini al traguardo, scelti automaticamente: prossimo livello, prossimo trofeo di collezione, punti o esplorazione, e una città in corso (la tua mappa attiva o una città fotografata negli ultimi 30 giorni; gli Invader distrutti mai fotografati non contano)."
     }
   },
   "about": {
@@ -498,9 +498,9 @@
     },
     "statusColors": {
       "section": "Colori degli stati",
-      "colorFor": "Colore — {{status}}",
+      "colorFor": "Colore: {{status}}",
       "flashed": "Fotografati",
-      "colorForFlashed": "Colore — Fotografati"
+      "colorForFlashed": "Colore: Fotografati"
     },
     "labels": {
       "section": "Le mie etichette",
@@ -533,7 +533,7 @@
       "checking": "Verifica…",
       "upToDate": "Dati aggiornati",
       "newVersion": "Nuova versione installata ({{v}})",
-      "offline": "Offline — riprova più tardi",
+      "offline": "Offline, riprova più tardi",
       "updateError": "Errore di aggiornamento",
       "replayPoiIntro": "Rivedi l'invito «Luoghi da vedere»",
       "poiVersion": "Luoghi da vedere",
@@ -585,7 +585,7 @@
       "note": "Non viene raccolto alcun dato. Apre semplicemente la tua app email.",
       "emptyTitle": "Messaggio vuoto",
       "emptyBody": "Scrivi la tua idea prima di inviare.",
-      "emailSubject": "Idea $t(common.appName) — {{subject}}",
+      "emailSubject": "Idea $t(common.appName): {{subject}}",
       "emailSubjectNoTopic": "Idea $t(common.appName)",
       "sentTitle": "Grazie!",
       "sentBody": "La tua idea è stata inviata."
@@ -594,7 +594,7 @@
       "button": "Segnala un cambio di stato",
       "pickTitle": "Nuovo stato rilevato",
       "pickBody": "Qual è lo stato reale dell'Invader {{id}}?",
-      "emailSubject": "Segnalazione stato — {{id}}",
+      "emailSubject": "Segnalazione stato: {{id}}",
       "bodyId": "Invader: {{id}}",
       "bodyCurrent": "Stato attuale nell'app: {{status}}",
       "bodyReported": "Stato segnalato: {{status}}",
@@ -981,7 +981,7 @@
         "title": "La mappa",
         "benefit": "Il tuo campo di gioco: tutti gli Invader intorno a te, colorati in base al loro stato. Di default vedi solo quelli che ti restano da flashare.",
         "steps": [
-          "Ogni alieno ha un colore in base allo stato (OK, danneggiato, distrutto, non verificato — e «flashato» una volta segnato).",
+          "Ogni alieno ha un colore in base allo stato (OK, danneggiato, distrutto, non verificato, e «flashato» una volta segnato).",
           "Tocca un Invader per aprire la sua scheda (punti, indizio, link Instagram) e segnarlo come flashato.",
           "Apri i filtri per mostrare o nascondere i flashati, i distrutti, ecc."
         ]
@@ -1033,7 +1033,7 @@
       },
       "news": {
         "title": "Novità",
-        "benefit": "Resta aggiornato sulle novità e sugli Invader aggiunti di recente nelle tue città — e ricevi un avviso quando ce ne sono.",
+        "benefit": "Resta aggiornato sulle novità e sugli Invader aggiunti di recente nelle tue città, e ricevi un avviso quando ce ne sono.",
         "steps": [
           "Apri Novità dal menu (un pallino segnala le novità).",
           "Tocca la campana 🔔 in alto per ricevere avvisi sui nuovi Invader nelle tue città.",
@@ -1047,12 +1047,12 @@
         "steps": [
           "Concludi una sessione di Caccia o di Percorso per vedere il riepilogo.",
           "Tocca Condividi: l'app crea un'immagine con la tua mappa, la distanza, il tempo e i punti.",
-          "Inviala dove vuoi — l'app non pubblica nulla a tuo nome e i punti di partenza/arrivo restano sfocati."
+          "Inviala dove vuoi: l'app non pubblica nulla a tuo nome e i punti di partenza/arrivo restano sfocati."
         ]
       },
       "flash": {
         "title": "Segna i tuoi flash",
-        "benefit": "Tieni traccia di ciò che hai già flashato — uno a uno o in blocco.",
+        "benefit": "Tieni traccia di ciò che hai già flashato, uno a uno o in blocco.",
         "steps": [
           "Nella scheda di un Invader, tocca il pulsante per segnarlo come flashato.",
           "Nella Lista, segna più Invader in una volta e filtra per stato.",

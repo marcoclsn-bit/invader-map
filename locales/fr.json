@@ -104,7 +104,7 @@
       "searchPlaceholder": "Rechercher une ville…",
       "selectAll": "Toutes les villes",
       "validate": "Afficher ({{count}})",
-      "warnLarge": "~{{count}} Invaders — l’affichage peut être plus lent."
+      "warnLarge": "~{{count}} Invaders : l’affichage peut être plus lent."
     }
   },
   "route": {
@@ -122,7 +122,7 @@
     "allFlashed": "Tous les Invaders de ce trajet sont flashés !",
     "calculate": "Calculer l'itinéraire",
     "corridor": "Couloir : {{label}}",
-    "corridorInfo": "Le couloir est la distance maximale autour de ton itinéraire dans laquelle l'app cherche des Invaders. Plus il est large, plus tu en vois — mais certains seront un peu plus loin de ton chemin.",
+    "corridorInfo": "Le couloir est la distance maximale autour de ton itinéraire dans laquelle l'app cherche des Invaders. Plus il est large, plus tu en vois, mais certains seront un peu plus loin de ton chemin.",
     "loadingRoute": "Recherche de l'itinéraire…",
     "loadingInvaders": "Recherche des Invaders sur le trajet…",
     "quit": "Terminer",
@@ -250,7 +250,7 @@
       },
       "map": {
         "title": "Carte & Flash",
-        "body": "Repère les mosaïques autour de toi et marque celles que tu as flashées. Par défaut, la carte ne montre que les Invaders qu'il te reste à faire — les filtres révèlent les flashés et les détruits."
+        "body": "Repère les mosaïques autour de toi et marque celles que tu as flashées. Par défaut, la carte ne montre que les Invaders qu'il te reste à faire ; les filtres révèlent les flashés et les détruits."
       },
       "location": {
         "title": "Position GPS",
@@ -266,7 +266,7 @@
       },
       "balade": {
         "title": "Alertes Balade",
-        "body": "Sois alerté quand tu passes près d'un Invader pas encore flashé — même l'application fermée. Il te faudra autoriser la localisation « Toujours » au moment de l'activer."
+        "body": "Sois alerté quand tu passes près d'un Invader pas encore flashé, même l'application fermée. Il te faudra autoriser la localisation « Toujours » au moment de l'activer."
       }
     }
   },
@@ -282,7 +282,7 @@
       "week": "Cette semaine",
       "month": "Ce mois",
       "total": "Total tous tps",
-      "onlyTotal": "Flashe les prochains Invaders pour voir ton activité dans le temps — les anciens flashs sont conservés, juste sans date."
+      "onlyTotal": "Flashe les prochains Invaders pour voir ton activité dans le temps ; les anciens flashs sont conservés, juste sans date."
     },
     "chart": {
       "section": "Progression",
@@ -309,7 +309,7 @@
       "weekly_one": "~{{count}} Invader / semaine",
       "weekly_other": "~{{count}} Invaders / semaine",
       "projection": "À ce rythme, {{city}} est terminée dans ~{{months}} mois.",
-      "projectionSoon": "Plus qu'un dernier sprint — {{city}} se finit en moins d'1 mois !",
+      "projectionSoon": "Plus qu'un dernier sprint : {{city}} se finit en moins d'1 mois !",
       "projectionDone": "{{city}} 100 % flashée 🏆",
       "notEnoughData": "Continue quelques semaines pour voir ta projection."
     },
@@ -324,7 +324,7 @@
       "namePlaceholder": "Chasseur",
       "totalFlashes_one": "{{count}} flash",
       "totalFlashes_other": "{{count}} flashs",
-      "localBadge": "Profil local — stocké sur cet appareil",
+      "localBadge": "Profil local, stocké sur cet appareil",
       "chooseAvatar": "Choisir un avatar",
       "locked": "Pas encore assez de données.",
       "titles": {
@@ -359,7 +359,7 @@
         "title": "Jour / Nuit",
         "day": "Jour",
         "night": "Nuit",
-        "basedOn": "Basé sur {{count}} flashs horodatés — le marquage en masse n'enregistre pas l'heure."
+        "basedOn": "Basé sur {{count}} flashs horodatés ; le marquage en masse n'enregistre pas l'heure."
       },
       "geo": {
         "title": "Répartition géographique",
@@ -460,7 +460,7 @@
       "title": "Parcours du chasseur",
       "info": "Nv {{next}} dans {{remaining}} XP · {{tier}} au Nv {{tierLevel}}",
       "infoNoTier": "Nv {{next}} dans {{remaining}} XP",
-      "maxed": "Niveau maximum atteint — Légende ✦",
+      "maxed": "Niveau maximum atteint : Légende ✦",
       "xpInfo": "L'XP mesure ta progression globale de chasseur :\n• +10 XP par Invader flashé\n• +1 XP par tranche de 10 points (un Invader à 100 pts rapporte 10 + 10 = 20 XP)\n• +50 XP par trophée débloqué"
     },
     "objectives": {
@@ -468,7 +468,7 @@
       "level": "Niveau {{level}}",
       "xpLeft": "{{count}} XP",
       "finishCity": "Terminer {{city}}",
-      "info": "Tes 4 objectifs les plus proches d'aboutir, choisis automatiquement : prochain niveau, prochain trophée de collection, de points ou d'exploration, et ville en cours de complétion (ta carte active ou une ville flashée dans les 30 derniers jours — les Invaders détruits jamais flashés ne comptent pas)."
+      "info": "Tes 4 objectifs les plus proches d'aboutir, choisis automatiquement : prochain niveau, prochain trophée de collection, de points ou d'exploration, et ville en cours de complétion (ta carte active ou une ville flashée dans les 30 derniers jours ; les Invaders détruits jamais flashés ne comptent pas)."
     }
   },
   "about": {
@@ -498,9 +498,9 @@
     },
     "statusColors": {
       "section": "Couleurs des statuts",
-      "colorFor": "Couleur — {{status}}",
+      "colorFor": "Couleur : {{status}}",
       "flashed": "Flashés",
-      "colorForFlashed": "Couleur — Flashés"
+      "colorForFlashed": "Couleur : Flashés"
     },
     "labels": {
       "section": "Mes étiquettes",
@@ -533,7 +533,7 @@
       "checking": "Vérification…",
       "upToDate": "Données à jour",
       "newVersion": "Nouvelle version installée ({{v}})",
-      "offline": "Hors ligne — réessaie plus tard",
+      "offline": "Hors ligne, réessaie plus tard",
       "updateError": "Erreur de mise à jour",
       "replayPoiIntro": "Revoir l'invitation « Lieux à voir »",
       "poiVersion": "Lieux à voir",
@@ -585,7 +585,7 @@
       "note": "Aucune donnée n'est collectée. Le message ouvre simplement votre application e-mail.",
       "emptyTitle": "Message vide",
       "emptyBody": "Écrivez d'abord votre idée avant d'envoyer.",
-      "emailSubject": "Idée $t(common.appName) — {{subject}}",
+      "emailSubject": "Idée $t(common.appName) : {{subject}}",
       "emailSubjectNoTopic": "Idée $t(common.appName)",
       "sentTitle": "Merci !",
       "sentBody": "Votre idée a bien été envoyée."
@@ -594,7 +594,7 @@
       "button": "Signaler un changement de statut",
       "pickTitle": "Nouveau statut constaté",
       "pickBody": "Quel est l'état réel de l'Invader {{id}} ?",
-      "emailSubject": "Signalement statut — {{id}}",
+      "emailSubject": "Signalement statut : {{id}}",
       "bodyId": "Invader : {{id}}",
       "bodyCurrent": "Statut actuel dans l'app : {{status}}",
       "bodyReported": "Statut signalé : {{status}}",
@@ -981,7 +981,7 @@
         "title": "La carte",
         "benefit": "Ton terrain de jeu : tous les Invaders autour de toi, colorés selon leur état. Par défaut, tu ne vois que ceux qu'il te reste à flasher.",
         "steps": [
-          "Chaque alien a une couleur selon son état (OK, endommagé, détruit, non vérifié — et « flashé » une fois marqué).",
+          "Chaque alien a une couleur selon son état (OK, endommagé, détruit, non vérifié, et « flashé » une fois marqué).",
           "Touche un Invader pour ouvrir sa fiche (points, indice, lien Instagram) et le marquer comme flashé.",
           "Ouvre les filtres pour afficher ou masquer les flashés, les détruits, etc."
         ]
@@ -1033,7 +1033,7 @@
       },
       "news": {
         "title": "Actus",
-        "benefit": "Reste au courant des nouveautés et des Invaders récemment ajoutés dans tes villes — et reçois une alerte quand il y en a.",
+        "benefit": "Reste au courant des nouveautés et des Invaders récemment ajoutés dans tes villes, et reçois une alerte quand il y en a.",
         "steps": [
           "Ouvre Actus depuis le menu (une pastille signale les nouveautés).",
           "Touche la cloche 🔔 en haut pour être alerté des nouveaux Invaders dans tes villes.",
@@ -1047,12 +1047,12 @@
         "steps": [
           "Termine une session de Chasse ou de Trajet pour afficher le récapitulatif.",
           "Appuie sur Partager : l'app crée une image avec ta carte, ta distance, ton temps et tes points.",
-          "Envoie-la où tu veux — l'app ne publie rien en ton nom, et tes points de départ/arrivée restent flous."
+          "Envoie-la où tu veux : l'app ne publie rien en ton nom, et tes points de départ/arrivée restent flous."
         ]
       },
       "flash": {
         "title": "Marquer tes flashés",
-        "benefit": "Garde la trace de ce que tu as déjà flashé — à la main, ou en masse.",
+        "benefit": "Garde la trace de ce que tu as déjà flashé, à la main ou en masse.",
         "steps": [
           "Sur la fiche d'un Invader, appuie sur le bouton pour le marquer comme flashé.",
           "Dans la Liste, marque plusieurs Invaders d'un coup et filtre par statut.",
