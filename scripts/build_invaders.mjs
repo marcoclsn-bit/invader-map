@@ -51,8 +51,8 @@ const NEWS_MAX_MONTHS = 6;     // ou fenêtre temporelle (le plus restrictif s'a
 
 const SOURCE_ATTRIBUTION =
   'Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) ' +
-  "et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). " +
-  "Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.";
+  "et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). " +
+  "Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.";
 
 // ── Métadonnées des villes ────────────────────────────────────────────────────
 // bbox → validation des coordonnées activée pour cette ville
