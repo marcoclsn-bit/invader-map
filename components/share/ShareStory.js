@@ -42,12 +42,16 @@ export const FORMATS = {
 export const FORMAT_DEFAUT = 'story';
 
 const ALIEN = require('../../assets/markers/alien_flashed.png'); // pins = Invaders flashés (cohérent carte)
+// Manqués : le sprite « statut inconnu », gris. Volontairement effacé — il
+// remplit le quartier sans jamais concurrencer ce que l'utilisateur a trouvé.
+const ALIEN_MANQUE = require('../../assets/markers/alien_unknown.png');
 // Plein cadre : la carte n'est plus une vignette encadrée mais le fond de
 // l'image. La boîte arrondie isolait le fond de carte et soulignait son vide ;
 // en fond, il donne une texture et une couleur sans réclamer d'attention.
 
 
 const PIN_SIZE = 20;
+const PIN_MANQUE = 16;
 
 // ─── Projection Web Mercator (pour aligner le tracé sur la carte Mapbox statique) ──
 const _mercX = (lon) => (lon + 180) / 360;
@@ -131,6 +135,22 @@ function RouteLine({ coords, project }) {
 }
 
 // Pins = images alien flashé, posées aux coordonnées projetées (cohérent avec la carte).
+// Invaders du quartier jamais flashés, le long du parcours. Ils racontent ce
+// qui reste à trouver ; on écarte ceux qui tombent hors cadre, la projection
+// n'étant bornée que par les flashés et le tracé.
+function GhostPins({ pins, project, W, H }) {
+  return (pins ?? []).map((p, i) => {
+    const xy = project(p.lng, p.lat);
+    if (xy.x < -PIN_MANQUE || xy.x > W + PIN_MANQUE || xy.y < -PIN_MANQUE || xy.y > H + PIN_MANQUE) return null;
+    return (
+      <Image key={`g${i}`} source={ALIEN_MANQUE}
+        style={{ position: 'absolute', opacity: 0.5, width: PIN_MANQUE, height: PIN_MANQUE,
+                 left: xy.x - PIN_MANQUE / 2, top: xy.y - PIN_MANQUE / 2 }}
+        resizeMode="contain" />
+    );
+  });
+}
+
 function PinImages({ pins, project }) {
   return (pins ?? []).map((p, i) => {
     const xy = project(p.lng, p.lat);
@@ -146,10 +166,11 @@ function PinImages({ pins, project }) {
  * Visuel de partage néon (capturé via react-native-view-shot).
  * @param session { distanceKm, durationSec, invaderIds, routeCoords }
  * @param cityName nom de ville
- * @param pins array de { lng, lat, points } — Invaders attrapés
+ * @param pins   array de { lng, lat, points } — Invaders attrapés
+ * @param missed array de { lng, lat } — Invaders du parcours jamais flashés
  * @param map { url, project } de buildStaticMap (carte réelle) ; null → fond stylisé
  */
-const ShareStory = forwardRef(function ShareStory({ session, cityName, pins, map, route, sessionPoints, format = FORMAT_DEFAUT }, ref) {
+const ShareStory = forwardRef(function ShareStory({ session, cityName, pins, missed, map, route, sessionPoints, format = FORMAT_DEFAUT }, ref) {
   const { t } = useTranslation();
   const fmt = FORMATS[format] ?? FORMATS[FORMAT_DEFAUT];
   const { w: W, h: H } = fmt;
@@ -191,6 +212,8 @@ const ShareStory = forwardRef(function ShareStory({ session, cityName, pins, map
         </Svg>
       )}
 
+      {/* Les manqués d'abord : ils passent SOUS les flashés, jamais l'inverse. */}
+      {hasGeo && project && <GhostPins pins={missed} project={project} W={W} H={H} />}
       {hasGeo && project && <PinImages pins={pins} project={project} />}
 
       {/* ── Voile : assombrit le sommet pour le logotype et le pied pour le

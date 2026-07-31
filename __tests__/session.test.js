@@ -7,6 +7,7 @@ jest.mock('../utils/arrondissement', () => ({
 
 import {
   haversineKm, invaderIdsInRange, dominantDistrict, makeSession, extractCityCode,
+  missedAlongRoute,
 } from '../utils/session';
 
 describe('haversineKm', () => {
@@ -78,5 +79,50 @@ describe('makeSession', () => {
     });
     expect(s.distanceKm).toBeNull();
     expect(s.routeCoords).toBeNull();
+  });
+});
+
+describe('missedAlongRoute', () => {
+  // Tracé rectiligne d'ouest en est le long de l'équateur : 1° de longitude
+  // y vaut ~111 km, les distances sont donc lisibles à l'œil.
+  const route = [[0, 0], [0.01, 0]]; // ~1,1 km
+
+  const inv = (id, lng, lat, status = 'ok') => ({ id, lng, lat, status });
+
+  test('retient un Invader proche du tracé, jamais flashé', () => {
+    const out = missedAlongRoute([inv('a', 0.005, 0.0009)], route, new Set());
+    expect(out).toEqual([{ lng: 0.005, lat: 0.0009 }]); // ~100 m
+  });
+
+  test('écarte au-delà du couloir de 150 m', () => {
+    expect(missedAlongRoute([inv('a', 0.005, 0.002)], route, new Set())).toHaveLength(0); // ~222 m
+  });
+
+  test('écarte les déjà flashés — le gris dit « à trouver », pas « raté »', () => {
+    const out = missedAlongRoute([inv('a', 0.005, 0.0005)], route, new Set(['a']));
+    expect(out).toHaveLength(0);
+  });
+
+  test('écarte les détruits : inutile d’envoyer chercher une mosaïque disparue', () => {
+    const out = missedAlongRoute([inv('a', 0.005, 0.0005, 'destroyed')], route, new Set());
+    expect(out).toHaveLength(0);
+  });
+
+  test('trie du plus proche du tracé au plus loin', () => {
+    const out = missedAlongRoute(
+      [inv('loin', 0.004, 0.0012), inv('pres', 0.006, 0.0002)],
+      route, new Set(),
+    );
+    expect(out[0].lng).toBe(0.006);
+  });
+
+  test('plafonne le nombre de repères', () => {
+    const many = Array.from({ length: 60 }, (_, i) => inv(`i${i}`, 0.0001 * i, 0.0001));
+    expect(missedAlongRoute(many, route, new Set(), 40)).toHaveLength(40);
+  });
+
+  test('sans tracé exploitable, aucun repère', () => {
+    expect(missedAlongRoute([inv('a', 0, 0)], [[0, 0]], new Set())).toEqual([]);
+    expect(missedAlongRoute([inv('a', 0, 0)], null, new Set())).toEqual([]);
   });
 });

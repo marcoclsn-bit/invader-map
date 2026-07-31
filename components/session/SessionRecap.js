@@ -9,6 +9,7 @@ import { getBadge } from '../../data/badges';
 import { useGamification } from '../../context/GamificationContext';
 import { useAppContext } from '../../context/AppContext';
 import ShareStory, { FORMATS, FORMAT_DEFAUT, buildStaticMap, trimRouteEnds } from '../share/ShareStory';
+import { missedAlongRoute } from '../../utils/session';
 import { captureAndShare } from '../../services/shareStory';
 import { reserveMapboxCall } from '../../services/routing';
 import { MAPBOX_TOKEN } from '../../config/mapbox';
@@ -54,7 +55,7 @@ export default function SessionRecap() {
 function RecapBody({ session, newBadgeIds, onClose }) {
   const { theme } = useTheme();
   const { t } = useTranslation();
-  const { invaders } = useAppContext();
+  const { invaders, flashed } = useAppContext();
   const { width: screenW, height: screenH } = useWindowDimensions();
   const storyRef = useRef(null);
   const [busy, setBusy] = useState(false);
@@ -82,6 +83,14 @@ function RecapBody({ session, newBadgeIds, onClose }) {
 
   // Tracé rogné (confidentialité : masque le départ/arrivée près du domicile).
   const shareRoute = useMemo(() => trimRouteEnds(session.routeCoords), [session.routeCoords]);
+  // Invaders du parcours jamais flashés : la carte montre ce qu'il reste à
+  // trouver, ce qui remplit le quartier sans exposer l'échec du jour — un
+  // Invader flashé lors d'une sortie précédente n'y figure pas.
+  const missed = useMemo(
+    () => missedAlongRoute(invaders, shareRoute, flashed),
+    [invaders, shareRoute, flashed],
+  );
+
   const km = session.distanceKm;
   const hasKm = km != null && km > 0;
   const aliens = session.invaderIds?.length ?? 0;
@@ -141,7 +150,7 @@ function RecapBody({ session, newBadgeIds, onClose }) {
 
   const visuel = (
     <ShareStory
-      session={session} cityName={cityName} pins={pins} map={shareMap}
+      session={session} cityName={cityName} pins={pins} missed={missed} map={shareMap}
       route={shareRoute} sessionPoints={sessionPoints} format={format}
     />
   );
@@ -259,7 +268,7 @@ function RecapBody({ session, newBadgeIds, onClose }) {
         <View style={[styles.offscreen, { width: fmt.w, height: fmt.h }]} pointerEvents="none">
           <ShareStory
             ref={storyRef}
-            session={session} cityName={cityName} pins={pins} map={shareMap}
+            session={session} cityName={cityName} pins={pins} missed={missed} map={shareMap}
             route={shareRoute} sessionPoints={sessionPoints} format={format}
           />
         </View>

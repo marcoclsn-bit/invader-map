@@ -45,6 +45,78 @@ export function invaderIdsInRange(flashedDates, startMs, endMs) {
   return out;
 }
 
+// Largeur du couloir dans lequel un Invader compte comme « croisé ». Le seuil
+// est sensible : sur une sortie réelle au Marais, 150 m donnaient 6 manqués
+// pour 25 flashés, 200 m en donnaient 20. Au-delà, on ne raconte plus le
+// parcours mais le quartier — et le tapis gris efface ce qui a été trouvé.
+const MANQUE_KM = 0.15;
+// Garde-fou de rendu, pas de sens : sans lui, une longue balade dans un secteur
+// dense pourrait poser des centaines de sprites sur la carte de partage.
+const MANQUE_MAX = 40;
+
+// Distance point → segment, en plan local (exact à cette échelle, et sans le
+// coût d'un haversine par segment).
+function distSegmentKm(lat, lng, a, b) {
+  const ky = 111.32;
+  const kx = 111.32 * Math.cos((lat * Math.PI) / 180);
+  const px = lng * kx, py = lat * ky;
+  const ax = a[0] * kx, ay = a[1] * ky;
+  const bx = b[0] * kx, by = b[1] * ky;
+  const dx = bx - ax, dy = by - ay;
+  const l2 = dx * dx + dy * dy;
+  const t = l2 === 0 ? 0 : Math.max(0, Math.min(1, ((px - ax) * dx + (py - ay) * dy) / l2));
+  return Math.hypot(px - (ax + t * dx), py - (ay + t * dy));
+}
+
+/**
+ * Invaders jamais flashés situés le long d'un parcours — ce qu'il reste à
+ * trouver, pas ce qui a été raté aujourd'hui : un Invader flashé le mois
+ * dernier n'apparaît pas. La carte de partage les montre en gris effacé.
+ *
+ * Les détruits sont écartés : les afficher enverrait chercher une mosaïque
+ * qui n'existe plus.
+ *
+ * @param invaders liste de la ville — { id, lat, lng, status }
+ * @param route    [[lng,lat],…] déjà rogné
+ * @param flashed  Set des ids flashés (toutes sorties confondues)
+ * @returns {{lng:number,lat:number}[]} triés du plus proche du tracé au plus loin
+ */
+export function missedAlongRoute(invaders, route, flashed, limite = MANQUE_MAX) {
+  if (!Array.isArray(invaders) || !Array.isArray(route) || route.length < 2) return [];
+
+  // Préfiltre par boîte englobante : évite un calcul de distance sur les
+  // 1 500 Invaders de la ville quand le parcours en traverse une poignée de rues.
+  let minLng = Infinity, maxLng = -Infinity, minLat = Infinity, maxLat = -Infinity;
+  for (const c of route) {
+    if (c[0] < minLng) minLng = c[0];
+    if (c[0] > maxLng) maxLng = c[0];
+    if (c[1] < minLat) minLat = c[1];
+    if (c[1] > maxLat) maxLat = c[1];
+  }
+  const padLat = MANQUE_KM / 111.32;
+  const cosLat = Math.cos((((minLat + maxLat) / 2) * Math.PI) / 180) || 1;
+  const padLng = MANQUE_KM / (111.32 * cosLat);
+
+  const out = [];
+  for (const inv of invaders) {
+    if (!inv || inv.status === 'destroyed') continue;
+    if (flashed?.has?.(inv.id)) continue;
+    if (inv.lng < minLng - padLng || inv.lng > maxLng + padLng) continue;
+    if (inv.lat < minLat - padLat || inv.lat > maxLat + padLat) continue;
+
+    let best = Infinity;
+    for (let i = 0; i < route.length - 1; i++) {
+      const d = distSegmentKm(inv.lat, inv.lng, route[i], route[i + 1]);
+      if (d < best) best = d;
+      if (best <= 0.001) break;
+    }
+    if (best <= MANQUE_KM) out.push({ lng: inv.lng, lat: inv.lat, d: best });
+  }
+
+  out.sort((a, b) => a.d - b.d);
+  return out.slice(0, limite).map(({ lng, lat }) => ({ lng, lat }));
+}
+
 /** Arrondissement dominant parmi une liste d'IDs (Paris). null sinon. */
 export function dominantDistrict(invaderIds) {
   const counts = new Map();
