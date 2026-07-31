@@ -236,9 +236,11 @@ const styles = StyleSheet.create({
 
   // Bloc du score, ancré en bas : c'est lui qu'on doit lire en vignette.
   bloc: { position: 'absolute', left: 0, right: 0, bottom: 62, alignItems: 'center' },
+  // Sans ombre portée : sur iOS, textShadowRadius rend un halo RECTANGULAIRE
+  // autour de la boîte du texte, pas autour des glyphes — un carré plus clair
+  // bien visible derrière le chiffre. Le contraste du voile suffit largement.
   chiffre: {
     fontFamily: MONO, fontSize: 96, lineHeight: 104, color: dark.accent,
-    textShadowColor: dark.accentGlow, textShadowOffset: { width: 0, height: 0 }, textShadowRadius: 18,
   },
   legende: { fontFamily: MONO, fontSize: 15, color: dark.textPrimary, letterSpacing: 3.5, marginTop: 4 },
   contexte: { fontFamily: MONO_R, fontSize: 13, color: dark.textSecondary, letterSpacing: 0.6, marginTop: 18 },
