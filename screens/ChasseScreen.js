@@ -1033,25 +1033,25 @@ export default function ChasseScreen({ route }) {
                 )}
                 {/* Rendus AVANT les étapes du parcours pour passer dessous :
                     la chasse doit rester lisible, ces marqueurs sont un bonus. */}
-                {/* Filtré ici et non dans le useMemo des voisins : celui-ci projette
-                    les candidats sur l'itinéraire (turf), le refaire à chaque flash
-                    coûterait cher pour un simple retrait d'affichage. */}
-                {voisins.filter(inv => !flashed.has(inv.id)).map(inv => {
-                  const selv = selectedInv?.id === inv.id;
+                {voisins.map(inv => {
+                  const flash = flashed.has(inv.id);
+                  const selv  = selectedInv?.id === inv.id;
                   return (
                     <PinMarker
                       key={`v-${inv.id}`}
                       coordinate={{ latitude: inv.lat, longitude: inv.lng }}
                       anchor={{ x: 0.5, y: 0.5 }}
                       onPress={() => selectInvader(inv)}
-                      redrawKey={`${selv}`}
+                      redrawKey={`${flash}|${selv}`}
                       stopPropagation
                       accessible
                       accessibilityRole="button"
-                      accessibilityLabel={`${inv.id}, ${t(`common.status.${inv.status}`)}, ${t('map.a11y.todo')}`}
+                      accessibilityLabel={`${inv.id}, ${t(`common.status.${inv.status}`)}, ${t(flash ? 'map.a11y.flashed' : 'map.a11y.todo')}`}
                       accessibilityHint={t('map.a11y.invaderHint')}
                     >
-                      <View style={[styles.nearMarker, selv && styles.nearMarkerSel]} />
+                      <View style={[styles.nearMarker, flash && styles.nearMarkerDone, selv && styles.nearMarkerSel]}>
+                        {flash && <Text style={styles.nearMarkerCheck}>✓</Text>}
+                      </View>
                     </PinMarker>
                   );
                 })}
@@ -1631,16 +1631,23 @@ function makeStyles(t) {
     // rang et deux fois plus petites : elles situent ce qu'il y a autour sans
     // entrer dans la lecture du parcours.
     //
-    // Seuls les NON flashés sont affichés : une pastille grise pleine pour un
-    // Invader déjà pris ne disait rien d'utile pendant une chasse, et le gris
-    // plein signifie déjà « étape faite » ailleurs sur cette carte
-    // (huntMarkerDone). L'anneau creux ne porte donc plus qu'un sens : à trouver.
+    // Un voisin flashé reprend le langage d'une étape faite — gris plein, ✓,
+    // opacité réduite — plutôt que de disparaître : deux réactions différentes
+    // au même geste sur la même carte n'avaient aucune justification, sinon la
+    // mienne, erronée, qu'un ✓ serait illisible à cette taille. Vérifié à
+    // l'échelle de l'écran : il l'est dès 15 pt, confortablement à 17.
+    // L'anneau creux (à trouver) partage cette taille : même objet, même gabarit,
+    // et une cible tactile un peu plus sûre qu'à 15.
     nearMarker: {
-      width: 15, height: 15, borderRadius: 8,
+      width: 17, height: 17, borderRadius: 9,
       borderWidth: 2.5, borderColor: t.textSecondary, backgroundColor: t.surface,
+      alignItems: 'center', justifyContent: 'center',
       shadowColor: '#000', shadowOffset: { width: 0, height: 1 }, shadowOpacity: 0.25, shadowRadius: 2,
     },
-    nearMarkerSel:  { borderColor: t.accent, backgroundColor: t.textPrimary },
+    // Mêmes valeurs que huntMarkerDone : la pastille s'éteint sans disparaître.
+    nearMarkerDone:  { backgroundColor: t.textSecondary, borderColor: t.surface, opacity: 0.75 },
+    nearMarkerCheck: { color: t.surface, fontSize: 10, fontWeight: '700', lineHeight: 12 },
+    nearMarkerSel:   { borderColor: t.accent, backgroundColor: t.textPrimary },
 
     // ── Lieux d'intérêt (or, jamais vert : on ne confond pas avec un Invader) ──
     poiMarkerWrap: { width: 28, height: 28, alignItems: 'center', justifyContent: 'center' },
