@@ -7,7 +7,7 @@
 // Ce défaut est SILENCIEUX — un tracé approximatif ne lève aucune erreur et ne
 // se voit que sur la carte de partage, après coup. D'où ces tests.
 
-import { comblerDepuisItineraire } from '../components/session/useSessionRecorder';
+import { lieuxAtteints, comblerDepuisItineraire } from '../components/session/useSessionRecorder';
 
 // Itinéraire droit d'ouest en est, 11 points espacés d'environ 74 m.
 const route = Array.from({ length: 11 }, (_, i) => [2.3500 + i * 0.001, 48.8600]);
@@ -90,5 +90,32 @@ describe('plafond de vitesse par mode', () => {
 
   test('un mode inconnu retombe sur la marche, le plus strict', () => {
     expect(VITESSE_DEFAUT).toBe(VITESSE_MAX_KMH['foot-walking']);
+  });
+});
+
+describe('lieuxAtteints', () => {
+  // Tracé le long de l'équateur : 1° de longitude y vaut ~111 km, donc
+  // 0,0005° ≈ 55 m, juste sous le seuil de 60 m.
+  const trace = [[0, 0], [0.001, 0], [0.002, 0]];
+  const lieu = (id, lng, lat) => ({ id, lng, lat });
+
+  test('retient un lieu longé de près', () => {
+    expect(lieuxAtteints([lieu('a', 0.001, 0.0004)], trace)).toEqual(['a']);
+  });
+
+  test('écarte un lieu prévu mais jamais approché', () => {
+    // ~220 m du tracé : la sortie s'est arrêtée avant, ou est passée ailleurs.
+    expect(lieuxAtteints([lieu('a', 0.001, 0.002)], trace)).toEqual([]);
+  });
+
+  test('ne compte chaque lieu qu\'une fois, même longé plusieurs fois', () => {
+    const allerRetour = [[0, 0], [0.001, 0], [0.002, 0], [0.001, 0], [0, 0]];
+    expect(lieuxAtteints([lieu('a', 0.001, 0)], allerRetour)).toEqual(['a']);
+  });
+
+  test('sans tracé ou sans lieu, rien', () => {
+    expect(lieuxAtteints([], trace)).toEqual([]);
+    expect(lieuxAtteints([lieu('a', 0, 0)], [])).toEqual([]);
+    expect(lieuxAtteints(null, trace)).toEqual([]);
   });
 });

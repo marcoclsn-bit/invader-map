@@ -917,7 +917,12 @@ export default function ChasseScreen({ route }) {
     // Démarre l'enregistrement de session (distance + trajet)
     // `profile` fixe le plafond de vraisemblance de la distance : un cycliste
     // atteint 30 km/h en pointe, un marcheur jamais.
-    recorder.begin({ source: 'hunt', city: currentCityCode, routeCoords: result?.routeCoords, profile });
+    recorder.begin({
+      source: 'hunt', city: currentCityCode, routeCoords: result?.routeCoords, profile,
+      // Lieux prévus : l'enregistreur retiendra ceux dont on est réellement
+      // passé près, pour alimenter le compteur « lieux découverts ».
+      pois: (result?.invaders ?? []).filter(s => s.isPoi).map(s => ({ id: s.id, lat: s.lat, lng: s.lng })),
+    });
     track('run_start', {
       source: 'hunt', city: currentCityCode,
       objective: poiPrefs.objective, budgetMin, steps: result?.invaders?.length ?? 0,

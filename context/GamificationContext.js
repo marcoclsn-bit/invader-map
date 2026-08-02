@@ -56,7 +56,7 @@ export function GamificationProvider({ children }) {
     const startMs = new Date(draft.startedAt).getTime();
     const endMs = new Date(draft.endedAt).getTime();
     const ids = invaderIdsInRange(flashedDates, startMs, endMs);
-    const session = makeSession({ ...draft, invaderIds: ids });
+    const session = makeSession({ ...draft, invaderIds: ids, poiIds: draft.poiIds ?? [] });
 
     // Session « vide » (rien flashé, ~aucune distance) → on n'enregistre pas
     const empty = ids.length === 0 && (!session.distanceKm || session.distanceKm < 0.1);
@@ -86,6 +86,7 @@ export function GamificationProvider({ children }) {
       distanceKm: Math.round((session.distanceKm ?? 0) * 10) / 10,
       durationMin: Math.round((session.durationSec ?? 0) / 60),
       badges: newBadgeIds.length,
+      pois: session.poiIds?.length ?? 0,
     });
     return session;
   }, [flashedDates, getFlashHistory, unlockIds]);

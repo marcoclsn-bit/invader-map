@@ -825,7 +825,12 @@ export default function TrajetScreen() {
     setFollowing(true);
     setDrifted(false);
     // Démarre l'enregistrement de session (récap + partage à l'arrêt)
-    recorder.begin({ source: 'route', city: currentCityCode, routeCoords });
+    recorder.begin({
+      source: 'route', city: currentCityCode, routeCoords,
+      // Mêmes lieux que ceux affichés dans le couloir : l'enregistreur ne
+      // retiendra que ceux dont on est réellement passé près.
+      pois: routePois.map(p => ({ id: p.id, lat: p.lat, lng: p.lng })),
+    });
     track('run_start', { source: 'route', city: currentCityCode });
     if (gpsRef.current) {
       recorder.addPoint(gpsRef.current[1], gpsRef.current[0]);

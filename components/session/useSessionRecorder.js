@@ -39,6 +39,16 @@ export const VITESSE_DEFAUT = 18;
 // reprendre l'itinéraire raconterait une balade qui n'a pas eu lieu.
 const PROCHE_ITI_KM = 0.40;
 
+// Distance en deçà de laquelle un lieu du parcours compte comme atteint. 60 m,
+// soit la largeur d'un carrefour : on est passé devant, pas dans la rue d'à
+// côté. Volontairement plus serré que le couloir de reprise d'itinéraire, qui
+// répond à une tout autre question.
+//
+// La mesure se fait sur le TRACÉ RÉEL en fin de session, pas au calcul de
+// l'itinéraire : un lieu prévu mais jamais atteint, parce que la sortie s'est
+// arrêtée en route, ne doit pas être compté comme découvert.
+const LIEU_ATTEINT_KM = 0.06;
+
 // Indice du point de l'itinéraire le plus proche d'une position donnée.
 function plusProche(route, lat, lng) {
   let idx = -1, best = Infinity;
@@ -86,6 +96,26 @@ export function comblerDepuisItineraire(route, depart, arrivee) {
   return { points, km };
 }
 
+/**
+ * Lieux du parcours dont le tracé réel est passé assez près pour qu'on puisse
+ * dire qu'ils ont été vus. Sert de compteur « lieux découverts ».
+ *
+ * @param pois  [{ id, lat, lng }] prévus au parcours
+ * @param trace [[lng, lat], …] réellement enregistré
+ */
+export function lieuxAtteints(pois, trace) {
+  if (!Array.isArray(pois) || pois.length === 0) return [];
+  if (!Array.isArray(trace) || trace.length === 0) return [];
+  const out = [];
+  for (const p of pois) {
+    if (!p || p.lat == null || p.lng == null) continue;
+    for (const c of trace) {
+      if (haversineKm(p.lat, p.lng, c[1], c[0]) <= LIEU_ATTEINT_KM) { out.push(p.id); break; }
+    }
+  }
+  return out;
+}
+
 export function useSessionRecorder() {
   const ref = useRef(null);
 
@@ -100,6 +130,9 @@ export function useSessionRecorder() {
       // Mode de déplacement : fixe le plafond de vraisemblance de la distance.
       // Absent (Trajet, Balade) → à pied, qui est le cas de ces écrans.
       vitesseMax: VITESSE_MAX_KMH[meta.profile] ?? VITESSE_DEFAUT,
+      // Lieux prévus au parcours : { id, lat, lng }. On confrontera le tracé
+      // réel à cette liste à la fin.
+      pois: Array.isArray(meta.pois) ? meta.pois : [],
       startedAt: new Date().toISOString(),
       distanceKm: 0,
       last: null,
@@ -142,7 +175,9 @@ export function useSessionRecorder() {
     const s = ref.current;
     if (!s) return null;
     ref.current = null;
+    const trace = s.coords.length > 1 ? s.coords : (s.fallbackRoute ?? []);
     return {
+      poiIds: lieuxAtteints(s.pois, trace),
       source: s.source,
       startedAt: s.startedAt,
       endedAt: new Date().toISOString(),

@@ -9,6 +9,7 @@
  *     startedAt, endedAt,        // ISO
  *     durationSec, distanceKm,   // distanceKm = null si non tracké
  *     invaderIds: string[],
+ *     poiIds: string[],          // lieux atteints (vide avant août 2026)
  *     city, district,            // district optionnel
  *     routeCoords,               // [[lon,lat],…] optionnel (carte de partage)
  *   }
@@ -132,7 +133,7 @@ export function dominantDistrict(invaderIds) {
 /** Construit une session normalisée à partir d'un brouillon. */
 export function makeSession({
   source = 'hunt', startedAt, endedAt, distanceKm = null,
-  invaderIds = [], city = null, district = null, routeCoords = null,
+  invaderIds = [], poiIds = [], city = null, district = null, routeCoords = null,
 }) {
   const startMs = new Date(startedAt).getTime();
   const endMs = new Date(endedAt).getTime();
@@ -143,6 +144,9 @@ export function makeSession({
     startedAt, endedAt, durationSec,
     distanceKm: distanceKm == null ? null : Math.round(distanceKm * 100) / 100,
     invaderIds,
+    // Lieux effectivement atteints pendant la sortie. Non rétroactif : les
+    // sessions antérieures à cette version n'en ont pas.
+    poiIds,
     city,
     district: district ?? dominantDistrict(invaderIds),
     routeCoords: routeCoords && routeCoords.length > 1 ? routeCoords : null,
