@@ -1,6 +1,6 @@
 {
-  "version": 11,
-  "updatedAt": "2026-08-01",
+  "version": 12,
+  "updatedAt": "2026-08-02",
   "cities": [
     {
       "code": "AIX",
@@ -124,8 +124,8 @@
       "code": "BGK",
       "name": "Bangkok",
       "count": 44,
-      "destroyed": 22,
-      "version": 6,
+      "destroyed": 24,
+      "version": 7,
       "center": {
         "lat": 13.7563,
         "lng": 100.502
@@ -398,8 +398,8 @@
       "code": "FTBL",
       "name": "Fontainebleau",
       "count": 45,
-      "destroyed": 11,
-      "version": 5,
+      "destroyed": 13,
+      "version": 6,
       "center": {
         "lat": 48.405,
         "lng": 2.701
@@ -415,8 +415,8 @@
       "code": "GNV",
       "name": "Genève",
       "count": 33,
-      "destroyed": 9,
-      "version": 6,
+      "destroyed": 3,
+      "version": 7,
       "center": {
         "lat": 46.2044,
         "lng": 6.1432
@@ -471,8 +471,8 @@
       "code": "HK",
       "name": "Hong Kong",
       "count": 130,
-      "destroyed": 107,
-      "version": 6,
+      "destroyed": 108,
+      "version": 7,
       "center": {
         "lat": 22.3193,
         "lng": 114.169
@@ -572,8 +572,8 @@
       "code": "LDN",
       "name": "London",
       "count": 193,
-      "destroyed": 67,
-      "version": 6,
+      "destroyed": 68,
+      "version": 7,
       "center": {
         "lat": 51.5074,
         "lng": -0.1278
@@ -600,8 +600,8 @@
       "code": "LJU",
       "name": "Ljubljana",
       "count": 42,
-      "destroyed": 4,
-      "version": 6,
+      "destroyed": 5,
+      "version": 7,
       "center": {
         "lat": 46.0569,
         "lng": 14.5058
@@ -898,8 +898,8 @@
       "code": "PA",
       "name": "Paris",
       "count": 1597,
-      "destroyed": 244,
-      "version": 7,
+      "destroyed": 247,
+      "version": 8,
       "center": {
         "lat": 48.8566,
         "lng": 2.3522
@@ -1056,8 +1056,8 @@
       "code": "ROM",
       "name": "Rome",
       "count": 75,
-      "destroyed": 16,
-      "version": 6,
+      "destroyed": 17,
+      "version": 7,
       "center": {
         "lat": 41.9028,
         "lng": 12.4964
@@ -1191,8 +1191,8 @@
       "code": "VRS",
       "name": "Versailles",
       "count": 42,
-      "destroyed": 15,
-      "version": 6,
+      "destroyed": 16,
+      "version": 7,
       "center": {
         "lat": 48.80571,
         "lng": 2.128069
@@ -1213,8 +1213,8 @@
       "code": "WN",
       "name": "Vienne",
       "count": 56,
-      "destroyed": 4,
-      "version": 6,
+      "destroyed": 6,
+      "version": 7,
       "center": {
         "lat": 48.2082,
         "lng": 16.3738
