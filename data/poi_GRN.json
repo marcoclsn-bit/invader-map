@@ -1,0 +1,932 @@
+{
+ "version": 1,
+ "city": "GRN",
+ "attribution": "Lieux : Wikidata (CC0) · Résumés d’après Wikipédia (CC BY-SA) · Photos : Wikimedia Commons",
+ "updatedAt": "2026-08-04",
+ "pois": [
+  {
+   "id": "Q1952944",
+   "name": "musée de Grenoble",
+   "lat": 45.1945,
+   "lng": 5.7324,
+   "theme": "museums",
+   "fame": 16,
+   "summary": "Créé le 16 février 1798 par le professeur de dessin Louis-Joseph Jay, le musée occupe depuis 1994 la place de Lavalette, à l'emplacement d'un couvent des Franciscains édifié en 1218. Ses 57 salles permanentes vont de l'Égypte antique à l'art contemporain, de l'Intérieur aux aubergines de Matisse au portrait de Jackie Kennedy par Warhol.",
+   "wiki": "Musée de Grenoble",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Musee%20Grenoble.JPG?width=960",
+   "photoBy": "Milky",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Museum of Grenoble",
+    "es": "Museo de Grenoble",
+    "it": "Museo di Grenoble"
+   }
+  },
+  {
+   "id": "Q3329695",
+   "name": "musée dauphinois",
+   "lat": 45.19514,
+   "lng": 5.72707,
+   "theme": "museums",
+   "fame": 4,
+   "summary": "Créé en 1906 à l'initiative de l'ethnographe Hippolyte Müller, il occupe l'ancien couvent de visitandines Sainte-Marie d'en-Haut, sur les premières hauteurs de la Bastille. Le musée y est inauguré par André Malraux le 3 février 1968, pendant les Jeux olympiques d'hiver.",
+   "wiki": "Musée dauphinois",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mus%C3%A9e%20Dauphinois%20%C3%A0%20Grenoble.JPG?width=960",
+   "photoBy": "Milky",
+   "photoLic": "FAL",
+   "alt": {
+    "en": "Musée dauphinois"
+   }
+  },
+  {
+   "id": "Q3329436",
+   "name": "musée archéologique Saint-Laurent",
+   "lat": 45.1977,
+   "lng": 5.7314,
+   "theme": "museums",
+   "fame": 4,
+   "summary": "Sous l'ancienne église Saint-Laurent, désacralisée en 1983, les édifices s'empilent sur une nécropole gallo-romaine. Le joyau du site est la crypte Saint-Oyand, du VIe siècle, dont Jacques-Joseph Champollion, frère aîné de l'égyptologue, révéla l'existence en 1803. Le lieu est devenu musée en 1986.",
+   "wiki": "Musée archéologique Saint-Laurent",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mus%C3%A9e%20arch%C3%A9ologique1%20-%20Grenoble.JPG?width=960",
+   "photoBy": "Milky",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Grenoble Archaeological Museum",
+    "es": "Museo Arqueológico de Grenoble"
+   }
+  },
+  {
+   "id": "Q3330877",
+   "name": "muséum d'histoire naturelle de Grenoble",
+   "lat": 45.188,
+   "lng": 5.73519,
+   "theme": "museums",
+   "fame": 4,
+   "summary": "Fondé en 1775 comme cabinet d'histoire naturelle voulu par le docteur Henri Gagnon, grand-père maternel de Stendhal, il ouvre son bâtiment actuel en 1855. Dans le jardin des Plantes voisin, une petite rivière artificielle est franchie par le premier ouvrage au monde en béton coulé, bâti en 1855 par Joseph et Louis Vicat.",
+   "wiki": "Muséum d'histoire naturelle de Grenoble",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Museum%20d%27histoire%20naturelle%20--%20Grenoble.JPG?width=960",
+   "photoBy": "Milky",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Natural History Museum of Grenoble"
+   }
+  },
+  {
+   "id": "Q3224155",
+   "name": "Magasin-CNAC",
+   "lat": 45.1875,
+   "lng": 5.704444,
+   "theme": "museums",
+   "fame": 4,
+   "summary": "Cette halle de 3 000 m2 fut construite à Paris en 1900 par les ateliers de Gustave Eiffel pour l'Exposition universelle, puis démontée et remontée à Grenoble, où elle servit soixante ans d'atelier de chaudronnerie avant de devenir un lieu de stockage. Le centre national d'art contemporain y est inauguré le 26 avril 1986.",
+   "wiki": "Magasin-CNAC",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/CNAC%20-%20Le%20Magasin%20-%20Grenoble%202.JPG?width=960",
+   "photoBy": "Milky",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Le Magasin des horizons",
+    "it": "Magasin-CNAC"
+   }
+  },
+  {
+   "id": "Q2858640",
+   "name": "appartement du docteur Gagnon",
+   "lat": 45.1917,
+   "lng": 5.7276,
+   "theme": "museums",
+   "fame": 3,
+   "summary": "Après la mort de sa mère, Stendhal vit ici de 1790 à 1796 chez son grand-père maternel, le docteur Henri Gagnon : deux maisons contiguës des XVIe et XVIIe siècles ouvrant l'une sur la place Grenette, l'autre sur le jardin de ville. L'appartement lui sert de laboratoire d'observation de la bonne société grenobloise.",
+   "wiki": "Appartement du docteur Gagnon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Treille%20de%20Stendhal.jpg?width=960",
+   "photoBy": "English : This photo has been taken by Matthieu Riegler  (User:Kyro) and release",
+   "photoLic": "CC BY 3.0",
+   "alt": {
+    "en": "House of Doctor Gagnon",
+    "es": "Apartamento del doctor Gagnon",
+    "it": "Appartamento del Dottor Gagnon"
+   }
+  },
+  {
+   "id": "Q22996666",
+   "name": "maison natale de Stendhal",
+   "lat": 45.191404,
+   "lng": 5.728901,
+   "theme": "museums",
+   "fame": 2,
+   "summary": "Henri Beyle, dit Stendhal, naît le 23 janvier 1783 au deuxième étage de cette maison du 14, rue Jean-Jacques-Rousseau, alors appelée rue des Vieux-Jésuites, et y vit jusqu'à sept ans. Le lieu, privé, a abrité de 1966 à 1994 le musée de la Résistance dauphinoise.",
+   "wiki": "Maison natale de Stendhal",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/14%20rue%20Jean-Jacques%20-%20Grenoble.jpg?width=960",
+   "photoBy": "Matthieu Riegler \n\n\n\n\n\n\n\n\n\nEnglish : This photo has been taken by Matthieu Riegl",
+   "photoLic": "CC BY 3.0",
+   "alt": {
+    "en": "birthplace of Stendhal"
+   }
+  },
+  {
+   "id": "Q2901456",
+   "name": "bibliothèque municipale de Grenoble",
+   "lat": 45.185278,
+   "lng": 5.731111,
+   "theme": "culture",
+   "fame": 5,
+   "summary": "Elle naît en 1772 du rachat par souscription de la bibliothèque de l'évêque Jean de Caulet, 33 644 ouvrages adjugés 45 000 livres. Elle conserve les fonds de Champollion, Stendhal ou Berlioz. Son siège occupe depuis 1970 l'ancienne bibliothèque universitaire du boulevard Maréchal-Lyautey.",
+   "wiki": "Bibliothèque municipale de Grenoble",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Biblioth%C3%A8que%20municipale%20Liautey%20Grenoble.JPG?width=960",
+   "photoBy": "Rémih",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Bibliothèque municipale de Grenoble",
+    "es": "Bibliothèque municipale de Grenoble",
+    "it": "Bibliothèque municipale de Grenoble"
+   }
+  },
+  {
+   "id": "Q2994563",
+   "name": "conservatoire à rayonnement régional de Grenoble",
+   "lat": 45.1733,
+   "lng": 5.73471,
+   "theme": "culture",
+   "fame": 2,
+   "summary": "Née d'une école de musique créée en 1922 et devenue conservatoire municipal en 1935, l'institution quitte en avril 1969 l'ancien couvent des Minimes pour ce bâtiment du chemin de Gordes, inauguré le 27 juin 1970 en présence du ministre de la Culture Edmond Michelet. En 2025, elle prend le nom de Nina Simone.",
+   "wiki": "Conservatoire à rayonnement régional de Grenoble",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Conservatoire%20de%20r%C3%A9gion%20-%20Grenoble.JPG?width=960",
+   "photoBy": "Milky",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "Conservatory of Grenoble"
+   }
+  },
+  {
+   "id": "Q2942283",
+   "name": "cathédrale Notre-Dame de Grenoble",
+   "lat": 45.1925,
+   "lng": 5.732222,
+   "theme": "religious",
+   "fame": 10,
+   "summary": "Construite à partir du Xe siècle, elle présente, dans un urbanisme très dense, la particularité d'avoir des immeubles d'habitation accolés à sa structure et de communiquer avec l'église Saint-Hugues. Les travaux du tramway ont révélé en 1989 son baptistère du IVe siècle, conservé dans la crypte archéologique du musée de l'Ancien Évêché.",
+   "wiki": "Cathédrale Notre-Dame de Grenoble",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Grenoble-Notre-Dame.jpg?width=960",
+   "photoBy": "Morburre",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Grenoble Cathedral",
+    "es": "Catedral de Nuestra Señora",
+    "it": "cattedrale di Grenoble"
+   }
+  },
+  {
+   "id": "Q2983944",
+   "name": "collégiale Saint-André de Grenoble",
+   "lat": 45.1929,
+   "lng": 5.72802,
+   "theme": "religious",
+   "fame": 5,
+   "summary": "Fondée en 1228 comme chapelle privée des dauphins, pour abriter leur sépulture, elle fut édifiée grâce aux revenus des mines d'argent de Brandes-en-Oisans. Sa cloche sonnait le sing à 10 heures chaque soir, prévenant les habitants que les portes de la ville allaient se fermer : la coutume subsiste jusqu'en 1877.",
+   "wiki": "Collégiale Saint-André de Grenoble",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Place%20Saint%20Andre%20-%20Grenoble.JPG?width=960",
+   "photoBy": "Milky",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Collegiate Church of Saint-André, Grenoble",
+    "it": "collegiata di Sant'Andrea"
+   }
+  },
+  {
+   "id": "Q16467688",
+   "name": "basilique du Sacré-Cœur de Grenoble",
+   "lat": 45.19156,
+   "lng": 5.71587,
+   "theme": "religious",
+   "fame": 4,
+   "summary": "Construite à partir de 1922 dans un style romano-byzantin, sur des plans établis par le premier curé, l'abbé Joseph Viallet, fils du maire Félix Viallet. Consacrée inachevée en 1943, elle voit les travaux s'arrêter en 1969 et le campanile prévu de 75 mètres ne sera jamais érigé.",
+   "wiki": "Basilique du Sacré-Cœur de Grenoble",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Sacr%C3%A9%20Coeur%2C%20Place%20Doyen%20Gosse%20-%20Grenoble.JPG?width=960",
+   "photoBy": "Milky",
+   "photoLic": "FAL",
+   "alt": {
+    "en": "Basilique du Sacré-Cœur de Grenoble"
+   }
+  },
+  {
+   "id": "Q2887006",
+   "name": "basilique Saint-Joseph de Grenoble",
+   "lat": 45.186871,
+   "lng": 5.730097,
+   "theme": "religious",
+   "fame": 4,
+   "summary": "Le seuil de la première église Saint-Joseph, consacrée en 1697 dans un faubourg hors des remparts, servit de point de référence pour déterminer l'altitude exacte de Grenoble : 213,48 mètres. L'ancienne église démolie, la basilique actuelle est consacrée en 1924. L'abbé Pierre y fut vicaire de 1939 à 1942.",
+   "wiki": "Basilique Saint-Joseph de Grenoble",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Clocher%20%C3%A9glise%20Saint%20Joseph%20-%20Grenoble.JPG?width=960",
+   "photoBy": "Milky",
+   "photoLic": "FAL",
+   "alt": {
+    "en": "Basilique Saint-Joseph de Grenoble"
+   }
+  },
+  {
+   "id": "Q3582365",
+   "name": "église Saint-Louis de Grenoble",
+   "lat": 45.1898,
+   "lng": 5.72581,
+   "theme": "religious",
+   "fame": 4,
+   "summary": "Fondée à la demande de Mgr Le Camus, évêque de Grenoble, qui la consacra en 1699 : il voulait deux paroisses neuves, Saint-Louis dans la ville et Saint-Joseph hors les murs. Au-dessus du portail, une inscription latine rappelle que Louis le Grand fit édifier cette maison pour le Seigneur, l'an 1699. L'orgue posé en 1980 compte 61 jeux.",
+   "wiki": "Église Saint-Louis de Grenoble",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Grenoble%20Saint-Louis%20church%202012.jpg?width=960",
+   "photoBy": "Marcin Białek",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Saint-Louis Church, Grenoble"
+   }
+  },
+  {
+   "id": "Q2385384",
+   "name": "église Saint-Jean de Grenoble",
+   "lat": 45.1806,
+   "lng": 5.7139,
+   "theme": "religious",
+   "fame": 2,
+   "summary": "Bâtie de 1963 à 1965 par l'architecte Maurice Blanc, natif de la ville, elle suit un plan circulaire de 37 mètres de diamètre et peut accueillir 1 300 personnes. Sa toiture autoportante en hyperboloïde, refaite en 1979 après des infiltrations, a été totalement réinterprétée. Elle est labellisée Patrimoine du XXe siècle depuis 2003.",
+   "wiki": "Église Saint-Jean de Grenoble",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Eglise%20Saint-Jean%20-%20Grenoble.JPG?width=960",
+   "photoBy": "Milky",
+   "photoLic": "FAL",
+   "alt": {
+    "en": "Église Saint-Jean, Grenoble",
+    "es": "iglesia de San Juan"
+   }
+  },
+  {
+   "id": "Q595256",
+   "name": "couvent des Minimes de Grenoble",
+   "lat": 45.193333,
+   "lng": 5.733333,
+   "theme": "religious",
+   "fame": 3,
+   "summary": "En 1671, les Révérends Pères Minimes se disent gênés dans leur méditation par les chants venus du temple protestant tout proche : une ordonnance royale fait déplacer le temple au-delà des remparts. Leur couvent, construit à partir de 1644, abrite aujourd'hui un foyer étudiant et une salle de concert, nommée salle Olivier Messiaen en 1981.",
+   "wiki": "Couvent des Minimes de Grenoble",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Couvent%20des%20Minimes%20-%20Grenoble.JPG?width=960",
+   "photoBy": "Milky",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Couvent des Minimes de Grenoble"
+   }
+  },
+  {
+   "id": "Q101086115",
+   "name": "synagogue de Grenoble",
+   "lat": 45.18195,
+   "lng": 5.72551,
+   "theme": "religious",
+   "fame": 1,
+   "summary": "Le culte israélite se répartit à Grenoble entre plusieurs organisations. On y trouve la synagogue consistoriale Bar Yohaï, l'association cultuelle Zekhout Avot, qui abrite elle aussi une synagogue, la communauté loubavitch, dotée d'une école et d'un mikvé, et la communauté juive libérale Beit ha Or.",
+   "wiki": "Synagogue de Grenoble"
+  },
+  {
+   "id": "Q545992",
+   "name": "Bastille",
+   "lat": 45.198773,
+   "lng": 5.725136,
+   "theme": "palaces",
+   "fame": 8,
+   "summary": "Venu inspecter les fortifications des Alpes en septembre 1692, Vauban ironise sur la place : un vigneron en est gouverneur, avec douze vaches et huit chèvres, une cavale et une bourrique pour toute garnison. Le fort que l'on visite aujourd'hui, commencé en avril 1824, aura demandé 23 ans de travaux.",
+   "wiki": "Bastille (Grenoble)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Terrasse%20Bastille%20-%20Grenoble.JPG?width=960",
+   "photoBy": "Milky",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Bastille",
+    "es": "Bastilla",
+    "it": "Bastiglia"
+   }
+  },
+  {
+   "id": "Q2446035",
+   "name": "tour Perret",
+   "lat": 45.184722,
+   "lng": 5.735278,
+   "theme": "palaces",
+   "fame": 5,
+   "summary": "Première tour en béton armé construite au monde, élevée en 1924 par Auguste Perret pour l'Exposition internationale de la houille blanche. Ses 84 mètres au dernier élément de béton ne doivent rien au hasard : il voulait un mètre de plus que le Sacré-Cœur de Montmartre, en hommage à son père, tailleur de pierre communard.",
+   "wiki": "Tour Perret (Grenoble)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/GRENOBLE15.JPG?width=960",
+   "photoBy": "simdaperce",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Perret tower (Grenoble)",
+    "it": "Torre Perret"
+   }
+  },
+  {
+   "id": "Q3361193",
+   "name": "palais du parlement du Dauphiné",
+   "lat": 45.1933,
+   "lng": 5.7285,
+   "theme": "palaces",
+   "fame": 5,
+   "summary": "Siège du Parlement du Dauphiné, cour souveraine créée en 1453 par Louis XI, puis palais de justice jusqu'en 2002. C'est de son salon bleu que partit, le 7 juin 1788, la Journée des Tuiles, premier événement de la révolution dauphinoise. Un moine accusé de sorcellerie y subit 230 séances d'interrogatoire avant sa condamnation en 1606.",
+   "wiki": "Palais du parlement du Dauphiné",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palais%20du%20parlement%20du%20Dauphin%C3%A9%20-%202012.jpg?width=960",
+   "photoBy": "English : This photo has been taken by Matthieu Riegler  (User:Kyro) and release",
+   "photoLic": "CC BY 3.0",
+   "alt": {
+    "en": "Palais du parlement du Dauphiné",
+    "es": "Palacio del Parlamento del Delfinado",
+    "it": "Palazzo del Parlamento del Delfinato"
+   }
+  },
+  {
+   "id": "Q3533160",
+   "name": "Tour Prémol",
+   "lat": 45.1633,
+   "lng": 5.72657,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "Cette tour carrée en briques, datée de 1350, est le vestige d'une maison forte, aujourd'hui située dans le quartier du village olympique. On l'appelait d'abord ferme de Vaulnaveys, du nom de son premier propriétaire ; elle doit son nom actuel aux religieuses de la Chartreuse de Prémol, qui la rachetèrent. Elle abrite une maison de l'enfance.",
+   "wiki": "Tour Prémol",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Tour%20Pr%C3%A9mol%2C%20ferme%20de%20Vaulnavey%2C%20Village%20Olympique%2C%20abc11.JPG?width=960",
+   "photoBy": "Patafisik",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Tour Prémol"
+   }
+  },
+  {
+   "id": "Q22966989",
+   "name": "maison Vaucanson",
+   "lat": 45.193525,
+   "lng": 5.731393,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "En 1794, une plaque posée sur cet hôtel du XVIIe siècle proclamait Jacques Vaucanson né ici le 24 février 1709. C'était faux : le créateur d'automates est né au 3 de la rue Brocherie, et n'a occupé les lieux qu'en 1717, à 8 ans, comme simple locataire. La plaque a été retirée, le nom de maison Vaucanson est resté.",
+   "wiki": "Maison Vaucanson",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Grenoble%20maison%20de%20Vaucanson%20img%208393.jpg?width=960",
+   "photoBy": "David Monniaux",
+   "photoLic": "CC BY-SA 3.0"
+  },
+  {
+   "id": "Q22966991",
+   "name": "maison Rabot",
+   "lat": 45.191441,
+   "lng": 5.728396,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "Bâti contre le rempart romain à partir de 1471 par la famille Rabot, cet hôtel abrite aujourd'hui la librairie Arthaud. Charles VIII, Louis XII et François Ier y séjournèrent ; c'est le premier qui autorisa, en 1494, le percement du rempart pour rejoindre son jardin, à l'origine de l'actuel passage de la République.",
+   "wiki": "Maison Rabot",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Hotel%20Rabot%20-%20Grenoble.JPG?width=960",
+   "photoBy": "Milky",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Hôtel Rabot"
+   }
+  },
+  {
+   "id": "Q1545706",
+   "name": "téléphérique de Grenoble Bastille",
+   "lat": 45.193069,
+   "lng": 5.726033,
+   "theme": "monuments",
+   "fame": 10,
+   "summary": "Inauguré le 29 septembre 1934, il compte parmi les premiers téléphériques construits dans une grande agglomération, avec 266 mètres de dénivelé jusqu'à la Bastille. Ses cabines bleues à douze pans furent remplacées dès mars 1951. Les bulles de l'ingénieur Denis Creissels, conçues pour que tout le monde voie, entrent en service le 31 juillet 1976.",
+   "wiki": "Téléphérique de Grenoble Bastille",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Grenoble%20lift.jpg?width=960",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Grenoble-Bastille Cable Car",
+    "es": "Teleférico de Grenoble Bastille",
+    "it": "Funivia di Grenoble Bastille"
+   }
+  },
+  {
+   "id": "Q3007086",
+   "name": "Cularo",
+   "lat": 45.192245,
+   "lng": 5.730636,
+   "theme": "monuments",
+   "fame": 3,
+   "summary": "Grenoble s'est d'abord appelée Cularo, toponyme gaulois qui signifiait vraisemblablement « champ de courges ». Sa première mention écrite date du 6 juin 43 av. J.-C. : une lettre du gouverneur Lucius Munatius Plancus à Cicéron. La bourgade prendra le nom de Gratianopolis en 381.",
+   "wiki": "Cularo",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Fontaine%20au%20lion%20-%20Grenoble%20-%202017-09-20.jpg?width=960",
+   "photoBy": "Jvillafruela",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Cularo"
+   }
+  },
+  {
+   "id": "Q3076251",
+   "name": "fontaine des trois ordres",
+   "lat": 45.1924,
+   "lng": 5.73107,
+   "theme": "monuments",
+   "fame": 3,
+   "summary": "Elle commémore l'été 1788 grenoblois, journée des Tuiles et réunion des états généraux du Dauphiné, en réunissant dans le marbre de Carrare le Tiers État, le Clergé et la Noblesse réconciliés. Inaugurée le 4 août 1897 devant le président Félix Faure, avec neuf ans de retard : son sculpteur, Henri Ding, ne fut même pas présenté au chef de l'État.",
+   "wiki": "Fontaine des trois ordres",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Fontaine%20trois%20ordres%20-%20Grenoble.JPG?width=960",
+   "photoBy": "Milky",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Fountain of the three orders, Grenoble"
+   }
+  },
+  {
+   "id": "Q85854765",
+   "name": "Statue de Bayard",
+   "lat": 45.19302,
+   "lng": 5.72849,
+   "theme": "monuments",
+   "fame": 3,
+   "summary": "Le 21 août 1822, la dépouille du chevalier Bayard est transférée dans la collégiale Saint-André voisine ; le même jour est inaugurée cette statue de Nicolas Raggi, fondue par Charles Crozatier. Elle montre Bayard blessé, appuyé contre un rocher, approchant de ses lèvres la garde de son épée, qui évoque une croix.",
+   "wiki": "Statue de Bayard (Grenoble)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Statue%20de%20Bayard%20%282%29.jpg?width=960",
+   "photoBy": "Jean-Paul Corlin",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Statue of Bayard in Grenoble"
+   }
+  },
+  {
+   "id": "Q3399041",
+   "name": "porte de France",
+   "lat": 45.1936,
+   "lng": 5.71943,
+   "theme": "monuments",
+   "fame": 2,
+   "summary": "Érigée en 1620 par Lesdiguières dans le cadre de la fortification de la colline de la Bastille, elle porte des trophées militaires en bas-relief sculptés par Jacob Richier. Turner l'a dessinée en 1802 dans son Grenoble Sketchbook. Depuis 1935, elle est le monument aux morts de la ville : 1 722 noms pour 1914-1926.",
+   "wiki": "Porte de France (Grenoble)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Porte%20de%20France%20-%20Grenoble%20-%202011.jpg?width=960",
+   "photoBy": "Matthieu Riegler \n\n\n\n\n\n\n\n\n\nEnglish : This photo has been taken by Matthieu Riegl",
+   "photoLic": "CC BY 3.0",
+   "alt": {
+    "en": "Porte de France"
+   }
+  },
+  {
+   "id": "Q22966994",
+   "name": "porte Saint-Laurent",
+   "lat": 45.197946,
+   "lng": 5.731767,
+   "theme": "monuments",
+   "fame": 2,
+   "summary": "Élevée en 1615 sur l'ordre de Lesdiguières, elle a gardé son mâchicoulis au-dessus du passage voûté et deux bretèches destinées à défendre les portes piétonnières. Jusqu'en 1864, toutes les portes de Grenoble restaient closes de 22 heures à 7 heures du matin, sauf celle-ci, ouverte dès 5 heures.",
+   "wiki": "Porte Saint-Laurent",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Porte%20Saint-Laurent%20-%20Grenoble%20-%202012.jpg?width=960",
+   "photoBy": "English : This photo has been taken by Matthieu Riegler  (User:Kyro) and release",
+   "photoLic": "CC BY 3.0",
+   "alt": {
+    "en": "Porte Saint-Laurent"
+   }
+  },
+  {
+   "id": "Q3140615",
+   "name": "horloge solaire du lycée Stendhal",
+   "lat": 45.189993,
+   "lng": 5.730194,
+   "theme": "monuments",
+   "fame": 2,
+   "summary": "Dans une cage d'escalier du lycée, deux petits miroirs posés sur le rebord des fenêtres renvoient au plafond une tache de soleil qui court sur des fresques baroques : on y lit l'heure solaire vraie, le jour, le mois, le signe du zodiaque. Le père jésuite Jean Bonfa acheva ce cadran à réflexion en 1673.",
+   "wiki": "Horloge solaire du lycée Stendhal",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Cadran%20solaire%20Stendhal%20-%20Grenoble.jpg?width=960",
+   "photoBy": "Milky",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Horloge solaire du lycée Stendhal"
+   }
+  },
+  {
+   "id": "Q3272779",
+   "name": "MC2",
+   "lat": 45.172266,
+   "lng": 5.732911,
+   "theme": "stages",
+   "fame": 3,
+   "summary": "Inaugurée le 3 février 1968 par André Malraux grâce au budget des Jeux olympiques, la maison de la culture d'André Wogenscky évoquait pour les journalistes un grand paquebot blanc surmonté de deux volumes noirs. Sa scène mobile avait un plateau tournant où prenaient place les spectateurs. Devenue Le Cargo en 1985, elle est la MC2 depuis 2004.",
+   "wiki": "MC2",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Nuit%20debout%20Grenoble%2020160409%207026.jpg?width=960",
+   "photoBy": "GAllegre",
+   "photoLic": "CC BY 3.0",
+   "alt": {
+    "en": "Maison de la Culture de Grenoble",
+    "es": "Maison de la Culture de Grenoble"
+   }
+  },
+  {
+   "id": "Q3363879",
+   "name": "parc Paul-Mistral",
+   "lat": 45.185356,
+   "lng": 5.738297,
+   "theme": "parks",
+   "fame": 3,
+   "summary": "Ancien polygone de tir du Génie, ce parc de 21 hectares doit sa configuration à l'exposition internationale de la houille blanche, qui attira 1 050 000 visiteurs en 1925. Un jardin zoologique y logeait deux ours vedettes, Martin et Michka, offerts par l'ambassadeur de Russie. Le parc porte depuis 1932 le nom du maire Paul Mistral.",
+   "wiki": "Parc Paul-Mistral",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Allee%20parc%20Paul-Mistral%20-%20Grenoble.JPG?width=960",
+   "photoBy": "Milky",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Paul Mistral park"
+   }
+  },
+  {
+   "id": "Q17000301",
+   "name": "parc Albert-Michallon",
+   "lat": 45.196,
+   "lng": 5.734,
+   "theme": "parks",
+   "fame": 3,
+   "summary": "Parc de sculptures du musée de Grenoble, il réunit depuis 1988 une quinzaine d'œuvres monumentales du XXe siècle, dont Conversation de George Rickey, dont les bras d'acier sont en mouvement permanent. Il abrite aussi le plus vieil arbre de la ville, un cèdre du Liban planté en 1847.",
+   "wiki": "Parc Albert-Michallon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Grenoble%20memorial%20Albert%20Michallon.jpg?width=960",
+   "photoBy": "GAllegre",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "parc Albert-Michallon"
+   }
+  },
+  {
+   "id": "Q125660255",
+   "name": "jardin de l'Évêché",
+   "lat": 45.19287,
+   "lng": 5.73235,
+   "theme": "parks",
+   "fame": 2,
+   "summary": "Le premier jardin du palais des évêques date de 1775 ; l'actuel, en forme de L, a été aménagé en 2014. Sa dernière partie donne à voir le chevet de la cathédrale, un chœur de brique du XIIIe siècle construit sur la crête du rempart romain, et un chemin de ronde fortifié de 1374.",
+   "wiki": "Jardin de l'Évêché (Grenoble)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Parc%20Notre%20Dame%20%28Grenoble%29%20%282%29.jpg?width=960",
+   "photoBy": "Jean-Paul Corlin",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q96380281",
+   "name": "jardin des plantes de Grenoble",
+   "lat": 45.18752,
+   "lng": 5.73561,
+   "theme": "parks",
+   "fame": 2,
+   "summary": "Ce jardin des plantes porte depuis 2022 le nom de Joséphine Baker. En 1850, il exposait des lions en cage, dont une lionne de Barbarie morte en 1856 ; en 2023, son corps naturalisé est conservé dans la réserve de zoologie du Muséum. Son petit pont, bâti en 1855 par Louis Vicat et son fils Joseph, est l'un des premiers au monde en béton coulé.",
+   "wiki": "Jardin des plantes Joséphine Baker",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Jardin%20des%20Plantes%2C%20Grenoble%202012.JPG?width=960",
+   "photoBy": "Anna reg",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Jardin des Plantes, Grenoble"
+   }
+  },
+  {
+   "id": "Q113838764",
+   "name": "Jardin des Dauphins",
+   "lat": 45.19387,
+   "lng": 5.720072,
+   "theme": "parks",
+   "fame": 1,
+   "summary": "À la fin du XVIIIe siècle, le négociant Jean-Baptiste Dolle achète ce rocher pour 2 400 livres et y fait aménager, de 1787 à 1789, de somptueux jardins et une maison que les Grenoblois surnomment le Château de la Folie. Faute de source sur place, l'eau était pompée dans l'Isère. Sous la Terreur, Dolle cède le domaine à la Nation.",
+   "wiki": "Jardin des Dauphins",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Jardin%20des%20Dauphins%2005.JPG?width=960",
+   "photoBy": "Milky",
+   "photoLic": "CC BY-SA 3.0"
+  },
+  {
+   "id": "Q3397282",
+   "name": "pont de la Porte de France",
+   "lat": 45.1928,
+   "lng": 5.72,
+   "theme": "water",
+   "fame": 2,
+   "summary": "Construit de 1956 à 1958 en remplacement d'un ouvrage métallique de 1893, ce pont doit son nom à la porte monumentale élevée en 1620 lors de la fortification de la ville par Lesdiguières. Il franchit l'Isère de biais, à 70 grades, pour éviter aux arrivants l'ancien virage à angle droit. Depuis 2019, il porte aussi le nom de Kofi Annan.",
+   "wiki": "Pont de la Porte-de-France",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Pont%20de%20la%20Porte%20de%20France.JPG?width=960",
+   "photoBy": "Bally GC",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Pont de la Porte de France"
+   }
+  },
+  {
+   "id": "Q65126347",
+   "name": "pont du Drac",
+   "lat": 45.189035,
+   "lng": 5.701709,
+   "theme": "water",
+   "fame": 2,
+   "summary": "Ouvert le 7 février 1828 à la place d'un vieux bac à traille, le premier pont était suspendu par des chaînes, œuvre de l'ingénieur Louis Crozet, futur maire de Grenoble. Son successeur à arches, construit en 1938, fut saboté par les troupes allemandes en août 1944, puis partiellement emporté par la crue de 1954.",
+   "wiki": "Pont du Drac",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Drac%20%C3%A0%20Grenoble%20au%20bout%20du%20cours%20Berriat.JPG?width=960",
+   "photoBy": "Yannick Vallée",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Pont du Drac"
+   }
+  },
+  {
+   "id": "Q118470177",
+   "name": "quai de France",
+   "lat": 45.19359,
+   "lng": 5.721024,
+   "theme": "water",
+   "fame": 2,
+   "summary": "Ouvert à la circulation vers 1840, ce quai a été taillé dans un rocher qui s'étendait jusqu'à l'Isère : seul un étroit sentier, hérité de la période antique, menait au petit port dit de la Roche. Après la découverte d'un filon de pierre à ciment par Louis Vicat en 1840, les cimenteries du mont Jalla s'installèrent le long du quai.",
+   "wiki": "Quai de France (Grenoble)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Grenoble%20-%20Quai%20de%20France%2C%20vers%20l%27est%20%28janv%202026%29.jpg?width=960",
+   "photoBy": "Sebleouf",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q3396916",
+   "name": "pont de Chartreuse",
+   "lat": 45.197288,
+   "lng": 5.733297,
+   "theme": "water",
+   "fame": 2,
+   "summary": "Mis en service le 24 janvier 2011 après treize mois de travaux, il remplace le pont provisoire monté en 2004 pour le chantier du tramway. Sur ses 17 mètres de large, la chaussée n'en occupe que 6 : trottoirs et bandes cyclables donnent la priorité aux piétons et aux vélos. Son nom vient du massif qui lui fait face.",
+   "wiki": "Pont de Chartreuse",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Pont%20de%20chartreuse.JPG?width=960",
+   "photoBy": "Manu et Hugo",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Pont de Chartreuse"
+   }
+  },
+  {
+   "id": "Q85854375",
+   "name": "place Grenette",
+   "lat": 45.19088,
+   "lng": 5.72741,
+   "theme": "streets",
+   "fame": 2,
+   "summary": "Son nom vient des marchés aux grains qui se tenaient là au Moyen Âge : la Granaterie, puis la Grenette. Au fond de la place, le château d'eau Lavalette, mis en service en 1827, est orné de quatre angelots chevauchant des dauphins en bronze, emblèmes du Dauphiné.",
+   "wiki": "Place Grenette",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Place%20Grenette%20en%20avril%202019.jpg?width=960",
+   "photoBy": "Jean-Paul Corlin",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Place Grenette"
+   }
+  },
+  {
+   "id": "Q62070763",
+   "name": "place Saint-André",
+   "lat": 45.192778,
+   "lng": 5.728056,
+   "theme": "streets",
+   "fame": 3,
+   "summary": "La justice a été rendue au palais du Parlement du Dauphiné jusqu'en 2002, d'où le surnom local de « place du Trib ». Au centre se dresse la statue du chevalier Pierre Terrail de Bayard ; sur un côté, le café de la Table ronde, le plus ancien café de Grenoble.",
+   "wiki": "Place Saint-André (Grenoble)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Place%20Saint-Andr%C3%A9%20Grenoble%20001.jpg?width=960",
+   "photoBy": "User:Abachell",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Place Saint-André"
+   }
+  },
+  {
+   "id": "Q109018356",
+   "name": "place de Verdun",
+   "lat": 45.188889,
+   "lng": 5.731944,
+   "theme": "streets",
+   "fame": 3,
+   "summary": "Ce carré de 150 mètres de côté fut d'abord la place d'Armes, conçue dans les années 1840 à l'emplacement d'un bastion des fortifications de Lesdiguières ; elle prend le nom de Verdun en 1918. Une statue de Napoléon Ier à cheval y fut inaugurée en 1868, démontée en 1870, puis réinstallée près du lac de Laffrey.",
+   "wiki": "Place de Verdun (Grenoble)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Grenoble%2C%20Place%20de%20Verdun%202.JPG?width=960",
+   "photoBy": "Milky",
+   "photoLic": "FAL",
+   "alt": {
+    "en": "Place de Verdun"
+   }
+  },
+  {
+   "id": "Q118470279",
+   "name": "place Notre-Dame",
+   "lat": 45.192787,
+   "lng": 5.731591,
+   "theme": "streets",
+   "fame": 2,
+   "summary": "La partie nord de la place correspond à l'emplacement de la porte Herculea, l'une des deux portes primitives de l'enceinte romaine. La fontaine des Trois ordres, édifiée à partir de 1888, fut inaugurée en 1897 lors de la visite officielle du président de la République à Grenoble.",
+   "wiki": "Place Notre-Dame (Grenoble)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Grenoble%20Place%20Notre-Dame.jpg?width=960",
+   "photoBy": "Zairon",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q118470123",
+   "name": "place des Tilleuls",
+   "lat": 45.192065,
+   "lng": 5.731984,
+   "theme": "streets",
+   "fame": 2,
+   "summary": "Cette petite cour carrée, fermée à la circulation automobile, se nommait au Moyen Âge place du Cloître-Notre-Dame, puis place des Tillots en 1694 : le mot évoquerait les teillots, les tailleurs de chanvre. Le nom actuel a été fixé par délibération du conseil municipal le 9 octobre 1857.",
+   "wiki": "Place des Tilleuls (Grenoble)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Place%20des%20Tilleuls%20%28Grenoble%29.jpg?width=960",
+   "photoBy": "Jean-Paul Corlin",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q108936563",
+   "name": "rue Très-Cloîtres",
+   "lat": 45.192222,
+   "lng": 5.733889,
+   "theme": "streets",
+   "fame": 3,
+   "summary": "Ouverte en 1338 alors que le faubourg s'était déjà installé hors les murs, la rue doit son nom soit au terme Trans-Claustra, soit aux trois cloîtres du quartier. Bordée jusqu'au XIXe siècle par le ruisseau du Verderet, elle a connu de nombreuses inondations ; un repère de crue rappelle celle de novembre 1859.",
+   "wiki": "Rue Très-Cloîtres",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rue%20Tr%C3%A8s%20Cloitres.jpg?width=960",
+   "photoBy": "JPC38",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Rue Très-Cloîtres"
+   }
+  },
+  {
+   "id": "Q106305111",
+   "name": "rue Bayard",
+   "lat": 45.19162,
+   "lng": 5.73202,
+   "theme": "streets",
+   "fame": 3,
+   "summary": "Ouverte en 1791 à travers le jardin des Capucins, la rue honore Pierre Terrail de Bayard (1476-1524), natif du château Bayard sur la commune de Pontcharra. Elle appartient au quartier des antiquaires de Grenoble ; au numéro 17, la laiterie Bayard, fondée en 1931, vend le lait des fermes du Vercors.",
+   "wiki": "Rue Bayard (Grenoble)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rue%20Bayard%20%C3%A0%20Grenoble.jpg?width=960",
+   "photoBy": "JPC38",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Rue Bayard"
+   }
+  },
+  {
+   "id": "Q118470124",
+   "name": "rue Voltaire",
+   "lat": 45.190634,
+   "lng": 5.732156,
+   "theme": "streets",
+   "fame": 3,
+   "summary": "D'abord « rue Neuve des Capucins », elle devient rue Saint-Vincent-de-Paul en 1837, puis rue Voltaire en 1873. Au numéro 17, la chapelle des Pénitents blancs, dont la façade date de 1657, abrite des stalles en bois du XVe siècle et sert de lieu de culte à la paroisse orthodoxe russe de Grenoble.",
+   "wiki": "Rue Voltaire (Grenoble)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rue%20Voltaire%20%28Grenoble%29.jpg?width=960",
+   "photoBy": "Jean-Paul Corlin",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "rue Voltaire"
+   }
+  },
+  {
+   "id": "Q109315611",
+   "name": "place Hubert-Dubedout",
+   "lat": 45.192111,
+   "lng": 5.72048,
+   "theme": "streets",
+   "fame": 2,
+   "summary": "Créée par une délibération du conseil municipal du 30 juin 1902, cette place qui marque l'entrée nord de la ville s'appelait place de la Bastille, du nom de la colline et du fort qui la dominent. Elle a ensuite été rebaptisée en hommage à Hubert Dubedout (1922-1986), maire de Grenoble de 1965 à 1983.",
+   "wiki": "Place Hubert-Dubedout",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Place%20Hubert%20Dubedout%20en%20janvier%202022.jpg?width=960",
+   "photoBy": "Jean-Paul Corlin",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q111188742",
+   "name": "Village olympique de Grenoble",
+   "lat": 45.16221,
+   "lng": 5.72525,
+   "theme": "streets",
+   "fame": 2,
+   "summary": "Conçu par Maurice Novarina pour héberger environ 2000 personnes, ce village des Jeux olympiques d'hiver de 1968 est construit du 1er avril 1966 à novembre 1967 : onze bâtiments de quatre étages aux façades essentiellement en bois et huit tours de quinze étages. Après les Jeux, le quartier devient résidentiel et conserve son nom.",
+   "wiki": "Village olympique de Grenoble",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Village%20olympiq%20-%20Grenoble.jpg?width=960",
+   "photoBy": "Milky",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Olympic village of Grenoble",
+    "it": "villaggio olimpico di Grenoble"
+   }
+  },
+  {
+   "id": "Q22979290",
+   "name": "halle Sainte-Claire",
+   "lat": 45.190795,
+   "lng": 5.730827,
+   "theme": "shops",
+   "fame": 2,
+   "summary": "La ville achète le terrain de l'ancien couvent Sainte-Claire en 1820 ; un marché s'y tient dès 1825, et son succès conduit en 1874 à ce bâtiment d'Hector Riondel, inspiré des halles Baltard. La toiture repose sur des piliers de fonte, les murs de brique n'étant pas porteurs, et des têtes de lion ornent les angles.",
+   "wiki": "Halle Sainte-Claire",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Halles%20Sainte-Claire%20Grenoble.JPG?width=960",
+   "photoBy": "Rémih",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Halle Sainte-Claire"
+   }
+  },
+  {
+   "id": "Q2299298",
+   "name": "stade des Alpes",
+   "lat": 45.187474,
+   "lng": 5.740194,
+   "theme": "other",
+   "fame": 23,
+   "summary": "Le stade a coûté environ 200 arbres du parc Paul-Mistral : de novembre 2003 à février 2004, des opposants venus de toute l'Europe occupent la cime des arbres centenaires, jusqu'à leur évacuation par des CRS en nacelles le 12 février 2004. Inauguré en février 2008, l'enceinte compte 20 068 places.",
+   "wiki": "Stade des Alpes",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Grenoble-Clermont.jpg?width=960",
+   "photoBy": "Milky",
+   "photoLic": "FAL",
+   "alt": {
+    "en": "Stade des Alpes",
+    "es": "Stade des Alpes",
+    "it": "stade des Alpes"
+   }
+  },
+  {
+   "id": "Q3146150",
+   "name": "hôtel de ville de Grenoble",
+   "lat": 45.1864,
+   "lng": 5.73639,
+   "theme": "other",
+   "fame": 3,
+   "summary": "Inauguré le 18 décembre 1967 à l'approche des Jeux olympiques d'hiver, ce bâtiment de 52,50 mètres remplace l'hôtel de Lesdiguières, mairie depuis 1719. Sa tour, habillée d'un mur-rideau de Jean Prouvé, pèse 8 000 tonnes et repose sur une poutre en béton de 23 mètres de portée.",
+   "wiki": "Hôtel de ville de Grenoble",
+   "alt": {
+    "en": "Town hall of Grenoble"
+   }
+  },
+  {
+   "id": "Q3268947",
+   "name": "lycée Stendhal",
+   "lat": 45.18979,
+   "lng": 5.73042,
+   "theme": "other",
+   "fame": 3,
+   "summary": "Héritier du collège des Jésuites fondé en 1651, c'est le plus ancien lycée de Grenoble : Stendhal et Champollion y firent leurs études. Il conserve une horloge solaire de 1673 due au père Bonfa, astronome, un cadran à réflexion muni de deux petits miroirs fixes, classé monument historique en 1920.",
+   "wiki": "Lycée Stendhal",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Coll%C3%A8ge%20lycee%20Stendhal%20Grenoble.JPG?width=960",
+   "photoBy": "Rémih",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Lycée Stendhal"
+   }
+  },
+  {
+   "id": "Q3010215",
+   "name": "Cémoi",
+   "lat": 45.185147,
+   "lng": 5.70533,
+   "theme": "other",
+   "fame": 2,
+   "summary": "En 1922, Félix Cartier-Millon annonce à sa femme le nouveau nom de sa chocolaterie, Chocolats Marquise. Elle lui répond : « Qui a eu cette idée stupide ? » Il répond : « C'est moi. » Ainsi naît la marque Cémoi. Ouverte rue Ampère en 1920, l'usine est liquidée le 21 juillet 1976 ; le site accueille aujourd'hui des bureaux.",
+   "wiki": "Cémoi",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ghost%20sign%20%22Chocolat%20C%C3%A9moi%22.JPG?width=960",
+   "photoBy": "Benoît Prieur",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "Cémoi"
+   }
+  },
+  {
+   "id": "Q1289",
+   "name": "Grenoble",
+   "lat": 45.186944,
+   "lng": 5.726389,
+   "theme": "other",
+   "fame": 144,
+   "summary": "« Au bout de chaque rue, une montagne », disait Stendhal de cette ville entourée de montagnes. Bourg gaulois nommé Cularo puis Gratianopolis, Grenoble devient au XIe siècle la capitale du Dauphiné, choisie par les comtes d'Albon. Son industrialisation débute au XVIIIe siècle avec la ganterie et s'accentue avec la houille blanche.",
+   "wiki": "Grenoble",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Grenoble%2001.JPG?width=960",
+   "photoBy": "Brücke-Osteuropa",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Grenoble",
+    "es": "Grenoble",
+    "it": "Grenoble"
+   }
+  },
+  {
+   "id": "Q3329777",
+   "name": "musée de l'Ancien Evêché",
+   "lat": 45.192822,
+   "lng": 5.73217,
+   "theme": "museums",
+   "fame": 5,
+   "summary": "En 1989, les fouilles de la ligne B du tramway mettent au jour un baptistère des premiers siècles chrétiens : le tracé est déplacé de quelques mètres et le sol fouillé de 1991 à 1996. Installé dans le palais épiscopal, qui abrita 48 évêques jusqu'en 1906, le musée a ouvert le 18 septembre 1998.",
+   "wiki": "Musée de l'Ancien Évêché",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/At%20Mus%C3%A9e%20de%20l%27Ancien%20%C3%89v%C3%AAch%C3%A9%2C%20Grenoble%202025%20011.jpg?width=960",
+   "photoBy": "Photograph by Mike Peel (www.mikepeel.net).",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Museum of the Old Archbishopric",
+    "es": "Museo del Ancien Évêché"
+   }
+  },
+  {
+   "id": "Q821617",
+   "name": "musée de la Résistance et de la Déportation de l'Isère",
+   "lat": 45.190033,
+   "lng": 5.735275,
+   "theme": "museums",
+   "fame": 5,
+   "summary": "Né en 1966 dans la maison natale de Stendhal, rue Jean-Jacques-Rousseau, le musée s'installe le 1er juillet 1994 au 14, rue Hébert, pour le cinquantenaire de la libération de Grenoble. Sa collection dépasse 8 000 pièces ; un plan relief de dix mètres carrés situe maquis, sabotages et parachutages en Isère.",
+   "wiki": "Musée de la Résistance et de la Déportation de l'Isère",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mus%C3%A9e%20de%20la%20R%C3%A9sistance%20et%20de%20la%20D%C3%A9portation%20de%20l%27Is%C3%A8re.jpg?width=960",
+   "photoBy": "Isere-culture",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Musée de la Résistance et de la Déportation à Grenoble",
+    "it": "Museo della Resistenza e della Deportazione di Grenoble"
+   }
+  }
+ ]
+}
