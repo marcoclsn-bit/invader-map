@@ -27,6 +27,10 @@ import { Marker } from 'react-native-maps';
  * mécanisme déjà employé pour InvaderMarker sur iOS (clé porteuse de l'état
  * flashé). Coût : un remontage, uniquement pour le marqueur qui change.
  *
+ * ANDROID SEULEMENT. iOS recapture correctement dans la fenêtre de tracking : y
+ * ajouter un remontage n'apporterait rien et ferait clignoter un marqueur qui se
+ * met à jour proprement aujourd'hui. On ne répare pas ce qui fonctionne.
+ *
  * @param {*} redrawKey  valeur qui, en changeant, rouvre la fenêtre de tracking
  * @param {*} stateKey   apparence du marqueur ; en changeant, force un remontage
  */
@@ -51,7 +55,10 @@ function PinMarkerInner({ redrawKey, children, ...props }) {
 }
 
 export default function PinMarker({ stateKey, ...props }) {
-  // La clé porte l'apparence : un changement de couleur ou de libellé remonte le
-  // marqueur, ce qui garantit une capture fraîche là où le tracking échoue.
-  return <PinMarkerInner key={stateKey ?? 'x'} {...props} />;
+  // Sur Android la clé porte l'apparence : un changement de couleur ou de libellé
+  // remonte le marqueur, ce qui garantit une capture fraîche là où le tracking
+  // échoue. Sur iOS la clé reste constante : le comportement d'origine est intact.
+  return Platform.OS === 'android'
+    ? <PinMarkerInner key={stateKey ?? 'x'} {...props} />
+    : <PinMarkerInner {...props} />;
 }
