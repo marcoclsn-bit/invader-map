@@ -145,7 +145,7 @@
     "objectiveHint_balanced": "Les Invaders du couloir, plus quelques lieux remarquables.",
     "objectiveHint_visit": "Les Invaders du couloir et un maximum de lieux à voir en chemin.",
     "corridorLabel": "Couloir",
-    "poiUnavailable": "Les lieux à découvrir ne sont pas encore disponibles à {{city}} : le parcours ne contient que des Invaders. Paris est la seule ville documentée pour l'instant."
+    "poiUnavailable": "Les lieux à découvrir ne sont pas encore disponibles à {{city}} : le parcours ne contient que des Invaders."
   },
   "hunt": {
     "aroundMe": "Autour de moi",
@@ -213,7 +213,7 @@
       "near": "Invader alentour, hors parcours",
       "done": "Déjà flashé"
     },
-    "poiUnavailable": "Les lieux à découvrir ne sont pas encore disponibles à {{city}} : le parcours ne contient que des Invaders. Paris est la seule ville documentée pour l'instant."
+    "poiUnavailable": "Les lieux à découvrir ne sont pas encore disponibles à {{city}} : le parcours ne contient que des Invaders."
   },
   "palmares": {
     "title": "Villes",

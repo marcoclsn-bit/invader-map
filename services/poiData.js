@@ -16,6 +16,11 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import i18n from '../i18n';
 import PA from '../data/poi_PA.json';
+// Marseille est embarquée comme Paris : le service ne télécharge que les villes
+// de BUNDLED (initPoiService, checkPoiUpdate et setPoiLanguage itèrent dessus),
+// une ville seulement distante ne serait jamais récupérée. L'embarquer règle le
+// problème ET donne le hors-ligne dès l'installation, pour 81 Ko.
+import MARS from '../data/poi_MARS.json';
 
 const BASE_URL  = 'https://raw.githubusercontent.com/marcoclsn-bit/invader-map/main/data';
 const INDEX_URL = `${BASE_URL}/poi_index.json`;
@@ -32,7 +37,7 @@ const KEY_LANG = (code, lang) => `@invader_poi_${code}_${lang}`;
 // gardés en cache. Tant qu'ils ne sont pas là, on affiche le français.
 
 // Version embarquée, immuable, toujours disponible.
-const BUNDLED = { PA };
+const BUNDLED = { PA, MARS };
 
 // Versions plus récentes chargées depuis le cache ou le réseau.
 const _fresh = new Map();   // code -> { version, updatedAt, pois }

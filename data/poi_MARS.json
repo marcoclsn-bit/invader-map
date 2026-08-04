@@ -1,0 +1,1722 @@
+{
+ "version": 1,
+ "city": "MARS",
+ "attribution": "Lieux : Wikidata (CC0) · Résumés d’après Wikipédia (CC BY-SA) · Photos : Wikimedia Commons",
+ "updatedAt": "2026-08-04",
+ "pois": [
+  {
+   "id": "Q2808698",
+   "name": "musée des civilisations de l'Europe et de la Méditerranée",
+   "lat": 43.296937,
+   "lng": 5.361139,
+   "theme": "museums",
+   "fame": 23,
+   "summary": "Un cube de 72 mètres de côté ceint d'une résille de béton, signé Rudy Ricciotti, relié au fort Saint-Jean par une passerelle de 130 mètres : inauguré le 7 juin 2013, alors que Marseille était capitale européenne de la culture, le Mucem est le premier musée national français consacré aux cultures de l'Europe et de la Méditerranée.",
+   "wiki": "Musée des civilisations de l'Europe et de la Méditerranée",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mucem%20et%20Cath%C3%A9drale%20Sainte-Marie-Majeure%20de%20Marseille.jpg?width=960",
+   "photoBy": "Olena Ilnytska",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Museum of European and Mediterranean Civilisations",
+    "es": "Museo de las civilizaciones de Europa y del Mediterráneo",
+    "it": "Museo delle Civiltà dell'Europa e del Mediterraneo"
+   }
+  },
+  {
+   "id": "Q83013",
+   "name": "musée des Beaux-Arts de Marseille",
+   "lat": 43.304414,
+   "lng": 5.393873,
+   "theme": "museums",
+   "fame": 14,
+   "summary": "Héritier du premier véritable musée de Marseille, ouvert en 1804 dans la chapelle des Bernardines, il occupe depuis 1873 une aile du palais Longchamp, bâti pour commémorer l'arrivée des eaux de la Durance. On y trouve Rubens, Pierre Puget et La Méditation de Rodin, offerte au musée par l'artiste lui-même.",
+   "wiki": "Musée des Beaux-Arts de Marseille",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marseille%20Palais%20Longchamp%20At%20Night%20JD%2022052007.jpg?width=960",
+   "photoBy": "Jan Drewes (www.jandrewes.de)",
+   "photoLic": "CC BY-SA 2.5",
+   "alt": {
+    "en": "Musée des beaux-arts de Marseille",
+    "it": "Museo di belle arti di Marsiglia"
+   }
+  },
+  {
+   "id": "Q3086101",
+   "name": "musée Cantini",
+   "lat": 43.29225,
+   "lng": 5.378167,
+   "theme": "museums",
+   "fame": 9,
+   "summary": "Cet hôtel particulier de 1694, bâti pour une compagnie spécialisée dans la pêche du corail sur les côtes de Tunisie, fut légué à la ville en 1916 par le marbrier Jules Cantini. Il abrite l'une des plus importantes collections publiques françaises de province pour la période 1900-1980 : Matisse, Signac, Kandinsky, Miró.",
+   "wiki": "Musée Cantini",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marseille%20%28Bouches-du-Rh%C3%B4ne%29%20-%20la%20fa%C3%A7ade%20du%20mus%C3%A9e%20Cantini%20rue%20Grignan.tif?width=960",
+   "photoBy": "Unknown authorUnknown author",
+   "photoLic": "Licence Ouverte",
+   "alt": {
+    "en": "Musée Cantini",
+    "es": "museo Cantini",
+    "it": "Museo Cantini"
+   }
+  },
+  {
+   "id": "Q3329666",
+   "name": "musée d'Histoire de Marseille",
+   "lat": 43.297778,
+   "lng": 5.375556,
+   "theme": "museums",
+   "fame": 9,
+   "summary": "Le chantier du Centre Bourse, entrepris en 1967, met au jour des vestiges grecs, romains et médiévaux : le musée naît en 1983 pour les présenter, avec le site du Port antique. Rouvert en 2013, c'est le plus important musée d'histoire urbaine en France ; on y voit des épaves de navires antiques, dont deux grecques de la fin du VIe siècle avant J.-C.",
+   "wiki": "Musée d'Histoire de Marseille",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20jardin%20des%20vestiges%20%28Marseille%29%20%2814225076473%29.jpg?width=960",
+   "photoBy": "Jean-Pierre Dalbéra from Paris, France",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Marseille History Museum",
+    "it": "Museo di storia di Marsiglia"
+   }
+  },
+  {
+   "id": "Q3330887",
+   "name": "muséum d'histoire naturelle de Marseille",
+   "lat": 43.303917,
+   "lng": 5.394528,
+   "theme": "museums",
+   "fame": 8,
+   "summary": "Créé en 1819, le muséum occupe depuis 1869 l'aile droite du palais Longchamp. Parmi ses 83 000 spécimens d'animaux, une surprise : en 1986, on retrouve dans ses collections un spécimen de gecko géant de Delcourt, qui a servi à décrire l'espèce.",
+   "wiki": "Muséum d'histoire naturelle de Marseille",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palais%20Longchamps%20MHN%20Marseille.JPG?width=960",
+   "photoBy": "Moumousse13",
+   "photoLic": "CC BY 2.5",
+   "alt": {
+    "en": "Muséum d'histoire naturelle de Marseille",
+    "it": "Museo di storia naturale di Marsiglia"
+   }
+  },
+  {
+   "id": "Q1795927",
+   "name": "musée d'archéologie méditerranéenne",
+   "lat": 43.300278,
+   "lng": 5.367778,
+   "theme": "museums",
+   "fame": 6,
+   "summary": "Au premier étage de la Vieille Charité, sa collection égyptienne provient surtout du docteur Clot-Bey, créateur de l'école de médecine en Égypte, et fut acquise par la ville pour un prix dérisoire. On y voit un papyrus du Livre des Morts long de 5,64 mètres et les quatre stèles du général Kasa, ensemble unique au monde.",
+   "wiki": "Musée d'archéologie méditerranéenne",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20cour%20int%C3%A9rieur%20de%20l%27hospice%20de%20La%20Vieille%20Charit%C3%A9%20qui%20abrite%20le%20Mus%C3%A9e%20de%20la%20Vieille%20Charit%C3%A9.jpg?width=960",
+   "photoBy": "No machine-readable author provided. Jddmano assumed (based on copyright claims)",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Musée d’Archéologie Méditerranéenne",
+    "es": "Museo de Arqueología Mediterránea",
+    "it": "Museo dell'Archeologia Mediterranea"
+   }
+  },
+  {
+   "id": "Q3329184",
+   "name": "musée Grobet-Labadié",
+   "lat": 43.303333,
+   "lng": 5.392778,
+   "theme": "museums",
+   "fame": 6,
+   "summary": "Face au palais Longchamp, cet hôtel particulier de 1873 renferme plus de sept mille pièces réunies à travers l'Europe par Marie, fille du riche Alexandre Labadié, et Louis Grobet, son professeur de musique devenu son second mari. Donné à la ville en 1919, ouvert au public en 1926, le musée est fermé depuis 2020, hors ouvertures temporaires.",
+   "wiki": "Musée Grobet-Labadié",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mus%C3%A9e-Grobet-Labadi%C3%A9.JPG?width=960",
+   "photoBy": "Robert Valette",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Musée Grobet-Labadié"
+   }
+  },
+  {
+   "id": "Q36191617",
+   "name": "musée Regards de Provence",
+   "lat": 43.297577,
+   "lng": 5.363622,
+   "theme": "museums",
+   "fame": 5,
+   "summary": "L'ancienne station sanitaire du port, construite par Fernand Pouillon, est devenue musée en 2013 : 850 œuvres réunies par des mécènes privés y valorisent le patrimoine artistique marseillais, provençal et méditerranéen. La salle des étuves, conservée dans son état originel, rappelle la première vie du bâtiment.",
+   "wiki": "Musée Regards de Provence",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mus%C3%A9e%20Regards%20de%20Provence.JPG?width=960",
+   "photoBy": "Likemonkeys",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Musée Regards de Provence"
+   }
+  },
+  {
+   "id": "Q15138574",
+   "name": "villa Méditerranée",
+   "lat": 43.2972,
+   "lng": 5.36199,
+   "theme": "museums",
+   "fame": 4,
+   "summary": "Son porte-à-faux de 40 mètres, le plus long porte-à-faux habité au monde, lui vaut les surnoms d'éléphant blanc ou d'agrafeuse. Inauguré en 2013 sur les plans de Stefano Boeri, critiqué pour son coût et son utilité, le bâtiment ferme en 2018 avant de trouver sa vocation en 2022 : abriter la réplique de la grotte Cosquer.",
+   "wiki": "Villa Méditerranée",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Skyline%20Marseille%20Fort%20Saint-Jean.jpg?width=960",
+   "photoBy": "Rémih",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Villa Méditerranée",
+    "it": "Villa Méditerranée"
+   }
+  },
+  {
+   "id": "Q251672",
+   "name": "château Borély",
+   "lat": 43.257423,
+   "lng": 5.381955,
+   "theme": "museums",
+   "fame": 7,
+   "summary": "Louis Borély fit bâtir ce château néo-classique dont la façade, dessinée par Charles-Louis Clérisseau en 1767, fut simplifiée par l'architecte Marie-Joseph Peyre. Rachetée par la ville en 1860, classée monument historique en 1936, la bastide abrite depuis Marseille-Provence 2013 le musée des Arts décoratifs, de la Faïence et de la Mode.",
+   "wiki": "Château Borély",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marseille-Ch%C3%A2teau%20Bor%C3%A9ly%2811%29.jpg?width=960",
+   "photoBy": "Charliemoon",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Château Borély",
+    "es": "Castillo Borély"
+   }
+  },
+  {
+   "id": "Q3087629",
+   "name": "Friche Belle de Mai",
+   "lat": 43.309444,
+   "lng": 5.390278,
+   "theme": "culture",
+   "fame": 4,
+   "summary": "Dans l'ancienne manufacture des tabacs de la Belle de Mai, fermée par la Seita, une association investit 45 000 m2 dès 1992. Plus de soixante structures artistiques y vivent aujourd'hui, avec skatepark, crèche et radios ; en 2013, année capitale européenne de la culture, 500 000 visiteurs ont arpenté le site.",
+   "wiki": "Friche Belle de Mai",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Toit%20de%20la%20Friche%20Belle%20de%20Mai%20%C3%A0%20Marseille.JPG?width=960",
+   "photoBy": "Charlotte Noblet",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "La Friche"
+   }
+  },
+  {
+   "id": "Q2832096",
+   "name": "Alcazar",
+   "lat": 43.299014,
+   "lng": 5.376673,
+   "theme": "culture",
+   "fame": 4,
+   "summary": "Café-concert de fantaisie mauresque inspiré de l'Alhambra, l'Alcazar ouvre en 1857 : 2 000 personnes pouvaient y boire et fumer en suivant le spectacle, et le public marseillais, réputé impitoyable, y vit débuter Yves Montand. Fermé en 1966, racheté par un marchand de meubles, il renaît en 2004 en bibliothèque de près d'un million de documents.",
+   "wiki": "Alcazar (Marseille)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marseille-001-MR-Alcazar.jpg?width=960",
+   "photoBy": "The original uploader was Christophe.moustier at French Wikipedia.",
+   "photoLic": "Attribution",
+   "alt": {
+    "en": "Alcazar (Marseille)",
+    "es": "Alcazar de Marbella"
+   }
+  },
+  {
+   "id": "Q1103949",
+   "name": "observatoire de Marseille",
+   "lat": 43.305449,
+   "lng": 5.394606,
+   "theme": "culture",
+   "fame": 26,
+   "summary": "Fondé en 1702 avec un jésuite pour premier directeur, l'observatoire vit son concierge Jean-Louis Pons devenir astronome adjoint et découvrir 18 comètes. Transféré au plateau de Longchamps, il y révéla le quintette de Stephan ; fusionné en 2000, c'est aujourd'hui le Laboratoire d'astrophysique de Marseille.",
+   "wiki": "Observatoire de Marseille",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Int%C3%A9rieur%20du%20Pr%C3%A9au%20des%20Accoules.jpg?width=960",
+   "photoBy": "MGHX",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Marseille Observatory",
+    "es": "Observatorio de Marsella",
+    "it": "osservatorio di Marsiglia"
+   }
+  },
+  {
+   "id": "Q975925",
+   "name": "basilique Notre-Dame-de-la-Garde",
+   "lat": 43.28395,
+   "lng": 5.371232,
+   "theme": "religious",
+   "fame": 29,
+   "summary": "Sur son piton calcaire de 149 mètres, la Bonne Mère veille sur les marins depuis le Moyen Âge : une première chapelle y fut bâtie en 1214. La basilique actuelle, consacrée en 1864 sur les bases d'un fort construit par François Ier, est l'œuvre d'un architecte protestant, Henri-Jacques Espérandieu ; sa Vierge de cuivre doré mesure 11,2 mètres.",
+   "wiki": "Basilique Notre-Dame-de-la-Garde",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Notre%20Dame%20de%20la%20Garde%20%E5%AE%88%E8%AD%B7%E8%81%96%E6%AF%8D%E9%99%A2%20-%20panoramio%20%281%29.jpg?width=960",
+   "photoBy": "lienyuan lee",
+   "photoLic": "CC BY 3.0",
+   "alt": {
+    "en": "Notre-Dame de la Garde",
+    "es": "Notre-Dame de la Garde",
+    "it": "Notre-Dame-de-la-Garde"
+   }
+  },
+  {
+   "id": "Q1419757",
+   "name": "cathédrale Sainte-Marie-Majeure",
+   "lat": 43.299804,
+   "lng": 5.364925,
+   "theme": "religious",
+   "fame": 25,
+   "summary": "Louis-Napoléon Bonaparte en pose la première pierre en 1852 ; la construction dure 40 ans. Longue de 142 mètres, coupole culminant à 70 mètres, 3 000 fidèles : la Major, aux pierres alternativement vertes et blanches, est considérée comme l'une des plus grandes cathédrales bâties depuis le Moyen Âge.",
+   "wiki": "Cathédrale Notre-Dame-de-la-Major",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Sainte-Marie-Majeure%20de%20Marseille.%20Vue%20g%C3%A9n%C3%A9rale..JPG?width=960",
+   "photoBy": "Guiguilacagouille",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Marseille Cathedral",
+    "es": "Catedral de Marsella",
+    "it": "cattedrale di Marsiglia"
+   }
+  },
+  {
+   "id": "Q3585889",
+   "name": "vieille Major",
+   "lat": 43.2994,
+   "lng": 5.36528,
+   "theme": "religious",
+   "fame": 3,
+   "summary": "Condamnée en 1852 pour laisser place à la nouvelle cathédrale, l'ancienne Major romane, bâtie au XIIe siècle en pierre rose de La Couronne, fut sauvée d'une destruction totale par les protestations de 1853 : il n'en reste que le chœur et une travée. Son site abritait le plus grand baptistère de Provence, 22 mètres de diamètre intérieur.",
+   "wiki": "Vieille Major",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89glise%20de%20la%20vieille%20Major.JPG?width=960",
+   "photoBy": "Guiguilacagouille",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Vieille Major"
+   }
+  },
+  {
+   "id": "Q1858504",
+   "name": "abbaye Saint-Victor de Marseille",
+   "lat": 43.290278,
+   "lng": 5.365556,
+   "theme": "religious",
+   "fame": 17,
+   "summary": "Fondée au Ve siècle par Jean Cassien près des tombes des martyrs de Marseille, l'abbaye rayonna sur toute la Provence : 440 églises et prieurés en dépendaient dans le seul diocèse de Marseille aux XIe et XIIe siècles, et l'un de ses abbés, Guillaume de Grimoard, devint pape en 1362 sous le nom d'Urbain V.",
+   "wiki": "Abbaye Saint-Victor de Marseille",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marseille-Saint-Victor-bjs180810-01.jpg?width=960",
+   "photoBy": "Bjs",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Abbey of St. Victor",
+    "es": "abadía de San Víctor de Marsella",
+    "it": "abbazia di San Vittore"
+   }
+  },
+  {
+   "id": "Q950637",
+   "name": "basilique du Sacré-Cœur de Marseille",
+   "lat": 43.28194,
+   "lng": 5.38687,
+   "theme": "religious",
+   "fame": 6,
+   "summary": "Sa première pierre fut posée en 1920, pour le second centenaire du vœu prononcé par Belsunce pendant la peste de 1720 ; l'édifice sert aussi de mémorial de la Première Guerre mondiale. Le chantier dura 27 ans et la flèche prévue à 62 mètres fut abandonnée faute de moyens ; consacrée en 1947, l'église devint basilique mineure en 1997.",
+   "wiki": "Basilique du Sacré-Cœur de Marseille",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Basilique%20du%20Sacr%C3%A9%20Coeur%20%C3%A0%20Marseille%2013.JPG?width=960",
+   "photoBy": "Robert Valette",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Basilique du Sacré-Cœur de Marseille"
+   }
+  },
+  {
+   "id": "Q3584646",
+   "name": "église Saint-Vincent-de-Paul de Marseille",
+   "lat": 43.29883,
+   "lng": 5.38593,
+   "theme": "religious",
+   "fame": 9,
+   "summary": "Les Marseillais la nomment église des Réformés, souvenir d'une ancienne chapelle des Augustins Réformés. Commencée en 1855, inaugurée en 1886 grâce à trois millions de francs réunis par la charité des paroissiens, cette église néogothique aux flèches de 76 mètres n'a jamais été véritablement terminée : sa façade attend toujours ses sculptures.",
+   "wiki": "Église Saint-Vincent-de-Paul de Marseille",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89glise%20des%20R%C3%A9form%C3%A9s%20in%20Marseille.jpg?width=960",
+   "photoBy": "The original uploader was Christophe.moustier at French Wikipedia.",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Église Saint-Vincent-de-Paul",
+    "es": "iglesia de San Vicente de Paúl",
+    "it": "chiesa di San Vincenzo de' Paoli"
+   }
+  },
+  {
+   "id": "Q3115133",
+   "name": "grande synagogue de Marseille",
+   "lat": 43.286944,
+   "lng": 5.377222,
+   "theme": "religious",
+   "fame": 11,
+   "summary": "Inaugurée en 1864 rue Breteuil sur les plans de Nathan Salomon, la grande synagogue offre 1 200 places assises dans un style romano-byzantin. Un orgue de 1900, toujours en état de fonctionnement, y accompagne encore les mariages ; elle porte depuis 2018 le nom de Beth Yossef, en hommage au grand rabbin Joseph Haïm Sitruk.",
+   "wiki": "Grande synagogue de Marseille",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marseille-synagogue.jpg?width=960",
+   "photoBy": "Rvalette",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Synagogue of Marseille",
+    "es": "Gran Sinagoga de Marsella",
+    "it": "Grande Sinagoga di Marsiglia"
+   }
+  },
+  {
+   "id": "Q3580413",
+   "name": "église Notre-Dame-du-Mont de Marseille",
+   "lat": 43.2917,
+   "lng": 5.38508,
+   "theme": "religious",
+   "fame": 6,
+   "summary": "Reconstruite à partir de 1823 et consacrée en 1824, cette église néoclassique reçoit Frédéric Chopin en 1839, venu jouer l'orgue pour les obsèques de son ami le chanteur Adolphe Nourrit. Verdict du compositeur au curé : « Cet orgue ne vaut rien, vendez-le ». L'instrument fut revendu à la commune d'Eyguières.",
+   "wiki": "Église Notre-Dame-du-Mont de Marseille",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Eglise%20ND%20du%20Mont%20Marseille.jpg?width=960",
+   "photoBy": "Kim",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Église Notre-Dame-du-Mont"
+   }
+  },
+  {
+   "id": "Q3581149",
+   "name": "église Saint-Cannat",
+   "lat": 43.2982,
+   "lng": 5.3735,
+   "theme": "religious",
+   "fame": 6,
+   "summary": "Fondée par les frères prêcheurs de l'ordre de saint Dominique, l'église est commencée en 1526 mais n'est consacrée qu'en 1619. Sa façade baroque de 1739, signée Joseph Gérard et Antoine Duparc, fut amputée en 1926 : ébranlée par le percement de la rue de la République, une partie fut démolie par mesure d'économie, fronton et pots à feu compris.",
+   "wiki": "Église Saint-Cannat de Marseille",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marseille%20-%20%C3%89glise%20Saint-Cannat%20-%201.jpg?width=960",
+   "photoBy": "This illustration was made by Peter Potrowl.\nPlease credit this with : © Peter P",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Église Saint-Cannat",
+    "it": "chiesa di San Cannato"
+   }
+  },
+  {
+   "id": "Q1764669",
+   "name": "église Saint-Laurent de Marseille",
+   "lat": 43.295833,
+   "lng": 5.363333,
+   "theme": "religious",
+   "fame": 4,
+   "summary": "Bâtie en pierre rose du cap Couronne à la fin du XIIe ou au début du XIIIe siècle, cette église de style roman provençal est la paroisse des pêcheurs et des gens de mer de Marseille. En 1943, elle échappe au dynamitage des vieux quartiers par l'occupant allemand ; son curé fit sonner le glas pendant la destruction du quartier.",
+   "wiki": "Église Saint-Laurent de Marseille",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Eglise%20Saint-Laurent%20%28Marseille%29%20%2803%29.jpg?width=960",
+   "photoBy": "Chris06",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Eglise Saint-Laurent (Marseille)"
+   }
+  },
+  {
+   "id": "Q970362",
+   "name": "église Notre-Dame-des-Accoules",
+   "lat": 43.29784,
+   "lng": 5.36903,
+   "theme": "religious",
+   "fame": 4,
+   "summary": "Cette collégiale médiévale fut rasée pendant la Révolution : ayant accueilli en 1793 les assemblées d'une section engagée dans l'insurrection fédéraliste, elle subit la punition infligée à la « Ville-sans-Nom ». Il ne reste que le mur du fond et le clocher, épargné car son horloge donnait l'heure à tous les travaux du port et de la ville.",
+   "wiki": "Église Notre-Dame-des-Accoules de Marseille",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marseille%2C%C3%A9glisedesaccoules.JPG?width=960",
+   "photoBy": "Robert Valette",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Église Notre-Dame-des-Accoules"
+   }
+  },
+  {
+   "id": "Q3585913",
+   "name": "église des Grands-Carmes de Marseille",
+   "lat": 43.3005,
+   "lng": 5.37223,
+   "theme": "religious",
+   "fame": 3,
+   "summary": "Arrivés aux Aygalades vers 1238, les Carmes fondent en 1285 un couvent sur la butte qui porte leur nom ; l'église est reconstruite au XVIIe siècle. En 1870, l'évêque demande à son clergé un don de cloches pour la patrie : le curé Decanis les garde en offrant au préfet une mitrailleuse de 500 francs, payée par les paroissiens.",
+   "wiki": "Église des Grands-Carmes de Marseille",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89glise%20des%20Carmes%20%28Marseille%2903.jpg?width=960",
+   "photoBy": "FredSeiller",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "Église des Grands-Carmes"
+   }
+  },
+  {
+   "id": "Q16008725",
+   "name": "cathédrale des Saints-Traducteurs de Marseille",
+   "lat": 43.27038,
+   "lng": 5.38899,
+   "theme": "religious",
+   "fame": 4,
+   "summary": "Cathédrale de l'Église apostolique arménienne consacrée le 25 octobre 1931, elle reprend la structure de la cathédrale Sainte-Etchmiadzin sur les plans d'Aram Tahtadjian, financée en grande partie par l'homme d'affaires bruxellois Vahan Khorassandjan. Depuis 1973, un mémorial du génocide arménien se trouve dans son jardin.",
+   "wiki": "Cathédrale des Saints-Traducteurs de Marseille",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C%20%D0%A1%D0%B2%D0%B2.%20%D0%A1%D0%B0%D0%B0%D0%BA%D0%B0%20%D0%B8%20%D0%9C%D0%B5%D1%81%D1%80%D0%BE%D0%BF%D0%B0%2C%20%D0%9C%D0%B0%D1%80%D1%81%D0%B5%D0%BB%D1%8C.%20me%20%E2%80%94%20%286%2C%20boulevard%20Charles%20Zeytountzian%20%E2%80%94%20Saint-J%C3%A9r%C3%B413013%20Marseille%29DSC09001-EFFECTS.jpg?width=960",
+   "photoBy": "Leon petrosyan",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Cathédrale des Saints-Traducteurs de Marseille",
+    "it": "Cattedrale dei Santi Traduttori"
+   }
+  },
+  {
+   "id": "Q3585891",
+   "name": "église des Augustins de Marseille",
+   "lat": 43.29628,
+   "lng": 5.37449,
+   "theme": "religious",
+   "fame": 6,
+   "summary": "Commencée en 1447 au fond du Vieux-Port, l'église des Augustins reçut une charpente taillée dans le bois d'une galère hors d'usage cédée par Jean de Villages, neveu de Jacques Cœur. Devenue Saint-Ferréol les Augustins en 1803, elle abrita les reliques de saint Louis d'Anjou, restituées en 1956 puis volées en 1993.",
+   "wiki": "Église des Augustins de Marseille",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89glise%20Saint-Ferr%C3%A9ol-les-Augustins.jpg?width=960",
+   "photoBy": "Rbert Valette",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Église Saint-Ferréol les Augustins",
+    "it": "chiesa di San Ferreolo"
+   }
+  },
+  {
+   "id": "Q3085786",
+   "name": "opéra municipal de Marseille",
+   "lat": 43.293333,
+   "lng": 5.375833,
+   "theme": "stages",
+   "fame": 11,
+   "summary": "Inauguré en 1787, le Grand Théâtre est ravagé par un incendie le 13 novembre 1919, à l'issue d'une répétition de L'Africaine de Meyerbeer : ne subsistent que le péristyle, la colonnade et les murs maîtres. L'architecte Gaston Castel y dirige la reconstruction d'une salle Art déco, inaugurée le 3 décembre 1924 avec le Sigurd d'Ernest Reyer.",
+   "wiki": "Opéra municipal de Marseille",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marseille%20-%20Op%C3%A9ra%20Municipal%20%2816265981769%29.jpg?width=960",
+   "photoBy": "Fred Romero from Paris, France",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Opéra de Marseille",
+    "it": "Opéra municipal de Marseille"
+   }
+  },
+  {
+   "id": "Q2626362",
+   "name": "La Criée",
+   "lat": 43.2925,
+   "lng": 5.36778,
+   "theme": "stages",
+   "fame": 5,
+   "summary": "Cette halle de 1909 sert de criée aux poissons jusqu'en 1975, avant de devenir en 1981 le Théâtre national de Marseille fondé par Marcel Maréchal. Trop vétuste, elle n'a conservé que sa façade, reconstituée à l'identique à une dizaine de centimètres près : on y lit toujours l'inscription « Criée libre aux poissons ».",
+   "wiki": "La Criée (théâtre)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Criee.jpg?width=960",
+   "photoBy": "Tiia Monto",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Théâtre National de la Criée",
+    "it": "La Criée"
+   }
+  },
+  {
+   "id": "Q3527792",
+   "name": "théâtre du Gymnase",
+   "lat": 43.2978,
+   "lng": 5.38211,
+   "theme": "stages",
+   "fame": 3,
+   "summary": "Un ancien acteur du Grand Théâtre, Giraud Destinval, achète en 1800 la chapelle de l'ancien couvent des Lyonnaises pour y bâtir ce théâtre à l'italienne, inauguré le 13 septembre 1804 sous le nom de Théâtre Français. Rebaptisé Gymnase en 1834, il a accueilli Sarah Bernhardt comme Jacques Brel, avant de fermer en 2021 pour travaux.",
+   "wiki": "Théâtre du Gymnase (Marseille)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/DSC%200870TheatreDuGymnase.jpg?width=960",
+   "photoBy": "The original uploader was Christophe.moustier at French Wikipedia.",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Théâtre du Gymnase",
+    "it": "Théâtre du Gymnase"
+   }
+  },
+  {
+   "id": "Q3527841",
+   "name": "théâtre antique de Marseille",
+   "lat": 43.296389,
+   "lng": 5.364722,
+   "theme": "stages",
+   "fame": 3,
+   "summary": "Construit à l'époque augustéenne dans un style proche des théâtres grecs antiques, ce théâtre large d'environ 115 mètres dort sous la ville : ses premiers vestiges sont apparus lors de sondages en 1945, pendant la reconstruction du quartier détruit en 1943. Enfouis sous le collège Vieux-Port, ils sont classés monuments historiques depuis 1966.",
+   "wiki": "Théâtre antique de Marseille",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marseille%20th%C3%A9%C3%A2tre%20plan.svg?width=960",
+   "photoBy": "Joël Thibault",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Théâtre antique de Marseille",
+    "es": "Teatro antiguo de Marsella"
+   }
+  },
+  {
+   "id": "Q248366",
+   "name": "Le Dôme",
+   "lat": 43.31525,
+   "lng": 5.40445,
+   "theme": "stages",
+   "fame": 6,
+   "summary": "Principale salle de spectacle de Marseille, le Dôme accueille de 1 200 à 8 500 spectateurs selon la configuration. Sa coupole, conçue par l'architecte Denis Sloan, rappelle la coque d'un bateau retourné, soutenue par un arc de 27 mètres de hauteur. Depuis son inauguration en 1994, la salle a accueilli en moyenne 300 000 spectateurs par an.",
+   "wiki": "Le Dôme (Marseille)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20D%C3%B4me%20%28Marseille%29.jpg?width=960",
+   "photoBy": "https://www.flickr.com/photos/kafeole/",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Le Dôme de Marseille"
+   }
+  },
+  {
+   "id": "Q1905802",
+   "name": "fort Saint-Jean",
+   "lat": 43.29472,
+   "lng": 5.3625,
+   "theme": "palaces",
+   "fame": 13,
+   "summary": "Louis XIV fait bâtir ce fort après la rébellion marseillaise, moins pour protéger le Vieux-Port que pour pouvoir bombarder la ville et mater une autre révolte urbaine. Son nom vient des Hospitaliers de Saint-Jean de Jérusalem, établis sur ce promontoire vers la fin du XIIe siècle. Depuis 2013, il est intégré au MuCEM.",
+   "wiki": "Fort Saint-Jean (Marseille)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marseille-Fort%20Saint-Jean.JPG?width=960",
+   "photoBy": "Robert Valette",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Fort Saint-Jean",
+    "es": "Fuerte Saint-Jean (Marseille)",
+    "it": "Forte Saint-Jean"
+   }
+  },
+  {
+   "id": "Q1763231",
+   "name": "fort Saint-Nicolas",
+   "lat": 43.29083,
+   "lng": 5.3625,
+   "theme": "palaces",
+   "fame": 7,
+   "summary": "Édifié de 1660 à 1664 par le chevalier de Clerville sur ordre de Louis XIV pour mater l'esprit d'indépendance de Marseille, le fort n'a pas convaincu Vauban, qui y voyait en 1679 un « assemblage fort magnifique de tout ce qui a jamais passé d'extravagant et de ridicule par la tête des plus méchants ingénieurs du monde ».",
+   "wiki": "Fort Saint-Nicolas (Marseille)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marseille%20Fort%20Saint%20Nicolas.jpg?width=960",
+   "photoLic": "CC BY-SA 2.5",
+   "alt": {
+    "en": "Fort Saint-Nicolas",
+    "it": "Forte Saint-Nicolas"
+   }
+  },
+  {
+   "id": "Q1619084",
+   "name": "palais Longchamp",
+   "lat": 43.3043,
+   "lng": 5.3945,
+   "theme": "palaces",
+   "fame": 11,
+   "summary": "Ce palais est d'abord un château d'eau, bâti pour célébrer l'arrivée des eaux de la Durance par le canal de Marseille, long de 85 km. À la pose de la première pierre en 1839, le duc d'Orléans prévient : « Poser la première pierre n'est pas malaisé ; c'est la dernière qui est difficile ». Le palais est inauguré trente ans plus tard, le 15 août 1869.",
+   "wiki": "Palais Longchamp",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palais%20Longchamp%202.jpg?width=960",
+   "photoBy": "kallerna",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Palais Longchamp",
+    "es": "Palacio Longchamp",
+    "it": "Palais Longchamp"
+   }
+  },
+  {
+   "id": "Q1906882",
+   "name": "palais du Pharo",
+   "lat": 43.29417,
+   "lng": 5.35806,
+   "theme": "palaces",
+   "fame": 10,
+   "summary": "Napoléon III fait construire cette résidence pour l'impératrice Eugénie, sur un site dominant la passe du port. Inachevé à la chute de l'Empire en 1870, le palais ne fut jamais habité par le couple impérial. Après avoir gagné son procès contre la ville en 1884, Eugénie le lui offre, à condition qu'il serve à des fins d'utilité publique.",
+   "wiki": "Palais du Pharo",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20palais%20du%20Pharo.jpg?width=960",
+   "photoBy": "Remontees",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Palais du Pharo",
+    "es": "Palacio del Pharo",
+    "it": "Palais du Pharo"
+   }
+  },
+  {
+   "id": "Q1065581",
+   "name": "palais de la Bourse",
+   "lat": 43.29583,
+   "lng": 5.37528,
+   "theme": "palaces",
+   "fame": 5,
+   "summary": "Il fallut exproprier 65 immeubles pour élever ce palais sur la Canebière, inauguré par Napoléon III le 10 septembre 1860. À l'annonce de la défaite de Sedan, le 4 septembre 1870, l'émeute décapite sa statue dans la galerie et promène la tête à travers les rues : un baromètre occupe aujourd'hui sa place.",
+   "wiki": "Palais de la Bourse (Marseille)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palais%20de%20la%20bourse%20%C3%A0%20Marseille.JPG?width=960",
+   "photoBy": "Robert Valette",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Palais de la Bourse",
+    "es": "Palacio de la bolsa"
+   }
+  },
+  {
+   "id": "Q3361012",
+   "name": "palais de justice de Marseille",
+   "lat": 43.291111,
+   "lng": 5.375,
+   "theme": "palaces",
+   "fame": 5,
+   "summary": "Inauguré le 4 novembre 1862 sur la place Montyon, ce palais du Second Empire, œuvre de l'architecte Auguste Martin, s'ouvre par un perron de 25 marches et un péristyle ionique de six colonnes. Dans la salle des pas perdus, 16 colonnes de marbre rouge du Languedoc veillent sous les portraits de législateurs, de Solon à Napoléon Ier.",
+   "wiki": "Palais de justice de Marseille",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palais%20de%20justice%20de%20Marseille.jpg?width=960",
+   "photoBy": "Robert Valette",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Marseille Courthouse",
+    "es": "Palacio de justicia de Marsella"
+   }
+  },
+  {
+   "id": "Q169369",
+   "name": "château Pastré",
+   "lat": 43.233333,
+   "lng": 5.373333,
+   "theme": "palaces",
+   "fame": 3,
+   "summary": "Bastide de pierres et de briques roses achevée en 1862 pour Eugène Pastré, elle devient pendant la Seconde Guerre mondiale un refuge : la comtesse Lily Pastré y abrite des artistes et de nombreux juifs tentant de quitter la France, dont Clara Haskil. Donnée à la ville, la Campagne Pastré a accueilli le musée de la Faïence de 1995 à 2013.",
+   "wiki": "Château Pastré",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A2teau%20Pastr%C3%A9%20%C3%A0%20Marseille.JPG?width=960",
+   "photoBy": "Robert Valette",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Château Pastré"
+   }
+  },
+  {
+   "id": "Q2109073",
+   "name": "hôtel de Cabre",
+   "lat": 43.2975,
+   "lng": 5.37111,
+   "theme": "palaces",
+   "fame": 4,
+   "summary": "C'est la plus vieille maison de Marseille, construite vers 1535 pour Louis de Cabre, second consul de la ville en 1544. Épargnée en 1943 quand les Allemands détruisent les ruelles de la rive nord du Vieux-Port, elle est déplacée d'un bloc en 1954 : près de 15 mètres de translation et un quart de tour pour l'aligner sur la Grand-Rue.",
+   "wiki": "Hôtel de Cabre (Marseille)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Hotel%20de%20cabre.jpg?width=960",
+   "photoBy": "Ciriol",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Hôtel de Cabre"
+   }
+  },
+  {
+   "id": "Q3278694",
+   "name": "maison Diamantée",
+   "lat": 43.297,
+   "lng": 5.36935,
+   "theme": "palaces",
+   "fame": 3,
+   "summary": "Sa façade couverte de pierres taillées en pointes lui vaut son nom. Élevée à la fin du XVIe siècle ou au tout début du XVIIe, c'est, avec l'hôtel de Cabre, l'une des plus anciennes demeures préservées de Marseille ; la tradition orale y voit le palais du roi René. Délabrée, elle est sauvée de la ruine en 1914 par l'association Art et Charité.",
+   "wiki": "Maison Diamantée",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Maison%20Diamant%C3%A9e%20%283x2%20crop%29.jpg?width=960",
+   "photoBy": "Guiguilacagouille",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Maison Diamantée"
+   }
+  },
+  {
+   "id": "Q3145471",
+   "name": "hôtel Daviel",
+   "lat": 43.2975,
+   "lng": 5.36935,
+   "theme": "palaces",
+   "fame": 3,
+   "summary": "Construit entre 1743 et 1747 par les frères Gérard, cet ancien palais de justice porte le nom de Jacques Daviel, chirurgien venu à Marseille lors de la peste de 1720. Les tribunaux y siégèrent jusqu'en 1862 ; épargné en 1943 lors de la destruction du quartier du Vieux-Port, il abrite aujourd'hui des services annexes de la mairie.",
+   "wiki": "Hôtel Daviel",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/H%C3%B4tel-Daviel.JPG?width=960",
+   "photoBy": "Robert Valette",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Hôtel Daviel"
+   }
+  },
+  {
+   "id": "Q3145574",
+   "name": "hôtel Louvre et Paix",
+   "lat": 43.2969,
+   "lng": 5.37861,
+   "theme": "palaces",
+   "fame": 3,
+   "summary": "Inauguré le 15 août 1863 sur la Canebière, ce grand hôtel bâti par Jean-Charles Pot offrait ascenseurs hydrauliques, téléphones et éclairage électrique. Sur sa façade, quatre cariatides figurent les continents : poisson ailé, éléphant, dromadaire, sphinx. Le 28 février 1896, on y projeta « Arrivée d'un train à la Ciotat » des frères Lumière.",
+   "wiki": "Hôtel Louvre et Paix",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marseille%2Cancien-h%C3%B4tel-du-Louvre.jpg?width=960",
+   "photoBy": "Rvalette",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Hôtel Louvre et Paix"
+   }
+  },
+  {
+   "id": "Q2422203",
+   "name": "hôtel de ville de Marseille",
+   "lat": 43.29611,
+   "lng": 5.37,
+   "theme": "palaces",
+   "fame": 6,
+   "summary": "Bâti sur pilotis quai du port, il n'a aucun escalier reliant le rez-de-chaussée, réservé à la loge des marchands, au premier étage : on passe par l'immeuble de derrière, relié à l'origine par un pont de bois. Commencé en 1653 et occupé fin 1673, l'édifice échappa de justesse à la démolition décrétée sous la Révolution, sauvé en février 1794.",
+   "wiki": "Hôtel de ville de Marseille",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marseille%20hotel%20de%20ville.jpg?width=960",
+   "photoBy": "Velvet",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Marseille City Hall",
+    "es": "Ayuntamiento de Marsella",
+    "it": "Hôtel de Ville (Marsiglia)"
+   }
+  },
+  {
+   "id": "Q2186614",
+   "name": "hôtel-Dieu de Marseille",
+   "lat": 43.29833,
+   "lng": 5.36972,
+   "theme": "palaces",
+   "fame": 6,
+   "summary": "Fondé en 1593, cet ancien hôpital du Panier a été érigé à partir de 1753 sur les plans de Jacques Hardouin-Mansart de Sagonne, petit-fils de Jules Hardouin-Mansart. Napoléon III inaugura le nouvel Hôtel-Dieu le 15 novembre 1866. Depuis 2013, l'ancien hôpital est devenu un hôtel 5 étoiles InterContinental.",
+   "wiki": "Hôtel-Dieu de Marseille",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marseille%2020131005%2002.jpg?width=960",
+   "photoBy": "Georges Seguin (Okki)",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Hôtel-Dieu de Marseille",
+    "it": "Hôtel-Dieu (Marsiglia)"
+   }
+  },
+  {
+   "id": "Q2243437",
+   "name": "porte d'Aix",
+   "lat": 43.3018,
+   "lng": 5.3747,
+   "theme": "monuments",
+   "fame": 8,
+   "summary": "Voté en 1784 en l'honneur de Louis XVI, repris en 1823 pour la campagne d'Espagne du duc d'Angoulême, cet arc de triomphe ne fut inauguré qu'en 1837 : les régimes ayant changé, ses reliefs célèbrent Fleurus, Héliopolis, Marengo et Austerlitz. Les Marseillais en ont fait une expression : avoir un tafanari gros comme la porte d'Aix.",
+   "wiki": "Place Jules-Guesde",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Porte%20d%27Aix%2003.jpg?width=960",
+   "photoBy": "Houss 2020",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Porte d'Aix",
+    "it": "Porte d'Aix"
+   }
+  },
+  {
+   "id": "Q6773259",
+   "name": "monument du génocide de Marseille",
+   "lat": 43.270607,
+   "lng": 5.388905,
+   "theme": "monuments",
+   "fame": 6,
+   "summary": "Inauguré le 11 février 1973 dans les jardins de la cathédrale des Saints-Traducteurs, ce mémorial du génocide arménien est le premier du genre à Marseille et l'un des premiers en France. Stèles de béton armé, flèche et coupe où est entretenue une flamme éternelle le composent ; sa construction conduisit la Turquie à rappeler son ambassadeur.",
+   "wiki": "Monument du génocide de Marseille",
+   "alt": {
+    "en": "Marseille Genocide Memorial"
+   }
+  },
+  {
+   "id": "Q2489442",
+   "name": "monument aux morts de l'Armée d'Orient et des terres lointaines",
+   "lat": 43.28583,
+   "lng": 5.35028,
+   "theme": "monuments",
+   "fame": 3,
+   "summary": "Sur la corniche Kennedy, cette Porte d'Orient honore les morts de l'armée d'Orient et des terres lointaines de la Première Guerre mondiale : une statue de bronze entourée d'un arc en granit. Édifié d'après les plans de l'architecte Gaston Castel et inauguré le 24 avril 1927, le monument est classé monument historique depuis 2011.",
+   "wiki": "Monument aux morts de l'Armée d'Orient et des terres lointaines",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Monument%20aux%20morts%20de%20l%27Arm%C3%A9e%20d%27Orient%20et%20des%20terres%20lointaines.%20Panneau%20d%27information..jpg?width=960",
+   "photoBy": "Rc1959",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "Monument aux morts de l'Armée d'Orient et des terres lointaines"
+   }
+  },
+  {
+   "id": "Q3497575",
+   "name": "Statue de David",
+   "lat": 43.26186,
+   "lng": 5.37474,
+   "theme": "monuments",
+   "fame": 3,
+   "summary": "Ce David en marbre de Carrare est une copie du célèbre David de Michel-Ange, offerte par le marbrier-sculpteur Jules Cantini en 1903. Haute de plus de 5 mètres et pesant 12 tonnes, la statue se dresse depuis 1949 près des plages du Prado, à l'intersection de l'avenue du Prado et de la promenade Georges Pompidou.",
+   "wiki": "Statue de David (Marseille)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Statue%20de%20David%20%C3%A0%20Marseille.jpg?width=960",
+   "photoBy": "Robert Valette",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Statue of David"
+   }
+  },
+  {
+   "id": "Q3296411",
+   "name": "marégraphe de Marseille",
+   "lat": 43.2786,
+   "lng": 5.35361,
+   "theme": "monuments",
+   "fame": 4,
+   "summary": "Construit à la fin du XIXe siècle pour fixer l'altitude zéro de la France continentale, il mesure le niveau de la mer depuis plus de 140 ans, pratiquement sans interruption. Son totalisateur mécanique est le seul exemplaire au monde ; ses relevés montrent une élévation 2,3 fois plus rapide sur les 35 dernières années qu'au cours des 100 premières.",
+   "wiki": "Marégraphe de Marseille",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20mar%C3%A9graphe%20de%20Marseille%20en%20venant%20du%20David.jpg?width=960",
+   "photoBy": "XDurang",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Marseille marigraph"
+   }
+  },
+  {
+   "id": "Q437959",
+   "name": "Vieux-Port de Marseille",
+   "lat": 43.29472,
+   "lng": 5.37083,
+   "theme": "water",
+   "fame": 16,
+   "summary": "Fondé par les Phocéens en 600 av. J.-C. dans la calanque du Lacydon, c'est le plus ancien port de Marseille. Une chaîne de fer barrait son entrée : emportée en trophée par les galères du roi d'Aragon lors du sac de 1423, elle se trouverait aujourd'hui sur le mur de la cathédrale de Valence, en Espagne.",
+   "wiki": "Vieux-Port de Marseille",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marseille%20Old%20Port.jpg?width=960",
+   "photoBy": "Ingo Mehling",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Old Port of Marseille",
+    "es": "Puerto Viejo de Marsella",
+    "it": "porto vecchio di Marsiglia"
+   }
+  },
+  {
+   "id": "Q2037477",
+   "name": "plages du Prado",
+   "lat": 43.262778,
+   "lng": 5.371389,
+   "theme": "water",
+   "fame": 13,
+   "summary": "Ces plages n'ont rien de naturel : elles ont été gagnées sur la mer à la fin des années 1970, sur 20 hectares, avec les remblais issus de la construction des deux lignes de métro marseillaises. Avant cela, les jours de mistral, les vagues venaient arroser passants et véhicules au bord de la chaussée.",
+   "wiki": "Plages du Prado",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mistral%20gagnant%20Plages%20du%20Prado%2C%20Marseille.jpg?width=960",
+   "photoBy": "Alpha du centaure",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Plages du Prado",
+    "es": "Playas del Prado"
+   }
+  },
+  {
+   "id": "Q2467550",
+   "name": "Vallon des Auffes",
+   "lat": 43.285,
+   "lng": 5.35139,
+   "theme": "water",
+   "fame": 5,
+   "summary": "Ce petit port doit son nom à l'auffe, une plante dont on faisait cordages et filets de pêche : des auffiers s'y établissent vers 1750. De part et d'autre du pont qui l'enjambe, une cinquantaine de petites maisons de pêcheurs et environ 80 places de bateaux, dont quelques pointus typiques, dont les prises sont réservées aux restaurants locaux.",
+   "wiki": "Vallon des Auffes",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marseille%20Vallon%20des%20Auffes%2001.jpg?width=960",
+   "photoBy": "Zairon",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Vallon des Auffes"
+   }
+  },
+  {
+   "id": "Q3231310",
+   "name": "Les Catalans",
+   "lat": 43.2907,
+   "lng": 5.35594,
+   "theme": "water",
+   "fame": 4,
+   "summary": "Après la peste de 1720, des pêcheurs catalans s'installent dans l'anse de Saint-Lambert, près des anciennes infirmeries laissées à l'abandon : leur nom est resté au quartier. En 1790, la flotte compte 75 bateaux et 400 pêcheurs. C'est de cette anse que Dumas fait venir Mercédès, la fiancée d'Edmond Dantès dans Le Comte de Monte-Cristo.",
+   "wiki": "Les Catalans",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Les%20Catalans%20-%20vers%201800.PNG?width=960",
+   "photoBy": "Jean-Jérôme Baugean",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Les Catalans"
+   }
+  },
+  {
+   "id": "Q1065573",
+   "name": "phare de Sainte-Marie",
+   "lat": 43.29917,
+   "lng": 5.35806,
+   "theme": "water",
+   "fame": 6,
+   "summary": "Construit en 1855 au nord de l'esplanade de la Joliette, qui marque l'entrée des bassins du Grand port maritime de Marseille, ce phare est une tourelle cylindrique en pierre calcaire de 21 mètres posée sur un corps de logis. Électrifié en 1922, il est aujourd'hui éteint : le feu rouge installé à son pied a pris le relais.",
+   "wiki": "Phare de Sainte-Marie",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Phare%20st%20marie.JPG?width=960",
+   "photoBy": "Todd Jones Chateau d'If at en.wikipedia",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Phare de Sainte Marie"
+   }
+  },
+  {
+   "id": "Q2269718",
+   "name": "calanque de Sormiou",
+   "lat": 43.20972,
+   "lng": 5.42111,
+   "theme": "water",
+   "fame": 4,
+   "summary": "C'est l'une des calanques les plus fréquentées par les Marseillais, et l'une des rares habitées : elle abrite une centaine de cabanons et un petit port protégé par une digue. Les cabanons se transmettent de génération en génération ; en 1992, leurs occupants se sont fédérés pour limiter l'urbanisation du site.",
+   "wiki": "Calanque de Sormiou",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marseille%20Calanque%20Sormiou.jpg?width=960",
+   "photoBy": "Benh LIEU SONG",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Calanque de Sormiou"
+   }
+  },
+  {
+   "id": "Q2933592",
+   "name": "calanque de Callelongue",
+   "lat": 43.211667,
+   "lng": 5.352222,
+   "theme": "water",
+   "fame": 3,
+   "summary": "Tout au bout de la route du bord de mer, après le village des Goudes, cette calanque tire son nom du provençal cala lònga, la grande crique. Dans les années 1960, un téléscaphe, sorte de téléphérique sous-marin, la reliait aux Goudes : les mécanismes à roues qui faisaient avancer les cabines sont encore visibles.",
+   "wiki": "Calanque de Callelongue",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Callelongue%20calanque.jpg?width=960",
+   "photoBy": "kallerna",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Callelongue"
+   }
+  },
+  {
+   "id": "Q2933594",
+   "name": "calanque de Marseilleveyre",
+   "lat": 43.209131,
+   "lng": 5.372039,
+   "theme": "water",
+   "fame": 3,
+   "summary": "De taille très modeste, cette calanque tire son nom du massif de Marseilleveyre, dont elle est la troisième calanque entre Marseille et Cassis. Elle est très prisée pour sa vue imprenable sur l'île de Riou.",
+   "wiki": "Calanque de Marseilleveyre",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Calanque%20de%20Marseilleveyre%20T%C3%AAtes%20de%20Malvallon.jpg?width=960",
+   "photoBy": "Rémih",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q3593057",
+   "name": "île Gaby",
+   "lat": 43.2775,
+   "lng": 5.34417,
+   "theme": "water",
+   "fame": 3,
+   "summary": "Louis XIV y fait bâtir un fortin, achevé en 1703, pour protéger le flanc sud de Marseille. Quand l'armée s'en sépare en 1914, l'île passe à l'industriel marseillais André Lavai, qui l'offre à sa future épouse, la vedette de music-hall Liane Degaby : le fort devient un lieu mondain très fréquenté, et l'île garde son nom.",
+   "wiki": "Île Degaby",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/L%27%C3%AElot%20Degaby%2C%20Marseille%20%2815995305728%29.jpg?width=960",
+   "photoBy": "Jeanne Menjoulet from Paris, France",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Degaby Island",
+    "es": "Isla Degaby"
+   }
+  },
+  {
+   "id": "Q597747",
+   "name": "parc Borély",
+   "lat": 43.25944,
+   "lng": 5.38028,
+   "theme": "parks",
+   "fame": 7,
+   "summary": "Aménagé par le paysagiste Adolphe Alphand sur l'ancien domaine de la famille Borély, ce parc de 17 hectares est inauguré en 1864. En 1910, il accueille la première quinzaine de l'aviation et le premier survol de Marseille par un aéroplane ; depuis 1962, le Mondial la Marseillaise à pétanque y réunit près de 13 000 joueurs.",
+   "wiki": "Parc Borély",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A2teau%20Bor%C3%A9ly.JPG?width=960",
+   "photoBy": "JohnLuke",
+   "photoLic": "CC BY 3.0",
+   "alt": {
+    "en": "Parc Borély",
+    "es": "Parque Borély"
+   }
+  },
+  {
+   "id": "Q2172329",
+   "name": "jardin des Vestiges",
+   "lat": 43.29771,
+   "lng": 5.3748,
+   "theme": "parks",
+   "fame": 6,
+   "summary": "En 1967, le chantier du Centre Bourse met au jour le port antique de Marseille : fortifications grecques, quais romains conservés sur 180 mètres, et même un bateau de 23 mètres abandonné vers le IIIe siècle, préservé par la vase puis extrait grâce à la lyophilisation. Le jardin, ouvert en 1983, fait partie du musée d'histoire de Marseille.",
+   "wiki": "Jardin des Vestiges",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marseille%20-%20Le%20jardin%20des%20vestiges.JPG?width=960",
+   "photoBy": "Vincent",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Jardin des Vestiges",
+    "it": "Jardin des Vestiges"
+   }
+  },
+  {
+   "id": "Q2204151",
+   "name": "parc du 26e Centenaire",
+   "lat": 43.28,
+   "lng": 5.39611,
+   "theme": "parks",
+   "fame": 4,
+   "summary": "Aménagé sur le site de l'ancienne gare du Prado et inauguré le 23 juin 2001, ce parc de 10 hectares célèbre les vingt-six siècles écoulés depuis la fondation de Massalia par les Grecs. À l'ombre de son arbre de l'Espérance, les noms de 500 000 Marseillais donateurs sont inscrits au sol.",
+   "wiki": "Parc du 26e Centenaire",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marseille%20Parc%2026%20Maltese.jpg?width=960",
+   "photoBy": "Photomaltese",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Parc du 26e Centenaire"
+   }
+  },
+  {
+   "id": "Q6159688",
+   "name": "Jardin botanique de Marseille",
+   "lat": 43.2598,
+   "lng": 5.3847,
+   "theme": "parks",
+   "fame": 4,
+   "summary": "Inauguré en 1918 et baptisé du nom du botaniste marseillais Édouard Marie Heckel, ce jardin du parc Borély cultive environ 3000 espèces réparties en neuf jardins à thèmes. Sa serre tropicale de fer forgé et de verre, construite en 1870 pour la famille Noilly-Prat dans le Gard, n'a rejoint Marseille qu'en 1982.",
+   "wiki": "Jardin botanique de Marseille",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palmier%20dattier%202.JPG?width=960",
+   "photoBy": "Moumousse13",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Jardin botanique E.M. Heckel",
+    "es": "Jardín Botánico de Marsella",
+    "it": "Giardino botanico Borély di Marsiglia"
+   }
+  },
+  {
+   "id": "Q3162496",
+   "name": "jardin de la Magalone",
+   "lat": 43.2616,
+   "lng": 5.3984,
+   "theme": "parks",
+   "fame": 4,
+   "summary": "Commandée à la fin du XVIIe siècle par les frères Magalon, riches négociants, cette bastide aux plans traditionnellement attribués à Pierre Puget fut vendue en 1721, inachevée, en raison de l'épidémie de peste. Son jardin classique, redessiné au début du XXe siècle par Edouard André, est aujourd'hui un parc public.",
+   "wiki": "Jardin de la Magalone",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Villa-Magalone.JPG?width=960",
+   "photoBy": "Rvalette",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Jardin de la Magalone"
+   }
+  },
+  {
+   "id": "Q58172041",
+   "name": "square Louise-Michel",
+   "lat": 43.30118,
+   "lng": 5.37816,
+   "theme": "parks",
+   "fame": 3,
+   "summary": "Sur un vide laissé par les bombardements américains de mai 1944, ce coin de Belsunce fut longtemps la place des Chibanis, où se retrouvaient les vieux travailleurs immigrés. Des habitants y apposèrent une plaque « place Louise Michel », en hommage à la communarde morte à proximité ; la Ville officialisa ce nom en 2018.",
+   "wiki": "Square Louise-Michel (Marseille)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Square%20Louise-Michel%20%28Marseille%29.jpg?width=960",
+   "photoBy": "Francesca Ubelka",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Square Louise-Michel"
+   }
+  },
+  {
+   "id": "Q2972480",
+   "name": "cimetière Saint-Pierre de Marseille",
+   "lat": 43.2891,
+   "lng": 5.4169,
+   "theme": "parks",
+   "fame": 4,
+   "summary": "Avec ses 63 hectares, le plus grand cimetière de Marseille est la troisième nécropole de France après Pantin et Thiais. Béni en 1855, il reçoit ses premières inhumations en janvier 1856. On y croise Edmond Rostand, Antonin Artaud, Vincent Scotto, Gaston Defferre et la chanteuse Gaby Deslys, dont la tombe se niche dans une pinède.",
+   "wiki": "Cimetière Saint-Pierre (Marseille)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marseille-Saint-Pierre-cimeti%C3%A8re26.JPG?width=960",
+   "photoBy": "Fr.Latreille",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Saint Pierre Cemetery",
+    "es": "Cementerio Saint-Pierre (Marsella)",
+    "it": "Cimitero di Sant Pierre"
+   }
+  },
+  {
+   "id": "Q2554649",
+   "name": "Canebière",
+   "lat": 43.29667,
+   "lng": 5.37861,
+   "theme": "streets",
+   "fame": 12,
+   "summary": "Un kilomètre de l'église des Réformés au Vieux-Port : la Canebière tient son nom du provençal canebiera, la chènevière, souvenir du temps où Marseille était l'un des plus grands comptoirs de chanvre au monde pour les cordages. Mentionnée dès 1672, elle prend sa forme actuelle en 1927 en englobant la rue Noailles et les allées de Meilhan.",
+   "wiki": "Canebière",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Canebi%C3%A8re%20-%20Marseille%20I%20%28FR13%29%20-%202023-07-22%20-%201.jpg?width=960",
+   "photoBy": "Chabe01",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "La Canebière",
+    "es": "Canebière",
+    "it": "Canebière"
+   }
+  },
+  {
+   "id": "Q2426692",
+   "name": "Le Panier",
+   "lat": 43.29806,
+   "lng": 5.36778,
+   "theme": "streets",
+   "fame": 7,
+   "summary": "Sur la rive nord du Vieux-Port, le Panier est la partie la plus ancienne de Marseille, où les Grecs fondèrent Massalia en 600 av. J.-C. Son nom viendrait d'une auberge à l'enseigne d'un panier. En 1943, les Allemands expulsent 30 000 habitants et dynamitent Saint-Jean ; le Panier est la seule partie conservée des vieux quartiers.",
+   "wiki": "Le Panier",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marseille%20Vieux-Marseille%202.jpg?width=960",
+   "photoBy": "Zairon",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Le Panier",
+    "it": "Le Panier"
+   }
+  },
+  {
+   "id": "Q3001343",
+   "name": "cours Julien",
+   "lat": 43.294553,
+   "lng": 5.382825,
+   "theme": "streets",
+   "fame": 3,
+   "summary": "De 1860 à 1972, le cours Julien vit au rythme du Marché Central des fruits et légumes : les paysans y arrivaient vers minuit, les grossistes y vendaient artichauts de Tunisie et oranges d'Algérie. Après le départ du marché aux Arnavaux, il devient le quartier des artistes et musiciens ; son jardin est inauguré en 1980 par Gaston Defferre.",
+   "wiki": "Cours Julien",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Cours%20Julien%20%C3%A0%20Marseille%20%28France%29.jpg?width=960",
+   "photoBy": "DC",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "cours Julien"
+   }
+  },
+  {
+   "id": "Q1137715",
+   "name": "cours Belsunce",
+   "lat": 43.298733,
+   "lng": 5.376358,
+   "theme": "streets",
+   "fame": 3,
+   "summary": "Créé en 1670 lors de l'agrandissement de Marseille prescrit par Louis XIV, le Grand Cours, dont l'ordonnancement des façades est attribué à Pierre Puget, fut considéré comme l'une des plus belles places de l'Europe baroque. Il prit en 1852 le nom de l'évêque Belsunce, qui y avait célébré une messe le 1er novembre 1720, en pleine peste.",
+   "wiki": "Cours Belsunce",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Cours%20Belsunce.JPG?width=960",
+   "photoBy": "Likemonkeys",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "cours Belsunce"
+   }
+  },
+  {
+   "id": "Q2114767",
+   "name": "rue de la République",
+   "lat": 43.301035,
+   "lng": 5.370251,
+   "theme": "streets",
+   "fame": 4,
+   "summary": "Percée à partir de 1862 pour relier le Vieux-Port au nouveau port de la Joliette, la rue Impériale a coûté 935 maisons et tout ou partie de 61 rues. Inaugurée en 1864, bordée d'immeubles haussmanniens pour faire revenir la bourgeoisie marseillaise : elle ne s'y installa pas. Elle devient rue de la République en 1870.",
+   "wiki": "Rue de la République (Marseille)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marseille%20-%20Tramway%20-%20Rue%20de%20la%20R%C3%A9publique%20%287670825116%29.jpg?width=960",
+   "photoBy": "IngolfBLN",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "rue de la République",
+    "es": "rue de la République"
+   }
+  },
+  {
+   "id": "Q3390246",
+   "name": "place de Lenche",
+   "lat": 43.2975,
+   "lng": 5.36567,
+   "theme": "streets",
+   "fame": 3,
+   "summary": "Cette place doit son nom à la famille Lenche, d'origine corse, qui y fit construire un hôtel particulier au XVIe siècle ; Thomas Lenche créa la Magnifique Compagnie du corail, reliant l'Afrique du Nord à Marseille. L'hôtel bâti par la famille Riquetti de Mirabeau hébergea Louis XIV en 1660 et fut démoli à la fin du XIXe siècle.",
+   "wiki": "Place de Lenche",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/DSC%200961Place%20de%20Lenche%20-%20Marseille.jpg?width=960",
+   "photoBy": "The original uploader was Christophe.moustier at French Wikipedia.",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "place de Lenche"
+   }
+  },
+  {
+   "id": "Q1946506",
+   "name": "montée des Accoules",
+   "lat": 43.297778,
+   "lng": 5.367222,
+   "theme": "streets",
+   "fame": 3,
+   "summary": "Cette rue en escaliers monte de la place de Lenche à la rue Caisserie, avec une belle perspective sur le clocher des Accoules. On l'appelait montée de l'observatoire : en 1702, les jésuites installèrent à son sommet un observatoire dans leur maison de Sainte-Croix, dite collège des quatre langues pour les langues orientales qu'on y enseignait.",
+   "wiki": "Montée des Accoules",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mont%C3%A9e%20des%20accoules.jpg?width=960",
+   "photoBy": "Robert Valette",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "montée des Accoules"
+   }
+  },
+  {
+   "id": "Q2997551",
+   "name": "corniche du Président-John-Fitzgerald-Kennedy",
+   "lat": 43.2773,
+   "lng": 5.35661,
+   "theme": "streets",
+   "fame": 4,
+   "summary": "Ce boulevard de bord de mer longe la Méditerranée sur environ 3,7 km, des Catalans aux plages du Prado, le long du plus long banc en béton du monde selon un dicton marseillais. Au no 174, un marégraphe installé en 1884 a défini, après douze ans d'observations, l'altitude zéro de référence en France : tous les nivellements français en découlent.",
+   "wiki": "Corniche du Président-John-Fitzgerald-Kennedy",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Corniche%20du%20pr%C3%A9sident%20John%20Fitzg%C3%A9rald%20Kennedy.jpg?width=960",
+   "photoBy": "Irma2403",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "corniche du Président-John-Fitzgerald-Kennedy"
+   }
+  },
+  {
+   "id": "Q3389888",
+   "name": "place Jean-Jaurès",
+   "lat": 43.295,
+   "lng": 5.3865,
+   "theme": "streets",
+   "fame": 6,
+   "summary": "La Plaine n'est pas une plaine mais un plateau : le provençal « plan », plateau, a été francisé de travers. En 1883, un tunnel de 700 mètres y est percé pour le premier tramway et sert encore au tramway actuel. Le 14 novembre 1886, Capazza et Fondère en partent en ballon et rejoignent la Corse. Renommée en 1919 en mémoire de Jean Jaurès.",
+   "wiki": "Place Jean-Jaurès (Marseille)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Place%20Jean%20Jaur%C3%A8s%20Marseille.JPG?width=960",
+   "photoBy": "Rvalette",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q3389745",
+   "name": "place Castellane",
+   "lat": 43.2859,
+   "lng": 5.38372,
+   "theme": "streets",
+   "fame": 5,
+   "summary": "Un obélisque, élevé en 1811 pour la naissance du Roi de Rome, occupa d'abord le centre de la place ; transféré à Mazargues en 1911, il fut remplacé par la fontaine Cantini, sculptée en marbre de Carrare par André-Joseph Allar à la demande de Jules Cantini. La place doit son nom à Henri-César de Castellane-Majastre, qui offrit le terrain en 1774.",
+   "wiki": "Place Castellane",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Place%20Castellane.JPG?width=960",
+   "photoBy": "Hombrey",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "place Castellane",
+    "es": "Place Castellane"
+   }
+  },
+  {
+   "id": "Q2236149",
+   "name": "avenue du Prado",
+   "lat": 43.272667,
+   "lng": 5.385205,
+   "theme": "streets",
+   "fame": 3,
+   "summary": "Tracée en équerre sur 3 400 mètres, large de 60 mètres, c'est la promenade la plus large de Marseille, nommée en 1844 en comparaison du célèbre Prado de Madrid. Sa voûte de platanes a été décimée par le chancre coloré, champignon importé des États-Unis dans des caisses de munitions ; le plus grand marché de la ville s'y déroule tous les matins.",
+   "wiki": "Avenue du Prado",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marseille%20Avenue%20du%20Prado.jpg?width=960",
+   "photoBy": "Michiel1972",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "avenue du Prado"
+   }
+  },
+  {
+   "id": "Q3450500",
+   "name": "rue d'Aubagne",
+   "lat": 43.294,
+   "lng": 5.38128,
+   "theme": "streets",
+   "fame": 3,
+   "summary": "Son nom vient d'une auberge, le Logis d'Aubagne. Au no 3, la Maison Empereur, fondée en 1827, est la plus vieille quincaillerie de France en activité. Le 5 novembre 2018, les immeubles des nos 63 et 65 s'effondrent, faisant 8 morts et révélant le délabrement du bâti marseillais ; la petite place voisine est depuis devenue la place du 5-Novembre.",
+   "wiki": "Rue d'Aubagne",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rue%20d%27Aubagne.png?width=960",
+   "photoBy": "Francesca Ubelka",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "rue d'Aubagne"
+   }
+  },
+  {
+   "id": "Q2121984",
+   "name": "quai des Belges",
+   "lat": 43.294979,
+   "lng": 5.374365,
+   "theme": "streets",
+   "fame": 6,
+   "summary": "Ce quai du front est du Vieux-Port fut tour à tour quai des Augustins, Rousseau, Impérial, Monsieur, d'Orléans, Napoléon, de la Fraternité en 1871 puis des Belges en 1915 ; il redevient quai de la Fraternité en 2013, l'année où l'Ombrière de Norman Foster, posée à six mètres au-dessus du quai, se met à réfléchir passants, ciel et mer.",
+   "wiki": "Quai de la Fraternité",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marseille-Quai%20des%20Belges%20vers%201900.jpg?width=960",
+   "photoBy": "Detroit Photographic Company, 1905.",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Quai des Belges",
+    "it": "Quai des Belges"
+   }
+  },
+  {
+   "id": "Q3448887",
+   "name": "rue Longue des Capucins",
+   "lat": 43.299566,
+   "lng": 5.378665,
+   "theme": "streets",
+   "fame": 2,
+   "summary": "Cette rue du 1er arrondissement traverse la Canebière, du boulevard Charles-Nédelec à la rue d'Aubagne. Elle rappelle l'ordre mendiant des Capucins, installé en 1665 sur des terrains que Catherine de Médicis avait achetés pour l'édification d'un couvent ; devenu bien national à la Révolution, l'ordre en fut expulsé en 1791.",
+   "wiki": "Rue Longue-des-Capucins",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rue%20Longue%20des%20Capucins%2C%20Marseille%202.jpg?width=960",
+   "photoBy": "Carl Ha",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "rue Longue-des-Capucins"
+   }
+  },
+  {
+   "id": "Q3057827",
+   "name": "escalier monumental de la gare de Marseille-Saint-Charles",
+   "lat": 43.30175,
+   "lng": 5.38063,
+   "theme": "streets",
+   "fame": 2,
+   "summary": "Cent quatre marches et 15,5 mètres de haut pour relier la gare au boulevard d'Athènes : ouvert au public en 1925, l'escalier est inauguré en grande pompe le 24 avril 1927 par le président Gaston Doumergue. Parmi ses groupes sculptés, Les Colonies d'Asie s'inscrit dans la lignée de l'exposition coloniale de 1922 tenue à Marseille.",
+   "wiki": "Escalier monumental de la gare de Marseille-Saint-Charles",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Escalier%20de%20la%20gare%20Marseille-Saint-Charles.JPG?width=960",
+   "photoBy": "Robert Valette",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Stairs of Gare de Marseille-Saint-Charles"
+   }
+  },
+  {
+   "id": "Q16511503",
+   "name": "Terrasses du Port",
+   "lat": 43.3071,
+   "lng": 5.36522,
+   "theme": "shops",
+   "fame": 3,
+   "summary": "Ouvert le 24 mai 2014, ce centre commercial de 210 commerces financé par le groupe anglais Hammerson doit son nom à sa terrasse de 2 600 mètres carrés face aux bassins de la Joliette et d'Arenc. Depuis 2021, le réseau de géothermie marine Thassalia le chauffe et le climatise grâce à l'énergie de la Méditerranée.",
+   "wiki": "Terrasses du Port",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/TDP%20Exterior.jpg?width=960",
+   "photoBy": "4A Architectes",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Terrasses du port"
+   }
+  },
+  {
+   "id": "Q202150",
+   "name": "stade Vélodrome",
+   "lat": 43.269241,
+   "lng": 5.394907,
+   "theme": "other",
+   "fame": 56,
+   "summary": "Inauguré le 13 juin 1937, ce stade accueillait courses cyclistes, boxe avec Marcel Cerdan et même du baseball joué par les troupes américaines à la Libération. Privé de toit pour la Coupe du monde 1998, surnommé l'Enrhumeur par Rolland Courbis, il retrouve une couverture pour l'Euro 2016 : 67 394 places, deuxième stade de France.",
+   "wiki": "Stade Vélodrome",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Stade%20V%C3%A9lodrome%20closeup.jpg?width=960",
+   "photoBy": "Bernard Ddd",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Stade Vélodrome",
+    "es": "Stade Vélodrome",
+    "it": "stadio Vélodrome"
+   }
+  },
+  {
+   "id": "Q371217",
+   "name": "Marseille-Saint-Charles",
+   "lat": 43.303056,
+   "lng": 5.381111,
+   "theme": "other",
+   "fame": 21,
+   "summary": "Le 8 janvier 1848, le premier convoi officiel quitte la gare pour Arles et retour : 172 kilomètres en cinq heures, sous la neige et la pluie. Isolée sur son plateau, la gare n'est reliée au centre-ville par un escalier monumental qu'en 1925. Depuis 2007, la halle Honnorat accueille les voyageurs sous 24 pins factices.",
+   "wiki": "Gare de Marseille-Saint-Charles",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/L04%20176%20Bf%20Marseille%20Saint-Charles%2C%20Kopfbau.jpg?width=960",
+   "photoBy": "Falk2",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Marseille-Saint-Charles station",
+    "es": "estación de Marsella-San Carlos",
+    "it": "stazione di Marsiglia Saint-Charles"
+   }
+  },
+  {
+   "id": "Q2587975",
+   "name": "cité radieuse de Marseille",
+   "lat": 43.2614,
+   "lng": 5.39639,
+   "theme": "other",
+   "fame": 9,
+   "summary": "Édifiée de 1947 à 1952 par Le Corbusier, cette barre sur pilotis voulait être un village vertical : 337 appartements desservis par des rues intérieures, commerces, école et piste de course sur le toit. Les Marseillais l'ont surnommée la maison du fada » ; l'UNESCO l'a classée au patrimoine mondial en 2016.",
+   "wiki": "Cité radieuse de Marseille",
+   "alt": {
+    "en": "Unité d'Habitation de Marseille",
+    "es": "Unité d’Habitation de Marseille",
+    "it": "Unité d'Habitation de Marseille"
+   }
+  },
+  {
+   "id": "Q58208336",
+   "name": "Tour La Marseillaise",
+   "lat": 43.313139,
+   "lng": 5.366889,
+   "theme": "other",
+   "fame": 15,
+   "summary": "Cette tour de bureaux de 136 mètres signée Jean Nouvel, inaugurée en octobre 2018, est la deuxième plus haute de Marseille derrière la tour CMA CGM. Selon le magazine Capital, les trois quarts de ses plateaux sont occupés par des groupes publics ou liés aux marchés publics : les seules entreprises privées sont Orange et Haribo.",
+   "wiki": "Tour La Marseillaise",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Bassin%20de%20la%20Joliette%20%40%20Rade%20de%20Marseille.jpg?width=960",
+   "photoBy": "Rémih",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Tour La Marseillaise",
+    "es": "La Marseillaise",
+    "it": "Tour La Marseillaise"
+   }
+  },
+  {
+   "id": "Q3533034",
+   "name": "Tour CMA-CGM",
+   "lat": 43.315039,
+   "lng": 5.365806,
+   "theme": "other",
+   "fame": 12,
+   "summary": "Dessinée par Zaha Hadid pour le siège de l'armateur CMA CGM, la tour plafonne à 147 mètres : le maire Jean-Claude Gaudin demandait qu'elle ne dépasse pas Notre-Dame-de-la-Garde et ses 154 mètres. Son hall devait abriter le plus grand aquarium privé d'Europe, souhait de Jacques Saadé abandonné pour des précautions techniques.",
+   "wiki": "Tour CMA CGM",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Digue%20du%20Fort%20Saint-Jean%2C%20Marseille%20-%20panoramio%20%281%29.jpg?width=960",
+   "photoBy": "Patrick Nouhailler's…",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "CMA CGM Tower",
+    "es": "Tour CMA CGM",
+    "it": "Torre CMA CGM"
+   }
+  },
+  {
+   "id": "Q3033477",
+   "name": "Docks",
+   "lat": 43.306944,
+   "lng": 5.366389,
+   "theme": "other",
+   "fame": 4,
+   "summary": "Construits de 1858 à 1864 sur le modèle des docks de Londres, ces entrepôts jouent le calendrier : sept étages comme les jours de la semaine, 365 mètres de long comme les jours de l'année, 52 portes comme les semaines, quatre cours comme les saisons. Fermés en 1988, ils rouvrent en 2015 et abritent aujourd'hui bureaux et commerces.",
+   "wiki": "Docks (Marseille)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/H%C3%B4tel%20de%20Direction%20des%20Docks%20de%20Marseille.jpg?width=960",
+   "photoBy": "Acanivenc",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Docks"
+   }
+  },
+  {
+   "id": "Q15636236",
+   "name": "Téléscaphe",
+   "lat": 43.2113,
+   "lng": 5.35064,
+   "theme": "other",
+   "fame": 5,
+   "summary": "Un téléphérique sous-marin : inauguré en juin 1967 entre les Goudes et la calanque de Callelongue, le téléscaphe promenait ses passagers sur cinq cents mètres, à une dizaine de mètres de profondeur, pour douze francs. Échec commercial, il ne dure qu'une année, du fait de son coût important, de décisions politiques et d'accidents supposés.",
+   "wiki": "Téléscaphe",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/T%C3%A9l%C3%A9scaphe.jpg?width=960",
+   "photoBy": "Maviesurmars from Marseille, FRANCE",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Téléscaphe"
+   }
+  },
+  {
+   "id": "Q23787696",
+   "name": "base sous-marine de Marseille Martha",
+   "lat": 43.338556,
+   "lng": 5.346583,
+   "theme": "other",
+   "fame": 3,
+   "summary": "Ce bunker pour sous-marins allemands, nom de code Martha, resté inachevé après le débarquement allié d'août 1944, dort sous un plafond de béton de 5,50 mètres d'épaisseur. Trop coûteux à détruire, il abrite depuis 2020 un centre de données; des fresques probablement peintes par des prisonniers allemands y ont été redécouvertes.",
+   "wiki": "Base sous-marine de Marseille",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/U-Boot-Bunker%20Martha%200697.jpg?width=960",
+   "photoBy": "Gerd Fahrenhorst",
+   "photoLic": "CC BY 4.0",
+   "alt": {
+    "en": "ex U-Boot-Bunker Martha"
+   }
+  },
+  {
+   "id": "Q3268957",
+   "name": "lycée Thiers",
+   "lat": 43.296854,
+   "lng": 5.38261,
+   "theme": "other",
+   "fame": 3,
+   "summary": "Le plus ancien lycée de Marseille, créé en 1802 comme lycée impérial dans le couvent des Bernardines édifié en 1746. Adolphe Thiers y fut élève, Ampère y mourut en 1836, et son censeur José Custódio de Faria, incarcéré au château d'If, fournit la base d'un épisode du Comte de Monte-Cristo.",
+   "wiki": "Lycée Thiers",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Entr%C3%A9e%20Lyc%C3%A9e%20Thiers.jpg?width=960",
+   "photoBy": "The original uploader was Christophe.moustier at French Wikipedia.",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Lycée Thiers",
+    "es": "Lycée Thiers",
+    "it": "liceo Thiers"
+   }
+  },
+  {
+   "id": "Q3558775",
+   "name": "villa Valmer",
+   "lat": 43.2797,
+   "lng": 5.355,
+   "theme": "other",
+   "fame": 3,
+   "summary": "Construite en 1865 par l'architecte Condamin sur la corniche Kennedy, cette villa néo-Renaissance fut la résidence d'été du fabricant d'huile d'olive Charles Gounelle. Expropriée par le régime de Vichy, jamais restituée à ses propriétaires, elle s'appelait d'abord Vague à la mer : Valmer, par contraction.",
+   "wiki": "Villa Valmer",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Villa%20Valmer%20Marseille.JPG?width=960",
+   "photoBy": "TouN",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Villa Valmer"
+   }
+  },
+  {
+   "id": "Q3558618",
+   "name": "villa La Palestine",
+   "lat": 43.3611,
+   "lng": 5.31259,
+   "theme": "other",
+   "fame": 5,
+   "summary": "Fasciné par une maquette de maison néo-mauresque vue à l'Exposition universelle de Paris, Pierre Leclerc, riche maître tailleur de Bourges, fait bâtir en 1906 cette folie orientale à l'Estaque par les frères Olive. Ouverte une seule fois, aux Journées du Patrimoine 1991, devant la déferlante de visiteurs la famille n'en rouvrit jamais les portes.",
+   "wiki": "Villa La Palestine",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marseille-villa-Palestine.jpg?width=960",
+   "photoBy": "Rvalette",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Villa La Palestine"
+   }
+  },
+  {
+   "id": "Q99194988",
+   "name": "savonnerie du Fer-à-cheval",
+   "lat": 43.321455,
+   "lng": 5.390569,
+   "theme": "other",
+   "fame": 1,
+   "summary": "D'abord fabrique de bougies installée en 1850 au 66 chemin de Sainte-Marthe, elle devient savonnerie en 1856 : c'est la plus ancienne savonnerie marseillaise. Elle produit des savons à l'huile d'olive ; son bâtiment des chaudrons et la salle en sous-sol aux sept cuves en tôle rivetées sont inscrits aux monuments historiques depuis 2019.",
+   "wiki": "Savonnerie du Fer-à-cheval",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Fer%20%C3%A0%20Cheval%2C%20mur.jpg?width=960",
+   "photoBy": "Fr.Latreille",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q1065120",
+   "name": "centre de la Vieille Charité",
+   "lat": 43.300205,
+   "lng": 5.367774,
+   "theme": "museums",
+   "fame": 5,
+   "summary": "Commencée en 1671 sur les plans de Pierre Puget pour enfermer les pauvres de la ville, la Vieille Charité aligne trois étages de galeries autour d'une chapelle à coupole ovoïde. Proche de la disparition dans les années 1950, elle abrite aujourd'hui des institutions culturelles de Marseille.",
+   "wiki": "Vieille Charité",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Vieille%20Charit%C3%A9.jpg?width=960",
+   "photoBy": "Vincent 13",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "La Vieille Charité",
+    "it": "La Vieille Charité"
+   }
+  },
+  {
+   "id": "Q166827",
+   "name": "Les Goudes",
+   "lat": 43.216111,
+   "lng": 5.345833,
+   "theme": "streets",
+   "fame": 3,
+   "summary": "Une route sans issue, puis plus rien : Les Goudes, c'est le bout du monde marseillais. Simple abri où les pêcheurs surpris par un coup de tabac attendaient l'accalmie, la crique s'industrialise au XIXe siècle (soude, plomb, soufre), avant que les pierres des usines mortes ne finissent en cabanons.",
+   "wiki": "Les Goudes",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20port%20des%20Goudes%20%2845851906375%29.jpg?width=960",
+   "photoBy": "Jeanne Menjoulet from Paris, France",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Les Goudes"
+   }
+  },
+  {
+   "id": "Q12949581",
+   "name": "Malmousque",
+   "lat": 43.282545,
+   "lng": 5.348035,
+   "theme": "streets",
+   "fame": 3,
+   "summary": "Un petit port et d'anciens cabanons de pêcheurs réhabilités : Malmousque, sous-quartier d'Endoume, tient son nom du provençal Malamosca, littéralement « mauvaise mouche », dont l'origine reste obscure.",
+   "wiki": "Malmousque",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Face%20%C3%A0%20Malmousque%20%2850780394371%29.jpg?width=960",
+   "photoBy": "Jeanne Menjoulet from Paris, France",
+   "photoLic": "CC BY 2.0"
+  },
+  {
+   "id": "Q1229951",
+   "name": "L'Estaque",
+   "lat": 43.364509,
+   "lng": 5.316188,
+   "theme": "streets",
+   "fame": 12,
+   "summary": "Hameau de pêcheurs et de fabricants de tuiles devenu village ouvrier, L'Estaque a inspiré Cézanne, Braque et Renoir entre 1870 et 1914. Frappé par l'effondrement industriel à partir des années 1940, filmé par Robert Guédiguian, le quartier reste réputé pour son ambiance de village.",
+   "wiki": "L'Estaque",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/L%27Estaque%20depuis%20le%20port%202.jpg?width=960",
+   "photoBy": "Irønie",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "L'Estaque",
+    "es": "L'Estaque",
+    "it": "L'Estaque"
+   }
+  },
+  {
+   "id": "Q622500",
+   "name": "château d'If",
+   "lat": 43.279861,
+   "lng": 5.325139,
+   "theme": "palaces",
+   "fame": 39,
+   "summary": "Édifié sur ordre de François Ier entre 1529 et 1531 sur un îlot de la rade de Marseille, le château d'If a surtout servi de prison pendant ses 400 ans d'utilisation. Alexandre Dumas l'a rendu célèbre en y faisant séjourner Edmond Dantès, personnage du Comte de Monte-Cristo. On y accède en bateau : c'est l'un des sites les plus visités de la ville.",
+   "wiki": "Château d'If",
+   "remote": true,
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A2teau%20d%27If%20%40%20Baie%20de%20Marseille%2001.jpg?width=960",
+   "photoBy": "Rémih",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Château d'If",
+    "es": "Castillo de If",
+    "it": "Castello d'If"
+   }
+  },
+  {
+   "id": "Q1464953",
+   "name": "îles du Frioul",
+   "lat": 43.275487,
+   "lng": 5.306647,
+   "theme": "water",
+   "fame": 19,
+   "summary": "Pomègues, Ratonneau, If et Tiboulen : quatre îles à 1,5 km au large de Marseille. Longtemps terrain militaire interdit au public, l'archipel ne s'ouvre qu'en 1975, quand le maire Gaston Defferre transforme la rade en port de plaisance. Des navettes relient le Vieux-Port à ces îles sans voitures, où vit une centaine d'habitants à l'année.",
+   "wiki": "Îles du Frioul",
+   "remote": true,
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marseille-iles-frioul.jpg?width=960",
+   "photoBy": "No machine-readable author provided. Jddmano assumed (based on copyright claims)",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Frioul Islands",
+    "es": "Archipiélago de Frioul",
+    "it": "Arcipelago delle Frioul"
+   }
+  },
+  {
+   "id": "Q2933606",
+   "name": "calanque de Sugiton",
+   "lat": 43.210556,
+   "lng": 5.455556,
+   "theme": "water",
+   "fame": 3,
+   "summary": "Son eau si fraîche lui vaut le surnom provençal de « rafrège cuou », entre mistral, ombre et sources froides. Près du rivage émerge le rocher du Torpilleur, un îlot qui ressemble à un navire de guerre. Face à la surfréquentation, un quota estival de visiteurs sur réservation a été instauré ; comptez environ une heure de marche depuis Luminy.",
+   "wiki": "Calanque de Sugiton",
+   "remote": true,
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Calanca%20de%20Sugiton.JPG?width=960",
+   "photoBy": "Nicolas Eynaud",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Calanque de Sugiton"
+   }
+  },
+  {
+   "id": "Q2933600",
+   "name": "calanque de Morgiou",
+   "lat": 43.208889,
+   "lng": 5.449167,
+   "theme": "water",
+   "fame": 3,
+   "summary": "En 1622, les pêcheurs de Marseille y organisèrent une gigantesque pêche au thon, une « madrague », pour la venue du roi Louis XIII. Tout près, la grotte Cosquer s'ouvre à 37 mètres sous la surface, ornée de peintures de 27 000 à 19 000 ans avant notre ère. Son entrée est condamnée, mais la calanque reste un départ de randonnées et d'escalade.",
+   "wiki": "Calanque de Morgiou",
+   "remote": true,
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marseille%20Calanque%20Morgiou%2002.jpg?width=960",
+   "photoBy": "Benh LIEU SONG",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Calanque de Morgiou"
+   }
+  },
+  {
+   "id": "Q2971172",
+   "name": "château de la Buzine",
+   "lat": 43.2953,
+   "lng": 5.5025,
+   "theme": "palaces",
+   "fame": 3,
+   "summary": "Marcel Pagnol l'achète en 1941 pour en faire une « Cité du cinéma » et y reconnaît une propriété traversée dans son enfance : le « château de ma mère » de ses Souvenirs d'enfance. Édifié au XIXe siècle dans le 11e arrondissement, il abrite depuis 2010 la Maison des cinématographies de la Méditerranée et sa salle de cinéma de 350 places.",
+   "wiki": "Château de la Buzine",
+   "remote": true,
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marseille-Buzine78.JPG?width=960",
+   "photoBy": "Fr.Latreille",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Château de la Buzine",
+    "it": "Château de la buzine"
+   }
+  }
+ ]
+}

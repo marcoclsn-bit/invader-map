@@ -477,6 +477,7 @@ export default function TrajetScreen() {
 
       const inCorridor = [];
       for (const p of getPois(currentCityCode)) {
+        if (p.remote) continue; // jamais suggéré sur un trajet à pied (île, calanque lointaine)
         if (!poiPrefs.families.has(familyOf(p))) continue;
         if (p.lng < minLng || p.lng > maxLng || p.lat < minLat || p.lat > maxLat) continue;
         const near = turf.nearestPointOnLine(line, turf.point([p.lng, p.lat]), { units: 'kilometers' });

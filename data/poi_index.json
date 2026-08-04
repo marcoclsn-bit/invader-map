@@ -1,7 +1,17 @@
 {
  "version": 18,
- "updatedAt": "2026-07-31",
+ "updatedAt": "2026-08-04",
  "cities": {
+  "MARS": {
+   "version": 1,
+   "updatedAt": "2026-08-04",
+   "count": 103,
+   "langs": {
+    "en": 1,
+    "es": 1,
+    "it": 1
+   }
+  },
   "PA": {
    "version": 18,
    "updatedAt": "2026-07-31",

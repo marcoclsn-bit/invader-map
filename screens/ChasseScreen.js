@@ -849,7 +849,11 @@ export default function ChasseScreen({ route }) {
 
       const alpha = poiEnabled ? (POI_ALPHA[objective] ?? 0) : 0;
       const selected = planHunt(startLon, startLat, candidates, budgetMin, SPEEDS[profile], {
-        pois: alpha > 0 ? getPois(currentCityCode).filter(p => poiPrefs.families.has(familyOf(p))) : [],
+        // `remote` : lieux consultables sur la carte mais impossibles à intégrer à
+        // un parcours à pied (île, calanque lointaine). Sans ce filtre, un budget
+        // généreux pouvait insérer le château d'If dans une chasse, et le calcul
+        // d'itinéraire ORS échouait sur la traversée maritime.
+        pois: alpha > 0 ? getPois(currentCityCode).filter(p => !p.remote && poiPrefs.families.has(familyOf(p))) : [],
         alpha,
       });
 

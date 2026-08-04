@@ -145,7 +145,7 @@
     "objectiveHint_balanced": "Invaders in the corridor, plus a few notable places.",
     "objectiveHint_visit": "Invaders in the corridor and as many places to see as possible.",
     "corridorLabel": "Corridor",
-    "poiUnavailable": "Places to discover aren't available in {{city}} yet, so the route only includes Invaders. Paris is the only documented city for now."
+    "poiUnavailable": "Places to discover aren't available in {{city}} yet, so the route only includes Invaders."
   },
   "hunt": {
     "aroundMe": "Around me",
@@ -213,7 +213,7 @@
       "near": "Invader nearby, off route",
       "done": "Already flashed"
     },
-    "poiUnavailable": "Places to discover aren't available in {{city}} yet, so the route only includes Invaders. Paris is the only documented city for now."
+    "poiUnavailable": "Places to discover aren't available in {{city}} yet, so the route only includes Invaders."
   },
   "palmares": {
     "title": "Cities",
