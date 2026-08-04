@@ -2,6 +2,16 @@
  "version": 18,
  "updatedAt": "2026-08-04",
  "cities": {
+  "LY": {
+   "version": 1,
+   "updatedAt": "2026-08-04",
+   "count": 70,
+   "langs": {
+    "en": 1,
+    "es": 1,
+    "it": 1
+   }
+  },
   "MARS": {
    "version": 1,
    "updatedAt": "2026-08-04",

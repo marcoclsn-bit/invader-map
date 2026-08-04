@@ -1,0 +1,1239 @@
+{
+ "version": 1,
+ "city": "LY",
+ "attribution": "Lieux : Wikidata (CC0) · Résumés d’après Wikipédia (CC BY-SA) · Photos : Wikimedia Commons",
+ "updatedAt": "2026-08-04",
+ "pois": [
+  {
+   "id": "Q511",
+   "name": "musée des Beaux-Arts de Lyon",
+   "lat": 45.766944,
+   "lng": 4.833611,
+   "theme": "museums",
+   "fame": 28,
+   "summary": "Installé dans l'ancienne abbaye Saint-Pierre, place des Terreaux, ce musée fondé en 1801 comporta longtemps un salon des fleurs destiné aux dessinateurs de la soierie lyonnaise. Il conserve La Lapidation de saint Étienne, premier tableau connu de Rembrandt, et fut en 1901 le premier musée hors de Paris à acheter des impressionnistes.",
+   "wiki": "Musée des Beaux-Arts de Lyon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Facade%20Musee%20des%20Beaux-Arts%20de%20Lyon%20n02.jpg?width=960",
+   "photoBy": "Jastrow",
+   "photoLic": "CC BY 2.5",
+   "alt": {
+    "en": "Museum of Fine Arts of Lyon",
+    "es": "Museo de Bellas Artes de Lyon",
+    "it": "Museo di belle arti di Lione"
+   }
+  },
+  {
+   "id": "Q509",
+   "name": "Lugdunum",
+   "lat": 45.760419,
+   "lng": 4.819914,
+   "theme": "museums",
+   "fame": 8,
+   "summary": "Enterré dans le versant de la colline de Fourvière, ce musée conçu par Bernard Zehrfuss et inauguré en 1975 déroule ses collections le long d'une rampe de béton descendant en spirale. On y voit la table claudienne, le calendrier de Coligny et un buste de Caracalla remis par le Louvre : l'empereur était né à Lugdunum.",
+   "wiki": "Lugdunum (musée)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Musee%20galloromain%20Lyon5%20fr%20entree.JPG?width=960",
+   "photoBy": "Alorange",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Lugdunum Musée et Théâtres",
+    "es": "Museo Lugdunum",
+    "it": "Museo Lugdunum"
+   }
+  },
+  {
+   "id": "Q8397",
+   "name": "Gadagne",
+   "lat": 45.764167,
+   "lng": 4.8275,
+   "theme": "museums",
+   "fame": 8,
+   "summary": "Cet hôtel particulier du Vieux Lyon, aménagé au début du XVIe siècle, fut occupé par les Gadagne, banquiers d'origine florentine dont la fortune inspira le dicton « riche comme Gadagne ». Il abrite le musée d'histoire de Lyon, inauguré en 1921, et le musée des arts de la marionnette, organisé autour de la marionnette originale de Guignol.",
+   "wiki": "Gadagne (musées)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Cour-gadagne%20Photo%20Service-communication-Gadagne%202021%20%285%29.jpg?width=960",
+   "photoBy": "Mathilde HOSPITAL (Gadagne)",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Gadagne (museums)",
+    "es": "Gadagne (museos)",
+    "it": "Gadagne (musei)"
+   }
+  },
+  {
+   "id": "Q8330",
+   "name": "musée d'Art contemporain de Lyon",
+   "lat": 45.784167,
+   "lng": 4.8525,
+   "theme": "museums",
+   "fame": 8,
+   "summary": "Installé depuis 1995 à la cité internationale, près du parc de la Tête d'or, le macLYON occupe un bâtiment de Renzo Piano qui conserve la façade de l'ancien palais de la foire de Lyon. Sa politique de production d'œuvres imposait à l'architecte un espace intérieur totalement modifiable, adapté à chaque scénario d'exposition.",
+   "wiki": "Musée d'Art contemporain de Lyon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/General%20view%20-%20Parc%20de%20la%20T%C3%AAte%20d%27Or%20-%20DSC05248.jpg?width=960",
+   "photoBy": "Daderot",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "Contemporary Arts Museum of Lyon",
+    "es": "Musée d'art contemporain de Lyon",
+    "it": "Museo d'arte contemporanea di Lione"
+   }
+  },
+  {
+   "id": "Q3330146",
+   "name": "Musée des Tissus",
+   "lat": 45.7532,
+   "lng": 4.83184,
+   "theme": "museums",
+   "fame": 6,
+   "summary": "Fondé par la Chambre de commerce et ouvert en 1864, ce musée installé depuis 1946 dans l'hôtel de Villeroy conserve plus de 2,5 millions de textiles couvrant 4 000 ans d'histoire de l'étoffe. Menacé de démantèlement à partir de 2014, il fut sauvé en 2017 : les deux hôtels particuliers furent cédés à la région pour un euro symbolique.",
+   "wiki": "Musée des Tissus",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lyon%20mus%C3%A9etissus.jpg?width=960",
+   "photoBy": "Karldupart",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Textile Arts Museum"
+   }
+  },
+  {
+   "id": "Q3279836",
+   "name": "maison des Canuts",
+   "lat": 45.7772,
+   "lng": 4.83385,
+   "theme": "museums",
+   "fame": 2,
+   "summary": "À la Croix-Rousse, ce lieu créé en 1970 par la coopérative de tisseurs Cooptiss fait revivre le monde des canuts, les ouvriers en soie du quartier. Les visites commentées, avec démonstration de tissage sur un métier à bras Jacquard, retracent l'histoire de la soierie lyonnaise depuis 1536, du cycle du ver à soie aux révoltes des canuts.",
+   "wiki": "Maison des Canuts",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Maison%20des%20Canuts%20Panneau.JPG?width=960",
+   "photoBy": "This picture belongs to Xavier Caré.\nPlease credit : Xavier Caré / Wikimedia Com",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Maison des Canuts"
+   }
+  },
+  {
+   "id": "Q8323",
+   "name": "musée de l'Imprimerie et de la Communication graphique",
+   "lat": 45.764444,
+   "lng": 4.834722,
+   "theme": "museums",
+   "fame": 4,
+   "summary": "Créé en 1964 par l'imprimeur Maurice Audin et l'historien du livre Henri-Jean Martin, ce musée occupe l'hôtel de la Couronne, édifice de la fin du XVe siècle où siégèrent les échevins de Lyon de 1604 à 1655. Son parcours va des origines de l'imprimerie à la société de l'information; un atelier typographique en activité y est installé depuis 1988.",
+   "wiki": "Musée de l'Imprimerie et de la Communication graphique",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Musee%20Imprimerie%20Lyon2%20fr%20facade.JPG?width=960",
+   "photoBy": "Alorange",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Musée de l'Imprimerie et de la Communication Graphique",
+    "es": "Musée de l'Imprimerie",
+    "it": "Musée de l'Imprimerie"
+   }
+  },
+  {
+   "id": "Q3330257",
+   "name": "musée Miniature et Cinéma",
+   "lat": 45.76187,
+   "lng": 4.82734,
+   "theme": "museums",
+   "fame": 2,
+   "summary": "Fondé en 2005 par le miniaturiste Dan Ohlmann dans l'ancienne Maison des avocats, rue Saint-Jean, ce musée privé réunit deux collections : l'une consacrée à l'art de la miniature, l'autre aux effets spéciaux du cinéma, avec douze salles présentant animatroniques, maquettes, costumes et décors, dont ceux du film Le Parfum.",
+   "wiki": "Musée Miniature et Cinéma",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Quartier%20Saint%20Jean%20014.jpg?width=960",
+   "photoBy": "Arnaud 25",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Musée Miniature et Cinéma"
+   }
+  },
+  {
+   "id": "Q1516",
+   "name": "basilique Notre-Dame de Fourvière",
+   "lat": 45.762292,
+   "lng": 4.822556,
+   "theme": "religious",
+   "fame": 25,
+   "summary": "Bâtie à partir de 1872 après le vœu qui plaça Lyon sous la protection de Marie pendant la guerre de 1870, cette basilique néo-byzantine est l'œuvre de Pierre Bossan. Le 8 décembre 1852, l'inauguration de la statue dorée de la Vierge sur le clocher voisin vit les Lyonnais allumer des lumignons : la fête des Lumières était née.",
+   "wiki": "Basilique Notre-Dame de Fourvière",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/France-003038%20-%20Basilica%20of%20Notre-Dame%20de%20Fourvi%C3%A8re%20%2815939822990%29.jpg?width=960",
+   "photoBy": "Dennis G. Jarvis",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Basilica of Notre-Dame de Fourvière",
+    "es": "basílica Notre-Dame de Fourvière",
+    "it": "basilica di Notre-Dame de Fourvière"
+   }
+  },
+  {
+   "id": "Q1521",
+   "name": "primatiale Saint-Jean de Lyon",
+   "lat": 45.760833,
+   "lng": 4.827222,
+   "theme": "religious",
+   "fame": 26,
+   "summary": "Siège de l'archevêque de Lyon, primat des Gaules, la cathédrale Saint-Jean fut bâtie de 1175 à 1480, chantier commencé en roman et achevé en gothique. Elle abrite une horloge astronomique du XIVe siècle, restaurée en 2021, et fut, par attachement au rite lyonnais, la dernière cathédrale de France à se doter d'un orgue, en 1841.",
+   "wiki": "Primatiale Saint-Jean de Lyon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/007.%20Photo%20prise%20depuis%20les%20toits%20de%20la%20Basilique%20Notre-Dame%20de%20Fourvi%C3%A8re.JPG?width=960",
+   "photoBy": "Otourly",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Lyon Cathedral",
+    "es": "Catedral de Lyon",
+    "it": "cattedrale di Saint-Jean"
+   }
+  },
+  {
+   "id": "Q3246",
+   "name": "basilique Saint-Martin d'Ainay",
+   "lat": 45.753711,
+   "lng": 4.827239,
+   "theme": "religious",
+   "fame": 10,
+   "summary": "Dédiée en 1107 par le pape Pascal II, cette abbatiale est l'une des rares églises romanes conservées à Lyon. Devenue grenier à blé à la Révolution, ce qui lui évite la destruction, elle rouvre au culte en 1802. Les quatre colonnes de la croisée du transept seraient des réemplois de l'autel du sanctuaire fédéral des Trois Gaules.",
+   "wiki": "Basilique Saint-Martin d'Ainay",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lyon%202e%20-%20Basilique%20Saint-Martin%20d%27Ainay%20depuis%20la%20rue%20Bourgelat%20%28mars%202019%29.jpg?width=960",
+   "photoBy": "Sebleouf",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Basilica of Saint-Martin d'Ainay",
+    "es": "basílica de San Martín de Ainay",
+    "it": "basilica di San Martino d'Ainay"
+   }
+  },
+  {
+   "id": "Q8250",
+   "name": "église Saint-Nizier de Lyon",
+   "lat": 45.764711,
+   "lng": 4.833597,
+   "theme": "religious",
+   "fame": 9,
+   "summary": "Reconstruite aux XIVe et XVe siècles en gothique flamboyant, Saint-Nizier fut l'église du peuple et des bourgeois lyonnais, face à une cathédrale qui rassemblait les élites. Elle doit son nom à l'évêque Nizier, mort en 573, dont le corps attirait les foules. Son registre paroissial a permis d'observer les débuts de la peste noire à Lyon en 1348.",
+   "wiki": "Église Saint-Nizier de Lyon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89glise%20St%20Nizier%20Lyon%205.jpg?width=960",
+   "photoBy": "Chabe01",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Église Saint-Nizier",
+    "es": "iglesia de San Niceto",
+    "it": "chiesa di Saint-Nizier"
+   }
+  },
+  {
+   "id": "Q8600",
+   "name": "église Saint-Bruno des Chartreux",
+   "lat": 45.771081,
+   "lng": 4.822375,
+   "theme": "religious",
+   "fame": 10,
+   "summary": "Église de la chartreuse de Lyon jusqu'à la Révolution, Saint-Bruno est l'un des rares édifices religieux baroques de la ville. Son dôme du XVIIIe siècle, financé par le Consulat à condition d'être visible depuis le centre de Lyon, culmine à 50 mètres. À l'intérieur, le baldaquin dessiné par Servandoni voulait magnifier la présence du Christ.",
+   "wiki": "Église Saint-Bruno-les-Chartreux de Lyon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Exterieur%20StBruno.JPG?width=960",
+   "photoBy": "No machine-readable author provided. Digne~commonswiki assumed (based on copyrig",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Church of Saint-Bruno des Chartreux",
+    "es": "Church of Saint-Bruno des Chartreux",
+    "it": "chiesa di San Bruno della Certosa"
+   }
+  },
+  {
+   "id": "Q5278",
+   "name": "sanctuaire fédéral des Trois Gaules",
+   "lat": 45.770556,
+   "lng": 4.830556,
+   "theme": "religious",
+   "fame": 10,
+   "summary": "Érigé en 12 av. J.-C. sur les pentes de la Croix-Rousse, ce sanctuaire réunissait chaque année, à partir du 1er août, les délégués des nations gauloises pour le culte de Rome et d'Auguste. En 1528, un drapier découvre dans sa vigne la partie inférieure de la Table Claudienne, plaque de bronze gravée du discours de l'empereur Claude en 48.",
+   "wiki": "Sanctuaire fédéral des Trois Gaules",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Dupondius%20Auguste%20Autel%20de%20Lyon.jpg?width=960",
+   "photoBy": "Siren-Com",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Sanctuary of the Three Gauls",
+    "es": "santuario federal de las tres Galias",
+    "it": "Santuario delle Tre Gallie"
+   }
+  },
+  {
+   "id": "Q10181",
+   "name": "église Saint-Georges",
+   "lat": 45.757672,
+   "lng": 4.825471,
+   "theme": "religious",
+   "fame": 9,
+   "summary": "Le site est occupé dès le VIe siècle par un lieu de culte fondé par Sacerdos ; restaurée vers 800 par Leidrade, l'église prend le vocable de saint Georges et donne son nom au quartier. Rattachée dès 1315 à la commanderie des chevaliers de Saint-Jean de Jérusalem, elle est rebâtie en style néogothique par Pierre Bossan en 1844-1845.",
+   "wiki": "Église Saint-Georges de Lyon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89glise%20Saint-Georges%2C%20Lyon.jpg?width=960",
+   "photoBy": "Matt Neale from UK",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Église Saint-Georges",
+    "es": "iglesia de Saint-Georges",
+    "it": "chiesa di San Giorgio"
+   }
+  },
+  {
+   "id": "Q8238",
+   "name": "basilique Saint-Bonaventure",
+   "lat": 45.763144,
+   "lng": 4.836905,
+   "theme": "religious",
+   "fame": 8,
+   "summary": "Église du couvent des Cordeliers, elle accueillit la dépouille du cardinal Bonaventure, mort à Lyon en plein concile dans la nuit du 14 au 15 juillet 1274. Consacrée inachevée en 1328 et achevée vers 1484, c'est le seul édifice médiéval subsistant dans le nord du 2e arrondissement. Le pape François l'a érigée en basilique mineure en 2019.",
+   "wiki": "Basilique Saint-Bonaventure de Lyon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Exterior%20of%20%C3%89glise%20Saint-Bonaventure%2003.jpg?width=960",
+   "photoBy": "Kent Wang",
+   "photoLic": "CC BY 4.0",
+   "alt": {
+    "en": "Saint-Bonaventure Basilica",
+    "es": "basílica San Buenaventura",
+    "it": "chiesa di San Bonaventura"
+   }
+  },
+  {
+   "id": "Q9528",
+   "name": "église Saint-Paul de Lyon",
+   "lat": 45.76665,
+   "lng": 4.82708,
+   "theme": "religious",
+   "fame": 8,
+   "summary": "Église attestée dès le IXe siècle dans des documents transmis par l'évêque Leidrade à Charlemagne. Les parties romanes, entreprises dans la seconde moitié du XIIe siècle, sont achevées au XIIIe, puis complétées d'éléments gothiques aux XVe et XVIe siècles. La flèche en pierre, détruite en 1817, est remplacée en 1875 par une flèche en bois.",
+   "wiki": "Église Saint-Paul de Lyon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89glise%20Saint-Paul%20de%20Lyon.jpg?width=960",
+   "photoBy": "Samari Prismade",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Église Saint-Paul",
+    "es": "Église Saint-Paul",
+    "it": "chiesa di San Paolo"
+   }
+  },
+  {
+   "id": "Q1531",
+   "name": "grande synagogue de Lyon",
+   "lat": 45.7571,
+   "lng": 4.8277,
+   "theme": "religious",
+   "fame": 7,
+   "summary": "Construite de 1863 à 1864 quai Tilsitt dans un style néo-byzantin, elle est l'œuvre du jeune architecte Abraham Hirsch, devenu plus tard architecte officiel de la ville de Lyon. Douze colonnes, rappelant les douze tribus d'Israël, séparent la nef des collatéraux ; l'orgue provient de la basilique Saint-Martin d'Ainay, vendu en 1864.",
+   "wiki": "Grande synagogue de Lyon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Synagogue%20Lyon2%20fr%20facade.JPG?width=960",
+   "photoBy": "Alorange",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Grande synagogue de Lyon",
+    "es": "Gran sinagoga de Lyon",
+    "it": "Grande sinagoga di Lione"
+   }
+  },
+  {
+   "id": "Q10182",
+   "name": "église Saint-Polycarpe de Lyon",
+   "lat": 45.7701,
+   "lng": 4.83375,
+   "theme": "religious",
+   "fame": 7,
+   "summary": "Ancienne église des Oratoriens, entreprise en 1665 et achevée en 1670, sa façade de Toussaint-Noël Loyer ne date que de 1756. Devenue paroissiale en 1791, elle prend le nom de saint Polycarpe, maître à penser des deux premiers évêques de Lyon. La façade garde les cicatrices du canon tiré par la Convention sur la Croix-Rousse en 1793.",
+   "wiki": "Église Saint-Polycarpe de Lyon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89glise%20Saint-Polycarpe.jpg?width=960",
+   "photoBy": "Leogs",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Église Saint-Polycarpe",
+    "es": "Église Saint-Polycarpe",
+    "it": "Église Saint-Polycarpe"
+   }
+  },
+  {
+   "id": "Q2957338",
+   "name": "chapelle de la Trinité",
+   "lat": 45.7655,
+   "lng": 4.8372,
+   "theme": "religious",
+   "fame": 5,
+   "summary": "Édifiée de 1617 à 1622 par le frère jésuite Étienne Martellange pour le collège de la Trinité, cette église baroque abrita dès 1702 le premier observatoire astronomique de Lyon, construit au-dessus de son fronton. Napoléon y préside la Consulte de Lyon en janvier 1802 ; désacralisée en 1920, elle sert aujourd'hui de salle de concerts.",
+   "wiki": "Chapelle de la Trinité de Lyon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Chapelle%20de%20la%20Trinit%C3%A9%20%28Lyon%29%20-%20fa%C3%A7ade.jpg?width=960",
+   "photoBy": "GO69",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Chapelle de la Trinité",
+    "es": "Chapelle de la Trinité"
+   }
+  },
+  {
+   "id": "Q3124",
+   "name": "amphithéâtre des Trois Gaules",
+   "lat": 45.770556,
+   "lng": 4.830556,
+   "theme": "stages",
+   "fame": 13,
+   "summary": "Au pied de la Croix-Rousse, cet amphithéâtre appartenait au sanctuaire fédéral où les soixante nations gauloises célébraient le culte de Rome et d'Auguste. Offert en 19 apr. J.-C. par un aristocrate de Saintes, agrandi à environ 20 000 places, il vit selon les historiens le supplice de martyrs chrétiens, dont Blandine, en 177.",
+   "wiki": "Amphithéâtre des Trois Gaules",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/03.%20Amphith%C3%A9atre%20des%20Trois%20Gaules.JPG?width=960",
+   "photoBy": "User:Otourly",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "amphitheater of Lyon",
+    "es": "anfiteatro de las Tres Galias",
+    "it": "Anfiteatro delle Tre Gallie"
+   }
+  },
+  {
+   "id": "Q1510",
+   "name": "théâtre antique de Lyon",
+   "lat": 45.759722,
+   "lng": 4.819722,
+   "theme": "stages",
+   "fame": 12,
+   "summary": "Adossé à la colline de Fourvière, ce théâtre construit au début de l'Empire, peut-être sous Auguste, pouvait accueillir jusqu'à 10 000 spectateurs après son agrandissement. Enseveli et oublié au Moyen Âge, il est dégagé à partir de 1933 par un chantier employant jusqu'à 120 ouvriers, et redevient scène en 1946 avec Les Perses d'Eschyle.",
+   "wiki": "Théâtre antique de Lyon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lyon%20-%20Lugdunum%20-%20Th%C3%A9atre%20Romain.jpg?width=960",
+   "photoBy": "Jean-Christophe BENOIST",
+   "photoLic": "CC BY 4.0",
+   "alt": {
+    "en": "ancient theatre of Lyon",
+    "es": "Teatro galorromano de Fourvière",
+    "it": "Teatro antico di Lione"
+   }
+  },
+  {
+   "id": "Q9496",
+   "name": "opéra de Lyon",
+   "lat": 45.767828,
+   "lng": 4.836611,
+   "theme": "stages",
+   "fame": 11,
+   "summary": "Le Grand Théâtre de 1831 n'affiche que huit muses sur son attique : faute de place, Uranie n'a jamais été réalisée. Jean Nouvel le restructure entre 1989 et 1993, ne gardant que les façades et le foyer sous une verrière culminant à 42 mètres ; sous ses arcades s'entraînent depuis les années 1990 des danseurs de breakdance.",
+   "wiki": "Opéra de Lyon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Place%20de%20la%20Com%C3%A9die%20%28Lyon%2C%202025%29.jpg?width=960",
+   "photoBy": "Corentin Eustacchi",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Opéra Nouvel",
+    "es": "Opéra Nouvel Lyon",
+    "it": "Opéra de Lyon"
+   }
+  },
+  {
+   "id": "Q4221",
+   "name": "Les Célestins, Théâtre de Lyon",
+   "lat": 45.7599,
+   "lng": 4.83137,
+   "theme": "stages",
+   "fame": 6,
+   "summary": "Un théâtre occupe depuis 1792 l'emplacement du couvent des Célestins, fondé en 1407. La salle à l'italienne de Gaspard André, inaugurée en 1877, brûle dès 1880 et rouvre en 1881, reconstruite à l'identique. En mai 68, des machinistes y cachèrent durant un an une partie des antiquités de l'institut d'égyptologie de l'université de Lyon.",
+   "wiki": "Théâtre des Célestins",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lyon%202e%20-%20Place%20des%20C%C3%A9lestins%20-%20Th%C3%A9%C3%A2tre%20des%20C%C3%A9lestins.jpg?width=960",
+   "photoBy": "Romainbehar",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "Théâtre des Célestins",
+    "es": "Teatro de los Celestinos",
+    "it": "teatro dei Celestini"
+   }
+  },
+  {
+   "id": "Q3175",
+   "name": "odéon antique de Lyon",
+   "lat": 45.758611,
+   "lng": 4.819722,
+   "theme": "stages",
+   "fame": 9,
+   "summary": "Voisin du grand théâtre sur la colline de Fourvière, cet odéon d'environ 3 000 places accueillait musique, lectures publiques et réunions ; en Gaule, seule Vienne possède aussi un tel couple. Ses ruines, dites Grottes des Sarrasins au Moyen Âge, furent longtemps prises pour l'amphithéâtre des martyrs, avant le dégagement entrepris en 1941.",
+   "wiki": "Odéon antique de Lyon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lyon%205%20-%20Od%C3%A9on%20antique%2001.jpg?width=960",
+   "photoBy": "Pymouss",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "odeon of Lyon",
+    "es": "Odeón de Lyon",
+    "it": "Odeon di Lione"
+   }
+  },
+  {
+   "id": "Q8426",
+   "name": "palais de justice historique de Lyon",
+   "lat": 45.761944,
+   "lng": 4.828056,
+   "theme": "palaces",
+   "fame": 6,
+   "summary": "Surnommé les Vingt-Quatre Colonnes, ce palais néoclassique bâti par Louis-Pierre Baltard de 1835 à 1847 borde la Saône dans le Vieux Lyon. Sa salle des pas perdus, haute de 17 mètres, fut aménagée en salle d'assises de 750 places pour le procès de Klaus Barbie, condamné en juillet 1987 pour crimes contre l'humanité.",
+   "wiki": "Palais de justice historique de Lyon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palais%20justice%20Lyon5%20fr.JPG?width=960",
+   "photoBy": "Alorange",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Palais de justice historique de Lyon",
+    "es": "Palais de justice historique de Lyon",
+    "it": "Palais de justice historique de Lyon"
+   }
+  },
+  {
+   "id": "Q8592",
+   "name": "château de Pierre Scize",
+   "lat": 45.7667,
+   "lng": 4.82139,
+   "theme": "palaces",
+   "fame": 7,
+   "summary": "De ce château perché sur un éperon rocheux dominant la Saône d'une cinquantaine de mètres, il ne reste rien : la forteresse est démolie en 1793. Demeure des archevêques de Lyon, elle devient prison d'État sous Louis XI et voit passer Ludovic Sforza, Cinq-Mars ou le marquis de Sade, qui y séjourne en 1768.",
+   "wiki": "Château de Pierre Scize",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A2teau%20de%20Pierre%20Scize%201.jpg?width=960",
+   "photoBy": "PHILDIC",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Château de Pierre Scize",
+    "es": "castillo de Pierre Scize",
+    "it": "castello di Pierre-Scize"
+   }
+  },
+  {
+   "id": "Q17319801",
+   "name": "jardin du palais Saint-Pierre",
+   "lat": 45.7668,
+   "lng": 4.83363,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "Dans l'ancien cloître de l'abbaye bénédictine devenue musée des Beaux-Arts, ce jardin est aménagé en musée de sculpture en plein air à partir de 1883. On y voit L'Ombre de Rodin, bronze fondu en 1904 aux mains volontairement inachevées, autour d'une fontaine couronnée d'un Apollon.",
+   "wiki": "Jardin du palais Saint-Pierre",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palais%20St.-Pierre%20Cour%20int%C3%A9rieure%20Lyon.jpg?width=960",
+   "photoBy": "Phinou",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "jardin du palais Saint-Pierre"
+   }
+  },
+  {
+   "id": "Q10144",
+   "name": "fontaine Bartholdi",
+   "lat": 45.767642,
+   "lng": 4.833456,
+   "theme": "monuments",
+   "fame": 8,
+   "summary": "Commandée par Bordeaux qui l'abandonna, cette fontaine de Bartholdi, réalisée par les ateliers de la statue de la Liberté, fut achetée par Lyon après l'Exposition universelle de 1889 et inaugurée place des Terreaux en 1892. Amphitrite y mène quatre chevaux marins dont les naseaux exhalent de l'eau pulvérisée.",
+   "wiki": "Fontaine Bartholdi",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lyon%201er%20-%20Fontaine%20Bartholdi%20-%20Statue%20et%20bassin.jpg?width=960",
+   "photoBy": "Romainbehar",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "Fontaine Bartholdi",
+    "es": "fuente Bartholdi",
+    "it": "fontana Bartholdi"
+   }
+  },
+  {
+   "id": "Q10147",
+   "name": "Fresque des Lyonnais",
+   "lat": 45.7681,
+   "lng": 4.82791,
+   "theme": "monuments",
+   "fame": 5,
+   "summary": "Sur 800 m2 de façade aveugle au bord de la Saône, ce trompe-l'œil peint en 1994-1995 par CitéCréation met vingt-quatre gloires lyonnaises aux fenêtres, la règle réservant les étages aux personnes décédées ; au rez-de-chaussée, des contemporains comme Paul Bocuse ou Frédéric Dard côtoient les passants.",
+   "wiki": "Fresque des Lyonnais",
+   "alt": {
+    "en": "Fresque des Lyonnais",
+    "es": "Fresco de los Lyoneses",
+    "it": "Fresque des Lyonnais"
+   }
+  },
+  {
+   "id": "Q3259169",
+   "name": "Longue traboule",
+   "lat": 45.7622,
+   "lng": 4.82694,
+   "theme": "monuments",
+   "fame": 2,
+   "summary": "La plus longue des traboules du Vieux Lyon, comme son nom l'indique : elle relie le 27 rue du Bœuf et le 54 rue Saint-Jean en traversant quatre immeubles distincts, ponctuée de plusieurs petites cours successives. Elle est ouverte au public.",
+   "wiki": "Longue Traboule",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20longue%20traboule%20-%20Lyon%20%282%29.JPG?width=960",
+   "photoBy": "Tusco",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "La longue traboule"
+   }
+  },
+  {
+   "id": "Q16303800",
+   "name": "Le Gros Caillou",
+   "lat": 45.7747,
+   "lng": 4.83517,
+   "theme": "monuments",
+   "fame": 4,
+   "summary": "Ce quartzite de 24 tonnes est un bloc erratique, transporté des Alpes jusqu'à Lyon par les glaciers. En 1890, les ouvriers creusant la tranchée du funiculaire de Croix-Paquet butent sur cette roche impossible à briser. Extraite, elle est installée en 1891 au bout du boulevard de la Croix-Rousse ; elle est un des symboles du quartier.",
+   "wiki": "Gros Caillou (Lyon)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lyon%201%20-%20Gros%20caillou.jpg?width=960",
+   "photoBy": "Pymouss",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Gros Caillou"
+   }
+  },
+  {
+   "id": "Q625",
+   "name": "tour métallique de Fourvière",
+   "lat": 45.763769,
+   "lng": 4.822267,
+   "theme": "monuments",
+   "fame": 12,
+   "summary": "Haute de 101 mètres, cette tour élevée pour l'Exposition universelle de Lyon de 1894 rappelle le troisième étage de la tour Eiffel ; une rumeur l'attribue à Gustave Eiffel, qui n'y est pour rien. Un ascenseur hissait 22 personnes au belvédère pour 1 franc. Rachetée en 1953 par la RTF, elle sert d'antenne relais, fermée au public.",
+   "wiki": "Tour métallique de Fourvière",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lyon%20-%20Tour%20m%C3%A9tallique%20de%20Fourvi%C3%A8re%2C%20septembre%202015.jpg?width=960",
+   "photoBy": "Yann Caradec from Paris, France",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Metallic tower of Fourvière",
+    "es": "Torre metálica de Fourvière",
+    "it": "torre metallica di Fourvière"
+   }
+  },
+  {
+   "id": "Q8412",
+   "name": "autels tauroboliques de Lyon",
+   "lat": 45.7604,
+   "lng": 4.8199,
+   "theme": "monuments",
+   "fame": 5,
+   "summary": "En 1704, un bloc sculpté d'une tête de taureau est découvert dans une vigne de Fourvière : un autel commémorant un taurobole, sacrifice en l'honneur de la déesse Cybèle célébré le 9 décembre 160 pour la santé de l'empereur Antonin le Pieux, alors malade. Il est conservé au musée gallo-romain avec d'autres autels du même culte.",
+   "wiki": "Autels tauroboliques de Lyon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Autel-Lyon-CIL-XIII-1751.jpg?width=960",
+   "photoBy": "Morburre",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Taurobolic Altar",
+    "es": "altar taurobólico de Lyon",
+    "it": "altare taurobolico di Lione"
+   }
+  },
+  {
+   "id": "Q3368319",
+   "name": "passerelle du Palais de Justice",
+   "lat": 45.7615,
+   "lng": 4.83002,
+   "theme": "water",
+   "fame": 3,
+   "summary": "En 1780, on franchissait ici la Saône sur une chaîne de douze bateaux, le pont Volant. La passerelle actuelle, inaugurée en 1983 après des années de mobilisation des riverains, suspend sa travée de 136 mètres à un mât unique en Y renversé peint en rouge. Elle est nommée en 2024 en l'honneur du procureur général Pierre Truche.",
+   "wiki": "Passerelle du Palais-de-Justice",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lyon%20-%20Passerelle%20du%20Palais%20de%20Justice.JPG?width=960",
+   "photoBy": "Arnaud Fafournoux",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Passerelle du Palais de Justice"
+   }
+  },
+  {
+   "id": "Q3368281",
+   "name": "passerelle Saint-Vincent",
+   "lat": 45.7675,
+   "lng": 4.82787,
+   "theme": "water",
+   "fame": 2,
+   "summary": "Les glaces de la Saône ont emporté les deux premiers ponts établis ici, en 1643 puis en 1711. La passerelle actuelle, ouverte au public fin 1832, a mieux résisté : avec celle de l'Homme de la Roche, elle est le seul pont lyonnais que les Allemands n'ont pas détruit lors de leur retraite du 2 septembre 1944.",
+   "wiki": "Passerelle Saint-Vincent",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Passerelle%20Saint%20Vincent%20Lyon.jpg?width=960",
+   "photoBy": "Emeric84",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Passerelle Saint-Vincent"
+   }
+  },
+  {
+   "id": "Q3396474",
+   "name": "pont Bonaparte",
+   "lat": 45.7595,
+   "lng": 4.82869,
+   "theme": "water",
+   "fame": 3,
+   "summary": "Entre Bellecour et Saint-Jean, un pont de bois franchit la Saône dès 1642. Le pont Tilsitt lui succède en 1807, reconstruit en 1863-1864, puis dynamité par les forces allemandes en septembre 1944. Le pont actuel, trois arches de béton armé recouvertes de pierre de Hauteville, est bâti de 1946 à 1950 et nommé Bonaparte en 1964.",
+   "wiki": "Pont Bonaparte",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Pont%20Bonaparte%20%28Lyon%2C%202025%29.jpg?width=960",
+   "photoBy": "Corentin Eustacchi",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Pont Bonaparte",
+    "es": "puente Bonaparte",
+    "it": "ponte Bonaparte"
+   }
+  },
+  {
+   "id": "Q3991",
+   "name": "parc de la Tête d'Or",
+   "lat": 45.780556,
+   "lng": 4.854167,
+   "theme": "parks",
+   "fame": 13,
+   "summary": "Ouvert dès 1857, la même année que le Central Park de New York, ce parc de 117 hectares dessiné par les frères Bühler doit son nom à une légende : un trésor comprenant une tête de christ en or y aurait été enfoui. Les fouilles menées jusqu'en 1860 n'ont rien donné ; le lac, le zoo et le jardin botanique, eux, sont bien là.",
+   "wiki": "Parc de la Tête-d'Or",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/General%20view%20-%20Parc%20de%20la%20T%C3%AAte%20d%27Or%20-%20DSC05262.jpg?width=960",
+   "photoBy": "Daderot",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "parc de la Tête d'Or",
+    "es": "parque de la Tête d'Or",
+    "it": "parco della Tête d'Or"
+   }
+  },
+  {
+   "id": "Q8668",
+   "name": "jardin botanique de Lyon",
+   "lat": 45.7754,
+   "lng": 4.8564,
+   "theme": "parks",
+   "fame": 9,
+   "summary": "Héritier du jardin botanique ouvert en 1796 au couvent de la Déserte, sur les pentes de la Croix-Rousse, il s'installe en 1857 au parc de la Tête d'or ; l'orangerie y fut transportée et remontée pierre par pierre. Il présente 15 000 taxons sur 8 hectares, dont 6 500 m2 de serres, et son herbier conserve environ 213 000 spécimens.",
+   "wiki": "Jardin botanique de Lyon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Grandes%20serres%20du%20Parc%20de%20la%20T%C3%AAte%20d%27Or%20-%203.JPG?width=960",
+   "photoBy": "Gonedelyon",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Jardin botanique de Lyon",
+    "es": "Jardín Botánico de Lyon",
+    "it": "Orto Botanico di Lione"
+   }
+  },
+  {
+   "id": "Q8670",
+   "name": "jardin Rosa Mir",
+   "lat": 45.780516,
+   "lng": 4.832057,
+   "theme": "parks",
+   "fame": 6,
+   "summary": "Jules Senis, maçon carreleur réfugié de la guerre d'Espagne, fit le vœu de construire un jardin s'il obtenait la rémission de son cancer. À partir de 1958, il dédia à sa mère Rosa Mir cette cour de 400 m2 aux colonnes tapissées de milliers de coquillages, d'inspiration catalane à la Gaudí. Il est classé monument historique depuis 1987.",
+   "wiki": "Jardin Rosa Mir",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rosa-mir-allee.jpg?width=960",
+   "photoBy": "Aurelie Chaumat",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Jardin Rosa Mir",
+    "es": "Jardín Rosa Mir",
+    "it": "Jardin Rosa Mir"
+   }
+  },
+  {
+   "id": "Q3162538",
+   "name": "jardin des Curiosités",
+   "lat": 45.755129,
+   "lng": 4.822083,
+   "theme": "parks",
+   "fame": 5,
+   "summary": "Offert par la ville de Montréal pour le vingtième anniversaire de sa coopération avec Lyon, ce jardin de 6 000 m² sur les hauteurs de Saint-Just est ouvert depuis août 2001. Six chaises-sculptures de Michel Goulet, scellées au sol, y côtoient un petit pont qui rappelle le pont Jacques-Cartier de Montréal.",
+   "wiki": "Jardin des Curiosités",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Jardin%20des%20Curiosit%C3%A9s%201.jpg?width=960",
+   "photoBy": "PHILDIC",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Jardin des Curiosités",
+    "es": "Jardín de las Curiosidades"
+   }
+  },
+  {
+   "id": "Q2387471",
+   "name": "jardin zoologique de la ville de Lyon",
+   "lat": 45.7774,
+   "lng": 4.85543,
+   "theme": "parks",
+   "fame": 6,
+   "summary": "Créé en 1858 sous l'impulsion du préfet Vaïsse, ce zoo municipal du parc de la Tête d'or présente un peu plus de 300 animaux de 66 espèces sur 9 hectares, en accès libre et gratuit depuis l'origine. La plaine africaine, inaugurée en 2006, fait cohabiter girafes, zèbres et flamants roses sur 2,5 hectares.",
+   "wiki": "Jardin zoologique de Lyon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Parc%20tete%20or%20animaux%20zoo.jpg?width=960",
+   "photoBy": "Romainberth",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Jardin zoologique de la ville de Lyon",
+    "es": "Jardin zoologico de Lyon"
+   }
+  },
+  {
+   "id": "Q9504",
+   "name": "parc des Hauteurs",
+   "lat": 45.76278,
+   "lng": 4.82,
+   "theme": "parks",
+   "fame": 4,
+   "summary": "Ce parc urbain de Fourvière relie les abords de la basilique au cimetière de Loyasse par un cheminement en belvédère. Sa passerelle des Quatre-Vents reprend le tracé d'une ligne ouverte en 1900, où des tramways équipés d'une remorque corbillard transportaient voyageurs et cercueils vers le cimetière ; le service ferme en 1938.",
+   "wiki": "Parc des Hauteurs",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lyon%205%20-%20Parc%20des%20Hauteurs%20-%20Jardin%20du%20Rosaire%20-Une%20all%C3%A9e%20au%20printemps%202008.JPG?width=960",
+   "photoBy": "Arnaud Fafournoux",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Parc des Hauteurs",
+    "es": "Parc des Hauteurs",
+    "it": "Parc des Hauteurs"
+   }
+  },
+  {
+   "id": "Q614",
+   "name": "place Bellecour",
+   "lat": 45.7575,
+   "lng": 4.832222,
+   "theme": "streets",
+   "fame": 14,
+   "summary": "Avec 63 000 mètres carrés, c'est la plus grande place de Lyon et son kilomètre zéro. Une première statue de Louis XIV, fondue en 1793 pour en faire des canons, fut remplacée en 1825 par l'œuvre équestre de Lemot : coulée à Paris, elle fut acheminée en douze jours par un attelage de vingt-quatre chevaux.",
+   "wiki": "Place Bellecour",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lyon%20PlaceBellecour.JPG?width=960",
+   "photoBy": "Claude",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Place Bellecour",
+    "es": "Plaza de Bellecour",
+    "it": "place Bellecour"
+   }
+  },
+  {
+   "id": "Q1506",
+   "name": "place des Terreaux",
+   "lat": 45.767481,
+   "lng": 4.833486,
+   "theme": "streets",
+   "fame": 11,
+   "summary": "Son nom viendrait du latin Terralia, le fossé qui se trouvait ici jusqu'au XVIe siècle. La fontaine Bartholdi, char triomphal de la Garonne commandé à l'origine par Bordeaux en 1857, fut rachetée par Lyon en 1890 et inaugurée en 1892. En 1994, l'artiste Daniel Buren et l'architecte Christian Drevet réaménagent la place avec 68 mini-fontaines.",
+   "wiki": "Place des Terreaux",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Place%20des%20Terreaux%20%28Lyon%2C%202025%29.jpg?width=960",
+   "photoBy": "Corentin Eustacchi",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "place des Terreaux",
+    "es": "Place des Terreaux",
+    "it": "place des Terreaux"
+   }
+  },
+  {
+   "id": "Q764519",
+   "name": "Fourvière",
+   "lat": 45.763056,
+   "lng": 4.822222,
+   "theme": "streets",
+   "fame": 13,
+   "summary": "La « colline qui prie » est le lieu de fondation de la colonie romaine de Lugdunum, en 43 av. J.-C. Son nom vient du latin forum vetus, le vieux forum, qui se dressait à l'emplacement du parvis de la basilique, bâtie de 1872 à 1884. Par ciel dégagé, la vue porte jusqu'au mont Blanc, situé à 160 km.",
+   "wiki": "Fourvière",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lyon%20-%20Colline%20de%20Fourvi%C3%A8re%20depuis%20les%20Jardins%20de%20Perrache%20%28mars%202019%29.jpg?width=960",
+   "photoBy": "Sebleouf",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Fourvière",
+    "es": "Fourvière",
+    "it": "Fourvière"
+   }
+  },
+  {
+   "id": "Q8220",
+   "name": "rue de la République",
+   "lat": 45.763056,
+   "lng": 4.835833,
+   "theme": "streets",
+   "fame": 7,
+   "summary": "Percée sous le Second Empire à l'initiative du préfet Vaïsse sous le nom de rue Impériale, cette artère commerçante surnommée la rue de la Ré prend son nom actuel en 1878. Au numéro 22, un pavé rouge et une plaque rappellent l'assassinat du président Sadi Carnot par l'anarchiste Caserio, le 24 juin 1894.",
+   "wiki": "Rue de la République (Lyon)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rue%20de%20la%20R%C3%A9publique%20%28Lyon%2C%202025%29.jpg?width=960",
+   "photoBy": "Corentin Eustacchi",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "rue de la République",
+    "es": "Rue de la République",
+    "it": "Rue de la République"
+   }
+  },
+  {
+   "id": "Q10169",
+   "name": "place des Jacobins",
+   "lat": 45.760502,
+   "lng": 4.833551,
+   "theme": "streets",
+   "fame": 4,
+   "summary": "Appelée place Confort jusqu'en 1782, elle tient son nom des religieux Jacobins, les Dominicains qui occupaient le côté sud de la place. Sa fontaine, conçue par Gaspard André et inaugurée le 14 juillet 1885, porte les statues d'Hippolyte Flandrin, Gérard Audran, Guillaume Coustou et Philibert Delorme.",
+   "wiki": "Place des Jacobins (Lyon)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Place%20des%20Jacobins%20%28Lyon%2C%202025%29.jpg?width=960",
+   "photoBy": "Corentin Eustacchi",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "place des Jacobins",
+    "es": "Place des Jacobins",
+    "it": "place des Jacobins"
+   }
+  },
+  {
+   "id": "Q9518",
+   "name": "place des Célestins",
+   "lat": 45.759791,
+   "lng": 4.831837,
+   "theme": "streets",
+   "fame": 4,
+   "summary": "Elle doit son nom aux religieux Célestins, installés de 1407 à 1778 sur un ancien domaine des Templiers. Réaménagée entre 1993 et 1995 lors de la création d'un parc de stationnement souterrain, elle abrite une sorte de télescope imaginé par Daniel Buren, qui donne une vision en kaléidoscope du parc à voitures.",
+   "wiki": "Place des Célestins",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Place%20des%20C%C3%A9lestins%20%28Lyon%2C%202025%29.jpg?width=960",
+   "photoBy": "Corentin Eustacchi",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "place des Célestins",
+    "es": "Place des Célestins",
+    "it": "place des Célestins"
+   }
+  },
+  {
+   "id": "Q9516",
+   "name": "place Saint-Jean",
+   "lat": 45.761111,
+   "lng": 4.826389,
+   "theme": "streets",
+   "fame": 5,
+   "summary": "La plus ancienne place de Lyon sert de parvis à la primatiale Saint-Jean ; en 1794, la Révolution l'avait rebaptisée place du Temple de la Raison. Sa fontaine de 1844, dessinée par René Dardel, reproduit un petit temple antique abritant un saint Jean-Baptiste baptisant le Christ, sculpté par Bonnassieux.",
+   "wiki": "Place Saint-Jean (Lyon)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Place%20cath%C3%A9drale%20Saint%20Jean%20Lyon.jpg?width=960",
+   "photoBy": "Fabimaru",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "place Saint-Jean",
+    "es": "Place Saint-Jean",
+    "it": "place Saint-Jean"
+   }
+  },
+  {
+   "id": "Q8226",
+   "name": "rue Victor-Hugo",
+   "lat": 45.754167,
+   "lng": 4.83,
+   "theme": "streets",
+   "fame": 5,
+   "summary": "Percée par étapes de 1817 à 1841 pour relier la place Carnot à Bellecour, l'ancienne rue de Bourbon prend son nom actuel le 26 mai 1885, quatre jours seulement après la mort de Victor Hugo. Éventrée en 1974 pour la construction de la ligne A du métro, elle devient le 8 décembre 1976 la deuxième rue piétonne de Lyon.",
+   "wiki": "Rue Victor-Hugo (Lyon)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rue%20Victor%20Hugo%20depuis%20place%20Bellecour%20%C3%A0%20Lyon.jpg?width=960",
+   "photoBy": "BELZUNCE Christian",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "rue Victor-Hugo",
+    "es": "Rue Victor-Hugo",
+    "it": "Rue Victor-Hugo"
+   }
+  },
+  {
+   "id": "Q4376",
+   "name": "rue des Marronniers",
+   "lat": 45.757222,
+   "lng": 4.834722,
+   "theme": "streets",
+   "fame": 4,
+   "summary": "Cette voie étroite et pavée, célèbre pour ses bouchons, doit son nom aux marronniers qui bordaient autrefois la place Bellecour voisine, enlevés au XVIIIe siècle; l'acte consulaire date du 30 septembre 1723. Au 3 bis, Roger Planchon créa en 1952 le théâtre de la Comédie dans un ancien atelier de serrurerie.",
+   "wiki": "Rue des Marronniers (Lyon)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rue%20des%20Marronniers%20%28Lyon%2C%202025%29.jpg?width=960",
+   "photoBy": "Corentin Eustacchi",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Rue des Marronniers",
+    "es": "Rue des Marronniers",
+    "it": "Rue des Marronniers"
+   }
+  },
+  {
+   "id": "Q3390131",
+   "name": "place Sathonay",
+   "lat": 45.769117,
+   "lng": 4.830444,
+   "theme": "streets",
+   "fame": 5,
+   "summary": "Aménagée sur l'emplacement du couvent de la Déserte, démoli en 1813, la place honore Fay de Sathonay, maire de Lyon de 1805 à 1812. Ses deux fontaines sont ornées de lions en fonte du Creusot, répliques de ceux de la fontaine de l'Institut à Paris. La statue en bronze du sergent Blandan, disparue pendant la guerre, fut remplacée en pierre en 1961.",
+   "wiki": "Place Sathonay",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Place%20Sathonay%20%28Lyon%2C%202025%29.jpg?width=960",
+   "photoBy": "Corentin Eustacchi",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "place Sathonay"
+   }
+  },
+  {
+   "id": "Q11029",
+   "name": "rue Mercière",
+   "lat": 45.7625,
+   "lng": 4.832778,
+   "theme": "streets",
+   "fame": 4,
+   "summary": "Attestée dès le XIIIe siècle, elle fut l'artère principale de la rive gauche de la Saône, puis la rue des libraires et imprimeurs au XVIe siècle, accueillant notamment l'atelier de Sébastien Gryphe. Longtemps insalubre, réhabilitée dans les années 1980, elle est devenue un haut lieu de la cuisine lyonnaise, avec ses bouchons et restaurants.",
+   "wiki": "Rue Mercière (Lyon)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rue%20Merci%C3%A8re%20%28Lyon%2C%202025%29.jpg?width=960",
+   "photoBy": "Corentin Eustacchi",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "rue Mercière",
+    "es": "Rue Mercière",
+    "it": "rue Mercière"
+   }
+  },
+  {
+   "id": "Q3126137",
+   "name": "halles de Lyon-Paul Bocuse",
+   "lat": 45.7632,
+   "lng": 4.85049,
+   "theme": "shops",
+   "fame": 3,
+   "summary": "Inaugurées en février 1971 à la Part-Dieu, elles remplacent l'ancienne halle des Cordeliers, démolie en janvier de la même année. Surnommées le ventre de Lyon, ces halles de 13 500 mètres carrés réunissent une soixantaine de commerçants; elles sont rebaptisées en 2007 en hommage à Paul Bocuse, qui s'y approvisionnait pour ses restaurants.",
+   "wiki": "Halles de Lyon-Paul Bocuse",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Un%20des%20acc%C3%A8s%20aux%20Halles%20Paul%20Bocuse%20%28f%C3%A9vrier%202023%29.jpg?width=960",
+   "photoBy": "Benoît Prieur",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "Halles de Lyon-Paul Bocuse"
+   }
+  },
+  {
+   "id": "Q4013",
+   "name": "hôtel-Dieu de Lyon",
+   "lat": 45.758333,
+   "lng": 4.836389,
+   "theme": "other",
+   "fame": 9,
+   "summary": "Héritier d'un hospice attesté en 1184 près du pont du Rhône, cet hôpital eut Rabelais pour médecin à partir de 1532. Sa façade sur le Rhône, dessinée par Soufflot, est construite de 1741 à 1761. Fermé en 2010 puis classé monument historique en 2011, il abrite désormais un hôtel, des commerces et la cité de la gastronomie.",
+   "wiki": "Hôtel-Dieu de Lyon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lyon%20%2852164665586%29.jpg?width=960",
+   "photoBy": "Kent Wang from Barcelona, Spain",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Hôtel-Dieu de Lyon",
+    "es": "Hôtel-Dieu",
+    "it": "Hôtel-Dieu de Lyon"
+   }
+  },
+  {
+   "id": "Q1992",
+   "name": "Lyon-Perrache",
+   "lat": 45.748333,
+   "lng": 4.825556,
+   "theme": "other",
+   "fame": 18,
+   "summary": "Construite d'après les plans de François-Alexis Cendrier et mise en service en 1856, la gare est inaugurée le 2 juin 1857. En 1896, la Société Lumière y tourne deux courts-métrages, dont Arrivée d'un train à Perrache. Un mémorial de la Shoah, rappelant les convois de déportés partis de là, est inauguré à proximité en janvier 2025.",
+   "wiki": "Gare de Lyon-Perrache",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lyon-gare%20de%20Perrache.jpg?width=960",
+   "photoBy": "Pymouss",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Gare de Lyon-Perrache",
+    "es": "Estación de Lyon-Perrache",
+    "it": "stazione di Lione Perrache"
+   }
+  },
+  {
+   "id": "Q2016",
+   "name": "Lyon-Saint-Paul",
+   "lat": 45.766022,
+   "lng": 4.826947,
+   "theme": "other",
+   "fame": 10,
+   "summary": "Ouverte le 17 janvier 1876 avec la ligne vers Montbrison, cette gare au pied de Fourvière fut le siège de la Compagnie des Dombes et des chemins de fer du Sud-Est. Après ses aiguillages, les voies s'enfoncent dans le tunnel de Loyasse, long de 1 417 mètres. Depuis 2012, elle est le terminus des deux lignes du tram-train de l'Ouest lyonnais.",
+   "wiki": "Gare de Lyon-Saint-Paul",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Batiment-voyageurs-gare-lyon-saint-paul.jpg?width=960",
+   "photoBy": "Remontees",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Lyon-Saint-Paul station",
+    "es": "Estación de Lyon-Saint-Paul",
+    "it": "stazione di Lione Saint-Paul"
+   }
+  },
+  {
+   "id": "Q5270",
+   "name": "Tour Part-Dieu",
+   "lat": 45.761111,
+   "lng": 4.853611,
+   "theme": "other",
+   "fame": 19,
+   "summary": "Bâti de 1972 à 1977 par le cabinet américain Araldo Cossutta, ce gratte-ciel de 164,9 mètres, cylindre coiffé d'une pyramide transparente, a reçu des Lyonnais le surnom de Crayon. Son architecte voulait que son sommet arrive sensiblement à la hauteur de la basilique de Fourvière. Un hôtel occupe les derniers étages.",
+   "wiki": "Tour Part-Dieu",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Esplanade%20Charles-de-Gaulle%20%28Lyon%29%20-%20entr%C3%A9e%20de%20la%20Tour%20Part-Dieu.jpg?width=960",
+   "photoBy": "Benoît Prieur",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "Tour Part-Dieu",
+    "es": "Torre Crédit Lyonnais",
+    "it": "Tour du Crédit Lyonnais"
+   }
+  },
+  {
+   "id": "Q2970872",
+   "name": "funiculaire de Fourvière",
+   "lat": 45.76,
+   "lng": 4.82583,
+   "theme": "other",
+   "fame": 5,
+   "summary": "Mise en service le 6 septembre 1900, cette ficelle grimpe en deux minutes du Vieux Lyon à la basilique de Fourvière : 427 mètres de long pour 116 mètres de dénivelé, presque entièrement en tunnel sous le parvis. En 1932, une cabine partie à la dérive percuta un immeuble en contrebas, sans faire de victimes.",
+   "wiki": "Funiculaire de Fourvière",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Funiculaire%20Fourvi%C3%A8re%20Von%20Roll%20n%C2%B02%20TCL%20Vieux%20Lyon-Cath%C3%A9drale%20Saint-Jean.jpg?width=960",
+   "photoBy": "Florian Fèvre",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Funiculaire de Fourvière",
+    "es": "funicular de Fourvière"
+   }
+  },
+  {
+   "id": "Q8484",
+   "name": "lycée du Parc",
+   "lat": 45.771703,
+   "lng": 4.856922,
+   "theme": "other",
+   "fame": 14,
+   "summary": "Construit sur une ancienne fortification de la ceinture de Lyon, la lunette des Charpennes bâtie en 1842, le lycée est créé en 1914 : il sert de caserne puis d'hôpital pendant la Première Guerre mondiale, et la première rentrée normale n'a lieu qu'en 1919. Édouard Herriot y enseigna ; l'établissement tire son nom du parc de la Tête d'Or voisin.",
+   "wiki": "Lycée du Parc",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/LyceeDuParcLyon.jpg?width=960",
+   "photoBy": "Antoine Laniray",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "lycée du Parc",
+    "es": "Lycée du Parc",
+    "it": "Lycée du Parc"
+   }
+  },
+  {
+   "id": "Q8399",
+   "name": "Vieux Lyon",
+   "lat": 45.763056,
+   "lng": 4.828056,
+   "theme": "streets",
+   "fame": 18,
+   "summary": "Quartier médiéval et Renaissance au pied de Fourvière, il réunit Saint-Georges, Saint-Jean et Saint-Paul. Méprisé au XIXe siècle, « quartier mort » selon Louis Boitel en 1833, longtemps menacé de démolition, il est protégé par son classement en secteur sauvegardé en 1964 et inscrit aujourd'hui au patrimoine de l'Unesco.",
+   "wiki": "Vieux Lyon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Vieuxlyon%20saintjean%20toits.jpg?width=960",
+   "photoBy": "Karldupart",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Vieux Lyon",
+    "es": "Vieux Lyon",
+    "it": "Vieux Lyon"
+   }
+  },
+  {
+   "id": "Q516",
+   "name": "hôtel de ville de Lyon",
+   "lat": 45.767778,
+   "lng": 4.835,
+   "theme": "other",
+   "fame": 14,
+   "summary": "Bâti de 1646 à 1672 sous la direction de Simon Maupin, il passait alors pour le plus vaste des hôtels de ville de France ; incendié en 1674, il est restauré d'après les plans de Jules Hardouin-Mansart. Sur sa porte de 1651, un heurtoir figurant un enfant qui frappe de ses fesses est surnommé Tony Tape-du-Cul.",
+   "wiki": "Hôtel de ville de Lyon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Fa%C3%A7ade%20de%20la%20mairie%20de%20Lyon.jpg?width=960",
+   "photoBy": "Danichou",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Hôtel de Ville de Lyon",
+    "es": "Hôtel de ville de Lyon",
+    "it": "Hôtel de Ville"
+   }
+  },
+  {
+   "id": "Q8213",
+   "name": "palais de la Bourse",
+   "lat": 45.763889,
+   "lng": 4.836389,
+   "theme": "palaces",
+   "fame": 8,
+   "summary": "Inauguré le 25 août 1860 par Napoléon III et l'impératrice Eugénie, ce palais conçu par René Dardel abrite aujourd'hui la chambre de commerce et d'industrie de Lyon. C'est en sortant de l'édifice, le 24 juin 1894, que le président Sadi Carnot fut assassiné par l'anarchiste Caserio : un pavé rouge marque l'endroit précis.",
+   "wiki": "Palais de la Bourse (Lyon)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palais%20Bourse%20Lyon%206.jpg?width=960",
+   "photoBy": "Chabe01",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Palais de la Bourse",
+    "es": "Palais de la Bourse",
+    "it": "Palais de la Bourse"
+   }
+  },
+  {
+   "id": "Q8422",
+   "name": "rue Saint-Jean",
+   "lat": 45.763,
+   "lng": 4.82791,
+   "theme": "streets",
+   "fame": 3,
+   "summary": "Tracée à la fin du IIIe siècle, quand les habitants de Fourvière, privés d'eau, descendirent bâtir un quartier au bord de la Saône, elle mène à la cathédrale qui lui donne son nom. Ses traboules sont nombreuses : la plus longue du Vieux Lyon part du n°54 et traverse quatre maisons jusqu'au 27 rue du Bœuf.",
+   "wiki": "Rue Saint-Jean (Lyon)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rue%20St%20Jean%2C%20Lyon.JPG?width=960",
+   "photoBy": "Gonedelyon",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "rue Saint-Jean",
+    "es": "Rue Saint-Jean",
+    "it": "rue Saint-Jean"
+   }
+  },
+  {
+   "id": "Q8696",
+   "name": "montée de la Grande-Côte",
+   "lat": 45.77059,
+   "lng": 4.83155,
+   "theme": "streets",
+   "fame": 5,
+   "summary": "Cette montée qui gravit la Croix-Rousse comptait 705 métiers à tisser en 1788 et fut empruntée par les manifestants de la révolte des canuts en 1831. Au n°95 fut fondée en 1835 la première coopérative française de consommation ; en 1895, Marius Berliet y essaya sa première automobile, la Pantoufle, qui finit dans la vitrine d'un charcutier.",
+   "wiki": "Montée de la Grande-Côte",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Grande%20Cote%20Lyon.jpg?width=960",
+   "photoBy": "arno.",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Montée de la Grande Côte",
+    "es": "Montée de la Grande-Côte",
+    "it": "Montée de la Grande-Côte"
+   }
+  },
+  {
+   "id": "Q3462254",
+   "name": "Saint-Georges",
+   "lat": 45.7577,
+   "lng": 4.82539,
+   "theme": "streets",
+   "fame": 1,
+   "summary": "L'une des trois paroisses du Vieux Lyon, avec Saint-Jean et Saint-Paul, nommée d'après son église. Les Hospitaliers de Saint-Jean de Jérusalem s'y installent en 1315 ; leur commanderie, démolie en 1860, a laissé place à la place qui porte son nom. Rue du Doyenné se dresse la statue de Laurent Mourguet, le créateur de Guignol.",
+   "wiki": "Saint-Georges (Lyon)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lyon%20-%20%C3%89glise%20Saint-Georges%20-%201.jpg?width=960",
+   "photoBy": "This illustration was made by Peter Potrowl.\nPlease credit this with : © Peter P",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Saint-Georges"
+   }
+  },
+  {
+   "id": "Q8324",
+   "name": "passage de l'Argue",
+   "lat": 45.761144,
+   "lng": 4.834762,
+   "theme": "shops",
+   "fame": 4,
+   "summary": "Ce passage couvert, reconstruit à partir de 1825 par l'architecte Vincent Farge et rouvert en 1828, tient son nom de l'argue, outil à filer l'or et l'argent. Sa rotonde a vu se succéder trois statues de Mercure : la première volée en 1902, la deuxième fondue par les Allemands pendant la guerre, la troisième volée en 1995 puis à nouveau en 2011.",
+   "wiki": "Passage de l'Argue",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Passage%20de%20l%E2%80%99Argue%20%28Lyon%2C%202025%2C%20version%202%29.jpg?width=960",
+   "photoBy": "Corentin Eustacchi",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "passage de l'Argue",
+    "es": "Passage de l'Argue",
+    "it": "Passage de l'Argue"
+   }
+  },
+  {
+   "id": "Q8352",
+   "name": "musée des Confluences",
+   "lat": 45.732355,
+   "lng": 4.817923,
+   "theme": "museums",
+   "fame": 9,
+   "summary": "Installé à la pointe de la Presqu'île, au confluent du Rhône et de la Saône, ce musée signé Coop Himmelb(l)au a ouvert en décembre 2014 après un chantier mouvementé : estimé à 61 millions d'euros en 2000, il en a finalement coûté 330. On y croise le mammouth de Choulans, découvert en 1859, et un exemplaire du Spoutnik 2.",
+   "wiki": "Musée des Confluences",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lyon%20-%20Mus%C3%A9e%20des%20Confluences%20%2849525806051%29.jpg?width=960",
+   "photoBy": "Fred Romero from Paris, France",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Musée des Confluences",
+    "es": "Musée des Confluences",
+    "it": "Musée des Confluences"
+   }
+  },
+  {
+   "id": "Q3151766",
+   "name": "Institut Lumière",
+   "lat": 45.745211,
+   "lng": 4.870408,
+   "theme": "museums",
+   "fame": 7,
+   "summary": "Créé en 1982 dans le quartier de Monplaisir, là où les frères Lumière conçurent le Cinématographe qui tourna en 1895 La Sortie de l'usine Lumière à Lyon, l'institut conserve et diffuse le patrimoine du cinéma. Son fonds de 1 425 films Lumière est inscrit au registre Mémoire du monde de l'Unesco depuis 2005.",
+   "wiki": "Institut Lumière",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Institut%20Lumi%C3%A8re%20Lyon.jpg?width=960",
+   "photoBy": "Matt Neale from UK",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Institut Lumière",
+    "es": "Instituto Lumière",
+    "it": "Institut Lumière"
+   }
+  }
+ ]
+}
