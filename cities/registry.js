@@ -87,7 +87,7 @@ const OVERRIDES = {
   MLB:  { orsCountry: 'boundary.country=AU' },
   PRT:  { orsCountry: 'boundary.country=AU' },
   // ── Complément de couverture pays (pour le classement du Palmarès) ──
-  ANZR: { orsCountry: 'boundary.country=FR' }, // Annecy
+  ANZR: { orsCountry: 'boundary.country=CH' }, // Anzère (Valais, Suisse)
   BTA:  { orsCountry: 'boundary.country=FR' }, // Bastia
   CHAR: { orsCountry: 'boundary.country=FR' }, // Chartres
   FRQ:  { orsCountry: 'boundary.country=FR' }, // Forcalquier

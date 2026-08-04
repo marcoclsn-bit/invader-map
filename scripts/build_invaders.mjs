@@ -118,7 +118,7 @@ const KNOWN_CITIES = {
   VRN:  { name: 'Varanasi',         bbox: { minLat: 25.15, maxLat: 25.55, minLng: 82.85, maxLng: 83.20 } },
   WN:   { name: 'Vienne',           bbox: { minLat: 48.15, maxLat: 48.25, minLng: 16.30, maxLng: 16.45 } },
   // ── Noms identifiés, bbox inconnue (pas de validation coords) ─────────────
-  ANZR: { name: 'Annecy' },
+  ANZR: { name: 'Anzère',           bbox: { minLat: 46.25, maxLat: 46.36, minLng: 7.32,  maxLng: 7.46  } },
   BAB:  { name: 'Biarritz Anglet-Bayonne' },
   BBO:  { name: 'Bilbao' },
   BRC:  { name: 'Barcelone' },
