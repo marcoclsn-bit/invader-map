@@ -16,9 +16,21 @@ import { Marker } from 'react-native-maps';
  * indéfiniment. On rouvre donc une brève fenêtre de tracking sur iOS aussi, mais
  * seulement à partir du DEUXIÈME rendu, pour ne pas payer la capture au montage.
  *
- * @param {*} redrawKey  valeur qui, en changeant, force une re-capture (ex. état sélectionné)
+ * FENÊTRE INSUFFISANTE SUR ANDROID. Signalé sur le terrain : un Invader flashé
+ * pendant une chasse gardait sa pastille verte numérotée, sans ✓ ni extinction.
+ * Rouvrir `tracksViewChanges` ne suffit pas quand seules les COULEURS du contenu
+ * changent : la taille du marqueur restant identique, la vue native ne se juge
+ * pas invalidée et ne recapture rien.
+ *
+ * Le remède fiable est de démonter le marqueur : `stateKey`, quand il change,
+ * remonte un <Marker> neuf, qui capture forcément l'apparence courante. C'est le
+ * mécanisme déjà employé pour InvaderMarker sur iOS (clé porteuse de l'état
+ * flashé). Coût : un remontage, uniquement pour le marqueur qui change.
+ *
+ * @param {*} redrawKey  valeur qui, en changeant, rouvre la fenêtre de tracking
+ * @param {*} stateKey   apparence du marqueur ; en changeant, force un remontage
  */
-export default function PinMarker({ redrawKey, children, ...props }) {
+function PinMarkerInner({ redrawKey, children, ...props }) {
   const [tracks, setTracks] = useState(Platform.OS === 'android');
   const firstRun = useRef(true);
   useEffect(() => {
@@ -36,4 +48,10 @@ export default function PinMarker({ redrawKey, children, ...props }) {
       {children}
     </Marker>
   );
+}
+
+export default function PinMarker({ stateKey, ...props }) {
+  // La clé porte l'apparence : un changement de couleur ou de libellé remonte le
+  // marqueur, ce qui garantit une capture fraîche là où le tracking échoue.
+  return <PinMarkerInner key={stateKey ?? 'x'} {...props} />;
 }

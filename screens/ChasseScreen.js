@@ -1075,6 +1075,7 @@ export default function ChasseScreen({ route }) {
                   return (
                     <PinMarker
                       key={`v-${inv.id}`}
+                      stateKey={`v-${inv.id}|${flash}|${selv}`}
                       coordinate={{ latitude: inv.lat, longitude: inv.lng }}
                       anchor={{ x: 0.5, y: 0.5 }}
                       onPress={() => selectInvader(inv)}
@@ -1098,7 +1099,8 @@ export default function ChasseScreen({ route }) {
                   const done = !inv.isPoi && flashed.has(inv.id);
                   const sel  = selectedInv?.id === inv.id || selectedPoi?.id === inv.id;
                   return (
-                  <PinMarker key={inv.id} coordinate={{ latitude: inv.lat, longitude: inv.lng }}
+                  <PinMarker key={inv.id} stateKey={`${inv.id}|${done}|${sel}`}
+                    coordinate={{ latitude: inv.lat, longitude: inv.lng }}
                     anchor={{ x: 0.5, y: 0.5 }}
                     onPress={() => (inv.isPoi ? (setSelectedPoi(inv), track('poi_open', { from: 'hunt', theme: inv.theme, lang: i18n.language })) : selectInvader(inv))}
                     redrawKey={`${sel}|${done}`}>
