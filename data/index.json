@@ -1,6 +1,6 @@
 {
- "version": 13,
- "updatedAt": "2026-08-04",
+ "version": 14,
+ "updatedAt": "2026-08-05",
  "cities": [
   {
    "code": "AIX",
@@ -274,10 +274,10 @@
   },
   {
    "code": "CHAR",
-   "name": "Chartres",
+   "name": "Charleroi",
    "count": 1,
    "destroyed": 0,
-   "version": 5,
+   "version": 6,
    "center": {
     "lat": 50.405413,
     "lng": 4.449921
@@ -447,10 +447,10 @@
   },
   {
    "code": "GRU",
-   "name": "Grumeti (Tanzanie)",
+   "name": "Grude",
    "count": 3,
    "destroyed": 0,
-   "version": 6,
+   "version": 7,
    "center": {
     "lat": 43.386892,
     "lng": 17.38041

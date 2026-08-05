@@ -89,7 +89,7 @@ const OVERRIDES = {
   // ── Complément de couverture pays (pour le classement du Palmarès) ──
   ANZR: { orsCountry: 'boundary.country=CH' }, // Anzère (Valais, Suisse)
   BTA:  { orsCountry: 'boundary.country=FR' }, // Bastia
-  CHAR: { orsCountry: 'boundary.country=FR' }, // Chartres
+  CHAR: { orsCountry: 'boundary.country=BE' }, // Charleroi (Belgique)
   FRQ:  { orsCountry: 'boundary.country=FR' }, // Forcalquier
   FTBL: { orsCountry: 'boundary.country=FR' }, // Fontainebleau
   LBR:  { orsCountry: 'boundary.country=FR' }, // Luberon
@@ -104,7 +104,7 @@ const OVERRIDES = {
   RDU:  { orsCountry: 'boundary.country=BE' }, // Redu (Belgique)
   BAB:  { orsCountry: 'boundary.country=FR' }, // Biarritz Anglet-Bayonne
   MBSA: { orsCountry: 'boundary.country=KE' }, // Mombasa
-  GRU:  { orsCountry: 'boundary.country=TZ' }, // Grumeti (Tanzanie)
+  GRU:  { orsCountry: 'boundary.country=BA' }, // Grude (Bosnie-Herzégovine)
 };
 
 // ─── Construction des villes ──────────────────────────────────────────────────
