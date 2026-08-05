@@ -1,6 +1,6 @@
 {
  "version": 18,
- "updatedAt": "2026-08-04",
+ "updatedAt": "2026-08-05",
  "cities": {
   "GRN": {
    "version": 1,
@@ -26,6 +26,16 @@
    "version": 1,
    "updatedAt": "2026-08-04",
    "count": 103,
+   "langs": {
+    "en": 1,
+    "es": 1,
+    "it": 1
+   }
+  },
+  "MPL": {
+   "version": 1,
+   "updatedAt": "2026-08-05",
+   "count": 63,
    "langs": {
     "en": 1,
     "es": 1,

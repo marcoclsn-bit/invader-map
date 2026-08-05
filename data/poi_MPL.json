@@ -1,0 +1,1066 @@
+{
+ "version": 1,
+ "city": "MPL",
+ "attribution": "Lieux : Wikidata (CC0) · Résumés d’après Wikipédia (CC BY-SA) · Photos : Wikimedia Commons",
+ "updatedAt": "2026-08-05",
+ "pois": [
+  {
+   "id": "Q1519002",
+   "name": "musée Fabre",
+   "lat": 43.611736,
+   "lng": 3.880192,
+   "theme": "museums",
+   "fame": 24,
+   "summary": "Le peintre et collectionneur François-Xavier Fabre propose en 1824 de donner ses collections à sa ville natale, à condition qu'un musée soit bâti pour les accueillir. La ville achète l'hôtel de Massilian en 1825 et le musée ouvre le 3 décembre 1828. Fermé de 2003 à 2007, il passe de 3 000 à 9 000 m2 d'exposition.",
+   "wiki": "Musée Fabre",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mus%C3%A9e%20Fabre%20-%20panoramio.jpg?width=960",
+   "photoBy": "Björn S.",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Musée Fabre",
+    "es": "Museo Fabre",
+    "it": "Museo Fabre"
+   }
+  },
+  {
+   "id": "Q3330631",
+   "name": "musée languedocien",
+   "lat": 43.609492,
+   "lng": 3.879108,
+   "theme": "museums",
+   "fame": 3,
+   "summary": "Installé depuis 1992 dans l'ancien hôtel des Trésoriers de France, rue Jacques Cœur, il présente les collections réunies depuis 1833 par la Société archéologique de Montpellier : faïences montpelliéraines, chapiteaux sculptés, vaisselle médiévale. Le musée est fermé jusqu'à nouvel ordre depuis 2016.",
+   "wiki": "Musée languedocien",
+   "alt": {
+    "en": "Languedoc Museum"
+   }
+  },
+  {
+   "id": "Q3373119",
+   "name": "pavillon Populaire",
+   "lat": 43.610247,
+   "lng": 3.881969,
+   "theme": "museums",
+   "fame": 3,
+   "summary": "Ce bâtiment néo-renaissance de 650 m2 est élevé en 1891 par l'architecte de la ville Léopold Carlier pour le Cercle des étudiants. En difficulté financière, celui-ci laisse les murs à la ville en 1905, qui les cède aux sociétés : de cette époque date le nom de pavillon populaire. Depuis 2001, c'est un espace municipal consacré à la photographie.",
+   "wiki": "Pavillon populaire",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Pavillon%20populaire%20montpellier.jpg?width=960",
+   "photoBy": "Dinkley = Jean-Marie DAVID",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Popular Pavilion",
+    "es": "Pabellón Popular"
+   }
+  },
+  {
+   "id": "Q104617429",
+   "name": "observatoire de Montpellier",
+   "lat": 43.61456,
+   "lng": 3.87111,
+   "theme": "culture",
+   "fame": 2,
+   "summary": "Fondé en 1879, cet observatoire astronomique est installé en plein cœur du jardin des plantes, rattaché à la faculté de médecine. Sa coupole reçoit la même année le télescope de Foucault, construit en 1877 à l'Observatoire de Paris par William Eichens d'après les plans de Foucault.",
+   "wiki": "Observatoire de Montpellier",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Montpellier%20jardin%20plantes2.jpg?width=960",
+   "photoBy": "The original uploader was Vpe at French Wikipedia.",
+   "photoLic": "CC BY-SA 2.0 fr",
+   "alt": {
+    "en": "Montpellier Astronomical Observatory",
+    "es": "Observatorio Astronómico de Montpellier"
+   }
+  },
+  {
+   "id": "Q3298462",
+   "name": "Faculté de médecine de Montpellier",
+   "lat": 43.612947,
+   "lng": 3.873542,
+   "theme": "culture",
+   "fame": 6,
+   "summary": "En 1181, le seigneur Guilhem VIII autorise « tout homme, quel qu'il soit et d'où qu'il soit » à diriger une école de médecine à Montpellier ; en 1220, un légat du pape concède ses premiers statuts à l'universitas medicorum. La faculté occupe depuis 1795 l'ancien collège Saint-Benoît bâti par Urbain V, devenu palais épiscopal en 1536.",
+   "wiki": "Faculté de médecine de Montpellier",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Facult%C3%A9%20M%C3%A9decine%20Mus%C3%A9e%20Anatomie%20-%20Montpellier%20%28FR34%29%20-%202021-07-12%20-%207.jpg?width=960",
+   "photoBy": "Chabe01",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Faculty of Medicine of Montpellier",
+    "es": "Facultad de Medicina de Montpellier"
+   }
+  },
+  {
+   "id": "Q1736197",
+   "name": "cathédrale Saint-Pierre de Montpellier",
+   "lat": 43.613333,
+   "lng": 3.874167,
+   "theme": "religious",
+   "fame": 17,
+   "summary": "Chapelle du monastère Saint-Benoît fondée en 1364 par le pape Urbain V, elle est érigée en cathédrale en 1536, quand le siège épiscopal quitte Maguelone. Son porche massif, à deux piliers cylindriques, est l'un des rares éléments médiévaux conservés : en 1567, l'assaut des protestants fait s'effondrer une tour, et l'édifice avec elle.",
+   "wiki": "Cathédrale Saint-Pierre de Montpellier",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Montpellier%20-%20Saint%20Pierre.jpg?width=960",
+   "photoLic": "CC BY 2.5",
+   "alt": {
+    "en": "Montpellier Cathedral",
+    "es": "Catedral de San Pedro de Montpellier",
+    "it": "cattedrale di Montpellier"
+   }
+  },
+  {
+   "id": "Q2886965",
+   "name": "basilique Notre-Dame des Tables",
+   "lat": 43.612042,
+   "lng": 3.879569,
+   "theme": "religious",
+   "fame": 6,
+   "summary": "Le nom vient des tables des changeurs de monnaie dressées au Moyen Âge autour de l'église Sainte-Marie, détruite à partir de 1794. Le titre est transféré en 1802 à l'ancienne chapelle du collège des Jésuites, bâtie de 1707 à 1748 sous la direction de Jean Giral. Pie XII l'érige en basilique mineure en 1939.",
+   "wiki": "Basilique Notre-Dame des Tables",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Notre-Dame%20Montpellier%20fa%C3%A7ade.JPG?width=960",
+   "photoBy": "Vpe",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "basilica Our Lady of the tables",
+    "es": "basílica de Nuestra Señora de las Mesas"
+   }
+  },
+  {
+   "id": "Q3584279",
+   "name": "église Saint-Roch de Montpellier",
+   "lat": 43.608697,
+   "lng": 3.875872,
+   "theme": "religious",
+   "fame": 5,
+   "summary": "Dédiée au saint guérisseur des pestiférés né dans la ville, cette église néo-gothique est bâtie de 1860 à 1868 par l'architecte municipal Jean Cassan, sur l'emplacement de l'église Saint-Paul détruite en 1622. Elle est restée inachevée : les deux flèches latérales prévues au-dessus du clocher n'ont jamais été élevées.",
+   "wiki": "Église Saint-Roch de Montpellier",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Eglise%20Saint-Roch.JPG?width=960",
+   "photoBy": "Vpe",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "church Saint-Roch of Montpellier",
+    "es": "iglesia de Saint-Roch de Montpellier",
+    "it": "Santuario di San Rocco"
+   }
+  },
+  {
+   "id": "Q56602235",
+   "name": "église Sainte-Anne de Montpellier",
+   "lat": 43.610261,
+   "lng": 3.874347,
+   "theme": "religious",
+   "fame": 2,
+   "summary": "Une église existe ici dès le XIIIe siècle ; détruite en 1568, rebâtie en 1665, elle est démolie en 1865 après un rapport signalant sa dangerosité. L'édifice néogothique de Jean Cassan qui lui succède culmine à 69 mètres, plus haut monument du centre-ville. Désacralisé en 1986, devenu le Carré Sainte-Anne en 1991, il a rouvert le 27 mai 2025.",
+   "wiki": "Église Sainte-Anne de Montpellier",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Montpellier%20Carr%C3%A9%20Sainte%20Anne%20%282396560190%29.jpg?width=960",
+   "photoBy": "Wolfgang Staudt from Saarbruecken, Germany",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "church St. Anne of Montpellier",
+    "es": "iglesia Santa Ana de Montpellier"
+   }
+  },
+  {
+   "id": "Q19815207",
+   "name": "église Sainte-Eulalie de Montpellier",
+   "lat": 43.609411,
+   "lng": 3.870658,
+   "theme": "religious",
+   "fame": 2,
+   "summary": "Pendant près de six cents ans, elle fut la chapelle des mercédaires, ordre voué au rachat des chrétiens réduits en esclavage en pays musulmans. L'agrandissement de la place Royale du Peyrou entraîne en 1740 la démolition de leur couvent ; la nouvelle église, commencée en 1741 par Antoine Vier, est consacrée en 1748.",
+   "wiki": "Église Sainte-Eulalie de Montpellier",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Entr%C3%A9e%20de%20l%27%C3%A9glise%20Sainte-Eulalie%20%C3%A0%20Montpellier.jpg?width=960",
+   "photoBy": "Sainte Eulalie",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "church Sainte-Eulalie of Montpellier",
+    "es": "iglesia Sainte-Eulalie de Montpellier"
+   }
+  },
+  {
+   "id": "Q3581345",
+   "name": "église Saint-Denis de Montpellier",
+   "lat": 43.605147,
+   "lng": 3.874911,
+   "theme": "religious",
+   "fame": 2,
+   "summary": "Bâtie de 1699 à 1702 par Augustin-Charles d'Aviler dans le faubourg de la Saunerie, elle remplace une église homonyme détruite aux guerres de religion. Fermée par la section révolutionnaire en 1793 et vendue à l'encan, elle est rachetée par des fidèles et rendue au culte en 1801. Agrandie en 1836 puis en 1895, elle n'a gardé intacte que sa façade.",
+   "wiki": "Église Saint-Denis de Montpellier",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Eglise%20Saint-Denis.JPG?width=960",
+   "photoBy": "Vpe",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "church Saint-Denis of Montpellier",
+    "es": "iglesia Saint-Denis de Montpellier"
+   }
+  },
+  {
+   "id": "Q2957097",
+   "name": "chapelle Sainte-Foy de Montpellier",
+   "lat": 43.609639,
+   "lng": 3.879283,
+   "theme": "religious",
+   "fame": 3,
+   "summary": "Dite chapelle des Pénitents blancs, elle est incendiée puis détruite par les huguenots en 1562 et 1568. Trop proches du rempart pour être relevées, ses ruines servent de cimetière à ciel ouvert plus de cinquante ans. Rendue à la confrérie en 1623, elle est consacrée la nuit de Noël 1624 et reçoit un plafond à caissons peint de 1671 à 1691.",
+   "wiki": "Chapelle Sainte-Foy de Montpellier, dite chapelle des Pénitents blancs",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Sainte-Foy%2C%20chapelle%20des%20P%C3%A9nitents%20blancs%20de%20Montpellier.%20Vue%20ext%C3%A9rieure..jpg?width=960",
+   "photoBy": "Penitentsblancs",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "chapel Sainte-Foy of Montpellier",
+    "es": "capilla Sainte-Foy de Montpellier"
+   }
+  },
+  {
+   "id": "Q3001757",
+   "name": "couvent des Ursulines de Montpellier",
+   "lat": 43.614278,
+   "lng": 3.8784,
+   "theme": "religious",
+   "fame": 3,
+   "summary": "Six religieuses venues de Pézenas s'y installent en 1641 pour instruire les jeunes filles pauvres, dans un monastère rebâti en 1657 par Jean Bonnassier. Le lieu devient prison, caserne, prison pour femmes de 1825 à 1934, lieu d'interrogatoire de la Gestapo sous l'Occupation, puis caserne jusqu'en 1986. Il abrite le centre chorégraphique national.",
+   "wiki": "Couvent des Ursulines de Montpellier",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ursulinesmontpellier.jpg?width=960",
+   "photoBy": "No machine-readable author provided. Vpe assumed (based on copyright claims).",
+   "photoLic": "CC BY 2.5",
+   "alt": {
+    "en": "convent of the Ursulines of Montpellier",
+    "es": "convento de las Ursulinas de Montpellier"
+   }
+  },
+  {
+   "id": "Q96472208",
+   "name": "Mikvé de Montpellier",
+   "lat": 43.61126,
+   "lng": 3.87546,
+   "theme": "religious",
+   "fame": 3,
+   "summary": "Ce bain rituel juif du XIIe siècle est creusé dans le grès, à environ cinq mètres sous la chaussée actuelle. Son bassin est alimenté par la nappe phréatique, sans qu'aucune main ne touche l'eau. Démantelé après l'expulsion des juifs de 1306, il servit de puits puis de cave à charbon avant d'être redécouvert au début des années 1980.",
+   "wiki": "Mikvé de Montpellier",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Montpellier%20Mikveh.JPG?width=960",
+   "photoBy": "Fagairolles 34",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Mikvaot in Montpellier"
+   }
+  },
+  {
+   "id": "Q968684",
+   "name": "opéra Comédie",
+   "lat": 43.607906,
+   "lng": 3.878789,
+   "theme": "stages",
+   "fame": 7,
+   "summary": "Le théâtre ouvert en 1755 est endommagé par un incendie en 1785, reconstruit à l'identique et remis en service en 1788. Celui de la nuit du 5 au 6 avril 1881 le détruit complètement. Le bâtiment actuel, inauguré en 1888, est l'œuvre de Joseph-Marie Cassien-Bernard, élève de Charles Garnier ; sa salle à l'italienne compte 1 200 places.",
+   "wiki": "Opéra Comédie",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/L%27op%C3%A9ra%20Com%C3%A9die%20%C3%A0%20Montpellier.jpg?width=960",
+   "photoBy": "Andreas Sandberg",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Opéra national de Montpellier",
+    "es": "Opéra Comédie",
+    "it": "Opéra national de Montpellier"
+   }
+  },
+  {
+   "id": "Q3438008",
+   "name": "Rockstore",
+   "lat": 43.606289,
+   "lng": 3.881383,
+   "theme": "stages",
+   "fame": 4,
+   "summary": "Sous la salle de concert subsiste la crypte des cordeliers, dont l'église fut consacrée en 1264. Charles Bonaparte, père de Napoléon Ier, mort à Montpellier en 1785, y fut d'abord inhumé. Premier garage de la ville en 1903, cinéma en 1927, le lieu devient le Rockstore en 1986 : sa Cadillac rouge s'inspire du premier Hard Rock Café de New York.",
+   "wiki": "Rockstore",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Chapelle%20Cordeliers%20Montpellier.jpg?width=960",
+   "photoBy": "Sapin88",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Rockstore",
+    "es": "Rockstore"
+   }
+  },
+  {
+   "id": "Q3145663",
+   "name": "hôtel Saint-Côme",
+   "lat": 43.608028,
+   "lng": 3.877347,
+   "theme": "stages",
+   "fame": 2,
+   "summary": "Le chirurgien François de Lapeyronie légua une partie de sa fortune pour doter Montpellier d'un amphithéâtre d'anatomie semblable à celui du collège Saint-Côme de Paris. Bâti de 1747 à 1757 sur les plans de Jean-Antoine Giral, l'édifice associe la salle de réunion des chirurgiens et l'amphithéâtre au fond de la cour.",
+   "wiki": "Hôtel Saint-Côme",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ccimontpellier2.JPG?width=960",
+   "photoBy": "Vpe",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "Saint-Côme hotel",
+    "es": "hotel Saint-Côme"
+   }
+  },
+  {
+   "id": "Q2998146",
+   "name": "Corum",
+   "lat": 43.613611,
+   "lng": 3.882222,
+   "theme": "stages",
+   "fame": 4,
+   "summary": "Palais des congrès dessiné par Claude Vasconi, le Corum se reconnaît à sa couverture en plaques de granit rose de Finlande. Sa première tranche est livrée en 1989, l'opéra Berlioz et ses 2 000 places en 1990. Son héliport n'a servi qu'une fois, pour la venue de François Mitterrand à l'inauguration.",
+   "wiki": "Corum (Montpellier)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Montpellier%20Corum%20station%20parc%202rames%2027122006.JPG?width=960",
+   "photoBy": "User:Sebjarod",
+   "photoLic": "CC BY-SA 2.5",
+   "alt": {
+    "en": "Corum",
+    "es": "Corum"
+   }
+  },
+  {
+   "id": "Q2092877",
+   "name": "tour de la Babotte",
+   "lat": 43.606419,
+   "lng": 3.877361,
+   "theme": "palaces",
+   "fame": 7,
+   "summary": "Haute de vingt-six mètres, elle est l'un des derniers vestiges des vingt-cinq tours de la commune clôture, l'enceinte médiévale de la ville. Surélevée pour un observatoire d'astronomie achevé en 1745, elle sert en décembre 1783 au physicien Lenormand pour tester son parachute avec des animaux, devant une foule où figure Joseph Montgolfier.",
+   "wiki": "Tour de la Babotte",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Montpellier%20-%20Tour%20de%20la%20Babote.jpg?width=960",
+   "photoBy": "Christophe.Finot",
+   "photoLic": "CC BY-SA 2.5",
+   "alt": {
+    "en": "Tour de la Babotte",
+    "es": "Torre de la Babotte",
+    "it": "osservatorio della Babotte"
+   }
+  },
+  {
+   "id": "Q3533649",
+   "name": "tour des Pins",
+   "lat": 43.6136,
+   "lng": 3.87306,
+   "theme": "palaces",
+   "fame": 3,
+   "summary": "Haute de vingt-neuf mètres à l'origine, cette tour de l'enceinte médiévale en perdit quatre au remblayage de son fossé en 1778. Sa fonction défensive abandonnée en 1592, elle fut habitation, prison, asile, puis reçut les archives municipales en 1886. Les Montpelliérains y rattachèrent une prédiction de Nostradamus : la cité périrait à la disparition des pins.",
+   "wiki": "Tour des Pins (Montpellier)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Montpellier%20tour%20des%20pins.JPG?width=960",
+   "photoBy": "Vpe",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Tour des Pins (Montpellier)"
+   }
+  },
+  {
+   "id": "Q2849122",
+   "name": "citadelle de Montpellier",
+   "lat": 43.611667,
+   "lng": 3.886111,
+   "theme": "palaces",
+   "fame": 5,
+   "summary": "Bâtie de 1624 à 1627 sur ordre de Louis XIII pour surveiller une ville et une région à forte population protestante, la place forte fut élevée sur les plans de Jean de Beins et comptait quatre bastions. Devenue caserne Joffre, elle accueille un lycée dont la première rentrée eut lieu le 1er octobre 1948.",
+   "wiki": "Citadelle de Montpellier",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Citadelle%20de%20Montpellier%20Bastion%20de%20VentadourA.jpg?width=960",
+   "photoBy": "Photographié et édité par User:Sebjarod (floutage des plaques d'immatriculation)",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Citadel of Montpellier"
+   }
+  },
+  {
+   "id": "Q3361016",
+   "name": "palais de justice de Montpellier",
+   "lat": 43.6114,
+   "lng": 3.87278,
+   "theme": "palaces",
+   "fame": 3,
+   "summary": "Ici s'élevait la forteresse des Guilhems, seigneurs de Montpellier, démolie en 1577 pendant les guerres de Religion. La Cour des comptes, aides et finances s'installa sur ses ruines en 1629. Le bâtiment étant fort délabré en 1839, il fut remplacé par le palais actuel, néoclassique, construit de 1846 à 1853 sur les plans de Charles Abric.",
+   "wiki": "Palais de justice de Montpellier",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/%28MONTPELLIER%2CFR84%29%20%2814936300671%29.jpg?width=960",
+   "photoBy": "jean-louis Zimmermann from Orange, FRANCE",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Palais de Justice de Montpellier",
+    "es": "palacio de justicia de Montpellier"
+   }
+  },
+  {
+   "id": "Q3146252",
+   "name": "hôtel des Trésoriers de France",
+   "lat": 43.609531,
+   "lng": 3.878992,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "Bâti vers 1448 pour Jacques Cœur par Simon de Beaujeu, il accueillit les souverains en visite en Languedoc. Acquis en 1632 par les trésoriers et grands voyers de France, il est presque entièrement reconstruit à partir de 1676 : pas de façade extérieure, mais une cour à deux colonnades superposées. Il abrite le musée languedocien depuis 1992.",
+   "wiki": "Hôtel des Trésoriers de France",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/H%C3%B4tel%20des%20Tr%C3%A9soriers%20de%20France%20%28Montpeller%29%20-%201.jpg?width=960",
+   "photoBy": "Albertvillanovadelmoral",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "hotel of the Treasurers of France",
+    "es": "hotel de los Tesoreros de Francia"
+   }
+  },
+  {
+   "id": "Q22953952",
+   "name": "hôtel de Cambacérès-Murles",
+   "lat": 43.611964,
+   "lng": 3.874378,
+   "theme": "palaces",
+   "fame": 3,
+   "summary": "Hôtel particulier de Montpellier, dans le département de l'Hérault. Sa façade et sa toiture donnant sur la place sont inscrites au titre des monuments historiques depuis le 23 mars 1943.",
+   "wiki": "Hôtel de Cambacérès-Murles",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/H%C3%B4tel%20de%20Cambac%C3%A9r%C3%A8s-Murles%20%28Montpeller%29%20-%20Fa%C3%A7ana.jpg?width=960",
+   "photoBy": "Albertvillanovadelmoral",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Cambacérès-Murles hotel",
+    "es": "hotel de Cambacérès-Murles"
+   }
+  },
+  {
+   "id": "Q3145519",
+   "name": "hôtel Haguenot",
+   "lat": 43.610075,
+   "lng": 3.870892,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "Folie montpelliéraine construite de 1752 à 1760 par Jean Antoine Giral pour Henri Haguenot, doyen de l'université, qui a plus de soixante-dix ans lorsqu'il décide de se faire bâtir cette maison des champs en contrebas du Peyrou. Façades, toitures et jardin sont classés monuments historiques depuis 1963.",
+   "wiki": "Hôtel Haguenot",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/H%C3%B4tel%20Haguenot%20%28Montpeller%29%20-%203.jpg?width=960",
+   "photoBy": "Albertvillanovadelmoral",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Haguenot hotel",
+    "es": "hotel Haguenot"
+   }
+  },
+  {
+   "id": "Q17354824",
+   "name": "hôtel de Ricard",
+   "lat": 43.608922,
+   "lng": 3.873989,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "Hôtel particulier de Montpellier, dans le département de l'Hérault. Le bâtiment est inscrit au titre des monuments historiques depuis le 28 juillet 1945.",
+   "wiki": "Hôtel de Ricard (Montpellier)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/H%C3%B4tel%20de%20Ricard%20%28Montpeller%29%20-%20Porta.jpg?width=960",
+   "photoBy": "Albertvillanovadelmoral",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Ricard hotel",
+    "es": "hotel de Ricard"
+   }
+  },
+  {
+   "id": "Q22953941",
+   "name": "hôtel de Fizes",
+   "lat": 43.608992,
+   "lng": 3.87475,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "Entré vers 1640 dans la famille de David de Fizes, cet hôtel de l'Écusson oppose à une façade austère un portail monumental daté de 1665, dont le décor sommital en cuirs découpés montre deux captifs dos à dos. Son escalier en loggia est l'un des premiers de Montpellier à avoir eu une rampe en fer forgé.",
+   "wiki": "Hôtel de Fizes",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/H%C3%B4tel%20de%20Fizes%20%28Montpeller%29%20-%20Escala.jpg?width=960",
+   "photoBy": "Albertvillanovadelmoral",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Fizes hotel",
+    "es": "hotel de Fizes"
+   }
+  },
+  {
+   "id": "Q17354817",
+   "name": "hôtel Bardy",
+   "lat": 43.6101,
+   "lng": 3.874808,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "Hôtel particulier de Montpellier, dans le département de l'Hérault. Le bâtiment est inscrit au titre des monuments historiques depuis le 3 mars 1954.",
+   "wiki": "Hôtel Bardy",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/H%C3%B4tel%20Bardy.JPG?width=960",
+   "photoBy": "Claudialap",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Bardy hotel",
+    "es": "hotel Bardy"
+   }
+  },
+  {
+   "id": "Q3145855",
+   "name": "hôtel de Griffy",
+   "lat": 43.611075,
+   "lng": 3.878486,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "Hôtel particulier situé au 26 rue de l'Aiguillerie, à Montpellier. Le bâtiment est inscrit au titre des monuments historiques depuis le 18 octobre 1944.",
+   "wiki": "Hôtel de Griffy",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/H%C3%B4tel%20de%20Griffy%20%28Montpeller%29%20-%20Fa%C3%A7ana%20principal.jpg?width=960",
+   "photoBy": "Albertvillanovadelmoral",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Griffy hotel",
+    "es": "hotel de Griffy"
+   }
+  },
+  {
+   "id": "Q17354818",
+   "name": "hôtel Baschy-du-Cayla",
+   "lat": 43.610569,
+   "lng": 3.878631,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "Propriété de la Ville de Montpellier, cet hôtel a abrité de 1984 à 2025 un centre de loisirs et une crèche municipale, qui ont dû quitter les lieux après la découverte de plomb dans le bâtiment. Fermé au public le 1er mars 2025, il doit subir plusieurs années de travaux. Une première inscription aux monuments historiques date de 1944.",
+   "wiki": "Hôtel Baschy-du-Cayla",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/H%C3%B4tel%20Bachy-du-Cayla%2C%20Montpellier%20-%20facade%20ext%C3%A9rieure.JPG?width=960",
+   "photoBy": "Auregann",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Bachy-du-Cayla hotel",
+    "es": "hotel Baschy-du-Cayla"
+   }
+  },
+  {
+   "id": "Q20127550",
+   "name": "hôtel de Guidais",
+   "lat": 43.610589,
+   "lng": 3.868336,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "Commencée en 1754 par l'architecte Isaac Guidais hors les murs, cette folie est, à peine achevée, menacée de démolition pour la construction des allées basses du Peyrou ; l'évêque de Nîmes s'y oppose. Ferdinand de Hompesch, grand maître de l'ordre de Malte, s'y installe dans l'espoir que la faculté de médecine soigne le mal dont il meurt en 1805.",
+   "wiki": "Hôtel de Guidais",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/H%C3%B4tel%20de%20Guidais%20%28Montpeller%29%20-%202.jpg?width=960",
+   "photoBy": "Albertvillanovadelmoral",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Guidais hotel",
+    "es": "hotel de Guidais"
+   }
+  },
+  {
+   "id": "Q3076244",
+   "name": "fontaine des Trois Grâces",
+   "lat": 43.6086,
+   "lng": 3.87944,
+   "theme": "monuments",
+   "fame": 3,
+   "summary": "Sculpté par Étienne Dantoine pour la place de la Canourgue, ce groupe de marbre est achevé en 1776, mais un différend avec la municipalité en retarde l'installation. Il gagne la place de la Comédie en 1793. L'original, dégradé, est enlevé en 1989 et remplacé par un moulage en résine ; le marbre orne le hall de l'Opéra Comédie.",
+   "wiki": "Fontaine des Trois Grâces (Montpellier)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Montpellier%20-%20Fontaine%20les%20trois%20Graces.jpg?width=960",
+   "photoBy": "Christophe.Finot",
+   "photoLic": "CC BY-SA 2.5",
+   "alt": {
+    "en": "Fontaine des Trois Grâces"
+   }
+  },
+  {
+   "id": "Q63762464",
+   "name": "monument aux morts de Montpellier",
+   "lat": 43.61044,
+   "lng": 3.882819,
+   "theme": "monuments",
+   "fame": 3,
+   "summary": "Décidé dès novembre 1918 et inauguré le 6 mai 1923, ce monument de l'architecte Jacques-Léon Février prend la forme d'une colonnade corinthienne en hémicycle. Un déambulatoire en sous-sol porte les noms de plus de 2 200 soldats de la commune. Érigé au centre du jardin de l'Esplanade, il a été déplacé en 1993 lors de la construction du Corum.",
+   "wiki": "Monument aux morts de Montpellier",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/War%20memorial%20Montpellier.JPG?width=960",
+   "photoBy": "Andrew Dalby",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Montpellier war memorial"
+   }
+  },
+  {
+   "id": "Q3399123",
+   "name": "porte de la Blanquerie",
+   "lat": 43.6146,
+   "lng": 3.87747,
+   "theme": "monuments",
+   "fame": 2,
+   "summary": "Aussi appelée Vieille porte, elle est un vestige de l'enceinte fortifiée qui protégeait Montpellier à la fin du XIIe et au début du XIIIe siècle, laquelle comptait vingt-cinq tours. Avec la tour de la Babote, la porte du Pila Saint-Gély et la tour des Pins, elle en est un des derniers témoins. Inscrite aux monuments historiques en 1938.",
+   "wiki": "Porte de la Blanquerie",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Porta%20de%20la%20Blanquerie%20%28Montpeller%29%20-%2006.JPG?width=960",
+   "photoBy": "Albertvillanovadelmoral",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Porte de la Blanquerie"
+   }
+  },
+  {
+   "id": "Q3100546",
+   "name": "jardin des plantes de Montpellier",
+   "lat": 43.6143,
+   "lng": 3.8717,
+   "theme": "parks",
+   "fame": 10,
+   "summary": "Fondé en 1593 par Pierre Richer de Belleval sur lettres patentes d'Henri IV pour y cultiver les « simples », c'est le plus ancien jardin botanique de France, devant celui de Strasbourg (1619). Le jardin est anéanti lors du siège de la ville en 1622 et Richer doit tout reprendre à zéro. Il s'étend sur 4,6 hectares.",
+   "wiki": "Jardin des plantes de Montpellier",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/File%20by%20Alexander%20Baranov%20-%20%2819421412971%29.jpg?width=960",
+   "photoBy": "Alexander Baranov from Montpellier, France",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Jardin des plantes de Montpellier",
+    "es": "Jardin des Plantes de Montpellier",
+    "it": "Orto botanico di Montpellier"
+   }
+  },
+  {
+   "id": "Q3407377",
+   "name": "promenade du Peyrou",
+   "lat": 43.6113,
+   "lng": 3.87012,
+   "theme": "parks",
+   "fame": 5,
+   "summary": "Décidée en 1688 par le Conseil de ville au point culminant de Montpellier, la promenade est inaugurée en 1690. L'esplanade de 4,59 hectares réunit l'arc de triomphe, la statue équestre de Louis XIV et le château d'eau alimenté par l'aqueduc Saint-Clément. Le roi y tend le bras : censé désigner l'Espagne, il vise en fait l'Italie.",
+   "wiki": "Promenade du Peyrou",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Promenade%20du%20Peyrou%20Montpellier.jpg?width=960",
+   "photoBy": "Danichou",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "promenade of Peyrou",
+    "es": "paseo de Peyrou"
+   }
+  },
+  {
+   "id": "Q144375",
+   "name": "aqueduc Saint-Clément",
+   "lat": 43.611667,
+   "lng": 3.866667,
+   "theme": "water",
+   "fame": 4,
+   "summary": "Bâti de 1753 à 1765 sous la direction de l'ingénieur Henri Pitot, il amenait l'eau jusqu'au château d'eau du Peyrou. Pitot s'inspire du pont du Gard : deux séries d'arches superposées, la faible portée des petites réduisant le risque de fissuration. Le débit initial de 25 litres par seconde atteint 250 l/s après le doublement souterrain de 1931.",
+   "wiki": "Aqueduc Saint-Clément",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Aqueduc%20du%20Peyrou%2C%20Montpellier.jpg?width=960",
+   "photoBy": "Wolfgang Staudt",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Aqueduc Saint-Clément"
+   }
+  },
+  {
+   "id": "Q58480511",
+   "name": "pont Vialleton",
+   "lat": 43.611219,
+   "lng": 3.872194,
+   "theme": "water",
+   "fame": 2,
+   "summary": "Construit en 1691 en même temps que l'arc de triomphe et par le même architecte, Augustin-Charles d'Aviler, ce pont de pierre remplace l'ancien pont-levis et relie la rue Foch à l'esplanade du Peyrou. Appelé pont du Peyrou, il est rebaptisé en l'honneur de Louis Vialleton après la mort de celui-ci en 1929.",
+   "wiki": "Pont Vialleton",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Montpellier%20T4%202016%2004.jpg?width=960",
+   "photoBy": "Smiley.toerist",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Vialleton bridge",
+    "es": "puente Vialleton"
+   }
+  },
+  {
+   "id": "Q1065164",
+   "name": "place de la Comédie",
+   "lat": 43.608664,
+   "lng": 3.879897,
+   "theme": "streets",
+   "fame": 8,
+   "summary": "Elle doit son nom au théâtre municipal, incendié en 1785 puis en 1881 et reconstruit chaque fois, dont la façade orne le côté sud-ouest. La première place date de 1755, sur l'ancienne emprise de la muraille. La fontaine des Trois Grâces, d'Étienne Dantoine, y est installée à la fin des années 1790.",
+   "wiki": "Place de la Comédie (Montpellier)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Montpellier%20-%20Op%C3%A9ra%20Com%C3%A9die.jpg?width=960",
+   "photoBy": "Christophe.Finot",
+   "photoLic": "CC BY-SA 2.5",
+   "alt": {
+    "en": "Comedy Square",
+    "es": "plaza de la Comedia"
+   }
+  },
+  {
+   "id": "Q80564925",
+   "name": "place de la Canourgue",
+   "lat": 43.611889,
+   "lng": 3.874639,
+   "theme": "streets",
+   "fame": 2,
+   "summary": "Son nom vient de l'occitan : le terrain appartenait au chapitre de Saint-Pierre, et « canourgue » désigne un chapitre canonial. La place prend forme après l'abandon du chantier d'une nouvelle cathédrale, interrompu en 1629 sur ordre de Richelieu, qui préfère faire restaurer Saint-Pierre. L'hôtel Richer de Belleval y abrita la mairie de 1816 à 1975.",
+   "wiki": "Place de la Canourgue",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20jardin%20de%20la%20Canourgue%20%28Montpellier%29%20%2828089376172%29.jpg?width=960",
+   "photoBy": "Jean-Pierre Dalbéra from Paris, France",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Place de la Canourgue"
+   }
+  },
+  {
+   "id": "Q3390640",
+   "name": "place du Marché-aux-Fleurs",
+   "lat": 43.611397,
+   "lng": 3.877522,
+   "theme": "streets",
+   "fame": 2,
+   "summary": "Le lieu abritait le couvent des Capucins, détruit pendant la Révolution. Une statue de Louis XVI y est installée en 1829, dix ans après la pose de la première pierre, puis déposée et remisée en 1831 après l'avènement de la monarchie de Juillet ; en 1966, le maire François Delmas l'offre à Louisville, ville jumelée avec Montpellier.",
+   "wiki": "Place du Marché-aux-Fleurs",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Place%20Marche%20Aux%20Fleurs%20Montpellier.JPG?width=960",
+   "photoBy": "Stéphane Batigne",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "flower Market Square",
+    "es": "plaza del mercado de las flores"
+   }
+  },
+  {
+   "id": "Q3389884",
+   "name": "place Jean-Jaurès",
+   "lat": 43.609983,
+   "lng": 3.877694,
+   "theme": "streets",
+   "fame": 2,
+   "summary": "La place occupe le vide laissé par la démolition en 1794 de l'église Notre-Dame-des-Tables, qui devait son nom aux changeurs de monnaie installés devant ses murs au XIIe siècle. Sa crypte, restée intacte sous les halles de 1806, abrite le musée de l'histoire de Montpellier. Jaurès y avait parlé lors de la révolte des vignerons de 1907.",
+   "wiki": "Place Jean-Jaurès (Montpellier)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rochelongue%20255%20Montpellier.JPG?width=960",
+   "photoBy": "Demeester",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "place Jean-Jaurès",
+    "es": "plaza Jean-Jaurès"
+   }
+  },
+  {
+   "id": "Q3447920",
+   "name": "rue Foch",
+   "lat": 43.610961,
+   "lng": 3.874464,
+   "theme": "streets",
+   "fame": 2,
+   "summary": "Tracée en 1205 avec la seconde enceinte, elle menait à la porte du Peyrou et en porta le nom jusqu'en 1860. Percée et élargie dans l'esprit haussmannien sous le maire Jules Pagézy, elle devient rue Impériale en 1864, puis rue Nationale sous la IIIe République ; les travaux cessent en 1885 faute d'argent. Elle prend le nom du maréchal Foch en 1929.",
+   "wiki": "Rue Foch",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Montpellier%28France%291.JL.jpg?width=960",
+   "photoBy": "Jonaslange",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Foch street",
+    "es": "calle Foch"
+   }
+  },
+  {
+   "id": "Q3451463",
+   "name": "rue de la Loge",
+   "lat": 43.609722,
+   "lng": 3.878056,
+   "theme": "streets",
+   "fame": 2,
+   "summary": "Au Moyen Âge, son nom occitan « carrièira daurada », rue dorée, venait des orfèvres et argentiers qui y étaient établis. Son nom vient de la Grande Loge des marchands, bâtie vers 1447 par Jacques Cœur à l'angle de la rue de l'Aiguillerie et détruite depuis. Avant la création de la place de la Comédie en 1755, elle débouchait sur la porte de Lattes.",
+   "wiki": "Rue de la Loge (Montpellier)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rue%20de%20la%20Loge.jpg?width=960",
+   "photoBy": "Thomon",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "street of the Loge",
+    "es": "calle de la Loge"
+   }
+  },
+  {
+   "id": "Q3451177",
+   "name": "rue de l'Aiguillerie",
+   "lat": 43.611453,
+   "lng": 3.878731,
+   "theme": "streets",
+   "fame": 2,
+   "summary": "Artère commerçante piétonne de l'Écusson, elle rejoint à son extrémité sud la place Jean-Jaurès et la rue de la Loge. Son nom renvoie aux aiguillers qui y étaient autrefois établis : à Montpellier le métier a disparu, le nom de rue est resté. On y trouve des bars et des magasins alternatifs, écologiques et de cultures étrangères.",
+   "wiki": "Rue de l'Aiguillerie (Montpellier)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rochelongue%20289%20Montpellier.JPG?width=960",
+   "photoBy": "Demeester",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "street of the Aiguillerie",
+    "es": "calle de la Aiguillerie"
+   }
+  },
+  {
+   "id": "Q102293279",
+   "name": "rue Sainte-Croix",
+   "lat": 43.61205,
+   "lng": 3.87457,
+   "theme": "streets",
+   "fame": 2,
+   "summary": "La rue longe la place de la Canourgue et doit son nom à l'église Sainte-Croix, chapelle castrale du deuxième château des Guilhem, seigneurs de Montpellier. Une révolte de ses sujets obligea Guilhem VI à abandonner ce château pour en bâtir un autre. Devenue propriété des chanoines de la cathédrale, l'église fut détruite par les protestants en 1621.",
+   "wiki": "Rue Sainte-Croix (Montpellier)",
+   "alt": {
+    "en": "Rue Sainte-Croix"
+   }
+  },
+  {
+   "id": "Q58426872",
+   "name": "rue de Maguelone",
+   "lat": 43.606508,
+   "lng": 3.879917,
+   "theme": "streets",
+   "fame": 2,
+   "summary": "Cette rue relie la place de la Comédie à la place Auguste-Gibert et à la gare Saint-Roch. Fermée à la circulation automobile depuis 1986, elle est traversée par les lignes 1 et 2 du tramway. Elle borde le square Planchon, aménagé en 1858, et le temple protestant, inauguré en 1870.",
+   "wiki": "Rue de Maguelone",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rue%20de%20Maguelone.jpg?width=960",
+   "photoBy": "Thomon",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "street of Maguelone",
+    "es": "calle de Maguelone"
+   }
+  },
+  {
+   "id": "Q3058438",
+   "name": "esplanade Charles-de-Gaulle",
+   "lat": 43.611375,
+   "lng": 3.881215,
+   "theme": "streets",
+   "fame": 2,
+   "summary": "Prolongement de la place de la Comédie, l'esplanade naît du démantèlement des remparts : murs abattus et fossé comblé en 1679, laissant un chemin carrossable. Le duc de Roquelaure y fait aménager une promenade en 1723 et l'année suivante. Le jardin du Champ-de-Mars, vendu par l'armée à la Ville, devient esplanade en 1900.",
+   "wiki": "Esplanade Charles-de-Gaulle (Montpellier)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Montpellier%20Esplanade%20Ch%20de%20Gaulle%2027122006.JPG?width=960",
+   "photoBy": "User:Sebjarod",
+   "photoLic": "CC BY-SA 2.5",
+   "alt": {
+    "en": "esplanade Charles de Gaulle",
+    "es": "explanada Charles de Gaulle"
+   }
+  },
+  {
+   "id": "Q16670337",
+   "name": "plan Cabanes",
+   "lat": 43.608586,
+   "lng": 3.868444,
+   "theme": "streets",
+   "fame": 2,
+   "summary": "En occitan, plan désigne une place : celle-ci, triangulaire, naît après 1862 dans le quartier Figuerolles avec la destruction des bâtiments de l'île Verdier. Un marché quotidien s'y tient à partir de 1924, d'abord spécialisé dans le bois de chauffage. Fermé en 2006, il a été rétabli en 2016, six matinées par semaine.",
+   "wiki": "Plan Cabanes",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Plan%20Cabanes.JPG?width=960",
+   "photoBy": "Stéphane Batigne",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "plan Cabanes",
+    "es": "plan Cabanes"
+   }
+  },
+  {
+   "id": "Q2922064",
+   "name": "boulevard du Jeu-de-Paume",
+   "lat": 43.607417,
+   "lng": 3.874258,
+   "theme": "streets",
+   "fame": 2,
+   "summary": "Cette artère borde l'Écusson et tire son nom du jeu de paume, jeu de balle largement pratiqué en Languedoc. Trois ans de travaux ont été nécessaires pour la rendre piétonne et y faire passer la ligne 4 du tramway. Au n° 30 est mort le peintre sourd-muet Frédéric Peyson, le 13 janvier 1877.",
+   "wiki": "Boulevard du Jeu-de-Paume",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Boulevard%20du%20Jeu%20de%20Paume%2C%20Montpellier.JPG?width=960",
+   "photoBy": "Ddk71",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Jeu de Paume Boulevard",
+    "es": "Bulevar Jeu de Paume"
+   }
+  },
+  {
+   "id": "Q3390528",
+   "name": "place des Martyrs-de-la-Résistance",
+   "lat": 43.610789,
+   "lng": 3.876589,
+   "theme": "streets",
+   "fame": 3,
+   "summary": "Cette place du cœur historique doit son nom aux résistants et opposants politiques honorés après la victoire des Alliés. Durant la Seconde Guerre mondiale, la préfecture qui s'y trouve fut le lieu de réunion des dirigeants pétainistes et le point de transit de ces opposants avant leur emprisonnement ou leur déportation.",
+   "wiki": "Place des Martyrs-de-la-Résistance (Montpellier)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Pr%C3%A9fecture%20%C3%A0%20Montpellier.jpg?width=960",
+   "photoBy": "Inkey",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "place des Martyrs de la Résistance"
+   }
+  },
+  {
+   "id": "Q3452508",
+   "name": "rue du Pila-Saint-Gély",
+   "lat": 43.61381,
+   "lng": 3.88035,
+   "theme": "streets",
+   "fame": 2,
+   "summary": "Dans l'Écusson, la rue relie la rue de l'Aiguillerie à la place du Corum. « Pila Saint Gély » est le nom occitan de l'ancien faubourg Pile Saint-Gilles. Au n° 27 se trouve le Logis du Chapeau-Rouge, auberge réputée dès le XVIe siècle, dont la construction commence au XIIIe.",
+   "wiki": "Rue du Pila-Saint-Gély",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Plan%20de%20Montpellier%20avant%20les%20guerres%20de%20religion%20%28vers%201737%29.JPG?width=960",
+   "photoBy": "Villaret",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "rue du Pila Saint Gély",
+    "es": "rue du Pila Saint Gély"
+   }
+  },
+  {
+   "id": "Q58650777",
+   "name": "halle Laissac",
+   "lat": 43.606117,
+   "lng": 3.876647,
+   "theme": "shops",
+   "fame": 2,
+   "summary": "Inaugurée en 1880 par le maire Alexandre Laissac, la halle de fer et de fonte était surnommée le « marché bas ». Détruite en 1966, elle cède la place en 1968 à une halle de béton surmontée d'un parking, le « marché rond ». Rasée à son tour en 2016, elle est remplacée par un bâtiment de métal et de verre inauguré le 1er décembre 2018.",
+   "wiki": "Halle Laissac",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Place%20Alexandre%20Laissac%20%283032066614%29.jpg?width=960",
+   "photoBy": "RR Nederhoed from The Hague, The Netherlands",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "hall Laissac",
+    "es": "mercado Laissac"
+   }
+  },
+  {
+   "id": "Q3395579",
+   "name": "Polygone",
+   "lat": 43.6086,
+   "lng": 3.88472,
+   "theme": "shops",
+   "fame": 2,
+   "summary": "Le centre commercial doit son nom aux terrains militaires qui servaient là d'exercices d'artillerie et de tir. Inauguré le 5 mars 1975 par le maire François Delmas, il ouvre avec 34 000 m2 et les Galeries Lafayette, qui quittent alors la place de la Comédie. Un second étage est ajouté en 1996, et la rénovation avec verrière inaugurée en 2021.",
+   "wiki": "Polygone (Montpellier)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Photo%20POLYGONE.jpg?width=960",
+   "photoBy": "Ana2894",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Polygone"
+   }
+  },
+  {
+   "id": "Q801197",
+   "name": "Montpellier-Saint-Roch",
+   "lat": 43.604636,
+   "lng": 3.881039,
+   "theme": "other",
+   "fame": 17,
+   "summary": "Construite en 1844, la gare doit son emplacement aux militaires, opposés au tracé rectiligne que l'ingénieur Didion voulait faire passer en travers de l'Esplanade. À l'approche du TGV, en 1980, tout est détruit et reconstruit sauf la façade, dont la partie centrale est inscrite monument historique depuis 1984.",
+   "wiki": "Gare de Montpellier-Saint-Roch",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Montpellier%20%2834%29%20Gare%20de%20Montpellier-Saint-Roch%20337.jpg?width=960",
+   "photoBy": "GFreihalter",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Montpellier-Saint-Roch railway station",
+    "es": "Estación de Montpellier Saint-Roch",
+    "it": "stazione di Montpellier-Saint-Roch"
+   }
+  },
+  {
+   "id": "Q3268766",
+   "name": "lycée Joffre",
+   "lat": 43.6115,
+   "lng": 3.884025,
+   "theme": "other",
+   "fame": 2,
+   "summary": "Inauguré le 7 mars 1804 sous le nom de Grand Lycée impérial, l'établissement prend la suite du collège royal fondé par les jésuites en 1629, qui occupait les locaux de l'actuel musée Fabre. En 1947, il est transféré dans la citadelle bâtie de 1624 à 1627 sous Louis XIII, et prend peu après le nom de lycée Joffre.",
+   "wiki": "Lycée Joffre",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Citadelle%20de%20Montpellier%20entree%20lycee%20joffre.jpg?width=960",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Lycée Joffre"
+   }
+  },
+  {
+   "id": "Q2853220",
+   "name": "quartier Antigone",
+   "lat": 43.608003,
+   "lng": 3.890556,
+   "theme": "streets",
+   "fame": 5,
+   "summary": "Conçu dès 1978 par l'architecte catalan Ricardo Bofill sous l'impulsion du maire Georges Frêche, le quartier est construit à partir de 1983 sur des terrains occupés jusque-là par un champ de tir militaire, une association et une friche industrielle. Son style postmoderne mêle colonnes cannelées et béton teinté imitant la pierre.",
+   "wiki": "Antigone (Montpellier)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Antigone%20nuit%2002.jpg?width=960",
+   "photoBy": "Mystère B",
+   "photoLic": "CC BY 3.0",
+   "alt": {
+    "en": "neighborhood Antigone",
+    "es": "barrio Antigone"
+   }
+  },
+  {
+   "id": "Q2969230",
+   "name": "château de Flaugergues",
+   "lat": 43.610278,
+   "lng": 3.92,
+   "theme": "palaces",
+   "fame": 5,
+   "summary": "Étienne de Flaugergues, conseiller à la Cour des comptes de Montpellier, achète le domaine en 1696 et l'embellit durant près d'un demi-siècle. Transmise par succession sans jamais être vendue, la folie appartient à la famille de Colbert. Son escalier à clefs pendantes s'élève sur trois étages sans le soutien d'aucun pilier.",
+   "wiki": "Château de Flaugergues",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Chateaudeflaugergue.jpg?width=960",
+   "photoBy": "Vpe",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Château de Flaugergues",
+    "es": "Parc et jardins du Château de Flaugergues"
+   }
+  },
+  {
+   "id": "Q2014804",
+   "name": "Odysseum",
+   "lat": 43.603803,
+   "lng": 3.920331,
+   "theme": "shops",
+   "fame": 2,
+   "summary": "Cette zone dédiée aux loisirs et au commerce, dans le quartier de Port Marianne, a été bâtie sur des terres encore agricoles à la fin des années 1990 : multiplexe Gaumont en 1998, patinoire Végapolis en 2000, planétarium Galilée en 2002, aquarium Mare Nostrum en 2007. Le centre commercial ouvre le 24 septembre 2009.",
+   "wiki": "Odysseum",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Fontaine%2C%20fontaine%2C%20Odysseum%20%28MONTPELLIER%2CFR34%29%20%283429325473%29.jpg?width=960",
+   "photoBy": "jean-louis Zimmermann from Orange, FRANCE",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Odysseum",
+    "es": "Odysseum"
+   }
+  },
+  {
+   "id": "Q59279414",
+   "name": "chapelle Royale des Pénitents bleus de Montpellier",
+   "lat": 43.607278,
+   "lng": 3.877486,
+   "theme": "religious",
+   "fame": 2,
+   "summary": "Construite en 1845 rue des Étuves par l'architecte Omer Lazard, cette chapelle est de style néogothique troubadour. Un orgue de la manufacture Théodore Puget y est ajouté en 1891 ; Albine de Montholon est inhumée dans la crypte.",
+   "wiki": "Chapelle des Pénitents bleus de Montpellier",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Chapelle%20des%20P%C3%A9nitents%20bleus.JPG?width=960",
+   "photoBy": "Vpe",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "chapel of Penitents Blues",
+    "es": "capilla de los Penitentes Azules"
+   }
+  },
+  {
+   "id": "Q3145748",
+   "name": "hôtel de Belleval",
+   "lat": 43.61175,
+   "lng": 3.874769,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "Édifié entre 1669 et 1682 par Charles de Boulhac, conseiller à la cour des comptes, l'hôtel est acheté par la ville en 1816 pour devenir l'hôtel de ville, fonction qu'il conserve jusqu'en 1975. Après d'importants travaux, il a rouvert en juin 2021 : hôtel de luxe, restaurant gastronomique et fondation d'art contemporain.",
+   "wiki": "Hôtel Richer de Belleval",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Hotel%20Belleval%201.jpg?width=960",
+   "photoBy": "Jean-Marie DAVID",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Belleval hotel",
+    "es": "hotel de Belleval"
+   }
+  },
+  {
+   "id": "Q59164849",
+   "name": "hôpital général Saint-Charles de Montpellier",
+   "lat": 43.615786,
+   "lng": 3.874107,
+   "theme": "other",
+   "fame": 2,
+   "summary": "Fondé en 1678 et construit en 1680 sur le site de l'ancien couvent des Carmes, l'hôpital général voulu par Louis XIV servait à parquer, nourrir et soigner mendiants et vagabonds. Fermé progressivement entre 1970 et 1997, il est devenu le campus Saint-Charles de l'université Paul-Valéry, livré en deux tranches en 2011 et 2017.",
+   "wiki": "Hôpital général Saint-Charles",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Montpellier%20-%20Chapelle%20Saint-Charles%201.jpg?width=960",
+   "photoBy": "Christophe.Finot",
+   "photoLic": "CC BY-SA 2.5",
+   "alt": {
+    "en": "St. Charles General Hospital",
+    "es": "Hospital General St. Charles"
+   }
+  },
+  {
+   "id": "Q832351",
+   "name": "porte du Peyrou",
+   "lat": 43.611131,
+   "lng": 3.872406,
+   "theme": "monuments",
+   "fame": 15,
+   "summary": "Érigé en 1691 par Augustin-Charles d'Aviler, architecte de la province du Languedoc, d'après des dessins de François II d'Orbay, cet arc de 15 mètres de haut et 18 de large donnait accès au Peyrou. Philippe Bertrand y réalise en 1694 quatre médaillons, dont l'un figure la jonction des deux mers par le canal royal de Languedoc.",
+   "wiki": "Arc de triomphe (Montpellier)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Arc%20triomphe%20de%20Montpellier.jpg?width=960",
+   "photoBy": "Biache Benoit",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Gate of Peyrou",
+    "es": "Puerta de Peyrou",
+    "it": "Porte du Peyrou"
+   }
+  }
+ ]
+}
