@@ -1,0 +1,2283 @@
+{
+ "version": 1,
+ "city": "WN",
+ "attribution": "Lieux : Wikidata (CC0) · Résumés d’après Wikipédia (CC BY-SA) · Photos : Wikimedia Commons",
+ "updatedAt": "2026-08-05",
+ "pois": [
+  {
+   "id": "Q46242",
+   "name": "Hofburg",
+   "lat": 48.206388888889,
+   "lng": 16.365277777778,
+   "theme": "museums",
+   "fame": 55,
+   "summary": "Le plus grand palais de Vienne s'est construit par étapes depuis le XIIIe siècle, autour d'un noyau élevé vers 1220 sous les Babenberg. Résidence des Habsbourg pendant plus de 600 ans, il compte plus de 2 600 pièces réparties sur 18 ailes et abrite les appartements impériaux ; depuis 1946, il est la résidence d'État du président fédéral.",
+   "wiki": "Hofburg",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Neue%20Hofburg.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 3.0 at",
+   "alt": {
+    "en": "Hofburg Palace",
+    "es": "Palacio Imperial de Hofburg",
+    "it": "Hofburg"
+   }
+  },
+  {
+   "id": "Q95569",
+   "name": "musée d'Histoire de l'art de Vienne",
+   "lat": 48.203880555556,
+   "lng": 16.3616,
+   "theme": "museums",
+   "fame": 52,
+   "summary": "Ouvert en 1891 sur le Ring, dans un bâtiment de style Renaissance italienne conçu dès l'origine pour cet usage, le musée abrite les collections rassemblées au fil des siècles par la maison des Habsbourg : antiquités égyptiennes et gréco-romaines, Kunstkammer, cabinet des monnaies, peintures. Son jumeau, le musée d'histoire naturelle, lui fait face.",
+   "wiki": "Musée d'Histoire de l'art de Vienne",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20Kunsthistorisches%20Museum.jpg?width=960",
+   "photoBy": "Andrzej Otrębski",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Kunsthistorisches Museum",
+    "es": "Museo de Historia del Arte de Viena",
+    "it": "Kunsthistorisches Museum"
+   }
+  },
+  {
+   "id": "Q371908",
+   "name": "Albertina",
+   "lat": 48.204722222222,
+   "lng": 16.368333333333,
+   "theme": "museums",
+   "fame": 47,
+   "summary": "Aménagé en 1801 pour abriter les dessins, estampes et aquarelles réunis par le duc Albert de Saxe-Teschen, gendre de Marie-Thérèse, le palais est aujourd'hui un musée. Sa collection d'arts graphiques compte parmi les plus riches du monde, et ses 139 dessins et aquarelles de Dürer forment le plus vaste ensemble au monde.",
+   "wiki": "Albertina (musée)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Albertina%20%28b%29.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Albertina",
+    "es": "Albertina",
+    "it": "Albertina"
+   }
+  },
+  {
+   "id": "Q304037",
+   "name": "bibliothèque nationale autrichienne",
+   "lat": 48.20614167,
+   "lng": 16.36626667,
+   "theme": "museums",
+   "fame": 43,
+   "summary": "Fondée au Moyen Âge tardif par les ducs autrichiens de la maison de Habsbourg, elle porta le nom de bibliothèque de la Cour jusqu'en 1920. Installée à la Hofburg, elle réunit plus de 12 millions de documents, dont près de 4 millions de livres, ce qui en fait la plus riche bibliothèque d'Autriche. Sa salle d'apparat mesure 80 mètres de long.",
+   "wiki": "Bibliothèque nationale autrichienne",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/State%20Hall%20of%20the%20Austrian%20National%20Library%20NightFall404%201.jpg?width=960",
+   "photoBy": "Richard Hopkins",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Austrian National Library",
+    "es": "Biblioteca Nacional de Austria",
+    "it": "Biblioteca Nazionale Austriaca"
+   }
+  },
+  {
+   "id": "Q265129",
+   "name": "palais de la Sécession",
+   "lat": 48.200395,
+   "lng": 16.365934,
+   "theme": "museums",
+   "fame": 28,
+   "summary": "Œuvre de Joseph Maria Olbrich construite en 1897, l'édifice fut un manifeste architectural et une salle d'exposition pour la Sécession viennoise, groupe d'artistes en rupture avec la conception ancienne des arts. Il abrite la frise Beethoven de Klimt et porte au-dessus de l'entrée la devise « À chaque époque son art, à chaque art sa liberté ».",
+   "wiki": "Palais de la Sécession",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Secessionsgeb%C3%A4ude.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Secession Building",
+    "es": "Pabellón de la Secesión",
+    "it": "Palazzo della Secessione"
+   }
+  },
+  {
+   "id": "Q699943",
+   "name": "Museumsquartier",
+   "lat": 48.203333333333,
+   "lng": 16.358888888889,
+   "theme": "museums",
+   "fame": 27,
+   "summary": "Ce complexe culturel occupe les anciennes écuries impériales du 7e arrondissement et a été construit entre 1998 et 2001, mariant le baroque des écuries à des bâtiments modernes comme le Musée Leopold et le Mumok. Il réunit aussi la Kunsthalle, l'Architekturzentrum, le musée des enfants ZOOM et le Tanzquartier.",
+   "wiki": "Museumsquartier",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/MuseumsQuartier%20Wien%20Sept%202020%201.jpg?width=960",
+   "photoBy": "Kasa Fue",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "MuseumsQuartier",
+    "es": "Museumsquartier",
+    "it": "Museumsquartier"
+   }
+  },
+  {
+   "id": "Q59435",
+   "name": "musée Leopold",
+   "lat": 48.20265,
+   "lng": 16.359142,
+   "theme": "museums",
+   "fame": 25,
+   "summary": "Ouvert en 2001, il est né de la collection de Rudolf Leopold, qui commença à acheter dans les années 1950 des artistes alors méconnus et réunit au total 5 300 objets. On y voit la plus grande collection mondiale de tableaux d'Egon Schiele, un vaste ensemble d'art autrichien et La Vie et la Mort de Gustav Klimt.",
+   "wiki": "Musée Leopold",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%2007%20Leopold%20Museum%20a.jpg?width=960",
+   "photoBy": "Gugerell",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "Leopold Museum",
+    "es": "Museo Leopold",
+    "it": "Leopold Museum"
+   }
+  },
+  {
+   "id": "Q689951",
+   "name": "Mumok",
+   "lat": 48.203722,
+   "lng": 16.357444,
+   "theme": "museums",
+   "fame": 18,
+   "summary": "Musée d'art moderne et contemporain inauguré en 1962 dans la 20er Haus, il rouvre en 2001 au MuseumsQuartier, dans un bâtiment cubique en roche volcanique conçu par Ortner & Ortner. Sa collection réunit des œuvres de Picasso, Warhol, Beuys ou Richter. Les collectionneurs Peter et Irene Ludwig lui remettent plus de 230 œuvres en 1981.",
+   "wiki": "Museum Moderner Kunst Stiftung Ludwig Wien",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20Muzeum%20Sztuki%20Nowoczesnej.jpg?width=960",
+   "photoBy": "Andrzej Otrębski",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Mumok",
+    "es": "Mumok",
+    "it": "Mumok"
+   }
+  },
+  {
+   "id": "Q694810",
+   "name": "musée Sigmund-Freud de Vienne",
+   "lat": 48.2186,
+   "lng": 16.3631,
+   "theme": "museums",
+   "fame": 18,
+   "summary": "Sigmund Freud emménage en 1891 au 19 Berggasse, dans le quartier Alsergrund : il y exerce et fonde la psychanalyse pendant 47 ans, jusqu'à son départ en exil à Londres en 1938. Anna Freud y ouvre son propre cabinet en 1923. L'appartement devient en 1971 un musée de l'histoire de la psychanalyse, inauguré en présence d'Anna Freud.",
+   "wiki": "Musée Sigmund-Freud de Vienne",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Sigmund%20Freud%20Museum%20%28d%29.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Sigmund Freud Museum",
+    "es": "Sigmund Freud Museum"
+   }
+  },
+  {
+   "id": "Q387667",
+   "name": "maison Mozart à Vienne",
+   "lat": 48.208161111111,
+   "lng": 16.374911111111,
+   "theme": "museums",
+   "fame": 18,
+   "summary": "Seule résidence viennoise de Mozart qui subsiste, elle l'abrita de 1784 à 1787. Construite au XVIIe siècle et agrandie en 1716, elle porte aussi le nom de maison Camesina, d'après la famille qui la possédait depuis 1720. L'entrée d'origine, sur la Schulerstraße, fut murée : on accède au musée par la Domgasse.",
+   "wiki": "Maison Mozart à Vienne",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien.Mozarthouse02.jpg?width=960",
+   "photoBy": "Georges Jansoone",
+   "photoLic": "CC BY 2.5",
+   "alt": {
+    "en": "Mozarthaus Vienna",
+    "es": "Mozarthaus Vienna",
+    "it": "Casa di Mozart"
+   }
+  },
+  {
+   "id": "Q1824069",
+   "name": "musée Liechtenstein",
+   "lat": 48.2225,
+   "lng": 16.3594,
+   "theme": "museums",
+   "fame": 15,
+   "summary": "Installé dans le palais Liechtenstein, édifice baroque d'Alsergrund, il réunit les collections des princes de Liechtenstein, l'une des principales collections d'art privées au monde : près de 1 600 peintures de la Renaissance au Biedermeier. Ouvert en 2004, fermé en 2011 faute de visites, il n'accueille plus que des groupes sur réservation.",
+   "wiki": "Musée Liechtenstein",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Alsergrund%20%28Wien%29%20-%20Palais%20Liechtenstein%20%28F%C3%BCrstengasse%29.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Liechtenstein Museum",
+    "es": "Museo Liechtenstein",
+    "it": "Liechtenstein Museum"
+   }
+  },
+  {
+   "id": "Q317701",
+   "name": "Trésor impérial de Vienne",
+   "lat": 48.20656667,
+   "lng": 16.36542222,
+   "theme": "museums",
+   "fame": 14,
+   "summary": "Installé dans l'aile suisse de la Hofburg, il déploie en 21 salles les objets que les Habsbourg jugeaient les plus chargés de sens dynastique ou religieux : d'un côté les regalia du Saint-Empire et les joyaux autrichiens, de l'autre des reliques et des objets attribués à des saints. Il dépend du Kunsthistorisches Museum.",
+   "wiki": "Trésor impérial de Vienne",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Weltliche%20Schatzkammer%20Wien%20%28190%29.JPG?width=960",
+   "photoBy": "MyName (Gryffindor)",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Imperial Treasury",
+    "es": "Schatzkammer",
+    "it": "Tesoreria imperiale"
+   }
+  },
+  {
+   "id": "Q549585",
+   "name": "Schottenstift",
+   "lat": 48.212119444444,
+   "lng": 16.3646,
+   "theme": "museums",
+   "fame": 13,
+   "summary": "Abbaye bénédictine fondée en 1155, quand Henri II Jasomirgott appela à Vienne des moines dits irlando-écossais, venus de l'abbaye Saint-Jacques près de Ratisbonne et non directement des îles Britanniques. Albert V la retira aux Écossais en 1418 pour la confier aux bénédictins, mais le nom resta. Son musée conserve un autel du gothique tardif.",
+   "wiki": "Schottenstift",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20Freyung%20Schottenstift.jpg?width=960",
+   "photoBy": "Photo: Andreas Praefcke",
+   "photoLic": "CC BY 3.0",
+   "alt": {
+    "en": "Schottenstift",
+    "es": "Schottenstift",
+    "it": "abbazia di Nostra Signora degli Scozzesi"
+   }
+  },
+  {
+   "id": "Q689043",
+   "name": "palais Liechtenstein",
+   "lat": 48.2225,
+   "lng": 16.3594,
+   "theme": "museums",
+   "fame": 13,
+   "summary": "Achevé en 1700 pour le prince Jean-Adam Ier de Liechtenstein, sur des plans de Domenico Egidio Rossi puis de Domenico Martinelli, ce palais baroque du quartier de Rossau appartient toujours à la famille princière. Elle y présente ses collections dans un musée ouvert au public de 1805 à 1938. Le musée Liechtenstein ouvre ses portes en 2004.",
+   "wiki": "Palais Liechtenstein",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Liechtenstein%20Palais%20Wien3.jpg?width=960",
+   "photoBy": "Welleschik",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Gartenpalais Liechtenstein",
+    "es": "palais Liechtenstein"
+   }
+  },
+  {
+   "id": "Q686488",
+   "name": "Musée du Monde",
+   "lat": 48.205,
+   "lng": 16.363055555556,
+   "theme": "museums",
+   "fame": 13,
+   "summary": "Installé dans la Hofburg, ce musée d'ethnographie inauguré en 1928 sous le nom de Museum für Völkerkunde a été rebaptisé Weltmuseum Wien en 2013, puis rouvert après travaux le 25 octobre 2017. Ses collections réunissent la collection du navigateur James Cook et des bronzes du royaume du Bénin.",
+   "wiki": "Weltmuseum Wien",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Weltmuseum%2C%20Wien%202.jpg?width=960",
+   "photoBy": "Thomas Ledl",
+   "photoLic": "CC BY 4.0",
+   "alt": {
+    "en": "Weltmuseum Wien",
+    "es": "Weltmuseum Wien"
+   }
+  },
+  {
+   "id": "Q284902",
+   "name": "Künstlerhaus de Vienne",
+   "lat": 48.2006,
+   "lng": 16.3717,
+   "theme": "museums",
+   "fame": 11,
+   "summary": "Construit de 1865 à 1868 par August Weber dans la zone de la Ringstrasse, dans un style inspiré des villas de la Renaissance italienne, le bâtiment sert depuis de maison d'exposition et de lieu de spectacles. En 1897, vingt artistes, dont Gustav Klimt, quittent la coopérative Künstlerhaus pour fonder la Sécession viennoise.",
+   "wiki": "Künstlerhaus",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Museum%20%E2%80%9EAlbertina%20modern%E2%80%9C%20bzw.%20K%C3%BCnstlerhaus%20%283%29.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Vienna Künstlerhaus",
+    "es": "Casa de los Artistas (Viena)"
+   }
+  },
+  {
+   "id": "Q874905",
+   "name": "palais du prince Eugène",
+   "lat": 48.2056,
+   "lng": 16.3728,
+   "theme": "museums",
+   "fame": 11,
+   "summary": "Palais d'hiver du prince Eugène de Savoie, il fut construit de 1697 à 1716 sur des plans de Fischer von Erlach, Lukas von Hildebrandt y intervenant de 1702 à 1724. Le bâtiment abrite aujourd'hui le ministère des finances autrichien.",
+   "wiki": "Palais du prince Eugène",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Winterpalais%20Prinz%20Eugen.jpg?width=960",
+   "photoBy": "Thomas Ledl",
+   "photoLic": "CC BY-SA 3.0 at",
+   "alt": {
+    "en": "Winter Palace of Prince Eugene",
+    "es": "Palacio de Invierno del Príncipe Eugenio",
+    "it": "Palazzo d'Inverno del Principe Eugenio"
+   }
+  },
+  {
+   "id": "Q505873",
+   "name": "musée de Vienne",
+   "lat": 48.1989,
+   "lng": 16.3731,
+   "theme": "museums",
+   "fame": 10,
+   "summary": "Ce groupe rassemble les musées consacrés à l'histoire de la ville. Outre le bâtiment principal de la Karlsplatz et la villa Hermès, il comprend de nombreux musées spécialisés, des résidences de musiciens et des sites archéologiques.",
+   "wiki": "Musée de Vienne",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20Museum%20Neu.jpg?width=960",
+   "photoBy": "Christine Koblitz",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "Vienna Museum",
+    "es": "Museo de Viena",
+    "it": "Wien Museum"
+   }
+  },
+  {
+   "id": "Q638493",
+   "name": "KunstHausWien",
+   "lat": 48.2111,
+   "lng": 16.3933,
+   "theme": "museums",
+   "fame": 10,
+   "summary": "Le musée occupe l'ancienne fabrique de meubles Thonet, un bâtiment de 1892 rénové de 1989 à 1991 sur les plans de Friedensreich Hundertwasser, dans le style qui lui est propre : sols ondulés, couleurs vives, mosaïques en damier, peu de lignes droites. Il abrite la seule exposition permanente au monde des œuvres de l'artiste.",
+   "wiki": "KunstHausWien",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20KunstHausWien%20%28b%29.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "KunstHausWien",
+    "es": "KunstHausWien",
+    "it": "KunstHausWien"
+   }
+  },
+  {
+   "id": "Q672373",
+   "name": "musée d'Éphèse",
+   "lat": 48.2055,
+   "lng": 16.3652,
+   "theme": "museums",
+   "fame": 8,
+   "summary": "Rattaché à la collection d'antiquités du Kunsthistorisches Museum, il occupe depuis décembre 1978 des salles de la Neue Burg, à la Hofburg. Ses pièces viennent des fouilles autrichiennes d'Éphèse, le sultan Abdülhamid II ayant offert à François-Joseph une partie des objets trouvés. On y voit la frise du monument des Parthes et l'Apoxyomène.",
+   "wiki": "Musée d'Éphèse (Vienne)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Neue%20Burg%20Vienna%20June%202006%20271.jpg?width=960",
+   "photoBy": "Gryffindor",
+   "photoLic": "CC BY 2.5",
+   "alt": {
+    "en": "Ephesos Museum",
+    "it": "Museo di Efeso"
+   }
+  },
+  {
+   "id": "Q351228",
+   "name": "Haus der Musik",
+   "lat": 48.2042,
+   "lng": 16.3733,
+   "theme": "museums",
+   "fame": 10,
+   "summary": "Ouverte en 2000, elle retrace sur 5 000 m2 l'histoire de la musique et du son, des premiers usages humains des instruments à aujourd'hui, par des présentations interactives et multimédias. Elle occupe le palais de l'archiduc Charles, où vivait Otto Nicolai, fondateur de la Philharmonie de Vienne, et a reçu le prix du musée autrichien en 2002.",
+   "wiki": "Haus der Musik",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Haus-Der-Musik-Wien.jpg?width=960",
+   "photoBy": "Clemens PFEIFFER, A-1190 Wien",
+   "photoLic": "Attribution",
+   "alt": {
+    "en": "Haus der Musik"
+   }
+  },
+  {
+   "id": "Q83423523",
+   "name": "Albertina Modern",
+   "lat": 48.20079,
+   "lng": 16.37167,
+   "theme": "museums",
+   "fame": 4,
+   "summary": "Deuxième site du musée de l'Albertina, inauguré le 12 mars 2020 dans la Künstlerhaus de la Karlsplatz, désignée en 2016 et aménagée sur plus de 2 000 m2. Le fonds compte 60 000 œuvres de 5 000 artistes : Hans Peter Haselsteiner avait acquis 60 % de la collection Essl, dont les 40 % restants ont été donnés à l'Albertina.",
+   "wiki": "Albertina Modern",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Museum%20%E2%80%9EAlbertina%20modern%E2%80%9C%20bzw.%20K%C3%BCnstlerhaus%20%281%29.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Albertina Modern",
+    "it": "Albertina Modern"
+   }
+  },
+  {
+   "id": "Q5943",
+   "name": "cathédrale Saint-Étienne de Vienne",
+   "lat": 48.208427,
+   "lng": 16.373256,
+   "theme": "religious",
+   "fame": 60,
+   "summary": "Gothique au milieu d'un quartier baroque, elle fut commencée en 1137 et consacrée en 1147 alors qu'elle était encore en chantier ; elle n'est cathédrale que depuis 1469. Sa tour sud culmine à 136,4 m, la tour nord resta inachevée. Sa toiture de tuiles vernissées porte, côté est, l'aigle à deux têtes de l'Autriche-Hongrie.",
+   "wiki": "Cathédrale Saint-Étienne de Vienne",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Stephansdom%20%281%29.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "St. Stephen's Cathedral",
+    "es": "Catedral de San Esteban",
+    "it": "cattedrale metropolitana di Santo Stefano"
+   }
+  },
+  {
+   "id": "Q253663",
+   "name": "Stadttempel",
+   "lat": 48.211649,
+   "lng": 16.374825,
+   "theme": "religious",
+   "fame": 26,
+   "summary": "Principale synagogue de Vienne, elle fut inaugurée en 1826 sur des plans de Joseph Kornhäusel. Les cultes non catholiques devant alors rester invisibles depuis la rue, la salle se tient derrière la façade d'un immeuble. Seule des plus de 90 synagogues épargnée par les flammes en 1938, elle fut saccagée ; des juifs y furent internés puis déportés.",
+   "wiki": "Stadttempel",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadttempel%20Vienna%20September%202006%20010.jpg?width=960",
+   "photoBy": "Gryffindor",
+   "photoLic": "CC BY 2.5",
+   "alt": {
+    "en": "Stadttempel",
+    "es": "Stadttempel",
+    "it": "Stadttempel"
+   }
+  },
+  {
+   "id": "Q700199",
+   "name": "église Saint-Michel",
+   "lat": 48.208,
+   "lng": 16.367,
+   "theme": "religious",
+   "fame": 20,
+   "summary": "Construite de 1219 à 1221 à la demande du duc Léopold VI, c'est un rare édifice viennois de style roman et l'une des trois paroisses de la ville avec Saint-Étienne et la Schottenstift. Les Salvatoriens la desservent depuis 1923. Le film Sissi y tourne le mariage impérial, célébré en réalité à l'église des Augustins.",
+   "wiki": "Église Saint-Michel de Vienne",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Michaelerkirche%20Vienna%20Sept%202007.jpg?width=960",
+   "photoBy": "Gryffindor This panoramic image was created with Autostitch ",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "St. Michael's Church",
+    "es": "iglesia de San Miguel",
+    "it": "chiesa di san Michele"
+   }
+  },
+  {
+   "id": "Q693884",
+   "name": "église Saint-Pierre de Vienne",
+   "lat": 48.209444444444,
+   "lng": 16.37,
+   "theme": "religious",
+   "fame": 20,
+   "summary": "Un incendie détruit presque entièrement l'église antérieure en 1661. Le bâtiment actuel, baroque, est construit sur l'initiative de Léopold Ier, d'après des plans de Gabriele Montani modifiés en 1703 par Johann Lucas von Hildebrandt. C'est la première église de Vienne à coupole baroque, sa nef est ovale. Des prêtres de l'Opus Dei la desservent.",
+   "wiki": "Église Saint-Pierre de Vienne (Autriche)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Peterskirche%20%281%29.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "St. Peter's Church",
+    "es": "iglesia de San Pedro",
+    "it": "Peterskirche"
+   }
+  },
+  {
+   "id": "Q693869",
+   "name": "église des Augustins",
+   "lat": 48.205669444444,
+   "lng": 16.3677,
+   "theme": "religious",
+   "fame": 16,
+   "summary": "Fondée en 1327 par le duc Frédéric le Bel avec son monastère augustin, elle fut la paroisse de la Hofburg et donc des Habsbourg. La nef fut bâtie entre 1330 et 1339, mais la consécration n'eut lieu qu'en 1349. Plusieurs mariages impériaux y furent célébrés, dont celui de Marie-Antoinette par procuration en 1770.",
+   "wiki": "Église des Augustins (Vienne)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Augustinian%20Church%20Vienna.jpg?width=960",
+   "photoBy": "Bede735c",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Augustinian Church",
+    "es": "iglesia de los Agustinos",
+    "it": "chiesa di Sant'Agostino"
+   }
+  },
+  {
+   "id": "Q688468",
+   "name": "église des Frères mineurs",
+   "lat": 48.209722,
+   "lng": 16.363889,
+   "theme": "religious",
+   "fame": 15,
+   "summary": "Église catholique du 1er arrondissement, ou Notre-Dame-des-Neiges, elle succède au sanctuaire fondé sur le site vers 1224 par des Frères mineurs franciscains. Le bâtiment actuel, de style gothique français, date de 1339. Joseph II l'attribue à la communauté italienne de Vienne. On y voit une copie en mosaïque de La Cène de Léonard de Vinci.",
+   "wiki": "Église des Frères mineurs (Vienne)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Minoritenkirche.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Minoritenkirche",
+    "es": "Minoritenkirche",
+    "it": "chiesa dei Minoriti"
+   }
+  },
+  {
+   "id": "Q688472",
+   "name": "église des Jésuites de Vienne",
+   "lat": 48.209047,
+   "lng": 16.377617,
+   "theme": "religious",
+   "fame": 15,
+   "summary": "Construite de 1623 à 1627 à l'emplacement d'une ancienne chapelle, elle est d'abord dédiée à saint Ignace de Loyola et à saint François-Xavier. Invité par l'empereur Léopold Ier, le frère jésuite Andrea Pozzo la réaménage en 1703-1705 et refait la façade en style baroque. L'intérieur richement orné comporte une grande coupole en trompe-l'œil.",
+   "wiki": "Église des Jésuites de Vienne",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Universit%C3%A4tskirche%20%282%29.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Jesuit Church",
+    "es": "iglesia de los jesuitas de Viena",
+    "it": "chiesa dei Gesuiti"
+   }
+  },
+  {
+   "id": "Q701837",
+   "name": "église Notre-Dame-du-Rivage",
+   "lat": 48.212744,
+   "lng": 16.370686,
+   "theme": "religious",
+   "fame": 15,
+   "summary": "Plus ancien sanctuaire marial de Vienne, elle conserve les restes de saint Clément-Marie Hofbauer, patron de la ville, et demeure un lieu de pèlerinage. Déconsacrée en 1786, elle servit d'arsenal et d'écurie sous l'occupation napoléonienne de 1809, avant d'être restaurée et reconsacrée en 1812, puis confiée aux Rédemptoristes.",
+   "wiki": "Église Notre-Dame-du-Rivage",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Kirche%20Maria%20am%20Gestade.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Maria am Gestade",
+    "es": "Maria am Gestade",
+    "it": "Maria am Gestade"
+   }
+  },
+  {
+   "id": "Q689008",
+   "name": "église Saint-Rupert de Vienne",
+   "lat": 48.211944444444,
+   "lng": 16.374444444444,
+   "theme": "religious",
+   "fame": 13,
+   "summary": "C'est, des églises conservées de Vienne, celle dont les fondations sont les plus anciennes. Bâtie dans l'aire de l'ancien camp romain de Vindobona, elle reste la seule paroisse jusqu'au transfert de cette fonction à Saint-Étienne en 1147. Ses plus anciens murs datent du début du XIIe siècle ; l'abside garde les plus vieux vitraux de la ville.",
+   "wiki": "Église Saint-Rupert de Vienne",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Ruprechtskirche.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "St. Rupert's Church",
+    "es": "Iglesia de San Ruperto (Viena)",
+    "it": "chiesa di San Ruprecht"
+   }
+  },
+  {
+   "id": "Q688524",
+   "name": "église franciscaine de Vienne",
+   "lat": 48.2062,
+   "lng": 16.3746,
+   "theme": "religious",
+   "fame": 12,
+   "summary": "Dédiée à saint Jérôme, elle est l'église de l'ordre franciscain à Vienne, façade Renaissance et intérieur baroque. Les Franciscains reçurent en 1589 l'usage d'un monastère bâti entre 1383 et 1387, jusque-là occupé par les Pénitentes ; l'église fut construite en 1607, son intérieur achevé vers 1720.",
+   "wiki": "Église franciscaine de Vienne",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Franziskanerkirche.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag (talk / email)",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Franciscan Church",
+    "es": "Franziskanerkirche",
+    "it": "chiesa dei Francescani"
+   }
+  },
+  {
+   "id": "Q700863",
+   "name": "Malteserkirche",
+   "lat": 48.205,
+   "lng": 16.371111111111,
+   "theme": "religious",
+   "fame": 11,
+   "summary": "Église catholique dédiée à saint Jean-Baptiste, sur la Kärntner Straße, elle a appartenu à l'ordre de Saint-Jean de Jérusalem. Mentionnée dès 1217 comme commanderie hospitalière pour les croisés, elle occupe un bâtiment du milieu du XVe siècle, reconstruit en 1806. L'ordre souverain de Malte, en difficulté financière, la vend en 1933.",
+   "wiki": "Malteserkirche",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Malteserkirche.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 3.0 at",
+   "alt": {
+    "en": "Maltese Church",
+    "es": "Malteserkirche"
+   }
+  },
+  {
+   "id": "Q251468",
+   "name": "église Mariahilf",
+   "lat": 48.1989,
+   "lng": 16.3531,
+   "theme": "religious",
+   "fame": 10,
+   "summary": "Église baroque de pèlerinage, elle est née d'une chapelle de cimetière en bois bâtie par les barnabites en 1656, où fut placé le tableau de Marie Secours des chrétiens. La chapelle de pierre qui lui succéda fut détruite lors du siège de Vienne par les Turcs, le tableau ayant été mis à l'abri. L'édifice actuel date de 1686 à 1689.",
+   "wiki": "Église Mariahilf (Vienne)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mariahilfer%20Kirche.jpg?width=960",
+   "photoBy": "Thomas Ledl",
+   "photoLic": "CC BY-SA 3.0 at",
+   "alt": {
+    "en": "Church of Mariahilf",
+    "es": "Mariahilf-kirken"
+   }
+  },
+  {
+   "id": "Q666683",
+   "name": "église des Dominicains de Vienne",
+   "lat": 48.2089,
+   "lng": 16.3789,
+   "theme": "religious",
+   "fame": 10,
+   "summary": "Les dominicains s'installent dans l'Innere Stadt en 1226 ; leur chapelle romane fait place en 1283 à une église gothique, en grande partie démolie lors du siège turc de 1529. Ferdinand II en commande une nouvelle, baroque, consacrée en 1634 ; dôme et façade suivent de 1666 à 1674. Elle est alors la plus grande église de Vienne après Saint-Étienne.",
+   "wiki": "Église des Dominicains de Vienne",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20Dominikanerkirche.jpg?width=960",
+   "photoBy": "Thomas Ledl",
+   "photoLic": "CC BY-SA 3.0 at",
+   "alt": {
+    "en": "Dominican Church",
+    "es": "Dominikanerkirche",
+    "it": "chiesa di Santa Maria della Rotonda"
+   }
+  },
+  {
+   "id": "Q662652",
+   "name": "crypte des Capucins",
+   "lat": 48.205555555556,
+   "lng": 16.369722222222,
+   "theme": "religious",
+   "fame": 33,
+   "summary": "L'impératrice Anne demande en 1618, par testament, une tombe pour elle et son mari au couvent des Capucins. La construction débute en 1622 et c'est en 1633 que l'empereur Matthias et son épouse y sont enterrés. Agrandie huit fois, la crypte regroupe cent quarante-neuf personnes, dont douze empereurs et dix-neuf impératrices et reines.",
+   "wiki": "Crypte des Capucins",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Kapuzinergruft%2C%20Maria-Theresia-Gruft%20%281%29.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 3.0 at",
+   "alt": {
+    "en": "Imperial Crypt",
+    "es": "Cripta Imperial de Viena",
+    "it": "Cripta Imperiale"
+   }
+  },
+  {
+   "id": "Q254476",
+   "name": "église votive",
+   "lat": 48.21545,
+   "lng": 16.3591,
+   "theme": "religious",
+   "fame": 33,
+   "summary": "Après l'échec de l'attentat de Libenyi contre François-Joseph Ier en 1853, l'archiduc Ferdinand Maximilien lança une collecte à laquelle plus de 300 000 citoyens répondirent. Le concours fut remporté par Heinrich Ferstel, âgé de 26 ans. Inaugurée en 1879, l'église néogothique porte des tours de 99 mètres.",
+   "wiki": "Église votive (Vienne)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Votivkirche%20%28a%29.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Votive Church",
+    "es": "iglesia Votiva",
+    "it": "Votivkirche"
+   }
+  },
+  {
+   "id": "Q697944",
+   "name": "église des Capucins",
+   "lat": 48.205721,
+   "lng": 16.36995,
+   "theme": "religious",
+   "fame": 11,
+   "summary": "Construite en 1617 pour les pères Capucins et consacrée en 1632, l'église Sainte-Marie-des-Anges fait face au Neuer Markt, près de la Hofburg. L'empereur Ferdinand II en fit le lieu de sépulture des Habsbourg et s'y fit inhumer en 1637 : la crypte réunit près de cent cinquante tombes de la famille.",
+   "wiki": "Église des Capucins (Vienne)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Capuchin%20Church%20-%20Vienna%20-%202.jpg?width=960",
+   "photoBy": "MrPanyGoff",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Capuchin Church",
+    "es": "Iglesia de los Capuchinos",
+    "it": "chiesa dei Cappuccini"
+   }
+  },
+  {
+   "id": "Q877807",
+   "name": "église grecque de la Sainte-Trinité",
+   "lat": 48.2106,
+   "lng": 16.3774,
+   "theme": "religious",
+   "fame": 12,
+   "summary": "Dans le quartier grec historique de l'Innere Stadt, dit Fleischmarkt, cette cathédrale orthodoxe est une reconception néo-byzantine, par Theophil Hansen, du bâtiment élevé en 1787 par Peter Mollner. Le diplomate Simon Sina finance le projet. Inaugurée en 1858, elle est depuis 1963 le siège de la métropole grecque orthodoxe d'Autriche.",
+   "wiki": "Église grecque de la Sainte-Trinité de Vienne",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Griechenkirche%20zur%20Heiligen%20Dreifaltigkeit.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Holy Trinity Greek Orthodox Church",
+    "es": "iglesia Ortodoxa Griega de la Santísima Trinidad"
+   }
+  },
+  {
+   "id": "Q211818",
+   "name": "palais du Belvédère",
+   "lat": 48.1934,
+   "lng": 16.380519444444,
+   "theme": "palaces",
+   "fame": 60,
+   "summary": "L'un des plus grands palais baroques de Vienne, bâti de 1714 à 1723 par Johann Lukas von Hildebrandt pour le prince Eugène de Savoie : le Belvédère supérieur domine les jardins, le Belvédère inférieur lui fait face. Il héberge un musée depuis 1903, avec la collection Gustav Klimt. Le traité d'État y est signé le 15 mai 1955.",
+   "wiki": "Palais du Belvédère (Vienne)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Schloss%20Belvedere%2C%20oberes%20%282%29.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Belvedere",
+    "es": "Palacio Belvedere",
+    "it": "Belvedere"
+   }
+  },
+  {
+   "id": "Q651030",
+   "name": "palais Schwarzenberg",
+   "lat": 48.196969444444,
+   "lng": 16.376888888889,
+   "theme": "palaces",
+   "fame": 16,
+   "summary": "Commencé en 1697 par Lukas von Hildebrandt, ce palais baroque de la famille princière de Schwarzenberg est terminé en 1728 sous Johann Bernhard Fischer von Erlach, le chantier étant supervisé par Anton Erhard Martinelli. Un manège et une orangerie s'y ajoutent en 1751. Une partie sert aujourd'hui d'hôtel cinq étoiles.",
+   "wiki": "Palais Schwarzenberg",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palais%20Schwarzenberg.jpg?width=960",
+   "photoBy": "Werckmeister",
+   "photoLic": "CC BY-SA 2.5",
+   "alt": {
+    "en": "Palais Schwarzenberg",
+    "es": "Palais Schwarzenberg",
+    "it": "Palazzo Schwarzenberg"
+   }
+  },
+  {
+   "id": "Q873332",
+   "name": "palais Augarten",
+   "lat": 48.222,
+   "lng": 16.3794,
+   "theme": "palaces",
+   "fame": 15,
+   "summary": "Bâti à la fin du XVIIe siècle par Johann Bernhard Fischer von Erlach pour l'échevin Zacharias Leeb, le palais devient en 1780 la propriété de Joseph II, puis reste aux Habsbourg-Lorraine jusqu'au début du XXe siècle. Lourdement endommagé pendant la Seconde Guerre mondiale puis restauré, il est confié en 1948 aux Petits Chanteurs de Vienne.",
+   "wiki": "Palais Augarten",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Palais%20Augarten%20%281%29.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Palais Augarten",
+    "es": "Palacio Augarten",
+    "it": "palazzo Augarten"
+   }
+  },
+  {
+   "id": "Q664155",
+   "name": "palais Todesco",
+   "lat": 48.203306,
+   "lng": 16.370343,
+   "theme": "palaces",
+   "fame": 12,
+   "summary": "Cet édifice néo-renaissance fut construit de 1861 à 1864 sur la Kärntner Straße, face à l'Opéra, pour le baron Eduard von Todesco, banquier. Ludwig Foerster en signa l'architecture, Theophil von Hansen les intérieurs. Gravement endommagé pendant la Seconde Guerre mondiale puis restauré, il fut le siège du Parti populaire autrichien de 1947 à 1993.",
+   "wiki": "Palais Todesco",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadtpalais%20Todesco%20%2840751%29%20IMG%201426.jpg?width=960",
+   "photoBy": "Tokfo",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "Palais Todesco",
+    "es": "Palais Todesco",
+    "it": "palazzo Todesco"
+   }
+  },
+  {
+   "id": "Q670935",
+   "name": "palais Kinsky",
+   "lat": 48.2115,
+   "lng": 16.3638,
+   "theme": "palaces",
+   "fame": 12,
+   "summary": "La construction de ce palais baroque débute en 1717 sous la direction de Johann Lucas von Hildebrandt, pour le comte Wirich Philipp von Daun ; son fils le vend en 1784 aux princes Kinsky, d'où le nom de palais Daun-Kinsky. Le général Joseph Poniatowski y naît en 1763. Restauré à la fin des années 1990, il abrite des magasins et un restaurant.",
+   "wiki": "Palais Kinsky",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Freyung%204.jpg?width=960",
+   "photoBy": "Thomas Ledl",
+   "photoLic": "CC BY-SA 3.0 at",
+   "alt": {
+    "en": "Palais Kinsky",
+    "es": "Palais Kinsky",
+    "it": "Palazzo Kinsky"
+   }
+  },
+  {
+   "id": "Q692117",
+   "name": "palais Coburg",
+   "lat": 48.205780555556,
+   "lng": 16.376730555556,
+   "theme": "palaces",
+   "fame": 12,
+   "summary": "Élevé sur les fondations de l'ancienne enceinte de Vienne, ce palais néo-classique conçu en 1839 par Karl Schleps pour le prince Ferdinand de Saxe-Cobourg et Gotha est achevé en 1845 par le bâtisseur Adolf Korompay. Occupé par les troupes soviétiques jusqu'en 1955, rénové de 2000 à 2003, il abrite un hôtel de luxe et deux restaurants.",
+   "wiki": "Palais Coburg",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Palais%20Coburg.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Palais Coburg",
+    "es": "Palais Coburg",
+    "it": "Palais Coburg"
+   }
+  },
+  {
+   "id": "Q610784",
+   "name": "palais Mollard-Clary",
+   "lat": 48.209419444444,
+   "lng": 16.365719444444,
+   "theme": "palaces",
+   "fame": 11,
+   "summary": "Construit pour le comte Mollard de 1696 à 1698, ce palais baroque de la Herrengasse fut acheté en 1760 par Franz Wenzel von Clary-und-Aldringen, qui en fit la résidence viennoise de sa famille. Sa cour d'honneur abrite un puits coiffé d'une grille de fer forgé de 1570. La Bibliothèque nationale y loge depuis 2005 le musée des Globes.",
+   "wiki": "Palais Mollard-Clary",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Herrengasse%209.jpg?width=960",
+   "photoBy": "Thomas Ledl",
+   "photoLic": "CC BY-SA 3.0 at",
+   "alt": {
+    "en": "Palais Mollard-Clary",
+    "es": "Palais Mollard-Clary",
+    "it": "Palazzo Mollard-Clary"
+   }
+  },
+  {
+   "id": "Q2047001",
+   "name": "palais Harrach",
+   "lat": 48.1964,
+   "lng": 16.3869,
+   "theme": "palaces",
+   "fame": 3,
+   "summary": "Aloys Thomas Raimund von Harrach le fait élever dans l'Ungargasse par Lukas von Hildebrandt entre 1727 et 1735, avec deux cours d'honneur et une chapelle dédiée à saint Janvier. Revendu en 1791 à Léopold II, il est gravement endommagé par un bombardement à la fin de la Seconde Guerre mondiale ; ses ruines sont enlevées en 1968, sauf la chapelle.",
+   "wiki": "Palais Harrach (Ungargasse)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Gartenpalast%20Harrach.jpg?width=960",
+   "photoBy": "Salomon Kleiner",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Palais Harrach",
+    "es": "Palais Harrach"
+   }
+  },
+  {
+   "id": "Q471908",
+   "name": "palais Trautson",
+   "lat": 48.2058,
+   "lng": 16.3553,
+   "theme": "palaces",
+   "fame": 10,
+   "summary": "Édifice baroque parmi les plus importants de Vienne, il est construit en 1712 pour le comte Trautson selon les plans de Johann Bernhard Fischer von Erlach, avec une façade de trois étages richement décorée. Marie-Thérèse l'achète en 1760 et le met à la disposition de la garde royale hongroise. Le ministère de la Justice y siège.",
+   "wiki": "Palais Trautson",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palais%20Trautson.jpg?width=960",
+   "photoBy": "Thomas Ledl",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Palais Trautson",
+    "es": "Palacio Trautson",
+    "it": "Palais Trautson"
+   }
+  },
+  {
+   "id": "Q459952",
+   "name": "palais Pallavicini",
+   "lat": 48.206632,
+   "lng": 16.367714,
+   "theme": "palaces",
+   "fame": 10,
+   "summary": "Élevé en 1783-1784 pour le comte Johann von Fries sur la Josefsplatz, face à la Hofburg, il est le premier palais viennois doté d'une façade néo-classique. Les contemporains la jugent trop simple : Fries commande en 1786 des cariatides à Franz Anton von Zauner. Les Pallavicini l'achètent en 1842. Le Troisième Homme en fait la maison de Harry Lime.",
+   "wiki": "Palais Pallavicini",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palais%20Pallavicini%20Vienna%20Sept%202006%20001.jpg?width=960",
+   "photoBy": "Gryffindor",
+   "photoLic": "CC BY 2.5",
+   "alt": {
+    "en": "Palais Pallavicini",
+    "es": "Palais Pallavicini",
+    "it": "Palazzo Pallavicini"
+   }
+  },
+  {
+   "id": "Q873416",
+   "name": "palais Équitable",
+   "lat": 48.207879,
+   "lng": 16.371522,
+   "theme": "palaces",
+   "fame": 9,
+   "summary": "Conçu par Andreas Streit et construit en 1887-91 pour la compagnie américaine The Equitable Life Assurance Society, l'édifice est l'un des rares palais viennois à n'avoir jamais été une résidence aristocratique. Sa façade richement décorée met en vedette des aigles américains. Il abrite aujourd'hui des bureaux d'entreprises et d'organisations.",
+   "wiki": "Palais Équitable",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palais%20Equitable%20Ansicht%202.jpg?width=960",
+   "photoBy": "Thomas Ledl",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Palais Equitable",
+    "es": "Palais Equitable"
+   }
+  },
+  {
+   "id": "Q774259",
+   "name": "Stallburg",
+   "lat": 48.2072,
+   "lng": 16.3672,
+   "theme": "palaces",
+   "fame": 8,
+   "summary": "Élevé entre 1558 et 1565 comme résidence pour l'empereur Maximilien II, ce bâtiment Renaissance à cour intérieure fait partie de la Hofburg. De 1659 à 1776, onze salles du deuxième étage abritèrent la collection d'art de l'archiduc Léopold Wilhelm. Le bâtiment servit ensuite d'écurie impériale ; l'École espagnole d'équitation l'utilise toujours.",
+   "wiki": "Stallburg",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Stallburg071029.jpg?width=960",
+   "photoBy": "Extrawurst",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Stallburg",
+    "es": "Stallburg",
+    "it": "Stallburg"
+   }
+  },
+  {
+   "id": "Q1674603",
+   "name": "Neue Burg",
+   "lat": 48.2053,
+   "lng": 16.3647,
+   "theme": "palaces",
+   "fame": 7,
+   "summary": "Partie de la Hofburg et du Kaiserforum que Gottfried Semper et Carl von Hasenauer conçoivent à partir de 1869, cette aile néoclassique est autorisée par François-Joseph Ier en 1881. Ses fondations descendent jusqu'à 25 mètres, le site reposant sur d'anciennes douves. Les travaux s'arrêtent en 1923 sans être achevés.",
+   "wiki": "Neue Burg",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20Hofburg%20Neue%20Burg%20Heldenplatz.jpg?width=960",
+   "photoBy": "Auwy",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Neue Burg"
+   }
+  },
+  {
+   "id": "Q686468",
+   "name": "Rathaus",
+   "lat": 48.2108,
+   "lng": 16.3574,
+   "theme": "palaces",
+   "fame": 37,
+   "summary": "Siège du conseil municipal et du Landtag de Vienne, le bâtiment est conçu par Friedrich von Schmidt dans un néogothique inspiré de l'hôtel de ville de Bruxelles et bâti de 1872 à 1883. Le Rathausmann, en haut de la tour principale, culmine à 97,9 mètres. Le balcon central est construit pour Adolf Hitler, qui y prononce un discours le 9 avril 1938.",
+   "wiki": "Rathaus (Vienne)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20Rathaus%20hochaufl%C3%B6send.jpg?width=960",
+   "photoBy": "Thomas Ledl",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Vienna City Hall",
+    "es": "Ayuntamiento de Viena",
+    "it": "Rathaus"
+   }
+  },
+  {
+   "id": "Q702121",
+   "name": "bâtiment du Parlement autrichien",
+   "lat": 48.20805,
+   "lng": 16.3587,
+   "theme": "palaces",
+   "fame": 23,
+   "summary": "Siège du Conseil national et du Conseil fédéral, cet édifice néo-classique fut bâti sur la Ringstrasse de 1874 à 1883 pour les réunions du Conseil d'Empire. Theophil Hansen s'inspira de l'architecture grecque, familière depuis un long séjour à Athènes. La moitié du bâtiment fut détruite dans les combats de 1945 et reconstruite en juin 1956.",
+   "wiki": "Bâtiment du Parlement autrichien",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Austria%20Parlament%20Front-Ausschnitt.jpg?width=960",
+   "photoBy": "Beao",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Austrian Parliament Building",
+    "es": "Asamblea Federal de Austria",
+    "it": "Parlamento di Vienna"
+   }
+  },
+  {
+   "id": "Q876884",
+   "name": "Palais de Justice",
+   "lat": 48.2067,
+   "lng": 16.357619444444,
+   "theme": "palaces",
+   "fame": 9,
+   "summary": "Édifice néo-Renaissance élevé entre 1875 et 1881 sur les plans d'Alexander Wielemans von Monteforte, il abrite la Cour suprême d'Autriche. Incendié en 1927 lors de la Révolte de Juillet, il est reconstruit au début des années 1930 et gagne un étage. Son hall d'entrée de 23 mètres de haut est coiffé d'une coupole en verre.",
+   "wiki": "Palais de Justice (Vienne)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%2001%20Justizpalast%20a.jpg?width=960",
+   "photoBy": "Gugerell",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "Palace of Justice",
+    "es": "Palacio de Justicia"
+   }
+  },
+  {
+   "id": "Q877068",
+   "name": "Palais Ferstel",
+   "lat": 48.2106,
+   "lng": 16.3656,
+   "theme": "palaces",
+   "fame": 10,
+   "summary": "Élevé pour la Banque nationale d'Autriche sur les plans de Heinrich von Ferstel, il devait réunir la banque, la Bourse, un café et un bazar ; banque et Bourse y furent achevées en 1860. La Bourse partit dès 1872, la banque en 1925. Rénové de 1975 à 1982, il est connu depuis sous le nom de Palais Ferstel et le Café Central y a rouvert.",
+   "wiki": "Palais Ferstel",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palais%20Ferstel%20Cafe%20Central.jpg?width=960",
+   "photoBy": "Thomas Ledl",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Palais Ferstel",
+    "es": "Palais Ferstel",
+    "it": "Palazzo Ferstel"
+   }
+  },
+  {
+   "id": "Q877570",
+   "name": "Caisse d'épargne de la poste",
+   "lat": 48.21,
+   "lng": 16.3803,
+   "theme": "palaces",
+   "fame": 16,
+   "summary": "Bâtie par l'architecte Otto Wagner, la Caisse d'épargne de la poste (Postsparkasse) est un édifice Art nouveau caractéristique de la Sécession viennoise. Elle se dresse au numéro 2 de la Georg Coch-Platz, dans le quadrant est du centre-ville.",
+   "wiki": "Caisse d'épargne de la poste (Vienne)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Postsparkasse-Coch-Platz-DSC1238w.jpg?width=960",
+   "photoBy": "P e z i",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Austrian Postal Savings Bank",
+    "es": "Wiener Postsparkasse",
+    "it": "Wiener Postsparkasse"
+   }
+  },
+  {
+   "id": "Q694760",
+   "name": "Looshaus",
+   "lat": 48.2083,
+   "lng": 16.3667,
+   "theme": "palaces",
+   "fame": 14,
+   "summary": "Adolf Loos la construit entre 1909 et 1911 face à la Hofburg, pour le magasin de prêt-à-porter masculin Goldman & Salatsch : commerce aux niveaux inférieurs, appartements au-dessus. Le rez-de-chaussée est plaqué de marbre, la partie haute reste sans ornement. L'absence d'auvents lui vaut le surnom de maison sans sourcils.",
+   "wiki": "Looshaus",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Looshaus%20Michaelerplatz.JPG?width=960",
+   "photoBy": "Thomas Ledl",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Looshaus",
+    "es": "Looshaus",
+    "it": "Looshaus"
+   }
+  },
+  {
+   "id": "Q697572",
+   "name": "immeuble Haas",
+   "lat": 48.208333,
+   "lng": 16.371667,
+   "theme": "palaces",
+   "fame": 15,
+   "summary": "Face à la cathédrale Saint-Étienne, cet édifice de l'architecte Hans Hollein fut inauguré en 1990. Il remplace un bâtiment de l'après-guerre qui avait lui-même succédé au magasin de tapis « Philipp Haas und Söhne », dont il a repris le nom. Son architecture avant-gardiste, si près du vieux centre, reste polémique.",
+   "wiki": "Immeuble Haas",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Haas-Haus%20%282%29.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Haas House",
+    "es": "Haas-Haus",
+    "it": "Haas-Haus"
+   }
+  },
+  {
+   "id": "Q874557",
+   "name": "Haus Wittgenstein",
+   "lat": 48.2034,
+   "lng": 16.3942,
+   "theme": "palaces",
+   "fame": 13,
+   "summary": "Le philosophe Ludwig Wittgenstein dessine les plans de cette maison et la construit en 1927-1928 avec Jacques Groag et Paul Engelmann, tous deux élèves d'Adolf Loos, à la demande de sa sœur Margarethe Stonborough. Le bâtiment est moderniste, inspiré de l'anti-ornementalisme de Loos. Il abritait en 2018 l'Institut culturel bulgare.",
+   "wiki": "Maison Wittgenstein",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/HauswittgenAug93.jpg?width=960",
+   "photoBy": "Robert Schediwy",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Wittgenstein House",
+    "es": "Haus Wittgenstein",
+    "it": "Casa Wittgenstein"
+   }
+  },
+  {
+   "id": "Q209937",
+   "name": "opéra d'État de Vienne",
+   "lat": 48.203333333333,
+   "lng": 16.369166666667,
+   "theme": "stages",
+   "fame": 54,
+   "summary": "Premier des grands projets du Ring, le bâtiment fut construit de 1861 à 1869 par August Sicard von Sicardsburg et Eduard van der Nüll, dans un style néorenaissance violemment critiqué ; ni l'un ni l'autre ne le vit achevé. Ravagé par un incendie lors d'un bombardement en 1945, il rouvrit le 5 novembre 1955 avec Fidelio.",
+   "wiki": "Opéra d'État de Vienne",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Staatsoper%20Wien%20DSC%205273w.jpg?width=960",
+   "photoBy": "P e z i",
+   "photoLic": "CC BY-SA 3.0 at",
+   "alt": {
+    "en": "Vienna State Opera house",
+    "es": "Ópera Estatal de Viena",
+    "it": "Wiener Staatsoper"
+   }
+  },
+  {
+   "id": "Q308720",
+   "name": "Burgtheater",
+   "lat": 48.210277777778,
+   "lng": 16.361388888889,
+   "theme": "stages",
+   "fame": 43,
+   "summary": "Fondé en 1741 sous le règne de Marie-Thérèse comme théâtre de la cour, c'est le deuxième théâtre d'Europe par l'ancienneté, après la Comédie-Française, et le plus grand de langue allemande. L'édifice actuel, néo-Renaissance et néo-baroque, dessiné par Karl von Hasenauer et Gottfried Semper, est inauguré en 1888 sur le Ring et compte 1285 places.",
+   "wiki": "Burgtheater",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Burgtheater.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Burgtheater",
+    "es": "Burgtheater",
+    "it": "Burgtheater"
+   }
+  },
+  {
+   "id": "Q686720",
+   "name": "Musikverein",
+   "lat": 48.200488888889,
+   "lng": 16.372738888889,
+   "theme": "stages",
+   "fame": 34,
+   "summary": "Inaugurée le 6 janvier 1870, cette salle de concert construite par l'architecte Theophil Hansen, sur un terrain donné par l'empereur François-Joseph, doit sa réputation à l'acoustique de sa Salle dorée, qui compte 1 744 places assises. Elle est la résidence de l'Orchestre philharmonique de Vienne et accueille chaque année le Concert du nouvel an.",
+   "wiki": "Musikverein (Vienne)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Haus%20des%20Wiener%20Musikvereins%20%281%29.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Musikverein",
+    "es": "Musikverein",
+    "it": "Musikverein"
+   }
+  },
+  {
+   "id": "Q374336",
+   "name": "Theater an der Wien",
+   "lat": 48.199680555556,
+   "lng": 16.363930555556,
+   "theme": "stages",
+   "fame": 32,
+   "summary": "Voulu par l'impresario Emanuel Schikaneder, le théâtre fut bâti à partir de 1798 sur les plans de Franz Jäger et inauguré le 13 juin 1801. Son nom vient non de la ville mais de la rivière Wien, sur les quais de laquelle il fut construit. Beethoven y créa Fidelio et plusieurs de ses symphonies.",
+   "wiki": "Theater an der Wien",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/TheateranDerWienJakobAlt.jpg?width=960",
+   "photoBy": "Alt, Jakob (1789 – 1872)",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Theater an der Wien",
+    "es": "Theater an der Wien",
+    "it": "Theater an der Wien"
+   }
+  },
+  {
+   "id": "Q694747",
+   "name": "opéra populaire",
+   "lat": 48.2245,
+   "lng": 16.3504,
+   "theme": "stages",
+   "fame": 27,
+   "summary": "Deuxième scène lyrique de Vienne après l'opéra national, la Volksoper occupe un bâtiment construit en 1898. Il fut d'abord exclusivement voué au théâtre, avant que des opéras et des opérettes ne s'ajoutent au programme à partir de 1903.",
+   "wiki": "Opéra populaire",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Volksoper.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Vienna Volksoper",
+    "es": "Volksoper",
+    "it": "Wiener Volksoper"
+   }
+  },
+  {
+   "id": "Q259553",
+   "name": "Urania",
+   "lat": 48.2117,
+   "lng": 16.3836,
+   "theme": "stages",
+   "fame": 20,
+   "summary": "Cet institut public d'éducation, doublé d'un observatoire astronomique, est bâti en style Art nouveau par Max Fabiani au bord de la rivière Vienne et inauguré en 1910 par François-Joseph Ier. Gravement endommagé pendant la Seconde Guerre mondiale, il rouvre en 1957 et abrite des salles de séminaires et une salle de théâtre et de cinéma.",
+   "wiki": "Urania (Vienne)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Urania%20Vienna%20June%202006%20295.jpg?width=960",
+   "photoBy": "Gryffindor",
+   "photoLic": "CC BY 2.5",
+   "alt": {
+    "en": "Urania",
+    "es": "Urania"
+   }
+  },
+  {
+   "id": "Q695126",
+   "name": "Konzerthaus de Vienne",
+   "lat": 48.200875,
+   "lng": 16.377377,
+   "theme": "stages",
+   "fame": 18,
+   "summary": "Construit entre 1911 et 1913 sur les plans de Ferdinand Fellner et Hermann Helmer, avec la collaboration de Ludwig Baumann, le Konzerthaus est inauguré le 19 octobre 1913 par Richard Strauss. Entièrement rénové entre 1997 et 2000, il abrite quatre salles, de la Grande salle de 1 840 places à la salle Schubert de 336 places.",
+   "wiki": "Konzerthaus de Vienne",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Konzerthaus%20%28a%29.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Konzerthaus",
+    "es": "Konzerthaus de Viena",
+    "it": "Wiener Konzerthaus"
+   }
+  },
+  {
+   "id": "Q167619",
+   "name": "Theater in der Josefstadt",
+   "lat": 48.20953,
+   "lng": 16.35108,
+   "theme": "stages",
+   "fame": 17,
+   "summary": "Fondé en 1788, c'est le plus ancien théâtre de Vienne, l'un des théâtres de faubourg. Après la reconstruction complète du bâtiment par Joseph Kornhäusel, Beethoven écrivit et dirigea Die Weihe des Hauses pour l'inauguration, en 1822. Camillo Castiglioni finança la rénovation de 1923 et confia la direction à Max Reinhardt.",
+   "wiki": "Theater in der Josefstadt",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Theater%20in%20der%20Josefstadt3.jpg?width=960",
+   "photoBy": "Theater_in_der_Josefstadt_9958.JPG: Gryffindor Theater_in_de",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Theater in der Josefstadt",
+    "es": "Theater in der Josefstadt"
+   }
+  },
+  {
+   "id": "Q688555",
+   "name": "Volkstheater",
+   "lat": 48.205167,
+   "lng": 16.357,
+   "theme": "stages",
+   "fame": 16,
+   "summary": "Ce théâtre du 7e arrondissement de Vienne (Neubau), anciennement Deutsches Volkstheater, est bâti sur les plans de Ferdinand Fellner et d'Hermann Helmer et inauguré en 1889. Il se dresse Neustiftgasse 1, en face du musée d'histoire naturelle, à proximité du Museumsquartier et de Spittelberg. Kay Voges le dirige depuis 2020.",
+   "wiki": "Volkstheater (Vienne)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Volkstheater%20%282%29.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Volkstheater",
+    "es": "Volkstheater (Viena)"
+   }
+  },
+  {
+   "id": "Q688568",
+   "name": "Raimundtheater",
+   "lat": 48.1922,
+   "lng": 16.3397,
+   "theme": "stages",
+   "fame": 9,
+   "summary": "Fondé le 28 novembre 1893 dans le 6e arrondissement, Mariahilf, il porte le nom du dramaturge Ferdinand Raimund. Adam Müller-Guttenbrunn le dirige jusqu'en 1896 et y donne du théâtre classique, à contre-pied des opérettes bourgeoises. Rudolf Marik y produit des opérettes de 1948 à 1976, puis des comédies musicales y sont données par intermittence.",
+   "wiki": "Raimundtheater",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/WienRaimundtheater.jpg?width=960",
+   "photoBy": "No machine-readable author provided. Extrawurst assumed (bas",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Raimund Theater",
+    "es": "Raimund Theater"
+   }
+  },
+  {
+   "id": "Q1266829",
+   "name": "Kursalon Hübner",
+   "lat": 48.203349,
+   "lng": 16.377947,
+   "theme": "stages",
+   "fame": 9,
+   "summary": "Bâtiment historiciste de style Renaissance italienne, il fut construit dans le Stadtpark entre 1865 et 1867 par l'architecte Johann Garben, pour le compte de la ville. Le premier concert de Johann Strauss fils s'y tint en octobre 1868, après quoi le lieu devint une salle de danse et de concert. Hans Hübner le loua en 1908 et lui donna son nom.",
+   "wiki": "Kursalon Hübner",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadtpark%20Kursalon%20Parkseite.jpg?width=960",
+   "photoBy": "Thomas Ledl",
+   "photoLic": "CC BY-SA 3.0 at",
+   "alt": {
+    "en": "Kursalon Vienna",
+    "es": "Kursalon Wien"
+   }
+  },
+  {
+   "id": "Q267329",
+   "name": "Innere Stadt",
+   "lat": 48.209722222222,
+   "lng": 16.37,
+   "theme": "streets",
+   "fame": 50,
+   "summary": "Le premier arrondissement de Vienne correspond à la vieille ville : jusqu'aux annexions des années 1850, il formait la ville tout entière. Ses quatre quartiers portent le nom d'anciennes portes, et la Ringstrasse en marque la limite depuis le démantèlement des murs. On y compte plus de 60 musées et la plus faible population de Vienne.",
+   "wiki": "Innere Stadt (Vienne)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rathaus%20Vienna%20June%202006%20165.jpg?width=960",
+   "photoBy": "Gryffindor",
+   "photoLic": "CC BY 2.5",
+   "alt": {
+    "en": "Innere Stadt",
+    "es": "Innere Stadt",
+    "it": "Innere Stadt"
+   }
+  },
+  {
+   "id": "Q46232",
+   "name": "Ring",
+   "lat": 48.2046,
+   "lng": 16.3627,
+   "theme": "streets",
+   "fame": 45,
+   "summary": "Boulevard annulaire tracé sur l'emprise des remparts, il ceinture le centre et délimite le premier arrondissement. Le 20 décembre 1857, François-Joseph signe le décret chargeant son ministre de préparer l'agrandissement de la capitale : les murs sont démantelés et le boulevard se borde d'édifices publics, de palais et de maisons de rapport.",
+   "wiki": "Ring (Vienne)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%2001%20Burgring%20b.jpg?width=960",
+   "photoBy": "Gugerell",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "Vienna Ring Road"
+   }
+  },
+  {
+   "id": "Q700128",
+   "name": "Heldenplatz",
+   "lat": 48.206280555556,
+   "lng": 16.363761111111,
+   "theme": "streets",
+   "fame": 25,
+   "summary": "Ouverte devant la Hofburg à l'emplacement du bastion que les troupes de Napoléon firent sauter en 1809, elle fut aménagée sous François-Joseph dans le cadre du Kaiserforum, projet lancé en 1871 et jamais achevé. Baptisée en 1878 d'après les héros de ses deux statues équestres, elle vit Hitler proclamer l'Anschluss en 1938.",
+   "wiki": "Heldenplatz",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Neue%20Hofburg.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 3.0 at",
+   "alt": {
+    "en": "Heldenplatz",
+    "es": "Heldenplatz",
+    "it": "Heldenplatz"
+   }
+  },
+  {
+   "id": "Q700753",
+   "name": "Karlsplatz",
+   "lat": 48.1992,
+   "lng": 16.37,
+   "theme": "streets",
+   "fame": 24,
+   "summary": "Cette place s'étend à la limite des arrondissements d'Innere Stadt et de Wieden. Dominée par l'église Saint-Charles-Borromée, elle compte parmi les plus fréquentées de la ville.",
+   "wiki": "Karlsplatz",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/View%20from%20Karlskirche%2C%20Vienna%2020180826.jpg?width=960",
+   "photoBy": "Suicasmo",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Karlsplatz",
+    "es": "Karlsplatz",
+    "it": "Karlsplatz"
+   }
+  },
+  {
+   "id": "Q701662",
+   "name": "Stephansplatz",
+   "lat": 48.2084,
+   "lng": 16.3725,
+   "theme": "streets",
+   "fame": 21,
+   "summary": "Place centrale de Vienne et point de départ du kilomètre zéro des distances vers les limites nationales du pays, elle est occupée en son milieu par la cathédrale Saint-Étienne, dont les travaux débutent en 1137. Elle prend forme dès le XVIIe siècle, quand les bâtiments jouxtant la cathédrale sont démolis.",
+   "wiki": "Stephansplatz",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Stephansplatz%20Wien%204.jpg?width=960",
+   "photoBy": "böhringer friedrich",
+   "photoLic": "CC BY-SA 2.5",
+   "alt": {
+    "en": "Stephansplatz",
+    "es": "Stephansplatz"
+   }
+  },
+  {
+   "id": "Q699937",
+   "name": "Graben",
+   "lat": 48.208613,
+   "lng": 16.369913,
+   "theme": "streets",
+   "fame": 18,
+   "summary": "Le nom signifie fossé : un fossé entourait le camp romain de Vindobona, puis les murs du château fort au Moyen Âge. Il disparut à la fin du XIIe siècle, quand les Babenbergs agrandirent la ville grâce à la rançon de Richard Cœur de Lion, et céda la place à une rue. Le Graben reste une des grandes rues marchandes de Vienne.",
+   "wiki": "Graben (Vienne)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Graben%20%283%29.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Graben",
+    "es": "Graben",
+    "it": "Graben"
+   }
+  },
+  {
+   "id": "Q699952",
+   "name": "place Marie-Thérèse",
+   "lat": 48.2046,
+   "lng": 16.3605,
+   "theme": "streets",
+   "fame": 16,
+   "summary": "Ouverte sur le Ring face à la Hofburg, là où s'étendait le glacis jusqu'en 1857, elle est encadrée par les deux anciens musées de la cour, le Musée d'histoire de l'art et le Muséum d'histoire naturelle. Le monument à Marie-Thérèse, inauguré en 1888, plus grand monument des Habsbourg à Vienne, en occupe le centre.",
+   "wiki": "Place Marie-Thérèse",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Maria-Theresien-Platz%20Kunsthistorisches%20Museum%20Wien%202010.jpg?width=960",
+   "photoBy": "Manfred Werner - Tsui",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Maria-Theresien-Platz"
+   }
+  },
+  {
+   "id": "Q390730",
+   "name": "Judenplatz",
+   "lat": 48.2116,
+   "lng": 16.3696,
+   "theme": "streets",
+   "fame": 12,
+   "summary": "Foyer de la communauté juive depuis le XIIe siècle, la place se nommait Schulhof jusqu'au pogrom de 1420-1421. Un édit de Frédéric II y autorisa en 1238 l'édification de divers bâtiments, dont une synagogue. S'y dressent une statue de Lessing et le mémorial de la Shoah de Rachel Whiteread, inauguré en 2000 ; la Cour constitutionnelle y siège.",
+   "wiki": "Judenplatz",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20Judenplatz%20B%C3%B6hmische%20Hofkanzlei.jpg?width=960",
+   "photoBy": "Photo: Andreas Praefcke",
+   "photoLic": "CC BY 3.0",
+   "alt": {
+    "en": "Judenplatz",
+    "es": "Judenplatz"
+   }
+  },
+  {
+   "id": "Q3573245",
+   "name": "Josefsplatz",
+   "lat": 48.206443,
+   "lng": 16.36722,
+   "theme": "streets",
+   "fame": 11,
+   "summary": "Place de l'Innere Stadt bordée par la salle de la Redoute, la bibliothèque et l'église des Augustins, elle occupe le site du cimetière des Augustins et porte depuis 1786 le nom de l'empereur Joseph II. Au milieu se dresse sa statue équestre, par Franz Anton Zauner, dévoilée en 1807. La place sert de décor extérieur au Troisième Homme en 1948.",
+   "wiki": "Josefsplatz",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%2001%20Josefsplatz%20b.jpg?width=960",
+   "photoBy": "Gugerell",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "Josefsplatz",
+    "es": "Josefsplatz",
+    "it": "Josefsplatz"
+   }
+  },
+  {
+   "id": "Q457381",
+   "name": "Freyung",
+   "lat": 48.2119,
+   "lng": 16.3656,
+   "theme": "streets",
+   "fame": 9,
+   "summary": "Cette place de l'Innere Stadt s'étend entre Am Hof et le Schottenstift, monastère élevé en 1158 par des moines irlandais. Son nom vient probablement de l'exemption de juridiction municipale obtenue par le monastère ; il désigne l'ensemble de la place depuis 1710. Bordée de palais, elle est surtout connue pour ses marchés.",
+   "wiki": "Freyung (Vienne)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%2001%20Freyung%20a.jpg?width=960",
+   "photoBy": "Gugerell",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "Freyung",
+    "es": "Freyung (Viena)"
+   }
+  },
+  {
+   "id": "Q451334",
+   "name": "Am Hof",
+   "lat": 48.211111111111,
+   "lng": 16.367777777778,
+   "theme": "streets",
+   "fame": 8,
+   "summary": "Comprise dans le camp romain de Vindobona, cette place fut de 1155 à environ 1275 le siège des Babenberg : Henri II d'Autriche y fit bâtir sa résidence après avoir quitté Klosterneuburg. Elle accueillit des marchés en 1340 et servit de lieu d'exécution. Pendant la révolution de 1848, la foule y tua le ministre de la Guerre Baillet von Latour.",
+   "wiki": "Am Hof",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%2001%20Am%20Hof%20a.jpg?width=960",
+   "photoBy": "Gugerell",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "Am Hof",
+    "es": "Am Hof"
+   }
+  },
+  {
+   "id": "Q874951",
+   "name": "Schwedenplatz",
+   "lat": 48.2114,
+   "lng": 16.3789,
+   "theme": "streets",
+   "fame": 12,
+   "summary": "Bordant la rive droite du canal du Danube, cette place de l'Innere Stadt est l'un des principaux nœuds de transports en commun de Vienne, desservie par les métros U1 et U4 et les tramways 1 et 2. Du Moyen Âge à 1858 s'y dressait la Rotenturmtor, porte de l'enceinte. Le nom actuel fut donné en 1919, en remerciement de l'aide suédoise.",
+   "wiki": "Schwedenplatz",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%2001%20Schwedenplatz%20a.jpg?width=960",
+   "photoBy": "Gugerell",
+   "photoLic": "CC0",
+   "alt": {
+    "es": "Schwedenplatz"
+   }
+  },
+  {
+   "id": "Q337357",
+   "name": "Escalier du Strudlhof",
+   "lat": 48.2222,
+   "lng": 16.3578,
+   "theme": "streets",
+   "fame": 7,
+   "summary": "Escalier monumental d'Alsergrund, il est bâti en calcaire de Mannersdorf sur des plans de Theodor Johann Jaeger et ouvert le 29 novembre 1910. Symétrique dans sa partie basse, qui comprend deux fontaines, il comporte deux escaliers courbes. Certaines parties, vertes aujourd'hui, étaient bleues à l'origine. Un roman de 1951 le rend célèbre.",
+   "wiki": "Escalier du Strudlhof",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Strudlhofstiege%202010.jpg?width=960",
+   "photoBy": "Lindlein",
+   "photoLic": "CC BY 3.0 de",
+   "alt": {
+    "en": "Strudlhofstiege",
+    "es": "Strudlhofstiege"
+   }
+  },
+  {
+   "id": "Q390534",
+   "name": "Fillgraderstiege",
+   "lat": 48.2001,
+   "lng": 16.3593,
+   "theme": "streets",
+   "fame": 7,
+   "summary": "Cet escalier Art nouveau de Mariahilf, construit de 1905 à 1907 sur un projet de Max Hegele, relie la Fillgradergasse à la Theobaldgasse. Fermé en 1981, réparé entre 1982 et 1984, il rouvre le 1er août 1985 avec un café et une galerie. Un sondage réalisé en 2004 par des professeurs d'art européens le classe quatrième plus bel escalier d'Europe.",
+   "wiki": "Escalier Fillgraderstiege",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20Fillgraderstiege%20Frontal.jpg?width=960",
+   "photoBy": "Invisigoth67",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Fillgraderstiege",
+    "es": "Fillgraderstiege"
+   }
+  },
+  {
+   "id": "Q417645",
+   "name": "Naschmarkt",
+   "lat": 48.1989,
+   "lng": 16.3636,
+   "theme": "streets",
+   "fame": 17,
+   "summary": "Avec 2,315 hectares entre les deux Wienzeile, du Getreidemarkt à la station Kettenbrückengasse, c'est le plus grand marché du centre de Vienne. Le marché fermier apparu en 1780 sur la rive droite de la Vienne n'est déplacé à cet emplacement qu'à partir de 1902 ; le nom Naschmarkt, attesté vers 1820, devient officiel en 1905.",
+   "wiki": "Naschmarkt",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Naschmarkt.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Naschmarkt",
+    "es": "Naschmarkt"
+   }
+  },
+  {
+   "id": "Q688614",
+   "name": "colonne de la peste",
+   "lat": 48.208722222222,
+   "lng": 16.369805555556,
+   "theme": "monuments",
+   "fame": 22,
+   "summary": "Dressée sur le Graben, elle naît d'un vœu de Léopold Ier : l'empereur, qui a fui Vienne pendant l'épidémie de peste de 1679, promet une colonne si le fléau cesse. Une colonne de bois provisoire précède le monument définitif, passé entre les mains de plusieurs sculpteurs et inauguré en 1694. Il marque la transition de Vienne vers le style baroque.",
+   "wiki": "Colonne de la peste (Vienne)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20Graben%20Pests%C3%A4ule%20Ostseite.jpg?width=960",
+   "photoBy": "Thomas Ledl",
+   "photoLic": "CC BY-SA 3.0 at",
+   "alt": {
+    "en": "Pestsäule",
+    "es": "Pestsäule",
+    "it": "Colonna della Peste"
+   }
+  },
+  {
+   "id": "Q697578",
+   "name": "Grande Roue de Vienne",
+   "lat": 48.216830555556,
+   "lng": 16.395919444444,
+   "theme": "monuments",
+   "fame": 22,
+   "summary": "Construite en 1896-1897 sur les plans des architectes anglais Walter Basset et Harry Hitchens, elle se dresse à l'entrée du Prater, à Leopoldstadt. Elle fut la plus haute grande roue du monde entre 1920 et 1985. Incendiée lors d'un bombardement en 1944, elle fut reconstruite en 1953 avec 15 seulement de ses 30 nacelles d'origine.",
+   "wiki": "Grande roue de Vienne",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Giant%20Ferris%20Wheel%20Vienna%20from%20W%20on%202010-09-20.jpg?width=960",
+   "photoBy": "Robert F. Tobler",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Wiener Riesenrad",
+    "es": "Noria de Viena",
+    "it": "Riesenrad"
+   }
+  },
+  {
+   "id": "Q18346455",
+   "name": "monument à Mozart",
+   "lat": 48.2041,
+   "lng": 16.3648,
+   "theme": "monuments",
+   "fame": 10,
+   "summary": "Une statue en marbre de Lasa représente le musicien Wolfgang Amadeus Mozart. Réalisé en 1896 par l'architecte Karl König et le sculpteur Viktor Tilgner, le monument fut inauguré le 8 avril de la même année. D'abord placé sur l'Albertinaplatz, il se trouve dans le Burggarten depuis 1953.",
+   "wiki": "Monument à Mozart",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Mozartdenkmal%20%281%29.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Mozart Monument, Vienna",
+    "es": "Monumento a Mozart"
+   }
+  },
+  {
+   "id": "Q21234884",
+   "name": "Monument à Marie-Thérèse",
+   "lat": 48.2045,
+   "lng": 16.3608,
+   "theme": "monuments",
+   "fame": 10,
+   "summary": "Dressé depuis 1888 sur la place Marie-Thérèse, entre les deux anciens musées de la cour, il commémore la souveraine qui dirigea la monarchie des Habsbourg de 1740 à 1780. François-Joseph Ier retint le projet de Caspar Zumbusch, dont les bronzes pèsent au total 44 tonnes. L'ensemble atteint 19,36 m de haut.",
+   "wiki": "Monument à Marie-Thérèse",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Maria-Theresien-Denkmal.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Maria Theresa Monument",
+    "es": "Monumento a María Teresa",
+    "it": "Monumento a Maria Teresa a Vienna"
+   }
+  },
+  {
+   "id": "Q1255665",
+   "name": "mémorial contre la guerre et le fascisme",
+   "lat": 48.204622,
+   "lng": 16.368982,
+   "theme": "monuments",
+   "fame": 9,
+   "summary": "Le sculpteur Alfred Hrdlicka réalise ce mémorial des victimes du nazisme et de la Seconde Guerre mondiale, installé en 1988 sur l'Albertinaplatz, derrière l'opéra d'État. Le site est celui du Philipphof, immeuble où des centaines de personnes meurent sous un bombardement le 12 mars 1945 ; seuls 180 corps sont retrouvés.",
+   "wiki": "Mémorial contre la guerre et le fascisme",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Hrdlicka%20Mahnmal%20Wien01.jpg?width=960",
+   "photoBy": "Manfred Werner - User:Tsui",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Monument against war and fascism",
+    "es": "Mahnmal gegen Krieg und Faschismus",
+    "it": "Memoriale contro la guerra e il fascismo"
+   }
+  },
+  {
+   "id": "Q1317970",
+   "name": "monument à Johann Strauss",
+   "lat": 48.2038,
+   "lng": 16.3791,
+   "theme": "monuments",
+   "fame": 8,
+   "summary": "Une arche blanche ornée de muses abrite en son centre la statue de bronze doré du compositeur Johann Strauss II jouant du violon ; le socle est de marbre. Le projet d'Alfred Castelliz et d'Edmund von Hellmer l'emporte au concours de 1906, mais la Première Guerre mondiale retarde l'exécution : le dévoilement a lieu le 26 juin 1921.",
+   "wiki": "Monument Johann-Strauss",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Johann%20Strauss%20Denkmal%20Wien.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Monument to Johann Strauss II",
+    "es": "Monumento a Johann Strauss hijo"
+   }
+  },
+  {
+   "id": "Q40300767",
+   "name": "monument à Beethoven",
+   "lat": 48.201924,
+   "lng": 16.377032,
+   "theme": "monuments",
+   "fame": 3,
+   "summary": "Érigée en 1880 sur la Beethovenplatz, cette statue en bronze est due à Caspar von Zumbusch, désigné vainqueur du concours en 1874. Beethoven est assis, entouré de Prométhée, de la Victoire et de neuf putti musiciens, allégories de ses 9 symphonies. Le monument donne son nom à la place.",
+   "wiki": "Monument à Beethoven (Vienne)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Beethovenplatz%2004%20Beethoven-Denkmal%201874-80%20Caspar%20von%20Zumbusch.JPG?width=960",
+   "photoBy": "Buchhändler",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Beethoven monument, Vienna",
+    "es": "monumento a Beethoven"
+   }
+  },
+  {
+   "id": "Q15850285",
+   "name": "Monument Tegetthoff",
+   "lat": 48.218007,
+   "lng": 16.390566,
+   "theme": "monuments",
+   "fame": 3,
+   "summary": "Élevé au Praterstern à la mémoire du vice-amiral Wilhelm von Tegetthoff, il fut inauguré le 21 septembre 1886 en présence de François-Joseph Ier. Le concours de 1872 avait été remporté par Ferdinand Schlöth, mais la commande revint à Carl Kundmann, membre du jury. Une statue de près de 3,5 mètres couronne la colonne rostrale de 16 mètres.",
+   "wiki": "Monument Tegetthoff",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Tegetthoff-Denkmal%20%281%29.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Tegetthoffdenkmal, Vienna",
+    "es": "Tegetthoffdenkmal"
+   }
+  },
+  {
+   "id": "Q869983",
+   "name": "mémorial de la Shoah",
+   "lat": 48.211652777778,
+   "lng": 16.369416666667,
+   "theme": "monuments",
+   "fame": 12,
+   "summary": "Ce bloc de béton armé de la Judenplatz, œuvre de la sculptrice britannique Rachel Whiteread inaugurée en 2000, est dédié aux 65 000 Juifs autrichiens assassinés par les nazis entre 1938 et 1945. Il figure des rayonnages de livres au dos tourné vers l'intérieur, d'où son autre nom de Bibliothèque sans nom.",
+   "wiki": "Mémorial de la Shoah (Vienne)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Holocaust-Mahnmal%20%282%29.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Judenplatz Holocaust Memorial",
+    "es": "Monumento a las víctimas del holocausto de Judenplatz",
+    "it": "Monumento alle vittime ebraiche austriache della Shoah"
+   }
+  },
+  {
+   "id": "Q177008",
+   "name": "mémorial de l'Armée rouge",
+   "lat": 48.19802,
+   "lng": 16.37634,
+   "theme": "monuments",
+   "fame": 15,
+   "summary": "Projeté dès février 1945 par le commandement soviétique et édifié juste après la guerre, le monument déploie une colonnade semi-circulaire en marbre blanc de 8 mètres de haut et 26 colonnes, qui enferme en partie un soldat de l'Armée rouge haut de douze mètres. Il est dédié aux 17 000 soldats soviétiques tués lors de l'offensive de Vienne.",
+   "wiki": "Mémorial de l'Armée rouge",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/0250%20-%20Wien%20-%20Heldendenkmal%20der%20Roten%20Armee.JPG?width=960",
+   "photoBy": "Andrew Bossi",
+   "photoLic": "CC BY-SA 2.5",
+   "alt": {
+    "en": "Soviet War Memorial",
+    "es": "Monumento a los Héroes del Ejército Rojo",
+    "it": "Monumento agli Eroi dell’Armata Rossa"
+   }
+  },
+  {
+   "id": "Q1897966",
+   "name": "colonne de Marie",
+   "lat": 48.2112,
+   "lng": 16.3678,
+   "theme": "monuments",
+   "fame": 4,
+   "summary": "Copie en bronze de la colonne de pierre élevée par Ferdinand III en mémoire du sauvetage de la ville face à l'armée suédoise en 1645, elle est commandée en 1664 au fondeur Balthasar Herold et érigée en 1667 sur la place Am Hof. Herold en coule le pilier et les figures, dessinées par Lodovico Burnacini, à partir de canons pris aux ennemis.",
+   "wiki": "Colonne de Marie (Vienne)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Am%20Hof%20Mariens%C3%A4ule%20Ansicht%201.jpg?width=960",
+   "photoBy": "Thomas Ledl",
+   "photoLic": "CC BY-SA 3.0 at",
+   "alt": {
+    "en": "Mariensäule am Hof",
+    "es": "Mariensäule am Hof"
+   }
+  },
+  {
+   "id": "Q1491188",
+   "name": "temple de Thésée",
+   "lat": 48.2084,
+   "lng": 16.3617,
+   "theme": "monuments",
+   "fame": 6,
+   "summary": "Ce bâtiment néo-classique du Volksgarten a été construit de 1819 à 1823 par Peter von Nobile, dans le style néo-grec. Réplique à échelle réduite du temple de Thésée d'Athènes, il abritait la sculpture Thésée et le Centaure d'Antonio Canova, transférée au Kunsthistorisches Museum en 1890. Il sert aujourd'hui de cadre à des expositions temporaires.",
+   "wiki": "Temple de Thésée (Vienne)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Theseustempel.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Temple of Theseus",
+    "es": "Theseustempel",
+    "it": "Theseustempel"
+   }
+  },
+  {
+   "id": "Q2358079",
+   "name": "Stubentor",
+   "lat": 48.207669444444,
+   "lng": 16.379219444444,
+   "theme": "monuments",
+   "fame": 3,
+   "summary": "Ancienne porte de l'enceinte de Vienne, dite Porte des Hongrois : la plus ancienne date de 1200, elle est reconstruite après le siège turc de 1529, puis en style Renaissance en 1555 et 1556, avec un clocher de 25 m. Les processions funéraires la franchissent vers le cimetière Saint-Marx ; le cortège de Mozart s'y arrête. Le mur est démoli en 1862.",
+   "wiki": "Stubentor",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Franz%20Poledne%20001.JPG?width=960",
+   "photoBy": "Franz Poledne",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Stubentor",
+    "es": "Stubentor"
+   }
+  },
+  {
+   "id": "Q33701",
+   "name": "mausolée de Frédéric III",
+   "lat": 48.2083,
+   "lng": 16.3733,
+   "theme": "monuments",
+   "fame": 3,
+   "summary": "Installé dans la cathédrale Saint-Étienne, ce tombeau monumental est planifié dès 1463 par Frédéric III, qui fait venir le sculpteur Nicolas de Leyde ; celui-ci n'achève que la dalle sommitale avant de mourir en 1473. Max Valmet puis Michael Tichter reprennent le chantier, terminé en 1513 : l'empereur, mort en 1493, ne verra pas son tombeau achevé.",
+   "wiki": "Mausolée de Frédéric III",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Stephansdom%20Friedrichsgrab%202.JPG?width=960",
+   "photoBy": "Uoaei1",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Grabmal Kaiser Friedrichs III"
+   }
+  },
+  {
+   "id": "Q877579",
+   "name": "Kugelmugel",
+   "lat": 48.215277777778,
+   "lng": 16.395555555556,
+   "theme": "monuments",
+   "fame": 25,
+   "summary": "Maison en forme de boule de 8 m de diamètre, construite en 1971 par l'artiste Edwin Lipburger à Katzelsdorf, sans permis de construire : une action judiciaire lui vaut dix semaines de prison. En 1976, il déclare l'indépendance de la République de Kugelmugel, qui n'est pas reconnue. La boule déménage au Prater en juin 1982.",
+   "wiki": "Kugelmugel",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kugelmugel%2003.jpg?width=960",
+   "photoBy": "Peter Gugerell",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Kugelmugel",
+    "es": "Kugelmugel",
+    "it": "Kugelmugel"
+   }
+  },
+  {
+   "id": "Q783523",
+   "name": "fontaine Austria",
+   "lat": 48.2116,
+   "lng": 16.3655,
+   "theme": "water",
+   "fame": 7,
+   "summary": "Sur la Freyung, une colonne de pierre blanche porte Austria victorieuse, personnification de l'Autriche, lance et bouclier à la main. Quatre allégories l'entourent, celles des fleuves les plus importants de l'empire des Habsbourg : l'Elbe, le Danube, la Vistule et le Pô. La fontaine fut conçue en 1844 par Ludwig Schwanthaler.",
+   "wiki": "Fontaine Austria",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%2001%20Austriabrunnen%2004.jpg?width=960",
+   "photoBy": "Gugerell",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "Austriabrunnen",
+    "es": "Austriabrunnen"
+   }
+  },
+  {
+   "id": "Q18629666",
+   "name": "fontaine de Pallas Athéna (Vienne)",
+   "lat": 48.207954,
+   "lng": 16.359471,
+   "theme": "water",
+   "fame": 3,
+   "summary": "Conçue en 1870 par Theophil Hansen dans le cadre du Parlement, elle ne fut mise en chantier qu'en 1898 et inaugurée en 1902. Une allégorie de l'Autriche fut d'abord prévue comme figure principale, avant qu'on ne lui préfère Pallas Athéna, jugée plus neutre pour la monarchie multiethnique. Haute de 5,5 mètres, la déesse tourne le dos au Parlement.",
+   "wiki": "Fontaine de Pallas Athéna (Vienne)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Pallas-Athene-Brunnen.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Pallas Athene Fountain",
+    "es": "Pallas-Athene-Brunnen"
+   }
+  },
+  {
+   "id": "Q1558800",
+   "name": "fontaine de la Fille à l'oie",
+   "lat": 48.201861111111,
+   "lng": 16.360930555556,
+   "theme": "water",
+   "fame": 4,
+   "summary": "Œuvre d'Anton Paul Wagner, cette fontaine montre une jeune fille avec une oie, motif retenu pour son emplacement d'origine : le marché aux volailles de la Brandstätte, qu'elle occupe à partir de 1866. Retirée en 1874, puis dressée devant l'église Mariahilf à partir de 1879, elle gagne le sommet de l'escalier Rahlstiege en 1886.",
+   "wiki": "Fontaine de la Fille à l'oie",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/G%C3%A4nsem%C3%A4dchenbrunnen%20Rahlstiege%203.JPG?width=960",
+   "photoBy": "Thomas Ledl (talk)",
+   "photoLic": "CC BY-SA 3.0 at",
+   "alt": {
+    "en": "Gänsemädchenbrunnen",
+    "es": "Gänsemädchenbrunnen"
+   }
+  },
+  {
+   "id": "Q1240976",
+   "name": "fontaine de la sirène du Danube",
+   "lat": 48.2108,
+   "lng": 16.3653,
+   "theme": "water",
+   "fame": 4,
+   "summary": "Inaugurée en octobre 1861 dans la cour du bazar du palais Ferstel, entre Freyung et Herrengasse, elle est conçue par Heinrich von Ferstel. Trois sirènes de bronze dansent autour de la colonne qui s'élève du bassin de marbre et que couronne une allégorie du Danube tenant un petit poisson. L'ensemble atteint 6 mètres de haut.",
+   "wiki": "Fontaine de la sirène du Danube",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Donaunixenbrunnen.jpg?width=960",
+   "photoBy": "Marek Śliwecki",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "es": "Donaunixenbrunnen"
+   }
+  },
+  {
+   "id": "Q2517129",
+   "name": "Fontaine du mariage",
+   "lat": 48.2108,
+   "lng": 16.3731,
+   "theme": "water",
+   "fame": 4,
+   "summary": "Le groupe sculpté représente le mariage de Marie et Joseph. Un premier monument votif en bois, dû à Johann Bernhard Fischer von Erlach et remontant à un vœu de Léopold Ier, fut érigé sur le Hoher Markt en 1706 ; devenu vétuste, il fut démoli en 1725. L'ensemble baroque actuel, haut de 18 mètres, fut consacré en 1732.",
+   "wiki": "Fontaine du mariage",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Verm%C3%A4hlungsbrunnen%20%282%29.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "es": "Vermählungsbrunnen"
+   }
+  },
+  {
+   "id": "Q1689154",
+   "name": "Albrechtsbrunnen",
+   "lat": 48.204224,
+   "lng": 16.368575,
+   "theme": "water",
+   "fame": 3,
+   "summary": "Adossée au palais de l'archiduc Albert, cette fontaine est inaugurée le 24 décembre 1869 sur des plans de Moritz von Loehr, avec des allégories de Johann Meixner figurant Vindobona, le Danube et ses affluents. Le bombardement du 12 mars 1945 n'en laisse debout que Vindobona, Danubius, la Save et la Tisza.",
+   "wiki": "Albrechtsbrunnen",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Albrechtsbrunnen.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Albrechtsbrunnen",
+    "es": "Albrechtsbrunnen"
+   }
+  },
+  {
+   "id": "Q264752",
+   "name": "Prater de Vienne",
+   "lat": 48.216111111111,
+   "lng": 16.395555555556,
+   "theme": "parks",
+   "fame": 35,
+   "summary": "Vaste étendue verte entre le Danube et le canal du Danube, le Prater est mentionné dès 1403, puis clôturé en 1560 par Maximilien II en réserve de chasse des Habsbourg ; Joseph II l'ouvre au public en 1766. On y trouve une fête foraine permanente, le stade Ernst Happel et la Grande Roue, bâtie en 1897 et haute de près de 65 m.",
+   "wiki": "Prater de Vienne",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/13-05-24-wien-RalfR-200.jpg?width=960",
+   "photoBy": "Ralf Roletschek",
+   "photoLic": "CC BY 3.0",
+   "alt": {
+    "en": "Prater",
+    "es": "Prater",
+    "it": "Prater"
+   }
+  },
+  {
+   "id": "Q1014945",
+   "name": "Burggarten",
+   "lat": 48.204280555556,
+   "lng": 16.365819444444,
+   "theme": "parks",
+   "fame": 8,
+   "summary": "Jardin d'agrément, il occupe un ancien glacis au pied de l'enceinte de Vienne, dont un seul bastion est debout après la destruction de la ville par les Français en 1809. D'abord jardin privé de l'empereur, il prend la forme d'un parc à l'anglaise, puis s'étend vers le Ring en 1863. Ouvert au public en 1919, il abrite une palmeraie.",
+   "wiki": "Burggarten (Vienne)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/AT-13768%20Palmenhaus%20Burggarten%2005.JPG?width=960",
+   "photoBy": "Hubertl",
+   "photoLic": "CC BY 3.0 at",
+   "alt": {
+    "en": "Burggarten",
+    "es": "Burggarten"
+   }
+  },
+  {
+   "id": "Q875751",
+   "name": "Volksgarten",
+   "lat": 48.2081,
+   "lng": 16.361761111111,
+   "theme": "parks",
+   "fame": 14,
+   "summary": "Aménagé en 1821 par Ludwig Remy sur des fortifications détruites en 1809 par les troupes de Napoléon, ce jardin rattaché à la Hofburg devait d'abord rester privé, réservé aux archiducs; il fut ouvert au public en 1823. Il abrite le temple de Thésée, les monuments à l'impératrice Elisabeth et à Franz Grillparzer, et plus de 3 000 rosiers.",
+   "wiki": "Volksgarten (Vienne)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Volksgarten.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Volksgarten",
+    "es": "Volksgarten de Viena"
+   }
+  },
+  {
+   "id": "Q688588",
+   "name": "Stadtpark",
+   "lat": 48.204722222222,
+   "lng": 16.380555555556,
+   "theme": "parks",
+   "fame": 14,
+   "summary": "Premier parc public de Vienne, ouvert en 1862 d'après un projet du paysagiste Joseph Selleny, il couvre 95 931 m2 et la rivière Vienne le sépare en deux. Aucun parc viennois ne compte autant de sculptures : la partie ouest, en prairies arborées, porte la statue dorée de Johann Strauss II ; la partie est accueille jeux et équipements sportifs.",
+   "wiki": "Stadtpark",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Johann%20Strauss%20Denkmal%20Wien.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Stadtpark",
+    "es": "Stadtpark"
+   }
+  },
+  {
+   "id": "Q677602",
+   "name": "jardin botanique de l'université de Vienne",
+   "lat": 48.191666666667,
+   "lng": 16.383888888889,
+   "theme": "parks",
+   "fame": 11,
+   "summary": "Fondé en 1754 par la faculté des sciences naturelles comme « hortus medicus » de plantes médicinales, il jouxte les jardins du Belvédère. Endlicher le transforme en jardin anglais en 1841. Serres, bâtiments et collections sont détruits par les bombardements de la Seconde Guerre mondiale ; une partie rouvre en 1970. Il compte 9 500 espèces.",
+   "wiki": "Jardin botanique de l'université de Vienne",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Botanischer%20Garten%20Wien%20I.jpg?width=960",
+   "photoBy": "User:Feldkurat Katz",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Botanical Garden of the University of Vienna",
+    "es": "Jardín Botánico de la Universidad de Viena"
+   }
+  },
+  {
+   "id": "Q2048203",
+   "name": "Palmeraie de Vienne",
+   "lat": 48.205069444444,
+   "lng": 16.366830555556,
+   "theme": "parks",
+   "fame": 9,
+   "summary": "Une première serre néo-classique est construite dans le Burggarten de 1823 à 1826 ; la palmeraie actuelle, de style Art nouveau, est dessinée par Friedrich Ohmann et élevée entre 1902 et 1906. Fermée en 1988 pour des raisons de sécurité, puis rénovée de 1996 à 1998, elle abrite un restaurant, une papillonneraie et une serre.",
+   "wiki": "Palmenhaus",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/AT-13768%20Palmenhaus%20Burggarten%2005.JPG?width=960",
+   "photoBy": "Hubertl",
+   "photoLic": "CC BY 3.0 at",
+   "alt": {
+    "en": "Palmenhaus",
+    "es": "Palmenhaus",
+    "it": "Palmenhaus"
+   }
+  },
+  {
+   "id": "Q1117261",
+   "name": "cimetière juif de Roßau",
+   "lat": 48.22371,
+   "lng": 16.36299,
+   "theme": "parks",
+   "fame": 7,
+   "summary": "Plus ancien cimetière juif conservé d'Autriche : la communauté juive de Vienne y enterre ses morts de 1540 à 1783, avant que les règles sanitaires de Joseph II ne le fassent fermer. Toutes les inscriptions des stèles sont en hébreu. Le terrain, d'environ 2 000 m2, fait partie de la cour d'une maison de retraite. L'accès est fermé pour travaux.",
+   "wiki": "Cimetière juif de Roßau",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/J%C3%BCdischer%20Friedhof%20IMG%207773.JPG?width=960",
+   "photoBy": "PictureObelix",
+   "photoLic": "CC BY-SA 3.0 at",
+   "alt": {
+    "en": "Jewish cemetery in Roßau",
+    "es": "Jüdischer Friedhof Rossau"
+   }
+  },
+  {
+   "id": "Q279260",
+   "name": "Hôtel Sacher Wien",
+   "lat": 48.203888888889,
+   "lng": 16.369444444444,
+   "theme": "shops",
+   "fame": 25,
+   "summary": "Fondé en 1876 par le restaurateur Eduard Sacher, à l'emplacement de l'ancien Theater am Kärntnertor, ce palace n'est d'abord qu'une maison meublée, l'Hôtel de l'Opéra. Anna Sacher, qui en hérite à la mort de son mari, en fait l'un des hôtels les plus raffinés du monde. Sa spécialité est la Sachertorte, inventée par Franz Sacher, le père d'Eduard.",
+   "wiki": "Hôtel Sacher",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Cafe%20Sacher%20Wien.jpg?width=960",
+   "photoBy": "Thomas Ledl",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Hotel Sacher Vienna",
+    "es": "Hotel Sacher",
+    "it": "Hotel Sacher"
+   }
+  },
+  {
+   "id": "Q694757",
+   "name": "café Central",
+   "lat": 48.210278,
+   "lng": 16.365278,
+   "theme": "shops",
+   "fame": 25,
+   "summary": "Ouvert en 1876 à l'emplacement de l'ancien bâtiment de banque et de change aujourd'hui appelé Palais Ferstel, il devient à la fin du XIXe siècle l'un des hauts lieux de la scène intellectuelle viennoise, fréquenté par Peter Altenberg, Theodor Herzl ou Adolf Loos. Ses nombreux joueurs d'échecs lui valent, jusqu'en 1938, le surnom d'école d'échecs.",
+   "wiki": "Café Central",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palais%20Ferstel%20Cafe%20Central.jpg?width=960",
+   "photoBy": "Thomas Ledl",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Café Central",
+    "es": "Café Central",
+    "it": "Café Central"
+   }
+  },
+  {
+   "id": "Q254425",
+   "name": "Demel",
+   "lat": 48.208611111111,
+   "lng": 16.367221944444,
+   "theme": "shops",
+   "fame": 14,
+   "summary": "Pâtisserie et chocolaterie fondée en 1786 sur la Michaelerplatz par Ludwig Dehne, elle passe en 1857 à Christof Demel, qui installe le commerce au Kohlmarkt, dans le palais Blankenstein, bâtiment baroque proche de la Hofburg. Ancien fournisseur de la Cour impériale et royale, elle reste aux Demel jusqu'en 1972 et appartient à Do & Co depuis 2002.",
+   "wiki": "Demel (pâtisserie)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Demel%20aussen.jpg?width=960",
+   "photoBy": "Johann Werfring",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Demel",
+    "es": "Demel"
+   }
+  },
+  {
+   "id": "Q1630919",
+   "name": "Hotel Imperial",
+   "lat": 48.201111,
+   "lng": 16.373056,
+   "theme": "shops",
+   "fame": 13,
+   "summary": "Construit en 1863 comme palais de ville du duc Philippe de Wurtemberg, le bâtiment est vendu en 1871 et transformé en hôtel pour l'Exposition universelle de 1873. La façade jaune et blanche est de style néo-Renaissance italienne. Samuel Schallinger, copropriétaire d'avant-guerre, est contraint de vendre en 1938 ; il meurt en 1942 à Theresienstadt.",
+   "wiki": "Hotel Imperial (Vienne)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%2001%20Hotel%20Imperial%20a.jpg?width=960",
+   "photoBy": "Gugerell",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "Hotel Imperial",
+    "es": "Hotel Imperial"
+   }
+  },
+  {
+   "id": "Q264318",
+   "name": "café Landtmann",
+   "lat": 48.2115,
+   "lng": 16.3614,
+   "theme": "shops",
+   "fame": 12,
+   "summary": "Créé le 1er octobre 1873 par Franz Landtmann, il compte parmi les cafés les plus célèbres de Vienne et borde le Ring, côté ouest. La famille Querfeld le possède depuis 1976. Sigmund Freud, Gustav Mahler, Oskar Kokoschka, Romy Schneider ou Marlene Dietrich y sont passés.",
+   "wiki": "Café Landtmann",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Landtmann%20oben.JPG?width=960",
+   "photoBy": "Andrea Schaufler (Schaufi)",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Café Landtmann"
+   }
+  },
+  {
+   "id": "Q1536160",
+   "name": "Grand Hotel Wien",
+   "lat": 48.202058,
+   "lng": 16.37206,
+   "theme": "shops",
+   "fame": 6,
+   "summary": "Ouvert en 1870 sur le Ring, il fut le premier hôtel de luxe de Vienne, avec plus de 300 chambres, un ascenseur à vapeur et un bureau de télégraphie, sur des plans de Carl Tietz. Il logea les troupes soviétiques de 1945 à 1955, rouvrit en 1958, puis fut loué à l'AIEA, qui y siégea jusqu'en 1979. Racheté et rénové, il rouvrit en 1994.",
+   "wiki": "Grand Hotel Wien",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20Grand%20Hotel%203.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Grand Hotel Wien",
+    "es": "Grand Hotel Wien"
+   }
+  },
+  {
+   "id": "Q37865047",
+   "name": "hôtel Bristol",
+   "lat": 48.202719444444,
+   "lng": 16.370080555556,
+   "theme": "shops",
+   "fame": 3,
+   "summary": "Ouvert le 26 juin 1892 sous le nom d'Hotel am Ring, il borde la Ringstrasse près de l'Opéra et compte 127 chambres et 23 suites ; l'Art Déco marque ses parties communes, toutes protégées. Samuel Schallinger est exproprié par les nazis en 1938 au titre de l'aryanisation, puis assassiné à Theresienstadt en 1942. Aucune restitution n'a suivi.",
+   "wiki": "Hôtel Bristol (Vienne)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20Hotel%20Bristol%20K%C3%A4rntnerring.jpg?width=960",
+   "photoBy": "Thomas Ledl",
+   "photoLic": "CC BY-SA 3.0 at",
+   "alt": {
+    "en": "Hotel Bristol",
+    "es": "Hotel Bristol"
+   }
+  },
+  {
+   "id": "Q269273",
+   "name": "école espagnole d'équitation",
+   "lat": 48.2075,
+   "lng": 16.366111111111,
+   "theme": "culture",
+   "fame": 30,
+   "summary": "Fondée en 1565, c'est la plus ancienne école d'équitation encore existante au monde. Elle ne dresse que des étalons lipizzans et donne ses spectacles dans le manège d'hiver, construit entre 1729 et 1735 près de la Hofburg. Les cavaliers y saluent par tradition le portrait de l'empereur Charles VI avant de commencer leurs figures.",
+   "wiki": "École espagnole d'équitation",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Spanische%20Hofreitschule3%2C%20Vienna.jpg?width=960",
+   "photoBy": "sparre",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Spanish Riding School",
+    "es": "Escuela Española de Equitación",
+    "it": "Scuola di Equitazione Spagnola"
+   }
+  },
+  {
+   "id": "Q460607",
+   "name": "Haus des Meeres",
+   "lat": 48.1977,
+   "lng": 16.3529,
+   "theme": "culture",
+   "fame": 10,
+   "summary": "Cet aquarium public occupe une tour anti-aérienne en béton haute de 47 mètres, construite pendant la Seconde Guerre mondiale, dans le parc Esterhazy à Mariahilf. Il présente plus de dix mille êtres aquatiques sur environ 4000 mètres carrés. Depuis 1991, le bâtiment porte une œuvre de Lawrence Weiner, mémorial contre la guerre et le fascisme.",
+   "wiki": "Haus des Meeres",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Haus%20des%20Meeres%202026%2C%20Wien%203.jpg?width=960",
+   "photoBy": "Thomas Ledl",
+   "photoLic": "CC BY 4.0",
+   "alt": {
+    "en": "Haus des Meeres",
+    "es": "Haus des Meeres"
+   }
+  },
+  {
+   "id": "Q2167653",
+   "name": "Caserne Rossauer",
+   "lat": 48.217969444444,
+   "lng": 16.367169444444,
+   "theme": "culture",
+   "fame": 5,
+   "summary": "Ancienne caserne de style éclectique construite de 1865 à 1869 dans le quartier Rossau, 9e arrondissement, elle porte d'abord le nom de caserne du Prince héritier Rudolf et s'élève, avec la caserne Franz-Joseph et l'Arsenal, pour protéger la ville du prolétariat après la Révolution de 1848. Elle abrite le ministère autrichien de la Défense.",
+   "wiki": "Caserne Rossauer",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Alsergrund%20%28Wien%29%20-%20Rossauer-Kaserne%20%281%29.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Rossauer Barracks",
+    "es": "Cuartel Rossauer"
+   }
+  },
+  {
+   "id": "Q620532",
+   "name": "pharmacie À l'Ange blanc",
+   "lat": 48.210269,
+   "lng": 16.36788,
+   "theme": "culture",
+   "fame": 4,
+   "summary": "Fondée peut-être vers 1440, et au plus tard en 1568, l'officine a changé plusieurs fois d'adresse avant de s'installer Bognergasse, dans l'Innere Stadt, en 1891. Le bâtiment est démoli en 1901 au profit d'un édifice de la Sécession viennoise d'Oskar Laske et Viktor Fiala. Deux anges en mosaïque, dessinés par Laske, encadrent la vitrine.",
+   "wiki": "Pharmacie À l'Ange blanc",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Apotheke%20zum%20wei%C3%9Fen%20Engel%2C%20Vienna.jpg?width=960",
+   "photoBy": "Thomas Ledl",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Apotheke zum weißen Engel, Vienna",
+    "es": "Apotheke zum weißen Engel"
+   }
+  },
+  {
+   "id": "Q2568865",
+   "name": "ancienne bourse de Vienne",
+   "lat": 48.215311111111,
+   "lng": 16.3664,
+   "theme": "culture",
+   "fame": 4,
+   "summary": "Bâtie sur la Ringstrasse dans un style historiciste, elle suivit les plans de Theophil Hansen, acceptés en 1869 ; l'architecte élevait au même moment le Parlement. La première réunion boursière s'y tint le 19 mars 1877. Endommagée par une bombe en 1945, puis par un incendie en 1956, elle voit aujourd'hui ses salles louées pour des événements.",
+   "wiki": "Ancienne bourse de Vienne",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%B6rse%20Wien%2001.jpg?width=960",
+   "photoBy": "Peter Gugerell",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Vienna stock exchange building",
+    "es": "Palacio de la Bolsa de Viena"
+   }
+  },
+  {
+   "id": "Q871525",
+   "name": "Vindobona",
+   "lat": 48.210833333333,
+   "lng": 16.370277777778,
+   "theme": "other",
+   "fame": 32,
+   "summary": "Établissement celtique devenu camp romain, Vindobona occupait l'emplacement de l'actuelle Vienne, dans la province de Pannonie. Selon Aurelius Victor, Marc Aurèle y installa son quartier général pendant les guerres contre les Marcomans et y mourut le 17 mars 180. Son plan asymétrique se lit encore dans le tracé du Graben et du Salzgries.",
+   "wiki": "Vindobona",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien.Hofburg10.jpg?width=960",
+   "photoBy": "Georges Jansoone",
+   "photoLic": "CC BY 2.5",
+   "alt": {
+    "en": "Vindobona",
+    "es": "Vindobona",
+    "it": "Vindobona"
+   }
+  },
+  {
+   "id": "Q408847",
+   "name": "église Saint-Charles-Borromée",
+   "lat": 48.198280555556,
+   "lng": 16.371880555556,
+   "theme": "religious",
+   "fame": 41,
+   "summary": "Cette église votive naît d'un vœu de l'empereur Charles VI pendant la peste de Vienne de 1713 et honore son saint patron, Charles Borromée. Johann Bernhard Fischer von Erlach en dessine les plans et suit le chantier jusqu'à sa mort en 1723 ; son fils Joseph Emanuel l'achève en 1737. Deux colonnes historiées encadrent le portique d'entrée.",
+   "wiki": "Église Saint-Charles-Borromée de Vienne",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien%20-%20Karlskirche%20%281%29.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Karlskirche",
+    "es": "iglesia de San Carlos Borromeo",
+    "it": "chiesa di San Carlo Borromeo"
+   }
+  },
+  {
+   "id": "Q478455",
+   "name": "MAK – Musée autrichien d’arts appliqués / art contemporain",
+   "lat": 48.207669444444,
+   "lng": 16.381369444444,
+   "theme": "museums",
+   "fame": 27,
+   "summary": "Musée des arts décoratifs et du design, il accorde aussi une place importante à l'art contemporain. Le bâtiment du Stubenring, conçu par Heinrich von Ferstel, a été érigé en 1871 ; depuis 2004, l'installation extérieure permanente MAKlite de James Turrell l'illumine le soir. Les collections dépassent 300 000 objets.",
+   "wiki": "Musée des arts appliqués (Vienne)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/M.A.K.%20Vienna%20June%202006%20017.jpg?width=960",
+   "photoBy": "Gryffindor",
+   "photoLic": "CC BY 2.5",
+   "alt": {
+    "en": "MAK – Museum of Applied Arts",
+    "es": "Museo de Artes Aplicadas de Viena",
+    "it": "Museum für angewandte Kunst"
+   }
+  },
+  {
+   "id": "Q695388",
+   "name": "église des Piaristes Maria Treu de Vienne",
+   "lat": 48.2105,
+   "lng": 16.3491,
+   "theme": "religious",
+   "fame": 14,
+   "summary": "Élevée de 1698 à 1719, probablement sur des plans de Lukas von Hildebrandt pour l'ordre des écoles pies, elle doit son nom à une image de grâce peinte lors de l'épidémie de peste de 1713. Sa façade convexe est le seul exemple viennois du genre. Franz Anton Maulbertsch, peintre du baroque tardif, y peint cinq fresques.",
+   "wiki": "Église des Piaristes Maria Treu de Vienne",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Josefstadt%20%28Wien%29%20-%20Piaristenkirche.JPG?width=960",
+   "photoBy": "C.Stadler/Bwag",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Piarist Church",
+    "es": "basílica Maria Treu",
+    "it": "basilica Maria Treu"
+   }
+  }
+ ]
+}
