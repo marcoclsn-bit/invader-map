@@ -2,6 +2,16 @@
  "version": 18,
  "updatedAt": "2026-08-05",
  "cities": {
+  "CLR": {
+   "version": 1,
+   "updatedAt": "2026-08-05",
+   "count": 49,
+   "langs": {
+    "en": 1,
+    "es": 1,
+    "it": 1
+   }
+  },
   "GRN": {
    "version": 1,
    "updatedAt": "2026-08-04",

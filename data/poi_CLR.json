@@ -1,0 +1,813 @@
+{
+ "version": 1,
+ "city": "CLR",
+ "attribution": "Lieux : Wikidata (CC0) · Résumés d’après Wikipédia (CC BY-SA) · Photos : Wikimedia Commons",
+ "updatedAt": "2026-08-05",
+ "pois": [
+  {
+   "id": "Q3329089",
+   "name": "musée Bargoin",
+   "lat": 45.773963,
+   "lng": 3.087287,
+   "theme": "museums",
+   "fame": 6,
+   "summary": "L'industriel clermontois Jean-Baptiste Bargoin lègue en 1885 une part de sa fortune à la ville pour fonder un musée ; le bâtiment, signé Joseph Dionnet, est inauguré en 1903. Pensé pour les beaux-arts, le musée expose dès l'ouverture des pièces archéologiques. Au sous-sol, 10 000 fragments d'ex-voto en bois de la source des Roches, à Chamalières.",
+   "wiki": "Musée Bargoin",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Musee%20bargoin%20clermont-fd%202.jpg?width=960",
+   "photoBy": "Fabien1309",
+   "photoLic": "CC BY-SA 2.0 fr",
+   "alt": {
+    "en": "Musée Bargoin"
+   }
+  },
+  {
+   "id": "Q1495869",
+   "name": "musée d'Art Roger-Quilliot",
+   "lat": 45.793801,
+   "lng": 3.116381,
+   "theme": "museums",
+   "fame": 4,
+   "summary": "Couvent d'ursulines jusqu'à la Révolution, les bâtiments furent caserne, grand séminaire, hôpital militaire, puis gendarmerie jusqu'en 1982. Adrien Fainsilber et le Clermontois Claude Gaillard y aménagent un musée, ouvert en 1992 autour d'un atrium central sous verrière. Le musée prend en 1999 le nom de Roger Quilliot, ancien maire et ministre.",
+   "wiki": "Musée d'Art Roger-Quilliot",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Clermont-Ferrand%20Mus%C3%A9e%20d%27Art%20Roger-Quilliot%20seen%20from%20Place%20Louis%20Deteix.jpg?width=960",
+   "photoBy": "Ymblanter",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Musée d'Art Roger-Quilliot",
+    "es": "Museo de arte Roger-Quilliot"
+   }
+  },
+  {
+   "id": "Q3330860",
+   "name": "muséum Henri-Lecoq",
+   "lat": 45.7741,
+   "lng": 3.08836,
+   "theme": "museums",
+   "fame": 3,
+   "summary": "Le naturaliste Henri Lecoq lègue ses collections à Clermont-Ferrand, qui achète son hôtel particulier pour en faire un muséum, inauguré en 1873. Plus de 200 000 végétaux, 300 000 animaux dont 200 000 insectes : parmi eux, l'Aphodius arvernicus, coléoptère réputé endémique d'Auvergne, s'avère être une supercherie scientifique.",
+   "wiki": "Muséum Henri-Lecoq",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mus%C3%A9um%20d%27histoire%20naturelle%20Henri-Lecoq%2C%20Clermont-Ferrand%2C%20entr%C3%A9e.jpg?width=960",
+   "photoBy": "Eunostos",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Muséum Henri-Lecoq"
+   }
+  },
+  {
+   "id": "Q56827114",
+   "name": "L'Aventure Michelin",
+   "lat": 45.789989444,
+   "lng": 3.105345555,
+   "theme": "museums",
+   "fame": 12,
+   "summary": "Musée consacré au groupe Michelin, inauguré le 23 janvier 2009, il retrace sur 2 000 m2 l'histoire, le patrimoine et les produits industriels du groupe. On y voit la voiture L'Éclair de 1895, un avion Breguet 14 de la Première Guerre mondiale et une micheline. Le musée accueille 100 000 visiteurs en 2019.",
+   "wiki": "L'Aventure Michelin",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Fourgonnette%20Citro%C3%ABn%20type%20H%20Michelin.jpg?width=960",
+   "photoBy": "TCY",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "L'Aventure Michelin",
+    "es": "L'Aventure Michelin",
+    "it": "L'Aventure Michelin"
+   }
+  },
+  {
+   "id": "Q85821952",
+   "name": "bibliothèque du patrimoine de Clermont Auvergne Métropole",
+   "lat": 45.774202,
+   "lng": 3.088468,
+   "theme": "culture",
+   "fame": 4,
+   "summary": "Née des confiscations révolutionnaires de 1791, qui réunirent les livres du chapitre de la cathédrale et des couvents de la ville, la bibliothèque ouvre au public en 1800 et s'installe rue Bardoux en 1994. Elle conserve 7 kilomètres de documents, dont le Bréviaire d'Alaric, qui porte en marge Tomida femina, un des plus anciens textes en occitan.",
+   "wiki": "Bibliothèque du Patrimoine de Clermont Auvergne Métropole",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Biblioth%C3%A8que%20du%20Patrimoine%20%C3%A0%20Clermont-Ferrand.jpg?width=960",
+   "photoBy": "Pierre Tribhou",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Rare book library of Clermont Auvergne Métropole"
+   }
+  },
+  {
+   "id": "Q770459",
+   "name": "basilique Notre-Dame-du-Port",
+   "lat": 45.780694444,
+   "lng": 3.089444444,
+   "theme": "religious",
+   "fame": 10,
+   "summary": "Le nom de cette collégiale romane viendrait du quartier du Port, du latin portus, « l'entrepôt », l'endroit où l'on stockait les marchandises. Bâtie en arkose blonde dès les années 1120-1130, elle faillit être rasée en 1800 au profit d'un marché aux toiles, et fut sauvée par une pétition. Léon XIII l'éleva au rang de basilique mineure en 1881.",
+   "wiki": "Basilique Notre-Dame-du-Port de Clermont-Ferrand",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/F08.N.-D.%20du%20Port.0050.jpg?width=960",
+   "photoBy": "Jochen Jahnke 14:18, 13. Okt. 2008 (CEST)",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Basilica of Notre-Dame du Port",
+    "es": "basílica de Nuestra Señora del Puerto",
+    "it": "Notre-Dame du Port"
+   }
+  },
+  {
+   "id": "Q3580231",
+   "name": "église Notre-Dame-de-Prospérité de Clermont-Ferrand",
+   "lat": 45.7931,
+   "lng": 3.11412,
+   "theme": "religious",
+   "fame": 3,
+   "summary": "Une charte de 1196 interdisant aux clercs de résider dans Montferrand, les églises se bâtirent hors des remparts ; seule la chapelle du château y était admise. La guerre de Cent Ans poussa les habitants à obtenir une paroisse intra-muros, installée dans cette chapelle castrale et transformée à partir de 1340 en église de gothique méridional.",
+   "wiki": "Église Notre-Dame-de-Prospérité de Clermont-Ferrand",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Eglise%20Notre-Dame%20de%20Prosperite%2002.jpg?width=960",
+   "photoBy": "Krzysztof Golik",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Église Notre-Dame de Montferrand (Clermont-Ferrand)"
+   }
+  },
+  {
+   "id": "Q22928172",
+   "name": "église Saint-Genès des Carmes",
+   "lat": 45.776795,
+   "lng": 3.087764,
+   "theme": "religious",
+   "fame": 2,
+   "summary": "Installés à Clermont en 1288, les Carmes achèvent en 1371 le chœur et le clocher de leur église, consacrée en 1472. La Révolution la détruit : seule la chapelle des Carmes reste debout, cédée à la municipalité, puis aux protestants, puis à un tonnelier qui en fait son atelier. Rendue au culte, elle prend en 1802 le nom de Saint-Genès-des-Carmes.",
+   "wiki": "Église Saint-Genès des Carmes",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Eglise-saint-genes-des-carmes-clermont-ferrand.JPG?width=960",
+   "photoBy": "nmar",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Église Saint-Genès des Carmes de Clermont-Ferrand"
+   }
+  },
+  {
+   "id": "Q22928176",
+   "name": "église Saint-Laurent de Clermont-Ferrand",
+   "lat": 45.78013,
+   "lng": 3.09061,
+   "theme": "religious",
+   "fame": 2,
+   "summary": "L'église Saint-Laurent se dresse à Clermont-Ferrand, dans le Puy-de-Dôme. Elle est classée monument historique depuis le 31 décembre 1976.",
+   "wiki": "Église Saint-Laurent de Clermont-Ferrand",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89glise%20Saint-Laurent%202013-09-28%2019-52-40.jpg?width=960",
+   "photoBy": "Alexandre.chassignon",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Église Saint-Laurent de Clermont-Ferrand"
+   }
+  },
+  {
+   "id": "Q3581416",
+   "name": "église Saint-Eutrope de Clermont-Ferrand",
+   "lat": 45.7819,
+   "lng": 3.0821,
+   "theme": "religious",
+   "fame": 2,
+   "summary": "Cette ancienne collégiale de style néo-gothique a été bâtie entre 1858 et 1862, à la place d'un édifice médiéval remontant probablement au XIIe siècle et détruit en 1858. Inscrite au titre des monuments historiques depuis 1986, elle a connu un important chantier de rénovation achevé en 2015.",
+   "wiki": "Église Saint-Eutrope de Clermont-Ferrand",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Clermont-Ferrand%2C%20France%20%2849280293691%29.jpg?width=960",
+   "photoBy": "David Lofink from Orange, United States",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Église Saint-Eutrope de Clermont-Ferrand"
+   }
+  },
+  {
+   "id": "Q3583584",
+   "name": "église Saint-Pierre-des-Minimes",
+   "lat": 45.77756,
+   "lng": 3.0809,
+   "theme": "religious",
+   "fame": 2,
+   "summary": "Bâtie au XVIIe siècle pour le couvent des Minimes, cette église de style classique ouvre son entrée orientale sur la place de Jaude. Jean Teillard l'agrandit au XIXe siècle ; les sculptures intérieures sont dues à Henri Gourgouillon. Elle est inscrite au titre des monuments historiques depuis 1987.",
+   "wiki": "Église Saint-Pierre-des-Minimes",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint-Pierre-des-Minimes-Clermont.jpg?width=960",
+   "photoBy": "(:Julien:)",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Église Saint-Pierre-des-Minimes"
+   }
+  },
+  {
+   "id": "Q2957289",
+   "name": "chapelle de l'ancien hôpital général",
+   "lat": 45.7802,
+   "lng": 3.07987,
+   "theme": "religious",
+   "fame": 2,
+   "summary": "Hugues Imbert dresse les plans de cette chapelle néoclassique avec une contrainte : un accès séparé pour les pensionnaires, la congrégation et le public. Achevée entre 1850 et 1855, elle est en croix grecque, chaque bras ayant son entrée. L'hôpital démoli dans les années 1980, seule la chapelle a survécu, rouverte en 2010 en salle d'exposition.",
+   "wiki": "Chapelle de l'ancien hôpital général",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Chapelle%20ancien%20hopital%20g%C3%A9n%C3%A9ral%20clermont%20ferrand%202.JPG?width=960",
+   "photoBy": "Pilifon",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Hôpital général de Clermont-Ferrand"
+   }
+  },
+  {
+   "id": "Q3354572",
+   "name": "Opéra-Théâtre de Clermont-Ferrand",
+   "lat": 45.7775,
+   "lng": 3.0824,
+   "theme": "stages",
+   "fame": 2,
+   "summary": "Construit de 1891 à 1894 sous la direction de Jean Teillard, à l'emplacement de la Halle aux toiles, il remplace le théâtre de la place Royale, jugé trop petit. Après l'effondrement d'une partie du plafond, il reste fermé sept ans et rouvre le 20 septembre 2013 ; la rénovation a révélé les fresques de Louis Retru derrière les tentures du foyer.",
+   "wiki": "Opéra-Théâtre de Clermont-Ferrand",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Op%C3%A9ra-Th%C3%A9%C3%A2tre%20de%20Clermont-Ferrand%20depuis%20la%20place%20de%20Jaude%202025-02-15.JPG?width=960",
+   "photoBy": "Tabl-trai",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Opera-Theatre of Clermont-Ferrand"
+   }
+  },
+  {
+   "id": "Q2996610",
+   "name": "Coopérative de Mai",
+   "lat": 45.788,
+   "lng": 3.10024,
+   "theme": "stages",
+   "fame": 3,
+   "summary": "La salle de concert s'élève sur le terrain de l'ancienne coopérative Michelin, un grand magasin destiné aux ouvriers, et a été inaugurée le 7 mars 2000 en compagnie des Rita Mitsouko. Labellisée scène de musiques actuelles, elle donne environ 130 concerts par an entre son Club de 460 places et sa Grande Salle de 1 500.",
+   "wiki": "La Coopérative de Mai",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lacoope%20clermont%20fd%201.JPG?width=960",
+   "photoBy": "Fabien1309",
+   "photoLic": "CC BY-SA 2.0 fr",
+   "alt": {
+    "en": "Coopérative de Mai"
+   }
+  },
+  {
+   "id": "Q15950424",
+   "name": "hôtel Cote-Blatin",
+   "lat": 45.777,
+   "lng": 3.09041,
+   "theme": "palaces",
+   "fame": 4,
+   "summary": "Émile Camut bâtit cet hôtel particulier en 1897 pour Joseph Cote, homme d'affaires devenu Cote-Blatin après son mariage avec Antoinette Blatin. En pierres de Volvic, il se signale par sa couverture d'ardoises, qui contraste avec les tuiles et les toits-terrasses du voisinage. L'inscription de 2010 englobe les décors intérieurs et le jardin.",
+   "wiki": "Hôtel Cote-Blatin",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/H%C3%B4tel%20Cote-Blatin%202013-09-28%2019-38-25.jpg?width=960",
+   "photoBy": "Alexandre.chassignon",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Hôtel Cote-Blatin"
+   }
+  },
+  {
+   "id": "Q22928279",
+   "name": "maison d'Adam et Ève",
+   "lat": 45.793,
+   "lng": 3.1142,
+   "theme": "palaces",
+   "fame": 3,
+   "summary": "La tourelle d'escalier, bâtie à la fin du XVe ou au début du XVIe siècle, porte le haut-relief qui donne son nom à la maison : sur la balustrade, un serpent à tête humaine s'enroule au pommier, qu'Adam et Ève désignent de la main. Du corps de logis du début du XIIIe siècle, démoli avant le classement de 1924, seule subsiste la façade sur rue.",
+   "wiki": "Maison d'Adam et Ève (Clermont-Ferrand)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Clermont-Ferrand%20-%20Maison%20d%27Adam%20et%20%C3%88ve%2020210806.jpg?width=960",
+   "photoBy": "Pymouss",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Maison d'Adam et Ève"
+   }
+  },
+  {
+   "id": "Q15950584",
+   "name": "hôtel de Chazerat",
+   "lat": 45.7785,
+   "lng": 3.08798,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "Commencé dans les années 1760 par Pierre Peyrat, cet hôtel Louis XVI ouvre sur une cour d'honneur ovale. Vendu comme bien national à la Révolution, il est récupéré par Antoine de Chazerat en 1806, puis abrite l'évêché, un hôpital pendant la Première Guerre mondiale et la faculté de lettres jusqu'en 1937. La DRAC s'y installe en 1982.",
+   "wiki": "Hôtel de Chazerat",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Clermont-Ferrand%20-%20H%C3%B4tel%20de%20Chazerat%2020260401-01.jpg?width=960",
+   "photoBy": "Pymouss",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Hôtel de Chazerat (Clermont-Ferrand)"
+   }
+  },
+  {
+   "id": "Q3145837",
+   "name": "hôtel Fontfreyde",
+   "lat": 45.7788,
+   "lng": 3.08323,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "Gabriel de Fontfreyde, marchand clermontois, achète cet hôtel au XVIe siècle et le reconstruit, y faisant sculpter ses armes à la clef de l'arc de la boutique. Les ordres dorique, ionique et corinthien superposés sur la cour trahissent l'influence des traités d'architecture, d'où son surnom de « maison des architectes ».",
+   "wiki": "Hôtel Fontfreyde (centre photographique)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Clermont-Ferrand%20-%20H%C3%B4tel%20de%20Fontfreyde%20%28juil%202020%29.jpg?width=960",
+   "photoBy": "Sebleouf",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Hôtel de Fontfreyde"
+   }
+  },
+  {
+   "id": "Q22928308",
+   "name": "hôtel de la Chanterie",
+   "lat": 45.793,
+   "lng": 3.114,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "Bâti à la fin du XIIe ou au début du XIIIe siècle, l'hôtel de la Chanterie est l'un des plus anciens monuments du centre médiéval de Montferrand et doit son nom au Grand Chantre, qui l'habita probablement. Ses arcades romanes, sans doute des échoppes, laissent supposer un riche négociant ; de lourdes grilles y rappellent un usage passé de prison.",
+   "wiki": "Hôtel de la Chanterie",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Monument%20historique%20Clermont-Ferrand%20%28224%29.JPG?width=960",
+   "photoBy": "Basvb",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Hôtel de la Chanterie"
+   }
+  },
+  {
+   "id": "Q111482612",
+   "name": "château de Bien-Assis",
+   "lat": 45.783,
+   "lng": 3.088,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "Blaise Pascal fit deux séjours dans ce château de son beau-frère Florin Périer, où sa sœur Gilberte emporta en 1664 les autographes des Pensées, conservés cinquante ans. Un fabricant de caoutchouc s'installa dans l'ancienne bibliothèque : en 1856, le benzène prit feu et incendia le bâtiment. Michelin le rasa en 1914 pour l'usine des Carmes.",
+   "wiki": "Château de Bien-Assis (Clermont-Ferrand)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A2teau%20Bien-Assis%2C%20vue%20Nord-Est%20%28FR-631136102%20GRA%205546%200005%29.jpg?width=960",
+   "photoBy": "Template:Musée d'histoire et d'art local",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Château de Bien-Assis"
+   }
+  },
+  {
+   "id": "Q22997576",
+   "name": "fortifications de Montferrand",
+   "lat": 45.79494723,
+   "lng": 3.11111506,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "Élevée du dernier quart du XIIe siècle au XVIe siècle pour protéger la ville comtale, l'enceinte de Montferrand comptait 1 773 mètres de murs, vingt-deux tours et quatre portes ; il en subsiste environ 900 mètres et treize tours. En 1388, Perrot le Béarnais parvint à entrer dans la ville en dissimulant ses hommes dans des tonneaux.",
+   "wiki": "Fortifications de Montferrand",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Old%20City%20Quarter%2C%20Clermont-Ferrand%2C%20France%20%2849279871268%29.jpg?width=960",
+   "photoBy": "David Lofink from Orange, United States",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Remparts de Montferrand"
+   }
+  },
+  {
+   "id": "Q3146105",
+   "name": "hôtel de préfecture du Puy-de-Dôme",
+   "lat": 45.7772,
+   "lng": 3.08417,
+   "theme": "palaces",
+   "fame": 3,
+   "summary": "En 1910, le préfet Becq alerte le conseil général : en vingt ans, quinze employés sont morts de l'insalubrité des locaux. Un concours réservé aux architectes du département est remporté en 1913 par François Clermont ; le chantier démarre en mai 1914. Alexandre Millerand inaugure l'édifice le 7 juillet 1923.",
+   "wiki": "Hôtel de préfecture du Puy-de-Dôme",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/FR-63-Clermont-Ferrand10.JPG?width=960",
+   "photoBy": "Szeder László",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Prefecture hotel of Puy-de-Dôme",
+    "es": "Hotel de la prefectura de Puy-de-Dôme"
+   }
+  },
+  {
+   "id": "Q2871713",
+   "name": "Augustonemetum",
+   "lat": 45.783088,
+   "lng": 3.082352,
+   "theme": "monuments",
+   "fame": 4,
+   "summary": "Le nom de cette ville gallo-romaine signifie « sanctuaire d'Auguste ». Son forum couronnait la butte, où s'élèvent la cathédrale et la place de la Victoire. Au IIe siècle, elle comptait 15 000 à 30 000 habitants, l'une des plus peuplées de Gaule romaine ; repliée derrière ses remparts, elle n'en compte plus que 700 environ à partir du IVe siècle.",
+   "wiki": "Augustonemetum",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Voie%20romaine%20%C3%A0%20Mozac.jpg?width=960",
+   "photoBy": "Matthieu Perona",
+   "photoLic": "CC BY 3.0",
+   "alt": {
+    "en": "Augustonemetum"
+   }
+  },
+  {
+   "id": "Q3123055",
+   "name": "statue du général Desaix",
+   "lat": 45.7759,
+   "lng": 3.08224,
+   "theme": "monuments",
+   "fame": 2,
+   "summary": "Achevée en 1844 dans l'atelier de Charles-François Lebœuf, dit Nanteuil, la statue du général mort à Marengo est inaugurée le 13 août 1848, encore posée sur un piédestal provisoire de brique et de bois, devant ses anciens compagnons d'armes. Le socle actuel date de 1903, année de l'inauguration du Vercingétorix de Bartholdi qui lui fait face.",
+   "wiki": "Statue du général Desaix (Clermont-Ferrand)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/FR-63-Clermont-Ferrand17.JPG?width=960",
+   "photoBy": "Szeder László",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Statue of General Desaix in Clermont-Ferrand"
+   }
+  },
+  {
+   "id": "Q3076110",
+   "name": "fontaine d'Amboise",
+   "lat": 45.7804,
+   "lng": 3.0859,
+   "theme": "water",
+   "fame": 2,
+   "summary": "Jacques d'Amboise, évêque de Clermont, la fit réaliser à partir de 1511 par le sculpteur Chapart, en pierre de Volvic : l'architecture est encore gothique, le décor sculpté déjà Renaissance. Dressée d'abord devant le portail méridional de la cathédrale, elle a été déplacée quatre fois et occupe depuis 1962 la place Olympe-de-Gouges.",
+   "wiki": "Fontaine d'Amboise",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Clermont-Ferrand.%20Fuente%20de%20Amboise.jpg?width=960",
+   "photoBy": "Tony Castle",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Fontaine d'Amboise",
+    "it": "Fontana di Amboise"
+   }
+  },
+  {
+   "id": "Q15948808",
+   "name": "fontaine Delille",
+   "lat": 45.7804,
+   "lng": 3.09128,
+   "theme": "water",
+   "fame": 2,
+   "summary": "Construite en 1875, cette fontaine occupe le terre-plein central de la place Delille. Elle est inscrite aux monuments historiques depuis 2007.",
+   "wiki": "Fontaine Delille",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Fontaine%20Delille%20%28Clermont-Ferrand%29.jpg?width=960",
+   "photoBy": "Vida Nova",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Fontaine Delille"
+   }
+  },
+  {
+   "id": "Q15113638",
+   "name": "fontaine de la Flèche",
+   "lat": 45.778888888,
+   "lng": 3.09,
+   "theme": "water",
+   "fame": 2,
+   "summary": "Cette fontaine du XVIIIe siècle, en pierre de Volvic, se dresse boulevard Trudaine, sur la placette que forme le débouché de la rue des Archers. Elle doit son nom à la corporation des chevaliers de la Flèche, dont le siège se tenait tout près, cour des Archers. L'eau s'échappe de la bouche de deux masques sculptés.",
+   "wiki": "Fontaine de la Flèche",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Fontaine%20fleche.JPG?width=960",
+   "photoBy": "Romary",
+   "photoLic": "CC BY 2.5",
+   "alt": {
+    "en": "Fontaine de la Flèche"
+   }
+  },
+  {
+   "id": "Q15948828",
+   "name": "fontaine du Terrail",
+   "lat": 45.7784,
+   "lng": 3.08741,
+   "theme": "water",
+   "fame": 2,
+   "summary": "Construite en 1602, elle occupe le milieu de la place du Terrail, dans le centre-ville historique, à l'est de la cathédrale. Elle est inscrite aux monuments historiques depuis 1987.",
+   "wiki": "Fontaine du Terrail",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Clermont-Ferrand%2C%20France%20%2849279819438%29.jpg?width=960",
+   "photoBy": "David Lofink from Orange, United States",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Fontaine du Terrail"
+   }
+  },
+  {
+   "id": "Q3076238",
+   "name": "fontaine des Quatre-Saisons",
+   "lat": 45.7934,
+   "lng": 3.1097,
+   "theme": "water",
+   "fame": 2,
+   "summary": "Construite en 1858 sur la place de la Rodade, dans la partie ouest du quartier de Montferrand, cette fontaine en pierre de Volvic porte sur chaque face de son fût une des quatre saisons, parmi cornes d'abondance, rinceaux et mascarons. Elle a servi d'abreuvoir aux animaux du foirail. Sa lanterne à gaz a été remplacée par une lanterne moderne.",
+   "wiki": "Fontaine des Quatre-Saisons (Clermont-Ferrand)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Fontaine%20des%20Quatre-Saisons%20%28Montferrand%29%202.jpg?width=960",
+   "photoBy": "Sylenius",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Fontaine des Quatre-Saisons (Montferrand)"
+   }
+  },
+  {
+   "id": "Q1152655",
+   "name": "Jardin Lecoq",
+   "lat": 45.772586,
+   "lng": 3.088614,
+   "theme": "parks",
+   "fame": 3,
+   "summary": "Ce parc de cinq hectares descend du jardin botanique créé en 1781, dont Henri Lecoq prit la direction en 1821 ; il reçut son nom en 1871. En 1862, le paysagiste Choulot proposa un nouveau plan, exécuté par l'ingénieur Guyot sous la direction de Lecoq. En 1915 y furent remontés le porche et la tourelle du château de Bien-Assis.",
+   "wiki": "Jardin Lecoq",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Jardin%20lecoq%20clermont-fd.jpg?width=960",
+   "photoBy": "Fabien1309",
+   "photoLic": "CC BY-SA 2.0 fr",
+   "alt": {
+    "en": "Jardin Lecoq"
+   }
+  },
+  {
+   "id": "Q3390247",
+   "name": "place de Jaude",
+   "lat": 45.7763,
+   "lng": 3.08217,
+   "theme": "streets",
+   "fame": 5,
+   "summary": "La place la plus connue de Clermont-Ferrand occupe la partie est du maar de Jaude, volcan phréato-magmatique de 1,5 km de diamètre auquel elle a donné son nom. Le Vercingétorix équestre de Bartholdi y a été inauguré en 1903. Le parvis nord, en basalte sombre, s'éclaire la nuit de 250 diodes rouges et jaunes qui figurent le mouvement de la lave.",
+   "wiki": "Place de Jaude",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Jaude%2004.JPG?width=960",
+   "photoBy": "Eazyzzz",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "place de Jaude"
+   }
+  },
+  {
+   "id": "Q16670270",
+   "name": "place Delille",
+   "lat": 45.780662,
+   "lng": 3.091507,
+   "theme": "streets",
+   "fame": 2,
+   "summary": "On admet couramment que le pape Urbain II a prêché ici la première croisade, en 1095, mais aucun chroniqueur n'a noté le lieu exact : la place n'est qu'une hypothèse vraisemblable. Elle doit son nom à l'abbé Delille, poète clermontois, et sa fontaine, réalisée vers 1875, est classée avec son réseau souterrain depuis 2007.",
+   "wiki": "Place Delille",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Place%20Delille.jpg?width=960",
+   "photoBy": "Aavitus",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "place Delille"
+   }
+  },
+  {
+   "id": "Q3390462",
+   "name": "place de la Victoire",
+   "lat": 45.77808,
+   "lng": 3.08576,
+   "theme": "streets",
+   "fame": 2,
+   "summary": "Parvis de la cathédrale, la place couvre le forum d'Augustonemetum ; elle n'a été dégagée qu'après la Révolution, par la destruction du palais épiscopal et du quartier médiéval. La fontaine à la statue d'Urbain II date de 1898. En 2024, le marché de Noël a migré place de Jaude : les semi-remorques risquaient de fragiliser les caves et souterrains.",
+   "wiki": "Place de la Victoire (Clermont-Ferrand)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Clermont-Ferrand%2C%20France%20%2849280494937%29.jpg?width=960",
+   "photoBy": "David Lofink from Orange, United States",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Place de la Victoire",
+    "es": "plaza de la Victoria"
+   }
+  },
+  {
+   "id": "Q28040721",
+   "name": "rue Jules-Guesde",
+   "lat": 45.79218,
+   "lng": 3.11323,
+   "theme": "streets",
+   "fame": 2,
+   "summary": "Au cœur du vieux Montferrand, cette rue jadis dite de l'Hôpital et de la Fontaine relie le carrefour des Taules à la place de la Fontaine. Les hôtels particuliers s'y suivent : au 11 l'hôtel d'Albiat, dit Maison des Centaures ; au 28 l'hôtel Fontfreyde, dit Maison de Lucrèce. Le 16 abrite une peinture murale du XIVe siècle, un saint Christophe.",
+   "wiki": "Rue Jules-Guesde (Clermont-Ferrand)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rue%20Jules%20Guesde%2001.jpg?width=960",
+   "photoBy": "Krzysztof Golik",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "rue Jules-Guesde",
+    "es": "rue Jules-Guesde",
+    "it": "rue Jules-Guesde"
+   }
+  },
+  {
+   "id": "Q16533596",
+   "name": "boulevard Trudaine",
+   "lat": 45.778355,
+   "lng": 3.09027,
+   "theme": "streets",
+   "fame": 2,
+   "summary": "Percé à l'emplacement des fossés de la ville par l'intendant Ballainvilliers, il s'appelait boulevard du Grand-Séminaire avant de prendre en 1880 le nom de l'administrateur clermontois Trudaine de Montigny. Ses deux rives ne se ressemblent pas : à l'ouest, bars et restaurants se succèdent ; à l'est, pas un commerce, ni même une rue qui débouche.",
+   "wiki": "Boulevard Trudaine",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Clermont-Ferrand%2023-7-2011%20%2844%29.JPG?width=960",
+   "photoBy": "Basvb",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "boulevard Trudaine"
+   }
+  },
+  {
+   "id": "Q60846407",
+   "name": "place de la Fontaine",
+   "lat": 45.791228,
+   "lng": 3.113456,
+   "theme": "streets",
+   "fame": 2,
+   "summary": "Aux portes de la ville médiévale de Montferrand, la place s'est formée hors des remparts, sur les fossés : c'est au croisement de la rue Jules-Guesde que s'ouvrait la porte sud. La fontaine qui lui donne son nom en occupait le centre depuis le XIXe siècle ; elle a été déplacée en 2005 pour la ligne de tramway, qui coupe la place en deux.",
+   "wiki": "Place de la Fontaine",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Place%20de%20la%20Fontaine%20Clermont-Ferrand.jpg?width=960",
+   "photoBy": "Krzysztof Golik",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Place de la Fontaine"
+   }
+  },
+  {
+   "id": "Q3322688",
+   "name": "Montferrand",
+   "lat": 45.793,
+   "lng": 3.11353,
+   "theme": "streets",
+   "fame": 4,
+   "summary": "Fondée ex nihilo au tournant du XIIe siècle par les comtes d'Auvergne face à Clermont, la cité des évêques, Montferrand a reçu la plus ancienne charte de franchises de la région et s'est administrée elle-même jusqu'en 1731, quand l'édit de Troyes de 1630 est enfin appliqué. Elle réclamera sa séparation en 1789, 1848, 1863 et 1911.",
+   "wiki": "Montferrand (quartier)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Montferrand%20-%20hier%20et%20aujourd%27hui.jpg?width=960",
+   "photoBy": "Aavitus",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Montferrand",
+    "es": "Montferrand",
+    "it": "Montferrand"
+   }
+  },
+  {
+   "id": "Q15952731",
+   "name": "marché Saint-Joseph",
+   "lat": 45.7787,
+   "lng": 3.09476,
+   "theme": "shops",
+   "fame": 2,
+   "summary": "Ce marché couvert a été construit en 1891-1892. Il est inscrit au titre des monuments historiques depuis 2002.",
+   "wiki": "Marché Saint-Joseph de Clermont-Ferrand",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marche%20st%20jo%20ClFd2.jpg?width=960",
+   "photoBy": "Romary",
+   "photoLic": "CC BY 2.5",
+   "alt": {
+    "en": "Marché Saint-Joseph"
+   }
+  },
+  {
+   "id": "Q2944824",
+   "name": "centre Jaude",
+   "lat": 45.7745,
+   "lng": 3.08381,
+   "theme": "shops",
+   "fame": 3,
+   "summary": "Jugé insalubre, le quartier du Fond de Jaude a été rasé pour accueillir ce centre commercial : les boutiques ouvrent le 11 septembre 1980. Jean-Loup Roubert l'a conçu en béton, avec des passages « dans la tradition des passages couverts du XIXe siècle ». En 2008, le carrelage blanc de ses façades sur la place a disparu sous 1 600 m² de verre.",
+   "wiki": "Centre Jaude",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Centrejaude.JPG?width=960",
+   "photoBy": "Oops-oops at French Wikipedia",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Jaude Centre"
+   }
+  },
+  {
+   "id": "Q42168",
+   "name": "Clermont-Ferrand",
+   "lat": 45.779722222,
+   "lng": 3.086944444,
+   "theme": "other",
+   "fame": 123,
+   "summary": "Capitale historique de l'Auvergne, la ville est née au XVIIe siècle de l'union de deux villes rivales, Clermont et Montferrand. Siège de Michelin, elle compte plus de 40 000 étudiants, soit un quart de sa population. Elle s'étend au pied de la faille de Limagne et de la chaîne des Puys, inscrites au patrimoine mondial de l'UNESCO depuis 2018.",
+   "wiki": "Clermont-Ferrand",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Grande%20roue%20-%20Clermont-Ferrand.jpg?width=960",
+   "photoBy": "bebatut",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Clermont-Ferrand",
+    "es": "Clermont-Ferrand",
+    "it": "Clermont-Ferrand"
+   }
+  },
+  {
+   "id": "Q1164900",
+   "name": "stade Marcel-Michelin",
+   "lat": 45.79001,
+   "lng": 3.10755,
+   "theme": "other",
+   "fame": 8,
+   "summary": "Michelin finance en 1911 la construction de ce terrain de rugby, à l'initiative de son gérant Marcel Michelin, mort en déportation. Le stade appartient à l'ASM Clermont Auvergne, mais s'élève sur un sol loué à la Manufacture des Pneus. Une tribune porte le nom de Jean-François Phliponeau, joueur montferrandais foudroyé sur la pelouse le 8 mai 1976.",
+   "wiki": "Stade Marcel-Michelin",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Stade%20Michelin.jpg?width=960",
+   "photoBy": "Own work",
+   "photoLic": "CC BY-SA 2.0 fr",
+   "alt": {
+    "en": "Parc des Sports Marcel Michelin",
+    "es": "Estadio Marcel-Michelin",
+    "it": "stadio Marcel Michelin"
+   }
+  },
+  {
+   "id": "Q3268594",
+   "name": "lycée Blaise-Pascal",
+   "lat": 45.78,
+   "lng": 3.089722222,
+   "theme": "other",
+   "fame": 3,
+   "summary": "Fondé en 1576, l'ancien collège des Jésuites change plusieurs fois de statut : Institut en 1791, école centrale en 1796, lycée impérial en 1808, collège royal en 1815, de nouveau lycée impérial en 1853, avant de devenir lycée Blaise-Pascal en 1871. Le nouvel établissement, bâti dès 1954 sur les terrains de la caserne Gribeauval, ouvre en 1956.",
+   "wiki": "Lycée Blaise-Pascal (Clermont-Ferrand)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lyc%C3%A9e%20Blaise-Pascal%20%28Clermont-Ferrand%29.jpg?width=960",
+   "photoBy": "Vida Nova",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Lycée Blaise-Pascal",
+    "es": "Liceo Blaise-Pascal"
+   }
+  },
+  {
+   "id": "Q2972588",
+   "name": "cimetière des Carmes",
+   "lat": 45.7844,
+   "lng": 3.09624,
+   "theme": "other",
+   "fame": 3,
+   "summary": "Le plus ancien cimetière en activité de la ville occupe l'enclos de l'ancienne abbaye des Carmes déchaussés, acheté en janvier 1816 par la ville et le diocèse pour 36 000 francs. Onze hectares coupés en deux par la Tiretaine, où presque toutes les tombes bâties jusqu'au milieu des années 1940 sont en pierre de Volvic, gris foncé.",
+   "wiki": "Cimetière des Carmes",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Carmes%20riberolles.JPG?width=960",
+   "photoBy": "No machine-readable author provided. Romary assumed (based o",
+   "photoLic": "CC BY 2.5",
+   "alt": {
+    "en": "Cimetière des Carmes"
+   }
+  },
+  {
+   "id": "Q1032205",
+   "name": "cathédrale Notre-Dame-de-l'Assomption de Clermont-Ferrand",
+   "lat": 45.778727,
+   "lng": 3.085766,
+   "theme": "religious",
+   "fame": 23,
+   "summary": "Ébloui par la Sainte-Chapelle, l'évêque Hugues de la Tour lance le chantier en 1248. C'est le premier emploi de la pierre de Volvic en architecture : sombre, résistante au point d'autoriser des piliers très fins, elle valut à l'édifice le surnom de « cathédrale des charbonniers » chez les Goncourt. La façade occidentale ne fut achevée qu'en 1884.",
+   "wiki": "Cathédrale Notre-Dame-de-l'Assomption de Clermont",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Cathedrale%20vue%20de%20montjuzet%20detail.jpg?width=960",
+   "photoBy": "Fabien1309",
+   "photoLic": "CC BY-SA 2.0 fr",
+   "alt": {
+    "en": "Clermont-Ferrand Cathedral",
+    "es": "Catedral de Nuestra Señora de la Asunción de Clermont",
+    "it": "cattedrale di Clermont-Ferrand"
+   }
+  },
+  {
+   "id": "Q2820668",
+   "name": "abbaye royale de Saint-Alyre",
+   "lat": 45.78333333,
+   "lng": 3.08166667,
+   "theme": "religious",
+   "fame": 3,
+   "summary": "Cette abbaye bénédictine, fondée auprès du tombeau de saint Alyre, resta indépendante de l'évêque de Clermont jusqu'en 1374. Prison à la Révolution, vendue en 1791 puis en grande partie détruite, elle devint pensionnat en 1796, puis caserne ; les ursulines s'y installèrent en 1807. Les bâtiments abritent aujourd'hui l'Institution Saint-Alyre.",
+   "wiki": "Abbaye de Saint-Alyre",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Abbaye%20de%20Saint-Alyre%20dans%20Monasticon%20Gallicanum.jpg?width=960",
+   "photoBy": "Michel Germain / Achille Peigné-Delacourt",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Royak abbaye of Saint-Alyre",
+    "it": "Abbazia di Sant'Illidio"
+   }
+  },
+  {
+   "id": "Q15958101",
+   "name": "chapelle Notre-Dame-de-la-Merci de Clermont-Ferrand",
+   "lat": 45.78041485,
+   "lng": 3.095990478,
+   "theme": "religious",
+   "fame": 3,
+   "summary": "Cette chapelle de l'avenue d'Italie, aménagée dans l'ancien cinéma Vox, accueille la messe selon le rite tridentin. Elle est née de la mission menée dans le Puy-de-Dôme en 1976 par l'abbé Paul Aulagnier, envoyé par Mgr Lefebvre, avec des laïcs attachés à l'ancienne messe. Les prêtres de la Fraternité Saint-Pie-X y assurent les offices.",
+   "wiki": "Chapelle Notre-Dame de la Merci (Clermont-Ferrand)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Chapelle%20Notre-Dame%20de%20la%20Merci%20%28Clermont-Ferrand%29.jpg?width=960",
+   "photoBy": "Strikehard",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Chapelle Notre-Dame de la Merci (Clermont-Ferrand)"
+   }
+  },
+  {
+   "id": "Q15945291",
+   "name": "chapelle des Cordeliers de Clermont-Ferrand",
+   "lat": 45.7773,
+   "lng": 3.08445,
+   "theme": "religious",
+   "fame": 2,
+   "summary": "La chapelle aurait été fondée par les franciscains en 1273, sur un terrain donné dix ans plus tôt par Bernard de la Tour, dont la famille y fut ensuite inhumée. Vendu comme bien national à la Révolution, le couvent des Cordeliers a disparu par destructions successives : seule reste la chapelle, aujourd'hui intégrée au siège du conseil général.",
+   "wiki": "Chapelle des Cordeliers (Clermont-Ferrand)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Chapelle%20des%20Cordeliers%20Clermont-Ferrand.JPG?width=960",
+   "photoBy": "Sylenius",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Chapelle des Cordeliers"
+   }
+  },
+  {
+   "id": "Q3497631",
+   "name": "statue de Vercingétorix",
+   "lat": 45.7771,
+   "lng": 3.0819,
+   "theme": "monuments",
+   "fame": 5,
+   "summary": "Bartholdi avait d'abord conçu cette statue équestre pour le plateau de Gergovie, mais ses dimensions l'interdirent ; réduite, elle fut dressée place de Jaude et inaugurée en octobre 1903. Le cheval saute au-dessus d'un Romain à terre, aucun sabot ne touchant le sol, et le visage du chef arverne est inspiré de celui de Napoléon III jeune.",
+   "wiki": "Statue équestre de Vercingétorix",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Statue%20de%20Vercing%C3%A9torix.%20%282%29.jpg?width=960",
+   "photoBy": "Espirat",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "equestrian statue of Vercingetorix",
+    "it": "Statua equestre di Vercingetorige"
+   }
+  },
+  {
+   "id": "Q15948823",
+   "name": "fontaine de la Pyramide",
+   "lat": 45.7738,
+   "lng": 3.08684,
+   "theme": "water",
+   "fame": 3,
+   "summary": "Le général Desaix, enfant du pays, meurt à Marengo le 14 juin 1800, à 31 ans ; la ville décide aussitôt un monument à sa gloire. L'architecte Pierre Laurent propose une fontaine centrée sur un obélisque, en rappel de la campagne d'Égypte ; sa réalisation en pierre de Volvic revient au sculpteur Joseph Chinard, chantier ouvert en 1801.",
+   "wiki": "La Pyramide (Clermont-Ferrand)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Fontaine%20de%20la%20Pyramide%20Clermont-Ferrand%202016-08.jpg?width=960",
+   "photoBy": "Zinneke",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "fontaine de la Pyramide"
+   }
+  }
+ ]
+}
