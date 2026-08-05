@@ -76,7 +76,7 @@ const KNOWN_CITIES = {
   BRN:  { name: 'Berne',            bbox: { minLat: 46.85, maxLat: 47.05, minLng: 7.35,  maxLng: 7.60  } },
   BSL:  { name: 'Bâle',             bbox: { minLat: 47.48, maxLat: 47.62, minLng: 7.50,  maxLng: 7.70  } },
   BXL:  { name: 'Bruxelles',        bbox: { minLat: 50.75, maxLat: 50.95, minLng: 4.25,  maxLng: 4.50  } },
-  CAZ:  { name: "Côte d'Azur",      bbox: { minLat: 42.95, maxLat: 44.00, minLng:  5.70, maxLng:  7.80 } },
+  CAZ:  { name: "Côte d'Azur",      bbox: { minLat: 42.95, maxLat: 44.0, minLng: 5.55, maxLng: 7.8 } },
   CCU:  { name: 'Cancún',           bbox: { minLat: 20.85, maxLat: 21.50, minLng: -87.20, maxLng: -86.65} },
   CLR:  { name: 'Clermont-Ferrand', bbox: { minLat: 45.70, maxLat: 45.85, minLng: 3.00,  maxLng: 3.20  } },
   DIJ:  { name: 'Dijon',            bbox: { minLat: 47.25, maxLat: 47.40, minLng: 4.95,  maxLng: 5.15  } },
@@ -98,8 +98,8 @@ const KNOWN_CITIES = {
   MIA:  { name: 'Miami',            bbox: { minLat: 25.65, maxLat: 25.90, minLng: -80.30,maxLng: -80.10} },
   MLB:  { name: 'Melbourne',        bbox: { minLat: -37.90,maxLat: -37.70,minLng: 144.8, maxLng: 145.1 } },
   MLGA: { name: 'Malaga',           bbox: { minLat: 36.65, maxLat: 36.80, minLng: -4.55, maxLng: -4.35 } },
-  MPL:  { name: 'Montpellier',      bbox: { minLat: 43.55, maxLat: 43.70, minLng: 3.80,  maxLng: 3.95  } },
-  MRAK: { name: 'Marrakech' },
+  MPL:  { name: 'Montpellier',      bbox: { minLat: 43.32, maxLat: 43.72, minLng: 3.62, maxLng: 3.98 } },
+  MRAK: { name: 'Marrakech', bbox: { minLat: 30.84, maxLat: 32.14, minLng: -8.7, maxLng: -7.45 } },
   MUN:  { name: 'Munich',           bbox: { minLat: 48.05, maxLat: 48.25, minLng: 11.45, maxLng: 11.70 } },
   NIM:  { name: 'Nîmes',            bbox: { minLat: 43.80, maxLat: 43.90, minLng: 4.30,  maxLng: 4.45  } },
   ORLN: { name: 'Orléans',          bbox: { minLat: 47.85, maxLat: 48.00, minLng: 1.80,  maxLng: 1.98  } },
@@ -110,7 +110,7 @@ const KNOWN_CITIES = {
   RBA:  { name: 'Rabat',            bbox: { minLat: 33.90, maxLat: 34.10, minLng: -6.90, maxLng: -6.75 } },
   REUN: { name: 'La Réunion',       bbox: { minLat: -21.40,maxLat: -20.85,minLng: 55.20, maxLng: 55.85 } },
   RN:   { name: 'Rennes',           bbox: { minLat: 47.95, maxLat: 48.20, minLng: -1.85, maxLng: -1.50 } },
-  ROM:  { name: 'Rome',             bbox: { minLat: 41.80, maxLat: 41.95, minLng: 12.40, maxLng: 12.60 } },
+  ROM:  { name: 'Rome',             bbox: { minLat: 41.75, maxLat: 42.0, minLng: 12.35, maxLng: 12.75 } },
   RTD:  { name: 'Rotterdam',        bbox: { minLat: 51.85, maxLat: 52.00, minLng: 4.35,  maxLng: 4.55  } },
   SD:   { name: 'San Diego',        bbox: { minLat: 32.60, maxLat: 32.85, minLng: -117.3,maxLng: -117.0} },
   SP:   { name: 'São Paulo',        bbox: { minLat: -23.70,maxLat: -23.45,minLng: -46.80,maxLng: -46.50} },
@@ -119,36 +119,36 @@ const KNOWN_CITIES = {
   WN:   { name: 'Vienne',           bbox: { minLat: 48.15, maxLat: 48.25, minLng: 16.30, maxLng: 16.45 } },
   // ── Noms identifiés, bbox inconnue (pas de validation coords) ─────────────
   ANZR: { name: 'Anzère',           bbox: { minLat: 46.25, maxLat: 46.36, minLng: 7.32,  maxLng: 7.46  } },
-  BAB:  { name: 'Biarritz Anglet-Bayonne' },
-  BBO:  { name: 'Bilbao' },
-  BRC:  { name: 'Barcelone' },
+  BAB:  { name: 'Biarritz Anglet-Bayonne', bbox: { minLat: 42.88, maxLat: 44.03, minLng: -2.16, maxLng: -0.97 } },
+  BBO:  { name: 'Bilbao', bbox: { minLat: 43.0, maxLat: 43.52, minLng: -3.2, maxLng: -2.67 } },
+  BRC:  { name: 'Barcelone', bbox: { minLat: 41.13, maxLat: 41.64, minLng: 1.91, maxLng: 2.43 } },
   BT:   { name: 'BT' },
-  BTA:  { name: 'Bastia' },
-  CAPF: { name: 'Cap-Ferret' },
+  BTA:  { name: 'Bastia', bbox: { minLat: 42.18, maxLat: 43.32, minLng: 8.94, maxLng: 9.99 } },
+  CAPF: { name: 'Cap-Ferret', bbox: { minLat: 44.12, maxLat: 45.21, minLng: -1.75, maxLng: -0.71 } },
   CHAR: { name: 'Charleroi',        bbox: { minLat: 50.35, maxLat: 50.47, minLng: 4.38,  maxLng: 4.52  } },
-  CON:  { name: 'Contis' },
+  CON:  { name: 'Contis', bbox: { minLat: 43.84, maxLat: 44.34, minLng: -1.57, maxLng: -1.07 } },
   DHK:  { name: 'Dhaka' },
-  DJN:  { name: 'Daejeon' },
-  ELT:  { name: 'Eilat' },
-  FRQ:  { name: 'Forcalquier' },
+  DJN:  { name: 'Daejeon', bbox: { minLat: 35.83, maxLat: 36.9, minLng: 126.85, maxLng: 127.93 } },
+  ELT:  { name: 'Eilat', bbox: { minLat: 29.26, maxLat: 29.8, minLng: 34.67, maxLng: 35.2 } },
+  FRQ:  { name: 'Forcalquier', bbox: { minLat: 43.71, maxLat: 44.21, minLng: 5.53, maxLng: 6.03 } },
   GRTI: { name: 'GRTI' },
   GRU:  { name: 'Grude',            bbox: { minLat: 43.30, maxLat: 43.48, minLng: 17.22, maxLng: 17.50 } },
-  HALM: { name: 'Halmstad' },
-  LBR:  { name: 'Luberon' },
-  LCT:  { name: 'La Ciotat' },
-  MBSA: { name: 'Mombasa' },
-  MEN:  { name: 'Minorque' },
-  MTB:  { name: 'Montauban' },
-  NA:   { name: 'Nantes' },
-  NCL:  { name: 'Newcastle' },
-  NOO:  { name: 'Noordwijk' },
-  RA:   { name: 'Ravenne' },
-  RDU:  { name: 'Redu' },
-  SL:   { name: 'Séoul' },
+  HALM: { name: 'Halmstad', bbox: { minLat: 56.43, maxLat: 56.93, minLng: 12.52, maxLng: 13.02 } },
+  LBR:  { name: 'Luberon', bbox: { minLat: 43.29, maxLat: 44.4, minLng: 4.64, maxLng: 6.18 } },
+  LCT:  { name: 'La Ciotat', bbox: { minLat: 42.92, maxLat: 43.45, minLng: 5.36, maxLng: 5.89 } },
+  MBSA: { name: 'Mombasa', bbox: { minLat: -4.56, maxLat: -3.14, minLng: 39.17, maxLng: 40.35 } },
+  MEN:  { name: 'Minorque', bbox: { minLat: 39.75, maxLat: 40.31, minLng: 3.57, maxLng: 4.14 } },
+  MTB:  { name: 'Montauban', bbox: { minLat: 43.76, maxLat: 44.27, minLng: 1.1, maxLng: 1.6 } },
+  NA:   { name: 'Nantes', bbox: { minLat: 46.97, maxLat: 47.47, minLng: -1.8, maxLng: -1.29 } },
+  NCL:  { name: 'Newcastle', bbox: { minLat: 54.71, maxLat: 55.23, minLng: -1.87, maxLng: -1.35 } },
+  NOO:  { name: 'Noordwijk', bbox: { minLat: 51.97, maxLat: 52.47, minLng: 4.17, maxLng: 4.67 } },
+  RA:   { name: 'Ravenne', bbox: { minLat: 43.86, maxLat: 44.99, minLng: 11.31, maxLng: 12.78 } },
+  RDU:  { name: 'Redu', bbox: { minLat: 49.75, maxLat: 50.26, minLng: 4.9, maxLng: 5.41 } },
+  SL:   { name: 'Séoul', bbox: { minLat: 37.3, maxLat: 37.82, minLng: 126.67, maxLng: 127.24 } },
   SPACE:{ name: 'SPACE' },
-  VLMO: { name: 'Valmorel' },
-  VRS:  { name: 'Versailles' },
-  VSB:  { name: 'Visby' },
+  VLMO: { name: 'Valmorel', bbox: { minLat: 45.21, maxLat: 45.73, minLng: 6.19, maxLng: 6.71 } },
+  VRS:  { name: 'Versailles', bbox: { minLat: 48.55, maxLat: 49.08, minLng: 1.86, maxLng: 2.41 } },
+  VSB:  { name: 'Visby', bbox: { minLat: 57.39, maxLat: 57.89, minLng: 18.04, maxLng: 18.54 } },
 };
 
 // Villes de notre pipeline effectivement couvertes par invader-spotter
@@ -497,12 +497,17 @@ async function main() {
     const baseInvaders = [];
     const baseIds      = new Set();
     let cityDivergences = 0, cityDestroyedToOk = 0;
+    // Compté puis journalisé : un Invader écarté par la bbox doit se voir. Le
+    // filtre protège d'une ville mal étiquetée (CHAR pris pour Chartres, GRU pour
+    // Grumeti), mais s'il rejette en silence, une mosaïque légitime posée en
+    // périphérie disparaît sans que personne ne le sache.
+    let bboxRejets = 0;
 
     for (const entry of gogEntries) {
       const lat = parseCoord(entry.lat);
       const lng = parseCoord(entry.lng);
       if (lat === null || lng === null) continue;
-      if (meta?.bbox && !inBbox(lat, lng, meta.bbox)) continue;
+      if (meta?.bbox && !inBbox(lat, lng, meta.bbox)) { bboxRejets++; continue; }
 
       const id              = String(entry.id);
       const gogStatus       = normalizeStatus(entry.status);
@@ -679,6 +684,7 @@ async function main() {
     if (pnoteOnlyInvaders.length) parts.push(`+${pnoteOnlyInvaders.length} pnote`);
     if (extrasAdded)              parts.push(`+${extrasAdded} extras`);
     if (cityDivergences)          parts.push(`~${cityDivergences}⚡`);
+    if (bboxRejets)               parts.push(`⚠ ${bboxRejets} hors bbox`);
     const flag = changed ? `✓ v${newVersion}` : `— v${newVersion}`;
     console.log(`${String(finalInvaders.length).padStart(5)} (${parts.join(', ')})  ${flag}  ${meta?.name ?? '?'}`);
   }
