@@ -1,0 +1,3394 @@
+{
+ "version": 1,
+ "city": "LDN",
+ "attribution": "Lieux : Wikidata (CC0) · Résumés d’après Wikipédia (CC BY-SA) · Photos : Wikimedia Commons",
+ "updatedAt": "2026-08-05",
+ "pois": [
+  {
+   "id": "Q23308",
+   "name": "British Library",
+   "lat": 51.529444,
+   "lng": -0.126944,
+   "theme": "museums",
+   "fame": 78,
+   "summary": "Bibliothèque nationale du Royaume-Uni, fondée en 1973 : auparavant, cette fonction dépendait du British Museum. Son bâtiment d'Euston Road, ouvert en 1997 et dû à l'architecte Colin St John Wilson, est le plus grand bâtiment public construit au Royaume-Uni au XXe siècle. Une tour de verre y abrite la King's Library, réunie par George III.",
+   "wiki": "British Library",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/British%20Library%20%2B%20St%20Pancras%207527-31hug.jpg?width=960",
+   "photoBy": "Patche99z",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "British Library",
+    "es": "Biblioteca Británica",
+    "it": "British Library"
+   }
+  },
+  {
+   "id": "Q180788",
+   "name": "National Gallery",
+   "lat": 51.508888888889,
+   "lng": -0.12833333333333,
+   "theme": "museums",
+   "fame": 71,
+   "summary": "Fondée en 1824, la galerie est née de l'achat des trente-huit peintures de John Julius Angerstein et occupe le nord de Trafalgar Square depuis 1838. Sa collection permanente de 2 300 peintures, datant de 1250 à 1900, appartient à l'État britannique et se visite gratuitement ; seules les expositions temporaires sont payantes.",
+   "wiki": "National Gallery",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Galer%C3%ADa%20Nacional%2C%20Londres%2C%20Inglaterra%2C%202014-08-07%2C%20DD%20036.JPG?width=960",
+   "photoBy": "Diego Delso",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "National Gallery",
+    "es": "National Gallery de Londres",
+    "it": "National Gallery"
+   }
+  },
+  {
+   "id": "Q186309",
+   "name": "Madame Tussauds",
+   "lat": 51.52279,
+   "lng": -0.15517,
+   "theme": "museums",
+   "fame": 69,
+   "summary": "Fondé en 1835 par l'artiste française Marie Tussaud, formée à la sculpture par Philippe Curtius, ce musée de cire ouvre d'abord sur Baker Street ; la « Chambre des horreurs » en est l'une des principales attractions. Il déménage en 1884 sur Marylebone Road, son emplacement actuel, où un incendie détruit de nombreuses figurines en 1925.",
+   "wiki": "Madame Tussauds",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/MadameTussaudMuseumLondon.JPG?width=960",
+   "photoBy": "Citizen59",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Madame Tussauds",
+    "es": "Museo Madame Tussauds",
+    "it": "Madame Tussauds"
+   }
+  },
+  {
+   "id": "Q2002512",
+   "name": "musée Petrie d'archéologie égyptienne",
+   "lat": 51.5236,
+   "lng": -0.133056,
+   "theme": "museums",
+   "fame": 24,
+   "summary": "Rattaché à l'University College de Londres, sur Malet Place, ce musée d'égyptologie conserve plus de 80 000 objets. Son noyau vient de la collection donnée en 1892 par Amelia Edwards ; le premier professeur d'égyptologie, William Matthew Flinders Petrie, revendit à l'UCL en 1913 le produit de ses fouilles. L'entrée est gratuite.",
+   "wiki": "Musée Petrie d'archéologie égyptienne",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Petrie%20Museum%20of%20Egyptian%20Archaeology.jpg?width=960",
+   "photoBy": "w:User:LordHarris",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Petrie Museum of Egyptian Archaeology",
+    "es": "Museo Petrie",
+    "it": "Petrie Museum"
+   }
+  },
+  {
+   "id": "Q1311497",
+   "name": "galerie Saatchi",
+   "lat": 51.4906,
+   "lng": -0.1589,
+   "theme": "museums",
+   "fame": 23,
+   "summary": "Musée d'art contemporain créé par Charles Saatchi en 1985, installé d'abord à Boundary Road, au nord de Londres, puis à County Hall en avril 2003, enfin à Chelsea. Après avoir montré des artistes américains et minimalistes, la galerie vendit cette collection pour miser, à partir de 1990, sur les Young British Artists, dont Damien Hirst.",
+   "wiki": "Galerie Saatchi",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/SaatchiGallery.jpg?width=960",
+   "photoBy": "Jack Gavigan",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Saatchi Gallery",
+    "es": "Saatchi Gallery",
+    "it": "Galleria Saatchi"
+   }
+  },
+  {
+   "id": "Q5933",
+   "name": "abbaye de Westminster",
+   "lat": 51.4994,
+   "lng": -0.127367,
+   "theme": "religious",
+   "fame": 91,
+   "summary": "Église gothique de Londres, elle date pour l'essentiel du XIIIe siècle, quand Henri III la reconstruit pour offrir un écrin à la sépulture d'Édouard le Confesseur. Depuis Guillaume le Conquérant, en 1066, les souverains y sont couronnés, à deux exceptions près. Plus de 3 300 personnes y sont inhumées ; classée à l'UNESCO depuis 1987.",
+   "wiki": "Abbaye de Westminster",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Westminster-Abbey.JPG?width=960",
+   "photoBy": "Σπάρτακος",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Westminster Abbey",
+    "es": "Abadía de Westminster",
+    "it": "abbazia di Westminster"
+   }
+  },
+  {
+   "id": "Q173882",
+   "name": "cathédrale Saint-Paul de Londres",
+   "lat": 51.513777777778,
+   "lng": -0.098305555555556,
+   "theme": "religious",
+   "fame": 74,
+   "summary": "Élevée après la destruction de l'édifice précédent lors du grand incendie de 1666, elle couronne Ludgate Hill, site de quatre sanctuaires antérieurs. Elle passe pour le chef-d'œuvre de Christopher Wren ; la première pierre fut posée en 1675. Son dôme, fait de trois enveloppes imbriquées, culmine à 111,3 mètres, au bout de 528 marches.",
+   "wiki": "Cathédrale Saint-Paul de Londres",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/St%20Pauls%20aerial%20%28cropped%29.jpg?width=960",
+   "photoBy": "Mark Fosh",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "St Paul's Cathedral",
+    "es": "Catedral de San Pablo de Londres",
+    "it": "cattedrale di San Paolo"
+   }
+  },
+  {
+   "id": "Q922967",
+   "name": "cathédrale de Southwark",
+   "lat": 51.506111111111,
+   "lng": -0.089722222222222,
+   "theme": "religious",
+   "fame": 30,
+   "summary": "Quatrième église du site, c'est l'édifice gothique le plus ancien de Londres : le bâtiment précédent ayant brûlé en 1212, la construction s'échelonna de 1220 à 1420. Réduite au rang d'église paroissiale après la dissolution des monastères en 1539, elle ne fut érigée en cathédrale qu'en 1905. Des compagnons de théâtre de Shakespeare y reposent.",
+   "wiki": "Cathédrale de Southwark",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Northwest%20View%20of%20Southwark%20Cathedral%20%2801%29.jpg?width=960",
+   "photoBy": "Ethan Doyle White",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Southwark Cathedral",
+    "es": "Catedral de Southwark",
+    "it": "cattedrale di Southwark"
+   }
+  },
+  {
+   "id": "Q1811339",
+   "name": "mosquée centrale de Londres",
+   "lat": 51.529166666667,
+   "lng": -0.16527777777778,
+   "theme": "religious",
+   "fame": 24,
+   "summary": "Également appelée mosquée de Regent's Park, elle occupe un terrain offert en 1944 par le gouvernement britannique à la communauté musulmane. Conçue par Frederick Gibberd, elle est achevée en juillet 1977, pour 6 millions de livres en partie réunis par des dons du roi Fayçal. Coiffée d'un dôme doré, elle est classée Grade II* depuis 2018.",
+   "wiki": "Mosquée centrale de Londres",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/London%20Central%20Mosque%202.jpg?width=960",
+   "photoBy": "Asim Saleem (Asim18)",
+   "photoLic": "CC BY 3.0",
+   "alt": {
+    "en": "London Central Mosque"
+   }
+  },
+  {
+   "id": "Q62408",
+   "name": "palais de Westminster",
+   "lat": 51.499444444444,
+   "lng": -0.12416666666667,
+   "theme": "palaces",
+   "fame": 84,
+   "summary": "Siège du Parlement du Royaume-Uni, il borde la rive nord de la Tamise, dans la Cité de Westminster. Un incendie le détruisit presque entièrement le 16 octobre 1834, épargnant Westminster Hall. Charles Barry le rebâtit en néogothique à partir de 1840. Sa tour de l'Horloge, dite tour Élisabeth depuis 2012, abrite la cloche Big Ben.",
+   "wiki": "Palais de Westminster",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Houses%20of%20Parliament%20in%202022%20%28cropped%29.jpg?width=960",
+   "photoBy": "Terry Ott from Washington, DC Metro Area, United States of A",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Palace of Westminster",
+    "es": "Palacio de Westminster",
+    "it": "Palazzo di Westminster"
+   }
+  },
+  {
+   "id": "Q169101",
+   "name": "10 Downing Street",
+   "lat": 51.503333333333,
+   "lng": -0.12777777777778,
+   "theme": "palaces",
+   "fame": 64,
+   "summary": "Résidence officielle et lieu de travail du Premier ministre du Royaume-Uni, dans la Cité de Westminster. L'adresse est officiellement celle du premier lord du Trésor, poste occupé conjointement avec celui de Premier ministre depuis 1905. George II en fit don en 1732 à Robert Walpole, qui exigea que le cadeau aille à la charge et non à sa personne.",
+   "wiki": "10 Downing Street",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/10%20Downing%20Street.%20MOD%2045155532%20%28cropped%29.jpg?width=960",
+   "photoBy": "Sergeant Tom Robinson RLC",
+   "photoLic": "OGL v1.0",
+   "alt": {
+    "en": "10 Downing Street",
+    "es": "10 de Downing Street",
+    "it": "10 Downing Street"
+   }
+  },
+  {
+   "id": "Q69482",
+   "name": "Lincoln's Inn",
+   "lat": 51.517125,
+   "lng": -0.11457777777778,
+   "theme": "palaces",
+   "fame": 25,
+   "summary": "Cette Inn of Court, voisine de la Cour Royale de Justice, reste l'un des quatre centres de formation des barristers. Sa date de fondation est inconnue, ses archives remontent à 1422. En 1234, un décret d'Henri III interdit les instituts de droit dans la Cité ; les juristes gagnèrent Holborn, où le comte de Lincoln les avait invités sur ses terres.",
+   "wiki": "Lincoln's Inn",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Exterior%20of%20Lincoln%27s%20Inn%20Great%20Hall.jpg?width=960",
+   "photoBy": "Ethan Doyle White",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Lincoln's Inn",
+    "es": "Lincoln's Inn",
+    "it": "Lincoln's Inn"
+   }
+  },
+  {
+   "id": "Q157412",
+   "name": "Gray's Inn",
+   "lat": 51.519444444444,
+   "lng": -0.11222222222222,
+   "theme": "palaces",
+   "fame": 23,
+   "summary": "Cette société de barristers et de juges est l'une des quatre Inns of Court de Londres : il faut appartenir à l'une d'elles pour exercer comme barrister en Angleterre et au pays de Galles. Des juristes y sont établis depuis au moins 1370, mais aucune des quatre ne se prétend plus ancienne que les autres. Les jardins existent depuis 1597 au moins.",
+   "wiki": "Gray's Inn",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Gray%27s%20inn%20zz.JPG?width=960",
+   "photoBy": "Chensiyuan",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Gray's Inn",
+    "es": "Gray's Inn",
+    "it": "Gray's Inn"
+   }
+  },
+  {
+   "id": "Q1194829",
+   "name": "Old Bailey",
+   "lat": 51.515833333333,
+   "lng": -0.10194444444444,
+   "theme": "palaces",
+   "fame": 22,
+   "summary": "Cour criminelle centrale de la Couronne britannique, située entre Holborn Circus et la cathédrale Saint-Paul, elle juge les principaux cas criminels du Grand Londres. Le bâtiment actuel, conçu par Edward William Mountford sur l'emplacement de la prison de Newgate, est inauguré par Édouard VII en 1907. Une statue de la Justice couronne son dôme.",
+   "wiki": "Old Bailey",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Oldbaileylondon-900.jpg?width=960",
+   "photoBy": "Nevilley at en.wikipedia",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Old Bailey",
+    "es": "Old Bailey",
+    "it": "Old Bailey"
+   }
+  },
+  {
+   "id": "Q2914560",
+   "name": "Broadcasting House",
+   "lat": 51.518555555556,
+   "lng": -0.14383333333333,
+   "theme": "palaces",
+   "fame": 25,
+   "summary": "Siège de la BBC, à Portland Place, c'est le tout premier centre de diffusion spécialement conçu comme tel au Royaume-Uni. Il a été inauguré le 15 mai 1932.",
+   "wiki": "Broadcasting House",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Broadcasting%20House%20and%20East%20Wing.jpg?width=960",
+   "photoBy": "keriluamox",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Broadcasting House",
+    "es": "Broadcasting House",
+    "it": "Broadcasting House"
+   }
+  },
+  {
+   "id": "Q41225",
+   "name": "Big Ben",
+   "lat": 51.50067,
+   "lng": -0.12449,
+   "theme": "monuments",
+   "fame": 88,
+   "summary": "Au sens strict, ce nom est celui de la plus grosse cloche du carillon; l'usage l'étend aussi à l'horloge et à la tour du palais de Westminster, appelée Clock Tower puis Elizabeth Tower depuis le jubilé de diamant d'Élisabeth II en 2012. Haute d'environ 96 mètres, elle est issue du plan de Charles Barry, retenu après l'incendie du Parlement de 1834.",
+   "wiki": "Big Ben",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Big%20Ben%202001-06-27.jpg?width=960",
+   "photoBy": "DS Pugh",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Big Ben",
+    "es": "Big Ben",
+    "it": "Big Ben"
+   }
+  },
+  {
+   "id": "Q842089",
+   "name": "colonne Nelson",
+   "lat": 51.50775,
+   "lng": -0.12794444444444,
+   "theme": "monuments",
+   "fame": 39,
+   "summary": "Dominant Trafalgar Square, la statue de l'amiral Horatio Nelson couronne une colonne de granite et de bronze de style corinthien, haute de 44 mètres, construite entre 1840 et 1843. William Railton en dessina la partie haute et la statue, qu'Edward Hodges Baily sculpta. Quatre lions de bronze, dus à Edwin Landseer en 1867, en ornent la base.",
+   "wiki": "Colonne Nelson (Londres)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Nelson%27s%20Column%2C%20Trafalgar%20Square%2C%20London.JPG?width=960",
+   "photoBy": "Beata May",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Nelson's Column",
+    "es": "Columna de Nelson",
+    "it": "colonna di Nelson"
+   }
+  },
+  {
+   "id": "Q526804",
+   "name": "arc de Wellington",
+   "lat": 51.5025,
+   "lng": -0.15083333333333,
+   "theme": "monuments",
+   "fame": 25,
+   "summary": "Commandé par George IV en 1825 pour commémorer les victoires britanniques des guerres napoléoniennes, cet arc de triomphe est bâti de 1826 à 1830 sur les plans de Decimus Burton. Déplacé entre 1882 et 1883 pour permettre l'élargissement des rues, il occupe le centre du rond-point de Hyde Park Corner. Un quadrige de bronze le couronne depuis 1912.",
+   "wiki": "Arc de Wellington",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Arco%20de%20Wellington%2C%20Hyde%20Park.jpg?width=960",
+   "photoBy": "Canaan",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Wellington Arch",
+    "es": "Arco de Wellington",
+    "it": "Wellington Arch"
+   }
+  },
+  {
+   "id": "Q607700",
+   "name": "monument au Grand incendie de Londres",
+   "lat": 51.510138888889,
+   "lng": -0.085944444444444,
+   "theme": "monuments",
+   "fame": 27,
+   "summary": "Cette colonne dorique en pierre de Portland, haute de 61 mètres, commémore le Grand incendie de 1666 : sa hauteur correspond à la distance qui la sépare de la boulangerie de Pudding Lane où le feu commença. Conçue par Christopher Wren et Robert Hooke, elle abrite un puits central prévu à l'origine pour l'astronomie et un escalier de 311 marches.",
+   "wiki": "Monument au Grand incendie de Londres",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Monument%20to%20the%20Great%20Fire%20of%20London.JPG?width=960",
+   "photoBy": "Eluveitie",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Monument to the Great Fire of London",
+    "es": "Monumento al Gran Incendio de Londres",
+    "it": "Monumento al grande incendio di Londra"
+   }
+  },
+  {
+   "id": "Q125555724",
+   "name": "Temple Bar",
+   "lat": 51.513694,
+   "lng": -0.111922,
+   "theme": "monuments",
+   "fame": 14,
+   "summary": "Élevé en 1878 sur Fleet Street, ce monument de Charles Bell Birch porte les effigies de la reine Victoria et de son fils le futur Édouard VII, sous un dragon de bronze improprement baptisé le Griffon. Il occupe l'emplacement d'une porte de Christopher Wren démolie la même année et marque symboliquement la limite avec la Cité de Westminster.",
+   "wiki": "Temple Bar (Londres)",
+   "photo": null,
+   "photoBy": null,
+   "photoLic": null,
+   "alt": {
+    "en": "Temple Bar",
+    "es": "Temple Bar (Londres)",
+    "it": "Temple Bar"
+   }
+  },
+  {
+   "id": "Q1858077",
+   "name": "tour Victoria",
+   "lat": 51.498336111111,
+   "lng": -0.12548888888889,
+   "theme": "monuments",
+   "fame": 22,
+   "summary": "Tour carrée de 98,5 mètres et 14 étages, elle occupe l'extrémité sud-ouest du palais de Westminster et porte le nom de la reine Victoria. Elle abrite les Archives Parlementaires des deux chambres, appelées avant 2006 le Bureau de la Chambre des lords. Son mât porte le drapeau national, remplacé par l'étendard royal quand le roi est dans le palais.",
+   "wiki": "Tour Victoria",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Victoria%20Tower%20from%20the%20south-west.jpg?width=960",
+   "photoBy": "Damien Everett from Southampton, UK",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Victoria Tower",
+    "es": "Torre Victoria",
+    "it": "Victoria Tower"
+   }
+  },
+  {
+   "id": "Q60308",
+   "name": "mur de Londres",
+   "lat": 51.5175,
+   "lng": -0.09694444,
+   "theme": "monuments",
+   "fame": 34,
+   "summary": "Mur romain élevé autour de Londinium, plus grande ville de la province romaine de Bretagne. Il en subsiste quelques tronçons. Long d'environ 3,2 kilomètres et haut de quelque 6 mètres, il enfermait 130 hectares aujourd'hui largement compris dans la Cité de Londres. Ses portes ont laissé leur nom à des lieux de Londres : Ludgate, Newgate, Aldgate.",
+   "wiki": "Mur de Londres",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/London%20Roman%20Wall%20-%20surviving%20section%20by%20Tower%20Hill%20gardens.jpg?width=960",
+   "photoBy": "Jamzze",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "London Wall",
+    "es": "Muralla de Londres",
+    "it": "London Wall"
+   }
+  },
+  {
+   "id": "Q160659",
+   "name": "London Eye",
+   "lat": 51.503333333333,
+   "lng": -0.11972222222222,
+   "theme": "culture",
+   "fame": 78,
+   "summary": "Grande roue mise en place pour les festivités de l'an 2000, en même temps que le Dôme du Millénaire de Greenwich. Construite à plat sur la Tamise, elle est redressée à la verticale au prix de plusieurs jours d'efforts, une première tentative ayant échoué. Ses 32 cabines bouclent un tour en 24 min 30 s environ.",
+   "wiki": "London Eye",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/London-Eye-2009.JPG?width=960",
+   "photoBy": "Khamtran",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "London Eye",
+    "es": "London Eye",
+    "it": "London Eye"
+   }
+  },
+  {
+   "id": "Q797085",
+   "name": "BT Tower",
+   "lat": 51.5215,
+   "lng": -0.1389,
+   "theme": "culture",
+   "fame": 25,
+   "summary": "Tour de télécommunications de British Telecom, dans le quartier de Fitzrovia, elle fut inaugurée par le premier ministre Harold Wilson le 8 octobre 1965 et ouverte au public le 16 mai 1966. Une bombe du groupe Angry Brigade explosa dans ses toilettes le 31 octobre 1971 ; l'accès du public fut interdit en 1981 pour des raisons de sécurité.",
+   "wiki": "BT Tower",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/BT%20Tower-1.jpg?width=960",
+   "photoBy": "David Castor (dcastor)",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "BT Tower",
+    "es": "Torre BT",
+    "it": "BT Tower"
+   }
+  },
+  {
+   "id": "Q927198",
+   "name": "Londinium",
+   "lat": 51.514217,
+   "lng": -0.088455,
+   "theme": "culture",
+   "fame": 48,
+   "summary": "Ville romaine à l'origine de Londres, fondée à la suite de l'invasion de 43 conduite par l'empereur Claude, mais que les archéologues datent plutôt des environs de 50. Le site fut choisi là où les berges de la Tamise sont les plus proches, afin d'y bâtir un pont, le fleuve restant assez profond pour les navires. La cité couvrait environ 1,4 km2.",
+   "wiki": "Londinium",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Londinium%20Arch%C3%A4ologische%20Karte.png?width=960",
+   "photoBy": "Fremantleboy 06 July 2007",
+   "photoLic": "CC BY 2.5",
+   "alt": {
+    "en": "Londinium",
+    "es": "Londinium",
+    "it": "Londinium"
+   }
+  },
+  {
+   "id": "Q171458",
+   "name": "Stamford Bridge",
+   "lat": 51.481666666667,
+   "lng": -0.19111111111111,
+   "theme": "culture",
+   "fame": 76,
+   "summary": "Ce stade de Walham Green, dans le borough de Hammersmith et Fulham, est celui du club de Chelsea. Son nom ne renvoie pas à la bataille de 1066 mais au pont qui jouxte l'entrée principale. Inaugurée le 28 avril 1877, l'enceinte reste dédiée à l'athlétisme jusqu'en 1904, quand Gus Mears l'achète ; Fulham ayant refusé de venir, il fonde Chelsea.",
+   "wiki": "Stamford Bridge (stade)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/London%20Stamford%20Bridge.jpg?width=960",
+   "photoBy": "Arne Müseler",
+   "photoLic": "CC BY-SA 3.0 de",
+   "alt": {
+    "en": "Stamford Bridge",
+    "es": "Stamford Bridge",
+    "it": "Stamford Bridge"
+   }
+  },
+  {
+   "id": "Q331613",
+   "name": "Lord's Cricket Ground",
+   "lat": 51.5294,
+   "lng": -0.1727,
+   "theme": "culture",
+   "fame": 43,
+   "summary": "Stade de cricket de St. John's Wood, propriété du Marylebone Cricket Club, il porte le nom de son fondateur Thomas Lord, qui l'établit après que le tracé du Regent's Canal eut traversé l'aire de jeu de son terrain précédent. La rencontre inaugurale s'y déroule le 22 juin 1814. L'équipe d'Angleterre y dispute des test-matchs depuis 1884.",
+   "wiki": "Lord's Cricket Ground",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lords-Cricket-Ground-Pavilion-06-08-2017.jpg?width=960",
+   "photoBy": "Yorkspotter",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Lord's Cricket Ground",
+    "es": "Lord's Cricket Ground",
+    "it": "Lord's Cricket Ground"
+   }
+  },
+  {
+   "id": "Q1155836",
+   "name": "The Oval",
+   "lat": 51.483719444444,
+   "lng": -0.11498055555556,
+   "theme": "culture",
+   "fame": 33,
+   "summary": "Terrain de cricket du quartier de Kennington, parfois appelé Kennington Oval, il doit son nom à sa forme ovale et a changé plusieurs fois de dénomination officielle au gré de ses partenaires. Il accueille l'équipe du Surrey et le dernier test-match de la saison sur le sol anglais ; 20 finales de la Coupe d'Angleterre de football s'y sont tenues.",
+   "wiki": "The Oval",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/OCS%20Stand%20%28Surrey%20v%20Yorkshire%20in%20foreground%29.JPG?width=960",
+   "photoBy": "user:jguk",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "The Oval",
+    "es": "The Oval",
+    "it": "The Oval"
+   }
+  },
+  {
+   "id": "Q209651",
+   "name": "Studios Abbey Road",
+   "lat": 51.531944444444,
+   "lng": -0.17833333333333,
+   "theme": "culture",
+   "fame": 38,
+   "summary": "Créés par EMI en novembre 1931 dans une ancienne maison de ville d'Abbey Road, ces studios d'enregistrement ont d'abord été destinés à la musique classique. Les Beatles y ont enregistré la plupart de leurs chansons de 1962 à 1969, et les studios ont pris en 1976 le nom du dernier album du groupe. Pink Floyd, Oasis et Radiohead y ont travaillé.",
+   "wiki": "Studios Abbey Road",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Abbey%20road%20studios.jpg?width=960",
+   "photoBy": "portum",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Abbey Road Studios",
+    "es": "Abbey Road Studios",
+    "it": "Abbey Road Studios"
+   }
+  },
+  {
+   "id": "Q215255",
+   "name": "Piccadilly Circus",
+   "lat": 51.51,
+   "lng": -0.13444444444444,
+   "theme": "streets",
+   "fame": 54,
+   "summary": "Ce carrefour de Westminster, créé en 1819 dans le prolongement de Regent Street, réunit cinq grandes artères du West End. Il est réputé pour ses enseignes lumineuses et pour la fontaine Shaftesbury Memorial, érigée en 1893 en l'honneur du philanthrope Lord Shaftesbury et surmontée de l'Ange de la charité chrétienne, que l'on appelle Éros.",
+   "wiki": "Piccadilly Circus",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Picadilly%20Circus%2C%20London%20%289308789313%29.jpg?width=960",
+   "photoBy": "Lily.Smith",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Piccadilly Circus",
+    "es": "Piccadilly Circus",
+    "it": "Piccadilly Circus"
+   }
+  },
+  {
+   "id": "Q1123106",
+   "name": "Regent Street",
+   "lat": 51.5108,
+   "lng": -0.1387,
+   "theme": "streets",
+   "fame": 34,
+   "summary": "Rue commerçante du West End due à l'architecte John Nash, elle relie Waterloo Place à Mortimer Street en passant par Piccadilly Circus et Oxford Circus. Elle prend son nom, celui du prince-régent futur George IV, en janvier 1819 et ouvre sans cérémonie à la fin de l'été de la même année. Hamleys et Liberty y tiennent boutique.",
+   "wiki": "Regent Street",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Regent%20Street%202011-04-25.jpg?width=960",
+   "photoBy": "aurélien.",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Regent Street",
+    "es": "Regent Street",
+    "it": "Regent Street"
+   }
+  },
+  {
+   "id": "Q892187",
+   "name": "Bond Street",
+   "lat": 51.5126,
+   "lng": -0.1448,
+   "theme": "streets",
+   "fame": 26,
+   "summary": "Rue commerçante de Mayfair, dans la Cité de Westminster, elle relie Piccadilly à Oxford Street et doit son nom au baronnet Thomas Bond, à l'origine de l'aménagement du quartier. Elle réunit en réalité deux voies : Old Bond Street, tracée vers 1686, et New Bond Street, ouverte en 1700-1720. Ses boutiques de luxe sont mondialement réputées.",
+   "wiki": "Bond Street",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Old%20Bond%20Street%202%20db.jpg?width=960",
+   "photoBy": "Dickbauch~commonswiki",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Bond Street",
+    "es": "Bond Street",
+    "it": "Bond Street"
+   }
+  },
+  {
+   "id": "Q270263",
+   "name": "zoo de Londres",
+   "lat": 51.535555555556,
+   "lng": -0.15583333333333,
+   "theme": "parks",
+   "fame": 44,
+   "summary": "Ouvert le 27 avril 1828 au nord du Regent's Park, dans la Cité de Westminster, c'est le plus ancien zoo scientifique du monde. Sur 15 hectares, il abrite plus de 20 000 animaux appartenant à 260 espèces, dont plus de cent espèces en voie de disparition. Il a ouvert la première maison des reptiles et le premier aquarium public.",
+   "wiki": "Zoo de Londres",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Snowdon%20Aviary%20at%20London%20Zoo%2C%20England-16Aug2009.jpg?width=960",
+   "photoBy": "heena_mistry",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "London Zoo",
+    "es": "Zoológico de Londres",
+    "it": "zoo di Londra"
+   }
+  },
+  {
+   "id": "Q1069148",
+   "name": "jardin botanique de Chelsea",
+   "lat": 51.485,
+   "lng": -0.16277777777778,
+   "theme": "parks",
+   "fame": 22,
+   "summary": "Créé en 1673 par la Worshipful Society of Apothecaries sous le nom d'Apothecaries' Garden, c'est le deuxième plus ancien jardin botanique de Grande-Bretagne, après celui d'Oxford. Ses hauts murs de briques abritent le plus grand olivier fructifère du pays. Longtemps gardé par la Société, il n'ouvre au grand public qu'en 1983.",
+   "wiki": "Jardin botanique de Chelsea",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Chelsea%20physic%20garden.jpg?width=960",
+   "photoBy": "flickr user flickr-rickr",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Chelsea Physic Garden",
+    "es": "Jardín Físico de Chelsea",
+    "it": "Chelsea Physic Garden"
+   }
+  },
+  {
+   "id": "Q1471930",
+   "name": "Serpentine",
+   "lat": 51.505277777778,
+   "lng": -0.16944444444444,
+   "theme": "parks",
+   "fame": 22,
+   "summary": "Lac artificiel de onze hectares aménagé dans Hyde Park : en 1730, la reine Caroline, épouse de George II, ordonna une retenue sur la rivière Westbourne, aujourd'hui souterraine. Au sens strict, le nom ne désigne que la partie située à l'est du pont, la moitié ouest s'appelant Long Water. La profondeur maximale est de 12 mètres.",
+   "wiki": "Serpentine (lac)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Serpentine%20Lake.jpg?width=960",
+   "photoBy": "The original uploader was Jamie101 at English Wikipedia.",
+   "photoLic": "CC BY-SA 2.5",
+   "alt": {
+    "en": "Serpentine",
+    "es": "Lago Serpentine",
+    "it": "Serpentine Lake"
+   }
+  },
+  {
+   "id": "Q44057",
+   "name": "Millennium Bridge",
+   "lat": 51.510173,
+   "lng": -0.098438,
+   "theme": "water",
+   "fame": 48,
+   "summary": "Ce pont piétonnier en acier enjambe la Tamise entre Southwark et la City ; ses portants encadrent la vue sur la façade sud de la cathédrale Saint-Paul. Ouvert le 10 juin 2000, il ferme trois jours plus tard, la foule le faisant osciller latéralement, d'où son surnom de Wobbly Bridge. Des amortisseurs règlent le problème ; il rouvre en février 2002.",
+   "wiki": "Millennium Bridge (Londres)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mill.bridge.from.tate.modern.arp.jpg?width=960",
+   "photoBy": "Arpingstone",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Millennium Bridge",
+    "es": "Millennium Bridge",
+    "it": "Millennium Bridge"
+   }
+  },
+  {
+   "id": "Q498563",
+   "name": "Fortnum & Mason",
+   "lat": 51.5083,
+   "lng": -0.1384,
+   "theme": "shops",
+   "fame": 19,
+   "summary": "Grand magasin de produits de luxe du centre de Londres, il a été établi en 1707 au 181 Piccadilly par William Fortnum et Hugh Mason. D'abord épicerie, il a bâti sa réputation sur des aliments de qualité et connu une croissance rapide à l'époque victorienne. Une horloge de quatre tonnes, commandée en 1964, surmonte l'entrée principale.",
+   "wiki": "Fortnum & Mason",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Fortnum%20and%20Mason.jpg?width=960",
+   "photoBy": "Tony Hisgett from Birmingham, UK",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Fortnum & Mason",
+    "es": "Fortnum & Mason",
+    "it": "Fortnum & Mason"
+   }
+  },
+  {
+   "id": "Q961148",
+   "name": "Leadenhall Market",
+   "lat": 51.5127,
+   "lng": -0.0835,
+   "theme": "shops",
+   "fame": 21,
+   "summary": "Un marché de volaille informel se tenait dès 1321 près du manoir de Leadenhall, que le lord-maire Simon Eyre transforma en marché en 1445. Il fut couvert après le grand incendie de 1666. Horace Jones lui donna en 1881 sa structure de fer forgé et de verrières. Il a servi de Chemin de Traverse dans Harry Potter à l'école des sorciers.",
+   "wiki": "Marché de Leadenhall",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Leadenhall%20Market%20In%20London%20-%20Feb%202006%20rotated.jpg?width=960",
+   "photoBy": "Diliff",
+   "photoLic": "CC BY 2.5",
+   "alt": {
+    "en": "Leadenhall Market",
+    "es": "Leadenhall Market"
+   }
+  },
+  {
+   "id": "Q6373",
+   "name": "British Museum",
+   "lat": 51.519444444444,
+   "lng": -0.12694444444444,
+   "theme": "museums",
+   "fame": 108,
+   "summary": "Fondé en 1753, notamment à partir de la collection léguée par le médecin Hans Sloane, il ouvre au public le 15 janvier 1759 à la Montagu House, à Bloomsbury, au même emplacement qu'aujourd'hui. Ses collections, de plus de sept millions d'objets venus de tous les continents, comptent parmi les plus importantes du monde.",
+   "wiki": "British Museum",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/British%20Museum%20from%20NE%202%20%28cropped%29.JPG?width=960",
+   "photoBy": "Ham",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "British Museum",
+    "es": "Museo Británico",
+    "it": "British Museum"
+   }
+  },
+  {
+   "id": "Q42182",
+   "name": "palais de Buckingham",
+   "lat": 51.501,
+   "lng": -0.142,
+   "theme": "museums",
+   "fame": 93,
+   "summary": "Résidence officielle des souverains britanniques, dans la Cité de Westminster. Son cœur est un hôtel particulier bâti pour le duc de Buckingham John Sheffield, acquis par George III en 1762, puis agrandi principalement par John Nash et Edward Blore. Le palais devient la résidence de la monarchie à l'accession au trône de Victoria, en 1837.",
+   "wiki": "Palais de Buckingham",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Buckingham%20Palace%2C%20London%20-%20April%202009.jpg?width=960",
+   "photoBy": "Diliff",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Buckingham Palace",
+    "es": "Palacio de Buckingham",
+    "it": "Palazzo di Buckingham"
+   }
+  },
+  {
+   "id": "Q62378",
+   "name": "tour de Londres",
+   "lat": 51.5082,
+   "lng": -0.076198055555556,
+   "theme": "museums",
+   "fame": 88,
+   "summary": "Forteresse de la rive nord de la Tamise, dont la construction commença fin 1066, dans le cadre de la conquête normande. La tour Blanche, élevée sur l'ordre de Guillaume le Conquérant en 1078, donna son nom à l'ensemble. Le château servit de prison dès 1100, mais aussi de palais royal et d'armurerie ; il abrite les joyaux de la Couronne.",
+   "wiki": "Tour de Londres",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Tower%20of%20London%20viewed%20from%20the%20River%20Thames.jpg?width=960",
+   "photoBy": "Bob Collowan",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Tower of London",
+    "es": "Torre de Londres",
+    "it": "Torre di Londra"
+   }
+  },
+  {
+   "id": "Q213322",
+   "name": "Victoria and Albert Museum",
+   "lat": 51.49685,
+   "lng": -0.17162,
+   "theme": "museums",
+   "fame": 61,
+   "summary": "Installé à South Kensington, ce musée national d'art est consacré aux arts appliqués et décoratifs, au design et à la sculpture. Fondé en 1852, il porte le nom de la reine Victoria et de son époux le prince Albert. Il couvre cinq hectares et compte 145 galeries, pour une collection permanente de plus de 2,27 millions d'objets.",
+   "wiki": "Victoria and Albert Museum",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Victoria%20%26%20Albert%20Museum%20Entrance%2C%20London%2C%20UK%20-%20Diliff.jpg?width=960",
+   "photoBy": "Diliff",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Victoria and Albert Museum",
+    "es": "Museo de Victoria y Alberto",
+    "it": "Victoria and Albert Museum"
+   }
+  },
+  {
+   "id": "Q193375",
+   "name": "Tate Modern",
+   "lat": 51.507777777778,
+   "lng": -0.099444444444444,
+   "theme": "museums",
+   "fame": 61,
+   "summary": "Ouvert le 13 mai 2000 dans une centrale électrique désaffectée de Bankside, à Southwark, le musée regroupe la collection nationale d'art moderne et contemporain venue de la Tate Gallery. La reconversion fut confiée en 1995 à Herzog & de Meuron, qui transforma la salle des machines en un immense hall et signa l'extension ouverte en juin 2016.",
+   "wiki": "Tate Modern",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Tate%20Modern%20viewed%20from%20Thames%20Pleasure%20Boat%20-%20geograph.org.uk%20-%20307445.jpg?width=960",
+   "photoBy": "Christine Matthews",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Tate Modern",
+    "es": "Tate Modern",
+    "it": "Tate Modern"
+   }
+  },
+  {
+   "id": "Q309388",
+   "name": "musée d'histoire naturelle de Londres",
+   "lat": 51.496111111111,
+   "lng": -0.17611111111111,
+   "theme": "museums",
+   "fame": 55,
+   "summary": "Installé le long d'Exhibition Road, à Kensington, il conserve environ 70 millions de spécimens de sciences de la vie et de la terre, dont les collections apportées par James Cook et Charles Darwin. Le bâtiment de brique de terre cuite, aux façades néoromanes d'Alfred Waterhouse, fut construit de 1873 à 1880 ; le musée ouvrit en 1881.",
+   "wiki": "Musée d'histoire naturelle de Londres",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Entrance%20to%20Natural%20History%20Museum%2C%20Cromwell%20Road%2C%20London%20SW7%20-%20geograph.org.uk%20-%201034304.jpg?width=960",
+   "photoBy": "Christine Matthews",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Natural History Museum",
+    "es": "Museo de Historia Natural de Londres",
+    "it": "Museo di storia naturale di Londra"
+   }
+  },
+  {
+   "id": "Q207385",
+   "name": "palais de Kensington",
+   "lat": 51.505277777778,
+   "lng": -0.18833333333333,
+   "theme": "museums",
+   "fame": 54,
+   "summary": "Cette résidence royale du district de Kensington et Chelsea est bâtie au début du XVIIe siècle comme hôtel de Nottingham. Guillaume III l'achète en 1689, voulant vivre loin du mauvais air de la capitale, et Christopher Wren l'agrandit. Victoria y naît et y habite jusqu'en juillet 1837, peu après son accession au trône. Une partie se visite.",
+   "wiki": "Palais de Kensington",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kensington%20Palace.jpg?width=960",
+   "photoBy": "Steve Cadman from London, U.K.",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Kensington Palace",
+    "es": "Palacio de Kensington",
+    "it": "Kensington Palace"
+   }
+  },
+  {
+   "id": "Q674773",
+   "name": "Science Museum de Londres",
+   "lat": 51.4975,
+   "lng": -0.17472222222222,
+   "theme": "museums",
+   "fame": 47,
+   "summary": "Fondé en 1857 à partir de la collection de la Royal Society of Arts et des surplus de l'Exposition universelle, ce musée de Kensington ne devint indépendant qu'en 1909. Il conserve plus de 300 000 objets, dont la fusée de Stephenson, le module de commande d'Apollo 10 et des machines à vapeur en état de marche. L'entrée est gratuite depuis 2001.",
+   "wiki": "Science Museum de Londres",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Science%20Museum%2C%20Exhibition%20Road%20%28cropped%29.jpg?width=960",
+   "photoBy": "Shadowssettle",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Science Museum",
+    "es": "Museo de Ciencias de Londres",
+    "it": "Museo della scienza"
+   }
+  },
+  {
+   "id": "Q238587",
+   "name": "National Portrait Gallery",
+   "lat": 51.509444444444,
+   "lng": -0.12805555555556,
+   "theme": "museums",
+   "fame": 47,
+   "summary": "Ouvert en 1856 dans le centre de Londres, ce musée d'art réunit les portraits de personnages historiques britanniques, choisis non pour leur auteur mais pour la notoriété du modèle. Les collections mêlent peintures, gravures, photographies, caricatures, dessins et sculptures. Les portraits de personnalités vivantes y sont admis depuis 1969.",
+   "wiki": "National Portrait Gallery (Royaume-Uni)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/National%20Portrait%20Gallery%2C%20London%2C%20June%202023%2034.jpg?width=960",
+   "photoBy": "No Swan So Fine",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "National Portrait Gallery",
+    "es": "National Portrait Gallery",
+    "it": "National Portrait Gallery"
+   }
+  },
+  {
+   "id": "Q270920",
+   "name": "Royal Academy",
+   "lat": 51.509166666667,
+   "lng": -0.13944444444444,
+   "theme": "museums",
+   "fame": 40,
+   "summary": "Fondée en 1768 par un acte personnel du roi George III, cette institution indépendante, financée sur fonds privés, promeut les arts visuels par des expositions et un enseignement. Elle réunit des artistes élus et siège à Burlington House, sur Piccadilly, depuis son centenaire en 1868. Son premier président fut le peintre Joshua Reynolds.",
+   "wiki": "Royal Academy of Arts",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Burlington%20House.jpg?width=960",
+   "photoBy": "Photograph by Mike Peel (www.mikepeel.net).",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Royal Academy of Arts",
+    "es": "Real Academia de Artes",
+    "it": "Royal Academy of Arts"
+   }
+  },
+  {
+   "id": "Q749808",
+   "name": "Imperial War Museum",
+   "lat": 51.495833333333,
+   "lng": -0.10861111111111,
+   "theme": "museums",
+   "fame": 37,
+   "summary": "Créé en 1917, cet organisme national de musées militaires britannique compte cinq sites, dont trois à Londres. Le principal et le plus visité occupe la partie centrale de l'ancien Bethlem Royal Hospital : il traite de la Première et de la Seconde Guerre mondiale, ainsi que du nazisme.",
+   "wiki": "Imperial War Museum",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Imperial%20War%20Museum.%20London%2C%20UK.jpg?width=960",
+   "photoBy": "Ввласенко",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Imperial War Museum London",
+    "es": "Museo Imperial de la Guerra",
+    "it": "Imperial War Museum"
+   }
+  },
+  {
+   "id": "Q195436",
+   "name": "Tate Britain",
+   "lat": 51.491062,
+   "lng": -0.127789,
+   "theme": "museums",
+   "fame": 36,
+   "summary": "Installé dans le quartier de Millbank, sur le site d'une ancienne prison, le musée a ouvert le 21 juillet 1897 sous le nom de National Gallery of British Art. Il porte le nom de son mécène, l'industriel Henry Tate, prend officiellement celui de Tate Gallery en 1932, puis celui de Tate Britain en mars 2000.",
+   "wiki": "Tate Britain",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Tate%20Britain%2C%20Millbank%20-%20panoramio%20%281%29.jpg?width=960",
+   "photoBy": "Carlos Cunha",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Tate Britain",
+    "es": "Tate Britain",
+    "it": "Tate Britain"
+   }
+  },
+  {
+   "id": "Q653858",
+   "name": "Barbican Centre",
+   "lat": 51.5202,
+   "lng": -0.095,
+   "theme": "museums",
+   "fame": 36,
+   "summary": "Centre culturel du nord de la Cité de Londres, au cœur du Barbican Estate, il est le plus grand centre des arts du spectacle d'Europe : concerts, théâtre, cinéma, expositions et bibliothèque. Le London Symphony Orchestra et le BBC Symphony Orchestra y sont basés. Conçu dans les années 1960, il est bâti dans les années 1970 et inauguré en 1982.",
+   "wiki": "Barbican Centre",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Barbican-arts-centre-large.jpg?width=960",
+   "photoBy": "en:User:Nevilley",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Barbican Centre",
+    "es": "Barbican Centre",
+    "it": "Barbican Centre"
+   }
+  },
+  {
+   "id": "Q757178",
+   "name": "HMS Belfast",
+   "lat": 51.506666666667,
+   "lng": -0.081388888888889,
+   "theme": "museums",
+   "fame": 34,
+   "summary": "Croiseur léger de classe Town de la Royal Navy, lancé en 1938, il ouvre le feu sur une batterie allemande à Ver-sur-Mer le 6 juin 1944, puis sert pendant la guerre de Corée. C'est l'un des seuls navires britanniques de la Seconde Guerre mondiale conservés ; il est amarré sur la Tamise, près de la station London Bridge.",
+   "wiki": "HMS Belfast",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/HMS%20Belfast%20%28C35%29%20%289899954683%29.jpg?width=960",
+   "photoBy": "Images George Rex from London, England",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "HMS Belfast",
+    "es": "HMS Belfast",
+    "it": "HMS Belfast"
+   }
+  },
+  {
+   "id": "Q642039",
+   "name": "maison des Banquets",
+   "lat": 51.5046,
+   "lng": -0.1259,
+   "theme": "museums",
+   "fame": 29,
+   "summary": "Ancienne dépendance du palais de Whitehall, dessinée par Inigo Jones en 1619 et achevée en 1622 avec l'aide de John Webb. Elle comprend une seule pièce sur deux niveaux, dont le plafond à caissons reçut des peintures de Rubens commandées par Charles Ier en 1635. Le roi fut décapité devant le bâtiment le 30 janvier 1649.",
+   "wiki": "Maison des Banquets",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Banqueting%20House%20London.jpg?width=960",
+   "photoBy": "en:User:ChrisO",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Banqueting House",
+    "es": "Banqueting House",
+    "it": "Banqueting House"
+   }
+  },
+  {
+   "id": "Q1990172",
+   "name": "Sherlock Holmes Museum",
+   "lat": 51.523694444444,
+   "lng": -0.161,
+   "theme": "museums",
+   "fame": 28,
+   "summary": "Reconstitution imaginaire du 221B Baker Street, domicile fictif du détective d'Arthur Conan Doyle, cette maison-musée est inaugurée le 27 mars 1990 au 239 Baker Street, non loin de l'adresse du roman. Le décor, inspiré de la série télévisée de 1984, mêle statues de cire et objets familiers. Le Royal Mail y redirige le courrier adressé au 221B.",
+   "wiki": "Sherlock Holmes Museum",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/221B%20Baker%20Street%2C%20London%20-%20Sherlock%20Holmes%20Museum.jpg?width=960",
+   "photoBy": "Jordan 1972 (talk)",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Sherlock Holmes Museum",
+    "es": "Museo de Sherlock Holmes",
+    "it": "Museo di Sherlock Holmes"
+   }
+  },
+  {
+   "id": "Q622206",
+   "name": "Apsley House",
+   "lat": 51.503472222222,
+   "lng": -0.15166666666667,
+   "theme": "museums",
+   "fame": 25,
+   "summary": "Construite de 1771 à 1778 par Robert Adam pour le baron Apsley, cette demeure de Piccadilly, face à Hyde Park Corner, est rachetée en 1807 par Richard Wellesley, qui la cède en 1817 à son frère Arthur, 1er duc de Wellington, commanditaire du portique corinthien. Offerte à l'État en 1947, elle abrite le Wellington Museum et 200 tableaux.",
+   "wiki": "Apsley House",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Apsley%20House%20-%20geograph.org.uk%20-%203763141.jpg?width=960",
+   "photoBy": "Anthony O'Neil",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Apsley House",
+    "es": "Apsley House",
+    "it": "Wellington Museum"
+   }
+  },
+  {
+   "id": "Q591086",
+   "name": "Serpentine Galleries",
+   "lat": 51.5047,
+   "lng": -0.17505,
+   "theme": "museums",
+   "fame": 24,
+   "summary": "Deux musées d'art contemporain des jardins de Kensington, séparés par le lac Serpentine qui leur donne son nom. La Serpentine Gallery, fondée en 1970, occupe un ancien pavillon de thé de 1933-1934 ; la Serpentine Sackler Gallery, ouverte en 2013, réutilise un entrepôt de poudre à canon de 1805 doté d'une extension de Zaha Hadid.",
+   "wiki": "Serpentine Galleries",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Serpentine%20Gallery%20and%202008%20Pavilion.jpg?width=960",
+   "photoBy": "FlickreviewR",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Serpentine Galleries",
+    "es": "Serpentine Galleries",
+    "it": "Serpentine Galleries"
+   }
+  },
+  {
+   "id": "Q2060860",
+   "name": "Sir John Soane's Museum",
+   "lat": 51.517102777778,
+   "lng": -0.11691388888889,
+   "theme": "museums",
+   "fame": 23,
+   "summary": "Installé dans l'ancienne maison de l'architecte néoclassique John Soane (1753-1837), ce musée éclectique réunit dessins, gravures, peintures, meubles et antiquités. On y voit des toiles de William Hogarth, dont la série « La Carrière du Libertin », ainsi que des œuvres de Canaletto, Watteau et Turner.",
+   "wiki": "Sir John Soane's Museum",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Sir%20John%20Soane%20Museum%20%2813952611347%29.jpg?width=960",
+   "photoBy": "Tony Hisgett from Birmingham, UK",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Sir John Soane's Museum",
+    "es": "Museo Soane",
+    "it": "Sir John Soane's Museum"
+   }
+  },
+  {
+   "id": "Q1786933",
+   "name": "Mansion House",
+   "lat": 51.51325,
+   "lng": -0.089361111111111,
+   "theme": "museums",
+   "fame": 23,
+   "summary": "Résidence officielle du lord-maire de la Cité de Londres, elle fut construite de 1739 à 1752 par George Dance l'Aîné, sur le site de l'église St Mary Woolchurch Haw détruite dans le Grand incendie. Le lord-maire y juge les délits commis dans la Cité, d'où onze cellules. Elle conserve 84 peintures hollandaises et flamandes du XVIIe siècle.",
+   "wiki": "Mansion House (Londres)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mansion%20House%2C%20City%20of%20London%20%2840478193673%29.jpg?width=960",
+   "photoBy": "Michael Gwyther-Jones from London, UK",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Mansion House",
+    "es": "Mansion House",
+    "it": "Mansion House (Londra)"
+   }
+  },
+  {
+   "id": "Q1541098",
+   "name": "musée des Transports de Londres",
+   "lat": 51.511944444444,
+   "lng": -0.12166666666667,
+   "theme": "museums",
+   "fame": 22,
+   "summary": "Installé à Covent Garden dans une halle de fer et de verre conçue en 1871 comme marché aux fleurs par William Rogers, il occupe les lieux depuis 1980, le marché ayant déménagé en 1971. Il conserve et explique le patrimoine des transports de la capitale. Son dépôt d'Acton, ouvert en 1999, abrite plus de 370 000 objets.",
+   "wiki": "Musée des Transports de Londres",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/London%20Transport%20Museum%20%2842206944281%29.jpg?width=960",
+   "photoBy": "Wei-Te Wong from Taipei City, Taiwan, Republic of China",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "London Transport Museum",
+    "it": "London Transport Museum"
+   }
+  },
+  {
+   "id": "Q571249",
+   "name": "Design Museum",
+   "lat": 51.4998973,
+   "lng": -0.200244,
+   "theme": "museums",
+   "fame": 20,
+   "summary": "Fondé en 1989 par Terence Conran dans un entrepôt reconditionné de Bermondsey, sur la rive sud de la Tamise, ce musée est consacré à l'architecture et au design contemporains. Il s'est installé en 2016 à Kensington, au sud de Holland Park, dans l'ancien Commonwealth Institute, un édifice des années 1960.",
+   "wiki": "Design Museum",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Design%20Museum%20%282%29%20%28geograph%205246509%29.jpg?width=960",
+   "photoBy": "Anthony O'Neil",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Design Museum",
+    "es": "Design Museum",
+    "it": "Design Museum"
+   }
+  },
+  {
+   "id": "Q1024854",
+   "name": "Churchill War Rooms",
+   "lat": 51.50222,
+   "lng": -0.1293,
+   "theme": "museums",
+   "fame": 19,
+   "summary": "L'une des cinq branches de l'Imperial War Museum, entre Whitehall et Horse Guards Road, le musée réunit les Cabinet War Rooms, complexe souterrain qui abrita un centre de commandement pendant la Seconde Guerre mondiale, et un musée consacré à Winston Churchill. Déclassé en 1945, le complexe resta peu utilisé jusqu'à l'ouverture du musée en 1984.",
+   "wiki": "Churchill War Rooms",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Cabinet%20war%20rooms.jpg?width=960",
+   "photoBy": "en:User:Jdhowens90",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Churchill War Rooms",
+    "es": "Churchill War Rooms",
+    "it": "Churchill Museum and Cabinet War Rooms"
+   }
+  },
+  {
+   "id": "Q1513107",
+   "name": "London Dungeon",
+   "lat": 51.505561111111,
+   "lng": -0.085830555555556,
+   "theme": "museums",
+   "fame": 18,
+   "summary": "Attraction dirigée par le groupe Merlin Entertainments, installée au County Hall à proximité du London Eye, elle met en scène des évènements historiques sanglants avec des comédiens et des effets spéciaux : la grande peste, Jack l'Éventreur, la chambre des tortures. Ouverte en 1976 dans Tooley Street, elle a rouvert le 1er mars 2013.",
+   "wiki": "London Dungeon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/London%20-%20The%20London%20Dungeon%20-%20panoramio.jpg?width=960",
+   "photoBy": "giggel",
+   "photoLic": "CC BY 3.0",
+   "alt": {
+    "en": "London Dungeon",
+    "it": "The London Dungeon"
+   }
+  },
+  {
+   "id": "Q12110695",
+   "name": "galerie Courtauld",
+   "lat": 51.511568,
+   "lng": -0.117712,
+   "theme": "museums",
+   "fame": 16,
+   "summary": "Musée installé dans Somerset House, sur le Strand, la galerie présente la collection de l'Institut Courtauld, établissement de l'université de Londres voué à l'histoire de l'art. Formée en grande partie de dons et de legs, elle va du Moyen Âge à l'époque moderne et vaut pour ses peintures impressionnistes et post-impressionnistes françaises.",
+   "wiki": "Galerie Courtauld",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Somerset%20House%2C%20Strand.jpg?width=960",
+   "photoBy": "Stephen Richards",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Courtauld Gallery",
+    "es": "Courtauld Gallery",
+    "it": "Courtauld Gallery"
+   }
+  },
+  {
+   "id": "Q1628509",
+   "name": "hôpital royal de Chelsea",
+   "lat": 51.486388888889,
+   "lng": -0.15777777777778,
+   "theme": "museums",
+   "fame": 15,
+   "summary": "Hospice pour anciens combattants fondé par un décret de Charles II en 1681, il fut dessiné par Christopher Wren sur le modèle de l'hôtel des Invalides et achevé en 1692, quand furent admis les premiers patients. Ouvert aux femmes en 2009, il accueille l'exposition florale de Chelsea depuis 1913. Le bâtiment central et la chapelle se visitent.",
+   "wiki": "Hôpital royal de Chelsea",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Royal%20Hospital%20Chelsea%20south%20front.JPG?width=960",
+   "photoBy": "Camster2",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Royal Hospital Chelsea",
+    "es": "Royal Hospital Chelsea",
+    "it": "Royal Hospital Chelsea"
+   }
+  },
+  {
+   "id": "Q2505545",
+   "name": "Spencer House",
+   "lat": 51.505277777778,
+   "lng": -0.14,
+   "theme": "museums",
+   "fame": 15,
+   "summary": "Ce manoir londonien se dresse près du palais Saint James, du palais de Buckingham et du palais de Westminster. L'architecte John Vardy, ancien élève de William Kent, l'a construit en 1756 pour le compte du premier comte Spencer. Il est aujourd'hui ouvert au public et peut être loué pour des événements, dont des mariages.",
+   "wiki": "Spencer House",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Spencer%20House.jpg?width=960",
+   "photoBy": "Steve Cadman",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Spencer House",
+    "it": "Spencer House"
+   }
+  },
+  {
+   "id": "Q2723633",
+   "name": "musée Charles-Dickens",
+   "lat": 51.5239,
+   "lng": -0.116902,
+   "theme": "museums",
+   "fame": 15,
+   "summary": "Charles Dickens habita cette maison géorgienne du 48, Doughty Street, à Bloomsbury, entre 1837 et 1839, alors que sa carrière littéraire s'envolait; il y écrivit notamment Oliver Twist et Nicholas Nickleby. Menacée de disparition en 1923, la demeure fut rachetée et rénovée par l'association The Dickens Fellowship, qui en fit un musée en 1925.",
+   "wiki": "Musée Charles-Dickens",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Charles%20Dickens%20Museum%20-%20geograph.org.uk%20-%207006672.jpg?width=960",
+   "photoBy": "Peter Trimming",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Charles Dickens Museum",
+    "es": "Museo de Charles Dickens",
+    "it": "Charles Dickens Museum"
+   }
+  },
+  {
+   "id": "Q2339207",
+   "name": "Southbank Centre",
+   "lat": 51.506064,
+   "lng": -0.116306,
+   "theme": "museums",
+   "fame": 14,
+   "summary": "Ensemble de salles de concert créé après la Seconde Guerre mondiale, il est situé le long de la Tamise, entre County Hall et le Waterloo Bridge, et réunit trois bâtiments principaux : le Royal Festival Hall, le Queen Elizabeth Hall et la Hayward Gallery. Il gère un espace comprenant la Purcell Room, les Jubilee Gardens et The Queen's Walk.",
+   "wiki": "Southbank Centre",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Royal%20Festival%20Hall%20%2837366103611%29.jpg?width=960",
+   "photoBy": "Ungry Young Man from Vienna, Austria",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Southbank Centre",
+    "it": "Southbank Centre"
+   }
+  },
+  {
+   "id": "Q1335201",
+   "name": "St Martin-in-the-Fields",
+   "lat": 51.508888888889,
+   "lng": -0.12694444444444,
+   "theme": "religious",
+   "fame": 37,
+   "summary": "Église anglicane du coin nord-est de Trafalgar Square, dédiée à saint Martin de Tours, elle est mentionnée pour la première fois en 1222 et rebâtie par Henri VIII en 1542, alors isolée entre les cités de Westminster et de Londres. L'édifice actuel est de James Gibbs. Elle arbore le White Ensign de la Royal Navy et accueille des concerts.",
+   "wiki": "St Martin-in-the-Fields (Londres)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/St%20martin%20in%20the%20fields%20exterior.jpg?width=960",
+   "photoBy": "Yopohari~commonswiki",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "St Martin-in-the-Fields",
+    "es": "St Martin-in-the-Fields",
+    "it": "chiesa di Saint Martin-in-the-Fields"
+   }
+  },
+  {
+   "id": "Q1130266",
+   "name": "Lambeth Palace",
+   "lat": 51.49556,
+   "lng": -0.11972,
+   "theme": "religious",
+   "fame": 35,
+   "summary": "Cette résidence londonienne officielle de l'archevêque de Canterbury s'élève sur la rive sud de la Tamise, un peu en amont du palais de Westminster, qui occupe l'autre berge. L'archevêché en fit l'acquisition vers 1200. La partie la plus ancienne est la chapelle gothique ; le cardinal John Morton édifia en 1495 la porte en brique de style Tudor.",
+   "wiki": "Lambeth Palace",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lambeth%20Palace%20London%20240404.jpg?width=960",
+   "photoBy": "JaT~commonswiki",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Lambeth Palace",
+    "es": "Palacio de Lambeth",
+    "it": "Lambeth Palace"
+   }
+  },
+  {
+   "id": "Q1429312",
+   "name": "église du Temple",
+   "lat": 51.5132,
+   "lng": -0.1104,
+   "theme": "religious",
+   "fame": 30,
+   "summary": "Bâtie au XIIe siècle entre Fleet Street et la Tamise par et pour les chevaliers de l'ordre du Temple, elle est dédiée à sainte Marie. Sa nef ronde s'inspire de l'église du Saint-Sépulcre à Jérusalem, et ses gisants sont réputés. Depuis 1608, elle sert de chapelle aux deux Inns of Court, l'Inner Temple et le Middle Temple.",
+   "wiki": "Église du Temple (Londres)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Temple%20Church%2C%20Temple%2C%20London%20EC4.jpeg?width=960",
+   "photoBy": "John Salmon",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Temple Church, London",
+    "es": "iglesia del Temple",
+    "it": "chiesa del Tempio"
+   }
+  },
+  {
+   "id": "Q1938714",
+   "name": "chapelle royale de Saint-Pierre-aux-Liens",
+   "lat": 51.5086,
+   "lng": -0.0769444,
+   "theme": "religious",
+   "fame": 19,
+   "summary": "Église paroissiale de la Tour de Londres, elle est bâtie à partir de 1519 par sir Richard Cholmondeley pour le compte d'Henri VIII, à l'emplacement d'une chapelle antérieure à la conquête normande. Sa notoriété tient aux sépultures de détenus exécutés à la Tour, dont trois reines : Anne Boleyn, Catherine Howard et Lady Jane Grey.",
+   "wiki": "Chapelle royale de Saint-Pierre-aux-Liens",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/St-Peter-Ad-Vincula.jpg?width=960",
+   "photoBy": "Attribution en:User:MattHucke of http://www.graveyards.com",
+   "photoLic": "CC BY 2.5",
+   "alt": {
+    "en": "Church of St Peter ad Vincula, Tower Hamlets",
+    "es": "Capilla Real de San Pedro ad Vincula",
+    "it": "chiesa di San Pietro ad Vincula"
+   }
+  },
+  {
+   "id": "Q2301992",
+   "name": "St Mary-le-Bow",
+   "lat": 51.51370986,
+   "lng": -0.093572737,
+   "theme": "religious",
+   "fame": 19,
+   "summary": "Cette église de la Cité de Londres, dans la rue Cheapside, est connue pour ses cloches, les Bow bells : un cockney est une personne née là où on les entend sonner. Détruite par le grand incendie de 1666, elle est reconstruite par Christopher Wren. Ravagée par le Blitz en 1941, elle est restaurée à partir de 1956 et reconsacrée en 1964.",
+   "wiki": "St Mary-le-Bow",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/StMaryLeBowChurch.jpg?width=960",
+   "photoBy": "Ctac",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "St Mary-le-Bow",
+    "it": "St Mary-le-Bow"
+   }
+  },
+  {
+   "id": "Q2038269",
+   "name": "St Clement Danes",
+   "lat": 51.513107,
+   "lng": -0.113898,
+   "theme": "religious",
+   "fame": 16,
+   "summary": "Église officielle de la Royal Air Force, à l'extrémité est du Strand, elle a été reconstruite par Christopher Wren de 1680 à 1682, son clocher ajouté par James Gibbs de 1719 à 1720. Bombardée le 10 mai 1941, elle a gardé ses murs extérieurs et sa tour ; un incendie en a ravagé l'intérieur. Son sol d'ardoise galloise porte des emblèmes de la RAF.",
+   "wiki": "St Clement Danes",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/St%20Clement%20Danes%2C%20Strand%20%28geograph%205590980%29.jpg?width=960",
+   "photoBy": "Stephen Richards",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "St Clement Danes",
+    "it": "chiesa di San Clemente dei Danesi"
+   }
+  },
+  {
+   "id": "Q851924",
+   "name": "synagogue de Bevis Marks",
+   "lat": 51.5145,
+   "lng": -0.07905,
+   "theme": "religious",
+   "fame": 16,
+   "summary": "Bâtie en 1701 par la communauté séfarade de Londres, juifs originaires d'Espagne et du Portugal, c'est la plus ancienne synagogue du Royaume-Uni toujours en activité, classée Grade I. Le décor intérieur reflète l'influence de la synagogue portugaise d'Amsterdam. Le toit, détruit par un incendie en 1738, fut reconstruit en 1749.",
+   "wiki": "Synagogue de Bevis Marks",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Bevis%20Marks%20Synagogue%20-%20geograph.org.uk%20-%201229874.jpg?width=960",
+   "photoBy": "John Salmon",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Bevis Marks Synagogue",
+    "es": "Sinagoga de Bevis Marks",
+    "it": "sinagoga Bevis Marks di Londra"
+   }
+  },
+  {
+   "id": "Q81473",
+   "name": "Westminster Central Hall",
+   "lat": 51.5,
+   "lng": -0.13,
+   "theme": "religious",
+   "fame": 14,
+   "summary": "Édifice méthodiste polyvalent construit de 1905 à 1911 face à l'abbaye de Westminster, sur le site de l'ancien Royal Aquarium, pour le centenaire de la mort de John Wesley. Dessiné par Edwin Alfred Rickards, il fait un usage précoce du béton armé en Grande-Bretagne. Il abrita la première partie de la première Assemblée générale des Nations unies.",
+   "wiki": "Westminster Central Hall",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Methodist%20Central%20Hall.JPG?width=960",
+   "photoBy": "Gt-man",
+   "photoLic": "CC BY-SA 2.0 de",
+   "alt": {
+    "en": "Methodist Central Hall",
+    "es": "Methodist Central Hall"
+   }
+  },
+  {
+   "id": "Q1112579",
+   "name": "église Saint-Bride",
+   "lat": 51.513777777778,
+   "lng": -0.10575,
+   "theme": "religious",
+   "fame": 14,
+   "summary": "Cette ancienne église de la City est reconstruite après le Grand incendie de 1666 selon les instructions de Christopher Wren. Le quartier, associé à l'imprimerie puis aux quotidiens, en fait l'église des journalistes. Bombardée le 29 décembre 1940, elle perd sa nef, est relevée à partir de 1953 et rouvre le 19 décembre 1957.",
+   "wiki": "Église Sainte-Bride",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/City%20parish%20churches%2C%20St.%20Bride%20Fleet%20Street%20-%20geograph.org.uk%20-%20864025.jpg?width=960",
+   "photoBy": "Chris Downer",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "St Bride's Church, City of London",
+    "es": "Iglesia de Santa Bride"
+   }
+  },
+  {
+   "id": "Q1093271",
+   "name": "église Saint-Barthélemy-le-Grand de Londres",
+   "lat": 51.518866666667,
+   "lng": -0.099658333333333,
+   "theme": "religious",
+   "fame": 13,
+   "summary": "Fondée en 1123 comme prieuré augustinien par Rahère, cette église anglicane de Smithfield conserve la plus significative architecture d'intérieur romane de la cité de Londres. Plus de la moitié de l'église du prieuré fut détruite en 1543 ; épargnée par le grand incendie de 1666, elle fut restaurée par Aston Webb à la fin du XIXe siècle.",
+   "wiki": "Église Saint-Barthélemy-le-Grand de Londres",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/St%20Bartholomew%20the%20Great%2C%20West%20Smithfield%2C%20London%20EC1%20-%20geograph.org.uk%20-%201142484.jpg?width=960",
+   "photoBy": "John Salmon",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "St Bartholomew-the-Great",
+    "es": "iglesia de St Bartholomew-the-Great",
+    "it": "chiesa del Priorato di San Bartolomeo il Grande"
+   }
+  },
+  {
+   "id": "Q579381",
+   "name": "All Hallows-by-the-Tower",
+   "lat": 51.509444,
+   "lng": -0.079444,
+   "theme": "religious",
+   "fame": 13,
+   "summary": "Fondée en 675 par l'abbé du monastère de Barking, cette église anglicane de la Cité de Londres conserve un sol romain du IIe siècle dans sa crypte. Sa tour, détruite en 1650 par l'explosion de barils de poudre, est reconstruite en 1658. L'église échappe au grand incendie de 1666, l'amiral William Penn ayant fait démolir les maisons voisines.",
+   "wiki": "All Hallows-by-the-Tower",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/AllHallowsByTheTowerChurch.jpg?width=960",
+   "photoBy": "Lonpicman",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "All Hallows-by-the-Tower",
+    "it": "All Hallows-by-the-Tower"
+   }
+  },
+  {
+   "id": "Q385521",
+   "name": "église Saint-Paul de Covent Garden",
+   "lat": 51.5114,
+   "lng": -0.124167,
+   "theme": "religious",
+   "fame": 12,
+   "summary": "Construite de 1630 à 1633 par Inigo Jones à la demande de Francis Russell, 4e comte de Bedford, c'est la première église bâtie à Londres depuis la Réforme. Simple chapelle de la paroisse de St Martin-in-the-Fields, elle est dédiée à saint Paul en 1645, quand Covent Garden devient une paroisse à part entière. On l'appelle aussi Actor's Church.",
+   "wiki": "Église Saint-Paul de Covent Garden",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/St.%20Paul%27s%20Church%2C%20Covent%20Garden%2C%20London.jpg?width=960",
+   "photoBy": "Steve Cadman",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "St Paul's Church, Covent Garden",
+    "it": "chiesa di San Paolo"
+   }
+  },
+  {
+   "id": "Q1570699",
+   "name": "Metropolitan Tabernacle",
+   "lat": 51.494166666667,
+   "lng": -0.10111111111111,
+   "theme": "religious",
+   "fame": 12,
+   "summary": "Église baptiste indépendante, fondée à Southwark en 1650 sous le nom de chapelle New Park Street. Charles Spurgeon en devint pasteur en 1854 ; la communauté s'installa en 1861 à Elephant and Castle, dans un édifice pourvu d'un auditorium de 6 000 places. Plusieurs fois incendié, le bâtiment fut reconstruit en 1894, 1941 et 1959, avec 1 750 sièges.",
+   "wiki": "Tabernacle métropolitain",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/London%20-%20Elephant%20and%20Castle%2C%20Metropolitan%20Tarbenacle%2C%20from%20the%20Castle%20Centre%20%28cropped%29.jpg?width=960",
+   "photoBy": "Romainbehar",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "Metropolitan Tabernacle",
+    "es": "Metropolitan Tabernacle",
+    "it": "Metropolitan Tabernacle"
+   }
+  },
+  {
+   "id": "Q4893186",
+   "name": "église Saint-Jacques de Piccadilly",
+   "lat": 51.5086,
+   "lng": -0.136667,
+   "theme": "religious",
+   "fame": 11,
+   "summary": "Conçue par Christopher Wren, nommé architecte en 1672, cette église anglicane de Piccadilly est consacrée le 13 juillet 1684 par Henry Compton, évêque de Londres. En briques rouges, elle conserve un bénitier de marbre et un retable de tilleul dus à Grinling Gibbons. Gravement endommagée par le Blitz en 1940, elle est restaurée jusqu'en 1954.",
+   "wiki": "Église St. James de Piccadilly",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/St%20James%27s%20Church%20-%20Piccadilly%2C%20London%2C%20UK.jpg?width=960",
+   "photoBy": "JFVoll",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "St James’s Church, Piccadilly",
+    "es": "Iglesia de Santiago (Piccadilly)",
+    "it": "chiesa di San Giacomo"
+   }
+  },
+  {
+   "id": "Q536866",
+   "name": "St Mary-le-Strand",
+   "lat": 51.512171,
+   "lng": -0.116904,
+   "theme": "religious",
+   "fame": 11,
+   "summary": "Deuxième église de ce nom, elle fut la première des cinquante nouvelles églises commanditées à Londres en 1711. Sa construction débuta en 1714 sous la direction de James Gibbs, et elle fut consacrée le 1er janvier 1723. Gibbs prévoyait une colonne portant une statue de la reine Anne ; à la mort de celle-ci, la pierre servit à bâtir une flèche.",
+   "wiki": "St Mary-le-Strand",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/1236753-St%20Mary%20le%20Strand.JPG?width=960",
+   "photoBy": "GVR",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "St Mary le Strand, Westminster",
+    "it": "St Mary-le-Strand"
+   }
+  },
+  {
+   "id": "Q11704046",
+   "name": "St Lawrence Jewry",
+   "lat": 51.5152,
+   "lng": -0.0925,
+   "theme": "religious",
+   "fame": 11,
+   "summary": "Église anglicane de la cité de Londres, à côté du Guildhall, bâtie au XIIe siècle près de l'ancien ghetto médiéval centré sur Old Jewry. Détruite par le grand incendie de 1666, elle est reconstruite par Christopher Wren entre 1670 et 1677. Sa girouette en forme de gril renvoie au martyre de saint Laurent.",
+   "wiki": "St Lawrence Jewry",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/St%20Lawrence%20Jewry.jpg?width=960",
+   "photoBy": "Prioryman",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "St Lawrence Jewry, London",
+    "es": "St. Lawrence Jewry"
+   }
+  },
+  {
+   "id": "Q2323930",
+   "name": "St Giles-without-Cripplegate",
+   "lat": 51.518716666667,
+   "lng": -0.094041666666667,
+   "theme": "religious",
+   "fame": 11,
+   "summary": "Cette église anglicane du Barbican Estate, dans la Cité de Londres, est dédiée à Gilles l'Ermite. À sa construction, elle se trouvait en dehors (without) du mur de Londres, près de la Cripplegate. Reconstruite en gothique perpendiculaire en 1394, elle a survécu au grand incendie de 1666. John Milton y fut enterré en 1674.",
+   "wiki": "St Giles-without-Cripplegate",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/StGilesCripplegate.jpg?width=960",
+   "photoBy": "The original uploader was Lonpicman at English Wikipedia.",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "St Giles-without-Cripplegate"
+   }
+  },
+  {
+   "id": "Q55018",
+   "name": "Royal Opera House",
+   "lat": 51.513055555556,
+   "lng": -0.12277777777778,
+   "theme": "stages",
+   "fame": 56,
+   "summary": "Troisième théâtre élevé sur cet emplacement, après un premier inauguré le 7 décembre 1732, il abrite le Royal Opera, le Royal Ballet et l'orchestre du Royal Opera House, et se nomme désormais Royal Ballet and Opera. La façade, le foyer et la salle datent de 1858, presque tout le reste des années 1990. Il peut contenir 2 268 personnes.",
+   "wiki": "Royal Opera House",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Royal%20Opera%20House%20and%20ballerina.jpg?width=960",
+   "photoBy": "Russ London (talk)",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Royal Opera House",
+    "es": "Ópera Real de Londrés",
+    "it": "Royal Opera House"
+   }
+  },
+  {
+   "id": "Q193639",
+   "name": "Royal Albert Hall",
+   "lat": 51.50105,
+   "lng": -0.17748,
+   "theme": "stages",
+   "fame": 52,
+   "summary": "Cette salle de spectacle de South Kensington, dont la construction débute le 20 mai 1867, est inaugurée le 29 mars 1871 et doit son nom au prince Albert, à la demande de sa veuve la reine Victoria. Une frise en terre cuite de 244 m, Le Triomphe des Arts et des Sciences, court le long de la façade. Le BBC Proms s'y tient chaque été depuis 1941.",
+   "wiki": "Royal Albert Hall",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Hansom%20cab%201904.jpg?width=960",
+   "photoBy": "B.L. Singley. Publisher: Keystone View Company, Meadville, P",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Royal Albert Hall",
+    "es": "Royal Albert Hall",
+    "it": "Royal Albert Hall"
+   }
+  },
+  {
+   "id": "Q272434",
+   "name": "théâtre du Globe",
+   "lat": 51.506666666667,
+   "lng": -0.094722222222222,
+   "theme": "stages",
+   "fame": 46,
+   "summary": "Élevé en 1599 à Southwark, le premier Globe accueillit la troupe de Shakespeare, les Lord Chamberlain's Men. Il brûla le 29 juin 1613 pendant une représentation d'Henry VIII, fut rebâti au même endroit et rouvrit l'année suivante, avant d'être fermé par les puritains en 1642, puis démoli en 1644. Le théâtre actuel, bâti en 1996, ouvrit en 1997.",
+   "wiki": "Théâtre du Globe",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/London%2C%20UK%20%28August%202014%29%20-%20156.JPG?width=960",
+   "photoBy": "Another Believer",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Globe Theatre",
+    "es": "The Globe",
+    "it": "Globe Theatre"
+   }
+  },
+  {
+   "id": "Q511108",
+   "name": "Royal National Theatre",
+   "lat": 51.5071,
+   "lng": -0.1141,
+   "theme": "stages",
+   "fame": 33,
+   "summary": "Sur la rive sud, dans le quartier de Lambeth, le bâtiment brutaliste dessiné par Denys Lasdun ouvre ses trois salles entre 1976 et 1977 ; la compagnie jouait jusque-là à l'Old Vic. Il est, dans les sondages d'opinion, à la fois le bâtiment londonien le plus apprécié et le plus détesté.",
+   "wiki": "Royal National Theatre",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/National%20Theatre%2C%20London.jpg?width=960",
+   "photoBy": "Aurelien Guichard from London, United Kingdom",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Royal National Theatre",
+    "es": "Royal National Theatre",
+    "it": "Royal National Theatre"
+   }
+  },
+  {
+   "id": "Q868806",
+   "name": "théâtre Old Vic",
+   "lat": 51.502,
+   "lng": -0.109315,
+   "theme": "stages",
+   "fame": 30,
+   "summary": "Fondé en 1818, ce théâtre proche de la gare de Waterloo fut repris en 1880 par Emma Cons, puis en 1898 par sa nièce Lilian Baylis, qui commença en 1914 à y produire des pièces de Shakespeare. Il forma en 1963 le noyau de la compagnie du Royal National Theatre, qui y resta jusqu'à la construction de nouveaux locaux sur la rive sud, en 1976.",
+   "wiki": "Théâtre Old Vic",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Waterloo%20the%20old%20vic%201.jpg?width=960",
+   "photoBy": "Tarquin Binary~commonswiki",
+   "photoLic": "CC BY-SA 2.5",
+   "alt": {
+    "en": "The Old Vic",
+    "es": "Old Vic",
+    "it": "Old Vic"
+   }
+  },
+  {
+   "id": "Q1155331",
+   "name": "His Majesty's Theatre",
+   "lat": 51.5081,
+   "lng": -0.132,
+   "theme": "stages",
+   "fame": 27,
+   "summary": "Son nom change avec le sexe du monarque : Her Majesty's Theatre en 1837, His Majesty's en 1901, Her Majesty's en 1952, puis His Majesty's après le couronnement de Charles III. Un théâtre occupe l'emplacement depuis 1705 ; le bâtiment actuel, le quatrième, ouvre en 1897. Il donne The Phantom of the Opera depuis 1986.",
+   "wiki": "His Majesty's Theatre",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/His%20Majesty%E2%80%99s%20Theatre%20London%20August%202023.jpg?width=960",
+   "photoBy": "AirshipJungleman29",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "His Majesty's Theatre",
+    "es": "Her Majesty's Theatre",
+    "it": "His Majesty's Theatre"
+   }
+  },
+  {
+   "id": "Q1756626",
+   "name": "théâtre de Drury Lane",
+   "lat": 51.513055555556,
+   "lng": -0.12027777777778,
+   "theme": "stages",
+   "fame": 27,
+   "summary": "Le bâtiment actuel date de 1812 et clôt une série de quatre salles élevées au même endroit depuis 1663, ce qui en fait le théâtre le plus ancien de Londres. La façade donne sur Catherine Street, l'arrière sur Drury Lane. Théâtre patenté, il partagea un monopole royal sur les pièces parlées. On y joue aujourd'hui surtout des comédies musicales.",
+   "wiki": "Théâtre de Drury Lane",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Theatre%20Royal%2C%20Drury%20Lane%20-%20geograph.org.uk%20-%20543440.jpg?width=960",
+   "photoBy": "Sue Adair",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "The Theatre Royal",
+    "es": "Teatro Drury Lane",
+    "it": "Drury Lane"
+   }
+  },
+  {
+   "id": "Q676755",
+   "name": "London Palladium",
+   "lat": 51.514583333333,
+   "lng": -0.1405,
+   "theme": "stages",
+   "fame": 24,
+   "summary": "Théâtre de Westminster, sur Argyll Street, élevé en 1910 par Walter Gibbons sur un terrain qui avait porté un bazar, un cirque puis une patinoire, il compte 2 286 places et est classé Grade II* depuis 1960. Cette salle de variétés a accueilli 43 fois la Royal Variety Performance et, de 1955 à 1967, une émission dominicale d'ITV.",
+   "wiki": "London Palladium",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/London-palladium-ccbb.jpg?width=960",
+   "photoBy": "The original uploader was MykReeve at English Wikipedia.",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "London Palladium",
+    "es": "London Palladium",
+    "it": "London Palladium"
+   }
+  },
+  {
+   "id": "Q647390",
+   "name": "Royal Festival Hall",
+   "lat": 51.505836111111,
+   "lng": -0.11678888888889,
+   "theme": "stages",
+   "fame": 24,
+   "summary": "Cette salle de concert du Southbank Centre, bâtie après la Seconde Guerre mondiale sur les plans de Robert Matthew et Leslie Martin, fut inaugurée le 3 mai 1951 dans le cadre du Festival of Britain. Entièrement rénovée en 2005, elle accueille en résidence l'orchestre philharmonique de Londres et l'orchestre Philharmonia.",
+   "wiki": "Royal Festival Hall",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Royal%20Festival%20Hall%202011-edit.jpg?width=960",
+   "photoBy": "Andreas Praefcke, edited by MenkinAlRire",
+   "photoLic": "CC BY 3.0",
+   "alt": {
+    "en": "Royal Festival Hall",
+    "es": "Royal Festival Hall",
+    "it": "Royal Festival Hall"
+   }
+  },
+  {
+   "id": "Q1337772",
+   "name": "Hammersmith Apollo",
+   "lat": 51.4907,
+   "lng": -0.224458,
+   "theme": "stages",
+   "fame": 22,
+   "summary": "Salle de concert d'Hammersmith ouverte en 1932 sous le nom de Gaumont Palace, elle doit sa décoration Art déco à Cromie et a changé plusieurs fois de nom, Hammersmith Odeon en 1962, Eventim Apollo en 2013. Sa réputation s'établit dans les années 1960 et de nombreux concerts y furent enregistrés, dont Beast over Hammersmith d'Iron Maiden.",
+   "wiki": "HMV Hammersmith Apollo",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Hammersmith%20Apollo%202008%2006%2019.jpg?width=960",
+   "photoBy": "Alex.muller",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Hammersmith Apollo",
+    "es": "Hammersmith Apollo",
+    "it": "Hammersmith Apollo"
+   }
+  },
+  {
+   "id": "Q1868965",
+   "name": "Coliseum Theatre",
+   "lat": 51.5097,
+   "lng": -0.126389,
+   "theme": "stages",
+   "fame": 22,
+   "summary": "Sur St. Martin's Lane, dans la Cité de Westminster, ce théâtre ouvert en 1904 est l'un des plus grands de Londres ; il fut conçu par l'architecte Frank Matcham pour l'imprésario Oswald Stoll. La Société d'Opéra de Sadler's Wells s'y installa en 1968, devint l'English National Opera en 1974 et acheta le bâtiment pour 12,8 millions de livres.",
+   "wiki": "Coliseum Theatre",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/London%20Coliseum.jpg?width=960",
+   "photoBy": "Photograph by Mike Peel (www.mikepeel.net).",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "London Coliseum",
+    "es": "London Coliseum",
+    "it": "London Coliseum"
+   }
+  },
+  {
+   "id": "Q1169370",
+   "name": "Royal Court Theatre",
+   "lat": 51.492611111111,
+   "lng": -0.1565,
+   "theme": "stages",
+   "fame": 19,
+   "summary": "Ce théâtre sans but lucratif de Chelsea a ouvert en 1870 ; le bâtiment actuel a été achevé en 1888. Il a abrité la révolution du new drama au début du XXe siècle, puis celle des années 1950. En 1956, il a été racheté par l'English Stage Company, qui s'intéresse principalement au théâtre contemporain.",
+   "wiki": "Royal Court Theatre",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Royalcourttheatre.jpg?width=960",
+   "photoBy": "Burnley at en.wikipedia",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Royal Court Theatre",
+    "es": "Royal Court Theatre",
+    "it": "Royal Court Theatre"
+   }
+  },
+  {
+   "id": "Q2165797",
+   "name": "Savoy Theatre",
+   "lat": 51.510138888889,
+   "lng": -0.12091666666667,
+   "theme": "stages",
+   "fame": 18,
+   "summary": "Théâtre du West End situé à The Strand, il ouvrit le 10 octobre 1881, construit par Richard D'Oyly Carte sur le site de l'ancien Savoy Palace. C'est le premier théâtre au monde à avoir adopté l'éclairage électrique. D'Oyly Carte fit bâtir à côté le Savoy Hotel en 1889.",
+   "wiki": "Savoy Theatre",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/1881%20Savoy%20Theatre.jpg?width=960",
+   "photoBy": "Charles J. Phipps",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Savoy Theatre",
+    "es": "Teatro Savoy",
+    "it": "Savoy Theatre"
+   }
+  },
+  {
+   "id": "Q4780361",
+   "name": "Apollo Theatre",
+   "lat": 51.5115,
+   "lng": -0.133417,
+   "theme": "stages",
+   "fame": 18,
+   "summary": "Consacré surtout aux comédies musicales, ce théâtre de la Shaftesbury Avenue, dans la cité de Westminster, a ouvert ses portes en 1901 et compte parmi les monuments classés. Le 19 décembre 2013, une partie du plafond de la salle s'est effondrée pendant une représentation, faisant plus de 75 blessés.",
+   "wiki": "Apollo Theatre",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Apollo%20Theatre%2C%20February%202022%2C%20Magic%20Goes%20Wrong.jpg?width=960",
+   "photoBy": "Richard Nevell",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Apollo Theatre",
+    "es": "Teatro Apollo",
+    "it": "Apollo Theatre"
+   }
+  },
+  {
+   "id": "Q540426",
+   "name": "Haymarket Theatre",
+   "lat": 51.508611111111,
+   "lng": -0.13138888888889,
+   "theme": "stages",
+   "fame": 17,
+   "summary": "Ce théâtre du West End, construit en 1720, est le troisième plus ancien de Londres encore en activité. Samuel Foote en acquiert le bail en 1747, puis un brevet royal l'autorise en 1766 à jouer des drames durant l'été. Le bâtiment d'origine se tenait plus au nord; redessiné par John Nash, le théâtre est à son emplacement actuel depuis 1821.",
+   "wiki": "Theatre Royal Haymarket",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/2008%20Haymarket%20Theatre.JPG?width=960",
+   "photoBy": "Kbthompson at English Wikipedia",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Theatre Royal Haymarket",
+    "es": "Teatro Haymarket",
+    "it": "Haymarket Theatre"
+   }
+  },
+  {
+   "id": "Q129143",
+   "name": "Trafalgar Square",
+   "lat": 51.508055555556,
+   "lng": -0.12805555555556,
+   "theme": "streets",
+   "fame": 73,
+   "summary": "Place de Westminster dont le nom, pris en 1830, commémore la bataille de Trafalgar de 1805. Son aménagement, conçu par John Nash, commence dans les années 1820 à l'emplacement des anciennes écuries royales et s'achève dans les années 1840. La colonne de Nelson, élevée en 1842, atteint 44 m et quatre lions de bronze l'entourent depuis 1867.",
+   "wiki": "Trafalgar Square",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Trafalgar%20Square%2C%20London%202%20-%20Jun%202009.jpg?width=960",
+   "photoBy": "Diliff",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Trafalgar Square",
+    "es": "Trafalgar Square",
+    "it": "Trafalgar Square"
+   }
+  },
+  {
+   "id": "Q192687",
+   "name": "Downing Street",
+   "lat": 51.503333333333,
+   "lng": -0.1275,
+   "theme": "streets",
+   "fame": 49,
+   "summary": "Depuis plus de deux cents ans, cette rue de Westminster abrite les résidences du Premier ministre britannique, au numéro 10, et du chancelier de l'Échiquier, au 11 ; le 12, ancienne résidence du chief whip, sert aujourd'hui de bureau de presse du Premier ministre. L'accès en est interdit au public depuis 1982.",
+   "wiki": "Downing Street",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Downing%20Street.jpg?width=960",
+   "photoBy": "Tom Ordelman (Thor NL)",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Downing Street",
+    "es": "Downing Street",
+    "it": "Downing Street"
+   }
+  },
+  {
+   "id": "Q214820",
+   "name": "Whitehall",
+   "lat": 51.504166666667,
+   "lng": -0.12638888888889,
+   "theme": "streets",
+   "fame": 46,
+   "summary": "Cette artère de la Cité de Westminster part de Parliament Square pour déboucher sur Charing Cross et regroupe tant de ministères que son nom désigne, par métonymie, le gouvernement britannique. Ce nom vient du palais de Whitehall, détruit presque entièrement par un incendie en 1698 ; la maison des Banquets en est le seul vestige.",
+   "wiki": "Whitehall",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Horse%20guard%20Whitehall%20London.jpg?width=960",
+   "photoBy": "Man vyi",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Whitehall",
+    "es": "Whitehall",
+    "it": "Whitehall"
+   }
+  },
+  {
+   "id": "Q848912",
+   "name": "Leicester Square",
+   "lat": 51.510277777778,
+   "lng": -0.13027777777778,
+   "theme": "streets",
+   "fame": 41,
+   "summary": "Tracée dans les années 1670, cette place piétonne du West End fut d'abord un jardin faisant face à Leicester House, palais urbain des Sydney, comtes de Leicester, titre dont elle tire son nom. Un procès resté célèbre, Tulk v Moxhay, en 1848, explique en grande partie sa préservation. Elle est aujourd'hui bordée de grands cinémas.",
+   "wiki": "Leicester Square",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Redeveloped%20Leicester%20Square.jpg?width=960",
+   "photoBy": "Romazur",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Leicester Square",
+    "es": "Leicester Square",
+    "it": "Leicester Square"
+   }
+  },
+  {
+   "id": "Q846686",
+   "name": "Fleet Street",
+   "lat": 51.513777777778,
+   "lng": -0.11152777777778,
+   "theme": "streets",
+   "fame": 39,
+   "summary": "Axe historique reliant la Cité de Westminster à celle de Londres, dans le prolongement du Strand, la rue tient son nom de la Fleet, affluent de la Tamise aujourd'hui recouvert. Des imprimeurs s'y installent dès 1500 et le premier quotidien britannique y paraît en 1702. L'exode de la presse commence en 1986 et s'achève en 2005.",
+   "wiki": "Fleet Street",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Londres%20-%20Fleet%20Street.JPG?width=960",
+   "photoBy": "Josep Renalias",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Fleet Street",
+    "es": "Fleet Street",
+    "it": "Fleet Street"
+   }
+  },
+  {
+   "id": "Q804402",
+   "name": "Baker Street",
+   "lat": 51.52,
+   "lng": -0.1566,
+   "theme": "streets",
+   "fame": 38,
+   "summary": "Percée au XVIIIe siècle à l'initiative de William Baker, dont elle porte le nom, cette rue de la cité de Westminster fut d'abord habitée par la haute société. Conan Doyle y installa Sherlock Holmes et le docteur Watson au 221B, un numéro qui n'existe pas. Le Special Operations Executive y eut son quartier général pendant la Seconde Guerre mondiale.",
+   "wiki": "Baker Street",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Baker%20Street%2C%20London%2C%2022%20May%202011.jpg?width=960",
+   "photoBy": "Tim Walker from United Kingdom",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Baker Street",
+    "es": "Baker Street",
+    "it": "Baker Street"
+   }
+  },
+  {
+   "id": "Q756819",
+   "name": "The Strand",
+   "lat": 51.5114,
+   "lng": -0.119,
+   "theme": "streets",
+   "fame": 36,
+   "summary": "Cette rue va de Charing Cross vers le nord-est jusqu'à la limite de la City, marquée par le Temple Bar, où Fleet Street prend le relais. Son nom vient du vieil anglais « rivage » : avant la construction de l'Embankment, elle longeait la Tamise. Elle reliait à l'origine la City au centre du pouvoir royal, à Westminster, deux villes alors distinctes.",
+   "wiki": "The Strand",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Strand%2002.jpg?width=960",
+   "photoBy": "Bernard Gagnon",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Strand",
+    "es": "Strand",
+    "it": "Strand"
+   }
+  },
+  {
+   "id": "Q925349",
+   "name": "Pall Mall",
+   "lat": 51.506944444444,
+   "lng": -0.13305555555556,
+   "theme": "streets",
+   "fame": 30,
+   "summary": "Rue de la Cité de Westminster, parallèle à The Mall, connue pour ses gentlemen's clubs fondés aux XIXe et XXe siècles, dont l'Athenaeum et le Reform Club, et surnommée « Club Land ». Son nom vient du français paille-maille, jeu de mail pratiqué dans le quartier au XVIIe siècle. Elle fut la première rue au monde éclairée au gaz, le 28 janvier 1807.",
+   "wiki": "Pall Mall",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/A4%2C%20Pall%20Mall%20-%20geograph.org.uk%20-%201149154.jpg?width=960",
+   "photoBy": "Oxyman",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Pall Mall",
+    "es": "Pall Mall",
+    "it": "Pall Mall"
+   }
+  },
+  {
+   "id": "Q1368556",
+   "name": "Parliament Square",
+   "lat": 51.500555555556,
+   "lng": -0.12666666666667,
+   "theme": "streets",
+   "fame": 28,
+   "summary": "Place située à l'extrémité nord-ouest du palais de Westminster, elle est encadrée par l'abbaye de Westminster, l'église St Margaret et le Middlesex Guildhall, siège de la Cour suprême. Onze statues d'hommes politiques y sont érigées, dont celles de Churchill et de Mandela. Depuis mai 2018, s'y ajoute celle de la suffragiste Millicent Fawcett.",
+   "wiki": "Parliament Square",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Parliament%20Square%20with%20Commonwealth%20flags%20%2852880399947%29.jpg?width=960",
+   "photoBy": "Matt Brown from London, England",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Parliament Square",
+    "es": "Parliament Square",
+    "it": "Parliament Square"
+   }
+  },
+  {
+   "id": "Q510323",
+   "name": "Speakers' Corner",
+   "lat": 51.511708333333,
+   "lng": -0.15977777777778,
+   "theme": "streets",
+   "fame": 27,
+   "summary": "Cet espace du nord-est de Hyde Park est réservé à la prise de parole publique : chacun peut y tenir un rôle temporaire d'orateur devant l'assistance du moment. Il fallut attendre 1872 pour que le gouvernement reconnaisse ce besoin de se réunir en public pour discuter. Londres en compte d'autres, à Finsbury Park, Clapham Common et Victoria Park.",
+   "wiki": "Speakers' Corner",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Danny%20Lambert.jpg?width=960",
+   "photoBy": "en:User:KF",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Speakers' Corner",
+    "es": "Speakers' Corner",
+    "it": "Speakers' Corner"
+   }
+  },
+  {
+   "id": "Q1254964",
+   "name": "Horse Guards Parade",
+   "lat": 51.5047,
+   "lng": -0.1283,
+   "theme": "streets",
+   "fame": 25,
+   "summary": "Cette grande place s'étend derrière Whitehall, dans la Cité de Westminster. Sous Henry VIII, les joutes équestres du palais de Whitehall s'y tenaient. Depuis le XVIIe siècle, elle accueille revues et défilés militaires, dont « Trooping the Colour », qui salue l'anniversaire du souverain régnant, et « Beating Retreat ».",
+   "wiki": "Horse Guards Parade",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Horse%20Guards%20Parade.jpg?width=960",
+   "photoBy": "Lcw27, Lucia Constance Wallbank",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Horse Guards Parade",
+    "es": "Horse Guards Parade",
+    "it": "Horse Guards Parade"
+   }
+  },
+  {
+   "id": "Q620182",
+   "name": "Aldwych",
+   "lat": 51.51325,
+   "lng": -0.11763888888889,
+   "theme": "streets",
+   "fame": 25,
+   "summary": "Rue en arc de cercle bordée d'arbres, longue d'environ 500 m, elle débouche sur le Strand à ses deux extrémités et reçoit Kingsway en son milieu. Aménagée avec cette avenue au début du XXe siècle, elle occupe le site de Lundenwic, établissement anglo-saxon du VIIe siècle. Bush House, siège du BBC World Service de 1941 à 2012, la borde.",
+   "wiki": "Aldwych",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Walking%20Past%20The%20Waldorf%20-%20geograph.org.uk%20-%202435163.jpg?width=960",
+   "photoBy": "Martin Addison",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Aldwych",
+    "es": "Aldwych",
+    "it": "Aldwych"
+   }
+  },
+  {
+   "id": "Q38778",
+   "name": "Carnaby Street",
+   "lat": 51.513333333333,
+   "lng": -0.13888888888889,
+   "theme": "streets",
+   "fame": 24,
+   "summary": "Rue commerçante de Soho, proche d'Oxford Street et de Regent Street, elle est aménagée dans les années 1680 et tire son nom d'une maison, Karnaby House. John Stephen y ouvre en 1958 sa première boutique, His Clothes ; dans les années 1960, elle devient un emblème du Swinging London. Elle est piétonne depuis 1973.",
+   "wiki": "Carnaby Street",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Carnaby%20London.jpg?width=960",
+   "photoBy": "SisterLondon",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Carnaby Street",
+    "es": "Carnaby Street",
+    "it": "Carnaby Street"
+   }
+  },
+  {
+   "id": "Q1631609",
+   "name": "Savile Row",
+   "lat": 51.5113,
+   "lng": -0.140853,
+   "theme": "streets",
+   "fame": 24,
+   "summary": "Parallèle à Regent Street, cette rue de Mayfair fut aménagée à partir de 1732 sur un terrain de Richard Boyle, 3e comte de Burlington. Elle est connue pour ses tailleurs sur mesure, ou bespoke : environ 7 000 costumes y sont fabriqués chaque année. Au no 3, les Beatles installèrent les bureaux d'Apple Corps et donnèrent leur concert sur le toit.",
+   "wiki": "Savile Row",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Savile%20Row%20from%20Burlington%20Gardens.jpg?width=960",
+   "photoBy": "Dave Fergusson",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Savile Row",
+    "es": "Savile Row",
+    "it": "Savile Row"
+   }
+  },
+  {
+   "id": "Q1996213",
+   "name": "Oxford Circus",
+   "lat": 51.515277777778,
+   "lng": -0.14194444444444,
+   "theme": "streets",
+   "fame": 21,
+   "summary": "Carrefour de Regent Street et d'Oxford Street, la place conçue par John Nash portait à son inauguration le nom de Regent Circus North. En 1969, Élisabeth II prit les commandes d'une rame depuis Green Park pour inaugurer la Victoria line, ce qui en fait le seul monarque britannique à avoir publiquement voyagé dans le métro de la ville.",
+   "wiki": "Oxford Circus",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Oxford%20Circus%2C%20November%202009.jpg?width=960",
+   "photoBy": "Mike Roberts from London, United Kingdom",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Oxford Circus",
+    "es": "Oxford Circus",
+    "it": "Oxford Circus"
+   }
+  },
+  {
+   "id": "Q1194528",
+   "name": "Brick Lane",
+   "lat": 51.521944444444,
+   "lng": -0.071666666666667,
+   "theme": "streets",
+   "fame": 21,
+   "summary": "Longue rue du district de Tower Hamlets, dans l'est de Londres, elle est mentionnée sous ce nom dès 1550, parce qu'elle passait près d'un lieu d'extraction de terre à briques et à tuiles. Le quartier a accueilli des communautés flamande, française et juive ; la rue forme aujourd'hui le cœur du quartier bangladais et indien de Londres.",
+   "wiki": "Brick Lane",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Brick%20Lane%20London.JPG?width=960",
+   "photoBy": "Gons",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Brick Lane",
+    "es": "Brick Lane",
+    "it": "Brick Lane"
+   }
+  },
+  {
+   "id": "Q169430",
+   "name": "Jermyn Street",
+   "lat": 51.5084,
+   "lng": -0.136908,
+   "theme": "streets",
+   "fame": 20,
+   "summary": "Rue commerçante du quartier St. James's, entre Haymarket et St James's Street, elle est connue pour ses chemisiers anglais et ses commerces de mode pour hommes. Elle doit son nom à Henry Jermyn, 1er comte de Saint-Albans, très impliqué dans le développement du quartier. Isaac Newton y a résidé, aux nos 88 puis 87.",
+   "wiki": "Jermyn Street",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Diamond%20Jubilee-%203rd%20June%202012%20%287541400768%29.jpg?width=960",
+   "photoBy": "Brian Harrington Spier from Shanghai, China",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Jermyn Street",
+    "es": "Jermyn Street",
+    "it": "Jermyn Street"
+   }
+  },
+  {
+   "id": "Q1631720",
+   "name": "Shaftesbury Avenue",
+   "lat": 51.512,
+   "lng": -0.132,
+   "theme": "streets",
+   "fame": 20,
+   "summary": "Créée à la fin du XIXe siècle pour améliorer la circulation du secteur, cette artère relie Piccadilly Circus à New Oxford Street et croise Charing Cross Road à Cambridge Circus. Elle appartient au secteur des théâtres du West End : les théâtres Lyric, Apollo, Gielgud et Queens se suivent de son côté nord.",
+   "wiki": "Shaftesbury Avenue",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Shaftesbury%20Avenue.jpg?width=960",
+   "photoBy": "The Lud",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Shaftesbury Avenue",
+    "es": "Shaftesbury Avenue",
+    "it": "Shaftesbury Avenue"
+   }
+  },
+  {
+   "id": "Q773458",
+   "name": "Harley Street",
+   "lat": 51.5206,
+   "lng": -0.1477,
+   "theme": "streets",
+   "fame": 19,
+   "summary": "Au nord d'Oxford Street, dans la cité de Westminster, la rue relie Marylebone Road à Wigmore Street et porte le nom d'Edward Harley, 2e comte d'Oxford, qui aménagea ces terres. Les médecins s'y installent dans les années 1860 : plus de 3 000 personnes y travaillent aujourd'hui dans des cabinets, des cliniques et des hôpitaux.",
+   "wiki": "Harley Street",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Harley%20Street%202011.jpg?width=960",
+   "photoBy": "Chemical Engineer",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Harley Street",
+    "es": "Harley Street",
+    "it": "Harley Street"
+   }
+  },
+  {
+   "id": "Q893034",
+   "name": "Haymarket",
+   "lat": 51.508611111111,
+   "lng": -0.13194444444444,
+   "theme": "streets",
+   "fame": 19,
+   "summary": "Cette rue du quartier St. James's, dans la Cité de Westminster, s'étend de Coventry Street à Pall Mall. Son nom vient du marché au foin. Elle fait partie du quartier des théâtres, le West End, et accueille des théâtres depuis le XVIIe siècle, dont le Theatre Royal, bâti par John Nash en 1820, et Her Majesty's Theatre.",
+   "wiki": "Haymarket",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Haymarket%20London.jpg?width=960",
+   "photoBy": "The Lud",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Haymarket",
+    "es": "Haymarket",
+    "it": "Haymarket"
+   }
+  },
+  {
+   "id": "Q2716065",
+   "name": "Pudding Lane",
+   "lat": 51.5102,
+   "lng": -0.0853,
+   "theme": "streets",
+   "fame": 19,
+   "summary": "Cette rue de la cité de Londres, voisine d'Eastcheap, abritait la boulangerie de Thomas Farriner, à l'origine du Grand incendie de Londres en septembre 1666 ; une plaque en marque l'emplacement. Selon le chroniqueur John Stow, son nom viendrait de puddings, terme désignant alors les entrailles, déchets des boucheries d'Eastcheap.",
+   "wiki": "Pudding Lane",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/An%20edible%20address%20every%20child%20knows%20-%20geograph.org.uk%20-%20882852.jpg?width=960",
+   "photoBy": "Basher Eyre",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Pudding Lane",
+    "es": "Pudding Lane"
+   }
+  },
+  {
+   "id": "Q1432321",
+   "name": "Lombard Street",
+   "lat": 51.5125,
+   "lng": -0.0869,
+   "theme": "streets",
+   "fame": 19,
+   "summary": "Artère de la City qui part de la Banque d'Angleterre et rejoint Gracechurch Street. Elle doit son nom aux orfèvres et prêteurs sur gages venus de Lombardie, à qui Édouard Ier concéda le terrain au XIIIe siècle. La Lloyd's Coffee House, ancêtre de la Lloyd's of London, s'y tint de 1691 à 1785 ; une plaque en signale le site.",
+   "wiki": "Lombard Street (Londres)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/St%20Mary%20Woolnoth%2C%20Lombard%20Street%2C%20London%20EC3%20-%20geograph.org.uk%20-%201202998.jpg?width=960",
+   "photoBy": "John Salmon",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Lombard Street",
+    "es": "Lombard Street",
+    "it": "Lombard Street"
+   }
+  },
+  {
+   "id": "Q216185",
+   "name": "Charing Cross",
+   "lat": 51.5073,
+   "lng": -0.12755,
+   "theme": "monuments",
+   "fame": 45,
+   "summary": "Croisement de six rues importantes, dont The Mall, Whitehall et The Strand, le lieu passe pour le cœur de Londres : les distances depuis Londres se comptent à partir de la statue équestre de Charles Ier, et le carrefour sert de point zéro au Royaume-Uni. Trafalgar Square borde son côté nord.",
+   "wiki": "Charing Cross",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Westminster%2C%20Charing%20Cross%20-%20geograph.org.uk%20-%20865507.jpg?width=960",
+   "photoBy": "Chris Downer",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Charing Cross",
+    "es": "Charing Cross",
+    "it": "Charing Cross"
+   }
+  },
+  {
+   "id": "Q359256",
+   "name": "arche de l'Amirauté",
+   "lat": 51.506758333333,
+   "lng": -0.12869166666667,
+   "theme": "monuments",
+   "fame": 32,
+   "summary": "Arche monumentale construite en 1911 sur les plans d'Aston Webb, à l'instigation d'Édouard VII et en mémoire de sa mère la reine Victoria ; le roi mourut avant l'achèvement des travaux. Le porche central, fermé par une grille de fer forgé, n'est emprunté que par le souverain lors des cérémonies officielles.",
+   "wiki": "Admiralty Arch",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Admiralty%20Arch%2C%20London%2C%20England%20-%20June%202009.jpg?width=960",
+   "photoBy": "Diliff",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Admiralty Arch",
+    "es": "Arco del Almirantazgo",
+    "it": "Admiralty Arch"
+   }
+  },
+  {
+   "id": "Q281465",
+   "name": "Albert Memorial",
+   "lat": 51.502413377526,
+   "lng": -0.17774243767051,
+   "theme": "monuments",
+   "fame": 31,
+   "summary": "Élevé dans les Kensington Gardens, face au Royal Albert Hall, à la mémoire d'Albert de Saxe-Cobourg-Gotha, époux de la reine Victoria, ce monument néogothique de George Gilbert Scott mesure 47,5 mètres de haut. La structure est terminée en 1872 et la statue dorée posée en 1875 : Albert y tient un catalogue de l'exposition universelle de 1851.",
+   "wiki": "Albert Memorial",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Memorial%20Alberto%20%281%29.jpg?width=960",
+   "photoBy": "Canaan",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Albert Memorial",
+    "es": "Albert Memorial",
+    "it": "Albert Memorial"
+   }
+  },
+  {
+   "id": "Q1333411",
+   "name": "Victoria Memorial",
+   "lat": 51.501833,
+   "lng": -0.140639,
+   "theme": "monuments",
+   "fame": 27,
+   "summary": "Élevé en l'honneur de la reine Victoria, ce monument fait face aux grilles de l'entrée principale du palais de Buckingham, à l'extrémité ouest du Mall. Le sculpteur Thomas Brock le réalise en 1911 avec le concours de l'architecte Aston Webb ; haut de 25 m, il mobilise 2 300 tonnes de marbre blanc. Une Victoire ailée en bronze doré le couronne.",
+   "wiki": "Victoria Memorial (Londres)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/%22The%20Victoria%20Memorial%22%20London%20%22Christmas%20day%22%20%2815925642490%29.jpg?width=960",
+   "photoBy": "Loco Steve from Bromley , UK",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Victoria Memorial",
+    "es": "Victoria Memorial",
+    "it": "Victoria Memorial"
+   }
+  },
+  {
+   "id": "Q180887",
+   "name": "Maman",
+   "lat": 51.507694444444446,
+   "lng": -0.09933333333333333,
+   "theme": "monuments",
+   "fame": 21,
+   "summary": "Araignée monumentale de Louise Bourgeois, dédiée à sa mère, haute d'environ 10 mètres, elle porte sous son corps un sac de vingt-six œufs en marbre. Commandée pour la participation inaugurale de l'artiste aux Unilever Series, c'est la version originale, en acier inoxydable : d'abord prêtée à long terme, elle est acquise par la Tate en janvier 2008.",
+   "wiki": "Maman (sculpture)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Maman%20-%20Louise%20Bourgeois%20-%2003%20%28Cropped%29.jpg?width=960",
+   "photoBy": "Jeangagnon",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Maman",
+    "es": "Mamá"
+   }
+  },
+  {
+   "id": "Q2896743",
+   "name": "Cénotaphe",
+   "lat": 51.502694444444,
+   "lng": -0.12608333333333,
+   "theme": "monuments",
+   "fame": 20,
+   "summary": "Ce mémorial de Whitehall fut d'abord une structure temporaire en bois et plâtre, conçue par Edwin Lutyens pour le défilé de la victoire du 19 juillet 1919. La pression publique conduisit à la remplacer par une réplique en pierre de Portland, que le roi Georges V dévoila le 11 novembre 1920. Une commémoration s'y tient chaque Remembrance Sunday.",
+   "wiki": "Cénotaphe (Londres)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Portland.stone.cenotaph.london.arp.jpg?width=960",
+   "photoBy": "Adrian Pingstone",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "the Cenotaph",
+    "es": "Cenotafio",
+    "it": "Cenotafio"
+   }
+  },
+  {
+   "id": "Q547654",
+   "name": "mémorial des animaux de guerre",
+   "lat": 51.511051,
+   "lng": -0.157548,
+   "theme": "monuments",
+   "fame": 13,
+   "summary": "Élevé sur Park Lane, ce mémorial rend hommage aux animaux qui ont servi et sont morts sous le commandement britannique au cours de l'Histoire. Conçu par le sculpteur anglais David Backhouse, il a été inauguré le 24 novembre 2004 par la princesse royale Anne. L'inscription se termine par ces mots : « Ils n'avaient pas le choix. »",
+   "wiki": "Mémorial des animaux de guerre",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/%22Animals%20in%20War%22%20memorial%2C%20north%20side%20-%20geograph.org.uk%20-%20898954.jpg?width=960",
+   "photoBy": "David Hawgood",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Animals in War Memorial",
+    "es": "Memorial Animales en la Guerra",
+    "it": "Animals in War Memorial"
+   }
+  },
+  {
+   "id": "Q1439502",
+   "name": "Napoléon en Mars désarmé et pacificateur",
+   "lat": 51.50361111,
+   "lng": -0.15166667,
+   "theme": "monuments",
+   "fame": 12,
+   "summary": "Antonio Canova sculpte entre 1802 et 1806 ce nu héroïque en marbre blanc, haut de 3,45 m, figurant Mars sous les traits de Napoléon Ier. L'empereur le refuse en 1811, le jugeant trop athlétique. Racheté en 1816 par le gouvernement britannique, il est proposé la même année au duc de Wellington et se dresse au pied de l'escalier d'Apsley House.",
+   "wiki": "Napoléon en Mars désarmé et pacificateur",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Napoleon-Canova-London%20JBU01.jpg?width=960",
+   "photoBy": "Antonio Canova",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Napoleon as Mars the Peacemaker",
+    "es": "Napoleón como Marte pacificador",
+    "it": "Napoleone Bonaparte come Marte pacificatore"
+   }
+  },
+  {
+   "id": "Q6906912",
+   "name": "monument aux femmes de la Seconde Guerre mondiale",
+   "lat": 51.5035,
+   "lng": -0.1262,
+   "theme": "monuments",
+   "fame": 12,
+   "summary": "Élevé à Whitehall, près du Cénotaphe, ce monument rend hommage aux femmes qui ont participé à l'effort de guerre lors de la Seconde Guerre mondiale en reprenant le travail des hommes. Conçu par John W. Mills, il a été inauguré en présence d'Élisabeth II en juillet 2005 et se compose de différents uniformes de travailleurs.",
+   "wiki": "Monument aux femmes de la Seconde Guerre mondiale",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/UK-2014-London-Monument%20to%20the%20Women%20of%20World%20War%20II%20%281%29.jpg?width=960",
+   "photoBy": "Godot13",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Monument to the Women of World War II",
+    "es": "Monumento a las Mujeres de la Segunda Guerra Mundial"
+   }
+  },
+  {
+   "id": "Q2919484",
+   "name": "mémorial de la bataille d'Angleterre",
+   "lat": 51.503017,
+   "lng": -0.123425,
+   "theme": "monuments",
+   "fame": 12,
+   "summary": "Sur le Victoria Embankment, au bord de la Tamise, cette sculpture rend hommage à ceux qui ont pris part à la bataille d'Angleterre. Long de plus de 24 mètres, le monument conçu par Bill Bond porte les noms de tous les participants ; les reliefs de bronze sont du sculpteur Paul Day.",
+   "wiki": "Mémorial de la bataille d'Angleterre",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Part%20Of%20Battle%20Of%20Britain%20Memorial.jpg?width=960",
+   "photoBy": "No machine-readable author provided. Lonpicman~commonswiki a",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Battle of Britain Monument",
+    "it": "Monumento alla battaglia d'Inghilterra"
+   }
+  },
+  {
+   "id": "Q3497572",
+   "name": "statue d'Oliver Cromwell",
+   "lat": 51.4998,
+   "lng": -0.125834,
+   "theme": "monuments",
+   "fame": 9,
+   "summary": "Elle représente Oliver Cromwell, Lord Protecteur du Commonwealth d'Angleterre, d'Écosse et d'Irlande, et se dresse à l'extérieur de la Chambre des communes, à Westminster. Érigée en 1899, elle est l'œuvre du sculpteur Hamo Thornycroft.",
+   "wiki": "Statue d'Oliver Cromwell",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Oliver%20Cromwell%20Statue%2C%20Westminster%20-%20London.jpg?width=960",
+   "photoBy": "Jim Linwood",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Statue of Oliver Cromwell",
+    "es": "Estatua de Oliver Cromwell (Westminster)"
+   }
+  },
+  {
+   "id": "Q7373706",
+   "name": "Royal Artillery Memorial",
+   "lat": 51.5025,
+   "lng": -0.151944,
+   "theme": "monuments",
+   "fame": 8,
+   "summary": "À Hyde Park Corner, ce monument inauguré en 1925 rend hommage aux 49 076 soldats de la Royal Artillery tués pendant la Première Guerre mondiale. Créé en 1918, le fonds commémoratif du régiment exigeait une représentation visuelle de l'artillerie qu'aucun architecte contacté ne sut fournir ; le projet de Charles Sargeant Jagger fut accepté en 1922.",
+   "wiki": "Royal Artillery Memorial",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Royal%20Artillery%20Monument%20corner%20view.jpg?width=960",
+   "photoBy": "Galileo55 (Michael Arrighi)",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Royal Artillery Memorial"
+   }
+  },
+  {
+   "id": "Q2911131",
+   "name": "colonne du duc d'York",
+   "lat": 51.506333333333,
+   "lng": -0.13180555555556,
+   "theme": "monuments",
+   "fame": 8,
+   "summary": "Monument dédié au prince Frédérick, duc d'York et d'Albany, deuxième fils de George III, commandant en chef de l'armée de terre britannique. À sa mort en 1827, l'armée entière consacra un jour de salaire pour lui élever cette colonne ; le plan de Benjamin Dean Wyatt fut choisi en décembre 1830. Creuse, elle abrite un escalier de 168 marches.",
+   "wiki": "Colonne du duc d'York",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Duke%20of%20York%20J.Woods%20after%20a%20picture%20by%20J.Salmon%20publ%201837.jpg?width=960",
+   "photoBy": "Merchbow~commonswiki",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Duke of York Column",
+    "es": "Columna del Duque de York",
+    "it": "Colonna del duca di York"
+   }
+  },
+  {
+   "id": "Q106509908",
+   "name": "mur mémorial national du Covid",
+   "lat": 51.5,
+   "lng": -0.12,
+   "theme": "monuments",
+   "fame": 8,
+   "summary": "Peinte par des bénévoles à partir de mars 2021, cette fresque s'étend sur plus de cinq cents mètres le long de la rive sud de la Tamise, face au palais de Westminster et devant l'hôpital St Thomas. Elle aligne des milliers de cœurs rouges et roses, avec l'intention d'en compter un par victime du Covid recensée au Royaume-Uni à son lancement.",
+   "wiki": "Mur mémorial national du Covid",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20National%20Covid%20Memorial%20Wall%2C%20London%2C%202021-04-16%2004.jpg?width=960",
+   "photoBy": "Kelly Foster",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "National Covid Memorial Wall",
+    "es": "Muro Nacional Conmemorativo del Covid"
+   }
+  },
+  {
+   "id": "Q7275188",
+   "name": "mémorial du Royal Air Force Bomber Command",
+   "lat": 51.5033,
+   "lng": -0.148889,
+   "theme": "monuments",
+   "fame": 7,
+   "summary": "Élevé dans Green Park, ce mémorial commémore les 55 573 aviateurs du Royal Air Force Bomber Command pendant la Seconde Guerre mondiale, quelle que soit leur nationalité. Il a été inauguré par la reine Élisabeth II le 28 juin 2012.",
+   "wiki": "Mémorial du Royal Air Force Bomber Command",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/2013-05-12%20London%20RAF%20Bomber%20Command%20Memorial.jpg?width=960",
+   "photoBy": "Tim Rademacher",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "RAF Bomber Command Memorial",
+    "it": "Memoriale del RAF Bomber Command"
+   }
+  },
+  {
+   "id": "Q18536",
+   "name": "The Shard",
+   "lat": 51.504444444444,
+   "lng": -0.086666666666667,
+   "theme": "culture",
+   "fame": 60,
+   "summary": "Gratte-ciel de bureaux et de logements de luxe à Southwark, sur la rive sud de la Tamise, il a pour architecte Renzo Piano. À son inauguration, le 5 juillet 2012, ses 309,60 m en font le plus haut immeuble du Royaume-Uni et de l'Union européenne. Il ouvre au public le 1er février 2013, deux étages étant réservés aux visites payantes.",
+   "wiki": "The Shard",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Shard%20from%20the%20Sky%20Garden%202015.jpg?width=960",
+   "photoBy": "Colin",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "The Shard",
+    "es": "Shard London Bridge",
+    "it": "Shard London Bridge"
+   }
+  },
+  {
+   "id": "Q191161",
+   "name": "30 St Mary Axe",
+   "lat": 51.514444444444,
+   "lng": -0.080277777777778,
+   "theme": "culture",
+   "fame": 49,
+   "summary": "Ce gratte-ciel de la City s'élève sur l'ancien site du Baltic Exchange. Ouvert le 28 avril 2004, conçu par le cabinet de Norman Foster pour Swiss Re, il compte 41 étages pour 180 mètres, et sa forme aérodynamique sert la ventilation de l'immeuble. Les Londoniens l'appellent the Gherkin, le cornichon, en référence à cette forme.",
+   "wiki": "30 St Mary Axe",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/30%20St%20Mary%20Axe%20from%20Leadenhall%20Street.jpg?width=960",
+   "photoBy": "Aurelien Guichard from London, United Kingdom",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "30 St Mary Axe",
+    "es": "30 St Mary Axe",
+    "it": "30 St Mary Axe"
+   }
+  },
+  {
+   "id": "Q1344889",
+   "name": "Somerset House",
+   "lat": 51.511111111111,
+   "lng": -0.11777777777778,
+   "theme": "culture",
+   "fame": 33,
+   "summary": "Ce grand bâtiment néo-classique donne sur le Strand, rive gauche de la Tamise, juste au nord du Waterloo Bridge. Il remplace l'Old Somerset House, ensemble palatial commencé dans les années 1550 et démoli à partir de 1775. La partie centrale actuelle, due à William Chambers, est construite entre 1776 et 1796.",
+   "wiki": "Somerset House",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Somerset%20House%2C%20Strand.jpg?width=960",
+   "photoBy": "Stephen Richards",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Somerset House",
+    "es": "Somerset House",
+    "it": "Somerset House"
+   }
+  },
+  {
+   "id": "Q1331574",
+   "name": "Tower 42",
+   "lat": 51.515277777778,
+   "lng": -0.083888888888889,
+   "theme": "culture",
+   "fame": 27,
+   "summary": "Construit pour la National Westminster Bank, ce gratte-ciel du 25 Old Broad Street s'appelait NatWest Tower à l'origine : vu du dessus, il reprend la forme du logo de la banque, trois chevrons en arrangement hexagonal. Dessiné par Richard Seifert, il fut élevé entre 1971 et 1979 et inauguré en 1980. Le bar Vertigo 42 occupe son sommet.",
+   "wiki": "Tower 42",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Tower%2042%20looking%20north%20from%20Bishopsgate%202011-05-04.jpg?width=960",
+   "photoBy": "Colin",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Tower 42",
+    "es": "Tower 42",
+    "it": "Tower 42"
+   }
+  },
+  {
+   "id": "Q2319878",
+   "name": "Barbican Estate",
+   "lat": 51.519192,
+   "lng": -0.094607,
+   "theme": "culture",
+   "fame": 25,
+   "summary": "Ce domaine résidentiel de la Cité de Londres est un dédale de béton typique des années 1970, avec sa dalle piétonne, ses bassins et des tours de plusieurs dizaines d'étages. Le nom vient du français barbacane, rempart : on y voit un reste de rempart romain et les vestiges d'une tour médiévale, ainsi que l'église saint-Gilles, reconstruite.",
+   "wiki": "Barbican Estate",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Barbican%20towers.jpg?width=960",
+   "photoBy": "Riodamascus",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Barbican Estate",
+    "es": "Barbican Estate",
+    "it": "Barbican Estate"
+   }
+  },
+  {
+   "id": "Q1241240",
+   "name": "Royal Exchange",
+   "lat": 51.513611111111,
+   "lng": -0.087222222222222,
+   "theme": "culture",
+   "fame": 25,
+   "summary": "Première bourse de commerce de la Cité de Londres, fondée en 1565 par Thomas Gresham, qui reprit l'idée de son père Richard et lui donna une forme trapézoïdale inspirée de la bourse d'Anvers. Détruit par le grand incendie de 1666, puis incendié en 1838, il fut chaque fois reconstruit. Il abrite depuis 2001 des boutiques de luxe.",
+   "wiki": "Royal Exchange",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Royal%20Exchange%20%283624902569%29.jpg?width=960",
+   "photoBy": "Rev Stan from London, UK",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Royal Exchange",
+    "es": "Royal Exchange",
+    "it": "Royal Exchange"
+   }
+  },
+  {
+   "id": "Q894072",
+   "name": "Borough Market",
+   "lat": 51.505555555556,
+   "lng": -0.090833333333333,
+   "theme": "culture",
+   "fame": 23,
+   "summary": "Marché de gros et de détail agro-alimentaire de Southwark, dans le sud-est de Londres, il compte parmi les plus grands et les plus anciens marchés alimentaires du monde. La vente en gros se tient chaque matin de semaine entre 2 h et 8 h, le détail les jeudis, vendredis et samedis. Le 3 juin 2017, un attentat terroriste touche le marché.",
+   "wiki": "Borough Market",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Borough%20Market%20%284701274756%29.jpg?width=960",
+   "photoBy": "Jeremy Keith from Brighton & Hove, United Kingdom",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Borough Market",
+    "es": "Borough Market",
+    "it": "Borough Market"
+   }
+  },
+  {
+   "id": "Q212834",
+   "name": "20 Fenchurch Street",
+   "lat": 51.511277777778,
+   "lng": -0.083527777777778,
+   "theme": "culture",
+   "fame": 23,
+   "summary": "Surnommé The Walkie-Talkie pour sa forme, ce gratte-ciel de verre et d'acier a été construit de 2009 à fin 2014 par Rafael Viñoly, pour plus de 200 millions de livres. Il s'élève à 160 mètres, contre les 200 prévus. Ses vitres concaves concentraient les rayons du Soleil dans les rues voisines, ce qui a conduit à la pose d'écrans de protection.",
+   "wiki": "20 Fenchurch Street",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Walkie-Talkie%2C%20Londres%2C%20Inglaterra%2C%202014-08-11%2C%20DD%20098.JPG?width=960",
+   "photoBy": "Diego Delso",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "20 Fenchurch Street",
+    "es": "20 Fenchurch Street",
+    "it": "20 Fenchurch Street"
+   }
+  },
+  {
+   "id": "Q1613853",
+   "name": "Heron Tower",
+   "lat": 51.5161,
+   "lng": -0.0808333,
+   "theme": "culture",
+   "fame": 22,
+   "summary": "Situé au 110 Bishopsgate, ce gratte-ciel de la City appartient à Heron International et a été dessiné par les architectes de Kohn Pedersen Fox. Le chantier débute en avril 2008 ; une cérémonie célèbre l'achèvement de la structure le 12 avril 2010, et l'antenne ajoutée le 22 juillet porte la hauteur à 230 mètres.",
+   "wiki": "Heron Tower",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Heron%20Tower%2C%20Bishopsgate%2C%20London.JPG?width=960",
+   "photoBy": "Eluveitie",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Heron Tower",
+    "es": "Heron Tower",
+    "it": "Heron Tower"
+   }
+  },
+  {
+   "id": "Q922589",
+   "name": "Broadgate Tower",
+   "lat": 51.5211,
+   "lng": -0.079533,
+   "theme": "culture",
+   "fame": 18,
+   "summary": "Au 201 Bishopsgate, dans la City, ce gratte-ciel conçu par le cabinet d'architectes Skidmore, Owings & Merrill a été construit par British Land entre 2005 et 2009. Ses 165 mètres et ses 35 étages en font le cinquième plus haut gratte-ciel de la Cité de Londres.",
+   "wiki": "Broadgate Tower",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Broadgate%20Tower.jpg?width=960",
+   "photoBy": "David Samuel, Hellodavey1902",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Broadgate Tower",
+    "es": "Broadgate Tower",
+    "it": "Broadgate Tower"
+   }
+  },
+  {
+   "id": "Q2389056",
+   "name": "Euston Tower",
+   "lat": 51.525583333333,
+   "lng": -0.13927777777778,
+   "theme": "culture",
+   "fame": 17,
+   "summary": "Ce gratte-ciel du quartier de Camden s'élance au 286 Euston Road, à l'intersection de Tottenham Court Road et d'Euston Road. Haut de 124 m, il compte 36 étages. Sydney Kaye l'a conçu en 1970.",
+   "wiki": "Euston Tower",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Euston%20Tower%202004.jpg?width=960",
+   "photoBy": "ed g2s • talk",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Euston Tower",
+    "es": "Euston Tower",
+    "it": "Euston Tower"
+   }
+  },
+  {
+   "id": "Q852282",
+   "name": "Bush House",
+   "lat": 51.51288156,
+   "lng": -0.117295882,
+   "theme": "culture",
+   "fame": 17,
+   "summary": "Classé Grade II, le bâtiment occupe l'extrémité sud de Kingsway, entre Aldwych et the Strand. Il abrita le siège du BBC World Service jusqu'au départ de celui-ci pour la Broadcasting House en 2012, et relève depuis 2015, pour l'essentiel, du campus Strand du King's College de Londres.",
+   "wiki": "Bush House",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Bush%20House%2C%20Aldwych%20%28geograph%204238525%29.jpg?width=960",
+   "photoBy": "Stephen Richards",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Bush House",
+    "es": "Bush House"
+   }
+  },
+  {
+   "id": "Q2339039",
+   "name": "centre Point",
+   "lat": 51.515861111111,
+   "lng": -0.12969444444444,
+   "theme": "culture",
+   "fame": 17,
+   "summary": "Gratte-ciel de bureaux du 101-103, New Oxford Street, à côté de St Giles' Circus, dans le quartier de Camden. Conçu par George Marsh, du cabinet Richard Seifert and Partners, il fut construit de 1963 à 1966 par Wimpey Construction. Haut de 117 m pour 32 étages, il compte parmi les premiers gratte-ciel élevés à Londres.",
+   "wiki": "Centre Point",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Centre%20Point%2C%20London%202a.jpg?width=960",
+   "photoBy": "Photograph by Mike Peel (www.mikepeel.net).",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Centre Point",
+    "es": "Centre Point",
+    "it": "Centre Point"
+   }
+  },
+  {
+   "id": "Q272162",
+   "name": "palais Saint James",
+   "lat": 51.504722222222,
+   "lng": -0.13777777777778,
+   "theme": "palaces",
+   "fame": 51,
+   "summary": "Construit entre 1531 et 1536 pour Henri VIII sur le site d'une ancienne léproserie dédiée à saint Jacques, ce palais de brique rouge de style Tudor s'organise autour de quatre cours. Les souverains n'y résident plus depuis 1837, année de l'accession de Victoria, mais il demeure le cœur administratif de la Couronne.",
+   "wiki": "Palais Saint James",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/St%20James%27s%20Palace%2C%20London%20-%20geograph.org.uk%20-%207963883.jpg?width=960",
+   "photoBy": "Steven Brown",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "St James's Palace",
+    "es": "Palacio de St. James",
+    "it": "Palazzo di St. James"
+   }
+  },
+  {
+   "id": "Q739364",
+   "name": "cathédrale de Westminster",
+   "lat": 51.495825,
+   "lng": -0.139475,
+   "theme": "palaces",
+   "fame": 46,
+   "summary": "Siège de l'archidiocèse catholique de Westminster, elle est le plus grand lieu de culte de l'Église catholique en Angleterre et au pays de Galles. Le terrain, occupé auparavant par une prison, est acquis en 1884; la construction commence en 1895 sur les plans de John Francis Bentley. Ouverte en 1903, elle n'est consacrée que le 28 juin 1910.",
+   "wiki": "Cathédrale de Westminster",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Westminster%20Cathedral%20London%2C%204th%20May%202024%20-%2053708806889.jpg?width=960",
+   "photoBy": "Frank Kovalchek",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Westminster Cathedral",
+    "es": "Catedral de la Preciosísima Sangre de Cristo de Westminster",
+    "it": "cattedrale di Westminster"
+   }
+  },
+  {
+   "id": "Q565521",
+   "name": "Clarence House",
+   "lat": 51.504,
+   "lng": -0.1385,
+   "theme": "palaces",
+   "fame": 35,
+   "summary": "Bâtie de 1825 à 1827 sur les plans de John Nash pour Guillaume, duc de Clarence, cette maison royale du Mall est mitoyenne du palais Saint James, dont elle partage le jardin. Résidence de la reine mère de 1953 à 2002, elle est aujourd'hui celle de Charles III et de la reine Camilla, et ouvre aux visiteurs environ deux mois chaque été.",
+   "wiki": "Clarence House",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Clarence%20house.jpg?width=960",
+   "photoBy": "ChrisO",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Clarence House",
+    "es": "Clarence House",
+    "it": "Clarence House"
+   }
+  },
+  {
+   "id": "Q1093950",
+   "name": "hôtel de ville de Londres",
+   "lat": 51.504722222222,
+   "lng": -0.078333333333333,
+   "theme": "palaces",
+   "fame": 31,
+   "summary": "Siège de l'Autorité du Grand Londres jusqu'à son déménagement à Newham en 2022, le bâtiment se dresse sur la berge sud de la Tamise, près du Tower Bridge. Dessiné par Norman Foster, il est inauguré en juillet 2002. Haut de 45 mètres pour dix étages, en forme de bulbe, il a été surnommé « glass testicle » par l'ancien maire Ken Livingstone.",
+   "wiki": "Hôtel de ville de Londres (Southwark)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/London%20City%20Hall.jpg?width=960",
+   "photoBy": "Garry Knight",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Old City Hall",
+    "es": "Ayuntamiento de Londres",
+    "it": "Municipio di Londra"
+   }
+  },
+  {
+   "id": "Q565532",
+   "name": "Marlborough House",
+   "lat": 51.505,
+   "lng": -0.13583333333333,
+   "theme": "palaces",
+   "fame": 27,
+   "summary": "Siège du Commonwealth des nations et de son Secrétariat, ce manoir de St James's est construit pour Sarah Churchill, duchesse de Marlborough : Christopher Wren et son fils en dressent les plans, avant que la duchesse ne les congédie et ne reprenne la conception. La Couronne le loue au Secrétariat du Commonwealth depuis 1965.",
+   "wiki": "Marlborough House",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Marlborough%20House.jpg?width=960",
+   "photoBy": "CMallwitz at English Wikipedia",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Marlborough House",
+    "es": "Marlborough House",
+    "it": "Marlborough House"
+   }
+  },
+  {
+   "id": "Q81279",
+   "name": "Guildhall",
+   "lat": 51.515894,
+   "lng": -0.091791,
+   "theme": "palaces",
+   "fame": 22,
+   "summary": "Bâti entre 1411 et 1440, cet édifice fut pendant des siècles l'hôtel de ville de la Cité de Londres, dont il reste le centre administratif. C'est le seul édifice médiéval non religieux ayant survécu dans la Cité. Frédéric Chopin y joua devant le public pour la dernière fois le 16 novembre 1848.",
+   "wiki": "Guildhall (Londres)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Guildhall%2C%20Londres%2C%20Inglaterra%2C%202014-08-11%2C%20DD%20139.JPG?width=960",
+   "photoBy": "Diego Delso",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Guildhall",
+    "es": "Guildhall",
+    "it": "Guildhall"
+   }
+  },
+  {
+   "id": "Q1451262",
+   "name": "cathédrale Saint-George de Southwark",
+   "lat": 51.497884,
+   "lng": -0.107901,
+   "theme": "palaces",
+   "fame": 18,
+   "summary": "Cathédrale catholique de l'archidiocèse de Southwark, distincte de la cathédrale anglicane de Southwark, elle fait face à l'Imperial War Museum. Conçue par Augustus Pugin, elle ouvrit en 1848 et fut la première cathédrale catholique construite au Royaume-Uni depuis la Réforme. Bombardée pendant la guerre, elle rouvrit reconstruite en 1958.",
+   "wiki": "Cathédrale Saint-George de Southwark",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/St%20George%27s%20Cathedral%20%282022%29%20-%20London%2C%20UK.jpg?width=960",
+   "photoBy": "JFVoll",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "St George's Cathedral, Southwark",
+    "es": "Catedral de San Jorge, Southwark"
+   }
+  },
+  {
+   "id": "Q225471",
+   "name": "Burlington House",
+   "lat": 51.508888888889,
+   "lng": -0.13944444444444,
+   "theme": "palaces",
+   "fame": 18,
+   "summary": "En 1664, Richard Boyle, premier comte de Burlington, voulut se faire construire un hôtel particulier près de St James's. Le troisième comte fit reconstruire l'ensemble dans le style palladien avec Colen Campbell, puis la demeure fut modifiée de 1867 à 1873 en style néorenaissance. Le bâtiment de Piccadilly abrite la Royal Academy depuis 1868.",
+   "wiki": "Burlington House",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Burlington%20House%20%285125727595%29.jpg?width=960",
+   "photoBy": "Tony Hisgett from Birmingham, UK",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Burlington House",
+    "es": "Burlington House",
+    "it": "Burlington House"
+   }
+  },
+  {
+   "id": "Q1137916",
+   "name": "Winfield House",
+   "lat": 51.5308,
+   "lng": -0.1644,
+   "theme": "palaces",
+   "fame": 10,
+   "summary": "Ce manoir néo-georgien de Regent's Park est la résidence officielle de l'ambassadeur des États-Unis au Royaume-Uni depuis 1955. L'héritière américaine Barbara Hutton acheta puis fit démolir la villa incendiée qui occupait le terrain, et bâtir la demeure actuelle, qu'elle vendit après la guerre au gouvernement américain pour un dollar symbolique.",
+   "wiki": "Winfield House",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Winfield%20House%20London.png?width=960",
+   "photoBy": "File Upload Bot (Magnus Manske)",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Winfield House"
+   }
+  },
+  {
+   "id": "Q123738",
+   "name": "Hyde Park",
+   "lat": 51.508611111111,
+   "lng": -0.16361111111111,
+   "theme": "parks",
+   "fame": 63,
+   "summary": "C'est le plus grand parc du centre de Londres et l'un de ses parcs royaux. Ses 140 hectares sont séparés des jardins de Kensington par la Serpentine. Henri VIII reprit le terrain aux abbés de l'abbaye de Westminster en 1536, et Decimus Burton en dessina une grande partie dans les années 1820. Le Speakers' Corner occupe la partie nord-est.",
+   "wiki": "Hyde Park",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Hyde%20Park%20July%202015-1.jpg?width=960",
+   "photoBy": "Alvesgaspar",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Hyde Park",
+    "es": "Hyde Park",
+    "it": "Hyde Park"
+   }
+  },
+  {
+   "id": "Q216914",
+   "name": "St James's Park",
+   "lat": 51.5025,
+   "lng": -0.135,
+   "theme": "parks",
+   "fame": 44,
+   "summary": "Le plus ancien des parcs royaux de Londres couvre 23 hectares entre The Mall, le Horse Guards, le Birdcage Walk et Buckingham Palace Road. Henri VIII acheta cette zone marécageuse en 1532; Jacques Ier la fit drainer et y installa des animaux exotiques, et Charles II l'ouvrit au public. Son lac compte deux îles, dont la Duck Island.",
+   "wiki": "St James's Park",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Big%20Ben%20Parketik%20-%20panoramio.jpg?width=960",
+   "photoBy": "Ugo Cuesta",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "St James's Park",
+    "es": "St. James’s Park",
+    "it": "St. James's Park"
+   }
+  },
+  {
+   "id": "Q739341",
+   "name": "Regent's Park",
+   "lat": 51.532222222222,
+   "lng": -0.15666666666667,
+   "theme": "parks",
+   "fame": 42,
+   "summary": "L'un des parcs royaux de Londres, il est partagé entre la Cité de Westminster et le district de Camden. Son nom renvoie à George, prince-régent, qui chargea l'architecte John Nash d'élaborer un plan d'aménagement de l'ancien Marylebone Park à l'expiration du bail en 1811. Ses 166 hectares abritent le zoo de Londres et un lac.",
+   "wiki": "Regent's Park",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Regent%27s%20Park%20London.jpg?width=960",
+   "photoBy": "Tom Page from London, UK",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Regent's Park",
+    "es": "Regent's Park",
+    "it": "Regent's Park"
+   }
+  },
+  {
+   "id": "Q823412",
+   "name": "église Sainte-Marguerite de Westminster",
+   "lat": 51.499882,
+   "lng": -0.126735,
+   "theme": "religious",
+   "fame": 41,
+   "summary": "Église paroissiale du palais de Westminster depuis 1614, elle se dresse dans l'enceinte de l'abbaye. Fondée au XIIe siècle par les bénédictins, reconstruite de 1486 à 1523, elle fut remaniée à l'intérieur par George Gilbert Scott en 1877. Un vitrail flamand de 1509 commémore les fiançailles de Catherine d'Aragon avec Henri VIII.",
+   "wiki": "Église Sainte-Marguerite de Westminster",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/St-Margaret%27s-%20Westminster.P1130954-PS%20%28cropped%29.jpg?width=960",
+   "photoBy": "Ermell",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "St Margaret's Church, Westminster",
+    "es": "iglesia de Santa Margarita",
+    "it": "chiesa di Santa Margherita"
+   }
+  },
+  {
+   "id": "Q119892",
+   "name": "Green Park",
+   "lat": 51.504166666667,
+   "lng": -0.14361111111111,
+   "theme": "parks",
+   "fame": 39,
+   "summary": "Ce parc du centre de Londres, l'un des parcs royaux, s'étend entre Hyde Park et St James's Park. Terrain marécageux où l'on enterrait les lépreux de l'hôpital Saint James's, il fut clôturé au XVIe siècle par Henri VIII, puis Charles II en fit un parc royal en 1668. De forme triangulaire, il est constitué entièrement d'espaces boisés.",
+   "wiki": "Green Park",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Green%20Park%2C%20London%2C%20England.jpg?width=960",
+   "photoBy": "Duffman~commonswiki",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Green Park",
+    "es": "Green Park",
+    "it": "Green Park"
+   }
+  },
+  {
+   "id": "Q822607",
+   "name": "Kensington Gardens",
+   "lat": 51.507222222222,
+   "lng": -0.18027777777778,
+   "theme": "parks",
+   "fame": 36,
+   "summary": "Anciens jardins privés du palais de Kensington, ils forment l'un des parcs royaux de Londres, immédiatement à l'ouest de Hyde Park, sur 1,1 km2. Clôturés, ils ont gardé le Round Pond et abritent l'Albert Memorial, la statue de Peter Pan et la Serpentine Gallery. J. M. Barrie y a situé Peter Pan in Kensington Gardens.",
+   "wiki": "Kensington Gardens",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Hyde%20Park%20Albert%20Memorial%20Jan%202006.jpg?width=960",
+   "photoBy": "Diliff",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Kensington Gardens",
+    "es": "Kensington Gardens",
+    "it": "Kensington Gardens"
+   }
+  },
+  {
+   "id": "Q1346906",
+   "name": "Russell Square",
+   "lat": 51.522133,
+   "lng": -0.126371,
+   "theme": "parks",
+   "fame": 22,
+   "summary": "Grand jardin public de Bloomsbury, il doit son nom aux comtes et ducs de Bedford, dont le nom de famille est Russell. Le British Museum et le bâtiment principal de l'université de Londres sont tout proches, de même que la station de métro Russell Square. En 2002, le parc est transformé pour retrouver son aspect original du XIXe siècle.",
+   "wiki": "Russell Square",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Russell%20Square%20with%20restaurant.JPG?width=960",
+   "photoBy": "Helge Høifødt",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Russell Square",
+    "es": "Russell Square",
+    "it": "Russell Square"
+   }
+  },
+  {
+   "id": "Q1574424",
+   "name": "cimetière de Kensal Green",
+   "lat": 51.5286,
+   "lng": -0.2241,
+   "theme": "parks",
+   "fame": 16,
+   "summary": "Inauguré en 1832 sur le modèle du Père-Lachaise, ce cimetière anglican de 29 hectares fait partie des sept grands cimetières historiques de Londres, les Magnificent Seven. Il compte plus de 65 000 tombes, mausolées, caveaux et catacombes, qui renferment environ 250 000 dépouilles, dont celles de Charles Babbage et de Thackeray.",
+   "wiki": "Cimetière de Kensal Green",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kensal%20Green%20Cemetery%20-15Aug2006.jpg?width=960",
+   "photoBy": "MattHucke at English Wikipedia",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Kensal Green Cemetery",
+    "es": "cementerio de Kensal Green",
+    "it": "Kensal Green Cemetery"
+   }
+  },
+  {
+   "id": "Q926913",
+   "name": "cimetière de Brompton",
+   "lat": 51.484882,
+   "lng": -0.190796,
+   "theme": "parks",
+   "fame": 16,
+   "summary": "Créé par une loi du Parlement en 1839 sous le nom de cimetière de l'ouest de Londres et de Westminster, il est consacré en juin 1840 et compte parmi les Magnificent Seven, sept cimetières ouverts autour de Londres au XIXe siècle. Conçu par l'architecte Benjamin Baud, il aligne quelque 35 000 monuments pour 205 000 personnes inhumées.",
+   "wiki": "Cimetière de Brompton",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Brompton%20Cemetery%20monument%2011.JPG?width=960",
+   "photoBy": "Edwardx",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Brompton Cemetery",
+    "es": "cementerio de Brompton",
+    "it": "Brompton Cemetery"
+   }
+  },
+  {
+   "id": "Q932992",
+   "name": "Grosvenor Square",
+   "lat": 51.511388888889,
+   "lng": -0.15138888888889,
+   "theme": "parks",
+   "fame": 14,
+   "summary": "Aménagée en 1720 par des membres de la famille Grosvenor, dont elle porte le nom, et construite entre 1725 et 1731, cette place de Mayfair est, Lincoln's Inn Fields mis à part, la plus grande place publique de Londres. Son jardin, réservé aux résidents, n'ouvre au public qu'en 1946. L'ambassade des États-Unis y siège de 1938 à 2017.",
+   "wiki": "Grosvenor Square",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Grosvenor%20Square%20nord.jpg?width=960",
+   "photoBy": "CVB",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Grosvenor Square",
+    "es": "Grosvenor Square",
+    "it": "Grosvenor Square"
+   }
+  },
+  {
+   "id": "Q1936696",
+   "name": "Tavistock Square",
+   "lat": 51.525,
+   "lng": -0.1291,
+   "theme": "parks",
+   "fame": 13,
+   "summary": "Place de Bloomsbury qui doit son nom à Francis Russell, marquis de Tavistock ; seules les maisons du côté ouest, dues à Thomas Cubitt, ont subsisté. Le parc réunit une statue du Mahatma Gandhi installée en 1968, un mémorial aux objecteurs de conscience et un buste de Virginia Woolf. Le 7 juillet 2005, un attentat-suicide y fit 14 morts.",
+   "wiki": "Tavistock Square",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/TavistockSquare.jpg?width=960",
+   "photoBy": "Greatpatton",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Tavistock Square",
+    "es": "Tavistock Square",
+    "it": "Tavistock Square"
+   }
+  },
+  {
+   "id": "Q2893581",
+   "name": "Bedford Square",
+   "lat": 51.518911111111,
+   "lng": -0.13010833333333,
+   "theme": "parks",
+   "fame": 12,
+   "summary": "Construit entre 1775 et 1783, ce square de Bloomsbury doit son nom au titre de la famille Russell, ducs de Bedford et grands propriétaires du quartier. Sa conception est généralement attribuée à Thomas Leverton. Les portes des maisons de brique sont ornées de pierre de Coade et le jardin central reste privatif.",
+   "wiki": "Bedford Square",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/London%20Bedford%20Square%20May%202005.jpg?width=960",
+   "photoBy": "Sir James",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Bedford Square",
+    "es": "Bedford Square",
+    "it": "Bedford Square"
+   }
+  },
+  {
+   "id": "Q782140",
+   "name": "cimetière de Bunhill Fields",
+   "lat": 51.523611111111,
+   "lng": -0.088888888888889,
+   "theme": "parks",
+   "fame": 12,
+   "summary": "Du XVIIe siècle au milieu du XIXe, ce cimetière d'Islington a servi aux enterrements de personnes non conformistes. On y trouve les tombes de William Blake, de Daniel Defoe, de John Bunyan, auteur du Voyage du pèlerin, de George Fox, un des fondateurs du mouvement quaker, et du statisticien Thomas Bayes.",
+   "wiki": "Cimetière de Bunhill Fields",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/William%20Blake%27s%20grave%20with%20flower.jpg?width=960",
+   "photoBy": "Grenavitar",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Bunhill Fields",
+    "it": "Bunhill Fields"
+   }
+  },
+  {
+   "id": "Q83125",
+   "name": "Tower Bridge",
+   "lat": 51.505555555556,
+   "lng": -0.075277777777778,
+   "theme": "water",
+   "fame": 86,
+   "summary": "Pont basculant construit à partir de 1886 pour franchir la Tamise sans fermer aux grands voiliers l'accès au port, il est ouvert le 30 juin 1894 par le prince de Galles. À la mort de l'architecte Horace Jones, en 1887, George D. Stevenson reprend le projet et substitue à la façade de briques un décor néogothique accordé à la tour de Londres.",
+   "wiki": "Tower Bridge",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/London%20-%20London%20Tower%20Bridge%20-%20140806%20171049.jpg?width=960",
+   "photoBy": "Barcex",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Tower Bridge",
+    "es": "puente de la Torre",
+    "it": "Tower Bridge"
+   }
+  },
+  {
+   "id": "Q130206",
+   "name": "pont de Londres",
+   "lat": 51.508055555556,
+   "lng": -0.087777777777778,
+   "theme": "water",
+   "fame": 78,
+   "summary": "Un pont de bois franchit déjà la Tamise sous l'occupation romaine, à l'époque de Londinium. Un ouvrage de pierre à 19 arches, construit de 1176 à 1209, lui succède, chargé de maisons jusqu'en 1770. Le pont de granit élevé en 1831 par John Rennie est démonté en 1969 puis remonté à Lake Havasu City, en Arizona. L'ouvrage actuel date de 1973.",
+   "wiki": "Pont de Londres",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/London%20Bridge%20from%20South%20bank.jpg?width=960",
+   "photoBy": "oyxman",
+   "photoLic": "CC BY 2.5",
+   "alt": {
+    "en": "London Bridge",
+    "es": "London Bridge",
+    "it": "London Bridge"
+   }
+  },
+  {
+   "id": "Q456960",
+   "name": "pont de Westminster",
+   "lat": 51.500833333333,
+   "lng": -0.12194444444444,
+   "theme": "water",
+   "fame": 49,
+   "summary": "Ouvert en 1862, ce pont de fer à sept arches remplace un premier ouvrage de 1750. Certains de ses ornements gothiques sont dus à Charles Barry, l'architecte du palais de Westminster. Le vert dominant est celui du cuir des sièges de la Chambre des communes, quand le Lambeth Bridge, en amont, est rouge comme les sièges de la Chambre des lords.",
+   "wiki": "Pont de Westminster",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Westminster%2C%20London%20%287660306446%29.jpg?width=960",
+   "photoBy": "Berit from Redhill/Surrey, UK",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Westminster Bridge",
+    "es": "Westminster Bridge",
+    "it": "Ponte di Westminster"
+   }
+  },
+  {
+   "id": "Q501003",
+   "name": "Waterloo Bridge",
+   "lat": 51.508611111111,
+   "lng": -0.11694444444444,
+   "theme": "water",
+   "fame": 40,
+   "summary": "Pont routier sur la Tamise, près de la gare de Waterloo. Le premier ouvrage du site, dû à John Rennie, ouvrit en 1817 comme pont à péage ; l'ambassadeur de France refusa d'assister à l'inauguration, le nom rappelant la bataille de Waterloo. Dans les années 1920, le London County Council décida son remplacement par un pont de Giles Gilbert Scott.",
+   "wiki": "Waterloo Bridge",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Waterloo%20bridge.jpg?width=960",
+   "photoBy": "The original uploader was Secretlondon at English Wikipedia.",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Waterloo Bridge",
+    "es": "puente de Waterloo",
+    "it": "Waterloo Bridge"
+   }
+  },
+  {
+   "id": "Q1324578",
+   "name": "Southwark Bridge",
+   "lat": 51.508888888889,
+   "lng": -0.094444444444444,
+   "theme": "water",
+   "fame": 33,
+   "summary": "Franchissant la Tamise entre Southwark, sur la rive sud, et la City, il compte parmi les quatre ponts gérés par les services du lord-maire. Un premier ouvrage y est construit de 1814 à 1819, remplacé par un pont en acier à cinq travées élevé de 1912 à 1921. Il se situe entre le Millennium Bridge et le Cannon Street Railway Bridge.",
+   "wiki": "Southwark Bridge",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Southwark%20Bridge%2C%20River%20Thames%2C%20London%2C%20England.jpg?width=960",
+   "photoBy": "ChrisO",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Southwark Bridge",
+    "es": "Puente de Southwark",
+    "it": "Southwark Bridge"
+   }
+  },
+  {
+   "id": "Q1130666",
+   "name": "Lambeth Bridge",
+   "lat": 51.494636,
+   "lng": -0.123877,
+   "theme": "water",
+   "fame": 31,
+   "summary": "Ce pont routier et piétonnier à cinq arcs en acier fut inauguré le 12 juillet 1932 par George V et la reine Mary. Le rouge de sa peinture est celui des bancs de la Chambre des lords, proche du pont. Les obélisques de ses extrémités portent des ananas, en hommage à John Tradescant, qui aurait apporté le premier ananas en Grande-Bretagne.",
+   "wiki": "Lambeth Bridge",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lambeth%20bridge.jpg?width=960",
+   "photoBy": "Amalster",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Lambeth Bridge",
+    "es": "Lambeth Bridge",
+    "it": "Lambeth Bridge"
+   }
+  },
+  {
+   "id": "Q880843",
+   "name": "Blackfriars Bridge",
+   "lat": 51.509722222222,
+   "lng": -0.10444444444444,
+   "theme": "water",
+   "fame": 30,
+   "summary": "Pont de la City franchissant la Tamise près des Inns of Court et de la Tate Modern, c'est l'un des quatre ponts gérés par les services du Lord-maire. Le premier ouvrage, en arcs de pierre de Portland, ouvre en 1769 ; l'actuel pont en fer de 281 m, conçu par Joseph Cubitt, le remplace en 1869. Le banquier Roberto Calvi y est retrouvé pendu en 1982.",
+   "wiki": "Blackfriars Bridge",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Blackfriars%20Bridge%2C%20River%20Thames%2C%20London%2C%20with%20St%20Pauls%20Cathedral.jpg?width=960",
+   "photoBy": "Duffman~commonswiki",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Blackfriars Bridge",
+    "es": "puente de Blackfriars",
+    "it": "ponte dei Frati Neri"
+   }
+  },
+  {
+   "id": "Q1142134",
+   "name": "Vauxhall Bridge",
+   "lat": 51.4875,
+   "lng": -0.12694444444444,
+   "theme": "water",
+   "fame": 30,
+   "summary": "Deuxième pont du site, il relie Westminster et Pimlico, rive nord, à Vauxhall, rive sud. Son prédécesseur, premier pont en fonte à franchir la Tamise, fut inauguré en mai 1813 et démoli en 1898. Le pont actuel fut ouvert le 26 mai 1906 par le prince de Galles. Huit statues de femmes, dues à Frederick Pomeroy et Alfred Drury, ornent ses culées.",
+   "wiki": "Vauxhall Bridge",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Architectuur%20london.jpg?width=960",
+   "photoBy": "Michiel1972 at Dutch Wikipedia",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Vauxhall Bridge",
+    "es": "Vauxhall Bridge",
+    "it": "Vauxhall Bridge"
+   }
+  },
+  {
+   "id": "Q1972207",
+   "name": "Albert Bridge",
+   "lat": 51.4823703,
+   "lng": -0.166777914,
+   "theme": "water",
+   "fame": 29,
+   "summary": "Pont routier entre Chelsea et Battersea, ouvert en 1873 sur des plans de Rowland Mason Ordish, il se révéla peu solide : Bazalgette le renforça de 1884 à 1887, puis le Conseil du Grand Londres lui ajouta deux piles en 1973. Ses postes de péage sont les seuls subsistant sur un pont londonien et ses vibrations lui valent le surnom de Trembling Lady.",
+   "wiki": "Albert Bridge",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Albert%20Bridge%20from%20the%20South.jpg?width=960",
+   "photoBy": "Peter Cooper",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Albert Bridge",
+    "es": "Albert Bridge",
+    "it": "Albert Bridge"
+   }
+  },
+  {
+   "id": "Q1069141",
+   "name": "Chelsea Bridge",
+   "lat": 51.484722222222,
+   "lng": -0.15,
+   "theme": "water",
+   "fame": 27,
+   "summary": "Reliant les deux rives de la Tamise entre Grosvenor Bridge et l'Albert Bridge, il remplace un ancien pont suspendu dessiné par Thomas Page. C'est le premier pont suspendu auto-ancré construit au Royaume-Uni : ses câbles de retenue ne sont pas ancrés au sol. Il est inauguré le 6 mai 1937 par le premier ministre du Canada, Mackenzie King.",
+   "wiki": "Chelsea Bridge",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Chelsea%20Bridge%2C%20London.jpg?width=960",
+   "photoBy": "Tom Graham",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Chelsea Bridge",
+    "es": "Chelsea Bridge",
+    "it": "Chelsea Bridge"
+   }
+  },
+  {
+   "id": "Q332474",
+   "name": "Harrods",
+   "lat": 51.499586,
+   "lng": -0.163517,
+   "theme": "shops",
+   "fame": 47,
+   "summary": "Grand magasin de luxe de Brompton Road, à Knightsbridge, c'est le plus grand de Londres et sa devise est Omnia Ubique omnibus, tout, partout, pour tous. Né en 1849 de l'épicerie de Charles Henry Harrod, il passa sous le contrôle de la famille Al-Fayed en 1985 par le rachat de House of Fraser, puis fut vendu en 2010 à Qatar Holding.",
+   "wiki": "Harrods",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/HarrodsDay.jpg?width=960",
+   "photoBy": "User:Mikegr",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Harrods",
+    "es": "Harrods",
+    "it": "Harrods"
+   }
+  },
+  {
+   "id": "Q1481002",
+   "name": "hôtel Ritz",
+   "lat": 51.507222222222,
+   "lng": -0.14138888888889,
+   "theme": "shops",
+   "fame": 26,
+   "summary": "Ouvert le 24 mai 1906 par César Ritz, créateur de l'hôtel Ritz de Paris, cet établissement de luxe de 133 chambres est situé à Piccadilly et donne sur Green Park. Son extérieur, d'inspiration française classique, est dû à Charles Mewès et Davis, son intérieur décoré en style Louis XVI. Margaret Thatcher y meurt le 8 avril 2013.",
+   "wiki": "Hôtel Ritz (Londres)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Ritz%20%286902790412%29.jpg?width=960",
+   "photoBy": "Tony Hisgett from Birmingham, UK",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "The Ritz London",
+    "es": "Hotel Ritz",
+    "it": "Hotel Ritz"
+   }
+  },
+  {
+   "id": "Q746639",
+   "name": "hôtel Savoy",
+   "lat": 51.509898,
+   "lng": -0.120215,
+   "theme": "shops",
+   "fame": 23,
+   "summary": "Ce palace cinq étoiles du Strand fut inauguré en 1889, bâti par Richard D'Oyly Carte, propriétaire du Savoy Theatre voisin. Ce fut le premier bâtiment public au monde éclairé à l'électricité. César Ritz le dirigea d'abord et Auguste Escoffier y créa la pêche Melba. Savoy Court, qui y mène, est la seule rue du Royaume-Uni où l'on roule à droite.",
+   "wiki": "Hôtel Savoy",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/H%C3%B4tel%20Savoy%20The%20Strand%20Londres%20-%20edited.jpg?width=960",
+   "photoBy": "Photo by CVB, edited and cropped by Cart",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Savoy Hotel",
+    "es": "Hotel Savoy",
+    "it": "Hotel Savoy"
+   }
+  },
+  {
+   "id": "Q2749941",
+   "name": "Dorchester Hotel",
+   "lat": 51.507222222222,
+   "lng": -0.1525,
+   "theme": "shops",
+   "fame": 16,
+   "summary": "Cet hôtel de luxe du no 53 de Park Lane, à Mayfair, a ouvert en 1931 sur l'emplacement de la Dorchester House, palais démoli en 1929. Le général Eisenhower y séjourna pendant la Seconde Guerre mondiale. L'établissement appartient au groupe Dorchester, que possède le sultan de Brunei, et a été visé par des campagnes de boycott en 2013 puis en 2019.",
+   "wiki": "Dorchester Hotel",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Entrance%20to%20The%20Dorchester%2C%20Park%20Lane%2C%20London%20W1%20-%20geograph.org.uk%20-%201098281.jpg?width=960",
+   "photoBy": "Christine Matthews",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "The Dorchester",
+    "es": "The Dorchester",
+    "it": "The Dorchester"
+   }
+  },
+  {
+   "id": "Q3237793",
+   "name": "Liberty",
+   "lat": 51.5139,
+   "lng": -0.1402,
+   "theme": "shops",
+   "fame": 14,
+   "summary": "Arthur Lasenby Liberty ouvre en 1875 sur Regent Street un magasin de tissu, d'abord baptisé « Emporium » parce qu'il proposait des articles importés de l'Empire britannique. En 1884 naît la marque Liberty, un coton fin aux motifs floraux. Le grand magasin occupe les numéros 214-220 et conserve sa façade Tudor de 1924 sur Great Marlborough Street.",
+   "wiki": "Liberty (magasin)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Liberty%20of%20London.jpg?width=960",
+   "photoBy": "habitatgirl",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Liberty",
+    "es": "Liberty",
+    "it": "Liberty's"
+   }
+  },
+  {
+   "id": "Q768935",
+   "name": "Langham",
+   "lat": 51.51791,
+   "lng": -0.1440239,
+   "theme": "shops",
+   "fame": 11,
+   "summary": "Sur Langham Place, dans St Marylebone, ce palace fait face à l'église All Souls. Conçu par John Giles, il est inauguré le 10 juin 1865 par le prince de Galles, futur Édouard VII, et c'est alors le plus grand hôtel de la capitale. Bombardé pendant la Seconde Guerre mondiale, il est transformé en bureaux avant de rouvrir en 1991.",
+   "wiki": "Langham Hotel (Londres)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Langham%20london.jpg?width=960",
+   "photoBy": "The Langham, London",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Langham Hotel",
+    "es": "Langham Hotel"
+   }
+  },
+  {
+   "id": "Q608175",
+   "name": "London Hilton on Park Lane",
+   "lat": 51.505478,
+   "lng": -0.1505376,
+   "theme": "shops",
+   "fame": 10,
+   "summary": "Ce gratte-ciel de 101 mètres, construit en 1963, abrite un hôtel de 512 chambres de la chaîne Hilton. Il était alors l'un des plus hauts bâtiments du Royaume-Uni. Les architectes en sont l'agence William Tabler et l'agence Lewis Solomon, Kaye & Partners.",
+   "wiki": "London Hilton on Park Lane Hotel",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20London%20Hilton%20on%20Park%20Lane.JPG?width=960",
+   "photoBy": "Sabrina756",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "London Hilton on Park Lane",
+    "es": "London Hilton on Park Lane"
+   }
+  },
+  {
+   "id": "Q4975949",
+   "name": "Brown's Hotel",
+   "lat": 51.509167,
+   "lng": -0.1425,
+   "theme": "shops",
+   "fame": 10,
+   "summary": "Cet hôtel de Mayfair, au n° 33 d'Albemarle Street, occupe une enfilade de demeures géorgiennes en stuc blanc. Passé au groupe Rocco Forte Hotels en 2003, il rouvrit le 9 avril 2018 après rénovation. Rudyard Kipling y écrivit Le Livre de la Jungle et Alexander Graham Bell y passa le premier appel téléphonique en Europe.",
+   "wiki": "Brown's Hotel",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Browns%20Hotel%20Londres.jpg?width=960",
+   "photoBy": "CVB",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Brown's Hotel",
+    "es": "Hotel Brown"
+   }
+  },
+  {
+   "id": "Q5911940",
+   "name": "Hôtel Kimpton Fitzroy London",
+   "lat": 51.5227,
+   "lng": -0.125,
+   "theme": "shops",
+   "fame": 9,
+   "summary": "Ouvert en 1900 sous le nom d'hôtel Russell, ce cinq étoiles de Russell Square est l'œuvre de Charles Fitzroy Doll, architecte qui conçut aussi la salle à manger du Titanic : le restaurant de l'hôtel passe pour presque identique à celle-ci. Quatre statues de reines britanniques, par Henry Charles Fehr, surmontent l'entrée principale.",
+   "wiki": "Hôtel Kimpton Fitzroy London",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Hotel%20Russell%20on%20Russell%20Square%2C%20London%20-%20April%202007.jpg?width=960",
+   "photoBy": "Diliff",
+   "photoLic": "CC BY 3.0",
+   "alt": {
+    "en": "Kimpton Fitzroy London Hotel",
+    "es": "Kimpton Fitzroy London Hotel",
+    "it": "Hotel Russell"
+   }
+  }
+ ]
+}

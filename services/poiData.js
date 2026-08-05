@@ -26,6 +26,7 @@ import GRN from '../data/poi_GRN.json';
 import MPL from '../data/poi_MPL.json';
 import CLR from '../data/poi_CLR.json';
 import WN from '../data/poi_WN.json';
+import LDN from '../data/poi_LDN.json';
 
 const BASE_URL  = 'https://raw.githubusercontent.com/marcoclsn-bit/invader-map/main/data';
 const INDEX_URL = `${BASE_URL}/poi_index.json`;
@@ -42,7 +43,7 @@ const KEY_LANG = (code, lang) => `@invader_poi_${code}_${lang}`;
 // gardés en cache. Tant qu'ils ne sont pas là, on affiche le français.
 
 // Version embarquée, immuable, toujours disponible.
-const BUNDLED = { PA, MARS, LY, GRN, MPL, CLR, WN };
+const BUNDLED = { PA, MARS, LY, GRN, MPL, CLR, WN, LDN };
 
 // Versions plus récentes chargées depuis le cache ou le réseau.
 const _fresh = new Map();   // code -> { version, updatedAt, pois }
