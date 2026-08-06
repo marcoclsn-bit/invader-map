@@ -9,6 +9,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
 import { DrawerActions } from '@react-navigation/native';
 import { useAppContext } from '../context/AppContext';
+import { useGamification } from '../context/GamificationContext';
 import { CITIES } from '../cities/registry';
 import { loadCityData, getCityData, checkCityForUpdate } from '../services/invaderData';
 import { STATUS_COLOR } from '../constants';
@@ -163,6 +164,7 @@ function CityPicker({ initial, cityIndex, onValidate, onClose, theme, t }) {
 
 export default function ListScreen({ navigation }) {
   const { invaders, flashed, toggleFlash, bulkFlash, bulkUnflash, currentCityCode, cityIndex } = useAppContext();
+  const { beginBatch } = useGamification();
   const { theme } = useTheme();
   const { t } = useTranslation();
   const styles = getStyles(theme);
@@ -278,7 +280,10 @@ export default function ListScreen({ navigation }) {
       t('list.bulkFlash.msg', { count: ids.length }),
       [
         { text: t('common.cancel'), style: 'cancel' },
-        { text: t('common.confirm'), onPress: () => bulkFlash(ids) },
+        // beginBatch AVANT bulkFlash : la fenêtre doit être ouverte quand l'effet
+        // de GamificationContext s'exécutera, sinon les trophées se célèbrent un
+        // par un — dix cartes de 3,5 s à la file sur un arrondissement entier.
+        { text: t('common.confirm'), onPress: () => { beginBatch(); bulkFlash(ids); } },
       ]
     );
   }

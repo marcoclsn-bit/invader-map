@@ -1109,5 +1109,13 @@
       "edit": "Ouvrir le réglage des familles",
       "shared": "Ce réglage est le même sur la Carte, le Trajet et la Chasse."
     }
+  },
+  "batchBadges": {
+    "title_one": "{{count}} nouveau trophée !",
+    "title_other": "{{count}} nouveaux trophées !",
+    "more_one": "et 1 autre",
+    "more_other": "et {{count}} autres",
+    "where": "Retrouve-les dans Stats, onglet Profil.",
+    "dismiss": "Toucher pour fermer"
   }
 }

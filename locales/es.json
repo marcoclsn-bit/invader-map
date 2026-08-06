@@ -1109,5 +1109,13 @@
       "edit": "Abrir ajustes de familias",
       "shared": "Este ajuste es el mismo en Mapa, Ruta y Caza."
     }
+  },
+  "batchBadges": {
+    "title_one": "¡{{count}} trofeo nuevo!",
+    "title_other": "¡{{count}} trofeos nuevos!",
+    "more_one": "y 1 más",
+    "more_other": "y {{count}} más",
+    "where": "Los encontrarás en Stats, pestaña Perfil.",
+    "dismiss": "Toca para cerrar"
   }
 }

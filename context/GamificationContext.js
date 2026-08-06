@@ -24,6 +24,7 @@ export function GamificationProvider({ children }) {
   const [queue, setQueue] = useState([]);            // ids à célébrer (FIFO)
   const [pendingRecap, setPendingRecap] = useState(null); // session à afficher en récap
   const [loaded, setLoaded] = useState(false);
+  const [batchBadges, setBatchBadges] = useState(null);   // récap groupé { ids } | null
 
   const unlockedRef = useRef({});
   unlockedRef.current = unlocked;
@@ -107,7 +108,11 @@ export function GamificationProvider({ children }) {
     if (!(loaded && appLoaded)) return;
     const ctx = { session: null, sessions, flashHistory: getFlashHistory(), ...extraCtxRef.current };
     const newIds = evaluateBadges(ctx, unlockedRef.current);
-    unlockIds(newIds, { celebrate: primed.current });
+    // Pendant une fenêtre groupée, on débloque en silence et on accumule : les
+    // trophées seront annoncés une seule fois, à la fermeture de la fenêtre.
+    const groupe = Date.now() < batchUntilRef.current;
+    unlockIds(newIds, { celebrate: primed.current && !groupe });
+    if (groupe && newIds.length) batchIdsRef.current.push(...newIds);
     primed.current = true;
     // cityProgress dans les deps : les trophées points/villes dépendent du registre
     // (qui se met à jour ~500 ms après un flash).
@@ -115,6 +120,43 @@ export function GamificationProvider({ children }) {
 
   const dismissCelebration = useCallback(() => setQueue((q) => q.slice(1)), []);
   const clearRecap = useCallback(() => setPendingRecap(null), []);
+
+  // ─── Déblocages groupés (« tout marquer », import d'une liste) ──────────────
+  //
+  // Un marquage en lot peut franchir dix paliers d'un coup. Célébrés un par un,
+  // ça fait dix cartes de 3,5 s enchaînées : l'utilisateur est prisonnier de
+  // l'animation pendant plus d'une demi-minute pour une action qu'il a demandée
+  // une seule fois.
+  //
+  // On ouvre donc une fenêtre : pendant sa durée, les trophées sont débloqués
+  // sans célébration et accumulés, puis annoncés en un seul écran.
+  //
+  // Pourquoi une fenêtre de temps plutôt qu'un simple drapeau refermé après le
+  // premier passage : l'effet ci-dessus se déclenche DEUX fois pour un même lot,
+  // une fois sur `flashed`, une autre ~500 ms plus tard sur `cityProgress` (les
+  // trophées de points et de villes dépendent du registre, qui se met à jour
+  // après coup). Un drapeau à un coup laisserait la seconde vague célébrer une
+  // par une, ce qui est précisément le défaut qu'on corrige.
+  const BATCH_WINDOW_MS = 2500;
+  const batchUntilRef = useRef(0);
+  const batchIdsRef = useRef([]);
+  const batchTimerRef = useRef(null);
+
+  const beginBatch = useCallback(() => {
+    batchUntilRef.current = Date.now() + BATCH_WINDOW_MS;
+    batchIdsRef.current = [];
+    clearTimeout(batchTimerRef.current);
+    batchTimerRef.current = setTimeout(() => {
+      batchUntilRef.current = 0;
+      const ids = batchIdsRef.current;
+      batchIdsRef.current = [];
+      if (ids.length) setBatchBadges({ ids });
+    }, BATCH_WINDOW_MS);
+  }, []);
+
+  useEffect(() => () => clearTimeout(batchTimerRef.current), []);
+
+  const clearBatchBadges = useCallback(() => setBatchBadges(null), []);
 
   // Badges enrichis (def + état) pour la galerie
   const badges = useMemo(
@@ -136,6 +178,9 @@ export function GamificationProvider({ children }) {
     dismissCelebration,
     pendingRecap,
     clearRecap,
+    beginBatch,
+    batchBadges,
+    clearBatchBadges,
   };
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;

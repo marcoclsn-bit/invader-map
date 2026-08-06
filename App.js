@@ -38,6 +38,7 @@ import DrawerContent from './components/DrawerContent';
 import StrollEngine from './components/StrollEngine';
 import SessionRecap from './components/session/SessionRecap';
 import BadgeCelebration from './components/gamification/BadgeCelebration';
+import BadgeBatch from './components/gamification/BadgeBatch';
 import { navigationRef } from './utils/navigationRef';
 import './services/strollEngine'; // enregistre la tâche de fond + le handler de notif
 import { initAnalytics, track } from './services/analytics';
@@ -238,6 +239,7 @@ function AppShell() {
       {/* Overlays globaux de gamification */}
       <SessionRecap />
       <BadgeCelebration />
+      <BadgeBatch />
     </>
   );
 }
