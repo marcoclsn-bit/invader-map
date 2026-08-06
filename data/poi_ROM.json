@@ -1,0 +1,2875 @@
+{
+ "version": 1,
+ "city": "ROM",
+ "attribution": "Lieux : Wikidata (CC0) · Résumés d’après Wikipédia (CC BY-SA) · Photos : Wikimedia Commons",
+ "updatedAt": "2026-08-06",
+ "pois": [
+  {
+   "id": "Q186282",
+   "name": "basilique Sainte-Marie-Majeure de Rome",
+   "lat": 41.8975,
+   "lng": 12.498611111111,
+   "theme": "religious",
+   "fame": 58,
+   "summary": "Bâtie au sommet de l'Esquilin, elle est l'une des quatre basiliques majeures de Rome et l'une des premières églises élevées en l'honneur de la Vierge Marie. Sixte III la consacra le 5 août 434. Seule basilique de Rome à avoir gardé sa structure paléochrétienne primitive, elle conserve les mosaïques de la nef et de l'arc de triomphe.",
+   "wiki": "Basilique Sainte-Marie-Majeure",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Basilica%20di%20Santa%20Maria%20Maggiore%20-%20Roma.jpg?width=960",
+   "photoBy": "NikonZ7II",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Basilica di Santa Maria Maggiore",
+    "es": "basílica de Santa María la Mayor",
+    "it": "basilica di Santa Maria Maggiore"
+   }
+  },
+  {
+   "id": "Q213678",
+   "name": "bibliothèque apostolique vaticane",
+   "lat": 41.904722222222,
+   "lng": 12.454444444444,
+   "theme": "museums",
+   "fame": 71,
+   "summary": "Bibliothèque d'État du Saint-Siège, elle naît du fonds que Nicolas V commence à réunir vers 1450, quand la collection du Vatican compte 340 manuscrits anciens ; à la mort du pape, elle en regroupe 1 200. Sixte IV l'institutionnalise en 1475. L'accès reste réservé aux chercheurs titulaires d'un doctorat.",
+   "wiki": "Bibliothèque apostolique vaticane",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Melozzo%20da%20Forl%C3%AC%20001.jpg?width=960",
+   "photoBy": "Melozzo da Forlì",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Vatican Library",
+    "es": "Biblioteca Vaticana",
+    "it": "Biblioteca Apostolica Vaticana"
+   }
+  },
+  {
+   "id": "Q369075",
+   "name": "colonne de Phocas",
+   "lat": 41.8925,
+   "lng": 12.484722222222,
+   "theme": "monuments",
+   "fame": 36,
+   "summary": "C'est le dernier monument érigé sur le Forum Romain. D'ordre corinthien, le fût cannelé, la colonne mesure près de 13,6 mètres. L'exarque de Ravenne Smaragde la dresse sur les rostres le 1er août 608 pour porter une statue de l'empereur byzantin Phocas, en remerciement de sa politique favorable aux évêques de Rome.",
+   "wiki": "Colonne de Phocas",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Colonna%20di%20Foca%20Forum%20Romanum%20Rome.jpg?width=960",
+   "photoBy": "Jebulon",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "Column of Phocas",
+    "es": "Columna de Focas",
+    "it": "Colonna di Foca"
+   }
+  },
+  {
+   "id": "Q907387",
+   "name": "statue équestre de Marc Aurèle",
+   "lat": 41.892741638889,
+   "lng": 12.482241461111,
+   "theme": "monuments",
+   "fame": 33,
+   "summary": "Seule statue équestre de la Rome antique parvenue jusqu'à nous, haute de 4,24 m, elle doit sans doute sa survie à une méprise : on y voyait Constantin quand on fondait les autres bronzes impériaux. Paul III la fit porter sur la place du Capitole en 1538, où Michel-Ange conçut son piédestal. Restaurée de 1981 à 1990, elle est aux musées du Capitole.",
+   "wiki": "Statue équestre de Marc Aurèle",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Equestrian%20statue%20of%20Marcus%20Aurelius%20%28Rome%29.jpg?width=960",
+   "photoBy": "Merulana",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "equestrian statue of Marcus Aurelius",
+    "es": "Estatua ecuestre de Marco Aurelio",
+    "it": "Statua equestre di Marco Aurelio"
+   }
+  },
+  {
+   "id": "Q752553",
+   "name": "Roche Tarpéienne",
+   "lat": 41.8915,
+   "lng": 12.482388888889,
+   "theme": "monuments",
+   "fame": 28,
+   "summary": "Cette crête rocheuse de l'extrémité sud-ouest du Capitole servit pendant l'Antiquité de lieu d'exécution capitale : on en précipitait les criminels, en particulier les coupables de faux témoignage et de haute trahison. Son nom vient de Tarpeia, qui accepta d'ouvrir les portes aux Sabins et fut écrasée sous leurs boucliers.",
+   "wiki": "Roche Tarpéienne",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Campitelli%20-%20rupe%20Tarpea%201060740.JPG?width=960",
+   "photoBy": "Lalupa",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Tarpeian Rock",
+    "es": "Roca Tarpeya",
+    "it": "Rupe Tarpea"
+   }
+  },
+  {
+   "id": "Q640092",
+   "name": "pont Æmilius",
+   "lat": 41.889444,
+   "lng": 12.479444,
+   "theme": "monuments",
+   "fame": 29,
+   "summary": "Le plus vieux pont en pierre de Rome franchissait le Tibre en aval de l'île Tibérine et reliait le forum Boarium au Trastevere. La crue de 1598 en détruisit trois des six arches, et il ne fut pas réparé : d'où son nom de ponte Rotto. La construction du pont Palatino emporta en 1887 les deux arches occidentales ; une seule subsiste.",
+   "wiki": "Pont Æmilius",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Roma-ponterotto.jpg?width=960",
+   "photoBy": "currybet",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Pons Aemilius",
+    "es": "Ponte Rotto",
+    "it": "Ponte Rotto"
+   }
+  },
+  {
+   "id": "Q848072",
+   "name": "escalier de la Trinité-des-Monts",
+   "lat": 41.90611,
+   "lng": 12.48278,
+   "theme": "streets",
+   "fame": 40,
+   "summary": "Cet escalier monumental monte de la piazza di Spagna à l'église de la Trinité-des-Monts. Le diplomate français Étienne Gueffier en légua les fonds, mais son testament fut contesté et le projet resta en sommeil jusqu'à Clément XI. Un concours désigna en 1717 Francesco De Sanctis, alors presque inconnu ; l'escalier fut bâti de 1723 à 1725.",
+   "wiki": "Escalier de la Trinité-des-Monts",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Scalinata%20della%20Trinit%C3%A0%20dei%20Monti.jpg?width=960",
+   "photoBy": "Hugo DK",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Spanish Steps",
+    "es": "Escalinata de la plaza de España",
+    "it": "Scalinata di Trinità dei Monti"
+   }
+  },
+  {
+   "id": "Q678313",
+   "name": "villa Borghèse",
+   "lat": 41.913647,
+   "lng": 12.485104,
+   "theme": "parks",
+   "fame": 35,
+   "summary": "Ce parc municipal de 80 hectares naît d'un vignoble transformé en jardins en 1605 par Flaminio Ponzio, sur les plans du cardinal Scipione Borghese, autour de la villa suburbaine où celui-ci abrite sa collection d'art. L'ensemble est terminé en 1633 ; les jardins actuels, de style anglais, datent du XIXe siècle.",
+   "wiki": "Villa Borghèse",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Villa%20Borghese%20-%20entrata%202669.JPG?width=960",
+   "photoBy": "user:Lalupa",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Villa Borghese gardens",
+    "es": "Villa Borghese",
+    "it": "Villa Borghese"
+   }
+  },
+  {
+   "id": "Q545404",
+   "name": "île Tibérine",
+   "lat": 41.890833333333,
+   "lng": 12.477222222222,
+   "theme": "parks",
+   "fame": 35,
+   "summary": "Dans le rione de Ripa, longue de 270 mètres, elle occupe un gué du Tibre que deux ponts courts suffisent à franchir : le pont Fabricius, de 62 av. J.-C., le plus ancien pont de Rome encore debout, et le pont Cestius, profondément remanié à la fin du XIXe siècle. La légende y fait accoster un serpent d'Asklépios lors de l'épidémie de 292 av. J.-C.",
+   "wiki": "Île Tibérine",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Isola%20Tiberina%202014.JPG?width=960",
+   "photoBy": "Livioandronico2013",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Tiber Island",
+    "es": "Isla Tiberina",
+    "it": "Isola Tiberina"
+   }
+  },
+  {
+   "id": "Q231699",
+   "name": "basilique Saint-Paul-hors-les-Murs",
+   "lat": 41.858611111111,
+   "lng": 12.477222222222,
+   "theme": "religious",
+   "fame": 58,
+   "summary": "Une des quatre basiliques majeures de Rome, elle fut élevée par Constantin sur la nécropole contenant la tombe de saint Paul, hors du mur d'Aurélien. Rasée puis rebâtie beaucoup plus vaste à partir de 386, elle brûla en 1823 ; l'abside, le transept et le cloître furent épargnés. La reconstruction, commencée en 1825, garda le plan paléochrétien.",
+   "wiki": "Basilique Saint-Paul-hors-les-Murs",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/StPaul.jpg?width=960",
+   "photoBy": "StPaul.jpg",
+   "photoLic": "CC BY 4.0",
+   "alt": {
+    "en": "Basilica of Saint Paul outside the Walls",
+    "es": "basílica de San Pablo Extramuros",
+    "it": "basilica di San Paolo fuori le mura"
+   },
+   "remote": true
+  },
+  {
+   "id": "Q658051",
+   "name": "basilique Saint-Sébastien-hors-les-Murs",
+   "lat": 41.855534,
+   "lng": 12.516756,
+   "theme": "religious",
+   "fame": 27,
+   "summary": "Élevée dans la première moitié du IVe siècle au-dessus des catacombes du même nom, elle doit son surnom à sa position à l'extérieur du mur d'Aurélien. Sa dédicace première, Basilica Apostolorum, renvoie à la tradition faisant des catacombes une sépulture provisoire de Pierre et Paul ; le vocable de saint Sébastien remonte au IXe siècle.",
+   "wiki": "Basilique Saint-Sébastien-hors-les-Murs",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/San%20Sebastiano%20fuori%20le%20mura%20%28Rome%29.jpg?width=960",
+   "photoBy": "NikonZ7II",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "San Sebastiano fuori le mura",
+    "es": "basílica de San Sebastián de las Catacumbas",
+    "it": "basilica di San Sebastiano fuori le mura"
+   },
+   "remote": true
+  },
+  {
+   "id": "Q1789776",
+   "name": "mosquée de Rome",
+   "lat": 41.934722222222,
+   "lng": 12.495,
+   "theme": "religious",
+   "fame": 33,
+   "summary": "Bâtie dans le quartier de Parioli, partie nord de Rome, sur un terrain donné par la ville à la communauté musulmane en 1974, elle n'est mise en chantier qu'en 1984, sur les plans de Paolo Portoghesi, Vittorio Gigliotti et Sami Mousawi, et inaugurée le 21 juin 1995. Plus grande mosquée d'Europe, elle abrite le Centre culturel islamique italien.",
+   "wiki": "Mosquée de Rome",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Grande%20Mosqu%C3%A9e%20de%20Rome%2002.JPG?width=960",
+   "photoBy": "LPLT",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Moschea di Roma",
+    "es": "Mezquita de Roma",
+    "it": "moschea di Roma"
+   },
+   "remote": true
+  },
+  {
+   "id": "Q831361",
+   "name": "Mausolée de Sainte Constance",
+   "lat": 41.9226014,
+   "lng": 12.5173984,
+   "theme": "religious",
+   "fame": 26,
+   "summary": "Bâtie au IVe siècle sur la via Nomentana à la demande de Constantin Ier, cette église à plan centré est le mausolée de sa fille Constance ; une autre de ses filles, Hélène, y est également enterrée. Douze doublets de colonnes géminées en granite portent le tambour et la coupole. Les mosaïques de la voûte du déambulatoire sont très bien conservées.",
+   "wiki": "Église Santa Costanza",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mausoleo%20di%20Santa%20Costanza%20-%20esterno.jpg?width=960",
+   "photoBy": "Grosseto2",
+   "photoLic": "CC BY 4.0",
+   "alt": {
+    "en": "Santa Costanza",
+    "es": "Mausoleo de Santa Constanza",
+    "it": "mausoleo di Santa Costanza"
+   },
+   "remote": true
+  },
+  {
+   "id": "Q189417",
+   "name": "voie Appienne",
+   "lat": 41.841389,
+   "lng": 12.5325,
+   "theme": "monuments",
+   "fame": 62,
+   "summary": "Voie romaine de plus de 800 km, elle part de Rome, longe la côte tyrrhénienne et s'achève dans les Pouilles. Le censeur Appius Claudius Caecus en lance les travaux en 312 av. J.-C. : elle relie d'abord Rome à Capoue, avant d'être prolongée vers Tarente et Brindisi en 191 av. J.-C. Les Romains la surnomment Regina Viarum, reine des voies.",
+   "wiki": "Voie Appienne",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Appian%20Way.jpg?width=960",
+   "photoBy": "Livioandronico2013",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Appian Way",
+    "es": "Vía Apia",
+    "it": "via Appia"
+   },
+   "remote": true
+  },
+  {
+   "id": "Q1127325",
+   "name": "pont Milvius",
+   "lat": 41.935555555556,
+   "lng": 12.466944444444,
+   "theme": "monuments",
+   "fame": 36,
+   "summary": "Ce pont romain franchit le Tibre à 3 km du centre historique, là où la via Flaminia et la via Cassia se rejoignaient pour traverser le fleuve. En octobre 312, il donne son nom à la bataille qui oppose Constantin à son rival Maxence. Partiellement détruit en 1849 par les troupes de Garibaldi puis restauré, il est réservé aux piétons depuis 1978.",
+   "wiki": "Pont Milvius",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ponte%20Milvio%20HD.jpg?width=960",
+   "photoBy": "Livioandronico2013",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Ponte Milvio",
+    "es": "puente Milvio",
+    "it": "Ponte Milvio"
+   },
+   "remote": true
+  },
+  {
+   "id": "Q622930",
+   "name": "aqueduc de l'Aqua Claudia",
+   "lat": 41.8490622,
+   "lng": 12.5541753,
+   "theme": "monuments",
+   "fame": 25,
+   "summary": "Commencé sous Caligula en 38, achevé sous Claude le 1er août 52 en même temps que l'Anio Novus, il capte trois sources de la vallée de l'Anio et court sur 68,7 km, dont 15,1 km d'ouvrages aériens. Néron le prolonge après 60, les Goths l'endommagent en 537 lors du siège de Rome. Des arches subsistent dans la campagne romaine.",
+   "wiki": "Aqueduc de l'Aqua Claudia",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/0%20Aqua%20Claudia%20-%20Mt%20Palatin%20-%20San%20Giovani%20e%20Paolo%20-%20Rome%20%281%29.jpg?width=960",
+   "photoBy": "Jean-Pol GRANDMONT",
+   "photoLic": "CC BY 3.0",
+   "alt": {
+    "en": "Aqua Claudia",
+    "es": "Aqua Claudia",
+    "it": "acquedotto Claudio"
+   },
+   "remote": true
+  },
+  {
+   "id": "Q1881229",
+   "name": "MAXXI - Musée national des arts du XXIe siècle",
+   "lat": 41.92807,
+   "lng": 12.46648,
+   "theme": "museums",
+   "fame": 25,
+   "summary": "Musée national consacré à l'art contemporain, il naît d'un projet lancé en 1998 par le ministère de la Culture, dont le concours d'architecture est remporté par Zaha Hadid. Construit de 2002 à 2007 puis aménagé jusqu'en 2009, il ouvre le 30 mai 2010. Sa conception fait polémique : on reproche à Hadid d'avoir privilégié les effets architecturaux.",
+   "wiki": "MAXXI - Musée national des Arts du XXIe siècle",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/More%20than%20meets%20the%20eye%20MAXXI%20Roma%202015.jpg?width=960",
+   "photoBy": "Galleria fumagalli",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "MAXXI",
+    "es": "MAXXI",
+    "it": "MAXXI - Museo nazionale delle arti del XXI secolo"
+   },
+   "remote": true
+  },
+  {
+   "id": "Q728399",
+   "name": "Cinecittà",
+   "lat": 41.85,
+   "lng": 12.566667,
+   "theme": "culture",
+   "fame": 41,
+   "summary": "Studios de cinéma fondés en 1937 dans le quartier de Don Bosco, voulus par le gouvernement fasciste pour concurrencer Hollywood et servir la propagande. Mussolini en pose la première pierre en 1936. Camp de concentration allemand de 1943 à 1944, le site abrite un camp de personnes déplacées de 1945 à 1947, puis renaît avec les tournages américains.",
+   "wiki": "Cinecittà",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ingressostorico%20cinecitta.jpg?width=960",
+   "photoBy": "Andrea Martella",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Cinecittà",
+    "es": "Cinecittà",
+    "it": "Studi di Cinecittà"
+   },
+   "remote": true
+  },
+  {
+   "id": "Q159884",
+   "name": "stade olympique de Rome",
+   "lat": 41.933888888889,
+   "lng": 12.454722222222,
+   "theme": "culture",
+   "fame": 73,
+   "summary": "Au Foro Italico, un premier stade naît du projet de complexe sportif confié en 1928 à Enrico Del Debbio, le Stadio dei Cipressi. Après la Seconde Guerre mondiale, le comité olympique italien charge Annibale Vitellozzi d'y bâtir un grand stade, inauguré le 17 mai 1953. La Lazio et l'AS Rome y jouent leurs matchs.",
+   "wiki": "Stade olympique de Rome",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadio%20Olimpico%202024.jpg?width=960",
+   "photoBy": "Messapi, cropped by Blackcat",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Stadio Olimpico",
+    "es": "Estadio Olímpico de Roma",
+    "it": "Stadio Olimpico"
+   },
+   "remote": true
+  },
+  {
+   "id": "Q12512",
+   "name": "basilique Saint-Pierre",
+   "lat": 41.902222222222,
+   "lng": 12.453416666667,
+   "theme": "religious",
+   "fame": 129,
+   "summary": "Plus grande église catholique au monde, elle s'élève à l'emplacement de l'antique basilique vaticane. Jules II en fait poser la première pierre le 18 avril 1506 et elle est achevée en 1626. Bramante, Michel-Ange, Maderno et Le Bernin comptent parmi ses architectes. C'est l'église du pape, non la cathédrale de Rome.",
+   "wiki": "Basilique Saint-Pierre",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Basilica%20di%20San%20Pietro%20in%20Vaticano%20September%202015-1a.jpg?width=960",
+   "photoBy": "Alvesgaspar",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "St. Peter's Basilica",
+    "es": "basílica de San Pedro",
+    "it": "basilica di San Pietro"
+   }
+  },
+  {
+   "id": "Q2943",
+   "name": "chapelle Sixtine",
+   "lat": 41.902956,
+   "lng": 12.454433,
+   "theme": "religious",
+   "fame": 89,
+   "summary": "Chapelle principale du palais apostolique, dédiée à l'Assomption de Marie, elle doit son nom au pape Sixte IV et est consacrée en 1483. Ses murs portent des fresques de Botticelli et du Pérugin ; Michel-Ange peint la voûte de 1508 à 1512, puis le Jugement dernier vers 1535-1541. Les cardinaux réunis en conclave y élisent le pape.",
+   "wiki": "Chapelle Sixtine",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Sistina-interno.jpg?width=960",
+   "photoBy": "The original uploader was Snowdog at Italian Wikipedia.",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Sistine Chapel",
+    "es": "Capilla Sixtina",
+    "it": "cappella Sistina"
+   }
+  },
+  {
+   "id": "Q84090",
+   "name": "basilique Saint-Jean-de-Latran",
+   "lat": 41.885905555556,
+   "lng": 12.506155555556,
+   "theme": "religious",
+   "fame": 62,
+   "summary": "Cathédrale de l'évêque de Rome et premier édifice monumental chrétien construit en Occident, elle porte sur son fronton le titre de mère et tête de toutes les Églises de la Ville et du monde. Plus de 250 conciles s'y sont tenus. Borromini en refait la nef pour le jubilé de 1650, Alessandro Galilei la façade de travertin en 1735.",
+   "wiki": "Basilique Saint-Jean-de-Latran",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/San%20Giovanni%20in%20Laterano%202021.jpg?width=960",
+   "photoBy": "NikonZ7II",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Archbasilica of St. John Lateran",
+    "es": "Archibasílica de San Juan de Letrán",
+    "it": "basilica di San Giovanni in Laterano"
+   }
+  },
+  {
+   "id": "Q542070",
+   "name": "basilique Saint-Pierre-aux-Liens",
+   "lat": 41.893872222222,
+   "lng": 12.493069444444,
+   "theme": "religious",
+   "fame": 42,
+   "summary": "Cette basilique mineure du rione de Monti fut construite entre 432 et 440 sur des fondations de la République romaine, pour abriter les chaînes de saint Pierre emprisonné à Jérusalem, vénérées comme reliques. Le transept droit abrite le mausolée de Jules II, commandé à Michel-Ange en 1505 et achevé seulement en 1545 ; le Moïse en occupe le centre.",
+   "wiki": "Basilique Saint-Pierre-aux-Liens",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/San%20Pietro%20in%20Vincoli%20-%20Roma%2C%20facciata.jpg?width=960",
+   "photoBy": "Luciano Tronati",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "San Pietro in Vincoli",
+    "es": "San Pietro in Vincoli",
+    "it": "basilica di San Pietro in Vincoli"
+   }
+  },
+  {
+   "id": "Q719794",
+   "name": "église du Gesù",
+   "lat": 41.895652,
+   "lng": 12.479155,
+   "theme": "religious",
+   "fame": 40,
+   "summary": "Église-mère de la Compagnie de Jésus, construite à partir de 1568 sur les plans de Jacopo Barozzi da Vignola et financée par le cardinal Alexandre Farnèse, elle est consacrée en 1584. Giacomo della Porta en bâtit la façade à partir de 1575 et conçoit la coupole. Giovanni Battista Gaulli peint la voûte en trompe-l'œil entre 1672 et 1683.",
+   "wiki": "Église du Gesù de Rome",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Jesus%20Church.jpg?width=960",
+   "photoBy": "Rione Colonna",
+   "photoLic": "CC BY 4.0",
+   "alt": {
+    "en": "Church of the Gesù",
+    "es": "Iglesia del Gesù",
+    "it": "chiesa del Gesù"
+   }
+  },
+  {
+   "id": "Q753791",
+   "name": "temple de Vesta",
+   "lat": 41.891707,
+   "lng": 12.486206,
+   "theme": "religious",
+   "fame": 40,
+   "summary": "Petit temple rond du Forum romain, il abritait le feu sacré et le Palladium, sans statue de la déesse. Les auteurs antiques attribuent le premier temple à Numa Pompilius. Plusieurs fois incendié, il est restauré sous Septime Sévère après le feu de 191. Fermé en 394, il est détruit en 1549 ; ses ruines résultent d'une reconstruction des années 1930.",
+   "wiki": "Temple de Vesta (Rome)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Valen%C3%A7a%20do%20Douro.jpg?width=960",
+   "photoBy": "Joseolgon",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Temple of Vesta",
+    "es": "templo de Vesta",
+    "it": "Tempio di Vesta"
+   }
+  },
+  {
+   "id": "Q738214",
+   "name": "basilique Saint-Laurent-hors-les-Murs",
+   "lat": 41.902534177483,
+   "lng": 12.520547230499,
+   "theme": "religious",
+   "fame": 36,
+   "summary": "Constantin la fit élever au début du IVe siècle sur le site présumé du martyre de saint Laurent. En 580, Pélage II y autorisa la construction d'une église ; devant l'ancienne, Honorius III en entreprit une autre au XIIIe siècle, les deux structures étant plus tard réunies. Bombardée par les Alliés en 1943, elle fut restaurée jusqu'en 1948.",
+   "wiki": "Basilique Saint-Laurent-hors-les-Murs",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Basilica%20of%20Saint%20Lawrence%20outside%20the%20Walls.jpg?width=960",
+   "photoBy": "Livioandronico2013",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Basilica of Saint Lawrence Outside the Walls",
+    "es": "basílica de San Lorenzo Extramuros",
+    "it": "Basilica di San Lorenzo fuori le mura"
+   }
+  },
+  {
+   "id": "Q746721",
+   "name": "temple de Saturne",
+   "lat": 41.892428,
+   "lng": 12.484111,
+   "theme": "religious",
+   "fame": 36,
+   "summary": "Un des plus anciens temples bâtis autour du Forum Romain, il abrite sous la République le trésor public, l'Aerarium ; sa date de fondation divise les auteurs antiques. Lucius Munatius Plancus en entreprend la reconstruction en 42 av. J.-C., achevée vers la fin des années 30. Ses huit colonnes datent probablement de la restauration du IVe siècle.",
+   "wiki": "Temple de Saturne",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Tempio%20di%20Saturno.jpg?width=960",
+   "photoBy": "ThePhotografer",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Temple of Saturn",
+    "es": "Templo de Saturno",
+    "it": "Tempio di Saturno"
+   }
+  },
+  {
+   "id": "Q863593",
+   "name": "église Santa Maria Della Vittoria de Rome",
+   "lat": 41.904656354617,
+   "lng": 12.494335768062,
+   "theme": "religious",
+   "fame": 36,
+   "summary": "Église baroque de la Via XX Settembre, reconstruite au début du XVIIe siècle sur un projet de Carlo Maderno et financée par le cardinal Scipione Borghese pour célébrer la victoire des catholiques sur les protestants à la bataille de la Montagne Blanche, à Prague en 1620. Elle abrite l'Extase de sainte Thérèse du Bernin, réalisée entre 1644 et 1652.",
+   "wiki": "Église Santa Maria della Vittoria de Rome",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Santa%20Maria%20della%20Vittoria%20in%20Rome%20-%20Front.jpg?width=960",
+   "photoBy": "Architas",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Santa Maria della Vittoria",
+    "es": "iglesia de Santa María de la Victoria",
+    "it": "chiesa di Santa Maria della Vittoria"
+   }
+  },
+  {
+   "id": "Q318660",
+   "name": "basilique Santa Maria in Aracoeli",
+   "lat": 41.893888888889,
+   "lng": 12.483333333333,
+   "theme": "religious",
+   "fame": 36,
+   "summary": "Au sommet du Capitole, l'église du Sénat italien et du peuple romain a ses fondations sur le site d'une abbaye byzantine mentionnée en 574. Donnée aux Bénédictins, elle passe aux Franciscains par bulle papale en 1249-1250. Un escalier de 124 marches, conçu en 1348, y mène. Sa statue de l'Enfant Jésus, volée en 1994, est remplacée par une copie.",
+   "wiki": "Basilique Santa Maria in Aracoeli",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Santa%20Maria%20in%20Aracoeli%20%28Rome%29%20-%20Facade.jpg?width=960",
+   "photoBy": "ThePhotografer",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Santa Maria in Aracoeli",
+    "es": "basílica de Santa María en Aracoeli",
+    "it": "basilica di Santa Maria in Aracoeli"
+   }
+  },
+  {
+   "id": "Q823685",
+   "name": "basilique de la Minerve",
+   "lat": 41.898055555556,
+   "lng": 12.478333333333,
+   "theme": "religious",
+   "fame": 35,
+   "summary": "Une des rares églises romaines de style majoritairement gothique, elle est bâtie par les Dominicains, de 1280 à 1370, sur les fondations d'un lieu de culte dédié à Minerve. Sainte Catherine de Sienne et Fra Angelico y sont enterrés. Devant le pilastre gauche du chœur se dresse un Christ ressuscité commencé par Michel-Ange.",
+   "wiki": "Basilique de la Minerve",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Santa%20Maria%20sopra%20Minerva.jpg?width=960",
+   "photoBy": "Merulana",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Santa Maria sopra Minerva",
+    "es": "Santa Maria sobre Minerva",
+    "it": "basilica di Santa Maria sopra Minerva"
+   }
+  },
+  {
+   "id": "Q592244",
+   "name": "église Sainte-Sabine de Rome",
+   "lat": 41.884444444444,
+   "lng": 12.479722222222,
+   "theme": "religious",
+   "fame": 35,
+   "summary": "Bâtie sur l'Aventin entre 422 et 432 par le prêtre Pierre d'Illyrie, elle compte parmi les églises paléochrétiennes les mieux conservées de Rome. Sa porte de cyprès du Ve siècle est le plus ancien bois sculpté de cette époque : on y voit une Crucifixion tenue pour la plus ancienne connue. Honorius III la donne en 1219 à saint Dominique.",
+   "wiki": "Basilique Sainte-Sabine de Rome",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Santa%20Sabina%20%28Rome%29%20-%20Esterno.jpg?width=960",
+   "photoBy": "Fiat 500e",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Basilica of Saint Sabina",
+    "es": "basílica de Santa Sabina",
+    "it": "basilica di Santa Sabina"
+   }
+  },
+  {
+   "id": "Q869513",
+   "name": "église Santa Maria del Popolo",
+   "lat": 41.911358,
+   "lng": 12.476033,
+   "theme": "religious",
+   "fame": 35,
+   "summary": "Basilique mineure tenue par les Augustins, sur le côté nord de la piazza del Popolo, près de la porte du même nom : sa position en a fait la première église visitée par la plupart des voyageurs entrant dans Rome. Sixte IV la fait entièrement reconstruire entre 1472 et 1477. La chapelle Cerasi réunit des toiles du Caravage et d'Annibale Carracci.",
+   "wiki": "Basilique Santa Maria del Popolo",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Church%20St%20Maria%20del%20popolo%201.jpg?width=960",
+   "photoBy": "Karelj",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Santa Maria del Popolo",
+    "es": "basílica de Santa María del Popolo",
+    "it": "basilica di Santa Maria del Popolo"
+   }
+  },
+  {
+   "id": "Q685940",
+   "name": "basilique Sainte-Croix-de-Jérusalem",
+   "lat": 41.888869,
+   "lng": 12.514736,
+   "theme": "religious",
+   "fame": 35,
+   "summary": "Comptant parmi les sept églises de pèlerinage de Rome, elle est construite autour d'une pièce du palais du Sessorium qu'Hélène, mère de Constantin, avait transformée en chapelle vers 320. La tradition la dit consacrée vers 325 pour abriter les reliques de la Passion rapportées de Terre Sainte. Son aspect baroque date de Benoît XIV.",
+   "wiki": "Basilique Sainte-Croix-de-Jérusalem",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Santa%20croce%20di%20gerusalemme%20at%20Night.jpg?width=960",
+   "photoBy": "Livioandronico2013",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Basilica of the Holy Cross in Jerusalem",
+    "es": "basílica de la Santa Cruz en Jerusalén",
+    "it": "basilica di Santa Croce in Gerusalemme"
+   }
+  },
+  {
+   "id": "Q638283",
+   "name": "église Saint-Louis-des-Français",
+   "lat": 41.899719,
+   "lng": 12.474933,
+   "theme": "religious",
+   "fame": 35,
+   "summary": "Église nationale des Français à Rome, entre le Panthéon et la piazza Navona, elle est dessinée par Giacomo della Porta, réalisée pour l'essentiel par Domenico Fontana, et consacrée en 1589, l'année de son achèvement. La chapelle Contarelli abrite le cycle peint par le Caravage de 1599 à 1602 sur la vie de saint Matthieu, en trois tableaux.",
+   "wiki": "Église Saint-Louis-des-Français de Rome",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89glise%20San%20Luigi%20Francesi%20-%20Rome%20%28IT62%29%20-%202021-08-28%20-%202.jpg?width=960",
+   "photoBy": "Chabe01",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "San Luigi dei Francesi",
+    "es": "iglesia de San Luis de los Franceses",
+    "it": "chiesa di San Luigi dei Francesi"
+   }
+  },
+  {
+   "id": "Q867329",
+   "name": "église Saint-Charles-des-Quatre-Fontaines",
+   "lat": 41.90181,
+   "lng": 12.49074,
+   "theme": "religious",
+   "fame": 34,
+   "summary": "Première réalisation indépendante de Francesco Borromini, elle doit son nom au carrefour dont les quatre angles portent chacun une fontaine, l'une intégrée à sa façade. Bâtie pour les Trinitaires Déchaux entre 1638 et 1641, elle n'est consacrée qu'en 1646. Ses petites dimensions lui valent le surnom de San Carlino.",
+   "wiki": "Église Saint-Charles-aux-Quatre-Fontaines",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/San%20Carlo%20alle%20Quattro%20Fontane%20-%20Front.jpg?width=960",
+   "photoBy": "Architas",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Saint Charles at the Four Fountains",
+    "es": "iglesia de San Carlo alle Quattro Fontane",
+    "it": "chiesa di San Carlo alle Quattro Fontane"
+   }
+  },
+  {
+   "id": "Q1137391",
+   "name": "basilique Sainte-Marie-du-Trastevere",
+   "lat": 41.889444,
+   "lng": 12.469722,
+   "theme": "religious",
+   "fame": 33,
+   "summary": "Parmi les plus anciennes églises de Rome, elle porte d'abord le nom de titulus Callixti, du pape Calixte Ier (217-222). Jules Ier la rebâtit à plus grande échelle en 340, et elle est consacrée à la Vierge sans doute à l'époque du concile d'Éphèse, en 431. Innocent II la reconstruit en 1140-1143, avec un transept et les mosaïques de l'abside.",
+   "wiki": "Basilique Sainte-Marie-du-Trastevere",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Roma%20-%20Basilica%20di%20Santa%20Maria%20in%20Trastevere%2020231228-02.jpg?width=960",
+   "photoBy": "Pymouss",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Santa Maria in Trastevere",
+    "es": "Basílica de Santa María en Trastevere",
+    "it": "Basilica di Santa Maria in Trastevere"
+   }
+  },
+  {
+   "id": "Q849241",
+   "name": "temple de Portunus",
+   "lat": 41.88926,
+   "lng": 12.480908,
+   "theme": "religious",
+   "fame": 33,
+   "summary": "Petit temple ionique du forum Boarium, il est voué à Portunus, dieu romain des ports, tout près du portus Tiberinus, premier port fluvial de Rome. D'autres dédicaces lui ont longtemps été prêtées, dont la Fortune virile. Sa conversion en église au Moyen Âge l'a préservé de la destruction.",
+   "wiki": "Temple de Portunus",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/L06%20709e%20Tempel%20des%20Portunus.jpg?width=960",
+   "photoBy": "Falk2",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Temple of Portunus",
+    "es": "Templo de Portunus",
+    "it": "Tempio di Portuno"
+   }
+  },
+  {
+   "id": "Q752555",
+   "name": "temple d'Antonin et Faustine",
+   "lat": 41.892138888889,
+   "lng": 12.486688888889,
+   "theme": "religious",
+   "fame": 33,
+   "summary": "Élevé en 141 sur décret du Sénat par Antonin le Pieux pour son épouse déifiée Faustine, il est dédié une seconde fois aux deux époux après la mort de l'empereur en 161. Sa cella accueille dès le haut Moyen Âge l'église San Lorenzo in Miranda, ce qui lui vaut sa bonne conservation : les colonnes du pronaos, hautes de 17 m, sont toutes en place.",
+   "wiki": "Temple d'Antonin et Faustine",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Temple%20of%20Antoninus%20and%20Faustina%20%28Roma%29.jpg?width=960",
+   "photoBy": "ThePhotografer",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Temple of Antoninus and Faustina",
+    "es": "Templo de Antonino y Faustina",
+    "it": "tempio di Antonino e Faustina"
+   }
+  },
+  {
+   "id": "Q1229008",
+   "name": "église et couvent de la Trinité-des-Monts de Rome",
+   "lat": 41.905917,
+   "lng": 12.48364,
+   "theme": "religious",
+   "fame": 32,
+   "summary": "Sur le Pincio, au sommet de l'escalier qui domine la piazza di Spagna, cette église nationale française fut consacrée en 1585 par Sixte V. Sa voûte de croisée, de style gothique tardif français, est le seul exemple du genre à Rome. Devant elle se dresse un obélisque venu des jardins de Salluste, érigé sur ordre de Pie VI en 1788.",
+   "wiki": "Église et couvent de la Trinité-des-Monts",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Trinit%C3%A0%20dei%20Monti%20%28Rome%29%20-%20esterno.jpg?width=960",
+   "photoBy": "SonyGM",
+   "photoLic": "CC BY 4.0",
+   "alt": {
+    "en": "Trinità dei Monti",
+    "es": "Trinità dei Monti",
+    "it": "chiesa della Trinità dei Monti"
+   }
+  },
+  {
+   "id": "Q586468",
+   "name": "temple de Jupiter capitolin",
+   "lat": 41.892175,
+   "lng": 12.481689,
+   "theme": "religious",
+   "fame": 32,
+   "summary": "Principal édifice cultuel de la religion romaine antique, il couronnait le Capitole et était dédié à la triade capitoline : Jupiter au centre, Junon à gauche, Minerve à droite. Les triomphes militaires s'y achevaient par un sacrifice. Incendié à plusieurs reprises, il fut chaque fois reconstruit plus somptueux.",
+   "wiki": "Temple de Jupiter capitolin",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/TempleofCapitoliumRome.jpg?width=960",
+   "photoBy": "Hiro-o at Japanese Wikipedia",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Temple of Jupiter Optimus Maximus",
+    "es": "Templo de Júpiter Óptimo Máximo",
+    "it": "Tempio di Giove Ottimo Massimo"
+   }
+  },
+  {
+   "id": "Q569253",
+   "name": "basilique Santa Maria degli Angeli e dei Martiri",
+   "lat": 41.903055555556,
+   "lng": 12.496944444444,
+   "theme": "religious",
+   "fame": 32,
+   "summary": "Aménagée par Michel-Ange dans la salle centrale des thermes de Dioclétien, par ordre du pape Pie IV et à la demande du prêtre sicilien Antonio del Duca, elle occupe aussi les anciennes salles du caldarium et du tepidarium. Luigi Vanvitelli en décore l'intérieur à partir de 1749. Elle sert aux cérémonies nationales.",
+   "wiki": "Basilique Santa Maria degli Angeli e dei Martiri",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Basilica%20di%20Santa%20Maria%20degli%20Angeli%20e%20dei%20Martiri%20-%2022-11-2019.jpg?width=960",
+   "photoBy": "Gustavo La Pizza",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Santa Maria degli Angeli e dei Martiri",
+    "es": "basílica de Santa María de los Ángeles y los Mártires",
+    "it": "basilica di Santa Maria degli Angeli e dei Martiri"
+   }
+  },
+  {
+   "id": "Q1133288",
+   "name": "temple de César",
+   "lat": 41.89203611,
+   "lng": 12.48609167,
+   "theme": "religious",
+   "fame": 31,
+   "summary": "Le Forum Romain reçut ce temple dédié à Jules César divinisé. Peu après l'assassinat, une colonne et un autel avaient été dressés à l'endroit du bûcher, mais Dolabella les fit détruire à la fin d'avril 44 av. J.-C. Le Sénat ordonna le temple à leur emplacement en 42, et Octavien le dédia le 18 août 29 av. J.-C.",
+   "wiki": "Temple de César",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Temple%20of%20Caesar%203D.jpg?width=960",
+   "photoBy": "L.VII.C",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Temple of Caesar",
+    "es": "Templo de César",
+    "it": "Tempio del Divo Giulio"
+   }
+  },
+  {
+   "id": "Q430792",
+   "name": "temple de Vénus et de Rome",
+   "lat": 41.890892,
+   "lng": 12.48975,
+   "theme": "religious",
+   "fame": 30,
+   "summary": "Le plus grand temple de la Rome antique par sa superficie fut mis en chantier en 121, sous Hadrien, entre le vieux Forum Romain et le Colisée, sur des terrains qu'occupait le vestibule de la Domus aurea ; il fallut déplacer le colosse de Néron. L'édifice accolait dos à dos deux cellae, dédiées à Venus Felix et à Roma Aeterna.",
+   "wiki": "Temple de Vénus et de Rome",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Temple%20of%20Venus%20and%20Roma%20%2814819291950%29.jpg?width=960",
+   "photoBy": "daryl_mitchell from Saskatoon, Saskatchewan, Canada",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Temple of Venus and Roma",
+    "es": "Templo de Venus y Roma",
+    "it": "Tempio di Venere e Roma"
+   }
+  },
+  {
+   "id": "Q609293",
+   "name": "église Santa Maria in Cosmedin",
+   "lat": 41.888123,
+   "lng": 12.481567,
+   "theme": "religious",
+   "fame": 29,
+   "summary": "Basilique mineure du rione de Ripa, elle fut bâtie au VIe siècle au Forum Boarium, sur les ruines du Très Grand Autel d'Hercule Invaincu, dont un mur de tuf subsiste en sous-sol. Une communauté grecque voisine lui valut le nom de Schola Graeca, et son aspect celui de Cosmedin, du grec Kosmidion, orné. Le péristyle abrite la Bocca della Verità.",
+   "wiki": "Église Santa Maria in Cosmedin",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Roma%2C%20basilica%20di%20Santa%20Maria%20in%20Cosmedin%20-%20Facciata.jpg?width=960",
+   "photoBy": "Felix Koenig",
+   "photoLic": "CC BY 4.0",
+   "alt": {
+    "en": "Santa Maria in Cosmedin",
+    "es": "Santa Maria in Cosmedin",
+    "it": "basilica di Santa Maria in Cosmedin"
+   }
+  },
+  {
+   "id": "Q1479873",
+   "name": "église Sainte-Cécile-du-Trastevere",
+   "lat": 41.887555555556,
+   "lng": 12.475891666667,
+   "theme": "religious",
+   "fame": 29,
+   "summary": "Église conventuelle du monastère bénédictin adjacent, dans le Trastevere, elle est dédiée à la martyre romaine Cécile et aurait été bâtie sur l'emplacement de sa maison. Pascal Ier la fit reconstruire en 822 et y rapporta les reliques de la sainte, venues des catacombes de Calixte Ier. La façade blanche fut construite en 1725 par Ferdinando Fuga.",
+   "wiki": "Basilique Sainte-Cécile-du-Trastevere",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Santa%20cecilia%20in%20trastevere%2C%20esterno%2002.jpg?width=960",
+   "photoBy": "Sailko",
+   "photoLic": "CC BY 3.0",
+   "alt": {
+    "en": "Santa Cecilia in Trastevere",
+    "es": "basílica de Santa Cecilia en Trastevere",
+    "it": "basilica di Santa Cecilia in Trastevere"
+   }
+  },
+  {
+   "id": "Q1465674",
+   "name": "église Saint-Ignace-de-Loyola de Rome",
+   "lat": 41.899003,
+   "lng": 12.479761,
+   "theme": "religious",
+   "fame": 29,
+   "summary": "Deuxième église jésuite de Rome par l'importance après le Gesù, elle est entreprise en 1626 pour le Collège romain, à l'initiative du cardinal Ludovico Ludovisi et sur les plans d'Orazio Grassi. Faute de moyens, la coupole prévue n'est pas bâtie : Andrea Pozzo la suggère en trompe-l'œil et peint l'Apothéose de saint Ignace sur la voûte de la nef.",
+   "wiki": "Église Saint-Ignace-de-Loyola (Rome)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Church%20of%20Sant%27Ignazio%20di%20Loyola.jpg?width=960",
+   "photoBy": "Fiat 500e",
+   "photoLic": "CC BY 4.0",
+   "alt": {
+    "en": "Sant'Ignazio Church",
+    "es": "iglesia de San Ignacio",
+    "it": "chiesa di Sant'Ignazio di Loyola in Campo Marzio"
+   }
+  },
+  {
+   "id": "Q1258576",
+   "name": "église San Pietro in Montorio",
+   "lat": 41.88907,
+   "lng": 12.466851,
+   "theme": "religious",
+   "fame": 28,
+   "summary": "Élevée sur le Janicule, à l'emplacement d'une église du IXe siècle dédiée à saint Pierre, elle fut commandée par Ferdinand d'Aragon et Isabelle la Catholique et marquait à la fin du Moyen Âge le lieu traditionnel de la crucifixion de Pierre. Sa cour abrite le Tempietto, petit temple commémoratif de Bramante bâti peut-être dès 1502.",
+   "wiki": "Église San Pietro in Montorio",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/San%20Pietro%20in%20Montorio%20-%20esterno.jpg?width=960",
+   "photoBy": "PubblicUsername",
+   "photoLic": "CC BY 4.0",
+   "alt": {
+    "en": "San Pietro in Montorio",
+    "es": "San Pietro in Montorio",
+    "it": "chiesa di San Pietro in Montorio"
+   }
+  },
+  {
+   "id": "Q385910",
+   "name": "basilique Saint-Clément-du-Latran",
+   "lat": 41.88929503,
+   "lng": 12.49756288,
+   "theme": "religious",
+   "fame": 28,
+   "summary": "Le site superpose trois niveaux : des bâtiments romains, dont une insula abritant un mithraeum, une première basilique remblayée après le sac normand de 1084, et l'église actuelle, rebâtie par-dessus par le cardinal Anastase. Le père Joseph Mullooly dégage la basilique enfouie à partir de 1857. Des Dominicains irlandais la desservent depuis 1677.",
+   "wiki": "Basilique Saint-Clément-du-Latran",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Basilica%20di%20San%20Clemente%20al%20Laterano%20-%20esterno.jpg?width=960",
+   "photoBy": "Labicanense",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Basilica of San Clemente",
+    "es": "basílica de San Clemente de Letrán",
+    "it": "basilica di San Clemente al Laterano"
+   }
+  },
+  {
+   "id": "Q828143",
+   "name": "temple de la Concorde",
+   "lat": 41.892930555556,
+   "lng": 12.484244444444,
+   "theme": "religious",
+   "fame": 28,
+   "summary": "Dédié à la déesse Concordia, il se situe à l'extrémité occidentale du Forum Romain. Le Sénat le fait établir ou restaurer en 121 av. J.-C. par le consul Lucius Opimius ; Tibère le reconstruit après l'incendie de 9 av. J.-C. et en garnit l'intérieur d'œuvres grecques. Presque disparu, il conserve les fondations du podium et le seuil de la cella.",
+   "wiki": "Temple de la Concorde",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Temple%20of%20Concord.jpg?width=960",
+   "photoBy": "L.VII.C",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Temple of Concord",
+    "es": "Templo de la Concordia",
+    "it": "Tempio della Concordia"
+   }
+  },
+  {
+   "id": "Q576929",
+   "name": "temple d'Hercule Victor",
+   "lat": 41.88873,
+   "lng": 12.48075,
+   "theme": "religious",
+   "fame": 28,
+   "summary": "Ceint à l'origine de vingt colonnes corinthiennes, il est le plus ancien monument de Rome presque entièrement bâti en marbre conservé jusqu'à nous. Sa forme ronde l'a longtemps fait prendre pour un temple de Vesta ; le XXe siècle l'a reconnu comme dédié à Hercule Olivarius. Il occupe la partie occidentale de la piazza della Bocca della Verità.",
+   "wiki": "Temple d'Hercule Olivarius",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Templo%20de%20H%C3%A9rcules%20V%C3%ADctor%2C%20Foro%20Boario%2C%20Roma%2C%20Italia%2C%202022-09-15%2C%20DD%20109-111%20HDR.jpg?width=960",
+   "photoBy": "Diego Delso",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Temple of Hercules Victor",
+    "es": "Templo de Hércules Víctor",
+    "it": "Tempio di Ercole Vincitore"
+   }
+  },
+  {
+   "id": "Q180212",
+   "name": "Forum Romain",
+   "lat": 41.8922,
+   "lng": 12.4852,
+   "theme": "monuments",
+   "fame": 72,
+   "summary": "Entre le Capitole et le mont Palatin, une plaine marécageuse servit d'abord de nécropole. Aménagé pour la première fois en 616 av. J.-C. ou peu après, drainé par la Cloaca Maxima creusée sous Tarquin l'Ancien, le forum devient le centre de la Rome antique. Laissé à l'abandon à partir du VIIe siècle, il sert de pâturage sous le nom de Campo Vaccino.",
+   "wiki": "Forum romain (Rome)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Foro%20Romano%20Musei%20Capitolini%20Roma.jpg?width=960",
+   "photoBy": "This Photo was taken by Wolfgang Moroder. Feel free to use m",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Roman Forum",
+    "es": "Foro Romano",
+    "it": "Foro Romano"
+   }
+  },
+  {
+   "id": "Q185382",
+   "name": "fontaine de Trevi",
+   "lat": 41.900833333333,
+   "lng": 12.483055555556,
+   "theme": "monuments",
+   "fame": 68,
+   "summary": "La plus grande fontaine de Rome s'adosse au palazzo Poli, sur la piazza di Trevi. Clément XII lance en 1730 un concours pour célébrer l'aqueduc de l'Aqua Virgo et retient le projet de Nicola Salvi ; à la mort de celui-ci en 1751, Giovanni Paolo Panini poursuit le chantier et achève l'ouvrage, inauguré le 22 mai 1762.",
+   "wiki": "Fontaine de Trevi",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Trevi%20Fountain%20-%20Roma.jpg?width=960",
+   "photoBy": "NikonZ7II",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Trevi Fountain",
+    "es": "Fontana di Trevi",
+    "it": "Fontana di Trevi"
+   }
+  },
+  {
+   "id": "Q200642",
+   "name": "mont Palatin",
+   "lat": 41.888333333333,
+   "lng": 12.486944444444,
+   "theme": "monuments",
+   "fame": 63,
+   "summary": "Cette colline, une des sept de Rome et une des parties les plus anciennes de la Rome antique, donne sur le Forum Romain au nord, sur le Circus Maximus au sud. Sous l'Empire, les empereurs y bâtissent les uns après les autres d'imposantes demeures, ce qui a donné naissance au mot « palais ». Les jardins Farnèse recouvrent encore la Domus Tiberiana.",
+   "wiki": "Mont Palatin",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palatine%20Hill.Pavement.jpg?width=960",
+   "photoBy": "Vitold Muratov",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Palatine Hill",
+    "es": "Monte Palatino",
+    "it": "Palatino"
+   }
+  },
+  {
+   "id": "Q192784",
+   "name": "colonne Trajane",
+   "lat": 41.895833333333,
+   "lng": 12.484166666667,
+   "theme": "monuments",
+   "fame": 56,
+   "summary": "Colonne triomphale du forum de Trajan, construite de 107 à 113 et dédiée en mai 113 par le Sénat. Un bas-relief en spirale déroule sur son fût le récit des deux guerres daciques, en 155 scènes. Les cendres de Trajan, mort en 117, furent déposées dans une chambre du soubassement. Sixte V la fit surmonter d'une statue de saint Pierre en 1587.",
+   "wiki": "Colonne Trajane",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Trajan%20column%20%28Rome%29%20September%202015-2.jpg?width=960",
+   "photoBy": "Alvesgaspar",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Trajan's Column",
+    "es": "Columna de Trajano",
+    "it": "Colonna Traiana"
+   }
+  },
+  {
+   "id": "Q207808",
+   "name": "Circus Maximus",
+   "lat": 41.8859,
+   "lng": 12.4857,
+   "theme": "monuments",
+   "fame": 52,
+   "summary": "Le plus vaste et le plus ancien hippodrome de Rome occupe la vallée Murcia, entre le Palatin et l'Aventin. La tradition en attribue la fondation à Tarquin l'Ancien ; les premières structures permanentes datent de 329 av. J.-C., Jules César l'agrandit en 46 av. J.-C. et Trajan le reconstruit en pierre. La dernière course s'y tient en 549.",
+   "wiki": "Circus Maximus",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Circus%20Maximus%202025.jpg?width=960",
+   "photoBy": "Rione Colonna",
+   "photoLic": "CC BY 4.0",
+   "alt": {
+    "en": "Circus Maximus",
+    "es": "Circo Máximo",
+    "it": "Circo Massimo"
+   }
+  },
+  {
+   "id": "Q5786",
+   "name": "arc de Constantin",
+   "lat": 41.889828,
+   "lng": 12.490605,
+   "theme": "monuments",
+   "fame": 49,
+   "summary": "Le Sénat romain l'élève pour commémorer la victoire de Constantin sur Maxence au pont Milvius, le 28 octobre 312, et ses dix années de pouvoir. Inauguré le 25 juillet 315, dernier de la série des arcs de triomphe de Rome, il se distingue par l'emploi systématique de réemplois pris à des monuments plus anciens.",
+   "wiki": "Arc de Constantin",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Arch%20of%20Constantine%20%28Rome%29%20-%20South%20side%2C%20from%20Via%20triumphalis.jpg?width=960",
+   "photoBy": "NikonZ7II (Paris Orlando)",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Arch of Constantine",
+    "es": "Arco de Constantino",
+    "it": "Arco di Costantino"
+   }
+  },
+  {
+   "id": "Q625149",
+   "name": "mur d'Aurélien",
+   "lat": 41.873292,
+   "lng": 12.498955,
+   "theme": "monuments",
+   "fame": 47,
+   "summary": "Rempart élevé autour de Rome au moment où l'insécurité met fin à la paix romaine : les travaux commencent en 271 sous Aurélien, après l'invasion du nord de l'Italie par les Juthunges et les Vandales. Maxence puis Honorius le renforcent. Conservé en grande partie, il marque la limite du Municipio I, le centre historique.",
+   "wiki": "Mur d'Aurélien",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Celio%20-%20le%20mura%20tra%20porta%20san%20Sebastiano%20e%20porta%20Ardeatina%201974.JPG?width=960",
+   "photoBy": "user:Lalupa",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Aurelian Walls",
+    "es": "Murallas aurelianas",
+    "it": "Mura aureliane"
+   }
+  },
+  {
+   "id": "Q723887",
+   "name": "arc de Titus",
+   "lat": 41.890717,
+   "lng": 12.488585,
+   "theme": "monuments",
+   "fame": 43,
+   "summary": "Domitien l'érige en 81 ap. J.-C., peu après la mort de son frère Titus, pour commémorer la prise de Jérusalem et la destruction du Second temple. Sous la voûte, deux reliefs montrent des soldats emportant le butin du Temple, dont le chandelier à sept branches, et Titus en triomphateur conduisant un quadrige.",
+   "wiki": "Arc de Titus",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Arch%20Titus%2C%20Forum%20Romanum%2C%20Rome%2C%20Italy.jpg?width=960",
+   "photoBy": "Jebulon",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "Arch of Titus",
+    "es": "Arco de Tito",
+    "it": "Arco di Tito"
+   }
+  },
+  {
+   "id": "Q770847",
+   "name": "mausolée d'Auguste",
+   "lat": 41.90611,
+   "lng": 12.47639,
+   "theme": "monuments",
+   "fame": 40,
+   "summary": "Auguste fait élever ce monument funéraire à partir de 28 av. J.-C. pour lui-même et la famille impériale, au bord de la via Flaminia. Le tumulus de 87 mètres de diamètre est saccagé en 410, sert de réduit fortifié aux Colonna, d'amphithéâtre à partir de 1780, d'auditorium après son achat par la commune en 1907, avant les fouilles de Mussolini.",
+   "wiki": "Mausolée d'Auguste",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Photographs%20of%20the%20Mausoleum%20of%20Augustus%2014%20%28cropped%29.jpg?width=960",
+   "photoBy": "MumblerJamie",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Mausoleum of Augustus",
+    "es": "Mausoleo de Augusto",
+    "it": "Mausoleo di Augusto"
+   }
+  },
+  {
+   "id": "Q265384",
+   "name": "colonne de Marc-Aurèle",
+   "lat": 41.900833333333,
+   "lng": 12.48,
+   "theme": "monuments",
+   "fame": 39,
+   "summary": "Érigée entre 176 et 192, elle célèbre les victoires de Marc Aurèle sur les Germains Marcomans et les Sarmates établis au nord du Danube. Haute de cent pieds romains et conçue à l'imitation de la colonne Trajane, elle est encore sur son site d'origine, au centre de la piazza Colonna qui lui doit son nom, devant le Palais Chigi.",
+   "wiki": "Colonne de Marc-Aurèle",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Colonna%20di%20Marco%20aurelio%20-%20Frontale.jpg?width=960",
+   "photoBy": "WikiRomaWiki",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Column of Marcus Aurelius",
+    "es": "Columna de Marco Aurelio",
+    "it": "Colonna di Marco Aurelio"
+   }
+  },
+  {
+   "id": "Q162353",
+   "name": "arc de Septime Sévère",
+   "lat": 41.892777777778,
+   "lng": 12.484722222222,
+   "theme": "monuments",
+   "fame": 38,
+   "summary": "Érigé en 203 pour glorifier les victoires de Septime Sévère et de ses fils Caracalla et Geta sur les Parthes, cet arc de marbre comporte une arche principale encadrée de deux plus petites. Caracalla assassine Geta en 212, puis fait remplacer le nom de son frère, dans la dédicace, par des qualifications supplémentaires.",
+   "wiki": "Arc de Septime Sévère",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Arch%20of%20Septimius%20Severus.jpg?width=960",
+   "photoBy": "Ramon Wijnands",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Arch of Septimius Severus (Roman Forum)",
+    "es": "Arco de Septimio Severo",
+    "it": "Arco di Settimio Severo"
+   }
+  },
+  {
+   "id": "Q281330",
+   "name": "muraille Servienne",
+   "lat": 41.901666666667,
+   "lng": 12.501666666667,
+   "theme": "monuments",
+   "fame": 37,
+   "summary": "Première enceinte complète autour de Rome, commencée sous la royauté, elle porte le nom de Servius Tullius mais est presque entièrement reconstruite au IVe siècle av. J.-C., après le sac de la ville par les Gaulois en 390. Haute d'environ 10 m, elle perd son rôle défensif sous l'Empire ; un pan de 94 m subsiste devant la gare de Rome-Termini.",
+   "wiki": "Muraille Servienne",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ripa%20-%20le%20mura%20a%20via%20di%20sant%20anselmo%20051211-06.JPG?width=960",
+   "photoBy": "Lalupa",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Servian Wall",
+    "es": "Murallas servianas",
+    "it": "mura serviane"
+   }
+  },
+  {
+   "id": "Q216568",
+   "name": "Forums impériaux",
+   "lat": 41.89444444,
+   "lng": 12.48555556,
+   "theme": "monuments",
+   "fame": 37,
+   "summary": "Ensemble de grandes places bordant le Forum Romain au nord-est, élevé entre 54 av. J.-C. et 113 ap. J.-C., quand le vieux forum devient trop exigu. Jules César le premier, puis Auguste, Vespasien, Domitien et Trajan, y font aménager chacun une vaste place fermée pour leur programme politique. Le forum de Trajan, le dernier, est le plus grand.",
+   "wiki": "Forums impériaux",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Fori-imperiali-big-1-.jpg?width=960",
+   "photoBy": "it:utente:Forma mentis",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Imperial fora",
+    "es": "Foros imperiales",
+    "it": "Fori Imperiali"
+   }
+  },
+  {
+   "id": "Q746102",
+   "name": "Cloaca Maxima",
+   "lat": 41.888888888889,
+   "lng": 12.480277777778,
+   "theme": "monuments",
+   "fame": 37,
+   "summary": "Principal égout collecteur de la Rome antique, ce canal recueille les eaux des vallons entre le Quirinal et l'Esquilin, traverse le forum romain et se déverse dans le Tibre. La tradition fait remonter le début des travaux aux environs de 600 av. J.-C. D'abord à ciel ouvert, il est peu à peu couvert. Ses conduits drainent encore le Foro Romano.",
+   "wiki": "Cloaca Maxima",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/040227%20tevere16CloacaMaxima.jpg?width=960",
+   "photoBy": "user:Lalupa",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Cloaca Maxima",
+    "es": "Cloaca Máxima",
+    "it": "Cloaca Massima"
+   }
+  },
+  {
+   "id": "Q659138",
+   "name": "théâtre de Marcellus",
+   "lat": 41.891911,
+   "lng": 12.479483,
+   "theme": "monuments",
+   "fame": 36,
+   "summary": "Planifié sous Jules César, qui dégage en 44 av. J.-C. une zone du Champ de Mars, le chantier n'est repris qu'en 23 av. J.-C. par Auguste. L'édifice est dédié le 7 mai 11 av. J.-C. à Marcellus, son neveu et gendre. Devenu forteresse au Moyen Âge, il sert d'assise au palais que Baldassare Peruzzi élève en 1532 pour les Savelli, ce qui l'a sauvegardé.",
+   "wiki": "Théâtre de Marcellus",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Teatro%20di%20Marcello%20intero.jpg?width=960",
+   "photoBy": "Fiat 500e",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Theatre of Marcellus",
+    "es": "Teatro de Marcelo",
+    "it": "Teatro di Marcello"
+   }
+  },
+  {
+   "id": "Q380530",
+   "name": "temple des Dioscures",
+   "lat": 41.891666666667,
+   "lng": 12.485555555556,
+   "theme": "monuments",
+   "fame": 35,
+   "summary": "Voué à Castor et Pollux, ce temple du Forum Romain fut élevé, selon Tite-Live, après le vœu du dictateur Aulus Postumius Albus en remerciement à Castor pour son rôle dans la victoire du lac Régille. Son podium servait de tribune aux orateurs sous la République. Il en subsiste une partie du soubassement et trois colonnes de 12,5 mètres.",
+   "wiki": "Temple des Dioscures",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/RomaForoRomanoTempioCastori.jpg?width=960",
+   "photoBy": "No machine-readable author provided. MM assumed (based on co",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Temple of Castor and Pollux",
+    "es": "Templo de Cástor y Pólux",
+    "it": "Tempio dei Dioscuri"
+   }
+  },
+  {
+   "id": "Q568342",
+   "name": "Tabularium",
+   "lat": 41.892777777778,
+   "lng": 12.483611111111,
+   "theme": "monuments",
+   "fame": 34,
+   "summary": "Élevé à l'extrémité nord-ouest du Forum Romain, sur les pentes de l'Arx, un des deux sommets du Capitole, il devient à la fin de la République le bureau officiel des archives de la Rome antique. Son nom vient des tabulae, les tablettes de cire qu'on y entreposait. Sa partie supérieure, rénovée par Michel-Ange, abrite la mairie de Rome.",
+   "wiki": "Tabularium",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rome%20Forum%20Romanum%20Tabularium.JPG?width=960",
+   "photoBy": "Rita1234",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Tabularium",
+    "es": "Tabulario",
+    "it": "Tabularium"
+   }
+  },
+  {
+   "id": "Q729490",
+   "name": "Bocca della Verità",
+   "lat": 41.888055555556,
+   "lng": 12.481666666667,
+   "theme": "monuments",
+   "fame": 33,
+   "summary": "Ce mascaron de marbre du Ier siècle apr. J.-C., d'un diamètre de 1,75 m, montre un visage masculin barbu aux yeux, au nez et à la bouche forés ; il servait probablement de bouche d'égout. Placé d'abord à l'extérieur du porche de Santa Maria in Cosmedin, il gagne le portique lors des restaurations voulues par Urbain VIII. Son nom apparaît en 1485.",
+   "wiki": "Bocca della Verità",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Et%C3%A0%20imperiale%2C%20chiusino%20a%20forma%20di%20mascherone%20di%20divinit%C3%A0%20fluviale%2C%20detta%20bocca%20della%20verit%C3%A0%2C%20collocata%20qui%20nel%201632.jpg?width=960",
+   "photoBy": "Sailko",
+   "photoLic": "CC BY 3.0",
+   "alt": {
+    "en": "Bocca della Verità",
+    "es": "Bocca della Verità",
+    "it": "Bocca della Verità"
+   }
+  },
+  {
+   "id": "Q770797",
+   "name": "Forum d'Auguste",
+   "lat": 41.894166666667,
+   "lng": 12.486666666667,
+   "theme": "monuments",
+   "fame": 33,
+   "summary": "Octavien fait le vœu d'un forum et d'un temple à Mars s'il l'emporte à la bataille de Philippes, en 42 av. J.-C. Les travaux ne débutent sans doute qu'entre 19 et 12 av. J.-C., et la dédicace du forum, comme la consécration du temple de Mars Ultor encore inachevé, n'a lieu que le 1er août de l'an 2 av. J.-C.",
+   "wiki": "Forum d'Auguste",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Temple%20Mars%20Vengeur%20-%20Rome%20%28IT62%29%20-%202021-08-30%20-%201.jpg?width=960",
+   "photoBy": "Chabe01",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Forum of Augustus",
+    "es": "Foro de Augusto",
+    "it": "Foro di Augusto"
+   }
+  },
+  {
+   "id": "Q371921",
+   "name": "basilique de Maxence et Constantin",
+   "lat": 41.891944444444,
+   "lng": 12.488333333333,
+   "theme": "monuments",
+   "fame": 33,
+   "summary": "Dernière et plus grande basilique civile de la Rome antique, commencée par Maxence au début du IVe siècle, elle est achevée par Constantin, vainqueur de Maxence au pont Milvius. Les basiliques antiques n'avaient pas de fonction religieuse : celle-ci abritait les activités judiciaires. Deux séismes, en 847 et 1349, ont eu raison de la nef centrale.",
+   "wiki": "Basilique de Maxence et Constantin",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Basilica%20of%20Maxentius2.jpg?width=960",
+   "photoBy": "Hiro-o",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Basilica of Maxentius",
+    "es": "Basílica de Majencio",
+    "it": "basilica di Massenzio"
+   }
+  },
+  {
+   "id": "Q836108",
+   "name": "thermes de Dioclétien",
+   "lat": 41.90277778,
+   "lng": 12.49833333,
+   "theme": "monuments",
+   "fame": 32,
+   "summary": "Construits sur le Viminal à partir de 298 sous Maximien Hercule, inaugurés en 306, ce sont les plus vastes thermes de la Rome antique. En 1560, le frigidarium est converti en église : Pie IV charge Michel-Ange d'élever la chapelle au rang de basilique, la future Santa Maria degli Angeli e dei Martiri, et de concevoir la chartreuse de Rome.",
+   "wiki": "Thermes de Dioclétien",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Baths%20of%20Diocletian-Antmoose1.jpg?width=960",
+   "photoBy": "Joris",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Baths of Diocletian",
+    "es": "Termas de Diocleciano",
+    "it": "Terme di Diocleziano"
+   }
+  },
+  {
+   "id": "Q10285",
+   "name": "Colisée",
+   "lat": 41.890277777778,
+   "lng": 12.492222222222,
+   "theme": "monuments",
+   "fame": 145,
+   "summary": "Ovoïde, entre l'Esquilin et le Cælius, c'est le plus grand amphithéâtre construit dans l'Empire romain. Sa construction commence entre 70 et 72 sous Vespasien et s'achève en 80 sous Titus ; Domitien y ajoute une galerie au sommet et crée l'hypogée. En service près de cinq siècles, il accueille combats d'animaux, de gladiateurs et exécutions.",
+   "wiki": "Colisée",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Colosseo%202020.jpg?width=960",
+   "photoBy": "FeaturedPics",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Colosseum",
+    "es": "Coliseo",
+    "it": "Colosseo"
+   }
+  },
+  {
+   "id": "Q99309",
+   "name": "Panthéon",
+   "lat": 41.898611111111,
+   "lng": 12.476944444444,
+   "theme": "monuments",
+   "fame": 80,
+   "summary": "Sur la piazza della Rotonda, ce temple bâti sur l'ordre d'Agrippa est d'abord consacré à toutes les divinités romaines. Endommagé par plusieurs incendies, il est entièrement reconstruit sous Hadrien, puis converti en église au VIIe siècle par le pape Boniface IV. Sa coupole, la plus grande de l'Antiquité, atteint 43,30 m de diamètre intérieur.",
+   "wiki": "Panthéon (Rome)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Pantheon%20%28Rome%29%20-%20Right%20side%20and%20front.jpg?width=960",
+   "photoBy": "NikonZ7II",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Pantheon",
+    "es": "Panteón de Agripa",
+    "it": "Pantheon"
+   }
+  },
+  {
+   "id": "Q182955",
+   "name": "musées du Vatican",
+   "lat": 41.906388888889,
+   "lng": 12.454444444444,
+   "theme": "museums",
+   "fame": 64,
+   "summary": "Douze musées, cinq galeries et mille quatre cents salles abritent la collection réunie au fil des siècles par les papes : environ 70 000 œuvres, dont 20 000 exposées. L'ensemble remonte au début du XVIe siècle, quand Jules II fait installer des statues antiques dans les jardins du Belvédère. C'est le deuxième musée le plus visité au monde en 2024.",
+   "wiki": "Musées du Vatican",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mura%20vaticane%20-%20ingresso%20ai%20Musei%2000410.JPG?width=960",
+   "photoBy": "user:Lalupa",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Vatican Museums",
+    "es": "Museos Vaticanos",
+    "it": "Musei Vaticani"
+   }
+  },
+  {
+   "id": "Q486382",
+   "name": "château Saint-Ange",
+   "lat": 41.903044,
+   "lng": 12.466307,
+   "theme": "museums",
+   "fame": 58,
+   "summary": "Élevé à partir de 118 comme mausolée d'Hadrien et achevé sous Antonin le Pieux en 139, il est intégré au mur d'Aurélien en 403 et devient une forteresse. Son nom vient de la vision de l'archange Michel prêtée à Grégoire Ier lors de la peste de 590. Refuge des papes, il sert de prison jusqu'en 1901 et abrite un musée depuis 1906.",
+   "wiki": "Château Saint-Ange",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Castel%20Sant%27Angelo%20at%20Night.jpg?width=960",
+   "photoBy": "Livioandronico2013",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Castel Sant'Angelo",
+    "es": "Castillo Sant'Angelo",
+    "it": "Castel Sant'Angelo"
+   }
+  },
+  {
+   "id": "Q841506",
+   "name": "Galerie Borghèse",
+   "lat": 41.91421,
+   "lng": 12.492144,
+   "theme": "museums",
+   "fame": 46,
+   "summary": "Musée public installé dans une villa bâtie pour les Borghese à partir de 1607 par Flaminio Ponzio, les travaux revenant ensuite à Giovanni Vasanzio. Une partie de la collection du cardinal Scipione Borghese y est transférée dès mars 1613. L'État italien achète la villa et ses collections en 1902 ; la galerie rouvre après restauration en juin 1997.",
+   "wiki": "Galerie Borghèse",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Roma%20Museo%20Borghese.jpg?width=960",
+   "photoBy": "Blackcat",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Galleria Borghese",
+    "es": "Galería Borghese",
+    "it": "Galleria Borghese"
+   }
+  },
+  {
+   "id": "Q333906",
+   "name": "musées du Capitole",
+   "lat": 41.893055555556,
+   "lng": 12.482777777778,
+   "theme": "museums",
+   "fame": 46,
+   "summary": "Créés en 1471 par Sixte IV pour abriter des bronzes antiques donnés au peuple romain, dont la Louve capitoline, ils passent pour le premier musée au monde et ouvrent au public en 1734 sous Clément XII. Benoît XIV y ajoute la pinacothèque capitoline. Leur siège historique est le palais Neuf et le palais des Conservateurs, sur la place du Capitole.",
+   "wiki": "Musées du Capitole",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palazzo%20dei%20Conservatori%20in%20Rome%20%282%29.jpg?width=960",
+   "photoBy": "Tournasol7",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Capitoline Museums",
+    "es": "Museos Capitolinos",
+    "it": "Musei Capitolini"
+   }
+  },
+  {
+   "id": "Q502098",
+   "name": "thermes de Caracalla",
+   "lat": 41.880264,
+   "lng": 12.492764,
+   "theme": "monuments",
+   "fame": 43,
+   "summary": "Les travaux commencent en 212 sous Caracalla et se prolongent jusqu'en 216, année de l'inauguration ; Héliogabale ajoute ensuite des portiques à l'enceinte extérieure, complétés plus tard par Sévère Alexandre. Plus de onze hectares, de la place pour 1 600 baigneurs : c'est aujourd'hui l'édifice thermal le mieux conservé de l'Empire romain.",
+   "wiki": "Thermes de Caracalla",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Apodyterium%20at%20Baths%20of%20Caracalla.jpg?width=960",
+   "photoBy": "Ethan Doyle White",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Baths of Caracalla",
+    "es": "Termas de Caracalla",
+    "it": "Terme di Caracalla"
+   }
+  },
+  {
+   "id": "Q506234",
+   "name": "monument à Victor-Emmanuel II",
+   "lat": 41.894722222222,
+   "lng": 12.483055555556,
+   "theme": "monuments",
+   "fame": 43,
+   "summary": "Conçu par Giuseppe Sacconi et réalisé entre 1885 et 1911, ce monument de marbre blanc célèbre les 50 ans de l'unification italienne et honore Victor-Emmanuel II, premier roi de l'Italie unifiée en 1861. Sa construction détruisit un quartier médiéval et fut fortement contestée : les Romains le surnomment « la machine à écrire ».",
+   "wiki": "Monument à Victor-Emmanuel II",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Altare%20della%20Patria%20%28Roma%29.jpg?width=960",
+   "photoBy": "ThePhotografer",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Altare della Patria",
+    "es": "Monumento a Víctor Manuel II",
+    "it": "Vittoriano"
+   }
+  },
+  {
+   "id": "Q623612",
+   "name": "autel de la paix d'Auguste",
+   "lat": 41.906388888889,
+   "lng": 12.475555555556,
+   "theme": "museums",
+   "fame": 41,
+   "summary": "Auguste éleva cet autel dédié à Pax, déesse de la Paix, entre 13 et 9 av. J.-C., sur décision du Sénat après son retour de Gaule et d'Espagne, dans la zone septentrionale du Champ de Mars. Enfoui par les crues du Tibre, redécouvert au XVIe siècle, il fut reconstitué en 1937-1938 près du mausolée d'Auguste, sous un pavillon inauguré par Mussolini.",
+   "wiki": "Ara Pacis",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ara%20Pacis%20%28SW%29.jpg?width=960",
+   "photoBy": "Rabax63",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Ara Pacis",
+    "es": "Ara Pacis",
+    "it": "Ara Pacis"
+   }
+  },
+  {
+   "id": "Q622438",
+   "name": "Domus aurea",
+   "lat": 41.891388888889,
+   "lng": 12.495277777778,
+   "theme": "monuments",
+   "fame": 37,
+   "summary": "Construite pour Néron à partir de l'an 65, après l'incendie de Rome, elle tirait son nom des feuilles d'or de son décor et couvrait plusieurs dizaines d'hectares : bâtiments distincts, jardins, lac artificiel, salle de banquet tournante. Après 69, l'espace fut rendu au public romain et Vespasien éleva sur le lac asséché l'amphithéâtre Flavien.",
+   "wiki": "Domus aurea",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Domus%20Aurea%20NEUTRA.png?width=960",
+   "photoBy": "Cristiano64",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Domus Aurea",
+    "es": "Domus Aurea",
+    "it": "Domus Aurea"
+   }
+  },
+  {
+   "id": "Q1126723",
+   "name": "villa Farnesina",
+   "lat": 41.893611111111,
+   "lng": 12.4675,
+   "theme": "museums",
+   "fame": 35,
+   "summary": "Baldassarre Peruzzi bâtit cette villa suburbaine à partir de 1508, dans le rione du Trastevere, pour le banquier siennois Agostino Chigi, trésorier du pape Jules II. Elle reçoit des fresques de Peruzzi, de Raphaël et de son école, de Sebastiano del Piombo et du Sodoma. Le cardinal Alexandre Farnèse l'acquiert vers 1580 et lui donne son nom.",
+   "wiki": "Villa Farnesina",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Loggia%20of%20Psyche%20%28Villa%20Farnesina%2C%20Rome%29.jpg?width=960",
+   "photoBy": "Paris Orlando",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Villa Farnesina",
+    "es": "Villa Farnesina",
+    "it": "Villa Farnesina"
+   }
+  },
+  {
+   "id": "Q1135392",
+   "name": "Musée national romain",
+   "lat": 41.903426175367,
+   "lng": 12.499017895209,
+   "theme": "museums",
+   "fame": 35,
+   "summary": "Créé en 1889 pour rassembler les antiquités de Rome, ce musée archéologique s'installe dans les thermes de Dioclétien et le monastère attenant à la basilique Santa Maria degli Angeli e dei Martiri. L'État achète en 1901 la villa Ludovisi, dont les sculptures le rejoignent. Ses œuvres se répartissent aujourd'hui entre quatre lieux d'exposition.",
+   "wiki": "Musée national romain",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Therme-vum-Diokletian.jpg?width=960",
+   "photoBy": "Briséis~commonswiki",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Museo Nazionale Romano",
+    "es": "Museo Nacional Romano",
+    "it": "Museo Nazionale Romano"
+   }
+  },
+  {
+   "id": "Q725404",
+   "name": "pyramide de Cestius",
+   "lat": 41.876388888889,
+   "lng": 12.480833333333,
+   "theme": "monuments",
+   "fame": 34,
+   "summary": "Proche de la porta San Paolo, elle abrite le tombeau de Caius Cestius, mais passait au Moyen Âge pour celui de Rémus. Construite entre 18 et 12 av. J.-C., haute de 36,4 m, elle est faite de béton revêtu de dalles de marbre de Carrare. Le testament de Cestius imposait à ses héritiers de l'élever en 330 jours, sous peine de perdre l'héritage.",
+   "wiki": "Pyramide de Cestius",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Piramide%20Cestia.jpg?width=960",
+   "photoBy": "Livioandronico2013",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Pyramid of Cestius",
+    "es": "Pirámide Cestia",
+    "it": "piramide Cestia"
+   }
+  },
+  {
+   "id": "Q1136614",
+   "name": "palais Barberini",
+   "lat": 41.903324209198,
+   "lng": 12.48985606991,
+   "theme": "museums",
+   "fame": 34,
+   "summary": "Urbain VIII, qui avait acheté le terrain aux Sforza en 1625, en confie la construction à Carlo Maderno en 1627 ; à la mort de celui-ci en 1629, son neveu Borromini reprend le chantier, d'abord avec Le Bernin, qui l'achève seul en 1633. L'État italien l'acquiert en 1949 et y installe la Galerie nationale d'art ancien.",
+   "wiki": "Palais Barberini",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/PalaisBarberini-Facade%20avant%20du%20palais.JPG?width=960",
+   "photoBy": "Mallowtek",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Palazzo Barberini",
+    "es": "Palacio Barberini",
+    "it": "Palazzo Barberini"
+   }
+  },
+  {
+   "id": "Q1492387",
+   "name": "Galerie Nationale d'Art Moderne et Contemporain",
+   "lat": 41.91653,
+   "lng": 12.48177,
+   "theme": "museums",
+   "fame": 28,
+   "summary": "Créée en 1883, elle occupe d'abord le Palazzo delle Esposizioni de la via Nazionale ; pour l'Exposition internationale de 1911, le gouvernement décide d'édifier un nouveau musée dans la villa Borghèse, sur les plans de Cesare Bazzani. Ses 55 salles présentent 1 100 œuvres, principalement italiennes.",
+   "wiki": "Galerie nationale d'Art moderne et contemporain",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Galleria%20nazionale%20d%27arte%20moderna%20-%20Rome%2C%20Italy%20-%20DSC05142.jpg?width=960",
+   "photoBy": "Daderot",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "Galleria Nazionale d'Arte Moderna e Contemporanea di Roma",
+    "es": "Galería Nacional de Arte Moderno",
+    "it": "Galleria Nazionale d'Arte Moderna e Contemporanea"
+   }
+  },
+  {
+   "id": "Q2266081",
+   "name": "Galerie nationale d'art ancien",
+   "lat": 41.902779717367,
+   "lng": 12.489527499324,
+   "theme": "museums",
+   "fame": 28,
+   "summary": "Fondée en 1895, cette galerie de peintures est longtemps restée au palais Corsini ; depuis les années 1950, elle se partage entre les palais Corsini et Barberini. Ses collections réunissent des œuvres majeures de la peinture italienne et européenne : La Fornarina de Raphaël, Judith décapitant Holopherne et Saint Jean-Baptiste du Caravage.",
+   "wiki": "Galerie nationale d'Art ancien",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palazzo%20corsini%20alla%20lungara%2C%20facciata%20lato%20giardino%2001.JPG?width=960",
+   "photoBy": "Sailko",
+   "photoLic": "CC BY 3.0",
+   "alt": {
+    "en": "Galleria Nazionale d'Arte Antica",
+    "es": "Galería Nacional de Arte Antiguo",
+    "it": "Galleria nazionale d'arte antica"
+   }
+  },
+  {
+   "id": "Q1203458",
+   "name": "Galerie Doria-Pamphilj",
+   "lat": 41.897669,
+   "lng": 12.481145,
+   "theme": "museums",
+   "fame": 26,
+   "summary": "Musée privé de la famille Doria Pamphilj Landi, dans un palais du XVIe siècle entre la via del Corso et la via della Gatta. Olimpia Aldobrandini l'apporte en 1647 au prince Camillo Pamphilj, neveu d'Innocent X. Le cœur de la collection vient de l'héritage Aldobrandini ; les tableaux y sont superposés sur plusieurs niveaux, presque sans cartels.",
+   "wiki": "Galerie Doria-Pamphilj",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Roma-palazzodoriapamphili.jpg?width=960",
+   "photoBy": "antmoose",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Galleria Doria Pamphilj",
+    "es": "Galería Doria-Pamphili",
+    "it": "Galleria Doria Pamphilj"
+   }
+  },
+  {
+   "id": "Q338523",
+   "name": "Accademia di San Luca",
+   "lat": 41.90166,
+   "lng": 12.483586,
+   "theme": "museums",
+   "fame": 22,
+   "summary": "Grégoire XIII autorise en 1577 cette institution artistique, placée sous le patronage de saint Luc, tenu pour l'auteur du premier portrait de la Vierge. Elle prend vraiment corps en 1593 sous Federico Zuccari, son premier prince. Après la démolition de ses bâtiments près du Forum romain, elle s'installe au Palazzo Carpegna en 1934.",
+   "wiki": "Accademia di San Luca",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Acc.San%20Luca%20Rop.jpg?width=960",
+   "photoBy": "Warburg",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Accademia di San Luca",
+    "es": "Academia de San Lucas",
+    "it": "Accademia nazionale di San Luca"
+   }
+  },
+  {
+   "id": "Q1971299",
+   "name": "palais Colonna",
+   "lat": 41.89763611,
+   "lng": 12.48421389,
+   "theme": "museums",
+   "fame": 21,
+   "summary": "Demeure historique de la famille Colonna, proche de la piazza Venezia, il est entrepris au XIVe siècle et sa construction dure cinq siècles, chaque époque y laissant son architecture. Martin V, issu de la famille, y réside dans les années 1420. Au XVIIe siècle, il devient une demeure baroque et la galerie Colonna, longue de 76 mètres, est édifiée.",
+   "wiki": "Palais Colonna (Rome)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Trevi%20-%20palazzo%20colonna%20e%20basilica%20santi%20apostoli%2001.JPG?width=960",
+   "photoBy": "user:Lalupa",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Palazzo Colonna",
+    "es": "Palacio Colonna",
+    "it": "Palazzo Colonna"
+   }
+  },
+  {
+   "id": "Q2517648",
+   "name": "palais Corsini",
+   "lat": 41.89333,
+   "lng": 12.466925,
+   "theme": "museums",
+   "fame": 21,
+   "summary": "Bâti au XVe siècle pour la famille Riario, dans le Trastevere face à la villa Farnesina, il est habité au XVIIe siècle par la reine Christine de Suède. Acheté en 1736 par le cardinal Neri Maria Corsini, il voit sa taille doubler lors de la reconstruction confiée à Ferdinando Fuga. Vendu à l'État en 1883, il abrite la Galerie nationale d'art ancien.",
+   "wiki": "Palais Corsini",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palazzo%20Corsini%20rear%20entrance%20angle%20AvL.JPG?width=960",
+   "photoBy": "AlexanderVanLoon",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Palazzo Corsini",
+    "es": "Palacio Corsini",
+    "it": "Palazzo Corsini alla Lungara"
+   }
+  },
+  {
+   "id": "Q2669644",
+   "name": "musée d'Art contemporain de Rome",
+   "lat": 41.912825,
+   "lng": 12.50221667,
+   "theme": "museums",
+   "fame": 16,
+   "summary": "Musée municipal d'art contemporain installé près de la porta Pia, sur le site des anciennes usines de bière Peroni, il hérite de la Galleria Comunale d'Arte Moderna e Contemporanea fondée en 1925. Six salles ouvrent en septembre 1999, le musée principal est inauguré le 11 octobre 2002, et l'extension d'Odile Decq ouvre au public à l'automne 2010.",
+   "wiki": "Musée d'Art contemporain de Rome",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Macro%20Rome2.jpg?width=960",
+   "photoBy": "LPLT",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Museum of Contemporary Art of Rome",
+    "es": "Museo de Arte Contemporáneo de Roma",
+    "it": "Museo di arte contemporanea di Roma"
+   }
+  },
+  {
+   "id": "Q83425",
+   "name": "place Saint-Pierre",
+   "lat": 41.902183055556,
+   "lng": 12.457238888889,
+   "theme": "streets",
+   "fame": 66,
+   "summary": "Commandée en 1656 par le pape Alexandre VII au Bernin, cette esplanade baroque sert de parvis à la basilique Saint-Pierre. Sa quadruple colonnade, 284 colonnes doriques et 88 pilastres, s'écarte depuis la basilique comme deux bras qui accueillent la foule. Le Bernin voulait fermer la place à l'est : la mort du pape interrompit les travaux.",
+   "wiki": "Place Saint-Pierre",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/St%20Peter%27s%20Square%2C%20Vatican%20City%20-%20April%202007.jpg?width=960",
+   "photoBy": "Diliff",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Saint Peter's Square",
+    "es": "Plaza de San Pedro",
+    "it": "piazza San Pietro"
+   }
+  },
+  {
+   "id": "Q211295",
+   "name": "Forum de Trajan",
+   "lat": 41.895417,
+   "lng": 12.485869,
+   "theme": "streets",
+   "fame": 47,
+   "summary": "Dernier des forums impériaux et le plus monumental, il réunit la basilique Ulpienne, la colonne Trajane, deux bibliothèques et les marchés de Trajan. Trajan le finance avec le butin des campagnes de Dacie ; sa construction, de 106 à 113 sous la direction d'Apollodore de Damas, exige d'araser le col entre Capitole et Quirinal.",
+   "wiki": "Forum de Trajan",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/IT-Rom-kaiserforen.jpg?width=960",
+   "photoBy": "Bgabel",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Trajan's Forum",
+    "es": "Foro de Trajano",
+    "it": "Foro di Traiano"
+   }
+  },
+  {
+   "id": "Q463400",
+   "name": "piazza Navona",
+   "lat": 41.89871,
+   "lng": 12.47316,
+   "theme": "streets",
+   "fame": 47,
+   "summary": "La plus grande place touristique de Rome, dans la partie nord du champ de Mars, repose sur les ruines du stade construit par Domitien en 86, dont elle conserve la forme exacte. Son nom antique, in agones, s'est déformé en nagone, navone, puis navona. La fontaine des Quatre-Fleuves, au centre, commandée au Bernin par Innocent X, est achevée en 1651.",
+   "wiki": "Piazza Navona",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Paolo%20Monti%20-%20Servizio%20fotografico%20%28Roma%2C%201966%29%20-%20BEIC%206329173.jpg?width=960",
+   "photoBy": "Paolo Monti",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Piazza Navona",
+    "es": "Plaza Navona",
+    "it": "Piazza Navona"
+   }
+  },
+  {
+   "id": "Q15124814",
+   "name": "piazza di Spagna",
+   "lat": 41.90595,
+   "lng": 12.48205833,
+   "theme": "streets",
+   "fame": 40,
+   "summary": "Place piétonne du centre historique, dans le quartier des boutiques de luxe, elle prend son nom en 1620 quand l'Espagne y établit son ambassade auprès du Saint-Siège. La fontaine Barcaccia, en forme de barque, y est installée en 1629. L'escalier de la Trinité-des-Monts, œuvre de Francesco De Sanctis, monte vers l'église.",
+   "wiki": "Piazza di Spagna",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Scalinata%20della%20Trinit%C3%A0%20dei%20Monti.jpg?width=960",
+   "photoBy": "Hugo DK",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Piazza di Spagna",
+    "es": "Plaza de España",
+    "it": "piazza di Spagna"
+   }
+  },
+  {
+   "id": "Q824997",
+   "name": "piazza del Popolo",
+   "lat": 41.910714,
+   "lng": 12.476317,
+   "theme": "streets",
+   "fame": 39,
+   "summary": "Aménagée dès la fin du XVIe siècle sur ordre de Sixte V, elle doit son aspect néo-classique à Giuseppe Valadier, qui la redessine en deux demi-cercles entre 1811 et 1823. En son centre, l'obélisque égyptien amené sur l'ordre d'Auguste pour la spina du Circus Maximus est relevé en 1589 par Domenico Fontana. Trois rues en trident en partent.",
+   "wiki": "Piazza del Popolo (Rome)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/PIAZZA%20DEL%20POPOLO%20VISTA%20AEREA.jpg?width=960",
+   "photoBy": "DellaGherardesca",
+   "photoLic": "CC BY 4.0",
+   "alt": {
+    "en": "piazza del Popolo",
+    "es": "Piazza del Popolo",
+    "it": "piazza del Popolo"
+   }
+  },
+  {
+   "id": "Q874832",
+   "name": "piazza Venezia",
+   "lat": 41.89639,
+   "lng": 12.4825,
+   "theme": "streets",
+   "fame": 38,
+   "summary": "Place importante dès la Rome antique, elle tient son nom du palais de Venise, que le futur pape Paul II y fait construire au XVe siècle et qui fut résidence papale puis siège de l'ambassade de la république de Venise au Saint-Siège. Giuseppe Sacconi lui donne sa forme actuelle avec le monument à Victor-Emmanuel II.",
+   "wiki": "Piazza Venezia",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Piazza%20Venezia%20a%20Roma.jpg?width=960",
+   "photoBy": "Zavijavah",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "piazza Venezia",
+    "es": "Plaza Venezia",
+    "it": "piazza Venezia"
+   }
+  },
+  {
+   "id": "Q28303",
+   "name": "Campo de' Fiori",
+   "lat": 41.89566377508,
+   "lng": 12.472046538447,
+   "theme": "streets",
+   "fame": 36,
+   "summary": "Le nom, « champ des fleurs », viendrait d'une vaste prairie que dominait au Moyen Âge la forteresse des Orsini. La place est située entre la piazza Navona et le palais Farnèse, et accueille un marché de fruits et légumes tous les jours sauf le dimanche. Au centre se dresse la statue de Giordano Bruno, brûlé vif à cet endroit le 17 février 1600.",
+   "wiki": "Campo de' Fiori",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Il%20Valle%20delle%20Rose%20....JPG?width=960",
+   "photoBy": "Carlat82",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Campo de' Fiori",
+    "es": "Campo de' Fiori",
+    "it": "Campo de' Fiori"
+   }
+  },
+  {
+   "id": "Q655172",
+   "name": "voie Sacrée",
+   "lat": 41.8918,
+   "lng": 12.4861,
+   "theme": "streets",
+   "fame": 36,
+   "summary": "Plus ancienne et plus célèbre des rues de la Rome antique, elle est, avec la Nova Via, la seule à être qualifiée de via avant l'Empire. Elle relie les Carinae, sur les pentes occidentales du mont Oppius, au Forum Romain et à l'Arx. Aux ides de chaque mois, prêtres et sacrificateurs y portent les idulia sacra, d'où pourrait venir son nom.",
+   "wiki": "Voie Sacrée (Rome)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Sacredroad.jpg?width=960",
+   "photoBy": "MosheA",
+   "photoLic": "CC BY-SA 2.5",
+   "alt": {
+    "en": "Via Sacra",
+    "es": "Vía Sacra",
+    "it": "via Sacra"
+   }
+  },
+  {
+   "id": "Q958299",
+   "name": "via del Corso",
+   "lat": 41.906027777778,
+   "lng": 12.478272222222,
+   "theme": "streets",
+   "fame": 30,
+   "summary": "Longue d'environ 1,5 kilomètre, elle mène en ligne droite de la piazza Venezia à la piazza del Popolo et forme la voie centrale du quartier du Trident, bordée de palais et d'églises. Le Carnaval de Rome s'y déroulait ; la municipalité y supprima en 1874 la course de chevaux libres qui le clôturait, ce qui contribua à la disparition de la fête.",
+   "wiki": "Via del Corso (Rome)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rom%2C%20die%20Stra%C3%9Fe%20Via%20del%20Corso%2C%20mittlerer%20Teil.JPG?width=960",
+   "photoBy": "Dguendel",
+   "photoLic": "CC BY 3.0",
+   "alt": {
+    "en": "via del Corso",
+    "es": "Via del Corso",
+    "it": "via del Corso"
+   }
+  },
+  {
+   "id": "Q283650",
+   "name": "Forum Boarium",
+   "lat": 41.888888888889,
+   "lng": 12.481111111111,
+   "theme": "streets",
+   "fame": 29,
+   "summary": "« Marché aux bœufs » de la Rome antique, il occupe les abords du Tibre entre Capitole, Palatin et Aventin, autour de l'actuelle piazza della Bocca della Verità. Le premier pont sur le Tibre et le premier port fluvial de la ville y sont établis. Ses temples de Portunus et d'Hercule Olivarius, devenus des églises, sont remarquablement conservés.",
+   "wiki": "Forum Boarium",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Temple%20of%20Portunus%20Rome%202.jpg?width=960",
+   "photoBy": "Torquatus",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Forum Boarium",
+    "es": "Foro Boario",
+    "it": "Foro Boario"
+   }
+  },
+  {
+   "id": "Q1768461",
+   "name": "Scala Santa",
+   "lat": 41.88722,
+   "lng": 12.50694,
+   "theme": "streets",
+   "fame": 28,
+   "summary": "Ces 28 marches de marbre blanc passent, selon la tradition, pour l'escalier du prétoire de Jérusalem gravi par Jésus lors de son jugement par Ponce Pilate, et apporté à Rome par Hélène. La dévotion, qui veut qu'on les monte à genoux, est attestée au jubilé de 1450. Sixte V les fait transporter en 1589 du vieux palais du Latran au Sancta sanctorum.",
+   "wiki": "Scala Santa",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Scala%20Santa%20%28Rome%29%2001.jpg?width=960",
+   "photoBy": "Antoine Taveneaux",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Scala Sancta",
+    "es": "Escalera Santa",
+    "it": "Scala Santa"
+   }
+  },
+  {
+   "id": "Q947037",
+   "name": "piazza Barberini",
+   "lat": 41.90361,
+   "lng": 12.48833,
+   "theme": "streets",
+   "fame": 26,
+   "summary": "Sur la colline du Quirinal, à cheval entre les rioni de Trevi et Colonna, elle doit son nom au Palais Barberini, sur son côté sud. En son centre trône la fontaine du Triton, commandée au Bernin par Urbain VIII et datée de 1642-1643. À l'angle de la Via Veneto se dresse la Fontaine des Abeilles : l'abeille est l'emblème des Barberini.",
+   "wiki": "Piazza Barberini",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/1391RomaPzaBarberini.jpg?width=960",
+   "photoBy": "Geobia",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "piazza Barberini",
+    "es": "Plaza Barberini",
+    "it": "piazza Barberini"
+   }
+  },
+  {
+   "id": "Q63785",
+   "name": "piazza Colonna",
+   "lat": 41.901056,
+   "lng": 12.479917,
+   "theme": "streets",
+   "fame": 26,
+   "summary": "Rectangulaire et entourée de palais historiques, elle doit son nom à la colonne de Marc Aurèle, qui se dresse à cet endroit depuis l'Antiquité et a aussi donné son nom au rione Colonna. Construite à la fin du XVIe siècle à l'initiative du pape Sixte V, elle porte une fontaine réalisée en 1577 d'après un projet de Giacomo Della Porta.",
+   "wiki": "Piazza Colonna",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Columna%20de%20Marco%20Aurelio%2C%20plaza%20Colonna%2C%20Roma%2C%20Italia%2C%202022-09-14%2C%20DD%2024-26%20HDR.jpg?width=960",
+   "photoBy": "Diego Delso",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Piazza Colonna",
+    "es": "Plaza Colonna",
+    "it": "piazza Colonna"
+   }
+  },
+  {
+   "id": "Q1202365",
+   "name": "place de la République",
+   "lat": 41.9025,
+   "lng": 12.496389,
+   "theme": "streets",
+   "fame": 26,
+   "summary": "Place circulaire proche de la gare Termini, elle porte jusqu'en 1960 le nom de piazza Esedra, en référence à l'exèdre des thermes romains ; ce nom reste employé localement. La fontaine des Naïades en occupe le centre : son inauguration, en 1901, donne lieu à une mascarade, dernier événement marquant du Carnaval de Rome.",
+   "wiki": "Place de la République (Rome)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Piazza%20Esedra%202022.jpg?width=960",
+   "photoBy": "NikonZ7II",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Piazza della Repubblica",
+    "es": "Plaza de la República",
+    "it": "piazza della Repubblica"
+   }
+  },
+  {
+   "id": "Q1140395",
+   "name": "Via della Conciliazione",
+   "lat": 41.9023,
+   "lng": 12.462,
+   "theme": "streets",
+   "fame": 22,
+   "summary": "Percée entre 1936 et 1950 sous le gouvernement de Mussolini par la démolition de la spina du Borgo, elle relie le château Saint-Ange à la piazza Pio XII, qui s'ouvre sur la place Saint-Pierre. Son nom commémore les accords du Latran de 1929. Rectiligne et longue de plus de 420 mètres, elle annule le jeu de perspective baroque conçu par Le Bernin.",
+   "wiki": "Via della Conciliazione",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/%D0%92%D0%B8%D0%B0%20%D0%B4%D0%B5%D0%BB%D0%BB%D0%B0%20%D0%9A%D0%BE%D0%BD%D1%87%D0%B8%D0%BB%D0%B8%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B5.jpg?width=960",
+   "photoBy": "Ульрих Петерс",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Via della Conciliazione",
+    "es": "Via della Conciliazione",
+    "it": "via della Conciliazione"
+   }
+  },
+  {
+   "id": "Q34921",
+   "name": "place du Capitole",
+   "lat": 41.893335625288,
+   "lng": 12.482923598991,
+   "theme": "streets",
+   "fame": 22,
+   "summary": "Place monumentale au sommet de la colline du Capitole, elle s'élève sur l'Asylum, la dépression qui sépare l'Arx du Capitolium ; on y accède notamment par la Cordonata capitolina. Paul III en confia la rénovation à Michel-Ange, qui accentua le retournement de la colline vers la basilique Saint-Pierre. Le conseil de Rome y siège.",
+   "wiki": "Place du Capitole (Rome)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Piazza%20del%20Campidoglio%202015.jpg?width=960",
+   "photoBy": "Kameister",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Piazza del Campidoglio",
+    "es": "Plaza del Campidoglio",
+    "it": "piazza del Campidoglio"
+   }
+  },
+  {
+   "id": "Q616887",
+   "name": "porte Esquiline",
+   "lat": 41.89577,
+   "lng": 12.50135,
+   "theme": "streets",
+   "fame": 22,
+   "summary": "Une des portes du mur Servien, elle se situe sur l'Esquilin, près de l'endroit où la via Labicana rejoint la via Tiburtina. Sous Auguste, elle est reconstruite en arc de triomphe à trois baies. L'arc, encore visible, est dédié en 262 à l'empereur Gallien par Marcus Aurelius Victor. L'église Santi Vito e Modesto, reconstruite en 1477, s'y adosse.",
+   "wiki": "Porte Esquiline",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/ArchofGallienus2.jpg?width=960",
+   "photoBy": "Tomk2ski",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Porta Esquilina",
+    "es": "Porta Esquilina",
+    "it": "Porta Esquilina"
+   }
+  },
+  {
+   "id": "Q1541068",
+   "name": "largo di Torre Argentina",
+   "lat": 41.89528,
+   "lng": 12.47694,
+   "theme": "streets",
+   "fame": 21,
+   "summary": "Cette vaste place rectangulaire du Champ de Mars, sur le corso Vittorio Emanuele, est presque entièrement occupée par une aire sacrée de quatre temples républicains, désignés A, B, C et D faute de certitude sur les divinités honorées. Derrière les temples B et C subsiste le soubassement de la Curie de Pompée, celle où César fut assassiné.",
+   "wiki": "Largo di Torre Argentina",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Largo%20di%20Torre%20Argentina%204.jpg?width=960",
+   "photoBy": "Wknight94",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "largo di Torre Argentina",
+    "es": "Largo di Torre Argentina",
+    "it": "largo di Torre Argentina"
+   }
+  },
+  {
+   "id": "Q1632777",
+   "name": "porte Capène",
+   "lat": 41.883944444444,
+   "lng": 12.4905,
+   "theme": "streets",
+   "fame": 21,
+   "summary": "Porte du mur Servien, elle se trouvait sur les pentes sud-ouest du Cælius, près du bois sacré de Camenae d'où part la Via Appia, et donna son nom à la première des quatorze régions entre lesquelles Auguste répartit Rome en 7 av. J.-C. Des vestiges en furent mis au jour en 1867. La piazza di Porta Capena occupe son emplacement.",
+   "wiki": "Porte Capène",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Forma%20Urbis%20Romae%20Lanciani-35-UR.jpg?width=960",
+   "photoBy": "Rodolfo Lanciani",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Porta Capena",
+    "es": "Porta Capena",
+    "it": "Porta Capena"
+   }
+  },
+  {
+   "id": "Q145093",
+   "name": "palais du Vatican",
+   "lat": 41.903611111111,
+   "lng": 12.456388888889,
+   "theme": "palaces",
+   "fame": 59,
+   "summary": "Résidence des papes, officiellement Palais apostolique, il naît de la restauration, entreprise par Nicolas V à partir de 1447, de l'ancien palais fortifié d'Eugène III. Ses 55 000 m2 et environ 1 400 pièces en font le plus grand palais du monde entièrement habité. Il abrite la chapelle Sixtine, les chambres de Raphaël et les appartements Borgia.",
+   "wiki": "Palais du Vatican",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/2018-03-18%20Apostolischer%20Palast.jpg?width=960",
+   "photoBy": "Burkhard Mücke",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Apostolic Palace",
+    "es": "Palacio Apostólico Vaticano",
+    "it": "Palazzo Apostolico"
+   }
+  },
+  {
+   "id": "Q223079",
+   "name": "palais du Quirinal",
+   "lat": 41.9,
+   "lng": 12.4875,
+   "theme": "palaces",
+   "fame": 53,
+   "summary": "En 1574, Grégoire XIII lance la construction d'une résidence d'été sur un site jugé plus salubre que le Latran ; Ottaviano Mascherino en achève les premiers travaux en 1585. Agrandi par Ponzio, Maderno puis Bernini, le palais est la résidence romaine de trente papes, celle des rois d'Italie de 1870 à 1946, puis celle du président de la République.",
+   "wiki": "Palais du Quirinal",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Quirinale%20palazzo%20e%20obelisco%20con%20dioscuri%20Roma.jpg?width=960",
+   "photoBy": "This Photo was taken by Wolfgang Moroder. Feel free to use m",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Quirinal Palace",
+    "es": "Palacio del Quirinal",
+    "it": "palazzo del Quirinale"
+   }
+  },
+  {
+   "id": "Q848394",
+   "name": "palais de Latran",
+   "lat": 41.886666666667,
+   "lng": 12.505277777778,
+   "theme": "palaces",
+   "fame": 39,
+   "summary": "Résidence principale des papes du IVe au XIVe siècle, il jouxte l'archibasilique Saint-Jean de Latran. La papauté d'Avignon cause sa désaffectation, et deux incendies y font des dégâts majeurs. Sixte V fait détruire en 1586 les restes du palais antique et médiéval et charge Domenico Fontana d'en bâtir un plus réduit.",
+   "wiki": "Palais du Latran",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Western%20facade%20Palazzo%20del%20Laterano%202006-09-07.jpg?width=960",
+   "photoBy": "Jastrow",
+   "photoLic": "CC BY 2.5",
+   "alt": {
+    "en": "Lateran Palace",
+    "es": "Palacio de Letrán",
+    "it": "palazzo del Laterano"
+   }
+  },
+  {
+   "id": "Q848386",
+   "name": "palais Farnèse",
+   "lat": 41.894694444444,
+   "lng": 12.470805555556,
+   "theme": "palaces",
+   "fame": 38,
+   "summary": "Commandé par le cardinal Alexandre Farnèse, futur pape Paul III, ce palais de la Haute Renaissance mobilise les architectes les plus importants de l'époque, en environ 75 ans de travaux : Antonio da Sangallo le Jeune, Michel-Ange, Vignole, puis Giacomo della Porta, qui l'achève en 1589. L'ambassade de France y siège depuis 1874.",
+   "wiki": "Palais Farnèse",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palais%20Farnese.jpg?width=960",
+   "photoBy": "Myrabella",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Palazzo Farnese",
+    "es": "Palacio Farnesio",
+    "it": "Palazzo Farnese"
+   }
+  },
+  {
+   "id": "Q1362663",
+   "name": "villa Médicis",
+   "lat": 41.90827,
+   "lng": 12.48252,
+   "theme": "palaces",
+   "fame": 35,
+   "summary": "Bâtie vers 1564 pour le cardinal Giovanni Ricci di Montepulciano sur le mont Pincio, elle passe en 1576 au cardinal Ferdinand de Médicis, qui l'aménage pour sa collection d'œuvres d'art et dote le parc de sept hectares d'un jardin à l'italienne. Galilée y réside six mois en résidence surveillée en 1633. Elle abrite l'Académie de France depuis 1803.",
+   "wiki": "Villa Médicis",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Roma%20-%20Villa%20Medici%20-%202023-09-10%2018-13-14%20006.jpeg?width=960",
+   "photoBy": "Laterbat",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Villa Medici",
+    "es": "Villa Médici",
+    "it": "Villa Medici"
+   }
+  },
+  {
+   "id": "Q2047548",
+   "name": "palais Chigi",
+   "lat": 41.901234945772,
+   "lng": 12.479771416006,
+   "theme": "palaces",
+   "fame": 33,
+   "summary": "Siège de la présidence du Conseil des ministres italien depuis 1961, il borde la Via del Corso et ouvre son entrée principale sur la Piazza Colonna. Son histoire commence en 1578, quand la famille Aldobrandini rassemble et remanie plusieurs propriétés donnant sur la place. Les Chigi l'ont cédé à l'État italien en 1916.",
+   "wiki": "Palais Chigi",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palazzo%20Chigi%20-%20esterno.jpg?width=960",
+   "photoBy": "DellaGherardesca",
+   "photoLic": "CC BY 4.0",
+   "alt": {
+    "en": "Palazzo Chigi",
+    "es": "Palacio Chigi",
+    "it": "Palazzo Chigi"
+   }
+  },
+  {
+   "id": "Q1123879",
+   "name": "palais de Venise",
+   "lat": 41.8962,
+   "lng": 12.4815,
+   "theme": "palaces",
+   "fame": 32,
+   "summary": "Construit entre 1455 et 1467 pour le cardinal vénitien Pietro Barbo, futur pape Paul II, il fut tour à tour résidence papale et ambassade de la république de Venise, d'où son nom. Mussolini en fit le siège du gouvernement et son appartement privé, et harangua la foule depuis son balcon. Il abrite le musée national du Palais de Venise.",
+   "wiki": "Palais de Venise",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palazzo%20Venezia%20%28Rome%29%20-%20Exterior.jpg?width=960",
+   "photoBy": "ThePhotografer",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Palazzo Venezia",
+    "es": "Palazzo Venezia",
+    "it": "Palazzo Venezia"
+   }
+  },
+  {
+   "id": "Q781417",
+   "name": "palais Montecitorio",
+   "lat": 41.901061270151,
+   "lng": 12.478650254304,
+   "theme": "palaces",
+   "fame": 25,
+   "summary": "Conçu par Le Bernin pour le cardinal Ludovico Ludovisi, il reste inachevé à la mort du pape Grégoire XV en 1623 ; les travaux reprennent sous Innocent X, Carlo Fontana modifiant les plans. La Curie apostolique s'y installe en 1696. Devenu siège de la Chambre des députés après 1870, il est reconstruit par Ernesto Basile, la façade frontale exceptée.",
+   "wiki": "Palais Montecitorio",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palazzo%20Montecitorio%20-%20esterno.jpg?width=960",
+   "photoBy": "DellaGherardesca",
+   "photoLic": "CC BY 4.0",
+   "alt": {
+    "en": "Palazzo Montecitorio",
+    "es": "Palazzo Montecitorio",
+    "it": "Palazzo Montecitorio"
+   }
+  },
+  {
+   "id": "Q2031943",
+   "name": "palais de la Chancellerie",
+   "lat": 41.896687,
+   "lng": 12.471521,
+   "theme": "palaces",
+   "fame": 22,
+   "summary": "Commencé à la fin du XVe siècle à l'initiative du cardinal Riario, achevé en 1513, il fut confisqué par le pape Léon X récemment élu, puis devint en 1517 le siège de la Chancellerie apostolique. Les tribunaux de la Curie romaine y siègent encore et le bâtiment reste propriété du Vatican. La Sala dei Cento Giorni y porte des fresques de Vasari.",
+   "wiki": "Palais de la Chancellerie",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Parione%20-%20palazzo%20Riario%20o%20Cancelleria%20nuova%201628.JPG?width=960",
+   "photoBy": "user:Lalupa",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Palazzo della Cancelleria",
+    "es": "Palacio de la Cancillería",
+    "it": "Palazzo della Cancelleria"
+   }
+  },
+  {
+   "id": "Q64103",
+   "name": "palais des Conservateurs",
+   "lat": 41.89299722,
+   "lng": 12.48281111,
+   "theme": "palaces",
+   "fame": 21,
+   "summary": "Sur la place du Capitole, le bâtiment fut le siège des Conservateurs, la magistrature élective qui gouvernait la Rome laïque. Michel-Ange en dessina la façade, achevée après sa mort par Giacomo della Porta en 1568. Le traité de Rome y fut signé en 1957. Il forme aujourd'hui, avec le palais Neuf et le Tabularium, le site des musées du Capitole.",
+   "wiki": "Palais des Conservateurs",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palazzo%20dei%20Conservatori%20in%20Rome%20%282%29.jpg?width=960",
+   "photoBy": "Tournasol7",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Palazzo dei Conservatori",
+    "es": "Palacio de los Conservadores",
+    "it": "Palazzo dei Conservatori"
+   }
+  },
+  {
+   "id": "Q647919",
+   "name": "palais Borghèse",
+   "lat": 41.90388611,
+   "lng": 12.47649444,
+   "theme": "palaces",
+   "fame": 20,
+   "summary": "Surnommé il Cembalo, le clavecin, du fait de son plan inhabituel, il fut construit entre 1560 et 1614 pour le cardinal Camillo Borghese, futur pape Paul V. La part qu'y prirent Martino Longhi l'Ancien et Flaminio Ponzio fait débat. Sa cour est ceinte de 96 colonnes. Il abrita jusqu'en 1891 la collection de tableaux du cardinal Scipione Borghese.",
+   "wiki": "Palais Borghèse",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Campo%20Marzio%20-%20palazzo%20Borghese%20sulla%20piazza%201110995.JPG?width=960",
+   "photoBy": "Lalupa",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Palazzo Borghese",
+    "es": "Palacio Borghese",
+    "it": "Palazzo Borghese"
+   }
+  },
+  {
+   "id": "Q1755046",
+   "name": "palais Madama",
+   "lat": 41.899191666667,
+   "lng": 12.474277777778,
+   "theme": "palaces",
+   "fame": 20,
+   "summary": "Le Sénat de la République italienne y siège. Achevé en 1505 par le cardinal Jean de Médicis, futur Léon X, le palais doit son nom à Marguerite de Parme, veuve d'Alexandre de Médicis puis épouse d'Octave Farnèse. Passé aux Habsbourg, puis à Benoît XIV qui en fit le siège du gouvernement pontifical, il abrita ensuite le sénat du royaume d'Italie.",
+   "wiki": "Palais Madame (Rome)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palazzo%20Madama%20%28Roma%29.jpg?width=960",
+   "photoBy": "Merulana",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Palazzo Madama",
+    "es": "Palazzo Madama",
+    "it": "Palazzo Madama"
+   }
+  },
+  {
+   "id": "Q2047593",
+   "name": "palais Pamphilj",
+   "lat": 41.898287,
+   "lng": 12.472933,
+   "theme": "palaces",
+   "fame": 18,
+   "summary": "Construit entre 1644 et 1650 sur la piazza Navona, il abrite depuis 1920 l'ambassade du Brésil et devient en 1964 la propriété de l'État brésilien. Une fresque de Pierre de Cortone représentant l'Histoire d'Énée, réalisée vers 1651-1654, orne la grande galerie.",
+   "wiki": "Palais Pamphilj",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Roma%20Palazzo%20Pamphilj%20ambasciata%20Brasile.jpg?width=960",
+   "photoBy": "Blackcat",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Palazzo Pamphilj",
+    "es": "Palacio Pamphili",
+    "it": "Palazzo Pamphilj"
+   }
+  },
+  {
+   "id": "Q1090910",
+   "name": "palais Braschi",
+   "lat": 41.89749,
+   "lng": 12.472733,
+   "theme": "palaces",
+   "fame": 18,
+   "summary": "Ce palais néoclassique abrite le musée de Rome, qui couvre l'histoire de la ville du Moyen Âge au XIXe siècle. En 1791, Pie VI fit démolir le palais Orsini, élevé au même endroit en 1435, et Cosimo Morelli bâtit le nouvel édifice pour le neveu du pape, Luigi Braschi-Onesti. Interrompu en 1798, le chantier reprit en 1802.",
+   "wiki": "Palais Braschi",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palais%20Braschi%20-%20Rome%20%28IT62%29%20-%202021-08-29%20-%203.jpg?width=960",
+   "photoBy": "Chabe01",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Palazzo Braschi",
+    "es": "Palacio Braschi",
+    "it": "Palazzo Braschi"
+   }
+  },
+  {
+   "id": "Q927092",
+   "name": "palais sénatorial",
+   "lat": 41.89300278,
+   "lng": 12.48355,
+   "theme": "palaces",
+   "fame": 18,
+   "summary": "Hôtel de ville depuis 1144, le plus ancien du monde, il fut élevé aux XIIe et XIIIe siècles sur les ruines du Tabularium. Paul III en confia la rénovation à Michel-Ange en 1538, qui régularisa la façade et dessina le double escalier ; Giacomo della Porta poursuivit après sa mort. Ce fut le siège du sénateur de Rome jusqu'en 1870.",
+   "wiki": "Palais sénatorial",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Estatua%20ecuestre%20de%20Marco%20Aurelio%20y%20palacio%20Senatorio%2C%20Roma%2C%20Italia%2C%202022-09-16%2C%20DD%2036.jpg?width=960",
+   "photoBy": "Diego Delso",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Palazzo Senatorio",
+    "es": "Palazzo Senatorio",
+    "it": "Palazzo Senatorio"
+   }
+  },
+  {
+   "id": "Q1058475",
+   "name": "palais Spada",
+   "lat": 41.894349,
+   "lng": 12.472001,
+   "theme": "palaces",
+   "fame": 18,
+   "summary": "Construit en 1540 pour le cardinal Girolamo Capodiferro par Bartolomeo Baronino, il est acheté en 1632 par le cardinal Bernardino Spada, qui charge Francesco Borromini de le modifier. Une galerie y paraît longue de 30 mètres alors qu'elle n'atteint pas 9 mètres, par perspective forcée. L'État italien l'achète en 1927 pour son Conseil d'État.",
+   "wiki": "Palais Spada",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palazzo%20Spada%20-%20Rome%2C%20Italy%20-%20DSC09752.jpg?width=960",
+   "photoBy": "Daderot",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Palazzo Spada",
+    "es": "Palacio Spada",
+    "it": "Palazzo Spada"
+   }
+  },
+  {
+   "id": "Q774654",
+   "name": "villa Doria Pamphilj",
+   "lat": 41.88776944,
+   "lng": 12.45055833,
+   "theme": "palaces",
+   "fame": 17,
+   "summary": "Créé au XVIIe siècle par les Pamphilj, ce parc de 180 hectares, sur le Gianicolense près de la porta San Pancrazio, est le plus grand du centre de Rome. L'État italien en achète la partie centrale en 1957, la commune le reste en 1965 et 1971, et l'ensemble ouvre au public en 1972.",
+   "wiki": "Villa Doria Pamphilj",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Villa%20Doria%20Pamphilj%20in%20Rom.jpg?width=960",
+   "photoBy": "Burkhard Mücke",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Villa Doria Pamphili",
+    "es": "Villa Doria Pamphilj",
+    "it": "Villa Doria Pamphilj"
+   }
+  },
+  {
+   "id": "Q2291560",
+   "name": "villa Pia",
+   "lat": 41.904167,
+   "lng": 12.4525,
+   "theme": "palaces",
+   "fame": 16,
+   "summary": "Cette construction Renaissance des jardins du Vatican devait servir de résidence d'été au pape et de pavillon de chasse. Les travaux démarrent sous Paul IV en 1558 ; après sa mort, Pie IV les poursuit avec Pirro Ligorio et ajoute une loggia, une galerie, une chapelle, trois chambres et un second étage. Elle abrite des Académies pontificales.",
+   "wiki": "Villa Pia",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Casino%20di%20pio%20IV%2C%2005.JPG?width=960",
+   "photoBy": "Sailko",
+   "photoLic": "CC BY 3.0",
+   "alt": {
+    "en": "Casina Pio IV",
+    "es": "Villa Pía",
+    "it": "Casina di Pio IV"
+   }
+  },
+  {
+   "id": "Q870476",
+   "name": "pont Saint-Ange",
+   "lat": 41.901803,
+   "lng": 12.46645,
+   "theme": "water",
+   "fame": 37,
+   "summary": "Bâti par Hadrien sous le nom de Pons Ælius, à une date incertaine, il donnait accès au mausolée impérial devenu le château Saint-Ange. Principal accès à la basilique Saint-Pierre au Moyen Âge, il est alors rebaptisé. Clément IX en lance la rénovation en 1667 et la confie au Bernin, qui l'orne de dix anges portant les instruments de la Passion.",
+   "wiki": "Pont Saint-Ange",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Roma%20-%20Ponte%20s.%20Angelo.jpg?width=960",
+   "photoBy": "Blackcat",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Ponte Sant'Angelo",
+    "es": "puente de Sant’Angelo",
+    "it": "Ponte Sant’Angelo"
+   }
+  },
+  {
+   "id": "Q655470",
+   "name": "fontaine des Quatre-Fleuves",
+   "lat": 41.898953,
+   "lng": 12.473075,
+   "theme": "water",
+   "fame": 36,
+   "summary": "Elle occupe le centre de la piazza Navona, devant l'église Sant'Agnese in Agone. Le Bernin l'élève de 1648 à 1651 sur commande d'Innocent X ; une taxe impopulaire sur le pain, la viande et le sel la finance. Quatre statues figurent le Danube, le Gange, le Nil et le Rio de la Plata, un fleuve par continent.",
+   "wiki": "Fontaine des Quatre-Fleuves",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/PiazzaNavonaPanoramicaVerticale.jpg?width=960",
+   "photoBy": "Bargioni",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Four Rivers Fountain",
+    "es": "Fuente de los Cuatro Ríos",
+    "it": "fontana dei Quattro Fiumi"
+   }
+  },
+  {
+   "id": "Q1114231",
+   "name": "fontaine Barcaccia",
+   "lat": 41.905806,
+   "lng": 12.482212,
+   "theme": "water",
+   "fame": 32,
+   "summary": "Commandée en 1629 par le pape Urbain VIII à Pietro Bernini et à son fils Gian Lorenzo, elle figure une barque semi-naufragée qui prend l'eau de toute part, en mémoire de la crue du Tibre du 24 décembre 1598, pendant laquelle les Romains traversaient la piazza di Spagna en barque. Faute de pression, elle est placée dans une fosse au ras du sol.",
+   "wiki": "Fontaine de la Barcaccia",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Barcaccia%20e%20scalinata.jpg?width=960",
+   "photoBy": "WikiRomaWiki",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Fontana della Barcaccia",
+    "es": "Fuente de la Barcaza",
+    "it": "fontana della Barcaccia"
+   }
+  },
+  {
+   "id": "Q983774",
+   "name": "Fontana dell'Acqua Felice",
+   "lat": 41.90436111,
+   "lng": 12.49441667,
+   "theme": "water",
+   "fame": 24,
+   "summary": "Bâtie entre 1585 et 1587 par Domenico Fontana, cette fontaine en portique porte le nom de baptême du pape Sixte V qui la commanda, Felice Peretti. Le Quirinal manquait d'eau : la source captée près du village de la Colonna devait alimenter ce quartier, le Monte Pincio et le Capitole. Trois arcades couvrent les statues de Moïse, Aaron et Gédéon.",
+   "wiki": "Fontana dell'Acqua Felice",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Fontana%20dell%27Acqua%20Felice%20%28Rome%29.jpg?width=960",
+   "photoBy": "Architas",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Fontana dell'Acqua Felice",
+    "es": "Fuente del Agua Feliz",
+    "it": "Fontana dell'Acqua Felice"
+   }
+  },
+  {
+   "id": "Q586329",
+   "name": "pont Sisto",
+   "lat": 41.892336,
+   "lng": 12.470794,
+   "theme": "water",
+   "fame": 22,
+   "summary": "Reliant les rioni de Regola et du Trastevere, il remplace un pont antique voulu par Agrippa, emporté par une crue en 791. Sixte IV décide sa reconstruction en 1473 et la confie à Baccio Pontelli ; ouvert pour le jubilé de 1475, il n'est achevé qu'en 1479. L'oculus de son pilier central réduit la pression des eaux et sert de repère lors des crues.",
+   "wiki": "Pont Sisto",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ponte%20Sisto%20Roma.jpg?width=960",
+   "photoBy": "Livioandronico2013",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Ponte Sisto",
+    "es": "Ponte Sisto",
+    "it": "Ponte Sisto"
+   }
+  },
+  {
+   "id": "Q936296",
+   "name": "fontaine des tortues",
+   "lat": 41.893805555556,
+   "lng": 12.4775,
+   "theme": "water",
+   "fame": 20,
+   "summary": "Dessinée par Giacomo della Porta à la fin de la Renaissance et fondue en bronze par Taddeo Landini, elle se dresse piazza Mattei, face au palais Mattei di Giove, dans le ghetto. Les quatre tortues qui lui donnent son nom sont postérieures : ajoutées lors d'une restauration, elles sont attribuées au Bernin ou à Andrea Sacchi.",
+   "wiki": "Fontaine des Tortues",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Turtle%20Fountain.jpg?width=960",
+   "photoBy": "Livioandronico2013",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Fontana delle Tartarughe",
+    "es": "Fuente de las Tortugas",
+    "it": "Fontana delle Tartarughe"
+   }
+  },
+  {
+   "id": "Q857540",
+   "name": "fontaine des Abeilles",
+   "lat": 41.90430556,
+   "lng": 12.48872222,
+   "theme": "water",
+   "fame": 18,
+   "summary": "Commandée à Gian Lorenzo Bernini par Urbain VIII en 1644 pour un usage public, elle porte les abeilles, emblème héraldique des Barberini. Démontée en 1880 parce qu'elle gênait la circulation, elle devait être remontée en 1915, mais la plupart des pièces avaient disparu : c'est une copie en travertin d'Adolfo Apolloni, inaugurée le 28 janvier 1916.",
+   "wiki": "Fontaine des Abeilles",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/RomaBerniniFontanaApi.JPG?width=960",
+   "photoBy": "No machine-readable author provided. MM assumed (based on co",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Fontana delle Api",
+    "es": "Fuente de las Abejas",
+    "it": "Fontana delle Api"
+   }
+  },
+  {
+   "id": "Q1217302",
+   "name": "Quattro Fontane",
+   "lat": 41.901962,
+   "lng": 12.490736,
+   "theme": "water",
+   "fame": 18,
+   "summary": "Commandées par le pape Sixte V, ces quatre fontaines de la fin de la Renaissance ont été construites sous la direction de Muzio Mattei et installées entre 1588 et 1593, à l'intersection de la via delle Quattro Fontane et de la via del Quirinale. Elles figurent le Tibre, l'Arno et deux femmes tenues pour Diane et Junon.",
+   "wiki": "Quattro Fontane",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Piazza%20Quattro%20Fontane%20270deg%20Pano.jpg?width=960",
+   "photoBy": "R. Bitzer",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Quattro Fontane",
+    "es": "Quattro Fontane",
+    "it": "Quattro Fontane"
+   }
+  },
+  {
+   "id": "Q1435809",
+   "name": "Fontana dell'Acqua Paola",
+   "lat": 41.88875,
+   "lng": 12.46416667,
+   "theme": "water",
+   "fame": 16,
+   "summary": "Construite en 1612 au terme de l'aqueduc restauré par Paul V, elle tient son nom de ce pape. Giovanni Fontana et Flaminio Ponzio lui donnent la forme d'une porte massive de cinq arches, où cinq cours d'eau coulent dans cinq bassins de marbre. Carlo Fontana ajoute en 1690 un bassin semi-circulaire pour les trop-pleins.",
+   "wiki": "Fontana dell'Acqua Paola",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Fontanone%20dell%27Acqua%20Paola.jpg?width=960",
+   "photoBy": "Labicanense",
+   "photoLic": "CC BY 4.0",
+   "alt": {
+    "en": "Fontana dell'Acqua Paola",
+    "es": "Fuente Acqua Paola",
+    "it": "Fontana dell'Acqua Paola"
+   }
+  },
+  {
+   "id": "Q770949",
+   "name": "pont Vittorio Emanuele II",
+   "lat": 41.901111,
+   "lng": 12.464444,
+   "theme": "water",
+   "fame": 16,
+   "summary": "Commencé en 1886 par l'architecte Ennio De Rossi, il ne fut inauguré qu'en 1911, sa construction ayant été retardée. Il relie le centre historique au rione Borgo et à la Cité du Vatican, en suivant l'axe du corso Vittorio Emanuele. Trois arches enjambent 108 mètres ; de hauts socles portent des Victoires ailées aux extrémités.",
+   "wiki": "Pont Vittorio Emanuele II",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Bridge%20Vittorio%20Emanuele%20II%20and%20dome%20of%20San%20peter.jpg?width=960",
+   "photoBy": "Livioandronico2013",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Bridge Vittorio Emanuele II",
+    "es": "Puente Vittorio Emanuele II",
+    "it": "Ponte Vittorio Emanuele II"
+   }
+  },
+  {
+   "id": "Q1759793",
+   "name": "Fontaine de Neptune",
+   "lat": 41.89980278,
+   "lng": 12.473,
+   "theme": "water",
+   "fame": 14,
+   "summary": "Au nord de la piazza Navona, son bassin est réalisé en 1574 par Giacomo della Porta, auteur également de la Fontana del Moro, au sud de la même place. Les sculptures sont bien postérieures : le Neptune, de Gregorio Zappalà, et les Néréides, d'Antonio Della Bitta, datent de 1878.",
+   "wiki": "Fontaine de Neptune (Rome)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Fontana%20del%20Nettuno%203.jpg?width=960",
+   "photoBy": "Fiat 500e",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Fountain of Neptune",
+    "es": "Fuente de Neptuno",
+    "it": "Fontana del Nettuno"
+   }
+  },
+  {
+   "id": "Q1435824",
+   "name": "Fontana del Moro",
+   "lat": 41.898141,
+   "lng": 12.473146,
+   "theme": "water",
+   "fame": 14,
+   "summary": "Conçue en 1575 par Giacomo della Porta avec un dauphin et quatre tritons, cette fontaine à double bassin, à l'extrémité sud de la piazza Navona, reçoit en 1653 la statue du Maure, taillée par Giovanni Antonio Mari d'après un dessin de Gian Lorenzo Bernini. En 1874, les statues d'origine gagnent la Galleria Borghese, remplacées par des copies.",
+   "wiki": "Fontaine du Maure",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Fontana%20del%20Moro%201.jpg?width=960",
+   "photoBy": "Fiat 500e",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Fontana del Moro",
+    "es": "Fuente del Moro",
+    "it": "Fontana del Moro"
+   }
+  },
+  {
+   "id": "Q34925",
+   "name": "Capitole",
+   "lat": 41.893333333333,
+   "lng": 12.483055555556,
+   "theme": "parks",
+   "fame": 67,
+   "summary": "La plus petite des sept collines de Rome, longue de 460 mètres, compte deux sommets : au nord l'Arx, citadelle fortifiée dès l'origine de la ville, au sud le Capitolium et son temple de Jupiter capitolin, dédié à la triade capitoline. La dépression qui les sépare, l'Asylum, est aujourd'hui occupée par la place du Capitole.",
+   "wiki": "Capitole",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Aracoeli-fachada.jpg?width=960",
+   "photoBy": "Ricardo André Frantz (User:Tetraktys)",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Capitoline Hill",
+    "es": "Colina Capitolina",
+    "it": "Campidoglio"
+   }
+  },
+  {
+   "id": "Q194103",
+   "name": "Aventin",
+   "lat": 41.883333333333,
+   "lng": 12.483333333333,
+   "theme": "parks",
+   "fame": 53,
+   "summary": "La plus méridionale des sept collines de Rome, entre le Tibre, le mont Cælius et le mont Palatin, elle resta hors des limites de la ville archaïque avant d'y être réunie par le roi Ancus Marcius. La plèbe s'y retira plusieurs fois pour obtenir ses droits, d'où l'expression « se retirer sur l'Aventin ». C'est aujourd'hui une zone résidentielle.",
+   "wiki": "Aventin",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ripa%20-%20Aventino%20-%20CavalieriDiMalta.JPG?width=960",
+   "photoBy": "user:Lalupa",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Aventine Hill",
+    "es": "Monte Aventino",
+    "it": "Aventino"
+   }
+  },
+  {
+   "id": "Q303001",
+   "name": "Janicule",
+   "lat": 41.891666666667,
+   "lng": 12.461111111111,
+   "theme": "parks",
+   "fame": 32,
+   "summary": "Longue crête de la rive droite du Tibre, tenue pour la huitième colline de Rome, il fait partie du rione Trastevere et atteint 85 m près de la Porta Aurelia. Il porte les statues équestres de Giuseppe et Anita Garibaldi, en mémoire de la défense de la République Romaine de 1849, et, à son sommet, un canon posé en 1904, qui tire à blanc à midi.",
+   "wiki": "Janicule",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Janiculum.jpg?width=960",
+   "photoBy": "Gugganij",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Janiculum",
+    "es": "Janículo",
+    "it": "Gianicolo"
+   }
+  },
+  {
+   "id": "Q1050350",
+   "name": "théâtre de l'opéra de Rome",
+   "lat": 41.900833333333,
+   "lng": 12.495555555556,
+   "theme": "stages",
+   "fame": 31,
+   "summary": "Bâti par l'impresario Domenico Costanzi sur les plans d'Achille Sfondrini, il ouvre le 27 novembre 1880 sous le nom de Teatro Costanzi. Placé en 1888 sous la responsabilité de l'éditeur Sonzogno, il s'ouvre aux jeunes compositeurs et voit créer Cavalleria rusticana et Tosca. Renommé Teatro Reale dell'Opera en 1928, il prend son nom actuel en 1946.",
+   "wiki": "Teatro dell'Opera di Roma",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Teatro%20Costanzi%20-%20palchi.jpg?width=960",
+   "photoBy": "Udine2812",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Teatro dell'Opera di Roma",
+    "es": "Teatro de la Ópera de Roma",
+    "it": "Teatro dell'Opera di Roma"
+   }
+  },
+  {
+   "id": "Q588377",
+   "name": "Teatro Argentina",
+   "lat": 41.895555555556,
+   "lng": 12.476111111111,
+   "theme": "stages",
+   "fame": 27,
+   "summary": "Inauguré le 31 janvier 1732 avec l'opéra Berenice de Domenico Sarro, il fut construit par la famille Cesarini à partir de leur hôtel particulier. Des visiteurs étrangers du XVIIIe siècle le tenaient pour le plus important des théâtres romains. Rossini y créa le Barbiere di Siviglia en 1816. La salle abrite la fondation Teatro di Roma.",
+   "wiki": "Teatro Argentina",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Roma%20Teatro%20Argentina.jpg?width=960",
+   "photoBy": "Blackcat",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Teatro Argentina",
+    "es": "Teatro Argentina",
+    "it": "Teatro Argentina"
+   }
+  },
+  {
+   "id": "Q2291009",
+   "name": "Odéon de Domitien",
+   "lat": 41.8972,
+   "lng": 12.4734,
+   "theme": "stages",
+   "fame": 11,
+   "summary": "Petit théâtre couvert destiné aux spectacles musicaux, à l'imitation des odéons grecs, il s'élevait sur le Champ de Mars, immédiatement au sud du stade de Domitien, et pouvait recevoir 10 000 spectateurs. La façade du Palazzo Massimo alle Colonne, fondée sur sa cavea, en conserve la forme arrondie.",
+   "wiki": "Odéon de Domitien",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Campus%20Martius%20-%20Odeum%20of%20Domitian.jpg?width=960",
+   "photoBy": "Joris",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Odeon of Domitian",
+    "es": "Odeón de Domiciano",
+    "it": "Odeon di Domiziano"
+   }
+  },
+  {
+   "id": "Q3687231",
+   "name": "Conservatoire Sainte-Cécile",
+   "lat": 41.90679,
+   "lng": 12.47865,
+   "theme": "stages",
+   "fame": 10,
+   "summary": "École de musique du centre de Rome, il dépend de l'académie nationale Sainte-Cécile et prend sa forme actuelle en 1875, sur l'impulsion de Giovanni Sgambati et d'Ettore Pinelli. L'institution dont il dérive, la Congregazione dei Musici di Roma, devenue Accademia en 1585, fut d'abord dirigée par Palestrina. Ennio Morricone y a étudié.",
+   "wiki": "Conservatoire Sainte-Cécile",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/C%20Marzio%20-%20v%20d%20Greci%20conservatorio%20s%20Cecilia%201210269.JPG?width=960",
+   "photoBy": "Lalupa",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Conservatorio Santa Cecilia",
+    "es": "Conservatorio Santa Cecilia",
+    "it": "Conservatorio Santa Cecilia"
+   }
+  },
+  {
+   "id": "Q1109934",
+   "name": "Teatro Valle",
+   "lat": 41.8975,
+   "lng": 12.475,
+   "theme": "stages",
+   "fame": 10,
+   "summary": "C'est le plus ancien théâtre en activité de Rome, bâti en bois pour l'usage privé de Camillo Capranica, inauguré le 7 janvier 1727. Les travaux de 1791 ayant conservé le bois, les architectes gouvernementaux imposent sa reconstruction en pierre, achevée par Gaspare Salvi en 1822. En 2011, il est fermé, puis occupé par des travailleurs du spectacle.",
+   "wiki": "Teatro Valle",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Teatro%20valle.jpg?width=960",
+   "photoBy": "The original uploader was Marten253 at Italian Wikipedia.",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Teatro Valle",
+    "it": "Teatro Valle"
+   }
+  },
+  {
+   "id": "Q18708327",
+   "name": "Teatro delle Dame",
+   "lat": 41.8962584,
+   "lng": 12.4632232,
+   "theme": "stages",
+   "fame": 9,
+   "summary": "Élevé en 1718 par Antonio D'Alibert sous le nom de Teatro Alibert, ce théâtre disparu fut mis aux enchères après la faillite de son fondateur, puis racheté et rebaptisé par des nobles romains. Tant que les femmes n'eurent pas le droit de jouer dans les États pontificaux, des castrats y tenaient les rôles féminins. Un incendie le détruisit en 1863.",
+   "wiki": "Teatro delle Dame",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Teatro%20delle%20Dame%20floor%20plan%2C%201760-61.jpg?width=960",
+   "photoBy": "Dumont",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Teatro delle Dame",
+    "es": "Teatro delle Dame",
+    "it": "Teatro delle Dame"
+   }
+  },
+  {
+   "id": "Q2329591",
+   "name": "palais magistral",
+   "lat": 41.905277777778,
+   "lng": 12.480555555556,
+   "theme": "culture",
+   "fame": 22,
+   "summary": "Siège officiel de l'ordre souverain de Malte, via Condotti, il appartient à l'Ordre et jouit du statut d'extraterritorialité de la part du gouvernement italien. Légué en 1629 par Antonio Bosio, il fut d'abord le siège de l'ambassadeur de l'Ordre auprès des États pontificaux, avant de devenir en 1834 la résidence du grand maître.",
+   "wiki": "Palais magistral (Rome)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palazzo%20Magistrale%20%28Rome%29%201.jpg?width=960",
+   "photoBy": "Giorgio Minguzzi",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Magistral Palace",
+    "es": "Palacio Magistral de Malta",
+    "it": "Palazzo Magistrale"
+   }
+  },
+  {
+   "id": "Q2047551",
+   "name": "Palazzo Della Rovere",
+   "lat": 41.901944444444,
+   "lng": 12.461111111111,
+   "theme": "culture",
+   "fame": 15,
+   "summary": "Aussi appelé palazzo dei Penitenzieri, ce palais de la Via della Conciliazione, dans le Borgo, fut commencé vers 1480 pour le cardinal Domenico della Rovere sur les plans de Baccio Pontelli. Sa façade reprend le style du palais de Venise. Des fouilles menées dans sa cour à partir de 2020 ont mis au jour le théâtre de Néron.",
+   "wiki": "Palais Della Rovere",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Borgo%20-%20palazzo%20dei%20Penitenzieri%201150682.JPG?width=960",
+   "photoBy": "Lalupa",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Palazzo Della Rovere",
+    "it": "Palazzo dei Penitenzieri"
+   }
+  },
+  {
+   "id": "Q2705933",
+   "name": "Portique d'Octavius",
+   "lat": 41.8939,
+   "lng": 12.4757,
+   "theme": "monuments",
+   "fame": 12,
+   "summary": "Élevé sur le Champ de Mars, en bordure nord du Circus Flaminius, il est construit entre 168 et 167 av. J.-C. par Cnaeus Octavius avec une partie du butin de la troisième guerre macédonienne, pour célébrer la victoire navale de Pydna sur Persée. Auguste le restaure en 33 av. J.-C. et y dépose les enseignes reprises aux Dalmatiens.",
+   "wiki": "Portique d'Octavius",
+   "photo": null,
+   "photoBy": null,
+   "photoLic": null,
+   "alt": {
+    "en": "Porticus Octavia",
+    "es": "Pórtico de Octavio",
+    "it": "Portico di Ottavio"
+   }
+  },
+  {
+   "id": "Q2901320",
+   "name": "bibliothèque Vallicelliane",
+   "lat": 41.898186,
+   "lng": 12.469432,
+   "theme": "culture",
+   "fame": 11,
+   "summary": "Au second étage de l'oratoire des Philippins, sur la piazza della Chiesa Nuova, dans le rione de Parione, elle doit son nom à l'église Santa Maria in Vallicella voisine. Le bâtiment a été conçu par Francesco Borromini sur commande de la Congrégation de l'Oratoire. Le fonds est issu à l'origine de la bibliothèque personnelle de Philippe Néri.",
+   "wiki": "Bibliothèque Vallicelliane",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Sala%20della%20biblioteca%20dell%27Oratorio%20dei%20Filippini%2C%20before%201976%20-%20Archivio%20Accademia%20delle%20Scienze%20Torino%2C%20Millon%2066%2029%20474.jpg?width=960",
+   "photoBy": "Henry A. Millon",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Biblioteca Vallicelliana",
+    "es": "Biblioteca Vallicelliana",
+    "it": "Biblioteca Vallicelliana"
+   }
+  },
+  {
+   "id": "Q575012",
+   "name": "Antico Caffè Greco",
+   "lat": 41.905558,
+   "lng": 12.481436,
+   "theme": "shops",
+   "fame": 16,
+   "summary": "Situé via Condotti, il fut ouvert vers 1760 par un Grec, Nicola della Maddalena, d'où son nom. Il aligne de petites salles aux murs pourpres couverts de tableaux, avec tables de marbre et fauteuils de velours. Son aspect actuel date de 1869 ; il fut déclaré monument d'intérêt historique en 1953.",
+   "wiki": "Antico Caffè Greco",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ludwig%20Passini%20-%20K%C3%BCnstler%20im%20Cafe%20Greco%20in%20Rom.jpg?width=960",
+   "photoBy": "Ludwig Passini",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Antico Caffè Greco",
+    "es": "Antiguo Caffè Greco",
+    "it": "Antico Caffè Greco"
+   }
+  },
+  {
+   "id": "Q16800590",
+   "name": "hôtel Westin Excelsior Rome",
+   "lat": 41.90759,
+   "lng": 12.48992,
+   "theme": "shops",
+   "fame": 9,
+   "summary": "Ouvert sur la via Veneto le 17 janvier 1906, il fut construit par une société hôtelière basée à Lucerne, puis vendu dans les années 1920 à la chaîne italienne CIGA. En 1944, il devint le siège provisoire du général Mark Clark après l'entrée de l'armée américaine à Rome. La Dolce Vita fut tourné autour de l'hôtel en 1960.",
+   "wiki": "Hôtel Westin Excelsior Rome",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Roma%20Via%20Veneto.jpg?width=960",
+   "photoBy": "Gobbler",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "The Westin Excelsior, Rome",
+    "es": "The Westin Excelsior Rome",
+    "it": "Hotel Excelsior"
+   }
+  },
+  {
+   "id": "Q18350121",
+   "name": "Hotel d'Inghilterra",
+   "lat": 41.904689345496,
+   "lng": 12.480799804684,
+   "theme": "shops",
+   "fame": 5,
+   "summary": "Ce cinq-étoiles de 88 chambres, ouvert en 1845, doit son nom à sa popularité auprès des visiteurs britanniques. Le bâtiment remonte au milieu du XVIe siècle, quand il logeait les visiteurs du Palazzo Torlonia. Byron, Keats, Mark Twain et Hemingway y ont séjourné. Une rénovation entamée en 2008 a ramené de 21 à 13 les chambres du quatrième étage.",
+   "wiki": "Hôtel d'Angleterre (Rome)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rom%2C%20H%C3%A4user%20in%20der%20Stra%C3%9Fe%20Via%20Bocca%20di%20Leone.JPG?width=960",
+   "photoBy": "Dguendel",
+   "photoLic": "CC BY 3.0",
+   "alt": {
+    "en": "Hotel d'Inghilterra",
+    "it": "Hotel d'Inghilterra"
+   }
+  },
+  {
+   "id": "Q2932912",
+   "name": "Caffè Aragno",
+   "lat": 41.902443,
+   "lng": 12.479983,
+   "theme": "shops",
+   "fame": 3,
+   "summary": "Inauguré en 1888 via del Corso, ce café atteint le sommet de sa notoriété dans les années 1930, quand il devient un rendez-vous culturel, politique et mondain de la capitale. Écrivains et artistes se retrouvaient dans la terza saletta, qu'Orio Vergani définit en 1938 comme le sancta sanctorum de la littérature, de l'art et du journalisme.",
+   "wiki": "Caffè Aragno",
+   "photo": null,
+   "photoBy": null,
+   "photoLic": null,
+   "alt": {
+    "en": "Caffè Aragno",
+    "it": "Caffè Aragno"
+   }
+  },
+  {
+   "id": "Q2932918",
+   "name": "Caffè Sant'Eustachio",
+   "lat": 41.898333333333,
+   "lng": 12.475277777778,
+   "theme": "shops",
+   "fame": 3,
+   "summary": "Bar historique de la place du même nom, dans le rione de Sant'Eustachio, il a été fondé en 1938 dans le local d'un ancien torréfacteur. Les grains d'arabica venus d'Amérique du Sud y sont torréfiés au feu de bois, dans une machine datant de 1948. Les Romains y voient l'un des meilleurs expressos de la capitale.",
+   "wiki": "Caffè Sant'Eustachio",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Caff%C3%A8%20Sant%27Eustachio.JPG?width=960",
+   "photoBy": "LPLT",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Caffè Sant'Eustachio",
+    "it": "Caffè Sant'Eustachio"
+   }
+  }
+ ]
+}

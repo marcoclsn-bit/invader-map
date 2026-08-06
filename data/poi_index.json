@@ -1,6 +1,6 @@
 {
  "version": 18,
- "updatedAt": "2026-08-05",
+ "updatedAt": "2026-08-06",
  "cities": {
   "CLR": {
    "version": 1,
@@ -70,6 +70,16 @@
     "en": 18,
     "es": 18,
     "it": 18
+   }
+  },
+  "ROM": {
+   "version": 1,
+   "updatedAt": "2026-08-06",
+   "count": 159,
+   "langs": {
+    "en": 1,
+    "es": 1,
+    "it": 1
    }
   },
   "WN": {
