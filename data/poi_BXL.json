@@ -1,0 +1,1593 @@
+{
+ "version": 1,
+ "city": "BXL",
+ "attribution": "Lieux : Wikidata (CC0) · Résumés d’après Wikipédia (CC BY-SA) · Photos : Wikimedia Commons",
+ "updatedAt": "2026-08-06",
+ "pois": [
+  {
+   "id": "Q2277238",
+   "name": "Autoworld",
+   "lat": 50.8392664,
+   "lng": 4.3933172,
+   "theme": "museums",
+   "fame": 10,
+   "summary": "Musée de l'automobile installé dans la Halle sud-est des Palais du Cinquantenaire, sous une charpente métallique et des verrières. Plus de 300 véhicules y sont exposés, dont des Minerva et des limousines ayant appartenu à la famille royale. Le musée a été fondé en 1986 à l'initiative de Charly De Pauw, autour de la collection de Ghislain Mahy.",
+   "wiki": "Autoworld",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Autoworld%20Cinquantenaire.JPG?width=960",
+   "photoBy": "No machine-readable author provided. Ben2~commonswiki assume",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Autoworld",
+    "it": "Autoworld"
+   }
+  },
+  {
+   "id": "Q943581",
+   "name": "Musée Magritte",
+   "lat": 50.8424182,
+   "lng": 4.358796,
+   "theme": "museums",
+   "fame": 14,
+   "summary": "Section des musées royaux des Beaux-Arts de Belgique, installée dans un bâtiment néo-classique de la place Royale et ouverte au public le 2 juin 2009. La collection, la plus riche du monde consacrée à Magritte, réunit plus de 150 œuvres ; le parcours, chronologique et thématique, occupe trois étages et commence par le dernier.",
+   "wiki": "Musée Magritte",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/BRX-mus%C3%A9e-magritte.2.JPG?width=960",
+   "photoBy": "Warburg",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Magritte Museum",
+    "it": "museo Magritte"
+   }
+  },
+  {
+   "id": "Q815542",
+   "name": "Centre belge de la bande dessinée",
+   "lat": 50.85125,
+   "lng": 4.36016,
+   "theme": "museums",
+   "fame": 19,
+   "summary": "Le musée de la bande dessinée occupe, rue des Sables, le bâtiment art nouveau conçu par Victor Horta en 1906 pour les grands magasins de tissus Waucquez. Restauré de 1984 à 1989, le lieu accueille le centre depuis le 6 octobre 1989. Une exposition permanente y retrace l'histoire de la bande dessinée.",
+   "wiki": "Centre belge de la bande dessinée",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Centre%20Belge%20de%20la%20Bande%20Dessin%C3%A9e%20-%2030.jpg?width=960",
+   "photoBy": "Ramón",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Belgian Comic Strip Center",
+    "es": "Centro belga del cómic",
+    "it": "Centro belga del fumetto"
+   }
+  },
+  {
+   "id": "Q46012",
+   "name": "maison de l'Histoire européenne",
+   "lat": 50.839938888889,
+   "lng": 4.3787611111111,
+   "theme": "museums",
+   "fame": 21,
+   "summary": "Voulu par le Parlement européen, ce musée a ouvert au public en 2017 dans le bâtiment Eastman du parc Léopold, ancienne clinique dentaire dessinée par Michel Polak et inaugurée en 1935. L'exposition permanente occupe quatre étages et quelque 4 000 m2, en vingt-quatre langues. La visite est gratuite.",
+   "wiki": "Maison de l'histoire européenne",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/House%20of%20European%20History%2C%20Brussels%20%28sept.%202019%29.jpg?width=960",
+   "photoBy": "Benoît Prieur",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "House of European History",
+    "es": "Casa de la Historia Europea",
+    "it": "Casa della Storia europea"
+   }
+  },
+  {
+   "id": "Q850537",
+   "name": "Palais de justice de Bruxelles",
+   "lat": 50.836667,
+   "lng": 4.351667,
+   "theme": "palaces",
+   "fame": 25,
+   "summary": "Siège de plusieurs cours et tribunaux, cet édifice éclectique d'inspiration gréco-romaine est l'œuvre de Joseph Poelaert et couvre 26 000 m2 au sol. La première pierre est posée en 1866, l'inauguration a lieu le 15 octobre 1883, après la mort de l'architecte. La coupole, incendiée en 1944, fut restaurée à partir de 1948.",
+   "wiki": "Palais de justice de Bruxelles",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Br%C3%BCsselJustizpalast.jpg?width=960",
+   "photoBy": "Mussklprozz",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Palace of Justice of Brussels",
+    "es": "Palacio de Justicia de Bruselas",
+    "it": "Palazzo di Giustizia di Bruxelles"
+   }
+  },
+  {
+   "id": "Q1255327",
+   "name": "hôtel de ville de Bruxelles",
+   "lat": 50.846389,
+   "lng": 4.351667,
+   "theme": "palaces",
+   "fame": 28,
+   "summary": "Seul vestige médiéval de la Grand-Place, face à la Maison du Roi, l'édifice gothique fut bâti au XVe siècle en trois temps, par des architectes différents : de là l'asymétrie des deux ailes qui encadrent la tour, onze arcades à gauche, six à droite. La flèche porte une copie du saint Michel de Martin Van Rode ; l'original est au musée de la ville.",
+   "wiki": "Hôtel de ville de Bruxelles",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Brussels%2C%20townhall%20oeg2043-00090%20foto3%202015-06-07%2008.38.jpg?width=960",
+   "photoBy": "Michielverbeek",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Brussels Town Hall",
+    "es": "Ayuntamiento de Bruselas",
+    "it": "Municipio di Bruxelles"
+   }
+  },
+  {
+   "id": "Q1131821",
+   "name": "palais du Coudenberg",
+   "lat": 50.84261,
+   "lng": 4.360689,
+   "theme": "palaces",
+   "fame": 7,
+   "summary": "Résidence des ducs de Brabant, puis des souverains bourguignons, espagnols et autrichiens, le palais est ravagé par un incendie dans la nuit du 3 au 4 février 1731. Ses ruines sont rasées entre 1774 et 1778 pour faire place au quartier de la place Royale. Seules subsistent les parties souterraines, visitables depuis le musée BELvue.",
+   "wiki": "Palais du Coudenberg",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Paleis%20op%20de%20Koudenberg.jpg?width=960",
+   "photoBy": "Jan Brueghel the Younger",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Palace of Coudenberg",
+    "es": "Palacio de Coudenberg",
+    "it": "palazzo del Coudenberg"
+   }
+  },
+  {
+   "id": "Q28485845",
+   "name": "Palais de la Bourse",
+   "lat": 50.848111111111,
+   "lng": 4.3503055555556,
+   "theme": "palaces",
+   "fame": 11,
+   "summary": "Ce palais éclectique, élevé sur les plans de Léon Suys, fut achevé en 1873 : plan en croix grecque, coupole, décor sculpté foisonnant auquel Auguste Rodin a contribué. Les lions de l'escalier disent les cours de bourse, tête dressée pour la hausse, échine courbée pour la baisse. Restauré de 2020 à 2023, il abrite une exposition sur la bière.",
+   "wiki": "Palais de la Bourse (Bruxelles)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Front%20of%20Brussels%20Stock%20Exchange%202023%20cropped.jpg?width=960",
+   "photoBy": "Guy Delsaut",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Bourse Palace",
+    "es": "Palacio de la Bolsa",
+    "it": "Palazzo della Borsa"
+   }
+  },
+  {
+   "id": "Q14505682",
+   "name": "Maison du Roi",
+   "lat": 50.84694,
+   "lng": 4.35278,
+   "theme": "palaces",
+   "fame": 7,
+   "summary": "Cet édifice néogothique se dresse au nord de la Grand-Place, face à l'hôtel de ville, et abrite le musée de la ville de Bruxelles. Une halle au pain l'a précédé, mentionnée dès 1321. Le bâtiment gothique du XVIe siècle, resté inachevé, fut démoli puis reconstruit par Pierre-Victor Jamaer, qui y ajouta la tour centrale prévue à l'origine.",
+   "wiki": "Maison du Roi (Bruxelles)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/%28Belgium%29%20Brussels%20City%20Museum%20Aug%202009%20%28crop%29.jpg?width=960",
+   "photoBy": "Donaldytong",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "King's House",
+    "it": "Maison du Roi"
+   }
+  },
+  {
+   "id": "Q2285837",
+   "name": "Palais des Beaux-Arts",
+   "lat": 50.843713888889,
+   "lng": 4.359775,
+   "theme": "stages",
+   "fame": 12,
+   "summary": "Conçu par Victor Horta à l'initiative du banquier Henry Le Bœuf, l'édifice Art déco fut construit entre 1922 et 1929 sur les pentes du Coudenberg ; sa hauteur dut être réduite pour ne pas masquer la vue depuis le palais royal. La salle de concert Henry Le Bœuf, en sous-sol, compte 2 200 places. Le palais signe ses activités sous la marque Bozar.",
+   "wiki": "Palais des Beaux-Arts de Bruxelles",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/BOZAR%20%28DSCF7462%29.jpg?width=960",
+   "photoBy": "Trougnouf (Benoit Brummer)",
+   "photoLic": "CC BY 4.0",
+   "alt": {
+    "en": "Centre for Fine Arts",
+    "es": "Palais des Beaux-Arts de Bruselas"
+   }
+  },
+  {
+   "id": "Q1101790",
+   "name": "parc du Cinquantenaire",
+   "lat": 50.840555555556,
+   "lng": 4.3927777777778,
+   "theme": "parks",
+   "fame": 23,
+   "summary": "Aménagé sur un ancien champ de manœuvres pour les fêtes du cinquantenaire de l'indépendance de la Belgique, en 1880, il s'ordonne autour d'un arc à trois arches dont Charles Girault établit les plans, inauguré en 1905 et surmonté d'un quadrige de bronze. Le Musée royal de l'Armée, Autoworld et les Musées royaux d'Art et d'Histoire l'entourent.",
+   "wiki": "Parc du Cinquantenaire",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Parc%20du%20Cinquantenaire%2030-05-06.JPG?width=960",
+   "photoBy": "User:Ben2",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Cinquantenaire Park",
+    "es": "Parque del Cincuentenario",
+    "it": "parco del Cinquantenario"
+   }
+  },
+  {
+   "id": "Q1548310",
+   "name": "Grande mosquée de Bruxelles",
+   "lat": 50.843333,
+   "lng": 4.387778,
+   "theme": "religious",
+   "fame": 20,
+   "summary": "Élevé en 1897 pour l'exposition internationale, ce pavillon oriental de style mauresque, dû à Ernest Van Humbeeck, abritait une toile panoramique du Caire conçue par Émile Wauters ; l'attraction ferme en 1963. Le roi Baudouin l'offre en 1967 au roi d'Arabie saoudite et la mosquée est inaugurée en 1978. Le minaret, instable, a été emballé en 2025.",
+   "wiki": "Grande Mosquée de Bruxelles",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Bruxelles%20%28Cinquantenaire%29%20la%20grande%20Mosqu%C3%A9e.JPG?width=960",
+   "photoBy": "Ben2~commonswiki",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Great Mosque of Brussels",
+    "es": "Gran Mezquita de Bruselas"
+   }
+  },
+  {
+   "id": "Q377500",
+   "name": "musées royaux des Beaux-Arts de Belgique",
+   "lat": 50.84168,
+   "lng": 4.358238,
+   "theme": "museums",
+   "fame": 32,
+   "summary": "L'institution réunit six musées : Oldmasters, Magritte, Wiertz, Meunier, Fin-de-Siècle et Art moderne, soit quelque vingt mille peintures, sculptures et dessins. Le bâtiment de la rue de la Régence est dû à l'architecte Alphonse Balat. Le musée Fin-de-Siècle est temporairement inaccessible au public depuis janvier 2024.",
+   "wiki": "Musées royaux des Beaux-Arts de Belgique",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Royal%20Museums%20of%20Fine%20Arts%20of%20Belgium%2020180629.jpg?width=960",
+   "photoBy": "Suicasmo",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Royal Museums of Fine Arts of Belgium",
+    "es": "Museos Reales de Bellas Artes de Bélgica",
+    "it": "Museo reale delle belle arti del Belgio"
+   }
+  },
+  {
+   "id": "Q1995367",
+   "name": "musée Horta",
+   "lat": 50.824169,
+   "lng": 4.355561,
+   "theme": "museums",
+   "fame": 25,
+   "summary": "Victor Horta a bâti entre 1898 et 1901, rue Américaine, sa maison et son atelier : deux immeubles conçus ensemble mais gardant chacun son individualité, pour séparer sphère privée et travail. L'escalier n'est pas enfermé dans une cage, il forme la colonne vertébrale de la maison, dont une verrière éclaire le centre. Le musée a été inauguré en 1969.",
+   "wiki": "Maison Horta",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Hortamuseum.tif?width=960",
+   "photoBy": "Paul Louis",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Horta Museum",
+    "es": "Museo Horta",
+    "it": "Horta Museum"
+   }
+  },
+  {
+   "id": "Q1395176",
+   "name": "Musée royal de l'Armée et d'Histoire militaire",
+   "lat": 50.840820379539,
+   "lng": 4.3933611374146,
+   "theme": "museums",
+   "fame": 15,
+   "summary": "Musée fédéral qui occupe la moitié nord du complexe muséal du Cinquantenaire, soit 40 000 mètres carrés d'exposition. Sa collection est née d'une section d'histoire militaire montrée à l'Exposition universelle de 1910 ; elle gagne le site à partir de 1923. Le hall de l'Air, dessiné par Gédéon Bordiau, abrite plus de 100 avions.",
+   "wiki": "Musée royal de l'Armée et d'Histoire militaire",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Royal%20Military%20Museum%20Brussels%202007%20456.JPG?width=960",
+   "photoBy": "Marcelloo",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Royal Museum of the Armed Forces and Military History",
+    "es": "Real museo de las Fuerzas Armadas e Historia Militar",
+    "it": "Musée royal de l'armée et de l'histoire militaire"
+   }
+  },
+  {
+   "id": "Q222297",
+   "name": "Musée des sciences naturelles de Belgique",
+   "lat": 50.8365465,
+   "lng": 4.3765602,
+   "theme": "museums",
+   "fame": 14,
+   "summary": "Musée d'histoire naturelle et centre de recherche, en bordure du parc Léopold, rue Vautier. Créé par arrêté royal en 1846, il s'installe sur les hauteurs du parc entre 1889 et 1891 et ouvre au public le 22 juillet 1891. Son clou reste les iguanodons de Bernissart, découverts en 1878 dans des galeries de mine, en Hainaut.",
+   "wiki": "Muséum des sciences naturelles",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mod%C3%A8le%20en%20bois.JPG?width=960",
+   "photoBy": "Bernard J. Noël",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Museum of Natural Sciences of Belgium",
+    "es": "Museo de Historia Natural de Bélgica",
+    "it": "Museo di scienze naturali di Bruxelles"
+   }
+  },
+  {
+   "id": "Q2988142",
+   "name": "Musée de la Porte de Hal",
+   "lat": 50.833014900005,
+   "lng": 4.34489395,
+   "theme": "museums",
+   "fame": 13,
+   "summary": "Construite en 1381, la porte de Hal est le dernier vestige de la seconde enceinte médiévale de Bruxelles, seule rescapée de ses sept portes : ses usages successifs, dont celui de prison, l'ont sauvée de la démolition. Henri Beyaert lui a donné de 1868 à 1871 son allure de château néogothique. Le musée retrace l'histoire du bâtiment et de la ville.",
+   "wiki": "Porte de Hal",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Bruxelles%20Porte%20de%20Hal%205.jpg?width=960",
+   "photoBy": "Zairon",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Halle Gate Museum",
+    "es": "Puerta de Hal (Bruselas)",
+    "it": "Porta di Halle"
+   }
+  },
+  {
+   "id": "Q945059",
+   "name": "musées royaux d'Art et d'Histoire",
+   "lat": 50.83936,
+   "lng": 4.3917,
+   "theme": "museums",
+   "fame": 13,
+   "summary": "Cet établissement scientifique fédéral a son siège dans le parc du Cinquantenaire et regroupe plusieurs sites : le musée Art et Histoire, la porte de Hal, le musée des Instruments de musique installé dans l'ancien magasin Old England et les musées d'Extrême-Orient de Laeken, fermés au public depuis 2013.",
+   "wiki": "Musées royaux d'Art et d'Histoire de Belgique",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mus%C3%A9e%20d%27Art%20et%20Histoire%20Bxl%2001.JPG?width=960",
+   "photoBy": "No machine-readable author provided. Ben2~commonswiki assume",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Royal Museums of Art and History",
+    "es": "Museos Reales de Arte e Historia",
+    "it": "Musei reali dell'arte e della storia"
+   }
+  },
+  {
+   "id": "Q256200",
+   "name": "musée Charlier",
+   "lat": 50.847556,
+   "lng": 4.369928,
+   "theme": "museums",
+   "fame": 8,
+   "summary": "Le musée occupe l'ancien hôtel de maître du mécène Henri Van Cutsem, avenue des Arts, dont Victor Horta a transformé l'intérieur de 1890 à 1893 pour la présentation des collections, en conservant l'enveloppe néoclassique. Le sculpteur Guillaume Charlier en hérite en 1904 et lègue la maison en 1925 à la commune de Saint-Josse-ten-Noode.",
+   "wiki": "Musée Charlier",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Charlier%20Museum%2C%20entrance.jpg?width=960",
+   "photoBy": "own work",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Charlier Museum",
+    "it": "Museo Charlier"
+   }
+  },
+  {
+   "id": "Q2859916",
+   "name": "arcades du Cinquantenaire",
+   "lat": 50.84055270444,
+   "lng": 4.3929938793196,
+   "theme": "monuments",
+   "fame": 8,
+   "summary": "Voulu par Léopold II pour le cinquantenaire de l'indépendance belge, le monument resta longtemps inachevé : en 1897, seuls les pieds verticaux de l'arche dessinée par Gédéon Bordiau étaient bâtis. En 1904, l'architecte français Charles Girault redessina un arc à trois arches, élevé en huit mois par 450 ouvriers et inauguré le 27 septembre 1905.",
+   "wiki": "Arcades du Cinquantenaire",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Arco%20del%20Cincuentenario%2C%20Bruselas%2C%20B%C3%A9lgica%2C%202021-12-15%2C%20DD%20115-135%20HDR%20PAN.jpg?width=960",
+   "photoBy": "Diego Delso",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Cinquantenaire Arcade",
+    "es": "Arcada del Cincuentenario"
+   }
+  },
+  {
+   "id": "Q2869992",
+   "name": "Maison Cauchie",
+   "lat": 50.838373,
+   "lng": 4.395334,
+   "theme": "museums",
+   "fame": 7,
+   "summary": "Construite en 1905 par Paul Cauchie pour lui-même et sa femme peintre Lina, cette maison de la rue des Francs sert d'enseigne à leur talent : un crépi enduit la façade à la manière d'une toile et porte des sgraffites ; une cariatide aux bras levés soutient le cartouche « Par nous, pour nous ». Elle est accessible au public les samedis.",
+   "wiki": "Maison Cauchie",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Maison%20Cauchie%2000.JPG?width=960",
+   "photoBy": "Ben2~commonswiki",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Cauchie House",
+    "es": "Casa Cauchie",
+    "it": "Maison Cauchie"
+   }
+  },
+  {
+   "id": "Q842660",
+   "name": "Musée Meunier",
+   "lat": 50.819116,
+   "lng": 4.367099,
+   "theme": "museums",
+   "fame": 7,
+   "summary": "Installé dans la maison-atelier de Constantin Meunier, à Ixelles, rachetée par l'État en 1936, le musée a ouvert au public en 1939. Environ 150 dessins, peintures et sculptures y retracent la période 1875-1905, marquée par la prise de conscience sociale de l'artiste. Depuis 1978, le musée fait partie des musées royaux des Beaux-Arts de Belgique.",
+   "wiki": "Musée Meunier",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Elsene%2C%20Abdijstraat%2059%20%28Voorgevel%29%20%28Eclectische%20stijl%29%20%28Oeuvre%20van%20architect%20Ernest%20Delune%29.jpg?width=960",
+   "photoBy": "IDD5000",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Meunier Museum"
+   }
+  },
+  {
+   "id": "Q19974092",
+   "name": "musée de la Banque nationale",
+   "lat": 50.848934,
+   "lng": 4.359805,
+   "theme": "museums",
+   "fame": 6,
+   "summary": "Ce musée de la Banque nationale de Belgique retrace l'histoire de la monnaie, du troc aux pièces et billets en euro. La collection compte plus de 24 000 billets et des pièces couvrant plus de 2500 ans. Le bâtiment éclectique a été construit de 1872 à 1874 pour l'Union du Crédit, sur les plans de l'architecte bruxellois Désiré De Keyser.",
+   "wiki": "Musée de la Banque nationale de Belgique",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Bruxelles%20Banque%20nationale.jpg?width=960",
+   "photoBy": "Michel wal",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Museum van de Nationale Bank van België"
+   }
+  },
+  {
+   "id": "Q488688",
+   "name": "Musée Wiertz",
+   "lat": 50.837185,
+   "lng": 4.375694,
+   "theme": "museums",
+   "fame": 6,
+   "summary": "Dessins, peintures, études et sculptures d'Antoine Wiertz (1806-1865) sont réunis rue Vautier, à Ixelles, dans l'atelier qui fut aussi le domicile de cet artiste romantique belge de 1853 jusqu'à son décès. Le musée constitue une section des musées royaux des Beaux-Arts de Belgique.",
+   "wiki": "Musée Wiertz",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mus%C3%A9e%20Wiertz%2C%20Bruxelles.JPG?width=960",
+   "photoBy": "User:Ben2",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Wiertz Museum",
+    "es": "Musée Wiertz",
+    "it": "Museo Wiertz"
+   }
+  },
+  {
+   "id": "Q269654",
+   "name": "cathédrale Saints-Michel-et-Gudule",
+   "lat": 50.847777777778,
+   "lng": 4.3602777777778,
+   "theme": "religious",
+   "fame": 35,
+   "summary": "Dédiée à saint Michel et à sainte Gudule, la collégiale a été promue cocathédrale de l'archidiocèse de Malines-Bruxelles en 1962. Le chantier de cet édifice gothique brabançon débute par le chœur en 1226 ; la façade date des années 1470-1485. Ses deux tours, attribuées à Jan Van Ruysbroeck, sont inachevées et auraient dû porter des flèches.",
+   "wiki": "Cathédrale Saints-Michel-et-Gudule de Bruxelles",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/%28Belgium%29%20St.%20Michael%20%26%20St.%20Gudula%20Cathedral%20Tower%2C%20Brussels.jpg?width=960",
+   "photoBy": "Donaldytong",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Cathedral of St. Michael and St. Gudula",
+    "es": "Catedral de San Miguel y Santa Gúdula de Bruselas",
+    "it": "concattedrale di San Michele e Santa Gudula"
+   }
+  },
+  {
+   "id": "Q763565",
+   "name": "chapelle de la Résurrection",
+   "lat": 50.84139,
+   "lng": 4.37861,
+   "theme": "religious",
+   "fame": 20,
+   "summary": "Ancienne chapelle du Saint-Sacrement de Miracle, bâtie en 1455 rue des Sols, démontée pour laisser place à la Gare Centrale, puis reconstruite rue van Maerlant, où elle rouvrit au culte en 1908. Acquise par une association de fonctionnaires européens, elle fut consacrée le 25 septembre 2001 comme lieu œcuménique aux vitraux de Thomas Reinhold.",
+   "wiki": "Chapelle de la Résurrection à Bruxelles",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Chapelle%20de%20la%20R%C3%A9surrection%2C%20Bruxelles.jpg?width=960",
+   "photoBy": "Fabre",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Chapel of the Resurrection, Brussels",
+    "es": "Capilla de la Resurrección",
+    "it": "chapelle de la Résurrection"
+   }
+  },
+  {
+   "id": "Q2002492",
+   "name": "église Notre-Dame du Sablon",
+   "lat": 50.84034,
+   "lng": 4.35621,
+   "theme": "religious",
+   "fame": 16,
+   "summary": "Une chapelle dédiée à la Vierge, élevée par le Grand Serment des arbalétriers, est achevée en 1318. L'arrivée en 1348 d'une statuette réputée miraculeuse y attire les dévots, et les offrandes permettent de bâtir au XVe siècle un nouveau sanctuaire, dont le chœur était achevé en 1435. Les arcs-boutants ont été ajoutés à la fin du XIXe siècle.",
+   "wiki": "Église Notre-Dame du Sablon de Bruxelles",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ko%C5%9Bci%C3%B3%C5%82%20Notre-Dame%20du%20Sablon%20w%20Brukseli.jpg?width=960",
+   "photoBy": "Voyager747",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Church of Our Lady of Victories at the Sablon",
+    "es": "iglesia de Nuestra Señora",
+    "it": "chiesa di Notre-Dame du Sablon"
+   }
+  },
+  {
+   "id": "Q3109592",
+   "name": "église Saint-Jacques-sur-Coudenberg",
+   "lat": 50.841944,
+   "lng": 4.360278,
+   "theme": "religious",
+   "fame": 11,
+   "summary": "Bâtie de 1776 à 1787, elle fait partie de l'ensemble néo-classique qui forme le pourtour de la place Royale. Sa façade à fronton triangulaire et six colonnes corinthiennes évoque un temple gréco-romain. C'est au-dessus des marches du porche que Léopold Ier prêta, le 21 juillet 1831, le serment qui fit de lui le premier roi des Belges.",
+   "wiki": "Cathédrale Saint-Jacques-sur-Coudenberg à Bruxelles",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint-Jacques-sur-Coudenberg%20during%20civil%20twilight%20%28DSCF7448%29.jpg?width=960",
+   "photoBy": "Trougnouf (Benoit Brummer)",
+   "photoLic": "CC BY 4.0",
+   "alt": {
+    "en": "Church of St. James on Coudenberg",
+    "es": "iglesia de Santiago",
+    "it": "chiesa di Saint Jacques-sur-Coudenberg"
+   }
+  },
+  {
+   "id": "Q2086424",
+   "name": "abbaye de la Cambre",
+   "lat": 50.818888888889,
+   "lng": 4.3741666666667,
+   "theme": "religious",
+   "fame": 11,
+   "summary": "Ancien monastère de moniales cisterciennes fondé à la source du Maelbeek, supprimé et vendu comme bien national en 1796. La plupart des bâtiments datent du XVIIIe siècle, quand les abbesses reconstruisirent l'ensemble dans le style français : cour d'honneur, escaliers monumentaux, jardins en gradins. L'église gothique est aujourd'hui paroissiale.",
+   "wiki": "Abbaye de la Cambre",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Cambre%20Abbey.jpg?width=960",
+   "photoBy": "GdML",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "La Cambre Abbey",
+    "es": "abadía de La Cambre",
+    "it": "Abbazia di La Cambre"
+   }
+  },
+  {
+   "id": "Q3586107",
+   "name": "église royale Sainte-Marie",
+   "lat": 50.859166666667,
+   "lng": 4.3688888888889,
+   "theme": "religious",
+   "fame": 11,
+   "summary": "Église catholique de style romano-byzantin, place de la Reine à Schaerbeek, sur le tracé royal qui mène de Laeken au palais royal de Bruxelles. Son plan octogonal, dû à Louis van Overstraeten, s'inspire de Saint-Vital de Ravenne. Ouverte au culte en 1853 et consacrée en 1902, elle a été fermée en 1966, puis restaurée et rouverte en 1996.",
+   "wiki": "Église royale Sainte-Marie",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Koninklijke%20Sint-Mariakerk%20Schaarbeek%202011%2009%2001%2002.jpg?width=960",
+   "photoBy": "Marcvandersmissen",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "St. Mary's Royal Church",
+    "es": "iglesia Real de Santa María",
+    "it": "chiesa reale di Santa Maria"
+   }
+  },
+  {
+   "id": "Q535244",
+   "name": "église Saint-Jean-Baptiste-au-Béguinage",
+   "lat": 50.85270278,
+   "lng": 4.35046667,
+   "theme": "religious",
+   "fame": 8,
+   "summary": "De l'ancien grand béguinage de Bruxelles, dont les dernières maisons ont disparu en 1856, il ne subsiste que cette église. L'édifice baroque, dont la première pierre est posée en 1657, s'élève sur les fondations de l'église gothique détruite lors des troubles religieux : de là son plan en croix latine, inhabituel pour le baroque.",
+   "wiki": "Église Saint-Jean-Baptiste-au-Béguinage",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Sint-Jan%20Baptist%20ten%20Begijnhofkerk%20%28Brussel%29%2022-09-2018%2015-08-16.jpg?width=960",
+   "photoBy": "Paul Hermans",
+   "photoLic": "CC BY 4.0",
+   "alt": {
+    "en": "Church of St. John the Baptist at the Béguinage",
+    "es": "iglesia de San Juan Bautista",
+    "it": "chiesa di San Giovanni Battista al Beghinaggio"
+   }
+  },
+  {
+   "id": "Q2762071",
+   "name": "église Saint-Nicolas de Bruxelles",
+   "lat": 50.847777777778,
+   "lng": 4.3516666666667,
+   "theme": "religious",
+   "fame": 8,
+   "summary": "Élevée vers 1125 pour le quartier des marchands, près du petit port de la Senne, l'église est voisine du palais de la Bourse, d'où son surnom de Saint-Nicolas de la Bourse. Son chœur prolonge la nef centrale en oblique et de petites maisons adossées cachent ses façades latérales. Un boulet de 1695 est fiché dans un pilier de la nef.",
+   "wiki": "Église Saint-Nicolas de Bruxelles",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Belgique%20-%20Bruxelles%20-%20Eglise%20Saint-Nicolas%20-%2001.jpg?width=960",
+   "photoBy": "EmDee",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Church of St. Nicholas"
+   }
+  },
+  {
+   "id": "Q1903443",
+   "name": "église Sainte-Catherine de Bruxelles",
+   "lat": 50.85083544226,
+   "lng": 4.3486223446618,
+   "theme": "religious",
+   "fame": 7,
+   "summary": "Bâtie sur un bassin comblé de l'ancien port, elle remplace une église plus ancienne dont seule la tour subsiste. Joseph Poelaert en donne les plans et suit le chantier de 1854 à 1859 ; son élève Wynand Janssens prend la suite, et l'inauguration a lieu le 6 octobre 1874. Formes gothiques et décoration Renaissance s'y mêlent.",
+   "wiki": "Église Sainte-Catherine de Bruxelles",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/ID2043-0075-0-Brussel%2C%20Sint-Katelijnekerk-PM%2050734.jpg?width=960",
+   "photoBy": "PMRMaeyaert",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Church of St. Catherine"
+   }
+  },
+  {
+   "id": "Q2957320",
+   "name": "chapelle de la Madeleine de Bruxelles",
+   "lat": 50.8455,
+   "lng": 4.3552,
+   "theme": "religious",
+   "fame": 5,
+   "summary": "Bâtie sur les fondations d'un sanctuaire antérieur, à quelque deux cents mètres au sud de la Grand-Place, cette petite chapelle gothique conserve une partie de style gothique brabançon datant du XVe siècle. Le percement de la jonction Nord-Midi a rasé le quartier : elle est le seul édifice du côté nord de la rue de la Madeleine à y avoir échappé.",
+   "wiki": "Chapelle de la Madeleine de Bruxelles",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Brusel%20kaple%20M%C3%A1%C5%99%C3%AD%20Magdaleny%201.jpg?width=960",
+   "photoBy": "VitVit",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Mary Magdalene Chapel"
+   }
+  },
+  {
+   "id": "Q2617482",
+   "name": "église Saints-Jean-et-Étienne-aux-Minimes",
+   "lat": 50.83917,
+   "lng": 4.35278,
+   "theme": "religious",
+   "fame": 5,
+   "summary": "Cette église paroissiale du quartier des Marolles, rue des Minimes, se dresse dans la partie haute du centre. Bâtie de 1700 à 1715 sur un plan basilical, elle relève d'un style de transition, fin du baroque brabançon et début du classicisme, avec un clocher modeste à droite de la façade. Ses orgues sont les plus anciennes de Bruxelles.",
+   "wiki": "Église Saints-Jean-et-Étienne-aux-Minimes",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Bruxelles%20Saints-Jean%20et%20Etienne%20aux%20Minimes.jpg?width=960",
+   "photoBy": "Michel wal",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Church of St. John and St. Stephen of the Minimes"
+   }
+  },
+  {
+   "id": "Q3584899",
+   "name": "église Sainte-Alice",
+   "lat": 50.855,
+   "lng": 4.38512,
+   "theme": "religious",
+   "fame": 5,
+   "summary": "Au 136 de l'avenue Dailly, à Schaerbeek, l'édifice remplace une première église dédiée à sainte Alice, moniale cistercienne morte de la lèpre à l'abbaye de la Cambre. La construction débuta en 1952 sur les plans de Willy Van Hove ; le cardinal Van Roey posa la première pierre en 1953 et son évêque auxiliaire Suenens consacra l'église en 1954.",
+   "wiki": "Église Sainte-Alice",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Schaerbeek%20Eglise%20Sainte-Alice%20001.jpg?width=960",
+   "photoBy": "Varech",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Church of St. Alice"
+   }
+  },
+  {
+   "id": "Q635307",
+   "name": "palais royal de Bruxelles",
+   "lat": 50.841667,
+   "lng": 4.362222,
+   "theme": "palaces",
+   "fame": 30,
+   "summary": "Lieu de travail et de réception du roi des Belges, qui vit au château de Laeken. Le bâtiment, situé devant le parc de Bruxelles, fait face au palais de la Nation. Deux hôtels autrichiens réunis sous Guillaume Ier en forment le noyau ; Léopold II fit refaire la façade sur les plans d'Henri Maquet. On le visite du 21 juillet à la fin du mois d'août.",
+   "wiki": "Palais royal de Bruxelles",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Bruxels%20April%202012-4.jpg?width=960",
+   "photoBy": "Alvesgaspar",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Royal Palace of Brussels",
+    "es": "Palacio Real de Bruselas",
+    "it": "Palazzo reale di Bruxelles"
+   }
+  },
+  {
+   "id": "Q1881679",
+   "name": "Hôtel Tassel",
+   "lat": 50.827778,
+   "lng": 4.362028,
+   "theme": "palaces",
+   "fame": 22,
+   "summary": "Victor Horta a construit cette maison de maître de 1892 à 1893 pour son ami Émile Tassel, professeur à l'Université libre de Bruxelles. Première synthèse mondiale de l'Art nouveau en architecture, elle est proclamée patrimoine mondial par l'Unesco en 2000. La façade mêle pierre blanche et métal ; l'intérieur ne se visite qu'en visite guidée.",
+   "wiki": "Hôtel Tassel",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Victor%20Horta%20Hotel%20Tassel.JPG?width=960",
+   "photoBy": "Karl Stas",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Hôtel Tassel",
+    "es": "Casa Tassel"
+   }
+  },
+  {
+   "id": "Q2671145",
+   "name": "Hôtel Solvay",
+   "lat": 50.826319,
+   "lng": 4.365278,
+   "theme": "palaces",
+   "fame": 18,
+   "summary": "Hôtel de maître Art nouveau conçu par Victor Horta pour l'industriel Armand Solvay, au numéro 224 de l'avenue Louise. Le permis fut délivré en 1895, le gros œuvre terminé en 1898, l'ameublement poursuivi jusqu'en 1903. L'architecte a tout dessiné, jusqu'au mobilier. Classé en 1977, inscrit au patrimoine mondial en 2000, il se visite depuis 2021.",
+   "wiki": "Hôtel Solvay",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Avenue%20Louise%20224%20Louizalaan%20Brussels%202012-08.jpg?width=960",
+   "photoBy": "Zinneke",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Hôtel Solvay",
+    "es": "Casa Solvay"
+   }
+  },
+  {
+   "id": "Q1818182",
+   "name": "Hôtel van Eetvelde",
+   "lat": 50.847167,
+   "lng": 4.380389,
+   "theme": "palaces",
+   "fame": 15,
+   "summary": "Victor Horta a bâti cette maison de maître Art nouveau en trois phases à partir de 1895 pour Edmond van Eetvelde, avenue Palmerston. La façade montre sa structure métallique ; à l'intérieur, une rotonde octogonale est coiffée d'une coupole de vitraux sur huit colonnettes d'acier. Elle figure depuis 2000 au patrimoine mondial de l'Unesco.",
+   "wiki": "Hôtel van Eetvelde",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Belgique%20-%20Bruxelles%20-%20H%C3%B4tel%20Van%20Eetvelde%20-%2001.jpg?width=960",
+   "photoBy": "EmDee",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Hôtel van Eetvelde",
+    "es": "Casa van Eetvelde"
+   }
+  },
+  {
+   "id": "Q2429651",
+   "name": "palais d'Egmont",
+   "lat": 50.838611,
+   "lng": 4.357778,
+   "theme": "palaces",
+   "fame": 10,
+   "summary": "Au no 8 de la place du Petit Sablon, le palais fut la demeure des Egmont, dont Lamoral fut exécuté sur les ordres du duc d'Albe en 1568, puis des ducs d'Arenberg au XVIIIe siècle. Un incendie le ravagea la nuit du 22 au 23 janvier 1892. Vendu à la Ville de Bruxelles en 1918, puis à l'État en 1964, il abrite le ministère des Affaires étrangères.",
+   "wiki": "Palais d'Egmont",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Bruxelles%20Palais%20d%27Egmont%20802.jpg?width=960",
+   "photoBy": "Michel wal",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Egmont Palace",
+    "it": "Palazzo di Egmont"
+   }
+  },
+  {
+   "id": "Q2616099",
+   "name": "palais des Académies",
+   "lat": 50.8425,
+   "lng": 4.36556,
+   "theme": "palaces",
+   "fame": 7,
+   "summary": "Bâti de 1823 à 1828 par Charles Vander Straeten et Tilman-François Suys, cet édifice néo-classique s'élève à l'est de la place des Palais, rue Ducale 1. Résidence du prince Guillaume d'Orange, il est mis sous séquestre après 1830, cédé à l'État belge en 1842, affecté au Musée de peinture moderne en 1860, puis aux Académies en 1876.",
+   "wiki": "Palais des Académies",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/BEL%20Brussels%2C%20Rue%20Ducale%20001.jpg?width=960",
+   "photoBy": "-wuppertaler",
+   "photoLic": "CC BY 4.0",
+   "alt": {
+    "en": "Academy Palace"
+   }
+  },
+  {
+   "id": "Q2480190",
+   "name": "Maison Saint-Cyr",
+   "lat": 50.847777777778,
+   "lng": 4.3838888888889,
+   "theme": "palaces",
+   "fame": 7,
+   "summary": "Gustave Strauven a conçu cette maison Art nouveau, construite entre 1901 et 1903 square Ambiorix pour le peintre Georges de Saint Cyr. Sur une façade large d'à peine quatre mètres monte un échafaudage d'entrelacs de fonte et de fer forgé, chaque balcon ayant une balustrade différente. Classée en 1988, elle a été restaurée entre 2009 et 2019.",
+   "wiki": "Maison Saint-Cyr",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Maison%20Saint-Cyr%20%28DSCF7558%29.jpg?width=960",
+   "photoBy": "Trougnouf (Benoit Brummer)",
+   "photoLic": "CC BY 4.0",
+   "alt": {
+    "en": "Saint-Cyr House",
+    "es": "Maison Saint-Cyr"
+   }
+  },
+  {
+   "id": "Q941560",
+   "name": "Hôtel Hannon",
+   "lat": 50.820833,
+   "lng": 4.352222,
+   "theme": "palaces",
+   "fame": 6,
+   "summary": "Maison de maître Art nouveau élevée de 1903 à 1904 pour Édouard Hannon, à l'angle de l'avenue Brugmann et de l'avenue de la Jonction. C'est la seule réalisation Art nouveau de son ami l'architecte Jules Brunfaut. La travée d'angle porte un bas-relief de Victor Rousseau, La fileuse. Devenue musée, elle s'appelle désormais Maison Hannon.",
+   "wiki": "Hôtel Hannon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint-Gilles%20Brunfaut%20050810%20%2815%29.JPG?width=960",
+   "photoBy": "Jean-Pol GRANDMONT",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Hôtel Hannon"
+   }
+  },
+  {
+   "id": "Q2628206",
+   "name": "palais de Charles de Lorraine",
+   "lat": 50.84293,
+   "lng": 4.357004,
+   "theme": "palaces",
+   "fame": 6,
+   "summary": "Acheté en 1756 par le gouverneur Charles Alexandre de Lorraine, cet ancien hôtel de la famille d'Orange-Nassau fut agrandi vers 1760, sans doute par Jean Faulte, d'une aile d'appartements d'été et d'une entrée d'honneur en hémicycle ornée d'allégories du bon gouvernement. Plus des trois quarts du palais ont été démolis dans les années 1960.",
+   "wiki": "Palais de Charles de Lorraine",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palace%20of%20Charles%20of%20Lorraine%201.jpg?width=960",
+   "photoBy": "DimiTalen",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "Palace of Charles of Lorraine"
+   }
+  },
+  {
+   "id": "Q3145619",
+   "name": "Hôtel Otlet",
+   "lat": 50.8296,
+   "lng": 4.35968,
+   "theme": "palaces",
+   "fame": 6,
+   "summary": "Bâtiment Art nouveau construit de 1894 à 1898 pour le juriste et documentaliste Paul Otlet, par Octave Van Rysselberghe, Henry van de Velde signant la décoration intérieure. Ses deux façades asymétriques, en pierre de Savonnières dorée, se rejoignent par un oriel d'angle. Classé en 1984, il abrite un bureau d'avocats.",
+   "wiki": "Hôtel Otlet",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/H%C3%B4tel%20Otlet%20-%203.JPG?width=960",
+   "photoBy": "EmDee",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Hôtel Otlet"
+   }
+  },
+  {
+   "id": "Q15939973",
+   "name": "palais du Comte de Flandre",
+   "lat": 50.8417,
+   "lng": 4.3588,
+   "theme": "palaces",
+   "fame": 5,
+   "summary": "Élevé de 1776 à 1781 sur les plans de Barnabé Guimard, ce pavillon néo-classique appartenait à l'ensemble destiné à structurer la place Royale. Il doit son nom à Philippe de Belgique, comte de Flandre, troisième fils de Léopold Ier, qui l'achète en 1866. Deux ailes ajoutées lui ont donné son plan en U. La Cour des comptes y siège.",
+   "wiki": "Palais du comte de Flandre",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Palacio%20del%20Conde%20de%20Flandes%2C%20Bruselas%2C%20B%C3%A9lgica%2C%202021-12-15%2C%20DD%2062.jpg?width=960",
+   "photoBy": "Diego Delso",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Palace of the Count of Flanders"
+   }
+  },
+  {
+   "id": "Q215429",
+   "name": "Grand-Place",
+   "lat": 50.84670775,
+   "lng": 4.35253815,
+   "theme": "streets",
+   "fame": 56,
+   "summary": "Le bombardement d'août 1695 par les troupes françaises du maréchal de Villeroy ruina la place : seuls la façade et la tour de l'hôtel de ville et quelques murs de pierre furent épargnés. Les maisons furent richement reconstruites en pierre par les corporations. Les façades actuelles viennent des restaurations menées à l'initiative de Charles Buls.",
+   "wiki": "Grand-Place de Bruxelles",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Brusel%20Grand-Place%20radnice%201a.jpg?width=960",
+   "photoBy": "VitVit",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Grand-Place",
+    "es": "Grand-Place",
+    "it": "Grand-Place"
+   }
+  },
+  {
+   "id": "Q1049313",
+   "name": "place Royale",
+   "lat": 50.842293800257,
+   "lng": 4.3594867,
+   "theme": "streets",
+   "fame": 11,
+   "summary": "Place néo-classique de 77 m sur 113 m, réalisée entre 1775 et 1782 là où le palais du Coudenberg avait brûlé en 1731. La statue de Charles de Lorraine qui l'occupait fut renversée par les Français, replacée, puis abattue et fondue ; le centre resta longtemps vide, jusqu'à la statue équestre de Godefroid de Bouillon par Eugène Simonis, en 1848.",
+   "wiki": "Place Royale (Bruxelles)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Brusel%20Kr%C3%A1lovsk%C3%A9%20n%C3%A1m%C4%9Bst%C3%AD.jpg?width=960",
+   "photoBy": "VitVit",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Place Royale - Koningsplein",
+    "es": "Place Royale",
+    "it": "Place Royale (Bruxelles)"
+   }
+  },
+  {
+   "id": "Q1821749",
+   "name": "place de Brouckère",
+   "lat": 50.851470815008,
+   "lng": 4.3527872508889,
+   "theme": "streets",
+   "fame": 9,
+   "summary": "Créée à la suite du voûtement de la Senne (1867-1871), elle porte le nom de Charles de Brouckère, bourgmestre de Bruxelles. Elle s'inscrit dans l'alignement des boulevards Émile Jacqmain et Adolphe Max au nord et du boulevard Anspach au sud. Intégrée au piétonnier du centre depuis 2015, elle a été repavée et dotée de jets d'eau.",
+   "wiki": "Place de Brouckère",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/De%20Brouck%C3%A8replein%20Brussel%20juli%202021.jpg?width=960",
+   "photoBy": "Riki",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Place de Brouckère - De Brouckèreplein",
+    "it": "Place de Brouckère"
+   }
+  },
+  {
+   "id": "Q1070882",
+   "name": "place Eugène Flagey",
+   "lat": 50.827793,
+   "lng": 4.372414,
+   "theme": "streets",
+   "fame": 9,
+   "summary": "Une des plus grandes places de la région bruxelloise, elle est née à Ixelles de l'assèchement de la pointe nord du Grand Étang. Longtemps parking à ciel ouvert, elle a été réaménagée à partir de 2003 et inaugurée le 5 juillet 2008. L'ancienne Maison de la radio, devenue Le Flagey, donne le ton de l'ensemble architectural alentour.",
+   "wiki": "Place Eugène Flagey",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Panorama%20place%20Flagey.jpg?width=960",
+   "photoBy": "BXLgutter",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Place Eugène Flagey",
+    "es": "Place Eugène Flagey",
+    "it": "place Flagey"
+   }
+  },
+  {
+   "id": "Q2217006",
+   "name": "place du Jeu de Balle",
+   "lat": 50.837024,
+   "lng": 4.345806,
+   "theme": "streets",
+   "fame": 8,
+   "summary": "Au cœur du quartier des Marolles, cette place tracée en même temps que la rue Blaes accueille chaque jour un marché aux puces : le conseil communal décida en 1873 d'y transférer le marché aux vieilleries de la place Anneessens. Elle occupe l'emplacement d'une usine de locomotives dont une partie des caves subsiste sous la place.",
+   "wiki": "Place du Jeu de Balle",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Jeu%20de%20Balle%20Bxl%2001.JPG?width=960",
+   "photoBy": "User:Ben2",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Place du Jeu de Balle - Vossenplein",
+    "es": "Plaza del Juego de Pelota",
+    "it": "place du Jeu de Balle"
+   }
+  },
+  {
+   "id": "Q1049291",
+   "name": "place des Martyrs",
+   "lat": 50.851716,
+   "lng": 4.356334,
+   "theme": "streets",
+   "fame": 7,
+   "summary": "Cette place néoclassique, tracée par l'ingénieur Claude Fisco sous le nom de place Saint-Michel, a été rebaptisée le 2 octobre 1830 en mémoire des combattants de la révolution belge : 467 d'entre eux sont inhumés sous les pavés, autour du monument sculpté par Guillaume Geefs. Façades et monument sont classés depuis 1963.",
+   "wiki": "Place des Martyrs (Bruxelles)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Place%20des%20Martyrs%2002.JPG?width=960",
+   "photoBy": "No machine-readable author provided. Ben2~commonswiki assume",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Place des Martyrs - Martelaarsplein",
+    "it": "place des Martyrs"
+   }
+  },
+  {
+   "id": "Q2706608",
+   "name": "rue de la Loi",
+   "lat": 50.844381,
+   "lng": 4.374361,
+   "theme": "streets",
+   "fame": 7,
+   "summary": "Tracée en 1777 parmi les quatre rues qui entourent le parc de Bruxelles, elle s'est appelée rue de Brabant jusqu'en 1797. Elle relie la rue Royale à l'avenue de la Joyeuse Entrée par le rond-point Robert Schuman et borde des bâtiments liés aux institutions européennes, dont le Berlaymont. Le « 16, rue de la Loi » vaut pour le Premier ministre.",
+   "wiki": "Rue de la Loi",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Wetstraat.jpg?width=960",
+   "photoBy": "Orland0",
+   "photoLic": "CC BY 2.5",
+   "alt": {
+    "en": "Rue de la Loi - Wetstraat",
+    "es": "rue de la Loi"
+   }
+  },
+  {
+   "id": "Q3432642",
+   "name": "rue Royale",
+   "lat": 50.852266,
+   "lng": 4.365242,
+   "theme": "streets",
+   "fame": 7,
+   "summary": "Partant de la place Royale, l'artère longe le parc de Bruxelles, passe devant la colonne du Congrès et aboutit en droite ligne à la porte de Schaerbeek. Son premier tronçon est tracé entre 1776 et 1780 par l'architecte Guimard. Avec la rue des Palais et l'avenue de la Reine, elle forme le « tracé royal » du palais royal au château de Laeken.",
+   "wiki": "Rue Royale (Bruxelles)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/..%20-%20panoramio%20%28173%29.jpg?width=960",
+   "photoBy": "Ala Kot",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Rue Royale - Koningsstraat",
+    "es": "Rue Royale (Bruselas)",
+    "it": "Rue Royale (Bruxelles)"
+   }
+  },
+  {
+   "id": "Q2523530",
+   "name": "place de la Bourse",
+   "lat": 50.848236450703,
+   "lng": 4.34956035,
+   "theme": "streets",
+   "fame": 6,
+   "summary": "Aménagée vers 1865, en même temps que le voûtement de la Senne et la création des boulevards centraux, elle doit son nom au palais de la Bourse, qui en occupe la partie sud-est. Sous la place se trouvent les ruines de l'ancien couvent des Récollets. Elle a été un important lieu de recueillement après les attentats de mars 2016.",
+   "wiki": "Place de la Bourse (Bruxelles)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Front%20of%20Brussels%20Stock%20Exchange%202023.jpg?width=960",
+   "photoBy": "Guy Delsaut",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Place de la Bourse - Beursplein",
+    "es": "Place de la Bourse (Bruselas)",
+    "it": "Place de la Bourse (Bruxelles)"
+   }
+  },
+  {
+   "id": "Q3390534",
+   "name": "place des Palais",
+   "lat": 50.842612,
+   "lng": 4.362645,
+   "theme": "streets",
+   "fame": 6,
+   "summary": "Longue de 350 mètres et large de 70, cette place en légère pente s'étend entre la rue Ducale et la rue Royale ; le parc de Bruxelles la longe au nord, le palais royal au sud. Elle doit son nom au palais royal et au palais des Académies, et le porte depuis 1827. Le défilé de la Fête nationale, le 21 juillet, s'y tient généralement.",
+   "wiki": "Place des Palais",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Paleizenplein%20%28Brussel%29%20-%20Zijaanzicht.jpg?width=960",
+   "photoBy": "IDD5000",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Place des Palais - Paleizenplein",
+    "es": "Place des Palais",
+    "it": "Place des Palais"
+   }
+  },
+  {
+   "id": "Q2385288",
+   "name": "place Charles Rogier",
+   "lat": 50.855555555556,
+   "lng": 4.3586111111111,
+   "theme": "streets",
+   "fame": 5,
+   "summary": "Nœud routier et de transports de Saint-Josse-ten-Noode, la place donne sur la rue Neuve. La gare du Nord s'y tenait jusqu'au milieu des années 1950, avant son déplacement de plusieurs centaines de mètres vers le nord ; le centre international Rogier, érigé en 1960 sur son emplacement, a été démoli en 2001. Elle a été réaménagée de 2008 à 2017.",
+   "wiki": "Place Charles Rogier",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Place%20Charles%20Rogier%20in%202007.jpg?width=960",
+   "photoBy": "Ice201:Játi Þór Mikjálsson",
+   "photoLic": "CC BY 2.5",
+   "alt": {
+    "en": "Place Charles Rogier - Karel Rogierplein"
+   }
+  },
+  {
+   "id": "Q152072",
+   "name": "Manneken-Pis",
+   "lat": 50.8449844,
+   "lng": 4.349988,
+   "theme": "monuments",
+   "fame": 66,
+   "summary": "Cette fontaine prend la forme d'une statue de bronze de 55,5 centimètres représentant un petit garçon nu qui urine. Elle occupe une niche de pierre de style rocaille datant de 1770, à l'intersection de la rue de l'Étuve et de la rue du Chêne. La statue visible sur place est une copie ; l'original est conservé au musée de la ville de Bruxelles.",
+   "wiki": "Manneken-Pis",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Bruxelles%20Manneken%20Pis.jpg?width=960",
+   "photoBy": "Myrabella",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Manneken Pis",
+    "es": "Manneken Pis",
+    "it": "Manneken Pis"
+   }
+  },
+  {
+   "id": "Q152360",
+   "name": "Jeanneke-Pis",
+   "lat": 50.848611,
+   "lng": 4.354167,
+   "theme": "monuments",
+   "fame": 34,
+   "summary": "Petite fille nue et accroupie en train d'uriner, cette statue en bronze d'environ 50 cm se dresse au fond de l'impasse de la Fidélité, dans le quartier de l'Îlot Sacré. Réplique féminine du Manneken-Pis, elle a été créée en 1985 par Denis-Adrien Debouvrie et dévoilée au public en 1987. On jette des pièces dans ses vasques.",
+   "wiki": "Jeanneke-Pis",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Bruksela%2C%20Jeanneke%20Pis%20-%20Siusiaj%C4%85ca%20dziewczynka.jpg?width=960",
+   "photoBy": "Aw58",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Jeanneke Pis",
+    "es": "Jeanneke Pis",
+    "it": "Jeanneke Pis"
+   }
+  },
+  {
+   "id": "Q205064",
+   "name": "Het Zinneke",
+   "lat": 50.848782,
+   "lng": 4.345655,
+   "theme": "monuments",
+   "fame": 19,
+   "summary": "Ce chien de bronze de Tom Frantzen lève la patte contre une borne, à l'angle de la rue des Chartreux, scellé dans les pavés du trottoir depuis 1999. Commandée par le comité de quartier dans l'esprit de la zwanze, la sculpture est un clin d'œil au Manneken-Pis. En dialecte bruxellois, zinneke désigne la petite Senne et un chien bâtard.",
+   "wiki": "Het Zinneke",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Het%20Zinneke%20%28DSCF5238%29%20Brussels%2C%20BE.jpg?width=960",
+   "photoBy": "Trougnouf (Benoit Brummer)",
+   "photoLic": "CC BY 4.0",
+   "alt": {
+    "en": "Het Zinneke",
+    "es": "Het Zinneke",
+    "it": "Het Zinneke"
+   }
+  },
+  {
+   "id": "Q1736784",
+   "name": "statue de l'Europe Unity in Peace",
+   "lat": 50.8414132,
+   "lng": 4.3787049,
+   "theme": "monuments",
+   "fame": 12,
+   "summary": "Des bras entrelacés portent un globe aux couleurs du drapeau européen ; l'ensemble est surmonté d'une colombe de la paix. Haute de plus de 5 mètres, cette statue en résine polyester de Bernard Romain a été conçue sous la direction de l'artiste par des enfants atteints de déficience visuelle. Elle se dresse dans le square Van Maerlant.",
+   "wiki": "Statue de l'Europe Unity in Peace",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Europa%20statue%20Bruxelles.jpg?width=960",
+   "photoBy": "Bernard Romain",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Statue of Europe",
+    "es": "Estatua de Europa",
+    "it": "statua dell'Europa"
+   }
+  },
+  {
+   "id": "Q3553062",
+   "name": "Vaartkapoen",
+   "lat": 50.858689,
+   "lng": 4.345306,
+   "theme": "monuments",
+   "fame": 7,
+   "summary": "Sculpture de Tom Frantzen installée en 1985 square Sainctelette, à Molenbeek-Saint-Jean. Elle montre un policier bruxellois attrapé par un « fripon du canal » qui sort d'un égout. L'artiste a voulu y représenter « la jeunesse faisant vaciller l'autorité ».",
+   "wiki": "Vaartkapoen",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Bruxelles-Sainctelette.jpg?width=960",
+   "photoBy": "David R Edgar - http://www.loughrigg.org/bxlLandmarks/",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Vaartkapoen",
+    "it": "Vaartkapoen"
+   }
+  },
+  {
+   "id": "Q27476493",
+   "name": "fontaine Anspach",
+   "lat": 50.853611111111,
+   "lng": 4.3469444444444,
+   "theme": "monuments",
+   "fame": 6,
+   "summary": "Ce monument éclectique fut élevé en 1897 au centre de la place de Brouckère, en hommage au bourgmestre Jules Anspach, promoteur du voûtement de la Senne et des boulevards du centre. Démontée en 1973 pour le métro, la fontaine n'a été remontée qu'en 1981, dans sa seule partie supérieure, entre le quai aux Briques et le quai au Bois à brûler.",
+   "wiki": "Fontaine Anspach",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Belgique%20-%20Bruxelles%20-%20Fontaine%20Anspach%20-%2003.jpg?width=960",
+   "photoBy": "EmDee",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Anspach Fountain",
+    "es": "Fuente de Anspach"
+   }
+  },
+  {
+   "id": "Q55123016",
+   "name": "Whirling Ear",
+   "lat": 50.843135,
+   "lng": 4.358109,
+   "theme": "monuments",
+   "fame": 5,
+   "summary": "Sculpture motorisée en tôle d'Alexander Calder, réalisée en 1958 pour un bassin d'eau devant le pavillon américain de l'Exposition universelle de Bruxelles. C'est l'unique pièce monumentale de Calder créée pour un site belge. Oubliée, puis longtemps gardée en réserve, elle a été restaurée et inaugurée rue Montagne de la Cour le 21 juin 2000.",
+   "wiki": "The Whirling Ear",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Alexander%20Calder%20-%20The%20Whirling%20Ear%20-%201958%20-%20Brussels.jpg?width=960",
+   "photoBy": "Sandra Fauconnier",
+   "photoLic": "CC BY 4.0",
+   "alt": {
+    "en": "The Whirling Ear"
+   }
+  },
+  {
+   "id": "Q55616349",
+   "name": "L'Envol",
+   "lat": 50.844056,
+   "lng": 4.35202,
+   "theme": "monuments",
+   "fame": 5,
+   "summary": "Statue de bronze de Tom Frantzen représentant Jacques Brel, les bras ouverts vers la foule, une attitude qu'il aimait avoir sur scène. Née d'une demande de l'association des commerçants de la place de la Vieille Halle aux Blés, elle a été inaugurée sur cette place le 11 octobre 2017, à quelques pas de la Fondation Brel.",
+   "wiki": "L'Envol (statue)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacques%20Brel%20memorial%20bronze%20statue%20by%20Tom%20Frantzen%20on%20place%20de%20la%20Vieille%20Halle%20aux%20Bl%C3%A9s%20during%20the%20evening%20civil%20twilight%20in%20Brussels%2C%20Belgium%20%28DSCF4319-crop%29.jpg?width=960",
+   "photoBy": "Trougnouf",
+   "photoLic": "CC BY 4.0",
+   "alt": {
+    "en": "L'Envol"
+   }
+  },
+  {
+   "id": "Q16509720",
+   "name": "monument à John Cockerill",
+   "lat": 50.8391,
+   "lng": 4.37268,
+   "theme": "monuments",
+   "fame": 5,
+   "summary": "Ce groupe éclectique se dresse au milieu de la place du Luxembourg, à Ixelles, à la mémoire de l'industriel John Cockerill et des ouvriers de la sidérurgie. Inauguré en 1872, il reprend le monument élevé à Seraing par Armand Cattier. Quatre ouvriers de bronze cantonnaient le piédestal ; la statue du mécanicien Beaufort a été déboulonnée en 2024.",
+   "wiki": "Monument à John Cockerill (Bruxelles)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Belgique%20-%20Bruxelles%20-%20Monument%20%C3%A0%20John%20Cockerill%20-%2001.jpg?width=960",
+   "photoBy": "EmDee",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "John Cockerill Monument"
+   }
+  },
+  {
+   "id": "Q16665229",
+   "name": "monument aux pionniers belges au Congo",
+   "lat": 50.842359,
+   "lng": 4.38783,
+   "theme": "monuments",
+   "fame": 5,
+   "summary": "Commandé en 1911 au sculpteur Thomas Vinçotte, achevé seulement en 1921 à cause de la Première Guerre mondiale, ce monument semi-circulaire en pierre d'Euville commémore les explorateurs, missionnaires et soldats de la colonisation du Congo. Sur un groupe latéral, le mot « arabe » a été martelé, restauré en 1992, puis effacé de nouveau.",
+   "wiki": "Monument aux pionniers belges au Congo",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Monument%20aux%20pionniers%20belges%20au%20Congo%2001.JPG?width=960",
+   "photoBy": "EmDee",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Monument to the Belgian Pioneers in Congo"
+   }
+  },
+  {
+   "id": "Q1865794",
+   "name": "mont des Arts",
+   "lat": 50.844211853253,
+   "lng": 4.35760585,
+   "theme": "parks",
+   "fame": 14,
+   "summary": "Ensemble urbain étagé entre le quartier royal, en haut, et le quartier du centre en contrebas. Il réunit la Bibliothèque royale de Belgique, les Archives générales du Royaume, le centre de congrès Square et un jardin dessiné par le paysagiste René Pechère. En haut se dresse The Whirling Ear, une sculpture d'Alexander Calder.",
+   "wiki": "Mont des Arts",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Brussels%20view%20from%20Mont%20des%20Arts%2C%20Brussels%2C%20Belgium%20%28cropped%29.jpg?width=960",
+   "photoBy": "Ank Kumar",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Mont des Arts - Kunstberg",
+    "es": "Mont des Arts",
+    "it": "Mont des Arts"
+   }
+  },
+  {
+   "id": "Q1704088",
+   "name": "parc Josaphat",
+   "lat": 50.8625,
+   "lng": 4.385,
+   "theme": "parks",
+   "fame": 12,
+   "summary": "Le parc occupe le vallon du ruisseau Josaphat, dont le nom viendrait, selon la tradition, d'un pèlerin revenu de Terre sainte frappé par la ressemblance du lieu avec la vallée de Josaphat, près de Jérusalem. Ouvert au public en 1904 sur quatre hectares, il en compte aujourd'hui vingt : étangs, pelouse, serres communales et sculptures.",
+   "wiki": "Parc Josaphat",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Parc%20Josaphat%20%28DSCF1381%29.jpg?width=960",
+   "photoBy": "Trougnouf (Benoit Brummer)",
+   "photoLic": "CC BY 4.0",
+   "alt": {
+    "en": "Josaphat Park",
+    "es": "Parque Josaphat",
+    "it": "parco Josaphat"
+   }
+  },
+  {
+   "id": "Q1073360",
+   "name": "étangs d'Ixelles",
+   "lat": 50.823611111111,
+   "lng": 4.3733333333333,
+   "theme": "parks",
+   "fame": 9,
+   "summary": "Quatre étangs formés par le cours du Maelbeek occupaient à l'origine le territoire d'Ixelles. Il en subsiste deux : l'étang supérieur, né de la réunion du Pennebroeck et du Ghévaert, et l'étang inférieur, vestige du Grand Étang qui couvrait la place Flagey. Le site est classé depuis 1976.",
+   "wiki": "Étangs d'Ixelles",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ixelles%20%28Bruxelles%29%20Les%20%C3%A9tangs.JPG?width=960",
+   "photoBy": "Ben2~commonswiki",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Ixelles Ponds",
+    "es": "Estanques de Ixelles",
+    "it": "Stagni di Ixelles"
+   }
+  },
+  {
+   "id": "Q2423861",
+   "name": "parc Léopold",
+   "lat": 50.83833,
+   "lng": 4.37944,
+   "theme": "parks",
+   "fame": 9,
+   "summary": "La Société royale de Zoologie acquiert ce domaine de plaisance en 1851 et le fait aménager en parc à l'anglaise par Alphonse Balat et Louis Fuchs, avant d'y installer un jardin zoologique. La ville de Bruxelles reprend le domaine en 1877. S'y trouvent le Muséum des sciences naturelles et le bâtiment Paul-Henri Spaak du Parlement européen.",
+   "wiki": "Parc Léopold (Bruxelles)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Leopold%20Park%20-%20Brussels%2C%20Belgium%20-%20DSC08324.jpg?width=960",
+   "photoBy": "Daderot",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "Leopold Park",
+    "es": "Parque Leopoldo"
+   }
+  },
+  {
+   "id": "Q739334",
+   "name": "Jardin botanique",
+   "lat": 50.854722,
+   "lng": 4.365278,
+   "theme": "parks",
+   "fame": 9,
+   "summary": "Ce parc de Saint-Josse-ten-Noode, à l'angle de la rue Royale et du boulevard du Jardin botanique, occupe l'emplacement du jardin botanique créé en 1826. Les plantes sont parties pour Meise à partir de 1940 et le parc a été réaménagé sur des plans de René Pechère, juste à temps pour l'Expo 58. Les serres accueillent un centre culturel, Le Botanique.",
+   "wiki": "Jardin botanique de Bruxelles",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Botanique%2003.JPG?width=960",
+   "photoBy": "No machine-readable author provided. Ben2~commonswiki assume",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Botanical Garden of Brussels",
+    "es": "Jardín Botánico de Bruselas"
+   }
+  },
+  {
+   "id": "Q3363922",
+   "name": "parc Tenbosch",
+   "lat": 50.82,
+   "lng": 4.3645,
+   "theme": "parks",
+   "fame": 5,
+   "summary": "Ce parc public d'environ 2 hectares, à Ixelles, est un ancien arboretum privé. Le dendrologue Jean-Louis Semet, propriétaire au début des années 1950, agrandit le jardin de parcelles voisines et le transforme en arboretum avec son jardinier Hector Noyer entre 1953 et 1980. Échappant aux projets de lotissement, le parc ouvre au public en juin 1985.",
+   "wiki": "Parc Tenbosch",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20parc%20Tenbosch%20%C3%A0%20Ixelles.jpg?width=960",
+   "photoBy": "GdML",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Tenbosch Park"
+   }
+  },
+  {
+   "id": "Q1491935",
+   "name": "galeries royales Saint-Hubert",
+   "lat": 50.84778,
+   "lng": 4.355,
+   "theme": "shops",
+   "fame": 15,
+   "summary": "Galerie du Roi, galerie de la Reine, galerie des Princes : trois passages couverts conçus par Jean-Pierre Cluysenaar, le plus ancien piétonnier de la ville. Léopold Ier en posa la première pierre le 6 mai 1846, l'inauguration eut lieu le 20 juin 1847. Les deux galeries principales, larges de 8,30 mètres, portent une verrière à 18 mètres de hauteur.",
+   "wiki": "Galeries royales Saint-Hubert",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Galeries%20royales%20Saint-Hubert%2C%20Bruselas%2C%20B%C3%A9lgica%2C%202021-12-14%2C%20DD%2004-06%20HDR.jpg?width=960",
+   "photoBy": "Diego Delso",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Royal Saint-Hubert Galleries",
+    "es": "Galerias Reales de San Huberto",
+    "it": "Gallerie Reali Saint-Hubert"
+   }
+  },
+  {
+   "id": "Q2166044",
+   "name": "hôtel Métropole",
+   "lat": 50.851388888889,
+   "lng": 4.3536111111111,
+   "theme": "shops",
+   "fame": 11,
+   "summary": "Élevé en 1872-1874 par Antoine Trappeniers pour la Caisse générale d'épargne et de retraite, le bâtiment est racheté en 1891 par la brasserie Wielemans-Ceuppens, puis transformé en hôtel de luxe par Alban Chambon et inauguré en 1895. Le premier Congrès Solvay s'y tient en 1911. Fermé depuis avril 2020, il doit rouvrir après rénovation.",
+   "wiki": "Hôtel Métropole",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Hotel%20M%C3%A9tropole%20%282%29.jpg?width=960",
+   "photoBy": "Bernard Lee",
+   "photoLic": "CC0",
+   "alt": {
+    "en": "Hotel Metropole, Brussels",
+    "es": "Hotel Métropole"
+   }
+  },
+  {
+   "id": "Q3467613",
+   "name": "Délirium Café",
+   "lat": 50.84840833,
+   "lng": 4.35393333,
+   "theme": "shops",
+   "fame": 11,
+   "summary": "Ouvert en décembre 2003 dans l'impasse de la Fidélité, près de la Grand-Place, ce bar est réputé pour l'étendue de sa carte de bières : un mois après son ouverture, le livre Guinness des records l'enregistrait comme l'établissement proposant le plus de marques de bière au monde. La statue de la Jeanneke Pis se trouve en face.",
+   "wiki": "Delirium Café",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/CafeDeliriumEx.JPG?width=960",
+   "photoBy": "Jamie Lantzy",
+   "photoLic": "CC BY 3.0",
+   "alt": {
+    "en": "Délirium Café",
+    "it": "Délirium Café"
+   }
+  },
+  {
+   "id": "Q7740434",
+   "name": "The Hotel Brussels",
+   "lat": 50.8372,
+   "lng": 4.35722,
+   "theme": "shops",
+   "fame": 8,
+   "summary": "Tour de style fonctionnaliste du boulevard de Waterloo, conçue par Henri Montois et Emmanuel Gran, construite de 1963 à 1967 et inaugurée sous le nom de Brussels Hilton. Haute de 99 mètres, elle compte 30 étages et domine la Petite Ceinture et la place Louise. Le succès de l'hôtel l'a fait passer de 308 à 431 chambres.",
+   "wiki": "The Hotel",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Belgique%20-%20Bruxelles%20-%20Brussels%20Hilton%20%28The%20Hotel%29%20-%2001.jpg?width=960",
+   "photoBy": "EmDee",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "The Hotel Brussels"
+   }
+  },
+  {
+   "id": "Q2261451",
+   "name": "Old England",
+   "lat": 50.842915,
+   "lng": 4.358898,
+   "theme": "museums",
+   "fame": 6,
+   "summary": "Cet ancien magasin du Mont des Arts occupe pour partie un bâtiment néo-classique, pour partie une annexe Art nouveau de l'architecte Paul Saintenoy : colonnes et poutres en fer, frises de faïence, tourelle et marquise. L'Old England a quitté les lieux en 1972 ; rénové à partir de 1989, le bâtiment abrite le musée des instruments de musique.",
+   "wiki": "Old England",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Old%20England%20facade%2C%20Brussels%20%28DSCF7544%29.jpg?width=960",
+   "photoBy": "Trougnouf (Benoit Brummer)",
+   "photoLic": "CC BY 4.0",
+   "alt": {
+    "en": "Old England",
+    "es": "Almacenes Old England"
+   }
+  },
+  {
+   "id": "Q2580013",
+   "name": "La Fleur en Papier Doré",
+   "lat": 50.84285,
+   "lng": 4.35069,
+   "theme": "shops",
+   "fame": 5,
+   "summary": "Bar historique de la rue des Alexiens, dans l'une des rares maisons du XVIIe siècle à avoir survécu au bombardement de Bruxelles. Ce fut un repaire d'artistes, des surréalistes en premier lieu mais aussi du mouvement Cobra : René Magritte, Hergé et Jacques Brel l'ont fréquenté. Le décor, classé depuis 1997, ne peut plus être modifié.",
+   "wiki": "La Fleur en papier doré",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Fleur%20en%20Papier%20dor%C3%A9%2C%20one%20of%20the%20oldest%20pubs%20in%20Brussels%2C%20constructed%20circa%201843.jpg?width=960",
+   "photoBy": "byantovez",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "La Fleur en Papier Doré - Het Goudblommeke in Papier"
+   }
+  },
+  {
+   "id": "Q821009",
+   "name": "Bâtiment Berlaymont",
+   "lat": 50.843611111111,
+   "lng": 4.3827777777778,
+   "theme": "culture",
+   "fame": 28,
+   "summary": "Siège de la Commission européenne, au carrefour de la rue de la Loi et du boulevard Charlemagne. Lucien De Vestel en dessina le plan en croix, à quatre ailes inégales qui ne reposent pas à terre mais sont suspendues à un noyau central par des tirants d'acier. Évacué en 1991 pour son désamiantage, le bâtiment a été réoccupé en 2004.",
+   "wiki": "Bâtiment Berlaymont",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Belgique%20-%20Bruxelles%20-%20Schuman%20-%20Berlaymont%20-%2001.jpg?width=960",
+   "photoBy": "EmDee",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Berlaymont building",
+    "es": "Edificio Berlaymont",
+    "it": "Palazzo Berlaymont"
+   }
+  },
+  {
+   "id": "Q421992",
+   "name": "Espace Léopold",
+   "lat": 50.838611111111,
+   "lng": 4.3752777777778,
+   "theme": "culture",
+   "fame": 17,
+   "summary": "Complexe de bâtiments du Parlement européen, dans le quartier Léopold. Le bâtiment Paul-Henri Spaak, que les Bruxellois ont surnommé le « Caprice des Dieux » d'après la boîte du fromage, abrite l'hémicycle sous un toit de verre cylindrique. Le siège officiel reste l'immeuble Louise-Weiss à Strasbourg, où se tiennent les sessions plénières.",
+   "wiki": "Espace Léopold",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/European%20Parliament%20-%20group%20of%20buildings.JPG?width=960",
+   "photoBy": "own work",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Espace Léopold",
+    "es": "Espacio Léopold",
+    "it": "Espace Léopold"
+   }
+  },
+  {
+   "id": "Q1816400",
+   "name": "tour du Midi",
+   "lat": 50.83806,
+   "lng": 4.33778,
+   "theme": "culture",
+   "fame": 14,
+   "summary": "Dressée à Saint-Gilles non loin de la gare de Bruxelles-Midi, dont elle tient son nom, elle culmine à 150 mètres sans compter la flèche, ce qui en fait la plus haute tour du pays. Ses 37 étages sont suspendus à un noyau central qui contient escaliers et ascenseurs : la technique évite les colonnes et libère de grands espaces utiles.",
+   "wiki": "Tour du Midi",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Tour%20du%20midi.jpg?width=960",
+   "photoBy": "Jim Linwood",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "South Tower",
+    "es": "Torre Sur",
+    "it": "Tour du Midi"
+   }
+  },
+  {
+   "id": "Q2636175",
+   "name": "Tour Madou",
+   "lat": 50.84944,
+   "lng": 4.37,
+   "theme": "culture",
+   "fame": 12,
+   "summary": "Gratte-ciel dressé place Madou, le long de la petite ceinture, à Saint-Josse-ten-Noode. Cet immeuble de 32 étages est construit de 1963 à 1965 sur les plans de Robert Goffaux, qui s'inspire du MetLife Building de New York. Une rénovation y a greffé un volume triangulaire à l'avant et deux étages au sommet, portant sa hauteur à 120 mètres.",
+   "wiki": "Tour Madou",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Madou%20Plaza.JPG?width=960",
+   "photoBy": "Potro",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Madou Plaza Tower",
+    "es": "Madou Plaza Tower"
+   }
+  },
+  {
+   "id": "Q3533638",
+   "name": "Tour des Finances",
+   "lat": 50.852777777778,
+   "lng": 4.3644444444444,
+   "theme": "culture",
+   "fame": 11,
+   "summary": "Ce gratte-ciel a été élevé entre 1968 et 1983 au croisement du boulevard du Jardin Botanique et de la rue Royale, à l'endroit de l'ancienne porte de Schaerbeek. Il abritait l'administration des Finances belges et fait partie de la Cité administrative de l'État. Une rénovation lourde a bouleversé sa structure entre 2005 et 2008.",
+   "wiki": "Tour des Finances",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Belgique%20-%20Bruxelles%20-%20Tour%20des%20Finances%20-%2002.jpg?width=960",
+   "photoBy": "EmDee",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Finance Tower",
+    "es": "Tour des Finances",
+    "it": "Torre delle Finanze"
+   }
+  },
+  {
+   "id": "Q551479",
+   "name": "Théâtre royal de la Monnaie",
+   "lat": 50.849591,
+   "lng": 4.354247,
+   "theme": "stages",
+   "fame": 22,
+   "summary": "Place de la Monnaie, la façade néoclassique de la salle d'opéra, dessinée par Louis Damesme, date de 1819 ; l'incendie du 21 janvier 1855 ne laissa debout que les quatre murs, et le théâtre fut rebâti presque à l'identique par Joseph Poelaert. En 1830, une représentation de La Muette de Portici y déclencha l'émeute qui mena à la révolution belge.",
+   "wiki": "La Monnaie",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Th%C3%A9%C3%A2tre%20de%20la%20Monnaie%201.JPG?width=960",
+   "photoBy": "EmDee",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Royal Theatre of La Monnaie",
+    "es": "Teatro Real de la Moneda",
+    "it": "La Monnaie/De Munt"
+   }
+  },
+  {
+   "id": "Q3495665",
+   "name": "stade Joseph Marien",
+   "lat": 50.8178,
+   "lng": 4.32917,
+   "theme": "stages",
+   "fame": 14,
+   "summary": "Terrain de la Royale Union saint-gilloise au parc Duden, à Forest, le stade est inauguré le 14 septembre 1919 par un match de gala contre le Milan Club. Le bâtiment de la tribune, élevé en 1926, montre une façade Art déco longue de 101,40 m, ornée de sept panneaux sculptés par Oscar De Clerck. Cette façade est classée.",
+   "wiki": "Stade Joseph Marien",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Stade%20Joseph%20Marien.JPG?width=960",
+   "photoBy": "MM1912",
+   "photoLic": "CC BY 4.0",
+   "alt": {
+    "en": "Joseph Marien Stadium",
+    "es": "Stade Joseph Marien",
+    "it": "Stadio Joseph Marien"
+   }
+  },
+  {
+   "id": "Q3527925",
+   "name": "Théâtre Royal du Parc",
+   "lat": 50.8458,
+   "lng": 4.36548,
+   "theme": "stages",
+   "fame": 9,
+   "summary": "Construit en 1782 sur les plans de Louis Montoyer, ce théâtre de 540 places borde le parc de Bruxelles, face au Parlement fédéral, et partage le site de l'ancien Vauxhall avec le Cercle Gaulois et le kiosque du Vauxhall. D'abord annexe du théâtre de la Monnaie, il était dévolu aux spectacles de jeunes comédiens, sorte d'école d'art dramatique.",
+   "wiki": "Théâtre royal du Parc",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Teatro%20Real%20del%20Parque%2C%20Bruselas%2C%20B%C3%A9lgica%2C%202021-12-15%2C%20DD%2053.jpg?width=960",
+   "photoBy": "Diego Delso",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Royal Park Theatre",
+    "es": "Teatro del Parque Real"
+   }
+  },
+  {
+   "id": "Q1973948",
+   "name": "Ancienne Belgique",
+   "lat": 50.847222,
+   "lng": 4.348889,
+   "theme": "stages",
+   "fame": 7,
+   "summary": "Deux salles de concert, la principale et Le Club, forment cette institution culturelle de la Communauté flamande, boulevard Anspach. En 1912, le lieu est une salle de kermesse appelée le Vieux Düsseldorf ; le nom d'Ancienne Belgique apparaît en 1932, avec la famille Mathonet. Rénovée à partir de 1993, la salle rouvre en 1996.",
+   "wiki": "Ancienne Belgique",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Beady%20Eye%20Gem%20Archer.jpg?width=960",
+   "photoBy": "Solly_Darling from Paris, France",
+   "photoLic": "CC BY-SA 2.0",
+   "alt": {
+    "en": "Ancienne Belgique",
+    "it": "Ancienne Belgique"
+   }
+  },
+  {
+   "id": "Q3527923",
+   "name": "théâtre royal des Galeries",
+   "lat": 50.8484,
+   "lng": 4.35519,
+   "theme": "stages",
+   "fame": 6,
+   "summary": "Ce théâtre de divertissement des Galeries Saint-Hubert a été inauguré en 1847. Détruit en 1951, il est restauré par l'architecte Paul Bonduelle et le décorateur Stéphane Jasinski : la salle garde son aspect italianisant de velours rouge et or et ses 850 places sont désormais de face. Le plafond porte une fresque nuageuse de René Magritte.",
+   "wiki": "Théâtre royal des Galeries",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Brussels%20Theatre%20Royal%20des%20Galleries.jpg?width=960",
+   "photoBy": "Sally V",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Théâtre Royal des Galeries"
+   }
+  },
+  {
+   "id": "Q3076025",
+   "name": "Le Cracheur",
+   "lat": 50.8467,
+   "lng": 4.35083,
+   "theme": "water",
+   "fame": 3,
+   "summary": "Cette fontaine d'eau potable à haut débit se trouve à l'angle de la rue des Pierres et de la rue du Marché au Charbon, dans le centre de Bruxelles. Elle a été inaugurée en 1704, mais le nom de son sculpteur reste inconnu.",
+   "wiki": "Fontaine Le Cracheur",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/F3LeCracheurBXL.JPG?width=960",
+   "photoBy": "Infirmiers De Rue",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Le Cracheur - Den Spauwer"
+   }
+  },
+  {
+   "id": "Q51056992",
+   "name": "fontaine Charles Buls",
+   "lat": 50.84660808,
+   "lng": 4.35469606,
+   "theme": "water",
+   "fame": 3,
+   "summary": "Le sculpteur Henri Lenaerts a représenté le bourgmestre Charles Buls assis sur le banc de pierre qui entoure la fontaine, un livre à la main, un chien mordillant sa manche, plutôt qu'au sommet d'un piédestal. La statue regarde vers la Grand-Place. En 2019, la vasque présentait trop de fissures pour mettre la fontaine en route.",
+   "wiki": "Fontaine Charles Buls",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Belgique%20-%20Bruxelles%20-%20Fontaine%20Charles%20Buls%20-%2003.jpg?width=960",
+   "photoBy": "EmDee",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Charles Buls Fountain"
+   }
+  }
+ ]
+}
