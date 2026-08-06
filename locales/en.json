@@ -1148,6 +1148,12 @@
       "subject": "My flashed Invaders",
       "emptyTitle": "Empty list",
       "emptyBody": "You have not flashed any Invader yet."
+    },
+    "undo": {
+      "action": "Undo this import ({{count}})",
+      "title": "Undo import",
+      "body": "Remove the {{count}} Invaders just added? Trophies already unlocked stay unlocked.",
+      "confirm": "Remove"
     }
   }
 }

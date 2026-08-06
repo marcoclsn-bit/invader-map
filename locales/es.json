@@ -1148,6 +1148,12 @@
       "subject": "Mis Invaders flasheados",
       "emptyTitle": "Lista vacía",
       "emptyBody": "Todavía no has flasheado ningún Invader."
+    },
+    "undo": {
+      "action": "Deshacer esta importación ({{count}})",
+      "title": "Deshacer la importación",
+      "body": "¿Quitar los {{count}} Invaders recién añadidos? Los trofeos ya desbloqueados se conservan.",
+      "confirm": "Quitar"
     }
   }
 }

@@ -27,32 +27,54 @@ export default function ImportScreen({ navigation }) {
   const { theme } = useTheme();
   const { t } = useTranslation();
   const st = getStyles(theme);
-  const { flashed, bulkFlash } = useAppContext();
+  const { flashed, bulkFlash, bulkUnflash } = useAppContext();
   const { beginBatch } = useGamification();
 
   const [texte, setTexte] = useState('');
+  // Identifiants du dernier import, pour l'annulation. Volontairement local à
+  // l'écran : le filet couvre le moment où l'on peut se rendre compte de
+  // l'erreur, pas indéfiniment. Quitter l'écran vaut acceptation.
+  const [dernier, setDernier] = useState(null);
   const analyse = useMemo(() => (texte.trim() ? analyseListe(texte, flashed) : null), [texte, flashed]);
 
   const confirmer = useCallback(() => {
     if (!analyse?.nouveaux.length) return;
     Keyboard.dismiss();
+    const ajoutes = analyse.nouveaux;
     // beginBatch AVANT bulkFlash : sans la fenêtre groupée, un import qui franchit
     // dix paliers enchaîne dix célébrations de 3,5 s.
     beginBatch();
-    bulkFlash(analyse.nouveaux);
+    bulkFlash(ajoutes);
     track('import_applied', {
-      added: analyse.nouveaux.length,
+      added: ajoutes.length,
       already: analyse.dejaFlashes.length,
       unknown: analyse.inconnus.length,
       cities: Object.keys(analyse.villes).length,
     });
     setTexte('');
+    setDernier(ajoutes);
+    Alert.alert(t('import.done.title'), t('import.done.body', { count: ajoutes.length }));
+  }, [analyse, beginBatch, bulkFlash, t]);
+
+  const annuler = useCallback(() => {
+    if (!dernier?.length) return;
     Alert.alert(
-      t('import.done.title'),
-      t('import.done.body', { count: analyse.nouveaux.length }),
-      [{ text: t('common.ok'), onPress: () => navigation.goBack() }]
+      t('import.undo.title'),
+      t('import.undo.body', { count: dernier.length }),
+      [
+        { text: t('common.cancel'), style: 'cancel' },
+        {
+          text: t('import.undo.confirm'),
+          style: 'destructive',
+          onPress: () => {
+            bulkUnflash(dernier);
+            track('import_undone', { removed: dernier.length });
+            setDernier(null);
+          },
+        },
+      ]
     );
-  }, [analyse, beginBatch, bulkFlash, navigation, t]);
+  }, [dernier, bulkUnflash, t]);
 
   const exporter = useCallback(async () => {
     const corps = exportListe(flashed);
@@ -116,6 +138,13 @@ export default function ImportScreen({ navigation }) {
         </Text>
       </TouchableOpacity>
 
+      {dernier?.length > 0 && (
+        <TouchableOpacity style={st.annuler} onPress={annuler} activeOpacity={0.8}>
+          <Ionicons name="arrow-undo-outline" size={16} color={theme.destructive} />
+          <Text style={st.annulerTexte}>{t('import.undo.action', { count: dernier.length })}</Text>
+        </TouchableOpacity>
+      )}
+
       <View style={st.separateur} />
 
       <Text style={st.label}>{t('import.export.label')}</Text>
@@ -176,6 +205,13 @@ function getStyles(t) {
     boutonInactif: { backgroundColor: t.surfaceHigh },
     boutonTexte: { ...typography.actionLabel, color: t.bg },
     boutonTexteInactif: { color: t.textSecondary },
+
+    annuler: {
+      marginTop: 12, paddingVertical: 11, borderRadius: 11,
+      borderWidth: StyleSheet.hairlineWidth, borderColor: t.destructive,
+      flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8,
+    },
+    annulerTexte: { fontSize: 13, fontWeight: '600', color: t.destructive },
 
     separateur: { height: StyleSheet.hairlineWidth, backgroundColor: t.border, marginVertical: 26 },
 
