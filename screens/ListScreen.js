@@ -337,6 +337,17 @@ export default function ListScreen({ navigation }) {
         </View>
         <View style={styles.headerRight}>
           <Text style={styles.counter} numberOfLines={1}>{t('list.counter', { flashed: flashedShown, total: allInvaders.length })}</Text>
+          {/* Entrée vers « Mes flashés ». Ici plutôt que dans le tiroir : c'est en
+              basculant son trentième interrupteur qu'on découvre qu'on voudrait
+              tout coller d'un coup. La liste reste la destination directe. */}
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Import')}
+            hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+            accessibilityRole="button"
+            accessibilityLabel={t('list.importBtn')}
+          >
+            <Ionicons name="download-outline" size={21} color={theme.accent} />
+          </TouchableOpacity>
         </View>
       </View>
 

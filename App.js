@@ -39,6 +39,7 @@ import StrollEngine from './components/StrollEngine';
 import SessionRecap from './components/session/SessionRecap';
 import BadgeCelebration from './components/gamification/BadgeCelebration';
 import BadgeBatch from './components/gamification/BadgeBatch';
+import ImportScreen from './screens/ImportScreen';
 import { navigationRef } from './utils/navigationRef';
 import './services/strollEngine'; // enregistre la tâche de fond + le handler de notif
 import { initAnalytics, track } from './services/analytics';
@@ -179,6 +180,18 @@ function AppShell() {
               headerShown: true,
               title: t('settings.title'),
               presentation: 'modal',
+              headerTintColor: theme.accent,
+              headerTitleStyle: { fontFamily: 'Silkscreen_700Bold', fontSize: 16, color: theme.textPrimary },
+              headerStyle: { backgroundColor: theme.surface },
+              contentStyle: { backgroundColor: theme.bg },
+            }}
+          />
+          <Root.Screen
+            name="Import"
+            component={ImportScreen}
+            options={{
+              headerShown: true,
+              title: t('import.title'),
               headerTintColor: theme.accent,
               headerTitleStyle: { fontFamily: 'Silkscreen_700Bold', fontSize: 16, color: theme.textPrimary },
               headerStyle: { backgroundColor: theme.surface },

@@ -27,7 +27,8 @@
     "menu": "Menu",
     "appName": "InvaderQuest",
     "reset": "Reimposta",
-    "close": "Chiudi"
+    "close": "Chiudi",
+    "ok": "OK"
   },
   "tabs": {
     "map": "Mappa",
@@ -105,7 +106,8 @@
       "selectAll": "Tutte le città",
       "validate": "Mostra ({{count}})",
       "warnLarge": "~{{count}} Invaders: la visualizzazione può essere più lenta."
-    }
+    },
+    "importBtn": "I miei flash"
   },
   "route": {
     "gpsLabel": "La mia posizione",
@@ -1117,5 +1119,35 @@
     "more_other": "e altri {{count}}",
     "where": "Li trovi in Stats, scheda Profilo.",
     "dismiss": "Tocca per chiudere"
+  },
+  "import": {
+    "title": "I miei flash",
+    "counter": "Invaders flashati",
+    "paste": {
+      "label": "Incolla una lista",
+      "placeholder": "BXL_02\nBXL_03\nBRC_01\n…",
+      "hint": "Incolla il contenuto della tua esportazione. Il formato non conta: un identificativo per riga, virgole, un CSV con intestazione, va tutto bene."
+    },
+    "res": {
+      "new": "nuovi da aggiungere",
+      "already": "già flashati",
+      "destroyed": "di cui mosaici distrutti",
+      "unknown": "identificativi sconosciuti",
+      "none": "Nessun identificativo riconosciuto in questo testo."
+    },
+    "apply": "Aggiungi {{count}} Invaders",
+    "applyIdle": "Niente da aggiungere",
+    "done": {
+      "title": "Importazione completata",
+      "body": "{{count}} Invaders aggiunti alla tua collezione."
+    },
+    "export": {
+      "label": "Esporta la mia lista",
+      "hint": "Ottieni i tuoi flash come testo, da conservare o incollare su un altro telefono.",
+      "action": "Condividi la mia lista",
+      "subject": "I miei Invaders flashati",
+      "emptyTitle": "Lista vuota",
+      "emptyBody": "Non hai ancora flashato nessun Invader."
+    }
   }
 }

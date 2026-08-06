@@ -27,7 +27,8 @@
     "menu": "Menu",
     "appName": "InvaderQuest",
     "reset": "Reset",
-    "close": "Close"
+    "close": "Close",
+    "ok": "OK"
   },
   "tabs": {
     "map": "Map",
@@ -105,7 +106,8 @@
       "selectAll": "All cities",
       "validate": "Show ({{count}})",
       "warnLarge": "~{{count}} Invaders: display may be slower."
-    }
+    },
+    "importBtn": "My flashes"
   },
   "route": {
     "gpsLabel": "My location",
@@ -1117,5 +1119,35 @@
     "more_other": "and {{count}} more",
     "where": "Find them in Stats, Profile tab.",
     "dismiss": "Tap to close"
+  },
+  "import": {
+    "title": "My flashes",
+    "counter": "Invaders flashed",
+    "paste": {
+      "label": "Paste a list",
+      "placeholder": "BXL_02\nBXL_03\nBRC_01\n…",
+      "hint": "Paste the contents of your export. Format does not matter: one ID per line, commas, a CSV with a header, all work."
+    },
+    "res": {
+      "new": "new to add",
+      "already": "already flashed",
+      "destroyed": "of which destroyed mosaics",
+      "unknown": "unknown IDs",
+      "none": "No ID recognised in this text."
+    },
+    "apply": "Add {{count}} Invaders",
+    "applyIdle": "Nothing to add",
+    "done": {
+      "title": "Import complete",
+      "body": "{{count}} Invaders added to your collection."
+    },
+    "export": {
+      "label": "Export my list",
+      "hint": "Get your flashes as plain text, to keep or paste onto another phone.",
+      "action": "Share my list",
+      "subject": "My flashed Invaders",
+      "emptyTitle": "Empty list",
+      "emptyBody": "You have not flashed any Invader yet."
+    }
   }
 }
