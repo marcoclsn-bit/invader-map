@@ -1,9 +1,16 @@
 {
-  "version": 13,
-  "updatedAt": "2026-08-03",
+  "version": 14,
+  "updatedAt": "2026-08-06",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "source": "invader-spotter.art",
   "events": [
+    {
+      "type": "destroyed",
+      "id": "LDN_91",
+      "city": "LDN",
+      "date": "2026-08-05",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LDN/LDN_091-grosplan.png"
+    },
     {
       "type": "damaged",
       "id": "BGK_11",
