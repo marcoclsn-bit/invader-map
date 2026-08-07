@@ -1,0 +1,1067 @@
+{
+ "version": 1,
+ "city": "AVI",
+ "attribution": "Lieux : Wikidata (CC0) · Résumés d’après Wikipédia (CC BY-SA) · Photos : Wikimedia Commons",
+ "updatedAt": "2026-08-07",
+ "pois": [
+  {
+   "id": "Q281849",
+   "name": "jardin du rocher des Doms",
+   "lat": 43.9528,
+   "lng": 4.80772,
+   "theme": "parks",
+   "fame": 6,
+   "summary": "Aménagé au XIXe siècle en jardin à l'anglaise sur le sommet du rocher, à côté du palais des papes, ce jardin public de 3 hectares réunit pelouses, lac, rocailles et un vignoble planté des 12 principaux cépages des côtes-du-rhône. Son esplanade offre un point de vue à 30 m de hauteur sur le Rhône et le pont Saint-Bénézet.",
+   "wiki": "Jardin du rocher des Doms",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Avignon%20-%20embarcad%C3%A8re%20navette%20fluviale.jpg?width=960",
+   "photoBy": "Véronique PAGNIER",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Jardin des doms",
+    "it": "Rocher des Doms"
+   }
+  },
+  {
+   "id": "Q24649065",
+   "name": "musée Louis-Vouland",
+   "lat": 43.947326,
+   "lng": 4.800529,
+   "theme": "museums",
+   "fame": 3,
+   "summary": "Collection d'arts décoratifs des XVIIe et XVIIIe siècles : mobilier parisien, faïences de Moustiers et de Marseille, orfèvrerie, tapisseries d'Aubusson et des Gobelins. Elle est présentée dans l'hôtel particulier des Villeneuve-Esclapon, acheté en 1927 par l'industriel Louis Vouland, qui légua demeure et collections pour qu'un musée y ouvre.",
+   "wiki": "Musée Louis-Vouland",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Avignon%20Vouland141.jpg?width=960",
+   "photoBy": "Finoskov",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Musée Louis Vouland"
+   }
+  },
+  {
+   "id": "Q3462893",
+   "name": "temple protestant Saint-Martial d'Avignon",
+   "lat": 43.945,
+   "lng": 4.80621,
+   "theme": "religious",
+   "fame": 4,
+   "summary": "À l'angle de la rue des Lices et de la rue de la République, le bâtiment est d'abord le palais élevé à partir de 1346 pour la reine Jeanne Ire de Naples, qui n'y vient qu'une fois, en 1348. Urbain V le donne en 1362 au cardinal de la Roche. Devenu prieuré bénédictin, puis muséum d'histoire naturelle, il est affecté au culte réformé en 1881.",
+   "wiki": "Temple Saint-Martial d'Avignon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Temple%20protestant%20Saint-Martial%20d%27Avignon.jpg?width=960",
+   "photoBy": "JLZIMMERMANN",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Temple Saint Martial"
+   }
+  },
+  {
+   "id": "Q38155000",
+   "name": "carmel d'Avignon",
+   "lat": 43.944039,
+   "lng": 4.801016,
+   "theme": "religious",
+   "fame": 3,
+   "summary": "Les carmélites déchaussées s'installent en 1612 grâce au don de Claire de Pérussis, baronne d'Oppède. Leur couvent est détruit à leur dispersion en 1792 ; certaines religieuses se regroupent rue du collège d'Annecy en 1801. Le carmel est rétabli en 1819 dans l'ancien couvent des récollets, 3 rue de l'Observance, donnant sur un parc d'un hectare.",
+   "wiki": "Carmel d'Avignon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Carmel%20d%27Avignon.jpg?width=960",
+   "photoBy": "Marianne Casamance",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {}
+  },
+  {
+   "id": "Q17635838",
+   "name": "Noviciat des Jésuites d'Avignon",
+   "lat": 43.944,
+   "lng": 4.80483,
+   "theme": "religious",
+   "fame": 3,
+   "summary": "Rue des Vieilles Études, cette ancienne maison de formation des novices jésuites conserve une chapelle dessinée par Étienne Martellange, en croix grecque sous un dôme, consacrée en 1611. La cour est bordée sur trois côtés d'une galerie voûtée qu'on appelle improprement cloître. L'aile nord, réhabilitée en 1987 par Jean Nouvel, abrite un hôtel.",
+   "wiki": "Noviciat des Jésuites d'Avignon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Avignon%20-%20noviciat%20des%20j%C3%A9suites%2012.JPG?width=960",
+   "photoBy": "Marianne Casamance",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Noviciat des jésuites (Avignon)"
+   }
+  },
+  {
+   "id": "Q16640108",
+   "name": "grenier à sel d'Avignon",
+   "lat": 43.9534,
+   "lng": 4.81182,
+   "theme": "culture",
+   "fame": 3,
+   "summary": "Le long des remparts, entre la porte de la Ligne et la porte Saint-Joseph, ce lieu entrepose le sel à partir de 1363, pour qu'y soit prélevée la gabelle. Remanié en 1758 par Jean-Ange Brun, classé en 1984, il a été réhabilité par Jean-Michel Wilmotte en 1989 et accueille désormais expositions et spectacles, en accès gratuit.",
+   "wiki": "Grenier à sel d'Avignon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Avignon%20-%20Grenier%20%C3%A0%20sel.jpg?width=960",
+   "photoBy": "Véronique PAGNIER",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Avignon - Grenier à Sel",
+    "es": "Avignon - Grenier à Sel",
+    "it": "Avignon - Grenier à Sel"
+   }
+  },
+  {
+   "id": "Q1710718",
+   "name": "lycée Frédéric Mistral d'Avignon",
+   "lat": 43.947041,
+   "lng": 4.801565,
+   "theme": "culture",
+   "fame": 3,
+   "summary": "Le plus ancien lycée d'Avignon, rue d'Annanelle, porte le nom de son ancien élève Frédéric Mistral, Prix Nobel de littérature 1904. Ancien Collège royal puis impérial, il se tenait près de la rue de la République, dans le bâtiment devenu le Petit Lycée. En juillet, pendant le Festival d'Avignon, la cité scolaire sert de lieu de représentation.",
+   "wiki": "Cité scolaire Frédéric-Mistral",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lyc%C3%A9e%20Fr%C3%A9d%C3%A9ric%20Mistral%20Avignon.JPG?width=960",
+   "photoBy": "Marianne Casamance",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Lycée Mistral"
+   }
+  },
+  {
+   "id": "Q3078019",
+   "name": "fort Saint-André",
+   "lat": 43.96657,
+   "lng": 4.801436,
+   "theme": "palaces",
+   "fame": 7,
+   "summary": "Sur le mont Andaon, qui domine Villeneuve-lès-Avignon, cette enceinte fortifiée longue de 750 mètres fut bâtie durant la deuxième moitié du XIVe siècle, face aux terres de l'Empire et des papes. Jean de Loubières, architecte du palais des papes, l'acheva sur ordre de Charles V. Du haut des tours jumelles, la vue porte sur Avignon.",
+   "wiki": "Fort Saint-André (Villeneuve-lès-Avignon)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Vue%20sur%20le%20ch%C3%A2teau%20fort%20Saint%20Andr%C3%A9.JPG?width=960",
+   "photoBy": "Vi..Cult...",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Fort Saint-André (Villeneuve-lès-Avignon)",
+    "it": "Forte Saint-André"
+   },
+   "remote": true
+  },
+  {
+   "id": "Q2961249",
+   "name": "chartreuse Notre-Dame du Val de Bénédiction",
+   "lat": 43.9664,
+   "lng": 4.79744,
+   "theme": "palaces",
+   "fame": 5,
+   "summary": "Fondée à Villeneuve-lès-Avignon par une bulle du pape Innocent VI du 2 juin 1356, la chartreuse jouxtait le palais que ce pape s'était fait bâtir ; son église et son cloître furent consacrés le 19 août 1358. Vendue en dix-sept lots en 1794, puis rachetée parcelle par parcelle par l'État, elle est depuis 1973 un centre culturel de rencontre.",
+   "wiki": "Chartreuse Notre-Dame-du-Val-de-Bénédiction",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Val-de-Benediction-Claustre-dels-Morts.jpg?width=960",
+   "photoBy": "Baldiri",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "charterhouse Notre-Dame du Val de Bénédiction",
+    "es": "Chartreuse Notre-Dame-du-val-de-Bénédiction",
+    "it": "certosa Notre-Dame du Val de Bénédiction"
+   },
+   "remote": true
+  },
+  {
+   "id": "Q2983936",
+   "name": "collégiale Notre-Dame de Villeneuve-lès-Avignon",
+   "lat": 43.96329,
+   "lng": 4.79667,
+   "theme": "religious",
+   "fame": 5,
+   "summary": "Ancienne collégiale gothique méridionale, à Villeneuve-lès-Avignon, dans le Gard. Un acte du 7 août 1333 érige la chapelle du palais du cardinal Arnaud de Via, neveu de Jean XXII, en collégiale de douze chanoines, dotée de ce palais. Le cloître date de 1336, la tour-beffroi de 1362. Le gisant du cardinal est dans la chapelle des Reliques.",
+   "wiki": "Collégiale Notre-Dame de Villeneuve-lès-Avignon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Collegiale%20de%20Villeneuve.JPG?width=960",
+   "photoBy": "Vpe",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Collégiale Notre-Dame (Villeneuve-lès-Avignon)",
+    "it": "collegiale Notre-Dame de Villeneuve-lès-Avignon"
+   },
+   "remote": true
+  },
+  {
+   "id": "Q334212",
+   "name": "abbaye Saint-Ruf d'Avignon",
+   "lat": 43.93277778,
+   "lng": 4.81277778,
+   "theme": "religious",
+   "fame": 6,
+   "summary": "Avenue du Moulin-Notre-Dame, il ne subsiste de l'abbatiale que le chevet, le clocher, le transept et un départ de nef. Siège des chanoines réguliers de Saint-Ruf, l'abbaye devient au XIIe siècle un des principaux foyers de la réforme canoniale, avant que le siège de l'ordre ne soit déplacé à Valence en 1158. Le transept garde créneaux et archères.",
+   "wiki": "Abbaye Saint-Ruf d'Avignon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Eglise%20%C3%A0%20environ%204%20km%20du%20centre%20d%27Avignon%20-%20P1000855.jpg?width=960",
+   "photoBy": "Vi..Cult...",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Abbaye de Saint-Ruf d'Avignon",
+    "it": "abbazia di Saint-Ruf"
+   },
+   "remote": true
+  },
+  {
+   "id": "Q292378",
+   "name": "île de la Barthelasse",
+   "lat": 43.97358,
+   "lng": 4.83572,
+   "theme": "parks",
+   "fame": 6,
+   "summary": "Île fluviale du Rhône, la plus grande du fleuve, née de la soudure progressive d'un chapelet d'îlots dont l'île Piot, qui en forme la pointe sud. Cédée par Villeneuve-lès-Avignon en 1856, elle forme un quartier d'Avignon resté agricole, fait de mas, de pavillons et de campings. Une navette fluviale gratuite dessert la rive d'Avignon.",
+   "wiki": "Île de la Barthelasse",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Barthelas.JPG?width=960",
+   "photoBy": "Véronique PAGNIER",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "île de la Barthelasse",
+    "it": "Isola della Barthelasse"
+   },
+   "remote": true
+  },
+  {
+   "id": "Q143463",
+   "name": "palais des papes",
+   "lat": 43.9508,
+   "lng": 4.8075,
+   "theme": "museums",
+   "fame": 46,
+   "summary": "Bâti sur le rocher des Doms, au nord de la ville, le palais fut au XIVe siècle le siège de la chrétienté d'Occident et reste la plus grande construction gothique du Moyen Âge. L'édifice imbrique deux bâtiments : le palais vieux de Benoît XII, une forteresse, et le palais neuf de Clément VI, dont Matteo Giovanetti dirigea les fresques.",
+   "wiki": "Palais des papes d'Avignon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/00%200711%20Avignon%20%28Frankreich%29%20-%20Kathetrale%20und%20Papstpalast.jpg?width=960",
+   "photoBy": "W. Bulach",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Palais des Papes",
+    "es": "Palacio Papal de Aviñón",
+    "it": "Palazzo dei Papi"
+   }
+  },
+  {
+   "id": "Q284444",
+   "name": "pont d'Avignon",
+   "lat": 43.953888888889,
+   "lng": 4.805,
+   "theme": "water",
+   "fame": 38,
+   "summary": "Achevé en 1185, le pont franchissait le Rhône ; les crues et les guerres l'ont amputé au fil des siècles et il n'en reste que quatre arches, accrochées à la rive gauche. Il part du nord d'Avignon vers le Gard mais ne permet plus de s'y rendre. Sur l'un des piliers s'élève la chapelle Saint-Bénézet, surmontée de la chapelle Saint-Nicolas.",
+   "wiki": "Pont Saint-Bénézet",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20pont%20d%27Avignon%20depuis%20l%27%C3%AEle%20de%20la%20Barthelasse.jpg?width=960",
+   "photoBy": "Chimigi",
+   "photoLic": "CC BY-SA 2.0 fr",
+   "alt": {
+    "en": "pont Saint-Bénézet",
+    "es": "puente de Aviñón",
+    "it": "Ponte di Avignone"
+   }
+  },
+  {
+   "id": "Q1200500",
+   "name": "cathédrale Notre-Dame-des-Doms d'Avignon",
+   "lat": 43.951666666667,
+   "lng": 4.8075,
+   "theme": "religious",
+   "fame": 22,
+   "summary": "Voisine du palais des papes, la cathédrale romane provençale domine le Rhône depuis le rocher des Doms. Son porche imite l'antique, avec des chapiteaux à feuilles d'acanthe. Pie IX lui donne le titre de basilique mineure en 1854 ; une Vierge de plomb doré couronne le clocher depuis 1859, au-dessus d'un carillon de 35 cloches.",
+   "wiki": "Cathédrale Notre-Dame-des-Doms d'Avignon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/France%20Avignon%20Notre%20Dame%20des%20Doms.jpg?width=960",
+   "photoBy": "Rolf Süssbrich",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Avignon Cathedral",
+    "es": "Catedral de Aviñón",
+    "it": "Cattedrale di Notre-Dame des Doms d'Avignon"
+   }
+  },
+  {
+   "id": "Q1664416",
+   "name": "musée du Petit Palais",
+   "lat": 43.95263889,
+   "lng": 4.80638889,
+   "theme": "museums",
+   "fame": 10,
+   "summary": "Installé dans l'ancienne résidence des archevêques d'Avignon, un bâtiment du XIVe siècle voisin du palais des papes, le musée a ouvert en 1976. Ses collections, réparties sur dix-neuf salles, réunissent 326 primitifs italiens de plus de 130 artistes, venus pour l'essentiel de la collection Campana, et des œuvres de l'école d'Avignon.",
+   "wiki": "Musée du Petit Palais (Avignon)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Avignon%2C%20Mus%C3%A9e%20du%20Petit%20Palais%20%2828839943528%29.jpg?width=960",
+   "photoBy": "Herbert Frank from Wien (Vienna), AT",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Musée du Petit Palais",
+    "es": "Petit Palais de Aviñón",
+    "it": "Musée du Petit Palais"
+   }
+  },
+  {
+   "id": "Q1366211",
+   "name": "synagogue d'Avignon",
+   "lat": 43.94841667,
+   "lng": 4.80902778,
+   "theme": "religious",
+   "fame": 9,
+   "summary": "Le bâtiment occupe, place Jérusalem, l'emplacement que l'évêque d'Avignon fixa à la fin des années 1220 pour une nouvelle carrière, quartier fermé de trois portes où les Juifs étaient contraints d'habiter. Rebâtie entre 1785 et 1787 par François Franque, la synagogue brûla en 1845 et fut reconstruite en 1846 par Joseph-Auguste Joffroy.",
+   "wiki": "Synagogue d'Avignon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Portalet%20de%20la%20Calandre%2C%20entr%C3%A9e%20de%20la%20Carri%C3%A8re%20d%27Avignon.jpg?width=960",
+   "photoBy": "RuTemple",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Synagogue d'Avignon",
+    "es": "Sinagoga de Aviñón"
+   }
+  },
+  {
+   "id": "Q2984016",
+   "name": "collégiale Saint-Pierre d'Avignon",
+   "lat": 43.9492,
+   "lng": 4.8083,
+   "theme": "religious",
+   "fame": 8,
+   "summary": "Cette église gothique ouvre sur la place Saint-Pierre. Sa façade, encadrée de deux tourelles, fut achevée en 1524 ; les portes en noyer massif ont été sculptées par Antoine Volard en 1551 et sont séparées par une Vierge à l'Enfant attribuée à Jean Péru. Érigée en collégiale par le pape Innocent VI, elle a reçu le titre de basilique mineure en 2012.",
+   "wiki": "Basilique Saint-Pierre d'Avignon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/00%201039%20%C3%89glise%20Saint%20Pierre%20%28Avignon%29.jpg?width=960",
+   "photoBy": "W. Bulach",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Église Saint Pierre (Avignon)",
+    "es": "basílica de San Pedro de Aviñón",
+    "it": "basilica di San Pietro d'Avignone"
+   }
+  },
+  {
+   "id": "Q1516274",
+   "name": "remparts d'Avignon",
+   "lat": 43.953305,
+   "lng": 4.806384,
+   "theme": "monuments",
+   "fame": 8,
+   "summary": "La structure des murs actuels date du XIVe et du XVe siècle et se développe sur 4 330 mètres. Le fossé qui les entourait a été comblé lors de l'aménagement de leurs abords : seule la partie supérieure des murailles reste visible. Les marques gravées par les tailleurs de pierre s'y distinguent encore par endroits.",
+   "wiki": "Remparts d'Avignon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Remparts%20%C3%A0%20Avignon.JPG?width=960",
+   "photoBy": "Véronique PAGNIER",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Avignon city wall",
+    "es": "Murallas de Aviñón"
+   }
+  },
+  {
+   "id": "Q1142988",
+   "name": "musée Calvet",
+   "lat": 43.946944444444,
+   "lng": 4.8033333333333,
+   "theme": "museums",
+   "fame": 7,
+   "summary": "Principal musée de la ville, il occupe pour ses beaux-arts l'hôtel de Villeneuve-Martignan, rebâti à partir de 1741 sur les plans de Jean-Baptiste Franque et achevé en 1749. La municipalité l'acquiert le 3 mars 1833 pour en faire un musée, autour du legs d'Esprit Calvet. Le musée lapidaire est installé à part, rue de la République.",
+   "wiki": "Musée Calvet",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mus%C3%A9e%20Calvet.jpg?width=960",
+   "photoBy": "Shoshanah",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Calvet Museum",
+    "es": "Museo Calvet",
+    "it": "Museo Calvet"
+   }
+  },
+  {
+   "id": "Q3329052",
+   "name": "musée Angladon",
+   "lat": 43.946,
+   "lng": 4.80697,
+   "theme": "museums",
+   "fame": 6,
+   "summary": "Installé dans l'hôtel de Massilian, du nom de la famille qui l'occupa au XVIIIe siècle, le musée expose depuis 1996 la collection du couturier et mécène parisien Jacques Doucet : Cézanne, Degas, Manet, Van Gogh, Modigliani, Picasso. Deux salles présentent l'art du Moyen Âge et de la Renaissance réuni par ses héritiers, les Angladon.",
+   "wiki": "Musée Angladon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Avignon%20Rue%20du%20Laboureur%20Mus%C3%A9e%20Angladon.jpg?width=960",
+   "photoBy": "ell brown",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "Musée Angladon"
+   }
+  },
+  {
+   "id": "Q3361180",
+   "name": "palais du Roure",
+   "lat": 43.9483,
+   "lng": 4.80556,
+   "theme": "museums",
+   "fame": 6,
+   "summary": "Hôtel particulier du XVe siècle : le Florentin Pierre Baroncelli acquiert en 1469 une taverne et des maisons voisines pour sa demeure. Frédéric Mistral, qui le fréquente au XIXe siècle, le surnomme palais du Roure, palais du chêne ; il devient un foyer du félibrige. Vendu en 1908, sauvé en 1918 par Jeanne de Flandreysy, il abrite un musée régional.",
+   "wiki": "Palais du Roure",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Avignon%20-%20Cours%20Roure.JPG?width=960",
+   "photoBy": "Véronique PAGNIER",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Palais du Roure",
+    "it": "Palais du Roure"
+   }
+  },
+  {
+   "id": "Q2315439",
+   "name": "collégiale Saint-Didier d'Avignon",
+   "lat": 43.946855,
+   "lng": 4.806911,
+   "theme": "religious",
+   "fame": 5,
+   "summary": "Née du testament du cardinal Bertrand de Deaux, la collégiale fut bâtie en trois ans et quatre mois et consacrée en 1359. Elle passe pour l'édifice le plus caractéristique du gothique avignonnais. La première chapelle de droite abrite un Portement de Croix de Francesco Laurana, commandé par le roi René en 1478.",
+   "wiki": "Collégiale Saint-Didier d'Avignon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/.00%203124%20%C3%89glise%20Saint%20Didier%20d%27Avignon%20-%20Frankreich.jpg?width=960",
+   "photoBy": "W. Bulach",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Saint-Didier",
+    "it": "collegiata Saint-Didier"
+   }
+  },
+  {
+   "id": "Q2983940",
+   "name": "collégiale Saint-Agricol d'Avignon",
+   "lat": 43.9491,
+   "lng": 4.80464,
+   "theme": "religious",
+   "fame": 5,
+   "summary": "La tradition attribue à saint Agricol, évêque d'Avignon vers 660 à 700, la construction d'une église à cet emplacement ; des fouilles y ont mis au jour des sépultures paléochrétiennes. Relevé de ses ruines au Xe siècle, l'édifice est érigé en collégiale par Jean XXII en 1321. La façade, le parvis et l'escalier monumental datent du XVe siècle.",
+   "wiki": "Collégiale Saint-Agricol d'Avignon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Avignon%20collegiale%20st%20agricol.jpg?width=960",
+   "photoBy": "Velvet",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Collégiale Saint Agricol",
+    "it": "collegiale di Sant'Agricola"
+   }
+  },
+  {
+   "id": "Q3354545",
+   "name": "opéra d'Avignon",
+   "lat": 43.9497,
+   "lng": 4.80553,
+   "theme": "stages",
+   "fame": 5,
+   "summary": "Décidé en 1824 lors de l'aménagement de la place de l'Horloge, le théâtre s'élève à l'emplacement de l'ancienne abbaye des bénédictines de Saint-Laurent ; la première représentation y est donnée le 30 octobre 1825. Il brûle le 26 janvier 1846 et est reconstruit au même emplacement en 1846-1847. Après rénovation, il rouvre en septembre 2021.",
+   "wiki": "Opéra d'Avignon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Avignon-Theatre-Opera-1846-1847%20anstelle%20des%20alten%20abgebrannten%20Theaters%20von%20den%20Architekten%20Leon%20Feucheres%26Theodore%20Charpentier%20errichtet%201..JPG?width=960",
+   "photoBy": "steffen heilfort",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Opéra d'Avignon"
+   }
+  },
+  {
+   "id": "Q3533155",
+   "name": "tour Philippe-le-Bel",
+   "lat": 43.9586,
+   "lng": 4.79753,
+   "theme": "palaces",
+   "fame": 5,
+   "summary": "Élevée à Villeneuve-lès-Avignon, dans le Gard, elle occupe l'emplacement d'une première tour construite en 1185 et démolie par les Avignonnais en 1226. Le traité de pariage de 1292 en ordonne la construction près du vieux port ; Randolphe de Mornel en termine le premier étage en 1303, et un étage gothique la rehausse vers 1360.",
+   "wiki": "Tour Philippe-le-Bel",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Tour%20Philippe%20le%20Bel.JPG?width=960",
+   "photoBy": "Véronique PAGNIER",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Tower of Philip the Fair",
+    "it": "Torre di Filippo il Bello"
+   },
+   "remote": true
+  },
+  {
+   "id": "Q6943577",
+   "name": "Muséum Requien",
+   "lat": 43.94666667,
+   "lng": 4.80361111,
+   "theme": "museums",
+   "fame": 5,
+   "summary": "Le musée d'histoire naturelle de la ville a été fondé en 1840 par Esprit Requien, botaniste et paléontologue avignonnais, sous la forme d'un cabinet d'histoire naturelle. Installé depuis 1940 dans l'hôtel de Raphélis-Soissan, sur trois niveaux, il retrace la faune et la flore vauclusiennes depuis la Préhistoire.",
+   "wiki": "Muséum Requien",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mus%C3%A9e%20Requien%20d%27Avignon%201.JPG?width=960",
+   "photoBy": "Marianne Casamance",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Muséum Requien"
+   }
+  },
+  {
+   "id": "Q15952870",
+   "name": "musée lapidaire d'Avignon",
+   "lat": 43.9459,
+   "lng": 4.80587,
+   "theme": "museums",
+   "fame": 5,
+   "summary": "Annexe du musée Calvet, il rassemble les collections archéologiques de la ville dans l'ancienne église du collège des Jésuites, dessinée en 1616 par Étienne Martellange puis confiée dès 1620 à François de Royers de La Valfenière. Antiquités grecque, étrusque, romaine et paléochrétienne et art gaulois y sont présentés.",
+   "wiki": "Musée lapidaire d'Avignon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Avignon%20-%20Mus%C3%A9e%20Lapidaire.JPG?width=960",
+   "photoBy": "Véronique PAGNIER",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Musée lapidaire d'Avignon"
+   }
+  },
+  {
+   "id": "Q2957291",
+   "name": "chapelle de l'Oratoire",
+   "lat": 43.9489,
+   "lng": 4.80325,
+   "theme": "religious",
+   "fame": 4,
+   "summary": "Rue Joseph-Vernet, la chapelle doit son nom à la congrégation de l'Oratoire de Jésus. Commencée en 1713, interrompue, reprise en 1730, elle n'est achevée qu'en 1749 : le chantier a usé plusieurs architectes. Son plan, deux ellipses emboîtées dans un rectangle, est sans équivalent à Avignon. Elle sert d'aumônerie au lycée Frédéric-Mistral.",
+   "wiki": "Chapelle de l'Oratoire (Avignon)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Avignon%20-%20Chapelle%20Oratoire.JPG?width=960",
+   "photoBy": "Véronique PAGNIER",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Chapelle de l'oratoire",
+    "it": "Cappella dell'oratorio"
+   }
+  },
+  {
+   "id": "Q19404022",
+   "name": "Hôtel d'Europe",
+   "lat": 43.9501,
+   "lng": 4.80327,
+   "theme": "shops",
+   "fame": 4,
+   "summary": "Sur la place Crillon, ce bâtiment de la fin du XVIe siècle prend son allure classique lors des grands travaux menés en 1740 par François de Boutin de Valouse, puis devient l'hôtel de Graveson en 1775. Catherine Pierron le rachète le 25 septembre 1799 et en fait la même année l'Hôtel d'Europe. L'établissement compte 39 chambres et 5 suites.",
+   "wiki": "Hôtel d'Europe",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/H%C3%B4tel%20Amat%20de%20Graveson.JPG?width=960",
+   "photoBy": "Véronique PAGNIER",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Hotel d'Europe"
+   }
+  },
+  {
+   "id": "Q3584529",
+   "name": "église Saint-Symphorien-les-Carmes",
+   "lat": 43.95075,
+   "lng": 4.81346,
+   "theme": "religious",
+   "fame": 4,
+   "summary": "Les Grands Carmes s'installèrent place des Carmes dès 1267, hors de l'enceinte de la Commune. Une reconstruction entreprise par Jean XXII en 1320 durait encore sous Clément VI. L'église fut consacrée en 1520. Un effondrement, en 1672, ne laissa debout que la façade, le chœur et les chapelles latérales ; l'édifice rebâti fut béni en 1678.",
+   "wiki": "Église Saint-Symphorien-les-Carmes d'Avignon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Avignon%20-%20%C3%A9glise%20st%20Symphorin.JPG?width=960",
+   "photoBy": "Véronique PAGNIER",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Église Saint-Symphorien d'Avignon"
+   }
+  },
+  {
+   "id": "Q1151040",
+   "name": "église des Célestins d'Avignon",
+   "lat": 43.94361111,
+   "lng": 4.80777778,
+   "theme": "religious",
+   "fame": 3,
+   "summary": "Église conventuelle désaffectée de la place des Corps-Saints, élevée près de la tombe de Pierre de Luxembourg : dernière fondation de la papauté avignonnaise et seule fondation royale de la ville. Le chantier, interrompu en 1425, n'a livré que trois travées d'un projet à sept nefs. Le cloître s'ouvre aux spectacles du Festival en 1968.",
+   "wiki": "Église des Célestins",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89glise%20des%20C%C3%A9lestins.JPG?width=960",
+   "photoBy": "Véronique PAGNIER",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Church of the Célestins of Avignon",
+    "it": "chiesa dei Celestini"
+   }
+  },
+  {
+   "id": "Q3452055",
+   "name": "rue des Teinturiers",
+   "lat": 43.945,
+   "lng": 4.81393,
+   "theme": "streets",
+   "fame": 3,
+   "summary": "Bordée par la Sorgue, la rue a compté vingt-trois roues à aubes actionnant moulins et filatures de soie ; les teinturiers, qui lui ont donné son nom, en utilisaient les eaux. Quatre roues subsistent et les Avignonnais l'appellent rue des Roues. Pavée de calades, elle garde le clocher des Cordeliers, seul vestige de l'église où fut inhumée Laure.",
+   "wiki": "Rue des Teinturiers (Avignon)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Roue%20rue%20teinturiers.jpg?width=960",
+   "photoBy": "Véronique PAGNIER",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "rue des Teinturiers"
+   }
+  },
+  {
+   "id": "Q16964583",
+   "name": "arcades romaines d'Avignon",
+   "lat": 43.9497,
+   "lng": 4.8075,
+   "theme": "monuments",
+   "fame": 3,
+   "summary": "Une seule arcade reste visible, les autres sont enchâssées dans les murs des maisons. Hautes de 4,60 m et larges de 2,50 m, en grand appareil, elles forment une construction de soutènement de plus de 250 m qui délimite une vaste esplanade, que les recherches archéologiques identifient comme le forum. L'usage de l'espace ménagé reste incertain.",
+   "wiki": "Arcades romaines d'Avignon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ruines%20des%20arcades%20romaines%20-%20Avignon.jpg?width=960",
+   "photoBy": "Véronique PAGNIER",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Roman arcades of Avignon"
+   }
+  },
+  {
+   "id": "Q22916655",
+   "name": "hôtel des Monnaies",
+   "lat": 43.95079,
+   "lng": 4.80633,
+   "theme": "palaces",
+   "fame": 3,
+   "summary": "L'inscription dédicatoire de la façade date la construction de 1619, pour le cardinal Scipion Borghese, légat du pape Paul V ; Joseph Girard y voit la plus italienne des façades d'Avignon. Caserne, puis mairie de 1846 à 1852, le bâtiment reçoit le conservatoire de musique en 1860. La ville l'a vendu en février 2018 pour en faire un boutique-hôtel.",
+   "wiki": "Hôtel des Monnaies (Avignon)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Avignone%2C%20H%C3%B4tel%20des%20Monnaies%2001.jpg?width=960",
+   "photoBy": "Sailko",
+   "photoLic": "CC BY 3.0",
+   "alt": {
+    "en": "Hôtel des Monnaies",
+    "it": "Hôtel des Monnaies"
+   }
+  },
+  {
+   "id": "Q22916674",
+   "name": "hôtel de Verclos",
+   "lat": 43.94801,
+   "lng": 4.80747,
+   "theme": "palaces",
+   "fame": 3,
+   "summary": "Le prix-fait de cette vaste maison fut donné en 1686 par Charles-Joseph de Joannis, marquis de Verclos, à un maçon et à un menuisier ; les plans sont probablement dus à Louis-François de Royers de La Valfenière. La façade, sur trois plans, donne sur la place de la Principale. Jean-Baptiste Franque dirigea des travaux en 1726 et 1748.",
+   "wiki": "Hôtel de Joannis de Verclos",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Avignon%20-%20Hotel%20de%20verclos.JPG?width=960",
+   "photoBy": "Marianne Casamance",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Hôtel de Joannis de Verclos"
+   }
+  },
+  {
+   "id": "Q2174601",
+   "name": "rue Carreterie",
+   "lat": 43.95083333,
+   "lng": 4.81472222,
+   "theme": "streets",
+   "fame": 3,
+   "summary": "De la place du Portail Matheron à la porte Saint-Lazare, cette voie fut le principal accès urbain depuis le Comtat Venaissin et la seule à mener directement d'une porte des remparts au palais des papes. Au no 20, le clocher des augustins, élevé entre 1372 et 1377, penche légèrement depuis le tremblement de terre de 1907.",
+   "wiki": "Rue Carreterie",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Avignon%20tramway%20rue%20Carreterie.jpg?width=960",
+   "photoBy": "Unknown authorUnknown author",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "rue Carreterie"
+   }
+  },
+  {
+   "id": "Q2957347",
+   "name": "chapelle de la Visitation d'Avignon",
+   "lat": 43.9481,
+   "lng": 4.81252,
+   "theme": "religious",
+   "fame": 3,
+   "summary": "Chapelle baroque du couvent des Visitandines, elle ouvre sa façade sur la place de la Pignotte. Le cardinal Mario Filonardi, vice-légat d'Avignon et commanditaire du couvent, en posa la première pierre le 10 avril 1631 ; elle fut consacrée en 1638. Église « à la romaine », elle compte parmi les tout premiers exemples de ce côté des Alpes.",
+   "wiki": "Chapelle de la Visitation d'Avignon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Avignon%20-%20Visitation.JPG?width=960",
+   "photoBy": "Véronique PAGNIER",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Chapelle de la Visitation, Avignon"
+   }
+  },
+  {
+   "id": "Q2957417",
+   "name": "chapelle des Pénitents noirs",
+   "lat": 43.952844523675,
+   "lng": 4.8098889535444,
+   "theme": "religious",
+   "fame": 3,
+   "summary": "Rue de la Banasterie, la chapelle fut celle des Pénitents noirs de la Miséricorde, confrérie fondée en 1586 par Pompée Catilina pour secourir les prisonniers et assister les condamnés. Sa façade, reconstruite à partir de 1739, montre une gloire en ronde-bosse : une nuée d'anges portant la tête de saint Jean-Baptiste sur un plat.",
+   "wiki": "Chapelle des Pénitents noirs (Avignon)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Chapelle%20des%20P%C3%A9nitents%20Noirs%20%C3%A0%20Avignon.JPG?width=960",
+   "photoBy": "Paul Munhoven",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Chapelle des Pénitents noirs"
+   }
+  },
+  {
+   "id": "Q2957418",
+   "name": "chapelle des Pénitents violets d'Avignon",
+   "lat": 43.952,
+   "lng": 4.81123,
+   "theme": "religious",
+   "fame": 3,
+   "summary": "Place du Grand-Paradis, cette ancienne chapelle catholique du XVIIIe siècle est aujourd'hui désaffectée. Ses façades sont inscrites au titre des monuments historiques depuis 1966, et le lieu sert de salle de spectacles pendant le festival d'Avignon.",
+   "wiki": "Chapelle des Pénitents violets d'Avignon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Th%C3%AAatre%20des%20Amants.JPG?width=960",
+   "photoBy": "Véronique PAGNIER",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Chapelle des Pénitents Violets"
+   }
+  },
+  {
+   "id": "Q15092201",
+   "name": "abbaye Sainte-Catherine d'Avignon",
+   "lat": 43.950513,
+   "lng": 4.809885,
+   "theme": "religious",
+   "fame": 3,
+   "summary": "Rue Sainte-Catherine, dans la vieille ville, des cisterciennes se sont établies quand l'évêque Zoen Tencarari leur a proposé, entre 1251 et 1253, de se réfugier en ville. Leur communauté avait été fondée bénédictine en 1060 sur la colline de Montdevergues, puis passée à la règle cistercienne vers 1150. L'église abrite le Théâtre du Chêne noir.",
+   "wiki": "Abbaye Sainte-Catherine d'Avignon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Th%C3%A9atre%20du%20Ch%C3%AAne%20Noir.JPG?width=960",
+   "photoBy": "Véronique PAGNIER",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Chapelle Sainte Catherine"
+   }
+  },
+  {
+   "id": "Q2873438",
+   "name": "Avenio",
+   "lat": 43.95,
+   "lng": 4.817,
+   "theme": "monuments",
+   "fame": 2,
+   "summary": "Nom latin de la ville dans l'Antiquité. La cité naît sur le rocher des Doms, occupé dès le néolithique et point de contrôle sur le Rhône, avant de s'étendre vers la plaine alluviale. Devenue colonie romaine au IIe siècle sous Hadrien, elle reçoit remparts, forum et aqueduc. À partir du IIIe siècle, l'espace urbain se contracte vers le rocher.",
+   "wiki": "Avenio",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ruines%20des%20arcades%20romaines%20-%20Avignon.jpg?width=960",
+   "photoBy": "Véronique PAGNIER",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Avenio",
+    "it": "Avenio"
+   }
+  },
+  {
+   "id": "Q16855013",
+   "name": "chapelle du Verbe Incarné",
+   "lat": 43.9457,
+   "lng": 4.81091,
+   "theme": "religious",
+   "fame": 2,
+   "summary": "Du couvent des Dames du Verbe Incarné, installé rue des Lices en 1639 par Jeanne Chézard de Matel, il ne reste que cette chapelle, au no 21, que Jean-Baptiste Franque et son fils François reconstruisirent entre 1725 et 1728 après un incendie. Propriété privée, elle accueille chaque année en juillet le TOMA, Théâtres d'Outre-Mer en Avignon.",
+   "wiki": "Chapelle du Verbe Incarné (Avignon)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Chapelle%20Ordre%20du%20Verbe%20Incarn%C3%A9.JPG?width=960",
+   "photoBy": "Véronique PAGNIER",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Chapelle du Verbe Incarné (Avignon)"
+   }
+  },
+  {
+   "id": "Q22916611",
+   "name": "aumône générale d'Avignon",
+   "lat": 43.94506,
+   "lng": 4.80946,
+   "theme": "religious",
+   "fame": 2,
+   "summary": "Créée à la fin du XVe siècle par le conseil de la ville pour secourir les nécessiteux, l'aumône s'installe en 1610 dans ce bâtiment. Sa partie centrale, à quatre niveaux et façade à arcades, précède les ailes en U. Rachetés par la ville en 1845, les locaux abritent les troupes de passage ; l'école des beaux-arts occupe l'aile est de 1890 à 1998.",
+   "wiki": "Aumône générale d'Avignon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Avignone%2C%20cortile%20porticato%20dell%27Aum%C3%B4ne%20g%C3%A9n%C3%A9rale%2001.jpg?width=960",
+   "photoBy": "Sailko",
+   "photoLic": "CC BY 3.0",
+   "alt": {
+    "en": "Aumône générale"
+   }
+  },
+  {
+   "id": "Q22916640",
+   "name": "hôtel de Félix",
+   "lat": 43.94715,
+   "lng": 4.80988,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "Rue de la Bonneterie, l'hôtel dit d'abord de Puget de Chastueil doit son escalier monumental à une commande de 1695 du marquis de Chastueil, sur des plans de Péru. Au-dessus de la fenêtre centrale du premier étage, le blason des Puget est encadré de deux chiens dont la sculpture n'a pas été terminée. Le rez-de-chaussée abrite des commerces.",
+   "wiki": "Hôtel de Félix",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Avignon%20-%20Hotel%20de%20F%C3%A9lix%201.JPG?width=960",
+   "photoBy": "Marianne Casamance",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Hôtel particulier de Félix"
+   }
+  },
+  {
+   "id": "Q22916642",
+   "name": "hôtel Fortia de Montréal",
+   "lat": 43.94677,
+   "lng": 4.80838,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "Face à l'hôtel de Crillon, élevé dix ans plus tard, il doit sa façade sur rue aux plans de François de Royers de La Valfenière. Paul de Fortia y logea Nicolas Mignard, qui peignit dans une galerie 18 panneaux tirés des Amours de Théogène et Chariclée, vendus à Paris au XVIIIe siècle. Saisi à la Révolution, il fut divisé aux numéros 8 et 10.",
+   "wiki": "Hôtel Fortia de Montréal",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Hotel%20Fortia%20de%20Montr%C3%A9al.JPG?width=960",
+   "photoBy": "Véronique PAGNIER",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Hôtel Fortia de Montréal"
+   }
+  },
+  {
+   "id": "Q22916658",
+   "name": "hôtel de Montaigu",
+   "lat": 43.94681,
+   "lng": 4.81164,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "Quatre secrétaires d'État y furent logés lors du séjour de Louis XIV à Avignon en 1660. La construction est attribuée aux Royers de La Valfenière, père et fils ; le prix fait du vestibule et de l'escalier, signé en 1668, est postérieur à la mort du père. Confié aux Compagnons pour une école des métiers d'art, il est devenu une copropriété.",
+   "wiki": "Hôtel de Montaigu",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Hotel%20Montaigu.jpg?width=960",
+   "photoBy": "Véronique PAGNIER",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Hotel Montaigu"
+   }
+  },
+  {
+   "id": "Q22916663",
+   "name": "hôtel de Raoulx",
+   "lat": 43.94758,
+   "lng": 4.80903,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "Rue de la Bonneterie, le marchand Jean-Paul Raoulx acheta en 1692 deux maisons contiguës et fit élever à leur place, par Jean Péru, une demeure aux dimensions d'un hôtel particulier. Au-dessus de la porte, un balcon porte une tête de Minerve casquée, et des mascarons ornent les fenêtres du rez-de-chaussée.",
+   "wiki": "Hôtel Raoulx",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Avignon%20-%20Hotel%20de%20Raoulx%205.JPG?width=960",
+   "photoBy": "Marianne Casamance",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Hotel de Raoulx"
+   }
+  },
+  {
+   "id": "Q36698400",
+   "name": "théâtre Golovine",
+   "lat": 43.9465,
+   "lng": 4.8093,
+   "theme": "stages",
+   "fame": 2,
+   "summary": "Fondé en 1975 par les danseurs étoiles Catherine et Georges Golovine, le théâtre occupe l'ancienne demeure du chanoine Sylvain, dans le quartier Sainte-Catherine, derrière le Palais des papes. Consacré à la danse, il porte la programmation « Off Danse » lors du Festival Off. Yourik Golovine le dirige depuis 2005.",
+   "wiki": "Théâtre Golovine",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Th%C3%A9%C3%A2tre%20Golovine.jpg?width=960",
+   "photoBy": "Mel.grbs",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Théâtre Golovine"
+   }
+  },
+  {
+   "id": "Q22916612",
+   "name": "chapelle Saint-Charles d'Avignon",
+   "lat": 43.945703,
+   "lng": 4.803383,
+   "theme": "religious",
+   "fame": 2,
+   "summary": "Rue Saint-Charles, la chapelle a été construite par François Franque entre 1749 et 1757, avec le cloître attenant et la façade sur rue, pour le collège Saint-Charles-de-la-Croix devenu séminaire. Le chœur, voûté en arc de cloître, abrite un immense baldaquin des frères Mazetti, marbriers et sculpteurs à Avignon.",
+   "wiki": "Chapelle Saint-Charles d'Avignon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Avignon%20-%20Chapelle%20St%20Charles.JPG?width=960",
+   "photoBy": "Marianne Casamance",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Chapelle Saint-Charles (Avignon, France)"
+   }
+  },
+  {
+   "id": "Q22916614",
+   "name": "chapelle Notre-Dame-des-Miracles d'Avignon",
+   "lat": 43.94446,
+   "lng": 4.79949,
+   "theme": "religious",
+   "fame": 2,
+   "summary": "Au 13 rue Velouterie, la chapelle a été fondée par le pape Jean XXII après un miracle survenu en mars 1320 pendant une exécution au bûcher. Le pape en finance le chœur, achevé en 1327 ; la nef n'est terminée que vers 1340-1350. Sécularisée à la Révolution, elle a abrité de 1932 à 1999 une fabrique de pompes, avant son rachat par des particuliers.",
+   "wiki": "Chapelle Notre-Dame-des-Miracles d'Avignon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/ND%20des%20Miracles.jpg?width=960",
+   "photoBy": "Véronique PAGNIER",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Chapelle, rue de la Velouterie"
+   }
+  },
+  {
+   "id": "Q115460879",
+   "name": "hôtel de la Caisse d'épargne d'Avignon",
+   "lat": 43.945169883278,
+   "lng": 4.8052282855314,
+   "theme": "culture",
+   "fame": 2,
+   "summary": "Cet immeuble du début du XXe siècle s'élève au no 110 de la rue Joseph-Vernet, au sud du centre-ville. Le concours ouvert au printemps 1912 aux architectes de plusieurs départements prévoyait alors de le bâtir à l'emplacement de l'immeuble du 55 rue Théodore-Aubanel. Les projets furent jugés « excellents » et plusieurs primes relevées.",
+   "wiki": "Hôtel de la Caisse d'épargne d'Avignon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Caisse%20d%27%C3%89pargne%20rue%20Joseph%20Vernet.jpg?width=960",
+   "photoBy": "lorentey",
+   "photoLic": "CC BY 2.0",
+   "alt": {
+    "en": "building of the Savings Bank of Avignon"
+   }
+  },
+  {
+   "id": "Q22916626",
+   "name": "hôtel de Gasqui",
+   "lat": 43.95125,
+   "lng": 4.8117,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "Place des Trois-Pilats, la maison achetée en 1706 par Joseph Gasqui a été rebâtie dans le second quart du XVIIIe siècle : un document de 1744 la dit tout juste rebâtie. L'hôtel fut le siège des Illuminés d'Avignon, secte fondée par Dom Pernety, qui y mourut en 1796. Inscrit monument historique en 1932, il abrite 14 appartements depuis février 2022.",
+   "wiki": "Hôtel de Gasqui",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Avignon%20-%20Hotel%20de%20la%20Bastide%201.jpg?width=960",
+   "photoBy": "Véronique PAGNIER",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Hotel de la Bastide"
+   }
+  },
+  {
+   "id": "Q22916643",
+   "name": "hôtel de Galéans des Issarts",
+   "lat": 43.95132,
+   "lng": 4.80935,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "L'entrée, rue du Four, se fait par une porte cochère haute et très simple, sur un plan classique entre cour et jardin. Bâti sur une ancienne livrée cardinalice, l'hôtel passe à la famille Galéans, qui y construit une chapelle en 1559 ; François de Galéans y tue Thomas de Baroncelli le 16 juin 1606, à la suite d'une provocation en duel.",
+   "wiki": "Hôtel de Galéans des Issarts",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Avignon%20-%20Hotel%20Galeans%20des%20Issarts%201.JPG?width=960",
+   "photoBy": "Marianne Casamance",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Hotel Galeans des Issarts"
+   }
+  },
+  {
+   "id": "Q22916667",
+   "name": "hôtel de Rochegude",
+   "lat": 43.947,
+   "lng": 4.82096,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "Vers 1730, Pierre Joseph Jacques de Robert, futur seigneur de Rochegude, achète une maison des La Gratia, famille qui avait introduit le cuir doré à Avignon, et la fait reconstruire en 1732-1733. Sa façade aligne 9 fenêtres sur deux étages et la clé de l'archivolte porte une tête de faune. Les boiseries du cabinet doré sont à Paris depuis 1891.",
+   "wiki": "Hôtel de Rochegude (Avignon)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Avignon%20-%20Hotel%20de%20Rochegude%201.JPG?width=960",
+   "photoBy": "Marianne Casamance",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Hotel de Rochegude"
+   }
+  },
+  {
+   "id": "Q108699305",
+   "name": "Jardins du palais des papes d'Avignon",
+   "lat": 43.950741,
+   "lng": 4.808286,
+   "theme": "parks",
+   "fame": 2,
+   "summary": "Réaménagés entre 2017 et 2020 d'après les fouilles de 2014, les anciens jardins pontificaux sont intégrés au parcours de visite du palais. Ils comptent trois parties : le jardin du Pape et sa fontaine du Griffon, au pied de la tour du Pape, le jardin du Palais et, en contrebas, le verger Urbain V. Les plantations sont méditerranéennes.",
+   "wiki": "Jardins du palais des papes d'Avignon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Jardins%20palais%20papes%20Avignon%2003.jpg?width=960",
+   "photoBy": "Arnaud 25",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Jardins du palais des papes d'Avignon"
+   }
+  },
+  {
+   "id": "Q22916613",
+   "name": "chapelle Sainte-Garde d'Avignon",
+   "lat": 43.948586,
+   "lng": 4.810488,
+   "theme": "religious",
+   "fame": 2,
+   "summary": "À l'angle de la rue du Général-Leclerc et de la rue Saint-Jean-le-Vieux, cette chapelle fut bâtie en 1770 par Jean-Baptiste Lambertin pour le séminaire de Sainte-Garde, et consacrée en 1775. Après la Révolution, elle servit de salle d'audience et de Bourse de commerce. Elle fait aujourd'hui partie du conservatoire Olivier Messiaen.",
+   "wiki": "Chapelle Sainte-Garde d'Avignon",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Avignon%20-%20Chapelle%20Sainte-Garde.jpg?width=960",
+   "photoBy": "Marianne Casamance",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Chapelle Sainte-Garde d'Avignon"
+   }
+  },
+  {
+   "id": "Q22916624",
+   "name": "hôtel de Beaumont de Teste",
+   "lat": 43.94965,
+   "lng": 4.8105,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "Deux maisons de la rue de la Croix, aux nos 9 et 11, furent réunies par un arceau après l'achat de la première en 1685, puis vendues en 1740 à Joseph de Teste. Armand du Plessis, évêque de Luçon, avait logé au no 9 pendant son exil, de 1618 à 1619. Léguée à la ville en 2013, la demeure est en cours de transformation en musée d'art contemporain.",
+   "wiki": "Hôtel de Beaumont ou de Teste",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Avignon%20-%2011%20rue%20de%20la%20croix%201.JPG?width=960",
+   "photoBy": "Marianne Casamance",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Hotel Beaumont de la Teste"
+   }
+  },
+  {
+   "id": "Q22916652",
+   "name": "hôtel Madon de Châteaublanc",
+   "lat": 43.95008,
+   "lng": 4.80855,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "Les maçons chargés de bâtir cet hôtel pour Jean-Pierre de Madon de Châteaublanc, sur les plans de Pierre II Mignard, ont passé leur marché en 1687. La cour est décorée d'une calade due à Henri Barrelet, semée de comètes, probable souvenir du passage de la comète de Halley en 1759. Les boiseries et les dessus de portes peints sont d'époque Louis XV.",
+   "wiki": "Hôtel Madon de Châteaublanc",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Avignon%20-Hotel%20de%20Madon%20de%20Chateaublanc.jpg?width=960",
+   "photoBy": "Véronique PAGNIER",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Hotel de Madon de Chateaublanc"
+   }
+  },
+  {
+   "id": "Q22916654",
+   "name": "hôtel de Monery",
+   "lat": 43.95013,
+   "lng": 4.80445,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "Aussi appelé hôtel de Saint-Priest d'Urgel, le bâtiment actuel a probablement été élevé après 1760 par l'architecte Jean-Baptiste II Péru, et il a peu changé depuis l'état des lieux de 1769. L'intérieur garde un bel escalier et des salons décorés ; Jean Pillement a décoré la salle à manger du premier étage, Jean Succharelli le boudoir.",
+   "wiki": "Hôtel de Monery",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Avignon%20-%20H%C3%B4tel%20de%20Monery%201.JPG?width=960",
+   "photoBy": "Marianne Casamance",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Hôtel de Monery"
+   }
+  },
+  {
+   "id": "Q22916662",
+   "name": "hôtel Peilhon de Faret",
+   "lat": 43.94851,
+   "lng": 4.80717,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "Simon Peilhon, marchand taffetassier, réunit à partir de 1687 plusieurs maisons de la rue du Puits-de-la-Rappe en une seule demeure, que son fils reconstruit en 1711. Vendu en l'an II, l'hôtel devient en 1838 l'installation commerciale d'un marchand de fers. Deux figures sculptées inspirées de celles de Pierre Puget subsistent à l'intérieur.",
+   "wiki": "Hôtel Peilhon de Faret",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Avignon%20-%20Hotel%20Peilhon%20de%20Faret%201.JPG?width=960",
+   "photoBy": "Marianne Casamance",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Hotel Peilhon de Faret"
+   }
+  },
+  {
+   "id": "Q2979774",
+   "name": "cloître des Carmes à Avignon",
+   "lat": 43.9509,
+   "lng": 4.81319,
+   "theme": "stages",
+   "fame": 3,
+   "summary": "Place des Carmes, dépendant de l'église conventuelle, ce cloître est le seul resté intact des couvents mendiants venus à Avignon au XIIIe siècle ; les Carmes reçurent l'emplacement en 1267. Agrandi sous Jean XXII puis sous Clément VI, longtemps occupé par des maisons, il a été dégagé au XXe siècle. Il accueille le Festival d'Avignon depuis 1967.",
+   "wiki": "Cloître des Carmes",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Cloitre%20Carmes.JPG?width=960",
+   "photoBy": "Véronique PAGNIER",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "cloître des Carmes"
+   }
+  },
+  {
+   "id": "Q3527744",
+   "name": "théâtre des Carmes",
+   "lat": 43.9505,
+   "lng": 4.81324,
+   "theme": "stages",
+   "fame": 3,
+   "summary": "André Benedetto, son épouse Jacqueline et Bertrand Hurault fondèrent ce théâtre en 1963, au 6 place des Carmes, dans l'ancienne salle paroissiale Saint-Benoît qui dépendait de l'église Saint-Symphorien-les-Carmes. Hors saison théâtrale, le lieu servit d'abord de salle de danse, de discothèque ou de bowling.",
+   "wiki": "Théâtre des Carmes",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Th%C3%A9atre%20des%20Carmes.JPG?width=960",
+   "photoBy": "Véronique PAGNIER",
+   "photoLic": "Public domain",
+   "alt": {
+    "en": "Théâtre des Carmes"
+   }
+  },
+  {
+   "id": "Q17640034",
+   "name": "théâtre des Halles",
+   "lat": 43.9493,
+   "lng": 4.80553,
+   "theme": "stages",
+   "fame": 2,
+   "summary": "Créé en 1983 par le metteur en scène Alain Timár, scène permanente et salle du Festival off, il occupe un ancien couvent de clarisses fondé en 1239, près de la place Pie et des halles dont il tient son nom. Un siècle après la fondation, c'est dans la chapelle du couvent que Pétrarque fit la connaissance de Laure de Noves.",
+   "wiki": "Théâtre des Halles",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Facade%20Sainte%20Claire.jpg?width=960",
+   "photoBy": "Véronique PAGNIER",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "it": "chiesa di Santa Chiara"
+   }
+  }
+ ]
+}

@@ -1,7 +1,17 @@
 {
  "version": 18,
- "updatedAt": "2026-08-06",
+ "updatedAt": "2026-08-07",
  "cities": {
+  "AVI": {
+   "version": 1,
+   "updatedAt": "2026-08-07",
+   "count": 64,
+   "langs": {
+    "en": 1,
+    "es": 1,
+    "it": 1
+   }
+  },
   "BXL": {
    "version": 1,
    "updatedAt": "2026-08-06",
