@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useMemo } from 'react';
+import { useState, useRef, useEffect, useMemo, Fragment } from 'react';
 import {
   StyleSheet, View, Text, TextInput, TouchableOpacity, ActivityIndicator,
   FlatList, Switch, ScrollView, Keyboard, Platform, KeyboardAvoidingView, Linking, Alert,
@@ -524,9 +524,6 @@ export default function ChasseScreen({ route }) {
   // Enregistreur de session (distance via le watch GPS de la navigation)
   const recorder = useSessionRecorder();
   const { recordSession } = useGamification();
-  // Écran maintenu allumé pendant le suivi : sans ça, iOS suspend l'app dès
-  // l'extinction de l'écran et la distance parcourue cesse d'être enregistrée.
-  useKeepScreenOn(following);
 
   // ─── GPS ──────────────────────────────────────────────────────────────────
   const [gpsReady, setGpsReady] = useState(false);
@@ -584,6 +581,10 @@ export default function ChasseScreen({ route }) {
   // proposition. Le refus est local au parcours affiché : une nouvelle chasse
   // repose la question, parce que la réponse portait sur celle-là et non sur le
   // principe. Ce n'est donc pas une préférence à mémoriser.
+  // Numéro de génération, porté par le résultat : il sert de clé de remontage
+  // aux enfants de la carte (voir le Fragment du rendu). Un compteur plutôt
+  // qu'un horodatage, qui collisionnerait sur deux générations rapprochées.
+  const runIdRef = useRef(0);
   const [spilling, setSpilling] = useState(false);
   const [spillDismissed, setSpillDismissed] = useState(false);
 
@@ -610,6 +611,14 @@ export default function ChasseScreen({ route }) {
   const [selectedPoi, setSelectedPoi] = useState(null); // fiche « lieu d'intérêt »
   const [inputCollapsed, setInputCollapsed] = useState(false);
   const [following, setFollowing] = useState(false);
+  // Écran maintenu allumé pendant le suivi : sans ça, iOS suspend l'app dès
+  // l'extinction de l'écran et la distance parcourue cesse d'être enregistrée.
+  //
+  // APRÈS la déclaration de `following`, et pas avant : l'appel vivait 80 lignes
+  // plus haut, dans la zone morte temporelle. Hermes ne la vérifie pas, donc
+  // aucun plantage — le hook recevait simplement `undefined` à chaque rendu et
+  // l'écran s'éteignait en pleine navigation. Une panne muette.
+  useKeepScreenOn(following);
   const [drifted, setDrifted] = useState(false);
   const [userPos, setUserPos] = useState(null);
   const [userHeading, setUserHeading] = useState(null);
@@ -958,6 +967,7 @@ export default function ChasseScreen({ route }) {
       const totalDurationMin = walkMin + visitTotalMin(sel);
 
       setResult({
+        runId: ++runIdRef.current,
         invaders: sel,
         routeCoords: coords,
         polyline: coords.map(([lng, lat]) => ({ latitude: lat, longitude: lng })),
@@ -1160,8 +1170,18 @@ export default function ChasseScreen({ route }) {
                 zIndex={0}
               />
             ))}
+            {/* La clé de génération remonte TOUS les enfants de la carte à chaque
+                nouveau parcours. Indispensable depuis que la relance par
+                débordement garde le résultat affiché au lieu de le vider : c'est
+                le seul chemin de l'app qui réconcilie les enfants de la MapView
+                en place, et sur Apple Maps la présence d'une annotation dépend
+                entièrement du montage React de l'enfant (AIRMap.m, insert/remove
+                ReactSubview → add/removeAnnotation). Réconcilier 42 enfants en 76,
+                en changeant au passage le rang des 40 étapes, en escamotait 14.
+                Remonter coûte une recapture ; ne pas remonter coûte des marqueurs
+                absents. */}
             {result && (
-              <>
+              <Fragment key={result.runId}>
                 {/* Tracé — gris derrière, orange devant */}
                 {walkedPolyline && (
                   <Polyline coordinates={walkedPolyline} strokeColor={theme.textSecondary} strokeWidth={4} lineCap="round" />
@@ -1213,11 +1233,11 @@ export default function ChasseScreen({ route }) {
                   const done = !inv.isPoi && flashed.has(inv.id);
                   const sel  = selectedInv?.id === inv.id || selectedPoi?.id === inv.id;
                   return (
-                  <PinMarker key={inv.id} stateKey={`${inv.id}|${done}|${sel}`}
+                  <PinMarker key={inv.id} stateKey={`${inv.id}|${done}|${sel}|${i}`}
                     coordinate={{ latitude: inv.lat, longitude: inv.lng }}
                     anchor={{ x: 0.5, y: 0.5 }}
                     onPress={() => (inv.isPoi ? (setSelectedPoi(inv), track('poi_open', { from: 'hunt', theme: inv.theme, lang: i18n.language })) : selectInvader(inv))}
-                    redrawKey={`${sel}|${done}`}>
+                    redrawKey={`${sel}|${done}|${i}`}>
                     {inv.isPoi ? (
                       // Lieu d'intérêt : losange doré, impossible à confondre avec un alien
                       <View style={styles.poiMarkerWrap}>
@@ -1234,7 +1254,7 @@ export default function ChasseScreen({ route }) {
                   </PinMarker>
                   );
                 })}
-              </>
+              </Fragment>
             )}
             {!isChangingCity && <HeadingCone userLocation={userPos} heading={userHeading} />}
           </MapView>
