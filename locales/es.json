@@ -160,8 +160,11 @@
     "cycling": "Bicicleta",
     "unflashedOnly": "Solo no fotografiados",
     "spillOffer": {
-      "text": "No queda ningún Invader por fotografiar en el {{district}}, y aún tienes {{left}} min libres.",
-      "action": "Extender a los distritos vecinos"
+      "text_one": "Después de fotografiar este Invader, aún te quedarán {{left}} minutos. ¿Extender la caza a los distritos vecinos?",
+      "text_other": "Después de fotografiar estos {{count}} Invaders, aún te quedarán {{left}} minutos. ¿Extender la caza a los distritos vecinos?",
+      "accept": "Sí, extender",
+      "decline": "No, mantener esta ruta",
+      "working": "Recalculando…"
     },
     "filteredTo": "Limitado al {{label}}",
     "generate": "Generar caza",

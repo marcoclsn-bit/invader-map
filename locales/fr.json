@@ -160,8 +160,11 @@
     "cycling": "Vélo",
     "unflashedOnly": "Non flashés uniquement",
     "spillOffer": {
-      "text": "Plus aucun Invader à flasher dans le {{district}}, et {{left}} min de budget encore libres.",
-      "action": "Étendre aux arrondissements voisins"
+      "text_one": "Après avoir flashé cet Invader, il te restera encore {{left}} minutes. Étendre la chasse aux arrondissements voisins ?",
+      "text_other": "Après avoir flashé ces {{count}} Invaders, il te restera encore {{left}} minutes. Étendre la chasse aux arrondissements voisins ?",
+      "accept": "Oui, étendre",
+      "decline": "Non, garder ce parcours",
+      "working": "Recalcul en cours…"
     },
     "filteredTo": "Limité au {{label}}",
     "generate": "Générer la chasse",

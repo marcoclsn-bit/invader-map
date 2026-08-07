@@ -10,7 +10,7 @@ const PRIS = [...CANDIDATS, poi];
 
 describe('spillOffer', () => {
   it('propose quand l\'arrondissement est vidé et le budget largement libre', () => {
-    expect(spillOffer(ar7, null, CANDIDATS, PRIS, 30, 120)).toEqual({ ar: 7, leftoverMin: 90 });
+    expect(spillOffer(ar7, null, CANDIDATS, PRIS, 30, 120)).toEqual({ ar: 7, leftoverMin: 90, count: 10 });
   });
 
   // LA raison d'être de la condition littérale : un parcours court n'est pas la
@@ -31,7 +31,7 @@ describe('spillOffer', () => {
     // 25 min libres sur 180 : au-dessus du plancher, mais sous les 20 % du budget.
     expect(spillOffer(ar7, null, CANDIDATS, PRIS, 155, 180)).toBeNull();
     // 40 min sur 180 : les deux seuils sont franchis.
-    expect(spillOffer(ar7, null, CANDIDATS, PRIS, 140, 180)).toEqual({ ar: 7, leftoverMin: 40 });
+    expect(spillOffer(ar7, null, CANDIDATS, PRIS, 140, 180)).toEqual({ ar: 7, leftoverMin: 40, count: 10 });
   });
 
   it('ne propose pas si le budget est dépassé', () => {

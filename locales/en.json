@@ -160,8 +160,11 @@
     "cycling": "Cycling",
     "unflashedOnly": "Unflashed only",
     "spillOffer": {
-      "text": "No Invaders left to flash in {{district}}, and {{left}} min of your budget still free.",
-      "action": "Extend to neighbouring districts"
+      "text_one": "Once you have flashed this Invader, you will still have {{left}} minutes left. Extend the hunt to neighbouring districts?",
+      "text_other": "Once you have flashed these {{count}} Invaders, you will still have {{left}} minutes left. Extend the hunt to neighbouring districts?",
+      "accept": "Yes, extend",
+      "decline": "No, keep this route",
+      "working": "Recalculating…"
     },
     "filteredTo": "Limited to {{label}}",
     "generate": "Generate hunt",

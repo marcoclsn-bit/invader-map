@@ -580,6 +580,12 @@ export default function ChasseScreen({ route }) {
   // arrondissements (Paris). Les villes sans arrondissement gardent l'adresse.
   const [selectedArs, setSelectedArs] = useState(() => new Set());
   const hasDistricts = !!city.subdivisionsKey;
+  // Recalcul en cours après acceptation du débordement, et refus de la
+  // proposition. Le refus est local au parcours affiché : une nouvelle chasse
+  // repose la question, parce que la réponse portait sur celle-là et non sur le
+  // principe. Ce n'est donc pas une préférence à mémoriser.
+  const [spilling, setSpilling] = useState(false);
+  const [spillDismissed, setSpillDismissed] = useState(false);
 
   // UN SEUL arrondissement à la fois. La multi-sélection produisait des chasses
   // vides ou dégradées, parce que le point de départ est le centroïde des zones
@@ -867,7 +873,13 @@ export default function ChasseScreen({ route }) {
     const access = await canUseFeature(FEATURES.CHASSE);
     if (!access.allowed) { /* TODO v2: afficher paywall */ return; }
     setError(null);
-    setResult(null);
+    setSpillDismissed(false);
+    // En cas de débordement, le parcours actuel RESTE affiché pendant le
+    // recalcul. Le vider ferait disparaître le panneau qui porte le bouton
+    // qu'on vient de toucher : plus de bouton, plus d'indicateur, et
+    // l'impression que rien ne se passe. Le remplacement se fait quand le
+    // nouveau parcours arrive, ou jamais si le calcul échoue.
+    if (spill) setSpilling(true); else setResult(null);
     setSelectedInv(null);
     setFollowing(false);
     setDrifted(false);
@@ -976,6 +988,7 @@ export default function ChasseScreen({ route }) {
       setError(e.message ?? t('hunt.error.generation'));
     } finally {
       setLoading(false);
+      setSpilling(false);
     }
   }
 
@@ -1544,23 +1557,42 @@ export default function ChasseScreen({ route }) {
                   plus un seul Invader à prendre dans l'arrondissement, et une part
                   franche du budget encore sur la table. Accepter relance un calcul
                   d'itinéraire, d'où la mesure : on ne le propose pas à la légère. */}
-              {result.spillOffer && !loading && (
+              {result.spillOffer && !spillDismissed && (
                 <View style={styles.spillBox}>
                   <Text style={styles.spillText}>
                     {t('hunt.spillOffer.text', {
-                      district: t('hunt.districtSelected', { ar: result.spillOffer.ar }),
+                      count: result.spillOffer.count,
                       left: result.spillOffer.leftoverMin,
                     })}
                   </Text>
-                  <TouchableOpacity
-                    style={styles.spillBtn}
-                    onPress={() => generate({ spill: true })}
-                    activeOpacity={0.8}
-                    accessibilityRole="button"
-                  >
-                    <Ionicons name="git-branch-outline" size={15} color={theme.accent} />
-                    <Text style={styles.spillBtnText}>{t('hunt.spillOffer.action')}</Text>
-                  </TouchableOpacity>
+                  {/* Pendant le recalcul, les deux réponses cèdent la place à
+                      l'état d'avancement, au même endroit et à la même hauteur :
+                      le bloc ne bouge pas sous le doigt qui vient de toucher. */}
+                  {spilling ? (
+                    <View style={[styles.spillBtn, styles.spillBtnBusy]}>
+                      <ActivityIndicator size="small" color={theme.accent} />
+                      <Text style={styles.spillBtnText}>{t('hunt.spillOffer.working')}</Text>
+                    </View>
+                  ) : (
+                    <View style={styles.spillActions}>
+                      <TouchableOpacity
+                        style={[styles.spillBtn, styles.spillBtnGhost]}
+                        onPress={() => setSpillDismissed(true)}
+                        activeOpacity={0.8}
+                        accessibilityRole="button"
+                      >
+                        <Text style={styles.spillBtnGhostText}>{t('hunt.spillOffer.decline')}</Text>
+                      </TouchableOpacity>
+                      <TouchableOpacity
+                        style={styles.spillBtn}
+                        onPress={() => generate({ spill: true })}
+                        activeOpacity={0.8}
+                        accessibilityRole="button"
+                      >
+                        <Text style={styles.spillBtnText}>{t('hunt.spillOffer.accept')}</Text>
+                      </TouchableOpacity>
+                    </View>
+                  )}
                 </View>
               )}
               {legendOpen && (
@@ -1756,12 +1788,19 @@ function makeStyles(t) {
       backgroundColor: t.accentDim, borderWidth: StyleSheet.hairlineWidth, borderColor: t.border,
     },
     spillText: { fontSize: 12.5, color: t.textPrimary, lineHeight: 17 },
+    // Les deux réponses ont la même largeur : ni l'une ni l'autre n'est le
+    // choix « par défaut », rester sur son parcours est aussi légitime.
+    spillActions: { flexDirection: 'row', gap: 8 },
     spillBtn: {
-      marginTop: 9, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 7,
-      paddingVertical: 9, borderRadius: 9,
+      flex: 1, marginTop: 9,
+      flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 7,
+      paddingVertical: 9, paddingHorizontal: 8, borderRadius: 9,
       borderWidth: StyleSheet.hairlineWidth, borderColor: t.accent,
     },
-    spillBtnText: { fontSize: 13, fontWeight: '600', color: t.accent },
+    spillBtnGhost: { borderColor: t.border },
+    spillBtnBusy: { borderColor: t.border },
+    spillBtnText: { fontSize: 12.5, fontWeight: '600', color: t.accent, textAlign: 'center' },
+    spillBtnGhostText: { fontSize: 12.5, fontWeight: '600', color: t.textSecondary, textAlign: 'center' },
 
     genBtn: {
       // Même rayon que « Calculer l'itinéraire » et que les segments d'objectif,

@@ -35,7 +35,7 @@ export const SPILL_MIN_LEFTOVER_FRAC = 0.2;
  * @param steps       étapes retenues, Invaders ET lieux mêlés
  * @param durationMin durée réelle du parcours, itinéraire compris
  * @param budgetMin   budget demandé
- * @returns {{ar: number, leftoverMin: number}|null}
+ * @returns {{ar: number, leftoverMin: number, count: number}|null}
  */
 export function spillOffer(arSet, spillArs, candidates, steps, durationMin, budgetMin) {
   // Un seul arrondissement à la fois : la multi-sélection est désactivée en
@@ -53,5 +53,5 @@ export function spillOffer(arSet, spillArs, candidates, steps, durationMin, budg
   const ar = [...arSet][0];
   if (!neighborsOf([ar]).length) return null;  // par sûreté : aucun voisin connu
 
-  return { ar, leftoverMin: Math.round(leftover) };
+  return { ar, leftoverMin: Math.round(leftover), count: pris };
 }

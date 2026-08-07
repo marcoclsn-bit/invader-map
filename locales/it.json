@@ -160,8 +160,11 @@
     "cycling": "Bicicletta",
     "unflashedOnly": "Solo non fotografati",
     "spillOffer": {
-      "text": "Nessun Invader ancora da fotografare nel {{district}}, e {{left}} min di budget ancora liberi.",
-      "action": "Estendere agli arrondissement vicini"
+      "text_one": "Dopo aver fotografato questo Invader, ti resteranno ancora {{left}} minuti. Estendere la caccia agli arrondissement vicini?",
+      "text_other": "Dopo aver fotografato questi {{count}} Invader, ti resteranno ancora {{left}} minuti. Estendere la caccia agli arrondissement vicini?",
+      "accept": "Sì, estendi",
+      "decline": "No, tieni questo percorso",
+      "working": "Ricalcolo in corso…"
     },
     "filteredTo": "Limitato al {{label}}",
     "generate": "Genera caccia",
