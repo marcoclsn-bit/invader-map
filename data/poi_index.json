@@ -1,11 +1,21 @@
 {
- "version": 18,
+ "version": 19,
  "updatedAt": "2026-08-07",
  "cities": {
   "AVI": {
    "version": 1,
    "updatedAt": "2026-08-07",
    "count": 64,
+   "langs": {
+    "en": 1,
+    "es": 1,
+    "it": 1
+   }
+  },
+  "BAB": {
+   "version": 1,
+   "updatedAt": "2026-08-07",
+   "count": 57,
    "langs": {
     "en": 1,
     "es": 1,
