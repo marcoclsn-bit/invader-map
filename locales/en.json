@@ -159,8 +159,10 @@
     "walking": "Walking",
     "cycling": "Cycling",
     "unflashedOnly": "Unflashed only",
-    "spillover": "Spill over into neighbouring districts",
-    "spilloverHint": "If time is left once the district is cleared, the hunt carries on next door.",
+    "spillOffer": {
+      "text": "No Invaders left to flash in {{district}}, and {{left}} min of your budget still free.",
+      "action": "Extend to neighbouring districts"
+    },
     "filteredTo": "Limited to {{label}}",
     "generate": "Generate hunt",
     "generating": "Building your route…",

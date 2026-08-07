@@ -22,6 +22,7 @@ import {
   INVADER_DISTRICT, ARRONDISSEMENT_CENTERS, ensureDistricts, districtOfPoint, districtRing,
   neighborsOf,
 } from '../utils/arrondissement';
+import { spillOffer } from '../utils/huntSpill';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
@@ -579,12 +580,6 @@ export default function ChasseScreen({ route }) {
   // arrondissements (Paris). Les villes sans arrondissement gardent l'adresse.
   const [selectedArs, setSelectedArs] = useState(() => new Set());
   const hasDistricts = !!city.subdivisionsKey;
-  // Débordement sur les arrondissements limitrophes. Par défaut NON : choisir un
-  // arrondissement est une contrainte volontaire, et une option qui s'active
-  // seule trahit la promesse qu'on vient de faire. C'est le cas d'usage inverse
-  // qui la justifie — un arrondissement presque terminé, où 20 minutes suffisent
-  // à ramasser tout ce qui reste et où les 100 autres seraient perdues.
-  const [spillover, setSpillover] = useState(false);
 
   // UN SEUL arrondissement à la fois. La multi-sélection produisait des chasses
   // vides ou dégradées, parce que le point de départ est le centroïde des zones
@@ -772,14 +767,12 @@ export default function ChasseScreen({ route }) {
   const districtRings = useMemo(() => {
     const live = mode === 'quartier' && hasDistricts;
     const core  = result?.ars ?? (live ? [...selectedArs] : []);
-    const spill = result
-      ? (result.spillArs ?? [])
-      : (live && spillover ? neighborsOf(selectedArs) : []);
+    const spill = result?.spillArs ?? [];
     return [
       ...core.map(ar => ({ ar, spill: false, ring: districtRing(ar) })),
       ...spill.map(ar => ({ ar, spill: true, ring: districtRing(ar) })),
     ].filter(r => r.ring);
-  }, [result, mode, hasDistricts, selectedArs, spillover]);
+  }, [result, mode, hasDistricts, selectedArs]);
 
   // ─── Portion déjà parcourue (gris) vs restante (orange) ──────────────────
   const { walkedPolyline, remainingPolyline } = useMemo(() => {
@@ -862,7 +855,13 @@ export default function ChasseScreen({ route }) {
         ? selectedArs.size > 0
         : (qCoords !== null && !qResolving);
 
-  async function generate() {
+  // `spill` : relance demandée par la proposition de débordement (voir spillOffer).
+  // Ce n'est délibérément PAS un réglage du panneau. L'utilisateur ne peut pas
+  // savoir d'avance qu'il ne lui reste que 28 Invaders dans le 7e ; l'information
+  // n'existe qu'une fois la chasse calculée. Un interrupteur en amont aurait donc
+  // été affiché dans tous les cas pour servir dans une minorité, au milieu de six
+  // réglages déjà présents.
+  async function generate({ spill = false } = {}) {
     Keyboard.dismiss();
     // Portail d'autorisation (v2 : abonnement + quotas). Aujourd'hui : toujours allowed.
     const access = await canUseFeature(FEATURES.CHASSE);
@@ -882,7 +881,7 @@ export default function ChasseScreen({ route }) {
         [startLon, startLat] = gpsRef.current;
       } else if (hasDistricts) {
         arSet = selectedArs;
-        spillArs = spillover ? new Set(neighborsOf(selectedArs)) : null;
+        spillArs = spill ? new Set(neighborsOf(selectedArs)) : null;
         // Les Invaders arrivés depuis la dernière version embarquée n'ont pas
         // encore d'arrondissement : sans ça, ils sont écartés sans un mot.
         ensureDistricts(invaders);
@@ -962,6 +961,7 @@ export default function ChasseScreen({ route }) {
         // pas à celui que l'utilisateur est en train de modifier au-dessus.
         ars: arSet ? [...arSet] : null,
         spillArs: spillArs ? [...spillArs] : null,
+        spillOffer: spillOffer(arSet, spillArs, candidates, sel, totalDurationMin, budgetMin),
       });
       setInputCollapsed(true);
       // Complète le tunnel EN AMONT de run_start : l'écart entre les deux mesure
@@ -1424,28 +1424,12 @@ export default function ChasseScreen({ route }) {
                     />
                   </View>
 
-                  {/* Débordement — n'a de sens qu'avec un arrondissement choisi */}
-                  {mode === 'quartier' && hasDistricts && (
-                    <View style={styles.toggleRow}>
-                      <View style={styles.toggleTextWrap}>
-                        <Text style={styles.toggleLabel}>{t('hunt.spillover')}</Text>
-                        <Text style={styles.toggleHint}>{t('hunt.spilloverHint')}</Text>
-                      </View>
-                      <Switch
-                        value={spillover}
-                        onValueChange={setSpillover}
-                        trackColor={{ false: theme.border, true: theme.accent }}
-                        thumbColor={theme.bg}
-                        accessibilityLabel={t('hunt.spillover')}
-                        accessibilityHint={t('hunt.spilloverHint')}
-                      />
-                    </View>
-                  )}
-
-                  {/* Bouton générer */}
+                  {/* Bouton générer. Enveloppé dans une flèche : onPress passe
+                      l'événement de pression en premier argument, qui tiendrait
+                      sinon lieu de sac d'options. */}
                   <TouchableOpacity
                     style={[styles.genBtn, (!startReady || loading) && styles.genBtnDisabled]}
-                    onPress={generate}
+                    onPress={() => generate()}
                     disabled={!startReady || loading}
                   >
                     {loading
@@ -1556,6 +1540,29 @@ export default function ChasseScreen({ route }) {
                   <Text style={styles.legendToggleText}>{t('hunt.legend.title')}</Text>
                 </TouchableOpacity>
               </View>
+              {/* Proposition de débordement. N'apparaît que quand elle est VRAIE :
+                  plus un seul Invader à prendre dans l'arrondissement, et une part
+                  franche du budget encore sur la table. Accepter relance un calcul
+                  d'itinéraire, d'où la mesure : on ne le propose pas à la légère. */}
+              {result.spillOffer && !loading && (
+                <View style={styles.spillBox}>
+                  <Text style={styles.spillText}>
+                    {t('hunt.spillOffer.text', {
+                      district: t('hunt.districtSelected', { ar: result.spillOffer.ar }),
+                      left: result.spillOffer.leftoverMin,
+                    })}
+                  </Text>
+                  <TouchableOpacity
+                    style={styles.spillBtn}
+                    onPress={() => generate({ spill: true })}
+                    activeOpacity={0.8}
+                    accessibilityRole="button"
+                  >
+                    <Ionicons name="git-branch-outline" size={15} color={theme.accent} />
+                    <Text style={styles.spillBtnText}>{t('hunt.spillOffer.action')}</Text>
+                  </TouchableOpacity>
+                </View>
+              )}
               {legendOpen && (
                 <View style={styles.legendBox}>
                   <LegendRow label={t('hunt.legend.step')} styles={styles}>
@@ -1741,9 +1748,20 @@ function makeStyles(t) {
 
     toggleRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: 10 },
     toggleLabel: { fontSize: 13, color: t.textPrimary },
-    // Laisse respirer le libellé face à l'interrupteur, qui ne se comprime pas.
-    toggleTextWrap: { flex: 1, paddingRight: 12 },
-    toggleHint: { fontSize: 11.5, color: t.textSecondary, marginTop: 2, lineHeight: 15 },
+
+    // Proposition de débordement : teintée d'accent pour se distinguer du
+    // récapitulatif, sans crier — c'est une suggestion, pas une alerte.
+    spillBox: {
+      marginTop: 10, padding: 11, borderRadius: 11,
+      backgroundColor: t.accentDim, borderWidth: StyleSheet.hairlineWidth, borderColor: t.border,
+    },
+    spillText: { fontSize: 12.5, color: t.textPrimary, lineHeight: 17 },
+    spillBtn: {
+      marginTop: 9, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 7,
+      paddingVertical: 9, borderRadius: 9,
+      borderWidth: StyleSheet.hairlineWidth, borderColor: t.accent,
+    },
+    spillBtnText: { fontSize: 13, fontWeight: '600', color: t.accent },
 
     genBtn: {
       // Même rayon que « Calculer l'itinéraire » et que les segments d'objectif,

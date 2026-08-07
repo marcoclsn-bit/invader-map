@@ -159,8 +159,10 @@
     "walking": "À pied",
     "cycling": "Vélo",
     "unflashedOnly": "Non flashés uniquement",
-    "spillover": "Déborder sur les arrondissements voisins",
-    "spilloverHint": "Si du temps reste une fois l'arrondissement ratissé, la chasse continue juste à côté.",
+    "spillOffer": {
+      "text": "Plus aucun Invader à flasher dans le {{district}}, et {{left}} min de budget encore libres.",
+      "action": "Étendre aux arrondissements voisins"
+    },
     "filteredTo": "Limité au {{label}}",
     "generate": "Générer la chasse",
     "generating": "Calcul de l'itinéraire…",

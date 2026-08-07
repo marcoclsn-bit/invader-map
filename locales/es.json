@@ -159,8 +159,10 @@
     "walking": "A pie",
     "cycling": "Bicicleta",
     "unflashedOnly": "Solo no fotografiados",
-    "spillover": "Extenderse a los distritos vecinos",
-    "spilloverHint": "Si sobra tiempo tras recorrer el distrito, la caza continúa al lado.",
+    "spillOffer": {
+      "text": "No queda ningún Invader por fotografiar en el {{district}}, y aún tienes {{left}} min libres.",
+      "action": "Extender a los distritos vecinos"
+    },
     "filteredTo": "Limitado al {{label}}",
     "generate": "Generar caza",
     "generating": "Calculando la ruta…",
