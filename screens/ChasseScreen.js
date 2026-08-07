@@ -20,6 +20,7 @@ import { countryCodeOf } from '../cities/countries';
 import { geocode, autocomplete, multiRoute } from '../services/routing';
 import {
   INVADER_DISTRICT, ARRONDISSEMENT_CENTERS, ensureDistricts, districtOfPoint, districtRing,
+  neighborsOf,
 } from '../utils/arrondissement';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
@@ -288,7 +289,7 @@ function insertPois(order, pois, startLat, startLon, budgetMin, speedKmPerMin, a
 // Orchestrateur : glouton → 2-opt → re-remplissage → 2-opt → lieux d'intérêt.
 // `alpha` (0 · 0,4 · 0,8) = curseur Chasse ↔ Balade.
 function planHunt(startLon, startLat, candidates, budgetMin, speedKmh, opts = {}) {
-  const { pois = [], alpha = 0 } = opts;
+  const { pois = [], alpha = 0, spillCandidates = [] } = opts;
   const speedKmPerMin = speedKmh / 60;
   // Rayon d'admission. L'ancienne formule — (budget × vitesse) / 2 — autorisait
   // des points dont le SEUL aller-retour dépassait le budget entier : 2,5 km pour
@@ -313,7 +314,17 @@ function planHunt(startLon, startLat, candidates, budgetMin, speedKmh, opts = {}
   const nbrPoints = neighborPointsMap(pool);
   let selected = greedySelect(startLat, startLon, pool, invaderBudget, speedKmPerMin, nbrPoints, invaderSteps);
   selected = twoOpt(selected, startLat, startLon, speedKmPerMin);
-  const remaining = pool.filter(inv => !selected.includes(inv));
+  // Débordement : les Invaders des arrondissements limitrophes n'entrent QUE
+  // dans le remplissage, jamais dans le glouton. L'arrondissement choisi est
+  // donc toujours ratissé en premier et jusqu'au bout ; les voisins ne servent
+  // qu'à convertir le temps qui resterait sinon inutilisé. Et comme refill
+  // insère par détour croissant, il pioche naturellement le long de la
+  // frontière plutôt qu'au fond de l'arrondissement d'à côté.
+  const spillPool = spillCandidates.filter(inv =>
+    inv.status !== 'destroyed' &&
+    haversineKm(startLat, startLon, inv.lat, inv.lng) <= maxRadiusKm
+  );
+  const remaining = [...pool.filter(inv => !selected.includes(inv)), ...spillPool];
   selected = refill(selected, remaining, startLat, startLon, invaderBudget, speedKmPerMin, invaderSteps);
   selected = twoOpt(selected, startLat, startLon, speedKmPerMin);
 
@@ -568,6 +579,12 @@ export default function ChasseScreen({ route }) {
   // arrondissements (Paris). Les villes sans arrondissement gardent l'adresse.
   const [selectedArs, setSelectedArs] = useState(() => new Set());
   const hasDistricts = !!city.subdivisionsKey;
+  // Débordement sur les arrondissements limitrophes. Par défaut NON : choisir un
+  // arrondissement est une contrainte volontaire, et une option qui s'active
+  // seule trahit la promesse qu'on vient de faire. C'est le cas d'usage inverse
+  // qui la justifie — un arrondissement presque terminé, où 20 minutes suffisent
+  // à ramasser tout ce qui reste et où les 100 autres seraient perdues.
+  const [spillover, setSpillover] = useState(false);
 
   // UN SEUL arrondissement à la fois. La multi-sélection produisait des chasses
   // vides ou dégradées, parce que le point de départ est le centroïde des zones
@@ -718,7 +735,7 @@ export default function ChasseScreen({ route }) {
     // voisins affichés étaient hors du 7e — des pastilles d'Invaders de l'autre
     // rive, tout autour d'un parcours censé ne pas quitter l'arrondissement.
     // Le parcours, lui, était juste : c'est l'affichage qui démentait la promesse.
-    const arSet = result?.ars ? new Set(result.ars) : null;
+    const arSet = result?.ars ? new Set([...result.ars, ...(result.spillArs ?? [])]) : null;
     try {
       const line = turf.lineString(result.routeCoords);
       // Pré-filtre par boîte englobante avant la mesure exacte : sans lui, on
@@ -753,9 +770,16 @@ export default function ChasseScreen({ route }) {
   // on voit la zone qu'on est en train de choisir. Après, ils suivent le
   // parcours affiché, qui peut avoir été calculé sur un autre arrondissement.
   const districtRings = useMemo(() => {
-    const ars = result?.ars ?? (mode === 'quartier' && hasDistricts ? [...selectedArs] : []);
-    return ars.map(ar => ({ ar, ring: districtRing(ar) })).filter(r => r.ring);
-  }, [result, mode, hasDistricts, selectedArs]);
+    const live = mode === 'quartier' && hasDistricts;
+    const core  = result?.ars ?? (live ? [...selectedArs] : []);
+    const spill = result
+      ? (result.spillArs ?? [])
+      : (live && spillover ? neighborsOf(selectedArs) : []);
+    return [
+      ...core.map(ar => ({ ar, spill: false, ring: districtRing(ar) })),
+      ...spill.map(ar => ({ ar, spill: true, ring: districtRing(ar) })),
+    ].filter(r => r.ring);
+  }, [result, mode, hasDistricts, selectedArs, spillover]);
 
   // ─── Portion déjà parcourue (gris) vs restante (orange) ──────────────────
   const { walkedPolyline, remainingPolyline } = useMemo(() => {
@@ -852,11 +876,13 @@ export default function ChasseScreen({ route }) {
     try {
       // Point de départ + restriction selon le mode
       let startLon, startLat;
-      let arSet = null; // null = pas de restriction par arrondissement
+      let arSet = null;    // null = pas de restriction par arrondissement
+      let spillArs = null; // arrondissements limitrophes ouverts au remplissage
       if (mode === 'around') {
         [startLon, startLat] = gpsRef.current;
       } else if (hasDistricts) {
         arSet = selectedArs;
+        spillArs = spillover ? new Set(neighborsOf(selectedArs)) : null;
         // Les Invaders arrivés depuis la dernière version embarquée n'ont pas
         // encore d'arrondissement : sans ça, ils sont écartés sans un mot.
         ensureDistricts(invaders);
@@ -890,7 +916,13 @@ export default function ChasseScreen({ route }) {
           ? getPois(currentCityCode).filter(p =>
               !p.remote &&
               poiPrefs.families.has(familyOf(p)) &&
-              (arSet === null || arSet.has(poiDistrict(p)))
+              (arSet === null || arSet.has(poiDistrict(p)) || !!spillArs?.has(poiDistrict(p)))
+            )
+          : [],
+        spillCandidates: spillArs
+          ? invaders.filter(inv =>
+              (!unflashedOnly || !flashed.has(inv.id)) &&
+              spillArs.has(INVADER_DISTRICT.get(inv.id))
             )
           : [],
         alpha,
@@ -929,6 +961,7 @@ export default function ChasseScreen({ route }) {
         // voisins doivent obéir au réglage qui a produit le résultat affiché,
         // pas à celui que l'utilisateur est en train de modifier au-dessus.
         ars: arSet ? [...arSet] : null,
+        spillArs: spillArs ? [...spillArs] : null,
       });
       setInputCollapsed(true);
       // Complète le tunnel EN AMONT de run_start : l'écart entre les deux mesure
@@ -1089,19 +1122,27 @@ export default function ChasseScreen({ route }) {
             onPress={() => Keyboard.dismiss()}
             onPanDrag={() => { if (following) setDrifted(true); }}
           >
-            {/* Contour de l'arrondissement, sous tout le reste.
-                Sans lui, rien ne distingue « le parcours sort de la zone » de
+            {/* Contours d'arrondissement, sous tout le reste.
+                Sans eux, rien ne distingue « le parcours sort de la zone » de
                 « le parcours longe la frontière » — et 12 des 28 Invaders du 7e
                 sont à moins de 150 m de la limite, quais et Champ-de-Mars
                 obligent. Le tracé d'un itinéraire réel repassera toujours par
                 l'arrondissement voisin ; la seule réponse honnête est de montrer
-                la limite plutôt que de prétendre ne jamais la franchir. */}
+                la limite plutôt que de prétendre ne jamais la franchir.
+
+                Tiretés gris et JAMAIS la couleur d'accent : le tracé de la
+                chasse la porte déjà, et deux lignes de la même couleur sur la
+                même carte se lisent comme une seule chose. Une frontière
+                administrative n'est pas un itinéraire, elle ne doit pas lui
+                ressembler. Le débordement est plus fin et plus effacé que
+                l'arrondissement choisi. */}
             {districtRings.map(r => (
               <Polygon
                 key={`ar-${r.ar}`}
                 coordinates={r.ring}
-                strokeColor={theme.accent}
-                strokeWidth={1.5}
+                strokeColor={r.spill ? theme.border : theme.textSecondary}
+                strokeWidth={r.spill ? 1 : 1.5}
+                lineDashPattern={r.spill ? [3, 7] : [6, 5]}
                 fillColor="transparent"
                 zIndex={0}
               />
@@ -1382,6 +1423,24 @@ export default function ChasseScreen({ route }) {
                       thumbColor={theme.bg}
                     />
                   </View>
+
+                  {/* Débordement — n'a de sens qu'avec un arrondissement choisi */}
+                  {mode === 'quartier' && hasDistricts && (
+                    <View style={styles.toggleRow}>
+                      <View style={styles.toggleTextWrap}>
+                        <Text style={styles.toggleLabel}>{t('hunt.spillover')}</Text>
+                        <Text style={styles.toggleHint}>{t('hunt.spilloverHint')}</Text>
+                      </View>
+                      <Switch
+                        value={spillover}
+                        onValueChange={setSpillover}
+                        trackColor={{ false: theme.border, true: theme.accent }}
+                        thumbColor={theme.bg}
+                        accessibilityLabel={t('hunt.spillover')}
+                        accessibilityHint={t('hunt.spilloverHint')}
+                      />
+                    </View>
+                  )}
 
                   {/* Bouton générer */}
                   <TouchableOpacity
@@ -1682,6 +1741,9 @@ function makeStyles(t) {
 
     toggleRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: 10 },
     toggleLabel: { fontSize: 13, color: t.textPrimary },
+    // Laisse respirer le libellé face à l'interrupteur, qui ne se comprime pas.
+    toggleTextWrap: { flex: 1, paddingRight: 12 },
+    toggleHint: { fontSize: 11.5, color: t.textSecondary, marginTop: 2, lineHeight: 15 },
 
     genBtn: {
       // Même rayon que « Calculer l'itinéraire » et que les segments d'objectif,

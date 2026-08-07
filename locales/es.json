@@ -159,6 +159,8 @@
     "walking": "A pie",
     "cycling": "Bicicleta",
     "unflashedOnly": "Solo no fotografiados",
+    "spillover": "Extenderse a los distritos vecinos",
+    "spilloverHint": "Si sobra tiempo tras recorrer el distrito, la caza continúa al lado.",
     "filteredTo": "Limitado al {{label}}",
     "generate": "Generar caza",
     "generating": "Calculando la ruta…",

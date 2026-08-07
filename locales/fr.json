@@ -159,6 +159,8 @@
     "walking": "À pied",
     "cycling": "Vélo",
     "unflashedOnly": "Non flashés uniquement",
+    "spillover": "Déborder sur les arrondissements voisins",
+    "spilloverHint": "Si du temps reste une fois l'arrondissement ratissé, la chasse continue juste à côté.",
     "filteredTo": "Limité au {{label}}",
     "generate": "Générer la chasse",
     "generating": "Calcul de l'itinéraire…",

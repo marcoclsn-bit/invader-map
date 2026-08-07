@@ -1,5 +1,6 @@
 import {
-  INVADER_DISTRICT, ARRONDISSEMENT_CENTERS, ensureDistricts, districtOfPoint, districtRing, arLabel,
+  INVADER_DISTRICT, ARRONDISSEMENT_CENTERS, ARRONDISSEMENT_NEIGHBORS,
+  ensureDistricts, districtOfPoint, districtRing, neighborsOf, arLabel,
 } from '../utils/arrondissement';
 
 // Repères vérifiables à la main, loin des frontières.
@@ -62,6 +63,43 @@ describe('districtRing', () => {
 
   it('renvoie null pour un numéro inexistant', () => {
     expect(districtRing(21)).toBeNull();
+  });
+});
+
+describe('mitoyenneté', () => {
+  it('couvre les vingt arrondissements', () => {
+    expect(ARRONDISSEMENT_NEIGHBORS.size).toBe(20);
+    for (let ar = 1; ar <= 20; ar++) {
+      expect(ARRONDISSEMENT_NEIGHBORS.get(ar).length).toBeGreaterThan(2);
+    }
+  });
+
+  // Une table asymétrique laisserait la chasse déborder dans un sens et pas
+  // dans l'autre, sans que rien ne le signale.
+  it('est symétrique', () => {
+    for (const [ar, vs] of ARRONDISSEMENT_NEIGHBORS) {
+      for (const v of vs) expect(ARRONDISSEMENT_NEIGHBORS.get(v)).toContain(ar);
+    }
+  });
+
+  it('n\'inclut jamais un arrondissement dans ses propres voisins', () => {
+    for (const [ar, vs] of ARRONDISSEMENT_NEIGHBORS) expect(vs).not.toContain(ar);
+  });
+
+  it('donne les voisins du 7e, sans le 7e', () => {
+    expect(neighborsOf([7])).toEqual([1, 6, 8, 15, 16]);
+  });
+
+  it('fusionne sans doublon et retire les arrondissements de départ', () => {
+    const v = neighborsOf([1, 2]);
+    expect(v).toEqual([...new Set(v)].sort((a, b) => a - b));
+    expect(v).not.toContain(1);
+    expect(v).not.toContain(2);
+    expect(v).toContain(10); // voisin du 2e seulement
+  });
+
+  it('tolère une sélection vide', () => {
+    expect(neighborsOf([])).toEqual([]);
   });
 });
 

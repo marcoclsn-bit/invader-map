@@ -159,6 +159,8 @@
     "walking": "Walking",
     "cycling": "Cycling",
     "unflashedOnly": "Unflashed only",
+    "spillover": "Spill over into neighbouring districts",
+    "spilloverHint": "If time is left once the district is cleared, the hunt carries on next door.",
     "filteredTo": "Limited to {{label}}",
     "generate": "Generate hunt",
     "generating": "Building your route…",

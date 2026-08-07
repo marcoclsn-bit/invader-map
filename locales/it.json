@@ -159,6 +159,8 @@
     "walking": "A piedi",
     "cycling": "Bicicletta",
     "unflashedOnly": "Solo non fotografati",
+    "spillover": "Sconfinare negli arrondissement vicini",
+    "spilloverHint": "Se avanza tempo dopo aver setacciato l'arrondissement, la caccia prosegue accanto.",
     "filteredTo": "Limitato al {{label}}",
     "generate": "Genera caccia",
     "generating": "Calcolo del percorso…",
