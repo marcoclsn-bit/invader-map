@@ -7,7 +7,7 @@ import { DrawerActions } from '@react-navigation/native';
 import { useAppContext } from '../context/AppContext';
 import { CITIES, ENABLED_CITIES } from '../cities/registry';
 import { countryCodeOf, countryName } from '../cities/countries';
-import { INVADER_DISTRICT, arLabel, ARRONDISSEMENT_CENTERS } from '../utils/arrondissement';
+import { INVADER_DISTRICT, arLabel, ARRONDISSEMENT_CENTERS, ensureDistricts } from '../utils/arrondissement';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 
@@ -218,6 +218,10 @@ export default function PalmaresScreen({ navigation }) {
     const g = mkZone();
     const byAr = new Map();
     for (let ar = 1; ar <= 20; ar++) byAr.set(ar, { ar, ...mkZone() });
+    // Les Invaders plus récents que le fichier embarqué n'avaient pas
+    // d'arrondissement : ils ne comptaient que dans le total général, jamais
+    // dans leur zone, et le pourcentage par arrondissement était donc faux.
+    if (currentCityCode === 'PA') ensureDistricts(invaders);
 
     for (const inv of invaders) {
       const isFlashed = flashed.has(inv.id);
@@ -255,7 +259,7 @@ export default function PalmaresScreen({ navigation }) {
       totalPts: global.denomPts,
       arrondissements: Array.from(byAr.values()).map(finish).sort((a, b) => a.ar - b.ar),
     };
-  }, [invaders, flashed]);
+  }, [invaders, flashed, currentCityCode]);
 
   function openDrawer() { navigation.dispatch(DrawerActions.openDrawer()); }
 

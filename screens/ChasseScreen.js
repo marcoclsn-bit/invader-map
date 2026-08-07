@@ -18,7 +18,9 @@ import { useAppContext } from '../context/AppContext';
 import { CITIES } from '../cities/registry';
 import { countryCodeOf } from '../cities/countries';
 import { geocode, autocomplete, multiRoute } from '../services/routing';
-import { INVADER_DISTRICT, ARRONDISSEMENT_CENTERS } from '../utils/arrondissement';
+import {
+  INVADER_DISTRICT, ARRONDISSEMENT_CENTERS, ensureDistricts, districtOfPoint, districtRing,
+} from '../utils/arrondissement';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
@@ -51,6 +53,14 @@ const visitMinOf = (step) => (step.isPoi ? VISIT_MIN_POI : VISIT_MIN);
 const visitTotalMin = (list) => list.reduce((s, x) => s + visitMinOf(x), 0);
 // Limite de l'API d'itinéraires (~50 points) : départ + étapes + retour.
 const MAX_STEPS = 46;
+// Arrondissement d'un lieu d'intérêt, mémoïsé par id. Le point-dans-polygone
+// coûte jusqu'à 20 tests par lieu ; sans cache il serait refait sur les ~690
+// lieux parisiens à chaque planification.
+const _poiDistrict = new Map();
+const poiDistrict = (p) => {
+  if (!_poiDistrict.has(p.id)) _poiDistrict.set(p.id, districtOfPoint(p.lng, p.lat));
+  return _poiDistrict.get(p.id);
+};
 const SPEEDS = { 'foot-walking': 5, 'cycling-regular': 15 }; // km/h
 // Pondération densité : bonus aux Invaders entourés d'autres Invaders (favorise les
 // grappes → on en attrape bien plus). Réglages validés sur données réelles Paris.
@@ -704,10 +714,15 @@ export default function ChasseScreen({ route }) {
     // excluent volontairement `flashed`, sinon un voisin flashé EN COURS de
     // chasse sortirait de la liste au lieu de s'éteindre avec son ✓.
     const dejaFlashes = unflashedOnly ? new Set(flashed) : null;
+    // Le périmètre s'applique aussi aux voisins. Sur une boucle du 7e, 10 des 11
+    // voisins affichés étaient hors du 7e — des pastilles d'Invaders de l'autre
+    // rive, tout autour d'un parcours censé ne pas quitter l'arrondissement.
+    // Le parcours, lui, était juste : c'est l'affichage qui démentait la promesse.
+    const arSet = result?.ars ? new Set(result.ars) : null;
     try {
       const line = turf.lineString(result.routeCoords);
       // Pré-filtre par boîte englobante avant la mesure exacte : sans lui, on
-      // projetterait les 1 528 Invaders de Paris sur une ligne de 400 points.
+      // projetterait les ~1 600 Invaders de Paris sur une ligne de 400 points.
       const [mnLng, mnLat, mxLng, mxLat] = turf.bbox(line);
       const padLat = VOISINS_KM / 111;
       const padLng = VOISINS_KM / (111 * Math.cos((((mnLat + mxLat) / 2) * Math.PI) / 180));
@@ -715,6 +730,7 @@ export default function ChasseScreen({ route }) {
         !dansLaChasse.has(inv.id) &&
         !dejaFlashes?.has(inv.id) &&
         inv.status !== 'destroyed' &&
+        (arSet === null || arSet.has(INVADER_DISTRICT.get(inv.id))) &&
         inv.lng >= mnLng - padLng && inv.lng <= mxLng + padLng &&
         inv.lat >= mnLat - padLat && inv.lat <= mxLat + padLat
       );
@@ -732,6 +748,14 @@ export default function ChasseScreen({ route }) {
     // ils servent de photographie à l'instant du calcul (voir dejaFlashes).
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [result, invaders]);
+
+  // Contours à dessiner. Avant génération, ils suivent la sélection en cours —
+  // on voit la zone qu'on est en train de choisir. Après, ils suivent le
+  // parcours affiché, qui peut avoir été calculé sur un autre arrondissement.
+  const districtRings = useMemo(() => {
+    const ars = result?.ars ?? (mode === 'quartier' && hasDistricts ? [...selectedArs] : []);
+    return ars.map(ar => ({ ar, ring: districtRing(ar) })).filter(r => r.ring);
+  }, [result, mode, hasDistricts, selectedArs]);
 
   // ─── Portion déjà parcourue (gris) vs restante (orange) ──────────────────
   const { walkedPolyline, remainingPolyline } = useMemo(() => {
@@ -833,6 +857,9 @@ export default function ChasseScreen({ route }) {
         [startLon, startLat] = gpsRef.current;
       } else if (hasDistricts) {
         arSet = selectedArs;
+        // Les Invaders arrivés depuis la dernière version embarquée n'ont pas
+        // encore d'arrondissement : sans ça, ils sont écartés sans un mot.
+        ensureDistricts(invaders);
         // Départ = centroïde moyen des arrondissements choisis
         const centers = [...selectedArs].map(ar => ARRONDISSEMENT_CENTERS.get(ar)).filter(Boolean);
         startLon = centers.reduce((s, c) => s + c.lon, 0) / centers.length;
@@ -853,7 +880,19 @@ export default function ChasseScreen({ route }) {
         // un parcours à pied (île, calanque lointaine). Sans ce filtre, un budget
         // généreux pouvait insérer le château d'If dans une chasse, et le calcul
         // d'itinéraire ORS échouait sur la traversée maritime.
-        pois: alpha > 0 ? getPois(currentCityCode).filter(p => !p.remote && poiPrefs.families.has(familyOf(p))) : [],
+        // Le périmètre vaut pour les lieux comme pour les Invaders. Sans ce filtre,
+        // une chasse dans le 7e piochait dans les 689 lieux de Paris — le rayon
+        // d'admission de planHunt vaut 6,25 km à 2 h de vélo, soit la ville
+        // entière — et insérait le Louvre ou les Beaux-Arts. Les seuls arrêts
+        // réellement hors zone venaient de là : le budget non consommé par les
+        // Invaders se convertissait en visites de l'autre côté de la Seine.
+        pois: alpha > 0
+          ? getPois(currentCityCode).filter(p =>
+              !p.remote &&
+              poiPrefs.families.has(familyOf(p)) &&
+              (arSet === null || arSet.has(poiDistrict(p)))
+            )
+          : [],
         alpha,
       });
 
@@ -886,6 +925,10 @@ export default function ChasseScreen({ route }) {
         poiCount: sel.filter(x => x.isPoi).length,
         startLat,
         startLon,
+        // Périmètre retenu pour CE parcours, figé avec lui : la carte et les
+        // voisins doivent obéir au réglage qui a produit le résultat affiché,
+        // pas à celui que l'utilisateur est en train de modifier au-dessus.
+        ars: arSet ? [...arSet] : null,
       });
       setInputCollapsed(true);
       // Complète le tunnel EN AMONT de run_start : l'écart entre les deux mesure
@@ -1046,6 +1089,23 @@ export default function ChasseScreen({ route }) {
             onPress={() => Keyboard.dismiss()}
             onPanDrag={() => { if (following) setDrifted(true); }}
           >
+            {/* Contour de l'arrondissement, sous tout le reste.
+                Sans lui, rien ne distingue « le parcours sort de la zone » de
+                « le parcours longe la frontière » — et 12 des 28 Invaders du 7e
+                sont à moins de 150 m de la limite, quais et Champ-de-Mars
+                obligent. Le tracé d'un itinéraire réel repassera toujours par
+                l'arrondissement voisin ; la seule réponse honnête est de montrer
+                la limite plutôt que de prétendre ne jamais la franchir. */}
+            {districtRings.map(r => (
+              <Polygon
+                key={`ar-${r.ar}`}
+                coordinates={r.ring}
+                strokeColor={theme.accent}
+                strokeWidth={1.5}
+                fillColor="transparent"
+                zIndex={0}
+              />
+            ))}
             {result && (
               <>
                 {/* Tracé — gris derrière, orange devant */}
