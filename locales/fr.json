@@ -159,6 +159,7 @@
     "walking": "À pied",
     "cycling": "Vélo",
     "unflashedOnly": "Non flashés uniquement",
+    "avoidBacktrack": "Éviter les demi-tours",
     "spillOffer": {
       "text_one": "Après avoir flashé cet Invader, il te restera encore {{left}} minutes. Étendre la chasse aux arrondissements voisins ?",
       "text_other": "Après avoir flashé ces {{count}} Invaders, il te restera encore {{left}} minutes. Étendre la chasse aux arrondissements voisins ?",

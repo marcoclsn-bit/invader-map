@@ -159,6 +159,7 @@
     "walking": "A piedi",
     "cycling": "Bicicletta",
     "unflashedOnly": "Solo non fotografati",
+    "avoidBacktrack": "Evitare i dietrofront",
     "spillOffer": {
       "text_one": "Dopo aver fotografato questo Invader, ti resteranno ancora {{left}} minuti. Estendere la caccia agli arrondissement vicini?",
       "text_other": "Dopo aver fotografato questi {{count}} Invader, ti resteranno ancora {{left}} minuti. Estendere la caccia agli arrondissement vicini?",

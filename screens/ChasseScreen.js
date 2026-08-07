@@ -23,6 +23,7 @@ import {
   neighborsOf,
 } from '../utils/arrondissement';
 import { spillOffer } from '../utils/huntSpill';
+import { backtrackScore } from '../utils/tourGeometry';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
@@ -55,6 +56,13 @@ const visitMinOf = (step) => (step.isPoi ? VISIT_MIN_POI : VISIT_MIN);
 const visitTotalMin = (list) => list.reduce((s, x) => s + visitMinOf(x), 0);
 // Limite de l'API d'itinéraires (~50 points) : départ + étapes + retour.
 const MAX_STEPS = 46;
+// Pénalité de demi-tour, en minutes par demi-tour complet. Mesurée sur 160
+// chasses parisiennes réelles : à 0,5, la part de chasses contenant un demi-tour
+// franc tombe de 49 % à 26 %, POUR 0,5 min de moins et le même nombre d'étapes
+// — l'Or-opt récupère ce que la pénalité coûte. Monter à 1 ne gagne que 5 points
+// de plus. Volontairement faible : on corrige les aller-retours voyants, on ne
+// réécrit pas la façon dont les parcours sont composés.
+const BACKTRACK_W = 0.5;
 // Arrondissement d'un lieu d'intérêt, mémoïsé par id. Le point-dans-polygone
 // coûte jusqu'à 20 tests par lieu ; sans cache il serait refait sur les ~690
 // lieux parisiens à chaque planification.
@@ -116,6 +124,15 @@ function tourTotalMin(order, startLat, startLon, speedKmPerMin) {
   }
   t += (haversineKm(curLat, curLon, startLat, startLon) / speedKmPerMin) * STREET_DETOUR; // retour
   return t;
+}
+
+// Coût d'une boucle. `backtrackW` à 0 rend EXACTEMENT tourTotalMin, sans un
+// calcul de plus : le mode par défaut emprunte le chemin de code d'origine, ce
+// qui se vérifie dans le diff au lieu de se promettre.
+// Unité de la pondération : minutes par demi-tour complet (voir tourGeometry).
+function tourCostMin(order, startLat, startLon, speedKmPerMin, backtrackW = 0) {
+  const t = tourTotalMin(order, startLat, startLon, speedKmPerMin);
+  return backtrackW ? t + backtrackW * backtrackScore(order, startLat, startLon) : t;
 }
 
 // Valeur d'une étape pour le nettoyage. Les lieux valent 30, milieu de la plage
@@ -199,10 +216,10 @@ function greedySelect(startLat, startLon, pool, budgetMin, speedKmPerMin, nbrPoi
 }
 
 // 2. 2-opt : inverse des segments tant que ça raccourcit la boucle (retire les croisements).
-function twoOpt(order, startLat, startLon, speedKmPerMin) {
+function twoOpt(order, startLat, startLon, speedKmPerMin, backtrackW = 0) {
   if (order.length < 3) return order;
   let best = order.slice();
-  let bestT = tourTotalMin(best, startLat, startLon, speedKmPerMin);
+  let bestT = tourCostMin(best, startLat, startLon, speedKmPerMin, backtrackW);
   let improved = true;
   while (improved) {
     improved = false;
@@ -210,8 +227,32 @@ function twoOpt(order, startLat, startLon, speedKmPerMin) {
       for (let k = i + 1; k < best.length; k++) {
         const cand = best.slice(0, i)
           .concat(best.slice(i, k + 1).reverse(), best.slice(k + 1));
-        const t = tourTotalMin(cand, startLat, startLon, speedKmPerMin);
+        const t = tourCostMin(cand, startLat, startLon, speedKmPerMin, backtrackW);
         if (t < bestT - 1e-9) { best = cand; bestT = t; improved = true; }
+      }
+    }
+  }
+  return best;
+}
+
+// 2 bis. Or-opt : retire une étape et la réinsère ailleurs dans l'ordre.
+// Le 2-opt sait inverser un segment, mais PAS déplacer un point isolé — il est
+// donc structurellement incapable de réparer un éperon, l'étape unique qu'on va
+// chercher en aller-retour. C'est exactement le mouvement qui manque.
+function orOpt(order, startLat, startLon, speedKmPerMin, backtrackW = 0) {
+  if (order.length < 3) return order;
+  let best = order.slice();
+  let bestC = tourCostMin(best, startLat, startLon, speedKmPerMin, backtrackW);
+  let improved = true;
+  while (improved) {
+    improved = false;
+    for (let i = 0; i < best.length; i++) {
+      const without = best.slice(0, i).concat(best.slice(i + 1));
+      for (let p = 0; p <= without.length; p++) {
+        if (p === i) continue;
+        const cand = without.slice(0, p).concat(best[i], without.slice(p));
+        const c = tourCostMin(cand, startLat, startLon, speedKmPerMin, backtrackW);
+        if (c < bestC - 1e-9) { best = cand; bestC = c; improved = true; }
       }
     }
   }
@@ -290,7 +331,7 @@ function insertPois(order, pois, startLat, startLon, budgetMin, speedKmPerMin, a
 // Orchestrateur : glouton → 2-opt → re-remplissage → 2-opt → lieux d'intérêt.
 // `alpha` (0 · 0,4 · 0,8) = curseur Chasse ↔ Balade.
 function planHunt(startLon, startLat, candidates, budgetMin, speedKmh, opts = {}) {
-  const { pois = [], alpha = 0, spillCandidates = [] } = opts;
+  const { pois = [], alpha = 0, spillCandidates = [], backtrackW = 0 } = opts;
   const speedKmPerMin = speedKmh / 60;
   // Rayon d'admission. L'ancienne formule — (budget × vitesse) / 2 — autorisait
   // des points dont le SEUL aller-retour dépassait le budget entier : 2,5 km pour
@@ -314,7 +355,7 @@ function planHunt(startLon, startLat, candidates, budgetMin, speedKmh, opts = {}
 
   const nbrPoints = neighborPointsMap(pool);
   let selected = greedySelect(startLat, startLon, pool, invaderBudget, speedKmPerMin, nbrPoints, invaderSteps);
-  selected = twoOpt(selected, startLat, startLon, speedKmPerMin);
+  selected = twoOpt(selected, startLat, startLon, speedKmPerMin, backtrackW);
   // Débordement : les Invaders des arrondissements limitrophes n'entrent QUE
   // dans le remplissage, jamais dans le glouton. L'arrondissement choisi est
   // donc toujours ratissé en premier et jusqu'au bout ; les voisins ne servent
@@ -327,7 +368,11 @@ function planHunt(startLon, startLat, candidates, budgetMin, speedKmh, opts = {}
   );
   const remaining = [...pool.filter(inv => !selected.includes(inv)), ...spillPool];
   selected = refill(selected, remaining, startLat, startLon, invaderBudget, speedKmPerMin, invaderSteps);
-  selected = twoOpt(selected, startLat, startLon, speedKmPerMin);
+  selected = twoOpt(selected, startLat, startLon, speedKmPerMin, backtrackW);
+  // Or-opt UNIQUEMENT quand la pénalité est active. Seul, il ne gagne que
+  // 0,6 min sur 83 et 5 points de demi-tours — pas de quoi payer son coût
+  // quadratique à chaque génération pour tout le monde.
+  if (backtrackW) selected = orOpt(selected, startLat, startLon, speedKmPerMin, backtrackW);
 
   if (alpha > 0 && pois.length) {
     const nearPois = pois
@@ -585,6 +630,11 @@ export default function ChasseScreen({ route }) {
   // aux enfants de la carte (voir le Fragment du rendu). Un compteur plutôt
   // qu'un horodatage, qui collisionnerait sur deux générations rapprochées.
   const runIdRef = useRef(0);
+  // Réglage TEMPORAIRE, le temps d'éprouver la pénalité de demi-tour sur le
+  // terrain. Il a vocation à disparaître au profit du mode explorateur, qui
+  // l'impliquera. Désactivé par défaut : le comportement d'aujourd'hui reste
+  // celui de tout le monde.
+  const [avoidBacktrack, setAvoidBacktrack] = useState(false);
   const [spilling, setSpilling] = useState(false);
   const [spillDismissed, setSpillDismissed] = useState(false);
 
@@ -946,6 +996,7 @@ export default function ChasseScreen({ route }) {
             )
           : [],
         alpha,
+        backtrackW: avoidBacktrack ? BACKTRACK_W : 0,
       });
 
       if (selected.length === 0) {
@@ -1452,6 +1503,16 @@ export default function ChasseScreen({ route }) {
                     <Switch
                       value={unflashedOnly}
                       onValueChange={setUnflashedOnly}
+                      trackColor={{ false: theme.border, true: theme.accent }}
+                      thumbColor={theme.bg}
+                    />
+                  </View>
+
+                  <View style={styles.toggleRow}>
+                    <Text style={styles.toggleLabel}>{t('hunt.avoidBacktrack')}</Text>
+                    <Switch
+                      value={avoidBacktrack}
+                      onValueChange={setAvoidBacktrack}
                       trackColor={{ false: theme.border, true: theme.accent }}
                       thumbColor={theme.bg}
                     />

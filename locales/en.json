@@ -159,6 +159,7 @@
     "walking": "Walking",
     "cycling": "Cycling",
     "unflashedOnly": "Unflashed only",
+    "avoidBacktrack": "Avoid backtracking",
     "spillOffer": {
       "text_one": "Once you have flashed this Invader, you will still have {{left}} minutes left. Extend the hunt to neighbouring districts?",
       "text_other": "Once you have flashed these {{count}} Invaders, you will still have {{left}} minutes left. Extend the hunt to neighbouring districts?",
