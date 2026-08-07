@@ -159,7 +159,6 @@
     "walking": "A pie",
     "cycling": "Bicicleta",
     "unflashedOnly": "Solo no fotografiados",
-    "avoidBacktrack": "Evitar dar marcha atrás",
     "spillOffer": {
       "text_one": "Después de fotografiar este Invader, aún te quedarán {{left}} minutos. ¿Extender la caza a los distritos vecinos?",
       "text_other": "Después de fotografiar estos {{count}} Invaders, aún te quedarán {{left}} minutos. ¿Extender la caza a los distritos vecinos?",

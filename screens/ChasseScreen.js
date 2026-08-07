@@ -62,6 +62,14 @@ const MAX_STEPS = 46;
 // — l'Or-opt récupère ce que la pénalité coûte. Monter à 1 ne gagne que 5 points
 // de plus. Volontairement faible : on corrige les aller-retours voyants, on ne
 // réécrit pas la façon dont les parcours sont composés.
+//
+// Appliquée à TOUTES les chasses. Elle a d'abord été livrée en option, le temps
+// de l'éprouver sur le terrain : refaire ses pas est ennuyeux à marcher quel que
+// soit le mode de jeu, ce n'était donc pas une affaire de puristes.
+//
+// `planHunt` garde malgré tout le paramètre : le mode explorateur voudra
+// probablement une pondération plus forte, puisque chez lui un aller-retour ne
+// gâche pas seulement la promenade, il désigne l'Invader.
 const BACKTRACK_W = 0.5;
 // Arrondissement d'un lieu d'intérêt, mémoïsé par id. Le point-dans-polygone
 // coûte jusqu'à 20 tests par lieu ; sans cache il serait refait sur les ~690
@@ -630,11 +638,6 @@ export default function ChasseScreen({ route }) {
   // aux enfants de la carte (voir le Fragment du rendu). Un compteur plutôt
   // qu'un horodatage, qui collisionnerait sur deux générations rapprochées.
   const runIdRef = useRef(0);
-  // Réglage TEMPORAIRE, le temps d'éprouver la pénalité de demi-tour sur le
-  // terrain. Il a vocation à disparaître au profit du mode explorateur, qui
-  // l'impliquera. Désactivé par défaut : le comportement d'aujourd'hui reste
-  // celui de tout le monde.
-  const [avoidBacktrack, setAvoidBacktrack] = useState(false);
   const [spilling, setSpilling] = useState(false);
   const [spillDismissed, setSpillDismissed] = useState(false);
 
@@ -996,7 +999,7 @@ export default function ChasseScreen({ route }) {
             )
           : [],
         alpha,
-        backtrackW: avoidBacktrack ? BACKTRACK_W : 0,
+        backtrackW: BACKTRACK_W,
       });
 
       if (selected.length === 0) {
@@ -1503,16 +1506,6 @@ export default function ChasseScreen({ route }) {
                     <Switch
                       value={unflashedOnly}
                       onValueChange={setUnflashedOnly}
-                      trackColor={{ false: theme.border, true: theme.accent }}
-                      thumbColor={theme.bg}
-                    />
-                  </View>
-
-                  <View style={styles.toggleRow}>
-                    <Text style={styles.toggleLabel}>{t('hunt.avoidBacktrack')}</Text>
-                    <Switch
-                      value={avoidBacktrack}
-                      onValueChange={setAvoidBacktrack}
                       trackColor={{ false: theme.border, true: theme.accent }}
                       thumbColor={theme.bg}
                     />
