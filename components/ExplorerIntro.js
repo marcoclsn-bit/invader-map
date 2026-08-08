@@ -22,9 +22,11 @@ export default function ExplorerIntro() {
   const { theme } = useTheme();
   const { t } = useTranslation();
   const st = getStyles(theme);
-  const { loaded, showOnboarding, explorerIntroSeen, dismissExplorerIntro, setExplorer } = useAppContext();
+  const { loaded, showOnboarding, explorerIntroSeen, dismissExplorerIntro, setExplorer, explorer } = useAppContext();
 
-  if (!loaded || showOnboarding || explorerIntroSeen) return null;
+  // `explorer` déjà actif : proposer d'essayer ce qu'on utilise n'a aucun sens.
+  // Le cas arrive à qui a trouvé le réglage avant que la présentation ne sorte.
+  if (!loaded || showOnboarding || explorerIntroSeen || explorer) return null;
 
   const repondre = (on) => {
     track('explorer_intro', { choice: on ? 'on' : 'off' });
@@ -45,11 +47,11 @@ export default function ExplorerIntro() {
           <Text style={st.note}>{t('explorer.intro.note')}</Text>
 
           <View style={st.actions}>
-            <TouchableOpacity style={[st.bouton, st.boutonGhost]} onPress={() => repondre(false)} activeOpacity={0.85}>
-              <Text style={st.boutonGhostTexte}>{t('explorer.intro.keep')}</Text>
-            </TouchableOpacity>
             <TouchableOpacity style={[st.bouton, st.boutonPlein]} onPress={() => repondre(true)} activeOpacity={0.85}>
               <Text style={st.boutonPleinTexte}>{t('explorer.intro.tryIt')}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={[st.bouton, st.boutonGhost]} onPress={() => repondre(false)} activeOpacity={0.85}>
+              <Text style={st.boutonGhostTexte}>{t('explorer.intro.keep')}</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -75,8 +77,13 @@ function getStyles(t) {
     titre: { ...typography.arcadeHeading, fontSize: 15, color: t.textPrimary, marginBottom: 10 },
     corps: { fontSize: 13.5, color: t.textPrimary, lineHeight: 20 },
     note: { fontSize: 12, color: t.textSecondary, lineHeight: 17, marginTop: 10 },
-    actions: { flexDirection: 'row', gap: 10, marginTop: 20 },
-    bouton: { flex: 1, paddingVertical: 12, borderRadius: 11, alignItems: 'center' },
+    // Empilés, et non côte à côte : « Continuer comme avant » passait sur deux
+    // lignes là où « Essayer » en tenait une, et le bouton plein s'étirait à la
+    // même hauteur — son libellé flottait au milieu d'une boîte trop grande.
+    // Une colonne rend la mise en page indifférente à la longueur des libellés,
+    // y compris dans les trois autres langues.
+    actions: { gap: 10, marginTop: 20 },
+    bouton: { paddingVertical: 13, borderRadius: 11, alignItems: 'center' },
     boutonGhost: { borderWidth: StyleSheet.hairlineWidth, borderColor: t.border },
     boutonGhostTexte: { fontSize: 13, fontWeight: '600', color: t.textSecondary, textAlign: 'center' },
     boutonPlein: { backgroundColor: t.accent },
