@@ -178,6 +178,63 @@ export async function persistCandidates(candidates) {
   await writeJSON(KEY_CANDIDATES, Array.isArray(candidates) ? candidates : []);
 }
 
+/**
+ * Envoie l'alerte de proximité pour un Invader.
+ *
+ * Extrait de handleEnter pour que la SIMULATION emprunte exactement le même
+ * chemin : un test qui reconstruirait la notification de son côté validerait sa
+ * propre copie, pas ce que reçoit l'utilisateur. C'est le comportement au tap
+ * qui compte ici, et il dépend entièrement du contenu de `data`.
+ */
+async function notifyProximity(invId) {
+  const tpl = await readJSON(KEY_NOTIF, { title: 'Invader à proximité 👾', bodies: ['{id} est tout près !'] });
+  // Mode explorateur : l'alerte devient l'atout du mode plutôt que sa faille.
+  // Elle dit qu'il y a quelque chose dans les parages — elle ne nomme pas
+  // l'Invader, et le tap ne recentre plus la carte sur lui. On garde le
+  // frisson, on retire l'indication. Sans `invId` dans les données, le tap
+  // n'ouvre aucune fiche (voir components/StrollEngine).
+  //
+  // Lu ICI et à chaque alerte : la tâche de fond tourne dans un processus
+  // réveillé par le système, qui n'a jamais vu le contexte React.
+  let explorer = false;
+  try { explorer = (await AsyncStorage.getItem(KEY_EXPLORER)) === '1'; } catch {}
+
+  const list = explorer
+    ? (Array.isArray(tpl.blindBodies) && tpl.blindBodies.length ? tpl.blindBodies : ['Un Invader est tout près.'])
+    // Choix aléatoire d'une variante (compat : ancien champ `body` unique).
+    : (Array.isArray(tpl.bodies) && tpl.bodies.length ? tpl.bodies : [tpl.body || '{id}']);
+  const chosen = list[Math.floor(Math.random() * list.length)];
+  try {
+    await Notifications.scheduleNotificationAsync({
+      content: {
+        title: explorer && tpl.blindTitle ? tpl.blindTitle : tpl.title,
+        body: explorer ? chosen : chosen.replace('{id}', invId),
+        sound: true,
+        data: explorer ? { type: 'stroll' } : { type: 'stroll', invId },
+      },
+      trigger: null, // immédiat
+    });
+  } catch (e) { __DEV__ && console.log('[Stroll] notif erreur :', e?.message); }
+}
+
+/**
+ * Simule une alerte, pour vérifier sur un vrai téléphone ce que donne le tap.
+ *
+ * Prend un Invader parmi les candidats déjà persistés — donc un vrai, non
+ * flashé, de la ville courante — sans quoi le mode normal n'aurait rien à
+ * ouvrir. Court-circuite les anti-répétitions : c'est un test, il doit pouvoir
+ * être relancé d'affilée.
+ *
+ * @returns l'identifiant utilisé, ou null si aucun candidat n'est disponible
+ */
+export async function simulateProximityAlert() {
+  const candidates = await readJSON(KEY_CANDIDATES, []);
+  if (!candidates.length) return null;
+  const pick = candidates[Math.floor(Math.random() * candidates.length)];
+  await notifyProximity(pick.id);
+  return pick.id;
+}
+
 /** Persiste les textes localisés de notification : titre + variantes de corps
  *  ({id} = placeholder remplacé par l'id de l'Invader à l'alerte). */
 export async function persistNotifStrings(title, bodies, blindTitle, blindBodies) {
@@ -271,33 +328,7 @@ async function handleEnter(invId) {
     if (settings.vibration) {
       try { await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success); } catch {}
     }
-    if (settings.notification) {
-      const tpl = await readJSON(KEY_NOTIF, { title: 'Invader à proximité 👾', bodies: ['{id} est tout près !'] });
-      // Mode explorateur : l'alerte devient l'atout du mode plutôt que sa faille.
-      // Elle dit qu'il y a quelque chose dans les parages — elle ne nomme pas
-      // l'Invader, et le tap ne recentre plus la carte sur lui. On garde le
-      // frisson, on retire l'indication. Sans `invId` dans les données, le
-      // routage au tap ouvre simplement la Carte (voir utils/navigationRef).
-      let explorer = false;
-      try { explorer = (await AsyncStorage.getItem(KEY_EXPLORER)) === '1'; } catch {}
-
-      const list = explorer
-        ? (Array.isArray(tpl.blindBodies) && tpl.blindBodies.length ? tpl.blindBodies : ['Un Invader est tout près.'])
-        // Choix aléatoire d'une variante (compat : ancien champ `body` unique).
-        : (Array.isArray(tpl.bodies) && tpl.bodies.length ? tpl.bodies : [tpl.body || '{id}']);
-      const chosen = list[Math.floor(Math.random() * list.length)];
-      try {
-        await Notifications.scheduleNotificationAsync({
-          content: {
-            title: explorer && tpl.blindTitle ? tpl.blindTitle : tpl.title,
-            body: explorer ? chosen : chosen.replace('{id}', invId),
-            sound: true,
-            data: explorer ? { type: 'stroll' } : { type: 'stroll', invId },
-          },
-          trigger: null, // immédiat
-        });
-      } catch (e) { __DEV__ && console.log('[Stroll] notif erreur :', e?.message); }
-    }
+    if (settings.notification) await notifyProximity(invId);
 
     __DEV__ && console.log('[Stroll] ALERTE', invId);
   } finally {

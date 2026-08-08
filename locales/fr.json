@@ -680,6 +680,8 @@
     "alertsSection": "Comment être alerté",
     "vibration": "Vibration",
     "notification": "Notification",
+    "notificationTestHint": "Appui long : recevoir une alerte de test.",
+    "testEmpty": "Aucun Invader à proximité dans cette ville : active d'abord le mode et laisse l'app préparer la liste.",
     "targetSection": "Cibler",
     "unflashedOnly": "Uniquement les non-flashés",
     "unflashedOnlyHint": "Ignore les Invaders déjà flashés.",

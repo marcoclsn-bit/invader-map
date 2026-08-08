@@ -10,6 +10,8 @@ import { DrawerActions } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useAppContext, STROLL_STATUS_OPTIONS } from '../context/AppContext';
 import { useGamification } from '../context/GamificationContext';
+import * as Notifications from 'expo-notifications';
+import { simulateProximityAlert } from '../services/strollEngine';
 import { canUseFeature, FEATURES } from '../services/featureAccess';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
@@ -41,10 +43,18 @@ function Section({ title, children, theme }) {
   );
 }
 
-function ToggleRow({ label, hint, value, onValueChange, disabled, theme, last }) {
+function ToggleRow({ label, hint, value, onValueChange, disabled, theme, last, onLongPress }) {
   const styles = getStyles(theme);
+  // Enveloppé seulement si un appui long est fourni : sans quoi on ajouterait
+  // une cible tactile là où il n'y a rien à déclencher.
+  const Conteneur = onLongPress ? TouchableOpacity : View;
   return (
-    <View style={[styles.row, !last && styles.rowDivider, disabled && styles.rowDisabled]}>
+    <Conteneur
+      onLongPress={onLongPress}
+      delayLongPress={600}
+      activeOpacity={1}
+      style={[styles.row, !last && styles.rowDivider, disabled && styles.rowDisabled]}
+    >
       <View style={styles.rowText}>
         <Text style={styles.rowLabel}>{label}</Text>
         {hint ? <Text style={styles.rowHint}>{hint}</Text> : null}
@@ -57,7 +67,7 @@ function ToggleRow({ label, hint, value, onValueChange, disabled, theme, last })
         thumbColor={theme.bg}
         ios_backgroundColor={theme.border}
       />
-    </View>
+    </Conteneur>
   );
 }
 
@@ -204,10 +214,21 @@ export default function StrollScreen({ navigation }) {
             disabled={off}
             theme={theme}
           />
+          {/* Appui long = alerte de test. Le comportement au TAP de la
+              notification — nom de l'Invader et recentrage, ou rien du tout en
+              mode explorateur — ne se vérifie que sur une vraie notification
+              reçue par le système. Même motif que le test des Actus dans
+              Réglages. */}
           <ToggleRow
             label={t('stroll.notification')}
+            hint={t('stroll.notificationTestHint')}
             value={stroll.notification}
             onValueChange={(v) => { track('stroll_setting', { setting: 'notification', state: v ? 'on' : 'off' }); setStrollPref({ notification: v }); }}
+            onLongPress={async () => {
+              try { await Notifications.requestPermissionsAsync(); } catch {}
+              const id = await simulateProximityAlert();
+              if (!id) Alert.alert('InvaderQuest', t('stroll.testEmpty'));
+            }}
             disabled={off}
             theme={theme}
             last
