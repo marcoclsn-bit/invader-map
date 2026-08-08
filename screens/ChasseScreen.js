@@ -1171,6 +1171,11 @@ export default function ChasseScreen({ route }) {
   }
 
   function selectInvader(inv) {
+    // Mode explorateur : la fiche zoome la carte sur la position exacte, et
+    // porte l'indice de localisation. Toucher une ligne de la liste dévoilait
+    // donc tout ce que le masquage des épingles venait de cacher — la fuite la
+    // plus facile à emprunter, puisque la liste, elle, reste affichée.
+    if (explorer && !flashed.has(inv.id)) return;
     const deselect = selectedInv?.id === inv.id;
     setSelectedInv(deselect ? null : inv);
     // En mode navigation : pause la caméra pour laisser l'utilisateur interagir avec le panel

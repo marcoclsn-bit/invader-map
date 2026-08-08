@@ -18,6 +18,7 @@ import Legend from '../components/Legend';
 import InvaderPanel from '../components/InvaderPanel';
 import HeadingCone from '../components/HeadingCone';
 import FlashOverlay from '../components/FlashOverlay';
+import ExplorerSheet from '../components/ExplorerSheet';
 import PoiSheet from '../components/PoiSheet';
 import PoiMarker from '../components/PoiMarker';
 import PoiIntroCard from '../components/PoiIntroCard';
@@ -218,6 +219,7 @@ export default function MapScreen({ navigation, route }) {
   // Invaders flashés à l'instant : on les garde affichés le temps que l'animation
   // (pop + « +X PTS ») se joue, avant qu'un filtre « à faire » ne les masque.
   const [recentlyFlashed, setRecentlyFlashed] = useState(() => new Set());
+  const [explorerSheet, setExplorerSheet] = useState(false);
   // Ref pour lire l'overlay courant depuis onRegionChange sans closure périmée.
   const flashEffectRef = useRef(null);
   flashEffectRef.current = flashEffect;
@@ -639,7 +641,7 @@ export default function MapScreen({ navigation, route }) {
       {!isChangingCity && explorer && (
         <TouchableOpacity
           style={[styles.explorerBar, { bottom: insets.bottom + 16 }]}
-          onPress={() => navigation.navigate('Import')}
+          onPress={() => setExplorerSheet(true)}
           activeOpacity={0.85}
           accessibilityRole="button"
           accessibilityLabel={t('explorer.badge')}
@@ -689,6 +691,14 @@ export default function MapScreen({ navigation, route }) {
       {showFilters && !isChangingCity && (
         <FilterPanel filters={filters} onFiltersChange={setFilters} onClose={() => setShowFilters(false)} />
       )}
+
+      {/* Volet de report — monté hors de tout conditionnel : il porte sa propre
+          visibilité, et c'est lui qui déclenche l'animation ci-dessous. */}
+      <ExplorerSheet
+        visible={explorerSheet}
+        onClose={() => setExplorerSheet(false)}
+        onFlash={handleFlashFromMap}
+      />
 
       {/* Overlay animation flash — au-dessus de la carte, transparent aux touches */}
       {flashEffect && !isChangingCity && (

@@ -1172,6 +1172,18 @@
   },
   "explorer": {
     "badge": "Mode explorateur",
-    "badgeHint": "Appuie pour reporter un Invader trouvé"
+    "badgeHint": "Appuie pour reporter un Invader trouvé",
+    "sheet": {
+      "title": "Reporter un Invader",
+      "placeholder": "PA_554",
+      "hint": "Saisis l'identifiant que FlashInvaders t'a affiché après le flash.",
+      "ready": "{{id}} sera ajouté à tes flashés.",
+      "already": "{{id}} est déjà dans tes flashés.",
+      "unknown": "{{id}} n'existe pas dans la base.",
+      "confirm": "Ajouter",
+      "about": "À propos de ce mode",
+      "help": "En mode explorateur, l'app ne montre jamais où sont les Invaders que tu n'as pas encore trouvés. Elle continue de dire combien il y en a sur un parcours et ce qu'ils valent. Tu chasses à l'œil, tu flashes avec FlashInvaders, et tu reportes ici l'identifiant qu'il t'affiche.",
+      "leave": "Quitter le mode explorateur"
+    }
   }
 }

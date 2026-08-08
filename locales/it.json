@@ -1172,6 +1172,18 @@
   },
   "explorer": {
     "badge": "Modalità esploratore",
-    "badgeHint": "Tocca per registrare un Invader trovato"
+    "badgeHint": "Tocca per registrare un Invader trovato",
+    "sheet": {
+      "title": "Registrare un Invader",
+      "placeholder": "PA_554",
+      "hint": "Inserisci l'identificativo che FlashInvaders ti ha mostrato dopo lo scatto.",
+      "ready": "{{id}} sarà aggiunto ai tuoi fotografati.",
+      "already": "{{id}} è già tra i tuoi fotografati.",
+      "unknown": "{{id}} non esiste nella banca dati.",
+      "confirm": "Aggiungi",
+      "about": "Su questa modalità",
+      "help": "In modalità esploratore, l'app non mostra mai dove sono gli Invader che non hai ancora trovato. Continua a dirti quanti ce ne sono su un percorso e quanto valgono. Cacci a vista, fotografi con FlashInvaders e registri qui l'identificativo che ti mostra.",
+      "leave": "Uscire dalla modalità esploratore"
+    }
   }
 }

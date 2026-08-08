@@ -1172,6 +1172,18 @@
   },
   "explorer": {
     "badge": "Explorer mode",
-    "badgeHint": "Tap to log an Invader you found"
+    "badgeHint": "Tap to log an Invader you found",
+    "sheet": {
+      "title": "Log an Invader",
+      "placeholder": "PA_554",
+      "hint": "Enter the ID FlashInvaders showed you after the flash.",
+      "ready": "{{id}} will be added to your flashes.",
+      "already": "{{id}} is already in your flashes.",
+      "unknown": "{{id}} does not exist in the database.",
+      "confirm": "Add",
+      "about": "About this mode",
+      "help": "In explorer mode, the app never shows where the Invaders you have not found yet are. It still tells you how many are on a route and what they are worth. You hunt by eye, you flash with FlashInvaders, and you log the ID it shows you here.",
+      "leave": "Leave explorer mode"
+    }
   }
 }

@@ -919,6 +919,10 @@ export default function TrajetScreen() {
   }
 
   function selectRouteInvader(inv) {
+    // Même fuite que sur la Chasse : la fiche recentre la carte sur la position
+    // exacte et porte l'indice. La liste du couloir reste affichée, elle ne doit
+    // pas servir de porte dérobée.
+    if (explorer && !flashed.has(inv.id)) return;
     setSelectedRouteInv(inv);
     if (following) setDrifted(true);
     mapRef.current?.animateToRegion(
