@@ -57,8 +57,13 @@ function getStyles(theme) {
 
 // ─── Logique de filtrage ──────────────────────────────────────────────────────
 
-function applyFilters(invaders, filters, flashed) {
+// `explorer` : mode explorateur. On masque tout Invader non flashé — c'est la
+// règle unique du mode, et elle passe AVANT les filtres de l'utilisateur, qui ne
+// doivent pas pouvoir la contourner (« non flashés uniquement » afficherait
+// exactement ce qu'on s'est engagé à ne pas montrer).
+function applyFilters(invaders, filters, flashed, explorer) {
   return invaders.filter((inv) => {
+    if (explorer && !flashed.has(inv.id)) return false;
     if (!filters.statuses.has(inv.status)) return false;
     if (filters.flashedState === 'flashed' && !flashed.has(inv.id)) return false;
     if (filters.flashedState === 'unflashed' && flashed.has(inv.id)) return false;
@@ -195,7 +200,7 @@ function FilterPanel({ filters, onFiltersChange, onClose }) {
 // ─── Écran carte ──────────────────────────────────────────────────────────────
 
 export default function MapScreen({ navigation, route }) {
-  const { invaders, flashed, labels, labelDefs, statusColors, colorOverrides, filters, setFilters, toggleFlash, mapsApp, setMapsAppPref, currentCityCode, isChangingCity, pendingCityCode, legendSeen, dismissLegend, poiPrefs, poiIntroSeen, poiDataVersion } = useAppContext();
+  const { invaders, flashed, labels, labelDefs, statusColors, colorOverrides, filters, setFilters, toggleFlash, mapsApp, setMapsAppPref, currentCityCode, isChangingCity, pendingCityCode, legendSeen, dismissLegend, poiPrefs, poiIntroSeen, poiDataVersion, explorer } = useAppContext();
   const city = CITIES[currentCityCode] ?? CITIES.PA;
   const overlayName = (pendingCityCode ? CITIES[pendingCityCode]?.name : null) ?? city.name;
   const { theme, isDark } = useTheme();
@@ -442,13 +447,13 @@ export default function MapScreen({ navigation, route }) {
   }, [filters]);
 
   const filteredInvaders = useMemo(() => {
-    const base = applyFilters(invaders, renderFilters, flashed);
+    const base = applyFilters(invaders, renderFilters, flashed, explorer);
     if (recentlyFlashed.size === 0) return base;
     // Réinjecte les Invaders en cours d'animation s'ils ont été masqués par le filtre
     const baseIds = new Set(base.map((i) => i.id));
     const extra = invaders.filter((i) => recentlyFlashed.has(i.id) && !baseIds.has(i.id));
     return extra.length ? [...base, ...extra] : base;
-  }, [invaders, renderFilters, flashed, recentlyFlashed]);
+  }, [invaders, renderFilters, flashed, recentlyFlashed, explorer]);
 
   // Tri par distance au centre courant (position GPS si dispo, sinon centre ville).
   // sortVersion en dep : re-trie quand sortCenterRef est mis à jour (max 2×).
@@ -624,6 +629,31 @@ export default function MapScreen({ navigation, route }) {
         </View>
       )}
 
+      {/* ── Mode explorateur : rappel permanent + accès à la saisie ──
+          Le rappel n'est pas décoratif. Une carte sans épingles se lit comme une
+          panne : sans cette bande, l'utilisateur conclut que l'app est cassée et
+          la désinstalle. Elle sert aussi de bouton, parce qu'avec les épingles
+          masquées il ne reste plus AUCUN moyen de marquer un Invader depuis la
+          carte — c'est la saisie de l'identifiant lu dans FlashInvaders qui prend
+          le relais. */}
+      {!isChangingCity && explorer && (
+        <TouchableOpacity
+          style={[styles.explorerBar, { bottom: insets.bottom + 16 }]}
+          onPress={() => navigation.navigate('Import')}
+          activeOpacity={0.85}
+          accessibilityRole="button"
+          accessibilityLabel={t('explorer.badge')}
+          accessibilityHint={t('explorer.badgeHint')}
+        >
+          <Ionicons name="eye-off-outline" size={15} color={theme.accent} />
+          <View style={{ flex: 1 }}>
+            <Text style={styles.explorerBarTitle}>{t('explorer.badge')}</Text>
+            <Text style={styles.explorerBarHint}>{t('explorer.badgeHint')}</Text>
+          </View>
+          <Ionicons name="chevron-forward" size={15} color={theme.textSecondary} />
+        </TouchableOpacity>
+      )}
+
       {/* ── Boutons bas-droite : Filtres + Localisation ── */}
       {!isChangingCity && (
         <View style={[styles.bottomRight, { bottom: insets.bottom + 16 }]}>
@@ -722,6 +752,16 @@ function makeStyles(t) {
   return StyleSheet.create({
     container: { flex: 1 },
     map: { ...StyleSheet.absoluteFillObject },
+
+    explorerBar: {
+      position: 'absolute', left: 14, right: 82,
+      flexDirection: 'row', alignItems: 'center', gap: 10,
+      paddingVertical: 9, paddingHorizontal: 12, borderRadius: 12,
+      backgroundColor: t.surface,
+      borderWidth: StyleSheet.hairlineWidth, borderColor: t.accent,
+    },
+    explorerBarTitle: { fontSize: 12.5, fontWeight: '700', color: t.textPrimary },
+    explorerBarHint: { fontSize: 11, color: t.textSecondary, marginTop: 1 },
 
     // ── Barre supérieure ─────────────────────────────────────────────────────
     topBar: {

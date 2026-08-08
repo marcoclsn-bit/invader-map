@@ -571,7 +571,7 @@ export default function ChasseScreen({ route }) {
   const debounce = useRef(null);
   const locationSub = useRef(null);
 
-  const { invaders, flashed, statusColors, currentCityCode, toggleFlash, mapsApp, isChangingCity, poiPrefs, setPoiPref } = useAppContext();
+  const { invaders, flashed, statusColors, currentCityCode, toggleFlash, mapsApp, isChangingCity, poiPrefs, setPoiPref, explorer } = useAppContext();
   const city = CITIES[currentCityCode] ?? CITIES.PA;
   const { theme, isDark } = useTheme();
   const { t, i18n } = useTranslation();
@@ -787,6 +787,9 @@ export default function ChasseScreen({ route }) {
   // couloir étant déjà réglable par l'utilisateur.
   const VOISINS_KM = 0.20;
   const voisins = useMemo(() => {
+    // Les voisins sont des Invaders NON FLASHÉS par construction : c'est la
+    // fuite la plus directe de l'écran, et elle n'a aucune place ici.
+    if (explorer) return [];
     if (!result?.routeCoords || result.routeCoords.length < 2) return [];
     const dansLaChasse = new Set(result.invaders.filter(s => !s.isPoi).map(s => s.id));
     // Invaders déjà flashés AU MOMENT du calcul : ils n'appartiennent pas à
@@ -832,7 +835,7 @@ export default function ChasseScreen({ route }) {
     // `flashed` et `unflashedOnly` sont lus à dessein sans figurer en dépendance :
     // ils servent de photographie à l'instant du calcul (voir dejaFlashes).
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [result, invaders]);
+  }, [result, invaders, explorer]);
 
   // Contours à dessiner. Avant génération, ils suivent la sélection en cours —
   // on voit la zone qu'on est en train de choisir. Après, ils suivent le
@@ -1286,6 +1289,12 @@ export default function ChasseScreen({ route }) {
                   );
                 })}
                 {result.invaders.map((inv, i) => {
+                  // Mode explorateur : pas d'épingle sur un Invader qu'on n'a pas
+                  // encore. Les lieux restent, et un Invader flashé EN COURS de
+                  // chasse apparaît — c'est la récompense, et il n'y a plus rien
+                  // à révéler. La liste du bas, elle, continue de tout dire :
+                  // le mode masque les positions, pas les objectifs.
+                  if (explorer && !inv.isPoi && !flashed.has(inv.id)) return null;
                   // Un Invader flashé s'éteint : pastille grise et ✓ au lieu du rang.
                   // `done` DOIT entrer dans redrawKey, sinon le bitmap du marqueur
                   // n'est jamais recapturé et le changement reste invisible.

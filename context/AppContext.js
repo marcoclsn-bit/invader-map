@@ -134,6 +134,16 @@ export function AppProvider({ children }) {
   const [newsLastSeen, setNewsLastSeen] = useState(null); // ISO de la dernière ouverture de News
   const [newsNotify, setNewsNotifyState] = useState(true); // notifs d'actualité (défaut ON)
 
+  // ── Mode explorateur ────────────────────────────────────────────────────────
+  // L'app cesse de montrer OÙ sont les Invaders non flashés. Elle continue de
+  // dire lesquels et combien ils valent : la promesse n'est pas « tu ne sais
+  // rien », c'est « l'app ne pose jamais d'épingle dessus ». Le tracé d'une
+  // chasse désigne une rue, jamais un mur — trouver une mosaïque de quarante
+  // centimètres sur cent mètres de façades reste entièrement le travail du
+  // chasseur.
+  // Défaut OFF : c'est une contrainte qu'on choisit, jamais qu'on subit.
+  const [explorer, setExplorerState] = useState(false);
+
   // ── Mode balade (réglages seulement ; moteur au dev build) ──────────────────
   const [stroll, setStroll] = useState(DEFAULT_STROLL);
 
@@ -294,6 +304,8 @@ export function AppProvider({ children }) {
         AsyncStorage.getItem('@invader_poi_prefs'),
         AsyncStorage.getItem('@invader_poi_intro_seen'),
       ]);
+      const explorerRaw = await AsyncStorage.getItem('@invader_explorer');
+      if (explorerRaw === '1') setExplorerState(true);
       if (cityProgressRaw) { try { setCityProgress(JSON.parse(cityProgressRaw)); } catch {} }
       if (legendSeenRaw === '1') setLegendSeen(true);
       // Notifs d'actualité : défaut ON (sauf si l'utilisateur a explicitement désactivé).
@@ -641,6 +653,11 @@ export function AppProvider({ children }) {
     AsyncStorage.removeItem('@invader_poi_intro_seen');
   }
 
+  function setExplorer(on) {
+    setExplorerState(on);
+    AsyncStorage.setItem('@invader_explorer', on ? '1' : '0').catch(() => {});
+  }
+
   // Notifs d'actualité : bascule (persiste + planifie/retire la tâche + prompt à l'activation).
   function setNewsNotifyPref(on) {
     setNewsNotifyState(on);
@@ -727,6 +744,8 @@ export function AppProvider({ children }) {
     // News
     news, newsCities, setNewsCitiesPref, newsLastSeen, markNewsSeen, newsUnreadCount,
     newsNotify, setNewsNotifyPref,
+    // Mode explorateur (masque les Invaders non flashés)
+    explorer, setExplorer,
     // Légende des couleurs
     legendSeen, dismissLegend,
     // Mode balade (réglages ; moteur au dev build)
@@ -747,7 +766,7 @@ export function AppProvider({ children }) {
     labels, labelDefs, statusColors, colorOverrides,
     filters,
     news, newsCities, newsLastSeen, newsUnreadCount, newsNotify,
-    legendSeen,
+    legendSeen, explorer,
     stroll, mapsApp, language,
     poiPrefs, poiIntroSeen, poiDataVersion,
     showOnboarding, loaded,

@@ -55,7 +55,7 @@ export default function SessionRecap() {
 function RecapBody({ session, newBadgeIds, onClose }) {
   const { theme } = useTheme();
   const { t } = useTranslation();
-  const { invaders, flashed } = useAppContext();
+  const { invaders, flashed, explorer } = useAppContext();
   const { width: screenW, height: screenH } = useWindowDimensions();
   const storyRef = useRef(null);
   const [busy, setBusy] = useState(false);
@@ -86,9 +86,13 @@ function RecapBody({ session, newBadgeIds, onClose }) {
   // Invaders du parcours jamais flashés : la carte montre ce qu'il reste à
   // trouver, ce qui remplit le quartier sans exposer l'échec du jour — un
   // Invader flashé lors d'une sortie précédente n'y figure pas.
+  // Mode explorateur : aucun alien fantôme. Ces marqueurs dessinent la position
+  // exacte des Invaders NON flashés le long du parcours, sur une image destinée
+  // à être publiée — c'est la fuite la plus lointaine du mode, et la seule qui
+  // survivrait au téléphone de son auteur.
   const missed = useMemo(
-    () => missedAlongRoute(invaders, shareRoute, flashed),
-    [invaders, shareRoute, flashed],
+    () => (explorer ? [] : missedAlongRoute(invaders, shareRoute, flashed)),
+    [invaders, shareRoute, flashed, explorer],
   );
 
   const km = session.distanceKm;

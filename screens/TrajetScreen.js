@@ -300,7 +300,7 @@ export default function TrajetScreen() {
   const depDebounce = useRef(null);
   const arrDebounce = useRef(null);
 
-  const { invaders, flashed, toggleFlash, labels, labelDefs, colorOverrides, statusColors, mapsApp, setMapsAppPref, currentCityCode, isChangingCity, poiPrefs, setPoiPref, poiDataVersion } = useAppContext();
+  const { invaders, flashed, toggleFlash, labels, labelDefs, colorOverrides, statusColors, mapsApp, setMapsAppPref, currentCityCode, isChangingCity, poiPrefs, setPoiPref, poiDataVersion, explorer } = useAppContext();
   const city = CITIES[currentCityCode] ?? CITIES.PA;
   const recorder = useSessionRecorder();
   const { recordSession } = useGamification();
@@ -1030,6 +1030,11 @@ export default function TrajetScreen() {
           )}
           {displayInvaders?.map((inv) => {
             const isFlashed = flashed.has(inv.id);
+            // Mode explorateur : aucune épingle sur un Invader non flashé. Le
+            // récapitulatif (« 12 Invaders sur ton trajet, 340 points ») et la
+            // liste des étapes restent : on masque les positions, pas les
+            // objectifs.
+            if (explorer && !isFlashed) return null;
             // Android : pendant l'animation de flash, on masque le vrai marqueur natif —
             // l'alien animé de l'overlay le remplace (sinon doublon décalé).
             if (Platform.OS === 'android' && flashEffect && flashEffect.invader.id === inv.id) {

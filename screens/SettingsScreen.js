@@ -104,7 +104,7 @@ export default function SettingsScreen({ navigation }) {
     labelDefs, setFlashedColor,
     mapsApp, setMapsAppPref,
     language, setLanguage,
-    newsNotify, setNewsNotifyPref,
+    newsNotify, setNewsNotifyPref, explorer, setExplorer,
     resetLabels, clearFlashDates,
     dataVersion, dataUpdatedAt, checkDataUpdate,
     resetPoiIntro, checkPoiUpdate, getPoiVersion, poiDataVersion,
@@ -189,6 +189,24 @@ export default function SettingsScreen({ navigation }) {
             <Switch
               value={newsNotify}
               onValueChange={(v) => { track('news_notify', { state: v ? 'on' : 'off', from: 'settings' }); setNewsNotifyPref(v); }}
+              trackColor={{ false: theme.border, true: theme.accent }}
+              thumbColor={theme.bg}
+              ios_backgroundColor={theme.border}
+            />
+          }
+          last
+        />
+      </Section>
+
+      {/* ── Mode explorateur ── */}
+      <Section title={t('settings.explorer.section')}>
+        <Row
+          label={t('settings.explorer.label')}
+          hint={t('settings.explorer.hint')}
+          trailing={
+            <Switch
+              value={explorer}
+              onValueChange={(v) => { track('explorer_mode', { state: v ? 'on' : 'off' }); setExplorer(v); }}
               trackColor={{ false: theme.border, true: theme.accent }}
               thumbColor={theme.bg}
               ios_backgroundColor={theme.border}

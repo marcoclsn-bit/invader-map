@@ -574,6 +574,11 @@
       "news": "Avvisi novità",
       "newsHint": "Ricevi un avviso quando compaiono o cambiano stato Invader nelle tue città seguite.",
       "testSent": "Notifica di prova inviata. Se non la vedi, verifica che le notifiche siano consentite nelle Impostazioni iOS."
+    },
+    "explorer": {
+      "section": "Modalità esploratore",
+      "label": "Non svelare nulla",
+      "hint": "Gli Invader che non hai ancora fotografato spariscono dalla mappa, dai percorsi e dagli avvisi. Continui a vedere quanti sono e quanto valgono, ma non più dove si trovano. Poi li registri con l'identificativo che ti mostra FlashInvaders."
     }
   },
   "feedback": {
@@ -1164,5 +1169,9 @@
       "body": "Rimuovere i {{count}} Invaders appena aggiunti? I trofei già sbloccati restano acquisiti.",
       "confirm": "Rimuovi"
     }
+  },
+  "explorer": {
+    "badge": "Modalità esploratore",
+    "badgeHint": "Tocca per registrare un Invader trovato"
   }
 }

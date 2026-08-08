@@ -574,6 +574,11 @@
       "news": "New activity alerts",
       "newsHint": "Get notified when Invaders appear or change status in the cities you follow.",
       "testSent": "Test notification sent. If you don’t see it, check that notifications are allowed in iOS Settings."
+    },
+    "explorer": {
+      "section": "Explorer mode",
+      "label": "Reveal nothing",
+      "hint": "Invaders you have not flashed yet disappear from the map, from routes and from alerts. You still see how many there are and what they are worth, but no longer where. You then log them with the ID FlashInvaders shows you."
     }
   },
   "feedback": {
@@ -1164,5 +1169,9 @@
       "body": "Remove the {{count}} Invaders just added? Trophies already unlocked stay unlocked.",
       "confirm": "Remove"
     }
+  },
+  "explorer": {
+    "badge": "Explorer mode",
+    "badgeHint": "Tap to log an Invader you found"
   }
 }

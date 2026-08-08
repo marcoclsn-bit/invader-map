@@ -29,7 +29,7 @@ function getStyles(theme) {
 
 // autoCloseOnAction : ferme le panel après chaque action (utilisé en mode navigation Chasse)
 export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClose, autoCloseOnAction = false }) {
-  const { flashed, statusColors, dataVersion } = useAppContext();
+  const { flashed, statusColors, dataVersion, explorer } = useAppContext();
   const { theme } = useTheme();
   const { t } = useTranslation();
   const styles = getStyles(theme);
@@ -124,12 +124,18 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
             {isFlashed ? t('map.panel.alreadyFlashed') : t('map.panel.markFlashed')}
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={handleNavigate} style={styles.actionBtn}>
-          <Text style={styles.actionBtnText} numberOfLines={1}>{t('map.panel.navigate')}</Text>
-        </TouchableOpacity>
+        {/* « Y aller » ouvre Plans sur la position EXACTE, et l'indice décrit la
+            façade : en mode explorateur, ces deux-là racontent précisément ce
+            qu'on s'est engagé à taire. Ils reviennent dès qu'il est flashé —
+            il n'y a alors plus rien à dévoiler. */}
+        {(!explorer || isFlashed) && (
+          <TouchableOpacity onPress={handleNavigate} style={styles.actionBtn}>
+            <Text style={styles.actionBtnText} numberOfLines={1}>{t('map.panel.navigate')}</Text>
+          </TouchableOpacity>
+        )}
       </View>
 
-      {invader.hint ? <Text style={styles.hint}>{invader.hint}</Text> : null}
+      {invader.hint && (!explorer || isFlashed) ? <Text style={styles.hint}>{invader.hint}</Text> : null}
 
       <TouchableOpacity
         style={styles.igBtn}
