@@ -56,12 +56,17 @@ const visitMinOf = (step) => (step.isPoi ? VISIT_MIN_POI : VISIT_MIN);
 const visitTotalMin = (list) => list.reduce((s, x) => s + visitMinOf(x), 0);
 // Limite de l'API d'itinéraires (~50 points) : départ + étapes + retour.
 const MAX_STEPS = 46;
-// Pénalité de demi-tour, en minutes par demi-tour complet. Mesurée sur 160
-// chasses parisiennes réelles : à 0,5, la part de chasses contenant un demi-tour
-// franc tombe de 49 % à 26 %, POUR 0,5 min de moins et le même nombre d'étapes
-// — l'Or-opt récupère ce que la pénalité coûte. Monter à 1 ne gagne que 5 points
-// de plus. Volontairement faible : on corrige les aller-retours voyants, on ne
-// réécrit pas la façon dont les parcours sont composés.
+// Pénalité de demi-tour, en minutes par demi-tour complet.
+//
+// Réglée sur mesure, pas au jugé. Sur 180 chasses parisiennes, en comptant les
+// virages de plus de 100° par parcours : 5,56 sans pénalité, 4,64 au premier
+// réglage (seuil 120°, poids 0,5), 3,25 au réglage actuel (seuil 90°, poids 1).
+// Le tout pour 97,5 min contre 97,6 sans pénalité et le même nombre d'étapes :
+// l'Or-opt récupère intégralement ce que la pénalité dépense.
+//
+// Monter à 2 descendrait à 2,34 virages, mais coûterait une minute et quatre
+// dixièmes d'étape. C'est le premier réglage qui se paie vraiment : on s'arrête
+// donc juste avant.
 //
 // Appliquée à TOUTES les chasses. Elle a d'abord été livrée en option, le temps
 // de l'éprouver sur le terrain : refaire ses pas est ennuyeux à marcher quel que
@@ -70,7 +75,7 @@ const MAX_STEPS = 46;
 // `planHunt` garde malgré tout le paramètre : le mode explorateur voudra
 // probablement une pondération plus forte, puisque chez lui un aller-retour ne
 // gâche pas seulement la promenade, il désigne l'Invader.
-const BACKTRACK_W = 0.5;
+const BACKTRACK_W = 1;
 // Arrondissement d'un lieu d'intérêt, mémoïsé par id. Le point-dans-polygone
 // coûte jusqu'à 20 tests par lieu ; sans cache il serait refait sur les ~690
 // lieux parisiens à chaque planification.

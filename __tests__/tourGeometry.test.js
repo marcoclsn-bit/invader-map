@@ -32,15 +32,20 @@ describe('backtrackScore', () => {
     expect(backtrackScore(CARRE_EPERON, ...S)).toBeGreaterThan(backtrackScore(CARRE, ...S));
   });
 
-  // Le seuil est la raison d'être du réglage : sans lui, chaque coin de rue
-  // serait pénalisé et TOUS les parcours seraient déformés, pas seulement ceux
-  // qui reviennent sur leurs pas.
-  it('laisse passer les virages ordinaires', () => {
-    expect(BACKTRACK_DOT_MIN).toBe(-0.5); // cos(120°)
-    // Un virage à angle droit ne coûte rien du tout (déjà couvert par CARRE),
-    // et un virage à ~110° reste marginal.
-    const virage110 = [P(48.8560, 2.3100), P(48.8500, 2.3160)];
-    expect(backtrackScore(virage110, ...S)).toBeLessThan(0.15);
+  // Le seuil garantit qu'un parcours en angles droits reste gratuit : sans lui,
+  // on paierait chaque coin de rue et TOUS les parcours seraient déformés, pas
+  // seulement ceux qui piquent.
+  it('ne facture rien avant 90°', () => {
+    expect(BACKTRACK_DOT_MIN).toBe(0); // cos(90°)
+    expect(backtrackScore(CARRE, ...S)).toBeCloseTo(0, 6);
+  });
+
+  // C'est le cas que le premier réglage laissait passer et que le terrain a
+  // signalé : l'éperon vers une étape isolée, qu'on rejoint et qu'on quitte en
+  // pivotant d'une centaine de degrés.
+  it('facture désormais les épingles autour de 100°', () => {
+    const epingle = [P(48.8560, 2.3100), P(48.8500, 2.3160)];
+    expect(backtrackScore(epingle, ...S)).toBeGreaterThan(0.2);
   });
 
   it('tolère les cas dégénérés sans produire de NaN', () => {
