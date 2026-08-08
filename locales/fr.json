@@ -488,6 +488,8 @@
     "appPitch": "Trouvez les mosaïques Space Invader partout dans le monde.",
     "versionApp": "Version de l'app",
     "versionData": "Version des données",
+    "versionOta": "Mise à jour",
+    "versionOtaEmbedded": "version embarquée",
     "creatorSection": "Créateur",
     "createdBy": "Créée par Marco",
     "thanksSection": "Remerciements",

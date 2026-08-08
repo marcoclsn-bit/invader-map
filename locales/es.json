@@ -488,6 +488,8 @@
     "appPitch": "Encuentra los mosaicos Space Invader donde quieras.",
     "versionApp": "Versión de la app",
     "versionData": "Versión de los datos",
+    "versionOta": "Actualización",
+    "versionOtaEmbedded": "versión incluida",
     "creatorSection": "Creador",
     "createdBy": "Creada por Marco",
     "thanksSection": "Agradecimientos",

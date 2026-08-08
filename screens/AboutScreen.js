@@ -3,6 +3,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { useNavigation } from '@react-navigation/native';
+import * as Updates from 'expo-updates';
 import { useAppContext } from '../context/AppContext';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
@@ -10,6 +11,22 @@ import { typography } from '../theme/tokens';
 const PNOTE_ENABLED = true;
 
 const APP_VERSION = require('../app.json')?.expo?.version ?? '1.0.0';
+
+// Empreinte de la mise à jour par-dessus les airs.
+//
+// La version ci-dessus vient d'app.json : elle ne change QUE lors d'un nouveau
+// build natif, donc jamais lors d'un envoi OTA — qui est pourtant la façon dont
+// arrive la quasi-totalité des évolutions. Sans ce bloc, impossible de
+// distinguer « la mise à jour n'est pas arrivée » de « elle est arrivée mais ne
+// change rien à ce que je regarde », ce qui a déjà coûté une enquête.
+//
+// `updateId` est nul quand on tourne sur le bundle embarqué (build neuf, ou
+// Expo Go) : on l'affiche alors comme tel plutôt que de laisser un vide.
+const OTA_CHANNEL = Updates.channel || '—';
+const OTA_ID = Updates.updateId ? Updates.updateId.slice(0, 8) : null;
+const OTA_DATE = Updates.createdAt
+  ? new Date(Updates.createdAt).toISOString().slice(0, 10)
+  : null;
 
 // ─── Composants internes ──────────────────────────────────────────────────────
 
@@ -115,7 +132,13 @@ export default function AboutScreen() {
       {/* ── L'application ── */}
       <Section title={t('about.appSection')} theme={theme}>
         <InfoRow label={t('about.versionApp')} value={`v${APP_VERSION}`} theme={theme} />
-        <InfoRow label={t('about.versionData')} value={dataVersionLabel} last theme={theme} />
+        <InfoRow label={t('about.versionData')} value={dataVersionLabel} theme={theme} />
+        <InfoRow
+          label={t('about.versionOta')}
+          value={OTA_ID ? `${OTA_CHANNEL} · ${OTA_ID} · ${OTA_DATE}` : t('about.versionOtaEmbedded')}
+          last
+          theme={theme}
+        />
       </Section>
 
       {/* ── Créateur ── */}
