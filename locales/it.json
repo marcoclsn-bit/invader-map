@@ -263,6 +263,14 @@
         "title": "Mappa & Flash",
         "body": "Individua i mosaici intorno a te e segna quelli che hai fotografato. Di default la mappa mostra solo gli Invader che ti restano; i filtri rivelano quelli fatti e quelli distrutti."
       },
+      "explorer": {
+        "title": "Due modi di giocare",
+        "body": "Puoi vedere tutti gli Invader sulla mappa, oppure scoprirli da solo. Questa scelta si cambia quando vuoi.",
+        "normal": "Vedere tutto",
+        "normalSub": "La mappa mostra tutti gli Invader",
+        "blind": "Esploratore",
+        "blindSub": "Compaiono solo una volta trovati"
+      },
       "location": {
         "title": "Posizione GPS",
         "body": "L'app usa la tua posizione per mostrarti sulla mappa e calcolare percorsi. I dati restano sul tuo dispositivo."
@@ -1193,6 +1201,13 @@
       "about": "Su questa modalità",
       "help": "In modalità esploratore, l'app non mostra mai dove sono gli Invader che non hai ancora trovato. Continua a dirti quanti ce ne sono su un percorso e quanto valgono. Cacci a vista, fotografi con FlashInvaders e registri qui l'identificativo che ti mostra.",
       "leave": "Uscire dalla modalità esploratore"
+    },
+    "intro": {
+      "title": "Un altro modo di cacciare",
+      "body": "La modalità esploratore toglie dalla mappa gli Invader che non hai ancora trovato. Continui a vedere quanti sono su un percorso e quanto valgono, ma non più dove si trovano. Cacci a vista e registri l'identificativo che FlashInvaders ti mostra dopo lo scatto.",
+      "note": "Puoi attivarla o uscirne quando vuoi nelle Impostazioni. Non si perde nulla: i tuoi fotografati e i tuoi progressi restano invariati.",
+      "keep": "Lasciare com'è",
+      "tryIt": "Provare"
     }
   }
 }

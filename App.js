@@ -39,6 +39,7 @@ import StrollEngine from './components/StrollEngine';
 import SessionRecap from './components/session/SessionRecap';
 import BadgeCelebration from './components/gamification/BadgeCelebration';
 import BadgeBatch from './components/gamification/BadgeBatch';
+import ExplorerIntro from './components/ExplorerIntro';
 import ImportScreen from './screens/ImportScreen';
 import { navigationRef } from './utils/navigationRef';
 import './services/strollEngine'; // enregistre la tâche de fond + le handler de notif
@@ -253,6 +254,7 @@ function AppShell() {
       <SessionRecap />
       <BadgeCelebration />
       <BadgeBatch />
+      <ExplorerIntro />
     </>
   );
 }

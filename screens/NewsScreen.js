@@ -215,7 +215,7 @@ export default function NewsScreen({ navigation }) {
   const {
     news, newsCities, setNewsCitiesPref, newsLastSeen, markNewsSeen,
     cityIndex, currentCityCode, setCurrentCity,
-    newsNotify, setNewsNotifyPref,
+    newsNotify, setNewsNotifyPref, explorer,
   } = useAppContext();
 
   // Date de dernière consultation, gardée à jour dans un ref pour la lire au focus
@@ -267,6 +267,11 @@ export default function NewsScreen({ navigation }) {
   }
 
   async function onPressEvent(e) {
+    // Mode explorateur : l'annonce reste — apprendre qu'un Invader vient d'être
+    // posé est précisément ce qu'un chasseur veut savoir, et le nommer ne dit
+    // pas où il est. C'est le SAUT qui trahit : il recentre la carte sur lui et
+    // ouvre sa fiche. On ouvre donc la ville, pas l'Invader.
+    if (explorer) return goToMap(e.city, null);
     if (!e.id) return goToMap(e.city, null);
 
     // Cherche l'Invader dans les données de sa ville (cache → réseau si besoin).

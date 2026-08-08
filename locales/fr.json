@@ -263,6 +263,14 @@
         "title": "Carte & Flash",
         "body": "Repère les mosaïques autour de toi et marque celles que tu as flashées. Par défaut, la carte ne montre que les Invaders qu'il te reste à faire ; les filtres révèlent les flashés et les détruits."
       },
+      "explorer": {
+        "title": "Deux façons de jouer",
+        "body": "Tu peux voir tous les Invaders sur la carte, ou les découvrir toi-même. Ce choix se change à tout moment.",
+        "normal": "Tout voir",
+        "normalSub": "La carte affiche tous les Invaders",
+        "blind": "Explorateur",
+        "blindSub": "Ils n'apparaissent qu'une fois trouvés"
+      },
       "location": {
         "title": "Position GPS",
         "body": "L'app utilise ta position pour te situer sur la carte et calculer tes itinéraires. Tes données restent sur ton appareil."
@@ -1193,6 +1201,13 @@
       "about": "À propos de ce mode",
       "help": "En mode explorateur, l'app ne montre jamais où sont les Invaders que tu n'as pas encore trouvés. Elle continue de dire combien il y en a sur un parcours et ce qu'ils valent. Tu chasses à l'œil, tu flashes avec FlashInvaders, et tu reportes ici l'identifiant qu'il t'affiche.",
       "leave": "Quitter le mode explorateur"
+    },
+    "intro": {
+      "title": "Une autre façon de chasser",
+      "body": "Le mode explorateur retire de la carte les Invaders que tu n'as pas encore trouvés. Tu vois toujours combien il y en a sur un parcours et ce qu'ils valent — mais plus où ils sont. Tu chasses à l'œil, et tu reportes l'identifiant que FlashInvaders t'affiche après le flash.",
+      "note": "Tu peux l'activer ou le quitter à tout moment dans les Réglages. Rien n'est perdu : tes flashés et ta progression ne bougent pas.",
+      "keep": "Continuer comme avant",
+      "tryIt": "Essayer"
     }
   }
 }

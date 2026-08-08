@@ -263,6 +263,14 @@
         "title": "Map & Flash",
         "body": "Spot the mosaics around you and mark the ones you've flashed. By default the map only shows the Invaders you still have to find; filters reveal the flashed and destroyed ones."
       },
+      "explorer": {
+        "title": "Two ways to play",
+        "body": "You can see every Invader on the map, or discover them yourself. This choice can be changed at any time.",
+        "normal": "Show all",
+        "normalSub": "The map shows every Invader",
+        "blind": "Explorer",
+        "blindSub": "They appear only once found"
+      },
       "location": {
         "title": "Location",
         "body": "The app uses your location to show you on the map and calculate routes. Your data stays on your device."
@@ -1193,6 +1201,13 @@
       "about": "About this mode",
       "help": "In explorer mode, the app never shows where the Invaders you have not found yet are. It still tells you how many are on a route and what they are worth. You hunt by eye, you flash with FlashInvaders, and you log the ID it shows you here.",
       "leave": "Leave explorer mode"
+    },
+    "intro": {
+      "title": "Another way to hunt",
+      "body": "Explorer mode removes from the map the Invaders you have not found yet. You still see how many are on a route and what they are worth, but no longer where they are. You hunt by eye, and log the ID FlashInvaders shows you after the flash.",
+      "note": "You can turn it on or leave it at any time in Settings. Nothing is lost: your flashes and your progress stay untouched.",
+      "keep": "Keep as it is",
+      "tryIt": "Try it"
     }
   }
 }

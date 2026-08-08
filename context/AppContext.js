@@ -143,6 +143,12 @@ export function AppProvider({ children }) {
   // chasseur.
   // Défaut OFF : c'est une contrainte qu'on choisit, jamais qu'on subit.
   const [explorer, setExplorerState] = useState(false);
+  // Présentation à une seule apparition, pour ceux qui ont DÉJÀ terminé
+  // l'onboarding : `@invader_onboarding_done` vaut 1 chez eux, ils ne le
+  // reverront jamais. Sans ce second chemin, le mode n'existerait que pour les
+  // nouveaux installés — soit personne, aujourd'hui.
+  // Drapeau distinct, sinon un nouvel installé se prendrait les deux.
+  const [explorerIntroSeen, setExplorerIntroSeen] = useState(true);
 
   // ── Mode balade (réglages seulement ; moteur au dev build) ──────────────────
   const [stroll, setStroll] = useState(DEFAULT_STROLL);
@@ -304,8 +310,14 @@ export function AppProvider({ children }) {
         AsyncStorage.getItem('@invader_poi_prefs'),
         AsyncStorage.getItem('@invader_poi_intro_seen'),
       ]);
-      const explorerRaw = await AsyncStorage.getItem('@invader_explorer');
+      const [explorerRaw, explorerIntroRaw] = await Promise.all([
+        AsyncStorage.getItem('@invader_explorer'),
+        AsyncStorage.getItem('@invader_explorer_intro'),
+      ]);
       if (explorerRaw === '1') setExplorerState(true);
+      // Ne s'affiche qu'aux anciens : un onboarding tout juste terminé porte
+      // déjà le choix, et le marque vu au passage (completeOnboarding).
+      if (onboardingRaw === '1' && explorerIntroRaw !== '1') setExplorerIntroSeen(false);
       if (cityProgressRaw) { try { setCityProgress(JSON.parse(cityProgressRaw)); } catch {} }
       if (legendSeenRaw === '1') setLegendSeen(true);
       // Notifs d'actualité : défaut ON (sauf si l'utilisateur a explicitement désactivé).
@@ -653,6 +665,11 @@ export function AppProvider({ children }) {
     AsyncStorage.removeItem('@invader_poi_intro_seen');
   }
 
+  function dismissExplorerIntro() {
+    setExplorerIntroSeen(true);
+    AsyncStorage.setItem('@invader_explorer_intro', '1').catch(() => {});
+  }
+
   function setExplorer(on) {
     setExplorerState(on);
     AsyncStorage.setItem('@invader_explorer', on ? '1' : '0').catch(() => {});
@@ -706,6 +723,10 @@ export function AppProvider({ children }) {
   function completeOnboarding() {
     setShowOnboarding(false);
     AsyncStorage.setItem('@invader_onboarding_done', '1');
+    // Le choix vient d'être fait dans l'onboarding : la présentation destinée
+    // aux anciens n'a plus lieu d'être, et l'enchaîner serait absurde.
+    setExplorerIntroSeen(true);
+    AsyncStorage.setItem('@invader_explorer_intro', '1').catch(() => {});
   }
 
   function resetOnboarding() {
@@ -745,7 +766,7 @@ export function AppProvider({ children }) {
     news, newsCities, setNewsCitiesPref, newsLastSeen, markNewsSeen, newsUnreadCount,
     newsNotify, setNewsNotifyPref,
     // Mode explorateur (masque les Invaders non flashés)
-    explorer, setExplorer,
+    explorer, setExplorer, explorerIntroSeen, dismissExplorerIntro,
     // Légende des couleurs
     legendSeen, dismissLegend,
     // Mode balade (réglages ; moteur au dev build)
@@ -766,7 +787,7 @@ export function AppProvider({ children }) {
     labels, labelDefs, statusColors, colorOverrides,
     filters,
     news, newsCities, newsLastSeen, newsUnreadCount, newsNotify,
-    legendSeen, explorer,
+    legendSeen, explorer, explorerIntroSeen,
     stroll, mapsApp, language,
     poiPrefs, poiIntroSeen, poiDataVersion,
     showOnboarding, loaded,

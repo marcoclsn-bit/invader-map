@@ -6,6 +6,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import * as Location from 'expo-location';
 import { useTranslation } from 'react-i18next';
+import { useAppContext } from '../context/AppContext';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import Logo from '../components/Logo';
@@ -59,6 +60,13 @@ function buildSlides(t) {
       body: t('onboarding.slides.balade.body'),
     },
     {
+      key: 'explorer',
+      icons: ['eye-off-outline'],
+      title: t('onboarding.slides.explorer.title'),
+      body: t('onboarding.slides.explorer.body'),
+      isExplorerSlide: true,
+    },
+    {
       key: 'location',
       icons: ['location-outline'],
       title: t('onboarding.slides.location.title'),
@@ -70,7 +78,7 @@ function buildSlides(t) {
 
 // ─── Slide individuel ─────────────────────────────────────────────────────────
 
-function Slide({ slide, slotWidth, illustrationHeight, theme, t, locationDenied, onRetry }) {
+function Slide({ slide, slotWidth, illustrationHeight, theme, t, locationDenied, onRetry, explorer, onExplorer }) {
   const iconSize = slide.icons.length > 1 ? 52 : 80;
 
   return (
@@ -123,6 +131,39 @@ function Slide({ slide, slotWidth, illustrationHeight, theme, t, locationDenied,
         ) : null}
 
         {/* Message de refus de localisation */}
+        {/* Le choix se fait ICI, pas dans un réglage qu'on ne trouvera jamais.
+            Mais le défaut reste « tout voir » : personne ne doit se retrouver
+            avec une carte vide sans l'avoir demandé, et le mode se comprend
+            mieux une fois qu'on a vu à quoi il renonce. */}
+        {slide.isExplorerSlide ? (
+          <View style={styles.modeRow}>
+            {[
+              { on: false, label: t('onboarding.slides.explorer.normal'), sub: t('onboarding.slides.explorer.normalSub') },
+              { on: true, label: t('onboarding.slides.explorer.blind'), sub: t('onboarding.slides.explorer.blindSub') },
+            ].map((opt) => {
+              const actif = explorer === opt.on;
+              return (
+                <TouchableOpacity
+                  key={String(opt.on)}
+                  style={[
+                    styles.modeCard,
+                    { backgroundColor: theme.surfaceHigh, borderColor: actif ? theme.accent : theme.border },
+                  ]}
+                  onPress={() => onExplorer(opt.on)}
+                  activeOpacity={0.85}
+                  accessibilityRole="radio"
+                  accessibilityState={{ selected: actif }}
+                >
+                  <Text style={[styles.modeCardLabel, { color: actif ? theme.accent : theme.textPrimary }]}>
+                    {opt.label}
+                  </Text>
+                  <Text style={[styles.modeCardSub, { color: theme.textSecondary }]}>{opt.sub}</Text>
+                </TouchableOpacity>
+              );
+            })}
+          </View>
+        ) : null}
+
         {slide.isLocationSlide && locationDenied ? (
           <View style={[styles.deniedCard, { backgroundColor: theme.surfaceHigh, borderColor: theme.border }]}>
             <Text style={[styles.deniedText, { color: theme.textSecondary }]}>
@@ -144,6 +185,7 @@ function Slide({ slide, slotWidth, illustrationHeight, theme, t, locationDenied,
 
 export default function OnboardingScreen({ onComplete }) {
   const { t } = useTranslation();
+  const { explorer, setExplorer } = useAppContext();
   const { theme } = useTheme();
   const insets = useSafeAreaInsets();
   const { width, height } = useWindowDimensions();
@@ -229,8 +271,10 @@ export default function OnboardingScreen({ onComplete }) {
       t={t}
       locationDenied={locationDenied}
       onRetry={requestLocation}
+      explorer={explorer}
+      onExplorer={setExplorer}
     />
-  ), [width, illustrationHeight, theme, t, locationDenied]); // eslint-disable-line
+  ), [width, illustrationHeight, theme, t, locationDenied, explorer, setExplorer]); // eslint-disable-line
 
   return (
     <View style={[styles.container, { backgroundColor: theme.bg, paddingTop: insets.top }]}>
@@ -336,6 +380,13 @@ const styles = StyleSheet.create({
     lineHeight: 25,
     marginTop: 4,
   },
+
+  modeRow: { flexDirection: 'row', gap: 10, marginTop: 18, paddingHorizontal: 4 },
+  modeCard: {
+    flex: 1, borderRadius: 12, borderWidth: 1.5, paddingVertical: 12, paddingHorizontal: 11,
+  },
+  modeCardLabel: { fontSize: 13.5, fontWeight: '700' },
+  modeCardSub: { fontSize: 11.5, marginTop: 4, lineHeight: 15 },
 
   deniedCard: {
     marginTop: 20,
