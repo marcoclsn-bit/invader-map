@@ -35,7 +35,16 @@ export default function StrollEngine() {
       .map(i => ({ id: i.id, lat: i.lat, lng: i.lng }));
     // Variantes de texte (rotation aléatoire à chaque alerte) — persistées pour la tâche de fond.
     const bodies = tr('stroll.notif.bodies', { returnObjects: true, id: '{id}' });
-    await persistNotifStrings(tr('stroll.notif.title'), Array.isArray(bodies) ? bodies : [bodies]);
+    // Variantes « à l'aveugle » du mode explorateur : elles ne nomment aucun
+    // Invader. Persistées en même temps que les autres, parce que la tâche de
+    // fond n'a pas accès à i18n et ne peut pas les traduire au moment d'alerter.
+    const blind = tr('stroll.notif.blindBodies', { returnObjects: true });
+    await persistNotifStrings(
+      tr('stroll.notif.title'),
+      Array.isArray(bodies) ? bodies : [bodies],
+      tr('stroll.notif.blindTitle'),
+      Array.isArray(blind) ? blind : [blind],
+    );
     await persistCandidates(candidates);
     return candidates.length;
   }
@@ -69,6 +78,10 @@ export default function StrollEngine() {
       const data = response?.notification?.request?.content?.data;
       // Actus (services/newsNotify.js) → écran Actus du tiroir
       if (data?.type === 'news') { openNews(); return; }
+      // Sans `invId`, c'est une alerte du mode explorateur : elle ne nomme
+      // aucun Invader, et le tap ne doit surtout pas recentrer la carte sur lui.
+      // L'app s'ouvre simplement là où elle était — ce qui est la bonne réponse :
+      // à ce stade, c'est à l'utilisateur de lever les yeux, pas à l'écran.
       if (data?.type !== 'stroll' || !data.invId) return;
       const { currentCityCode: cc, setCurrentCity: setCity } = dataRef.current;
       focusInvaderOnMap(data.invId, {

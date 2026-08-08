@@ -40,6 +40,12 @@ const KEY_CANDIDATES = '@stroll_candidates';     // [{id, lat, lng}] (non flash�
 const KEY_NOTIF      = '@stroll_notif';          // {title, body} localisés ({id} = placeholder)
 const KEY_ALERTS     = '@stroll_last_alerts';    // { [id]: epochMs } anti-répétition par Invader
 const KEY_LAST_ALERT = '@stroll_last_alert_at';  // epochMs — espacement global (un à la fois)
+// Mode explorateur, écrit par AppContext. Lu ICI, à chaque alerte, et non passé
+// au moteur au démarrage : la tâche de fond s'exécute dans un processus réveillé
+// par le système, souvent tout neuf, qui n'a jamais vu le contexte React. Une
+// valeur capturée au dernier lancement serait périmée dès que l'utilisateur
+// change de mode sans rouvrir l'app.
+const KEY_EXPLORER   = '@invader_explorer';
 
 // Réglages du moteur
 const MAX_REGIONS     = 20;                       // limite iOS (region monitoring)
@@ -174,9 +180,10 @@ export async function persistCandidates(candidates) {
 
 /** Persiste les textes localisés de notification : titre + variantes de corps
  *  ({id} = placeholder remplacé par l'id de l'Invader à l'alerte). */
-export async function persistNotifStrings(title, bodies) {
+export async function persistNotifStrings(title, bodies, blindTitle, blindBodies) {
   const list = (Array.isArray(bodies) ? bodies : [bodies]).filter(Boolean);
-  await writeJSON(KEY_NOTIF, { title, bodies: list });
+  const blind = (Array.isArray(blindBodies) ? blindBodies : [blindBodies]).filter(Boolean);
+  await writeJSON(KEY_NOTIF, { title, bodies: list, blindTitle, blindBodies: blind });
 }
 
 export async function startStroll() { return refreshGeofences(); }
@@ -266,16 +273,26 @@ async function handleEnter(invId) {
     }
     if (settings.notification) {
       const tpl = await readJSON(KEY_NOTIF, { title: 'Invader à proximité 👾', bodies: ['{id} est tout près !'] });
-      // Choix aléatoire d'une variante (compat : ancien champ `body` unique).
-      const list = Array.isArray(tpl.bodies) && tpl.bodies.length ? tpl.bodies : [tpl.body || '{id}'];
+      // Mode explorateur : l'alerte devient l'atout du mode plutôt que sa faille.
+      // Elle dit qu'il y a quelque chose dans les parages — elle ne nomme pas
+      // l'Invader, et le tap ne recentre plus la carte sur lui. On garde le
+      // frisson, on retire l'indication. Sans `invId` dans les données, le
+      // routage au tap ouvre simplement la Carte (voir utils/navigationRef).
+      let explorer = false;
+      try { explorer = (await AsyncStorage.getItem(KEY_EXPLORER)) === '1'; } catch {}
+
+      const list = explorer
+        ? (Array.isArray(tpl.blindBodies) && tpl.blindBodies.length ? tpl.blindBodies : ['Un Invader est tout près.'])
+        // Choix aléatoire d'une variante (compat : ancien champ `body` unique).
+        : (Array.isArray(tpl.bodies) && tpl.bodies.length ? tpl.bodies : [tpl.body || '{id}']);
       const chosen = list[Math.floor(Math.random() * list.length)];
       try {
         await Notifications.scheduleNotificationAsync({
           content: {
-            title: tpl.title,
-            body: chosen.replace('{id}', invId),
+            title: explorer && tpl.blindTitle ? tpl.blindTitle : tpl.title,
+            body: explorer ? chosen : chosen.replace('{id}', invId),
             sound: true,
-            data: { type: 'stroll', invId }, // pour router vers la fiche au tap
+            data: explorer ? { type: 'stroll' } : { type: 'stroll', invId },
           },
           trigger: null, // immédiat
         });

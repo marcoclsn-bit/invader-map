@@ -693,6 +693,13 @@
         "Obiettivo in vista: {{id}} è a portata di flash ⚡",
         "Non perderti {{id}}, è proprio lì 🛸",
         "{{id}} avvistato nelle vicinanze - prepara la fotocamera! 🎯"
+      ],
+      "blindTitle": "Qualcosa nei paraggi 👾",
+      "blindBodies": [
+        "Un Invader è vicinissimo. Tieni gli occhi aperti.",
+        "Ce n'è uno nelle immediate vicinanze.",
+        "Alza lo sguardo: ce n'è uno da queste parti.",
+        "Un Invader si nasconde a pochi passi."
       ]
     },
     "perm": {

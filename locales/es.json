@@ -693,6 +693,13 @@
         "Objetivo a la vista: {{id}} está a tu alcance ⚡",
         "No te pierdas {{id}}, está justo ahí 🛸",
         "{{id}} detectado cerca - ¡prepara la cámara! 🎯"
+      ],
+      "blindTitle": "Algo por aquí cerca 👾",
+      "blindBodies": [
+        "Hay un Invader muy cerca. Abre bien los ojos.",
+        "Hay uno en los alrededores inmediatos.",
+        "Levanta la vista: hay uno por aquí.",
+        "Un Invader se esconde a unos pasos."
       ]
     },
     "perm": {

@@ -693,6 +693,13 @@
         "Cible en vue : {{id}} est à portée de flash ⚡",
         "Ne rate pas {{id}}, il est juste là 🛸",
         "{{id}} repéré dans les parages - dégaine ton appareil ! 🎯"
+      ],
+      "blindTitle": "Quelque chose dans les parages 👾",
+      "blindBodies": [
+        "Un Invader est tout près. Ouvre l'œil.",
+        "Il y en a un dans les environs immédiats.",
+        "Lève les yeux : il y en a un par ici.",
+        "Un Invader se cache à quelques pas."
       ]
     },
     "perm": {

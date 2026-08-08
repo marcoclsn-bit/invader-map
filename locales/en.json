@@ -693,6 +693,13 @@
         "Target in sight: {{id}} is within flash range ⚡",
         "Don’t miss {{id}}, it’s right there 🛸",
         "{{id}} spotted nearby - get your camera ready! 🎯"
+      ],
+      "blindTitle": "Something nearby 👾",
+      "blindBodies": [
+        "An Invader is very close. Keep your eyes open.",
+        "There is one in the immediate area.",
+        "Look up: there is one around here.",
+        "An Invader is hiding a few steps away."
       ]
     },
     "perm": {
