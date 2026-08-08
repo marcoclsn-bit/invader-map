@@ -719,15 +719,18 @@ export default function ChasseScreen({ route }) {
   // ─── Cadrage carte après génération ──────────────────────────────────────
   useEffect(() => {
     if (!result) return;
+    // Tracé simplifié en mode explorateur : sinon les quatre bords du rectangle
+    // de caméra sont posés par les décrochages de façade les plus extrêmes,
+    // c'est-à-dire par des positions exactes, sans qu'aucun marqueur ne soit là.
     const coords = [
       { latitude: result.startLat, longitude: result.startLon },
-      ...result.polyline,
+      ...simplifyPath(result.polyline, explorer),
     ];
     mapRef.current?.fitToCoordinates(coords, {
       edgePadding: { top: 60, right: 40, bottom: 260, left: 40 },
       animated: true,
     });
-  }, [result]);
+  }, [result, explorer]);
 
   // ─── Suivi de position (mode navigation) ──────────────────────────────────
   useEffect(() => {
@@ -857,6 +860,20 @@ export default function ChasseScreen({ route }) {
   // MÉMOÏSÉE, et c'est indispensable : en navigation, la boussole redessine
   // plusieurs fois par seconde, et un nouveau tableau à chaque rendu ferait
   // reconstruire le calque natif de la polyligne à chaque battement.
+  // Rang affiché dans la liste, en mode explorateur : consécutif SUR LES SEULS
+  // Invaders. Le rang global se lisait 1, 2, 4, 5, 7… et chaque trou marquait un
+  // lieu à ce rang, exactement l'inférence que masquer le numéro du losange
+  // devait fermer. Le correctif s'annulait donc lui-même.
+  // Sans risque d'incohérence avec la carte : en mode explorateur aucun marqueur
+  // ne porte de numéro, les Invaders flashés affichant une coche et les lieux rien.
+  const rangExplorateur = useMemo(() => {
+    if (!explorer || !result?.invaders) return null;
+    const m = new Map();
+    let n = 0;
+    for (const s of result.invaders) if (!s.isPoi) m.set(s.id, n++);
+    return m;
+  }, [explorer, result]);
+
   const traceRestante = useMemo(
     () => simplifyPath(remainingPolyline ?? result?.polyline, explorer),
     [remainingPolyline, result, explorer],
@@ -1794,7 +1811,7 @@ export default function ChasseScreen({ route }) {
                 ) : (
                   <HuntRow
                     inv={inv}
-                    index={index}
+                    index={rangExplorateur?.get(inv.id) ?? index}
                     isFlashed={flashed.has(inv.id)}
                     statusColors={statusColors}
                     onPress={() => selectInvader(inv)}

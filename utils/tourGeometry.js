@@ -103,10 +103,21 @@ function _douglasPeucker(pts, tol) {
   let maxD = 0, idx = 0;
   const [ax, ay] = pts[0], [bx, by] = pts[pts.length - 1];
   const dx = bx - ax, dy = by - ay;
-  const den = Math.hypot(dx, dy) || 1e-12;
+  const den = Math.hypot(dx, dy);
+  // EXTRÉMITÉS CONFONDUES : on mesure la distance au POINT, pas à la droite.
+  // Une chasse est une boucle, son premier et son dernier point sont le même :
+  // la droite de référence était alors dégénérée, la distance valait exactement
+  // zéro pour TOUS les points, et la fonction rendait deux points identiques.
+  // Autrement dit le tracé disparaissait entièrement de la carte, sur 100 % des
+  // chasses en mode explorateur. Mesurer au point rétablit le comportement
+  // attendu : le point le plus éloigné devient la coupure, et la récursion fait
+  // le reste sur deux moitiés qui, elles, ont des extrémités distinctes.
+  const boucle = den < 1e-12;
   for (let i = 1; i < pts.length - 1; i++) {
     const [px, py] = pts[i];
-    const d = Math.abs(dy * px - dx * py + bx * ay - by * ax) / den;
+    const d = boucle
+      ? Math.hypot(px - ax, py - ay)
+      : Math.abs(dy * px - dx * py + bx * ay - by * ax) / den;
     if (d > maxD) { maxD = d; idx = i; }
   }
   if (maxD <= tol) return [pts[0], pts[pts.length - 1]];

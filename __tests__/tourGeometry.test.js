@@ -1,4 +1,4 @@
-import { backtrackScore, BACKTRACK_DOT_MIN } from '../utils/tourGeometry';
+import { backtrackScore, BACKTRACK_DOT_MIN, simplifyPath } from '../utils/tourGeometry';
 
 const P = (lat, lng) => ({ lat, lng });
 const S = [48.85, 2.30]; // la chasse est une boucle : départ ET arrivée
@@ -55,5 +55,55 @@ describe('backtrackScore', () => {
     expect(backtrackScore(undefined, ...S)).toBe(0);
     // Deux étapes exactement confondues : aucun angle définissable.
     expect(backtrackScore([P(48.85, 2.31), P(48.85, 2.31)], ...S)).not.toBeNaN();
+  });
+});
+
+describe('simplifyPath', () => {
+  // ATTENTION : `simplifyPath` travaille sur la forme de react-native-maps
+  // ({ latitude, longitude }), là où `backtrackScore` prend la forme des données
+  // Invader ({ lat, lng }). Deux conventions dans le même module, d'où ce second
+  // constructeur — le premier jet de ces tests a silencieusement produit des NaN.
+  const L = (latitude, longitude) => ({ latitude, longitude });
+
+  const boucle = (n) => {
+    const p = [];
+    for (let i = 0; i < n; i++) {
+      const a = (2 * Math.PI * i) / (n - 1);
+      p.push({ latitude: 48.85 + 0.004 * Math.sin(a), longitude: 2.30 + 0.006 * Math.cos(a) });
+    }
+    p[p.length - 1] = { ...p[0] }; // départ = arrivée, comme toute chasse
+    return p;
+  };
+
+  it('ne touche à rien quand le mode est inactif', () => {
+    const p = boucle(50);
+    expect(simplifyPath(p, false)).toBe(p); // identité stricte : aucune copie
+  });
+
+  // LA régression : une chasse est une boucle, donc son premier et son dernier
+  // point sont le même. La distance à la droite de référence valait alors zéro
+  // pour tous les points, et le tracé entier disparaissait de la carte.
+  it('conserve un tracé dont le départ et l\'arrivée sont confondus', () => {
+    const out = simplifyPath(boucle(200), true);
+    expect(out.length).toBeGreaterThan(8);
+    expect(out[0]).toEqual(out[out.length - 1]); // la boucle reste fermée
+  });
+
+  it('efface un décrochage de 20 m mais garde celui de 30 m, dans les deux directions', () => {
+    const R = 111320, lat = 48.85, kx = Math.cos((lat * Math.PI) / 180);
+    const ns = (m) => [L(lat, 2.30), L(lat + m / R, 2.305), L(lat, 2.31)];
+    const eo = (m) => [L(lat, 2.30), L(lat + 0.005, 2.30 + m / (R * kx)), L(lat + 0.01, 2.30)];
+    expect(simplifyPath(ns(20), true)).toHaveLength(2);
+    expect(simplifyPath(eo(20), true)).toHaveLength(2);
+    expect(simplifyPath(ns(30), true)).toHaveLength(3);
+    expect(simplifyPath(eo(30), true)).toHaveLength(3);
+  });
+
+  it('tolère les cas dégénérés', () => {
+    expect(simplifyPath(null, true)).toBeNull();
+    expect(simplifyPath([], true)).toHaveLength(0);
+    expect(simplifyPath([L(1, 1)], true)).toHaveLength(1);
+    const identiques = Array.from({ length: 50 }, () => L(48.85, 2.30));
+    expect(simplifyPath(identiques, true).length).toBeLessThanOrEqual(2);
   });
 });
