@@ -1,5 +1,5 @@
 /**
- * utils/tourGeometry.js — Mesure les demi-tours d'une boucle de chasse.
+ * utils/tourGeometry.js : mesure les demi-tours d'une boucle de chasse.
  *
  * Le planificateur minimise le TEMPS, et un aller-retour est très souvent la
  * solution optimale en temps : c'est précisément pour cela qu'il en produit.
@@ -24,7 +24,7 @@
  * Le seuil était d'abord à 120°, par crainte de déformer tous les parcours en
  * pénalisant les coins de rue. La mesure a démenti cette crainte : sur 180
  * chasses parisiennes, passer de 120° à 90° retire 41 % des virages voyants
- * SANS coûter une étape ni une minute — l'Or-opt récupère la différence. Le
+ * SANS coûter une étape ni une minute, l'Or-opt récupère la différence. Le
  * garde-fou théorique valait moins que le chiffre.
  */
 export const BACKTRACK_DOT_MIN = 0; // cos(90°)
@@ -56,7 +56,7 @@ export function backtrackScore(order, startLat, startLon) {
     if (nu < 1e-12 || nv < 1e-12) continue; // deux étapes confondues : pas d'angle
     const dot = (ux * vx + uy * vy) / (nu * nv);
     if (dot < BACKTRACK_DOT_MIN) s += (BACKTRACK_DOT_MIN - dot) / (1 + BACKTRACK_DOT_MIN);
-    // Note : avec un seuil à 0, l'expression se réduit à -dot — un demi-tour
+    // Note : avec un seuil à 0, l'expression se réduit à -dot, un demi-tour
     // complet coûte 1, un virage à 120° en coûte 0,5, un angle droit rien.
   }
   return s;

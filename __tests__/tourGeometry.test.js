@@ -5,7 +5,7 @@ const S = [48.85, 2.30]; // la chasse est une boucle : départ ET arrivée
 
 // Boucle propre : quatre côtés, que des virages à angle droit.
 const CARRE = [P(48.85, 2.32), P(48.84, 2.32), P(48.84, 2.30)];
-// Le même carré, avec un éperon greffé sur le deuxième sommet — le motif exact
+// Le même carré, avec un éperon greffé sur le deuxième sommet, le motif exact
 // qu'on cherche à décourager : on descend le chercher, on remonte par où on est
 // venu.
 const CARRE_EPERON = [P(48.85, 2.32), P(48.84, 2.32), P(48.835, 2.322), P(48.84, 2.30)];

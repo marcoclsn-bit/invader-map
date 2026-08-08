@@ -250,7 +250,7 @@ function twoOpt(order, startLat, startLon, speedKmPerMin, backtrackW = 0) {
 }
 
 // 2 bis. Or-opt : retire une étape et la réinsère ailleurs dans l'ordre.
-// Le 2-opt sait inverser un segment, mais PAS déplacer un point isolé — il est
+// Le 2-opt sait inverser un segment, mais PAS déplacer un point isolé, il est
 // donc structurellement incapable de réparer un éperon, l'étape unique qu'on va
 // chercher en aller-retour. C'est exactement le mouvement qui manque.
 function orOpt(order, startLat, startLon, speedKmPerMin, backtrackW = 0) {
@@ -384,7 +384,7 @@ function planHunt(startLon, startLat, candidates, budgetMin, speedKmh, opts = {}
   selected = refill(selected, remaining, startLat, startLon, invaderBudget, speedKmPerMin, invaderSteps);
   selected = twoOpt(selected, startLat, startLon, speedKmPerMin, backtrackW);
   // Or-opt UNIQUEMENT quand la pénalité est active. Seul, il ne gagne que
-  // 0,6 min sur 83 et 5 points de demi-tours — pas de quoi payer son coût
+  // 0,6 min sur 83 et 5 points de demi-tours, pas de quoi payer son coût
   // quadratique à chaque génération pour tout le monde.
   if (backtrackW) selected = orOpt(selected, startLat, startLon, speedKmPerMin, backtrackW);
 
@@ -676,7 +676,7 @@ export default function ChasseScreen({ route }) {
   //
   // APRÈS la déclaration de `following`, et pas avant : l'appel vivait 80 lignes
   // plus haut, dans la zone morte temporelle. Hermes ne la vérifie pas, donc
-  // aucun plantage — le hook recevait simplement `undefined` à chaque rendu et
+  // aucun plantage, le hook recevait simplement `undefined` à chaque rendu et
   // l'écran s'éteignait en pleine navigation. Une panne muette.
   useKeepScreenOn(following);
   const [drifted, setDrifted] = useState(false);
@@ -805,7 +805,7 @@ export default function ChasseScreen({ route }) {
     // chasse sortirait de la liste au lieu de s'éteindre avec son ✓.
     const dejaFlashes = unflashedOnly ? new Set(flashed) : null;
     // Le périmètre s'applique aussi aux voisins. Sur une boucle du 7e, 10 des 11
-    // voisins affichés étaient hors du 7e — des pastilles d'Invaders de l'autre
+    // voisins affichés étaient hors du 7e, des pastilles d'Invaders de l'autre
     // rive, tout autour d'un parcours censé ne pas quitter l'arrondissement.
     // Le parcours, lui, était juste : c'est l'affichage qui démentait la promesse.
     const arSet = result?.ars ? new Set([...result.ars, ...(result.spillArs ?? [])]) : null;
@@ -843,7 +843,7 @@ export default function ChasseScreen({ route }) {
   // décrochages dentés qui quittent l'axe de la rue pour toucher la façade exacte
   // désignent l'Invader aussi sûrement qu'une épingle, et à cette distance
   // quelqu'un d'attentif l'identifie sans avoir besoin du crochet. La rue reste
-  // la même, le parcours réel et la navigation ne changent pas — seul le dessin
+  // la même, le parcours réel et la navigation ne changent pas, seul le dessin
   // cesse d'être au mètre près. C'est le seul endroit où le tracé en disait trop.
   const drawnPolyline = useMemo(() => {
     if (!explorer || !result?.routeCoords || result.routeCoords.length < 3) return null;
@@ -855,7 +855,7 @@ export default function ChasseScreen({ route }) {
     } catch { return null; }
   }, [explorer, result]);
 
-  // Contours à dessiner. Avant génération, ils suivent la sélection en cours —
+  // Contours à dessiner. Avant génération, ils suivent la sélection en cours ,
   // on voit la zone qu'on est en train de choisir. Après, ils suivent le
   // parcours affiché, qui peut avoir été calculé sur un autre arrondissement.
   const districtRings = useMemo(() => {
@@ -1006,9 +1006,9 @@ export default function ChasseScreen({ route }) {
         // généreux pouvait insérer le château d'If dans une chasse, et le calcul
         // d'itinéraire ORS échouait sur la traversée maritime.
         // Le périmètre vaut pour les lieux comme pour les Invaders. Sans ce filtre,
-        // une chasse dans le 7e piochait dans les 689 lieux de Paris — le rayon
+        // une chasse dans le 7e piochait dans les 689 lieux de Paris, le rayon
         // d'admission de planHunt vaut 6,25 km à 2 h de vélo, soit la ville
-        // entière — et insérait le Louvre ou les Beaux-Arts. Les seuls arrêts
+        // entière, et insérait le Louvre ou les Beaux-Arts. Les seuls arrêts
         // réellement hors zone venaient de là : le budget non consommé par les
         // Invaders se convertissait en visites de l'autre côté de la Seine.
         pois: alpha > 0
@@ -1191,7 +1191,7 @@ export default function ChasseScreen({ route }) {
   function selectInvader(inv) {
     // Mode explorateur : la fiche zoome la carte sur la position exacte, et
     // porte l'indice de localisation. Toucher une ligne de la liste dévoilait
-    // donc tout ce que le masquage des épingles venait de cacher — la fuite la
+    // donc tout ce que le masquage des épingles venait de cacher, la fuite la
     // plus facile à emprunter, puisque la liste, elle, reste affichée.
     if (explorer && !flashed.has(inv.id)) return;
     const deselect = selectedInv?.id === inv.id;
@@ -1232,7 +1232,7 @@ export default function ChasseScreen({ route }) {
           >
             {/* Contours d'arrondissement, sous tout le reste.
                 Sans eux, rien ne distingue « le parcours sort de la zone » de
-                « le parcours longe la frontière » — et 12 des 28 Invaders du 7e
+                « le parcours longe la frontière », et 12 des 28 Invaders du 7e
                 sont à moins de 150 m de la limite, quais et Champ-de-Mars
                 obligent. Le tracé d'un itinéraire réel repassera toujours par
                 l'arrondissement voisin ; la seule réponse honnête est de montrer
@@ -1314,7 +1314,7 @@ export default function ChasseScreen({ route }) {
                 {result.invaders.map((inv, i) => {
                   // Mode explorateur : pas d'épingle sur un Invader qu'on n'a pas
                   // encore. Les lieux restent, et un Invader flashé EN COURS de
-                  // chasse apparaît — c'est la récompense, et il n'y a plus rien
+                  // chasse apparaît, c'est la récompense, et il n'y a plus rien
                   // à révéler. La liste du bas, elle, continue de tout dire :
                   // le mode masque les positions, pas les objectifs.
                   if (explorer && !inv.isPoi && !flashed.has(inv.id)) return null;
@@ -1655,7 +1655,7 @@ export default function ChasseScreen({ route }) {
           </View>}
         </View>
 
-        {/* Volet de report — hors de tout conditionnel : il porte sa propre
+        {/* Volet de report, hors de tout conditionnel : il porte sa propre
             visibilité. Pas d'animation ici (l'écran n'a pas d'overlay de flash),
             mais un retour haptique, et la pastille de l'étape s'allume aussitôt. */}
         <ExplorerSheet
@@ -1924,7 +1924,7 @@ function makeStyles(t) {
     toggleLabel: { fontSize: 13, color: t.textPrimary },
 
     // Proposition de débordement : teintée d'accent pour se distinguer du
-    // récapitulatif, sans crier — c'est une suggestion, pas une alerte.
+    // récapitulatif, sans crier, c'est une suggestion, pas une alerte.
     spillBox: {
       marginTop: 10, padding: 11, borderRadius: 11,
       backgroundColor: t.accentDim, borderWidth: StyleSheet.hairlineWidth, borderColor: t.border,

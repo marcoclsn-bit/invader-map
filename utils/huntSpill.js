@@ -1,5 +1,5 @@
 /**
- * utils/huntSpill.js — Faut-il proposer d'étendre la chasse aux arrondissements
+ * utils/huntSpill.js : faut-il proposer d'étendre la chasse aux arrondissements
  * voisins ?
  *
  * Le réglage n'est PAS offert en amont : l'utilisateur ne peut pas savoir avant
@@ -10,7 +10,7 @@
  *
  * La détection est gratuite : le planificateur travaille hors ligne, seul le
  * calcul d'itinéraire coûte un appel réseau. On ne dépense donc rien pour savoir
- * s'il y a lieu de proposer — seul l'utilisateur qui accepte paie une relance.
+ * s'il y a lieu de proposer, seul l'utilisateur qui accepte paie une relance.
  * C'est ce qui rend la proposition après coup préférable au réglage en amont.
  *
  * La condition est LITTÉRALE, pas heuristique. Un parcours court n'est pas

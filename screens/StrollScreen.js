@@ -215,8 +215,8 @@ export default function StrollScreen({ navigation }) {
             theme={theme}
           />
           {/* Appui long = alerte de test. Le comportement au TAP de la
-              notification — nom de l'Invader et recentrage, ou rien du tout en
-              mode explorateur — ne se vérifie que sur une vraie notification
+              notification, nom de l'Invader et recentrage, ou rien du tout en
+              mode explorateur, ne se vérifie que sur une vraie notification
               reçue par le système. Même motif que le test des Actus dans
               Réglages. */}
           <ToggleRow

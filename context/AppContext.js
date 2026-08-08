@@ -138,7 +138,7 @@ export function AppProvider({ children }) {
   // L'app cesse de montrer OÙ sont les Invaders non flashés. Elle continue de
   // dire lesquels et combien ils valent : la promesse n'est pas « tu ne sais
   // rien », c'est « l'app ne pose jamais d'épingle dessus ». Le tracé d'une
-  // chasse désigne une rue, jamais un mur — trouver une mosaïque de quarante
+  // chasse désigne une rue, jamais un mur, trouver une mosaïque de quarante
   // centimètres sur cent mètres de façades reste entièrement le travail du
   // chasseur.
   // Défaut OFF : c'est une contrainte qu'on choisit, jamais qu'on subit.
@@ -146,7 +146,7 @@ export function AppProvider({ children }) {
   // Présentation à une seule apparition, pour ceux qui ont DÉJÀ terminé
   // l'onboarding : `@invader_onboarding_done` vaut 1 chez eux, ils ne le
   // reverront jamais. Sans ce second chemin, le mode n'existerait que pour les
-  // nouveaux installés — soit personne, aujourd'hui.
+  // nouveaux installés, soit personne, aujourd'hui.
   // Drapeau distinct, sinon un nouvel installé se prendrait les deux.
   const [explorerIntroSeen, setExplorerIntroSeen] = useState(true);
 

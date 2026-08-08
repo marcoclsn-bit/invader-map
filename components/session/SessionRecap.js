@@ -88,7 +88,7 @@ function RecapBody({ session, newBadgeIds, onClose }) {
   // Invader flashé lors d'une sortie précédente n'y figure pas.
   // Mode explorateur : aucun alien fantôme. Ces marqueurs dessinent la position
   // exacte des Invaders NON flashés le long du parcours, sur une image destinée
-  // à être publiée — c'est la fuite la plus lointaine du mode, et la seule qui
+  // à être publiée, c'est la fuite la plus lointaine du mode, et la seule qui
   // survivrait au téléphone de son auteur.
   const missed = useMemo(
     () => (explorer ? [] : missedAlongRoute(invaders, shareRoute, flashed)),

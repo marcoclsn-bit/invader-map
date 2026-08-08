@@ -17,7 +17,7 @@ import { track } from '../services/analytics';
  * Un VOLET et non un écran : les épingles étant masquées, reporter est le geste
  * central du mode, répété à chaque trouvaille. L'envoyer sur une page séparée
  * imposait un aller-retour à chaque fois, et surtout faisait perdre l'animation
- * de récompense — on revenait sur la carte une fois la pastille déjà posée.
+ * de récompense, on revenait sur la carte une fois la pastille déjà posée.
  * Ici la carte reste dessous, et l'alien apparaît sous les yeux.
  *
  * L'identifiant vient de FlashInvaders, qui l'affiche après chaque flash
@@ -66,7 +66,7 @@ export default function ExplorerSheet({ visible, onClose, onFlash }) {
     <Modal visible={visible} transparent animationType="slide" onRequestClose={fermer}>
       {/* Sans remontée au clavier, le volet reste sous lui : on ne voyait QUE le
           clavier, ni le champ, ni le bouton, ni l'aide. Le champ prend le focus
-          tout seul, donc le cas n'est pas un cas limite — c'est le cas normal. */}
+          tout seul, donc le cas n'est pas un cas limite, c'est le cas normal. */}
       <KeyboardAvoidingView
         style={{ flex: 1, justifyContent: 'flex-end' }}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}

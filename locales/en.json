@@ -586,7 +586,7 @@
     "explorer": {
       "section": "How you play",
       "label": "Explorer mode",
-      "hint": "The map only shows Invaders you have already flashed. You hunt by eye, then log the ID FlashInvaders gives you. Everything else — routes, places, stats, trophies — carries on as usual.",
+      "hint": "The map only shows Invaders you have already flashed. You hunt by eye, then log the ID FlashInvaders gives you. Everything else (routes, places, stats, trophies) carries on as usual.",
       "introReset": "The mode introduction will show again next time you go back to the map. The mode has been turned off so it can appear."
     }
   },

@@ -920,7 +920,7 @@ export default function TrajetScreen() {
 
   // Tracé DESSINÉ en mode explorateur : simplifié à ~25 m, pour que les petits
   // décrochages vers une façade cessent de désigner l'Invader. Le couloir réel
-  // et la navigation ne changent pas — seul le dessin cesse d'être au mètre près.
+  // et la navigation ne changent pas, seul le dessin cesse d'être au mètre près.
   const drawnRoute = useMemo(() => {
     if (!explorer || !routeCoords || routeCoords.length < 3) return null;
     try {

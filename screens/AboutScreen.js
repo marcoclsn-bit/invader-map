@@ -15,14 +15,14 @@ const APP_VERSION = require('../app.json')?.expo?.version ?? '1.0.0';
 // Empreinte de la mise à jour par-dessus les airs.
 //
 // La version ci-dessus vient d'app.json : elle ne change QUE lors d'un nouveau
-// build natif, donc jamais lors d'un envoi OTA — qui est pourtant la façon dont
+// build natif, donc jamais lors d'un envoi OTA, qui est pourtant la façon dont
 // arrive la quasi-totalité des évolutions. Sans ce bloc, impossible de
 // distinguer « la mise à jour n'est pas arrivée » de « elle est arrivée mais ne
 // change rien à ce que je regarde », ce qui a déjà coûté une enquête.
 //
 // `updateId` est nul quand on tourne sur le bundle embarqué (build neuf, ou
 // Expo Go) : on l'affiche alors comme tel plutôt que de laisser un vide.
-const OTA_CHANNEL = Updates.channel || '—';
+const OTA_CHANNEL = Updates.channel || '?';
 const OTA_ID = Updates.updateId ? Updates.updateId.slice(0, 8) : null;
 const OTA_DATE = Updates.createdAt
   ? new Date(Updates.createdAt).toISOString().slice(0, 10)

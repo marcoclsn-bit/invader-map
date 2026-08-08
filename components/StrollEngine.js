@@ -80,7 +80,7 @@ export default function StrollEngine() {
       if (data?.type === 'news') { openNews(); return; }
       // Sans `invId`, c'est une alerte du mode explorateur : elle ne nomme
       // aucun Invader, et le tap ne doit surtout pas recentrer la carte sur lui.
-      // L'app s'ouvre simplement là où elle était — ce qui est la bonne réponse :
+      // L'app s'ouvre simplement là où elle était, ce qui est la bonne réponse :
       // à ce stade, c'est à l'utilisateur de lever les yeux, pas à l'écran.
       if (data?.type !== 'stroll' || !data.invId) return;
       const { currentCityCode: cc, setCurrentCity: setCity } = dataRef.current;

@@ -126,7 +126,7 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
         </TouchableOpacity>
         {/* « Y aller » ouvre Plans sur la position EXACTE, et l'indice décrit la
             façade : en mode explorateur, ces deux-là racontent précisément ce
-            qu'on s'est engagé à taire. Ils reviennent dès qu'il est flashé —
+            qu'on s'est engagé à taire. Ils reviennent dès qu'il est flashé ,
             il n'y a alors plus rien à dévoiler. */}
         {(!explorer || isFlashed) && (
           <TouchableOpacity onPress={handleNavigate} style={styles.actionBtn}>

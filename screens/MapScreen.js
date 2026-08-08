@@ -58,7 +58,7 @@ function getStyles(theme) {
 
 // ─── Logique de filtrage ──────────────────────────────────────────────────────
 
-// `explorer` : mode explorateur. On masque tout Invader non flashé — c'est la
+// `explorer` : mode explorateur. On masque tout Invader non flashé, c'est la
 // règle unique du mode, et elle passe AVANT les filtres de l'utilisateur, qui ne
 // doivent pas pouvoir la contourner (« non flashés uniquement » afficherait
 // exactement ce qu'on s'est engagé à ne pas montrer).
@@ -636,7 +636,7 @@ export default function MapScreen({ navigation, route }) {
           panne : sans cette bande, l'utilisateur conclut que l'app est cassée et
           la désinstalle. Elle sert aussi de bouton, parce qu'avec les épingles
           masquées il ne reste plus AUCUN moyen de marquer un Invader depuis la
-          carte — c'est la saisie de l'identifiant lu dans FlashInvaders qui prend
+          carte, c'est la saisie de l'identifiant lu dans FlashInvaders qui prend
           le relais. */}
       {!isChangingCity && explorer && (
         <TouchableOpacity
@@ -692,7 +692,7 @@ export default function MapScreen({ navigation, route }) {
         <FilterPanel filters={filters} onFiltersChange={setFilters} onClose={() => setShowFilters(false)} />
       )}
 
-      {/* Volet de report — monté hors de tout conditionnel : il porte sa propre
+      {/* Volet de report, monté hors de tout conditionnel : il porte sa propre
           visibilité, et c'est lui qui déclenche l'animation ci-dessous. */}
       <ExplorerSheet
         visible={explorerSheet}

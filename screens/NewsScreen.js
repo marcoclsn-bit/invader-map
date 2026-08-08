@@ -267,7 +267,7 @@ export default function NewsScreen({ navigation }) {
   }
 
   async function onPressEvent(e) {
-    // Mode explorateur : l'annonce reste — apprendre qu'un Invader vient d'être
+    // Mode explorateur : l'annonce reste, apprendre qu'un Invader vient d'être
     // posé est précisément ce qu'un chasseur veut savoir, et le nommer ne dit
     // pas où il est. C'est le SAUT qui trahit : il recentre la carte sur lui et
     // ouvre sa fiche. On ouvre donc la ville, pas l'Invader.

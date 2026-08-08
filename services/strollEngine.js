@@ -189,7 +189,7 @@ export async function persistCandidates(candidates) {
 async function notifyProximity(invId) {
   const tpl = await readJSON(KEY_NOTIF, { title: 'Invader à proximité 👾', bodies: ['{id} est tout près !'] });
   // Mode explorateur : l'alerte devient l'atout du mode plutôt que sa faille.
-  // Elle dit qu'il y a quelque chose dans les parages — elle ne nomme pas
+  // Elle dit qu'il y a quelque chose dans les parages, elle ne nomme pas
   // l'Invader, et le tap ne recentre plus la carte sur lui. On garde le
   // frisson, on retire l'indication. Sans `invId` dans les données, le tap
   // n'ouvre aucune fiche (voir components/StrollEngine).
@@ -220,8 +220,8 @@ async function notifyProximity(invId) {
 /**
  * Simule une alerte, pour vérifier sur un vrai téléphone ce que donne le tap.
  *
- * Prend un Invader parmi les candidats déjà persistés — donc un vrai, non
- * flashé, de la ville courante — sans quoi le mode normal n'aurait rien à
+ * Prend un Invader parmi les candidats déjà persistés, donc un vrai, non
+ * flashé, de la ville courante, sans quoi le mode normal n'aurait rien à
  * ouvrir. Court-circuite les anti-répétitions : c'est un test, il doit pouvoir
  * être relancé d'affilée.
  *

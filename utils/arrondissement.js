@@ -31,7 +31,7 @@ for (const inv of INVADERS) {
  * Dérivée des mêmes polygones que ce fichier, au seuil de 25 m entre contours.
  * Résultat stable de 2 m à 60 m (50 puis 51 paires) : ce n'est donc pas un
  * réglage sensible. Les voisinages de part et d'autre de la Seine sont
- * conservés — la limite administrative passe dans l'axe du fleuve, et les
+ * conservés, la limite administrative passe dans l'axe du fleuve, et les
  * ponts rendent le passage réel à pied comme à vélo.
  */
 export const ARRONDISSEMENT_NEIGHBORS = new Map([
@@ -85,14 +85,14 @@ export function districtOfPoint(lng, lat) {
  * sert `data/invaders_PA.json`, qui compte davantage d'Invaders et en gagne à
  * chaque mise à jour du dépôt. Les nouveaux venus n'avaient donc aucun
  * arrondissement, et `Set.has(undefined)` les excluait EN SILENCE du mode
- * quartier de la Chasse comme du décompte du Palmarès — un Invader du 7e était
+ * quartier de la Chasse comme du décompte du Palmarès, un Invader du 7e était
  * ainsi invisible, et l'écart se creusait à chaque rafraîchissement des données.
  *
  * Idempotent et incrémental : seuls les ids jamais examinés sont projetés sur
  * les polygones, donc un appel supplémentaire ne coûte qu'un parcours de liste.
  * On mémorise aussi les ÉCHECS (`_seen`) : un Invader hors de Paris ne tombe
  * dans aucun polygone, et sans cette trace on referait ses vingt tests à chaque
- * appel — or le Palmarès recalcule à chaque flash, sur la ville courante quelle
+ * appel, or le Palmarès recalcule à chaque flash, sur la ville courante quelle
  * qu'elle soit.
  */
 const _seen = new Set();

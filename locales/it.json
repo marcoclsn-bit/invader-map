@@ -586,7 +586,7 @@
     "explorer": {
       "section": "Modo di giocare",
       "label": "Modalità Esploratore",
-      "hint": "La mappa mostra solo gli Invader che hai già fotografato. Cacci a vista, poi registri l'identificativo che ti dà FlashInvaders. Tutto il resto — percorsi, luoghi, statistiche, trofei — prosegue normalmente.",
+      "hint": "La mappa mostra solo gli Invader che hai già fotografato. Cacci a vista, poi registri l'identificativo che ti dà FlashInvaders. Tutto il resto (percorsi, luoghi, statistiche, trofei) prosegue normalmente.",
       "introReset": "La presentazione della modalità riapparirà al prossimo ritorno sulla mappa. La modalità è stata disattivata per renderla visibile."
     }
   },

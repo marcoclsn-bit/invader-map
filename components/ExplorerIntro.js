@@ -13,11 +13,11 @@ import { track } from '../services/analytics';
  * L'onboarding porte le choix pour les nouveaux, mais il ne les reverra jamais :
  * `@invader_onboarding_done` vaut déjà 1 chez tous les utilisateurs actuels, et
  * un envoi par-dessus les airs ne le remet pas à zéro. Sans ce second chemin, le
- * mode n'existerait que pour les prochains installés — soit personne aujourd'hui.
+ * mode n'existerait que pour les prochains installés, soit personne aujourd'hui.
  *
  * DEUX étapes, et l'activation seulement à la seconde. Le premier panneau dit
  * pourquoi le mode existe, le second ce qui va concrètement changer. Un bouton
- * unique aurait laissé activer sans avoir rien lu — or c'est un mode qui vide la
+ * unique aurait laissé activer sans avoir rien lu, or c'est un mode qui vide la
  * carte : quelqu'un qui n'a pas compris pourquoi conclura que l'app est cassée.
  * Le libellé de la première étape est donc « En savoir plus » et non « Essayer »,
  * puisqu'il n'active rien : l'appeler autrement serait le premier malentendu.
@@ -116,7 +116,7 @@ function getStyles(t) {
     blocCorps: { fontSize: 13, color: t.textSecondary, lineHeight: 18, marginTop: 3 },
     // Empilés, et non côte à côte : « Continuer comme avant » passait sur deux
     // lignes là où « Essayer » en tenait une, et le bouton plein s'étirait à la
-    // même hauteur — son libellé flottait au milieu d'une boîte trop grande.
+    // même hauteur, son libellé flottait au milieu d'une boîte trop grande.
     // Une colonne rend la mise en page indifférente à la longueur des libellés,
     // y compris dans les trois autres langues.
     actions: { gap: 10, marginTop: 20 },
