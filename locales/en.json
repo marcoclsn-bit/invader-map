@@ -689,7 +689,6 @@
     "alertsSection": "How to be alerted",
     "vibration": "Vibration",
     "notification": "Notification",
-    "notificationTestHint": "Long-press to receive a test alert.",
     "testEmpty": "No Invader available in this city: turn the mode on first and let the app prepare the list.",
     "targetSection": "Target",
     "unflashedOnly": "Unflashed only",

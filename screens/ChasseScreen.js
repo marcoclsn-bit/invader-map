@@ -24,7 +24,7 @@ import {
 } from '../utils/arrondissement';
 import { spillOffer } from '../utils/huntSpill';
 import ExplorerSheet from '../components/ExplorerSheet';
-import { backtrackScore } from '../utils/tourGeometry';
+import { backtrackScore, simplifyPath } from '../utils/tourGeometry';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
@@ -260,13 +260,19 @@ function orOpt(order, startLat, startLon, speedKmPerMin, backtrackW = 0) {
   let improved = true;
   while (improved) {
     improved = false;
-    for (let i = 0; i < best.length; i++) {
-      const without = best.slice(0, i).concat(best.slice(i + 1));
-      for (let p = 0; p <= without.length; p++) {
+    // On RECOMMENCE dès qu'une amélioration est acceptée. La première version
+    // continuait la boucle intérieure après avoir réassigné `best` : `without`
+    // et `best[i]` restaient calculés sur l'ancien ordre, et le candidat suivant
+    // dupliquait une étape tout en en perdant une autre. Le nombre d'étapes
+    // restant inchangé, aucun de mes contrôles ne l'avait vu.
+    for (let i = 0; i < best.length && !improved; i++) {
+      const sans = best.slice(0, i).concat(best.slice(i + 1));
+      const etape = best[i];
+      for (let p = 0; p <= sans.length; p++) {
         if (p === i) continue;
-        const cand = without.slice(0, p).concat(best[i], without.slice(p));
+        const cand = sans.slice(0, p).concat(etape, sans.slice(p));
         const c = tourCostMin(cand, startLat, startLon, speedKmPerMin, backtrackW);
-        if (c < bestC - 1e-9) { best = cand; bestC = c; improved = true; }
+        if (c < bestC - 1e-9) { best = cand; bestC = c; improved = true; break; }
       }
     }
   }
@@ -839,23 +845,7 @@ export default function ChasseScreen({ route }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [result, invaders, explorer]);
 
-  // Tracé DESSINÉ. En mode explorateur, on le simplifie à ~25 m : les petits
-  // décrochages dentés qui quittent l'axe de la rue pour toucher la façade exacte
-  // désignent l'Invader aussi sûrement qu'une épingle, et à cette distance
-  // quelqu'un d'attentif l'identifie sans avoir besoin du crochet. La rue reste
-  // la même, le parcours réel et la navigation ne changent pas, seul le dessin
-  // cesse d'être au mètre près. C'est le seul endroit où le tracé en disait trop.
-  const drawnPolyline = useMemo(() => {
-    if (!explorer || !result?.routeCoords || result.routeCoords.length < 3) return null;
-    try {
-      const simple = turf.simplify(turf.lineString(result.routeCoords), {
-        tolerance: 0.00025, highQuality: true, mutate: false,
-      });
-      return simple.geometry.coordinates.map(([lng, lat]) => ({ latitude: lat, longitude: lng }));
-    } catch { return null; }
-  }, [explorer, result]);
-
-  // Contours à dessiner. Avant génération, ils suivent la sélection en cours ,
+  // Contours à dessiner. Avant génération, ils suivent la sélection en cours :
   // on voit la zone qu'on est en train de choisir. Après, ils suivent le
   // parcours affiché, qui peut avoir été calculé sur un autre arrondissement.
   const districtRings = useMemo(() => {
@@ -867,6 +857,12 @@ export default function ChasseScreen({ route }) {
       ...spill.map(ar => ({ ar, spill: true, ring: districtRing(ar) })),
     ].filter(r => r.ring);
   }, [result, mode, hasDistricts, selectedArs]);
+
+  // Tracés DESSINÉS. La simplification s'applique ICI, après le découpage
+  // parcouru/restant : la poser en repli d'une autre valeur ne servait à rien,
+  // `remainingPolyline` étant toujours non nul dès qu'un résultat existe. Elle
+  // couvre ainsi la navigation, où le tracé était resté au mètre près.
+  const trace = (coords) => simplifyPath(coords, explorer);
 
   // ─── Portion déjà parcourue (gris) vs restante (orange) ──────────────────
   const { walkedPolyline, remainingPolyline } = useMemo(() => {
@@ -1269,10 +1265,10 @@ export default function ChasseScreen({ route }) {
               <Fragment key={result.runId}>
                 {/* Tracé — gris derrière, orange devant */}
                 {walkedPolyline && (
-                  <Polyline coordinates={walkedPolyline} strokeColor={theme.textSecondary} strokeWidth={4} lineCap="round" />
+                  <Polyline coordinates={trace(walkedPolyline)} strokeColor={theme.textSecondary} strokeWidth={4} lineCap="round" />
                 )}
                 <Polyline
-                  coordinates={remainingPolyline ?? drawnPolyline ?? result.polyline}
+                  coordinates={trace(remainingPolyline ?? result.polyline)}
                   strokeColor={theme.accent}
                   strokeWidth={4}
                   lineCap="round"
@@ -1770,7 +1766,10 @@ export default function ChasseScreen({ route }) {
                 inv.isPoi ? (
                   <TouchableOpacity style={styles.poiRow} onPress={() => { setSelectedPoi(inv); track('poi_open', { from: 'hunt_list', theme: inv.theme, lang: i18n.language }); }} activeOpacity={0.7}>
                     <View style={styles.poiRowDiamond} />
-                    <Text style={styles.poiRowNum}>{index + 1}</Text>
+                    {/* Même raison que sur le marqueur : deux lieux rangés 24 et
+                        31 annoncent six Invaders entre eux, sur le segment de
+                        tracé qui relie deux losanges parfaitement visibles. */}
+                    {!explorer && <Text style={styles.poiRowNum}>{index + 1}</Text>}
                     <View style={{ flex: 1, marginLeft: 6 }}>
                       <Text style={styles.poiRowName} numberOfLines={1}>{inv.name}</Text>
                       <Text style={styles.poiRowSub} numberOfLines={1}>{t('hunt.poiBadge')}</Text>

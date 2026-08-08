@@ -378,6 +378,12 @@ export default function MapScreen({ navigation, route }) {
     if (isChangingCity) return;
     const inv = invaders.find((i) => i.id === focusId);
     if (!inv) return; // pas encore chargé → réessaiera (dep invaders)
+    // Défense en profondeur du mode explorateur. Les appelants actuels sont
+    // gardés, mais la garde doit vivre ICI : une notification de proximité émise
+    // AVANT l'activation du mode transporte encore son `invId` et reste dans le
+    // centre de notifications. Un appui après coup recentrait la carte sur la
+    // position exacte et ouvrait la fiche. Tout futur appelant fuirait de même.
+    if (explorer && !flashed.has(inv.id)) { handledFocusTs.current = focusTs; return; }
     handledFocusTs.current = focusTs;
     setSelected(inv);
     setShowFilters(false);
@@ -385,7 +391,7 @@ export default function MapScreen({ navigation, route }) {
       { latitude: inv.lat, longitude: inv.lng, latitudeDelta: 0.01, longitudeDelta: 0.01 },
       600
     );
-  }, [focusId, focusTs, invaders, isChangingCity]);
+  }, [focusId, focusTs, invaders, isChangingCity, explorer, flashed]);
 
   function closeAll() { setSelected(null); setSelectedPoi(null); setShowFilters(false); }
 

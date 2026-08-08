@@ -10,6 +10,7 @@ import { useGamification } from '../../context/GamificationContext';
 import { useAppContext } from '../../context/AppContext';
 import ShareStory, { FORMATS, FORMAT_DEFAUT, buildStaticMap, trimRouteEnds } from '../share/ShareStory';
 import { missedAlongRoute } from '../../utils/session';
+import { simplifyPath } from '../../utils/tourGeometry';
 import { captureAndShare } from '../../services/shareStory';
 import { reserveMapboxCall } from '../../services/routing';
 import { MAPBOX_TOKEN } from '../../config/mapbox';
@@ -82,7 +83,16 @@ function RecapBody({ session, newBadgeIds, onClose }) {
   const sessionPoints = pins.reduce((s, p) => s + (p.points ?? 0), 0);
 
   // Tracé rogné (confidentialité : masque le départ/arrivée près du domicile).
-  const shareRoute = useMemo(() => trimRouteEnds(session.routeCoords), [session.routeCoords]);
+  // La trace enregistrée retombe sur l'itinéraire PRÉVU quand le GPS n'a rien
+  // donné (écran verrouillé, cas normal sur iOS) : elle porte alors tous les
+  // décrochages de façade, et part dans l'image partagée. On la simplifie donc
+  // aussi, sinon vider les aliens fantômes ne servait à rien.
+  const shareRoute = useMemo(() => {
+    const brut = trimRouteEnds(session.routeCoords);
+    if (!explorer || !brut?.length) return brut;
+    const lisse = simplifyPath(brut.map(([lng, lat]) => ({ latitude: lat, longitude: lng })), true);
+    return lisse.map(p => [p.longitude, p.latitude]);
+  }, [session.routeCoords, explorer]);
   // Invaders du parcours jamais flashés : la carte montre ce qu'il reste à
   // trouver, ce qui remplit le quartier sans exposer l'échec du jour — un
   // Invader flashé lors d'une sortie précédente n'y figure pas.

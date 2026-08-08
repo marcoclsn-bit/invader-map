@@ -689,7 +689,6 @@
     "alertsSection": "Cómo recibir el aviso",
     "vibration": "Vibración",
     "notification": "Notificación",
-    "notificationTestHint": "Mantén pulsado para recibir una alerta de prueba.",
     "testEmpty": "Ningún Invader disponible en esta ciudad: activa primero el modo y deja que la app prepare la lista.",
     "targetSection": "Filtrar",
     "unflashedOnly": "Solo los no fotografiados",

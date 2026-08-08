@@ -61,3 +61,50 @@ export function backtrackScore(order, startLat, startLon) {
   }
   return s;
 }
+
+/**
+ * Simplifie un tracé destiné à l'AFFICHAGE, en mode explorateur.
+ *
+ * Les petits décrochages qui quittent l'axe de la rue pour toucher une façade
+ * désignent l'Invader aussi sûrement qu'une épingle. À 25 m de tolérance, la rue
+ * empruntée reste la même et le parcours réel ne change pas : seul le dessin
+ * cesse d'être au mètre près.
+ *
+ * Appliqué au moment de DESSINER, et non en repli d'une autre valeur : la
+ * première version posait `drawnPolyline` derrière un `??` que le tracé
+ * complet, toujours non nul, rendait inatteignable. La protection existait dans
+ * le code et ne s'exécutait jamais.
+ *
+ * @param coords    [{ latitude, longitude }]
+ * @param actif     false rend le tableau d'origine, sans copie ni calcul
+ */
+export function simplifyPath(coords, actif) {
+  if (!actif || !coords || coords.length < 3) return coords;
+  try {
+    // Douglas-Peucker en degrés : 0,00025° vaut ~25 m sous nos latitudes.
+    const pts = coords.map(c => [c.longitude, c.latitude]);
+    const out = _douglasPeucker(pts, 0.00025);
+    return out.map(([lng, lat]) => ({ latitude: lat, longitude: lng }));
+  } catch { return coords; }
+}
+
+// Implémenté ici plutôt que via turf.simplify : la fonction est appelée au
+// rendu, et fabriquer un objet GeoJSON à chaque passe pour le défaire ensuite
+// coûte plus que l'algorithme lui-même.
+function _douglasPeucker(pts, tol) {
+  if (pts.length < 3) return pts;
+  let maxD = 0, idx = 0;
+  const [ax, ay] = pts[0], [bx, by] = pts[pts.length - 1];
+  const dx = bx - ax, dy = by - ay;
+  const den = Math.hypot(dx, dy) || 1e-12;
+  for (let i = 1; i < pts.length - 1; i++) {
+    const [px, py] = pts[i];
+    const d = Math.abs(dy * px - dx * py + bx * ay - by * ax) / den;
+    if (d > maxD) { maxD = d; idx = i; }
+  }
+  if (maxD <= tol) return [pts[0], pts[pts.length - 1]];
+  return [
+    ..._douglasPeucker(pts.slice(0, idx + 1), tol).slice(0, -1),
+    ..._douglasPeucker(pts.slice(idx), tol),
+  ];
+}

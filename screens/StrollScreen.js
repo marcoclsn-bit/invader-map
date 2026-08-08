@@ -221,10 +221,11 @@ export default function StrollScreen({ navigation }) {
               Réglages. */}
           <ToggleRow
             label={t('stroll.notification')}
-            hint={t('stroll.notificationTestHint')}
             value={stroll.notification}
             onValueChange={(v) => { track('stroll_setting', { setting: 'notification', state: v ? 'on' : 'off' }); setStrollPref({ notification: v }); }}
-            onLongPress={async () => {
+            onLongPress={off ? undefined : async () => {
+              // Gardé par `off` : sans ça, la Balade désactivée déclenchait quand
+              // même la demande d'autorisation système puis une vraie notification.
               try { await Notifications.requestPermissionsAsync(); } catch {}
               const id = await simulateProximityAlert();
               if (!id) Alert.alert('InvaderQuest', t('stroll.testEmpty'));

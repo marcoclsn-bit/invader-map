@@ -28,11 +28,16 @@ export default function ExplorerIntro() {
   const st = getStyles(theme);
   const { loaded, showOnboarding, explorerIntroSeen, dismissExplorerIntro, setExplorer, explorer } = useAppContext();
 
+  // TOUS les hooks avant le moindre retour anticipé. Le `useState` vivait sous
+  // la garde ci-dessous : au rendu qui suit la réponse de l'utilisateur, le
+  // composant sortait avant lui et React levait « Rendered fewer hooks than
+  // expected », sans limite de bord d'erreur, donc écran vide. Le cas se
+  // produisait pour TOUT LE MONDE, au premier appui sur l'un ou l'autre bouton.
+  const [etape, setEtape] = useState(1);
+
   // `explorer` déjà actif : proposer d'essayer ce qu'on utilise n'a aucun sens.
   // Le cas arrive à qui a trouvé le réglage avant que la présentation ne sorte.
   if (!loaded || showOnboarding || explorerIntroSeen || explorer) return null;
-
-  const [etape, setEtape] = useState(1);
 
   const repondre = (on) => {
     track('explorer_intro', { choice: on ? 'on' : 'off' });

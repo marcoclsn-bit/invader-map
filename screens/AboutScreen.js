@@ -24,9 +24,15 @@ const APP_VERSION = require('../app.json')?.expo?.version ?? '1.0.0';
 // Expo Go) : on l'affiche alors comme tel plutôt que de laisser un vide.
 const OTA_CHANNEL = Updates.channel || '?';
 const OTA_ID = Updates.updateId ? Updates.updateId.slice(0, 8) : null;
-const OTA_DATE = Updates.createdAt
-  ? new Date(Updates.createdAt).toISOString().slice(0, 10)
-  : null;
+// Enveloppé : ce fichier est importé au chargement du bundle. Une date invalide
+// mais non nulle ferait lever toISOString AVANT le premier rendu, et l'app ne
+// démarrerait pas du tout. Coût de la garde : deux lignes.
+const OTA_DATE = (() => {
+  try {
+    const d = new Date(Updates.createdAt);
+    return Number.isNaN(+d) ? null : d.toISOString().slice(0, 10);
+  } catch { return null; }
+})();
 
 // ─── Composants internes ──────────────────────────────────────────────────────
 

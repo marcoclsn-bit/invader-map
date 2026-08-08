@@ -15,6 +15,7 @@ import i18n from '../i18n';
 import { STATUS_COLOR } from '../constants';
 import { ORS_API_KEY } from '../config/ors';
 import { useAppContext } from '../context/AppContext';
+import { simplifyPath } from '../utils/tourGeometry';
 import { CITIES } from '../cities/registry';
 import { familyOf } from '../data/poiFamilies';
 import { getPois, hasPois } from '../services/poiData';
@@ -306,7 +307,6 @@ export default function TrajetScreen() {
   const { recordSession } = useGamification();
   // Écran maintenu allumé pendant le suivi : sans ça, iOS suspend l'app dès
   // l'extinction de l'écran et la distance parcourue cesse d'être enregistrée.
-  useKeepScreenOn(following);
   const { theme, isDark } = useTheme();
   const { t } = useTranslation();
   const styles = getStyles(theme);
@@ -367,6 +367,11 @@ export default function TrajetScreen() {
   }
   const [showInfo, setShowInfo] = useState(false);
   const [following, setFollowing] = useState(false);
+  // APRÈS la déclaration de `following` : l'appel vivait soixante lignes plus
+  // haut, dans la zone morte temporelle. Hermes ne la vérifie pas, donc aucun
+  // plantage, le hook recevait `undefined` à chaque rendu et l'écran s'éteignait
+  // en pleine navigation. Exactement la panne déjà réparée sur la Chasse.
+  useKeepScreenOn(following);
   const [drifted, setDrifted] = useState(false);
   const [userPos, setUserPos] = useState(null);
   const [userHeading, setUserHeading] = useState(null);
@@ -507,7 +512,13 @@ export default function TrajetScreen() {
     }
     __DEV__ && console.log('[Trajet] Markers rendus sur la carte :', routeInvaders.length);
     const routeLatlngs = routeCoords.map(([lng, lat]) => ({ latitude: lat, longitude: lng }));
-    const invLatlngs = routeInvaders.map((inv) => ({ latitude: inv.lat, longitude: inv.lng }));
+    // Mode explorateur : on ne cadre QUE sur le tracé. Les Invaders du couloir
+    // peuvent être à `bufferKm` de la rue empruntée : ils bornent alors les quatre
+    // côtés du rectangle de caméra, ce qui désigne quatre positions presque
+    // exactes sans qu'aucun marqueur ne soit dessiné.
+    const invLatlngs = explorer
+      ? []
+      : routeInvaders.map((inv) => ({ latitude: inv.lat, longitude: inv.lng }));
     const allCoords = invLatlngs.length > 0 ? [...routeLatlngs, ...invLatlngs] : routeLatlngs;
     mapRef.current?.fitToCoordinates(allCoords, {
       edgePadding: { top: 60, right: 40, bottom: 40, left: 40 },
@@ -918,18 +929,9 @@ export default function TrajetScreen() {
     } catch {}
   }
 
-  // Tracé DESSINÉ en mode explorateur : simplifié à ~25 m, pour que les petits
-  // décrochages vers une façade cessent de désigner l'Invader. Le couloir réel
-  // et la navigation ne changent pas, seul le dessin cesse d'être au mètre près.
-  const drawnRoute = useMemo(() => {
-    if (!explorer || !routeCoords || routeCoords.length < 3) return null;
-    try {
-      const simple = turf.simplify(turf.lineString(routeCoords), {
-        tolerance: 0.00025, highQuality: true, mutate: false,
-      });
-      return simple.geometry.coordinates.map(([lng, lat]) => ({ latitude: lat, longitude: lng }));
-    } catch { return null; }
-  }, [explorer, routeCoords]);
+  // Tracés DESSINÉS : voir ChasseScreen, même correctif. La simplification
+  // s'applique au dessin, pas en repli d'une valeur toujours définie.
+  const trace = (coords) => simplifyPath(coords, explorer);
 
   function selectRouteInvader(inv) {
     // Même fuite que sur la Chasse : la fiche recentre la carte sur la position
@@ -1017,9 +1019,9 @@ export default function TrajetScreen() {
         >
           {routePolyline && (
             <>
-              <Polyline coordinates={remainingPolyline ?? drawnRoute ?? routePolyline} strokeColor={theme.accent} strokeWidth={4} lineCap="round" />
+              <Polyline coordinates={trace(remainingPolyline ?? routePolyline)} strokeColor={theme.accent} strokeWidth={4} lineCap="round" />
               {walkedPolyline && (
-                <Polyline coordinates={walkedPolyline} strokeColor={theme.textSecondary} strokeWidth={4} lineCap="round" />
+                <Polyline coordinates={trace(walkedPolyline)} strokeColor={theme.textSecondary} strokeWidth={4} lineCap="round" />
               )}
               {/* Repère départ — masqué en suivi et quand le départ est la position GPS */}
               {!following && depText !== GPS_LABEL && (

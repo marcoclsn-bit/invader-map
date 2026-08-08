@@ -126,7 +126,7 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
         </TouchableOpacity>
         {/* « Y aller » ouvre Plans sur la position EXACTE, et l'indice décrit la
             façade : en mode explorateur, ces deux-là racontent précisément ce
-            qu'on s'est engagé à taire. Ils reviennent dès qu'il est flashé ,
+            qu'on s'est engagé à taire. Ils reviennent dès qu'il est flashé :
             il n'y a alors plus rien à dévoiler. */}
         {(!explorer || isFlashed) && (
           <TouchableOpacity onPress={handleNavigate} style={styles.actionBtn}>
@@ -137,6 +137,11 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
 
       {invader.hint && (!explorer || isFlashed) ? <Text style={styles.hint}>{invader.hint}</Text> : null}
 
+      {/* Le hashtag affiche des photos de la mosaïque en situation : un « où
+          est-il » en un appui, depuis un mode qui promet de se taire. Et le
+          signalement de statut fait sortir lat/lng dans une feuille de partage.
+          Les deux reviennent dès que l'Invader est flashé. */}
+      {(!explorer || isFlashed) && (
       <TouchableOpacity
         style={styles.igBtn}
         onPress={handleInstagram}
@@ -145,7 +150,9 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
         <Ionicons name="logo-instagram" size={16} color="#E1306C" />
         <Text style={styles.igBtnText}>{t('map.panel.instagram')}</Text>
       </TouchableOpacity>
+      )}
 
+      {(!explorer || isFlashed) && (
       <TouchableOpacity
         style={styles.reportBtn}
         onPress={reportStatus}
@@ -155,6 +162,7 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
         <Ionicons name="flag-outline" size={13} color={theme.textSecondary} />
         <Text style={styles.reportBtnText}>{t('feedback.status.button')}</Text>
       </TouchableOpacity>
+      )}
 
     </View>
   );
