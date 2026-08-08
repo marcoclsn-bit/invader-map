@@ -23,6 +23,7 @@ import {
   neighborsOf,
 } from '../utils/arrondissement';
 import { spillOffer } from '../utils/huntSpill';
+import ExplorerSheet from '../components/ExplorerSheet';
 import { backtrackScore } from '../utils/tourGeometry';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
@@ -644,6 +645,7 @@ export default function ChasseScreen({ route }) {
   // qu'un horodatage, qui collisionnerait sur deux générations rapprochées.
   const runIdRef = useRef(0);
   const [spilling, setSpilling] = useState(false);
+  const [explorerSheet, setExplorerSheet] = useState(false);
   const [spillDismissed, setSpillDismissed] = useState(false);
 
   // UN SEUL arrondissement à la fois. La multi-sélection produisait des chasses
@@ -836,6 +838,22 @@ export default function ChasseScreen({ route }) {
     // ils servent de photographie à l'instant du calcul (voir dejaFlashes).
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [result, invaders, explorer]);
+
+  // Tracé DESSINÉ. En mode explorateur, on le simplifie à ~25 m : les petits
+  // décrochages dentés qui quittent l'axe de la rue pour toucher la façade exacte
+  // désignent l'Invader aussi sûrement qu'une épingle, et à cette distance
+  // quelqu'un d'attentif l'identifie sans avoir besoin du crochet. La rue reste
+  // la même, le parcours réel et la navigation ne changent pas — seul le dessin
+  // cesse d'être au mètre près. C'est le seul endroit où le tracé en disait trop.
+  const drawnPolyline = useMemo(() => {
+    if (!explorer || !result?.routeCoords || result.routeCoords.length < 3) return null;
+    try {
+      const simple = turf.simplify(turf.lineString(result.routeCoords), {
+        tolerance: 0.00025, highQuality: true, mutate: false,
+      });
+      return simple.geometry.coordinates.map(([lng, lat]) => ({ latitude: lat, longitude: lng }));
+    } catch { return null; }
+  }, [explorer, result]);
 
   // Contours à dessiner. Avant génération, ils suivent la sélection en cours —
   // on voit la zone qu'on est en train de choisir. Après, ils suivent le
@@ -1254,7 +1272,7 @@ export default function ChasseScreen({ route }) {
                   <Polyline coordinates={walkedPolyline} strokeColor={theme.textSecondary} strokeWidth={4} lineCap="round" />
                 )}
                 <Polyline
-                  coordinates={remainingPolyline ?? result.polyline}
+                  coordinates={remainingPolyline ?? drawnPolyline ?? result.polyline}
                   strokeColor={theme.accent}
                   strokeWidth={4}
                   lineCap="round"
@@ -1315,7 +1333,10 @@ export default function ChasseScreen({ route }) {
                       // Lieu d'intérêt : losange doré, impossible à confondre avec un alien
                       <View style={styles.poiMarkerWrap}>
                         <View style={[styles.poiMarker, selectedPoi?.id === inv.id && styles.poiMarkerSel]} />
-                        <Text style={styles.poiMarkerNum}>{i + 1}</Text>
+                        {/* Le rang d'un lieu est un rang GLOBAL : deux lieux
+                            numérotés 24 et 31 annoncent six Invaders entre eux.
+                            Le losange suffit à situer, et le tracé donne l'ordre. */}
+                        {!explorer && <Text style={styles.poiMarkerNum}>{i + 1}</Text>}
                       </View>
                     ) : (
                       <View style={[styles.huntMarker, done && styles.huntMarkerDone, sel && styles.huntMarkerSel]}>
@@ -1591,6 +1612,22 @@ export default function ChasseScreen({ route }) {
                   </TouchableOpacity>
                 )}
                 <View style={styles.rightControls}>
+                  {/* Report depuis la Chasse. C'est ICI qu'on trouve les Invaders :
+                      obliger à revenir sur la Carte pour en marquer un cassait la
+                      sortie en deux à chaque trouvaille. Le bouton n'apparaît
+                      qu'en mode explorateur, où les épingles masquées privent de
+                      tout autre moyen de flasher. */}
+                  {explorer && (
+                    <TouchableOpacity
+                      style={[styles.recenterBtn, { borderColor: theme.accent, borderWidth: StyleSheet.hairlineWidth }]}
+                      onPress={() => setExplorerSheet(true)}
+                      accessibilityRole="button"
+                      accessibilityLabel={t('explorer.badge')}
+                      accessibilityHint={t('explorer.badgeHint')}
+                    >
+                      <Ionicons name="eye-off-outline" size={20} color={theme.accent} />
+                    </TouchableOpacity>
+                  )}
                   {(!following || drifted) && (
                     <TouchableOpacity style={styles.recenterBtn} onPress={recenter}>
                       <Ionicons name="locate-outline" size={22} color={theme.accent} />
@@ -1617,6 +1654,18 @@ export default function ChasseScreen({ route }) {
             )}
           </View>}
         </View>
+
+        {/* Volet de report — hors de tout conditionnel : il porte sa propre
+            visibilité. Pas d'animation ici (l'écran n'a pas d'overlay de flash),
+            mais un retour haptique, et la pastille de l'étape s'allume aussitôt. */}
+        <ExplorerSheet
+          visible={explorerSheet}
+          onClose={() => setExplorerSheet(false)}
+          onFlash={(id) => {
+            toggleFlash(id);
+            Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).catch(() => {});
+          }}
+        />
 
         {/* ── Panneau résultat (masqué en navigation ET quand le formulaire est ouvert) ── */}
         {!isChangingCity && result && !following && inputCollapsed && (

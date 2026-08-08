@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
 import {
   Modal, View, Text, TextInput, TouchableOpacity, StyleSheet, Pressable, Keyboard,
+  KeyboardAvoidingView, Platform,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
@@ -63,8 +64,15 @@ export default function ExplorerSheet({ visible, onClose, onFlash }) {
 
   return (
     <Modal visible={visible} transparent animationType="slide" onRequestClose={fermer}>
-      <Pressable style={st.fond} onPress={fermer} />
-      <View style={st.volet}>
+      {/* Sans remontée au clavier, le volet reste sous lui : on ne voyait QUE le
+          clavier, ni le champ, ni le bouton, ni l'aide. Le champ prend le focus
+          tout seul, donc le cas n'est pas un cas limite — c'est le cas normal. */}
+      <KeyboardAvoidingView
+        style={{ flex: 1, justifyContent: 'flex-end' }}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+      >
+        <Pressable style={st.fond} onPress={fermer} />
+        <View style={st.volet}>
         <View style={st.poignee} />
 
         <View style={st.entete}>
@@ -132,7 +140,8 @@ export default function ExplorerSheet({ visible, onClose, onFlash }) {
             </TouchableOpacity>
           </>
         )}
-      </View>
+        </View>
+      </KeyboardAvoidingView>
     </Modal>
   );
 }

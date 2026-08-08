@@ -918,6 +918,19 @@ export default function TrajetScreen() {
     } catch {}
   }
 
+  // Tracé DESSINÉ en mode explorateur : simplifié à ~25 m, pour que les petits
+  // décrochages vers une façade cessent de désigner l'Invader. Le couloir réel
+  // et la navigation ne changent pas — seul le dessin cesse d'être au mètre près.
+  const drawnRoute = useMemo(() => {
+    if (!explorer || !routeCoords || routeCoords.length < 3) return null;
+    try {
+      const simple = turf.simplify(turf.lineString(routeCoords), {
+        tolerance: 0.00025, highQuality: true, mutate: false,
+      });
+      return simple.geometry.coordinates.map(([lng, lat]) => ({ latitude: lat, longitude: lng }));
+    } catch { return null; }
+  }, [explorer, routeCoords]);
+
   function selectRouteInvader(inv) {
     // Même fuite que sur la Chasse : la fiche recentre la carte sur la position
     // exacte et porte l'indice. La liste du couloir reste affichée, elle ne doit
@@ -1004,7 +1017,7 @@ export default function TrajetScreen() {
         >
           {routePolyline && (
             <>
-              <Polyline coordinates={remainingPolyline ?? routePolyline} strokeColor={theme.accent} strokeWidth={4} lineCap="round" />
+              <Polyline coordinates={remainingPolyline ?? drawnRoute ?? routePolyline} strokeColor={theme.accent} strokeWidth={4} lineCap="round" />
               {walkedPolyline && (
                 <Polyline coordinates={walkedPolyline} strokeColor={theme.textSecondary} strokeWidth={4} lineCap="round" />
               )}
