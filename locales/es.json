@@ -1203,11 +1203,19 @@
       "leave": "Salir del modo explorador"
     },
     "intro": {
-      "title": "Otra forma de cazar",
-      "body": "El modo explorador quita del mapa los Invaders que aún no has encontrado. Sigues viendo cuántos hay en una ruta y cuánto valen, pero ya no dónde están. Cazas a ojo y registras el identificador que FlashInvaders te muestra tras la foto.",
-      "note": "Puedes activarlo o salir cuando quieras en Ajustes. No se pierde nada: tus fotografiados y tu progreso no cambian.",
-      "keep": "Dejar como está",
-      "tryIt": "Probar"
+      "title": "Nuevo: el modo Explorador",
+      "body": "Algunos cazadores de Invaders nos dijeron que ver todos los Invaders en el mapa lo hacía demasiado fácil y le quitaba la gracia. Hemos tenido en cuenta esos comentarios para crear un modo pensado para quienes quieren buscar por sí mismos.\n\nCon este modo, no tendrás ninguna localización de Invaders mientras no te la hayas ganado. El mapa solo muestra los que has fotografiado, pero todo lo demás sigue: paseos a medida que te anuncian cuántos Invaders cruzarás sin decir cuáles, lugares por descubrir en el camino, un aviso cuando pasas muy cerca si lo activas, tus estadísticas, tus trofeos y tu mapa que se llena con cada hallazgo.",
+      "more": "Saber más",
+      "keep": "Más tarde",
+      "step2Title": "Antes de empezar",
+      "s1t": "Los Invaders que no has fotografiado desaparecen.",
+      "s1b": "Del mapa, de las rutas, de los avisos. Sigues viendo cuántos hay y cuánto valen.",
+      "s2t": "Para registrar uno, escribes su identificador.",
+      "s2b": "El que FlashInvaders te muestra tras la foto: «YOU FOUND PA_554». Son dos toques desde el mapa o la caza.",
+      "s3t": "No se pierde nada.",
+      "s3b": "Tus fotografiados, tus puntos, tus trofeos y tus estadísticas no cambian, y lo recuperas todo al salir del modo.",
+      "activate": "Activar el modo Explorador",
+      "back": "Volver"
     }
   }
 }

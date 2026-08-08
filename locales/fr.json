@@ -1203,11 +1203,19 @@
       "leave": "Quitter le mode explorateur"
     },
     "intro": {
-      "title": "Une autre façon de chasser",
-      "body": "Le mode explorateur retire de la carte les Invaders que tu n'as pas encore trouvés. Tu vois toujours combien il y en a sur un parcours et ce qu'ils valent — mais plus où ils sont. Tu chasses à l'œil, et tu reportes l'identifiant que FlashInvaders t'affiche après le flash.",
-      "note": "Tu peux l'activer ou le quitter à tout moment dans les Réglages. Rien n'est perdu : tes flashés et ta progression ne bougent pas.",
-      "keep": "Continuer comme avant",
-      "tryIt": "Essayer"
+      "title": "Nouveau : le mode Explorateur",
+      "body": "Pour certains chasseurs d'Invaders, voir tous les Invaders sur la carte rendait la chose trop facile et enlevait le fun. Nous avons pris en compte ces retours pour créer un mode destiné à ceux qui veulent chercher par eux-mêmes.\n\nAvec ce mode, tu n'auras plus aucune localisation d'Invaders tant que tu ne l'auras pas méritée. La carte ne montre que ceux que tu as flashés, mais tout le reste continue : des balades sur mesure qui t'annoncent combien d'Invaders tu croiseras sans dire lesquels, les lieux à découvrir en chemin, l'alerte quand tu passes tout près si tu l'actives, tes statistiques, tes trophées, et ta carte qui se remplit à chaque trouvaille.",
+      "more": "En savoir plus",
+      "keep": "Plus tard",
+      "step2Title": "Avant de commencer",
+      "s1t": "Les Invaders que tu n'as pas flashés disparaissent.",
+      "s1b": "De la carte, des parcours, des alertes. Tu vois toujours combien il y en a et ce qu'ils valent.",
+      "s2t": "Pour en marquer un, tu saisis son identifiant.",
+      "s2b": "Celui que FlashInvaders t'affiche après le flash : « YOU FOUND PA_554 ». C'est en deux appuis depuis la carte ou la chasse.",
+      "s3t": "Rien n'est perdu.",
+      "s3b": "Tes flashés, tes points, tes trophées et tes statistiques ne bougent pas, et tu retrouves tout en quittant le mode.",
+      "activate": "Activer le mode Explorateur",
+      "back": "Retour"
     }
   }
 }

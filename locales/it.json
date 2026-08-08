@@ -1203,11 +1203,19 @@
       "leave": "Uscire dalla modalità esploratore"
     },
     "intro": {
-      "title": "Un altro modo di cacciare",
-      "body": "La modalità esploratore toglie dalla mappa gli Invader che non hai ancora trovato. Continui a vedere quanti sono su un percorso e quanto valgono, ma non più dove si trovano. Cacci a vista e registri l'identificativo che FlashInvaders ti mostra dopo lo scatto.",
-      "note": "Puoi attivarla o uscirne quando vuoi nelle Impostazioni. Non si perde nulla: i tuoi fotografati e i tuoi progressi restano invariati.",
-      "keep": "Lasciare com'è",
-      "tryIt": "Provare"
+      "title": "Novità: la modalità Esploratore",
+      "body": "Alcuni cacciatori di Invader ci hanno detto che vedere tutti gli Invader sulla mappa rendeva tutto troppo facile e toglieva il gusto. Abbiamo tenuto conto di questi ritorni per creare una modalità pensata per chi vuole cercare da sé.\n\nCon questa modalità non avrai più alcuna posizione di Invader finché non te la sarai meritata. La mappa mostra solo quelli che hai fotografato, ma tutto il resto continua: passeggiate su misura che ti annunciano quanti Invader incrocerai senza dirti quali, luoghi da scoprire lungo il cammino, un avviso quando passi vicinissimo se lo attivi, le tue statistiche, i tuoi trofei e la tua mappa che si riempie a ogni scoperta.",
+      "more": "Scopri di più",
+      "keep": "Più tardi",
+      "step2Title": "Prima di iniziare",
+      "s1t": "Gli Invader che non hai fotografato spariscono.",
+      "s1b": "Dalla mappa, dai percorsi, dagli avvisi. Continui a vedere quanti sono e quanto valgono.",
+      "s2t": "Per registrarne uno, digiti il suo identificativo.",
+      "s2b": "Quello che FlashInvaders ti mostra dopo lo scatto: «YOU FOUND PA_554». Bastano due tocchi dalla mappa o dalla caccia.",
+      "s3t": "Non si perde nulla.",
+      "s3b": "I tuoi fotografati, i punti, i trofei e le statistiche restano invariati, e recuperi tutto uscendo dalla modalità.",
+      "activate": "Attivare la modalità Esploratore",
+      "back": "Indietro"
     }
   }
 }
