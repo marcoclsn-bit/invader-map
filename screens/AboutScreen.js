@@ -29,8 +29,11 @@ const OTA_ID = Updates.updateId ? Updates.updateId.slice(0, 8) : null;
 // démarrerait pas du tout. Coût de la garde : deux lignes.
 const OTA_DATE = (() => {
   try {
-    const d = new Date(Updates.createdAt);
-    return Number.isNaN(+d) ? null : d.toISOString().slice(0, 10);
+    const d = Updates.createdAt;
+    // `new Date(null)` vaut le 1er janvier 1970 et non NaN : tester le TYPE,
+    // pas la validité du résultat, sinon la garde laisse passer une fausse date.
+    if (!(d instanceof Date) || Number.isNaN(+d)) return null;
+    return d.toISOString().slice(0, 10);
   } catch { return null; }
 })();
 

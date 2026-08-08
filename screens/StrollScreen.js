@@ -45,11 +45,11 @@ function Section({ title, children, theme }) {
 
 function ToggleRow({ label, hint, value, onValueChange, disabled, theme, last, onLongPress }) {
   const styles = getStyles(theme);
-  // Enveloppé seulement si un appui long est fourni : sans quoi on ajouterait
-  // une cible tactile là où il n'y a rien à déclencher.
-  const Conteneur = onLongPress ? TouchableOpacity : View;
+  // TOUJOURS un TouchableOpacity, même sans appui long. Le faire dépendre de
+  // `onLongPress` faisait changer la nature du conteneur quand le réglage
+  // maître bascule, ce qui remontait tout le sous-arbre, Switch compris.
   return (
-    <Conteneur
+    <TouchableOpacity
       onLongPress={onLongPress}
       delayLongPress={600}
       activeOpacity={1}
@@ -67,7 +67,7 @@ function ToggleRow({ label, hint, value, onValueChange, disabled, theme, last, o
         thumbColor={theme.bg}
         ios_backgroundColor={theme.border}
       />
-    </Conteneur>
+    </TouchableOpacity>
   );
 }
 

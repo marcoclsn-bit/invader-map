@@ -523,7 +523,7 @@ function getStyles(theme) {
 // Une fois flashée, la ligne s'éteint : pastille grise, ✓ à la place du rang.
 // On la garde en place plutôt que de la retirer — voir ce qu'on a accompli fait
 // partie du plaisir, et la numérotation reste alignée avec celle de la carte.
-function HuntRow({ inv, index, isFlashed, statusColors, onPress }) {
+function HuntRow({ inv, index, isFlashed, statusColors, onPress, inerte }) {
   const { theme } = useTheme();
   const { t } = useTranslation();
   const styles = getStyles(theme);
@@ -531,7 +531,11 @@ function HuntRow({ inv, index, isFlashed, statusColors, onPress }) {
     <TouchableOpacity
       style={styles.huntRow}
       onPress={onPress}
-      activeOpacity={0.7}
+      // Mode explorateur : la fiche est interdite pour un Invader non flashé.
+      // Sans ce `disabled`, la ligne s'enfonçait quand même sous le doigt et ne
+      // faisait rien : on appuie trois fois, puis on conclut que c'est cassé.
+      disabled={inerte}
+      activeOpacity={inerte ? 1 : 0.7}
       accessibilityRole="button"
       accessibilityLabel={`${index + 1}. ${inv.id}, ${inv.points} ${t('common.pts')}`}
       accessibilityState={{ checked: isFlashed }}
@@ -845,6 +849,23 @@ export default function ChasseScreen({ route }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [result, invaders, explorer]);
 
+  // Tracés DESSINÉS. La simplification s'applique ICI, après le découpage
+  // parcouru/restant : la poser en repli d'une autre valeur ne servait à rien,
+  // `remainingPolyline` étant toujours non nul dès qu'un résultat existe. Elle
+  // couvre ainsi la navigation, où le tracé était resté au mètre près.
+  //
+  // MÉMOÏSÉE, et c'est indispensable : en navigation, la boussole redessine
+  // plusieurs fois par seconde, et un nouveau tableau à chaque rendu ferait
+  // reconstruire le calque natif de la polyligne à chaque battement.
+  const traceRestante = useMemo(
+    () => simplifyPath(remainingPolyline ?? result?.polyline, explorer),
+    [remainingPolyline, result, explorer],
+  );
+  const traceParcourue = useMemo(
+    () => simplifyPath(walkedPolyline, explorer),
+    [walkedPolyline, explorer],
+  );
+
   // Contours à dessiner. Avant génération, ils suivent la sélection en cours :
   // on voit la zone qu'on est en train de choisir. Après, ils suivent le
   // parcours affiché, qui peut avoir été calculé sur un autre arrondissement.
@@ -857,12 +878,6 @@ export default function ChasseScreen({ route }) {
       ...spill.map(ar => ({ ar, spill: true, ring: districtRing(ar) })),
     ].filter(r => r.ring);
   }, [result, mode, hasDistricts, selectedArs]);
-
-  // Tracés DESSINÉS. La simplification s'applique ICI, après le découpage
-  // parcouru/restant : la poser en repli d'une autre valeur ne servait à rien,
-  // `remainingPolyline` étant toujours non nul dès qu'un résultat existe. Elle
-  // couvre ainsi la navigation, où le tracé était resté au mètre près.
-  const trace = (coords) => simplifyPath(coords, explorer);
 
   // ─── Portion déjà parcourue (gris) vs restante (orange) ──────────────────
   const { walkedPolyline, remainingPolyline } = useMemo(() => {
@@ -1265,10 +1280,10 @@ export default function ChasseScreen({ route }) {
               <Fragment key={result.runId}>
                 {/* Tracé — gris derrière, orange devant */}
                 {walkedPolyline && (
-                  <Polyline coordinates={trace(walkedPolyline)} strokeColor={theme.textSecondary} strokeWidth={4} lineCap="round" />
+                  <Polyline coordinates={traceParcourue} strokeColor={theme.textSecondary} strokeWidth={4} lineCap="round" />
                 )}
                 <Polyline
-                  coordinates={trace(remainingPolyline ?? result.polyline)}
+                  coordinates={traceRestante}
                   strokeColor={theme.accent}
                   strokeWidth={4}
                   lineCap="round"
@@ -1783,6 +1798,7 @@ export default function ChasseScreen({ route }) {
                     isFlashed={flashed.has(inv.id)}
                     statusColors={statusColors}
                     onPress={() => selectInvader(inv)}
+                    inerte={explorer && !flashed.has(inv.id)}
                   />
                 )
               }

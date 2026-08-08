@@ -172,12 +172,14 @@ function AddressInput({
 
 // ─── Ligne d'un Invader dans la liste ────────────────────────────────────────
 
-function RouteInvaderRow({ inv, isFlashed, statusColors, onPress }) {
+function RouteInvaderRow({ inv, isFlashed, statusColors, onPress, inerte }) {
   const { theme } = useTheme();
   const { t } = useTranslation();
   const styles = getStyles(theme);
   return (
-    <TouchableOpacity style={styles.routeRow} onPress={onPress} activeOpacity={0.7}>
+    // `disabled` en mode explorateur : voir HuntRow, une ligne qui s'enfonce
+    // sans rien faire se lit comme une panne.
+    <TouchableOpacity style={styles.routeRow} onPress={onPress} disabled={inerte} activeOpacity={inerte ? 1 : 0.7}>
       <View style={[styles.routeDot, { backgroundColor: statusColors[inv.status] ?? STATUS_COLOR[inv.status] }]} />
       <Text style={styles.routeId}>{inv.id}</Text>
       <Text style={styles.routePts}>{inv.points} {t('common.pts')}</Text>
@@ -210,7 +212,7 @@ function RoutePoiRow({ poi, onPress }) {
   );
 }
 
-function RoutePanel({ allInvaders, displayInvaders, flashed, statusColors, showOnlyUnflashed, onToggleFilter, onSelectInvader, onWidenCorridor, pois = [], onSelectPoi }) {
+function RoutePanel({ allInvaders, displayInvaders, flashed, statusColors, showOnlyUnflashed, onToggleFilter, onSelectInvader, onWidenCorridor, pois = [], onSelectPoi, explorer }) {
   const { theme } = useTheme();
   const { t } = useTranslation();
   const styles = getStyles(theme);
@@ -219,10 +221,15 @@ function RoutePanel({ allInvaders, displayInvaders, flashed, statusColors, showO
   // Liste dans le SENS DE LA MARCHE : Invaders et lieux mélangés, triés par leur
   // distance parcourue le long du tracé (`along`, calculée par nearestPointOnLine).
   // On suit ainsi l'ordre dans lequel on les rencontrera réellement.
-  const rows = [
-    ...pois.map((p) => ({ __poi: true, ...p })),
-    ...displayInvaders,
-  ].sort((a, b) => (a.along ?? 0) - (b.along ?? 0));
+  // Mode explorateur : la liste ne mêle plus lieux et Invaders. Les losanges des
+  // lieux SONT dessinés sur la carte, à leur position exacte : un intercalage
+  // trié le long du tracé disait donc « PA_812 est entre la fontaine et le pont ».
+  const rows = explorer
+    ? [...displayInvaders]
+    : [
+      ...pois.map((p) => ({ __poi: true, ...p })),
+      ...displayInvaders,
+    ].sort((a, b) => (a.along ?? 0) - (b.along ?? 0));
   // « À flasher » = ni déjà flashés, ni détruits (les détruits ne sont pas flashables)
   const todoInvaders = allInvaders.filter((inv) => !flashed.has(inv.id) && inv.status !== 'destroyed');
   const unflashedCount = todoInvaders.length;
@@ -278,6 +285,7 @@ function RoutePanel({ allInvaders, displayInvaders, flashed, statusColors, showO
                 isFlashed={flashed.has(item.id)}
                 statusColors={statusColors}
                 onPress={() => onSelectInvader(item)}
+                inerte={explorer && !flashed.has(item.id)}
               />
             )
           }
@@ -929,9 +937,15 @@ export default function TrajetScreen() {
     } catch {}
   }
 
-  // Tracés DESSINÉS : voir ChasseScreen, même correctif. La simplification
-  // s'applique au dessin, pas en repli d'une valeur toujours définie.
-  const trace = (coords) => simplifyPath(coords, explorer);
+  // Tracés DESSINÉS : voir ChasseScreen, même correctif, mémoïsation comprise.
+  const traceRestante = useMemo(
+    () => simplifyPath(remainingPolyline ?? routePolyline, explorer),
+    [remainingPolyline, routePolyline, explorer],
+  );
+  const traceParcourue = useMemo(
+    () => simplifyPath(walkedPolyline, explorer),
+    [walkedPolyline, explorer],
+  );
 
   function selectRouteInvader(inv) {
     // Même fuite que sur la Chasse : la fiche recentre la carte sur la position
@@ -1019,9 +1033,9 @@ export default function TrajetScreen() {
         >
           {routePolyline && (
             <>
-              <Polyline coordinates={trace(remainingPolyline ?? routePolyline)} strokeColor={theme.accent} strokeWidth={4} lineCap="round" />
+              <Polyline coordinates={traceRestante} strokeColor={theme.accent} strokeWidth={4} lineCap="round" />
               {walkedPolyline && (
-                <Polyline coordinates={trace(walkedPolyline)} strokeColor={theme.textSecondary} strokeWidth={4} lineCap="round" />
+                <Polyline coordinates={traceParcourue} strokeColor={theme.textSecondary} strokeWidth={4} lineCap="round" />
               )}
               {/* Repère départ — masqué en suivi et quand le départ est la position GPS */}
               {!following && depText !== GPS_LABEL && (
@@ -1306,6 +1320,7 @@ export default function TrajetScreen() {
             onWidenCorridor={() => setInputCollapsed(false)}
             pois={routePois}
             onSelectPoi={(poi) => { setSelectedRoutePoi(poi); setSelectedRouteInv(null); track('poi_open', { from: 'route_list', theme: poi.theme, lang: i18n.language }); }}
+            explorer={explorer}
           />
         )}
 

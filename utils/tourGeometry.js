@@ -78,13 +78,20 @@ export function backtrackScore(order, startLat, startLon) {
  * @param coords    [{ latitude, longitude }]
  * @param actif     false rend le tableau d'origine, sans copie ni calcul
  */
+// ~25 m en latitude, et désormais en longitude aussi (voir la projection).
+const TOLERANCE_DEG = 0.00022;
+
 export function simplifyPath(coords, actif) {
   if (!actif || !coords || coords.length < 3) return coords;
   try {
-    // Douglas-Peucker en degrés : 0,00025° vaut ~25 m sous nos latitudes.
-    const pts = coords.map(c => [c.longitude, c.latitude]);
-    const out = _douglasPeucker(pts, 0.00025);
-    return out.map(([lng, lat]) => ({ latitude: lat, longitude: lng }));
+    // Projection plane locale AVANT de simplifier : un degré de longitude est
+    // plus court qu'un degré de latitude, et travailler en degrés bruts rendait
+    // la tolérance anisotrope, 28 m nord-sud contre 18 m est-ouest à Paris.
+    // Le facteur remet les deux axes à la même échelle.
+    const kx = Math.cos((coords[0].latitude * Math.PI) / 180) || 1;
+    const pts = coords.map(c => [c.longitude * kx, c.latitude]);
+    const out = _douglasPeucker(pts, TOLERANCE_DEG);
+    return out.map(([x, lat]) => ({ latitude: lat, longitude: x / kx }));
   } catch { return coords; }
 }
 
