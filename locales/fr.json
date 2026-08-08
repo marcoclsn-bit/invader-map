@@ -584,9 +584,10 @@
       "testSent": "Notification de test envoyée. Si tu n’en vois pas, vérifie que les notifications sont autorisées dans les Réglages iOS."
     },
     "explorer": {
-      "section": "Mode explorateur",
-      "label": "Ne rien dévoiler",
-      "hint": "Les Invaders que tu n'as pas encore flashés disparaissent de la carte, des parcours et des alertes. Tu vois toujours combien il y en a et ce qu'ils valent — mais plus où ils sont. Tu les reportes ensuite avec l'identifiant que FlashInvaders t'affiche."
+      "section": "Façon de jouer",
+      "label": "Mode Explorateur",
+      "hint": "La carte ne montre que les Invaders que tu as déjà flashés. Tu chasses à l'œil, et tu reportes ensuite l'identifiant que FlashInvaders t'affiche. Tout le reste — parcours, lieux, statistiques, trophées — continue normalement.",
+      "introReset": "La présentation du mode réapparaîtra au prochain retour sur la carte. Le mode a été désactivé pour la rendre visible."
     }
   },
   "feedback": {

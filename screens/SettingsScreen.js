@@ -104,7 +104,7 @@ export default function SettingsScreen({ navigation }) {
     labelDefs, setFlashedColor,
     mapsApp, setMapsAppPref,
     language, setLanguage,
-    newsNotify, setNewsNotifyPref, explorer, setExplorer,
+    newsNotify, setNewsNotifyPref, explorer, setExplorer, resetExplorerIntro,
     resetLabels, clearFlashDates,
     dataVersion, dataUpdatedAt, checkDataUpdate,
     resetPoiIntro, checkPoiUpdate, getPoiVersion, poiDataVersion,
@@ -203,6 +203,10 @@ export default function SettingsScreen({ navigation }) {
         <Row
           label={t('settings.explorer.label')}
           hint={t('settings.explorer.hint')}
+          onLongPress={() => {
+            resetExplorerIntro();
+            Alert.alert('InvaderQuest', t('settings.explorer.introReset'));
+          }}
           trailing={
             <Switch
               value={explorer}

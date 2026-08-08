@@ -584,9 +584,10 @@
       "testSent": "Notifica di prova inviata. Se non la vedi, verifica che le notifiche siano consentite nelle Impostazioni iOS."
     },
     "explorer": {
-      "section": "Modalità esploratore",
-      "label": "Non svelare nulla",
-      "hint": "Gli Invader che non hai ancora fotografato spariscono dalla mappa, dai percorsi e dagli avvisi. Continui a vedere quanti sono e quanto valgono, ma non più dove si trovano. Poi li registri con l'identificativo che ti mostra FlashInvaders."
+      "section": "Modo di giocare",
+      "label": "Modalità Esploratore",
+      "hint": "La mappa mostra solo gli Invader che hai già fotografato. Cacci a vista, poi registri l'identificativo che ti dà FlashInvaders. Tutto il resto — percorsi, luoghi, statistiche, trofei — prosegue normalmente.",
+      "introReset": "La presentazione della modalità riapparirà al prossimo ritorno sulla mappa. La modalità è stata disattivata per renderla visibile."
     }
   },
   "feedback": {

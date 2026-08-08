@@ -670,6 +670,15 @@ export function AppProvider({ children }) {
     AsyncStorage.setItem('@invader_explorer_intro', '1').catch(() => {});
   }
 
+  // Réaffiche la présentation. Désactive aussi le mode, sans quoi le panneau
+  // resterait masqué par sa propre garde (proposer d'essayer ce qu'on utilise
+  // n'a pas de sens) et l'appui long semblerait ne rien faire.
+  function resetExplorerIntro() {
+    setExplorerIntroSeen(false);
+    setExplorerState(false);
+    AsyncStorage.multiRemove(['@invader_explorer_intro', '@invader_explorer']).catch(() => {});
+  }
+
   function setExplorer(on) {
     setExplorerState(on);
     AsyncStorage.setItem('@invader_explorer', on ? '1' : '0').catch(() => {});
@@ -766,7 +775,7 @@ export function AppProvider({ children }) {
     news, newsCities, setNewsCitiesPref, newsLastSeen, markNewsSeen, newsUnreadCount,
     newsNotify, setNewsNotifyPref,
     // Mode explorateur (masque les Invaders non flashés)
-    explorer, setExplorer, explorerIntroSeen, dismissExplorerIntro,
+    explorer, setExplorer, explorerIntroSeen, dismissExplorerIntro, resetExplorerIntro,
     // Légende des couleurs
     legendSeen, dismissLegend,
     // Mode balade (réglages ; moteur au dev build)

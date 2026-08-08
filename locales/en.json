@@ -584,9 +584,10 @@
       "testSent": "Test notification sent. If you don’t see it, check that notifications are allowed in iOS Settings."
     },
     "explorer": {
-      "section": "Explorer mode",
-      "label": "Reveal nothing",
-      "hint": "Invaders you have not flashed yet disappear from the map, from routes and from alerts. You still see how many there are and what they are worth, but no longer where. You then log them with the ID FlashInvaders shows you."
+      "section": "How you play",
+      "label": "Explorer mode",
+      "hint": "The map only shows Invaders you have already flashed. You hunt by eye, then log the ID FlashInvaders gives you. Everything else — routes, places, stats, trophies — carries on as usual.",
+      "introReset": "The mode introduction will show again next time you go back to the map. The mode has been turned off so it can appear."
     }
   },
   "feedback": {
