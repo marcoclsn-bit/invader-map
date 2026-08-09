@@ -65,12 +65,14 @@ function getStyles(theme) {
 function applyFilters(invaders, filters, flashed, explorer) {
   return invaders.filter((inv) => {
     if (explorer && !flashed.has(inv.id)) return false;
-    if (!filters.statuses.has(inv.status)) return false;
-    // En mode explorateur, l'état flashé n'a plus de sens : seuls les flashés
-    // sont affichés. Et le laisser agir était un piège — quelqu'un qui avait
-    // réglé « non flashés uniquement » AVANT d'activer le mode se retrouvait
-    // avec une carte entièrement vide, sans rien pour comprendre pourquoi.
+    // En mode explorateur, AUCUN filtre d'Invader n'agit, et leurs réglages
+    // disparaissent du panneau. Les neutraliser n'est pas cosmétique : sans
+    // commande pour les défaire, un réglage posé AVANT l'activation du mode
+    // resterait actif sans plus rien pour l'annuler. « Non flashés uniquement »
+    // vidait ainsi la carte entièrement, et un statut décoché aurait fait
+    // disparaître des flashés sans explication.
     if (explorer) return true;
+    if (!filters.statuses.has(inv.status)) return false;
     if (filters.flashedState === 'flashed' && !flashed.has(inv.id)) return false;
     if (filters.flashedState === 'unflashed' && flashed.has(inv.id)) return false;
     return true;
@@ -98,13 +100,14 @@ function FilterPanel({ filters, onFiltersChange, onClose, explorer }) {
   return (
     <View style={styles.panel}>
       <View style={styles.panelHeader}>
-        <Text style={styles.panelId}>{t('map.filter.title')}</Text>
+        <Text style={styles.panelId}>{t(explorer ? 'poi.section' : 'map.filter.title')}</Text>
         <TouchableOpacity onPress={onClose} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
           <Text style={styles.closeButton}>✕</Text>
         </TouchableOpacity>
       </View>
 
       {/* ── Statut (sélection multiple) ── */}
+      {!explorer && <>
       <Text style={styles.sectionTitle}>{t('map.filter.conditionSection')}</Text>
       <View style={styles.chipRow}>
         {ALL_STATUSES.map((status) => {
@@ -135,11 +138,7 @@ function FilterPanel({ filters, onFiltersChange, onClose, explorer }) {
         })}
       </View>
 
-      {/* ── État (sélection unique) ──
-          Masqué en mode explorateur : proposer « non flashés uniquement » alors
-          qu'aucun non flashé n'est affichable serait une promesse intenable.
-          Les filtres par STATUT restent, eux : ils trient parmi les flashés. */}
-      {!explorer && <>
+      {/* ── État (sélection unique) ── */}
       <Text style={styles.sectionTitle}>{t('map.filter.flashSection')}</Text>
       <View style={styles.chipRow}>
         {[
@@ -682,8 +681,11 @@ export default function MapScreen({ navigation, route }) {
               setSelected(null);
             }}
           >
+            {/* En mode explorateur le panneau ne contient plus que les lieux à
+                découvrir : un entonnoir promettrait des filtres qui n'existent
+                plus, et laisserait chercher ceux qu'on a retirés. */}
             <Ionicons
-              name={hasActiveFilters ? 'funnel' : 'funnel-outline'}
+              name={explorer ? 'diamond-outline' : (hasActiveFilters ? 'funnel' : 'funnel-outline')}
               size={19}
               color={hasActiveFilters ? theme.bg : theme.textPrimary}
             />
