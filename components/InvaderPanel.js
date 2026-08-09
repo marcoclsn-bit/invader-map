@@ -73,32 +73,33 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
   }
 
   async function submitStatusReport(newStatus) {
-    const subject = t('feedback.status.emailSubject', { id: invader.id });
-    const body = [
-      t('feedback.status.bodyId', { id: invader.id }),
-      t('feedback.status.bodyCurrent', { status: t(`common.status.${invader.status}`) }),
-      t('feedback.status.bodyReported', { status: t(`common.status.${newStatus}`) }),
-      t('feedback.status.bodyCoords', { lat: invader.lat, lng: invader.lng }),
-      t('feedback.status.bodyDate', { date: new Date().toLocaleString() }),
-      '',
-      buildContextBlock(dataVersion),
-    ].join('\n');
-
-    // Compositeur mail PRÉ-ADRESSÉ, avec repli sur la feuille de partage.
+    // TOUT est enveloppé, construction du message comprise.
     //
-    // La version précédente appelait Share.share directement, sans destinataire :
-    // l'adresse n'était qu'une ligne de texte dans le corps du message, et le
-    // champ « À : » restait vide. Un utilisateur qui allait au bout du geste
-    // envoyait donc dans le vide, et rien n'arrivait jamais. C'est la vraie
-    // raison du « rien ne se passe » signalé plusieurs fois.
-    //
-    // Et AUCUNE confirmation n'était affichée : la feuille se refermait sur une
-    // fiche inchangée. Les deux clés de remerciement existaient pourtant dans les
-    // quatre langues, sans être utilisées nulle part.
+    // C'est la différence structurelle avec l'écran « Une idée ? », qui lui
+    // fonctionne : il enveloppe l'ensemble, alors qu'ici la composition du corps
+    // vivait HORS du try. Et cette fonction est appelée depuis un setTimeout,
+    // donc sans personne pour écouter le rejet : une exception à cette étape
+    // disparaissait sans laisser la moindre trace à l'écran. C'est le seul
+    // mécanisme capable de produire le « rien ne se passe » observé, puisque ni
+    // le compositeur ni la feuille de partage n'étaient alors atteints.
     let issue = 'error';
     try {
+      const subject = t('feedback.status.emailSubject', { id: invader.id });
+      const body = [
+        t('feedback.status.bodyId', { id: invader.id }),
+        t('feedback.status.bodyCurrent', { status: t(`common.status.${invader.status}`) }),
+        t('feedback.status.bodyReported', { status: t(`common.status.${newStatus}`) }),
+        t('feedback.status.bodyCoords', { lat: invader.lat, lng: invader.lng }),
+        t('feedback.status.bodyDate', { date: new Date().toLocaleString() }),
+        '',
+        buildContextBlock(dataVersion),
+      ].join('\n');
+
+      // Compositeur mail pré-adressé, avec repli sur la feuille de partage.
+      // La version précédente appelait Share.share sans destinataire : le champ
+      // « À : » restait vide et le message n'arrivait jamais nulle part.
       issue = await sendFeedbackEmail({ subject, body });
-    } catch { issue = 'no_mail'; }
+    } catch { issue = 'error'; }
 
     track('status_report', { from: invader.status, to: newStatus, outcome: issue });
 
