@@ -1798,10 +1798,15 @@ export default function ChasseScreen({ route }) {
                 inv.isPoi ? (
                   <TouchableOpacity style={styles.poiRow} onPress={() => { setSelectedPoi(inv); track('poi_open', { from: 'hunt_list', theme: inv.theme, lang: i18n.language }); }} activeOpacity={0.7}>
                     <View style={styles.poiRowDiamond} />
-                    {/* Même raison que sur le marqueur : deux lieux rangés 24 et
-                        31 annoncent six Invaders entre eux, sur le segment de
-                        tracé qui relie deux losanges parfaitement visibles. */}
-                    {!explorer && <Text style={styles.poiRowNum}>{index + 1}</Text>}
+                    {/* Le numéro est masqué en mode explorateur (deux lieux rangés
+                        24 et 31 annonceraient six Invaders entre eux), mais son
+                        ESPACE doit rester : le losange est en position absolue,
+                        et ce bloc de 22 pt est le seul à lui réserver sa place
+                        dans le flux. Le retirer faisait glisser le nom du lieu
+                        sous le losange. */}
+                    {explorer
+                      ? <View style={{ width: 22 }} />
+                      : <Text style={styles.poiRowNum}>{index + 1}</Text>}
                     <View style={{ flex: 1, marginLeft: 6 }}>
                       <Text style={styles.poiRowName} numberOfLines={1}>{inv.name}</Text>
                       <Text style={styles.poiRowSub} numberOfLines={1}>{t('hunt.poiBadge')}</Text>

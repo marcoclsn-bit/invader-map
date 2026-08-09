@@ -221,15 +221,19 @@ function RoutePanel({ allInvaders, displayInvaders, flashed, statusColors, showO
   // Liste dans le SENS DE LA MARCHE : Invaders et lieux mélangés, triés par leur
   // distance parcourue le long du tracé (`along`, calculée par nearestPointOnLine).
   // On suit ainsi l'ordre dans lequel on les rencontrera réellement.
-  // Mode explorateur : la liste ne mêle plus lieux et Invaders. Les losanges des
-  // lieux SONT dessinés sur la carte, à leur position exacte : un intercalage
-  // trié le long du tracé disait donc « PA_812 est entre la fontaine et le pont ».
-  const rows = explorer
-    ? [...displayInvaders]
-    : [
-      ...pois.map((p) => ({ __poi: true, ...p })),
-      ...displayInvaders,
-    ].sort((a, b) => (a.along ?? 0) - (b.along ?? 0));
+  // La liste reste ordonnée le long du trajet, y compris en mode explorateur.
+  //
+  // J'avais d'abord retiré les lieux ici, pour empêcher de déduire qu'un Invader
+  // se trouve entre deux losanges visibles. C'était excessif : cette liste EST
+  // le produit, c'est elle qu'on suit en marchant, et la savoir ordonnée ne
+  // situe un Invader que sur un SEGMENT de trajet, soit exactement la précision
+  // que le tracé donne déjà. La promesse du mode est que l'app ne pose jamais
+  // d'épingle et que le tracé désigne une rue, jamais un mur : elle est tenue.
+  // La retirer coûtait une information utile pour un gain nul.
+  const rows = [
+    ...pois.map((p) => ({ __poi: true, ...p })),
+    ...displayInvaders,
+  ].sort((a, b) => (a.along ?? 0) - (b.along ?? 0));
   // « À flasher » = ni déjà flashés, ni détruits (les détruits ne sont pas flashables)
   const todoInvaders = allInvaders.filter((inv) => !flashed.has(inv.id) && inv.status !== 'destroyed');
   const unflashedCount = todoInvaders.length;

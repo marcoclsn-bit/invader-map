@@ -66,6 +66,11 @@ function applyFilters(invaders, filters, flashed, explorer) {
   return invaders.filter((inv) => {
     if (explorer && !flashed.has(inv.id)) return false;
     if (!filters.statuses.has(inv.status)) return false;
+    // En mode explorateur, l'état flashé n'a plus de sens : seuls les flashés
+    // sont affichés. Et le laisser agir était un piège — quelqu'un qui avait
+    // réglé « non flashés uniquement » AVANT d'activer le mode se retrouvait
+    // avec une carte entièrement vide, sans rien pour comprendre pourquoi.
+    if (explorer) return true;
     if (filters.flashedState === 'flashed' && !flashed.has(inv.id)) return false;
     if (filters.flashedState === 'unflashed' && flashed.has(inv.id)) return false;
     return true;
@@ -76,7 +81,7 @@ function applyFilters(invaders, filters, flashed, explorer) {
 
 // ─── Panneau de filtres ───────────────────────────────────────────────────────
 
-function FilterPanel({ filters, onFiltersChange, onClose }) {
+function FilterPanel({ filters, onFiltersChange, onClose, explorer }) {
   const { statusColors, poiPrefs, setPoiPref, currentCityCode } = useAppContext();
   const { theme } = useTheme();
   const { t } = useTranslation();
@@ -130,7 +135,11 @@ function FilterPanel({ filters, onFiltersChange, onClose }) {
         })}
       </View>
 
-      {/* ── État (sélection unique) ── */}
+      {/* ── État (sélection unique) ──
+          Masqué en mode explorateur : proposer « non flashés uniquement » alors
+          qu'aucun non flashé n'est affichable serait une promesse intenable.
+          Les filtres par STATUT restent, eux : ils trient parmi les flashés. */}
+      {!explorer && <>
       <Text style={styles.sectionTitle}>{t('map.filter.flashSection')}</Text>
       <View style={styles.chipRow}>
         {[
@@ -163,6 +172,7 @@ function FilterPanel({ filters, onFiltersChange, onClose }) {
           );
         })}
       </View>
+      </>}
 
       {/* ── Lieux à voir (couche indépendante des Invaders) ── */}
       {poiAvailable && (
@@ -537,7 +547,7 @@ export default function MapScreen({ navigation, route }) {
 
   const hasActiveFilters =
     filters.statuses.size < ALL_STATUSES.length ||
-    filters.flashedState !== 'all';
+    (!explorer && filters.flashedState !== 'all');
 
   return (
     <View style={styles.container}>
@@ -695,7 +705,7 @@ export default function MapScreen({ navigation, route }) {
       )}
 
       {showFilters && !isChangingCity && (
-        <FilterPanel filters={filters} onFiltersChange={setFilters} onClose={() => setShowFilters(false)} />
+        <FilterPanel filters={filters} onFiltersChange={setFilters} onClose={() => setShowFilters(false)} explorer={explorer} />
       )}
 
       {/* Volet de report, monté hors de tout conditionnel : il porte sa propre
