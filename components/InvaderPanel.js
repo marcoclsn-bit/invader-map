@@ -84,17 +84,26 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
     // le compositeur ni la feuille de partage n'étaient alors atteints.
     let issue = 'error';
     let detail = '';
+    // DIAGNOSTIC : jalon mis à jour à chaque étape, pour que le message d'erreur
+    // dise OÙ ça lève et non seulement que ça lève. Quatre hypothèses ont déjà
+    // été écartées à l'aveugle, ça suffit.
+    let etape = 'debut';
     try {
+      etape = 'sujet';
       const subject = t('feedback.status.emailSubject', { id: invader.id });
-      const body = [
+      etape = 'corps';
+      const lignes = [
         t('feedback.status.bodyId', { id: invader.id }),
         t('feedback.status.bodyCurrent', { status: t(`common.status.${invader.status}`) }),
         t('feedback.status.bodyReported', { status: t(`common.status.${newStatus}`) }),
         t('feedback.status.bodyCoords', { lat: invader.lat, lng: invader.lng }),
-        t('feedback.status.bodyDate', { date: new Date().toLocaleString() }),
-        '',
-        buildContextBlock(dataVersion),
-      ].join('\n');
+      ];
+      etape = 'date';
+      lignes.push(t('feedback.status.bodyDate', { date: new Date().toISOString().slice(0, 16).replace('T', ' ') }));
+      etape = 'contexte';
+      lignes.push('', buildContextBlock(dataVersion));
+      etape = 'envoi';
+      const body = lignes.join('\n');
 
       // Compositeur mail pré-adressé, avec repli sur la feuille de partage.
       // La version précédente appelait Share.share sans destinataire : le champ
@@ -104,7 +113,7 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
       // Message conservé pour le diagnostic en cours : « error » seul ne dit pas
       // CE QUI a levé, et deux causes très différentes mènent ici.
       issue = 'error';
-      detail = e?.message ? String(e.message).slice(0, 120) : 'sans message';
+      detail = `${etape} · ${e?.message ? String(e.message).slice(0, 90) : 'sans message'}`;
     }
 
     track('status_report', { from: invader.status, to: newStatus, outcome: issue });
