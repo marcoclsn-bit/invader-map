@@ -204,11 +204,13 @@ export default function SettingsScreen({ navigation }) {
           label={t('settings.explorer.label')}
           hint={t('settings.explorer.hint')}
           onLongPress={() => {
-            // La remise à zéro est faite APRÈS l'alerte, pas avant : elle rend
-            // <ExplorerIntro> visible, et présenter un modal pendant qu'iOS
-            // présente déjà l'UIAlertController laisse le modal coincé.
+            // La remise à zéro est faite APRÈS l'alerte, et même après un court
+            // délai : elle rend <ExplorerIntro> visible, et présenter un modal
+            // pendant qu'iOS termine de RENVOYER l'UIAlertController laisse le
+            // modal coincé, voire fait tomber la présentation. Le rappel du
+            // bouton OK se déclenche avant la fin de l'animation de fermeture.
             Alert.alert('InvaderQuest', t('settings.explorer.introReset'),
-              [{ text: 'OK', onPress: resetExplorerIntro }]);
+              [{ text: 'OK', onPress: () => setTimeout(resetExplorerIntro, 350) }]);
           }}
           trailing={
             <Switch

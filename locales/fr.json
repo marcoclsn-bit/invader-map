@@ -587,7 +587,7 @@
       "section": "Façon de jouer",
       "label": "Mode Explorateur",
       "hint": "La carte ne montre que les Invaders que tu as déjà flashés. Tu chasses à l'œil, et tu saisis ensuite l'identifiant que FlashInvaders t'affiche. Tout le reste (parcours, lieux, statistiques, trophées) continue normalement.",
-      "introReset": "La présentation du mode réapparaîtra au prochain retour sur la carte. Le mode a été désactivé pour la rendre visible."
+      "introReset": "La présentation du mode réapparaîtra dans un instant."
     }
   },
   "feedback": {

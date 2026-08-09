@@ -587,7 +587,7 @@
       "section": "Forma de jugar",
       "label": "Modo Explorador",
       "hint": "El mapa solo muestra los Invaders que ya has fotografiado. Cazas a ojo y luego registras el identificador que te da FlashInvaders. Todo lo demás (rutas, lugares, estadísticas, trofeos) sigue igual.",
-      "introReset": "La presentación del modo volverá a aparecer la próxima vez que vuelvas al mapa. El modo se ha desactivado para que sea visible."
+      "introReset": "La presentación del modo volverá a aparecer en un momento."
     }
   },
   "feedback": {

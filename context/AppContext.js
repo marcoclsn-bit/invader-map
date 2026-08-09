@@ -149,6 +149,10 @@ export function AppProvider({ children }) {
   // nouveaux installés, soit personne, aujourd'hui.
   // Drapeau distinct, sinon un nouvel installé se prendrait les deux.
   const [explorerIntroSeen, setExplorerIntroSeen] = useState(true);
+  // Réaffichage DEMANDÉ depuis les Réglages. Distinct de `explorerIntroSeen` :
+  // il autorise le panneau à s'afficher alors que le mode tourne déjà, ce que
+  // la garde de <ExplorerIntro> interdit normalement.
+  const [explorerIntroForced, setExplorerIntroForced] = useState(false);
 
   // ── Mode balade (réglages seulement ; moteur au dev build) ──────────────────
   const [stroll, setStroll] = useState(DEFAULT_STROLL);
@@ -667,16 +671,25 @@ export function AppProvider({ children }) {
 
   function dismissExplorerIntro() {
     setExplorerIntroSeen(true);
+    setExplorerIntroForced(false);
     AsyncStorage.setItem('@invader_explorer_intro', '1').catch(() => {});
   }
 
-  // Réaffiche la présentation. Désactive aussi le mode, sans quoi le panneau
-  // resterait masqué par sa propre garde (proposer d'essayer ce qu'on utilise
-  // n'a pas de sens) et l'appui long semblerait ne rien faire.
+  // Réaffiche la présentation SANS toucher au mode.
+  //
+  // La première version le désactivait, pour contourner la garde qui masque le
+  // panneau quand le mode tourne déjà. Mais basculer le mode fait apparaître ou
+  // disparaître d'un coup tous les Invaders de la ville sur la carte, et un
+  // ajout massif d'annotations est une cause connue de plantage de MKMapView
+  // (voir le débounce des filtres dans MapScreen) — un plantage natif, donc un
+  // redémarrage de l'application. Signalé sur le terrain.
+  //
+  // On lève donc la garde plutôt que de changer d'état : réafficher un panneau
+  // ne devrait de toute façon jamais modifier silencieusement un réglage.
   function resetExplorerIntro() {
     setExplorerIntroSeen(false);
-    setExplorerState(false);
-    AsyncStorage.multiRemove(['@invader_explorer_intro', '@invader_explorer']).catch(() => {});
+    setExplorerIntroForced(true);
+    AsyncStorage.removeItem('@invader_explorer_intro').catch(() => {});
   }
 
   function setExplorer(on) {
@@ -775,7 +788,7 @@ export function AppProvider({ children }) {
     news, newsCities, setNewsCitiesPref, newsLastSeen, markNewsSeen, newsUnreadCount,
     newsNotify, setNewsNotifyPref,
     // Mode explorateur (masque les Invaders non flashés)
-    explorer, setExplorer, explorerIntroSeen, dismissExplorerIntro, resetExplorerIntro,
+    explorer, setExplorer, explorerIntroSeen, explorerIntroForced, dismissExplorerIntro, resetExplorerIntro,
     // Légende des couleurs
     legendSeen, dismissLegend,
     // Mode balade (réglages ; moteur au dev build)
@@ -796,7 +809,7 @@ export function AppProvider({ children }) {
     labels, labelDefs, statusColors, colorOverrides,
     filters,
     news, newsCities, newsLastSeen, newsUnreadCount, newsNotify,
-    legendSeen, explorer, explorerIntroSeen,
+    legendSeen, explorer, explorerIntroSeen, explorerIntroForced,
     stroll, mapsApp, language,
     poiPrefs, poiIntroSeen, poiDataVersion,
     showOnboarding, loaded,

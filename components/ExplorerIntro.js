@@ -26,7 +26,10 @@ export default function ExplorerIntro() {
   const { theme } = useTheme();
   const { t } = useTranslation();
   const st = getStyles(theme);
-  const { loaded, showOnboarding, explorerIntroSeen, dismissExplorerIntro, setExplorer, explorer } = useAppContext();
+  const {
+    loaded, showOnboarding, explorerIntroSeen, explorerIntroForced,
+    dismissExplorerIntro, setExplorer, explorer,
+  } = useAppContext();
 
   // TOUS les hooks avant le moindre retour anticipé. Le `useState` vivait sous
   // la garde ci-dessous : au rendu qui suit la réponse de l'utilisateur, le
@@ -37,7 +40,9 @@ export default function ExplorerIntro() {
 
   // `explorer` déjà actif : proposer d'essayer ce qu'on utilise n'a aucun sens.
   // Le cas arrive à qui a trouvé le réglage avant que la présentation ne sorte.
-  if (!loaded || showOnboarding || explorerIntroSeen || explorer) return null;
+  // Sauf réaffichage explicitement demandé depuis les Réglages.
+  if (!loaded || showOnboarding || explorerIntroSeen) return null;
+  if (explorer && !explorerIntroForced) return null;
 
   const repondre = (on) => {
     track('explorer_intro', { choice: on ? 'on' : 'off' });
