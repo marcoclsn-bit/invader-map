@@ -1272,6 +1272,12 @@ export default function ChasseScreen({ route }) {
                 administrative n'est pas un itinéraire, elle ne doit pas lui
                 ressembler. Le débordement est plus fin et plus effacé que
                 l'arrondissement choisi. */}
+            {/* Le cône EN PREMIER, pour que les étapes du parcours restent les
+                derniers enfants de la carte. Voir MapScreen : la couche
+                d'interopérabilité de React Native ne monte immédiatement que
+                l'enfant qui arrive en fin de liste, les autres passent par une
+                file où un contentView encore nul fait planter l'application. */}
+            {!isChangingCity && <HeadingCone userLocation={userPos} heading={userHeading} />}
             {districtRings.map(r => (
               <Polygon
                 key={`ar-${r.ar}`}
@@ -1378,7 +1384,6 @@ export default function ChasseScreen({ route }) {
                 })}
               </Fragment>
             )}
-            {!isChangingCity && <HeadingCone userLocation={userPos} heading={userHeading} />}
           </MapView>
           {isChangingCity && <View style={[StyleSheet.absoluteFillObject, styles.cityTransitionOverlay]} />}
 

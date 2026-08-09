@@ -1065,6 +1065,19 @@ export default function TrajetScreen() {
               </PinMarker>
             </>
           )}
+          {/* Cône puis lieux puis Invaders : ces derniers doivent être les
+              derniers enfants de la carte, voir MapScreen. */}
+          {!isChangingCity && <HeadingCone userLocation={userPos} heading={userHeading} />}
+          {!isChangingCity && routePois.map((poi) => (
+            <PoiMarker
+              key={`poi-${poi.id}`}
+              poi={poi}
+              label={`${poi.name}, ${t(`hunt.poiTheme.${poi.theme}`)}`}
+              hint={t('poi.a11y.openHint')}
+              onPress={() => { setSelectedRoutePoi(poi); setSelectedRouteInv(null); track('poi_open', { from: 'route', theme: poi.theme, lang: i18n.language }); }}
+            />
+          ))}
+
           {displayInvaders?.map((inv) => {
             const isFlashed = flashed.has(inv.id);
             // Mode explorateur : aucune épingle sur un Invader non flashé. Le
@@ -1089,16 +1102,7 @@ export default function TrajetScreen() {
             );
           })}
           {/* Lieux du couloir : même losange doré que sur la Carte et la Chasse */}
-          {!isChangingCity && routePois.map((poi) => (
-            <PoiMarker
-              key={`poi-${poi.id}`}
-              poi={poi}
-              label={`${poi.name}, ${t(`hunt.poiTheme.${poi.theme}`)}`}
-              hint={t('poi.a11y.openHint')}
-              onPress={() => { setSelectedRoutePoi(poi); setSelectedRouteInv(null); track('poi_open', { from: 'route', theme: poi.theme, lang: i18n.language }); }}
-            />
-          ))}
-          {!isChangingCity && <HeadingCone userLocation={userPos} heading={userHeading} />}
+
         </MapView>
 
         {isChangingCity && <View style={[StyleSheet.absoluteFillObject, styles.cityTransitionOverlay]} />}
