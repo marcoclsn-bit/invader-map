@@ -513,7 +513,9 @@
     "creditsRoutingLabel": "Itinerari",
     "creditsFontsLabel": "Font (SIL OFL)",
     "legalSection": "Note legali",
-    "legalText": "$t(common.appName) è un progetto di fan indipendente, non ufficiale e non affiliato all'artista Invader né all'applicazione FlashInvaders. I mosaici Space Invader sono l'opera e la proprietà esclusiva dell'artista Invader. Questa applicazione non è autorizzata, sponsorizzata né approvata dall'artista."
+    "legalText": "$t(common.appName) è un progetto di fan indipendente, non ufficiale e non affiliato all'artista Invader né all'applicazione FlashInvaders. I mosaici Space Invader sono l'opera e la proprietà esclusiva dell'artista Invader. Questa applicazione non è autorizzata, sponsorizzata né approvata dall'artista.",
+    "devOn": "Modalità sviluppatore attiva. I gesti di prova sono disponibili con pressione prolungata: Novità e Modalità esploratore nelle Impostazioni, Notifica in Passeggiata.",
+    "devOff": "Modalità sviluppatore disattivata. I gesti di prova non rispondono più."
   },
   "settings": {
     "title": "Impostazioni",

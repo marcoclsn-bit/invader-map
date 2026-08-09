@@ -513,7 +513,9 @@
     "creditsRoutingLabel": "Itinéraires",
     "creditsFontsLabel": "Polices (SIL OFL)",
     "legalSection": "Mentions légales",
-    "legalText": "$t(common.appName) est un projet de fan indépendant, non officiel et non affilié à l'artiste Invader ni à l'application FlashInvaders. Les mosaïques Space Invader sont l'œuvre et la propriété exclusive de l'artiste Invader. Cette application n'est pas autorisée, sponsorisée ni approuvée par l'artiste."
+    "legalText": "$t(common.appName) est un projet de fan indépendant, non officiel et non affilié à l'artiste Invader ni à l'application FlashInvaders. Les mosaïques Space Invader sont l'œuvre et la propriété exclusive de l'artiste Invader. Cette application n'est pas autorisée, sponsorisée ni approuvée par l'artiste.",
+    "devOn": "Mode développeur activé. Les gestes de test sont accessibles par appui long : Actus et Mode explorateur dans les Réglages, Notification dans la Balade.",
+    "devOff": "Mode développeur désactivé. Les gestes de test ne répondent plus."
   },
   "settings": {
     "title": "Réglages",

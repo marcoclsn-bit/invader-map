@@ -107,7 +107,7 @@ export default function SettingsScreen({ navigation }) {
     newsNotify, setNewsNotifyPref, explorer, setExplorer, resetExplorerIntro,
     resetLabels, clearFlashDates,
     dataVersion, dataUpdatedAt, checkDataUpdate,
-    resetPoiIntro, checkPoiUpdate, getPoiVersion, poiDataVersion,
+    resetPoiIntro, checkPoiUpdate, getPoiVersion, poiDataVersion, devMode,
   } = useAppContext();
 
   const flashedColor = labelDefs.find((d) => d.id === 'lbl_flashed')?.color;
@@ -175,16 +175,19 @@ export default function SettingsScreen({ navigation }) {
       </Section>
 
       {/* ── Notifications ── */}
-      {/* Appui long (caché) sur cette ligne → notification de test. */}
+      {/* Appui long → notification de test. RÉSERVÉ au mode développeur (sept
+          appuis sur le numéro de version dans « À propos ») : en production, ce
+          geste envoyait une vraie notification à qui laissait le doigt sur la
+          ligne, sans le moindre moyen de comprendre d'où elle venait. */}
       <Section title={t('settings.notifs.section')}>
         <Row
           label={t('settings.notifs.news')}
           hint={t('settings.notifs.newsHint')}
-          onLongPress={async () => {
+          onLongPress={devMode ? async () => {
             try { await Notifications.requestPermissionsAsync(); } catch {}
             await checkNewsAndNotify({ force: true });
             Alert.alert('InvaderQuest', t('settings.notifs.testSent'));
-          }}
+          } : undefined}
           trailing={
             <Switch
               value={newsNotify}
@@ -203,7 +206,7 @@ export default function SettingsScreen({ navigation }) {
         <Row
           label={t('settings.explorer.label')}
           hint={t('settings.explorer.hint')}
-          onLongPress={() => {
+          onLongPress={devMode ? () => {
             // La remise à zéro est faite APRÈS l'alerte, et même après un court
             // délai : elle rend <ExplorerIntro> visible, et présenter un modal
             // pendant qu'iOS termine de RENVOYER l'UIAlertController laisse le
@@ -211,7 +214,7 @@ export default function SettingsScreen({ navigation }) {
             // bouton OK se déclenche avant la fin de l'animation de fermeture.
             Alert.alert('InvaderQuest', t('settings.explorer.introReset'),
               [{ text: 'OK', onPress: () => setTimeout(resetExplorerIntro, 350) }]);
-          }}
+          } : undefined}
           trailing={
             <Switch
               value={explorer}

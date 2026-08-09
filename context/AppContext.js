@@ -148,6 +148,12 @@ export function AppProvider({ children }) {
   // est à 30 m par là ». Reste un interrupteur pour qui veut la saisie strictement
   // aveugle.
   const [explorerSuggest, setExplorerSuggestState] = useState(true);
+  // Gestes de test (appui long) réservés au porteur du projet. Ils envoient de
+  // VRAIES notifications et rejouent des panneaux : en production, un utilisateur
+  // qui laisse le doigt sur une ligne les déclenche sans comprendre, et sans
+  // moyen de faire le lien. `__DEV__` ne convient pas : les essais se font sur
+  // une build de production, où il vaut faux.
+  const [devMode, setDevModeState] = useState(false);
   // Présentation à une seule apparition, pour ceux qui ont DÉJÀ terminé
   // l'onboarding : `@invader_onboarding_done` vaut 1 chez eux, ils ne le
   // reverront jamais. Sans ce second chemin, le mode n'existerait que pour les
@@ -323,15 +329,17 @@ export function AppProvider({ children }) {
         AsyncStorage.getItem('@invader_poi_prefs'),
         AsyncStorage.getItem('@invader_poi_intro_seen'),
       ]);
-      const [explorerRaw, explorerIntroRaw, favCitiesRaw, explorerSuggestRaw] = await Promise.all([
+      const [explorerRaw, explorerIntroRaw, favCitiesRaw, explorerSuggestRaw, devRaw] = await Promise.all([
         AsyncStorage.getItem('@invader_explorer'),
         AsyncStorage.getItem('@invader_explorer_intro'),
         AsyncStorage.getItem('@invader_fav_cities'),
         AsyncStorage.getItem('@invader_explorer_suggest'),
+        AsyncStorage.getItem('@invader_dev'),
       ]);
       // Comparé à '0' et non à '1' : le défaut est ACTIF, seul un refus explicite
       // est enregistré. Tester l'inverse aurait éteint l'option chez tout le monde.
       if (explorerSuggestRaw === '0') setExplorerSuggestState(false);
+      if (devRaw === '1') setDevModeState(true);
       if (favCitiesRaw) {
         try { setFavCities(new Set(JSON.parse(favCitiesRaw))); } catch {}
       }
@@ -723,6 +731,11 @@ export function AppProvider({ children }) {
     AsyncStorage.setItem('@invader_explorer', on ? '1' : '0').catch(() => {});
   }
 
+  function setDevMode(on) {
+    setDevModeState(on);
+    AsyncStorage.setItem('@invader_dev', on ? '1' : '0').catch(() => {});
+  }
+
   function setExplorerSuggest(on) {
     setExplorerSuggestState(on);
     AsyncStorage.setItem('@invader_explorer_suggest', on ? '1' : '0').catch(() => {});
@@ -823,6 +836,7 @@ export function AppProvider({ children }) {
     // Villes favorites
     favCities, toggleFavCity,
     explorerSuggest, setExplorerSuggest,
+    devMode, setDevMode,
     // Légende des couleurs
     legendSeen, dismissLegend,
     // Mode balade (réglages ; moteur au dev build)
@@ -843,7 +857,7 @@ export function AppProvider({ children }) {
     labels, labelDefs, statusColors, colorOverrides,
     filters,
     news, newsCities, newsLastSeen, newsUnreadCount, newsNotify,
-    legendSeen, explorer, explorerSuggest, explorerIntroSeen, explorerIntroForced, favCities,
+    legendSeen, explorer, explorerSuggest, devMode, explorerIntroSeen, explorerIntroForced, favCities,
     stroll, mapsApp, language,
     poiPrefs, poiIntroSeen, poiDataVersion,
     showOnboarding, loaded,

@@ -78,7 +78,7 @@ export default function StrollScreen({ navigation }) {
   const { theme } = useTheme();
   const { t } = useTranslation();
   const styles = getStyles(theme);
-  const { stroll, setStrollPref, currentCityCode } = useAppContext();
+  const { stroll, setStrollPref, currentCityCode, devMode } = useAppContext();
   const { recordSession } = useGamification();
 
   const off = !stroll.enabled;
@@ -224,7 +224,7 @@ export default function StrollScreen({ navigation }) {
             label={t('stroll.notification')}
             value={stroll.notification}
             onValueChange={(v) => { track('stroll_setting', { setting: 'notification', state: v ? 'on' : 'off' }); setStrollPref({ notification: v }); }}
-            onLongPress={(off || !stroll.notification) ? undefined : async () => {
+            onLongPress={(!devMode || off || !stroll.notification) ? undefined : async () => {
               // Gardé par `off` ET par le réglage lui-même : envoyer une vraie
               // notification à quelqu'un qui vient de les couper, parce qu'il a
               // laissé son pouce six dixièmes de seconde sur la ligne en lisant,

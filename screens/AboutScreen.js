@@ -1,4 +1,5 @@
-import { ScrollView, View, Text, TouchableOpacity, Linking, StyleSheet } from 'react-native';
+import { useRef } from 'react';
+import { ScrollView, View, Text, TouchableOpacity, Linking, StyleSheet, Alert } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
@@ -115,7 +116,8 @@ export default function AboutScreen() {
   const { t } = useTranslation();
   const { theme } = useTheme();
   const navigation = useNavigation();
-  const { dataVersion, dataUpdatedAt } = useAppContext();
+  const { dataVersion, dataUpdatedAt, devMode, setDevMode } = useAppContext();
+  const appuis = useRef(0);
   const insets = useSafeAreaInsets();
 
   const dataVersionLabel = dataVersion
@@ -132,7 +134,24 @@ export default function AboutScreen() {
         <Text style={[typography.arcadeTitle, styles.appName, { color: theme.accent }]}>
           {t('common.appName')}
         </Text>
-        <Text style={[styles.appVersion, { color: theme.textSecondary }]}>v{APP_VERSION}</Text>
+        {/* Sept appuis sur le numéro de version : c'est la seule porte d'entrée du
+            mode développeur, et elle n'a aucune chance d'être poussée par accident.
+            Sans elle, les gestes de test devraient rester actifs pour tout le
+            monde ou disparaître de la build que je teste, qui est une build de
+            production. */}
+        <TouchableOpacity
+          activeOpacity={1}
+          onPress={() => {
+            appuis.current += 1;
+            if (appuis.current < 7) return;
+            appuis.current = 0;
+            const on = !devMode;
+            setDevMode(on);
+            Alert.alert('InvaderQuest', t(on ? 'about.devOn' : 'about.devOff'));
+          }}
+        >
+          <Text style={[styles.appVersion, { color: theme.textSecondary }]}>v{APP_VERSION}</Text>
+        </TouchableOpacity>
         <Text style={[styles.appPitch, { color: theme.textSecondary }]}>
           {t('about.appPitch')}
         </Text>
