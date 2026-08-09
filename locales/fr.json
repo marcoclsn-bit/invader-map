@@ -339,7 +339,7 @@
       "section": "Top arrondissements"
     },
     "profile": {
-      "sectionTitle": "Profil de chasseur",
+      "sectionTitle": "Profil de chasse",
       "namePlaceholder": "Chasseur",
       "totalFlashes_one": "{{count}} flash",
       "totalFlashes_other": "{{count}} flashs",
@@ -389,7 +389,7 @@
         "title": "Progression"
       },
       "empty": {
-        "sliders": "Flashe quelques Invaders pour révéler ton profil de chasseur.",
+        "sliders": "Flashe quelques Invaders pour révéler ton profil de chasse.",
         "dayNight": "Continue à flasher pour découvrir ton rythme jour/nuit.",
         "geo": "Explore davantage d’Invaders pour dessiner ta carte des zones.",
         "curve": "Ta courbe de progression apparaîtra dès tes premiers flashs datés."
@@ -476,11 +476,11 @@
       "lastTrophyValue": "{{title}} · {{date}}"
     },
     "path": {
-      "title": "Parcours du chasseur",
+      "title": "Parcours de chasse",
       "info": "Nv {{next}} dans {{remaining}} XP · {{tier}} au Nv {{tierLevel}}",
       "infoNoTier": "Nv {{next}} dans {{remaining}} XP",
       "maxed": "Niveau maximum atteint : Légende ✦",
-      "xpInfo": "L'XP mesure ta progression globale de chasseur :\n• +10 XP par Invader flashé\n• +1 XP par tranche de 10 points (un Invader à 100 pts rapporte 10 + 10 = 20 XP)\n• +50 XP par trophée débloqué"
+      "xpInfo": "L'XP mesure ta progression globale de chasse :\n• +10 XP par Invader flashé\n• +1 XP par tranche de 10 points (un Invader à 100 pts rapporte 10 + 10 = 20 XP)\n• +50 XP par trophée débloqué"
     },
     "objectives": {
       "title": "Prochains objectifs",
@@ -685,7 +685,7 @@
     "radiusSection": "Rayon d'alerte",
     "radiusLabel": "Distance de déclenchement",
     "radiusValue": "{{m}} m",
-    "radiusHint": "Tu seras alerté lorsqu'un Invader se trouve à moins de cette distance.",
+    "radiusHint": "Tu recevras une alerte lorsqu'un Invader se trouve à moins de cette distance.",
     "alertsSection": "Comment être alerté",
     "vibration": "Vibration",
     "notification": "Notification",
@@ -716,7 +716,7 @@
       "deniedTitle": "Localisation refusée",
       "deniedBody": "Les alertes balade ont besoin de ta position pour t'alerter près des Invaders. Active la localisation dans les Réglages iOS.",
       "bgTitle": "Autorisation arrière-plan manquante",
-      "bgBody": "Pour être alerté même app fermée, choisis « Toujours autoriser » la localisation dans les Réglages. Pour l'instant, tu seras alerté seulement quand l'app est ouverte."
+      "bgBody": "Pour recevoir les alertes même app fermée, choisis « Toujours autoriser » la localisation dans les Réglages. Pour l'instant, tu seras alerté seulement quand l'app est ouverte."
     },
     "fallback": {
       "title": "Alertes limitées à l'app ouverte",
@@ -1059,7 +1059,7 @@
       },
       "stats": {
         "title": "Stats & profil",
-        "benefit": "Suis ton évolution dans le temps et façonne ton profil de chasseur.",
+        "benefit": "Suis ton évolution dans le temps et façonne ton profil de chasse.",
         "steps": [
           "Ouvre Stats depuis le menu.",
           "Regarde ta courbe de progression, tes séries et tes trophées.",
@@ -1204,18 +1204,19 @@
     },
     "intro": {
       "title": "Nouveau : le mode Explorateur",
-      "body": "Pour certains chasseurs d'Invaders, voir tous les Invaders sur la carte rendait la chose trop facile et enlevait le fun. Nous avons pris en compte ces retours pour créer un mode destiné à ceux qui veulent chercher par eux-mêmes.\n\nAvec ce mode, tu n'auras plus aucune localisation d'Invaders tant que tu ne l'auras pas méritée. La carte ne montre que ceux que tu as flashés, mais tout le reste continue : des balades sur mesure qui t'annoncent combien d'Invaders tu croiseras sans dire lesquels, les lieux à découvrir en chemin, l'alerte quand tu passes tout près si tu l'actives, tes statistiques, tes trophées, et ta carte qui se remplit à chaque trouvaille.",
+      "body": "Pour certains chasseurs d'Invaders, voir tous les Invaders sur la carte rendait l'expérience trop facile et retirait le fun. Nous avons pris en compte ces retours pour créer un mode destiné à ceux qui souhaitent réellement chercher par eux-mêmes.\n\nAvec ce mode, tu ne pourras plus voir sur la carte les Space Invaders que tu n'as pas encore flashés. Tu peux néanmoins profiter de tout le reste de l'application : des balades sur mesure qui t'annoncent combien d'Invaders tu croiseras sans dire exactement où, les lieux à découvrir en chemin, une notification quand tu passes tout près d'un Invader si tu l'actives, tes statistiques, tes trophées, et ta carte qui se remplit à chaque trouvaille.",
       "more": "En savoir plus",
       "keep": "Plus tard",
       "step2Title": "Avant de commencer",
-      "s1t": "Les Invaders que tu n'as pas flashés disparaissent.",
-      "s1b": "De la carte, des parcours, des alertes. Tu vois toujours combien il y en a et ce qu'ils valent.",
+      "s1t": "Seuls les Invaders déjà flashés apparaissent sur ta carte.",
+      "s1b": "Pour tes chasses et tes itinéraires, tu verras toujours combien il y en a sur ton trajet et ce qu'ils valent, mais tu n'auras pas la localisation exacte.",
       "s2t": "Pour en marquer un, tu saisis son identifiant.",
-      "s2b": "Celui que FlashInvaders t'affiche après le flash : « YOU FOUND PA_554 ». C'est en deux appuis depuis la carte ou la chasse.",
-      "s3t": "Rien n'est perdu.",
-      "s3b": "Tes flashés, tes points, tes trophées et tes statistiques ne bougent pas, et tu retrouves tout en quittant le mode.",
+      "s2b": "Quand tu flashes un Invader avec l'application officielle FlashInvaders, tu reçois un message : « YOU FOUND PA_554 ». Dès que tu as l'ID, reporte-le dans InvaderQuest depuis la carte ou depuis une chasse en cours.",
+      "s3t": "Profite du reste de l'application comme n'importe qui :",
+      "s3b": "tes statistiques, tes trophées, ton palmarès par ville et par arrondissement, les actus des nouvelles poses, et l'import ou l'export de tes flashés. Rien n'est perdu, et tout redevient visible si tu quittes le mode.",
       "activate": "Activer le mode Explorateur",
-      "back": "Retour"
+      "back": "Retour",
+      "leaveNote": "Tu peux quitter le mode à tout moment depuis Réglages, en désactivant « Mode Explorateur » dans la section « Façon de jouer »."
     }
   }
 }

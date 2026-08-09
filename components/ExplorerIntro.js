@@ -63,12 +63,18 @@ export default function ExplorerIntro() {
             {etape === 1 ? (
               <Text style={st.corps}>{t('explorer.intro.body')}</Text>
             ) : (
-              [['s1t', 's1b'], ['s2t', 's2b'], ['s3t', 's3b']].map(([ti, bo]) => (
-                <View key={ti} style={st.bloc}>
-                  <Text style={st.blocTitre}>{t(`explorer.intro.${ti}`)}</Text>
-                  <Text style={st.blocCorps}>{t(`explorer.intro.${bo}`)}</Text>
-                </View>
-              ))
+              <>
+                {[['s1t', 's1b'], ['s2t', 's2b'], ['s3t', 's3b']].map(([ti, bo]) => (
+                  <View key={ti} style={st.bloc}>
+                    <Text style={st.blocTitre}>{t(`explorer.intro.${ti}`)}</Text>
+                    <Text style={st.blocCorps}>{t(`explorer.intro.${bo}`)}</Text>
+                  </View>
+                ))}
+                {/* La sortie n'est pas une quatrième affirmation : c'est un
+                    rappel. En note, plus discrète, pour ne pas la mettre sur le
+                    même plan que ce qui change vraiment. */}
+                <Text style={st.note}>{t('explorer.intro.leaveNote')}</Text>
+              </>
             )}
           </ScrollView>
 
@@ -117,6 +123,11 @@ function getStyles(t) {
     zone: { maxHeight: 380 },
     corps: { fontSize: 13.5, color: t.textPrimary, lineHeight: 20 },
     bloc: { marginBottom: 14 },
+    note: {
+      fontSize: 12, color: t.textSecondary, lineHeight: 17,
+      marginTop: 4, paddingTop: 12,
+      borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: t.border,
+    },
     blocTitre: { fontSize: 13.5, fontWeight: '700', color: t.textPrimary, lineHeight: 19 },
     blocCorps: { fontSize: 13, color: t.textSecondary, lineHeight: 18, marginTop: 3 },
     // Empilés, et non côte à côte : « Continuer comme avant » passait sur deux

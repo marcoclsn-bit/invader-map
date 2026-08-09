@@ -339,7 +339,7 @@
       "section": "Top distritos"
     },
     "profile": {
-      "sectionTitle": "Perfil de cazador",
+      "sectionTitle": "Perfil de caza",
       "namePlaceholder": "Cazador",
       "totalFlashes_one": "{{count}} flash",
       "totalFlashes_other": "{{count}} flashes",
@@ -389,7 +389,7 @@
         "title": "Progresión"
       },
       "empty": {
-        "sliders": "Flashea algunos Invaders para revelar tu perfil de cazador.",
+        "sliders": "Flashea algunos Invaders para revelar tu perfil de caza.",
         "dayNight": "Sigue flasheando para descubrir tu ritmo día/noche.",
         "geo": "Explora más Invaders para dibujar tu mapa de zonas.",
         "curve": "Tu curva de progresión aparecerá con tus primeros flashes con fecha."
@@ -476,11 +476,11 @@
       "lastTrophyValue": "{{title}} · {{date}}"
     },
     "path": {
-      "title": "Camino del cazador",
+      "title": "Camino de caza",
       "info": "Nv {{next}} en {{remaining}} XP · {{tier}} en Nv {{tierLevel}}",
       "infoNoTier": "Nv {{next}} en {{remaining}} XP",
       "maxed": "Nivel máximo alcanzado: Leyenda ✦",
-      "xpInfo": "La XP mide tu progresión global de cazador:\n• +10 XP por Invader fotografiado\n• +1 XP por cada 10 puntos (un Invader de 100 pts da 10 + 10 = 20 XP)\n• +50 XP por trofeo desbloqueado"
+      "xpInfo": "La XP mide tu progresión global de caza:\n• +10 XP por Invader fotografiado\n• +1 XP por cada 10 puntos (un Invader de 100 pts da 10 + 10 = 20 XP)\n• +50 XP por trofeo desbloqueado"
     },
     "objectives": {
       "title": "Próximos objetivos",
@@ -716,7 +716,7 @@
       "deniedTitle": "Ubicación denegada",
       "deniedBody": "Las alertas de paseo necesitan tu ubicación para avisarte cerca de los Invaders. Actívala en los Ajustes de iOS.",
       "bgTitle": "Falta permiso en segundo plano",
-      "bgBody": "Para recibir avisos con la app cerrada, elige «Permitir siempre» la ubicación en Ajustes. Por ahora solo recibirás avisos con la app abierta."
+      "bgBody": "Para recibir los avisos con la app cerrada, elige «Permitir siempre» la ubicación en Ajustes. Por ahora solo recibirás avisos con la app abierta."
     },
     "fallback": {
       "title": "Avisos solo con la app abierta",
@@ -1059,7 +1059,7 @@
       },
       "stats": {
         "title": "Estadísticas y perfil",
-        "benefit": "Sigue tu evolución en el tiempo y da forma a tu perfil de cazador.",
+        "benefit": "Sigue tu evolución en el tiempo y da forma a tu perfil de caza.",
         "steps": [
           "Abre Estadísticas desde el menú.",
           "Mira tu curva de progreso, tus rachas y tus trofeos.",
@@ -1204,18 +1204,19 @@
     },
     "intro": {
       "title": "Nuevo: el modo Explorador",
-      "body": "Algunos cazadores de Invaders nos dijeron que ver todos los Invaders en el mapa lo hacía demasiado fácil y le quitaba la gracia. Hemos tenido en cuenta esos comentarios para crear un modo pensado para quienes quieren buscar por sí mismos.\n\nCon este modo, no tendrás ninguna localización de Invaders mientras no te la hayas ganado. El mapa solo muestra los que has fotografiado, pero todo lo demás sigue: paseos a medida que te anuncian cuántos Invaders cruzarás sin decir cuáles, lugares por descubrir en el camino, un aviso cuando pasas muy cerca si lo activas, tus estadísticas, tus trofeos y tu mapa que se llena con cada hallazgo.",
+      "body": "Algunas personas que cazan Invaders nos dijeron que ver todos los Invaders en el mapa hacía la experiencia demasiado fácil y le quitaba la gracia. Hemos tenido en cuenta esos comentarios para crear un modo destinado a quienes quieren buscar de verdad por su cuenta.\n\nCon este modo ya no podrás ver en el mapa los Space Invaders que aún no has fotografiado. Aun así puedes disfrutar de todo lo demás: paseos a medida que te anuncian cuántos Invaders cruzarás sin decir exactamente dónde, lugares por descubrir en el camino, una notificación cuando pasas muy cerca de uno si la activas, tus estadísticas, tus trofeos y tu mapa que se llena con cada hallazgo.",
       "more": "Saber más",
       "keep": "Más tarde",
       "step2Title": "Antes de empezar",
-      "s1t": "Los Invaders que no has fotografiado desaparecen.",
-      "s1b": "Del mapa, de las rutas, de los avisos. Sigues viendo cuántos hay y cuánto valen.",
+      "s1t": "Solo aparecen en tu mapa los Invaders ya fotografiados.",
+      "s1b": "En tus cazas y tus rutas seguirás viendo cuántos hay en tu camino y cuánto valen, pero no su ubicación exacta.",
       "s2t": "Para registrar uno, escribes su identificador.",
-      "s2b": "El que FlashInvaders te muestra tras la foto: «YOU FOUND PA_554». Son dos toques desde el mapa o la caza.",
-      "s3t": "No se pierde nada.",
-      "s3b": "Tus fotografiados, tus puntos, tus trofeos y tus estadísticas no cambian, y lo recuperas todo al salir del modo.",
+      "s2b": "Cuando fotografías un Invader con la aplicación oficial FlashInvaders, recibes un mensaje: «YOU FOUND PA_554». En cuanto tengas el ID, anótalo en InvaderQuest desde el mapa o desde una caza en curso.",
+      "s3t": "Disfruta del resto de la aplicación como cualquiera:",
+      "s3b": "tus estadísticas, tus trofeos, tu clasificación por ciudad y por distrito, las novedades sobre nuevos mosaicos, y la importación o exportación de tus fotografiados. No se pierde nada, y todo vuelve a verse si sales del modo.",
       "activate": "Activar el modo Explorador",
-      "back": "Volver"
+      "back": "Volver",
+      "leaveNote": "Puedes salir del modo cuando quieras desde Ajustes, desactivando «Modo Explorador» en la sección «Forma de jugar»."
     }
   }
 }

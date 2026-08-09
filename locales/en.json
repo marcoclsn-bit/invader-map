@@ -1204,18 +1204,19 @@
     },
     "intro": {
       "title": "New: Explorer mode",
-      "body": "Some Invader hunters told us that seeing every Invader on the map made it too easy and took the fun away. We took that on board and built a mode for those who want to search for themselves.\n\nWith this mode, you get no Invader location until you have earned it. The map shows only the ones you have flashed, but everything else carries on: tailored walks telling you how many Invaders you will pass without saying which ones, places to discover along the way, an alert when you walk right past one if you turn it on, your stats, your trophies, and your map filling up with every find.",
+      "body": "Some Invader hunters told us that seeing every Invader on the map made the experience too easy and took the fun away. We took that on board and built a mode for those who really want to search for themselves.\n\nWith this mode, you can no longer see on the map the Space Invaders you have not flashed yet. You still get everything else the app offers: tailored walks telling you how many Invaders you will pass without saying exactly where, places to discover along the way, a notification when you walk right past one if you turn it on, your stats, your trophies, and your map filling up with every find.",
       "more": "Learn more",
       "keep": "Later",
       "step2Title": "Before you start",
-      "s1t": "Invaders you have not flashed disappear.",
-      "s1b": "From the map, from routes, from alerts. You still see how many there are and what they are worth.",
+      "s1t": "Only the Invaders you have already flashed appear on your map.",
+      "s1b": "For your hunts and your routes, you will still see how many are on your way and what they are worth, but not their exact location.",
       "s2t": "To log one, you type its ID.",
-      "s2b": "The one FlashInvaders shows you after the flash: “YOU FOUND PA_554”. Two taps from the map or the hunt.",
-      "s3t": "Nothing is lost.",
-      "s3b": "Your flashes, points, trophies and stats stay untouched, and you get everything back when you leave the mode.",
+      "s2b": "When you flash an Invader with the official FlashInvaders app, you get a message: “YOU FOUND PA_554”. As soon as you have the ID, enter it in InvaderQuest from the map or from a hunt in progress.",
+      "s3t": "Enjoy the rest of the app like anyone else:",
+      "s3b": "your stats, your trophies, your rankings by city and district, the news about new mosaics, and importing or exporting your flashes. Nothing is lost, and everything becomes visible again if you leave the mode.",
       "activate": "Turn on Explorer mode",
-      "back": "Back"
+      "back": "Back",
+      "leaveNote": "You can leave the mode at any time in Settings, by turning off “Explorer mode” in the “How you play” section."
     }
   }
 }
