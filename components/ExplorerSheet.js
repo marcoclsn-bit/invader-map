@@ -78,14 +78,12 @@ export default function ExplorerSheet({ visible, onClose, onFlash, position }) {
       const d = distanceM(position.latitude, position.longitude, inv.lat, inv.lng);
       if (d <= RAYON_M) out.push({ id: inv.id, d });
     }
-    // On CHOISIT par distance, puis on AFFICHE par numéro. Trier l'affichage par
-    // distance ferait de la première pastille « la plus proche » : la distance
-    // aurait disparu de l'écran tout en restant lisible dans l'ordre.
-    return out
-      .sort((a, b) => a.d - b.d)
-      .slice(0, MAX_SUGGESTIONS)
-      .map(({ id }) => id)
-      .sort((a, b) => Number(a.slice(a.lastIndexOf('_') + 1)) - Number(b.slice(b.lastIndexOf('_') + 1)));
+    // Ordonnées par distance, la plus proche en tête. C'est un CHOIX assumé et
+    // non un oubli : l'ordre reste un indice d'éloignement relatif, mais sans
+    // mètres il ne permet pas de savoir si l'on se rapproche. Le plus souvent,
+    // la première pastille est celle qu'on vient de flasher — la ranger ailleurs
+    // faisait chercher.
+    return out.sort((a, b) => a.d - b.d).slice(0, MAX_SUGGESTIONS).map(({ id }) => id);
   }, [visible, explorerSuggest, position, invaders, flashed]);
 
   const fermer = useCallback(() => {
