@@ -10,6 +10,7 @@ import { useAppContext } from '../context/AppContext';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import { buildContextBlock, sendFeedbackEmail } from '../utils/feedback';
+import { FEEDBACK_EMAIL } from '../constants';
 
 export default function IdeaScreen({ navigation }) {
   const { t } = useTranslation();
@@ -36,14 +37,14 @@ export default function IdeaScreen({ navigation }) {
       const status = await sendFeedbackEmail({ subject: subj, body });
 
       if (status === 'no_mail') {
-        Alert.alert(t('feedback.noMailTitle'), t('feedback.noMailBody'));
+        Alert.alert(t('feedback.noMailTitle'), t('feedback.noMailBody', { email: FEEDBACK_EMAIL }));
       } else if (status === 'sent') {
         Alert.alert(t('feedback.idea.sentTitle'), t('feedback.idea.sentBody'),
           [{ text: 'OK', onPress: () => navigation.goBack() }]);
       }
       // 'cancelled' / 'saved' / 'opened' : on ne dérange pas l'utilisateur
     } catch (e) {
-      Alert.alert(t('feedback.noMailTitle'), t('feedback.noMailBody'));
+      Alert.alert(t('feedback.noMailTitle'), t('feedback.noMailBody', { email: FEEDBACK_EMAIL }));
     } finally {
       setSending(false);
     }

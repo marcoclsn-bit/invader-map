@@ -593,6 +593,8 @@
   "feedback": {
     "noMailTitle": "Sin app de correo",
     "noMailBody": "No se detectó ninguna app de correo. Escríbenos directamente a {{email}} indicando el Invader y su nuevo estado.",
+    "sharedTitle": "Casi enviado",
+    "sharedBody": "Tu mensaje está listo. Solo falta enviarlo a {{email}} desde la aplicación que acabas de elegir.",
     "context": {
       "title": "Información técnica (contexto)",
       "appVersion": "Versión de la app",

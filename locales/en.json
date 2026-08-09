@@ -593,6 +593,8 @@
   "feedback": {
     "noMailTitle": "No mail app",
     "noMailBody": "No email app detected. Write to us directly at {{email}} with the Invader and its new status.",
+    "sharedTitle": "Almost sent",
+    "sharedBody": "Your message is ready. You still need to send it to {{email}} from the app you just picked.",
     "context": {
       "title": "Technical info (context)",
       "appVersion": "App version",

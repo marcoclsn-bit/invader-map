@@ -5,7 +5,8 @@ import { useAppContext } from '../context/AppContext';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import { openInstagramTag } from '../utils/navigation';
-import { buildContextBlock } from '../utils/feedback';
+import { buildContextBlock, sendFeedbackEmail } from '../utils/feedback';
+import { track } from '../services/analytics';
 import { FEEDBACK_EMAIL } from '../constants';
 import i18n from '../i18n';
 
@@ -59,10 +60,15 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
       onPress: () => setTimeout(() => submitStatusReport(s), 400),
     }));
     buttons.push({ text: t('common.cancel'), style: 'cancel' });
+    // `cancelable` : Android ne garde que TROIS boutons (Alert.js, buttons.slice(0, 3))
+    // et le quatrième, « Annuler », disparaît en silence. Le dialogue étant par
+    // défaut non annulable, l'utilisateur était OBLIGÉ de choisir un statut pour
+    // en sortir. Le rendre annulable rétablit le retour arrière et le tap dehors.
     Alert.alert(
       t('feedback.status.pickTitle'),
       t('feedback.status.pickBody', { id: invader.id }),
       buttons,
+      { cancelable: true },
     );
   }
 
@@ -78,13 +84,33 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
       buildContextBlock(dataVersion),
     ].join('\n');
 
-    // Feuille de partage native : s'ouvre toujours (Mail, Gmail, Messages, Copier…).
-    // L'adresse de contact est incluse dans le message.
+    // Compositeur mail PRÉ-ADRESSÉ, avec repli sur la feuille de partage.
+    //
+    // La version précédente appelait Share.share directement, sans destinataire :
+    // l'adresse n'était qu'une ligne de texte dans le corps du message, et le
+    // champ « À : » restait vide. Un utilisateur qui allait au bout du geste
+    // envoyait donc dans le vide, et rien n'arrivait jamais. C'est la vraie
+    // raison du « rien ne se passe » signalé plusieurs fois.
+    //
+    // Et AUCUNE confirmation n'était affichée : la feuille se refermait sur une
+    // fiche inchangée. Les deux clés de remerciement existaient pourtant dans les
+    // quatre langues, sans être utilisées nulle part.
+    let issue = 'error';
     try {
-      await Share.share({ subject, message: `${subject}\n\n${body}\n\n→ ${FEEDBACK_EMAIL}` });
-    } catch {
+      issue = await sendFeedbackEmail({ subject, body });
+    } catch { issue = 'no_mail'; }
+
+    track('status_report', { from: invader.status, to: newStatus, outcome: issue });
+
+    if (issue === 'sent') {
+      Alert.alert(t('feedback.status.sentTitle'), t('feedback.status.sentBody'));
+    } else if (issue === 'shared') {
+      // Le partage n'adresse rien : on le dit, sinon l'utilisateur croit avoir fini.
+      Alert.alert(t('feedback.sharedTitle'), t('feedback.sharedBody', { email: FEEDBACK_EMAIL }));
+    } else if (issue === 'no_mail' || issue === 'error') {
       Alert.alert(t('feedback.noMailTitle'), t('feedback.noMailBody', { email: FEEDBACK_EMAIL }));
     }
+    // 'cancelled' et 'saved' : l'utilisateur sait ce qu'il a fait, on se tait.
     if (autoCloseOnAction) onClose();
   }
 
