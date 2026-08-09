@@ -27,6 +27,7 @@ import PoiMarker from '../components/PoiMarker';
 import PoiSheet from '../components/PoiSheet';
 import PinMarker from '../components/PinMarker';
 import HeadingCone from '../components/HeadingCone';
+import ExplorerSheet from '../components/ExplorerSheet';
 import InvaderPanel from '../components/InvaderPanel';
 import FlashOverlay from '../components/FlashOverlay';
 import { useSessionRecorder } from '../components/session/useSessionRecorder';
@@ -389,6 +390,7 @@ export default function TrajetScreen() {
   useKeepScreenOn(following);
   const [drifted, setDrifted] = useState(false);
   const [userPos, setUserPos] = useState(null);
+  const [explorerSheet, setExplorerSheet] = useState(false);
   const [userHeading, setUserHeading] = useState(null);
   const [inputCollapsed, setInputCollapsed] = useState(false);
   const locationSub = useRef(null);
@@ -607,8 +609,12 @@ export default function TrajetScreen() {
 
   const displayInvaders = useMemo(() => {
     if (!routeInvaders) return null;
-    // Filtre « À faire » : on masque les déjà flashés ET les détruits (non flashables)
-    const base = renderUnflashed
+    // Filtre « À faire » : on masque les déjà flashés ET les détruits (non flashables).
+    // NEUTRALISÉ en mode explorateur, comme sur la Carte : là-bas seuls les
+    // flashés s'affichent, donc « à faire » et « explorateur » se contredisent et
+    // vident la carte. Depuis qu'on peut flasher d'ici, ça se voyait : l'alien
+    // vert apparaissait le temps de l'animation, puis disparaissait.
+    const base = (renderUnflashed && !explorer)
       ? routeInvaders.filter((inv) => !flashed.has(inv.id) && inv.status !== 'destroyed')
       : routeInvaders;
     if (recentlyFlashed.size === 0) return base;
@@ -616,7 +622,7 @@ export default function TrajetScreen() {
     const baseIds = new Set(base.map((i) => i.id));
     const extra = routeInvaders.filter((i) => recentlyFlashed.has(i.id) && !baseIds.has(i.id));
     return extra.length ? [...base, ...extra] : base;
-  }, [routeInvaders, renderUnflashed, flashed, recentlyFlashed]);
+  }, [routeInvaders, renderUnflashed, flashed, recentlyFlashed, explorer]);
 
   // ─── Découpe du tracé en portion parcourue (gris) + restante (bleu) ──────
 
@@ -1313,6 +1319,21 @@ export default function TrajetScreen() {
                 </TouchableOpacity>
               )}
               <View style={styles.rightControls}>
+                {/* Flasher depuis le Trajet. Sans ce bouton, le mode explorateur
+                    obligeait à revenir sur la Carte à chaque trouvaille, puis à
+                    revenir ici : deux allers-retours par Invader, sur le trajet
+                    même où on les trouve. Relevé sur le terrain. */}
+                {explorer && (
+                  <TouchableOpacity
+                    style={[styles.recenterBtn, { borderColor: theme.accent, borderWidth: StyleSheet.hairlineWidth }]}
+                    onPress={() => setExplorerSheet(true)}
+                    accessibilityRole="button"
+                    accessibilityLabel={t('explorer.badge')}
+                    accessibilityHint={t('explorer.badgeHint')}
+                  >
+                    <Ionicons name="eye-off-outline" size={20} color={theme.accent} />
+                  </TouchableOpacity>
+                )}
                 {(!following || drifted) && (
                   <TouchableOpacity style={styles.recenterBtn} onPress={recenter}>
                     <Ionicons name="locate-outline" size={22} color={theme.accent} />
@@ -1343,6 +1364,15 @@ export default function TrajetScreen() {
           )}
         </View>}
         </View>
+
+        {/* Volet de saisie, monté hors de tout conditionnel : il porte sa propre
+            visibilité. Même geste que sur la Carte et la Chasse. */}
+        <ExplorerSheet
+          visible={explorerSheet}
+          position={userPos}
+          onClose={() => setExplorerSheet(false)}
+          onFlash={handleFlashRoute}
+        />
 
         {/* ── Panneau de résultat (masqué en navigation ou quand une fiche est ouverte) ── */}
         {!isChangingCity && !following && !selectedRouteInv && routeInvaders !== null && displayInvaders !== null && (

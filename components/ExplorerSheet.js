@@ -1,15 +1,30 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import {
   Modal, View, Text, TextInput, TouchableOpacity, StyleSheet, Pressable, Keyboard,
-  KeyboardAvoidingView, Platform,
+  KeyboardAvoidingView, Platform, Switch,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import { useAppContext } from '../context/AppContext';
-import { analyseListe } from '../utils/importList';
+import { analyseListe, normaliseSaisie } from '../utils/importList';
 import { track } from '../services/analytics';
+
+// Rayon des suggestions. 150 m : au-delà, on ne « voit » plus la mosaïque depuis
+// le trottoir où l'on est, et la suggestion cesse d'être une aide à la saisie
+// pour devenir un radar.
+const RAYON_M = 150;
+const MAX_SUGGESTIONS = 3;
+
+// Distance approchée en mètres, projection plane locale. Sur 150 m l'erreur est
+// très en dessous de la précision du GPS : inutile de payer un haversine.
+function distanceM(aLat, aLng, bLat, bLng) {
+  const kx = Math.cos((aLat * Math.PI) / 180) * 111320;
+  const dy = (bLat - aLat) * 110540;
+  const dx = (bLng - aLng) * kx;
+  return Math.hypot(dx, dy);
+}
 
 /**
  * Volet de report d'un Invader, en mode explorateur.
@@ -28,11 +43,14 @@ import { track } from '../services/analytics';
  * épingles se lit comme une panne : il faut pouvoir comprendre où l'on est et
  * en sortir sans chercher, mais depuis un endroit qu'on n'ouvre pas par accident.
  */
-export default function ExplorerSheet({ visible, onClose, onFlash }) {
+export default function ExplorerSheet({ visible, onClose, onFlash, position }) {
   const { theme } = useTheme();
   const { t } = useTranslation();
   const st = getStyles(theme);
-  const { flashed, setExplorer } = useAppContext();
+  const {
+    flashed, setExplorer, invaders, currentCityCode,
+    explorerSuggest, setExplorerSuggest,
+  } = useAppContext();
 
   const [texte, setTexte] = useState('');
   const [aide, setAide] = useState(false);
@@ -40,10 +58,28 @@ export default function ExplorerSheet({ visible, onClose, onFlash }) {
   // Un seul identifiant à la fois : on réutilise l'analyseur de l'import, qui
   // extrait les jetons au lieu de découper. Coller « YOU FOUND PA_554 » en
   // entier fonctionne donc, ce qui évite d'avoir à nettoyer à la main.
-  const analyse = texte.trim() ? analyseListe(texte, flashed) : null;
+  //
+  // La saisie passe d'abord par la normalisation : en marchant, on tape « 284 »
+  // et non « PA_284 ». La ville est déjà celle de la carte affichée.
+  const analyse = texte.trim() ? analyseListe(normaliseSaisie(texte, currentCityCode), flashed) : null;
   const cible = analyse?.nouveaux[0] ?? null;
   const deja = analyse?.dejaFlashes[0] ?? null;
   const inconnu = analyse?.inconnus[0] ?? null;
+
+  // Les plus proches, non flashés. Calculé seulement quand le volet est ouvert
+  // ET que l'option est active : sur 1 597 Invaders c'est une passe linéaire,
+  // mais inutile de la refaire à chaque frappe — d'où la mémoïsation sur la
+  // position, qui ne bouge pas pendant qu'on tape.
+  const suggestions = useMemo(() => {
+    if (!visible || !explorerSuggest || !position) return [];
+    const out = [];
+    for (const inv of invaders) {
+      if (flashed.has(inv.id)) continue;
+      const d = distanceM(position.latitude, position.longitude, inv.lat, inv.lng);
+      if (d <= RAYON_M) out.push({ id: inv.id, d });
+    }
+    return out.sort((a, b) => a.d - b.d).slice(0, MAX_SUGGESTIONS);
+  }, [visible, explorerSuggest, position, invaders, flashed]);
 
   const fermer = useCallback(() => {
     Keyboard.dismiss();
@@ -95,6 +131,26 @@ export default function ExplorerSheet({ visible, onClose, onFlash }) {
         {aide ? (
           <View>
             <Text style={st.aideTexte}>{t('explorer.sheet.help')}</Text>
+
+            {/* Réglage placé ICI et nulle part ailleurs : c'est le seul endroit
+                où l'on explique ce que le mode promet, donc le seul où l'on peut
+                dire honnêtement ce que cette option lui retire. */}
+            <View style={st.suggestRow}>
+              <View style={{ flex: 1 }}>
+                <Text style={st.suggestLabel}>{t('explorer.sheet.suggestLabel')}</Text>
+                <Text style={st.suggestHint}>{t('explorer.sheet.suggestHint')}</Text>
+              </View>
+              <Switch
+                value={explorerSuggest}
+                onValueChange={(v) => {
+                  setExplorerSuggest(v);
+                  track('explorer_suggest', { state: v ? 'on' : 'off' });
+                }}
+                trackColor={{ false: theme.border, true: theme.accent }}
+                thumbColor={theme.bg}
+              />
+            </View>
+
             <TouchableOpacity
               style={st.quitter}
               onPress={() => { setExplorer(false); track('explorer_mode', { state: 'off', from: 'sheet' }); fermer(); }}
@@ -117,6 +173,27 @@ export default function ExplorerSheet({ visible, onClose, onFlash }) {
               returnKeyType="done"
               onSubmitEditing={valider}
             />
+
+            {/* Le numéro seul suffit : la pastille porte donc ce qu'on aurait à
+                taper, pas l'identifiant complet. Elle remplit le champ au lieu
+                de valider — un doigt qui glisse ne doit pas écrire un flash. */}
+            {suggestions.length > 0 && (
+              <View style={st.pastilles}>
+                {suggestions.map(({ id, d }) => (
+                  <TouchableOpacity
+                    key={id}
+                    style={st.pastille}
+                    onPress={() => setTexte(id.slice(id.lastIndexOf('_') + 1))}
+                    activeOpacity={0.8}
+                    accessibilityRole="button"
+                    accessibilityLabel={t('explorer.sheet.suggestA11y', { id, m: Math.round(d) })}
+                  >
+                    <Text style={st.pastilleId}>{id.slice(id.lastIndexOf('_') + 1)}</Text>
+                    <Text style={st.pastilleDist}>{Math.round(d)} m</Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
+            )}
 
             <Text style={st.retour}>
               {cible
@@ -178,7 +255,23 @@ function getStyles(t) {
     boutonTexte: { ...typography.actionLabel, color: t.bg },
     boutonTexteInactif: { color: t.textSecondary },
 
+    pastilles: { flexDirection: 'row', gap: 8, marginTop: 10 },
+    pastille: {
+      flexDirection: 'row', alignItems: 'baseline', gap: 6,
+      backgroundColor: t.surfaceHigh, borderRadius: 9,
+      borderWidth: StyleSheet.hairlineWidth, borderColor: t.border,
+      paddingHorizontal: 12, paddingVertical: 9,
+    },
+    pastilleId: { ...typography.arcadeHeading, fontSize: 13, color: t.textPrimary },
+    pastilleDist: { fontSize: 11, color: t.textSecondary },
+
     aideTexte: { fontSize: 13, color: t.textPrimary, lineHeight: 19 },
+    suggestRow: {
+      flexDirection: 'row', alignItems: 'center', gap: 12, marginTop: 18,
+      paddingTop: 16, borderTopWidth: StyleSheet.hairlineWidth, borderColor: t.border,
+    },
+    suggestLabel: { fontSize: 13, fontWeight: '600', color: t.textPrimary },
+    suggestHint: { fontSize: 11.5, color: t.textSecondary, lineHeight: 16, marginTop: 3 },
     quitter: {
       marginTop: 18, paddingVertical: 12, borderRadius: 11,
       borderWidth: StyleSheet.hairlineWidth, borderColor: t.destructive,

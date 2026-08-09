@@ -1198,15 +1198,18 @@
     "badgeHint": "Appuie pour flasher ce que tu viens de trouver",
     "sheet": {
       "title": "Flasher un Invader",
-      "placeholder": "PA_554",
-      "hint": "Saisis l'identifiant que FlashInvaders t'a affiché après le flash.",
+      "placeholder": "284 ou PA_284",
+      "hint": "Saisis le numéro que FlashInvaders t'a affiché après le flash. L'indicatif de la ville est facultatif.",
       "ready": "{{id}} sera ajouté à tes flashés.",
       "already": "{{id}} est déjà dans tes flashés.",
       "unknown": "{{id}} n'existe pas dans la base.",
       "confirm": "Ajouter",
       "about": "À propos de ce mode",
       "help": "En mode explorateur, l'app ne montre jamais où sont les Invaders que tu n'as pas encore trouvés. Elle continue de dire combien il y en a sur un parcours et ce qu'ils valent. Tu chasses à l'œil, tu flashes avec FlashInvaders, et tu saisis ici l'identifiant qu'il t'affiche.",
-      "leave": "Quitter le mode explorateur"
+      "leave": "Quitter le mode explorateur",
+      "suggestLabel": "Suggestions de proximité",
+      "suggestHint": "Propose les Invaders les plus proches quand tu ouvres ce volet. Tu tapes moins, mais l'app te dit alors où ils sont : la chasse n'est plus tout à fait aveugle.",
+      "suggestA11y": "{{id}}, à {{m}} mètres"
     },
     "intro": {
       "title": "Nouveau : le mode Explorateur",

@@ -143,6 +143,12 @@ export function AppProvider({ children }) {
   // chasseur.
   // Défaut OFF : c'est une contrainte qu'on choisit, jamais qu'on subit.
   const [explorer, setExplorerState] = useState(false);
+  // Suggestions de proximité dans le volet de saisie. DÉSACTIVÉES par défaut, et
+  // c'est structurel : proposer « l'Invader le plus proche » revient à dire où il
+  // est, c'est-à-dire exactement ce que le mode explorateur promet de ne jamais
+  // faire. Ça reste utile à qui veut seulement taper moins vite, donc on l'offre
+  // — en le choisissant, jamais par défaut.
+  const [explorerSuggest, setExplorerSuggestState] = useState(false);
   // Présentation à une seule apparition, pour ceux qui ont DÉJÀ terminé
   // l'onboarding : `@invader_onboarding_done` vaut 1 chez eux, ils ne le
   // reverront jamais. Sans ce second chemin, le mode n'existerait que pour les
@@ -318,11 +324,13 @@ export function AppProvider({ children }) {
         AsyncStorage.getItem('@invader_poi_prefs'),
         AsyncStorage.getItem('@invader_poi_intro_seen'),
       ]);
-      const [explorerRaw, explorerIntroRaw, favCitiesRaw] = await Promise.all([
+      const [explorerRaw, explorerIntroRaw, favCitiesRaw, explorerSuggestRaw] = await Promise.all([
         AsyncStorage.getItem('@invader_explorer'),
         AsyncStorage.getItem('@invader_explorer_intro'),
         AsyncStorage.getItem('@invader_fav_cities'),
+        AsyncStorage.getItem('@invader_explorer_suggest'),
       ]);
+      if (explorerSuggestRaw === '1') setExplorerSuggestState(true);
       if (favCitiesRaw) {
         try { setFavCities(new Set(JSON.parse(favCitiesRaw))); } catch {}
       }
@@ -714,6 +722,11 @@ export function AppProvider({ children }) {
     AsyncStorage.setItem('@invader_explorer', on ? '1' : '0').catch(() => {});
   }
 
+  function setExplorerSuggest(on) {
+    setExplorerSuggestState(on);
+    AsyncStorage.setItem('@invader_explorer_suggest', on ? '1' : '0').catch(() => {});
+  }
+
   // Notifs d'actualité : bascule (persiste + planifie/retire la tâche + prompt à l'activation).
   function setNewsNotifyPref(on) {
     setNewsNotifyState(on);
@@ -808,6 +821,7 @@ export function AppProvider({ children }) {
     explorer, setExplorer, explorerIntroSeen, explorerIntroForced, dismissExplorerIntro, resetExplorerIntro,
     // Villes favorites
     favCities, toggleFavCity,
+    explorerSuggest, setExplorerSuggest,
     // Légende des couleurs
     legendSeen, dismissLegend,
     // Mode balade (réglages ; moteur au dev build)
@@ -828,7 +842,7 @@ export function AppProvider({ children }) {
     labels, labelDefs, statusColors, colorOverrides,
     filters,
     news, newsCities, newsLastSeen, newsUnreadCount, newsNotify,
-    legendSeen, explorer, explorerIntroSeen, explorerIntroForced, favCities,
+    legendSeen, explorer, explorerSuggest, explorerIntroSeen, explorerIntroForced, favCities,
     stroll, mapsApp, language,
     poiPrefs, poiIntroSeen, poiDataVersion,
     showOnboarding, loaded,

@@ -24,6 +24,38 @@ import IDS from '../data/invader_ids.json';
 // Les frontières \b évitent d'attraper un morceau de mot plus long.
 const JETON = /\b[A-Z]{2,5}_\d{1,4}\b/g;
 
+// Même motif sans le drapeau global : `JETON.test()` est à état et rendrait un
+// résultat sur deux.
+const JETON_UNIQUE = /\b[A-Z]{2,5}_\d{1,4}\b/;
+
+/**
+ * Normalise UNE saisie manuelle avant analyse (volet du mode explorateur).
+ *
+ * En chasse, on tape à une main en marchant : réclamer « PA_284 » au caractère
+ * près fait perdre plus de temps que le flash lui-même. On accepte donc
+ * « PA_284 », « PA284 », « pa 284 », « pa-284 », et « 284 » tout court — la ville
+ * étant déjà connue par la carte affichée, la répéter n'apporte rien.
+ *
+ * Un texte contenant déjà un identifiant complet n'est PAS touché : coller
+ * « YOU FOUND PA_554 » depuis FlashInvaders doit continuer de marcher tel quel.
+ *
+ * @param texte           saisie brute
+ * @param villeParDefaut  code de la ville courante, pour un numéro seul
+ */
+export function normaliseSaisie(texte, villeParDefaut) {
+  const brut = String(texte ?? '').toUpperCase().trim();
+  if (!brut) return brut;
+  if (JETON_UNIQUE.test(brut)) return brut;
+
+  const colle = brut.match(/^([A-Z]{2,5})[\s._-]*(\d{1,4})$/);
+  if (colle) return `${colle[1]}_${colle[2]}`;
+
+  const nu = brut.match(/^(\d{1,4})$/);
+  if (nu && villeParDefaut) return `${villeParDefaut}_${nu[1]}`;
+
+  return brut;
+}
+
 /** « 1-10,12-14,16 » → Set(1,2,…,10,12,13,14,16). */
 function decompresse(plages) {
   const out = new Set();
@@ -73,13 +105,21 @@ export function analyseListe(texte, flashed) {
   const nouveaux = [], dejaFlashes = [], detruits = [], inconnus = [];
   const villes = {};
 
-  for (const id of uniques) {
-    const i = id.lastIndexOf('_');
-    const code = id.slice(0, i);
-    const num = Number(id.slice(i + 1));
+  for (const jeton of uniques) {
+    const i = jeton.lastIndexOf('_');
+    const code = jeton.slice(0, i);
+    const num = Number(jeton.slice(i + 1));
     const ville = villeSets(code);
 
-    if (!ville || !ville.tous.has(num)) { inconnus.push(id); continue; }
+    if (!ville || !ville.tous.has(num)) { inconnus.push(jeton); continue; }
+
+    // FORME CANONIQUE, et non le jeton tel qu'il a été tapé. Les 4 288
+    // identifiants padent le numéro sur DEUX chiffres au minimum : le premier
+    // Invader de Paris est `PA_01`, pas `PA_1`. Renvoyer le jeton brut écrivait
+    // « PA_1 » dans les flashés — une chaîne qui ne correspond à aucun Invader,
+    // donc un flash perdu en silence, jamais affiché sur la carte. Le défaut
+    // existait déjà à l'import ; la saisie d'un numéro seul le rendait courant.
+    const id = `${code}_${String(num).padStart(2, '0')}`;
 
     villes[code] = (villes[code] ?? 0) + 1;
     if (flashed?.has?.(id)) { dejaFlashes.push(id); continue; }

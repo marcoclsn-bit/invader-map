@@ -37,12 +37,15 @@ export function buildContextBlock(dataVersion) {
 // rien silencieusement (cause du « rien ne se passe »).
 // Retourne : 'sent' | 'saved' | 'cancelled' | 'shared' | 'no_mail'
 // ─────────────────────────────────────────────────────────────────────────────
-// Le compositeur peut ne JAMAIS rendre la main : sur iOS, quand la présentation
-// échoue silencieusement, la promesse reste en suspens et l'utilisateur ne voit
-// rien du tout. C'est l'état qui produit le « rien ne se passe » signalé, et le
-// seul qu'aucun `catch` n'attrape. On lui impose donc une limite de temps.
-const COMPOSER_TIMEOUT_MS = 8000;
-
+// AUCUN DÉLAI SUR LE COMPOSITEUR. `composeAsync` ne se résout pas à l'OUVERTURE
+// mais à la FERMETURE : le module natif appelle sa callback depuis
+// `mailComposeController(didFinishWith:)`, à l'intérieur du `dismiss` (et depuis
+// `onActivityResult` sur Android). Une limite de temps compte donc le temps que
+// l'utilisateur passe à ÉCRIRE : au bout du délai, la feuille de partage
+// s'ouvrait par-dessus le compositeur encore affiché, et l'app annonçait
+// « presque envoyé » pendant la rédaction. La vraie cause du « rien ne se passe »
+// était ailleurs — une option i18next réservée — et elle est corrigée.
+// Le délai reste sur `isAvailableAsync`, qui doit répondre tout de suite.
 function avecDelai(promesse, ms) {
   return Promise.race([
     promesse,
@@ -64,17 +67,12 @@ export async function sendFeedbackEmail({ subject, body }) {
   } catch { available = false; }
   if (available === true) {
     try {
-      const res = await avecDelai(
-        MailComposer.composeAsync({
-          recipients: FEEDBACK_EMAIL ? [FEEDBACK_EMAIL] : [],
-          subject,
-          body,
-        }),
-        COMPOSER_TIMEOUT_MS,
-      );
-      // Le compositeur n'a jamais répondu : on ne reste pas bloqué, on bascule
-      // sur la feuille de partage, qui elle s'ouvre partout.
-      if (res !== '__timeout__') return res?.status ?? 'cancelled';
+      const res = await MailComposer.composeAsync({
+        recipients: FEEDBACK_EMAIL ? [FEEDBACK_EMAIL] : [],
+        subject,
+        body,
+      });
+      return res?.status ?? 'cancelled';
     } catch {
       // échec de présentation → on bascule sur le partage
     }

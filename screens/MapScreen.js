@@ -732,6 +732,7 @@ export default function MapScreen({ navigation, route }) {
         visible={explorerSheet}
         onClose={() => setExplorerSheet(false)}
         onFlash={handleFlashFromMap}
+        position={userLocation}
       />
 
       {/* Overlay animation flash — au-dessus de la carte, transparent aux touches */}

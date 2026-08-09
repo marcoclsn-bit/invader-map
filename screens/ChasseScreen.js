@@ -889,15 +889,6 @@ export default function ChasseScreen({ route }) {
     return m;
   }, [explorer, result]);
 
-  const traceRestante = useMemo(
-    () => simplifyPath(remainingPolyline ?? result?.polyline, explorer),
-    [remainingPolyline, result, explorer],
-  );
-  const traceParcourue = useMemo(
-    () => simplifyPath(walkedPolyline, explorer),
-    [walkedPolyline, explorer],
-  );
-
   // Contours à dessiner. Avant génération, ils suivent la sélection en cours :
   // on voit la zone qu'on est en train de choisir. Après, ils suivent le
   // parcours affiché, qui peut avoir été calculé sur un autre arrondissement.
@@ -938,6 +929,22 @@ export default function ChasseScreen({ route }) {
       return { walkedPolyline: null, remainingPolyline: result.polyline };
     }
   }, [result, userPos, following]);
+
+  // Tracés DESSINÉS. Déclarés APRÈS le découpage parcouru/restant, et non avant :
+  // Hermes n'applique pas la zone morte temporelle, il rend `undefined` au lieu
+  // de lever. Les deux memos recevaient donc undefined pour toujours, avec un
+  // tableau de dépendances lui-même figé à undefined — ils ne se recalculaient
+  // jamais. Le tracé gris ne s'affichait pas, l'orange ne raccourcissait plus, et
+  // sur Android `<Polyline coordinates={undefined}>` laisse le champ natif à null
+  // jusqu'au `options.addAll(null)` de MapPolyline.java.
+  const traceRestante = useMemo(
+    () => simplifyPath(remainingPolyline ?? result?.polyline, explorer),
+    [remainingPolyline, result, explorer],
+  );
+  const traceParcourue = useMemo(
+    () => simplifyPath(walkedPolyline, explorer),
+    [walkedPolyline, explorer],
+  );
 
   // ─── Autocomplétion quartier ──────────────────────────────────────────────
   function onQChange(text) {
@@ -1725,6 +1732,7 @@ export default function ChasseScreen({ route }) {
             mais un retour haptique, et la pastille de l'étape s'allume aussitôt. */}
         <ExplorerSheet
           visible={explorerSheet}
+          position={userPos}
           onClose={() => setExplorerSheet(false)}
           onFlash={(id) => {
             toggleFlash(id);
