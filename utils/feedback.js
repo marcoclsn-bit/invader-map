@@ -37,16 +37,37 @@ export function buildContextBlock(dataVersion) {
 // rien silencieusement (cause du « rien ne se passe »).
 // Retourne : 'sent' | 'saved' | 'cancelled' | 'shared' | 'no_mail'
 // ─────────────────────────────────────────────────────────────────────────────
+// Le compositeur peut ne JAMAIS rendre la main : sur iOS, quand la présentation
+// échoue silencieusement, la promesse reste en suspens et l'utilisateur ne voit
+// rien du tout. C'est l'état qui produit le « rien ne se passe » signalé, et le
+// seul qu'aucun `catch` n'attrape. On lui impose donc une limite de temps.
+const COMPOSER_TIMEOUT_MS = 8000;
+
+function avecDelai(promesse, ms) {
+  return Promise.race([
+    promesse,
+    new Promise((resolve) => setTimeout(() => resolve('__timeout__'), ms)),
+  ]);
+}
+
 export async function sendFeedbackEmail({ subject, body }) {
-  const available = await MailComposer.isAvailableAsync().catch(() => false);
-  if (available) {
+  const available = await avecDelai(
+    MailComposer.isAvailableAsync().catch(() => false),
+    3000,
+  );
+  if (available === true) {
     try {
-      const { status } = await MailComposer.composeAsync({
-        recipients: FEEDBACK_EMAIL ? [FEEDBACK_EMAIL] : [],
-        subject,
-        body,
-      });
-      return status; // 'sent' | 'saved' | 'cancelled' | 'undetermined'
+      const res = await avecDelai(
+        MailComposer.composeAsync({
+          recipients: FEEDBACK_EMAIL ? [FEEDBACK_EMAIL] : [],
+          subject,
+          body,
+        }),
+        COMPOSER_TIMEOUT_MS,
+      );
+      // Le compositeur n'a jamais répondu : on ne reste pas bloqué, on bascule
+      // sur la feuille de partage, qui elle s'ouvre partout.
+      if (res !== '__timeout__') return res?.status ?? 'cancelled';
     } catch {
       // échec de présentation → on bascule sur le partage
     }

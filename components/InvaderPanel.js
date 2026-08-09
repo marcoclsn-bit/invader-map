@@ -107,7 +107,10 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
     } else if (issue === 'shared') {
       // Le partage n'adresse rien : on le dit, sinon l'utilisateur croit avoir fini.
       Alert.alert(t('feedback.sharedTitle'), t('feedback.sharedBody', { email: FEEDBACK_EMAIL }));
-    } else if (issue === 'no_mail' || issue === 'error') {
+    } else if (issue !== 'cancelled' && issue !== 'saved') {
+      // TOUT le reste affiche quelque chose, y compris une issue inattendue.
+      // Le silence était le vrai défaut : l'utilisateur ne pouvait pas
+      // distinguer « ça a marché » de « l'app n'a rien fait ».
       Alert.alert(t('feedback.noMailTitle'), t('feedback.noMailBody', { email: FEEDBACK_EMAIL }));
     }
     // 'cancelled' et 'saved' : l'utilisateur sait ce qu'il a fait, on se tait.
