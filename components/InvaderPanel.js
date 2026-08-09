@@ -112,7 +112,15 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
       // TOUT le reste affiche quelque chose, y compris une issue inattendue.
       // Le silence était le vrai défaut : l'utilisateur ne pouvait pas
       // distinguer « ça a marché » de « l'app n'a rien fait ».
-      Alert.alert(t('feedback.noMailTitle'), t('feedback.noMailBody', { email: FEEDBACK_EMAIL }));
+      //
+      // DIAGNOSTIC TEMPORAIRE : le code d'issue est ajouté au message. Deux
+      // causes très différentes mènent ici — `no_mail` veut dire que la feuille
+      // de partage elle-même a refusé de s'ouvrir, `error` qu'une exception a été
+      // levée avant. À retirer une fois la cause identifiée.
+      Alert.alert(
+        t('feedback.noMailTitle'),
+        `${t('feedback.noMailBody', { email: FEEDBACK_EMAIL })}\n\n[${issue}]`,
+      );
     }
     // 'cancelled' et 'saved' : l'utilisateur sait ce qu'il a fait, on se tait.
     if (autoCloseOnAction) onClose();
