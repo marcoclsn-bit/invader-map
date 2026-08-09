@@ -1208,8 +1208,8 @@
       "help": "In explorer mode, the app never shows where the Invaders you have not found yet are. It still tells you how many are on a route and what they are worth. You hunt by eye, you flash with FlashInvaders, and you log the ID it shows you here.",
       "leave": "Leave explorer mode",
       "suggestLabel": "Nearby suggestions",
-      "suggestHint": "Offers the closest Invaders when you open this sheet. Less typing, but the app then tells you where they are: the hunt is no longer quite blind.",
-      "suggestA11y": "{{id}}, {{m}} metres away"
+      "suggestHint": "Offers the closest Invaders when you open this sheet, never telling you how far away they are. Turn it off for strictly blind entry.",
+      "suggestA11y": "{{id}}"
     },
     "intro": {
       "title": "New: Explorer mode",

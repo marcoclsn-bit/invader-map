@@ -1208,8 +1208,8 @@
       "help": "En mode explorateur, l'app ne montre jamais où sont les Invaders que tu n'as pas encore trouvés. Elle continue de dire combien il y en a sur un parcours et ce qu'ils valent. Tu chasses à l'œil, tu flashes avec FlashInvaders, et tu saisis ici l'identifiant qu'il t'affiche.",
       "leave": "Quitter le mode explorateur",
       "suggestLabel": "Suggestions de proximité",
-      "suggestHint": "Propose les Invaders les plus proches quand tu ouvres ce volet. Tu tapes moins, mais l'app te dit alors où ils sont : la chasse n'est plus tout à fait aveugle.",
-      "suggestA11y": "{{id}}, à {{m}} mètres"
+      "suggestHint": "Propose les Invaders les plus proches quand tu ouvres ce volet, sans jamais dire à quelle distance ils sont. Désactive-la pour une saisie strictement aveugle.",
+      "suggestA11y": "{{id}}"
     },
     "intro": {
       "title": "Nouveau : le mode Explorateur",

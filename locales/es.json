@@ -1208,8 +1208,8 @@
       "help": "En modo explorador, la app nunca muestra dónde están los Invaders que aún no has encontrado. Sigue diciéndote cuántos hay en una ruta y cuánto valen. Cazas a ojo, fotografías con FlashInvaders y registras aquí el identificador que te muestra.",
       "leave": "Salir del modo explorador",
       "suggestLabel": "Sugerencias cercanas",
-      "suggestHint": "Propone los Invaders más cercanos al abrir esta hoja. Escribes menos, pero la app te dice dónde están: la caza ya no es del todo a ciegas.",
-      "suggestA11y": "{{id}}, a {{m}} metros"
+      "suggestHint": "Propone los Invaders más cercanos al abrir esta hoja, sin decir nunca a qué distancia están. Desactívala para una entrada totalmente a ciegas.",
+      "suggestA11y": "{{id}}"
     },
     "intro": {
       "title": "Nuevo: el modo Explorador",

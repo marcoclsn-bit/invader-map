@@ -78,7 +78,14 @@ export default function ExplorerSheet({ visible, onClose, onFlash, position }) {
       const d = distanceM(position.latitude, position.longitude, inv.lat, inv.lng);
       if (d <= RAYON_M) out.push({ id: inv.id, d });
     }
-    return out.sort((a, b) => a.d - b.d).slice(0, MAX_SUGGESTIONS);
+    // On CHOISIT par distance, puis on AFFICHE par numéro. Trier l'affichage par
+    // distance ferait de la première pastille « la plus proche » : la distance
+    // aurait disparu de l'écran tout en restant lisible dans l'ordre.
+    return out
+      .sort((a, b) => a.d - b.d)
+      .slice(0, MAX_SUGGESTIONS)
+      .map(({ id }) => id)
+      .sort((a, b) => Number(a.slice(a.lastIndexOf('_') + 1)) - Number(b.slice(b.lastIndexOf('_') + 1)));
   }, [visible, explorerSuggest, position, invaders, flashed]);
 
   const fermer = useCallback(() => {
@@ -176,20 +183,22 @@ export default function ExplorerSheet({ visible, onClose, onFlash, position }) {
 
             {/* Le numéro seul suffit : la pastille porte donc ce qu'on aurait à
                 taper, pas l'identifiant complet. Elle remplit le champ au lieu
-                de valider — un doigt qui glisse ne doit pas écrire un flash. */}
+                de valider — un doigt qui glisse ne doit pas écrire un flash.
+                AUCUNE DISTANCE, ni à l'écran ni dans l'étiquette d'accessibilité :
+                sans elle, la pastille dit « il y en a un par ici » et non « il
+                est à 30 m dans cette direction ». */}
             {suggestions.length > 0 && (
               <View style={st.pastilles}>
-                {suggestions.map(({ id, d }) => (
+                {suggestions.map((id) => (
                   <TouchableOpacity
                     key={id}
                     style={st.pastille}
                     onPress={() => setTexte(id.slice(id.lastIndexOf('_') + 1))}
                     activeOpacity={0.8}
                     accessibilityRole="button"
-                    accessibilityLabel={t('explorer.sheet.suggestA11y', { id, m: Math.round(d) })}
+                    accessibilityLabel={t('explorer.sheet.suggestA11y', { id })}
                   >
                     <Text style={st.pastilleId}>{id.slice(id.lastIndexOf('_') + 1)}</Text>
-                    <Text style={st.pastilleDist}>{Math.round(d)} m</Text>
                   </TouchableOpacity>
                 ))}
               </View>
@@ -257,13 +266,11 @@ function getStyles(t) {
 
     pastilles: { flexDirection: 'row', gap: 8, marginTop: 10 },
     pastille: {
-      flexDirection: 'row', alignItems: 'baseline', gap: 6,
       backgroundColor: t.surfaceHigh, borderRadius: 9,
       borderWidth: StyleSheet.hairlineWidth, borderColor: t.border,
       paddingHorizontal: 12, paddingVertical: 9,
     },
     pastilleId: { ...typography.arcadeHeading, fontSize: 13, color: t.textPrimary },
-    pastilleDist: { fontSize: 11, color: t.textSecondary },
 
     aideTexte: { fontSize: 13, color: t.textPrimary, lineHeight: 19 },
     suggestRow: {

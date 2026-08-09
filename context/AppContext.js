@@ -143,12 +143,11 @@ export function AppProvider({ children }) {
   // chasseur.
   // Défaut OFF : c'est une contrainte qu'on choisit, jamais qu'on subit.
   const [explorer, setExplorerState] = useState(false);
-  // Suggestions de proximité dans le volet de saisie. DÉSACTIVÉES par défaut, et
-  // c'est structurel : proposer « l'Invader le plus proche » revient à dire où il
-  // est, c'est-à-dire exactement ce que le mode explorateur promet de ne jamais
-  // faire. Ça reste utile à qui veut seulement taper moins vite, donc on l'offre
-  // — en le choisissant, jamais par défaut.
-  const [explorerSuggest, setExplorerSuggestState] = useState(false);
+  // Suggestions de proximité dans le volet de saisie. ACTIVÉES par défaut : sans
+  // distance affichée, une pastille dit « il y en a un dans le coin » et non « il
+  // est à 30 m par là ». Reste un interrupteur pour qui veut la saisie strictement
+  // aveugle.
+  const [explorerSuggest, setExplorerSuggestState] = useState(true);
   // Présentation à une seule apparition, pour ceux qui ont DÉJÀ terminé
   // l'onboarding : `@invader_onboarding_done` vaut 1 chez eux, ils ne le
   // reverront jamais. Sans ce second chemin, le mode n'existerait que pour les
@@ -330,7 +329,9 @@ export function AppProvider({ children }) {
         AsyncStorage.getItem('@invader_fav_cities'),
         AsyncStorage.getItem('@invader_explorer_suggest'),
       ]);
-      if (explorerSuggestRaw === '1') setExplorerSuggestState(true);
+      // Comparé à '0' et non à '1' : le défaut est ACTIF, seul un refus explicite
+      // est enregistré. Tester l'inverse aurait éteint l'option chez tout le monde.
+      if (explorerSuggestRaw === '0') setExplorerSuggestState(false);
       if (favCitiesRaw) {
         try { setFavCities(new Set(JSON.parse(favCitiesRaw))); } catch {}
       }
