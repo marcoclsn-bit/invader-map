@@ -627,7 +627,7 @@
       "bodyId": "Invader: {{id}}",
       "bodyCurrent": "Current status in app: {{status}}",
       "bodyReported": "Reported status: {{status}}",
-      "bodyCoords": "Coordinates: {{lat}}, {{lng}}",
+      "bodyCoords": "Coordinates: {{lat}}, {{lon}}",
       "bodyDate": "Date: {{date}}",
       "sentTitle": "Thanks!",
       "sentBody": "Your report has been sent."

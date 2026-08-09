@@ -83,38 +83,29 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
     // mécanisme capable de produire le « rien ne se passe » observé, puisque ni
     // le compositeur ni la feuille de partage n'étaient alors atteints.
     let issue = 'error';
-    let detail = '';
-    // DIAGNOSTIC : jalon mis à jour à chaque étape, pour que le message d'erreur
-    // dise OÙ ça lève et non seulement que ça lève. Quatre hypothèses ont déjà
-    // été écartées à l'aveugle, ça suffit.
-    let etape = 'debut';
     try {
-      etape = 'sujet';
       const subject = t('feedback.status.emailSubject', { id: invader.id });
-      etape = 'corps';
       const lignes = [
         t('feedback.status.bodyId', { id: invader.id }),
         t('feedback.status.bodyCurrent', { status: t(`common.status.${invader.status}`) }),
         t('feedback.status.bodyReported', { status: t(`common.status.${newStatus}`) }),
-        t('feedback.status.bodyCoords', { lat: invader.lat, lng: invader.lng }),
+        // `lon` et NON `lng` : `lng` est une option RÉSERVÉE d'i18next, elle
+        // force la langue de traduction. On demandait donc de traduire dans la
+        // langue « 5.44 », i18next tentait des opérations de chaîne sur un
+        // nombre, et levait « undefined is not a function » — avant tout envoi,
+        // avant toute feuille de partage, sans que rien n'apparaisse à l'écran.
+        // C'est la cause du « rien ne se passe » signalé depuis des semaines.
+        t('feedback.status.bodyCoords', { lat: invader.lat, lon: invader.lng }),
       ];
-      etape = 'date';
       lignes.push(t('feedback.status.bodyDate', { date: new Date().toISOString().slice(0, 16).replace('T', ' ') }));
-      etape = 'contexte';
       lignes.push('', buildContextBlock(dataVersion));
-      etape = 'envoi';
       const body = lignes.join('\n');
 
       // Compositeur mail pré-adressé, avec repli sur la feuille de partage.
       // La version précédente appelait Share.share sans destinataire : le champ
       // « À : » restait vide et le message n'arrivait jamais nulle part.
       issue = await sendFeedbackEmail({ subject, body });
-    } catch (e) {
-      // Message conservé pour le diagnostic en cours : « error » seul ne dit pas
-      // CE QUI a levé, et deux causes très différentes mènent ici.
-      issue = 'error';
-      detail = `${etape} · ${e?.message ? String(e.message).slice(0, 90) : 'sans message'}`;
-    }
+    } catch { issue = 'error'; }
 
     track('status_report', { from: invader.status, to: newStatus, outcome: issue });
 
@@ -127,15 +118,7 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
       // TOUT le reste affiche quelque chose, y compris une issue inattendue.
       // Le silence était le vrai défaut : l'utilisateur ne pouvait pas
       // distinguer « ça a marché » de « l'app n'a rien fait ».
-      //
-      // DIAGNOSTIC TEMPORAIRE : le code d'issue est ajouté au message. Deux
-      // causes très différentes mènent ici — `no_mail` veut dire que la feuille
-      // de partage elle-même a refusé de s'ouvrir, `error` qu'une exception a été
-      // levée avant. À retirer une fois la cause identifiée.
-      Alert.alert(
-        t('feedback.noMailTitle'),
-        `${t('feedback.noMailBody', { email: FEEDBACK_EMAIL })}\n\n[${issue}] ${detail}`,
-      );
+      Alert.alert(t('feedback.noMailTitle'), t('feedback.noMailBody', { email: FEEDBACK_EMAIL }));
     }
     // 'cancelled' et 'saved' : l'utilisateur sait ce qu'il a fait, on se tait.
     if (autoCloseOnAction) onClose();
