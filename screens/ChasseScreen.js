@@ -729,6 +729,12 @@ export default function ChasseScreen({ route }) {
     setSelectedInv(null);
     setSelectedPoi(null);
     setFollowing(false);
+    // Et l'enregistrement en cours : sans ça, une session de plusieurs kilomètres
+    // restait ouverte sans plus jamais recevoir de point, donc perdue sans récap
+    // ni confirmation, puis écrasée au prochain départ. Ailleurs, cette perte est
+    // protégée par une alerte destructive (askResetHunt).
+    recorder.cancel();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentCityCode]);
 
   // ─── Cadrage carte après génération ──────────────────────────────────────

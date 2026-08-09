@@ -245,10 +245,22 @@ async function notifyProximity(invId) {
  *
  * @returns l'identifiant utilisé, ou null si aucun candidat n'est disponible
  */
-export async function simulateProximityAlert() {
+export async function simulateProximityAlert(position) {
   const candidates = await readJSON(KEY_CANDIDATES, []);
   if (!candidates.length) return null;
-  const pick = candidates[Math.floor(Math.random() * candidates.length)];
+  // LE PLUS PROCHE, pas un au hasard. Le tirage portait sur toute la ville, soit
+  // environ 1 500 Invaders à Paris : l'alerte annonçait « tout près » un Invader
+  // qui était à des kilomètres, et le test ne testait donc pas ce qu'il prétend.
+  let pick = candidates[0];
+  if (position) {
+    let meilleure = Infinity;
+    for (const c of candidates) {
+      const dy = (c.lat - position.latitude) * 110540;
+      const dx = (c.lng - position.longitude) * Math.cos((position.latitude * Math.PI) / 180) * 111320;
+      const d = dx * dx + dy * dy;
+      if (d < meilleure) { meilleure = d; pick = c; }
+    }
+  }
   await notifyProximity(pick.id);
   return pick.id;
 }

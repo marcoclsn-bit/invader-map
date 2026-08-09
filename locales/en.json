@@ -696,6 +696,7 @@
     "vibration": "Vibration",
     "notification": "Notification",
     "testEmpty": "No Invader available in this city: turn the mode on first and let the app prepare the list.",
+    "testNoPermission": "Notifications are turned off for InvaderQuest. Allow them in your phone settings to receive proximity alerts.",
     "targetSection": "Target",
     "unflashedOnly": "Unflashed only",
     "unflashedOnlyHint": "Ignore Invaders you've already flashed.",

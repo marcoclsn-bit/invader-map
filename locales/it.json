@@ -696,6 +696,7 @@
     "vibration": "Vibrazione",
     "notification": "Notifica",
     "testEmpty": "Nessun Invader disponibile in questa città: attiva prima la modalità e lascia che l'app prepari l'elenco.",
+    "testNoPermission": "Le notifiche sono bloccate per InvaderQuest. Autorizzale nelle impostazioni del telefono per ricevere gli avvisi di prossimità.",
     "targetSection": "Filtro",
     "unflashedOnly": "Solo i non fotografati",
     "unflashedOnlyHint": "Ignora gli Invaders già fotografati.",

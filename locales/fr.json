@@ -696,6 +696,7 @@
     "vibration": "Vibration",
     "notification": "Notification",
     "testEmpty": "Aucun Invader à proximité dans cette ville : active d'abord le mode et laisse l'app préparer la liste.",
+    "testNoPermission": "Les notifications sont refusées pour InvaderQuest. Autorise-les dans les réglages de l'iPhone pour recevoir les alertes de proximité.",
     "targetSection": "Cibler",
     "unflashedOnly": "Uniquement les non-flashés",
     "unflashedOnlyHint": "Ignore les Invaders déjà flashés.",

@@ -11,6 +11,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useAppContext, STROLL_STATUS_OPTIONS } from '../context/AppContext';
 import { useGamification } from '../context/GamificationContext';
 import * as Notifications from 'expo-notifications';
+import * as Location from 'expo-location';
 import { simulateProximityAlert } from '../services/strollEngine';
 import { canUseFeature, FEATURES } from '../services/featureAccess';
 import { useTheme } from '../theme/ThemeContext';
@@ -223,11 +224,29 @@ export default function StrollScreen({ navigation }) {
             label={t('stroll.notification')}
             value={stroll.notification}
             onValueChange={(v) => { track('stroll_setting', { setting: 'notification', state: v ? 'on' : 'off' }); setStrollPref({ notification: v }); }}
-            onLongPress={off ? undefined : async () => {
-              // Gardé par `off` : sans ça, la Balade désactivée déclenchait quand
-              // même la demande d'autorisation système puis une vraie notification.
-              try { await Notifications.requestPermissionsAsync(); } catch {}
-              const id = await simulateProximityAlert();
+            onLongPress={(off || !stroll.notification) ? undefined : async () => {
+              // Gardé par `off` ET par le réglage lui-même : envoyer une vraie
+              // notification à quelqu'un qui vient de les couper, parce qu'il a
+              // laissé son pouce six dixièmes de seconde sur la ligne en lisant,
+              // est une surprise désagréable et incompréhensible.
+              let accorde = false;
+              try {
+                const r = await Notifications.requestPermissionsAsync();
+                accorde = r?.granted === true || r?.status === 'granted';
+              } catch { accorde = false; }
+              // Sans ce message, la permission refusée produisait EXACTEMENT le
+              // même silence qu'une panne : le geste existe pour diagnostiquer,
+              // il doit dire pourquoi il ne se passe rien.
+              if (!accorde) { Alert.alert('InvaderQuest', t('stroll.testNoPermission')); return; }
+              // Le plus proche de la position réelle. `getLastKnownPositionAsync`
+              // rend la main tout de suite, sans réveiller le GPS : pour choisir
+              // un candidat, un point même un peu vieux vaut mieux que l'attente.
+              let position = null;
+              try {
+                const loc = await Location.getLastKnownPositionAsync();
+                if (loc?.coords) position = { latitude: loc.coords.latitude, longitude: loc.coords.longitude };
+              } catch { position = null; }
+              const id = await simulateProximityAlert(position);
               if (!id) Alert.alert('InvaderQuest', t('stroll.testEmpty'));
             }}
             disabled={off}

@@ -633,6 +633,14 @@ export default function TrajetScreen() {
     setRouteInvaders(null);
     setSelectedRouteInv(null);
     setFollowing(false);
+    // Le TRACÉ aussi. Il survivait au changement de ville : la ligne parisienne
+    // et ses deux épingles restaient dessinées sur la carte de Marseille, et
+    // comme la barre du bas dépend de lui, « Démarrer » restait actif et ouvrait
+    // une session étiquetée Marseille pour un parcours parisien, ce que cet effet
+    // était censé empêcher.
+    setRoutePolyline(null);
+    recorder.cancel();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentCityCode]);
 
   const { walkedPolyline, remainingPolyline } = useMemo(() => {
