@@ -730,6 +730,10 @@
         {
           "title": "Radar: contacto 🛸",
           "body": "Un Invader está a tiro. Busca bien."
+        },
+        {
+          "title": "Alerta píxeles 👾",
+          "body": "Hay azulejos sueltos por la zona."
         }
       ]
     },

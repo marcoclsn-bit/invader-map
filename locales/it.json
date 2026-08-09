@@ -730,6 +730,10 @@
         {
           "title": "Radar: contatto 🛸",
           "body": "Un Invader è a portata. Cerca bene."
+        },
+        {
+          "title": "Allerta pixel 👾",
+          "body": "Ci sono piastrelle in giro da queste parti."
         }
       ]
     },

@@ -730,6 +730,10 @@
         {
           "title": "Radar contact 🛸",
           "body": "An Invader is within reach. Look closely."
+        },
+        {
+          "title": "Pixel alert 👾",
+          "body": "There are tiles lurking around here."
         }
       ]
     },
