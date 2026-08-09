@@ -40,6 +40,9 @@ import { track, failureReason } from '../services/analytics';
 import ObjectivePicker from '../components/ObjectivePicker';
 import PoiFamiliesRow from '../components/PoiFamiliesRow';
 
+// Au-delà de cette distance au tracé, on cesse de découper le parcours en
+// « parcouru » et « restant » : la projection sur la ligne n'a plus de sens.
+const HORS_TRACE_KM = 0.2;
 const _PA         = CITIES.PA;
 const PARIS       = { latitude: _PA.center.lat, longitude: _PA.center.lng, ..._PA.mapDelta };
 const DEBOUNCE_MS = 300;
@@ -617,6 +620,15 @@ export default function TrajetScreen() {
 
   // ─── Découpe du tracé en portion parcourue (gris) + restante (bleu) ──────
 
+  // Changer de ville périme l'itinéraire : ses Invaders n'appartiennent plus au
+  // jeu de données chargé. Voir ChasseScreen, même raison.
+  useEffect(() => {
+    setRouteCoords(null);
+    setRouteInvaders(null);
+    setSelectedRouteInv(null);
+    setFollowing(false);
+  }, [currentCityCode]);
+
   const { walkedPolyline, remainingPolyline } = useMemo(() => {
     if (!routePolyline || !routeCoords || !following || !userPos) {
       return { walkedPolyline: null, remainingPolyline: routePolyline };
@@ -624,6 +636,12 @@ export default function TrajetScreen() {
     try {
       const line = turf.lineString(routeCoords);
       const nearest = turf.nearestPointOnLine(line, turf.point([userPos.longitude, userPos.latitude]));
+      // Trop loin du tracé : on ne découpe RIEN. Sans ce garde-fou, la projection
+      // sur la ligne s'applique quelle que soit la distance. Sur une boucle, partir
+      // 300 m dans le mauvais sens place l'utilisateur sur la branche de RETOUR,
+      // à zéro mètre du tracé : 93 % du parcours passait alors en gris « déjà
+      // parcouru ». À 2 km, on obtenait 38 à 61 % de gris arbitraire.
+      if ((nearest.properties.dist ?? 0) > HORS_TRACE_KM) throw new Error('hors trace');
       const idx = nearest.properties.index ?? 0;
       const split = nearest.geometry.coordinates;
       const toLl = ([lng, lat]) => ({ latitude: lat, longitude: lng });
@@ -856,10 +874,21 @@ export default function TrajetScreen() {
       pois: routePois.map(p => ({ id: p.id, lat: p.lat, lng: p.lng })),
     });
     track('run_start', { source: 'route', city: currentCityCode });
-    if (gpsRef.current) {
-      recorder.addPoint(gpsRef.current[1], gpsRef.current[0]);
+    // Position FRAÎCHE, pas celle du montage de l'écran. `gpsRef` n'est renseigné
+    // qu'une fois, à l'ouverture de l'onglet, et les onglets restent montés toute
+    // la vie de l'application : elle pouvait donc dater de plusieurs heures. Le
+    // premier point de la session était alors faux, la caméra sautait à un endroit
+    // où l'utilisateur n'est plus, et surtout l'écart avec le point suivant
+    // déclenchait le comblement d'itinéraire — donc une trace fabriquée.
+    const fix = await Location.getLastKnownPositionAsync().catch(() => null);
+    const depart = fix
+      ? [fix.coords.longitude, fix.coords.latitude]
+      : gpsRef.current;
+    if (depart) {
+      gpsRef.current = depart;
+      recorder.addPoint(depart[1], depart[0]);
       mapRef.current?.animateCamera(
-        { center: { latitude: gpsRef.current[1], longitude: gpsRef.current[0] }, zoom: 17 },
+        { center: { latitude: depart[1], longitude: depart[0] }, zoom: 17 },
         { duration: 500 }
       );
     }

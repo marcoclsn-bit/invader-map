@@ -103,6 +103,20 @@ export function comblerDepuisItineraire(route, depart, arrivee) {
  * @param pois  [{ id, lat, lng }] prévus au parcours
  * @param trace [[lng, lat], …] réellement enregistré
  */
+/**
+ * Un écart entre deux points est-il vraisemblable pour le mode de déplacement ?
+ *
+ * Extrait pour être testable : c'est la décision qui garde à la fois le compteur
+ * de distance ET la trace dessinée. Elle ne protégeait que le premier, et le
+ * comblement d'itinéraire était injecté quoi qu'il arrive — d'où 3,8 km de
+ * parcours fabriqué pour 200 m réellement marchés, et des lieux d'intérêt
+ * comptés comme découverts sans y être passé.
+ */
+export function ecartVraisemblable(km, ms, vitesseMaxKmh) {
+  const heures = Math.max((ms ?? 0) / 3600000, 1 / 3600);
+  return km / heures <= (vitesseMaxKmh ?? VITESSE_DEFAUT);
+}
+
 export function lieuxAtteints(pois, trace) {
   if (!Array.isArray(pois) || pois.length === 0) return [];
   if (!Array.isArray(trace) || trace.length === 0) return [];
@@ -157,12 +171,20 @@ export function useSessionRecorder() {
       } else {
         // Interruption : on tente de reconstituer le chemin réellement suivi.
         const comble = comblerDepuisItineraire(s.fallbackRoute, s.last, { lat, lng });
-        const heures = Math.max((now - (s.lastAt ?? now)) / 3600000, 1 / 3600);
         const parcourue = comble ? comble.km : d;
         // Vraisemblance : au-delà du plafond du mode, l'écart n'a pas été
         // parcouru par l'utilisateur. On raccorde le tracé sans gonfler le total.
-        if (parcourue / heures <= s.vitesseMax) s.distanceKm += parcourue;
-        if (comble) s.coords.push(...comble.points);
+        // MÊME condition pour la distance ET pour la trace. Le `push` était
+        // inconditionnel : un déplacement jugé invraisemblable ne gonflait pas le
+        // compteur, mais injectait quand même le morceau d'itinéraire dans la
+        // trace. Deux conséquences mesurées sur une boucle de 4 km : la carte de
+        // fin dessinait 3,8 km de parcours pour 200 m réellement marchés, et les
+        // cinq lieux d'intérêt du parcours étaient comptés comme découverts.
+        // Ce qu'on refuse de compter, on refuse aussi de le dessiner.
+        if (ecartVraisemblable(parcourue, now - (s.lastAt ?? now), s.vitesseMax)) {
+          s.distanceKm += parcourue;
+          if (comble) s.coords.push(...comble.points);
+        }
       }
     }
 

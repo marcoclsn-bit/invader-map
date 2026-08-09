@@ -7,7 +7,7 @@
 // Ce défaut est SILENCIEUX — un tracé approximatif ne lève aucune erreur et ne
 // se voit que sur la carte de partage, après coup. D'où ces tests.
 
-import { lieuxAtteints, comblerDepuisItineraire } from '../components/session/useSessionRecorder';
+import { lieuxAtteints, comblerDepuisItineraire, ecartVraisemblable } from '../components/session/useSessionRecorder';
 
 // Itinéraire droit d'ouest en est, 11 points espacés d'environ 74 m.
 const route = Array.from({ length: 11 }, (_, i) => [2.3500 + i * 0.001, 48.8600]);
@@ -117,5 +117,36 @@ describe('lieuxAtteints', () => {
     expect(lieuxAtteints([], trace)).toEqual([]);
     expect(lieuxAtteints([lieu('a', 0, 0)], [])).toEqual([]);
     expect(lieuxAtteints(null, trace)).toEqual([]);
+  });
+});
+
+// ── Vraisemblance d'un écart ──────────────────────────────────────────────
+//
+// Régression du 2026-08-09 : cette décision ne gardait que le compteur de
+// distance, jamais la trace. Le comblement d'itinéraire était injecté quoi
+// qu'il arrive, si bien qu'un premier point périmé suivi d'un point réel
+// suffisait à dessiner une boucle entière et à valider tous ses lieux
+// d'intérêt comme découverts. Les deux passent désormais par ici.
+describe('ecartVraisemblable', () => {
+  const H = 3600000;
+
+  it('accepte une marche normale', () => {
+    expect(ecartVraisemblable(1.2, H, 18)).toBe(true);   // 1,2 km/h
+    expect(ecartVraisemblable(5, H, 18)).toBe(true);     // 5 km/h
+  });
+
+  it('refuse un saut instantané, le cas du point de départ périmé', () => {
+    expect(ecartVraisemblable(3.8, 1000, 18)).toBe(false); // 3,8 km en 1 s
+  });
+
+  it('refuse un trajet en métro et accepte le vélo à sa vitesse', () => {
+    expect(ecartVraisemblable(6, H / 4, 18)).toBe(false);  // 24 km/h à pied
+    expect(ecartVraisemblable(6, H / 4, 30)).toBe(true);   // 24 km/h à vélo
+  });
+
+  it('ne divise jamais par zéro', () => {
+    expect(ecartVraisemblable(0, 0, 18)).toBe(true);
+    expect(ecartVraisemblable(1, 0, 18)).toBe(false);     // plancher d'une seconde
+    expect(ecartVraisemblable(0.001, undefined, undefined)).toBe(true);
   });
 });

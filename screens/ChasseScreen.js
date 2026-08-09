@@ -93,6 +93,10 @@ const DENSITY_RADIUS_KM = 0.25;  // rayon de voisinage (~250 m à pied)
 // Facteur de détour : le vol d'oiseau sous-estime la distance réelle par les rues.
 // Appliqué au calcul de temps interne pour que la durée réelle colle au budget.
 const STREET_DETOUR = 1.2;
+// Au-delà de cette distance au tracé, on cesse de découper le parcours en
+// « parcouru » et « restant » : la projection sur la ligne n'a plus de sens.
+const HORS_TRACE_KM = 0.2;
+
 // Aucune étape ne peut à elle seule ajouter plus que cette fraction du budget.
 // Sans ce plafond, le remplissage final acceptait n'importe quoi tant qu'il
 // « restait du temps » : un Invader à 10 points pour 12 min de détour passait.
@@ -716,6 +720,17 @@ export default function ChasseScreen({ route }) {
     }, 300);
   }, [route?.params?.arPreset?._ts]); // _ts change à chaque tap → déclenche même arr. deux fois
 
+  // Changer de ville périme le parcours. Rien ne le vidait : la chasse
+  // parisienne restait affichée par-dessus la carte de Marseille, avec des
+  // étapes absentes du jeu de données chargé, et « Démarrer » aurait enregistré
+  // une session étiquetée Marseille pour un parcours parisien.
+  useEffect(() => {
+    setResult(null);
+    setSelectedInv(null);
+    setSelectedPoi(null);
+    setFollowing(false);
+  }, [currentCityCode]);
+
   // ─── Cadrage carte après génération ──────────────────────────────────────
   useEffect(() => {
     if (!result) return;
@@ -904,6 +919,12 @@ export default function ChasseScreen({ route }) {
     try {
       const line = turf.lineString(result.routeCoords);
       const nearest = turf.nearestPointOnLine(line, turf.point([userPos.longitude, userPos.latitude]));
+      // Trop loin du tracé : on ne découpe RIEN. Sans ce garde-fou, la projection
+      // sur la ligne s'applique quelle que soit la distance. Sur une boucle, partir
+      // 300 m dans le mauvais sens place l'utilisateur sur la branche de RETOUR,
+      // à zéro mètre du tracé : 93 % du parcours passait alors en gris « déjà
+      // parcouru ». À 2 km, on obtenait 38 à 61 % de gris arbitraire.
+      if ((nearest.properties.dist ?? 0) > HORS_TRACE_KM) throw new Error('hors trace');
       const idx = nearest.properties.index ?? 0;
       const split = nearest.geometry.coordinates;
       const toLl = ([lng, lat]) => ({ latitude: lat, longitude: lng });
@@ -1138,10 +1159,21 @@ export default function ChasseScreen({ route }) {
       source: 'hunt', city: currentCityCode,
       objective: poiPrefs.objective, budgetMin, steps: result?.invaders?.length ?? 0,
     });
-    if (gpsRef.current) {
-      recorder.addPoint(gpsRef.current[1], gpsRef.current[0]);
+    // Position FRAÎCHE, pas celle du montage de l'écran. `gpsRef` n'est renseigné
+    // qu'une fois, à l'ouverture de l'onglet, et les onglets restent montés toute
+    // la vie de l'application : elle pouvait donc dater de plusieurs heures. Le
+    // premier point de la session était alors faux, la caméra sautait à un endroit
+    // où l'utilisateur n'est plus, et surtout l'écart avec le point suivant
+    // déclenchait le comblement d'itinéraire — donc une trace fabriquée.
+    const fix = await Location.getLastKnownPositionAsync().catch(() => null);
+    const depart = fix
+      ? [fix.coords.longitude, fix.coords.latitude]
+      : gpsRef.current;
+    if (depart) {
+      gpsRef.current = depart;
+      recorder.addPoint(depart[1], depart[0]);
       mapRef.current?.animateCamera(
-        { center: { latitude: gpsRef.current[1], longitude: gpsRef.current[0] }, zoom: 17 },
+        { center: { latitude: depart[1], longitude: depart[0] }, zoom: 17 },
         { duration: 500 }
       );
     }
