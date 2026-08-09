@@ -710,12 +710,27 @@
         "No te pierdas {{id}}, está justo ahí 🛸",
         "{{id}} detectado cerca - ¡prepara la cámara! 🎯"
       ],
-      "blindTitle": "Algo por aquí cerca 👾",
-      "blindBodies": [
-        "Hay un Invader muy cerca. Abre bien los ojos.",
-        "Hay uno en los alrededores inmediatos.",
-        "Levanta la vista: hay uno por aquí.",
-        "Un Invader se esconde a unos pasos."
+      "blindAlerts": [
+        {
+          "title": "Abre bien los ojos 👀",
+          "body": "Un Invader se esconde por aquí."
+        },
+        {
+          "title": "Zona habitada 👾",
+          "body": "Hay uno muy cerca. Ve a encontrarlo."
+        },
+        {
+          "title": "Huele a Invader 👾",
+          "body": "Un muro de la zona esconde uno."
+        },
+        {
+          "title": "Algo por aquí 👀",
+          "body": "Levanta la vista, no está lejos."
+        },
+        {
+          "title": "Radar: contacto 🛸",
+          "body": "Un Invader está a tiro. Busca bien."
+        }
       ]
     },
     "perm": {

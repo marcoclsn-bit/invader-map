@@ -710,12 +710,27 @@
         "Ne rate pas {{id}}, il est juste là 🛸",
         "{{id}} repéré dans les parages - dégaine ton appareil ! 🎯"
       ],
-      "blindTitle": "Quelque chose dans les parages 👾",
-      "blindBodies": [
-        "Un Invader est tout près. Ouvre l'œil.",
-        "Il y en a un dans les environs immédiats.",
-        "Lève les yeux : il y en a un par ici.",
-        "Un Invader se cache à quelques pas."
+      "blindAlerts": [
+        {
+          "title": "Ouvre l’œil 👀",
+          "body": "Un Invader se cache dans le coin."
+        },
+        {
+          "title": "Zone habitée 👾",
+          "body": "Il y en a un tout près. À toi de le voir."
+        },
+        {
+          "title": "Ça sent l’Invader 👾",
+          "body": "Un mur des environs en cache un."
+        },
+        {
+          "title": "Quelque chose par ici 👀",
+          "body": "Lève les yeux, il n’est pas loin."
+        },
+        {
+          "title": "Radar : contact 🛸",
+          "body": "Un Invader est à portée. Cherche bien."
+        }
       ]
     },
     "perm": {

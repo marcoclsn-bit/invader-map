@@ -38,12 +38,14 @@ export default function StrollEngine() {
     // Variantes « à l'aveugle » du mode explorateur : elles ne nomment aucun
     // Invader. Persistées en même temps que les autres, parce que la tâche de
     // fond n'a pas accès à i18n et ne peut pas les traduire au moment d'alerter.
-    const blind = tr('stroll.notif.blindBodies', { returnObjects: true });
+    // Titre ET corps appariés : un titre unique répété fabriquait un mur de
+    // notifications identiques sur l'écran verrouillé, et le seul titre existant
+    // était trop long pour tenir sans être coupé.
+    const blind = tr('stroll.notif.blindAlerts', { returnObjects: true });
     await persistNotifStrings(
       tr('stroll.notif.title'),
       Array.isArray(bodies) ? bodies : [bodies],
-      tr('stroll.notif.blindTitle'),
-      Array.isArray(blind) ? blind : [blind],
+      Array.isArray(blind) ? blind : [],
     );
     await persistCandidates(candidates);
     return candidates.length;

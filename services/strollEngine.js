@@ -199,15 +199,33 @@ async function notifyProximity(invId) {
   let explorer = false;
   try { explorer = (await AsyncStorage.getItem(KEY_EXPLORER)) === '1'; } catch {}
 
-  const list = explorer
-    ? (Array.isArray(tpl.blindBodies) && tpl.blindBodies.length ? tpl.blindBodies : ['Un Invader est tout près.'])
+  // Mode explorateur : une PAIRE titre + corps, tirée ensemble. Repli sur
+  // l'ancien format (`blindTitle` + `blindBodies`) puis sur une chaîne en dur,
+  // pour la fenêtre où la tâche de fond alerte avant que le composant React
+  // n'ait réécrit le gabarit après une mise à jour.
+  let titre = tpl.title;
+  let chosen;
+  if (explorer) {
+    const paires = Array.isArray(tpl.blindAlerts) && tpl.blindAlerts.length ? tpl.blindAlerts : null;
+    if (paires) {
+      const p = paires[Math.floor(Math.random() * paires.length)];
+      titre = p.title;
+      chosen = p.body;
+    } else {
+      const anciens = Array.isArray(tpl.blindBodies) && tpl.blindBodies.length
+        ? tpl.blindBodies : ['Un Invader est tout près.'];
+      titre = tpl.blindTitle || tpl.title;
+      chosen = anciens[Math.floor(Math.random() * anciens.length)];
+    }
+  } else {
     // Choix aléatoire d'une variante (compat : ancien champ `body` unique).
-    : (Array.isArray(tpl.bodies) && tpl.bodies.length ? tpl.bodies : [tpl.body || '{id}']);
-  const chosen = list[Math.floor(Math.random() * list.length)];
+    const list = Array.isArray(tpl.bodies) && tpl.bodies.length ? tpl.bodies : [tpl.body || '{id}'];
+    chosen = list[Math.floor(Math.random() * list.length)];
+  }
   try {
     await Notifications.scheduleNotificationAsync({
       content: {
-        title: explorer && tpl.blindTitle ? tpl.blindTitle : tpl.title,
+        title: titre,
         body: explorer ? chosen : chosen.replace('{id}', invId),
         sound: true,
         data: explorer ? { type: 'stroll' } : { type: 'stroll', invId },
@@ -236,11 +254,13 @@ export async function simulateProximityAlert() {
 }
 
 /** Persiste les textes localisés de notification : titre + variantes de corps
- *  ({id} = placeholder remplacé par l'id de l'Invader à l'alerte). */
-export async function persistNotifStrings(title, bodies, blindTitle, blindBodies) {
+ *  ({id} = placeholder remplacé par l'id de l'Invader à l'alerte), plus les
+ *  paires titre/corps du mode explorateur, qui ne nomment aucun Invader. */
+export async function persistNotifStrings(title, bodies, blindAlerts) {
   const list = (Array.isArray(bodies) ? bodies : [bodies]).filter(Boolean);
-  const blind = (Array.isArray(blindBodies) ? blindBodies : [blindBodies]).filter(Boolean);
-  await writeJSON(KEY_NOTIF, { title, bodies: list, blindTitle, blindBodies: blind });
+  const paires = (Array.isArray(blindAlerts) ? blindAlerts : [])
+    .filter((p) => p && p.title && p.body);
+  await writeJSON(KEY_NOTIF, { title, bodies: list, blindAlerts: paires });
 }
 
 export async function startStroll() { return refreshGeofences(); }

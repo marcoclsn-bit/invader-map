@@ -710,12 +710,27 @@
         "Don’t miss {{id}}, it’s right there 🛸",
         "{{id}} spotted nearby - get your camera ready! 🎯"
       ],
-      "blindTitle": "Something nearby 👾",
-      "blindBodies": [
-        "An Invader is very close. Keep your eyes open.",
-        "There is one in the immediate area.",
-        "Look up: there is one around here.",
-        "An Invader is hiding a few steps away."
+      "blindAlerts": [
+        {
+          "title": "Keep your eyes open 👀",
+          "body": "An Invader is hiding nearby."
+        },
+        {
+          "title": "Occupied zone 👾",
+          "body": "There is one very close. Go and find it."
+        },
+        {
+          "title": "Invader in the air 👾",
+          "body": "A wall around here is hiding one."
+        },
+        {
+          "title": "Something around here 👀",
+          "body": "Look up, it is not far."
+        },
+        {
+          "title": "Radar contact 🛸",
+          "body": "An Invader is within reach. Look closely."
+        }
       ]
     },
     "perm": {
