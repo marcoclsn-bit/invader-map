@@ -51,10 +51,17 @@ function avecDelai(promesse, ms) {
 }
 
 export async function sendFeedbackEmail({ subject, body }) {
-  const available = await avecDelai(
-    MailComposer.isAvailableAsync().catch(() => false),
-    3000,
-  );
+  // Appel BLINDÉ : si le module natif n'est pas dans le binaire,
+  // `isAvailableAsync` est indéfini et l'appel lève SYNCHRONEMENT, donc avant
+  // que le `.catch()` ne puisse s'appliquer. L'exception traverserait alors
+  // toute la fonction et empêcherait même le repli sur le partage.
+  let available = false;
+  try {
+    available = await avecDelai(
+      Promise.resolve(MailComposer?.isAvailableAsync?.() ?? false).catch(() => false),
+      3000,
+    );
+  } catch { available = false; }
   if (available === true) {
     try {
       const res = await avecDelai(

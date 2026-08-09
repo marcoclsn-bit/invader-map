@@ -83,6 +83,7 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
     // mécanisme capable de produire le « rien ne se passe » observé, puisque ni
     // le compositeur ni la feuille de partage n'étaient alors atteints.
     let issue = 'error';
+    let detail = '';
     try {
       const subject = t('feedback.status.emailSubject', { id: invader.id });
       const body = [
@@ -99,7 +100,12 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
       // La version précédente appelait Share.share sans destinataire : le champ
       // « À : » restait vide et le message n'arrivait jamais nulle part.
       issue = await sendFeedbackEmail({ subject, body });
-    } catch { issue = 'error'; }
+    } catch (e) {
+      // Message conservé pour le diagnostic en cours : « error » seul ne dit pas
+      // CE QUI a levé, et deux causes très différentes mènent ici.
+      issue = 'error';
+      detail = e?.message ? String(e.message).slice(0, 120) : 'sans message';
+    }
 
     track('status_report', { from: invader.status, to: newStatus, outcome: issue });
 
@@ -119,7 +125,7 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
       // levée avant. À retirer une fois la cause identifiée.
       Alert.alert(
         t('feedback.noMailTitle'),
-        `${t('feedback.noMailBody', { email: FEEDBACK_EMAIL })}\n\n[${issue}]`,
+        `${t('feedback.noMailBody', { email: FEEDBACK_EMAIL })}\n\n[${issue}] ${detail}`,
       );
     }
     // 'cancelled' et 'saved' : l'utilisateur sait ce qu'il a fait, on se tait.
