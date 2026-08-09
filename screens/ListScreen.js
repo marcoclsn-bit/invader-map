@@ -12,7 +12,7 @@ import { useAppContext } from '../context/AppContext';
 import { useGamification } from '../context/GamificationContext';
 import { CITIES } from '../cities/registry';
 import { loadCityData, getCityData, checkCityForUpdate } from '../services/invaderData';
-import { STATUS_COLOR } from '../constants';
+import { STATUS_COLOR, statusKey } from '../constants';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 
@@ -41,7 +41,7 @@ const InvaderRow = memo(function InvaderRow({ item, isFlashed, onToggle, cityLab
   const meta = `${t(`common.status.${item.status}`)} · ${item.points} ${t('common.pts')}`;
   return (
     <View style={styles.row}>
-      <View style={[styles.statusDot, { backgroundColor: STATUS_COLOR[item.status] }]} />
+      <View style={[styles.statusDot, { backgroundColor: STATUS_COLOR[statusKey(item.status)] }]} />
       <View style={styles.rowInfo}>
         <Text style={styles.rowId}>{item.id}</Text>
         <Text style={styles.rowMeta} numberOfLines={1}>

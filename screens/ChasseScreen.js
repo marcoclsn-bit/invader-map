@@ -13,7 +13,7 @@ import { Ionicons } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
 import { useTranslation } from 'react-i18next';
 import i18n from '../i18n';
-import { STATUS_COLOR } from '../constants';
+import { STATUS_COLOR, statusKey } from '../constants';
 import { useAppContext } from '../context/AppContext';
 import { CITIES } from '../cities/registry';
 import { countryCodeOf } from '../cities/countries';
@@ -551,7 +551,7 @@ function HuntRow({ inv, index, isFlashed, statusColors, onPress, inerte }) {
       </View>
       <View style={[
         styles.huntDot,
-        { backgroundColor: isFlashed ? theme.textSecondary : (statusColors[inv.status] ?? STATUS_COLOR[inv.status]) },
+        { backgroundColor: isFlashed ? theme.textSecondary : (statusColors[statusKey(inv.status)] ?? STATUS_COLOR[statusKey(inv.status)]) },
       ]} />
       <Text style={[styles.huntId, isFlashed && styles.huntTextDone]}>{inv.id}</Text>
       <Text style={[styles.huntPts, isFlashed && styles.huntTextDone]}>{inv.points} {t('common.pts')}</Text>

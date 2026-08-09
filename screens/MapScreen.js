@@ -10,7 +10,7 @@ import i18n from '../i18n';
 import { DrawerActions } from '@react-navigation/native';
 import { useAppContext } from '../context/AppContext';
 import { CITIES, ENABLED_CITIES } from '../cities/registry';
-import { ALL_STATUSES } from '../constants';
+import { ALL_STATUSES, statusKey, statusLabelKey } from '../constants';
 import { familyOf } from '../data/poiFamilies';
 import { getPois, hasPois } from '../services/poiData';
 import InvaderMarker from '../components/InvaderMarker';
@@ -72,7 +72,7 @@ function applyFilters(invaders, filters, flashed, explorer) {
     // vidait ainsi la carte entièrement, et un statut décoché aurait fait
     // disparaître des flashés sans explication.
     if (explorer) return true;
-    if (!filters.statuses.has(inv.status)) return false;
+    if (!filters.statuses.has(statusKey(inv.status))) return false;
     if (filters.flashedState === 'flashed' && !flashed.has(inv.id)) return false;
     if (filters.flashedState === 'unflashed' && flashed.has(inv.id)) return false;
     return true;
@@ -131,7 +131,7 @@ function FilterPanel({ filters, onFiltersChange, onClose, explorer }) {
                 color={active ? theme.bg : theme.textSecondary}
               />
               <Text style={[styles.chipText, active ? styles.chipTextActive : { color: theme.textPrimary }]}>
-                {t(`common.status.${status}`)}
+                {t(statusLabelKey(status))}
               </Text>
             </TouchableOpacity>
           );

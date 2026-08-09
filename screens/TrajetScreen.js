@@ -12,7 +12,7 @@ import { Ionicons } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
 import { useTranslation } from 'react-i18next';
 import i18n from '../i18n';
-import { STATUS_COLOR } from '../constants';
+import { STATUS_COLOR, statusKey } from '../constants';
 import { ORS_API_KEY } from '../config/ors';
 import { useAppContext } from '../context/AppContext';
 import { simplifyPath } from '../utils/tourGeometry';
@@ -183,7 +183,7 @@ function RouteInvaderRow({ inv, isFlashed, statusColors, onPress, inerte }) {
     // `disabled` en mode explorateur : voir HuntRow, une ligne qui s'enfonce
     // sans rien faire se lit comme une panne.
     <TouchableOpacity style={styles.routeRow} onPress={onPress} disabled={inerte} activeOpacity={inerte ? 1 : 0.7}>
-      <View style={[styles.routeDot, { backgroundColor: statusColors[inv.status] ?? STATUS_COLOR[inv.status] }]} />
+      <View style={[styles.routeDot, { backgroundColor: statusColors[statusKey(inv.status)] ?? STATUS_COLOR[statusKey(inv.status)] }]} />
       <Text style={styles.routeId}>{inv.id}</Text>
       <Text style={styles.routePts}>{inv.points} {t('common.pts')}</Text>
       <View style={[styles.routeBadge, isFlashed && styles.routeBadgeFlashed]}>

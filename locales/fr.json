@@ -9,8 +9,9 @@
       "ok": "OK",
       "damaged": "Endommagé",
       "destroyed": "Détruit",
-      "hidden": "Caché",
-      "unknown": "Inconnu"
+      "hidden": "Non visible",
+      "unknown": "Inconnu",
+      "notVisible": "Non visible"
     },
     "flashed": "✓ Flashé",
     "markFlashed": "Marquer comme flashé",
@@ -67,7 +68,7 @@
       "title": "Légende",
       "ok": "Bon état",
       "damaged": "Endommagé",
-      "unknown": "Inconnu",
+      "unknown": "Non visible",
       "destroyed": "Détruit",
       "flashed": "Flashé"
     },

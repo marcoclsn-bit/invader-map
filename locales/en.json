@@ -9,8 +9,9 @@
       "ok": "OK",
       "damaged": "Damaged",
       "destroyed": "Destroyed",
-      "hidden": "Hidden",
-      "unknown": "Unknown"
+      "hidden": "Not visible",
+      "unknown": "Unknown",
+      "notVisible": "Not visible"
     },
     "flashed": "✓ Flashed",
     "markFlashed": "Mark as flashed",
@@ -67,7 +68,7 @@
       "title": "Legend",
       "ok": "Good condition",
       "damaged": "Damaged",
-      "unknown": "Unknown",
+      "unknown": "Not visible",
       "destroyed": "Destroyed",
       "flashed": "Flashed"
     },

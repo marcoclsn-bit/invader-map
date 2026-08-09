@@ -11,7 +11,7 @@ import { useAppContext } from '../context/AppContext';
 import { checkNewsAndNotify } from '../services/newsNotify';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
-import { PALETTE, ALL_STATUSES } from '../constants';
+import { PALETTE, ALL_STATUSES, statusLabelKey } from '../constants';
 import { SUPPORTED_LANGUAGES } from '../i18n';
 import { track } from '../services/analytics';
 
@@ -230,7 +230,7 @@ export default function SettingsScreen({ navigation }) {
         {ALL_STATUSES.map((status) => (
           <Row
             key={status}
-            label={t(`common.status.${status}`)}
+            label={t(statusLabelKey(status))}
             trailing={<View style={[layout.colorDot, { backgroundColor: statusColors[status] }]} />}
             onPress={() => setColorPickerFor(status)}
           />

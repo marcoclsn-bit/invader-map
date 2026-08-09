@@ -9,8 +9,9 @@
       "ok": "OK",
       "damaged": "Dañado",
       "destroyed": "Destruido",
-      "hidden": "Oculto",
-      "unknown": "Desconocido"
+      "hidden": "No visible",
+      "unknown": "Desconocido",
+      "notVisible": "No visible"
     },
     "flashed": "✓ Fotografiado",
     "markFlashed": "Marcar como fotografiado",
@@ -67,7 +68,7 @@
       "title": "Leyenda",
       "ok": "Buen estado",
       "damaged": "Dañado",
-      "unknown": "Desconocido",
+      "unknown": "No visible",
       "destroyed": "Destruido",
       "flashed": "Fotografiado"
     },

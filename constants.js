@@ -22,6 +22,21 @@ export const STATUS_LABEL = {
 
 export const ALL_STATUSES = ['ok', 'damaged', 'destroyed', 'unknown'];
 
+// Un Invader peut porter un statut absent de ALL_STATUSES : 'hidden' (« Non
+// visible » chez invader-spotter — 24 cas, dont PA_1265 dans le Centre
+// Pompidou), et demain n'importe quelle valeur nouvelle de la source amont.
+// Le filtre de la carte est une liste blanche : sans ce repli, un statut non
+// prévu disparaît de la carte SANS AUCUNE commande pour le faire revenir. C'est
+// exactement ce qui est arrivé à 'hidden'. Tout ce qui n'est pas reconnu tombe
+// donc dans le seau gris, coché par défaut.
+export const statusKey = (status) => (ALL_STATUSES.includes(status) ? status : 'unknown');
+
+// Le seau gris ne contient en pratique que des « non visibles » : c'est ce que
+// disent la légende, la puce de filtre et le sélecteur de couleur. La fiche et
+// la liste, elles, gardent le statut exact ('Non visible' vs 'Inconnu').
+export const statusLabelKey = (status) =>
+  (status === 'unknown' ? 'common.status.notVisible' : `common.status.${status}`);
+
 export const DEFAULT_LABELS = {};
 
 // Palette de couleurs pour le sélecteur (12 teintes harmonieuses)

@@ -1,4 +1,4 @@
-import { STATUS_COLOR } from '../constants';
+import { STATUS_COLOR, statusKey } from '../constants';
 
 // Priorité : flashé (lbl_flashed) > colorOverride > couleur du statut
 export function getMarkerColor(inv, labels, labelDefs, colorOverrides, statusColors, flashed) {
@@ -7,5 +7,6 @@ export function getMarkerColor(inv, labels, labelDefs, colorOverrides, statusCol
     if (flashedDef) return flashedDef.color;
   }
   if (colorOverrides[inv.id]) return colorOverrides[inv.id];
-  return statusColors[inv.status] ?? STATUS_COLOR[inv.status];
+  const key = statusKey(inv.status);
+  return statusColors[key] ?? STATUS_COLOR[key];
 }
