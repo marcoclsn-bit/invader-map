@@ -572,6 +572,36 @@ export default function MapScreen({ navigation, route }) {
         onRegionChange={dismissFlash}
       >
         {!isChangingCity && <HeadingCone userLocation={userLocation} heading={userHeading} />}
+        {/* ORDRE CRITIQUE : les lieux AVANT les Invaders, donc les marqueurs
+            d'Invaders sont les DERNIERS enfants de la carte.
+            Cause d'un plantage confirmé par deux journaux d'incident identiques :
+            « -[__NSArrayM insertObject:atIndex:]: object cannot be nil », levé
+            depuis RCTLegacyViewManagerInteropComponentView. react-native-maps est
+            un composant de l'ancienne architecture, ses enfants passent donc par
+            la couche d'interopérabilité de React Native. Or celle-ci n'ajoute
+            immédiatement un enfant que s'il arrive EN FIN de liste ; sinon elle le
+            met en file, et au vidage de la file elle insère son `contentView`,
+            encore nil si l'enfant n'a pas fini de s'initialiser.
+            Les Invaders étant montés avant les lieux, en ajouter revenait à
+            insérer au milieu — plus d'un millier d'un coup à la bascule du mode
+            explorateur. Placés en dernier, ils empruntent le chemin direct.
+            Conséquence assumée : les marqueurs d'Invaders passent au-dessus des
+            losanges dorés, l'ordre de rendu valant ordre d'empilement. */}
+        {/* Lieux à voir : losange doré, même signe que dans la Chasse. Aucun
+            plafond — tous les lieux visibles des familles cochées sont montés. */}
+        {mapReady && tilesLoaded && !isChangingCity && visiblePois.map((poi) => (
+          <PoiMarker
+            key={`poi-${poi.id}`}
+            poi={poi}
+            label={`${poi.name}, ${t(`hunt.poiTheme.${poi.theme}`)}`}
+            hint={t('poi.a11y.openHint')}
+            onPress={() => {
+              setSelectedPoi(poi); setSelected(null); setShowFilters(false);
+              track('poi_open', { from: 'map', theme: poi.theme, lang: i18n.language });
+            }}
+          />
+        ))}
+
         {/* Marqueurs montés seulement quand la carte est prête (mapReady) et hors
             changement de ville — évite le churn/ajout d'annotations sur MKMapView. */}
         {mapReady && tilesLoaded && !isChangingCity && visibleInvaders.map((invader) => {
@@ -596,20 +626,6 @@ export default function MapScreen({ navigation, route }) {
           );
         })}
 
-        {/* Lieux à voir : losange doré, même signe que dans la Chasse. Aucun
-            plafond — tous les lieux visibles des familles cochées sont montés. */}
-        {mapReady && tilesLoaded && !isChangingCity && visiblePois.map((poi) => (
-          <PoiMarker
-            key={`poi-${poi.id}`}
-            poi={poi}
-            label={`${poi.name}, ${t(`hunt.poiTheme.${poi.theme}`)}`}
-            hint={t('poi.a11y.openHint')}
-            onPress={() => {
-              setSelectedPoi(poi); setSelected(null); setShowFilters(false);
-              track('poi_open', { from: 'map', theme: poi.theme, lang: i18n.language });
-            }}
-          />
-        ))}
       </MapView>
 
       {/* ── Barre supérieure : Menu | barre de progression | chip ville ── */}
