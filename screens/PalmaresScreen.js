@@ -168,7 +168,8 @@ function ArrondissementsView({ stats, insets, onBack, onOpenDrawer, onHuntAr, th
 
 export default function PalmaresScreen({ navigation }) {
   const insets = useSafeAreaInsets();
-  const { invaders, flashed, currentCityCode, setCurrentCity, cityIndex, isChangingCity } = useAppContext();
+  const { invaders, flashed, currentCityCode, setCurrentCity, cityIndex, isChangingCity,
+    favCities, toggleFavCity } = useAppContext();
   const { theme } = useTheme();
   const { t, i18n } = useTranslation();
   const lang = i18n.language?.slice(0, 2) || 'fr';
@@ -320,6 +321,22 @@ export default function PalmaresScreen({ navigation }) {
               {complete && <CompleteBadge theme={theme} />}
               <View style={{ flex: 1 }} />
               <Text style={styles.villePct}>{pct.toFixed(0)} %</Text>
+              {/* L'étoile est DANS la carte mais hors de son bouton : la toucher
+                  ne doit pas changer de ville. hitSlop généreux, la cible est
+                  petite et voisine d'une action lourde. */}
+              <TouchableOpacity
+                onPress={() => toggleFavCity(c.code)}
+                hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}
+                accessibilityRole="button"
+                accessibilityState={{ selected: favCities.has(c.code) }}
+                accessibilityLabel={t(favCities.has(c.code) ? 'palmares.unfavorite' : 'palmares.favorite', { city: c.name })}
+              >
+                <Ionicons
+                  name={favCities.has(c.code) ? 'star' : 'star-outline'}
+                  size={18}
+                  color={favCities.has(c.code) ? theme.accentScore : theme.textSecondary}
+                />
+              </TouchableOpacity>
               {isActive
                 ? <Ionicons name="checkmark-circle" size={20} color={theme.accent} />
                 : <Ionicons name="chevron-forward" size={16} color={theme.textSecondary} />}
@@ -371,6 +388,10 @@ export default function PalmaresScreen({ navigation }) {
     ? ENABLED_CITIES.filter(c => norm(c.name).includes(q)).sort((a, b) => a.name.localeCompare(b.name))
     : null;
   const currentCity = ENABLED_CITIES.find(c => c.code === currentCityCode);
+  // La ville en cours a déjà sa section : la répéter en favorite ferait doublon.
+  const favoriteCities = ENABLED_CITIES
+    .filter(c => favCities.has(c.code) && c.code !== currentCityCode)
+    .sort((a, b) => a.name.localeCompare(b.name));
 
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
@@ -444,9 +465,20 @@ export default function PalmaresScreen({ navigation }) {
               </>
             )}
 
-            {/* Villes groupées par pays (France d'abord), sans la ville en cours */}
+            {/* Favorites, juste après la ville en cours. Rien du tout s'il n'y
+                en a aucune : une section vide qui explique comment la remplir
+                est pire que pas de section. */}
+            {favoriteCities.length > 0 && (
+              <>
+                <Text style={styles.countryHeader}>{t('palmares.favorites')}</Text>
+                {favoriteCities.map(renderCityCard)}
+              </>
+            )}
+
+            {/* Villes groupées par pays (France d'abord), sans la ville en cours
+                ni les favorites, déjà montrées au-dessus. */}
             {countryGroups.map((group) => {
-              const cities = group.cities.filter(c => c.code !== currentCityCode);
+              const cities = group.cities.filter(c => c.code !== currentCityCode && !favCities.has(c.code));
               if (cities.length === 0) return null;
               return (
                 <Fragment key={group.code}>

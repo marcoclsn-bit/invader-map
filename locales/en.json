@@ -245,6 +245,9 @@
     "villeCardProgress": "{{flashed}}/{{total}} flashed",
     "searchPlaceholder": "Search for a city…",
     "currentCity": "CURRENT MAP",
+    "favorites": "FAVOURITES",
+    "favorite": "Add {{city}} to favourites",
+    "unfavorite": "Remove {{city}} from favourites",
     "noResults": "No city found"
   },
   "onboarding": {

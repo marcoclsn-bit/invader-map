@@ -245,6 +245,9 @@
     "villeCardProgress": "{{flashed}}/{{total}} fotografati",
     "searchPlaceholder": "Cerca una città…",
     "currentCity": "MAPPA ATTUALE",
+    "favorites": "PREFERITE",
+    "favorite": "Aggiungere {{city}} ai preferiti",
+    "unfavorite": "Togliere {{city}} dai preferiti",
     "noResults": "Nessuna città trovata"
   },
   "onboarding": {

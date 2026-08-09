@@ -154,6 +154,10 @@ export function AppProvider({ children }) {
   // la garde de <ExplorerIntro> interdit normalement.
   const [explorerIntroForced, setExplorerIntroForced] = useState(false);
 
+  // Villes favorites. 84 villes dans le sélecteur : chercher « Paris » à chaque
+  // sortie est une friction quotidienne pour un bénéfice nul.
+  const [favCities, setFavCities] = useState(() => new Set());
+
   // ── Mode balade (réglages seulement ; moteur au dev build) ──────────────────
   const [stroll, setStroll] = useState(DEFAULT_STROLL);
 
@@ -314,10 +318,14 @@ export function AppProvider({ children }) {
         AsyncStorage.getItem('@invader_poi_prefs'),
         AsyncStorage.getItem('@invader_poi_intro_seen'),
       ]);
-      const [explorerRaw, explorerIntroRaw] = await Promise.all([
+      const [explorerRaw, explorerIntroRaw, favCitiesRaw] = await Promise.all([
         AsyncStorage.getItem('@invader_explorer'),
         AsyncStorage.getItem('@invader_explorer_intro'),
+        AsyncStorage.getItem('@invader_fav_cities'),
       ]);
+      if (favCitiesRaw) {
+        try { setFavCities(new Set(JSON.parse(favCitiesRaw))); } catch {}
+      }
       if (explorerRaw === '1') setExplorerState(true);
       // Ne s'affiche qu'aux anciens : un onboarding tout juste terminé porte
       // déjà le choix, et le marque vu au passage (completeOnboarding).
@@ -686,6 +694,15 @@ export function AppProvider({ children }) {
   //
   // On lève donc la garde plutôt que de changer d'état : réafficher un panneau
   // ne devrait de toute façon jamais modifier silencieusement un réglage.
+  function toggleFavCity(code) {
+    setFavCities((prev) => {
+      const next = new Set(prev);
+      if (next.has(code)) next.delete(code); else next.add(code);
+      AsyncStorage.setItem('@invader_fav_cities', JSON.stringify([...next])).catch(() => {});
+      return next;
+    });
+  }
+
   function resetExplorerIntro() {
     setExplorerIntroSeen(false);
     setExplorerIntroForced(true);
@@ -789,6 +806,8 @@ export function AppProvider({ children }) {
     newsNotify, setNewsNotifyPref,
     // Mode explorateur (masque les Invaders non flashés)
     explorer, setExplorer, explorerIntroSeen, explorerIntroForced, dismissExplorerIntro, resetExplorerIntro,
+    // Villes favorites
+    favCities, toggleFavCity,
     // Légende des couleurs
     legendSeen, dismissLegend,
     // Mode balade (réglages ; moteur au dev build)
@@ -809,7 +828,7 @@ export function AppProvider({ children }) {
     labels, labelDefs, statusColors, colorOverrides,
     filters,
     news, newsCities, newsLastSeen, newsUnreadCount, newsNotify,
-    legendSeen, explorer, explorerIntroSeen, explorerIntroForced,
+    legendSeen, explorer, explorerIntroSeen, explorerIntroForced, favCities,
     stroll, mapsApp, language,
     poiPrefs, poiIntroSeen, poiDataVersion,
     showOnboarding, loaded,

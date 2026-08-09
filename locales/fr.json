@@ -245,6 +245,9 @@
     "villeCardProgress": "{{flashed}}/{{total}} flashés",
     "searchPlaceholder": "Rechercher une ville…",
     "currentCity": "CARTE EN COURS",
+    "favorites": "FAVORITES",
+    "favorite": "Ajouter {{city}} aux favorites",
+    "unfavorite": "Retirer {{city}} des favorites",
     "noResults": "Aucune ville trouvée"
   },
   "onboarding": {
