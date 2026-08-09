@@ -183,8 +183,8 @@
     },
     "objective": {
       "label": "Tu es plutôt…",
-      "pure": "Chasseur",
-      "balanced": "Curieux",
+      "pure": "Chasseur·se",
+      "balanced": "Curieux·se",
       "visit": "Touriste",
       "hint_pure": "Uniquement des Invaders : le maximum dans ton temps.",
       "hint_balanced": "Des Invaders avant tout, avec quelques lieux remarquables sur le chemin.",
