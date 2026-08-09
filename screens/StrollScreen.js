@@ -54,6 +54,14 @@ function ToggleRow({ label, hint, value, onValueChange, disabled, theme, last, o
       onLongPress={onLongPress}
       delayLongPress={600}
       activeOpacity={1}
+      // `accessible={false}` : sans lui, TouchableOpacity déclare la ligne comme
+      // UN élément d'accessibilité unique, et l'interrupteur qu'elle contient
+      // cesse d'être atteignable et actionnable à VoiceOver. La ligne était
+      // annoncée « bouton », le double-tap ne faisait rien, et le Mode balade
+      // devenait impossible à activer au lecteur d'écran. Le conteneur reste un
+      // TouchableOpacity dans tous les cas (voir ci-dessus), donc c'est ici que
+      // la correction doit se faire, pas en changeant sa nature.
+      accessible={false}
       style={[styles.row, !last && styles.rowDivider, disabled && styles.rowDisabled]}
     >
       <View style={styles.rowText}>
