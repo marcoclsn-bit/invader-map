@@ -7,7 +7,7 @@ import { typography } from '../theme/tokens';
 import { openInstagramTag } from '../utils/navigation';
 import { buildContextBlock, sendFeedbackEmail } from '../utils/feedback';
 import { track } from '../services/analytics';
-import { FEEDBACK_EMAIL } from '../constants';
+import { FEEDBACK_EMAIL, STATUS_COLOR, statusKey } from '../constants';
 import i18n from '../i18n';
 
 // « 1998-04-18 » → date lisible dans la LANGUE DE L'APP (ex. « 18 avr. 1998 »).
@@ -142,7 +142,9 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
       </View>
 
       <View style={styles.panelRow}>
-        <View style={[styles.statusBadge, { backgroundColor: statusColors[invader.status] }]}>
+        {/* `hidden` n'a pas d'entrée propre : sans le repli, la pastille perdait
+            son fond et le libellé flottait sans couleur. */}
+        <View style={[styles.statusBadge, { backgroundColor: statusColors[statusKey(invader.status)] ?? STATUS_COLOR[statusKey(invader.status)] }]}>
           <Text style={styles.statusText}>{t(`common.status.${invader.status}`) ?? invader.status}</Text>
         </View>
         <Text style={styles.points}>{invader.points != null ? `${invader.points} pts` : '— pts'}</Text>
