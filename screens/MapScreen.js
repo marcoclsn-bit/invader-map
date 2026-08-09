@@ -463,25 +463,14 @@ export default function MapScreen({ navigation, route }) {
     return () => clearTimeout(id);
   }, [filters]);
 
-  // Le mode explorateur passe par le MÊME sas. Il contournait ce garde-fou alors
-  // qu'il provoque le plus gros changement d'annotations de toute l'app :
-  // basculer, c'est faire apparaître ou disparaître d'un coup tous les Invaders
-  // non flashés de la ville, soit plus d'un millier à Paris. Le délai laisse au
-  // panneau des Réglages le temps de se refermer avant que la carte ne bouge.
-  const [renderExplorer, setRenderExplorer] = useState(explorer);
-  useEffect(() => {
-    const id = setTimeout(() => setRenderExplorer(explorer), 250);
-    return () => clearTimeout(id);
-  }, [explorer]);
-
   const filteredInvaders = useMemo(() => {
-    const base = applyFilters(invaders, renderFilters, flashed, renderExplorer);
+    const base = applyFilters(invaders, renderFilters, flashed, explorer);
     if (recentlyFlashed.size === 0) return base;
     // Réinjecte les Invaders en cours d'animation s'ils ont été masqués par le filtre
     const baseIds = new Set(base.map((i) => i.id));
     const extra = invaders.filter((i) => recentlyFlashed.has(i.id) && !baseIds.has(i.id));
     return extra.length ? [...base, ...extra] : base;
-  }, [invaders, renderFilters, flashed, recentlyFlashed, renderExplorer]);
+  }, [invaders, renderFilters, flashed, recentlyFlashed, explorer]);
 
   // Tri par distance au centre courant (position GPS si dispo, sinon centre ville).
   // sortVersion en dep : re-trie quand sortCenterRef est mis à jour (max 2×).
@@ -499,14 +488,10 @@ export default function MapScreen({ navigation, route }) {
   const BATCH   = 250;
   const [renderedCount, setRenderedCount] = useState(INITIAL);
 
-  // Reset sur re-tri (ville/GPS), et sur bascule du mode explorateur : celle-ci
-  // change la liste de plus d'un millier d'entrées, et sans remise à zéro tout
-  // était ajouté dans une seule passe de rendu. Pas sur les filtres ordinaires,
-  // dont l'écart est petit et où un reset provoquerait plus de churn qu'il n'en
-  // évite.
+  // Reset uniquement sur re-tri (ville/GPS) — pas sur les filtres (sinon churn massif).
   useEffect(() => {
     setRenderedCount(INITIAL);
-  }, [sortVersion, renderExplorer]);
+  }, [sortVersion]);
 
   useEffect(() => {
     if (isChangingCity) return;
