@@ -47,6 +47,31 @@ Alerte de proximité, cartes hors-ligne, stats de progression, multi-villes, "In
 - Commit Git régulier.
 - Privilégier le local (pas de backend) tant que possible.
 
+## Prochain build natif : deux raisons, une seule revue Apple
+
+Tout passe en OTA sur le runtime `1.2.0` (voir Stack). Ces deux points ne le
+peuvent pas et attendent donc un build. Les grouper évite deux revues et deux
+montées de runtime, qui scindent chaque fois la base d'utilisateurs.
+
+1. **react-native-maps 1.20.1 → 1.29.0.** Corrige des PLANTAGES qui touchent
+   déjà la production. Signature relevée sur deux journaux d'incident du
+   2026-08-09 : `-[__NSArrayM insertObject:atIndex:]: object cannot be nil`,
+   levée depuis `RCTLegacyViewManagerInteropComponentView`. La 1.20.1 n'a aucun
+   composant pour la nouvelle architecture, tous les enfants de la carte
+   transitent donc par la couche d'interopérabilité de React Native ; celle-ci
+   met en file tout enfant inséré ailleurs qu'en fin de liste, et insère au
+   vidage un `contentView` encore nul quand la vue a été recyclée. La 1.29.0
+   embarque de vrais composants (`ios/generated/RNMapsSpecs/`) et supprime la
+   couche du chemin. Atténuation OTA en place : les marqueurs qui changent le
+   plus sont montés EN DERNIER sur les trois écrans de carte, ce qui les fait
+   passer par l'ajout direct. Vérifié sur l'appareil, mais partiel.
+
+2. **Alerte de proximité perceptible.** Son personnalisé (fichier embarqué) et
+   `interruptionLevel: 'timeSensitive'` (entitlement). Le haptique d'iOS ne
+   produit RIEN quand l'app n'est pas au premier plan, ce qui est le cas d'usage
+   entier ; sans build, le seul levier est de répéter les notifications. Voir la
+   note mémoire `alerte-proximite-contraintes`.
+
 ## À compléter (TODO)
 - Étiquettes : UI pour créer / renommer / supprimer des étiquettes personnalisées (pour l'instant, seules les étiquettes par défaut existent).
 - Faisceau de direction (cône heading) — reporté, à reprendre avec un test en extérieur.
