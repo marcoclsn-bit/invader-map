@@ -204,9 +204,11 @@ export function AppProvider({ children }) {
   // ─── Initialisation du service de données ────────────────────────────────────
   useEffect(() => {
     // Charge l'index des villes (cache puis remote en arrière-plan)
-    initInvaderService().then(index => {
-      if (index.length > 0) setCityIndex(index);
-    });
+    // Deux applications : le cache dès qu'il est lu, puis le réseau quand il
+    // répond. La seconde est indispensable au premier lancement, où il n'y a
+    // aucun cache et où le tableau rendu serait vide.
+    initInvaderService((index) => { if (index.length > 0) setCityIndex(index); })
+      .then(index => { if (index.length > 0) setCityIndex(index); });
 
     // Charge les données Paris (cache puis remote en arrière-plan)
     loadCityData('PA').then(data => {

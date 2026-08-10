@@ -82,9 +82,18 @@ export function onCityUpdate(fn) {
  * Initialise le service : charge l'index depuis le cache, fetch en arrière-plan.
  * Retourne l'index disponible (peut être vide si première utilisation sans réseau).
  */
-export async function initInvaderService() {
+export async function initInvaderService(onIndex) {
   await _loadIndexCache();
-  _fetchIndex().catch(() => {});
+  // Le cache d'abord, tout de suite : la liste des villes s'affiche sans attendre
+  // le réseau quand il existe.
+  if (_cityIndex.length) onIndex?.(_cityIndex);
+  // Puis le réseau, ATTENDU. Il ne l'était pas : au tout premier lancement, sans
+  // cache, la fonction rendait un tableau VIDE, l'appelant n'appliquait donc rien,
+  // et rien ne le prévenait quand la requête aboutissait une seconde plus tard.
+  // Résultat : toutes les villes sauf Paris affichaient « … » à la place de leur
+  // barre de progression, jusqu'au redémarrage suivant de l'app. Chaque nouvelle
+  // installation passait par là.
+  await _fetchIndex();
   return _cityIndex;
 }
 
