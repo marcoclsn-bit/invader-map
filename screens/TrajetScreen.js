@@ -1496,6 +1496,10 @@ function makeStyles(t) {
 
     bottomZone: {
       position: 'absolute', bottom: 0, left: 0, right: 0,
+      // Au-dessus de FlashOverlay, qui se pose à 900 et 999 pour couvrir la
+      // carte : sans ça, l'alien de l'animation traverse la fiche et le panneau
+      // de résultat. Même correctif que sur l'écran Carte.
+      zIndex: 1000,
     },
     overlayRow: {
       flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end',

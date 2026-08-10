@@ -234,9 +234,11 @@ function makeStyles(t) {
     actionBtnPrimary: { backgroundColor: t.accent },
     actionBtnTextPrimary: { color: t.bg, fontWeight: '700' },
     // Déjà flashé → état « fait » : fond neutre, liseré + texte accent.
-    actionBtnActive: { backgroundColor: t.surfaceHigh, borderWidth: 1, borderColor: t.accent },
+    // Violet : c'est l'ÉTAT « c'est à moi ». Le bouton d'action « Flasher »,
+    // lui, reste vert, parce que c'est l'app qui propose, pas vous qui possédez.
+    actionBtnActive: { backgroundColor: t.surfaceHigh, borderWidth: 1, borderColor: t.flashed },
     actionBtnText: { fontSize: 14, fontWeight: '500', color: t.textPrimary },
-    actionBtnTextActive: { color: t.accent, fontWeight: '600' },
+    actionBtnTextActive: { color: t.flashed, fontWeight: '600' },
     igBtn: {
       marginTop: 12, flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
       gap: 7, paddingVertical: 8, borderRadius: 8,

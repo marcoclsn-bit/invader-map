@@ -746,8 +746,12 @@ export default function MapScreen({ navigation, route }) {
         />
       )}
 
+      {/* zIndex 1000 : FlashOverlay se pose à 900 et 999 pour passer au-dessus de
+          la carte. Sans valeur ici, la fiche restait à 0 et l'alien de l'animation
+          lui passait DEVANT, au milieu du panneau. Un volet est la surface du
+          dessus, toujours. */}
       {selected && !showFilters && !isChangingCity && (
-        <View style={{ position: 'absolute', bottom: 0, left: 0, right: 0 }}>
+        <View style={{ position: 'absolute', bottom: 0, left: 0, right: 0, zIndex: 1000 }}>
           <InvaderPanel
             invader={selected}
             onToggleFlash={handleFlashFromMap}
