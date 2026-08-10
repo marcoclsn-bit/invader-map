@@ -1564,9 +1564,9 @@ function makeStyles(t) {
     routeId: { fontWeight: '600', fontSize: 14, color: t.textPrimary, width: 84 },
     routePts: { fontSize: 13, color: t.textSecondary, flex: 1 },
     routeBadge: { borderRadius: 12, paddingHorizontal: 10, paddingVertical: 3, backgroundColor: t.surfaceHigh },
-    routeBadgeFlashed: { backgroundColor: t.accentDim },
+    routeBadgeFlashed: { backgroundColor: t.flashedDim },
     routeBadgeText: { fontSize: 12, fontWeight: '500', color: t.textSecondary },
-    routeBadgeTextFlashed: { color: t.statusOk },
+    routeBadgeTextFlashed: { color: t.flashed },
 
     separator: { height: StyleSheet.hairlineWidth, backgroundColor: t.border, marginLeft: 16 },
 

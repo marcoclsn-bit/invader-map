@@ -2245,8 +2245,8 @@ function makeStyles(t) {
     huntDot: { width: 10, height: 10, borderRadius: 5, flexShrink: 0 },
     huntId: { fontWeight: '600', fontSize: 14, color: t.textPrimary, width: 80 },
     huntPts: { fontSize: 13, color: t.textSecondary, flex: 1 },
-    flashedBadge: { borderRadius: 12, paddingHorizontal: 10, paddingVertical: 3, backgroundColor: t.accentDim },
-    flashedBadgeText: { fontSize: 12, fontWeight: '600', color: t.statusOk },
+    flashedBadge: { borderRadius: 12, paddingHorizontal: 10, paddingVertical: 3, backgroundColor: t.flashedDim },
+    flashedBadgeText: { fontSize: 12, fontWeight: '600', color: t.flashed },
     separator: { height: StyleSheet.hairlineWidth, backgroundColor: t.border, marginLeft: 16 },
   });
 }

@@ -47,6 +47,13 @@ export const dark = {
   // Score arcade (flash +PTS) — jaune chaud, lisible sur n'importe quel fond
   accentScore: '#FFD23F',
 
+  // Flashé — violet. Jetons DÉDIÉS et non `accent`/`accentDim` : ces deux-là
+  // servent à une vingtaine d'éléments d'interface qui doivent rester verts
+  // (onglets, anneaux, boutons). En accord avec alien_flashed.png, le halo de
+  // InvaderMarker et lbl_flashed dans constants.js.
+  flashed:    '#9547FB',
+  flashedDim: 'rgba(149,71,251,0.16)',
+
   // Nuit — bleu sobre (donut Jour/Nuit). Seule teinte froide de la palette.
   night: '#5A78C2',
 };
@@ -83,6 +90,10 @@ export const light = {
 
   // Score arcade (flash +PTS) — même jaune, lisible sur fond clair aussi
   accentScore: '#CC9900',
+
+  // Flashé — violet assombri pour rester lisible sur fond clair.
+  flashed:    '#7C3AED',
+  flashedDim: 'rgba(124,58,237,0.12)',
 
   // Nuit — bleu sobre, lisible sur fond clair
   night: '#3E5BAA',
