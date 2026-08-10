@@ -64,8 +64,30 @@ let _notify = null;
 let _lang = 'fr';
 
 /** Liste des POI d'une ville (tableau vide si la ville n'en a pas). */
+// Wikidata suit la typographie française, qui laisse le nom commun en bas de
+// casse : « rue de Lappe », « musée du Louvre ». Correct dans une phrase, mais
+// dans une liste où chaque ligne commence par ce nom, ça se lit comme une faute.
+// Le corpus est en plus incohérent, 71 % des 1 740 noms en minuscule et 29 % en
+// majuscule selon l'humeur du contributeur.
+//
+// Capitalisation à L'AFFICHAGE et non dans les données : la forme d'origine
+// reste celle de la source, et un retour en arrière ne demande pas de
+// régénérer treize fichiers. `toUpperCase` gère les accents, « église » donne
+// bien « Église ».
+const capitalise = (s) => (s ? s[0].toUpperCase() + s.slice(1) : s);
+
+// Mémoïsé par ville : la transformation est triviale, mais getPois est appelé à
+// chaque rendu de carte et rendrait sinon un tableau neuf à chaque fois, ce qui
+// casserait les useMemo qui en dépendent.
+const _capCache = new Map();
 export function getPois(cityCode) {
-  return (_fresh.get(cityCode) ?? BUNDLED[cityCode])?.pois ?? [];
+  const src = (_fresh.get(cityCode) ?? BUNDLED[cityCode])?.pois ?? [];
+  const vu = _capCache.get(cityCode);
+  if (vu?.src === src) return vu.out;
+  const out = src.map((p) => (p.name?.[0] === p.name?.[0]?.toUpperCase()
+    ? p : { ...p, name: capitalise(p.name) }));
+  _capCache.set(cityCode, { src, out });
+  return out;
 }
 
 /** true si la ville dispose d'assez de lieux pour proposer le mode visite. */
