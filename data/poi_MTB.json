@@ -1,0 +1,262 @@
+{
+ "version": 1,
+ "city": "MTB",
+ "attribution": "Lieux : Wikidata (CC0) · Résumés d’après Wikipédia (CC BY-SA) · Photos : Wikimedia Commons",
+ "updatedAt": "2026-08-10",
+ "pois": [
+  {
+   "id": "Q2843748",
+   "name": "musée Ingres-Bourdelle",
+   "lat": 44.016944,
+   "lng": 1.351667,
+   "theme": "museums",
+   "fame": 15,
+   "summary": "Seul musée au monde consacré à Ingres, né dans la ville, il conserve 4 500 de ses dessins, le plus grand fonds au monde, 44 peintures et son violon. Un étage entier revient à Antoine Bourdelle, l'autre enfant du pays. À la veille de la Seconde Guerre mondiale, La Joconde y fut mise à l'abri avec d'autres œuvres du Louvre.",
+   "wiki": "Musée Ingres-Bourdelle",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Montauban%20-%20Le%20Mus%C3%A9e%20Ingres.jpg?width=960",
+   "photoBy": "Didier Descouens",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Musée Ingres Bourdelle",
+    "es": "Museo Ingres Bourdelle",
+    "it": "Museo Ingres"
+   }
+  },
+  {
+   "id": "Q2942243",
+   "name": "cathédrale Notre-Dame-de-l'Assomption de Montauban",
+   "lat": 44.015278,
+   "lng": 1.355278,
+   "theme": "religious",
+   "fame": 13,
+   "summary": "Bâtie en pierre blanche au point culminant du centre-ville, dans une cité de brique rouge, elle a été ordonnée par Louis XIV après la révocation de l'édit de Nantes, pour marquer le catholicisme dans une ville acquise au protestantisme. En 1707, six piliers de la nef, montés en briques mal cuites, s'écroulent et emportent une partie de la voûte ; la consécration attendra 1739. Fermée depuis 2020 pour fissures, elle rouvrira après confortement.",
+   "wiki": "Cathédrale Notre-Dame-de-l'Assomption de Montauban",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Cath%C3%A9drale%20Notre%20Dame%20de%20l%27Assomption%20de%20Montauban.jpg?width=960",
+   "photoBy": "Didier Descouens",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Montauban Cathedral",
+    "es": "Catedral de Nuestra Señora de la Asunción",
+    "it": "cattedrale di Montauban"
+   }
+  },
+  {
+   "id": "Q3396779",
+   "name": "pont Vieux",
+   "lat": 44.017,
+   "lng": 1.34986,
+   "theme": "water",
+   "fame": 6,
+   "summary": "Sept arches ogivales percées d'ouvertures hautes pour laisser filer les crues, et un tablier plat, rare au Moyen Âge, sur 205 mètres : le chantier s'ouvre en 1311 sur ordre de Philippe le Bel et traîne jusque vers 1335, les édiles étant accusés d'avoir détourné les subsides royaux. Sur les trois tours prévues, deux furent bâties, puis démolies en 1663 et 1701. La chapelle Sainte-Catherine, au centre, a disparu en 1828.",
+   "wiki": "Pont Vieux (Montauban)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Montauban%20-%20le%20Pont%20Vieux.jpg?width=960",
+   "photoBy": "Didier Descouens",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Pont Vieux",
+    "es": "puente Viejo"
+   }
+  },
+  {
+   "id": "Q3323271",
+   "name": "monument aux morts de 1870",
+   "lat": 44.017279,
+   "lng": 1.351436,
+   "theme": "monuments",
+   "fame": 6,
+   "summary": "Première commande importante de Bourdelle, enfant de la ville : ce monument aux morts de la guerre de 1870 fait se succéder l'assaut, le combat et la mort, dans des corps déformés au-delà de la vraisemblance. La première maquette, trop romantique, fut mal reçue par le comité ; il fallut l'intervention de Rodin, en 1897, pour qu'il l'exécute sans compromis. Place de la Bourse en 1902, place Bourdelle depuis 1970.",
+   "wiki": "Monument aux morts de la guerre de 1870 de Montauban",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Montauban%20-%20Bourdelle%20monument%20aux%20morts%20de%201870.jpg?width=960",
+   "photoBy": "Didier Descouens",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Monument aux Morts de Montauban",
+    "es": "Monumento a los muertos de Montauban"
+   }
+  },
+  {
+   "id": "Q19366621",
+   "name": "pont Neuf",
+   "lat": 44.014167,
+   "lng": 1.348889,
+   "theme": "water",
+   "fame": 5,
+   "summary": "Le Tarn peut monter de six mètres en douze heures : il fallait un ouvrage aussi transparent que possible. Le projet de Simon Boussiron, retenu en 1910, coupe la traversée en deux ponts de béton armé, l'un à deux travées de 53 et 56 mètres sur la rivière, l'autre en bow-string sur le canal de Lissac. Ouvert le 29 juin 1913, il attendra janvier 1926 pour voir passer le tramway, arrêté dès la fin de 1933.",
+   "wiki": "Pont Neuf (Montauban)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Montauban%20-%20Pont%20Neuf%20-04.JPG?width=960",
+   "photoBy": "MOSSOT",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Pont Neuf"
+   }
+  },
+  {
+   "id": "Q3390010",
+   "name": "place Nationale",
+   "lat": 44.01769,
+   "lng": 1.35411,
+   "theme": "streets",
+   "fame": 3,
+   "summary": "Cœur de la bastide, la place est bordée d'une double rangée de couverts qui portaient le nom des denrées qu'on y échangeait : le Blé au nord, les Drapiers au sud, les Fruits à l'est, les Sabots à l'ouest. Après l'incendie de 1614, les consuls imposent la brique au lieu du bois et Louis XIII accorde 16 000 livres ; un second feu, en 1649, emporte le nord et l'est. Tout est achevé en 1713.",
+   "wiki": "Place Nationale (Montauban)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Montauban%20-%20La%20Place%20Nationale.jpg?width=960",
+   "photoBy": "Didier Descouens",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Place Nationale"
+   }
+  },
+  {
+   "id": "Q21294421",
+   "name": "palais épiscopal de Montauban",
+   "lat": 44.01694,
+   "lng": 1.35178,
+   "theme": "palaces",
+   "fame": 3,
+   "summary": "Les salles du château inachevé du Prince Noir servirent un siècle et demi de repaire aux voleurs et aux courtisanes, chassées en 1520 par le sénéchal de Quercy. Louis XIV en donna les masures à l'évêque Pierre de Bertier, qui en fit dresser les plans en 1664 ; il s'y installa en 1671 et mourut trois ans plus tard d'un accident de carrosse. Hôtel de ville après la Révolution, le palais abrite aujourd'hui le musée Ingres-Bourdelle.",
+   "wiki": "Palais épiscopal de Montauban",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Montauban%20-%20Le%20Mus%C3%A9e%20Ingres.jpg?width=960",
+   "photoBy": "Didier Descouens",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q21294409",
+   "name": "monument aux morts de la Première Guerre mondiale",
+   "lat": 44.02269,
+   "lng": 1.34342,
+   "theme": "monuments",
+   "fame": 3,
+   "summary": "Commandé en août 1921 à Antoine Bourdelle, qui en présenta plusieurs versions jusqu'en 1925, il prend la forme d'un temple à colonnes abritant l'autel des morts. Devant, un bronze de la France victorieuse fixe l'horizon, c'est-à-dire l'avenir ; à ses côtés, un bouclier pour le Droit et un serpent pour l'intelligence. Inauguré cours Foucault le 13 novembre 1932, onze ans après la commande.",
+   "wiki": "Monument aux morts de la Première Guerre mondiale (Montauban)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Monuments%20aux%20morts%20montauban.jpg?width=960",
+   "photoBy": "LLF",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Montauban war memorial"
+   }
+  },
+  {
+   "id": "Q23926744",
+   "name": "muséum d'histoire naturelle Victor-Brun",
+   "lat": 44.017425,
+   "lng": 1.351729,
+   "theme": "museums",
+   "fame": 3,
+   "summary": "Installé dans l'ancien Hôtel de la Cour des aides, à quelques pas du Pont Vieux, le muséum est né en 1852 de la mise en commun des collections d'une société savante. Son conservateur Victor Brun découvrit en mai 1864, dans la vallée de l'Aveyron, la « Dame de Bruniquel », squelette vieux de 15 300 ans. Plus de 2 500 animaux naturalisés, dont l'emblématique éléphante, dépouille donnée par le cirque Pinder en 1894.",
+   "wiki": "Muséum d'histoire naturelle Victor-Brun",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Montauban%20-%20Le%20Mus%C3%A9um%20Victor%20Brun.jpg?width=960",
+   "photoBy": "Didier Descouens",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Muséum Victor-Brun"
+   }
+  },
+  {
+   "id": "Q107414543",
+   "name": "château de Montauriol",
+   "lat": 44.008611,
+   "lng": 1.358889,
+   "theme": "palaces",
+   "fame": 3,
+   "summary": "Élevé en 1865 dans un style néo-Renaissance par le Toulousain Henri Bach, il occupe l'ancien jardin de l'Évêque, promenade publique dessinée en 1658. À la suite de la loi de 1905, les évêques quittent en 1909 leur palais du centre-ville et achètent ce château, où ils résident jusqu'en 1969. Le Département l'acquiert en 1974 et bâtit à côté l'actuel Hôtel du Département. Louis Malle y a tourné Lacombe Lucien.",
+   "wiki": "Château de Montauriol",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A2teau%20de%20Montauriol%20%28Montauban%29.jpg?width=960",
+   "photoBy": "Didier Descouens",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q3581867",
+   "name": "église Saint-Jacques de Montauban",
+   "lat": 44.0176,
+   "lng": 1.35282,
+   "theme": "religious",
+   "fame": 3,
+   "summary": "Bâtie au XIIIe siècle peu après la fondation de la ville, c'est le plus ancien monument historique de Montauban ; avec le pont Vieux, l'un des deux vestiges médiévaux encore en usage. En 1561, les calvinistes en abattent la voûte et la flèche, et la base fortifiée du clocher octogonal porte toujours les traces des boulets du siège de 1621, mené par Louis XIII. Richelieu en ordonne la reconstruction en 1629.",
+   "wiki": "Église Saint-Jacques de Montauban",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Montauban%20-%20L%27%C3%A9glise%20St%20Jacques.jpg?width=960",
+   "photoBy": "Didier Descouens",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Église Saint-Jacques de Montauban"
+   }
+  },
+  {
+   "id": "Q22940263",
+   "name": "temple protestant des Carmes",
+   "lat": 44.0156,
+   "lng": 1.3528,
+   "theme": "religious",
+   "fame": 3,
+   "summary": "Construit pour les Carmes dans l'esprit de la Contre-Réforme et consacré en 1682, cet édifice de brique passe au culte protestant à la Révolution : un négociant réformé l'achète en 1791, lors de la vente des biens du clergé. Le premier culte y est célébré le 20 janvier 1793, après l'intervention de Jeanbon Saint-André, conventionnel et ancien pasteur de la ville. Il abrite toujours une paroisse de l'Église protestante unie.",
+   "wiki": "Temple protestant des Carmes (Montauban)",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Temple%20des%20Carmes%20%28Montauban%29.jpg?width=960",
+   "photoBy": "Didier Descouens",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Temple des Carmes"
+   }
+  },
+  {
+   "id": "Q131106320",
+   "name": "hôtel Vialètes de Mortarieu",
+   "lat": 44.014972,
+   "lng": 1.354333,
+   "theme": "palaces",
+   "fame": 2,
+   "summary": "Rare plan en U à Montauban : deux ailes de longueurs inégales, la rue Lasserre et les allées en contrebas n'étant pas parallèles. Le porche en demi-lune facilitait la manœuvre des carrosses ; la clé d'arc du portail porte une tête d'homme barbu. À droite, une plaque rappelle le rôle du baron de Mortarieu, maire sous l'Empire, dans la création du Tarn-et-Garonne en 1808. L'hôtel est aujourd'hui une copropriété privée.",
+   "wiki": "Hôtel Vialètes de Mortarieu",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Porche%20en%20demi-lune%20de%20l%27h%C3%B4tel%20Vial%C3%A8tes%20de%20Mortarieu.jpg?width=960",
+   "photoBy": "Aristidedumay",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Hôtel Vialètes de Mortarieu"
+   }
+  },
+  {
+   "id": "Q2392062",
+   "name": "roseraie François-Mitterrand",
+   "lat": 44.01289,
+   "lng": 1.36757,
+   "theme": "parks",
+   "fame": 2,
+   "summary": "Née du don, en 1975, de la collection du rosiériste Roger Sucret, inaugurée en 1983 et baptisée du nom de François Mitterrand en 1998, elle a compté jusqu'à 12 000 rosiers et un millier de variétés, rangés selon leurs 97 créateurs. Elle occupe le parc Chambord, ainsi nommé en 1820 quand il couvrait 20 hectares ; le centre aquatique Ingréo l'a fait reculer en 2013.",
+   "wiki": "Roseraie François-Mitterrand",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rosa%20%27Soleil%20d%27or2%27.jpg?width=960",
+   "photoBy": "A. Barra",
+   "photoLic": "CC BY-SA 3.0",
+   "alt": {
+    "en": "Roseraie de Montauban",
+    "es": "Rosaleda François Miterrand"
+   }
+  },
+  {
+   "id": "Q27339189",
+   "name": "église Saint-Orens de Montauban",
+   "lat": 44.014397,
+   "lng": 1.346763,
+   "theme": "religious",
+   "fame": 2,
+   "summary": "Le quartier de Villebourbon a usé les églises : celle de 1650, bâtie trop près de la rivière, est emportée par les eaux deux ans plus tard ; la suivante, reconstruite en retrait puis agrandie, devient trop petite et disparaît à son tour. L'édifice néogothique actuel date de 1870-1891, et son clocher n'a été achevé qu'en 1935.",
+   "wiki": "Église Saint-Orens de Montauban",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Eglise%20Saint-Orens%20de%20Montauban.jpg?width=960",
+   "photoBy": "Didier Descouens",
+   "photoLic": "CC BY-SA 4.0"
+  },
+  {
+   "id": "Q106714892",
+   "name": "musée des jouets de Montauban",
+   "lat": 44.018889,
+   "lng": 1.363611,
+   "theme": "museums",
+   "fame": 1,
+   "summary": "Né de la rencontre d'un collectionneur, Gérard Misrai, et d'une entrepreneuse qui avait des locaux libres, ce musée privé tenu par des bénévoles a ouvert en décembre 2016. Les jouets y sont mis en scène : soldats de plomb en pleine bataille, peloton du Tour de France à l'assaut d'un col. On y voit une Sagrada Familia en Meccano, et un espace permet de jouer au flipper ou au babyfoot.",
+   "wiki": "Musée des jouets de Montauban",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Pr%C3%A9sentation%20Mus%C3%A9e%20des%20Jouets%20Montauban.png?width=960",
+   "photoBy": "DARME Alain",
+   "photoLic": "CC BY-SA 4.0",
+   "alt": {
+    "en": "Toy Museum Montauban"
+   }
+  }
+ ]
+}

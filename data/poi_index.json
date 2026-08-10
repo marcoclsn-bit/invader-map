@@ -1,6 +1,6 @@
 {
- "version": 19,
- "updatedAt": "2026-08-07",
+ "version": 18,
+ "updatedAt": "2026-08-10",
  "cities": {
   "AVI": {
    "version": 1,
@@ -86,6 +86,16 @@
    "version": 1,
    "updatedAt": "2026-08-05",
    "count": 63,
+   "langs": {
+    "en": 1,
+    "es": 1,
+    "it": 1
+   }
+  },
+  "MTB": {
+   "version": 1,
+   "updatedAt": "2026-08-10",
+   "count": 16,
    "langs": {
     "en": 1,
     "es": 1,
