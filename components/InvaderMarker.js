@@ -76,7 +76,12 @@ const styles = StyleSheet.create({
   glowWrap: {
     width: SIZE, height: SIZE,
     alignItems: 'center', justifyContent: 'center',
-    shadowColor: '#3DF96B',
+    // Le halo est dessiné par le CODE, pas par l'image : recolorer le PNG en
+    // violet laissait une auréole verte autour de l'alien. À garder en accord
+    // avec assets/markers/alien_flashed.png et avec lbl_flashed dans constants.js.
+    // Codé en dur et non lu depuis le thème : ce composant est monté plusieurs
+    // centaines de fois sur la carte, on ne lui ajoute pas une lecture de contexte.
+    shadowColor: '#9547FB',
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.95,
     shadowRadius: 7,
