@@ -49,5 +49,11 @@ export const PALETTE = [
 // Étiquette système unique : lbl_flashed — gérée automatiquement via l'état flashé
 // (donne sa couleur aux Invaders flashés). Les étiquettes personnalisées ont été retirées.
 export const DEFAULT_LABEL_DEFS = [
-  { id: 'lbl_flashed', name: 'Déjà flashé', color: '#3DF96B', isDefault: true, system: true },
+  // Violet et non plus vert : le vert des flashés se distinguait mal du vert
+  // « OK », 22° de teinte d'écart et surtout un simple écart de luminosité, le
+  // signal le plus fragile en plein soleil. Simulé en deutéranopie, les deux
+  // verts et le rouge « détruit » viraient à trois jaunes grisâtres presque
+  // identiques. Le violet est à plus de 90° de tous les autres marqueurs.
+  // Doit rester en accord avec assets/markers/alien_flashed.png.
+  { id: 'lbl_flashed', name: 'Déjà flashé', color: '#9547FB', isDefault: true, system: true },
 ];
