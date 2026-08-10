@@ -47,9 +47,9 @@ Alerte de proximité, cartes hors-ligne, stats de progression, multi-villes, "In
 - Commit Git régulier.
 - Privilégier le local (pas de backend) tant que possible.
 
-## Prochain build natif : deux raisons, une seule revue Apple
+## Prochain build natif : trois raisons, une seule revue Apple
 
-Tout passe en OTA sur le runtime `1.2.0` (voir Stack). Ces deux points ne le
+Tout passe en OTA sur le runtime `1.2.0` (voir Stack). Ces trois points ne le
 peuvent pas et attendent donc un build. Les grouper évite deux revues et deux
 montées de runtime, qui scindent chaque fois la base d'utilisateurs.
 
@@ -71,6 +71,20 @@ montées de runtime, qui scindent chaque fois la base d'utilisateurs.
    produit RIEN quand l'app n'est pas au premier plan, ce qui est le cas d'usage
    entier ; sans build, le seul levier est de répéter les notifications. Voir la
    note mémoire `alerte-proximite-contraintes`.
+
+3. **Android : refuser l'assombrissement forcé.** Constaté le 2026-08-10 sur un
+   Xiaomi, confirmé en désactivant l'option système : le mode sombre forcé
+   d'Android (« assombrir les applications » chez MIUI) repeint une app qui est
+   DÉJÀ sombre. Le jaune `accentScore` `#FFD23F` devient brun, et le texte
+   presque noir `#221A00` du bouton devient blanc. Les images ne sont jamais
+   touchées, d'où le losange de lieu resté jaune sur la carte : c'est ce
+   contraste qui a identifié la cause. Aucun correctif OTA n'existe, la couleur
+   est repeinte par le système après nous.
+   Correctif : `android:forceDarkAllowed=false` sur le thème de l'app, via un
+   plugin de configuration `withAndroidStyles` (`@expo/config-plugins` est déjà
+   installé ; `expo-build-properties` ne l'est pas et n'expose pas cette clé).
+   Ne PAS y répondre en passant `userInterfaceStyle` à `dark` : ça figerait
+   aussi le thème clair choisi par l'utilisateur dans les Réglages.
 
 ## À compléter (TODO)
 - Étiquettes : UI pour créer / renommer / supprimer des étiquettes personnalisées (pour l'instant, seules les étiquettes par défaut existent).
