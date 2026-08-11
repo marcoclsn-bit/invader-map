@@ -200,14 +200,15 @@ export default function ExplorerSheet({ visible, onClose, onFlash, position }) {
               onSubmitEditing={valider}
             />
 
-            {/* Le numéro seul suffit : la pastille porte donc ce qu'on aurait à
-                taper, pas l'identifiant complet. Elle remplit le champ au lieu
-                de valider — un doigt qui glisse ne doit pas écrire un flash.
-                AUCUNE DISTANCE, ni à l'écran ni dans l'étiquette d'accessibilité :
-                sans elle, la pastille dit « il y en a un par ici » et non « il
-                est à 30 m dans cette direction ». */}
-            {/* Sans intitulé, une pastille « 309 » posée sous le champ ne dit
-                rien de ce qu'elle est ni d'où elle sort. */}
+            {/* Pastilles de proximité. Trois règles, chacune payée d'une erreur :
+                l'identifiant COMPLET, parce que « 309 » ne se rattache à rien
+                alors que « PA_309 » est ce que FlashInvaders affiche ; un
+                intitulé au-dessus, sans quoi on ignore d'où elles sortent ;
+                AUCUNE DISTANCE, ni à l'écran ni dans l'étiquette
+                d'accessibilité, sans quoi la pastille dirait « il est à 30 m par
+                là » au lieu de « il y en a un par ici ».
+                Et elle remplit le champ au lieu de valider : un doigt qui glisse
+                ne doit pas écrire un flash. */}
             {suggestions.length > 0 && (
               <Text style={st.pastillesTitre}>{t('explorer.sheet.suggestTitle')}</Text>
             )}
@@ -223,12 +224,12 @@ export default function ExplorerSheet({ visible, onClose, onFlash, position }) {
                   <TouchableOpacity
                     key={id}
                     style={st.pastille}
-                    onPress={() => setTexte(id.slice(id.lastIndexOf('_') + 1))}
+                    onPress={() => setTexte(id)}
                     activeOpacity={0.8}
                     accessibilityRole="button"
                     accessibilityLabel={t('explorer.sheet.suggestA11y', { id })}
                   >
-                    <Text style={st.pastilleId}>{id.slice(id.lastIndexOf('_') + 1)}</Text>
+                    <Text style={st.pastilleId}>{id}</Text>
                   </TouchableOpacity>
                 ))}
               </ScrollView>
