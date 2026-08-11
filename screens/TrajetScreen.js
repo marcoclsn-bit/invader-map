@@ -316,6 +316,14 @@ export default function TrajetScreen() {
   const arrInputRef = useRef(null);
   const depDebounce = useRef(null);
   const arrDebounce = useRef(null);
+  // Jetons d'anti-obsolescence. Choisir une suggestion ne suffisait pas à faire
+  // taire la recherche en cours : la frappe précédente avait armé un debounce et
+  // parfois lancé une requête, dont la réponse arrivait APRÈS la sélection et
+  // reposait la liste par-dessus. D'où deux appuis nécessaires pour valider une
+  // adresse. Chaque frappe et chaque sélection incrémentent le jeton ; une
+  // réponse dont le jeton a changé est jetée.
+  const depSeq = useRef(0);
+  const arrSeq = useRef(0);
 
   const { invaders, flashed, toggleFlash, labels, labelDefs, colorOverrides, statusColors, mapsApp, setMapsAppPref, currentCityCode, isChangingCity, poiPrefs, setPoiPref, poiDataVersion, explorer } = useAppContext();
   const city = CITIES[currentCityCode] ?? CITIES.PA;
@@ -609,12 +617,11 @@ export default function TrajetScreen() {
 
   const displayInvaders = useMemo(() => {
     if (!routeInvaders) return null;
-    // Filtre « À faire » : on masque les déjà flashés ET les détruits (non flashables).
-    // NEUTRALISÉ en mode explorateur, comme sur la Carte : là-bas seuls les
-    // flashés s'affichent, donc « à faire » et « explorateur » se contredisent et
-    // vident la carte. Depuis qu'on peut flasher d'ici, ça se voyait : l'alien
-    // vert apparaissait le temps de l'animation, puis disparaissait.
-    const base = (renderUnflashed && !explorer)
+    // Filtre « À faire » : on masque les déjà flashés ET les détruits (non
+    // flashables). S'applique TOUJOURS, mode explorateur compris : c'est la
+    // liste que l'utilisateur regarde pour savoir ce qu'il lui reste, et la
+    // neutraliser rendait l'interrupteur inerte sous les doigts.
+    const base = renderUnflashed
       ? routeInvaders.filter((inv) => !flashed.has(inv.id) && inv.status !== 'destroyed')
       : routeInvaders;
     if (recentlyFlashed.size === 0) return base;
@@ -622,7 +629,13 @@ export default function TrajetScreen() {
     const baseIds = new Set(base.map((i) => i.id));
     const extra = routeInvaders.filter((i) => recentlyFlashed.has(i.id) && !baseIds.has(i.id));
     return extra.length ? [...base, ...extra] : base;
-  }, [routeInvaders, renderUnflashed, flashed, recentlyFlashed, explorer]);
+  }, [routeInvaders, renderUnflashed, flashed, recentlyFlashed]);
+
+  // Source des MARQUEURS, distincte de celle de la liste. En mode explorateur la
+  // carte ne montre que les flashés (ligne de rendu ci-dessous) : lui appliquer
+  // en plus « à faire », qui ne garde que les NON flashés, ne laisserait rien.
+  // Les deux filtres se contredisent, la carte ignore donc celui-là.
+  const mapInvaders = explorer ? routeInvaders : displayInvaders;
 
   // ─── Découpe du tracé en portion parcourue (gris) + restante (bleu) ──────
 
@@ -676,11 +689,13 @@ export default function TrajetScreen() {
     setDepText(text);
     setDepCoords(null);
     clearTimeout(depDebounce.current);
+    const jeton = ++depSeq.current;
     if (text.length >= MIN_CHARS) {
       setDepSearching(true);
       setDepSugg([]);
       depDebounce.current = setTimeout(async () => {
         const sugg = await autocomplete(text, gpsRef.current, geoOpts);
+        if (jeton !== depSeq.current) return;
         setDepSugg(sugg);
         setDepSearching(false);
       }, DEBOUNCE_MS);
@@ -701,6 +716,8 @@ export default function TrajetScreen() {
   }
 
   function selectDep(s) {
+    clearTimeout(depDebounce.current);
+    depSeq.current += 1;              // périme toute réponse encore en vol
     setDepText(s.label);
     setDepCoords(s.coords);
     setDepSugg([]);
@@ -741,11 +758,13 @@ export default function TrajetScreen() {
     setArrText(text);
     setArrCoords(null);
     clearTimeout(arrDebounce.current);
+    const jeton = ++arrSeq.current;
     if (text.length >= MIN_CHARS) {
       setArrSearching(true);
       setArrSugg([]);
       arrDebounce.current = setTimeout(async () => {
         const sugg = await autocomplete(text, gpsRef.current, geoOpts);
+        if (jeton !== arrSeq.current) return;
         setArrSugg(sugg);
         setArrSearching(false);
       }, DEBOUNCE_MS);
@@ -766,6 +785,8 @@ export default function TrajetScreen() {
   }
 
   function selectArr(s) {
+    clearTimeout(arrDebounce.current);
+    arrSeq.current += 1;              // périme toute réponse encore en vol
     setArrText(s.label);
     setArrCoords(s.coords);
     setArrSugg([]);
@@ -1121,7 +1142,7 @@ export default function TrajetScreen() {
             />
           ))}
 
-          {displayInvaders?.map((inv) => {
+          {mapInvaders?.map((inv) => {
             const isFlashed = flashed.has(inv.id);
             // Mode explorateur : aucune épingle sur un Invader non flashé. Le
             // récapitulatif (« 12 Invaders sur ton trajet, 340 points ») et la

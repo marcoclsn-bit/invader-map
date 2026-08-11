@@ -1,9 +1,10 @@
-import { useState, useCallback, useMemo } from 'react';
+import { useState, useCallback, useMemo, useEffect } from 'react';
 import {
   Modal, View, Text, TextInput, TouchableOpacity, StyleSheet, Pressable, Keyboard,
-  KeyboardAvoidingView, Platform, Switch,
+  KeyboardAvoidingView, Platform, Switch, ScrollView,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import * as Location from 'expo-location';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
@@ -11,11 +12,12 @@ import { useAppContext } from '../context/AppContext';
 import { analyseListe, normaliseSaisie } from '../utils/importList';
 import { track } from '../services/analytics';
 
-// Rayon des suggestions. 150 m : au-delà, on ne « voit » plus la mosaïque depuis
-// le trottoir où l'on est, et la suggestion cesse d'être une aide à la saisie
-// pour devenir un radar.
-const RAYON_M = 150;
-const MAX_SUGGESTIONS = 3;
+// Rayon des suggestions. 150 m ne rendait presque jamais rien : dans un quartier
+// déjà bien flashé, les Invaders restants sont plus loin, et l'on se retrouvait
+// devant un volet vide. 300 m reste l'échelle d'un pâté de maisons, et huit
+// pastilles défilantes valent mieux que trois figées.
+const RAYON_M = 300;
+const MAX_SUGGESTIONS = 8;
 
 // Distance approchée en mètres, projection plane locale. Sur 150 m l'erreur est
 // très en dessous de la précision du GPS : inutile de payer un haversine.
@@ -54,6 +56,25 @@ export default function ExplorerSheet({ visible, onClose, onFlash, position }) {
 
   const [texte, setTexte] = useState('');
   const [aide, setAide] = useState(false);
+  // Position de repli. `position` vient du suivi de l'écran appelant, qui ne la
+  // renseigne qu'au-dessus d'un seuil de précision : à l'ouverture de l'app, ou
+  // en ville dense, elle reste souvent nulle et AUCUNE suggestion n'apparaissait.
+  // `getLastKnownPositionAsync` répond tout de suite, sans réveiller le GPS.
+  const [repli, setRepli] = useState(null);
+  useEffect(() => {
+    if (!visible || position) return;
+    let annule = false;
+    (async () => {
+      try {
+        const loc = await Location.getLastKnownPositionAsync();
+        if (!annule && loc?.coords) {
+          setRepli({ latitude: loc.coords.latitude, longitude: loc.coords.longitude });
+        }
+      } catch { /* pas de position : on affichera simplement le champ de saisie */ }
+    })();
+    return () => { annule = true; };
+  }, [visible, position]);
+  const pos = position ?? repli;
 
   // Un seul identifiant à la fois : on réutilise l'analyseur de l'import, qui
   // extrait les jetons au lieu de découper. Coller « YOU FOUND PA_554 » en
@@ -71,11 +92,11 @@ export default function ExplorerSheet({ visible, onClose, onFlash, position }) {
   // mais inutile de la refaire à chaque frappe — d'où la mémoïsation sur la
   // position, qui ne bouge pas pendant qu'on tape.
   const suggestions = useMemo(() => {
-    if (!visible || !explorerSuggest || !position) return [];
+    if (!visible || !explorerSuggest || !pos) return [];
     const out = [];
     for (const inv of invaders) {
       if (flashed.has(inv.id)) continue;
-      const d = distanceM(position.latitude, position.longitude, inv.lat, inv.lng);
+      const d = distanceM(pos.latitude, pos.longitude, inv.lat, inv.lng);
       if (d <= RAYON_M) out.push({ id: inv.id, d });
     }
     // Ordonnées par distance, la plus proche en tête. C'est un CHOIX assumé et
@@ -84,7 +105,7 @@ export default function ExplorerSheet({ visible, onClose, onFlash, position }) {
     // la première pastille est celle qu'on vient de flasher — la ranger ailleurs
     // faisait chercher.
     return out.sort((a, b) => a.d - b.d).slice(0, MAX_SUGGESTIONS).map(({ id }) => id);
-  }, [visible, explorerSuggest, position, invaders, flashed]);
+  }, [visible, explorerSuggest, pos, invaders, flashed]);
 
   const fermer = useCallback(() => {
     Keyboard.dismiss();
@@ -186,7 +207,13 @@ export default function ExplorerSheet({ visible, onClose, onFlash, position }) {
                 sans elle, la pastille dit « il y en a un par ici » et non « il
                 est à 30 m dans cette direction ». */}
             {suggestions.length > 0 && (
-              <View style={st.pastilles}>
+              <ScrollView
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                keyboardShouldPersistTaps="handled"
+                contentContainerStyle={st.pastilles}
+                style={st.pastillesRail}
+              >
                 {suggestions.map((id) => (
                   <TouchableOpacity
                     key={id}
@@ -199,7 +226,7 @@ export default function ExplorerSheet({ visible, onClose, onFlash, position }) {
                     <Text style={st.pastilleId}>{id.slice(id.lastIndexOf('_') + 1)}</Text>
                   </TouchableOpacity>
                 ))}
-              </View>
+              </ScrollView>
             )}
 
             <Text style={st.retour}>
@@ -262,7 +289,8 @@ function getStyles(t) {
     boutonTexte: { ...typography.actionLabel, color: t.bg },
     boutonTexteInactif: { color: t.textSecondary },
 
-    pastilles: { flexDirection: 'row', gap: 8, marginTop: 10 },
+    pastillesRail: { marginTop: 10, marginHorizontal: -18 },
+    pastilles: { flexDirection: 'row', gap: 8, paddingHorizontal: 18 },
     pastille: {
       backgroundColor: t.surfaceHigh, borderRadius: 9,
       borderWidth: StyleSheet.hairlineWidth, borderColor: t.border,
