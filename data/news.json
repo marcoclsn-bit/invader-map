@@ -1,9 +1,23 @@
 {
-  "version": 16,
-  "updatedAt": "2026-08-08",
+  "version": 17,
+  "updatedAt": "2026-08-11",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "source": "invader-spotter.art",
   "events": [
+    {
+      "type": "damaged",
+      "id": "FTBL_16",
+      "city": "FTBL",
+      "date": "2026-08-10",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/FTBL/FTBL_16-grosplan.png"
+    },
+    {
+      "type": "destroyed",
+      "id": "HK_54",
+      "city": "HK",
+      "date": "2026-08-10",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/HK/HK_054-grosplan.png"
+    },
     {
       "type": "damaged",
       "id": "TK_127",
