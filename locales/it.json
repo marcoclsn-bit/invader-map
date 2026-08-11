@@ -1222,6 +1222,7 @@
       "title": "Registrare un Invader",
       "placeholder": "284 o PA_284",
       "hint": "Inserisci il numero che FlashInvaders ti ha mostrato dopo lo scatto. Il prefisso della città è facoltativo.",
+      "suggestTitle": "Qui vicino, non ancora fotografati",
       "ready": "{{id}} sarà aggiunto ai tuoi fotografati.",
       "already": "{{id}} è già tra i tuoi fotografati.",
       "unknown": "{{id}} non esiste nella banca dati.",

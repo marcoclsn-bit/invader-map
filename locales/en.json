@@ -1222,6 +1222,7 @@
       "title": "Log an Invader",
       "placeholder": "284 or PA_284",
       "hint": "Enter the number FlashInvaders showed you after the flash. The city prefix is optional.",
+      "suggestTitle": "Nearby, not yet flashed",
       "ready": "{{id}} will be added to your flashes.",
       "already": "{{id}} is already in your flashes.",
       "unknown": "{{id}} does not exist in the database.",

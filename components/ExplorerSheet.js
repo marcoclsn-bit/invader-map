@@ -206,6 +206,11 @@ export default function ExplorerSheet({ visible, onClose, onFlash, position }) {
                 AUCUNE DISTANCE, ni à l'écran ni dans l'étiquette d'accessibilité :
                 sans elle, la pastille dit « il y en a un par ici » et non « il
                 est à 30 m dans cette direction ». */}
+            {/* Sans intitulé, une pastille « 309 » posée sous le champ ne dit
+                rien de ce qu'elle est ni d'où elle sort. */}
+            {suggestions.length > 0 && (
+              <Text style={st.pastillesTitre}>{t('explorer.sheet.suggestTitle')}</Text>
+            )}
             {suggestions.length > 0 && (
               <ScrollView
                 horizontal
@@ -289,7 +294,10 @@ function getStyles(t) {
     boutonTexte: { ...typography.actionLabel, color: t.bg },
     boutonTexteInactif: { color: t.textSecondary },
 
-    pastillesRail: { marginTop: 10, marginHorizontal: -18 },
+    pastillesTitre: {
+      ...typography.fieldLabel, color: t.textSecondary, marginTop: 12,
+    },
+    pastillesRail: { marginTop: 8, marginHorizontal: -18 },
     pastilles: { flexDirection: 'row', gap: 8, paddingHorizontal: 18 },
     pastille: {
       backgroundColor: t.surfaceHigh, borderRadius: 9,

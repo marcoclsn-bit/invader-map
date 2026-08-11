@@ -1222,6 +1222,7 @@
       "title": "Flasher un Invader",
       "placeholder": "284 ou PA_284",
       "hint": "Saisis le numéro que FlashInvaders t'a affiché après le flash. L'indicatif de la ville est facultatif.",
+      "suggestTitle": "À proximité, pas encore flashés",
       "ready": "{{id}} sera ajouté à tes flashés.",
       "already": "{{id}} est déjà dans tes flashés.",
       "unknown": "{{id}} n'existe pas dans la base.",
