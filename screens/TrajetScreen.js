@@ -335,7 +335,15 @@ export default function TrajetScreen() {
   const depSeq = useRef(0);
   const arrSeq = useRef(0);
 
-  const { invaders, flashed, toggleFlash, labels, labelDefs, colorOverrides, statusColors, mapsApp, setMapsAppPref, currentCityCode, isChangingCity, poiPrefs, setPoiPref, poiDataVersion, explorer } = useAppContext();
+  // ── Instrumentation temporaire du champ d'arrivée ──────────────────────────
+  // Trois correctifs à l'aveugle n'ont pas réglé le « il faut deux appuis ».
+  // Plutôt qu'une quatrième hypothèse, on compte ce qui se passe réellement et
+  // on l'affiche. Visible UNIQUEMENT en mode développeur, donc pour personne
+  // d'autre. À retirer dès que la cause est connue.
+  const [diag, setDiag] = useState({ chg: 0, foc: 0, blur: 0, sel: 0, rep: 0, fb: 0 });
+  const compte = (quoi) => setDiag((d) => ({ ...d, [quoi]: d[quoi] + 1 }));
+
+  const { invaders, flashed, toggleFlash, labels, labelDefs, colorOverrides, statusColors, mapsApp, setMapsAppPref, currentCityCode, isChangingCity, poiPrefs, setPoiPref, poiDataVersion, explorer, devMode } = useAppContext();
   const city = CITIES[currentCityCode] ?? CITIES.PA;
   const recorder = useSessionRecorder();
   const { recordSession } = useGamification();
@@ -760,6 +768,7 @@ export default function TrajetScreen() {
   // ─── Gestion de l'arrivée ─────────────────────────────────────────────────
 
   function onArrChange(text) {
+    compte('chg');
     setArrText(text);
     setArrCoords(null);
     clearTimeout(arrDebounce.current);
@@ -770,6 +779,7 @@ export default function TrajetScreen() {
       arrDebounce.current = setTimeout(async () => {
         const sugg = await autocomplete(text, gpsRef.current, geoOpts);
         if (jeton !== arrSeq.current) return;
+        compte('rep');
         setArrSugg(sugg);
         setArrSearching(false);
       }, DEBOUNCE_MS);
@@ -779,9 +789,10 @@ export default function TrajetScreen() {
     }
   }
 
-  function onArrFocus() { setArrFocused(true); }
+  function onArrFocus() { compte('foc'); setArrFocused(true); }
 
   function onArrBlur() {
+    compte('blur');
     setTimeout(() => {
       setArrSugg([]);
       setArrSearching(false);
@@ -790,6 +801,7 @@ export default function TrajetScreen() {
   }
 
   function selectArr(s) {
+    compte('sel');
     clearTimeout(arrDebounce.current);
     arrSeq.current += 1;              // périme toute réponse encore en vol
     setArrText(s.label);
@@ -801,6 +813,7 @@ export default function TrajetScreen() {
   }
 
   async function onArrFallback() {
+    compte('fb');
     setArrSugg([]);
     setArrSearching(false);
     setArrResolving(true);
@@ -1254,6 +1267,12 @@ export default function TrajetScreen() {
                   gpsOption={false}
                   onSelectGps={null}
                 />
+                {devMode && (
+                  <Text style={{ color: theme.textSecondary, fontSize: 11, marginTop: 6 }}>
+                    {`chg ${diag.chg} · foc ${diag.foc} · blur ${diag.blur} · sel ${diag.sel} · rep ${diag.rep} · fb ${diag.fb}`}
+                    {`  |  sugg ${arrSugg.length} · srch ${arrSearching ? 1 : 0} · coord ${arrCoords ? 1 : 0} · vide ${arrShowEmpty ? 1 : 0}`}
+                  </Text>
+                )}
                 <View style={styles.bufferSection}>
                   <View style={styles.bufferHeader}>
                     {/* Intitulé et valeur séparés : l'intitulé passe en capitales,
