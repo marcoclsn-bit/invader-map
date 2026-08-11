@@ -133,7 +133,7 @@ function AddressInput({
         <View style={styles.suggestions}>
           {/* Raccourci GPS en tête (départ uniquement) */}
           {gpsOption && (
-            <TouchableOpacity style={styles.suggItem} onPress={onSelectGps}>
+            <TouchableOpacity style={styles.suggItem} onPressIn={onSelectGps}>
               <View style={styles.gpsRow}>
                 <Ionicons name="locate" size={14} color={theme.accent} />
                 <Text style={styles.gpsRowText}>{t('route.gpsLabel')}</Text>
@@ -160,9 +160,19 @@ function AddressInput({
           ) : suggestions.length > 0 ? (
             suggestions.map((s, i) => (
               <TouchableOpacity
-                key={i}
+                // Clé STABLE et non l'index : quand une réponse d'autocomplétion
+                // remplace la liste, une clé d'index fait changer le contenu sous
+                // le doigt au lieu de remonter la ligne.
+                key={`${s.label}-${s.coords?.[0]}`}
                 style={[styles.suggItem, (gpsOption || i > 0) && styles.suggBorder]}
-                onPress={() => onSelect(s)}
+                // onPressIn et non onPress : la sélection est prise à l'INSTANT
+                // où le doigt touche, avant que quoi que ce soit puisse
+                // l'annuler, perte de focus, réponse réseau qui repeuple la
+                // liste, ou clavier qui se referme. Le symptôme « il faut deux
+                // appuis » vient toujours d'un de ces trois-là, et ce choix les
+                // neutralise tous sans avoir à trancher lequel. Sans risque ici :
+                // la liste ne défile pas, on ne peut donc pas l'effleurer.
+                onPressIn={() => onSelect(s)}
               >
                 <Text style={styles.suggText} numberOfLines={1}>{s.label}</Text>
               </TouchableOpacity>

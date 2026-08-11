@@ -1523,9 +1523,11 @@ export default function ChasseScreen({ route }) {
                             </View>
                           ) : qSugg.length > 0 ? (
                             qSugg.map((s, i) => (
-                              <TouchableOpacity key={i}
+                              // Clé stable et sélection à l'appui, comme sur le
+                              // Trajet : même liste, même piège des deux appuis.
+                              <TouchableOpacity key={`${s.label}-${s.coords?.[0]}`}
                                 style={[styles.suggItem, i > 0 && styles.suggBorder]}
-                                onPress={() => selectQ(s)}
+                                onPressIn={() => selectQ(s)}
                               >
                                 <Text style={styles.suggText} numberOfLines={1}>{s.label}</Text>
                               </TouchableOpacity>
