@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useState } from 'react';
 import { ScrollView, View, Text, TouchableOpacity, Linking, StyleSheet, Alert } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
@@ -117,7 +117,18 @@ export default function AboutScreen() {
   const { theme } = useTheme();
   const navigation = useNavigation();
   const { dataVersion, dataUpdatedAt, devMode, setDevMode } = useAppContext();
-  const appuis = useRef(0);
+  // Compteur en ÉTAT et non en ref : sans re-rendu, impossible d'afficher le
+  // décompte, et l'utilisateur tape dans le vide sans savoir si ça marche.
+  const [appuis, setAppuis] = useState(0);
+  const SEUIL = 7;
+  function tapVersion() {
+    const n = appuis + 1;
+    if (n < SEUIL) { setAppuis(n); return; }
+    setAppuis(0);
+    const on = !devMode;
+    setDevMode(on);
+    Alert.alert('InvaderQuest', t(on ? 'about.devOn' : 'about.devOff'));
+  }
   const insets = useSafeAreaInsets();
 
   const dataVersionLabel = dataVersion
@@ -134,24 +145,24 @@ export default function AboutScreen() {
         <Text style={[typography.arcadeTitle, styles.appName, { color: theme.accent }]}>
           {t('common.appName')}
         </Text>
-        {/* Sept appuis sur le numéro de version : c'est la seule porte d'entrée du
-            mode développeur, et elle n'a aucune chance d'être poussée par accident.
-            Sans elle, les gestes de test devraient rester actifs pour tout le
-            monde ou disparaître de la build que je teste, qui est une build de
-            production. */}
+        {/* Sept appuis sur le numéro de version ouvrent le mode développeur.
+            L'écran affiche DEUX fois la version, ici et dans la fiche plus bas :
+            les deux répondent, sinon on tape sur la mauvaise sans jamais le
+            savoir. hitSlop large, la cible est un texte de 13 points. */}
         <TouchableOpacity
           activeOpacity={1}
-          onPress={() => {
-            appuis.current += 1;
-            if (appuis.current < 7) return;
-            appuis.current = 0;
-            const on = !devMode;
-            setDevMode(on);
-            Alert.alert('InvaderQuest', t(on ? 'about.devOn' : 'about.devOff'));
-          }}
+          onPress={tapVersion}
+          hitSlop={{ top: 12, bottom: 12, left: 30, right: 30 }}
         >
           <Text style={[styles.appVersion, { color: theme.textSecondary }]}>v{APP_VERSION}</Text>
         </TouchableOpacity>
+        {/* Décompte à partir du troisième appui : sans retour, on ne sait pas si
+            le geste est enregistré, et on abandonne avant le septième. */}
+        {appuis >= 3 && (
+          <Text style={[styles.appVersion, { color: theme.accent }]}>
+            {t('about.devCountdown', { count: SEUIL - appuis })}
+          </Text>
+        )}
         <Text style={[styles.appPitch, { color: theme.textSecondary }]}>
           {t('about.appPitch')}
         </Text>
@@ -159,7 +170,9 @@ export default function AboutScreen() {
 
       {/* ── L'application ── */}
       <Section title={t('about.appSection')} theme={theme}>
-        <InfoRow label={t('about.versionApp')} value={`v${APP_VERSION}`} theme={theme} />
+        <TouchableOpacity activeOpacity={1} onPress={tapVersion}>
+          <InfoRow label={t('about.versionApp')} value={`v${APP_VERSION}`} theme={theme} />
+        </TouchableOpacity>
         <InfoRow label={t('about.versionData')} value={dataVersionLabel} theme={theme} />
         <InfoRow
           label={t('about.versionOta')}

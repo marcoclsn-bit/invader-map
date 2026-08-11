@@ -515,7 +515,8 @@
     "legalSection": "Legal notice",
     "legalText": "$t(common.appName) is an independent fan project, unofficial and unaffiliated with the artist Invader or the FlashInvaders app. Space Invader mosaics are the work and exclusive property of the artist Invader. This application is not authorised, sponsored, or approved by the artist.",
     "devOn": "Developer mode on. Test gestures are available by long press: News and Explorer mode in Settings, Notification in Stroll.",
-    "devOff": "Developer mode off. Test gestures no longer respond."
+    "devOff": "Developer mode off. Test gestures no longer respond.",
+    "devCountdown": "{{count}} more…"
   },
   "settings": {
     "title": "Settings",
