@@ -584,6 +584,7 @@ export default function ChasseScreen({ route }) {
   const gpsRef = useRef(null);
   const quartierInputRef = useRef(null);
   const debounce = useRef(null);
+  const qEcho = useRef(null);
   const locationSub = useRef(null);
 
   const { invaders, flashed, statusColors, currentCityCode, toggleFlash, mapsApp, isChangingCity, poiPrefs, setPoiPref, explorer } = useAppContext();
@@ -954,6 +955,11 @@ export default function ChasseScreen({ route }) {
 
   // ─── Autocomplétion quartier ──────────────────────────────────────────────
   function onQChange(text) {
+    // Même écho natif que sur le Trajet : après une sélection, iOS renvoie un
+    // onChangeText portant l'ancien texte, ce qui effaçait les coordonnées tout
+    // juste validées et relançait une recherche. On avale cet écho, une fois.
+    if (qEcho.current !== null && text === qEcho.current) { qEcho.current = null; return; }
+    qEcho.current = null;
     setQText(text);
     setQCoords(null);
     clearTimeout(debounce.current);
@@ -972,6 +978,7 @@ export default function ChasseScreen({ route }) {
   }
 
   function selectQ(s) {
+    qEcho.current = qText;
     setQText(s.label);
     setQCoords(s.coords);
     setQSugg([]);

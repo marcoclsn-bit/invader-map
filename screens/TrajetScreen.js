@@ -334,6 +334,16 @@ export default function TrajetScreen() {
   // réponse dont le jeton a changé est jetée.
   const depSeq = useRef(0);
   const arrSeq = useRef(0);
+  // Écho natif du champ de texte. Diagnostiqué sur appareil : après une
+  // sélection, `sel` valait bien 1, mais `coord` retombait à 0 et une DEUXIÈME
+  // réponse d'autocomplétion passait. Or seul `onArrChange` remet les
+  // coordonnées à null et réarme une requête : le champ natif iOS renvoie donc
+  // un `onChangeText` portant l'ANCIEN texte, celui d'avant la sélection, juste
+  // après qu'on lui ait posé le libellé choisi. L'app croit à une frappe, efface
+  // l'adresse validée et relance la recherche, d'où le second appui nécessaire.
+  // On mémorise le texte d'avant et on avale exactement cet écho, une fois.
+  const depEcho = useRef(null);
+  const arrEcho = useRef(null);
 
   // ── Instrumentation temporaire du champ d'arrivée ──────────────────────────
   // Trois correctifs à l'aveugle n'ont pas réglé le « il faut deux appuis ».
@@ -699,6 +709,8 @@ export default function TrajetScreen() {
   // ─── Gestion du départ ───────────────────────────────────────────────────
 
   function onDepChange(text) {
+    if (depEcho.current !== null && text === depEcho.current) { depEcho.current = null; return; }
+    depEcho.current = null;
     setDepText(text);
     setDepCoords(null);
     clearTimeout(depDebounce.current);
@@ -729,6 +741,7 @@ export default function TrajetScreen() {
   }
 
   function selectDep(s) {
+    depEcho.current = depText;   // ce que le champ natif risque de nous renvoyer
     clearTimeout(depDebounce.current);
     depSeq.current += 1;              // périme toute réponse encore en vol
     setDepText(s.label);
@@ -768,6 +781,8 @@ export default function TrajetScreen() {
   // ─── Gestion de l'arrivée ─────────────────────────────────────────────────
 
   function onArrChange(text) {
+    if (arrEcho.current !== null && text === arrEcho.current) { arrEcho.current = null; return; }
+    arrEcho.current = null;
     compte('chg');
     setArrText(text);
     setArrCoords(null);
@@ -802,6 +817,7 @@ export default function TrajetScreen() {
 
   function selectArr(s) {
     compte('sel');
+    arrEcho.current = arrText;   // ce que le champ natif risque de nous renvoyer
     clearTimeout(arrDebounce.current);
     arrSeq.current += 1;              // périme toute réponse encore en vol
     setArrText(s.label);
