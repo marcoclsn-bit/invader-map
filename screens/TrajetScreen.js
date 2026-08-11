@@ -631,11 +631,6 @@ export default function TrajetScreen() {
     return extra.length ? [...base, ...extra] : base;
   }, [routeInvaders, renderUnflashed, flashed, recentlyFlashed]);
 
-  // Source des MARQUEURS, distincte de celle de la liste. En mode explorateur la
-  // carte ne montre que les flashés (ligne de rendu ci-dessous) : lui appliquer
-  // en plus « à faire », qui ne garde que les NON flashés, ne laisserait rien.
-  // Les deux filtres se contredisent, la carte ignore donc celui-là.
-  const mapInvaders = explorer ? routeInvaders : displayInvaders;
 
   // ─── Découpe du tracé en portion parcourue (gris) + restante (bleu) ──────
 
@@ -1142,7 +1137,12 @@ export default function TrajetScreen() {
             />
           ))}
 
-          {mapInvaders?.map((inv) => {
+          {/* Même source que la liste : « À faire » doit vouloir dire la même
+              chose partout. En mode explorateur, la carte ne montrant que les
+              flashés, activer le filtre ne laisse aucun Invader dessus. C'est la
+              réponse honnête à la question posée, et le tracé comme les lieux
+              restent affichés. */}
+          {displayInvaders?.map((inv) => {
             const isFlashed = flashed.has(inv.id);
             // Mode explorateur : aucune épingle sur un Invader non flashé. Le
             // récapitulatif (« 12 Invaders sur ton trajet, 340 points ») et la
