@@ -136,7 +136,12 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
     <View style={styles.panel}>
       <View style={styles.panelHeader}>
         <View style={{ flex: 1 }}>
-          <Text style={styles.panelId} numberOfLines={1} adjustsFontSizeToFit>{invader.id}</Text>
+          {/* `minimumFontScale` : sans borne, l'ajustement automatique réduisait
+              l'identifiant à une taille illisible quand la fiche est montée dans
+              un conteneur dont la largeur n'est pas encore résolue, ce qui arrive
+              sur la Chasse. On garde l'ajustement, qui protège les identifiants
+              longs, mais il ne peut plus descendre sous 70 %. */}
+          <Text style={styles.panelId} numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.7}>{invader.id}</Text>
           {invader.datePosed ? (
             <View style={styles.metaRow}>
               <Ionicons name="calendar-outline" size={13} color={theme.textSecondary} />

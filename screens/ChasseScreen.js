@@ -1757,8 +1757,13 @@ export default function ChasseScreen({ route }) {
           }}
         />
 
-        {/* ── Panneau résultat (masqué en navigation ET quand le formulaire est ouvert) ── */}
-        {!isChangingCity && result && !following && inputCollapsed && (
+        {/* ── Panneau résultat ────────────────────────────────────────────────
+            Masqué en navigation, quand le formulaire est ouvert, ET quand une
+            fiche d'Invader est ouverte. Sans cette dernière condition, les deux
+            s'empilaient : la fiche par-dessus le panneau de 220 points, il ne
+            restait qu'un bandeau de carte en haut. Le Trajet masquait déjà son
+            panneau dans ce cas. */}
+        {!isChangingCity && result && !following && inputCollapsed && !selectedInv && (
           <View style={styles.resultPanel}>
             <View style={styles.resultHeader}>
               <View style={styles.resultHeaderRow}>
