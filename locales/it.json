@@ -56,7 +56,9 @@
       "alreadyFlashed": "✓ Fatto",
       "navigate": "Indicazioni",
       "instagram": "Vedi su Instagram",
-      "spotterPhoto": "Vedi la foto su invader-spotter",
+      "spotterPhotos": "Foto su invader-spotter",
+      "photoZoom": "Primo piano",
+      "photoWide": "Campo lungo",
       "labelsTitle": "ETICHETTE",
       "posedOn": "Installato il {{date}}"
     },

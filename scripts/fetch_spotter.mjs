@@ -2,7 +2,15 @@
 /**
  * scripts/fetch_spotter.mjs
  *
- * Récupère les données invader-spotter.art (autorisation de l'auteur).
+ * Récupère les données invader-spotter.art.
+ *
+ * PAS D'AUTORISATION à ce jour. L'en-tête et l'agent utilisateur ont longtemps
+ * affirmé le contraire ; c'était faux, et une affirmation fausse envoyée à leur
+ * serveur à chaque passage est pire que le silence. On s'identifie donc
+ * clairement, avec un contact, sans rien prétendre.
+ *
+ * Conséquences tenues côté app : aucune image n'est affichée ni mise en cache,
+ * seuls des liens sortants renvoient l'utilisateur chez eux.
  *
  * Le site n'expose aucun flux JSON : on interroge le formulaire de recherche
  * (listing.php) qui liste les mosaïques d'une ville avec, par Invader :
@@ -32,7 +40,7 @@ const REFERER  = `${BASE}/cherche.php`;
 const PAGE_SIZE = 50;
 const THROTTLE_MS = 1200;              // délai entre deux pages (sobriété serveur)
 const MAX_PAGES   = 200;               // garde-fou anti-boucle
-const UA = 'InvaderMap-databot/1.0 (+contact marchenri.colson@gmail.com; authorized by invader-spotter.art)';
+const UA = 'InvaderQuest-databot/1.0 (+contact marchenri.colson@gmail.com)';
 
 // Paris = cas spécial : le filtre ville passe par les cases d'arrondissement.
 const PA_ARRONDISSEMENTS = [

@@ -250,12 +250,16 @@ function numFromId(id) {
 // Enrichit une liste d'Invaders (mutée en place) avec les données invader-spotter.
 // On ne comble que des trous, jamais on écrase :
 //   • points   : rempli seulement si null (goguelnikov reste primaire) + pointsSource
-//   • photoUrl : gros plan (URL seule, image jamais téléchargée)
+//   • photoUrl     : gros plan (URL seule, image jamais téléchargée)
+//   • photoWideUrl : dernière photo EN SITUATION, dite « plan large ». Son nom
+//     de fichier contient un mois en toutes lettres (LY_01-aout2024.jpg) : il ne
+//     se devine pas, d'où le stockage de l'URL. Comme la précédente, ce n'est
+//     qu'un lien : l'app n'affiche et ne met en cache aucune image.
 //   • statut   : comble un 'unknown' uniquement (ne régresse pas un 'hidden' pnote)
 // Renvoie les compteurs { pts, photos, status }.
 function enrichWithSpotter(invaders, spotter) {
-  let pts = 0, photos = 0, status = 0;
-  if (!spotter) return { pts, photos, status };
+  let pts = 0, photos = 0, wides = 0, status = 0;
+  if (!spotter) return { pts, photos, wides, status };
   for (const inv of invaders) {
     const s = spotter.get(numFromId(inv.id));
     if (!s) continue;
@@ -265,20 +269,22 @@ function enrichWithSpotter(invaders, spotter) {
       pts++;
     }
     if (!inv.photoUrl && s.grosplan) { inv.photoUrl = s.grosplan; photos++; }
+    if (!inv.photoWideUrl && s.latestPhoto) { inv.photoWideUrl = s.latestPhoto; wides++; }
     if (!inv.datePosed && s.datePosed) { inv.datePosed = s.datePosed; }
     if (inv.status === 'unknown' && s.status && s.status !== 'unknown') {
       inv.status = s.status;
       status++;
     }
   }
-  return { pts, photos, status };
+  return { pts, photos, wides, status };
 }
 
 function contentHash(invaders) {
   const sorted = [...invaders].sort((a, b) => a.id.localeCompare(b.id));
-  const minimal = sorted.map(({ id, city, lat, lng, status, points, hint, instagramUrl, photoUrl, datePosed }) =>
+  const minimal = sorted.map(({ id, city, lat, lng, status, points, hint, instagramUrl, photoUrl, photoWideUrl, datePosed }) =>
     ({ id, city, lat, lng, status, points: points ?? null, hint,
-       instagramUrl: instagramUrl ?? null, photoUrl: photoUrl ?? null, datePosed: datePosed ?? null })
+       instagramUrl: instagramUrl ?? null, photoUrl: photoUrl ?? null,
+       photoWideUrl: photoWideUrl ?? null, datePosed: datePosed ?? null })
   );
   return createHash('sha256').update(JSON.stringify(minimal)).digest('hex').slice(0, 16);
 }
@@ -482,7 +488,7 @@ async function main() {
   let gTotal = 0, gGog = 0, gPnote = 0, gExtras = 0;
   let gInstagram = 0, gNullPoints = 0, gDivergences = 0;
   let gStatusFromPnote = 0, gDestroyedToOk = 0;
-  let gPtsFilled = 0, gPhotos = 0, gStatusFilled = 0;   // enrichissement invader-spotter
+  let gPtsFilled = 0, gPhotos = 0, gWides = 0, gStatusFilled = 0;   // enrichissement invader-spotter
   let paTotal = 0, paGog = 0, paPnote = 0, paExtras = 0;
 
   for (const code of sortedCodes) {
@@ -562,7 +568,7 @@ async function main() {
         let idxEntry = prevIndex?.cities?.find(c => c.code === code);
         if (prevInvaders?.length) {
           const e = enrichWithSpotter(prevInvaders, spotterByCity.get(code));
-          gPtsFilled += e.pts; gPhotos += e.photos; gStatusFilled += e.status;
+          gPtsFilled += e.pts; gPhotos += e.photos; gWides += e.wides; gStatusFilled += e.status;
           const nh = contentHash(prevInvaders);
           if (nh !== prevHash) {
             const nv = prevVersion + 1;
@@ -629,7 +635,7 @@ async function main() {
     // Appliqué APRÈS les extras (qui restent prioritaires) : ne comble que des trous.
     {
       const e = enrichWithSpotter(finalInvaders, spotterByCity.get(code));
-      gPtsFilled += e.pts; gPhotos += e.photos; gStatusFilled += e.status;
+      gPtsFilled += e.pts; gPhotos += e.photos; gWides += e.wides; gStatusFilled += e.status;
     }
 
     // ── Hash + écriture si modifié ────────────────────────────────────────
@@ -773,6 +779,7 @@ async function main() {
   console.log(`  Points comblés (null→valeur): ${String(gPtsFilled).padStart(6)}`);
   console.log(`  Points encore inconnus      : ${String(gNullPoints).padStart(6)}`);
   console.log(`  Photos (photoUrl) ajoutées  : ${String(gPhotos).padStart(6)}`);
+  console.log(`  Plans larges ajoutés        : ${String(gWides).padStart(6)}`);
   console.log(`  Statuts 'unknown' comblés   : ${String(gStatusFilled).padStart(6)}`);
   console.log('');
   console.log(`  Événements news (spotter)  : ${String(events.length).padStart(6)}`);

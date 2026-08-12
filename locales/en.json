@@ -56,7 +56,9 @@
       "alreadyFlashed": "✓ Flashed",
       "navigate": "Directions",
       "instagram": "See on Instagram",
-      "spotterPhoto": "See the photo on invader-spotter",
+      "spotterPhotos": "Photos on invader-spotter",
+      "photoZoom": "Close-up",
+      "photoWide": "Wide shot",
       "labelsTitle": "LABELS",
       "posedOn": "Installed on {{date}}"
     },
