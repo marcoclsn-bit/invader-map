@@ -1257,9 +1257,12 @@
   },
   "indice": {
     "titre": "¿Una pista para {{id}}?",
-    "corps": "La primera muestra el mosaico de cerca: sabrás qué buscar. La segunda lo muestra en su muro, así que revela dónde está.",
-    "niveau1": "Pista 1: el mosaico de cerca",
-    "niveau2": "Pista 2: revela la ubicación",
+    "corps": "Dos niveles, y no revelan lo mismo.",
+    "niveau1": "El mosaico de cerca",
+    "niveau1Sub": "Sabrás qué buscar, no dónde.",
+    "niveau2": "El mosaico en su muro",
+    "niveau2Sub": "Revela la ubicación.",
+    "source": "Fotos alojadas por invader-spotter.art",
     "a11y": "Pedir una pista para {{id}}"
   }
 }

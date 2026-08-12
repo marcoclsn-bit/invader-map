@@ -1257,9 +1257,12 @@
   },
   "indice": {
     "titre": "A hint for {{id}}?",
-    "corps": "The first shows the mosaic close up: you will know what to look for. The second shows it on its wall, so it reveals where it is.",
-    "niveau1": "Hint 1: the mosaic close up",
-    "niveau2": "Hint 2: reveals the location",
+    "corps": "Two levels, and they do not reveal the same thing.",
+    "niveau1": "The mosaic close up",
+    "niveau1Sub": "You will know what to look for, not where.",
+    "niveau2": "The mosaic on its wall",
+    "niveau2Sub": "Reveals the location.",
+    "source": "Photos hosted by invader-spotter.art",
     "a11y": "Ask for a hint for {{id}}"
   }
 }

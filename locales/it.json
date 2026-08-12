@@ -1257,9 +1257,12 @@
   },
   "indice": {
     "titre": "Un indizio per {{id}}?",
-    "corps": "Il primo mostra il mosaico da vicino: saprai cosa cercare. Il secondo lo mostra sul suo muro, quindi rivela dove si trova.",
-    "niveau1": "Indizio 1: il mosaico da vicino",
-    "niveau2": "Indizio 2: rivela il luogo",
+    "corps": "Due livelli, e non svelano la stessa cosa.",
+    "niveau1": "Il mosaico da vicino",
+    "niveau1Sub": "Saprai cosa cercare, non dove.",
+    "niveau2": "Il mosaico sul suo muro",
+    "niveau2Sub": "Rivela il luogo.",
+    "source": "Foto ospitate da invader-spotter.art",
     "a11y": "Chiedere un indizio per {{id}}"
   }
 }

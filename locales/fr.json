@@ -1257,9 +1257,12 @@
   },
   "indice": {
     "titre": "Un indice pour {{id}} ?",
-    "corps": "Le premier montre la mosaïque de près : tu sauras quoi chercher. Le second la montre sur son mur, et révèle donc où elle est.",
-    "niveau1": "Indice 1 : la mosaïque de près",
-    "niveau2": "Indice 2 : révèle l'emplacement",
+    "corps": "Deux niveaux, et ils ne dévoilent pas la même chose.",
+    "niveau1": "La mosaïque de près",
+    "niveau1Sub": "Tu sauras quoi chercher, pas où.",
+    "niveau2": "La mosaïque sur son mur",
+    "niveau2Sub": "Révèle l'emplacement.",
+    "source": "Photos hébergées par invader-spotter.art",
     "a11y": "Demander un indice pour {{id}}"
   }
 }
