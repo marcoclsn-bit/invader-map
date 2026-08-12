@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, StyleSheet, Alert, Share } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Alert, Share, Linking } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { useAppContext } from '../context/AppContext';
@@ -190,6 +190,23 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
       </TouchableOpacity>
       )}
 
+      {/* Photo de la mosaïque : lien SORTANT, jamais d'image affichée ici.
+          L'app ne reproduit donc rien, c'est le navigateur de l'utilisateur qui
+          va la chercher chez invader-spotter, à son initiative. Le site n'ayant
+          pas de page consultable par Invader, sa recherche fonctionnant en POST,
+          on ne peut pointer que l'image elle-même. Crédit affiché à côté. */}
+      {(!explorer || isFlashed) && invader.photoUrl ? (
+      <TouchableOpacity
+        style={styles.photoBtn}
+        onPress={() => { track('spotter_photo', { city: invader.id.slice(0, invader.id.lastIndexOf('_')) }); Linking.openURL(invader.photoUrl).catch(() => {}); }}
+        activeOpacity={0.7}
+      >
+        <Ionicons name="image-outline" size={15} color={theme.textSecondary} />
+        <Text style={styles.photoBtnText}>{t('map.panel.spotterPhoto')}</Text>
+        <Ionicons name="open-outline" size={13} color={theme.textSecondary} />
+      </TouchableOpacity>
+      ) : null}
+
       {(!explorer || isFlashed) && (
       <TouchableOpacity
         style={styles.reportBtn}
@@ -245,6 +262,13 @@ function makeStyles(t) {
       borderWidth: 1, borderColor: '#E1306C',
     },
     igBtnText: { fontSize: 14, fontWeight: '500', color: '#E1306C' },
+    photoBtn: {
+      flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8,
+      marginTop: 10, paddingVertical: 11, borderRadius: 11,
+      borderWidth: StyleSheet.hairlineWidth, borderColor: t.border,
+      backgroundColor: t.surfaceHigh,
+    },
+    photoBtnText: { fontSize: 13, color: t.textPrimary, fontWeight: '600' },
     reportBtn: {
       marginTop: 12, flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
       gap: 6, paddingVertical: 4,
