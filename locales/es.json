@@ -1254,5 +1254,12 @@
       "back": "Volver",
       "leaveNote": "Puedes salir del modo cuando quieras desde Ajustes, desactivando «Modo Explorador» en la sección «Forma de jugar»."
     }
+  },
+  "indice": {
+    "titre": "¿Una pista para {{id}}?",
+    "corps": "La primera muestra el mosaico de cerca: sabrás qué buscar. La segunda lo muestra en su muro, así que revela dónde está.",
+    "niveau1": "Pista 1: el mosaico de cerca",
+    "niveau2": "Pista 2: revela la ubicación",
+    "a11y": "Pedir una pista para {{id}}"
   }
 }

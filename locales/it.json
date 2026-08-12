@@ -1254,5 +1254,12 @@
       "back": "Indietro",
       "leaveNote": "Puoi uscire dalla modalità quando vuoi dalle Impostazioni, disattivando «Modalità Esploratore» nella sezione «Modo di giocare»."
     }
+  },
+  "indice": {
+    "titre": "Un indizio per {{id}}?",
+    "corps": "Il primo mostra il mosaico da vicino: saprai cosa cercare. Il secondo lo mostra sul suo muro, quindi rivela dove si trova.",
+    "niveau1": "Indizio 1: il mosaico da vicino",
+    "niveau2": "Indizio 2: rivela il luogo",
+    "a11y": "Chiedere un indizio per {{id}}"
   }
 }

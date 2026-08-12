@@ -1254,5 +1254,12 @@
       "back": "Retour",
       "leaveNote": "Tu peux quitter le mode à tout moment depuis Réglages, en désactivant « Mode Explorateur » dans la section « Façon de jouer »."
     }
+  },
+  "indice": {
+    "titre": "Un indice pour {{id}} ?",
+    "corps": "Le premier montre la mosaïque de près : tu sauras quoi chercher. Le second la montre sur son mur, et révèle donc où elle est.",
+    "niveau1": "Indice 1 : la mosaïque de près",
+    "niveau2": "Indice 2 : révèle l'emplacement",
+    "a11y": "Demander un indice pour {{id}}"
   }
 }

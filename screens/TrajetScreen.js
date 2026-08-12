@@ -30,6 +30,7 @@ import HeadingCone from '../components/HeadingCone';
 import ExplorerSheet from '../components/ExplorerSheet';
 import InvaderPanel from '../components/InvaderPanel';
 import FlashOverlay from '../components/FlashOverlay';
+import IndiceButton from '../components/IndiceButton';
 import { useSessionRecorder } from '../components/session/useSessionRecorder';
 import useKeepScreenOn from '../components/session/useKeepScreenOn';
 import { useGamification } from '../context/GamificationContext';
@@ -197,6 +198,7 @@ function RouteInvaderRow({ inv, isFlashed, statusColors, onPress, inerte }) {
       <View style={[styles.routeDot, { backgroundColor: statusColors[statusKey(inv.status)] ?? STATUS_COLOR[statusKey(inv.status)] }]} />
       <Text style={styles.routeId}>{inv.id}</Text>
       <Text style={styles.routePts}>{inv.points} {t('common.pts')}</Text>
+      {!isFlashed && <IndiceButton invader={inv} style={styles.indice} />}
       <View style={[styles.routeBadge, isFlashed && styles.routeBadgeFlashed]}>
         <Text style={[styles.routeBadgeText, isFlashed && styles.routeBadgeTextFlashed]}>
           {isFlashed ? t('common.flashed') : t('common.todo')}
@@ -1616,6 +1618,7 @@ function makeStyles(t) {
     routeId: { fontWeight: '600', fontSize: 14, color: t.textPrimary, width: 84 },
     routePts: { fontSize: 13, color: t.textSecondary, flex: 1 },
     routeBadge: { borderRadius: 12, paddingHorizontal: 10, paddingVertical: 3, backgroundColor: t.surfaceHigh },
+    indice: { paddingHorizontal: 6 },
     routeBadgeFlashed: { backgroundColor: t.flashedDim },
     routeBadgeText: { fontSize: 12, fontWeight: '500', color: t.textSecondary },
     routeBadgeTextFlashed: { color: t.flashed },

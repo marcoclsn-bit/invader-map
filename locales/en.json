@@ -1254,5 +1254,12 @@
       "back": "Back",
       "leaveNote": "You can leave the mode at any time in Settings, by turning off “Explorer mode” in the “How you play” section."
     }
+  },
+  "indice": {
+    "titre": "A hint for {{id}}?",
+    "corps": "The first shows the mosaic close up: you will know what to look for. The second shows it on its wall, so it reveals where it is.",
+    "niveau1": "Hint 1: the mosaic close up",
+    "niveau2": "Hint 2: reveals the location",
+    "a11y": "Ask for a hint for {{id}}"
   }
 }
