@@ -1263,6 +1263,7 @@
     "niveau2": "El mosaico en su muro",
     "niveau2Sub": "Revela la ubicación.",
     "source": "Fotos alojadas por invader-spotter.art",
-    "a11y": "Pedir una pista para {{id}}"
+    "a11y": "Pedir una pista para {{id}}",
+    "dejaVu": "Ya consultada"
   }
 }

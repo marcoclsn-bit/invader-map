@@ -1263,6 +1263,7 @@
     "niveau2": "La mosaïque sur son mur",
     "niveau2Sub": "Révèle l'emplacement.",
     "source": "Photos hébergées par invader-spotter.art",
-    "a11y": "Demander un indice pour {{id}}"
+    "a11y": "Demander un indice pour {{id}}",
+    "dejaVu": "Déjà consulté"
   }
 }

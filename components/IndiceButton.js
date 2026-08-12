@@ -30,13 +30,18 @@ export default function IndiceButton({ invader, style }) {
   const { t } = useTranslation();
   const st = getStyles(theme);
   const [ouvert, setOuvert] = useState(false);
+  // Niveaux déjà consultés. Le volet NE SE FERME PAS quand on ouvre un indice :
+  // on quitte l'app pour le navigateur, et au retour on doit retrouver l'écran
+  // tel qu'on l'a laissé. Le fermer obligeait à se rappeler de quel Invader il
+  // s'agissait pour aller voir le second indice.
+  const [vus, setVus] = useState([]);
 
   const zoom = invader?.photoUrl;
   const large = invader?.photoWideUrl;
 
-  const fermer = useCallback(() => setOuvert(false), []);
+  const fermer = useCallback(() => { setOuvert(false); setVus([]); }, []);
   const ouvrir = useCallback((url, niveau) => {
-    setOuvert(false);
+    setVus((v) => (v.includes(niveau) ? v : [...v, niveau]));
     track('indice', { niveau, city: invader.id.slice(0, invader.id.lastIndexOf('_')) });
     Linking.openURL(url).catch(() => {});
   }, [invader]);
@@ -76,9 +81,15 @@ export default function IndiceButton({ invader, style }) {
                 <Ionicons name="scan-outline" size={20} color={theme.textPrimary} />
                 <View style={{ flex: 1 }}>
                   <Text style={st.optionTitre}>{t('indice.niveau1')}</Text>
-                  <Text style={st.optionSous}>{t('indice.niveau1Sub')}</Text>
+                  <Text style={st.optionSous}>
+                    {vus.includes(1) ? t('indice.dejaVu') : t('indice.niveau1Sub')}
+                  </Text>
                 </View>
-                <Ionicons name="open-outline" size={15} color={theme.textSecondary} />
+                <Ionicons
+                  name={vus.includes(1) ? 'checkmark-circle-outline' : 'open-outline'}
+                  size={15}
+                  color={vus.includes(1) ? theme.accent : theme.textSecondary}
+                />
               </TouchableOpacity>
             ) : null}
 
@@ -87,9 +98,15 @@ export default function IndiceButton({ invader, style }) {
                 <Ionicons name="image-outline" size={20} color={theme.accentScore} />
                 <View style={{ flex: 1 }}>
                   <Text style={[st.optionTitre, { color: theme.accentScore }]}>{t('indice.niveau2')}</Text>
-                  <Text style={st.optionSous}>{t('indice.niveau2Sub')}</Text>
+                  <Text style={st.optionSous}>
+                    {vus.includes(2) ? t('indice.dejaVu') : t('indice.niveau2Sub')}
+                  </Text>
                 </View>
-                <Ionicons name="open-outline" size={15} color={theme.textSecondary} />
+                <Ionicons
+                  name={vus.includes(2) ? 'checkmark-circle-outline' : 'open-outline'}
+                  size={15}
+                  color={vus.includes(2) ? theme.accent : theme.textSecondary}
+                />
               </TouchableOpacity>
             ) : null}
 
