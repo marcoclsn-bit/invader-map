@@ -1,1398 +1,1398 @@
 {
-  "version": 17,
-  "updatedAt": "2026-08-12",
-  "cities": [
-    {
-      "code": "AIX",
-      "name": "Aix-en-Provence",
-      "count": 10,
-      "destroyed": 0,
-      "version": 5,
-      "center": {
-        "lat": 43.5297,
-        "lng": 5.4474
-      },
-      "bbox": {
-        "minLat": 43.45,
-        "maxLat": 43.65,
-        "minLng": 5.3,
-        "maxLng": 5.6
-      }
-    },
-    {
-      "code": "AMI",
-      "name": "Amiens",
-      "count": 16,
-      "destroyed": 0,
-      "version": 4,
-      "center": {
-        "lat": 49.8942,
-        "lng": 2.2957
-      },
-      "bbox": {
-        "minLat": 49.83,
-        "maxLat": 49.95,
-        "minLng": 2.22,
-        "maxLng": 2.35
-      }
-    },
-    {
-      "code": "AMS",
-      "name": "Amsterdam",
-      "count": 26,
-      "destroyed": 6,
-      "version": 6,
-      "center": {
-        "lat": 52.3676,
-        "lng": 4.9041
-      },
-      "bbox": {
-        "minLat": 52.28,
-        "maxLat": 52.45,
-        "minLng": 4.72,
-        "maxLng": 5.1
-      }
-    },
-    {
-      "code": "ANVR",
-      "name": "Anvers",
-      "count": 2,
-      "destroyed": 1,
-      "version": 5,
-      "center": {
-        "lat": 51.2194,
-        "lng": 4.4025
-      },
-      "bbox": {
-        "minLat": 51.1,
-        "maxLat": 51.35,
-        "minLng": 4.3,
-        "maxLng": 4.55
-      }
-    },
-    {
-      "code": "ANZR",
-      "name": "Anzère",
-      "count": 4,
-      "destroyed": 0,
-      "version": 5,
-      "center": {
-        "lat": 46.304457,
-        "lng": 7.391638
-      },
-      "bbox": {
-        "minLat": 46.25,
-        "maxLat": 46.36,
-        "minLng": 7.32,
-        "maxLng": 7.46
-      }
-    },
-    {
-      "code": "AVI",
-      "name": "Avignon",
-      "count": 41,
-      "destroyed": 11,
-      "version": 6,
-      "center": {
-        "lat": 43.9493,
-        "lng": 4.8055
-      },
-      "bbox": {
-        "minLat": 43.85,
-        "maxLat": 44.05,
-        "minLng": 4.75,
-        "maxLng": 4.95
-      }
-    },
-    {
-      "code": "BAB",
-      "name": "Biarritz Anglet-Bayonne",
-      "count": 60,
-      "destroyed": 6,
-      "version": 6,
-      "center": {
-        "lat": 43.483143,
-        "lng": -1.530272
-      },
-      "bbox": {
-        "minLat": 42.88,
-        "maxLat": 44.03,
-        "minLng": -2.16,
-        "maxLng": -0.97
-      }
-    },
-    {
-      "code": "BBO",
-      "name": "Bilbao",
-      "count": 40,
-      "destroyed": 9,
-      "version": 6,
-      "center": {
-        "lat": 43.261473,
-        "lng": -2.930698
-      },
-      "bbox": {
-        "minLat": 43,
-        "maxLat": 43.52,
-        "minLng": -3.2,
-        "maxLng": -2.67
-      }
-    },
-    {
-      "code": "BGK",
-      "name": "Bangkok",
-      "count": 44,
-      "destroyed": 24,
-      "version": 7,
-      "center": {
-        "lat": 13.7563,
-        "lng": 100.502
-      },
-      "bbox": {
-        "minLat": 13.5,
-        "maxLat": 14,
-        "minLng": 100.3,
-        "maxLng": 100.8
-      }
-    },
-    {
-      "code": "BRC",
-      "name": "Barcelone",
-      "count": 17,
-      "destroyed": 15,
-      "version": 6,
-      "center": {
-        "lat": 41.38332,
-        "lng": 2.172895
-      },
-      "bbox": {
-        "minLat": 41.13,
-        "maxLat": 41.64,
-        "minLng": 1.91,
-        "maxLng": 2.43
-      }
-    },
-    {
-      "code": "BRL",
-      "name": "Berlin",
-      "count": 11,
-      "destroyed": 1,
-      "version": 6,
-      "center": {
-        "lat": 52.52,
-        "lng": 13.405
-      },
-      "bbox": {
-        "minLat": 52.35,
-        "maxLat": 52.7,
-        "minLng": 13.1,
-        "maxLng": 13.8
-      }
-    },
-    {
-      "code": "BRN",
-      "name": "Berne",
-      "count": 29,
-      "destroyed": 10,
-      "version": 6,
-      "center": {
-        "lat": 46.9481,
-        "lng": 7.4474
-      },
-      "bbox": {
-        "minLat": 46.85,
-        "maxLat": 47.05,
-        "minLng": 7.35,
-        "maxLng": 7.6
-      }
-    },
-    {
-      "code": "BSL",
-      "name": "Bâle",
-      "count": 25,
-      "destroyed": 6,
-      "version": 6,
-      "center": {
-        "lat": 47.5596,
-        "lng": 7.5886
-      },
-      "bbox": {
-        "minLat": 47.48,
-        "maxLat": 47.62,
-        "minLng": 7.5,
-        "maxLng": 7.7
-      }
-    },
-    {
-      "code": "BTA",
-      "name": "Bastia",
-      "count": 34,
-      "destroyed": 3,
-      "version": 6,
-      "center": {
-        "lat": 42.700778,
-        "lng": 9.45079
-      },
-      "bbox": {
-        "minLat": 42.18,
-        "maxLat": 43.32,
-        "minLng": 8.94,
-        "maxLng": 9.99
-      }
-    },
-    {
-      "code": "BXL",
-      "name": "Bruxelles",
-      "count": 42,
-      "destroyed": 7,
-      "version": 6,
-      "center": {
-        "lat": 50.8503,
-        "lng": 4.3517
-      },
-      "bbox": {
-        "minLat": 50.75,
-        "maxLat": 50.95,
-        "minLng": 4.25,
-        "maxLng": 4.5
-      }
-    },
-    {
-      "code": "CAPF",
-      "name": "Cap-Ferret",
-      "count": 10,
-      "destroyed": 4,
-      "version": 6,
-      "center": {
-        "lat": 44.662923,
-        "lng": -1.240386
-      },
-      "bbox": {
-        "minLat": 44.12,
-        "maxLat": 45.21,
-        "minLng": -1.75,
-        "maxLng": -0.71
-      }
-    },
-    {
-      "code": "CAZ",
-      "name": "Côte d'Azur",
-      "count": 40,
-      "destroyed": 9,
-      "version": 5,
-      "center": {
-        "lat": 43.407,
-        "lng": 6.755
-      },
-      "bbox": {
-        "minLat": 42.95,
-        "maxLat": 44,
-        "minLng": 5.55,
-        "maxLng": 7.8
-      }
-    },
-    {
-      "code": "CCU",
-      "name": "Cancún",
-      "count": 3,
-      "destroyed": 0,
-      "version": 5,
-      "center": {
-        "lat": 21.164,
-        "lng": -86.765
-      },
-      "bbox": {
-        "minLat": 20.85,
-        "maxLat": 21.5,
-        "minLng": -87.2,
-        "maxLng": -86.65
-      }
-    },
-    {
-      "code": "CHAR",
-      "name": "Charleroi",
-      "count": 1,
-      "destroyed": 0,
-      "version": 5,
-      "center": {
-        "lat": 50.405413,
-        "lng": 4.449921
-      },
-      "bbox": {
-        "minLat": 50.35,
-        "maxLat": 50.47,
-        "minLng": 4.38,
-        "maxLng": 4.52
-      }
-    },
-    {
-      "code": "CLR",
-      "name": "Clermont-Ferrand",
-      "count": 47,
-      "version": 4,
-      "center": {
-        "lat": 45.800334,
-        "lng": 3.090138
-      },
-      "destroyed": 2
-    },
-    {
-      "code": "CON",
-      "name": "Contis",
-      "count": 2,
-      "destroyed": 0,
-      "version": 6,
-      "center": {
-        "lat": 44.092551,
-        "lng": -1.323003
-      },
-      "bbox": {
-        "minLat": 43.84,
-        "maxLat": 44.34,
-        "minLng": -1.57,
-        "maxLng": -1.07
-      }
-    },
-    {
-      "code": "DIJ",
-      "name": "Dijon",
-      "count": 6,
-      "destroyed": 0,
-      "version": 5,
-      "center": {
-        "lat": 47.3216,
-        "lng": 5.0415
-      },
-      "bbox": {
-        "minLat": 47.25,
-        "maxLat": 47.4,
-        "minLng": 4.95,
-        "maxLng": 5.15
-      }
-    },
-    {
-      "code": "DJBA",
-      "name": "Djerba",
-      "count": 58,
-      "version": 4,
-      "center": {
-        "lat": 33.807735,
-        "lng": 10.891873
-      },
-      "destroyed": 4
-    },
-    {
-      "code": "DJN",
-      "name": "Daejeon",
-      "count": 22,
-      "destroyed": 4,
-      "version": 6,
-      "center": {
-        "lat": 36.366028,
-        "lng": 127.381718
-      },
-      "bbox": {
-        "minLat": 35.83,
-        "maxLat": 36.9,
-        "minLng": 126.85,
-        "maxLng": 127.93
-      }
-    },
-    {
-      "code": "ELT",
-      "name": "Eilat",
-      "count": 2,
-      "destroyed": 0,
-      "version": 5,
-      "center": {
-        "lat": 29.531915,
-        "lng": 34.939717
-      },
-      "bbox": {
-        "minLat": 29.26,
-        "maxLat": 29.8,
-        "minLng": 34.67,
-        "maxLng": 35.2
-      }
-    },
-    {
-      "code": "FAO",
-      "name": "Faro",
-      "count": 4,
-      "version": 4,
-      "center": {
-        "lat": 37.018078,
-        "lng": -7.956933
-      },
-      "destroyed": 3
-    },
-    {
-      "code": "FKF",
-      "name": "Francfort",
-      "count": 14,
-      "destroyed": 0,
-      "version": 5,
-      "center": {
-        "lat": 50.115,
-        "lng": 8.682
-      },
-      "bbox": {
-        "minLat": 49.8,
-        "maxLat": 50.25,
-        "minLng": 8.45,
-        "maxLng": 8.85
-      }
-    },
-    {
-      "code": "FRQ",
-      "name": "Forcalquier",
-      "count": 4,
-      "destroyed": 0,
-      "version": 5,
-      "center": {
-        "lat": 43.959362,
-        "lng": 5.780969
-      },
-      "bbox": {
-        "minLat": 43.71,
-        "maxLat": 44.21,
-        "minLng": 5.53,
-        "maxLng": 6.03
-      }
-    },
-    {
-      "code": "FTBL",
-      "name": "Fontainebleau",
-      "count": 45,
-      "destroyed": 13,
-      "version": 6,
-      "center": {
-        "lat": 48.405,
-        "lng": 2.701
-      },
-      "bbox": {
-        "minLat": 48.15,
-        "maxLat": 48.65,
-        "minLng": 2.4,
-        "maxLng": 3
-      }
-    },
-    {
-      "code": "GNV",
-      "name": "Genève",
-      "count": 33,
-      "destroyed": 3,
-      "version": 7,
-      "center": {
-        "lat": 46.2044,
-        "lng": 6.1432
-      },
-      "bbox": {
-        "minLat": 46.15,
-        "maxLat": 46.3,
-        "minLng": 6.05,
-        "maxLng": 6.25
-      }
-    },
-    {
-      "code": "GRN",
-      "name": "Grenoble",
-      "count": 57,
-      "destroyed": 15,
-      "version": 6,
-      "center": {
-        "lat": 45.1885,
-        "lng": 5.7245
-      },
-      "bbox": {
-        "minLat": 45.1,
-        "maxLat": 45.25,
-        "minLng": 5.65,
-        "maxLng": 5.8
-      }
-    },
-    {
-      "code": "GRU",
-      "name": "Grude",
-      "count": 3,
-      "destroyed": 0,
-      "version": 6,
-      "center": {
-        "lat": 43.386892,
-        "lng": 17.38041
-      },
-      "bbox": {
-        "minLat": 43.3,
-        "maxLat": 43.48,
-        "minLng": 17.22,
-        "maxLng": 17.5
-      }
-    },
-    {
-      "code": "HALM",
-      "name": "Halmstad",
-      "count": 2,
-      "destroyed": 0,
-      "version": 5,
-      "center": {
-        "lat": 56.679103,
-        "lng": 12.773971
-      },
-      "bbox": {
-        "minLat": 56.43,
-        "maxLat": 56.93,
-        "minLng": 12.52,
-        "maxLng": 13.02
-      }
-    },
-    {
-      "code": "HK",
-      "name": "Hong Kong",
-      "count": 130,
-      "destroyed": 108,
-      "version": 7,
-      "center": {
-        "lat": 22.3193,
-        "lng": 114.169
-      },
-      "bbox": {
-        "minLat": 22.15,
-        "maxLat": 22.55,
-        "minLng": 113.8,
-        "maxLng": 114.4
-      }
-    },
-    {
-      "code": "IST",
-      "name": "Istanbul",
-      "count": 16,
-      "destroyed": 6,
-      "version": 6,
-      "center": {
-        "lat": 41.0082,
-        "lng": 28.9784
-      },
-      "bbox": {
-        "minLat": 40.85,
-        "maxLat": 41.25,
-        "minLng": 28.6,
-        "maxLng": 29.2
-      }
-    },
-    {
-      "code": "KAT",
-      "name": "Katmandu",
-      "count": 21,
-      "destroyed": 7,
-      "version": 6,
-      "center": {
-        "lat": 27.7172,
-        "lng": 85.324
-      },
-      "bbox": {
-        "minLat": 27.6,
-        "maxLat": 27.8,
-        "minLng": 85.2,
-        "maxLng": 85.45
-      }
-    },
-    {
-      "code": "KLN",
-      "name": "Cologne",
-      "count": 27,
-      "version": 4,
-      "center": {
-        "lat": 50.928348,
-        "lng": 6.972527
-      },
-      "destroyed": 4
-    },
-    {
-      "code": "LA",
-      "name": "Los Angeles",
-      "count": 214,
-      "destroyed": 189,
-      "version": 6,
-      "center": {
-        "lat": 34.0522,
-        "lng": -118.243
-      },
-      "bbox": {
-        "minLat": 33.7,
-        "maxLat": 34.35,
-        "minLng": -118.7,
-        "maxLng": -117.6
-      }
-    },
-    {
-      "code": "LBR",
-      "name": "Luberon",
-      "count": 8,
-      "destroyed": 2,
-      "version": 6,
-      "center": {
-        "lat": 43.860304,
-        "lng": 5.355548
-      },
-      "bbox": {
-        "minLat": 43.29,
-        "maxLat": 44.4,
-        "minLng": 4.64,
-        "maxLng": 6.18
-      }
-    },
-    {
-      "code": "LCT",
-      "name": "La Ciotat",
-      "count": 9,
-      "destroyed": 5,
-      "version": 6,
-      "center": {
-        "lat": 43.185047,
-        "lng": 5.61956
-      },
-      "bbox": {
-        "minLat": 42.92,
-        "maxLat": 43.45,
-        "minLng": 5.36,
-        "maxLng": 5.89
-      }
-    },
-    {
-      "code": "LDN",
-      "name": "London",
-      "count": 193,
-      "destroyed": 68,
-      "version": 7,
-      "center": {
-        "lat": 51.5074,
-        "lng": -0.1278
-      },
-      "bbox": {
-        "minLat": 51.28,
-        "maxLat": 51.7,
-        "minLng": -0.55,
-        "maxLng": 0.35
-      }
-    },
-    {
-      "code": "LIL",
-      "name": "Lille",
-      "count": 6,
-      "version": 4,
-      "center": {
-        "lat": 50.59408,
-        "lng": 3.046499
-      },
-      "destroyed": 1
-    },
-    {
-      "code": "LJU",
-      "name": "Ljubljana",
-      "count": 42,
-      "destroyed": 5,
-      "version": 7,
-      "center": {
-        "lat": 46.0569,
-        "lng": 14.5058
-      },
-      "bbox": {
-        "minLat": 46,
-        "maxLat": 46.12,
-        "minLng": 14.45,
-        "maxLng": 14.6
-      }
-    },
-    {
-      "code": "LSN",
-      "name": "Lausanne",
-      "count": 16,
-      "destroyed": 9,
-      "version": 6,
-      "center": {
-        "lat": 46.5197,
-        "lng": 6.6323
-      },
-      "bbox": {
-        "minLat": 46.48,
-        "maxLat": 46.58,
-        "minLng": 6.58,
-        "maxLng": 6.72
-      }
-    },
-    {
-      "code": "LY",
-      "name": "Lyon",
-      "count": 48,
-      "destroyed": 26,
-      "version": 5,
-      "center": {
-        "lat": 45.764,
-        "lng": 4.8357
-      },
-      "bbox": {
-        "minLat": 45.65,
-        "maxLat": 45.85,
-        "minLng": 4.75,
-        "maxLng": 5
-      }
-    },
-    {
-      "code": "MAN",
-      "name": "Manchester",
-      "count": 47,
-      "destroyed": 11,
-      "version": 5,
-      "center": {
-        "lat": 53.4808,
-        "lng": -2.2426
-      },
-      "bbox": {
-        "minLat": 53.4,
-        "maxLat": 53.55,
-        "minLng": -2.35,
-        "maxLng": -2.1
-      }
-    },
-    {
-      "code": "MARS",
-      "name": "Marseille",
-      "count": 97,
-      "destroyed": 24,
-      "version": 6,
-      "center": {
-        "lat": 43.2965,
-        "lng": 5.3698
-      },
-      "bbox": {
-        "minLat": 43.2,
-        "maxLat": 43.4,
-        "minLng": 5.3,
-        "maxLng": 5.55
-      }
-    },
-    {
-      "code": "MBSA",
-      "name": "Mombasa",
-      "count": 5,
-      "destroyed": 5,
-      "version": 5,
-      "center": {
-        "lat": -3.977181,
-        "lng": 39.706815
-      },
-      "bbox": {
-        "minLat": -4.56,
-        "maxLat": -3.14,
-        "minLng": 39.17,
-        "maxLng": 40.35
-      }
-    },
-    {
-      "code": "MEN",
-      "name": "Minorque",
-      "count": 5,
-      "destroyed": 1,
-      "version": 6,
-      "center": {
-        "lat": 40.012279,
-        "lng": 3.85219
-      },
-      "bbox": {
-        "minLat": 39.75,
-        "maxLat": 40.31,
-        "minLng": 3.57,
-        "maxLng": 4.14
-      }
-    },
-    {
-      "code": "MIA",
-      "name": "Miami",
-      "count": 80,
-      "destroyed": 63,
-      "version": 6,
-      "center": {
-        "lat": 25.7617,
-        "lng": -80.1918
-      },
-      "bbox": {
-        "minLat": 25.65,
-        "maxLat": 25.9,
-        "minLng": -80.3,
-        "maxLng": -80.1
-      }
-    },
-    {
-      "code": "MLB",
-      "name": "Melbourne",
-      "count": 16,
-      "destroyed": 3,
-      "version": 6,
-      "center": {
-        "lat": -37.814,
-        "lng": 144.963
-      },
-      "bbox": {
-        "minLat": -37.9,
-        "maxLat": -37.7,
-        "minLng": 144.8,
-        "maxLng": 145.1
-      }
-    },
-    {
-      "code": "MLGA",
-      "name": "Malaga",
-      "count": 29,
-      "destroyed": 24,
-      "version": 5,
-      "center": {
-        "lat": 36.7213,
-        "lng": -4.4214
-      },
-      "bbox": {
-        "minLat": 36.65,
-        "maxLat": 36.8,
-        "minLng": -4.55,
-        "maxLng": -4.35
-      }
-    },
-    {
-      "code": "MPL",
-      "name": "Montpellier",
-      "count": 38,
-      "destroyed": 1,
-      "version": 6,
-      "center": {
-        "lat": 43.6117,
-        "lng": 3.8777
-      },
-      "bbox": {
-        "minLat": 43.32,
-        "maxLat": 43.72,
-        "minLng": 3.62,
-        "maxLng": 3.98
-      }
-    },
-    {
-      "code": "MRAK",
-      "name": "Marrakech",
-      "count": 4,
-      "destroyed": 0,
-      "version": 5,
-      "center": {
-        "lat": 31.6295,
-        "lng": -7.9811
-      },
-      "bbox": {
-        "minLat": 30.84,
-        "maxLat": 32.14,
-        "minLng": -8.7,
-        "maxLng": -7.45
-      }
-    },
-    {
-      "code": "MTB",
-      "name": "Montauban",
-      "count": 11,
-      "destroyed": 2,
-      "version": 6,
-      "center": {
-        "lat": 44.016693,
-        "lng": 1.351914
-      },
-      "bbox": {
-        "minLat": 43.76,
-        "maxLat": 44.27,
-        "minLng": 1.1,
-        "maxLng": 1.6
-      }
-    },
-    {
-      "code": "MUN",
-      "name": "Munich",
-      "count": 18,
-      "destroyed": 1,
-      "version": 6,
-      "center": {
-        "lat": 48.1351,
-        "lng": 11.582
-      },
-      "bbox": {
-        "minLat": 48.05,
-        "maxLat": 48.25,
-        "minLng": 11.45,
-        "maxLng": 11.7
-      }
-    },
-    {
-      "code": "NA",
-      "name": "Nantes",
-      "count": 3,
-      "destroyed": 2,
-      "version": 6,
-      "center": {
-        "lat": 47.216183,
-        "lng": -1.545731
-      },
-      "bbox": {
-        "minLat": 46.97,
-        "maxLat": 47.47,
-        "minLng": -1.8,
-        "maxLng": -1.29
-      }
-    },
-    {
-      "code": "NCL",
-      "name": "Newcastle",
-      "count": 25,
-      "destroyed": 3,
-      "version": 6,
-      "center": {
-        "lat": 54.969838,
-        "lng": -1.608875
-      },
-      "bbox": {
-        "minLat": 54.71,
-        "maxLat": 55.23,
-        "minLng": -1.87,
-        "maxLng": -1.35
-      }
-    },
-    {
-      "code": "NIM",
-      "name": "Nîmes",
-      "count": 5,
-      "destroyed": 0,
-      "version": 5,
-      "center": {
-        "lat": 43.8367,
-        "lng": 4.3601
-      },
-      "bbox": {
-        "minLat": 43.8,
-        "maxLat": 43.9,
-        "minLng": 4.3,
-        "maxLng": 4.45
-      }
-    },
-    {
-      "code": "NOO",
-      "name": "Noordwijk",
-      "count": 10,
-      "destroyed": 0,
-      "version": 5,
-      "center": {
-        "lat": 52.218211,
-        "lng": 4.419613
-      },
-      "bbox": {
-        "minLat": 51.97,
-        "maxLat": 52.47,
-        "minLng": 4.17,
-        "maxLng": 4.67
-      }
-    },
-    {
-      "code": "NY",
-      "name": "New York",
-      "count": 192,
-      "destroyed": 173,
-      "version": 6,
-      "center": {
-        "lat": 40.7128,
-        "lng": -74.006
-      },
-      "bbox": {
-        "minLat": 40.48,
-        "maxLat": 40.93,
-        "minLng": -74.3,
-        "maxLng": -73.6
-      }
-    },
-    {
-      "code": "ORLN",
-      "name": "Orléans",
-      "count": 12,
-      "destroyed": 0,
-      "version": 4,
-      "center": {
-        "lat": 47.9029,
-        "lng": 1.9092
-      },
-      "bbox": {
-        "minLat": 47.85,
-        "maxLat": 48,
-        "minLng": 1.8,
-        "maxLng": 1.98
-      }
-    },
-    {
-      "code": "PA",
-      "name": "Paris",
-      "count": 1597,
-      "destroyed": 247,
-      "version": 8,
-      "center": {
-        "lat": 48.8566,
-        "lng": 2.3522
-      },
-      "bbox": {
-        "minLat": 48.5,
-        "maxLat": 49.1,
-        "minLng": 1.9,
-        "maxLng": 3
-      }
-    },
-    {
-      "code": "PAU",
-      "name": "Pau",
-      "count": 10,
-      "destroyed": 1,
-      "version": 5,
-      "center": {
-        "lat": 43.2951,
-        "lng": -0.3708
-      },
-      "bbox": {
-        "minLat": 43.25,
-        "maxLat": 43.35,
-        "minLng": -0.45,
-        "maxLng": -0.3
-      }
-    },
-    {
-      "code": "POTI",
-      "name": "Potosí",
-      "count": 52,
-      "destroyed": 13,
-      "version": 5,
-      "center": {
-        "lat": -19.591,
-        "lng": -65.752
-      },
-      "bbox": {
-        "minLat": -19.75,
-        "maxLat": -19.45,
-        "minLng": -65.9,
-        "maxLng": -65.65
-      }
-    },
-    {
-      "code": "PRP",
-      "name": "Perpignan",
-      "count": 8,
-      "destroyed": 0,
-      "version": 5,
-      "center": {
-        "lat": 42.6887,
-        "lng": 2.8948
-      },
-      "bbox": {
-        "minLat": 42.65,
-        "maxLat": 42.75,
-        "minLng": 2.85,
-        "maxLng": 3
-      }
-    },
-    {
-      "code": "PRT",
-      "name": "Perth",
-      "count": 26,
-      "destroyed": 17,
-      "version": 5,
-      "center": {
-        "lat": -31.964,
-        "lng": 115.83
-      },
-      "bbox": {
-        "minLat": -32.2,
-        "maxLat": -31.7,
-        "minLng": 115.6,
-        "maxLng": 116.05
-      }
-    },
-    {
-      "code": "RA",
-      "name": "Ravenne",
-      "count": 40,
-      "destroyed": 10,
-      "version": 6,
-      "center": {
-        "lat": 44.421317,
-        "lng": 12.196371
-      },
-      "bbox": {
-        "minLat": 43.86,
-        "maxLat": 44.99,
-        "minLng": 11.31,
-        "maxLng": 12.78
-      }
-    },
-    {
-      "code": "RBA",
-      "name": "Rabat",
-      "count": 17,
-      "destroyed": 8,
-      "version": 6,
-      "center": {
-        "lat": 33.9716,
-        "lng": -6.8498
-      },
-      "bbox": {
-        "minLat": 33.9,
-        "maxLat": 34.1,
-        "minLng": -6.9,
-        "maxLng": -6.75
-      }
-    },
-    {
-      "code": "RDU",
-      "name": "Redu",
-      "count": 6,
-      "destroyed": 2,
-      "version": 6,
-      "center": {
-        "lat": 50.002999,
-        "lng": 5.1489
-      },
-      "bbox": {
-        "minLat": 49.75,
-        "maxLat": 50.26,
-        "minLng": 4.9,
-        "maxLng": 5.41
-      }
-    },
-    {
-      "code": "REUN",
-      "name": "La Réunion",
-      "count": 11,
-      "destroyed": 0,
-      "version": 6,
-      "center": {
-        "lat": -20.9,
-        "lng": 55.5
-      },
-      "bbox": {
-        "minLat": -21.4,
-        "maxLat": -20.85,
-        "minLng": 55.2,
-        "maxLng": 55.85
-      }
-    },
-    {
-      "code": "RN",
-      "name": "Rennes",
-      "count": 4,
-      "destroyed": 0,
-      "version": 5,
-      "center": {
-        "lat": 48.111,
-        "lng": -1.679
-      },
-      "bbox": {
-        "minLat": 47.95,
-        "maxLat": 48.2,
-        "minLng": -1.85,
-        "maxLng": -1.5
-      }
-    },
-    {
-      "code": "ROM",
-      "name": "Rome",
-      "count": 75,
-      "destroyed": 17,
-      "version": 7,
-      "center": {
-        "lat": 41.9028,
-        "lng": 12.4964
-      },
-      "bbox": {
-        "minLat": 41.75,
-        "maxLat": 42,
-        "minLng": 12.35,
-        "maxLng": 12.75
-      }
-    },
-    {
-      "code": "RTD",
-      "name": "Rotterdam",
-      "count": 25,
-      "destroyed": 3,
-      "version": 6,
-      "center": {
-        "lat": 51.9225,
-        "lng": 4.4792
-      },
-      "bbox": {
-        "minLat": 51.85,
-        "maxLat": 52,
-        "minLng": 4.35,
-        "maxLng": 4.55
-      }
-    },
-    {
-      "code": "SD",
-      "name": "San Diego",
-      "count": 20,
-      "destroyed": 20,
-      "version": 6,
-      "center": {
-        "lat": 32.7157,
-        "lng": -117.161
-      },
-      "bbox": {
-        "minLat": 32.6,
-        "maxLat": 32.85,
-        "minLng": -117.3,
-        "maxLng": -117
-      }
-    },
-    {
-      "code": "SL",
-      "name": "Séoul",
-      "count": 14,
-      "destroyed": 2,
-      "version": 4,
-      "center": {
-        "lat": 37.561233,
-        "lng": 126.959511
-      },
-      "bbox": {
-        "minLat": 37.3,
-        "maxLat": 37.82,
-        "minLng": 126.67,
-        "maxLng": 127.24
-      }
-    },
-    {
-      "code": "SP",
-      "name": "São Paulo",
-      "count": 52,
-      "destroyed": 36,
-      "version": 6,
-      "center": {
-        "lat": -23.55,
-        "lng": -46.633
-      },
-      "bbox": {
-        "minLat": -23.7,
-        "maxLat": -23.45,
-        "minLng": -46.8,
-        "maxLng": -46.5
-      }
-    },
-    {
-      "code": "TK",
-      "name": "Tokyo",
-      "count": 123,
-      "destroyed": 109,
-      "version": 5,
-      "center": {
-        "lat": 35.6762,
-        "lng": 139.6503
-      },
-      "bbox": {
-        "minLat": 35.5,
-        "maxLat": 35.85,
-        "minLng": 139.4,
-        "maxLng": 139.9
-      }
-    },
-    {
-      "code": "TLS",
-      "name": "Toulouse",
-      "count": 11,
-      "version": 4,
-      "center": {
-        "lat": 43.695205,
-        "lng": 1.353076
-      },
-      "destroyed": 3
-    },
-    {
-      "code": "VLMO",
-      "name": "Valmorel",
-      "count": 3,
-      "destroyed": 1,
-      "version": 6,
-      "center": {
-        "lat": 45.465017,
-        "lng": 6.450343
-      },
-      "bbox": {
-        "minLat": 45.21,
-        "maxLat": 45.73,
-        "minLng": 6.19,
-        "maxLng": 6.71
-      }
-    },
-    {
-      "code": "VRN",
-      "name": "Varanasi",
-      "count": 12,
-      "destroyed": 7,
-      "version": 5,
-      "center": {
-        "lat": 25.301,
-        "lng": 83.008
-      },
-      "bbox": {
-        "minLat": 25.15,
-        "maxLat": 25.55,
-        "minLng": 82.85,
-        "maxLng": 83.2
-      }
-    },
-    {
-      "code": "VRS",
-      "name": "Versailles",
-      "count": 42,
-      "destroyed": 16,
-      "version": 7,
-      "center": {
-        "lat": 48.80571,
-        "lng": 2.128069
-      },
-      "bbox": {
-        "minLat": 48.55,
-        "maxLat": 49.08,
-        "minLng": 1.86,
-        "maxLng": 2.41
-      }
-    },
-    {
-      "code": "VSB",
-      "name": "Visby",
-      "count": 3,
-      "destroyed": 0,
-      "version": 5,
-      "center": {
-        "lat": 57.638922,
-        "lng": 18.291373
-      },
-      "bbox": {
-        "minLat": 57.39,
-        "maxLat": 57.89,
-        "minLng": 18.04,
-        "maxLng": 18.54
-      }
-    },
-    {
-      "code": "WN",
-      "name": "Vienne",
-      "count": 56,
-      "destroyed": 6,
-      "version": 7,
-      "center": {
-        "lat": 48.2082,
-        "lng": 16.3738
-      },
-      "bbox": {
-        "minLat": 48.15,
-        "maxLat": 48.25,
-        "minLng": 16.3,
-        "maxLng": 16.45
-      }
-    }
-  ]
+ "version": 19,
+ "updatedAt": "2026-08-12",
+ "cities": [
+  {
+   "code": "AIX",
+   "name": "Aix-en-Provence",
+   "count": 10,
+   "destroyed": 0,
+   "version": 5,
+   "center": {
+    "lat": 43.5297,
+    "lng": 5.4474
+   },
+   "bbox": {
+    "minLat": 43.45,
+    "maxLat": 43.65,
+    "minLng": 5.3,
+    "maxLng": 5.6
+   }
+  },
+  {
+   "code": "AMI",
+   "name": "Amiens",
+   "count": 16,
+   "destroyed": 0,
+   "version": 4,
+   "center": {
+    "lat": 49.8942,
+    "lng": 2.2957
+   },
+   "bbox": {
+    "minLat": 49.83,
+    "maxLat": 49.95,
+    "minLng": 2.22,
+    "maxLng": 2.35
+   }
+  },
+  {
+   "code": "AMS",
+   "name": "Amsterdam",
+   "count": 26,
+   "destroyed": 6,
+   "version": 6,
+   "center": {
+    "lat": 52.3676,
+    "lng": 4.9041
+   },
+   "bbox": {
+    "minLat": 52.28,
+    "maxLat": 52.45,
+    "minLng": 4.72,
+    "maxLng": 5.1
+   }
+  },
+  {
+   "code": "ANVR",
+   "name": "Anvers",
+   "count": 2,
+   "destroyed": 1,
+   "version": 5,
+   "center": {
+    "lat": 51.2194,
+    "lng": 4.4025
+   },
+   "bbox": {
+    "minLat": 51.1,
+    "maxLat": 51.35,
+    "minLng": 4.3,
+    "maxLng": 4.55
+   }
+  },
+  {
+   "code": "ANZR",
+   "name": "Anzère",
+   "count": 4,
+   "destroyed": 0,
+   "version": 5,
+   "center": {
+    "lat": 46.304457,
+    "lng": 7.391638
+   },
+   "bbox": {
+    "minLat": 46.25,
+    "maxLat": 46.36,
+    "minLng": 7.32,
+    "maxLng": 7.46
+   }
+  },
+  {
+   "code": "AVI",
+   "name": "Avignon",
+   "count": 41,
+   "destroyed": 11,
+   "version": 6,
+   "center": {
+    "lat": 43.9493,
+    "lng": 4.8055
+   },
+   "bbox": {
+    "minLat": 43.85,
+    "maxLat": 44.05,
+    "minLng": 4.75,
+    "maxLng": 4.95
+   }
+  },
+  {
+   "code": "BAB",
+   "name": "Biarritz Anglet-Bayonne",
+   "count": 60,
+   "destroyed": 6,
+   "version": 6,
+   "center": {
+    "lat": 43.483143,
+    "lng": -1.530272
+   },
+   "bbox": {
+    "minLat": 42.88,
+    "maxLat": 44.03,
+    "minLng": -2.16,
+    "maxLng": -0.97
+   }
+  },
+  {
+   "code": "BBO",
+   "name": "Bilbao",
+   "count": 40,
+   "destroyed": 9,
+   "version": 6,
+   "center": {
+    "lat": 43.261473,
+    "lng": -2.930698
+   },
+   "bbox": {
+    "minLat": 43,
+    "maxLat": 43.52,
+    "minLng": -3.2,
+    "maxLng": -2.67
+   }
+  },
+  {
+   "code": "BGK",
+   "name": "Bangkok",
+   "count": 44,
+   "destroyed": 24,
+   "version": 7,
+   "center": {
+    "lat": 13.7563,
+    "lng": 100.502
+   },
+   "bbox": {
+    "minLat": 13.5,
+    "maxLat": 14,
+    "minLng": 100.3,
+    "maxLng": 100.8
+   }
+  },
+  {
+   "code": "BRC",
+   "name": "Barcelone",
+   "count": 17,
+   "destroyed": 15,
+   "version": 6,
+   "center": {
+    "lat": 41.38332,
+    "lng": 2.172895
+   },
+   "bbox": {
+    "minLat": 41.13,
+    "maxLat": 41.64,
+    "minLng": 1.91,
+    "maxLng": 2.43
+   }
+  },
+  {
+   "code": "BRL",
+   "name": "Berlin",
+   "count": 11,
+   "destroyed": 1,
+   "version": 6,
+   "center": {
+    "lat": 52.52,
+    "lng": 13.405
+   },
+   "bbox": {
+    "minLat": 52.35,
+    "maxLat": 52.7,
+    "minLng": 13.1,
+    "maxLng": 13.8
+   }
+  },
+  {
+   "code": "BRN",
+   "name": "Berne",
+   "count": 29,
+   "destroyed": 10,
+   "version": 6,
+   "center": {
+    "lat": 46.9481,
+    "lng": 7.4474
+   },
+   "bbox": {
+    "minLat": 46.85,
+    "maxLat": 47.05,
+    "minLng": 7.35,
+    "maxLng": 7.6
+   }
+  },
+  {
+   "code": "BSL",
+   "name": "Bâle",
+   "count": 25,
+   "destroyed": 6,
+   "version": 6,
+   "center": {
+    "lat": 47.5596,
+    "lng": 7.5886
+   },
+   "bbox": {
+    "minLat": 47.48,
+    "maxLat": 47.62,
+    "minLng": 7.5,
+    "maxLng": 7.7
+   }
+  },
+  {
+   "code": "BTA",
+   "name": "Bastia",
+   "count": 34,
+   "destroyed": 3,
+   "version": 6,
+   "center": {
+    "lat": 42.700778,
+    "lng": 9.45079
+   },
+   "bbox": {
+    "minLat": 42.18,
+    "maxLat": 43.32,
+    "minLng": 8.94,
+    "maxLng": 9.99
+   }
+  },
+  {
+   "code": "BXL",
+   "name": "Bruxelles",
+   "count": 42,
+   "destroyed": 7,
+   "version": 6,
+   "center": {
+    "lat": 50.8503,
+    "lng": 4.3517
+   },
+   "bbox": {
+    "minLat": 50.75,
+    "maxLat": 50.95,
+    "minLng": 4.25,
+    "maxLng": 4.5
+   }
+  },
+  {
+   "code": "CAPF",
+   "name": "Cap-Ferret",
+   "count": 10,
+   "destroyed": 4,
+   "version": 6,
+   "center": {
+    "lat": 44.662923,
+    "lng": -1.240386
+   },
+   "bbox": {
+    "minLat": 44.12,
+    "maxLat": 45.21,
+    "minLng": -1.75,
+    "maxLng": -0.71
+   }
+  },
+  {
+   "code": "CAZ",
+   "name": "Côte d'Azur",
+   "count": 40,
+   "destroyed": 9,
+   "version": 5,
+   "center": {
+    "lat": 43.407,
+    "lng": 6.755
+   },
+   "bbox": {
+    "minLat": 42.95,
+    "maxLat": 44,
+    "minLng": 5.55,
+    "maxLng": 7.8
+   }
+  },
+  {
+   "code": "CCU",
+   "name": "Cancún",
+   "count": 3,
+   "destroyed": 0,
+   "version": 5,
+   "center": {
+    "lat": 21.164,
+    "lng": -86.765
+   },
+   "bbox": {
+    "minLat": 20.85,
+    "maxLat": 21.5,
+    "minLng": -87.2,
+    "maxLng": -86.65
+   }
+  },
+  {
+   "code": "CHAR",
+   "name": "Charleroi",
+   "count": 1,
+   "destroyed": 0,
+   "version": 5,
+   "center": {
+    "lat": 50.405413,
+    "lng": 4.449921
+   },
+   "bbox": {
+    "minLat": 50.35,
+    "maxLat": 50.47,
+    "minLng": 4.38,
+    "maxLng": 4.52
+   }
+  },
+  {
+   "code": "CLR",
+   "name": "Clermont-Ferrand",
+   "count": 47,
+   "version": 4,
+   "center": {
+    "lat": 45.800334,
+    "lng": 3.090138
+   },
+   "destroyed": 2
+  },
+  {
+   "code": "CON",
+   "name": "Contis",
+   "count": 2,
+   "destroyed": 0,
+   "version": 6,
+   "center": {
+    "lat": 44.092551,
+    "lng": -1.323003
+   },
+   "bbox": {
+    "minLat": 43.84,
+    "maxLat": 44.34,
+    "minLng": -1.57,
+    "maxLng": -1.07
+   }
+  },
+  {
+   "code": "DIJ",
+   "name": "Dijon",
+   "count": 6,
+   "destroyed": 0,
+   "version": 5,
+   "center": {
+    "lat": 47.3216,
+    "lng": 5.0415
+   },
+   "bbox": {
+    "minLat": 47.25,
+    "maxLat": 47.4,
+    "minLng": 4.95,
+    "maxLng": 5.15
+   }
+  },
+  {
+   "code": "DJBA",
+   "name": "Djerba",
+   "count": 58,
+   "version": 4,
+   "center": {
+    "lat": 33.807735,
+    "lng": 10.891873
+   },
+   "destroyed": 4
+  },
+  {
+   "code": "DJN",
+   "name": "Daejeon",
+   "count": 22,
+   "destroyed": 4,
+   "version": 6,
+   "center": {
+    "lat": 36.366028,
+    "lng": 127.381718
+   },
+   "bbox": {
+    "minLat": 35.83,
+    "maxLat": 36.9,
+    "minLng": 126.85,
+    "maxLng": 127.93
+   }
+  },
+  {
+   "code": "ELT",
+   "name": "Eilat",
+   "count": 2,
+   "destroyed": 0,
+   "version": 5,
+   "center": {
+    "lat": 29.531915,
+    "lng": 34.939717
+   },
+   "bbox": {
+    "minLat": 29.26,
+    "maxLat": 29.8,
+    "minLng": 34.67,
+    "maxLng": 35.2
+   }
+  },
+  {
+   "code": "FAO",
+   "name": "Faro",
+   "count": 4,
+   "version": 4,
+   "center": {
+    "lat": 37.018078,
+    "lng": -7.956933
+   },
+   "destroyed": 3
+  },
+  {
+   "code": "FKF",
+   "name": "Francfort",
+   "count": 14,
+   "destroyed": 0,
+   "version": 5,
+   "center": {
+    "lat": 50.115,
+    "lng": 8.682
+   },
+   "bbox": {
+    "minLat": 49.8,
+    "maxLat": 50.25,
+    "minLng": 8.45,
+    "maxLng": 8.85
+   }
+  },
+  {
+   "code": "FRQ",
+   "name": "Forcalquier",
+   "count": 4,
+   "destroyed": 0,
+   "version": 5,
+   "center": {
+    "lat": 43.959362,
+    "lng": 5.780969
+   },
+   "bbox": {
+    "minLat": 43.71,
+    "maxLat": 44.21,
+    "minLng": 5.53,
+    "maxLng": 6.03
+   }
+  },
+  {
+   "code": "FTBL",
+   "name": "Fontainebleau",
+   "count": 45,
+   "destroyed": 13,
+   "version": 6,
+   "center": {
+    "lat": 48.405,
+    "lng": 2.701
+   },
+   "bbox": {
+    "minLat": 48.15,
+    "maxLat": 48.65,
+    "minLng": 2.4,
+    "maxLng": 3
+   }
+  },
+  {
+   "code": "GNV",
+   "name": "Genève",
+   "count": 33,
+   "destroyed": 3,
+   "version": 7,
+   "center": {
+    "lat": 46.2044,
+    "lng": 6.1432
+   },
+   "bbox": {
+    "minLat": 46.15,
+    "maxLat": 46.3,
+    "minLng": 6.05,
+    "maxLng": 6.25
+   }
+  },
+  {
+   "code": "GRN",
+   "name": "Grenoble",
+   "count": 57,
+   "destroyed": 15,
+   "version": 6,
+   "center": {
+    "lat": 45.1885,
+    "lng": 5.7245
+   },
+   "bbox": {
+    "minLat": 45.1,
+    "maxLat": 45.25,
+    "minLng": 5.65,
+    "maxLng": 5.8
+   }
+  },
+  {
+   "code": "GRU",
+   "name": "Grude",
+   "count": 3,
+   "destroyed": 0,
+   "version": 6,
+   "center": {
+    "lat": 43.386892,
+    "lng": 17.38041
+   },
+   "bbox": {
+    "minLat": 43.3,
+    "maxLat": 43.48,
+    "minLng": 17.22,
+    "maxLng": 17.5
+   }
+  },
+  {
+   "code": "HALM",
+   "name": "Halmstad",
+   "count": 2,
+   "destroyed": 0,
+   "version": 5,
+   "center": {
+    "lat": 56.679103,
+    "lng": 12.773971
+   },
+   "bbox": {
+    "minLat": 56.43,
+    "maxLat": 56.93,
+    "minLng": 12.52,
+    "maxLng": 13.02
+   }
+  },
+  {
+   "code": "HK",
+   "name": "Hong Kong",
+   "count": 130,
+   "destroyed": 108,
+   "version": 7,
+   "center": {
+    "lat": 22.3193,
+    "lng": 114.169
+   },
+   "bbox": {
+    "minLat": 22.15,
+    "maxLat": 22.55,
+    "minLng": 113.8,
+    "maxLng": 114.4
+   }
+  },
+  {
+   "code": "IST",
+   "name": "Istanbul",
+   "count": 16,
+   "destroyed": 6,
+   "version": 6,
+   "center": {
+    "lat": 41.0082,
+    "lng": 28.9784
+   },
+   "bbox": {
+    "minLat": 40.85,
+    "maxLat": 41.25,
+    "minLng": 28.6,
+    "maxLng": 29.2
+   }
+  },
+  {
+   "code": "KAT",
+   "name": "Katmandu",
+   "count": 21,
+   "destroyed": 7,
+   "version": 6,
+   "center": {
+    "lat": 27.7172,
+    "lng": 85.324
+   },
+   "bbox": {
+    "minLat": 27.6,
+    "maxLat": 27.8,
+    "minLng": 85.2,
+    "maxLng": 85.45
+   }
+  },
+  {
+   "code": "KLN",
+   "name": "Cologne",
+   "count": 27,
+   "version": 4,
+   "center": {
+    "lat": 50.928348,
+    "lng": 6.972527
+   },
+   "destroyed": 4
+  },
+  {
+   "code": "LA",
+   "name": "Los Angeles",
+   "count": 214,
+   "destroyed": 189,
+   "version": 6,
+   "center": {
+    "lat": 34.0522,
+    "lng": -118.243
+   },
+   "bbox": {
+    "minLat": 33.7,
+    "maxLat": 34.35,
+    "minLng": -118.7,
+    "maxLng": -117.6
+   }
+  },
+  {
+   "code": "LBR",
+   "name": "Luberon",
+   "count": 8,
+   "destroyed": 2,
+   "version": 6,
+   "center": {
+    "lat": 43.860304,
+    "lng": 5.355548
+   },
+   "bbox": {
+    "minLat": 43.29,
+    "maxLat": 44.4,
+    "minLng": 4.64,
+    "maxLng": 6.18
+   }
+  },
+  {
+   "code": "LCT",
+   "name": "La Ciotat",
+   "count": 9,
+   "destroyed": 5,
+   "version": 6,
+   "center": {
+    "lat": 43.185047,
+    "lng": 5.61956
+   },
+   "bbox": {
+    "minLat": 42.92,
+    "maxLat": 43.45,
+    "minLng": 5.36,
+    "maxLng": 5.89
+   }
+  },
+  {
+   "code": "LDN",
+   "name": "London",
+   "count": 193,
+   "destroyed": 68,
+   "version": 7,
+   "center": {
+    "lat": 51.5074,
+    "lng": -0.1278
+   },
+   "bbox": {
+    "minLat": 51.28,
+    "maxLat": 51.7,
+    "minLng": -0.55,
+    "maxLng": 0.35
+   }
+  },
+  {
+   "code": "LIL",
+   "name": "Lille",
+   "count": 6,
+   "version": 4,
+   "center": {
+    "lat": 50.59408,
+    "lng": 3.046499
+   },
+   "destroyed": 1
+  },
+  {
+   "code": "LJU",
+   "name": "Ljubljana",
+   "count": 42,
+   "destroyed": 5,
+   "version": 7,
+   "center": {
+    "lat": 46.0569,
+    "lng": 14.5058
+   },
+   "bbox": {
+    "minLat": 46,
+    "maxLat": 46.12,
+    "minLng": 14.45,
+    "maxLng": 14.6
+   }
+  },
+  {
+   "code": "LSN",
+   "name": "Lausanne",
+   "count": 16,
+   "destroyed": 9,
+   "version": 6,
+   "center": {
+    "lat": 46.5197,
+    "lng": 6.6323
+   },
+   "bbox": {
+    "minLat": 46.48,
+    "maxLat": 46.58,
+    "minLng": 6.58,
+    "maxLng": 6.72
+   }
+  },
+  {
+   "code": "LY",
+   "name": "Lyon",
+   "count": 48,
+   "destroyed": 26,
+   "version": 5,
+   "center": {
+    "lat": 45.764,
+    "lng": 4.8357
+   },
+   "bbox": {
+    "minLat": 45.65,
+    "maxLat": 45.85,
+    "minLng": 4.75,
+    "maxLng": 5
+   }
+  },
+  {
+   "code": "MAN",
+   "name": "Manchester",
+   "count": 47,
+   "destroyed": 11,
+   "version": 5,
+   "center": {
+    "lat": 53.4808,
+    "lng": -2.2426
+   },
+   "bbox": {
+    "minLat": 53.4,
+    "maxLat": 53.55,
+    "minLng": -2.35,
+    "maxLng": -2.1
+   }
+  },
+  {
+   "code": "MARS",
+   "name": "Marseille",
+   "count": 97,
+   "destroyed": 24,
+   "version": 6,
+   "center": {
+    "lat": 43.2965,
+    "lng": 5.3698
+   },
+   "bbox": {
+    "minLat": 43.2,
+    "maxLat": 43.4,
+    "minLng": 5.3,
+    "maxLng": 5.55
+   }
+  },
+  {
+   "code": "MBSA",
+   "name": "Mombasa",
+   "count": 5,
+   "destroyed": 5,
+   "version": 5,
+   "center": {
+    "lat": -3.977181,
+    "lng": 39.706815
+   },
+   "bbox": {
+    "minLat": -4.56,
+    "maxLat": -3.14,
+    "minLng": 39.17,
+    "maxLng": 40.35
+   }
+  },
+  {
+   "code": "MEN",
+   "name": "Minorque",
+   "count": 5,
+   "destroyed": 1,
+   "version": 6,
+   "center": {
+    "lat": 40.012279,
+    "lng": 3.85219
+   },
+   "bbox": {
+    "minLat": 39.75,
+    "maxLat": 40.31,
+    "minLng": 3.57,
+    "maxLng": 4.14
+   }
+  },
+  {
+   "code": "MIA",
+   "name": "Miami",
+   "count": 80,
+   "destroyed": 63,
+   "version": 6,
+   "center": {
+    "lat": 25.7617,
+    "lng": -80.1918
+   },
+   "bbox": {
+    "minLat": 25.65,
+    "maxLat": 25.9,
+    "minLng": -80.3,
+    "maxLng": -80.1
+   }
+  },
+  {
+   "code": "MLB",
+   "name": "Melbourne",
+   "count": 16,
+   "destroyed": 3,
+   "version": 6,
+   "center": {
+    "lat": -37.814,
+    "lng": 144.963
+   },
+   "bbox": {
+    "minLat": -37.9,
+    "maxLat": -37.7,
+    "minLng": 144.8,
+    "maxLng": 145.1
+   }
+  },
+  {
+   "code": "MLGA",
+   "name": "Malaga",
+   "count": 29,
+   "destroyed": 24,
+   "version": 5,
+   "center": {
+    "lat": 36.7213,
+    "lng": -4.4214
+   },
+   "bbox": {
+    "minLat": 36.65,
+    "maxLat": 36.8,
+    "minLng": -4.55,
+    "maxLng": -4.35
+   }
+  },
+  {
+   "code": "MPL",
+   "name": "Montpellier",
+   "count": 38,
+   "destroyed": 1,
+   "version": 6,
+   "center": {
+    "lat": 43.6117,
+    "lng": 3.8777
+   },
+   "bbox": {
+    "minLat": 43.32,
+    "maxLat": 43.72,
+    "minLng": 3.62,
+    "maxLng": 3.98
+   }
+  },
+  {
+   "code": "MRAK",
+   "name": "Marrakech",
+   "count": 4,
+   "destroyed": 0,
+   "version": 5,
+   "center": {
+    "lat": 31.6295,
+    "lng": -7.9811
+   },
+   "bbox": {
+    "minLat": 30.84,
+    "maxLat": 32.14,
+    "minLng": -8.7,
+    "maxLng": -7.45
+   }
+  },
+  {
+   "code": "MTB",
+   "name": "Montauban",
+   "count": 11,
+   "destroyed": 2,
+   "version": 6,
+   "center": {
+    "lat": 44.016693,
+    "lng": 1.351914
+   },
+   "bbox": {
+    "minLat": 43.76,
+    "maxLat": 44.27,
+    "minLng": 1.1,
+    "maxLng": 1.6
+   }
+  },
+  {
+   "code": "MUN",
+   "name": "Munich",
+   "count": 18,
+   "destroyed": 1,
+   "version": 6,
+   "center": {
+    "lat": 48.1351,
+    "lng": 11.582
+   },
+   "bbox": {
+    "minLat": 48.05,
+    "maxLat": 48.25,
+    "minLng": 11.45,
+    "maxLng": 11.7
+   }
+  },
+  {
+   "code": "NA",
+   "name": "Nantes",
+   "count": 3,
+   "destroyed": 2,
+   "version": 6,
+   "center": {
+    "lat": 47.216183,
+    "lng": -1.545731
+   },
+   "bbox": {
+    "minLat": 46.97,
+    "maxLat": 47.47,
+    "minLng": -1.8,
+    "maxLng": -1.29
+   }
+  },
+  {
+   "code": "NCL",
+   "name": "Newcastle",
+   "count": 25,
+   "destroyed": 3,
+   "version": 6,
+   "center": {
+    "lat": 54.969838,
+    "lng": -1.608875
+   },
+   "bbox": {
+    "minLat": 54.71,
+    "maxLat": 55.23,
+    "minLng": -1.87,
+    "maxLng": -1.35
+   }
+  },
+  {
+   "code": "NIM",
+   "name": "Nîmes",
+   "count": 5,
+   "destroyed": 0,
+   "version": 5,
+   "center": {
+    "lat": 43.8367,
+    "lng": 4.3601
+   },
+   "bbox": {
+    "minLat": 43.8,
+    "maxLat": 43.9,
+    "minLng": 4.3,
+    "maxLng": 4.45
+   }
+  },
+  {
+   "code": "NOO",
+   "name": "Noordwijk",
+   "count": 10,
+   "destroyed": 0,
+   "version": 5,
+   "center": {
+    "lat": 52.218211,
+    "lng": 4.419613
+   },
+   "bbox": {
+    "minLat": 51.97,
+    "maxLat": 52.47,
+    "minLng": 4.17,
+    "maxLng": 4.67
+   }
+  },
+  {
+   "code": "NY",
+   "name": "New York",
+   "count": 192,
+   "destroyed": 173,
+   "version": 6,
+   "center": {
+    "lat": 40.7128,
+    "lng": -74.006
+   },
+   "bbox": {
+    "minLat": 40.48,
+    "maxLat": 40.93,
+    "minLng": -74.3,
+    "maxLng": -73.6
+   }
+  },
+  {
+   "code": "ORLN",
+   "name": "Orléans",
+   "count": 12,
+   "destroyed": 0,
+   "version": 4,
+   "center": {
+    "lat": 47.9029,
+    "lng": 1.9092
+   },
+   "bbox": {
+    "minLat": 47.85,
+    "maxLat": 48,
+    "minLng": 1.8,
+    "maxLng": 1.98
+   }
+  },
+  {
+   "code": "PA",
+   "name": "Paris",
+   "count": 1597,
+   "destroyed": 247,
+   "version": 9,
+   "center": {
+    "lat": 48.8566,
+    "lng": 2.3522
+   },
+   "bbox": {
+    "minLat": 48.5,
+    "maxLat": 49.1,
+    "minLng": 1.9,
+    "maxLng": 3
+   }
+  },
+  {
+   "code": "PAU",
+   "name": "Pau",
+   "count": 10,
+   "destroyed": 1,
+   "version": 5,
+   "center": {
+    "lat": 43.2951,
+    "lng": -0.3708
+   },
+   "bbox": {
+    "minLat": 43.25,
+    "maxLat": 43.35,
+    "minLng": -0.45,
+    "maxLng": -0.3
+   }
+  },
+  {
+   "code": "POTI",
+   "name": "Potosí",
+   "count": 52,
+   "destroyed": 13,
+   "version": 5,
+   "center": {
+    "lat": -19.591,
+    "lng": -65.752
+   },
+   "bbox": {
+    "minLat": -19.75,
+    "maxLat": -19.45,
+    "minLng": -65.9,
+    "maxLng": -65.65
+   }
+  },
+  {
+   "code": "PRP",
+   "name": "Perpignan",
+   "count": 8,
+   "destroyed": 0,
+   "version": 5,
+   "center": {
+    "lat": 42.6887,
+    "lng": 2.8948
+   },
+   "bbox": {
+    "minLat": 42.65,
+    "maxLat": 42.75,
+    "minLng": 2.85,
+    "maxLng": 3
+   }
+  },
+  {
+   "code": "PRT",
+   "name": "Perth",
+   "count": 26,
+   "destroyed": 17,
+   "version": 5,
+   "center": {
+    "lat": -31.964,
+    "lng": 115.83
+   },
+   "bbox": {
+    "minLat": -32.2,
+    "maxLat": -31.7,
+    "minLng": 115.6,
+    "maxLng": 116.05
+   }
+  },
+  {
+   "code": "RA",
+   "name": "Ravenne",
+   "count": 40,
+   "destroyed": 10,
+   "version": 6,
+   "center": {
+    "lat": 44.421317,
+    "lng": 12.196371
+   },
+   "bbox": {
+    "minLat": 43.86,
+    "maxLat": 44.99,
+    "minLng": 11.31,
+    "maxLng": 12.78
+   }
+  },
+  {
+   "code": "RBA",
+   "name": "Rabat",
+   "count": 17,
+   "destroyed": 8,
+   "version": 6,
+   "center": {
+    "lat": 33.9716,
+    "lng": -6.8498
+   },
+   "bbox": {
+    "minLat": 33.9,
+    "maxLat": 34.1,
+    "minLng": -6.9,
+    "maxLng": -6.75
+   }
+  },
+  {
+   "code": "RDU",
+   "name": "Redu",
+   "count": 6,
+   "destroyed": 2,
+   "version": 6,
+   "center": {
+    "lat": 50.002999,
+    "lng": 5.1489
+   },
+   "bbox": {
+    "minLat": 49.75,
+    "maxLat": 50.26,
+    "minLng": 4.9,
+    "maxLng": 5.41
+   }
+  },
+  {
+   "code": "REUN",
+   "name": "La Réunion",
+   "count": 11,
+   "destroyed": 0,
+   "version": 6,
+   "center": {
+    "lat": -20.9,
+    "lng": 55.5
+   },
+   "bbox": {
+    "minLat": -21.4,
+    "maxLat": -20.85,
+    "minLng": 55.2,
+    "maxLng": 55.85
+   }
+  },
+  {
+   "code": "RN",
+   "name": "Rennes",
+   "count": 4,
+   "destroyed": 0,
+   "version": 5,
+   "center": {
+    "lat": 48.111,
+    "lng": -1.679
+   },
+   "bbox": {
+    "minLat": 47.95,
+    "maxLat": 48.2,
+    "minLng": -1.85,
+    "maxLng": -1.5
+   }
+  },
+  {
+   "code": "ROM",
+   "name": "Rome",
+   "count": 75,
+   "destroyed": 17,
+   "version": 7,
+   "center": {
+    "lat": 41.9028,
+    "lng": 12.4964
+   },
+   "bbox": {
+    "minLat": 41.75,
+    "maxLat": 42,
+    "minLng": 12.35,
+    "maxLng": 12.75
+   }
+  },
+  {
+   "code": "RTD",
+   "name": "Rotterdam",
+   "count": 25,
+   "destroyed": 3,
+   "version": 6,
+   "center": {
+    "lat": 51.9225,
+    "lng": 4.4792
+   },
+   "bbox": {
+    "minLat": 51.85,
+    "maxLat": 52,
+    "minLng": 4.35,
+    "maxLng": 4.55
+   }
+  },
+  {
+   "code": "SD",
+   "name": "San Diego",
+   "count": 20,
+   "destroyed": 20,
+   "version": 6,
+   "center": {
+    "lat": 32.7157,
+    "lng": -117.161
+   },
+   "bbox": {
+    "minLat": 32.6,
+    "maxLat": 32.85,
+    "minLng": -117.3,
+    "maxLng": -117
+   }
+  },
+  {
+   "code": "SL",
+   "name": "Séoul",
+   "count": 14,
+   "destroyed": 2,
+   "version": 4,
+   "center": {
+    "lat": 37.561233,
+    "lng": 126.959511
+   },
+   "bbox": {
+    "minLat": 37.3,
+    "maxLat": 37.82,
+    "minLng": 126.67,
+    "maxLng": 127.24
+   }
+  },
+  {
+   "code": "SP",
+   "name": "São Paulo",
+   "count": 52,
+   "destroyed": 36,
+   "version": 6,
+   "center": {
+    "lat": -23.55,
+    "lng": -46.633
+   },
+   "bbox": {
+    "minLat": -23.7,
+    "maxLat": -23.45,
+    "minLng": -46.8,
+    "maxLng": -46.5
+   }
+  },
+  {
+   "code": "TK",
+   "name": "Tokyo",
+   "count": 123,
+   "destroyed": 109,
+   "version": 5,
+   "center": {
+    "lat": 35.6762,
+    "lng": 139.6503
+   },
+   "bbox": {
+    "minLat": 35.5,
+    "maxLat": 35.85,
+    "minLng": 139.4,
+    "maxLng": 139.9
+   }
+  },
+  {
+   "code": "TLS",
+   "name": "Toulouse",
+   "count": 11,
+   "version": 4,
+   "center": {
+    "lat": 43.695205,
+    "lng": 1.353076
+   },
+   "destroyed": 3
+  },
+  {
+   "code": "VLMO",
+   "name": "Valmorel",
+   "count": 3,
+   "destroyed": 1,
+   "version": 6,
+   "center": {
+    "lat": 45.465017,
+    "lng": 6.450343
+   },
+   "bbox": {
+    "minLat": 45.21,
+    "maxLat": 45.73,
+    "minLng": 6.19,
+    "maxLng": 6.71
+   }
+  },
+  {
+   "code": "VRN",
+   "name": "Varanasi",
+   "count": 12,
+   "destroyed": 7,
+   "version": 5,
+   "center": {
+    "lat": 25.301,
+    "lng": 83.008
+   },
+   "bbox": {
+    "minLat": 25.15,
+    "maxLat": 25.55,
+    "minLng": 82.85,
+    "maxLng": 83.2
+   }
+  },
+  {
+   "code": "VRS",
+   "name": "Versailles",
+   "count": 42,
+   "destroyed": 16,
+   "version": 7,
+   "center": {
+    "lat": 48.80571,
+    "lng": 2.128069
+   },
+   "bbox": {
+    "minLat": 48.55,
+    "maxLat": 49.08,
+    "minLng": 1.86,
+    "maxLng": 2.41
+   }
+  },
+  {
+   "code": "VSB",
+   "name": "Visby",
+   "count": 3,
+   "destroyed": 0,
+   "version": 5,
+   "center": {
+    "lat": 57.638922,
+    "lng": 18.291373
+   },
+   "bbox": {
+    "minLat": 57.39,
+    "maxLat": 57.89,
+    "minLng": 18.04,
+    "maxLng": 18.54
+   }
+  },
+  {
+   "code": "WN",
+   "name": "Vienne",
+   "count": 56,
+   "destroyed": 6,
+   "version": 7,
+   "center": {
+    "lat": 48.2082,
+    "lng": 16.3738
+   },
+   "bbox": {
+    "minLat": 48.15,
+    "maxLat": 48.25,
+    "minLng": 16.3,
+    "maxLng": 16.45
+   }
+  }
+ ]
 }
