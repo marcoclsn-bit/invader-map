@@ -1,8 +1,8 @@
 {
-  "version": 6,
-  "updatedAt": "2026-07-19",
+  "version": 7,
+  "updatedAt": "2026-08-13",
   "city": "LSN",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 16,
   "invaders": [
     {
@@ -17,6 +17,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LSN/LSN_01-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LSN/LSN_01-septembre2023.jpg",
       "datePosed": "2000-07-05"
     },
     {
@@ -31,6 +32,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LSN/LSN_02-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LSN/LSN_02-septembre2020.jpg",
       "datePosed": "2000-07-05"
     },
     {
@@ -45,6 +47,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LSN/LSN_04-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LSN/LSN_04-septembre2016.jpg",
       "datePosed": "2000-07-05"
     },
     {
@@ -59,6 +62,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LSN/LSN_05-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LSN/LSN_05-juin2023.jpg",
       "datePosed": "2000-07-05"
     },
     {
@@ -87,6 +91,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LSN/LSN_08-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LSN/LSN_08-aout2026.jpg",
       "datePosed": "2000-07-05"
     },
     {
@@ -157,6 +162,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LSN/LSN_13-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LSN/LSN_13-mai2025.jpg",
       "datePosed": "2000-07-07"
     },
     {
@@ -171,6 +177,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LSN/LSN_14-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LSN/LSN_14-mars2022.jpg",
       "datePosed": "2000-07-07"
     },
     {
@@ -185,6 +192,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LSN/LSN_15-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LSN/LSN_15-mai2025.jpg",
       "datePosed": "2000-07-07"
     },
     {
@@ -199,6 +207,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LSN/LSN_16-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LSN/LSN_16-avril2026.jpg",
       "datePosed": "2000-07-07"
     },
     {

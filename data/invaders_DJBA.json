@@ -1,8 +1,8 @@
 {
-  "version": 4,
-  "updatedAt": "2026-07-19",
+  "version": 5,
+  "updatedAt": "2026-08-13",
   "city": "DJBA",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 58,
   "invaders": [
     {
@@ -15,7 +15,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_01-grosplan.png",
-      "datePosed": "2019-11-11"
+      "datePosed": "2019-11-11",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_01-decembre2019.jpg"
     },
     {
       "id": "DJBA_02",
@@ -27,7 +28,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_02-grosplan.png",
-      "datePosed": "2019-11-11"
+      "datePosed": "2019-11-11",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_02-decembre2019.jpg"
     },
     {
       "id": "DJBA_03",
@@ -39,7 +41,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_03-grosplan.png",
-      "datePosed": "2019-11-11"
+      "datePosed": "2019-11-11",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_03-decembre2019.jpg"
     },
     {
       "id": "DJBA_04",
@@ -51,7 +54,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_04-grosplan.png",
-      "datePosed": "2019-11-11"
+      "datePosed": "2019-11-11",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_04-decembre2019.jpg"
     },
     {
       "id": "DJBA_05",
@@ -63,7 +67,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_05-grosplan.png",
-      "datePosed": "2019-11-11"
+      "datePosed": "2019-11-11",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_05-avril2024.jpg"
     },
     {
       "id": "DJBA_06",
@@ -75,7 +80,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_06-grosplan.png",
-      "datePosed": "2019-11-11"
+      "datePosed": "2019-11-11",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_06-decembre2019.jpg"
     },
     {
       "id": "DJBA_07",
@@ -87,7 +93,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_07-grosplan.png",
-      "datePosed": "2019-11-12"
+      "datePosed": "2019-11-12",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_07-decembre2019.jpg"
     },
     {
       "id": "DJBA_08",
@@ -99,7 +106,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_08-grosplan.png",
-      "datePosed": "2019-11-12"
+      "datePosed": "2019-11-12",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_08-fevrier2023.jpg"
     },
     {
       "id": "DJBA_09",
@@ -111,7 +119,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_09-grosplan.png",
-      "datePosed": "2019-11-12"
+      "datePosed": "2019-11-12",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_09-decembre2019.jpg"
     },
     {
       "id": "DJBA_10",
@@ -123,7 +132,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_10-grosplan.png",
-      "datePosed": "2019-11-12"
+      "datePosed": "2019-11-12",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_10-decembre2019.jpg"
     },
     {
       "id": "DJBA_11",
@@ -135,7 +145,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_11-grosplan.png",
-      "datePosed": "2019-11-12"
+      "datePosed": "2019-11-12",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_11-decembre2019.jpg"
     },
     {
       "id": "DJBA_12",
@@ -147,7 +158,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_12-grosplan.png",
-      "datePosed": "2019-11-12"
+      "datePosed": "2019-11-12",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_12-mars2022.jpg"
     },
     {
       "id": "DJBA_13",
@@ -159,7 +171,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_13-grosplan.png",
-      "datePosed": "2019-11-12"
+      "datePosed": "2019-11-12",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_13-decembre2019.jpg"
     },
     {
       "id": "DJBA_14",
@@ -171,7 +184,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_14-grosplan.png",
-      "datePosed": "2019-11-12"
+      "datePosed": "2019-11-12",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_14-decembre2019.jpg"
     },
     {
       "id": "DJBA_15",
@@ -183,7 +197,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_15-grosplan.png",
-      "datePosed": "2019-11-12"
+      "datePosed": "2019-11-12",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_15-decembre2019.jpg"
     },
     {
       "id": "DJBA_16",
@@ -195,7 +210,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_16-grosplan.png",
-      "datePosed": "2019-11-12"
+      "datePosed": "2019-11-12",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_16-mars2022.jpg"
     },
     {
       "id": "DJBA_17",
@@ -207,7 +223,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_17-grosplan.png",
-      "datePosed": "2019-11-12"
+      "datePosed": "2019-11-12",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_17-decembre2019.jpg"
     },
     {
       "id": "DJBA_18",
@@ -219,7 +236,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_18-grosplan.png",
-      "datePosed": "2019-11-13"
+      "datePosed": "2019-11-13",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_18-mars2022.jpg"
     },
     {
       "id": "DJBA_19",
@@ -231,7 +249,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_19-grosplan.png",
-      "datePosed": "2019-11-13"
+      "datePosed": "2019-11-13",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_19-decembre2019.jpg"
     },
     {
       "id": "DJBA_20",
@@ -243,7 +262,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_20-grosplan.png",
-      "datePosed": "2019-11-13"
+      "datePosed": "2019-11-13",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_20-avril2026.jpg"
     },
     {
       "id": "DJBA_21",
@@ -255,7 +275,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_21-grosplan.png",
-      "datePosed": "2019-11-13"
+      "datePosed": "2019-11-13",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_21-mars2025.jpg"
     },
     {
       "id": "DJBA_22",
@@ -267,7 +288,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_22-grosplan.png",
-      "datePosed": "2019-11-14"
+      "datePosed": "2019-11-14",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_22-mars2025.jpg"
     },
     {
       "id": "DJBA_23",
@@ -279,7 +301,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_23-grosplan.png",
-      "datePosed": "2019-11-14"
+      "datePosed": "2019-11-14",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_23-decembre2019.jpg"
     },
     {
       "id": "DJBA_24",
@@ -291,7 +314,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_24-grosplan.png",
-      "datePosed": "2019-11-14"
+      "datePosed": "2019-11-14",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_24-janvier2022.jpg"
     },
     {
       "id": "DJBA_25",
@@ -303,7 +327,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_25-grosplan.png",
-      "datePosed": "2019-11-14"
+      "datePosed": "2019-11-14",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_25-decembre2025.jpg"
     },
     {
       "id": "DJBA_26",
@@ -315,7 +340,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_26-grosplan.png",
-      "datePosed": "2019-11-14"
+      "datePosed": "2019-11-14",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_26-avril2026.jpg"
     },
     {
       "id": "DJBA_27",
@@ -327,7 +353,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_27-grosplan.png",
-      "datePosed": "2019-11-14"
+      "datePosed": "2019-11-14",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_27-avril2026.jpg"
     },
     {
       "id": "DJBA_28",
@@ -339,7 +366,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_28-grosplan.png",
-      "datePosed": "2019-11-15"
+      "datePosed": "2019-11-15",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_28-mars2025.jpg"
     },
     {
       "id": "DJBA_29",
@@ -351,7 +379,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_29-grosplan.png",
-      "datePosed": "2019-11-15"
+      "datePosed": "2019-11-15",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_29-decembre2019.jpg"
     },
     {
       "id": "DJBA_30",
@@ -363,7 +392,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_30-grosplan.png",
-      "datePosed": "2019-11-15"
+      "datePosed": "2019-11-15",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_30-mars2022.jpg"
     },
     {
       "id": "DJBA_31",
@@ -375,7 +405,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_31-grosplan.png",
-      "datePosed": "2019-11-15"
+      "datePosed": "2019-11-15",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_31-decembre2019.jpg"
     },
     {
       "id": "DJBA_32",
@@ -387,7 +418,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_32-grosplan.png",
-      "datePosed": "2019-11-16"
+      "datePosed": "2019-11-16",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_32-janvier2020.jpg"
     },
     {
       "id": "DJBA_33",
@@ -399,7 +431,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_33-grosplan.png",
-      "datePosed": "2019-11-16"
+      "datePosed": "2019-11-16",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_33-juin2024.jpg"
     },
     {
       "id": "DJBA_34",
@@ -411,7 +444,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_34-grosplan.png",
-      "datePosed": "2019-11-16"
+      "datePosed": "2019-11-16",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_34-decembre2019.jpg"
     },
     {
       "id": "DJBA_35",
@@ -423,7 +457,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_35-grosplan.png",
-      "datePosed": "2019-11-17"
+      "datePosed": "2019-11-17",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_35-aout2024.jpg"
     },
     {
       "id": "DJBA_36",
@@ -435,7 +470,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_36-grosplan.png",
-      "datePosed": "2019-11-17"
+      "datePosed": "2019-11-17",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_36-decembre2019.jpg"
     },
     {
       "id": "DJBA_37",
@@ -447,7 +483,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_37-grosplan.png",
-      "datePosed": "2019-11-17"
+      "datePosed": "2019-11-17",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_37-janvier2020.jpg"
     },
     {
       "id": "DJBA_38",
@@ -459,7 +496,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_38-grosplan.png",
-      "datePosed": "2019-11-18"
+      "datePosed": "2019-11-18",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_38-mai2023.jpg"
     },
     {
       "id": "DJBA_39",
@@ -471,7 +509,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_39-grosplan.png",
-      "datePosed": "2019-11-18"
+      "datePosed": "2019-11-18",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_39-mai2026.jpg"
     },
     {
       "id": "DJBA_40",
@@ -483,7 +522,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_40-grosplan.png",
-      "datePosed": "2019-11-18"
+      "datePosed": "2019-11-18",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_40-decembre2019.jpg"
     },
     {
       "id": "DJBA_41",
@@ -495,7 +535,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_41-grosplan.png",
-      "datePosed": "2019-11-19"
+      "datePosed": "2019-11-19",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_41-mars2025.jpg"
     },
     {
       "id": "DJBA_42",
@@ -507,7 +548,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_42-grosplan.png",
-      "datePosed": "2019-11-19"
+      "datePosed": "2019-11-19",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_42-decembre2019.jpg"
     },
     {
       "id": "DJBA_43",
@@ -519,7 +561,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_43-grosplan.png",
-      "datePosed": "2019-11-20"
+      "datePosed": "2019-11-20",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_43-decembre2019.jpg"
     },
     {
       "id": "DJBA_44",
@@ -531,7 +574,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_44-grosplan.png",
-      "datePosed": "2019-11-20"
+      "datePosed": "2019-11-20",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_44-juillet2026.jpg"
     },
     {
       "id": "DJBA_45",
@@ -543,7 +587,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_45-grosplan.png",
-      "datePosed": "2019-11-20"
+      "datePosed": "2019-11-20",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_45-decembre2019.jpg"
     },
     {
       "id": "DJBA_46",
@@ -555,7 +600,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_46-grosplan.png",
-      "datePosed": "2019-11-20"
+      "datePosed": "2019-11-20",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_46-decembre2019.jpg"
     },
     {
       "id": "DJBA_47",
@@ -567,7 +613,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_47-grosplan.png",
-      "datePosed": "2019-11-20"
+      "datePosed": "2019-11-20",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_47-janvier2020.jpg"
     },
     {
       "id": "DJBA_48",
@@ -579,7 +626,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_48-grosplan.png",
-      "datePosed": "2019-11-21"
+      "datePosed": "2019-11-21",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_48-decembre2019.jpg"
     },
     {
       "id": "DJBA_49",
@@ -591,7 +639,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_49-grosplan.png",
-      "datePosed": "2019-11-21"
+      "datePosed": "2019-11-21",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_49-decembre2019.jpg"
     },
     {
       "id": "DJBA_50",
@@ -603,7 +652,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_50-grosplan.png",
-      "datePosed": "2019-11-21"
+      "datePosed": "2019-11-21",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_50-decembre2019.jpg"
     },
     {
       "id": "DJBA_51",
@@ -615,7 +665,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_51-grosplan.png",
-      "datePosed": "2019-11-21"
+      "datePosed": "2019-11-21",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_51-decembre2019.jpg"
     },
     {
       "id": "DJBA_52",
@@ -627,7 +678,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_52-grosplan.png",
-      "datePosed": "2019-11-21"
+      "datePosed": "2019-11-21",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_52-decembre2019.jpg"
     },
     {
       "id": "DJBA_53",
@@ -639,7 +691,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_53-grosplan.png",
-      "datePosed": "2019-11-21"
+      "datePosed": "2019-11-21",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_53-decembre2019.jpg"
     },
     {
       "id": "DJBA_54",
@@ -651,7 +704,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_54-grosplan.png",
-      "datePosed": "2019-11-21"
+      "datePosed": "2019-11-21",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_54-decembre2019.jpg"
     },
     {
       "id": "DJBA_55",
@@ -663,7 +717,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_55-grosplan.png",
-      "datePosed": "2019-11-22"
+      "datePosed": "2019-11-22",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_55-decembre2019.jpg"
     },
     {
       "id": "DJBA_56",
@@ -675,7 +730,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_56-grosplan.png",
-      "datePosed": "2019-11-22"
+      "datePosed": "2019-11-22",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_56-decembre2019.jpg"
     },
     {
       "id": "DJBA_57",
@@ -687,7 +743,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_57-grosplan.png",
-      "datePosed": "2019-11-22"
+      "datePosed": "2019-11-22",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_57-decembre2019.jpg"
     },
     {
       "id": "DJBA_58",
@@ -699,7 +756,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJBA/DJBA_58-grosplan.png",
-      "datePosed": "2019-11-22"
+      "datePosed": "2019-11-22",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJBA/DJBA_58-decembre2019.jpg"
     }
   ]
 }

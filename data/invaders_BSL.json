@@ -1,8 +1,8 @@
 {
-  "version": 6,
-  "updatedAt": "2026-07-19",
+  "version": 7,
+  "updatedAt": "2026-08-13",
   "city": "BSL",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 25,
   "invaders": [
     {
@@ -31,6 +31,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BSL/BSL_02-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BSL/BSL_02-septembre2016.jpg",
       "datePosed": "2013-06-03"
     },
     {
@@ -45,6 +46,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BSL/BSL_03-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BSL/BSL_03-septembre2016.jpg",
       "datePosed": "2013-06-03"
     },
     {
@@ -59,6 +61,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BSL/BSL_04-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BSL/BSL_04-septembre2016.jpg",
       "datePosed": "2013-06-03"
     },
     {
@@ -73,6 +76,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BSL/BSL_05-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BSL/BSL_05-mars2026.jpg",
       "datePosed": "2013-06-03"
     },
     {
@@ -87,6 +91,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BSL/BSL_06-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BSL/BSL_06-septembre2016.jpg",
       "datePosed": "2013-06-04"
     },
     {
@@ -101,6 +106,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BSL/BSL_07-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BSL/BSL_07-septembre2016.jpg",
       "datePosed": "2013-06-04"
     },
     {
@@ -115,6 +121,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BSL/BSL_08-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BSL/BSL_08-septembre2016.jpg",
       "datePosed": "2013-06-04"
     },
     {
@@ -129,6 +136,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BSL/BSL_09-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BSL/BSL_09-avril2026.jpg",
       "datePosed": "2013-06-04"
     },
     {
@@ -143,6 +151,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BSL/BSL_10-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BSL/BSL_10-septembre2016.jpg",
       "datePosed": "2013-06-04"
     },
     {
@@ -157,6 +166,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BSL/BSL_11-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BSL/BSL_11-septembre2016.jpg",
       "datePosed": "2013-06-04"
     },
     {
@@ -185,6 +195,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BSL/BSL_13-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BSL/BSL_13-septembre2016.jpg",
       "datePosed": "2013-06-04"
     },
     {
@@ -199,6 +210,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BSL/BSL_14-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BSL/BSL_14-septembre2016.jpg",
       "datePosed": "2013-06-04"
     },
     {
@@ -213,6 +225,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BSL/BSL_15-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BSL/BSL_15-septembre2016.jpg",
       "datePosed": "2013-06-05"
     },
     {
@@ -227,6 +240,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BSL/BSL_16-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BSL/BSL_16-janvier2022.jpg",
       "datePosed": "2013-06-05"
     },
     {
@@ -241,6 +255,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BSL/BSL_17-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BSL/BSL_17-avril2024.jpg",
       "datePosed": "2013-06-05"
     },
     {
@@ -255,6 +270,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BSL/BSL_18-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BSL/BSL_18-septembre2016.jpg",
       "datePosed": "2013-06-05"
     },
     {
@@ -269,6 +285,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BSL/BSL_19-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BSL/BSL_19-mars2026.jpg",
       "datePosed": "2013-06-05"
     },
     {
@@ -283,6 +300,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BSL/BSL_20-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BSL/BSL_20-septembre2016.jpg",
       "datePosed": "2013-06-06"
     },
     {
@@ -297,6 +315,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BSL/BSL_21-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BSL/BSL_21-septembre2016.jpg",
       "datePosed": "2013-06-06"
     },
     {
@@ -311,6 +330,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BSL/BSL_22-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BSL/BSL_22-septembre2023.jpg",
       "datePosed": "2013-06-06"
     },
     {
@@ -325,6 +345,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BSL/BSL_23-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BSL/BSL_23-septembre2016.jpg",
       "datePosed": "2013-06-06"
     },
     {
@@ -339,6 +360,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BSL/BSL_24-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BSL/BSL_24-septembre2023.jpg",
       "datePosed": "2013-06-06"
     },
     {

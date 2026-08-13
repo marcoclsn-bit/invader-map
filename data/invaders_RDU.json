@@ -1,8 +1,8 @@
 {
-  "version": 6,
-  "updatedAt": "2026-07-19",
+  "version": 7,
+  "updatedAt": "2026-08-13",
   "city": "RDU",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 6,
   "invaders": [
     {
@@ -59,6 +59,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RDU/RDU_04-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RDU/RDU_04-septembre2025.jpg",
       "datePosed": "2015-02-23"
     },
     {
@@ -73,6 +74,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RDU/RDU_05-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RDU/RDU_05-juillet2022.jpg",
       "datePosed": "2015-02-23"
     },
     {

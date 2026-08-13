@@ -1,8 +1,8 @@
 {
-  "version": 6,
-  "updatedAt": "2026-07-19",
+  "version": 7,
+  "updatedAt": "2026-08-13",
   "city": "RTD",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 25,
   "invaders": [
     {
@@ -17,6 +17,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RTD/RTD_01-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RTD/RTD_01-juillet2020.jpg",
       "datePosed": "2001-10-31"
     },
     {
@@ -45,6 +46,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RTD/RTD_03-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RTD/RTD_03-mai2017.jpg",
       "datePosed": "2001-10-31"
     },
     {
@@ -87,6 +89,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RTD/RTD_06-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RTD/RTD_06-mai2017.jpg",
       "datePosed": "2001-10-31"
     },
     {
@@ -101,6 +104,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RTD/RTD_07-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RTD/RTD_07-mai2026.jpg",
       "datePosed": "2001-11-01"
     },
     {
@@ -115,6 +119,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RTD/RTD_08-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RTD/RTD_08-aout2022.jpg",
       "datePosed": "2001-11-01"
     },
     {
@@ -129,6 +134,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RTD/RTD_09-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RTD/RTD_09-mai2017.jpg",
       "datePosed": "2001-11-01"
     },
     {
@@ -157,6 +163,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RTD/RTD_11-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RTD/RTD_11-mai2017.jpg",
       "datePosed": "2001-11-01"
     },
     {
@@ -171,6 +178,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RTD/RTD_12-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RTD/RTD_12-avril2024.jpg",
       "datePosed": "2001-11-01"
     },
     {
@@ -185,6 +193,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RTD/RTD_13-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RTD/RTD_13-mai2017.jpg",
       "datePosed": "2001-11-01"
     },
     {
@@ -199,6 +208,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RTD/RTD_14-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RTD/RTD_14-aout2025.jpg",
       "datePosed": "2001-11-01"
     },
     {
@@ -213,6 +223,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RTD/RTD_15-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RTD/RTD_15-mai2017.jpg",
       "datePosed": "2001-11-02"
     },
     {
@@ -241,6 +252,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RTD/RTD_17-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RTD/RTD_17-mai2017.jpg",
       "datePosed": "2001-11-02"
     },
     {
@@ -269,6 +281,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RTD/RTD_19-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RTD/RTD_19-mai2017.jpg",
       "datePosed": "2001-11-02"
     },
     {
@@ -283,6 +296,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RTD/RTD_20-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RTD/RTD_20-juillet2021.jpg",
       "datePosed": "2001-11-03"
     },
     {
@@ -297,6 +311,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RTD/RTD_21-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RTD/RTD_21-mai2017.jpg",
       "datePosed": "2001-11-03"
     },
     {
@@ -325,6 +340,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RTD/RTD_23-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RTD/RTD_23-mai2017.jpg",
       "datePosed": "2001-11-03"
     },
     {
@@ -339,6 +355,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RTD/RTD_24-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RTD/RTD_24-octobre2022.jpg",
       "datePosed": "2001-11-03"
     },
     {
@@ -353,6 +370,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RTD/RTD_25-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RTD/RTD_25-mai2017.jpg",
       "datePosed": "2001-11-03"
     }
   ]

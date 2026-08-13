@@ -1,8 +1,8 @@
 {
-  "version": 6,
-  "updatedAt": "2026-07-19",
+  "version": 7,
+  "updatedAt": "2026-08-13",
   "city": "DJN",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 22,
   "invaders": [
     {
@@ -73,6 +73,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_05-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJN/DJN_05-avril2018.jpg",
       "datePosed": "2009-09-27"
     },
     {
@@ -101,6 +102,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_07-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJN/DJN_07-avril2018.jpg",
       "datePosed": "2009-09-27"
     },
     {
@@ -129,6 +131,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_09-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJN/DJN_09-octobre2022.jpg",
       "datePosed": "2009-09-28"
     },
     {
@@ -143,6 +146,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_10-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJN/DJN_10-octobre2022.jpg",
       "datePosed": "2009-09-28"
     },
     {
@@ -185,6 +189,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_14-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJN/DJN_14-mars2024.jpg",
       "datePosed": "2009-09-29"
     },
     {
@@ -213,6 +218,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_16-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJN/DJN_16-juin2018.jpg",
       "datePosed": "2009-09-29"
     },
     {
@@ -241,6 +247,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_18-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJN/DJN_18-decembre2022.jpg",
       "datePosed": "2009-10-01"
     },
     {
@@ -255,6 +262,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_19-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJN/DJN_19-juin2018.jpg",
       "datePosed": "2009-10-01"
     },
     {
@@ -269,6 +277,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_20-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJN/DJN_20-mars2025.jpg",
       "datePosed": "2009-10-01"
     },
     {
@@ -283,6 +292,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_21-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJN/DJN_21-fevrier2025.jpg",
       "datePosed": "2009-10-01"
     },
     {
@@ -297,6 +307,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_22-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJN/DJN_22-avril2018.jpg",
       "datePosed": "2009-10-01"
     },
     {
@@ -311,6 +322,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/DJN/DJN_23-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DJN/DJN_23-mars2023.jpg",
       "datePosed": "2009-10-02"
     }
   ]

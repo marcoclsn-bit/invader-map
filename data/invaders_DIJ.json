@@ -1,8 +1,8 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-19",
+  "version": 6,
+  "updatedAt": "2026-08-13",
   "city": "DIJ",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 6,
   "invaders": [
     {
@@ -17,6 +17,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/DIJ/DIJ_01-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DIJ/DIJ_01-juillet2019.jpg",
       "datePosed": "2019-07-06"
     },
     {
@@ -31,6 +32,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/DIJ/DIJ_02-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DIJ/DIJ_02-juillet2019.jpg",
       "datePosed": "2019-07-06"
     },
     {
@@ -45,6 +47,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/DIJ/DIJ_03-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DIJ/DIJ_03-juillet2019.jpg",
       "datePosed": "2019-07-06"
     },
     {
@@ -59,6 +62,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/DIJ/DIJ_04-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DIJ/DIJ_04-juillet2019.jpg",
       "datePosed": "2019-07-06"
     },
     {
@@ -73,6 +77,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/DIJ/DIJ_05-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DIJ/DIJ_05-juillet2019.jpg",
       "datePosed": "2019-07-06"
     },
     {
@@ -87,6 +92,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/DIJ/DIJ_06-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/DIJ/DIJ_06-juillet2019.jpg",
       "datePosed": "2019-07-06"
     }
   ]

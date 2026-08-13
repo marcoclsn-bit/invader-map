@@ -1,8 +1,8 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-19",
+  "version": 6,
+  "updatedAt": "2026-08-13",
   "city": "NOO",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 10,
   "invaders": [
     {
@@ -115,6 +115,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NOO/NOO_08-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NOO/NOO_08-juin2017.jpg",
       "datePosed": "2015-06-03"
     },
     {
@@ -129,6 +130,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NOO/NOO_09-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NOO/NOO_09-juin2017.jpg",
       "datePosed": "2015-06-03"
     },
     {
@@ -143,6 +145,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NOO/NOO_10-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NOO/NOO_10-juin2017.jpg",
       "datePosed": "2015-06-03"
     }
   ]

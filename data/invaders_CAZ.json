@@ -1,9 +1,9 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-19",
+  "version": 6,
+  "updatedAt": "2026-08-13",
   "city": "CAZ",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
-  "_baseCount": 39,
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
+  "_baseCount": 40,
   "invaders": [
     {
       "id": "CAZ_01",
@@ -17,6 +17,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_01-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_01-septembre2017.jpg",
       "datePosed": "2007-05-12"
     },
     {
@@ -31,6 +32,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_02-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_02-septembre2019.jpg",
       "datePosed": "2007-05-12"
     },
     {
@@ -45,6 +47,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_03-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_03-septembre2019.jpg",
       "datePosed": "2007-05-14"
     },
     {
@@ -59,6 +62,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_04-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_04-fevrier2021.jpg",
       "datePosed": "2007-05-14"
     },
     {
@@ -73,6 +77,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_05-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_05-mai2024.jpg",
       "datePosed": "2007-05-14"
     },
     {
@@ -87,6 +92,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_06-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_06-septembre2021.jpg",
       "datePosed": "2007-05-15"
     },
     {
@@ -101,6 +107,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_07-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_07-juin2015.jpg",
       "datePosed": "2007-05-15"
     },
     {
@@ -115,6 +122,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_08-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_08-juin2015.jpg",
       "datePosed": "2007-05-16"
     },
     {
@@ -129,6 +137,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_09-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_09-septembre2019.jpg",
       "datePosed": "2007-05-16"
     },
     {
@@ -143,6 +152,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_10-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_10-septembre2019.jpg",
       "datePosed": "2007-05-16"
     },
     {
@@ -157,6 +167,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_11-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_11-septembre2016.jpg",
       "datePosed": "2007-05-16"
     },
     {
@@ -171,6 +182,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_12-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_12-septembre2016.jpg",
       "datePosed": "2007-05-17"
     },
     {
@@ -185,6 +197,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_13-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_13-octobre2021.jpg",
       "datePosed": "2007-05-17"
     },
     {
@@ -199,6 +212,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_14-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_14-septembre2021.jpg",
       "datePosed": "2007-05-17"
     },
     {
@@ -213,6 +227,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_15-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_15-aout2025.jpg",
       "datePosed": "2007-05-18"
     },
     {
@@ -227,6 +242,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_16-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_16-fevrier2026.jpg",
       "datePosed": "2007-05-18"
     },
     {
@@ -255,6 +271,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_18-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_18-juin2021.jpg",
       "datePosed": "2007-05-19"
     },
     {
@@ -269,6 +286,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_19-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_19-septembre2023.jpg",
       "datePosed": "2007-05-19"
     },
     {
@@ -283,6 +301,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_20-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_20-septembre2019.jpg",
       "datePosed": "2007-05-19"
     },
     {
@@ -297,6 +316,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_21-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_21-archive.jpg",
       "datePosed": "2007-05-19"
     },
     {
@@ -325,6 +345,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_23-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_23-septembre2016.jpg",
       "datePosed": "2007-05-21"
     },
     {
@@ -339,6 +360,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_24-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_24-fevrier2025.jpg",
       "datePosed": "2007-05-21"
     },
     {
@@ -353,6 +375,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_25-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_25-octobre2025.jpg",
       "datePosed": "2007-05-22"
     },
     {
@@ -367,6 +390,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_26-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_26-fevrier2017.jpg",
       "datePosed": "2007-05-22"
     },
     {
@@ -409,6 +433,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_29-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_29-mai2023.jpg",
       "datePosed": "2007-05-23"
     },
     {
@@ -423,6 +448,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_30-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_30-mars2024.jpg",
       "datePosed": "2007-05-23"
     },
     {
@@ -437,6 +463,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_31-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_31-septembre2019.jpg",
       "datePosed": "2007-05-24"
     },
     {
@@ -451,6 +478,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_32-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_32-octobre2021.jpg",
       "datePosed": "2007-05-24"
     },
     {
@@ -465,6 +493,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_33-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_33-fevrier2017.jpg",
       "datePosed": "2007-05-24"
     },
     {
@@ -479,6 +508,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_34-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_34-juin2017.jpg",
       "datePosed": "2007-05-24"
     },
     {
@@ -490,10 +520,10 @@
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/caz_35/",
-      "source": "pnote",
+      "source": "goguelnikov",
       "statusFromPnote": true,
-      "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_35-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_35-juin2017.jpg",
       "datePosed": "2007-05-25"
     },
     {
@@ -508,6 +538,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_36-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_36-septembre2023.jpg",
       "datePosed": "2016-09-25"
     },
     {
@@ -522,6 +553,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_37-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_37-septembre2017.jpg",
       "datePosed": "2017-07-08"
     },
     {
@@ -536,6 +568,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_38-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_38-juin2018.jpg",
       "datePosed": "2017-08-21"
     },
     {
@@ -550,6 +583,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_39-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_39-juin2018.jpg",
       "datePosed": "2017-08-23"
     },
     {
@@ -564,6 +598,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/CAZ/CAZ_40-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CAZ/CAZ_40-juin2018.jpg",
       "datePosed": "2017-08-23"
     }
   ]

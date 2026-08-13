@@ -1,8 +1,8 @@
 {
-  "version": 4,
-  "updatedAt": "2026-07-19",
+  "version": 5,
+  "updatedAt": "2026-08-13",
   "city": "TLS",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 11,
   "invaders": [
     {
@@ -15,7 +15,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_01-grosplan.png",
-      "datePosed": "2016-07-08"
+      "datePosed": "2016-07-08",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_01-mars2024.jpg"
     },
     {
       "id": "TLS_02",
@@ -27,7 +28,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_02-grosplan.png",
-      "datePosed": "2016-07-08"
+      "datePosed": "2016-07-08",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_02-mars2024.jpg"
     },
     {
       "id": "TLS_03",
@@ -39,7 +41,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_03-grosplan.png",
-      "datePosed": "2016-07-11"
+      "datePosed": "2016-07-11",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_03-juillet2025.jpg"
     },
     {
       "id": "TLS_04",
@@ -51,7 +54,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_04-grosplan.png",
-      "datePosed": "2016-07-11"
+      "datePosed": "2016-07-11",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_04-septembre2016.jpg"
     },
     {
       "id": "TLS_05",
@@ -63,7 +67,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_05-grosplan.png",
-      "datePosed": "2016-07-11"
+      "datePosed": "2016-07-11",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_05-septembre2016.jpg"
     },
     {
       "id": "TLS_06",
@@ -75,7 +80,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_06-grosplan.png",
-      "datePosed": "2016-07-13"
+      "datePosed": "2016-07-13",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_06-octobre2025.jpg"
     },
     {
       "id": "TLS_07",
@@ -87,7 +93,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_07-grosplan.png",
-      "datePosed": "2016-07-13"
+      "datePosed": "2016-07-13",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_07-septembre2016.jpg"
     },
     {
       "id": "TLS_08",
@@ -99,7 +106,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_08-grosplan.png",
-      "datePosed": "2016-07-13"
+      "datePosed": "2016-07-13",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_08-septembre2016.jpg"
     },
     {
       "id": "TLS_09",
@@ -111,7 +119,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_09-grosplan.png",
-      "datePosed": "2016-07-15"
+      "datePosed": "2016-07-15",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_09-septembre2016.jpg"
     },
     {
       "id": "TLS_10",
@@ -135,7 +144,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_11-grosplan.png",
-      "datePosed": "2017-03-29"
+      "datePosed": "2017-03-29",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_11-septembre2024.jpg"
     }
   ]
 }

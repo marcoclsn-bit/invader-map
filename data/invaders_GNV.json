@@ -1,6 +1,6 @@
 {
-  "version": 7,
-  "updatedAt": "2026-08-02",
+  "version": 8,
+  "updatedAt": "2026-08-13",
   "city": "GNV",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 33,
@@ -17,6 +17,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_01-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GNV/GNV_01-avril2026.jpg",
       "datePosed": "2000-09-18"
     },
     {
@@ -45,6 +46,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_03-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GNV/GNV_03-septembre2016.jpg",
       "datePosed": "2000-09-18"
     },
     {
@@ -59,6 +61,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_04-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GNV/GNV_04-septembre2016.jpg",
       "datePosed": "2000-09-18"
     },
     {
@@ -73,6 +76,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_05-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GNV/GNV_05-juillet2024.jpg",
       "datePosed": "2000-09-18"
     },
     {
@@ -87,6 +91,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_06-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GNV/GNV_06-aout2025.jpg",
       "datePosed": "2000-09-18"
     },
     {
@@ -101,6 +106,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_07-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GNV/GNV_07-aout2022.jpg",
       "datePosed": "2000-09-19"
     },
     {
@@ -115,6 +121,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_08-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GNV/GNV_08-juillet2026.jpg",
       "datePosed": "2000-09-19"
     },
     {
@@ -129,6 +136,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_09-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GNV/GNV_09-avril2026.jpg",
       "datePosed": "2000-09-20"
     },
     {
@@ -143,6 +151,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_10-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GNV/GNV_10-aout2025.jpg",
       "datePosed": "2000-09-20"
     },
     {
@@ -157,6 +166,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_11-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GNV/GNV_11-septembre2016.jpg",
       "datePosed": "2000-09-20"
     },
     {
@@ -171,6 +181,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_12-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GNV/GNV_12-septembre2016.jpg",
       "datePosed": "2000-09-20"
     },
     {
@@ -185,6 +196,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_13-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GNV/GNV_13-juillet2026.jpg",
       "datePosed": "2000-09-20"
     },
     {
@@ -199,6 +211,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_14-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GNV/GNV_14-aout2022.jpg",
       "datePosed": "2000-09-20"
     },
     {
@@ -213,6 +226,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_15-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GNV/GNV_15-aout2022.jpg",
       "datePosed": "2000-09-20"
     },
     {
@@ -227,6 +241,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_16-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GNV/GNV_16-fevrier2025.jpg",
       "datePosed": "2000-09-21"
     },
     {
@@ -241,6 +256,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_17-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GNV/GNV_17-aout2022.jpg",
       "datePosed": "2000-09-21"
     },
     {
@@ -255,6 +271,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_18-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GNV/GNV_18-septembre2016.jpg",
       "datePosed": "2000-09-21"
     },
     {
@@ -269,6 +286,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_19-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GNV/GNV_19-mars2025.jpg",
       "datePosed": "2000-09-21"
     },
     {
@@ -297,6 +315,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_21-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GNV/GNV_21-juin2022.jpg",
       "datePosed": "2000-09-21"
     },
     {
@@ -311,6 +330,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_22-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GNV/GNV_22-novembre2023.jpg",
       "datePosed": "2000-09-22"
     },
     {
@@ -325,6 +345,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_23-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GNV/GNV_23-juillet2026.jpg",
       "datePosed": "2000-09-23"
     },
     {
@@ -353,6 +374,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_25-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GNV/GNV_25-mars2025.jpg",
       "datePosed": "2000-09-23"
     },
     {
@@ -367,6 +389,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_26-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GNV/GNV_26-septembre2016.jpg",
       "datePosed": "2000-09-23"
     },
     {
@@ -381,6 +404,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_27-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GNV/GNV_27-juin2022.jpg",
       "datePosed": "2000-09-23"
     },
     {
@@ -395,6 +419,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_28-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GNV/GNV_28-avril2025.jpg",
       "datePosed": "2000-09-23"
     },
     {
@@ -409,6 +434,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_29-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GNV/GNV_29-aout2022.jpg",
       "datePosed": "2000-09-23"
     },
     {
@@ -437,6 +463,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_31-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GNV/GNV_31-aout2022.jpg",
       "datePosed": "2000-09-23"
     },
     {
@@ -465,6 +492,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GNV/GNV_33-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GNV/GNV_33-septembre2016.jpg",
       "datePosed": "2000-11-03"
     }
   ]

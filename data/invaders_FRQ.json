@@ -1,8 +1,8 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-19",
+  "version": 6,
+  "updatedAt": "2026-08-13",
   "city": "FRQ",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 4,
   "invaders": [
     {
@@ -17,6 +17,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/FRQ/FRQ_01-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/FRQ/FRQ_01-juin2017.jpg",
       "datePosed": "2017-04-08"
     },
     {
@@ -31,6 +32,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/FRQ/FRQ_02-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/FRQ/FRQ_02-juin2017.jpg",
       "datePosed": "2017-04-08"
     },
     {
@@ -45,6 +47,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/FRQ/FRQ_03-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/FRQ/FRQ_03-juin2017.jpg",
       "datePosed": "2017-04-08"
     },
     {
@@ -59,6 +62,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/FRQ/FRQ_04-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/FRQ/FRQ_04-juin2017.jpg",
       "datePosed": "2017-04-08"
     }
   ]

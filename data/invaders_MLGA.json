@@ -1,8 +1,8 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-19",
+  "version": 6,
+  "updatedAt": "2026-08-13",
   "city": "MLGA",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 29,
   "invaders": [
     {
@@ -17,6 +17,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_01-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLGA/MLGA_01-septembre2017.jpg",
       "datePosed": "2017-05-15"
     },
     {
@@ -31,6 +32,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_02-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLGA/MLGA_02-septembre2017.jpg",
       "datePosed": "2017-05-15"
     },
     {
@@ -45,6 +47,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_03-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLGA/MLGA_03-septembre2017.jpg",
       "datePosed": "2017-05-16"
     },
     {
@@ -59,6 +62,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_04-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLGA/MLGA_04-mai2025.jpg",
       "datePosed": "2017-05-16"
     },
     {
@@ -73,6 +77,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_05-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLGA/MLGA_05-septembre2017.jpg",
       "datePosed": "2017-05-16"
     },
     {
@@ -87,6 +92,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_06-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLGA/MLGA_06-septembre2017.jpg",
       "datePosed": "2017-05-16"
     },
     {
@@ -101,6 +107,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_07-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLGA/MLGA_07-septembre2017.jpg",
       "datePosed": "2017-05-16"
     },
     {
@@ -115,6 +122,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_08-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLGA/MLGA_08-septembre2017.jpg",
       "datePosed": "2017-05-16"
     },
     {
@@ -129,6 +137,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_09-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLGA/MLGA_09-septembre2017.jpg",
       "datePosed": "2017-05-16"
     },
     {
@@ -143,6 +152,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_10-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLGA/MLGA_10-septembre2017.jpg",
       "datePosed": "2017-05-17"
     },
     {
@@ -157,6 +167,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_11-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLGA/MLGA_11-septembre2017.jpg",
       "datePosed": "2017-05-17"
     },
     {
@@ -171,6 +182,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_12-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLGA/MLGA_12-septembre2017.jpg",
       "datePosed": "2017-05-17"
     },
     {
@@ -185,6 +197,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_13-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLGA/MLGA_13-mai2020.jpg",
       "datePosed": "2017-05-17"
     },
     {
@@ -199,6 +212,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_14-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLGA/MLGA_14-octobre2023.jpg",
       "datePosed": "2017-05-17"
     },
     {
@@ -213,6 +227,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_15-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLGA/MLGA_15-septembre2017.jpg",
       "datePosed": "2017-05-17"
     },
     {
@@ -227,6 +242,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_16-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLGA/MLGA_16-septembre2017.jpg",
       "datePosed": "2017-05-18"
     },
     {
@@ -241,6 +257,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_17-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLGA/MLGA_17-septembre2017.jpg",
       "datePosed": "2017-05-18"
     },
     {
@@ -255,6 +272,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_18-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLGA/MLGA_18-septembre2017.jpg",
       "datePosed": "2017-05-18"
     },
     {
@@ -269,6 +287,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_19-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLGA/MLGA_19-septembre2017.jpg",
       "datePosed": "2017-05-18"
     },
     {
@@ -283,6 +302,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_20-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLGA/MLGA_20-septembre2017.jpg",
       "datePosed": "2017-05-18"
     },
     {
@@ -297,6 +317,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_21-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLGA/MLGA_21-septembre2017.jpg",
       "datePosed": "2017-05-18"
     },
     {
@@ -311,6 +332,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_22-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLGA/MLGA_22-septembre2017.jpg",
       "datePosed": "2017-05-19"
     },
     {
@@ -325,6 +347,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_23-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLGA/MLGA_23-septembre2017.jpg",
       "datePosed": "2017-05-19"
     },
     {
@@ -339,6 +362,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_24-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLGA/MLGA_24-septembre2017.jpg",
       "datePosed": "2017-05-19"
     },
     {
@@ -353,6 +377,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_25-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLGA/MLGA_25-septembre2017.jpg",
       "datePosed": "2017-05-21"
     },
     {
@@ -367,6 +392,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_26-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLGA/MLGA_26-septembre2017.jpg",
       "datePosed": "2017-05-21"
     },
     {
@@ -381,6 +407,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_27-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLGA/MLGA_27-septembre2017.jpg",
       "datePosed": "2017-05-21"
     },
     {
@@ -395,6 +422,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_28-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLGA/MLGA_28-septembre2017.jpg",
       "datePosed": "2017-05-21"
     },
     {
@@ -409,6 +437,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLGA/MLGA_29-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLGA/MLGA_29-septembre2017.jpg",
       "datePosed": "2017-05-23"
     }
   ]

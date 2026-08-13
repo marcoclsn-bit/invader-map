@@ -1,8 +1,8 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-19",
+  "version": 6,
+  "updatedAt": "2026-08-13",
   "city": "VRN",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 12,
   "invaders": [
     {
@@ -17,6 +17,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/VRN/VRN_01-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/VRN/VRN_01-decembre2022.jpg",
       "datePosed": "2008-03-08"
     },
     {
@@ -31,6 +32,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/VRN/VRN_03-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/VRN/VRN_03-decembre2022.jpg",
       "datePosed": "2008-03-09"
     },
     {
@@ -45,6 +47,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/VRN/VRN_04-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/VRN/VRN_04-decembre2022.jpg",
       "datePosed": "2008-03-09"
     },
     {
@@ -73,6 +76,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/VRN/VRN_06-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/VRN/VRN_06-juillet2025.jpg",
       "datePosed": "2008-03-10"
     },
     {
@@ -87,6 +91,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/VRN/VRN_07-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/VRN/VRN_07-mars2025.jpg",
       "datePosed": "2008-03-10"
     },
     {
@@ -101,6 +106,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/VRN/VRN_08-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/VRN/VRN_08-novembre2024.jpg",
       "datePosed": "2008-03-11"
     },
     {
@@ -115,6 +121,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/VRN/VRN_09-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/VRN/VRN_09-decembre2022.jpg",
       "datePosed": "2008-03-11"
     },
     {
@@ -129,6 +136,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/VRN/VRN_10-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/VRN/VRN_10-novembre2024.jpg",
       "datePosed": "2008-03-11"
     },
     {
@@ -143,6 +151,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/VRN/VRN_11-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/VRN/VRN_11-novembre2025.jpg",
       "datePosed": "2008-03-11"
     },
     {
@@ -157,6 +166,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/VRN/VRN_12-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/VRN/VRN_12-novembre2024.jpg",
       "datePosed": "2008-03-12"
     },
     {
@@ -171,6 +181,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/VRN/VRN_14-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/VRN/VRN_14-decembre2022.jpg",
       "datePosed": "2008-03-14"
     }
   ]

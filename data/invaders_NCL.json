@@ -1,8 +1,8 @@
 {
-  "version": 6,
-  "updatedAt": "2026-07-19",
+  "version": 7,
+  "updatedAt": "2026-08-13",
   "city": "NCL",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 25,
   "invaders": [
     {
@@ -17,6 +17,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NCL/NCL_01-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NCL/NCL_01-mai2017.jpg",
       "datePosed": "2006-05-22"
     },
     {
@@ -45,6 +46,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NCL/NCL_03-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NCL/NCL_03-aout2024.jpg",
       "datePosed": "2006-05-22"
     },
     {
@@ -59,6 +61,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NCL/NCL_04-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NCL/NCL_04-mai2017.jpg",
       "datePosed": "2006-05-22"
     },
     {
@@ -73,6 +76,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NCL/NCL_05-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NCL/NCL_05-aout2024.jpg",
       "datePosed": "2006-05-23"
     },
     {
@@ -87,6 +91,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NCL/NCL_06-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NCL/NCL_06-aout2024.jpg",
       "datePosed": "2006-05-23"
     },
     {
@@ -101,6 +106,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NCL/NCL_07-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NCL/NCL_07-mai2017.jpg",
       "datePosed": "2006-05-23"
     },
     {
@@ -115,6 +121,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NCL/NCL_08-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NCL/NCL_08-avril2022.jpg",
       "datePosed": "2006-05-23"
     },
     {
@@ -129,6 +136,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NCL/NCL_09-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NCL/NCL_09-mai2017.jpg",
       "datePosed": "2006-05-23"
     },
     {
@@ -143,6 +151,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NCL/NCL_10-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NCL/NCL_10-mai2017.jpg",
       "datePosed": "2006-08-02"
     },
     {
@@ -157,6 +166,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NCL/NCL_11-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NCL/NCL_11-mai2017.jpg",
       "datePosed": "2006-08-02"
     },
     {
@@ -171,6 +181,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NCL/NCL_12-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NCL/NCL_12-mai2017.jpg",
       "datePosed": "2006-08-02"
     },
     {
@@ -185,6 +196,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NCL/NCL_13-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NCL/NCL_13-aout2024.jpg",
       "datePosed": "2006-08-02"
     },
     {
@@ -199,6 +211,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NCL/NCL_14-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NCL/NCL_14-aout2024.jpg",
       "datePosed": "2006-08-03"
     },
     {
@@ -213,6 +226,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NCL/NCL_15-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NCL/NCL_15-mai2017.jpg",
       "datePosed": "2006-08-03"
     },
     {
@@ -227,6 +241,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NCL/NCL_16-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NCL/NCL_16-aout2024.jpg",
       "datePosed": "2006-08-03"
     },
     {
@@ -241,6 +256,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NCL/NCL_17-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NCL/NCL_17-juillet2025.jpg",
       "datePosed": "2006-08-03"
     },
     {
@@ -255,6 +271,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NCL/NCL_18-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NCL/NCL_18-aout2024.jpg",
       "datePosed": "2006-09-25"
     },
     {
@@ -269,6 +286,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NCL/NCL_19-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NCL/NCL_19-mai2017.jpg",
       "datePosed": "2006-09-26"
     },
     {
@@ -283,6 +301,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NCL/NCL_20-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NCL/NCL_20-aout2024.jpg",
       "datePosed": "2006-09-26"
     },
     {
@@ -297,6 +316,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NCL/NCL_21-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NCL/NCL_21-mai2017.jpg",
       "datePosed": "2006-09-26"
     },
     {
@@ -311,6 +331,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NCL/NCL_22-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NCL/NCL_22-mai2017.jpg",
       "datePosed": "2006-09-26"
     },
     {
@@ -325,6 +346,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NCL/NCL_23-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NCL/NCL_23-aout2024.jpg",
       "datePosed": "2006-09-27"
     },
     {
@@ -339,6 +361,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NCL/NCL_24-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NCL/NCL_24-juillet2025.jpg",
       "datePosed": "2006-09-27"
     },
     {
@@ -353,6 +376,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NCL/NCL_25-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NCL/NCL_25-mai2017.jpg",
       "datePosed": "2006-09-27"
     }
   ]

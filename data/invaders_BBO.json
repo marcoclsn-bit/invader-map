@@ -1,8 +1,8 @@
 {
-  "version": 6,
-  "updatedAt": "2026-07-19",
+  "version": 7,
+  "updatedAt": "2026-08-13",
   "city": "BBO",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 40,
   "invaders": [
     {
@@ -17,6 +17,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_01-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_01-novembre2017.jpg",
       "datePosed": "2007-10-27"
     },
     {
@@ -31,6 +32,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_02-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_02-octobre2025.jpg",
       "datePosed": "2007-10-27"
     },
     {
@@ -59,6 +61,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_04-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_04-novembre2017.jpg",
       "datePosed": "2007-12-23"
     },
     {
@@ -87,6 +90,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_06-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_06-octobre2023.jpg",
       "datePosed": "2007-12-23"
     },
     {
@@ -101,6 +105,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_07-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_07-octobre2023.jpg",
       "datePosed": "2007-12-24"
     },
     {
@@ -115,6 +120,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_08-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_08-novembre2017.jpg",
       "datePosed": "2007-12-24"
     },
     {
@@ -129,6 +135,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_09-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_09-novembre2017.jpg",
       "datePosed": "2007-12-24"
     },
     {
@@ -143,6 +150,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_10-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_10-novembre2017.jpg",
       "datePosed": "2007-12-24"
     },
     {
@@ -157,6 +165,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_11-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_11-novembre2017.jpg",
       "datePosed": "2007-12-24"
     },
     {
@@ -171,6 +180,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_12-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_12-novembre2017.jpg",
       "datePosed": "2007-12-24"
     },
     {
@@ -199,6 +209,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_14-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_14-novembre2017.jpg",
       "datePosed": "2007-12-25"
     },
     {
@@ -213,6 +224,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_15-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_15-novembre2017.jpg",
       "datePosed": "2007-12-25"
     },
     {
@@ -227,6 +239,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_16-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_16-novembre2017.jpg",
       "datePosed": "2007-12-26"
     },
     {
@@ -241,6 +254,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_17-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_17-novembre2017.jpg",
       "datePosed": "2007-12-26"
     },
     {
@@ -255,6 +269,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_18-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_18-novembre2017.jpg",
       "datePosed": "2007-12-26"
     },
     {
@@ -269,6 +284,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_19-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_19-fevrier2023.jpg",
       "datePosed": "2007-12-26"
     },
     {
@@ -283,6 +299,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_20-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_20-novembre2017.jpg",
       "datePosed": "2007-12-26"
     },
     {
@@ -297,6 +314,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_21-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_21-octobre2023.jpg",
       "datePosed": "2007-12-26"
     },
     {
@@ -311,6 +329,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_22-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_22-aout2025.jpg",
       "datePosed": "2007-12-27"
     },
     {
@@ -381,6 +400,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_27-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_27-novembre2017.jpg",
       "datePosed": "2007-12-27"
     },
     {
@@ -395,6 +415,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_28-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_28-octobre2023.jpg",
       "datePosed": "2007-12-27"
     },
     {
@@ -409,6 +430,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_29-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_29-fevrier2017.jpg",
       "datePosed": "2007-12-28"
     },
     {
@@ -423,6 +445,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_30-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_30-aout2022.jpg",
       "datePosed": "2007-12-29"
     },
     {
@@ -437,6 +460,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_31-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_31-fevrier2017.jpg",
       "datePosed": "2007-12-29"
     },
     {
@@ -465,6 +489,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_33-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_33-novembre2017.jpg",
       "datePosed": "2007-12-29"
     },
     {
@@ -479,6 +504,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_34-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_34-novembre2017.jpg",
       "datePosed": "2007-12-29"
     },
     {
@@ -493,6 +519,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_35-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_35-novembre2017.jpg",
       "datePosed": "2007-12-30"
     },
     {
@@ -507,6 +534,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_36-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_36-novembre2017.jpg",
       "datePosed": "2007-12-30"
     },
     {
@@ -521,6 +549,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_37-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_37-mars2015.jpg",
       "datePosed": "2007-12-30"
     },
     {
@@ -535,6 +564,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_38-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_38-fevrier2023.jpg",
       "datePosed": "2007-12-30"
     },
     {
@@ -563,6 +593,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BBO/BBO_40-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BBO/BBO_40-novembre2017.jpg",
       "datePosed": "2007-12-31"
     }
   ]

@@ -1,8 +1,8 @@
 {
-  "version": 6,
-  "updatedAt": "2026-07-19",
+  "version": 7,
+  "updatedAt": "2026-08-13",
   "city": "IST",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 16,
   "invaders": [
     {
@@ -17,6 +17,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/IST/IST_01-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/IST/IST_01-avril2025.jpg",
       "datePosed": "2003-09-16"
     },
     {
@@ -87,6 +88,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/IST/IST_07-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/IST/IST_07-septembre2025.jpg",
       "datePosed": "2003-09-17"
     },
     {
@@ -115,6 +117,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/IST/IST_09-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/IST/IST_09-avril2025.jpg",
       "datePosed": "2003-09-17"
     },
     {
@@ -143,6 +146,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/IST/IST_11-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/IST/IST_11-avril2025.jpg",
       "datePosed": "2003-09-18"
     },
     {
@@ -157,6 +161,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/IST/IST_12-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/IST/IST_12-avril2025.jpg",
       "datePosed": "2003-09-18"
     },
     {
@@ -171,6 +176,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/IST/IST_13-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/IST/IST_13-novembre2021.jpg",
       "datePosed": "2003-09-18"
     },
     {

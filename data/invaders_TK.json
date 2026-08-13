@@ -1,8 +1,8 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-19",
+  "version": 6,
+  "updatedAt": "2026-08-13",
   "city": "TK",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 123,
   "invaders": [
     {
@@ -31,6 +31,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_002-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_002-novembre2023.jpg",
       "datePosed": "1999-09-20"
     },
     {
@@ -45,6 +46,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_003-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_003-novembre2023.jpg",
       "datePosed": "1999-09-20"
     },
     {
@@ -59,6 +61,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_004-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_004-aout2022.jpg",
       "datePosed": "1999-09-20"
     },
     {
@@ -73,6 +76,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_006-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_006-septembre2023.jpg",
       "datePosed": "1999-09-20"
     },
     {
@@ -87,6 +91,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_007-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_007-novembre2023.jpg",
       "datePosed": "1999-09-20"
     },
     {
@@ -115,6 +120,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_009-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_009-mai2021.jpg",
       "datePosed": "1999-09-21"
     },
     {
@@ -143,6 +149,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_011-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_011-novembre2023.jpg",
       "datePosed": "1999-09-21"
     },
     {
@@ -171,6 +178,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_013-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_013-mai2021.jpg",
       "datePosed": "1999-09-21"
     },
     {
@@ -199,6 +207,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_015-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_015-mars2021.jpg",
       "datePosed": "1999-09-21"
     },
     {
@@ -353,6 +362,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_029-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_029-octobre2023.jpg",
       "datePosed": "1999-09-25"
     },
     {
@@ -675,6 +685,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_054-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_054-juillet2025.jpg",
       "datePosed": "2001-09-09"
     },
     {
@@ -689,6 +700,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_056-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_056-mars2021.jpg",
       "datePosed": "2001-09-09"
     },
     {
@@ -731,6 +743,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_059-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_059-octobre2022.jpg",
       "datePosed": "2001-09-10"
     },
     {
@@ -787,6 +800,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_068-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_068-novembre2023.jpg",
       "datePosed": "2001-09-12"
     },
     {
@@ -815,6 +829,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_070-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_070-avril2025.jpg",
       "datePosed": "2001-09-13"
     },
     {
@@ -829,6 +844,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_072-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_072-octobre2022.jpg",
       "datePosed": "2001-09-13"
     },
     {
@@ -871,6 +887,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_076-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_076-aout2022.jpg",
       "datePosed": "2002-04-19"
     },
     {
@@ -899,6 +916,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_078-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_078-novembre2023.jpg",
       "datePosed": "2002-04-21"
     },
     {
@@ -969,6 +987,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_084-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_084-septembre2023.jpg",
       "datePosed": "2010-11-01"
     },
     {
@@ -983,6 +1002,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_085-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_085-nonvisible.jpg",
       "datePosed": "2010-11-01"
     },
     {
@@ -1011,6 +1031,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_087-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_087-decembre2024.jpg",
       "datePosed": "2010-11-01"
     },
     {
@@ -1137,6 +1158,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_096-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_096-novembre2023.jpg",
       "datePosed": "2014-05-13"
     },
     {
@@ -1151,6 +1173,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_097-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_097-mai2023.jpg",
       "datePosed": "2014-05-13"
     },
     {
@@ -1361,6 +1384,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_112-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_112-juin2024.jpg",
       "datePosed": "2014-05-15"
     },
     {
@@ -1403,6 +1427,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_115-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_115-decembre2022.jpg",
       "datePosed": "2014-05-17"
     },
     {
@@ -1459,6 +1484,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_119-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_119-juin2022.jpg",
       "datePosed": "2014-05-18"
     },
     {
@@ -1543,6 +1569,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_125-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_125-septembre2022.jpg",
       "datePosed": "2014-05-19"
     },
     {
@@ -1571,6 +1598,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_127-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_127-aout2026.jpg",
       "datePosed": "2014-05-19"
     },
     {
@@ -1599,6 +1627,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_129-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_129-mars2024.jpg",
       "datePosed": "2014-05-20"
     },
     {
@@ -1627,6 +1656,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_131-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_131-juin2014.jpg",
       "datePosed": "2014-05-23"
     },
     {
@@ -1641,6 +1671,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TK/TK_132-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TK/TK_132-novembre2023.jpg",
       "datePosed": "2014-05-24"
     },
     {

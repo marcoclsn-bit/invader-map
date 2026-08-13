@@ -1,8 +1,8 @@
 {
-  "version": 6,
-  "updatedAt": "2026-07-19",
+  "version": 7,
+  "updatedAt": "2026-08-13",
   "city": "AMS",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 26,
   "invaders": [
     {
@@ -17,6 +17,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMS/AMS_01-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMS/AMS_01-juin2017.jpg",
       "datePosed": "1999-11-11"
     },
     {
@@ -45,6 +46,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMS/AMS_03-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMS/AMS_03-juin2017.jpg",
       "datePosed": "1999-11-11"
     },
     {
@@ -59,6 +61,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMS/AMS_04-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMS/AMS_04-decembre2024.jpg",
       "datePosed": "1999-11-11"
     },
     {
@@ -87,6 +90,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMS/AMS_06-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMS/AMS_06-juin2017.jpg",
       "datePosed": "1999-11-12"
     },
     {
@@ -101,6 +105,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMS/AMS_07-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMS/AMS_07-juin2017.jpg",
       "datePosed": "1999-11-12"
     },
     {
@@ -115,6 +120,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMS/AMS_08-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMS/AMS_08-juin2017.jpg",
       "datePosed": "1999-11-12"
     },
     {
@@ -129,6 +135,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMS/AMS_09-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMS/AMS_09-novembre2025.jpg",
       "datePosed": "1999-11-14"
     },
     {
@@ -143,6 +150,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMS/AMS_10-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMS/AMS_10-juin2017.jpg",
       "datePosed": "1999-11-14"
     },
     {
@@ -157,6 +165,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMS/AMS_11-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMS/AMS_11-juin2017.jpg",
       "datePosed": "1999-11-14"
     },
     {
@@ -171,6 +180,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMS/AMS_12-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMS/AMS_12-juin2017.jpg",
       "datePosed": "1999-11-14"
     },
     {
@@ -185,6 +195,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMS/AMS_13-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMS/AMS_13-juin2017.jpg",
       "datePosed": "1999-11-14"
     },
     {
@@ -199,6 +210,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMS/AMS_14-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMS/AMS_14-fevrier2025.jpg",
       "datePosed": "1999-11-14"
     },
     {
@@ -227,6 +239,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMS/AMS_16-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMS/AMS_16-juin2017.jpg",
       "datePosed": "1999-11-14"
     },
     {
@@ -241,6 +254,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMS/AMS_17-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMS/AMS_17-septembre2024.jpg",
       "datePosed": "1999-11-15"
     },
     {
@@ -255,6 +269,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMS/AMS_18-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMS/AMS_18-juin2017.jpg",
       "datePosed": "1999-11-15"
     },
     {
@@ -269,6 +284,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMS/AMS_19-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMS/AMS_19-juin2017.jpg",
       "datePosed": "1999-11-15"
     },
     {
@@ -283,6 +299,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMS/AMS_20-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMS/AMS_20-octobre2023.jpg",
       "datePosed": "1999-11-15"
     },
     {
@@ -297,6 +314,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMS/AMS_21-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMS/AMS_21-novembre2023.jpg",
       "datePosed": "1999-11-16"
     },
     {
@@ -311,6 +329,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMS/AMS_22-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMS/AMS_22-juin2017.jpg",
       "datePosed": "1999-11-16"
     },
     {
@@ -325,6 +344,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMS/AMS_23-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMS/AMS_23-juin2017.jpg",
       "datePosed": "1999-11-16"
     },
     {

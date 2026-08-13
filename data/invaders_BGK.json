@@ -1,6 +1,6 @@
 {
-  "version": 7,
-  "updatedAt": "2026-08-02",
+  "version": 8,
+  "updatedAt": "2026-08-13",
   "city": "BGK",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 44,
@@ -31,6 +31,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_02-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BGK/BGK_02-octobre2025.jpg",
       "datePosed": "2002-10-18"
     },
     {
@@ -45,6 +46,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_03-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BGK/BGK_03-juin2024.jpg",
       "datePosed": "2005-07-08"
     },
     {
@@ -59,6 +61,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_04-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BGK/BGK_04-aout2022.jpg",
       "datePosed": "2005-07-08"
     },
     {
@@ -73,6 +76,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_05-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BGK/BGK_05-mai2026.jpg",
       "datePosed": "2005-07-08"
     },
     {
@@ -115,6 +119,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_10-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BGK/BGK_10-novembre2022.jpg",
       "datePosed": "2005-07-09"
     },
     {
@@ -129,6 +134,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_11-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BGK/BGK_11-aout2026.jpg",
       "datePosed": "2005-07-10"
     },
     {
@@ -171,6 +177,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_16-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BGK/BGK_16-avril2024.jpg",
       "datePosed": "2005-07-10"
     },
     {
@@ -199,6 +206,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_18-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BGK/BGK_18-decembre2025.jpg",
       "datePosed": "2005-07-11"
     },
     {
@@ -213,6 +221,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_19-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BGK/BGK_19-novembre2025.jpg",
       "datePosed": "2005-07-11"
     },
     {
@@ -227,6 +236,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_20-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BGK/BGK_20-aout2020.jpg",
       "datePosed": "2005-07-11"
     },
     {
@@ -241,6 +251,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_21-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BGK/BGK_21-novembre2024.jpg",
       "datePosed": "2005-07-12"
     },
     {
@@ -255,6 +266,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_24-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BGK/BGK_24-novembre2025.jpg",
       "datePosed": "2005-07-14"
     },
     {
@@ -283,6 +295,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_26-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BGK/BGK_26-juillet2026.jpg",
       "datePosed": "2005-07-14"
     },
     {
@@ -311,6 +324,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_28-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BGK/BGK_28-octobre2016.jpg",
       "datePosed": "2005-07-14"
     },
     {
@@ -339,6 +353,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_30-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BGK/BGK_30-novembre2025.jpg",
       "datePosed": "2005-07-16"
     },
     {
@@ -353,6 +368,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_31-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BGK/BGK_31-janvier2022.jpg",
       "datePosed": "2005-07-16"
     },
     {
@@ -367,6 +383,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_32-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BGK/BGK_32-novembre2025-2.jpg",
       "datePosed": "2005-07-16"
     },
     {
@@ -381,6 +398,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_33-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BGK/BGK_33-juin2024.jpg",
       "datePosed": "2005-07-17"
     },
     {
@@ -395,6 +413,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_34-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BGK/BGK_34-avril2026.jpg",
       "datePosed": "2005-07-17"
     },
     {
@@ -437,6 +456,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_37-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BGK/BGK_37-novembre2025.jpg",
       "datePosed": "2005-07-18"
     },
     {
@@ -479,6 +499,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_40-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BGK/BGK_40-fevrier2026.jpg",
       "datePosed": "2005-07-18"
     },
     {
@@ -493,6 +514,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_41-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BGK/BGK_41-aout2020.jpg",
       "datePosed": "2005-07-18"
     },
     {
@@ -521,6 +543,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_43-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BGK/BGK_43-novembre2025.jpg",
       "datePosed": "2005-07-20"
     },
     {
@@ -549,6 +572,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_45-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BGK/BGK_45-fevrier2024.jpg",
       "datePosed": "2005-07-20"
     },
     {
@@ -563,6 +587,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_47-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BGK/BGK_47-novembre2025.jpg",
       "datePosed": "2005-07-20"
     },
     {
@@ -577,6 +602,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_48-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BGK/BGK_48-novembre2025.jpg",
       "datePosed": "2005-07-21"
     },
     {
@@ -591,6 +617,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_49-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BGK/BGK_49-juin2026.jpg",
       "datePosed": "2005-07-21"
     },
     {
@@ -605,6 +632,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_50-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BGK/BGK_50-decembre2025.jpg",
       "datePosed": "2005-07-21"
     },
     {

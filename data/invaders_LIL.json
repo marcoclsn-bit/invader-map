@@ -1,8 +1,8 @@
 {
-  "version": 4,
-  "updatedAt": "2026-07-19",
+  "version": 5,
+  "updatedAt": "2026-08-13",
   "city": "LIL",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 6,
   "invaders": [
     {
@@ -15,7 +15,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/LIL/LIL_00-grosplan.png",
-      "datePosed": "1999-01-11"
+      "datePosed": "1999-01-11",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LIL/LIL_00-mars2017.jpg"
     },
     {
       "id": "LIL_01",
@@ -27,7 +28,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/LIL/LIL_01-grosplan.png",
-      "datePosed": "2002-08-30"
+      "datePosed": "2002-08-30",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LIL/LIL_01-mars2023.jpg"
     },
     {
       "id": "LIL_02",
@@ -39,7 +41,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/LIL/LIL_02-grosplan.png",
-      "datePosed": "2002-08-30"
+      "datePosed": "2002-08-30",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LIL/LIL_02-mai2025.jpg"
     },
     {
       "id": "LIL_03",
@@ -51,7 +54,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/LIL/LIL_03-grosplan.png",
-      "datePosed": "2002-08-30"
+      "datePosed": "2002-08-30",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LIL/LIL_03-mars2017.jpg"
     },
     {
       "id": "LIL_04",
@@ -63,7 +67,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/LIL/LIL_04-grosplan.png",
-      "datePosed": "2002-08-30"
+      "datePosed": "2002-08-30",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LIL/LIL_04-mars2021.jpg"
     },
     {
       "id": "LIL_05",
@@ -75,7 +80,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/LIL/LIL_05-grosplan.png",
-      "datePosed": "2002-08-30"
+      "datePosed": "2002-08-30",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LIL/LIL_05-mars2025-2.jpg"
     }
   ]
 }

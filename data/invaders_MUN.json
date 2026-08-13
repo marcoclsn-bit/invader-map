@@ -1,8 +1,8 @@
 {
-  "version": 6,
-  "updatedAt": "2026-07-19",
+  "version": 7,
+  "updatedAt": "2026-08-13",
   "city": "MUN",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 18,
   "invaders": [
     {
@@ -45,6 +45,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_03-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MUN/MUN_03-avril2023.jpg",
       "datePosed": "2023-04-09"
     },
     {
@@ -87,6 +88,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_06-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MUN/MUN_06-novembre2023.jpg",
       "datePosed": "2023-04-09"
     },
     {
@@ -101,6 +103,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_07-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MUN/MUN_07-juin2025.jpg",
       "datePosed": "2023-04-09"
     },
     {
@@ -115,6 +118,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_08-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MUN/MUN_08-avril2023-2.jpg",
       "datePosed": "2023-04-09"
     },
     {
@@ -143,6 +147,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_10-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MUN/MUN_10-aout2026.jpg",
       "datePosed": "2023-04-09"
     },
     {
@@ -157,6 +162,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_11-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MUN/MUN_11-avril2023.jpg",
       "datePosed": "2023-04-09"
     },
     {
@@ -171,6 +177,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_12-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MUN/MUN_12-avril2023.jpg",
       "datePosed": "2023-04-09"
     },
     {
@@ -185,6 +192,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_13-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MUN/MUN_13-avril2023.jpg",
       "datePosed": "2023-04-09"
     },
     {
@@ -213,6 +221,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_15-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MUN/MUN_15-juin2026.jpg",
       "datePosed": "2023-04-10"
     },
     {
@@ -227,6 +236,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_16-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MUN/MUN_16-juillet2026.jpg",
       "datePosed": "2023-04-10"
     },
     {
@@ -241,6 +251,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_17-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MUN/MUN_17-avril2023.jpg",
       "datePosed": "2023-04-11"
     },
     {
@@ -255,6 +266,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MUN/MUN_18-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MUN/MUN_18-avril2023.jpg",
       "datePosed": "2023-04-11"
     }
   ]

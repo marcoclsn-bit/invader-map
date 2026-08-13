@@ -1,8 +1,8 @@
 {
-  "version": 6,
-  "updatedAt": "2026-07-19",
+  "version": 7,
+  "updatedAt": "2026-08-13",
   "city": "BRL",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 11,
   "invaders": [
     {
@@ -17,6 +17,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BRL/BRL_01-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BRL/BRL_01-aout2018.jpg",
       "datePosed": "2002-05-10"
     },
     {
@@ -31,6 +32,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BRL/BRL_02-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BRL/BRL_02-aout2018.jpg",
       "datePosed": "2002-05-10"
     },
     {
@@ -59,6 +61,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BRL/BRL_04-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BRL/BRL_04-aout2018.jpg",
       "datePosed": "2002-05-10"
     },
     {
@@ -73,6 +76,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BRL/BRL_05-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BRL/BRL_05-aout2018.jpg",
       "datePosed": "2002-05-10"
     },
     {
@@ -87,6 +91,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BRL/BRL_06-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BRL/BRL_06-aout2018.jpg",
       "datePosed": "2002-05-10"
     },
     {
@@ -101,6 +106,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BRL/BRL_07-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BRL/BRL_07-aout2018.jpg",
       "datePosed": "2002-05-10"
     },
     {
@@ -115,6 +121,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BRL/BRL_09-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BRL/BRL_09-novembre2021.jpg",
       "datePosed": "2002-05-11"
     },
     {
@@ -129,6 +136,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BRL/BRL_10-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BRL/BRL_10-juillet2024.jpg",
       "datePosed": "2002-05-11"
     },
     {
@@ -143,6 +151,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BRL/BRL_11-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BRL/BRL_11-aout2018.jpg",
       "datePosed": "2002-05-11"
     },
     {
@@ -157,6 +166,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BRL/BRL_12-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BRL/BRL_12-aout2018.jpg",
       "datePosed": "2017-04-12"
     }
   ]

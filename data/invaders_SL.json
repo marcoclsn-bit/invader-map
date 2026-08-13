@@ -1,8 +1,8 @@
 {
-  "version": 4,
-  "updatedAt": "2026-07-19",
+  "version": 5,
+  "updatedAt": "2026-08-13",
   "city": "SL",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 0,
   "invaders": [
     {
@@ -18,6 +18,7 @@
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/SL/SL_01-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/SL/SL_01-septembre2025.jpg",
       "datePosed": "2024-10-19"
     },
     {
@@ -33,6 +34,7 @@
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/SL/SL_02-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/SL/SL_02-septembre2025.jpg",
       "datePosed": "2024-10-19"
     },
     {
@@ -93,6 +95,7 @@
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/SL/SL_06-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/SL/SL_06-octobre2024.jpg",
       "datePosed": "2024-10-22"
     },
     {
@@ -123,6 +126,7 @@
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/SL/SL_08-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/SL/SL_08-octobre2024.jpg",
       "datePosed": "2024-10-22"
     },
     {

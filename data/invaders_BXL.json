@@ -1,8 +1,8 @@
 {
-  "version": 6,
-  "updatedAt": "2026-07-19",
+  "version": 7,
+  "updatedAt": "2026-08-13",
   "city": "BXL",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 42,
   "invaders": [
     {
@@ -31,6 +31,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_02-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BXL/BXL_02-mai2017.jpg",
       "datePosed": "2012-03-08"
     },
     {
@@ -45,6 +46,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_03-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BXL/BXL_03-mai2025.jpg",
       "datePosed": "2012-03-08"
     },
     {
@@ -101,6 +103,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_07-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BXL/BXL_07-mai2017.jpg",
       "datePosed": "2012-03-09"
     },
     {
@@ -129,6 +132,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_09-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BXL/BXL_09-juillet2020.jpg",
       "datePosed": "2012-03-09"
     },
     {
@@ -143,6 +147,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_10-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BXL/BXL_10-mai2017.jpg",
       "datePosed": "2012-03-09"
     },
     {
@@ -157,6 +162,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_11-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BXL/BXL_11-mai2017.jpg",
       "datePosed": "2012-03-09"
     },
     {
@@ -241,6 +247,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_17-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BXL/BXL_17-mai2017.jpg",
       "datePosed": "2012-03-10"
     },
     {
@@ -283,6 +290,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_20-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BXL/BXL_20-mai2017.jpg",
       "datePosed": "2012-03-11"
     },
     {
@@ -297,6 +305,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_21-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BXL/BXL_21-mai2017.jpg",
       "datePosed": "2012-03-11"
     },
     {
@@ -311,6 +320,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_22-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BXL/BXL_22-mai2024.jpg",
       "datePosed": "2012-03-11"
     },
     {
@@ -325,6 +335,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_23-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BXL/BXL_23-aout2022.jpg",
       "datePosed": "2012-03-11"
     },
     {
@@ -339,6 +350,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_24-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BXL/BXL_24-juillet2023.jpg",
       "datePosed": "2012-03-11"
     },
     {
@@ -353,6 +365,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_25-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BXL/BXL_25-mai2017.jpg",
       "datePosed": "2012-03-11"
     },
     {
@@ -381,6 +394,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_27-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BXL/BXL_27-mai2017.jpg",
       "datePosed": "2012-03-12"
     },
     {
@@ -395,6 +409,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_28-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BXL/BXL_28-mai2017.jpg",
       "datePosed": "2012-03-12"
     },
     {
@@ -409,6 +424,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_29-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BXL/BXL_29-mai2017.jpg",
       "datePosed": "2012-03-12"
     },
     {
@@ -423,6 +439,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_30-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BXL/BXL_30-mai2017.jpg",
       "datePosed": "2012-03-12"
     },
     {
@@ -451,6 +468,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_32-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BXL/BXL_32-mai2017.jpg",
       "datePosed": "2012-03-12"
     },
     {
@@ -479,6 +497,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_34-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BXL/BXL_34-mars2025.jpg",
       "datePosed": "2012-03-12"
     },
     {
@@ -493,6 +512,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_35-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BXL/BXL_35-juin2020.jpg",
       "datePosed": "2012-03-13"
     },
     {
@@ -507,6 +527,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_36-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BXL/BXL_36-juin2021.jpg",
       "datePosed": "2012-03-13"
     },
     {
@@ -521,6 +542,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_37-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BXL/BXL_37-mai2017.jpg",
       "datePosed": "2012-03-13"
     },
     {
@@ -535,6 +557,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_38-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BXL/BXL_38-mai2017.jpg",
       "datePosed": "2012-03-14"
     },
     {
@@ -563,6 +586,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_40-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BXL/BXL_40-juillet2025.jpg",
       "datePosed": "2012-03-15"
     },
     {
@@ -577,6 +601,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_41-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BXL/BXL_41-aout2022.jpg",
       "datePosed": "2022-07-05"
     },
     {
@@ -591,6 +616,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BXL/BXL_42-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BXL/BXL_42-aout2022.jpg",
       "datePosed": "2022-07-05"
     }
   ]

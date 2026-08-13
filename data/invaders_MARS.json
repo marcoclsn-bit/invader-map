@@ -1,8 +1,8 @@
 {
-  "version": 6,
-  "updatedAt": "2026-07-19",
+  "version": 7,
+  "updatedAt": "2026-08-13",
   "city": "MARS",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 97,
   "invaders": [
     {
@@ -17,6 +17,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_01-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_01-fevrier2025.jpg",
       "datePosed": "2004-07-24"
     },
     {
@@ -31,6 +32,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_02-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_02-fevrier2025.jpg",
       "datePosed": "2004-07-24"
     },
     {
@@ -45,6 +47,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_03-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_03-fevrier2025.jpg",
       "datePosed": "2004-07-24"
     },
     {
@@ -59,6 +62,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_04-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_04-novembre2025.jpg",
       "datePosed": "2004-07-24"
     },
     {
@@ -73,6 +77,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_05-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_05-janvier2023.jpg",
       "datePosed": "2004-07-24"
     },
     {
@@ -87,6 +92,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_06-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_06-novembre2025.jpg",
       "datePosed": "2004-07-24"
     },
     {
@@ -101,6 +107,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_07-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_07-fevrier2025.jpg",
       "datePosed": "2004-07-25"
     },
     {
@@ -115,6 +122,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_08-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_08-fevrier2025.jpg",
       "datePosed": "2004-07-25"
     },
     {
@@ -129,6 +137,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_09-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_09-aout2022.jpg",
       "datePosed": "2004-07-25"
     },
     {
@@ -143,6 +152,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_10-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_10-septembre2018.jpg",
       "datePosed": "2004-08-28"
     },
     {
@@ -157,6 +167,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_11-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_11-septembre2018.jpg",
       "datePosed": "2004-08-28"
     },
     {
@@ -171,6 +182,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_12-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_12-septembre2018.jpg",
       "datePosed": "2014-08-12"
     },
     {
@@ -185,6 +197,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_13-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_13-septembre2018.jpg",
       "datePosed": "2014-08-12"
     },
     {
@@ -199,6 +212,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_14-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_14-aout2020.jpg",
       "datePosed": "2020-08-05"
     },
     {
@@ -213,6 +227,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_15-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_15-aout2020.jpg",
       "datePosed": "2020-08-06"
     },
     {
@@ -227,6 +242,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_16-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_16-fevrier2025.jpg",
       "datePosed": "2020-08-06"
     },
     {
@@ -241,6 +257,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_17-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_17-aout2020.jpg",
       "datePosed": "2020-08-06"
     },
     {
@@ -255,6 +272,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_18-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_18-fevrier2024.jpg",
       "datePosed": "2020-08-06"
     },
     {
@@ -269,6 +287,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_19-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_19-novembre2025.jpg",
       "datePosed": "2020-08-06"
     },
     {
@@ -283,6 +302,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_20-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_20-janvier2025.jpg",
       "datePosed": "2020-08-06"
     },
     {
@@ -297,6 +317,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_21-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_21-aout2020.jpg",
       "datePosed": "2020-08-06"
     },
     {
@@ -311,6 +332,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_22-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_22-archive.jpg",
       "datePosed": "2020-08-07"
     },
     {
@@ -325,6 +347,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_23-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_23-aout2020.jpg",
       "datePosed": "2020-08-07"
     },
     {
@@ -339,6 +362,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_24-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_24-aout2020.jpg",
       "datePosed": "2020-08-07"
     },
     {
@@ -353,6 +377,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_25-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_25-aout2020.jpg",
       "datePosed": "2020-08-07"
     },
     {
@@ -367,6 +392,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_26-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_26-aout2020.jpg",
       "datePosed": "2020-08-07"
     },
     {
@@ -381,6 +407,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_27-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_27-aout2020.jpg",
       "datePosed": "2020-08-07"
     },
     {
@@ -395,6 +422,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_28-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_28-octobre2023.jpg",
       "datePosed": "2020-08-07"
     },
     {
@@ -409,6 +437,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_29-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_29-aout2020.jpg",
       "datePosed": "2020-08-07"
     },
     {
@@ -423,6 +452,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_30-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_30-aout2020.jpg",
       "datePosed": "2020-08-07"
     },
     {
@@ -437,6 +467,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_31-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_31-octobre2024.jpg",
       "datePosed": "2020-08-09"
     },
     {
@@ -451,6 +482,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_32-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_32-aout2024.jpg",
       "datePosed": "2020-08-09"
     },
     {
@@ -465,6 +497,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_33-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_33-aout2020.jpg",
       "datePosed": "2020-08-09"
     },
     {
@@ -479,6 +512,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_34-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_34-archive.jpg",
       "datePosed": "2020-08-09"
     },
     {
@@ -493,6 +527,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_35-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_35-aout2020.jpg",
       "datePosed": "2020-08-09"
     },
     {
@@ -507,6 +542,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_36-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_36-aout2020.jpg",
       "datePosed": "2020-08-09"
     },
     {
@@ -521,6 +557,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_37-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_37-aout2020.jpg",
       "datePosed": "2020-08-09"
     },
     {
@@ -535,6 +572,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_38-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_38-aout2020.jpg",
       "datePosed": "2020-08-09"
     },
     {
@@ -549,6 +587,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_39-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_39-novembre2025.jpg",
       "datePosed": "2020-08-09"
     },
     {
@@ -563,6 +602,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_40-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_40-aout2020.jpg",
       "datePosed": "2020-08-09"
     },
     {
@@ -577,6 +617,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_41-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_41-archive.jpg",
       "datePosed": "2020-08-10"
     },
     {
@@ -591,6 +632,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_42-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_42-aout2020.jpg",
       "datePosed": "2020-08-10"
     },
     {
@@ -605,6 +647,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_43-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_43-archive.jpg",
       "datePosed": "2020-08-10"
     },
     {
@@ -619,6 +662,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_44-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_44-aout2020.jpg",
       "datePosed": "2020-08-10"
     },
     {
@@ -633,6 +677,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_45-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_45-aout2020.jpg",
       "datePosed": "2020-08-10"
     },
     {
@@ -647,6 +692,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_46-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_46-aout2020.jpg",
       "datePosed": "2020-08-10"
     },
     {
@@ -661,6 +707,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_47-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_47-aout2020.jpg",
       "datePosed": "2020-08-10"
     },
     {
@@ -675,6 +722,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_48-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_48-juin2024.jpg",
       "datePosed": "2020-08-10"
     },
     {
@@ -689,6 +737,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_49-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_49-aout2020.jpg",
       "datePosed": "2020-08-10"
     },
     {
@@ -703,6 +752,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_50-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_50-archive.jpg",
       "datePosed": "2020-08-10"
     },
     {
@@ -717,6 +767,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_51-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_51-aout2020.jpg",
       "datePosed": "2020-08-11"
     },
     {
@@ -731,6 +782,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_52-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_52-juillet2023.jpg",
       "datePosed": "2020-08-11"
     },
     {
@@ -745,6 +797,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_53-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_53-aout2020.jpg",
       "datePosed": "2020-08-11"
     },
     {
@@ -759,6 +812,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_54-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_54-aout2020.jpg",
       "datePosed": "2020-08-11"
     },
     {
@@ -773,6 +827,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_55-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_55-aout2020.jpg",
       "datePosed": "2020-08-11"
     },
     {
@@ -787,6 +842,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_56-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_56-archive.jpg",
       "datePosed": "2020-08-11"
     },
     {
@@ -801,6 +857,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_57-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_57-archive.jpg",
       "datePosed": "2020-08-11"
     },
     {
@@ -815,6 +872,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_58-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_58-archive.jpg",
       "datePosed": "2020-08-12"
     },
     {
@@ -829,6 +887,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_59-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_59-aout2020.jpg",
       "datePosed": "2020-08-12"
     },
     {
@@ -843,6 +902,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_60-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_60-aout2020.jpg",
       "datePosed": "2020-08-12"
     },
     {
@@ -857,6 +917,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_61-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_61-aout2020.jpg",
       "datePosed": "2020-08-12"
     },
     {
@@ -871,6 +932,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_62-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_62-archive.jpg",
       "datePosed": "2020-08-12"
     },
     {
@@ -885,6 +947,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_63-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_63-aout2020.jpg",
       "datePosed": "2020-08-12"
     },
     {
@@ -899,6 +962,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_64-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_64-aout2020.jpg",
       "datePosed": "2020-08-12"
     },
     {
@@ -913,6 +977,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_65-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_65-archive.jpg",
       "datePosed": "2020-08-12"
     },
     {
@@ -927,6 +992,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_66-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_66-aout2020.jpg",
       "datePosed": "2020-08-12"
     },
     {
@@ -941,6 +1007,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_67-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_67-octobre2020-ok.jpg",
       "datePosed": "2020-08-13"
     },
     {
@@ -955,6 +1022,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_68-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_68-novembre2025.jpg",
       "datePosed": "2020-08-13"
     },
     {
@@ -969,6 +1037,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_69-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_69-aout2020.jpg",
       "datePosed": "2020-08-13"
     },
     {
@@ -983,6 +1052,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_70-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_70-archive.jpg",
       "datePosed": "2020-08-13"
     },
     {
@@ -997,6 +1067,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_71-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_71-novembre2025.jpg",
       "datePosed": "2020-08-13"
     },
     {
@@ -1011,6 +1082,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_72-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_72-aout2020.jpg",
       "datePosed": "2020-08-14"
     },
     {
@@ -1025,6 +1097,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_73-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_73-aout2020.jpg",
       "datePosed": "2020-08-14"
     },
     {
@@ -1039,6 +1112,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_74-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_74-archive.jpg",
       "datePosed": "2020-08-15"
     },
     {
@@ -1053,6 +1127,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_75-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_75-aout2020.jpg",
       "datePosed": "2020-08-16"
     },
     {
@@ -1067,6 +1142,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_76-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_76-juillet2026.jpg",
       "datePosed": "2020-08-16"
     },
     {
@@ -1081,6 +1157,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_77-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_77-aout2020.jpg",
       "datePosed": "2020-08-16"
     },
     {
@@ -1095,6 +1172,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_78-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_78-aout2020.jpg",
       "datePosed": "2020-08-16"
     },
     {
@@ -1109,6 +1187,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_79-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_79-aout2020.jpg",
       "datePosed": "2020-08-17"
     },
     {
@@ -1123,6 +1202,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_80-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_80-septembre2023.jpg",
       "datePosed": "2020-08-17"
     },
     {
@@ -1137,6 +1217,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_81-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_81-aout2020.jpg",
       "datePosed": "2020-08-17"
     },
     {
@@ -1151,6 +1232,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_82-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_82-aout2020.jpg",
       "datePosed": "2020-08-17"
     },
     {
@@ -1165,6 +1247,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_83-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_83-aout2020.jpg",
       "datePosed": "2020-08-18"
     },
     {
@@ -1179,6 +1262,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_84-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_84-aout2020.jpg",
       "datePosed": "2020-08-18"
     },
     {
@@ -1193,6 +1277,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_85-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_85-aout2020.jpg",
       "datePosed": "2020-08-18"
     },
     {
@@ -1207,6 +1292,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_86-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_86-aout2020.jpg",
       "datePosed": "2020-08-18"
     },
     {
@@ -1221,6 +1307,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_87-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_87-novembre2024.jpg",
       "datePosed": "2020-08-19"
     },
     {
@@ -1235,6 +1322,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_88-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_88-aout2020.jpg",
       "datePosed": "2020-08-19"
     },
     {
@@ -1249,6 +1337,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_89-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_89-aout2020.jpg",
       "datePosed": "2020-08-20"
     },
     {
@@ -1263,6 +1352,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_90-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_90-archive.jpg",
       "datePosed": "2020-08-20"
     },
     {
@@ -1277,6 +1367,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_91-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_91-aout2020.jpg",
       "datePosed": "2020-08-20"
     },
     {
@@ -1291,6 +1382,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_92-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_92-avril2021.jpg",
       "datePosed": "2020-08-20"
     },
     {
@@ -1305,6 +1397,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_93-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_93-aout2020.jpg",
       "datePosed": "2020-08-20"
     },
     {
@@ -1319,6 +1412,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_94-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_94-avril2021.jpg",
       "datePosed": "2020-08-20"
     },
     {
@@ -1333,6 +1427,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_95-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_95-avril2021.jpg",
       "datePosed": "2020-08-20"
     },
     {
@@ -1347,6 +1442,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MARS/MARS_96-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MARS/MARS_96-aout2020.jpg",
       "datePosed": "2020-08-20"
     },
     {

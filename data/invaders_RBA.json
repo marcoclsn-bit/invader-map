@@ -1,8 +1,8 @@
 {
-  "version": 6,
-  "updatedAt": "2026-07-19",
+  "version": 7,
+  "updatedAt": "2026-08-13",
   "city": "RBA",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 17,
   "invaders": [
     {
@@ -31,6 +31,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RBA/RBA_02-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RBA/RBA_02-septembre2022.jpg",
       "datePosed": "2017-03-15"
     },
     {
@@ -45,6 +46,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RBA/RBA_04-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RBA/RBA_04-decembre2018.jpg",
       "datePosed": "2017-03-15"
     },
     {
@@ -59,6 +61,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RBA/RBA_05-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RBA/RBA_05-decembre2018.jpg",
       "datePosed": "2017-03-15"
     },
     {
@@ -73,6 +76,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RBA/RBA_06-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RBA/RBA_06-septembre2022.jpg",
       "datePosed": "2017-03-15"
     },
     {
@@ -87,6 +91,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RBA/RBA_07-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RBA/RBA_07-decembre2018.jpg",
       "datePosed": "2017-03-16"
     },
     {
@@ -101,6 +106,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RBA/RBA_08-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RBA/RBA_08-decembre2018.jpg",
       "datePosed": "2017-03-16"
     },
     {
@@ -115,6 +121,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RBA/RBA_09-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RBA/RBA_09-decembre2018.jpg",
       "datePosed": "2017-03-16"
     },
     {
@@ -143,6 +150,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RBA/RBA_12-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RBA/RBA_12-decembre2018.jpg",
       "datePosed": "2017-03-17"
     },
     {
@@ -157,6 +165,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RBA/RBA_13-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RBA/RBA_13-decembre2018.jpg",
       "datePosed": "2017-03-17"
     },
     {
@@ -171,6 +180,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RBA/RBA_14-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RBA/RBA_14-decembre2018.jpg",
       "datePosed": "2017-03-17"
     },
     {
@@ -185,6 +195,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RBA/RBA_15-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RBA/RBA_15-decembre2018.jpg",
       "datePosed": "2017-03-17"
     },
     {
@@ -199,6 +210,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RBA/RBA_16-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RBA/RBA_16-decembre2018.jpg",
       "datePosed": "2017-03-18"
     },
     {
@@ -213,6 +225,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RBA/RBA_17-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RBA/RBA_17-decembre2018.jpg",
       "datePosed": "2017-03-18"
     },
     {
@@ -227,6 +240,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RBA/RBA_18-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RBA/RBA_18-decembre2018.jpg",
       "datePosed": "2017-03-18"
     },
     {
@@ -241,6 +255,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RBA/RBA_20-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RBA/RBA_20-janvier2025.jpg",
       "datePosed": "2017-03-18"
     }
   ]

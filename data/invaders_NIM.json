@@ -1,8 +1,8 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-19",
+  "version": 6,
+  "updatedAt": "2026-08-13",
   "city": "NIM",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 5,
   "invaders": [
     {
@@ -17,6 +17,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NIM/NIM_01-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NIM/NIM_01-juin2025.jpg",
       "datePosed": "2004-09-23"
     },
     {
@@ -45,6 +46,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NIM/NIM_03-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NIM/NIM_03-juin2016.jpg",
       "datePosed": "2004-09-23"
     },
     {
@@ -73,6 +75,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NIM/NIM_05-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NIM/NIM_05-aout2025.jpg",
       "datePosed": "2004-09-23"
     }
   ]

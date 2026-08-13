@@ -1,8 +1,8 @@
 {
-  "version": 4,
-  "updatedAt": "2026-07-19",
+  "version": 5,
+  "updatedAt": "2026-08-13",
   "city": "FAO",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 4,
   "invaders": [
     {
@@ -15,7 +15,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/FAO/FAO_01-grosplan.png",
-      "datePosed": "2016-08-26"
+      "datePosed": "2016-08-26",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/FAO/FAO_01-avril2025.jpg"
     },
     {
       "id": "FAO_02",
@@ -27,7 +28,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/FAO/FAO_02-grosplan.png",
-      "datePosed": "2016-08-26"
+      "datePosed": "2016-08-26",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/FAO/FAO_02-fevrier2017.jpg"
     },
     {
       "id": "FAO_03",
@@ -51,7 +53,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/FAO/FAO_04-grosplan.png",
-      "datePosed": "2016-08-29"
+      "datePosed": "2016-08-29",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/FAO/FAO_04-fevrier2017.jpg"
     }
   ]
 }

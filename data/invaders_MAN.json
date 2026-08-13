@@ -1,8 +1,8 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-19",
+  "version": 6,
+  "updatedAt": "2026-08-13",
   "city": "MAN",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 47,
   "invaders": [
     {
@@ -31,6 +31,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_02-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_02-fevrier2023.jpg",
       "datePosed": "2004-06-21"
     },
     {
@@ -45,6 +46,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_03-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_03-mars2022.jpg",
       "datePosed": "2004-06-21"
     },
     {
@@ -59,6 +61,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_04-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_04-mars2022.jpg",
       "datePosed": "2004-06-21"
     },
     {
@@ -73,6 +76,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_05-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_05-mai2017.jpg",
       "datePosed": "2004-06-21"
     },
     {
@@ -87,6 +91,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_06-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_06-mars2022.jpg",
       "datePosed": "2004-06-21"
     },
     {
@@ -101,6 +106,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_07-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_07-mars2022-2.jpg",
       "datePosed": "2004-06-21"
     },
     {
@@ -115,6 +121,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_08-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_08-octobre2024.jpg",
       "datePosed": "2004-06-22"
     },
     {
@@ -129,6 +136,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_09-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_09-avril2024.jpg",
       "datePosed": "2004-06-22"
     },
     {
@@ -143,6 +151,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_10-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_10-mars2022.jpg",
       "datePosed": "2004-06-22"
     },
     {
@@ -157,6 +166,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_11-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_11-avril2024.jpg",
       "datePosed": "2004-06-22"
     },
     {
@@ -171,6 +181,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_12-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_12-mai2017.jpg",
       "datePosed": "2004-06-22"
     },
     {
@@ -185,6 +196,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_13-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_13-mai2017.jpg",
       "datePosed": "2004-06-23"
     },
     {
@@ -199,6 +211,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_14-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_14-mars2022.jpg",
       "datePosed": "2004-06-23"
     },
     {
@@ -227,6 +240,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_16-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_16-mai2017.jpg",
       "datePosed": "2004-06-23"
     },
     {
@@ -241,6 +255,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_17-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_17-mai2017.jpg",
       "datePosed": "2004-06-24"
     },
     {
@@ -255,6 +270,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_18-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_18-mai2017.jpg",
       "datePosed": "2004-06-24"
     },
     {
@@ -269,6 +285,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_19-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_19-mars2022.jpg",
       "datePosed": "2004-06-24"
     },
     {
@@ -283,6 +300,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_20-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_20-mai2017.jpg",
       "datePosed": "2004-06-24"
     },
     {
@@ -325,6 +343,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_23-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_23-mars2022.jpg",
       "datePosed": "2004-06-24"
     },
     {
@@ -339,6 +358,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_24-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_24-mai2017.jpg",
       "datePosed": "2004-06-24"
     },
     {
@@ -353,6 +373,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_25-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_25-mai2017.jpg",
       "datePosed": "2004-06-25"
     },
     {
@@ -367,6 +388,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_26-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_26-mai2017.jpg",
       "datePosed": "2004-06-25"
     },
     {
@@ -381,6 +403,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_27-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_27-aout2025.jpg",
       "datePosed": "2004-06-25"
     },
     {
@@ -395,6 +418,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_28-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_28-mars2022.jpg",
       "datePosed": "2004-06-25"
     },
     {
@@ -409,6 +433,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_29-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_29-mars2022.jpg",
       "datePosed": "2004-06-25"
     },
     {
@@ -423,6 +448,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_30-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_30-fevrier2024.jpg",
       "datePosed": "2004-06-26"
     },
     {
@@ -437,6 +463,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_31-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_31-avril2024.jpg",
       "datePosed": "2004-06-26"
     },
     {
@@ -465,6 +492,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_33-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_33-mars2022.jpg",
       "datePosed": "2004-06-27"
     },
     {
@@ -479,6 +507,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_34-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_34-mars2022.jpg",
       "datePosed": "2004-06-27"
     },
     {
@@ -493,6 +522,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_35-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_35-mai2017(2).jpg",
       "datePosed": "2004-06-27"
     },
     {
@@ -507,6 +537,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_36-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_36-avril2024.jpg",
       "datePosed": "2004-06-27"
     },
     {
@@ -521,6 +552,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_37-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_37-mai2017.jpg",
       "datePosed": "2004-06-27"
     },
     {
@@ -535,6 +567,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_38-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_38-avril2024.jpg",
       "datePosed": "2004-06-27"
     },
     {
@@ -549,6 +582,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_39-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_39-mars2022.jpg",
       "datePosed": "2004-06-27"
     },
     {
@@ -563,6 +597,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_40-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_40-mars2022-2.jpg",
       "datePosed": "2004-06-27"
     },
     {
@@ -591,6 +626,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_42-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_42-avril2024.jpg",
       "datePosed": "2004-06-27"
     },
     {
@@ -605,6 +641,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_43-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_43-mars2022.jpg",
       "datePosed": "2004-06-27"
     },
     {
@@ -619,6 +656,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_44-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_44-avril2024.jpg",
       "datePosed": "2004-06-27"
     },
     {
@@ -633,6 +671,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_45-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_45-mai2017.jpg",
       "datePosed": "2004-06-28"
     },
     {
@@ -647,6 +686,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_46-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_46-mars2022.jpg",
       "datePosed": "2004-06-28"
     },
     {
@@ -661,6 +701,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_47-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MAN/MAN_47-juillet2022.jpg",
       "datePosed": "2004-06-29"
     }
   ]

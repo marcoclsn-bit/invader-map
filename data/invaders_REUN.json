@@ -1,8 +1,8 @@
 {
-  "version": 6,
-  "updatedAt": "2026-07-19",
+  "version": 7,
+  "updatedAt": "2026-08-13",
   "city": "REUN",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 10,
   "invaders": [
     {
@@ -17,6 +17,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_01-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/REUN/REUN_01-janvier2023.jpg",
       "datePosed": "2022-12-24"
     },
     {
@@ -31,6 +32,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_02-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/REUN/REUN_02-janvier2023.jpg",
       "datePosed": "2022-12-24"
     },
     {
@@ -45,6 +47,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_03-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/REUN/REUN_03-janvier2026.jpg",
       "datePosed": "2022-12-24"
     },
     {
@@ -59,6 +62,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_04-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/REUN/REUN_04-fevrier2024.jpg",
       "datePosed": "2022-12-24"
     },
     {
@@ -73,6 +77,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_05-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/REUN/REUN_05-janvier2023.jpg",
       "datePosed": "2022-12-24"
     },
     {
@@ -87,6 +92,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_06-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/REUN/REUN_06-janvier2023.jpg",
       "datePosed": "2022-12-24"
     },
     {
@@ -101,6 +107,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_07-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/REUN/REUN_07-janvier2023.jpg",
       "datePosed": "2022-12-27"
     },
     {
@@ -115,6 +122,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_08-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/REUN/REUN_08-janvier2023.jpg",
       "datePosed": "2022-12-27"
     },
     {
@@ -130,6 +138,7 @@
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_09-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/REUN/REUN_09-janvier2023.jpg",
       "datePosed": "2022-12-27"
     },
     {
@@ -144,6 +153,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_10-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/REUN/REUN_10-janvier2023.jpg",
       "datePosed": "2022-12-27"
     },
     {
@@ -158,6 +168,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/REUN/REUN_11-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/REUN/REUN_11-janvier2023.jpg",
       "datePosed": "2022-12-27"
     }
   ]

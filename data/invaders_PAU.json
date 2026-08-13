@@ -1,8 +1,8 @@
 {
-  "version": 5,
-  "updatedAt": "2026-07-19",
+  "version": 6,
+  "updatedAt": "2026-08-13",
   "city": "PAU",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 10,
   "invaders": [
     {
@@ -17,6 +17,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/PAU/PAU_01-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/PAU/PAU_01-novembre2017.jpg",
       "datePosed": "2000-11-21"
     },
     {
@@ -31,6 +32,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/PAU/PAU_02-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/PAU/PAU_02-fevrier2017.jpg",
       "datePosed": "2000-11-21"
     },
     {
@@ -45,6 +47,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/PAU/PAU_03-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/PAU/PAU_03-mars2015.jpg",
       "datePosed": "2000-11-21"
     },
     {
@@ -59,6 +62,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/PAU/PAU_04-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/PAU/PAU_04-mars2015.jpg",
       "datePosed": "2000-11-21"
     },
     {
@@ -73,6 +77,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/PAU/PAU_05-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/PAU/PAU_05-fevrier2023.jpg",
       "datePosed": "2000-11-22"
     },
     {
@@ -87,6 +92,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/PAU/PAU_06-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/PAU/PAU_06-fevrier2017.jpg",
       "datePosed": "2000-11-22"
     },
     {
@@ -101,6 +107,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/PAU/PAU_07-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/PAU/PAU_07-decembre2020.jpg",
       "datePosed": "2000-11-22"
     },
     {
@@ -115,6 +122,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/PAU/PAU_08-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/PAU/PAU_08-fevrier2023.jpg",
       "datePosed": "2000-11-22"
     },
     {
@@ -143,6 +151,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/PAU/PAU_10-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/PAU/PAU_10-novembre2017.jpg",
       "datePosed": "2000-11-23"
     }
   ]

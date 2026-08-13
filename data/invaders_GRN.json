@@ -1,8 +1,8 @@
 {
-  "version": 6,
-  "updatedAt": "2026-07-19",
+  "version": 7,
+  "updatedAt": "2026-08-13",
   "city": "GRN",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 57,
   "invaders": [
     {
@@ -17,6 +17,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_01-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_01-septembre2025.jpg",
       "datePosed": "1999-12-14"
     },
     {
@@ -45,6 +46,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_03-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_03-juin2016.jpg",
       "datePosed": "1999-12-14"
     },
     {
@@ -59,6 +61,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_04-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_04-mars2025.jpg",
       "datePosed": "1999-12-14"
     },
     {
@@ -87,6 +90,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_06-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_06-fevrier2022.jpg",
       "datePosed": "1999-12-14"
     },
     {
@@ -101,6 +105,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_07-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_07-avril2023.jpg",
       "datePosed": "1999-12-14"
     },
     {
@@ -115,6 +120,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_08-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_08-decembre2024.jpg",
       "datePosed": "1999-12-14"
     },
     {
@@ -143,6 +149,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_10-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_10-decembre2024.jpg",
       "datePosed": "1999-12-14"
     },
     {
@@ -171,6 +178,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_12-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_12-mars2025.jpg",
       "datePosed": "1999-12-14"
     },
     {
@@ -199,6 +207,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_14-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_14-novembre2024.jpg",
       "datePosed": "1999-12-14"
     },
     {
@@ -213,6 +222,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_15-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_15-novembre2024.jpg",
       "datePosed": "1999-12-15"
     },
     {
@@ -269,6 +279,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_19-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_19-juin2025.jpg",
       "datePosed": "1999-12-15"
     },
     {
@@ -283,6 +294,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_20-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_20-mai2025.jpg",
       "datePosed": "1999-12-15"
     },
     {
@@ -311,6 +323,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_22-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_22-juin2016.jpg",
       "datePosed": "1999-12-15"
     },
     {
@@ -325,6 +338,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_23-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_23-juillet2024.jpg",
       "datePosed": "1999-12-15"
     },
     {
@@ -339,6 +353,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_24-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_24-juin2025.jpg",
       "datePosed": "1999-12-15"
     },
     {
@@ -367,6 +382,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_26-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_26-mai2025.jpg",
       "datePosed": "1999-12-15"
     },
     {
@@ -381,6 +397,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_27-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_27-decembre2021.jpg",
       "datePosed": "1999-12-16"
     },
     {
@@ -423,6 +440,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_30-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_30-novembre2024.jpg",
       "datePosed": "1999-12-16"
     },
     {
@@ -479,6 +497,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_34-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_34-juin2016.jpg",
       "datePosed": "1999-12-16"
     },
     {
@@ -507,6 +526,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_36-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_36-mars2025.jpg",
       "datePosed": "1999-12-16"
     },
     {
@@ -521,6 +541,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_37-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_37-mars2026.jpg",
       "datePosed": "1999-12-16"
     },
     {
@@ -535,6 +556,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_38-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_38-fevrier2022.jpg",
       "datePosed": "1999-12-16"
     },
     {
@@ -563,6 +585,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_40-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_40-septembre2019.jpg",
       "datePosed": "1999-12-16"
     },
     {
@@ -577,6 +600,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_41-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_41-mai2025.jpg",
       "datePosed": "1999-12-17"
     },
     {
@@ -591,6 +615,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_42-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_42-janvier2025.jpg",
       "datePosed": "1999-12-17"
     },
     {
@@ -605,6 +630,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_43-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_43-avril2023.jpg",
       "datePosed": "1999-12-17"
     },
     {
@@ -633,6 +659,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_45-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_45-avril2023.jpg",
       "datePosed": "1999-12-17"
     },
     {
@@ -647,6 +674,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_46-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_46-decembre2021.jpg",
       "datePosed": "1999-12-17"
     },
     {
@@ -703,6 +731,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_50-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_50-mars2025.jpg",
       "datePosed": "1999-12-17"
     },
     {
@@ -745,6 +774,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_53-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_53-mai2025.jpg",
       "datePosed": "1999-12-17"
     },
     {
@@ -759,6 +789,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_54-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_54-mai2025.jpg",
       "datePosed": "1999-12-17"
     },
     {
@@ -773,6 +804,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_55-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_55-juin2023.jpg",
       "datePosed": "1999-12-17"
     },
     {
@@ -801,6 +833,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/GRN/GRN_57-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/GRN/GRN_57-fevrier2025.jpg",
       "datePosed": "1999-12-17"
     }
   ]

@@ -1,8 +1,8 @@
 {
-  "version": 6,
-  "updatedAt": "2026-07-19",
+  "version": 7,
+  "updatedAt": "2026-08-13",
   "city": "NY",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 192,
   "invaders": [
     {
@@ -143,6 +143,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_010-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_010-juillet2025.jpg",
       "datePosed": "2000-02-22"
     },
     {
@@ -241,6 +242,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_017-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_017-fevrier2021.jpg",
       "datePosed": "2000-02-24"
     },
     {
@@ -339,6 +341,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_025-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_025-juillet2023.jpg",
       "datePosed": "2000-02-26"
     },
     {
@@ -367,6 +370,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_027-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_027-juillet2025.jpg",
       "datePosed": "2000-02-26"
     },
     {
@@ -395,6 +399,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_029-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_029-mars2016.jpg",
       "datePosed": "2000-02-27"
     },
     {
@@ -409,6 +414,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_030-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_030-avril2023-ko.jpg",
       "datePosed": "2000-02-27"
     },
     {
@@ -423,6 +429,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_031-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_031-mars2016.jpg",
       "datePosed": "2000-02-27"
     },
     {
@@ -451,6 +458,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_033-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_033-juillet2023.jpg",
       "datePosed": "2000-02-27"
     },
     {
@@ -493,6 +501,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_036-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_036-mars2026.jpg",
       "datePosed": "2003-06-20"
     },
     {
@@ -521,6 +530,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_038-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_038-octobre2021.jpg",
       "datePosed": "2003-06-20"
     },
     {
@@ -535,6 +545,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_039-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_039-octobre2021.jpg",
       "datePosed": "2003-06-20"
     },
     {
@@ -577,6 +588,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_042-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_042-juillet2021.jpg",
       "datePosed": "2003-06-22"
     },
     {
@@ -787,6 +799,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_057-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_057-juin2021.jpg",
       "datePosed": "2003-06-25"
     },
     {
@@ -815,6 +828,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_059-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_059-juin2025.jpg",
       "datePosed": "2003-06-25"
     },
     {
@@ -885,6 +899,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_064-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_064-avril2022.jpg",
       "datePosed": "2003-06-26"
     },
     {
@@ -1081,6 +1096,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_078-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_078-mai2021.jpg",
       "datePosed": "2003-07-06"
     },
     {
@@ -1095,6 +1111,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_079-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_079-novembre2024.jpg",
       "datePosed": "2003-07-06"
     },
     {
@@ -1109,6 +1126,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_080-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_080-mai2021.jpg",
       "datePosed": "2003-07-06"
     },
     {
@@ -1179,6 +1197,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_085-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_085-septembre2022.jpg",
       "datePosed": "2003-07-08"
     },
     {
@@ -1193,6 +1212,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_086-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_086-juin2022.jpg",
       "datePosed": "2007-11-28"
     },
     {
@@ -1235,6 +1255,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_089-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_089-archive.jpg",
       "datePosed": "2007-11-29"
     },
     {
@@ -1249,6 +1270,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_090-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_090-mars2016.jpg",
       "datePosed": "2007-11-30"
     },
     {
@@ -1263,6 +1285,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_091-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_091-juin2025.jpg",
       "datePosed": "2007-11-30"
     },
     {
@@ -1277,6 +1300,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_092-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_092-aout2022.jpg",
       "datePosed": "2007-11-30"
     },
     {
@@ -1291,6 +1315,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_093-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_093-juin2025-2.jpg",
       "datePosed": "2007-12-01"
     },
     {
@@ -1347,6 +1372,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_097-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_097-fevrier2021.jpg",
       "datePosed": "2007-12-03"
     },
     {
@@ -1375,6 +1401,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_099-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_099-avril2023.jpg",
       "datePosed": "2007-12-03"
     },
     {
@@ -1389,6 +1416,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_100-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_100-novembre2024.jpg",
       "datePosed": "2007-12-03"
     },
     {
@@ -1403,6 +1431,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_101-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_101-octobre2025.jpg",
       "datePosed": "2007-12-03"
     },
     {
@@ -1417,6 +1446,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_102-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_102-mars2016.jpg",
       "datePosed": "2007-12-03"
     },
     {
@@ -1431,6 +1461,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_103-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_103-mars2023.jpg",
       "datePosed": "2007-12-04"
     },
     {
@@ -1459,6 +1490,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_105-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_105-juillet2025.jpg",
       "datePosed": "2007-12-04"
     },
     {
@@ -1473,6 +1505,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_106-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_106-mai2022.jpg",
       "datePosed": "2007-12-04"
     },
     {
@@ -1487,6 +1520,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_107-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_107-mars2016.jpg",
       "datePosed": "2007-12-05"
     },
     {
@@ -1529,6 +1563,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_110-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_110-juin2025.jpg",
       "datePosed": "2007-12-05"
     },
     {
@@ -1543,6 +1578,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_111-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_111-juin2024.jpg",
       "datePosed": "2007-12-06"
     },
     {
@@ -1557,6 +1593,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_112-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_112-mars2016.jpg",
       "datePosed": "2007-12-06"
     },
     {
@@ -1571,6 +1608,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_113-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_113-avril2022.jpg",
       "datePosed": "2007-12-06"
     },
     {
@@ -1599,6 +1637,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_115-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_115-juin2024.jpg",
       "datePosed": "2009-06-25"
     },
     {
@@ -1613,6 +1652,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_116-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_116-mars2024.jpg",
       "datePosed": "2009-06-25"
     },
     {
@@ -1627,6 +1667,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_117-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_117-aout2024.jpg",
       "datePosed": "2009-06-26"
     },
     {
@@ -1641,6 +1682,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_118-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_118-aout2021.jpg",
       "datePosed": "2009-06-27"
     },
     {
@@ -1655,6 +1697,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_119-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_119-avril2023.jpg",
       "datePosed": "2009-06-28"
     },
     {
@@ -1669,6 +1712,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_120-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_120-mars2024.jpg",
       "datePosed": "2009-06-29"
     },
     {
@@ -1739,6 +1783,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_125-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_125-novembre2021.jpg",
       "datePosed": "2013-10-27"
     },
     {
@@ -1893,6 +1938,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_136-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_136-mars2016.jpg",
       "datePosed": "2013-11-01"
     },
     {
@@ -2047,6 +2093,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_147-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_147-juin2024.jpg",
       "datePosed": "2015-08-08"
     },
     {
@@ -2061,6 +2108,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_148-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_148-janvier2026.jpg",
       "datePosed": "2015-11-07"
     },
     {
@@ -2075,6 +2123,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_149-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_149-mars2016.jpg",
       "datePosed": "2015-11-09"
     },
     {
@@ -2089,6 +2138,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_150-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_150-mars2016.jpg",
       "datePosed": "2015-11-09"
     },
     {
@@ -2103,6 +2153,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_151-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_151-mars2016.jpg",
       "datePosed": "2015-11-10"
     },
     {
@@ -2117,6 +2168,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_152-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_152-novembre2017.jpg",
       "datePosed": "2015-11-11"
     },
     {
@@ -2131,6 +2183,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_153-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_153-mars2016.jpg",
       "datePosed": "2015-11-11"
     },
     {
@@ -2145,6 +2198,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_154-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_154-mai2024.jpg",
       "datePosed": "2015-11-12"
     },
     {
@@ -2159,6 +2213,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_155-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_155-mars2016.jpg",
       "datePosed": "2015-11-12"
     },
     {
@@ -2173,6 +2228,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_156-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_156-janvier2026.jpg",
       "datePosed": "2015-11-12"
     },
     {
@@ -2187,6 +2243,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_157-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_157-juillet2025.jpg",
       "datePosed": "2015-11-12"
     },
     {
@@ -2201,6 +2258,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_158-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_158-mai2024.jpg",
       "datePosed": "2015-11-14"
     },
     {
@@ -2215,6 +2273,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_159-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_159-juillet2024.jpg",
       "datePosed": "2015-11-14"
     },
     {
@@ -2229,6 +2288,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_160-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_160-mars2016.jpg",
       "datePosed": "2015-11-14"
     },
     {
@@ -2243,6 +2303,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_161-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_161-avril2024.jpg",
       "datePosed": "2015-11-15"
     },
     {
@@ -2257,6 +2318,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_162-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_162-mars2026.jpg",
       "datePosed": "2015-11-16"
     },
     {
@@ -2271,6 +2333,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_163-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_163-mars2016.jpg",
       "datePosed": "2015-11-17"
     },
     {
@@ -2285,6 +2348,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_164-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_164-juin2024.jpg",
       "datePosed": "2015-11-17"
     },
     {
@@ -2299,6 +2363,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_165-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_165-septembre2025.jpg",
       "datePosed": "2015-11-17"
     },
     {
@@ -2313,6 +2378,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_166-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_166-novembre2022.jpg",
       "datePosed": "2015-11-17"
     },
     {
@@ -2327,6 +2393,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_167-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_167-mars2016.jpg",
       "datePosed": "2015-11-17"
     },
     {
@@ -2341,6 +2408,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_168-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_168-mai2024.jpg",
       "datePosed": "2015-11-18"
     },
     {
@@ -2355,6 +2423,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_169-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_169-janvier2023.jpg",
       "datePosed": "2015-11-18"
     },
     {
@@ -2369,6 +2438,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_170-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_170-aout2024.jpg",
       "datePosed": "2015-11-19"
     },
     {
@@ -2383,6 +2453,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_171-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_171-mai2024.jpg",
       "datePosed": "2015-11-19"
     },
     {
@@ -2397,6 +2468,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_172-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_172-mars2016.jpg",
       "datePosed": "2015-11-19"
     },
     {
@@ -2453,6 +2525,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_176-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_176-mai2026.jpg",
       "datePosed": "2015-11-20"
     },
     {
@@ -2467,6 +2540,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_177-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_177-mai2024.jpg",
       "datePosed": "2015-11-20"
     },
     {
@@ -2495,6 +2569,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_179-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_179-mars2016.jpg",
       "datePosed": "2015-11-21"
     },
     {
@@ -2509,6 +2584,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_180-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_180-mars2016.jpg",
       "datePosed": "2015-11-22"
     },
     {
@@ -2551,6 +2627,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_183-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_183-avril2026.jpg",
       "datePosed": "2015-11-22"
     },
     {
@@ -2565,6 +2642,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_184-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_184-mars2016.jpg",
       "datePosed": "2015-11-22"
     },
     {
@@ -2579,6 +2657,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_185-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_185-juin2024.jpg",
       "datePosed": "2015-11-22"
     },
     {
@@ -2593,6 +2672,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_186-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_186-mars2016.jpg",
       "datePosed": "2015-11-22"
     },
     {
@@ -2607,6 +2687,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_187-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_187-mars2016.jpg",
       "datePosed": "2015-11-23"
     },
     {
@@ -2621,6 +2702,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_188-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_188-avril2023.jpg",
       "datePosed": "2015-11-23"
     },
     {
@@ -2635,6 +2717,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_189-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_189-archive.jpg",
       "datePosed": "2016-05-08"
     },
     {
@@ -2649,6 +2732,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_216-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_216-mars2024.jpg",
       "datePosed": "2019-08-09"
     },
     {
@@ -2663,6 +2747,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_217-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_217-juin2025-2.jpg",
       "datePosed": "2019-08-12"
     },
     {
@@ -2677,6 +2762,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_218-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_218-janvier2023.jpg",
       "datePosed": "2019-08-13"
     },
     {

@@ -1,6 +1,6 @@
 {
-  "version": 7,
-  "updatedAt": "2026-08-02",
+  "version": 8,
+  "updatedAt": "2026-08-13",
   "city": "LJU",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 42,
@@ -17,6 +17,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_01-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LJU/LJU_01-mars2024.jpg",
       "datePosed": "2006-03-13"
     },
     {
@@ -129,6 +130,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_09-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LJU/LJU_09-aout2024.jpg",
       "datePosed": "2006-03-13"
     },
     {
@@ -143,6 +145,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_10-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LJU/LJU_10-juillet2021.jpg",
       "datePosed": "2006-03-13"
     },
     {
@@ -213,6 +216,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_15-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LJU/LJU_15-avril2025.jpg",
       "datePosed": "2006-03-14"
     },
     {
@@ -241,6 +245,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_17-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LJU/LJU_17-avril2026.jpg",
       "datePosed": "2006-03-15"
     },
     {
@@ -269,6 +274,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_19-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LJU/LJU_19-juillet2026.jpg",
       "datePosed": "2006-03-15"
     },
     {
@@ -353,6 +359,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_25-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LJU/LJU_25-avril2024.jpg",
       "datePosed": "2021-03-10"
     },
     {
@@ -367,6 +374,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_26-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LJU/LJU_26-mars2021.jpg",
       "datePosed": "2021-03-10"
     },
     {
@@ -409,6 +417,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_29-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LJU/LJU_29-mars2024.jpg",
       "datePosed": "2021-03-10"
     },
     {
@@ -493,6 +502,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_35-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LJU/LJU_35-juillet2025.jpg",
       "datePosed": "2021-03-11"
     },
     {
@@ -591,6 +601,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LJU/LJU_42-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LJU/LJU_42-mars2021.jpg",
       "datePosed": "2021-03-14"
     }
   ]

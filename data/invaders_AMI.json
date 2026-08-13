@@ -1,8 +1,8 @@
 {
-  "version": 4,
-  "updatedAt": "2026-07-19",
+  "version": 5,
+  "updatedAt": "2026-08-13",
   "city": "AMI",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 0,
   "invaders": [
     {
@@ -18,6 +18,7 @@
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_01-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMI/AMI_01-juin2025.jpg",
       "datePosed": "2025-06-10"
     },
     {
@@ -33,6 +34,7 @@
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_02-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMI/AMI_02-juin2025.jpg",
       "datePosed": "2025-06-10"
     },
     {
@@ -48,6 +50,7 @@
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_03-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMI/AMI_03-juin2025.jpg",
       "datePosed": "2025-06-10"
     },
     {
@@ -63,6 +66,7 @@
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_04-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMI/AMI_04-juin2026.jpg",
       "datePosed": "2025-06-10"
     },
     {
@@ -78,6 +82,7 @@
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_05-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMI/AMI_05-juin2025.jpg",
       "datePosed": "2025-06-10"
     },
     {
@@ -93,6 +98,7 @@
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_06-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMI/AMI_06-juin2025.jpg",
       "datePosed": "2025-06-10"
     },
     {
@@ -108,6 +114,7 @@
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_07-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMI/AMI_07-juin2025.jpg",
       "datePosed": "2025-06-10"
     },
     {
@@ -123,6 +130,7 @@
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_08-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMI/AMI_08-juin2025.jpg",
       "datePosed": "2025-06-10"
     },
     {
@@ -138,6 +146,7 @@
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_09-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMI/AMI_09-juin2025.jpg",
       "datePosed": "2025-06-10"
     },
     {
@@ -153,6 +162,7 @@
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_10-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMI/AMI_10-juin2025.jpg",
       "datePosed": "2025-06-10"
     },
     {
@@ -168,6 +178,7 @@
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_11-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMI/AMI_11-juin2025.jpg",
       "datePosed": "2025-06-11"
     },
     {
@@ -183,6 +194,7 @@
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_12-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMI/AMI_12-juin2025.jpg",
       "datePosed": "2025-06-11"
     },
     {
@@ -198,6 +210,7 @@
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_13-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMI/AMI_13-juin2025.jpg",
       "datePosed": "2025-06-11"
     },
     {
@@ -213,6 +226,7 @@
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_14-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMI/AMI_14-juin2025.jpg",
       "datePosed": "2025-06-11"
     },
     {
@@ -228,6 +242,7 @@
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_15-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMI/AMI_15-juin2025.jpg",
       "datePosed": "2025-06-11"
     },
     {
@@ -243,6 +258,7 @@
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/AMI/AMI_16-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AMI/AMI_16-juin2025.jpg",
       "datePosed": "2025-06-11"
     }
   ]

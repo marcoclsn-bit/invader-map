@@ -1,8 +1,8 @@
 {
-  "version": 6,
-  "updatedAt": "2026-07-19",
+  "version": 7,
+  "updatedAt": "2026-08-13",
   "city": "MIA",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 80,
   "invaders": [
     {
@@ -45,6 +45,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_03-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_03-decembre2024.jpg",
       "datePosed": "2010-11-25"
     },
     {
@@ -59,6 +60,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_04-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_04-avril2025.jpg",
       "datePosed": "2010-11-26"
     },
     {
@@ -87,6 +89,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_06-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_06-avril2025.jpg",
       "datePosed": "2010-11-27"
     },
     {
@@ -115,6 +118,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_08-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_08-janvier2023.jpg",
       "datePosed": "2010-11-28"
     },
     {
@@ -129,6 +133,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_09-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_09-avril2025.jpg",
       "datePosed": "2010-11-28"
     },
     {
@@ -157,6 +162,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_11-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_11-fevrier2020.jpg",
       "datePosed": "2010-11-28"
     },
     {
@@ -185,6 +191,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_13-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_13-novembre2022.jpg",
       "datePosed": "2010-11-29"
     },
     {
@@ -199,6 +206,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_14-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_14-juin2024.jpg",
       "datePosed": "2010-11-29"
     },
     {
@@ -311,6 +319,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_22-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_22-mai2024.jpg",
       "datePosed": "2010-12-03"
     },
     {
@@ -339,6 +348,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_24-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_24-novembre2021.jpg",
       "datePosed": "2010-12-03"
     },
     {
@@ -367,6 +377,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_26-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_26-juillet2022.jpg",
       "datePosed": "2010-12-03"
     },
     {
@@ -381,6 +392,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_27-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_27-juillet2022.jpg",
       "datePosed": "2010-12-03"
     },
     {
@@ -409,6 +421,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_29-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_29-aout2024.jpg",
       "datePosed": "2012-08-07"
     },
     {
@@ -451,6 +464,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_32-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_32-avril2025.jpg",
       "datePosed": "2012-08-09"
     },
     {
@@ -465,6 +479,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_33-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_33-avril2025.jpg",
       "datePosed": "2012-08-09"
     },
     {
@@ -493,6 +508,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_35-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_35-mars2016.jpg",
       "datePosed": "2012-08-10"
     },
     {
@@ -521,6 +537,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_37-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_37-mars2016.jpg",
       "datePosed": "2012-08-10"
     },
     {
@@ -577,6 +594,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_41-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_41-decembre2021.jpg",
       "datePosed": "2012-08-11"
     },
     {
@@ -591,6 +609,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_42-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_42-mars2016.jpg",
       "datePosed": "2012-08-11"
     },
     {
@@ -605,6 +624,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_43-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_43-mars2016.jpg",
       "datePosed": "2012-08-12"
     },
     {
@@ -619,6 +639,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_44-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_44-mars2016.jpg",
       "datePosed": "2012-08-12"
     },
     {
@@ -675,6 +696,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_48-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_48-mars2016.jpg",
       "datePosed": "2012-08-12"
     },
     {
@@ -689,6 +711,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_49-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_49-janvier2025.jpg",
       "datePosed": "2012-08-17"
     },
     {
@@ -717,6 +740,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_51-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_51-decembre2024.jpg",
       "datePosed": "2012-08-17"
     },
     {
@@ -759,6 +783,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_54-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_54-mars2016.jpg",
       "datePosed": "2012-08-18"
     },
     {
@@ -801,6 +826,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_57-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_57-janvier2024.jpg",
       "datePosed": "2012-08-18"
     },
     {
@@ -829,6 +855,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_59-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_59-avril2025.jpg",
       "datePosed": "2012-08-19"
     },
     {
@@ -857,6 +884,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_61-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_61-avril2025.jpg",
       "datePosed": "2012-08-22"
     },
     {
@@ -871,6 +899,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_62-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_62-mars2016.jpg",
       "datePosed": "2012-08-22"
     },
     {
@@ -885,6 +914,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_63-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_63-mars2016.jpg",
       "datePosed": "2012-08-24"
     },
     {
@@ -899,6 +929,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_64-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_64-mars2016.jpg",
       "datePosed": "2012-08-24"
     },
     {
@@ -913,6 +944,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_65-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_65-mars2016.jpg",
       "datePosed": "2012-08-24"
     },
     {
@@ -927,6 +959,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_66-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_66-mars2016.jpg",
       "datePosed": "2012-08-24"
     },
     {
@@ -941,6 +974,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_67-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_67-fevrier2023.jpg",
       "datePosed": "2012-08-24"
     },
     {
@@ -955,6 +989,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_68-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_68-mars2016.jpg",
       "datePosed": "2012-08-24"
     },
     {
@@ -969,6 +1004,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_69-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_69-octobre2025.jpg",
       "datePosed": "2012-08-25"
     },
     {
@@ -983,6 +1019,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_70-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_70-mars2016.jpg",
       "datePosed": "2012-08-26"
     },
     {
@@ -997,6 +1034,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_71-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_71-juillet2022.jpg",
       "datePosed": "2012-08-27"
     },
     {
@@ -1011,6 +1049,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_72-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_72-janvier2025.jpg",
       "datePosed": "2012-08-27"
     },
     {
@@ -1039,6 +1078,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_74-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_74-mars2016.jpg",
       "datePosed": "2012-11-30"
     },
     {
@@ -1053,6 +1093,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_75-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_75-mars2016.jpg",
       "datePosed": "2012-11-30"
     },
     {
@@ -1067,6 +1108,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_79-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_79-mars2016.jpg",
       "datePosed": "2012-12-02"
     },
     {
@@ -1123,6 +1165,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_84-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MIA/MIA_84-novembre2021.jpg",
       "datePosed": "2012-12-09"
     }
   ]

@@ -1,8 +1,8 @@
 {
-  "version": 4,
-  "updatedAt": "2026-07-19",
+  "version": 5,
+  "updatedAt": "2026-08-13",
   "city": "CLR",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 47,
   "invaders": [
     {
@@ -15,7 +15,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_01-grosplan.png",
-      "datePosed": "2001-02-03"
+      "datePosed": "2001-02-03",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_01-decembre2020.jpg"
     },
     {
       "id": "CLR_02",
@@ -27,7 +28,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_02-grosplan.png",
-      "datePosed": "2001-02-03"
+      "datePosed": "2001-02-03",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_02-septembre2017.jpg"
     },
     {
       "id": "CLR_03",
@@ -39,7 +41,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_03-grosplan.png",
-      "datePosed": "2001-02-03"
+      "datePosed": "2001-02-03",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_03-juin2016.jpg"
     },
     {
       "id": "CLR_04",
@@ -51,7 +54,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_04-grosplan.png",
-      "datePosed": "2001-02-03"
+      "datePosed": "2001-02-03",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_04-mai2015.jpg"
     },
     {
       "id": "CLR_05",
@@ -63,7 +67,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_05-grosplan.png",
-      "datePosed": "2001-02-03"
+      "datePosed": "2001-02-03",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_05-mars2026.jpg"
     },
     {
       "id": "CLR_06",
@@ -75,7 +80,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_06-grosplan.png",
-      "datePosed": "2001-02-03"
+      "datePosed": "2001-02-03",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_06-juin2016.jpg"
     },
     {
       "id": "CLR_07",
@@ -87,7 +93,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_07-grosplan.png",
-      "datePosed": "2002-12-31"
+      "datePosed": "2002-12-31",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_07-aout2025.jpg"
     },
     {
       "id": "CLR_08",
@@ -99,7 +106,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_08-grosplan.png",
-      "datePosed": "2002-12-31"
+      "datePosed": "2002-12-31",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_08-juin2016.jpg"
     },
     {
       "id": "CLR_09",
@@ -111,7 +119,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_09-grosplan.png",
-      "datePosed": "2016-01-21"
+      "datePosed": "2016-01-21",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_09-juin2016.jpg"
     },
     {
       "id": "CLR_10",
@@ -123,7 +132,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_10-grosplan.png",
-      "datePosed": "2016-01-21"
+      "datePosed": "2016-01-21",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_10-juin2016.jpg"
     },
     {
       "id": "CLR_11",
@@ -135,7 +145,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_11-grosplan.png",
-      "datePosed": "2016-01-21"
+      "datePosed": "2016-01-21",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_11-juin2016.jpg"
     },
     {
       "id": "CLR_12",
@@ -159,7 +170,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_13-grosplan.png",
-      "datePosed": "2016-01-21"
+      "datePosed": "2016-01-21",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_13-juin2016.jpg"
     },
     {
       "id": "CLR_14",
@@ -171,7 +183,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_14-grosplan.png",
-      "datePosed": "2016-01-22"
+      "datePosed": "2016-01-22",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_14-juin2016.jpg"
     },
     {
       "id": "CLR_15",
@@ -183,7 +196,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_15-grosplan.png",
-      "datePosed": "2016-01-22"
+      "datePosed": "2016-01-22",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_15-juin2016.jpg"
     },
     {
       "id": "CLR_16",
@@ -195,7 +209,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_16-grosplan.png",
-      "datePosed": "2016-01-22"
+      "datePosed": "2016-01-22",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_16-juin2016.jpg"
     },
     {
       "id": "CLR_17",
@@ -207,7 +222,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_17-grosplan.png",
-      "datePosed": "2016-01-22"
+      "datePosed": "2016-01-22",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_17-avril2024.jpg"
     },
     {
       "id": "CLR_18",
@@ -219,7 +235,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_18-grosplan.png",
-      "datePosed": "2016-01-23"
+      "datePosed": "2016-01-23",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_18-juin2016.jpg"
     },
     {
       "id": "CLR_19",
@@ -231,7 +248,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_19-grosplan.png",
-      "datePosed": "2016-01-23"
+      "datePosed": "2016-01-23",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_19-juin2016.jpg"
     },
     {
       "id": "CLR_20",
@@ -243,7 +261,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_20-grosplan.png",
-      "datePosed": "2016-01-23"
+      "datePosed": "2016-01-23",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_20-juin2016.jpg"
     },
     {
       "id": "CLR_21",
@@ -255,7 +274,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_21-grosplan.png",
-      "datePosed": "2016-01-23"
+      "datePosed": "2016-01-23",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_21-juin2016.jpg"
     },
     {
       "id": "CLR_22",
@@ -267,7 +287,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_22-grosplan.png",
-      "datePosed": "2016-01-24"
+      "datePosed": "2016-01-24",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_22-juin2016.jpg"
     },
     {
       "id": "CLR_23",
@@ -279,7 +300,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_23-grosplan.png",
-      "datePosed": "2016-01-24"
+      "datePosed": "2016-01-24",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_23-juin2016.jpg"
     },
     {
       "id": "CLR_24",
@@ -291,7 +313,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_24-grosplan.png",
-      "datePosed": "2016-01-24"
+      "datePosed": "2016-01-24",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_24-juin2016.jpg"
     },
     {
       "id": "CLR_25",
@@ -303,7 +326,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_25-grosplan.png",
-      "datePosed": "2016-01-24"
+      "datePosed": "2016-01-24",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_25-fevrier2021.jpg"
     },
     {
       "id": "CLR_26",
@@ -315,7 +339,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_26-grosplan.png",
-      "datePosed": "2016-01-24"
+      "datePosed": "2016-01-24",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_26-juin2016.jpg"
     },
     {
       "id": "CLR_27",
@@ -327,7 +352,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_27-grosplan.png",
-      "datePosed": "2016-01-24"
+      "datePosed": "2016-01-24",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_27-juin2016.jpg"
     },
     {
       "id": "CLR_28",
@@ -339,7 +365,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_28-grosplan.png",
-      "datePosed": "2016-01-24"
+      "datePosed": "2016-01-24",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_28-juin2016.jpg"
     },
     {
       "id": "CLR_29",
@@ -351,7 +378,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_29-grosplan.png",
-      "datePosed": "2016-01-24"
+      "datePosed": "2016-01-24",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_29-juin2016.jpg"
     },
     {
       "id": "CLR_30",
@@ -363,7 +391,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_30-grosplan.png",
-      "datePosed": "2016-01-24"
+      "datePosed": "2016-01-24",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_30-juin2016.jpg"
     },
     {
       "id": "CLR_31",
@@ -375,7 +404,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_31-grosplan.png",
-      "datePosed": "2016-01-24"
+      "datePosed": "2016-01-24",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_31-juin2016.jpg"
     },
     {
       "id": "CLR_32",
@@ -387,7 +417,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_32-grosplan.png",
-      "datePosed": "2016-01-25"
+      "datePosed": "2016-01-25",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_32-juin2016.jpg"
     },
     {
       "id": "CLR_33",
@@ -399,7 +430,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_33-grosplan.png",
-      "datePosed": "2016-01-25"
+      "datePosed": "2016-01-25",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_33-mars2025.jpg"
     },
     {
       "id": "CLR_34",
@@ -411,7 +443,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_34-grosplan.png",
-      "datePosed": "2016-01-25"
+      "datePosed": "2016-01-25",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_34-mars2025.jpg"
     },
     {
       "id": "CLR_35",
@@ -423,7 +456,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_35-grosplan.png",
-      "datePosed": "2016-01-26"
+      "datePosed": "2016-01-26",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_35-septembre2024.jpg"
     },
     {
       "id": "CLR_36",
@@ -435,7 +469,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_36-grosplan.png",
-      "datePosed": "2016-01-26"
+      "datePosed": "2016-01-26",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_36-juin2016.jpg"
     },
     {
       "id": "CLR_37",
@@ -447,7 +482,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_37-grosplan.png",
-      "datePosed": "2016-01-26"
+      "datePosed": "2016-01-26",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_37-avril2024.jpg"
     },
     {
       "id": "CLR_38",
@@ -459,7 +495,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_38-grosplan.png",
-      "datePosed": "2016-01-26"
+      "datePosed": "2016-01-26",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_38-avril2019.jpg"
     },
     {
       "id": "CLR_39",
@@ -471,7 +508,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_39-grosplan.png",
-      "datePosed": "2016-01-26"
+      "datePosed": "2016-01-26",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_39-decembre2024.jpg"
     },
     {
       "id": "CLR_40",
@@ -483,7 +521,8 @@
       "hint": "",
       "source": "goguelnikov",
       "photoUrl": "https://www.invader-spotter.art/grosplan/CLR/CLR_40-grosplan.png",
-      "datePosed": "2018-10-25"
+      "datePosed": "2018-10-25",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/CLR/CLR_40-avril2019.jpg"
     },
     {
       "id": "CLR_41",

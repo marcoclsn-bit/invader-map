@@ -1,8 +1,8 @@
 {
-  "version": 6,
-  "updatedAt": "2026-07-19",
+  "version": 7,
+  "updatedAt": "2026-08-13",
   "city": "LA",
-  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires — avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap — licence ODbL.",
+  "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 214,
   "invaders": [
     {
@@ -31,6 +31,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_002-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_002-mars2022.jpg",
       "datePosed": "1999-12-26"
     },
     {
@@ -59,6 +60,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_004-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_004-mai2024.jpg",
       "datePosed": "1999-12-27"
     },
     {
@@ -73,6 +75,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_005-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_005-janvier2022.jpg",
       "datePosed": "1999-12-27"
     },
     {
@@ -87,6 +90,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_006-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_006-juin2024.jpg",
       "datePosed": "1999-12-28"
     },
     {
@@ -157,6 +161,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_011-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_011-juin2021.jpg",
       "datePosed": "1999-12-31"
     },
     {
@@ -297,6 +302,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_021-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_021-avril2017.jpg",
       "datePosed": "2000-01-04"
     },
     {
@@ -311,6 +317,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_022-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_022-janvier2022.jpg",
       "datePosed": "2000-01-04"
     },
     {
@@ -409,6 +416,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_029-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_029-octobre2017.jpg",
       "datePosed": "2000-01-07"
     },
     {
@@ -423,6 +431,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_030-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_030-mars2022.jpg",
       "datePosed": "2000-01-07"
     },
     {
@@ -437,6 +446,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_031-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_031-mai2022.jpg",
       "datePosed": "2000-01-07"
     },
     {
@@ -451,6 +461,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_032-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_032-mars2022.jpg",
       "datePosed": "2000-01-07"
     },
     {
@@ -507,6 +518,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_036-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_036-mars2026.jpg",
       "datePosed": "2000-01-08"
     },
     {
@@ -605,6 +617,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_043-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_043-mars2022.jpg",
       "datePosed": "2002-12-05"
     },
     {
@@ -633,6 +646,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_045-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_045-novembre2024.jpg",
       "datePosed": "2002-12-05"
     },
     {
@@ -731,6 +745,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_052-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_052-juillet2023.jpg",
       "datePosed": "2002-12-08"
     },
     {
@@ -745,6 +760,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_053-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_053-janvier2022.jpg",
       "datePosed": "2002-12-08"
     },
     {
@@ -787,6 +803,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_056-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_056-mars2022.jpg",
       "datePosed": "2002-12-09"
     },
     {
@@ -885,6 +902,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_063-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_063-mars2026.jpg",
       "datePosed": "2002-12-10"
     },
     {
@@ -941,6 +959,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_067-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_067-septembre2022.jpg",
       "datePosed": "2003-12-05"
     },
     {
@@ -1081,6 +1100,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_077-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_077-avril2021.jpg",
       "datePosed": "2003-12-07"
     },
     {
@@ -1151,6 +1171,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_082-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_082-janvier2022.jpg",
       "datePosed": "2003-12-08"
     },
     {
@@ -1179,6 +1200,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_084-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_084-mai2025.jpg",
       "datePosed": "2003-12-08"
     },
     {
@@ -1193,6 +1215,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_085-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_085-mai2022.jpg",
       "datePosed": "2003-12-08"
     },
     {
@@ -1207,6 +1230,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_086-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_086-janvier2022.jpg",
       "datePosed": "2003-12-08"
     },
     {
@@ -1235,6 +1259,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_088-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_088-mars2026.jpg",
       "datePosed": "2003-12-09"
     },
     {
@@ -1263,6 +1288,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_090-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_090-mars2026.jpg",
       "datePosed": "2003-12-09"
     },
     {
@@ -1277,6 +1303,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_091-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_091-fevrier2025.jpg",
       "datePosed": "2003-12-09"
     },
     {
@@ -1305,6 +1332,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_093-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_093-mai2022.jpg",
       "datePosed": "2003-12-09"
     },
     {
@@ -1319,6 +1347,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_094-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_094-aout2022.jpg",
       "datePosed": "2004-03-25"
     },
     {
@@ -1333,6 +1362,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_095-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_095-fevrier2025.jpg",
       "datePosed": "2004-04-05"
     },
     {
@@ -1375,6 +1405,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_098-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_098-decembre2022.jpg",
       "datePosed": "2004-04-07"
     },
     {
@@ -1389,6 +1420,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_099-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_099-fevrier2022.jpg",
       "datePosed": "2004-04-08"
     },
     {
@@ -1403,6 +1435,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_100-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_100-mars2026.jpg",
       "datePosed": "2004-04-08"
     },
     {
@@ -1473,6 +1506,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_105-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_105-avril2026.jpg",
       "datePosed": "2005-06-03"
     },
     {
@@ -1487,6 +1521,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_106-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_106-archive.jpg",
       "datePosed": "2005-06-04"
     },
     {
@@ -1501,6 +1536,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_107-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_107-avril2023.jpg",
       "datePosed": "2005-06-04"
     },
     {
@@ -1543,6 +1579,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_110-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_110-avril2019.jpg",
       "datePosed": "2005-06-04"
     },
     {
@@ -1557,6 +1594,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_111-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_111-octobre2023.jpg",
       "datePosed": "2005-06-09"
     },
     {
@@ -1571,6 +1609,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_112-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_112-archive.jpg",
       "datePosed": "2005-06-10"
     },
     {
@@ -1599,6 +1638,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_114-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_114-mars2023.jpg",
       "datePosed": "2005-06-13"
     },
     {
@@ -1613,6 +1653,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_115-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_115-mai2019.jpg",
       "datePosed": "2005-06-13"
     },
     {
@@ -1627,6 +1668,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_116-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_116-archive.jpg",
       "datePosed": "2005-06-13"
     },
     {
@@ -1641,6 +1683,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_117-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_117-mars2022.jpg",
       "datePosed": "2005-06-13"
     },
     {
@@ -1655,6 +1698,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_118-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_118-mars2023.jpg",
       "datePosed": "2005-06-13"
     },
     {
@@ -1669,6 +1713,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_119-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_119-juillet2019.jpg",
       "datePosed": "2005-06-14"
     },
     {
@@ -1683,6 +1728,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_120-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_120-archive.jpg",
       "datePosed": "2005-06-14"
     },
     {
@@ -1697,6 +1743,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_121-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_121-mai2022.jpg",
       "datePosed": "2005-06-14"
     },
     {
@@ -1767,6 +1814,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_126-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_126-novembre2021.jpg",
       "datePosed": "2006-09-04"
     },
     {
@@ -1823,6 +1871,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_130-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_130-mai2022.jpg",
       "datePosed": "2006-09-09"
     },
     {
@@ -1837,6 +1886,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_131-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_131-mars2026.jpg",
       "datePosed": "2006-09-09"
     },
     {
@@ -1851,6 +1901,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_132-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_132-archive.jpg",
       "datePosed": "2006-09-09"
     },
     {
@@ -1879,6 +1930,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_134-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_134-mars2026.jpg",
       "datePosed": "2006-09-11"
     },
     {
@@ -1907,6 +1959,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_136-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_136-mars2022.jpg",
       "datePosed": "2008-08-03"
     },
     {
@@ -1921,6 +1974,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_137-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_137-mai2022.jpg",
       "datePosed": "2008-08-03"
     },
     {
@@ -2005,6 +2059,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_143-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_143-juin2022.jpg",
       "datePosed": "2008-08-08"
     },
     {
@@ -2117,6 +2172,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_151-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_151-archive.jpg",
       "datePosed": "2011-04-09"
     },
     {
@@ -2271,6 +2327,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_162-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_162-archive.jpg",
       "datePosed": "2011-04-12"
     },
     {
@@ -2285,6 +2342,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_163-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_163-archive.jpg",
       "datePosed": "2011-04-12"
     },
     {
@@ -2299,6 +2357,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_164-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_164-avril2025.jpg",
       "datePosed": "2011-04-13"
     },
     {
@@ -2313,6 +2372,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_165-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_165-mai2026.jpg",
       "datePosed": "2011-04-13"
     },
     {
@@ -2383,6 +2443,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_170-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_170-novembre2024.jpg",
       "datePosed": "2011-04-15"
     },
     {
@@ -2439,6 +2500,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_174-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_174-avril2025.jpg",
       "datePosed": "2018-05-10"
     },
     {
@@ -2467,6 +2529,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_176-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_176-archive.jpg",
       "datePosed": "2018-05-11"
     },
     {
@@ -2481,6 +2544,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_177-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_177-novembre2024.jpg",
       "datePosed": "2018-05-11"
     },
     {
@@ -2509,6 +2573,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_179-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_179-novembre2021.jpg",
       "datePosed": "2018-05-11"
     },
     {
@@ -2537,6 +2602,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_181-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_181-aout2024.jpg",
       "datePosed": "2018-05-12"
     },
     {
@@ -2719,6 +2785,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_194-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_194-janvier2023.jpg",
       "datePosed": "2018-05-15"
     },
     {
@@ -2817,6 +2884,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_201-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_201-aout2022.jpg",
       "datePosed": "2018-11-12"
     },
     {
@@ -2831,6 +2899,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_202-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_202-juin2025.jpg",
       "datePosed": "2018-11-14"
     },
     {
@@ -2873,6 +2942,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_205-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_205-octobre2022.jpg",
       "datePosed": "2018-11-14"
     },
     {
@@ -2915,6 +2985,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_208-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_208-novembre2021.jpg",
       "datePosed": "2018-11-15"
     },
     {
@@ -2929,6 +3000,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LA/LA_209-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LA/LA_209-novembre2021.jpg",
       "datePosed": "2018-11-15"
     },
     {
