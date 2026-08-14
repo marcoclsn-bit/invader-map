@@ -1217,6 +1217,22 @@
       "title": "Annulla importazione",
       "body": "Rimuovere i {{count}} Invaders appena aggiunti? I trofei già sbloccati restano acquisiti.",
       "confirm": "Rimuovi"
+    },
+    "uid": {
+      "label": "Dal tuo account FlashInvaders",
+      "placeholder": "Il tuo UID",
+      "hint": "Se conosci l'UID del tuo account FlashInvaders, recuperiamo la tua lista in una volta. Resta sul telefono e serve solo a interrogare il server ufficiale.",
+      "forget": "Dimentica il mio UID",
+      "forgetTitle": "Dimenticare l'UID?",
+      "forgetBody": "Sarà cancellato da questo telefono. I tuoi fotografati importati restano.",
+      "forgetOk": "Dimentica",
+      "errTitle": "Recupero impossibile",
+      "err": {
+        "forme": "Non è un UID valido. Assomiglia a 1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d.",
+        "inconnu": "Nessun account corrisponde a questo UID.",
+        "reseau": "Il server non ha risposto. Riprova più tardi.",
+        "vide": "Questo account non ha alcun flash."
+      }
     }
   },
   "explorer": {

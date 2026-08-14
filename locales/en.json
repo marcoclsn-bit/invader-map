@@ -1217,6 +1217,22 @@
       "title": "Undo import",
       "body": "Remove the {{count}} Invaders just added? Trophies already unlocked stay unlocked.",
       "confirm": "Remove"
+    },
+    "uid": {
+      "label": "From your FlashInvaders account",
+      "placeholder": "Your UID",
+      "hint": "If you know your FlashInvaders account UID, we fetch your list in one go. It stays on your phone and is only used to query the official server.",
+      "forget": "Forget my UID",
+      "forgetTitle": "Forget the UID?",
+      "forgetBody": "It will be erased from this phone. Your imported flashes are kept.",
+      "forgetOk": "Forget",
+      "errTitle": "Could not fetch",
+      "err": {
+        "forme": "That is not a valid UID. It looks like 1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d.",
+        "inconnu": "No account matches this UID.",
+        "reseau": "The server did not answer. Try again later.",
+        "vide": "This account has no flashes."
+      }
     }
   },
   "explorer": {

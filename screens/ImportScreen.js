@@ -1,5 +1,5 @@
-import { useState, useMemo, useCallback } from 'react';
-import {
+import { useState, useMemo, useCallback, useEffect } from 'react';
+import { ActivityIndicator,
   ScrollView, View, Text, TextInput, TouchableOpacity, StyleSheet, Share, Alert, Keyboard,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
@@ -9,6 +9,7 @@ import { typography } from '../theme/tokens';
 import { useAppContext } from '../context/AppContext';
 import { useGamification } from '../context/GamificationContext';
 import { analyseListe, exportListe } from '../utils/importList';
+import { recupererGalerie, uidValide, getUid, setUid, oublierUid } from '../services/flashinvaders';
 import { track } from '../services/analytics';
 
 // Écran « Mes flashés » — atteint par l'en-tête de la Liste.
@@ -31,6 +32,12 @@ export default function ImportScreen({ navigation }) {
   const { beginBatch } = useGamification();
 
   const [texte, setTexte] = useState('');
+  // Import par UID FlashInvaders. L'UID reste sur l'appareil et ne part que vers
+  // l'interface officielle : jamais dans un événement de mesure, jamais journalisé.
+  const [uid, setUidLocal] = useState('');
+  const [uidConnu, setUidConnu] = useState(false);
+  const [chargement, setChargement] = useState(false);
+  useEffect(() => { getUid().then((v) => { if (v) { setUidLocal(v); setUidConnu(true); } }); }, []);
   // Identifiants du dernier import, pour l'annulation. Volontairement local à
   // l'écran : le filet couvre le moment où l'on peut se rendre compte de
   // l'erreur, pas indéfiniment. Quitter l'écran vaut acceptation.
@@ -55,6 +62,35 @@ export default function ImportScreen({ navigation }) {
     setDernier(ajoutes);
     Alert.alert(t('import.done.title'), t('import.done.body', { count: ajoutes.length }));
   }, [analyse, beginBatch, bulkFlash, t]);
+
+  // Récupère la galerie et verse le résultat dans le MÊME champ que le
+  // copier-coller : une seule analyse, un seul écran de résultat, un seul bouton
+  // de confirmation. L'UID change la provenance, pas le parcours.
+  const recuperer = useCallback(async () => {
+    Keyboard.dismiss();
+    setChargement(true);
+    try {
+      const { ids } = await recupererGalerie(uid);
+      await setUid(uid);
+      setUidConnu(true);
+      setTexte(ids.join('\n'));
+      track('import_uid', { count: ids.length });   // JAMAIS l'uid lui-même
+    } catch (e) {
+      const motif = e?.motif || 'reseau';
+      track('import_uid_echec', { motif });
+      Alert.alert(t('import.uid.errTitle'), t(`import.uid.err.${motif}`));
+    } finally {
+      setChargement(false);
+    }
+  }, [uid, t]);
+
+  const effacerUid = useCallback(() => {
+    Alert.alert(t('import.uid.forgetTitle'), t('import.uid.forgetBody'), [
+      { text: t('common.cancel'), style: 'cancel' },
+      { text: t('import.uid.forgetOk'), style: 'destructive',
+        onPress: async () => { await oublierUid(); setUidLocal(''); setUidConnu(false); } },
+    ]);
+  }, [t]);
 
   const annuler = useCallback(() => {
     if (!dernier?.length) return;
@@ -92,7 +128,39 @@ export default function ImportScreen({ navigation }) {
         <Text style={st.compteurLabel}>{t('import.counter')}</Text>
       </View>
 
-      <Text style={st.label}>{t('import.paste.label')}</Text>
+      {/* ── Depuis un compte FlashInvaders ────────────────────────────────
+          Placé AVANT le collage : quand on a un UID, c'est le chemin le plus
+          court, et il remplit le même champ que le copier-coller. */}
+      <Text style={st.label}>{t('import.uid.label')}</Text>
+      <View style={st.uidRow}>
+        <TextInput
+          style={[st.zone, st.uidChamp]}
+          value={uid}
+          onChangeText={setUidLocal}
+          autoCapitalize="none"
+          autoCorrect={false}
+          placeholder={t('import.uid.placeholder')}
+          placeholderTextColor={theme.textSecondary}
+        />
+        <TouchableOpacity
+          style={[st.uidBtn, (!uidValide(uid) || chargement) && st.boutonInactif]}
+          onPress={recuperer}
+          disabled={!uidValide(uid) || chargement}
+          activeOpacity={0.8}
+        >
+          {chargement
+            ? <ActivityIndicator size="small" color={theme.bg} />
+            : <Ionicons name="cloud-download-outline" size={18} color={uidValide(uid) ? theme.bg : theme.textSecondary} />}
+        </TouchableOpacity>
+      </View>
+      <Text style={st.aide}>{t('import.uid.hint')}</Text>
+      {uidConnu && (
+        <TouchableOpacity onPress={effacerUid} hitSlop={8}>
+          <Text style={st.uidOubli}>{t('import.uid.forget')}</Text>
+        </TouchableOpacity>
+      )}
+
+      <Text style={[st.label, { marginTop: 22 }]}>{t('import.paste.label')}</Text>
       <TextInput
         style={st.zone}
         value={texte}
@@ -182,6 +250,13 @@ function getStyles(t) {
     compteurLabel: { fontSize: 12.5, color: t.textSecondary, marginTop: 6 },
 
     label: { ...typography.fieldLabel, color: t.textSecondary, marginBottom: 8 },
+    uidRow: { flexDirection: 'row', alignItems: 'stretch', gap: 8 },
+    uidChamp: { flex: 1, minHeight: 46, maxHeight: 46, paddingTop: 13 },
+    uidBtn: {
+      width: 52, borderRadius: 11, alignItems: 'center', justifyContent: 'center',
+      backgroundColor: t.accent,
+    },
+    uidOubli: { fontSize: 12, color: t.textSecondary, textDecorationLine: 'underline', marginTop: 8 },
     zone: {
       backgroundColor: t.surfaceHigh, borderRadius: 11, borderWidth: 1, borderColor: t.border,
       padding: 12, minHeight: 130, maxHeight: 200, fontSize: 13.5, color: t.textPrimary,

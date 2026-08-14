@@ -1217,6 +1217,22 @@
       "title": "Annuler l’import",
       "body": "Retirer les {{count}} Invaders qui viennent d’être ajoutés ? Les trophées déjà débloqués restent acquis.",
       "confirm": "Retirer"
+    },
+    "uid": {
+      "label": "Depuis ton compte FlashInvaders",
+      "placeholder": "Ton UID",
+      "hint": "Si tu connais l'UID de ton compte FlashInvaders, on récupère ta liste d'un coup. Il reste sur ton téléphone et ne sert qu'à interroger le serveur officiel.",
+      "forget": "Oublier mon UID",
+      "forgetTitle": "Oublier l'UID ?",
+      "forgetBody": "Il sera effacé de ce téléphone. Tes flashés déjà importés sont conservés.",
+      "forgetOk": "Oublier",
+      "errTitle": "Récupération impossible",
+      "err": {
+        "forme": "Ce n'est pas un UID valide. Il ressemble à 1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d.",
+        "inconnu": "Aucun compte ne correspond à cet UID.",
+        "reseau": "Le serveur n'a pas répondu. Réessaie plus tard.",
+        "vide": "Ce compte ne contient aucun flash."
+      }
     }
   },
   "explorer": {
