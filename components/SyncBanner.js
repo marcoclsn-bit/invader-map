@@ -34,7 +34,14 @@ export default function SyncBanner({ style }) {
   const { theme } = useTheme();
   const { t } = useTranslation();
   const st = getStyles(theme);
-  const { flashed, bulkFlash } = useAppContext();
+  // `loaded` est REDONDANT ici, et c'est volontaire : AppShell (App.js) ne rend
+  // rien tant que le chargement disque n'est pas fini, donc ce composant ne peut
+  // pas être monté avant. La garde est une ceinture par-dessus la bretelle, pour
+  // que le jour où ce bandeau serait monté ailleurs, l'invariant parte avec lui —
+  // fusionner avant la lecture disque ne perdrait rien (bulkFlash est
+  // fonctionnel, l'écriture est gardée) mais la fusion serait ensuite écrasée et
+  // l'utilisateur croirait avoir synchronisé.
+  const { flashed, bulkFlash, loaded } = useAppContext();
   const { beginBatch } = useGamification();
 
   const [nouveaux, setNouveaux] = useState(0);
@@ -87,7 +94,7 @@ export default function SyncBanner({ style }) {
     }
   }, [flashed, bulkFlash, beginBatch]);
 
-  if (!nouveaux || masque) return null;
+  if (!loaded || !nouveaux || masque) return null;
 
   return (
     <View style={[st.bandeau, style]}>
