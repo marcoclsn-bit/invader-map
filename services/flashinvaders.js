@@ -17,6 +17,11 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
  */
 
 const BASE = 'https://api.space-invaders.com/flashinvaders_v3_pas_trop_predictif/api';
+// On se NOMME. Un client non officiel qui se cache derrière l'en-tête par défaut
+// est indistinguable d'un abus : celui-ci nous rend reconnaissables, joignables,
+// et bloquables d'un seul filtre si notre trafic les gêne. C'est le prix d'usage
+// d'une interface qui ne nous doit rien.
+const ENTETES = { 'User-Agent': 'InvaderQuest/1.0 (+contact marchenri.colson@gmail.com)' };
 const CLE_UID = '@invader_fi_uid';
 // Compteur du SERVEUR lors de la dernière synchronisation réussie. À ne surtout
 // pas confondre avec le total local, qui inclut les marquages manuels et les
@@ -63,7 +68,8 @@ export async function sonderCompte(uid) {
   const ctrl = new AbortController();
   const minuteur = setTimeout(() => ctrl.abort(), DELAI_MS);
   try {
-    const res = await fetch(`${BASE}/account?uid=${encodeURIComponent(propre)}`, { signal: ctrl.signal });
+    const res = await fetch(`${BASE}/account?uid=${encodeURIComponent(propre)}`,
+      { signal: ctrl.signal, headers: ENTETES });
     if (!res.ok) return null;
     const j = await res.json();
     if (j?.code !== 0 && j?.code !== '0') return null;
@@ -88,7 +94,8 @@ export async function recupererGalerie(uid) {
   const minuteur = setTimeout(() => ctrl.abort(), DELAI_MS);
   let json;
   try {
-    const res = await fetch(`${BASE}/gallery?uid=${encodeURIComponent(propre)}`, { signal: ctrl.signal });
+    const res = await fetch(`${BASE}/gallery?uid=${encodeURIComponent(propre)}`,
+      { signal: ctrl.signal, headers: ENTETES });
     if (!res.ok) throw new ErreurFlash('reseau');
     json = await res.json();
   } catch (e) {

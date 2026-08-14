@@ -629,6 +629,14 @@ export function AppProvider({ children }) {
   function mergeFiPhotos(nouvelles) {
     if (!nouvelles || !Object.keys(nouvelles).length) return;
     setFiPhotos(prev => {
+      // On n'écrit que si quelque chose a VRAIMENT changé : la galerie est
+      // retéléchargée à chaque nouveau flash, et réécrire 30 Ko sur le disque à
+      // chaque fois userait la mémoire flash pour rien.
+      let change = false;
+      for (const [id, url] of Object.entries(nouvelles)) {
+        if (prev[id] !== url) { change = true; break; }
+      }
+      if (!change) return prev;
       const next = { ...prev, ...nouvelles };
       AsyncStorage.setItem('@invader_fi_photos', JSON.stringify(next)).catch(() => {});
       return next;

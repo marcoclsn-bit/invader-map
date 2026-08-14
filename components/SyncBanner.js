@@ -48,6 +48,12 @@ export default function SyncBanner({ style }) {
   const [enCours, setEnCours] = useState(false);
   const [masque, setMasque] = useState(false);
   const dernierSondage = useRef(0);
+  // Compteur serveur pour lequel la galerie a DÉJÀ été téléchargée et analysée.
+  // Sans lui, un bandeau affiché mais laissé de côté faisait retélécharger 92 Ko
+  // à chaque retour au premier plan — une fois par minute, indéfiniment, soit
+  // 5,5 Mo par heure d'usage sur les serveurs de space-invaders.com, par
+  // utilisateur. Le sondage à 389 octets, lui, peut se répéter sans dommage.
+  const compteAnalyse = useRef(null);
   // Galerie déjà téléchargée pendant le sondage : appliquer devient instantané
   // et ne coûte pas un second téléchargement de la même liste.
   const idsPrets = useRef(null);
@@ -72,6 +78,9 @@ export default function SyncBanner({ style }) {
     const connu = await getCompteConnu();
     if (connu == null) { await setCompteConnu(compte); return; }
     if (compte <= connu) return;
+    // Déjà analysé pour ce compteur : le verdict ne changerait pas, et la
+    // réponse serait identique octet pour octet.
+    if (compteAnalyse.current === compte) return;
 
     // Le compteur du serveur a monté — mais il ne dit PAS que ces flashs
     // manquent ici. Le cas le plus courant est justement l'inverse : en chasse,
@@ -81,6 +90,7 @@ export default function SyncBanner({ style }) {
     // visible, et qui reviendrait à chaque ouverture. Seule la galerie tranche.
     let ids, dates, photos;
     try { ({ ids, dates, photos } = await recupererGalerie(uid)); } catch { return; }
+    compteAnalyse.current = compte;
     mergeRef.current(photos);
     const ajouts = ids.filter((id) => !flashedRef.current.has(id));
     if (!ajouts.length) {
@@ -95,10 +105,14 @@ export default function SyncBanner({ style }) {
     setMasque(false);
   }, []);
 
+  // Un bandeau déjà affiché attend une réponse : rien à redemander au serveur.
+  const enAttenteRef = useRef(false);
+  enAttenteRef.current = nouveaux > 0 && !masque;
+
   useEffect(() => {
     sonder();
     const sub = AppState.addEventListener('change', (etat) => {
-      if (etat === 'active') sonder();
+      if (etat === 'active' && !enAttenteRef.current) sonder();
     });
     return () => sub.remove();
   }, [sonder]);
