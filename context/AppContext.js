@@ -160,6 +160,13 @@ export function AppProvider({ children }) {
   // passante de space-invaders.com, pour afficher des timbres-poste. La fiche,
   // elle, charge UNE image à la demande : là, le coût est proportionné.
   const [photosListe, setPhotosListeState] = useState(false);
+  // EXPÉRIMENTAL, preview uniquement pour l'instant. Affiche dans la grille de
+  // Collection les gros plans d'invader-spotter à la place des aliens pixel.
+  // Mesuré avant d'être branché : ces images pèsent 20 Ko, pas 216 — ce sont des
+  // recadrages, pas des photos pleines. Une grille de Paris tient donc en 31 Mo
+  // et un écran en 600 Ko. Reste la question des droits, tranchée par Marco pour
+  // la preview : InvaderPhoto.js documente le renoncement d'origine.
+  const [photosSpotter, setPhotosSpotterState] = useState(false);
   // Gestes de test (appui long) réservés au porteur du projet. Ils envoient de
   // VRAIES notifications et rejouent des panneaux : en production, un utilisateur
   // qui laisse le doigt sur une ligne les déclenche sans comprendre, et sans
@@ -352,6 +359,8 @@ export function AppProvider({ children }) {
       ]);
       const photosListeRaw = await AsyncStorage.getItem('@invader_photos_liste');
       if (photosListeRaw === '1') setPhotosListeState(true);
+      const photosSpotterRaw = await AsyncStorage.getItem('@invader_photos_spotter');
+      if (photosSpotterRaw === '1') setPhotosSpotterState(true);
       const fiPhotosRaw = await AsyncStorage.getItem('@invader_fi_photos');
       if (fiPhotosRaw) { try { setFiPhotos(JSON.parse(fiPhotosRaw) || {}); } catch {} }
       // Comparé à '0' et non à '1' : le défaut est ACTIF, seul un refus explicite
@@ -801,6 +810,11 @@ export function AppProvider({ children }) {
     AsyncStorage.setItem('@invader_dev', on ? '1' : '0').catch(() => {});
   }
 
+  function setPhotosSpotter(on) {
+    setPhotosSpotterState(on);
+    AsyncStorage.setItem('@invader_photos_spotter', on ? '1' : '0').catch(() => {});
+  }
+
   function setPhotosListe(on) {
     setPhotosListeState(on);
     AsyncStorage.setItem('@invader_photos_liste', on ? '1' : '0').catch(() => {});
@@ -908,6 +922,7 @@ export function AppProvider({ children }) {
     favCities, toggleFavCity,
     explorerSuggest, setExplorerSuggest,
     photosListe, setPhotosListe,
+    photosSpotter, setPhotosSpotter,
     devMode, setDevMode,
     // Légende des couleurs
     legendSeen, dismissLegend,

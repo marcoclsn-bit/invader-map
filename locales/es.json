@@ -534,7 +534,9 @@
       "listPhotos": "Mis fotos en la lista",
       "listPhotosHint": "Muestra tu foto de FlashInvaders en cada línea ya fotografiada. Apagado por defecto: el servidor no ofrece miniaturas, así que cada imagen descarga la foto entera, unos 200 KB.",
       "listPhotosWarnTitle": "¿Descargar tus fotos?",
-      "listPhotosWarnBody": "FlashInvaders no ofrece miniaturas: cada línea descargará la foto entera, unos 216 KB. Para tus {{count}} fotos son aproximadamente {{mo}} MB, tomados de tus datos y de los servidores de Space Invaders. Cada foto se descarga una sola vez y luego se guarda en caché."
+      "listPhotosWarnBody": "FlashInvaders no ofrece miniaturas: cada línea descargará la foto entera, unos 216 KB. Para tus {{count}} fotos son aproximadamente {{mo}} MB, tomados de tus datos y de los servidores de Space Invaders. Cada foto se descarga una sola vez y luego se guarda en caché.",
+      "spotterPhotos": "Fotos reales en la Colección (prueba)",
+      "spotterPhotosHint": "Sustituye los aliens de píxeles de la cuadrícula por los primeros planos de invader-spotter, unos 20 KB cada uno. Las casillas no encontradas siguen atenuadas."
     },
     "statusColors": {
       "section": "Colores de estado",

@@ -108,7 +108,7 @@ export default function SettingsScreen({ navigation }) {
     resetLabels, clearFlashDates,
     dataVersion, dataUpdatedAt, checkDataUpdate,
     resetPoiIntro, checkPoiUpdate, getPoiVersion, poiDataVersion, devMode,
-    photosListe, setPhotosListe, fiPhotos,
+    photosListe, setPhotosListe, fiPhotos, photosSpotter, setPhotosSpotter,
   } = useAppContext();
 
   // Activer les vignettes engage un volume qu'on peut CHIFFRER avant de le
@@ -202,6 +202,23 @@ export default function SettingsScreen({ navigation }) {
             <Switch
               value={photosListe}
               onValueChange={basculerPhotosListe}
+              trackColor={{ false: theme.border, true: theme.accent }}
+              thumbColor={theme.bg}
+              ios_backgroundColor={theme.border}
+            />
+          }
+        />
+        {/* Expérimental. L'aide dit d'où viennent les images et ce qu'elles
+            pèsent : 20 Ko l'unité, mesuré, soit 31 Mo pour toute une grille
+            parisienne. C'est la question des droits qui le garde éteint, pas
+            celle du poids. */}
+        <Row
+          label={t('settings.appearance.spotterPhotos')}
+          hint={t('settings.appearance.spotterPhotosHint')}
+          trailing={
+            <Switch
+              value={photosSpotter}
+              onValueChange={setPhotosSpotter}
               trackColor={{ false: theme.border, true: theme.accent }}
               thumbColor={theme.bg}
               ios_backgroundColor={theme.border}

@@ -1,6 +1,10 @@
 import { _interne, etatFile, PRIORITE_FICHE, PRIORITE_LISTE } from '../services/photoQueue';
 
-const { demander, rendre, MAX_SIMULTANEES, INTERVALLE_MS, reinitialiser } = _interne;
+const { demander, rendre, MAX_SIMULTANEES, POIDS_DEFAUT, delai, reinitialiser } = _interne;
+
+// La cadence dépend désormais du POIDS de la requête précédente : même plafond
+// d'octets, cadence adaptée. On calcule donc le délai attendu au lieu de le lire.
+const INTERVALLE_MS = delai(POIDS_DEFAUT);
 
 // La file existe pour ne pas frapper space-invaders.com par salves : dérouler
 // une liste de mille vignettes lançait mille requêtes au rythme du défilement,
@@ -100,5 +104,36 @@ describe('file d’attente des photos', () => {
     rendre(parti);
     rendre(parti);
     expect(etatFile().enCours).toBe(apres);
+  });
+});
+
+// Le plafond porte sur des OCTETS, pas sur un nombre de requêtes. C'est ce qui
+// permet à une vignette de 20 Ko d'aller dix fois plus vite qu'une photo de
+// 216 Ko sans consommer plus de bande passante.
+describe('cadence proportionnelle au poids', () => {
+  beforeEach(() => { jest.useFakeTimers(); _interne.reinitialiser(); });
+  afterEach(() => { jest.useRealTimers(); });
+
+  test('une vignette légère libère la file plus vite qu’une photo lourde', () => {
+    const leger = _interne.delai(20 * 1024);
+    const lourd = _interne.delai(216 * 1024);
+    expect(leger).toBeLessThan(lourd);
+    expect(lourd / leger).toBeGreaterThan(8);   // ~10×, le rapport des poids
+  });
+
+  test('le débit plafond est le même quel que soit le poids', () => {
+    for (const poids of [20 * 1024, 216 * 1024, 546 * 1024]) {
+      const octetsParMs = poids / _interne.delai(poids);
+      expect(octetsParMs).toBeCloseTo(_interne.DEBIT_OCTETS_PAR_MS, 0);
+    }
+  });
+
+  test('le délai réellement appliqué suit le poids de la requête partie', () => {
+    const journal = [];
+    const j1 = _interne.demander(0, () => journal.push('leger'), 20 * 1024);
+    _interne.demander(0, () => journal.push('suivant'), 20 * 1024);
+    _interne.rendre(j1);
+    jest.advanceTimersByTime(_interne.delai(20 * 1024) + 2);
+    expect(journal).toContain('suivant');
   });
 });

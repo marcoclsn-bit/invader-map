@@ -12,26 +12,32 @@ import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import { statusKey } from '../constants';
 import { CITIES } from '../cities/registry';
-import { usePhotoCreneau, PRIORITE_LISTE } from '../services/photoQueue';
+import { usePhotoCreneau, PRIORITE_LISTE, POIDS_FLASHINVADERS, POIDS_SPOTTER } from '../services/photoQueue';
 import { track } from '../services/analytics';
 
 /**
  * Collection — la vue « Pokédex ».
  *
- * LA GRILLE N'AFFICHE PAS DE PHOTOS DISTANTES, et ce n'est pas un choix de
- * prudence, c'est une impossibilité arithmétique : Paris compte 1 597 Invaders et
- * une photo pèse en moyenne 200 Ko. Une grille photographique, c'est 319 Mo pour
- * UNE ville, à chaque ouverture d'écran. Peu importe à qui appartiennent ces
- * images — les nôtres, celles d'invader-spotter, celles d'invamap — aucune ne
- * tient dans une grille de mille cellules.
+ * PAR DÉFAUT, la grille est faite de nos cinq aliens pixel : 1,2 Ko pièce, déjà
+ * dans le binaire, affichés hors ligne, et ils nous appartiennent. C'est aussi ce
+ * qui fait marcher un Pokédex — il ne montre pas la photo de ce qu'on n'a pas
+ * attrapé, il montre une OMBRE.
  *
- * Et c'est justement ce qui fait marcher un Pokédex : il ne montre pas la photo
- * de ce qu'on n'a pas attrapé, il montre une OMBRE. Nos cinq aliens pixel font
- * ce travail, ils pèsent 1,2 Ko, ils sont déjà dans le binaire, ils s'affichent
- * hors ligne, et ils nous appartiennent.
+ * UN RÉGLAGE EXPÉRIMENTAL remplace ces ombres par les gros plans
+ * d'invader-spotter. J'avais d'abord écrit ici que c'était arithmétiquement
+ * impossible, en extrapolant le poids des photos FlashInvaders : 216 Ko pièce,
+ * donc 319 Mo pour Paris. MESURE FAITE : les gros plans d'invader-spotter pèsent
+ * 20 Ko — ce sont des recadrages serrés, pas des photos pleines. Une grille de
+ * Paris tient en 31 Mo, un écran en 600 Ko, et rien ne bloque le lien externe.
+ * Je m'étais trompé d'un facteur dix et j'en tirais une impossibilité.
  *
- * La photo garde sa place là où elle a du sens : sur la fiche, une à la fois,
- * quand l'utilisateur la demande. Toucher une case y conduit.
+ * Reste la question des droits, elle : InvaderPhoto.js porte le renoncement
+ * d'origine, « reproduction de l'œuvre d'Invader ». D'où un réglage éteint par
+ * défaut, activé sciemment, et pour l'instant destiné à la seule preview.
+ *
+ * Même avec les photos, une case NON acquise reste une silhouette : l'image est
+ * assombrie à 38 %. Sans ça, trouvé et pas-trouvé se ressembleraient et la grille
+ * perdrait son moteur.
  *
  * Cinq états :
  *   photo  — flashé, et le cliché personnel de l'utilisateur est disponible
@@ -65,9 +71,16 @@ function numero(id) {
   return i > 0 ? id.slice(i + 1) : id;
 }
 
-const Case = memo(function Case({ inv, etat, photoUrl, taille, theme, onPress, t }) {
+const Case = memo(function Case({ inv, etat, photoUrl, spotterUrl, taille, theme, onPress, t }) {
   const st = getStyles(theme);
-  const { src, fini } = usePhotoCreneau(etat === 'photo' ? photoUrl : null, PRIORITE_LISTE);
+  // Deux sources possibles, deux poids très différents : la photo personnelle
+  // pèse 216 Ko, le gros plan d'invader-spotter 20 Ko. La file règle sa cadence
+  // là-dessus, sinon les vignettes légères attendraient dix fois trop.
+  const perso = etat === 'photo' ? photoUrl : null;
+  const url = perso || (etat !== 'gone' ? spotterUrl : null);
+  const { src, fini } = usePhotoCreneau(
+    url, PRIORITE_LISTE, perso ? POIDS_FLASHINVADERS : POIDS_SPOTTER,
+  );
   const dim = { width: taille, height: taille };
 
   const teinte = etat === 'done' ? theme.flashed
@@ -82,10 +95,10 @@ const Case = memo(function Case({ inv, etat, photoUrl, taille, theme, onPress, t
       accessibilityRole="button"
       accessibilityLabel={`${inv.id}, ${t(`collection.state.${etat}`)}`}
     >
-      {etat === 'photo' && src ? (
+      {src ? (
         <Image
           source={{ uri: src }}
-          style={[StyleSheet.absoluteFill, { borderRadius: 10 }]}
+          style={[StyleSheet.absoluteFill, { borderRadius: 10 }, etat !== 'photo' && etat !== 'done' && st.imgTodo]}
           contentFit="cover"
           transition={120}
           cachePolicy="disk"
@@ -101,7 +114,7 @@ const Case = memo(function Case({ inv, etat, photoUrl, taille, theme, onPress, t
           transition={0}
         />
       )}
-      <Text style={[st.num, etat === 'photo' && st.numSurPhoto]} numberOfLines={1}>
+      <Text style={[st.num, src && st.numSurPhoto]} numberOfLines={1}>
         {numero(inv.id)}
       </Text>
       {etat === 'gone' ? <View style={st.barre} pointerEvents="none" /> : null}
@@ -110,7 +123,7 @@ const Case = memo(function Case({ inv, etat, photoUrl, taille, theme, onPress, t
 });
 
 export default function CollectionScreen({ navigation }) {
-  const { invaders, flashed, currentCityCode, fiPhotos, photosListe } = useAppContext();
+  const { invaders, flashed, currentCityCode, fiPhotos, photosListe, photosSpotter } = useAppContext();
   const { theme } = useTheme();
   const { t } = useTranslation();
   const st = getStyles(theme);
@@ -163,12 +176,13 @@ export default function CollectionScreen({ navigation }) {
       inv={item}
       etat={etatDe(item)}
       photoUrl={fiPhotos?.[item.id] || null}
+      spotterUrl={photosSpotter ? (item.photoUrl || null) : null}
       taille={TAILLE}
       theme={theme}
       onPress={ouvrir}
       t={t}
     />
-  ), [etatDe, fiPhotos, theme, ouvrir, t]);
+  ), [etatDe, fiPhotos, photosSpotter, theme, ouvrir, t]);
 
   const getItemLayout = useCallback((_, index) => ({
     length: HAUTEUR_RANGEE, offset: HAUTEUR_RANGEE * Math.floor(index / COLONNES), index,
@@ -233,7 +247,7 @@ export default function CollectionScreen({ navigation }) {
         renderItem={renderItem}
         numColumns={COLONNES}
         getItemLayout={getItemLayout}
-        extraData={[flashed, theme, photosListe, fiPhotos]}
+        extraData={[flashed, theme, photosListe, photosSpotter, fiPhotos]}
         columnWrapperStyle={{ gap: ECART }}
         contentContainerStyle={{ paddingHorizontal: MARGE, paddingBottom: insets.bottom + 24, gap: ECART }}
         initialNumToRender={40}
@@ -287,6 +301,10 @@ function getStyles(t) {
     case_photo: { borderColor: t.flashed },
     case_done: { borderColor: t.flashed, backgroundColor: t.flashedDim },
     case_todo: {},
+    // Une photo sur une case NON acquise reste une silhouette : assombrie et
+    // désaturée. Sans ça, trouvé et pas-trouvé se ressembleraient, et la grille
+    // perdrait la seule chose qui fait marcher un Pokédex.
+    imgTodo: { opacity: 0.38 },
     case_gone: { opacity: 0.55, borderStyle: 'dashed' },
 
     px: { width: '52%', height: '38%', opacity: 0.9 },
