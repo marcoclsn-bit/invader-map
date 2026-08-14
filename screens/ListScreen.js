@@ -4,6 +4,7 @@ import {
   TouchableOpacity, Switch, Alert, ActivityIndicator,
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Image } from 'expo-image';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
@@ -39,13 +40,26 @@ function getStyles(theme) {
 
 // ─── Ligne ────────────────────────────────────────────────────────────────────
 
-const InvaderRow = memo(function InvaderRow({ item, isFlashed, onToggle, cityLabel, theme }) {
+const InvaderRow = memo(function InvaderRow({ item, isFlashed, onToggle, cityLabel, theme, photoUrl }) {
   const { t } = useTranslation();
   const styles = getStyles(theme);
   const meta = `${t(`common.status.${item.status}`)} · ${item.points} ${t('common.pts')}`;
   return (
     <View style={styles.row}>
       <View style={[styles.statusDot, { backgroundColor: STATUS_COLOR[statusKey(item.status)] }]} />
+      {/* Vignette du cliché personnel, quand il existe. Chargée à la demande par
+          la virtualisation de la liste : seules les lignes visibles téléchargent.
+          Sans photo, rien ne s'affiche et la ligne garde sa hauteur — ROW_HEIGHT
+          alimente getItemLayout, une ligne plus haute désaccorderait le calcul. */}
+      {photoUrl ? (
+        <Image
+          source={{ uri: photoUrl }}
+          style={styles.rowPhoto}
+          contentFit="cover"
+          transition={120}
+          cachePolicy="disk"
+        />
+      ) : null}
       <View style={styles.rowInfo}>
         <Text style={styles.rowId}>{item.id}</Text>
         <Text style={styles.rowMeta} numberOfLines={1}>
@@ -167,7 +181,7 @@ function CityPicker({ initial, cityIndex, onValidate, onClose, theme, t }) {
 // ─── Écran liste ──────────────────────────────────────────────────────────────
 
 export default function ListScreen({ navigation }) {
-  const { invaders, flashed, toggleFlash, bulkFlash, bulkUnflash, currentCityCode, cityIndex } = useAppContext();
+  const { invaders, flashed, toggleFlash, bulkFlash, bulkUnflash, currentCityCode, cityIndex, fiPhotos } = useAppContext();
   const [carteImport, setCarteImport] = useState(false);
   useEffect(() => { AsyncStorage.getItem(KEY_IMPORT_CARD).then((v) => setCarteImport(v !== '1')); }, []);
   const ecarterCarte = useCallback(() => {
@@ -280,8 +294,9 @@ export default function ListScreen({ navigation }) {
       onToggle={() => toggleFlash(item.id, { dated: false })}
       cityLabel={multi ? (CITIES[cityCodeOfId(item.id)]?.name ?? null) : null}
       theme={theme}
+      photoUrl={fiPhotos?.[item.id] || null}
     />
-  ), [flashed, toggleFlash, theme, multi]);
+  ), [flashed, toggleFlash, theme, multi, fiPhotos]);
 
   function confirmBulkFlash() {
     const ids = rows.map(r => r.id);
@@ -438,7 +453,7 @@ export default function ListScreen({ navigation }) {
           keyExtractor={(item) => item.id}
           renderItem={renderItem}
           getItemLayout={getItemLayout}
-          extraData={[flashed, theme, multi]}
+          extraData={[flashed, theme, multi, fiPhotos]}
           initialNumToRender={20}
           maxToRenderPerBatch={20}
           windowSize={5}
@@ -455,6 +470,10 @@ export default function ListScreen({ navigation }) {
 function makeStyles(t) {
   return StyleSheet.create({
     container: { flex: 1, backgroundColor: t.bg },
+    rowPhoto: {
+      width: 40, height: 40, borderRadius: 8, marginRight: 10,
+      backgroundColor: t.surfaceHigh,
+    },
 
     importCard: {
       flexDirection: 'row', alignItems: 'flex-start', gap: 11,

@@ -114,6 +114,10 @@ export function AppProvider({ children }) {
   const [flashed,      setFlashed]      = useState(new Set());
   // Map<id, isoString> — absente = null (Invader flashé avant cette version)
   const [flashedDates, setFlashedDates] = useState(new Map());
+  // Photos personnelles rapatriées de FlashInvaders : id → URL. Ce sont les
+  // clichés de l'utilisateur lui-même, servis publiquement par space-invaders.com
+  // (aucune authentification, ~66 Ko, cache d'un mois). On ne stocke que l'URL.
+  const [fiPhotos, setFiPhotos] = useState({});
   // Registre persistant de progression par ville — alimenté par la ville ACTIVE
   // (points exacts, complétion « juste »). Sert aux trophées (points cumulés,
   // villes terminées) sans devoir charger les données de toutes les villes.
@@ -338,6 +342,8 @@ export function AppProvider({ children }) {
         AsyncStorage.getItem('@invader_explorer_suggest'),
         AsyncStorage.getItem('@invader_dev'),
       ]);
+      const fiPhotosRaw = await AsyncStorage.getItem('@invader_fi_photos');
+      if (fiPhotosRaw) { try { setFiPhotos(JSON.parse(fiPhotosRaw) || {}); } catch {} }
       // Comparé à '0' et non à '1' : le défaut est ACTIF, seul un refus explicite
       // est enregistré. Tester l'inverse aurait éteint l'option chez tout le monde.
       if (explorerSuggestRaw === '0') setExplorerSuggestState(false);
@@ -607,6 +613,18 @@ export function AppProvider({ children }) {
   // Une date DÉJÀ POSÉE n'est jamais écrasée : si l'utilisateur a coché cet
   // Invader ici, c'est son geste et son horodatage qui font foi, pas ceux d'une
   // autre app.
+  // Fusionne les URL de photos rapatriées. Additif : une ville retirée de la
+  // galerie ne doit pas effacer ce qu'on avait déjà. Persisté immédiatement,
+  // l'objet étant petit (~30 Ko pour 400 entrées) et écrit rarement.
+  function mergeFiPhotos(nouvelles) {
+    if (!nouvelles || !Object.keys(nouvelles).length) return;
+    setFiPhotos(prev => {
+      const next = { ...prev, ...nouvelles };
+      AsyncStorage.setItem('@invader_fi_photos', JSON.stringify(next)).catch(() => {});
+      return next;
+    });
+  }
+
   function bulkFlash(ids, dates) {
     const list = ids ?? invaders.map(inv => inv.id);
     setFlashed(prev => {
@@ -848,6 +866,7 @@ export function AppProvider({ children }) {
     labels, labelDefs, statusColors, colorOverrides,
     filters, setFilters,
     toggleFlash, bulkFlash, bulkUnflash, clearFlashDates,
+    fiPhotos, mergeFiPhotos,
     setStatusColor, setFlashedColor,
     // News
     news, newsCities, setNewsCitiesPref, newsLastSeen, markNewsSeen, newsUnreadCount,

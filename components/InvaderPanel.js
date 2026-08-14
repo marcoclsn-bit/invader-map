@@ -1,4 +1,5 @@
 import { View, Text, TouchableOpacity, StyleSheet, Alert, Share, Linking } from 'react-native';
+import { Image } from 'expo-image';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { useAppContext } from '../context/AppContext';
@@ -30,7 +31,8 @@ function getStyles(theme) {
 
 // autoCloseOnAction : ferme le panel après chaque action (utilisé en mode navigation Chasse)
 export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClose, autoCloseOnAction = false }) {
-  const { flashed, statusColors, dataVersion, explorer } = useAppContext();
+  const { flashed, statusColors, dataVersion, explorer, fiPhotos } = useAppContext();
+  const maPhoto = fiPhotos?.[invader?.id] || null;
   const { theme } = useTheme();
   const { t } = useTranslation();
   const styles = getStyles(theme);
@@ -203,6 +205,26 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
       </TouchableOpacity>
       )}
 
+      {/* Photo PERSONNELLE de l'utilisateur, rapatriée de son compte
+          FlashInvaders. Distincte des liens sortants ci-dessous : c'est son
+          propre cliché, de sa propre prise, affiché à lui seul dans son app.
+          Chargée à la demande et mise en cache sur disque — on ne préfère pas
+          précharger quatre cents images sur la bande passante d'autrui.
+          L'absence est le cas NORMAL : sans UID renseigné il n'y en a aucune. */}
+      {isFlashed && maPhoto ? (
+        <View style={styles.photoBloc}>
+          <Text style={styles.photoLabel}>{t('map.panel.myPhoto')}</Text>
+          <Image
+            source={{ uri: maPhoto }}
+            style={styles.maPhoto}
+            contentFit="cover"
+            transition={150}
+            cachePolicy="disk"
+            accessibilityLabel={t('map.panel.myPhoto')}
+          />
+        </View>
+      ) : null}
+
       {/* Photo de la mosaïque : lien SORTANT, jamais d'image affichée ici.
           L'app ne reproduit donc rien, c'est le navigateur de l'utilisateur qui
           va la chercher chez invader-spotter, à son initiative. Le site n'ayant
@@ -292,6 +314,10 @@ function makeStyles(t) {
     },
     igBtnText: { fontSize: 14, fontWeight: '500', color: '#E1306C' },
     photoBloc: { marginTop: 12 },
+    maPhoto: {
+      width: '100%', aspectRatio: 4 / 3, borderRadius: 12,
+      backgroundColor: t.surfaceHigh, marginTop: 6,
+    },
     photoLabel: { ...typography.fieldLabel, color: t.textSecondary, marginBottom: 6 },
     photoRow: { flexDirection: 'row', gap: 8 },
     photoBtn: {

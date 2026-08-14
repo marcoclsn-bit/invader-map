@@ -60,7 +60,8 @@
       "photoZoom": "Close-up",
       "photoWide": "Wide shot",
       "labelsTitle": "LABELS",
-      "posedOn": "Installed on {{date}}"
+      "posedOn": "Installed on {{date}}",
+      "myPhoto": "Your photo"
     },
     "loading": {
       "progress": "LOADING ({{pct}}%)"

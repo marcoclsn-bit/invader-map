@@ -60,7 +60,8 @@
       "photoZoom": "Zoom",
       "photoWide": "Plan large",
       "labelsTitle": "ÉTIQUETTES",
-      "posedOn": "Posé le {{date}}"
+      "posedOn": "Posé le {{date}}",
+      "myPhoto": "Ta photo"
     },
     "loading": {
       "progress": "CHARGEMENT ({{pct}}%)"

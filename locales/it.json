@@ -60,7 +60,8 @@
       "photoZoom": "Primo piano",
       "photoWide": "Campo lungo",
       "labelsTitle": "ETICHETTE",
-      "posedOn": "Installato il {{date}}"
+      "posedOn": "Installato il {{date}}",
+      "myPhoto": "La tua foto"
     },
     "loading": {
       "progress": "CARICAMENTO ({{pct}}%)"
