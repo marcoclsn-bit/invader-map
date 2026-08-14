@@ -23,6 +23,7 @@ const GROUPS = [
   ] },
   { key: 'manage', sections: [
     { id: 'flash', icon: 'flash' },
+    { id: 'import', icon: 'download' },
   ] },
 ];
 

@@ -111,7 +111,11 @@
       "validate": "Mostra ({{count}})",
       "warnLarge": "~{{count}} Invaders: la visualizzazione può essere più lenta."
     },
-    "importBtn": "I miei flash"
+    "importBtn": "Importare i miei flash",
+    "importCard": {
+      "title": "Hai già fotografato degli Invader?",
+      "body": "Porta qui la tua collezione dall'account FlashInvaders o da un elenco, senza rifare tutto a mano."
+    }
   },
   "route": {
     "gpsLabel": "La mia posizione",
@@ -1125,6 +1129,16 @@
           "Nella Lista, segna più Invader in una volta e filtra per stato.",
           "Usa le etichette per organizzare i tuoi Invader a modo tuo."
         ]
+      },
+      "import": {
+        "title": "Recuperare i flash fatti altrove",
+        "benefit": "Arrivi con centinaia di Invader già fotografati in un'altra app? Non serve rifarli: il menu «Importare i miei flash» apre tre strade.",
+        "steps": [
+          "Dal tuo account FlashInvaders: inserisci il tuo UID e arriva tutta la galleria in un colpo.",
+          "Da un elenco: incolla un testo o un export, un identificativo per riga; vanno bene anche virgole e CSV.",
+          "Uno per uno: nella scheda Flash, basta il fulmine di ogni riga.",
+          "La stessa schermata esporta il tuo elenco, per conservarlo o passarlo a un altro telefono."
+        ]
       }
     }
   },
@@ -1184,10 +1198,10 @@
     "dismiss": "Tocca per chiudere"
   },
   "import": {
-    "title": "I miei flash",
+    "title": "Importare i miei flash",
     "counter": "Invaders flashati",
     "paste": {
-      "label": "Incolla una lista",
+      "label": "Da un elenco",
       "placeholder": "BXL_02\nBXL_03\nBRC_01\n…",
       "hint": "Incolla il contenuto della tua esportazione. Il formato non conta: un identificativo per riga, virgole, un CSV con intestazione, va tutto bene."
     },
@@ -1233,6 +1247,12 @@
         "reseau": "Il server non ha risposto. Riprova più tardi.",
         "vide": "Questo account non ha alcun flash."
       }
+    },
+    "intro": "Tre modi per recuperare una collezione già fatta. Niente viene aggiunto senza il tuo consenso: prima vedi il conteggio.",
+    "hand": {
+      "label": "Uno per uno, nell'elenco",
+      "hint": "Il fulmine a destra di ogni riga segna l'Invader. Lo stesso tocco lo toglie.",
+      "action": "Apri l'elenco"
     }
   },
   "explorer": {

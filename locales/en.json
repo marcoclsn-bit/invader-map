@@ -111,7 +111,11 @@
       "validate": "Show ({{count}})",
       "warnLarge": "~{{count}} Invaders: display may be slower."
     },
-    "importBtn": "My flashes"
+    "importBtn": "Import my flashes",
+    "importCard": {
+      "title": "Already flashed some Invaders?",
+      "body": "Bring your collection over from your FlashInvaders account or from a list, instead of ticking it all again."
+    }
   },
   "route": {
     "gpsLabel": "My location",
@@ -1125,6 +1129,16 @@
           "In the List, mark several Invaders at once and filter by status.",
           "Use labels to organize your Invaders your way."
         ]
+      },
+      "import": {
+        "title": "Bringing in flashes made elsewhere",
+        "benefit": "Arriving with hundreds of Invaders already flashed in another app? No need to tick them again: the “Import my flashes” menu opens three paths.",
+        "steps": [
+          "From your FlashInvaders account: enter your UID and the whole gallery arrives at once.",
+          "From a list: paste text or an export, one ID per line : commas and CSV are fine too.",
+          "One by one: in the Flashes tab, the bolt on each row does the job.",
+          "The same screen exports your list, to keep it or move it to another phone."
+        ]
       }
     }
   },
@@ -1184,10 +1198,10 @@
     "dismiss": "Tap to close"
   },
   "import": {
-    "title": "My flashes",
+    "title": "Import my flashes",
     "counter": "Invaders flashed",
     "paste": {
-      "label": "Paste a list",
+      "label": "From a list",
       "placeholder": "BXL_02\nBXL_03\nBRC_01\n…",
       "hint": "Paste the contents of your export. Format does not matter: one ID per line, commas, a CSV with a header, all work."
     },
@@ -1233,6 +1247,12 @@
         "reseau": "The server did not answer. Try again later.",
         "vide": "This account has no flashes."
       }
+    },
+    "intro": "Three ways to bring in a collection you already have. Nothing is added without your say-so: you see the count first.",
+    "hand": {
+      "label": "One by one, in the list",
+      "hint": "The bolt on the right of each row marks an Invader as flashed. Same tap to unmark it.",
+      "action": "Open the list"
     }
   },
   "explorer": {

@@ -12,11 +12,19 @@ import { analyseListe, exportListe } from '../utils/importList';
 import { recupererGalerie, uidValide, getUid, setUid, oublierUid, setCompteConnu } from '../services/flashinvaders';
 import { track } from '../services/analytics';
 
-// Écran « Mes flashés » — atteint par l'en-tête de la Liste.
+// Écran « Importer mes flashs » — menu, en-tête de la Liste, et carte d'accueil
+// de la Liste quand rien n'est encore flashé.
 //
 // Deux besoins, une page. Reprendre d'un coup une collection constituée ailleurs
 // (l'utilisateur arrive de FlashInvaders avec des centaines de flashs), et
 // emporter la sienne (changement de téléphone, second appareil).
+//
+// Les moyens sont présentés comme TROIS CARTES NOMMÉES, pas comme un formulaire
+// à dérouler. La version précédente ouvrait sur un champ « Ton UID » : celui qui
+// ignore ce qu'est un UID — l'immense majorité — en concluait que l'import ne
+// lui était pas destiné et repartait. Des cartes ne sont pas une décoration
+// ici, elles rendent le CHOIX visible. Elles ne sont pas numérotées : ce sont
+// des chemins alternatifs, pas des étapes d'une séquence.
 //
 // Il n'y a PAS de sélecteur de fichier : ce serait une dépendance native, donc un
 // build et une revue Apple. Un champ où l'on colle fait le même travail, se livre
@@ -131,10 +139,16 @@ export default function ImportScreen({ navigation }) {
         <Text style={st.compteurLabel}>{t('import.counter')}</Text>
       </View>
 
-      {/* ── Depuis un compte FlashInvaders ────────────────────────────────
+      <Text style={st.intro}>{t('import.intro')}</Text>
+
+      {/* ── Moyen 1 : compte FlashInvaders ────────────────────────────────
           Placé AVANT le collage : quand on a un UID, c'est le chemin le plus
           court, et il remplit le même champ que le copier-coller. */}
-      <Text style={st.label}>{t('import.uid.label')}</Text>
+      <View style={st.carte}>
+      <View style={st.carteTitre}>
+        <Ionicons name="cloud-download-outline" size={18} color={theme.accent} />
+        <Text style={st.label}>{t('import.uid.label')}</Text>
+      </View>
       <View style={st.uidRow}>
         <TextInput
           style={[st.zone, st.uidChamp]}
@@ -162,8 +176,14 @@ export default function ImportScreen({ navigation }) {
           <Text style={st.uidOubli}>{t('import.uid.forget')}</Text>
         </TouchableOpacity>
       )}
+      </View>
 
-      <Text style={[st.label, { marginTop: 22 }]}>{t('import.paste.label')}</Text>
+      {/* ── Moyen 2 : une liste collée ─────────────────────────────────── */}
+      <View style={st.carte}>
+      <View style={st.carteTitre}>
+        <Ionicons name="clipboard-outline" size={18} color={theme.accent} />
+        <Text style={st.label}>{t('import.paste.label')}</Text>
+      </View>
       <TextInput
         style={st.zone}
         value={texte}
@@ -215,6 +235,27 @@ export default function ImportScreen({ navigation }) {
           <Text style={st.annulerTexte}>{t('import.undo.action', { count: dernier.length })}</Text>
         </TouchableOpacity>
       )}
+      </View>
+
+      {/* ── Moyen 3 : à la main ────────────────────────────────────────────
+          Ce n'est pas un import, mais c'est bien la troisième réponse à « comment
+          je marque mes flashs ? ». L'omettre laissait croire qu'il fallait un
+          fichier ou un UID pour commencer. */}
+      <View style={st.carte}>
+        <View style={st.carteTitre}>
+          <Ionicons name="flash-outline" size={18} color={theme.accent} />
+          <Text style={st.label}>{t('import.hand.label')}</Text>
+        </View>
+        <Text style={[st.aide, { marginTop: 0 }]}>{t('import.hand.hint')}</Text>
+        <TouchableOpacity
+          style={st.boutonSecondaire}
+          onPress={() => navigation.navigate('Main', { screen: 'Liste' })}
+          activeOpacity={0.8}
+        >
+          <Ionicons name="list-outline" size={17} color={theme.textPrimary} />
+          <Text style={st.boutonSecondaireTexte}>{t('import.hand.action')}</Text>
+        </TouchableOpacity>
+      </View>
 
       <View style={st.separateur} />
 
@@ -252,7 +293,13 @@ function getStyles(t) {
     compteur: { ...typography.arcadeScore, color: t.accent },
     compteurLabel: { fontSize: 12.5, color: t.textSecondary, marginTop: 6 },
 
-    label: { ...typography.fieldLabel, color: t.textSecondary, marginBottom: 8 },
+    intro: { fontSize: 13, color: t.textSecondary, lineHeight: 18, marginBottom: 18 },
+    carte: {
+      backgroundColor: t.surface, borderRadius: 14, borderWidth: 1, borderColor: t.border,
+      padding: 14, marginBottom: 14,
+    },
+    carteTitre: { flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 10 },
+    label: { ...typography.fieldLabel, color: t.textSecondary, flex: 1 },
     uidRow: { flexDirection: 'row', alignItems: 'stretch', gap: 8 },
     uidChamp: { flex: 1, minHeight: 46, maxHeight: 46, paddingTop: 13 },
     uidBtn: {

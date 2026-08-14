@@ -18,6 +18,10 @@ import { typography } from '../theme/tokens';
 
 const ROW_HEIGHT = 56;
 const KEY_LIST_CITIES = '@invader_list_cities';
+// Écart de la carte « tu as déjà flashé ailleurs ? ». Retenu sur le disque :
+// quelqu'un qui part vraiment de zéro et l'a écartée ne doit pas la revoir à
+// chaque lancement.
+const KEY_IMPORT_CARD = '@invader_import_card_off';
 
 function cityCodeOfId(id) {
   const i = id.lastIndexOf('_');
@@ -164,6 +168,12 @@ function CityPicker({ initial, cityIndex, onValidate, onClose, theme, t }) {
 
 export default function ListScreen({ navigation }) {
   const { invaders, flashed, toggleFlash, bulkFlash, bulkUnflash, currentCityCode, cityIndex } = useAppContext();
+  const [carteImport, setCarteImport] = useState(false);
+  useEffect(() => { AsyncStorage.getItem(KEY_IMPORT_CARD).then((v) => setCarteImport(v !== '1')); }, []);
+  const ecarterCarte = useCallback(() => {
+    setCarteImport(false);
+    AsyncStorage.setItem(KEY_IMPORT_CARD, '1').catch(() => {});
+  }, []);
   const { beginBatch } = useGamification();
   const { theme } = useTheme();
   const { t } = useTranslation();
@@ -351,6 +361,26 @@ export default function ListScreen({ navigation }) {
         </View>
       </View>
 
+      {carteImport && flashed.size === 0 && (
+        <View style={styles.importCard}>
+          <Ionicons name="download-outline" size={20} color={theme.accent} style={{ marginTop: 1 }} />
+          <View style={{ flex: 1 }}>
+            <Text style={styles.importCardTitle}>{t('list.importCard.title')}</Text>
+            <Text style={styles.importCardBody}>{t('list.importCard.body')}</Text>
+            <TouchableOpacity
+              style={styles.importCardBtn}
+              onPress={() => navigation.navigate('Import')}
+              activeOpacity={0.8}
+            >
+              <Text style={styles.importCardBtnText}>{t('list.importBtn')}</Text>
+            </TouchableOpacity>
+          </View>
+          <TouchableOpacity onPress={ecarterCarte} hitSlop={10} accessibilityLabel={t('common.cancel')}>
+            <Ionicons name="close" size={16} color={theme.textSecondary} />
+          </TouchableOpacity>
+        </View>
+      )}
+
       {/* Sélecteur de villes */}
       <TouchableOpacity style={styles.cityBar} onPress={() => setPickerOpen(true)} activeOpacity={0.7}>
         <Ionicons name="business-outline" size={16} color={theme.accent} />
@@ -425,6 +455,20 @@ export default function ListScreen({ navigation }) {
 function makeStyles(t) {
   return StyleSheet.create({
     container: { flex: 1, backgroundColor: t.bg },
+
+    importCard: {
+      flexDirection: 'row', alignItems: 'flex-start', gap: 11,
+      marginHorizontal: 16, marginBottom: 10, padding: 14,
+      backgroundColor: t.surface, borderRadius: 14,
+      borderWidth: 1, borderColor: t.accentDim,
+    },
+    importCardTitle: { fontSize: 14, fontWeight: '700', color: t.textPrimary },
+    importCardBody: { fontSize: 12.5, color: t.textSecondary, lineHeight: 17, marginTop: 4 },
+    importCardBtn: {
+      alignSelf: 'flex-start', marginTop: 11, backgroundColor: t.accent,
+      borderRadius: 9, paddingHorizontal: 14, paddingVertical: 8,
+    },
+    importCardBtnText: { fontSize: 13, fontWeight: '700', color: t.bg },
     header: {
       flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center',
       paddingHorizontal: 20, paddingTop: 16, paddingBottom: 10,

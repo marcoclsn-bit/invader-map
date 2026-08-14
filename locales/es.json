@@ -111,7 +111,11 @@
       "validate": "Mostrar ({{count}})",
       "warnLarge": "~{{count}} Invaders: la visualización puede ser más lenta."
     },
-    "importBtn": "Mis flasheados"
+    "importBtn": "Importar mis flashes",
+    "importCard": {
+      "title": "¿Ya has fotografiado Invaders?",
+      "body": "Trae tu colección desde tu cuenta FlashInvaders o desde una lista, sin volver a marcarlo todo a mano."
+    }
   },
   "route": {
     "gpsLabel": "Mi posición",
@@ -1125,6 +1129,16 @@
           "En la Lista, marca varios Invaders a la vez y filtra por estado.",
           "Usa las etiquetas para organizar tus Invaders a tu manera."
         ]
+      },
+      "import": {
+        "title": "Recuperar flashes hechos en otra app",
+        "benefit": "¿Llegas con cientos de Invaders ya fotografiados en otra app? No hace falta repetirlo: el menú «Importar mis flashes» abre tres caminos.",
+        "steps": [
+          "Desde tu cuenta FlashInvaders: introduce tu UID y llega toda tu galería de golpe.",
+          "Desde una lista: pega un texto o una exportación, un identificador por línea; comas y CSV también valen.",
+          "Uno a uno: en la pestaña Flashes, el rayo de cada fila basta.",
+          "La misma pantalla exporta tu lista, para guardarla o pasarla a otro teléfono."
+        ]
       }
     }
   },
@@ -1184,10 +1198,10 @@
     "dismiss": "Toca para cerrar"
   },
   "import": {
-    "title": "Mis flasheados",
+    "title": "Importar mis flashes",
     "counter": "Invaders flasheados",
     "paste": {
-      "label": "Pegar una lista",
+      "label": "Desde una lista",
       "placeholder": "BXL_02\nBXL_03\nBRC_01\n…",
       "hint": "Pega el contenido de tu exportación. El formato da igual: un identificador por línea, comas, un CSV con encabezado, todo vale."
     },
@@ -1233,6 +1247,12 @@
         "reseau": "El servidor no respondió. Inténtalo más tarde.",
         "vide": "Esta cuenta no tiene ningún flash."
       }
+    },
+    "intro": "Tres maneras de recuperar una colección ya hecha. Nada se añade sin tu visto bueno: primero ves el recuento.",
+    "hand": {
+      "label": "Uno a uno, en la lista",
+      "hint": "El rayo a la derecha de cada fila marca el Invader. El mismo toque lo desmarca.",
+      "action": "Abrir la lista"
     }
   },
   "explorer": {

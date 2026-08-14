@@ -88,6 +88,15 @@ export default function DrawerContent({ navigation, state }) {
 
         <View style={[styles.sep, { backgroundColor: theme.border, marginVertical: 8 }]} />
 
+        {/* Placé en tête du second groupe, et non enfoui dans la Liste : les
+            utilisateurs demandent « comment j'importe ? », donc ils cherchent
+            un verbe dans le menu, pas une icône sans libellé dans un en-tête. */}
+        <NavItem
+          icon="download-outline"
+          label={t('import.title')}
+          onPress={() => goToModal('Import')}
+          theme={theme}
+        />
         <NavItem
           icon="bulb-outline"
           label={t('feedback.idea.title')}

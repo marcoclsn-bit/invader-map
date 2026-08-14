@@ -111,7 +111,11 @@
       "validate": "Afficher ({{count}})",
       "warnLarge": "~{{count}} Invaders : l’affichage peut être plus lent."
     },
-    "importBtn": "Mes flashés"
+    "importBtn": "Importer mes flashs",
+    "importCard": {
+      "title": "Tu as déjà flashé des Invaders ?",
+      "body": "Récupère ta collection depuis ton compte FlashInvaders ou depuis une liste, sans tout recocher à la main."
+    }
   },
   "route": {
     "gpsLabel": "Ma position",
@@ -1125,6 +1129,16 @@
           "Dans la Liste, marque plusieurs Invaders d'un coup et filtre par statut.",
           "Utilise les étiquettes pour organiser tes Invaders à ta façon."
         ]
+      },
+      "import": {
+        "title": "Récupérer des flashs faits ailleurs",
+        "benefit": "Tu arrives avec des centaines d'Invaders déjà flashés sur une autre app ? Inutile de tout recocher : le menu « Importer mes flashs » ouvre trois chemins.",
+        "steps": [
+          "Depuis ton compte FlashInvaders : entre ton UID, toute ta galerie arrive d'un coup.",
+          "Depuis une liste : colle un texte ou un export, un identifiant par ligne, virgules et CSV acceptés.",
+          "Un par un : dans l'onglet Flashs, l'éclair de chaque ligne fait l'affaire.",
+          "Le même écran sait exporter ta liste, pour la garder ou la reprendre sur un autre téléphone."
+        ]
       }
     }
   },
@@ -1184,10 +1198,10 @@
     "dismiss": "Toucher pour fermer"
   },
   "import": {
-    "title": "Mes flashés",
+    "title": "Importer mes flashs",
     "counter": "Invaders flashés",
     "paste": {
-      "label": "Coller une liste",
+      "label": "Depuis une liste",
       "placeholder": "BXL_02\nBXL_03\nBRC_01\n…",
       "hint": "Colle le contenu de ton export. Peu importe le format : une ligne par identifiant, des virgules, un CSV avec en-tête, tout est accepté."
     },
@@ -1233,6 +1247,12 @@
         "reseau": "Le serveur n'a pas répondu. Réessaie plus tard.",
         "vide": "Ce compte ne contient aucun flash."
       }
+    },
+    "intro": "Trois façons de récupérer une collection déjà constituée. Rien n'est ajouté sans ton accord : le décompte s'affiche avant.",
+    "hand": {
+      "label": "Un par un, dans la liste",
+      "hint": "L'éclair à droite de chaque ligne marque l'Invader comme flashé. C'est aussi comme ça qu'on démarque.",
+      "action": "Ouvrir la liste"
     }
   },
   "explorer": {
