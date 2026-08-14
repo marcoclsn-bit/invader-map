@@ -47,9 +47,9 @@ Alerte de proximité, cartes hors-ligne, stats de progression, multi-villes, "In
 - Commit Git régulier.
 - Privilégier le local (pas de backend) tant que possible.
 
-## Prochain build natif : trois raisons, une seule revue Apple
+## Prochain build natif : quatre raisons, une seule revue Apple
 
-Tout passe en OTA sur le runtime `1.2.0` (voir Stack). Ces trois points ne le
+Tout passe en OTA sur le runtime `1.2.0` (voir Stack). Ces quatre points ne le
 peuvent pas et attendent donc un build. Les grouper évite deux revues et deux
 montées de runtime, qui scindent chaque fois la base d'utilisateurs.
 
@@ -85,6 +85,13 @@ montées de runtime, qui scindent chaque fois la base d'utilisateurs.
    installé ; `expo-build-properties` ne l'est pas et n'expose pas cette clé).
    Ne PAS y répondre en passant `userInterfaceStyle` à `dark` : ça figerait
    aussi le thème clair choisi par l'utilisateur dans les Réglages.
+
+4. **Import d'un fichier .txt ou .csv.** Demandé le 2026-08-14. L'écran d'import
+   ne sait lire qu'un texte collé ; ouvrir un fichier exige `expo-document-picker`,
+   absent de `package.json` et donc du binaire. L'import par UID FlashInvaders,
+   lui, est parti en OTA le même jour : il n'est que du réseau et du texte.
+   Ajouter aussi `expo-file-system` si l'on veut écrire un export sur disque
+   plutôt que de passer par la feuille de partage.
 
 ## À compléter (TODO)
 - Étiquettes : UI pour créer / renommer / supprimer des étiquettes personnalisées (pour l'instant, seules les étiquettes par défaut existent).
