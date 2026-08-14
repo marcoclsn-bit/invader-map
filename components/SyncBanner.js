@@ -48,6 +48,13 @@ export default function SyncBanner({ style }) {
   const [enCours, setEnCours] = useState(false);
   const [masque, setMasque] = useState(false);
   const dernierSondage = useRef(0);
+  // Galerie déjà téléchargée pendant le sondage : appliquer devient instantané
+  // et ne coûte pas un second téléchargement de la même liste.
+  const idsPrets = useRef(null);
+  // `sonder` ne dépend de rien pour ne pas se recréer à chaque flash ; il lit
+  // donc la liste courante par une référence plutôt que par la fermeture.
+  const flashedRef = useRef(flashed);
+  flashedRef.current = flashed;
 
   const sonder = useCallback(async () => {
     const maintenant = Date.now();
@@ -61,8 +68,26 @@ export default function SyncBanner({ style }) {
 
     const connu = await getCompteConnu();
     if (connu == null) { await setCompteConnu(compte); return; }
-    const ecart = compte - connu;
-    if (ecart > 0) { setNouveaux(ecart); setMasque(false); }
+    if (compte <= connu) return;
+
+    // Le compteur du serveur a monté — mais il ne dit PAS que ces flashs
+    // manquent ici. Le cas le plus courant est justement l'inverse : en chasse,
+    // on photographie dans FlashInvaders ET on coche dans InvaderQuest, donc
+    // les deux compteurs montent ensemble. Annoncer « 5 nouveaux » sur ce seul
+    // écart afficherait un bandeau pour rien, dont l'appui ne ferait rien de
+    // visible, et qui reviendrait à chaque ouverture. Seule la galerie tranche.
+    let ids;
+    try { ({ ids } = await recupererGalerie(uid)); } catch { return; }
+    const ajouts = ids.filter((id) => !flashedRef.current.has(id));
+    if (!ajouts.length) {
+      // Déjà à jour : on aligne le compteur en silence. Aucun bandeau, aucun
+      // geste demandé pour un travail déjà fait.
+      await setCompteConnu(ids.length);
+      return;
+    }
+    idsPrets.current = ids;
+    setNouveaux(ajouts.length);
+    setMasque(false);
   }, []);
 
   useEffect(() => {
@@ -76,14 +101,17 @@ export default function SyncBanner({ style }) {
   const synchroniser = useCallback(async () => {
     setEnCours(true);
     try {
-      const uid = await getUid();
-      const { ids } = await recupererGalerie(uid);
+      // La galerie a déjà été téléchargée par le sondage, qui s'en est servi
+      // pour compter juste : la réutiliser évite 92 Ko inutiles.
+      let ids = idsPrets.current;
+      if (!ids) { ids = (await recupererGalerie(await getUid())).ids; }
       const ajouts = ids.filter((id) => !flashed.has(id));
       if (ajouts.length) {
         beginBatch();      // sans la fenêtre groupée, dix paliers = dix célébrations
         bulkFlash(ajouts);
       }
       await setCompteConnu(ids.length);
+      idsPrets.current = null;
       track('sync_applied', { added: ajouts.length });
       setNouveaux(0);
     } catch (e) {
