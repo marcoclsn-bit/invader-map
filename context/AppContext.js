@@ -1,5 +1,12 @@
 import { createContext, useContext, useState, useEffect, useRef, useMemo } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as Updates from 'expo-updates';
+
+// Défaut du réglage expérimental des photos invader-spotter : allumé sur le
+// canal de test, éteint ailleurs. Lu une fois au chargement du module.
+// `Updates.channel` vaut null en développement et dans Expo Go, où l'essai
+// n'a pas de sens : le `=== 'preview'` couvre les deux d'un coup.
+const DEFAUT_SPOTTER = Updates.channel === 'preview';
 import * as Location from 'expo-location';
 import { INVADERS as EMBEDDED_PA, INVADERS_VERSION, INVADERS_UPDATED_AT } from '../data/invaders';
 import { ALL_STATUSES, STATUS_COLOR, DEFAULT_LABEL_DEFS } from '../constants';
@@ -160,13 +167,17 @@ export function AppProvider({ children }) {
   // passante de space-invaders.com, pour afficher des timbres-poste. La fiche,
   // elle, charge UNE image à la demande : là, le coût est proportionné.
   const [photosListe, setPhotosListeState] = useState(false);
-  // EXPÉRIMENTAL, preview uniquement pour l'instant. Affiche dans la grille de
-  // Collection les gros plans d'invader-spotter à la place des aliens pixel.
-  // Mesuré avant d'être branché : ces images pèsent 20 Ko, pas 216 — ce sont des
-  // recadrages, pas des photos pleines. Une grille de Paris tient donc en 31 Mo
-  // et un écran en 600 Ko. Reste la question des droits, tranchée par Marco pour
-  // la preview : InvaderPhoto.js documente le renoncement d'origine.
-  const [photosSpotter, setPhotosSpotterState] = useState(false);
+  // EXPÉRIMENTAL. Affiche dans la grille de Collection les gros plans
+  // d'invader-spotter à la place des aliens pixel. Mesuré avant d'être branché :
+  // ces images pèsent 20 Ko, pas 216 — ce sont des recadrages, pas des photos
+  // pleines. Une grille de Paris tient donc en 31 Mo et un écran en 600 Ko.
+  //
+  // ALLUMÉ D'OFFICE SUR LE CANAL PREVIEW, éteint partout ailleurs. Un essai
+  // demandé ne doit pas commencer par une chasse à l'interrupteur ; et la
+  // production, où la question des droits n'est pas tranchée (voir le
+  // renoncement documenté dans InvaderPhoto.js), reste sur les aliens pixel.
+  // Le réglage explicite, une fois touché, l'emporte sur ce défaut.
+  const [photosSpotter, setPhotosSpotterState] = useState(DEFAUT_SPOTTER);
   // Gestes de test (appui long) réservés au porteur du projet. Ils envoient de
   // VRAIES notifications et rejouent des panneaux : en production, un utilisateur
   // qui laisse le doigt sur une ligne les déclenche sans comprendre, et sans
@@ -359,8 +370,11 @@ export function AppProvider({ children }) {
       ]);
       const photosListeRaw = await AsyncStorage.getItem('@invader_photos_liste');
       if (photosListeRaw === '1') setPhotosListeState(true);
+      // Trois cas distincts : jamais touché (null) → on garde le défaut du
+      // canal ; '1' ou '0' → le choix de l'utilisateur, qui prime.
       const photosSpotterRaw = await AsyncStorage.getItem('@invader_photos_spotter');
       if (photosSpotterRaw === '1') setPhotosSpotterState(true);
+      else if (photosSpotterRaw === '0') setPhotosSpotterState(false);
       const fiPhotosRaw = await AsyncStorage.getItem('@invader_fi_photos');
       if (fiPhotosRaw) { try { setFiPhotos(JSON.parse(fiPhotosRaw) || {}); } catch {} }
       // Comparé à '0' et non à '1' : le défaut est ACTIF, seul un refus explicite
