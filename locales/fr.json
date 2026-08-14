@@ -536,7 +536,7 @@
       "listPhotosWarnTitle": "Télécharger tes photos ?",
       "listPhotosWarnBody": "FlashInvaders ne propose pas de miniature : chaque ligne téléchargera la photo entière, environ 216 Ko. Pour tes {{count}} clichés, cela représente à peu près {{mo}} Mo, pris sur tes données et sur les serveurs de Space Invaders. Chaque photo n'est téléchargée qu'une fois, puis gardée en cache.",
       "spotterPhotos": "Photos réelles dans la Collection (essai)",
-      "spotterPhotosHint": "Remplace les aliens pixel de la grille par les gros plans d'invader-spotter, environ 20 Ko chacun. Les cases non trouvées restent assombries."
+      "spotterPhotosHint": "Sur les cases déjà flashées, montre la vraie mosaïque (gros plans invader-spotter, ~20 Ko). Celles qu'il te reste à trouver gardent leur ombre."
     },
     "statusColors": {
       "section": "Couleurs des statuts",

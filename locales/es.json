@@ -536,7 +536,7 @@
       "listPhotosWarnTitle": "¿Descargar tus fotos?",
       "listPhotosWarnBody": "FlashInvaders no ofrece miniaturas: cada línea descargará la foto entera, unos 216 KB. Para tus {{count}} fotos son aproximadamente {{mo}} MB, tomados de tus datos y de los servidores de Space Invaders. Cada foto se descarga una sola vez y luego se guarda en caché.",
       "spotterPhotos": "Fotos reales en la Colección (prueba)",
-      "spotterPhotosHint": "Sustituye los aliens de píxeles de la cuadrícula por los primeros planos de invader-spotter, unos 20 KB cada uno. Las casillas no encontradas siguen atenuadas."
+      "spotterPhotosHint": "En las casillas ya fotografiadas, muestra el mosaico real (primeros planos de invader-spotter, ~20 KB). Las que te quedan por encontrar conservan su sombra."
     },
     "statusColors": {
       "section": "Colores de estado",

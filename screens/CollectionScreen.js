@@ -23,21 +23,27 @@ import { track } from '../services/analytics';
  * qui fait marcher un Pokédex — il ne montre pas la photo de ce qu'on n'a pas
  * attrapé, il montre une OMBRE.
  *
- * UN RÉGLAGE EXPÉRIMENTAL remplace ces ombres par les gros plans
- * d'invader-spotter. J'avais d'abord écrit ici que c'était arithmétiquement
- * impossible, en extrapolant le poids des photos FlashInvaders : 216 Ko pièce,
- * donc 319 Mo pour Paris. MESURE FAITE : les gros plans d'invader-spotter pèsent
- * 20 Ko — ce sont des recadrages serrés, pas des photos pleines. Une grille de
- * Paris tient en 31 Mo, un écran en 600 Ko, et rien ne bloque le lien externe.
- * Je m'étais trompé d'un facteur dix et j'en tirais une impossibilité.
+ * UN RÉGLAGE EXPÉRIMENTAL montre la vraie mosaïque — SUR LES CASES ACQUISES
+ * SEULEMENT. J'avais d'abord écrit ici que des photos dans une grille étaient
+ * arithmétiquement impossibles, en extrapolant le poids des photos FlashInvaders :
+ * 216 Ko pièce, donc 319 Mo pour Paris. MESURE FAITE : les gros plans
+ * d'invader-spotter pèsent 20 Ko — des recadrages serrés, pas des photos pleines.
+ * Je m'étais trompé d'un facteur dix.
  *
- * Reste la question des droits, elle : InvaderPhoto.js porte le renoncement
- * d'origine, « reproduction de l'œuvre d'Invader ». D'où un réglage éteint par
- * défaut, activé sciemment, et pour l'instant destiné à la seule preview.
+ * Première version : photo partout, assombrie à 38 % sur les cases non acquises.
+ * Ça ne cachait rien du tout — la mosaïque restait parfaitement identifiable, et
+ * la grille livrait d'avance ce qu'elle est censée faire chercher. Une case non
+ * acquise est donc redevenue une ombre, sans exception.
  *
- * Même avec les photos, une case NON acquise reste une silhouette : l'image est
- * assombrie à 38 %. Sans ça, trouvé et pas-trouvé se ressembleraient et la grille
- * perdrait son moteur.
+ * Le gain est double. Ludique : la surprise revient. Et technique : sur une
+ * collection parisienne à 329 flashs sur 1 597, on passe de 1 597 photos
+ * téléchargées à 329, soit 31 Mo → 6,6 Mo. Un nouvel utilisateur, qui n'a rien
+ * flashé, ne télécharge RIEN — c'est exactement l'inverse du profil de charge
+ * qu'on redoutait pour invader-spotter.
+ *
+ * Reste la question des droits : InvaderPhoto.js porte le renoncement d'origine,
+ * « reproduction de l'œuvre d'Invader ». D'où un réglage allumé sur le seul canal
+ * preview, éteint partout ailleurs.
  *
  * Cinq états :
  *   photo  — flashé, et le cliché personnel de l'utilisateur est disponible
@@ -73,11 +79,21 @@ function numero(id) {
 
 const Case = memo(function Case({ inv, etat, photoUrl, spotterUrl, taille, theme, onPress, t }) {
   const st = getStyles(theme);
+  // UNE PHOTO NE S'AFFICHE QUE SUR UNE CASE ACQUISE. Assombrir la photo d'un
+  // Invader non trouvé ne cachait rien : à 38 %, la mosaïque restait parfaitement
+  // identifiable et la grille livrait d'avance ce qu'elle devait faire chercher.
+  // Une case non acquise est donc une ombre, un point.
+  //
+  // Le gain n'est pas que ludique : sur une collection parisienne à 329 flashs
+  // sur 1 597, on passe de 1 597 photos à 329, soit 31 Mo → 6,6 Mo. Et un
+  // nouvel utilisateur, qui n'a rien flashé, ne télécharge RIEN.
+  //
   // Deux sources possibles, deux poids très différents : la photo personnelle
   // pèse 216 Ko, le gros plan d'invader-spotter 20 Ko. La file règle sa cadence
   // là-dessus, sinon les vignettes légères attendraient dix fois trop.
+  const acquis = etat === 'photo' || etat === 'done';
   const perso = etat === 'photo' ? photoUrl : null;
-  const url = perso || (etat !== 'gone' ? spotterUrl : null);
+  const url = acquis ? (perso || spotterUrl) : null;
   const { src, fini } = usePhotoCreneau(
     url, PRIORITE_LISTE, perso ? POIDS_FLASHINVADERS : POIDS_SPOTTER,
   );
@@ -98,7 +114,7 @@ const Case = memo(function Case({ inv, etat, photoUrl, spotterUrl, taille, theme
       {src ? (
         <Image
           source={{ uri: src }}
-          style={[StyleSheet.absoluteFill, { borderRadius: 10 }, etat !== 'photo' && etat !== 'done' && st.imgTodo]}
+          style={[StyleSheet.absoluteFill, { borderRadius: 10 }]}
           contentFit="cover"
           transition={120}
           cachePolicy="disk"
@@ -301,13 +317,9 @@ function getStyles(t) {
     case_photo: { borderColor: t.flashed },
     case_done: { borderColor: t.flashed, backgroundColor: t.flashedDim },
     case_todo: {},
-    // Une photo sur une case NON acquise reste une silhouette : assombrie et
-    // désaturée. Sans ça, trouvé et pas-trouvé se ressembleraient, et la grille
-    // perdrait la seule chose qui fait marcher un Pokédex.
-    imgTodo: { opacity: 0.38 },
     case_gone: { opacity: 0.55, borderStyle: 'dashed' },
 
-    px: { width: '52%', height: '38%', opacity: 0.9 },
+    px: { width: '52%', height: '38%', opacity: 0.55 },
     num: {
       position: 'absolute', bottom: 3, fontSize: 9, color: t.textSecondary,
       fontVariant: ['tabular-nums'],

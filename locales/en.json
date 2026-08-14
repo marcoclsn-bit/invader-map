@@ -536,7 +536,7 @@
       "listPhotosWarnTitle": "Download your photos?",
       "listPhotosWarnBody": "FlashInvaders offers no thumbnails: every row will download the full photo, around 216 KB. For your {{count}} shots that is roughly {{mo}} MB, taken from your data plan and from Space Invaders' servers. Each photo is downloaded once, then cached.",
       "spotterPhotos": "Real photos in the Collection (test)",
-      "spotterPhotosHint": "Replaces the pixel aliens in the grid with invader-spotter close-ups, about 20 KB each. Cells you have not found stay dimmed."
+      "spotterPhotosHint": "On cells you have already flashed, shows the real mosaic (invader-spotter close-ups, ~20 KB). The ones left to find keep their shadow."
     },
     "statusColors": {
       "section": "Status colours",
