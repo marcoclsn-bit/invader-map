@@ -1,7 +1,9 @@
-import { useState, useMemo, useCallback, memo } from 'react';
+import { useState, useMemo, useCallback, useEffect, useRef, memo } from 'react';
 import {
   View, Text, FlatList, TouchableOpacity, StyleSheet, Switch, Dimensions,
+  Modal, TextInput, Animated, Easing,
 } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Image } from 'expo-image';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -55,6 +57,14 @@ import { dispositionRangee } from '../utils/gridLayout';
  *            pas, et qui appartient en propre à ce sujet : on ne l'aura jamais.
  */
 
+// Révélation. On retient les identifiants DÉJÀ montrés dans la Collection ; à
+// l'ouverture, ceux qui sont flashés sans avoir été montrés se retournent, l'un
+// après l'autre. C'est la récompense d'être sorti marcher.
+const CLE_VUS = '@invader_collection_vus';
+const MAX_REVELATIONS = 24;   // au-delà, ce n'est plus une fête mais une attente
+const PAS_MS = 130;           // décalage entre deux cartes
+const DUREE_MS = 520;
+
 const COLONNES = 5;
 const MARGE = 14;
 const ECART = 8;
@@ -70,15 +80,37 @@ const ALIEN = {
   unknown: require('../assets/markers/alien_unknown.png'),
 };
 
-// « PA_1247 » → « 1247 ». Le préfixe est déjà donné par l'en-tête de ville, le
-// répéter mille fois volerait la place du seul chiffre qui distingue les cases.
-function numero(id) {
-  const i = id.lastIndexOf('_');
-  return i > 0 ? id.slice(i + 1) : id;
-}
+// L'identifiant s'affiche ENTIER, préfixe compris. J'avais coupé « PA_1247 » en
+// « 1247 » pour gagner de la place, en me disant que l'en-tête de ville suffisait.
+// C'est le nom sous lequel les chasseurs connaissent une mosaïque : le tronquer
+// oblige à recomposer mentalement ce qu'on venait lire. Onze caractères au pire
+// (un seul cas dans toute la base), sept en pratique : la police se réduit
+// d'elle-même plutôt que de tronquer.
 
-const Case = memo(function Case({ inv, etat, photoUrl, spotterUrl, taille, theme, onPress, t }) {
+const Case = memo(function Case({ inv, etat, photoUrl, spotterUrl, taille, theme, onPress, t, ordre }) {
   const st = getStyles(theme);
+  // `ordre` vaut null pour l'immense majorité des cases : rien n'est animé, et
+  // aucun coût n'est payé. Seules les prises jamais montrées se retournent.
+  const flip = useRef(new Animated.Value(ordre == null ? 1 : 0)).current;
+  const [retourne, setRetourne] = useState(ordre == null);
+
+  useEffect(() => {
+    if (ordre == null) return undefined;
+    const anim = Animated.timing(flip, {
+      toValue: 1,
+      duration: DUREE_MS,
+      delay: Math.min(ordre * PAS_MS, 2600),
+      easing: Easing.out(Easing.cubic),
+      useNativeDriver: true,
+    });
+    // À mi-course la carte est de profil : c'est le seul instant où l'on peut
+    // échanger les faces sans que ça se voie.
+    const mi = setTimeout(() => setRetourne(true), Math.min(ordre * PAS_MS, 2600) + DUREE_MS / 2);
+    anim.start();
+    return () => { anim.stop(); clearTimeout(mi); };
+  }, [ordre, flip]);
+
+  const rotation = flip.interpolate({ inputRange: [0, 1], outputRange: ['180deg', '360deg'] });
   // UNE PHOTO NE S'AFFICHE QUE SUR UNE CASE ACQUISE. Assombrir la photo d'un
   // Invader non trouvé ne cachait rien : à 38 %, la mosaïque restait parfaitement
   // identifiable et la grille livrait d'avance ce qu'elle devait faire chercher.
@@ -93,7 +125,10 @@ const Case = memo(function Case({ inv, etat, photoUrl, spotterUrl, taille, theme
   // là-dessus, sinon les vignettes légères attendraient dix fois trop.
   const acquis = etat === 'photo' || etat === 'done';
   const perso = etat === 'photo' ? photoUrl : null;
-  const url = acquis ? (perso || spotterUrl) : null;
+  // Tant que la carte n'a pas basculé, elle montre encore sa face d'ombre : on ne
+  // demande donc pas la photo, ce qui évite de la charger pour rien si l'écran
+  // est quitté pendant l'attente.
+  const url = acquis && retourne ? (perso || spotterUrl) : null;
   const { src, fini } = usePhotoCreneau(
     url, PRIORITE_LISTE, perso ? POIDS_FLASHINVADERS : POIDS_SPOTTER,
   );
@@ -103,14 +138,8 @@ const Case = memo(function Case({ inv, etat, photoUrl, spotterUrl, taille, theme
     : etat === 'gone' ? theme.statusDestroyed
       : theme.textSecondary;
 
-  return (
-    <TouchableOpacity
-      style={[st.case, dim, st[`case_${etat}`]]}
-      onPress={() => onPress(inv)}
-      activeOpacity={0.7}
-      accessibilityRole="button"
-      accessibilityLabel={`${inv.id}, ${t(`collection.state.${etat}`)}`}
-    >
+  const contenu = (
+    <>
       {src ? (
         <Image
           source={{ uri: src }}
@@ -130,16 +159,117 @@ const Case = memo(function Case({ inv, etat, photoUrl, spotterUrl, taille, theme
           transition={0}
         />
       )}
-      <Text style={[st.num, src && st.numSurPhoto]} numberOfLines={1}>
-        {numero(inv.id)}
+      <Text
+        style={[st.num, src && st.numSurPhoto]}
+        numberOfLines={1}
+        adjustsFontSizeToFit
+        minimumFontScale={0.7}
+      >
+        {inv.id}
       </Text>
       {etat === 'gone' ? <View style={st.barre} pointerEvents="none" /> : null}
+    </>
+  );
+
+  const dedans = ordre == null ? contenu : (
+    <Animated.View
+      style={[
+        StyleSheet.absoluteFill,
+        { alignItems: 'center', justifyContent: 'center', transform: [{ perspective: 700 }, { rotateY: rotation }] },
+      ]}
+    >
+      {retourne ? contenu : (
+        <Image
+          source={ALIEN[statusKey(inv.status)] ?? ALIEN.unknown}
+          style={st.px}
+          contentFit="contain"
+          tintColor={theme.textSecondary}
+          transition={0}
+        />
+      )}
+    </Animated.View>
+  );
+
+  return (
+    <TouchableOpacity
+      style={[st.case, dim, st[`case_${etat}`]]}
+      onPress={() => onPress(inv)}
+      activeOpacity={0.7}
+      accessibilityRole="button"
+      accessibilityLabel={`${inv.id}, ${t(`collection.state.${etat}`)}`}
+    >
+      {dedans}
     </TouchableOpacity>
   );
 });
 
+// Sélecteur de ville. Il vit ICI et non dans un écran séparé : le parcours
+// d'avant obligeait à passer par Villes, puis la Carte, puis le menu, pour
+// revenir à la Collection — cinq écrans pour changer un mot dans un en-tête.
+function SelecteurVille({ visible, cityIndex, courante, onChoisir, onFermer, theme, t }) {
+  const st = getStyles(theme);
+  const [recherche, setRecherche] = useState('');
+  const villes = useMemo(() => {
+    const q = recherche.trim().toLowerCase();
+    return [...cityIndex]
+      .filter((c) => !q || c.name.toLowerCase().includes(q))
+      .sort((a, b) => a.name.localeCompare(b.name));
+  }, [cityIndex, recherche]);
+
+  return (
+    <Modal visible={visible} animationType="slide" transparent onRequestClose={onFermer}>
+      <View style={st.modalFond}>
+        <View style={st.modalCorps}>
+          <View style={st.modalTete}>
+            <Text style={st.modalTitre}>{t('list.picker.title')}</Text>
+            <TouchableOpacity onPress={onFermer} hitSlop={12}>
+              <Ionicons name="close" size={22} color={theme.textSecondary} />
+            </TouchableOpacity>
+          </View>
+          <TextInput
+            style={st.modalRecherche}
+            value={recherche}
+            onChangeText={setRecherche}
+            placeholder={t('list.picker.searchPlaceholder')}
+            placeholderTextColor={theme.textSecondary}
+            autoCorrect={false}
+          />
+          <FlatList
+            data={villes}
+            keyExtractor={(c) => c.code}
+            keyboardShouldPersistTaps="handled"
+            renderItem={({ item }) => {
+              const active = item.code === courante;
+              return (
+                <TouchableOpacity
+                  style={st.modalLigne}
+                  onPress={() => onChoisir(item.code)}
+                  activeOpacity={0.7}
+                >
+                  <Text style={[st.modalVille, active && { color: theme.accent, fontWeight: '700' }]}>
+                    {item.name}
+                  </Text>
+                  <Text style={st.modalCompte}>{item.count ?? ''}</Text>
+                  {active ? <Ionicons name="checkmark" size={17} color={theme.accent} /> : null}
+                </TouchableOpacity>
+              );
+            }}
+          />
+        </View>
+      </View>
+    </Modal>
+  );
+}
+
 export default function CollectionScreen({ navigation }) {
-  const { invaders, flashed, currentCityCode, fiPhotos, photosListe, photosSpotter } = useAppContext();
+  const { invaders, flashed, currentCityCode, setCurrentCity, cityIndex,
+    isChangingCity, fiPhotos, photosListe, photosSpotter } = useAppContext();
+  const [selecteurOuvert, setSelecteurOuvert] = useState(false);
+  // id → rang d'apparition. Calculé UNE fois à l'ouverture de l'écran : flasher
+  // depuis la Collection ne doit pas déclencher une animation sous les doigts.
+  const [revelations, setRevelations] = useState(null);
+  const flashedRef = useRef(flashed);
+  flashedRef.current = flashed;
   const { theme } = useTheme();
   const { t } = useTranslation();
   const st = getStyles(theme);
@@ -147,6 +277,35 @@ export default function CollectionScreen({ navigation }) {
   const [masquerImpossibles, setMasquerImpossibles] = useState(false);
 
   const ville = CITIES[currentCityCode]?.name ?? currentCityCode;
+
+  useEffect(() => {
+    let vivant = true;
+    (async () => {
+      let vus = [];
+      try {
+        const brut = await AsyncStorage.getItem(CLE_VUS);
+        vus = brut ? JSON.parse(brut) : [];
+      } catch { vus = []; }
+      if (!vivant) return;
+      const dejaVus = new Set(Array.isArray(vus) ? vus : []);
+      const tous = [...flashedRef.current];
+      const nouveaux = tous.filter((id) => !dejaVus.has(id));
+
+      // Premier lancement : tout est « nouveau », et retourner quatre cents
+      // cartes serait une punition, pas une fête. On note tout comme vu sans
+      // rien animer — la mise en scène commence à la prochaine sortie.
+      const anime = dejaVus.size > 0 && nouveaux.length <= MAX_REVELATIONS;
+      const carte = new Map();
+      if (anime) nouveaux.forEach((id, i) => carte.set(id, i));
+      if (vivant) setRevelations(carte);
+
+      if (nouveaux.length) {
+        try { await AsyncStorage.setItem(CLE_VUS, JSON.stringify(tous)); } catch { /* sans effet */ }
+      }
+      if (anime) track('collection_reveal', { count: nouveaux.length });
+    })();
+    return () => { vivant = false; };
+  }, []);
 
   // Un « impossible » est un Invader détruit que l'utilisateur n'a jamais flashé :
   // il ne pourra jamais l'obtenir. Le masquer n'est pas de la triche, c'est la
@@ -193,12 +352,13 @@ export default function CollectionScreen({ navigation }) {
       etat={etatDe(item)}
       photoUrl={fiPhotos?.[item.id] || null}
       spotterUrl={photosSpotter ? (item.photoUrl || null) : null}
+      ordre={revelations?.has(item.id) ? revelations.get(item.id) : null}
       taille={TAILLE}
       theme={theme}
       onPress={ouvrir}
       t={t}
     />
-  ), [etatDe, fiPhotos, photosSpotter, theme, ouvrir, t]);
+  ), [etatDe, fiPhotos, photosSpotter, revelations, theme, ouvrir, t]);
 
   // `index` est ici un index de RANGÉE, pas d'élément : voir utils/gridLayout.js.
   const getItemLayout = useCallback((_, index) => dispositionRangee(index, TAILLE, ECART), []);
@@ -218,8 +378,10 @@ export default function CollectionScreen({ navigation }) {
       {/* En-tête de ville : le compte, le pourcentage, la barre. */}
       <TouchableOpacity
         style={st.villeBloc}
-        onPress={() => navigation.navigate('Palmarès')}
+        onPress={() => setSelecteurOuvert(true)}
         activeOpacity={0.75}
+        accessibilityRole="button"
+        accessibilityLabel={t('list.picker.title')}
       >
         <View style={st.villeLigne}>
           <Ionicons name="business-outline" size={16} color={theme.accent} />
@@ -227,7 +389,7 @@ export default function CollectionScreen({ navigation }) {
           <View style={st.pastille}>
             <Text style={st.pastilleTexte}>{faits} / {total}</Text>
           </View>
-          <Ionicons name="chevron-forward" size={15} color={theme.textSecondary} />
+          <Ionicons name="chevron-down" size={15} color={theme.textSecondary} />
         </View>
         <View style={st.barreFond}>
           <View style={[st.barrePleine, { width: `${Math.min(100, pct)}%` }]} />
@@ -256,13 +418,23 @@ export default function CollectionScreen({ navigation }) {
         </View>
       ) : null}
 
+      <SelecteurVille
+        visible={selecteurOuvert}
+        cityIndex={cityIndex ?? []}
+        courante={currentCityCode}
+        onChoisir={(code) => { setSelecteurOuvert(false); setCurrentCity(code); }}
+        onFermer={() => setSelecteurOuvert(false)}
+        theme={theme}
+        t={t}
+      />
+
       <FlatList
-        data={cases}
+        data={isChangingCity ? [] : cases}
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
         numColumns={COLONNES}
         getItemLayout={getItemLayout}
-        extraData={[flashed, theme, photosListe, photosSpotter, fiPhotos]}
+        extraData={[flashed, theme, photosListe, photosSpotter, fiPhotos, revelations]}
         columnWrapperStyle={{ gap: ECART, marginBottom: ECART }}
         contentContainerStyle={{ paddingHorizontal: MARGE, paddingBottom: insets.bottom + 24 }}
         initialNumToRender={40}
@@ -320,13 +492,36 @@ function getStyles(t) {
 
     px: { width: '52%', height: '38%', opacity: 0.55 },
     num: {
-      position: 'absolute', bottom: 3, fontSize: 9, color: t.textSecondary,
-      fontVariant: ['tabular-nums'],
+      position: 'absolute', bottom: 3, left: 2, right: 2, fontSize: 9,
+      color: t.textSecondary, fontVariant: ['tabular-nums'], textAlign: 'center',
     },
     numSurPhoto: {
       color: '#FFF', backgroundColor: 'rgba(0,0,0,0.55)',
       paddingHorizontal: 4, borderRadius: 4, overflow: 'hidden',
     },
+    modalFond: { flex: 1, backgroundColor: 'rgba(0,0,0,0.55)', justifyContent: 'flex-end' },
+    modalCorps: {
+      maxHeight: '75%', backgroundColor: t.surface,
+      borderTopLeftRadius: 18, borderTopRightRadius: 18, paddingBottom: 28,
+    },
+    modalTete: {
+      flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
+      paddingHorizontal: 18, paddingTop: 16, paddingBottom: 10,
+    },
+    modalTitre: { ...typography.arcadeTitle, fontSize: 14, color: t.textPrimary },
+    modalRecherche: {
+      marginHorizontal: 18, marginBottom: 8, paddingHorizontal: 12, paddingVertical: 10,
+      backgroundColor: t.surfaceHigh, borderRadius: 10, borderWidth: 1, borderColor: t.border,
+      color: t.textPrimary, fontSize: 14,
+    },
+    modalLigne: {
+      flexDirection: 'row', alignItems: 'center', gap: 10,
+      paddingHorizontal: 18, paddingVertical: 13,
+      borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: t.border,
+    },
+    modalVille: { flex: 1, fontSize: 15, color: t.textPrimary },
+    modalCompte: { fontSize: 12, color: t.textSecondary, fontVariant: ['tabular-nums'] },
+
     barre: {
       position: 'absolute', left: -4, right: -4, top: '48%', height: 1.5,
       backgroundColor: t.statusDestroyed, opacity: 0.6, transform: [{ rotate: '-24deg' }],
