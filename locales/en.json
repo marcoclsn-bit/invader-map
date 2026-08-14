@@ -532,7 +532,9 @@
       "section": "Appearance",
       "darkTheme": "Dark theme",
       "listPhotos": "My photos in the list",
-      "listPhotosHint": "Shows your FlashInvaders shot on each flashed row. Off by default: the server has no thumbnails, so every tile downloads the full photo, around 200 KB."
+      "listPhotosHint": "Shows your FlashInvaders shot on each flashed row. Off by default: the server has no thumbnails, so every tile downloads the full photo, around 200 KB.",
+      "listPhotosWarnTitle": "Download your photos?",
+      "listPhotosWarnBody": "FlashInvaders offers no thumbnails: every row will download the full photo, around 216 KB. For your {{count}} shots that is roughly {{mo}} MB, taken from your data plan and from Space Invaders' servers. Each photo is downloaded once, then cached."
     },
     "statusColors": {
       "section": "Status colours",

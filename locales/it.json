@@ -532,7 +532,9 @@
       "section": "Aspetto",
       "darkTheme": "Tema scuro",
       "listPhotos": "Le mie foto nell'elenco",
-      "listPhotosHint": "Mostra il tuo scatto FlashInvaders su ogni riga già fotografata. Spento di default: il server non offre miniature, quindi ogni anteprima scarica la foto intera, circa 200 KB."
+      "listPhotosHint": "Mostra il tuo scatto FlashInvaders su ogni riga già fotografata. Spento di default: il server non offre miniature, quindi ogni anteprima scarica la foto intera, circa 200 KB.",
+      "listPhotosWarnTitle": "Scaricare le tue foto?",
+      "listPhotosWarnBody": "FlashInvaders non offre miniature: ogni riga scaricherà la foto intera, circa 216 KB. Per i tuoi {{count}} scatti sono all'incirca {{mo}} MB, presi dai tuoi dati e dai server di Space Invaders. Ogni foto viene scaricata una sola volta, poi tenuta in cache."
     },
     "statusColors": {
       "section": "Colori degli stati",
