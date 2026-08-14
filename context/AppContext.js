@@ -633,12 +633,20 @@ export function AppProvider({ children }) {
       return next;
     });
     if (!dates) return;
+    // La datation NE SE LIMITE PAS aux identifiants ajoutés à l'instant. Quelqu'un
+    // qui avait déjà importé sa galerie possède déjà tous ces Invaders : la liste
+    // des ajouts serait vide, et son historique resterait éternellement sans date.
+    // On date donc tout ce dont on connaît la date ET qu'on possède — soit ceux
+    // qu'on vient d'ajouter, soit ceux qu'on avait déjà.
+    const ajoutes = new Set(list);
     setFlashedDates(prev => {
       const next = new Map(prev);
       let change = false;
-      for (const id of list) {
-        const d = dates[id];
-        if (d && !next.has(id)) { next.set(id, d); change = true; }
+      for (const [id, d] of Object.entries(dates)) {
+        if (!d || next.has(id)) continue;              // date déjà posée : elle fait foi
+        if (!ajoutes.has(id) && !flashed.has(id)) continue;  // pas à nous : on n'invente rien
+        next.set(id, d);
+        change = true;
       }
       return change ? next : prev;
     });

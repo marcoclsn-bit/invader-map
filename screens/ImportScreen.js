@@ -36,7 +36,7 @@ export default function ImportScreen({ navigation }) {
   const { theme } = useTheme();
   const { t } = useTranslation();
   const st = getStyles(theme);
-  const { flashed, bulkFlash, bulkUnflash, mergeFiPhotos } = useAppContext();
+  const { flashed, flashedDates, bulkFlash, bulkUnflash, mergeFiPhotos } = useAppContext();
   const { beginBatch } = useGamification();
 
   const [texte, setTexte] = useState('');
@@ -57,9 +57,25 @@ export default function ImportScreen({ navigation }) {
   // n'en a aucune : le comportement d'avant vaut toujours pour elle.
   const datesUid = useRef(null);
   const analyse = useMemo(() => (texte.trim() ? analyseListe(texte, flashed) : null), [texte, flashed]);
+  // Dates récupérables sans rien ajouter : le cas de quelqu'un qui avait DÉJÀ
+  // importé sa galerie. Rien de nouveau à cocher, mais tout un historique à
+  // dater. Sans ce compte, le bouton resterait « Rien à ajouter » et l'intérêt
+  // principal de la manœuvre lui serait inaccessible.
+  const [signature, setSignature] = useState(0);
+  const aDater = useMemo(() => {
+    const d = datesUid.current;
+    if (!d) return 0;
+    let n = 0;
+    for (const id of Object.keys(d)) {
+      if (flashed.has(id) && !flashedDates.has(id)) n += 1;
+    }
+    return n;
+    // `signature` force le recalcul après un téléchargement, datesUid étant une ref.
+  }, [flashed, flashedDates, signature]);
+  const aFaire = (analyse?.nouveaux.length || 0) + aDater;
 
   const confirmer = useCallback(() => {
-    if (!analyse?.nouveaux.length) return;
+    if (!analyse?.nouveaux.length && !datesUid.current) return;
     Keyboard.dismiss();
     const ajoutes = analyse.nouveaux;
     // beginBatch AVANT bulkFlash : sans la fenêtre groupée, un import qui franchit
@@ -73,9 +89,14 @@ export default function ImportScreen({ navigation }) {
       cities: Object.keys(analyse.villes).length,
     });
     setTexte('');
-    setDernier(ajoutes);
-    Alert.alert(t('import.done.title'), t('import.done.body', { count: ajoutes.length }));
-  }, [analyse, beginBatch, bulkFlash, t]);
+    setDernier(ajoutes.length ? ajoutes : null);
+    Alert.alert(
+      t('import.done.title'),
+      ajoutes.length
+        ? t('import.done.body', { count: ajoutes.length })
+        : t('import.done.datesOnly', { count: aDater }),
+    );
+  }, [analyse, aDater, beginBatch, bulkFlash, t]);
 
   // Récupère la galerie et verse le résultat dans le MÊME champ que le
   // copier-coller : une seule analyse, un seul écran de résultat, un seul bouton
@@ -86,6 +107,7 @@ export default function ImportScreen({ navigation }) {
     try {
       const { ids, dates, photos } = await recupererGalerie(uid);
       datesUid.current = dates;
+      setSignature((n) => n + 1);
       mergeFiPhotos(photos);
       await setUid(uid);
       // Point de départ du bandeau de synchronisation : sans lui, le premier
@@ -220,20 +242,25 @@ export default function ImportScreen({ navigation }) {
               <Text style={st.rejets} numberOfLines={3}>{analyse.inconnus.slice(0, 12).join(' · ')}</Text>
             </>
           )}
+          {aDater > 0 && (
+            <Ligne theme={theme} valeur={aDater} ton="accent" texte={t('import.res.dates')} />
+          )}
           {analyse.total === 0 && <Text style={st.rien}>{t('import.res.none')}</Text>}
         </View>
       )}
 
       <TouchableOpacity
-        style={[st.bouton, !analyse?.nouveaux.length && st.boutonInactif]}
+        style={[st.bouton, !aFaire && st.boutonInactif]}
         onPress={confirmer}
-        disabled={!analyse?.nouveaux.length}
+        disabled={!aFaire}
         activeOpacity={0.8}
       >
-        <Text style={[st.boutonTexte, !analyse?.nouveaux.length && st.boutonTexteInactif]}>
+        <Text style={[st.boutonTexte, !aFaire && st.boutonTexteInactif]}>
           {analyse?.nouveaux.length
             ? t('import.apply', { count: analyse.nouveaux.length })
-            : t('import.applyIdle')}
+            : aDater
+              ? t('import.applyDates', { count: aDater })
+              : t('import.applyIdle')}
         </Text>
       </TouchableOpacity>
 

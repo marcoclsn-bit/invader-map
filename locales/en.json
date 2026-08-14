@@ -1211,13 +1211,15 @@
       "already": "already flashed",
       "destroyed": "of which destroyed mosaics",
       "unknown": "unknown IDs",
-      "none": "No ID recognised in this text."
+      "none": "No ID recognised in this text.",
+      "dates": "flash dates to recover"
     },
     "apply": "Add {{count}} Invaders",
     "applyIdle": "Nothing to add",
     "done": {
       "title": "Import complete",
-      "body": "{{count}} Invaders added to your collection."
+      "body": "{{count}} Invaders added to your collection.",
+      "datesOnly": "{{count}} flashes recovered their date."
     },
     "export": {
       "label": "Export my list",
@@ -1254,7 +1256,8 @@
       "label": "One by one, in the list",
       "hint": "The bolt on the right of each row marks an Invader as flashed. Same tap to unmark it.",
       "action": "Open the list"
-    }
+    },
+    "applyDates": "Date {{count}} flashes"
   },
   "explorer": {
     "badge": "Explorer mode",

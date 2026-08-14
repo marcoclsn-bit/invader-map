@@ -1211,13 +1211,15 @@
       "already": "déjà flashés",
       "destroyed": "dont mosaïques détruites",
       "unknown": "identifiants introuvables",
-      "none": "Aucun identifiant reconnu dans ce texte."
+      "none": "Aucun identifiant reconnu dans ce texte.",
+      "dates": "dates de flash à récupérer"
     },
     "apply": "Ajouter {{count}} Invaders",
     "applyIdle": "Rien à ajouter",
     "done": {
       "title": "Import terminé",
-      "body": "{{count}} Invaders ajoutés à ta collection."
+      "body": "{{count}} Invaders ajoutés à ta collection.",
+      "datesOnly": "{{count}} flashs ont retrouvé leur date."
     },
     "export": {
       "label": "Exporter ma liste",
@@ -1254,7 +1256,8 @@
       "label": "Un par un, dans la liste",
       "hint": "L'éclair à droite de chaque ligne marque l'Invader comme flashé. C'est aussi comme ça qu'on démarque.",
       "action": "Ouvrir la liste"
-    }
+    },
+    "applyDates": "Dater {{count}} flashs"
   },
   "explorer": {
     "badge": "Mode explorateur",
