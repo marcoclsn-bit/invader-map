@@ -1,6 +1,6 @@
 {
-  "version": 6,
-  "updatedAt": "2026-08-13",
+  "version": 7,
+  "updatedAt": "2026-08-14",
   "city": "PRT",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 26,
@@ -240,7 +240,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/PRT/PRT_16-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/PRT/PRT_16-fevrier2019.jpg",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/PRT/PRT_16-aout2026.jpg",
       "datePosed": "2002-10-24"
     },
     {
@@ -315,7 +315,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/PRT/PRT_21-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/PRT/PRT_21-fevrier2019.jpg",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/PRT/PRT_21-aout2026.jpg",
       "datePosed": "2002-10-25"
     },
     {
@@ -330,7 +330,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/PRT/PRT_22-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/PRT/PRT_22-juin2014.jpg",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/PRT/PRT_22-aout2026.jpg",
       "datePosed": "2002-10-25"
     },
     {
@@ -359,7 +359,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/PRT/PRT_24-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/PRT/PRT_24-novembre2023.jpg",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/PRT/PRT_24-aout2026.jpg",
       "datePosed": "2002-10-26"
     },
     {
