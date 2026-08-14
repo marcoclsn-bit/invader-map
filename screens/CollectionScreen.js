@@ -14,6 +14,7 @@ import { statusKey } from '../constants';
 import { CITIES } from '../cities/registry';
 import { usePhotoCreneau, PRIORITE_LISTE, POIDS_FLASHINVADERS, POIDS_SPOTTER } from '../services/photoQueue';
 import { track } from '../services/analytics';
+import { dispositionRangee } from '../utils/gridLayout';
 
 /**
  * Collection — la vue « Pokédex ».
@@ -60,7 +61,6 @@ const ECART = 8;
 const TAILLE = Math.floor(
   (Dimensions.get('window').width - MARGE * 2 - ECART * (COLONNES - 1)) / COLONNES,
 );
-const HAUTEUR_RANGEE = TAILLE + ECART;
 
 const ALIEN = {
   ok: require('../assets/markers/alien_ok.png'),
@@ -200,9 +200,8 @@ export default function CollectionScreen({ navigation }) {
     />
   ), [etatDe, fiPhotos, photosSpotter, theme, ouvrir, t]);
 
-  const getItemLayout = useCallback((_, index) => ({
-    length: HAUTEUR_RANGEE, offset: HAUTEUR_RANGEE * Math.floor(index / COLONNES), index,
-  }), []);
+  // `index` est ici un index de RANGÉE, pas d'élément : voir utils/gridLayout.js.
+  const getItemLayout = useCallback((_, index) => dispositionRangee(index, TAILLE, ECART), []);
 
   return (
     <View style={[st.page, { paddingTop: insets.top }]}>
@@ -264,8 +263,8 @@ export default function CollectionScreen({ navigation }) {
         numColumns={COLONNES}
         getItemLayout={getItemLayout}
         extraData={[flashed, theme, photosListe, photosSpotter, fiPhotos]}
-        columnWrapperStyle={{ gap: ECART }}
-        contentContainerStyle={{ paddingHorizontal: MARGE, paddingBottom: insets.bottom + 24, gap: ECART }}
+        columnWrapperStyle={{ gap: ECART, marginBottom: ECART }}
+        contentContainerStyle={{ paddingHorizontal: MARGE, paddingBottom: insets.bottom + 24 }}
         initialNumToRender={40}
         maxToRenderPerBatch={40}
         windowSize={7}
