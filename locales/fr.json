@@ -1306,5 +1306,10 @@
     "banner_one": "Tu as flashé 1 Invader depuis ta dernière visite.",
     "banner_other": "Tu as flashé {{count}} Invaders depuis ta dernière visite.",
     "action": "Synchroniser"
+  },
+  "update": {
+    "step1": "Préparation d'InvaderQuest…",
+    "step2": "Récupération des Invaders et des lieux…",
+    "skip": "Continuer sans attendre"
   }
 }

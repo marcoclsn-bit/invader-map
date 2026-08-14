@@ -40,6 +40,7 @@ import SessionRecap from './components/session/SessionRecap';
 import BadgeCelebration from './components/gamification/BadgeCelebration';
 import BadgeBatch from './components/gamification/BadgeBatch';
 import ExplorerIntro from './components/ExplorerIntro';
+import UpdateGate from './components/UpdateGate';
 import ImportScreen from './screens/ImportScreen';
 import { navigationRef } from './utils/navigationRef';
 import './services/strollEngine'; // enregistre la tâche de fond + le handler de notif
@@ -273,11 +274,13 @@ function ThemedApp() {
   }
 
   return (
-    <AppProvider>
-      <GamificationProvider>
-        <AppShell />
-      </GamificationProvider>
-    </AppProvider>
+    <UpdateGate>
+      <AppProvider>
+        <GamificationProvider>
+          <AppShell />
+        </GamificationProvider>
+      </AppProvider>
+    </UpdateGate>
   );
 }
 

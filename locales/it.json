@@ -1306,5 +1306,10 @@
     "banner_one": "Hai fotografato 1 Invader dalla tua ultima visita.",
     "banner_other": "Hai fotografato {{count}} Invader dalla tua ultima visita.",
     "action": "Sincronizza"
+  },
+  "update": {
+    "step1": "Preparazione di InvaderQuest…",
+    "step2": "Recupero di Invader e luoghi…",
+    "skip": "Continua senza aspettare"
   }
 }
