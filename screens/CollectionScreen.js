@@ -8,7 +8,7 @@ import { Image } from 'expo-image';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
-import { DrawerActions } from '@react-navigation/native';
+import { DrawerActions, useFocusEffect } from '@react-navigation/native';
 import { useAppContext } from '../context/AppContext';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
@@ -95,7 +95,14 @@ const Case = memo(function Case({ inv, etat, photoUrl, spotterUrl, taille, theme
   const [retourne, setRetourne] = useState(ordre == null);
 
   useEffect(() => {
-    if (ordre == null) return undefined;
+    // Remise à plat AVANT toute chose. Les révélations arrivent après la lecture
+    // du disque, donc la case a déjà été rendue une fois avec `ordre` à null :
+    // sa valeur animée valait 1 et sa face était déjà retournée. Sans cette
+    // réinitialisation, l'animation jouait de 1 vers 1 — invisible.
+    if (ordre == null) { flip.setValue(1); setRetourne(true); return undefined; }
+    flip.setValue(0);
+    setRetourne(false);
+
     const anim = Animated.timing(flip, {
       toValue: 1,
       duration: DUREE_MS,
@@ -278,7 +285,12 @@ export default function CollectionScreen({ navigation }) {
 
   const ville = CITIES[currentCityCode]?.name ?? currentCityCode;
 
-  useEffect(() => {
+  // À CHAQUE PRISE DE FOCUS, et non au seul montage. Les écrans d'un tiroir de
+  // navigation ne se démontent PAS quand on les quitte : un `useEffect` à
+  // dépendances vides ne s'exécutait donc qu'une fois dans toute la vie de l'app.
+  // On ouvrait la Collection, elle enregistrait tout comme vu, et plus jamais
+  // rien ne se retournait — sans la moindre erreur pour le signaler.
+  useFocusEffect(useCallback(() => {
     let vivant = true;
     (async () => {
       let vus = [];
@@ -305,7 +317,7 @@ export default function CollectionScreen({ navigation }) {
       if (anime) track('collection_reveal', { count: nouveaux.length });
     })();
     return () => { vivant = false; };
-  }, []);
+  }, []));
 
   // Un « impossible » est un Invader détruit que l'utilisateur n'a jamais flashé :
   // il ne pourra jamais l'obtenir. Le masquer n'est pas de la triche, c'est la
