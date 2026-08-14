@@ -9,7 +9,7 @@ import { typography } from '../theme/tokens';
 import { useAppContext } from '../context/AppContext';
 import { useGamification } from '../context/GamificationContext';
 import { analyseListe, exportListe } from '../utils/importList';
-import { recupererGalerie, uidValide, getUid, setUid, oublierUid } from '../services/flashinvaders';
+import { recupererGalerie, uidValide, getUid, setUid, oublierUid, setCompteConnu } from '../services/flashinvaders';
 import { track } from '../services/analytics';
 
 // Écran « Mes flashés » — atteint par l'en-tête de la Liste.
@@ -72,6 +72,9 @@ export default function ImportScreen({ navigation }) {
     try {
       const { ids } = await recupererGalerie(uid);
       await setUid(uid);
+      // Point de départ du bandeau de synchronisation : sans lui, le premier
+      // lancement suivant annoncerait « X nouveaux » pour la liste entière.
+      await setCompteConnu(ids.length);
       setUidConnu(true);
       setTexte(ids.join('\n'));
       track('import_uid', { count: ids.length });   // JAMAIS l'uid lui-même

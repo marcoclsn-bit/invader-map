@@ -1281,5 +1281,10 @@
     "source": "Foto ospitate da invader-spotter.art",
     "a11y": "Chiedere un indizio per {{id}}",
     "dejaVu": "Già consultato"
+  },
+  "sync": {
+    "banner_one": "Hai fotografato 1 Invader dalla tua ultima visita.",
+    "banner_other": "Hai fotografato {{count}} Invader dalla tua ultima visita.",
+    "action": "Sincronizza"
   }
 }

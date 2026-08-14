@@ -18,6 +18,11 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const BASE = 'https://api.space-invaders.com/flashinvaders_v3_pas_trop_predictif/api';
 const CLE_UID = '@invader_fi_uid';
+// Compteur du SERVEUR lors de la dernière synchronisation réussie. À ne surtout
+// pas confondre avec le total local, qui inclut les marquages manuels et les
+// villes non couvertes : comparer avec lui ferait croire à du nouveau en
+// permanence et rechargerait 92 Ko à chaque retour dans l'app.
+const CLE_COMPTE = '@invader_fi_count';
 const DELAI_MS = 15000;
 
 // Format attendu : 8-4-4-4-12 hexadécimal. Vérifié AVANT tout appel réseau,
@@ -36,7 +41,39 @@ export async function setUid(uid) {
   try { await AsyncStorage.setItem(CLE_UID, String(uid).trim()); } catch { /* sans effet */ }
 }
 export async function oublierUid() {
-  try { await AsyncStorage.removeItem(CLE_UID); } catch { /* sans effet */ }
+  try { await AsyncStorage.multiRemove([CLE_UID, CLE_COMPTE]); } catch { /* sans effet */ }
+}
+
+export async function getCompteConnu() {
+  try { const v = await AsyncStorage.getItem(CLE_COMPTE); return v == null ? null : Number(v); }
+  catch { return null; }
+}
+export async function setCompteConnu(n) {
+  try { await AsyncStorage.setItem(CLE_COMPTE, String(n)); } catch { /* sans effet */ }
+}
+
+/**
+ * Sondage LÉGER : 389 octets contre 92 Ko pour la galerie, soit 151 fois moins.
+ * Rend le nombre total de flashs connu du serveur, ou null si indisponible.
+ * N'échoue jamais bruyamment : c'est un confort, pas une fonction critique.
+ */
+export async function sonderCompte(uid) {
+  const propre = String(uid || '').trim();
+  if (!uidValide(propre)) return null;
+  const ctrl = new AbortController();
+  const minuteur = setTimeout(() => ctrl.abort(), DELAI_MS);
+  try {
+    const res = await fetch(`${BASE}/account?uid=${encodeURIComponent(propre)}`, { signal: ctrl.signal });
+    if (!res.ok) return null;
+    const j = await res.json();
+    if (j?.code !== 0 && j?.code !== '0') return null;
+    const n = Number(j.si_found);
+    return Number.isFinite(n) ? n : null;
+  } catch {
+    return null;
+  } finally {
+    clearTimeout(minuteur);
+  }
 }
 
 /**

@@ -1281,5 +1281,10 @@
     "source": "Photos hébergées par invader-spotter.art",
     "a11y": "Demander un indice pour {{id}}",
     "dejaVu": "Déjà consulté"
+  },
+  "sync": {
+    "banner_one": "Tu as flashé 1 Invader depuis ta dernière visite.",
+    "banner_other": "Tu as flashé {{count}} Invaders depuis ta dernière visite.",
+    "action": "Synchroniser"
   }
 }

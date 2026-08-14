@@ -1281,5 +1281,10 @@
     "source": "Fotos alojadas por invader-spotter.art",
     "a11y": "Pedir una pista para {{id}}",
     "dejaVu": "Ya consultada"
+  },
+  "sync": {
+    "banner_one": "Has fotografiado 1 Invader desde tu última visita.",
+    "banner_other": "Has fotografiado {{count}} Invaders desde tu última visita.",
+    "action": "Sincronizar"
   }
 }
