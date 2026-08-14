@@ -1135,7 +1135,7 @@
         "benefit": "Arriving with hundreds of Invaders already flashed in another app? No need to tick them again: the “Import my flashes” menu opens three paths.",
         "steps": [
           "From your FlashInvaders account: enter your UID and the whole gallery arrives at once.",
-          "From a list: paste text or an export, one ID per line : commas and CSV are fine too.",
+          "From a list: paste text or an export, one ID per line. Commas and CSV files work too.",
           "One by one: in the Flashes tab, the bolt on each row does the job.",
           "The same screen exports your list, to keep it or move it to another phone."
         ]
