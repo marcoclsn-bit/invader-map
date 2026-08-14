@@ -51,6 +51,7 @@ export default function SyncBanner({ style }) {
   // Galerie déjà téléchargée pendant le sondage : appliquer devient instantané
   // et ne coûte pas un second téléchargement de la même liste.
   const idsPrets = useRef(null);
+  const datesPretes = useRef(null);
   // `sonder` ne dépend de rien pour ne pas se recréer à chaque flash ; il lit
   // donc la liste courante par une référence plutôt que par la fermeture.
   const flashedRef = useRef(flashed);
@@ -76,8 +77,8 @@ export default function SyncBanner({ style }) {
     // les deux compteurs montent ensemble. Annoncer « 5 nouveaux » sur ce seul
     // écart afficherait un bandeau pour rien, dont l'appui ne ferait rien de
     // visible, et qui reviendrait à chaque ouverture. Seule la galerie tranche.
-    let ids;
-    try { ({ ids } = await recupererGalerie(uid)); } catch { return; }
+    let ids, dates;
+    try { ({ ids, dates } = await recupererGalerie(uid)); } catch { return; }
     const ajouts = ids.filter((id) => !flashedRef.current.has(id));
     if (!ajouts.length) {
       // Déjà à jour : on aligne le compteur en silence. Aucun bandeau, aucun
@@ -86,6 +87,7 @@ export default function SyncBanner({ style }) {
       return;
     }
     idsPrets.current = ids;
+    datesPretes.current = dates;
     setNouveaux(ajouts.length);
     setMasque(false);
   }, []);
@@ -104,14 +106,16 @@ export default function SyncBanner({ style }) {
       // La galerie a déjà été téléchargée par le sondage, qui s'en est servi
       // pour compter juste : la réutiliser évite 92 Ko inutiles.
       let ids = idsPrets.current;
-      if (!ids) { ids = (await recupererGalerie(await getUid())).ids; }
+      let dates = datesPretes.current;
+      if (!ids) { ({ ids, dates } = await recupererGalerie(await getUid())); }
       const ajouts = ids.filter((id) => !flashed.has(id));
       if (ajouts.length) {
         beginBatch();      // sans la fenêtre groupée, dix paliers = dix célébrations
-        bulkFlash(ajouts);
+        bulkFlash(ajouts, dates || undefined);
       }
       await setCompteConnu(ids.length);
       idsPrets.current = null;
+      datesPretes.current = null;
       track('sync_applied', { added: ajouts.length });
       setNouveaux(0);
     } catch (e) {

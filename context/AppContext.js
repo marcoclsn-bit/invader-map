@@ -594,17 +594,36 @@ export function AppProvider({ children }) {
     });
   }
 
-  // Marquage en masse (Liste) = mise à jour de l'historique déjà flashé.
-  // On N'AJOUTE PAS de date → ces flashs comptent dans les totaux/géo mais pas
-  // dans les stats temporelles. FUSIONNE (ne touche pas aux autres villes).
-  function bulkFlash(ids) {
+  // Marquage en masse. FUSIONNE, ne remplace jamais (les autres villes restent).
+  //
+  // `dates` est facultatif : objet id → ISO. Sans lui — marquage depuis la Liste,
+  // liste collée sans horodatage — on n'écrit AUCUNE date, et ces flashs comptent
+  // dans les totaux et la géographie mais pas dans les statistiques temporelles.
+  // Dater « maintenant » un passé de deux ans empilerait tout sur aujourd'hui.
+  //
+  // Avec lui — synchronisation FlashInvaders, qui fournit `date_flash` pour
+  // chaque entrée — on pose la vraie date, et l'historique devient exploitable.
+  //
+  // Une date DÉJÀ POSÉE n'est jamais écrasée : si l'utilisateur a coché cet
+  // Invader ici, c'est son geste et son horodatage qui font foi, pas ceux d'une
+  // autre app.
+  function bulkFlash(ids, dates) {
     const list = ids ?? invaders.map(inv => inv.id);
     setFlashed(prev => {
       const next = new Set(prev);
       for (const id of list) next.add(id);
       return next;
     });
-    // volontairement : aucune écriture dans flashedDates (voir commentaire ci-dessus)
+    if (!dates) return;
+    setFlashedDates(prev => {
+      const next = new Map(prev);
+      let change = false;
+      for (const id of list) {
+        const d = dates[id];
+        if (d && !next.has(id)) { next.set(id, d); change = true; }
+      }
+      return change ? next : prev;
+    });
   }
 
   // Efface tout l'historique temporel (garde les flashés). Utile pour repartir

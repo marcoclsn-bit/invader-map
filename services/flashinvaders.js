@@ -106,9 +106,43 @@ export async function recupererGalerie(uid) {
     : Array.isArray(brut) ? brut.map((x) => x?.name).filter(Boolean) : [];
   if (!ids.length) throw new ErreurFlash('vide');
 
+  // Chaque entrée porte bien plus que son identifiant. On ne gardait que la
+  // clé, et on jetait `date_flash` — l'horodatage réel du flash, présent sur
+  // 100 % des entrées mesurées. C'est lui qui permet de reconstituer un
+  // historique honnête plutôt que d'empiler tout un passé sur la date du jour.
+  const entrees = brut && !Array.isArray(brut) ? Object.entries(brut)
+    : Array.isArray(brut) ? brut.filter((x) => x?.name).map((x) => [x.name, x]) : [];
+  const dates = {};
+  const photos = {};
+  for (const [id, v] of entrees) {
+    const d = normaliseDate(v?.date_flash);
+    if (d) dates[id] = d;
+    if (typeof v?.photoUrl === 'string') photos[id] = v.photoUrl;
+    else if (typeof v?.image_url === 'string') photos[id] = v.image_url;
+  }
+
   return {
     ids,
+    dates,
+    photos,
     villes: Array.isArray(json.cities) ? json.cities.length : null,
     total: Number(json.total_si_count) || null,
   };
+}
+
+// « 2026-08-12 14:33:01 » → « 2026-08-12T14:33:01 ».
+//
+// Le fuseau a été mesuré, pas supposé : le flash le plus récent d'un compte
+// tombait à 0,2 h de l'heure locale de la machine et à −1,8 h d'UTC, c'est-à-dire
+// dans le futur si on lisait ces dates en UTC. C'est donc une heure murale
+// locale. La forme sans décalage est justement lue comme heure locale par
+// ECMAScript, on ne rajoute donc AUCUN suffixe : ajouter « Z » décalerait tout
+// l'historique de deux heures et ferait sortir un flash de la fenêtre de sa
+// session.
+const FORME_DATE = /^(\d{4}-\d{2}-\d{2})[ T](\d{2}:\d{2}:\d{2})$/;
+export function normaliseDate(brut) {
+  const m = FORME_DATE.exec(String(brut || '').trim());
+  if (!m) return null;
+  const iso = `${m[1]}T${m[2]}`;
+  return Number.isFinite(new Date(iso).getTime()) ? iso : null;
 }

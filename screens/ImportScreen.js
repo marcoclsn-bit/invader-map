@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback, useEffect } from 'react';
+import { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import { ActivityIndicator,
   ScrollView, View, Text, TextInput, TouchableOpacity, StyleSheet, Share, Alert, Keyboard,
 } from 'react-native';
@@ -50,6 +50,12 @@ export default function ImportScreen({ navigation }) {
   // l'écran : le filet couvre le moment où l'on peut se rendre compte de
   // l'erreur, pas indéfiniment. Quitter l'écran vaut acceptation.
   const [dernier, setDernier] = useState(null);
+  // Horodatages du dernier téléchargement par UID. L'import verse les
+  // identifiants dans le champ de collage pour n'avoir qu'un seul parcours de
+  // confirmation — mais du texte ne transporte pas de date. On les garde donc
+  // ici, et on les applique à ceux qui en ont une. Une liste collée à la main
+  // n'en a aucune : le comportement d'avant vaut toujours pour elle.
+  const datesUid = useRef(null);
   const analyse = useMemo(() => (texte.trim() ? analyseListe(texte, flashed) : null), [texte, flashed]);
 
   const confirmer = useCallback(() => {
@@ -59,7 +65,7 @@ export default function ImportScreen({ navigation }) {
     // beginBatch AVANT bulkFlash : sans la fenêtre groupée, un import qui franchit
     // dix paliers enchaîne dix célébrations de 3,5 s.
     beginBatch();
-    bulkFlash(ajoutes);
+    bulkFlash(ajoutes, datesUid.current || undefined);
     track('import_applied', {
       added: ajoutes.length,
       already: analyse.dejaFlashes.length,
@@ -78,7 +84,8 @@ export default function ImportScreen({ navigation }) {
     Keyboard.dismiss();
     setChargement(true);
     try {
-      const { ids } = await recupererGalerie(uid);
+      const { ids, dates } = await recupererGalerie(uid);
+      datesUid.current = dates;
       await setUid(uid);
       // Point de départ du bandeau de synchronisation : sans lui, le premier
       // lancement suivant annoncerait « X nouveaux » pour la liste entière.
