@@ -1331,7 +1331,11 @@ export default function ChasseScreen({ route }) {
                 d'interopérabilité de React Native ne monte immédiatement que
                 l'enfant qui arrive en fin de liste, les autres passent par une
                 file où un contentView encore nul fait planter l'application. */}
-            {!isChangingCity && <HeadingCone userLocation={userPos} heading={userHeading} />}
+            {/* Monté SANS condition : le retirer pendant un changement de ville le
+                ferait réapparaître plus tard, au milieu des enfants déjà en place,
+                soit exactement l'insertion qu'on cherche à supprimer. Il se rend
+                invisible tout seul quand il n'a ni position ni cap. */}
+        <HeadingCone userLocation={userPos} heading={userHeading} />
             {districtRings.map(r => (
               <Polygon
                 key={`ar-${r.ar}`}

@@ -1155,7 +1155,11 @@ export default function TrajetScreen() {
           )}
           {/* Cône puis lieux puis Invaders : ces derniers doivent être les
               derniers enfants de la carte, voir MapScreen. */}
-          {!isChangingCity && <HeadingCone userLocation={userPos} heading={userHeading} />}
+          {/* Monté SANS condition : le retirer pendant un changement de ville le
+              ferait réapparaître plus tard, au milieu des enfants déjà en place,
+              soit exactement l'insertion qu'on cherche à supprimer. Il se rend
+              invisible tout seul quand il n'a ni position ni cap. */}
+        <HeadingCone userLocation={userPos} heading={userHeading} />
           {!isChangingCity && routePois.map((poi) => (
             <PoiMarker
               key={`poi-${poi.id}`}

@@ -571,7 +571,11 @@ export default function MapScreen({ navigation, route }) {
         onMapLoaded={() => setTilesLoaded(true)}
         onRegionChange={dismissFlash}
       >
-        {!isChangingCity && <HeadingCone userLocation={userLocation} heading={userHeading} />}
+{/* Monté SANS condition : le retirer pendant un changement de ville le
+            ferait réapparaître plus tard, au milieu des enfants déjà en place,
+            soit exactement l'insertion qu'on cherche à supprimer. Il se rend
+            invisible tout seul quand il n'a ni position ni cap. */}
+        <HeadingCone userLocation={userLocation} heading={userHeading} />
         {/* ORDRE CRITIQUE : les lieux AVANT les Invaders, donc les marqueurs
             d'Invaders sont les DERNIERS enfants de la carte.
             Cause d'un plantage confirmé par deux journaux d'incident identiques :
