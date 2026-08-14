@@ -95,4 +95,3 @@ montées de runtime, qui scindent chaque fois la base d'utilisateurs.
 
 ## À compléter (TODO)
 - Étiquettes : UI pour créer / renommer / supprimer des étiquettes personnalisées (pour l'instant, seules les étiquettes par défaut existent).
-- Faisceau de direction (cône heading) — reporté, à reprendre avec un test en extérieur.
