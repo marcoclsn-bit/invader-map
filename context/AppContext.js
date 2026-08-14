@@ -152,6 +152,14 @@ export function AppProvider({ children }) {
   // est à 30 m par là ». Reste un interrupteur pour qui veut la saisie strictement
   // aveugle.
   const [explorerSuggest, setExplorerSuggestState] = useState(true);
+  // Vignettes personnelles dans la liste des Flashs. ÉTEINT par défaut, et c'est
+  // une décision mesurée : FlashInvaders ne sert AUCUNE version réduite (toutes
+  // les variantes de chemin testées répondent 404), donc une vignette de 40 px
+  // télécharge la photo pleine taille — 216 Ko en moyenne, mesuré sur 12 clichés.
+  // Faire défiler une collection de 400 Invaders tirerait ~87 Mo, sur la bande
+  // passante de space-invaders.com, pour afficher des timbres-poste. La fiche,
+  // elle, charge UNE image à la demande : là, le coût est proportionné.
+  const [photosListe, setPhotosListeState] = useState(false);
   // Gestes de test (appui long) réservés au porteur du projet. Ils envoient de
   // VRAIES notifications et rejouent des panneaux : en production, un utilisateur
   // qui laisse le doigt sur une ligne les déclenche sans comprendre, et sans
@@ -342,6 +350,8 @@ export function AppProvider({ children }) {
         AsyncStorage.getItem('@invader_explorer_suggest'),
         AsyncStorage.getItem('@invader_dev'),
       ]);
+      const photosListeRaw = await AsyncStorage.getItem('@invader_photos_liste');
+      if (photosListeRaw === '1') setPhotosListeState(true);
       const fiPhotosRaw = await AsyncStorage.getItem('@invader_fi_photos');
       if (fiPhotosRaw) { try { setFiPhotos(JSON.parse(fiPhotosRaw) || {}); } catch {} }
       // Comparé à '0' et non à '1' : le défaut est ACTIF, seul un refus explicite
@@ -783,6 +793,11 @@ export function AppProvider({ children }) {
     AsyncStorage.setItem('@invader_dev', on ? '1' : '0').catch(() => {});
   }
 
+  function setPhotosListe(on) {
+    setPhotosListeState(on);
+    AsyncStorage.setItem('@invader_photos_liste', on ? '1' : '0').catch(() => {});
+  }
+
   function setExplorerSuggest(on) {
     setExplorerSuggestState(on);
     AsyncStorage.setItem('@invader_explorer_suggest', on ? '1' : '0').catch(() => {});
@@ -884,6 +899,7 @@ export function AppProvider({ children }) {
     // Villes favorites
     favCities, toggleFavCity,
     explorerSuggest, setExplorerSuggest,
+    photosListe, setPhotosListe,
     devMode, setDevMode,
     // Légende des couleurs
     legendSeen, dismissLegend,

@@ -530,7 +530,9 @@
     "title": "Réglages",
     "appearance": {
       "section": "Apparence",
-      "darkTheme": "Thème sombre"
+      "darkTheme": "Thème sombre",
+      "listPhotos": "Mes photos dans la liste",
+      "listPhotosHint": "Affiche ton cliché FlashInvaders sur chaque ligne déjà flashée. Éteint par défaut : aucune miniature n'existe côté serveur, chaque vignette télécharge donc la photo entière, environ 200 Ko."
     },
     "statusColors": {
       "section": "Couleurs des statuts",

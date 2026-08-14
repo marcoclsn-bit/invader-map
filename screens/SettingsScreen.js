@@ -108,6 +108,7 @@ export default function SettingsScreen({ navigation }) {
     resetLabels, clearFlashDates,
     dataVersion, dataUpdatedAt, checkDataUpdate,
     resetPoiIntro, checkPoiUpdate, getPoiVersion, poiDataVersion, devMode,
+    photosListe, setPhotosListe,
   } = useAppContext();
 
   const flashedColor = labelDefs.find((d) => d.id === 'lbl_flashed')?.color;
@@ -165,6 +166,22 @@ export default function SettingsScreen({ navigation }) {
             <Switch
               value={isDark}
               onValueChange={toggle}
+              trackColor={{ false: theme.border, true: theme.accent }}
+              thumbColor={theme.bg}
+              ios_backgroundColor={theme.border}
+            />
+          }
+        />
+        {/* Éteint par défaut, et l'aide dit pourquoi en clair : FlashInvaders ne
+            sert pas de miniature, chaque vignette de 40 px télécharge la photo
+            entière. On ne dépense pas les données de quelqu'un sans le lui dire. */}
+        <Row
+          label={t('settings.appearance.listPhotos')}
+          hint={t('settings.appearance.listPhotosHint')}
+          trailing={
+            <Switch
+              value={photosListe}
+              onValueChange={setPhotosListe}
               trackColor={{ false: theme.border, true: theme.accent }}
               thumbColor={theme.bg}
               ios_backgroundColor={theme.border}

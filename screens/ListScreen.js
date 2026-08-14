@@ -181,7 +181,7 @@ function CityPicker({ initial, cityIndex, onValidate, onClose, theme, t }) {
 // ─── Écran liste ──────────────────────────────────────────────────────────────
 
 export default function ListScreen({ navigation }) {
-  const { invaders, flashed, toggleFlash, bulkFlash, bulkUnflash, currentCityCode, cityIndex, fiPhotos } = useAppContext();
+  const { invaders, flashed, toggleFlash, bulkFlash, bulkUnflash, currentCityCode, cityIndex, fiPhotos, photosListe } = useAppContext();
   const [carteImport, setCarteImport] = useState(false);
   useEffect(() => { AsyncStorage.getItem(KEY_IMPORT_CARD).then((v) => setCarteImport(v !== '1')); }, []);
   const ecarterCarte = useCallback(() => {
@@ -294,9 +294,9 @@ export default function ListScreen({ navigation }) {
       onToggle={() => toggleFlash(item.id, { dated: false })}
       cityLabel={multi ? (CITIES[cityCodeOfId(item.id)]?.name ?? null) : null}
       theme={theme}
-      photoUrl={fiPhotos?.[item.id] || null}
+      photoUrl={photosListe ? (fiPhotos?.[item.id] || null) : null}
     />
-  ), [flashed, toggleFlash, theme, multi, fiPhotos]);
+  ), [flashed, toggleFlash, theme, multi, fiPhotos, photosListe]);
 
   function confirmBulkFlash() {
     const ids = rows.map(r => r.id);
@@ -453,7 +453,7 @@ export default function ListScreen({ navigation }) {
           keyExtractor={(item) => item.id}
           renderItem={renderItem}
           getItemLayout={getItemLayout}
-          extraData={[flashed, theme, multi, fiPhotos]}
+          extraData={[flashed, theme, multi, fiPhotos, photosListe]}
           initialNumToRender={20}
           maxToRenderPerBatch={20}
           windowSize={5}

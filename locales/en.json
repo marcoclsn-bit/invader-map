@@ -530,7 +530,9 @@
     "title": "Settings",
     "appearance": {
       "section": "Appearance",
-      "darkTheme": "Dark theme"
+      "darkTheme": "Dark theme",
+      "listPhotos": "My photos in the list",
+      "listPhotosHint": "Shows your FlashInvaders shot on each flashed row. Off by default: the server has no thumbnails, so every tile downloads the full photo, around 200 KB."
     },
     "statusColors": {
       "section": "Status colours",

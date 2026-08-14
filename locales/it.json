@@ -530,7 +530,9 @@
     "title": "Impostazioni",
     "appearance": {
       "section": "Aspetto",
-      "darkTheme": "Tema scuro"
+      "darkTheme": "Tema scuro",
+      "listPhotos": "Le mie foto nell'elenco",
+      "listPhotosHint": "Mostra il tuo scatto FlashInvaders su ogni riga già fotografata. Spento di default: il server non offre miniature, quindi ogni anteprima scarica la foto intera, circa 200 KB."
     },
     "statusColors": {
       "section": "Colori degli stati",

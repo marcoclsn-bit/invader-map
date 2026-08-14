@@ -530,7 +530,9 @@
     "title": "Ajustes",
     "appearance": {
       "section": "Apariencia",
-      "darkTheme": "Tema oscuro"
+      "darkTheme": "Tema oscuro",
+      "listPhotos": "Mis fotos en la lista",
+      "listPhotosHint": "Muestra tu foto de FlashInvaders en cada línea ya fotografiada. Apagado por defecto: el servidor no ofrece miniaturas, así que cada imagen descarga la foto entera, unos 200 KB."
     },
     "statusColors": {
       "section": "Colores de estado",
