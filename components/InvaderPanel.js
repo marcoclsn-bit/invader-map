@@ -1,5 +1,6 @@
 import { View, Text, TouchableOpacity, StyleSheet, Alert, Share, Linking } from 'react-native';
 import { Image } from 'expo-image';
+import { usePhotoCreneau, PRIORITE_FICHE } from '../services/photoQueue';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { useAppContext } from '../context/AppContext';
@@ -33,6 +34,9 @@ function getStyles(theme) {
 export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClose, autoCloseOnAction = false }) {
   const { flashed, statusColors, dataVersion, explorer, fiPhotos } = useAppContext();
   const maPhoto = fiPhotos?.[invader?.id] || null;
+  // Priorité haute : ouvrir une fiche est un geste explicite qui attend une
+  // réponse, il ne fait pas la queue derrière des vignettes qui défilent.
+  const { src: maPhotoSrc, fini: maPhotoFinie } = usePhotoCreneau(maPhoto, PRIORITE_FICHE);
   const { theme } = useTheme();
   const { t } = useTranslation();
   const styles = getStyles(theme);
@@ -214,14 +218,20 @@ export default function InvaderPanel({ invader, onToggleFlash, onNavigate, onClo
       {isFlashed && maPhoto ? (
         <View style={styles.photoBloc}>
           <Text style={styles.photoLabel}>{t('map.panel.myPhoto')}</Text>
-          <Image
-            source={{ uri: maPhoto }}
-            style={styles.maPhoto}
-            contentFit="cover"
-            transition={150}
-            cachePolicy="disk"
-            accessibilityLabel={t('map.panel.myPhoto')}
-          />
+          <View style={styles.maPhoto}>
+            {maPhotoSrc ? (
+              <Image
+                source={{ uri: maPhotoSrc }}
+                style={styles.maPhotoImg}
+                contentFit="cover"
+                transition={150}
+                cachePolicy="disk"
+                onLoadEnd={maPhotoFinie}
+                onError={maPhotoFinie}
+                accessibilityLabel={t('map.panel.myPhoto')}
+              />
+            ) : null}
+          </View>
         </View>
       ) : null}
 
@@ -316,8 +326,9 @@ function makeStyles(t) {
     photoBloc: { marginTop: 12 },
     maPhoto: {
       width: '100%', aspectRatio: 4 / 3, borderRadius: 12,
-      backgroundColor: t.surfaceHigh, marginTop: 6,
+      backgroundColor: t.surfaceHigh, marginTop: 6, overflow: 'hidden',
     },
+    maPhotoImg: { width: '100%', height: '100%' },
     photoLabel: { ...typography.fieldLabel, color: t.textSecondary, marginBottom: 6 },
     photoRow: { flexDirection: 'row', gap: 8 },
     photoBtn: {

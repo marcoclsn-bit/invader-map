@@ -5,6 +5,7 @@ import {
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Image } from 'expo-image';
+import { usePhotoCreneau, PRIORITE_LISTE } from '../services/photoQueue';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
@@ -42,6 +43,9 @@ function getStyles(theme) {
 
 const InvaderRow = memo(function InvaderRow({ item, isFlashed, onToggle, cityLabel, theme, photoUrl }) {
   const { t } = useTranslation();
+  // La vignette ne part QUE lorsque la file lui donne le feu vert : dérouler une
+  // longue liste ne doit pas lancer une requête par ligne au rythme du doigt.
+  const { src: photoSrc, fini: photoFinie } = usePhotoCreneau(photoUrl, PRIORITE_LISTE);
   const styles = getStyles(theme);
   const meta = `${t(`common.status.${item.status}`)} · ${item.points} ${t('common.pts')}`;
   return (
@@ -52,13 +56,19 @@ const InvaderRow = memo(function InvaderRow({ item, isFlashed, onToggle, cityLab
           Sans photo, rien ne s'affiche et la ligne garde sa hauteur — ROW_HEIGHT
           alimente getItemLayout, une ligne plus haute désaccorderait le calcul. */}
       {photoUrl ? (
-        <Image
-          source={{ uri: photoUrl }}
-          style={styles.rowPhoto}
-          contentFit="cover"
-          transition={120}
-          cachePolicy="disk"
-        />
+        <View style={styles.rowPhoto}>
+          {photoSrc ? (
+            <Image
+              source={{ uri: photoSrc }}
+              style={styles.rowPhotoImg}
+              contentFit="cover"
+              transition={120}
+              cachePolicy="disk"
+              onLoadEnd={photoFinie}
+              onError={photoFinie}
+            />
+          ) : null}
+        </View>
       ) : null}
       <View style={styles.rowInfo}>
         <Text style={styles.rowId}>{item.id}</Text>
@@ -472,8 +482,9 @@ function makeStyles(t) {
     container: { flex: 1, backgroundColor: t.bg },
     rowPhoto: {
       width: 40, height: 40, borderRadius: 8, marginRight: 10,
-      backgroundColor: t.surfaceHigh,
+      backgroundColor: t.surfaceHigh, overflow: 'hidden',
     },
+    rowPhotoImg: { width: '100%', height: '100%' },
 
     importCard: {
       flexDirection: 'row', alignItems: 'flex-start', gap: 11,
