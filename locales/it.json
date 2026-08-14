@@ -1319,5 +1319,17 @@
     "step1": "Preparazione di InvaderQuest…",
     "step2": "Recupero di Invader e luoghi…",
     "skip": "Continua senza aspettare"
+  },
+  "collection": {
+    "title": "Collezione",
+    "completed": "di questa città",
+    "hideImpossible": "Nascondere gli impossibili",
+    "hideImpossibleHint": "{{count}} Invader distrutti che non hai mai fotografato. Toglierli dà una percentuale raggiungibile.",
+    "state": {
+      "photo": "fotografato, con la tua foto",
+      "done": "fotografato",
+      "todo": "non ancora trovato",
+      "gone": "distrutto, mai fotografato"
+    }
   }
 }

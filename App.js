@@ -42,6 +42,7 @@ import BadgeBatch from './components/gamification/BadgeBatch';
 import ExplorerIntro from './components/ExplorerIntro';
 import UpdateGate from './components/UpdateGate';
 import ImportScreen from './screens/ImportScreen';
+import CollectionScreen from './screens/CollectionScreen';
 import { navigationRef } from './utils/navigationRef';
 import './services/strollEngine'; // enregistre la tâche de fond + le handler de notif
 import { initAnalytics, track } from './services/analytics';
@@ -111,6 +112,7 @@ function DrawerNavigator() {
         }}
       />
       {/* Écrans accessibles via le menu hamburger */}
+      <Drawer.Screen name="Collection" component={CollectionScreen} />
       <Drawer.Screen name="Liste" component={ListScreen} />
       <Drawer.Screen name="Palmarès" component={PalmaresScreen} />
       <Drawer.Screen name="Stats" component={StatsScreen} />

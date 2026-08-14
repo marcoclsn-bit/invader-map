@@ -1319,5 +1319,17 @@
     "step1": "Getting InvaderQuest ready…",
     "step2": "Fetching Invaders and places…",
     "skip": "Continue without waiting"
+  },
+  "collection": {
+    "title": "Collection",
+    "completed": "of this city",
+    "hideImpossible": "Hide the impossible ones",
+    "hideImpossibleHint": "{{count}} destroyed Invaders you never flashed. Removing them gives a reachable percentage.",
+    "state": {
+      "photo": "flashed, with your photo",
+      "done": "flashed",
+      "todo": "not found yet",
+      "gone": "destroyed, never flashed"
+    }
   }
 }

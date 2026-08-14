@@ -43,6 +43,7 @@ export default function DrawerContent({ navigation, state }) {
     { name: 'Tabs',     icon: 'map',          label: t('tabs.map') },
     { name: 'Palmarès', icon: 'business',     label: t('tabs.palmares') },  // « Villes »
     { name: 'Liste',    icon: 'flash',        label: t('tabs.list') },      // « Flashs »
+    { name: 'Collection', icon: 'grid',       label: t('collection.title') },
     { name: 'News',     icon: 'newspaper',    label: t('news.title'), badge: newsUnreadCount },
     { name: 'Stats',    icon: 'stats-chart',  label: t('tabs.stats') },
     { name: 'Balade',   icon: 'radio',        label: t('stroll.title') },   // « Alertes Balade »

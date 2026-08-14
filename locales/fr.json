@@ -1319,5 +1319,17 @@
     "step1": "Préparation d'InvaderQuest…",
     "step2": "Récupération des Invaders et des lieux…",
     "skip": "Continuer sans attendre"
+  },
+  "collection": {
+    "title": "Collection",
+    "completed": "de cette ville",
+    "hideImpossible": "Masquer les impossibles",
+    "hideImpossibleHint": "{{count}} Invaders détruits que tu n'as jamais flashés. Les retirer donne un pourcentage atteignable.",
+    "state": {
+      "photo": "flashé, avec ta photo",
+      "done": "flashé",
+      "todo": "pas encore trouvé",
+      "gone": "détruit, jamais flashé"
+    }
   }
 }
