@@ -25,7 +25,12 @@ import { useState, useEffect, useRef, useCallback } from 'react';
  */
 
 const MAX_SIMULTANEES = 2;     // requêtes en vol par appareil
-const INTERVALLE_MS   = 250;   // 4 départs par seconde au plus
+// 250 ms avaient été posées au jugé ; le calcul les a démenties. À 4 images par
+// seconde, cent appareils produiraient 708 Mbit/s — PIRE que la salve qu'on
+// cherchait à éviter. Un plafond plus haut que le mal ne protège de rien.
+// À 800 ms : 1,25 image/s, soit 2,2 Mbit/s par appareil et 216 Mbit/s pour cent,
+// et encore faut-il qu'ils défilent tous sans s'arrêter pendant treize minutes.
+const INTERVALLE_MS   = 800;
 const SECOURS_MS      = 15000; // rend le créneau même si l'image ne dit rien
 
 export const PRIORITE_FICHE  = 10;
