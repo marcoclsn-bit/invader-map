@@ -986,6 +986,13 @@ export function AppProvider({ children }) {
     stroll, mapsApp, language,
     poiPrefs, poiIntroSeen, poiDataVersion,
     showOnboarding, loaded,
+    // Ajoutés après coup, et oubliés ici — d'où quatre pannes silencieuses : la
+    // note qui restait « Enregistrement… » pour toujours, les photos personnelles
+    // qui n'apparaissaient qu'au prochain rendu fortuit, et les deux réglages de
+    // photos sans effet immédiat. La valeur du contexte n'étant pas recréée, les
+    // consommateurs continuaient de lire l'ancien objet. Un test statique vérifie
+    // désormais que tout état exposé figure dans cette liste.
+    notes, fiPhotos, photosListe, photosSpotter,
   ]);
 
   return (
