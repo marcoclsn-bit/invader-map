@@ -71,7 +71,7 @@ import { dispositionRangee } from '../utils/gridLayout';
 // La mise en scène ne dépend donc plus du tout de la position de défilement.
 const CLE_VUS = '@invader_collection_vus';
 const MAX_REVELATIONS = 12;   // au-delà, ce n'est plus une fête mais une attente
-const MS_DEFILEMENT = 320;   // la rangée visée rejoint le centre, derrière le voile
+const MS_DEFILEMENT = 140;   // saut instantané derrière le voile, puis on souffle
 const MS_BALAYAGE = 700;     // la ligne descend, la photo se remplit
 const MS_LECTURE = 560;      // le temps de lire le nom, l'année, les points
 const MS_SORTIE = 240;
@@ -247,9 +247,16 @@ function SelecteurVille({ visible, cityIndex, courante, onChoisir, onFermer, the
  * Elle ne déplace rien, ne calcule aucune coordonnée d'arrivée, et affiche ce
  * qu'on veut savoir d'une prise — son nom, son année de pose, ses points.
  *
- * Le balayage anime une HAUTEUR, ce que le pilote natif ne sait pas faire. C'est
- * assumé : une seule vue, sept dixièmes de seconde. La sortie et les informations,
- * elles, restent sur le pilote natif.
+ * TOUT est sur le pilote natif, y compris le balayage. Première version : le cache
+ * rétrécissait en hauteur et la ligne se posait sur son arête — deux propriétés de
+ * mise en page, donc soixante recalculs par seconde sur le fil JavaScript, pendant
+ * que la liste finissait justement de se replacer. Ça saccadait, et je l'avais
+ * assumé en commentaire au lieu de le corriger.
+ *
+ * Le cache GLISSE désormais vers le bas au lieu de rétrécir, et l'ombre qu'il
+ * contient glisse d'autant en sens inverse pour rester immobile. Elle se fait donc
+ * effacer par le haut à mesure que la photo se découvre — ce qui est mieux que
+ * l'effet visé : l'ombre est essuyée, elle ne s'en va pas.
  */
 function CarteRevelation({ inv, etat, photoUrl, spotterUrl, theme, phase, t }) {
   const st = getStyles(theme);
@@ -267,7 +274,7 @@ function CarteRevelation({ inv, etat, photoUrl, spotterUrl, theme, phase, t }) {
     if (phase === 'balaye') {
       const a = Animated.parallel([
         Animated.timing(balayage, {
-          toValue: 1, duration: MS_BALAYAGE, easing: Easing.linear, useNativeDriver: false,
+          toValue: 1, duration: MS_BALAYAGE, easing: Easing.linear, useNativeDriver: true,
         }),
         Animated.timing(infos, {
           toValue: 1, duration: 320, delay: MS_BALAYAGE - 180,
@@ -287,11 +294,11 @@ function CarteRevelation({ inv, etat, photoUrl, spotterUrl, theme, phase, t }) {
     return undefined;
   }, [phase, balayage, infos, sortie]);
 
-  // Le cache est ancré EN BAS : sa hauteur passe de la totalité à zéro, ce qui
-  // découvre l'image du haut vers le bas. La ligne se tient sur son arête.
-  const hauteurCache = balayage.interpolate({
-    inputRange: [0, 1], outputRange: [GRANDE_CARTE, 0],
-  });
+  // Le cache glisse vers le bas et sort de la carte, qui rogne ce qui dépasse.
+  // L'ombre à l'intérieur glisse d'autant en sens inverse : elle reste donc
+  // immobile à l'écran et se fait effacer par le haut, au rythme de la ligne.
+  const glisse = balayage.interpolate({ inputRange: [0, 1], outputRange: [0, GRANDE_CARTE] });
+  const contreGlisse = balayage.interpolate({ inputRange: [0, 1], outputRange: [0, -GRANDE_CARTE] });
   const opaciteSortie = sortie.interpolate({ inputRange: [0, 1], outputRange: [1, 0] });
   const echelleSortie = sortie.interpolate({ inputRange: [0, 1], outputRange: [1, 0.92] });
 
@@ -315,19 +322,21 @@ function CarteRevelation({ inv, etat, photoUrl, spotterUrl, theme, phase, t }) {
           />
         ) : null}
 
-        {/* Le cache, qui recule vers le bas, et l'ombre qui l'occupe encore. */}
-        <Animated.View style={[st.cache, { height: hauteurCache }]}>
-          <Image
-            source={ALIEN[statusKey(inv.status)] ?? ALIEN.unknown}
-            style={{ width: GRANDE_CARTE * 0.44, height: GRANDE_CARTE * 0.32 }}
-            contentFit="contain"
-            tintColor={theme.textSecondary}
-            transition={0}
-          />
+        {/* Le cache glisse vers le bas ; l'ombre reste en place et se fait essuyer. */}
+        <Animated.View style={[st.cache, { transform: [{ translateY: glisse }] }]}>
+          <Animated.View style={{ transform: [{ translateY: contreGlisse }] }}>
+            <Image
+              source={ALIEN[statusKey(inv.status)] ?? ALIEN.unknown}
+              style={{ width: GRANDE_CARTE * 0.44, height: GRANDE_CARTE * 0.32 }}
+              contentFit="contain"
+              tintColor={theme.textSecondary}
+              transition={0}
+            />
+          </Animated.View>
         </Animated.View>
 
-        {/* La ligne de balayage, posée sur l'arête du cache. */}
-        <Animated.View style={[st.ligne, { bottom: hauteurCache }]} />
+        {/* La ligne, calée sur l'arête haute du cache : même translation. */}
+        <Animated.View style={[st.ligne, { transform: [{ translateY: glisse }] }]} />
       </View>
 
       <Animated.View style={[st.grandeCarteBas, { opacity: infos }]}>
@@ -420,8 +429,11 @@ export default function CollectionScreen({ navigation }) {
     // On amène la RANGÉE au centre. scrollToIndex compte en rangées, comme
     // getItemLayout — vérifié dans le source de React Native, pas supposé.
     try {
+      // `animated: false` : ce défilement a lieu DERRIÈRE un voile opaque, personne
+      // ne le voit. L'animer ne faisait que disputer le fil JavaScript au balayage
+      // qui démarre juste après, et prolonger l'attente pour rien.
       listeRef.current?.scrollToIndex({
-        index: Math.floor(index / COLONNES), viewPosition: 0.5, animated: true,
+        index: Math.floor(index / COLONNES), viewPosition: 0.5, animated: false,
       });
     } catch { /* liste pas encore prête : on présente quand même */ }
 
@@ -704,14 +716,16 @@ function getStyles(t) {
       shadowColor: t.accent, shadowOpacity: 0.45, shadowRadius: 24,
       shadowOffset: { width: 0, height: 6 }, elevation: 16,
     },
-    // Ancré EN BAS : c'est sa hauteur décroissante qui découvre l'image.
+    // Occupe toute la carte et glisse vers le bas ; `overflow: hidden` du parent
+    // rogne ce qui sort. Aucune propriété de mise en page n'est animée.
     cache: {
-      position: 'absolute', left: 0, right: 0, bottom: 0,
+      ...StyleSheet.absoluteFillObject,
       backgroundColor: t.surfaceHigh,
       alignItems: 'center', justifyContent: 'center',
+      overflow: 'hidden',
     },
     ligne: {
-      position: 'absolute', left: 0, right: 0, height: 2.5,
+      position: 'absolute', left: 0, right: 0, top: -1.5, height: 2.5,
       backgroundColor: t.accent,
       shadowColor: t.accent, shadowOpacity: 1, shadowRadius: 9,
       shadowOffset: { width: 0, height: 0 }, elevation: 8,
