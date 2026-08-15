@@ -14,7 +14,7 @@ import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import { statusKey } from '../constants';
 import { CITIES } from '../cities/registry';
-import { usePhotoCreneau, PRIORITE_LISTE, POIDS_FLASHINVADERS, POIDS_SPOTTER } from '../services/photoQueue';
+import { usePhotoCreneau, PRIORITE_LISTE, PRIORITE_FICHE, POIDS_FLASHINVADERS, POIDS_SPOTTER } from '../services/photoQueue';
 import { track } from '../services/analytics';
 import { dispositionRangee } from '../utils/gridLayout';
 
@@ -384,10 +384,15 @@ export default function CollectionScreen({ navigation }) {
 
   // Déroulé d'une présentation. Une seule à la fois, en série : chacune attend
   // que la précédente ait rejoint sa place.
+  // La dépendance est la TÊTE de file, pas `courante`. Poser `courante` aurait
+  // sinon déclenché le nettoyage de cet effet — donc l'annulation des minuteurs
+  // qui devaient enchaîner le retournement et l'atterrissage. La carte serait
+  // apparue puis restée figée, voile compris, sans aucune erreur.
+  const tete = aReveler.length ? aReveler[0] : null;
   useEffect(() => {
-    if (!aReveler.length || courante || !zone.h) return undefined;
+    if (!tete || !zone.h) return undefined;
     abandon.current = false;
-    const id = aReveler[0];
+    const id = tete;
     const index = casesRef.current.findIndex((c) => c.id === id);
     // La prise peut appartenir à une autre ville, ou être masquée par le filtre :
     // dans ce cas on la retire de la file sans rien montrer.
@@ -415,7 +420,7 @@ export default function CollectionScreen({ navigation }) {
     }, MS_DEFILEMENT + MS_RETOURNEMENT + MS_CONTEMPLATION + MS_ATTERRISSAGE);
 
     return () => minuteurs.forEach(clearTimeout);
-  }, [aReveler, courante, zone.h]);
+  }, [tete, zone.h]);
 
   // Tout écarter d'un geste : on ne retient personne devant une animation.
   const passerLaSuite = useCallback(() => {
