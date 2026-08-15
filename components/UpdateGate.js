@@ -154,6 +154,30 @@ export default function UpdateGate({ children }) {
     };
   }, [laisserEntrer, appliquer]);
 
+  // MISE À JOUR DÉJÀ TÉLÉCHARGÉE, EN ATTENTE D'ÊTRE APPLIQUÉE.
+  //
+  // Ce cas n'a rien à voir avec le premier lancement, et il touche TOUT LE MONDE,
+  // à chaque publication : expo-updates télécharge au démarrage N et n'applique
+  // qu'au démarrage N+1. Un seul redémarrage ne suffit donc jamais, et personne
+  // ne redémarre deux fois de suite sans raison. Marco s'est retrouvé à tester
+  // une fonctionnalité livrée quatre heures plus tôt sans jamais la recevoir.
+  //
+  // Quand une mise à jour est prête, on la charge tout de suite : elle est déjà
+  // sur le disque, le rechargement est instantané, il n'y a rien à attendre.
+  //
+  // Fenêtre de trois secondes après le démarrage, et uniquement au premier plan :
+  // une mise à jour qui finit de se télécharger pendant qu'on se sert de l'app ne
+  // doit RIEN interrompre. Elle attendra le lancement suivant, comme avant.
+  const naissance = useRef(Date.now());
+  useEffect(() => {
+    if (!Updates.isEnabled || entre.current) return;
+    if (!isUpdatePending) return;
+    if (Date.now() - naissance.current > 3000) return;
+    if (AppState.currentState !== 'active') return;
+    track('update_pending_applied', { ms: Date.now() - naissance.current });
+    Updates.reloadAsync().catch(() => { /* on continue sur la version en place */ });
+  }, [isUpdatePending]);
+
   useEffect(() => {
     if (!DOIT_BARRER || entre.current) return;
     if (isUpdatePending) { appliquer(); return; }
