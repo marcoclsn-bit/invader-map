@@ -71,10 +71,10 @@ import { dispositionRangee } from '../utils/gridLayout';
 // La mise en scène ne dépend donc plus du tout de la position de défilement.
 const CLE_VUS = '@invader_collection_vus';
 const MAX_REVELATIONS = 12;   // au-delà, ce n'est plus une fête mais une attente
-const MS_DEFILEMENT = 420;    // le temps que la rangée visée arrive au centre
-const MS_RETOURNEMENT = 620;
-const MS_CONTEMPLATION = 420; // on laisse le temps de regarder ce qu'on a pris
-const MS_ATTERRISSAGE = 560;
+const MS_DEFILEMENT = 320;   // la rangée visée rejoint le centre, derrière le voile
+const MS_BALAYAGE = 700;     // la ligne descend, la photo se remplit
+const MS_LECTURE = 560;      // le temps de lire le nom, l'année, les points
+const MS_SORTIE = 240;
 const GRANDE_CARTE = Math.min(Math.round(Dimensions.get('window').width * 0.58), 250);
 
 const COLONNES = 5;
@@ -234,18 +234,28 @@ function SelecteurVille({ visible, cityIndex, courante, onChoisir, onFermer, the
 }
 
 /**
- * La carte présentée en grand, puis reposée à sa place.
+ * La carte présentée en grand, révélée par un balayage.
  *
- * Les coordonnées d'arrivée sont CALCULÉES, jamais mesurées : la colonne se
- * déduit de l'index, et la ligne est au centre vertical de la liste parce qu'on
- * a demandé `viewPosition: 0.5` au défilement. Mesurer une cellule virtualisée
- * qui vient d'apparaître aurait été une course perdue d'avance.
+ * Trois mises en scène ont été essayées. Le retournement SUR PLACE, dans la
+ * grille, ne pouvait pas marcher : une prise se trouve à la rangée 200 aussi
+ * souvent qu'à la première, l'animation jouait hors écran. La carte volante qui
+ * rejoignait sa case marchait, mais Marco ne l'a pas aimée — trop longue, et le
+ * rétrécissement final n'apportait rien.
+ *
+ * Celle-ci : une ligne verte descend sur la carte et la photo apparaît derrière
+ * elle, comme un tube cathodique qui se remplit. Écho direct au mot « flash ».
+ * Elle ne déplace rien, ne calcule aucune coordonnée d'arrivée, et affiche ce
+ * qu'on veut savoir d'une prise — son nom, son année de pose, ses points.
+ *
+ * Le balayage anime une HAUTEUR, ce que le pilote natif ne sait pas faire. C'est
+ * assumé : une seule vue, sept dixièmes de seconde. La sortie et les informations,
+ * elles, restent sur le pilote natif.
  */
-function CarteRevelation({ inv, index, zone, etat, photoUrl, spotterUrl, theme, phase, t }) {
+function CarteRevelation({ inv, zone, etat, photoUrl, spotterUrl, theme, phase, t }) {
   const st = getStyles(theme);
-  const flip = useRef(new Animated.Value(0)).current;
-  const pose = useRef(new Animated.Value(0)).current;
-  const [face, setFace] = useState('dos');
+  const balayage = useRef(new Animated.Value(0)).current;
+  const infos = useRef(new Animated.Value(0)).current;
+  const sortie = useRef(new Animated.Value(0)).current;
 
   const perso = etat === 'photo' ? photoUrl : null;
   const url = perso || spotterUrl;
@@ -253,37 +263,39 @@ function CarteRevelation({ inv, index, zone, etat, photoUrl, spotterUrl, theme, 
     url, PRIORITE_FICHE, perso ? POIDS_FLASHINVADERS : POIDS_SPOTTER,
   );
 
-  const { width: LARGEUR } = Dimensions.get('window');
-  const centreX = LARGEUR / 2;
-  const centreY = zone.y + zone.h / 2;
-  const colonne = index % COLONNES;
-  const cibleX = MARGE + colonne * (TAILLE + ECART) + TAILLE / 2;
-  const cibleY = centreY;   // la rangée a été centrée par le défilement
-
   useEffect(() => {
-    if (phase === 'retourne') {
-      const a = Animated.timing(flip, {
-        toValue: 1, duration: MS_RETOURNEMENT, easing: Easing.out(Easing.cubic), useNativeDriver: true,
-      });
-      const mi = setTimeout(() => setFace('face'), MS_RETOURNEMENT / 2);
+    if (phase === 'balaye') {
+      const a = Animated.parallel([
+        Animated.timing(balayage, {
+          toValue: 1, duration: MS_BALAYAGE, easing: Easing.linear, useNativeDriver: false,
+        }),
+        Animated.timing(infos, {
+          toValue: 1, duration: 320, delay: MS_BALAYAGE - 180,
+          easing: Easing.out(Easing.quad), useNativeDriver: true,
+        }),
+      ]);
       a.start();
-      return () => { a.stop(); clearTimeout(mi); };
+      return () => a.stop();
     }
-    if (phase === 'pose') {
-      const a = Animated.timing(pose, {
-        toValue: 1, duration: MS_ATTERRISSAGE, easing: Easing.in(Easing.cubic), useNativeDriver: true,
+    if (phase === 'sort') {
+      const a = Animated.timing(sortie, {
+        toValue: 1, duration: MS_SORTIE, easing: Easing.in(Easing.quad), useNativeDriver: true,
       });
       a.start();
       return () => a.stop();
     }
     return undefined;
-  }, [phase, flip, pose]);
+  }, [phase, balayage, infos, sortie]);
 
-  const rotation = flip.interpolate({ inputRange: [0, 1], outputRange: ['180deg', '360deg'] });
-  const echelle = pose.interpolate({ inputRange: [0, 1], outputRange: [1, TAILLE / GRANDE_CARTE] });
-  const dx = pose.interpolate({ inputRange: [0, 1], outputRange: [0, cibleX - centreX] });
-  const dy = pose.interpolate({ inputRange: [0, 1], outputRange: [0, cibleY - centreY] });
-  const opacite = pose.interpolate({ inputRange: [0, 0.82, 1], outputRange: [1, 1, 0] });
+  // Le cache est ancré EN BAS : sa hauteur passe de la totalité à zéro, ce qui
+  // découvre l'image du haut vers le bas. La ligne se tient sur son arête.
+  const hauteurCache = balayage.interpolate({
+    inputRange: [0, 1], outputRange: [GRANDE_CARTE, 0],
+  });
+  const opaciteSortie = sortie.interpolate({ inputRange: [0, 1], outputRange: [1, 0] });
+  const echelleSortie = sortie.interpolate({ inputRange: [0, 1], outputRange: [1, 0.92] });
+
+  const annee = typeof inv.datePosed === 'string' ? inv.datePosed.slice(0, 4) : null;
 
   return (
     <Animated.View
@@ -291,38 +303,47 @@ function CarteRevelation({ inv, index, zone, etat, photoUrl, spotterUrl, theme, 
       style={[
         st.grandeCarte,
         {
-          width: GRANDE_CARTE, height: GRANDE_CARTE,
-          left: centreX - GRANDE_CARTE / 2, top: centreY - GRANDE_CARTE / 2,
-          opacity: opacite,
-          transform: [
-            { translateX: dx }, { translateY: dy },
-            { perspective: 900 }, { rotateY: rotation }, { scale: echelle },
-          ],
+          width: GRANDE_CARTE,
+          left: (Dimensions.get('window').width - GRANDE_CARTE) / 2,
+          top: zone.y + zone.h / 2 - (GRANDE_CARTE + 66) / 2,
+          opacity: opaciteSortie,
+          transform: [{ scale: echelleSortie }],
         },
       ]}
     >
-      {face === 'face' && src ? (
-        <Image
-          source={{ uri: src }}
-          style={[StyleSheet.absoluteFill, { borderRadius: 20 }]}
-          contentFit="cover" transition={0} cachePolicy="disk"
-          onLoadEnd={fini} onError={fini}
-        />
-      ) : (
-        <Image
-          source={ALIEN[statusKey(inv.status)] ?? ALIEN.unknown}
-          style={{ width: '46%', height: '34%' }}
-          contentFit="contain"
-          tintColor={face === 'face' ? theme.flashed : theme.textSecondary}
-          transition={0}
-        />
-      )}
-      <View style={st.grandeCarteBas}>
+      <View style={{ width: GRANDE_CARTE, height: GRANDE_CARTE, overflow: 'hidden' }}>
+        {src ? (
+          <Image
+            source={{ uri: src }}
+            style={StyleSheet.absoluteFill}
+            contentFit="cover" transition={0} cachePolicy="disk"
+            onLoadEnd={fini} onError={fini}
+          />
+        ) : null}
+
+        {/* Le cache, qui recule vers le bas, et l'ombre qui l'occupe encore. */}
+        <Animated.View style={[st.cache, { height: hauteurCache }]}>
+          <Image
+            source={ALIEN[statusKey(inv.status)] ?? ALIEN.unknown}
+            style={{ width: GRANDE_CARTE * 0.44, height: GRANDE_CARTE * 0.32 }}
+            contentFit="contain"
+            tintColor={theme.textSecondary}
+            transition={0}
+          />
+        </Animated.View>
+
+        {/* La ligne de balayage, posée sur l'arête du cache. */}
+        <Animated.View style={[st.ligne, { bottom: hauteurCache }]} />
+      </View>
+
+      <Animated.View style={[st.grandeCarteBas, { opacity: infos }]}>
         <Text style={st.grandeCarteId} numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.6}>
           {inv.id}
         </Text>
-        <Text style={st.grandeCartePts}>{inv.points} {t('common.pts')}</Text>
-      </View>
+        <Text style={st.grandeCarteMeta}>
+          {annee ? `${annee}  ·  ` : ''}{inv.points} {t('common.pts')}
+        </Text>
+      </Animated.View>
     </Animated.View>
   );
 }
@@ -410,14 +431,14 @@ export default function CollectionScreen({ navigation }) {
       });
     } catch { /* liste pas encore prête : on présente quand même */ }
 
-    plus_tard(() => setCourante({ inv, index, phase: 'retourne' }), MS_DEFILEMENT);
-    plus_tard(() => setCourante((c) => (c ? { ...c, phase: 'pose' } : c)),
-      MS_DEFILEMENT + MS_RETOURNEMENT + MS_CONTEMPLATION);
+    plus_tard(() => setCourante({ inv, index, phase: 'balaye' }), MS_DEFILEMENT);
+    plus_tard(() => setCourante((c) => (c ? { ...c, phase: 'sort' } : c)),
+      MS_DEFILEMENT + MS_BALAYAGE + MS_LECTURE);
     plus_tard(() => {
       if (abandon.current) return;
       setCourante(null);
       setAReveler((f) => f.slice(1));
-    }, MS_DEFILEMENT + MS_RETOURNEMENT + MS_CONTEMPLATION + MS_ATTERRISSAGE);
+    }, MS_DEFILEMENT + MS_BALAYAGE + MS_LECTURE + MS_SORTIE);
 
     return () => minuteurs.forEach(clearTimeout);
   }, [tete, zone.h]);
@@ -606,7 +627,6 @@ export default function CollectionScreen({ navigation }) {
           </TouchableOpacity>
           <CarteRevelation
             inv={courante.inv}
-            index={courante.index}
             zone={zone}
             phase={courante.phase}
             etat={etatDe(courante.inv)}
@@ -679,19 +699,30 @@ function getStyles(t) {
     },
     voile: { backgroundColor: 'rgba(0,0,0,0.72)' },
     grandeCarte: {
-      position: 'absolute', borderRadius: 20, overflow: 'hidden',
-      backgroundColor: t.surfaceHigh, borderWidth: 2, borderColor: t.flashed,
+      position: 'absolute', borderRadius: 18, overflow: 'hidden',
+      backgroundColor: t.surfaceHigh, borderWidth: 2, borderColor: t.accent,
+      shadowColor: t.accent, shadowOpacity: 0.45, shadowRadius: 24,
+      shadowOffset: { width: 0, height: 6 }, elevation: 16,
+    },
+    // Ancré EN BAS : c'est sa hauteur décroissante qui découvre l'image.
+    cache: {
+      position: 'absolute', left: 0, right: 0, bottom: 0,
+      backgroundColor: t.surfaceHigh,
       alignItems: 'center', justifyContent: 'center',
-      shadowColor: t.flashed, shadowOpacity: 0.5, shadowRadius: 26,
-      shadowOffset: { width: 0, height: 8 }, elevation: 16,
+    },
+    ligne: {
+      position: 'absolute', left: 0, right: 0, height: 2.5,
+      backgroundColor: t.accent,
+      shadowColor: t.accent, shadowOpacity: 1, shadowRadius: 9,
+      shadowOffset: { width: 0, height: 0 }, elevation: 8,
     },
     grandeCarteBas: {
-      position: 'absolute', left: 0, right: 0, bottom: 0,
-      backgroundColor: 'rgba(0,0,0,0.55)', paddingVertical: 8, paddingHorizontal: 10,
-      alignItems: 'center', gap: 2,
+      paddingVertical: 10, paddingHorizontal: 12, alignItems: 'center', gap: 3,
+      borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: t.border,
+      backgroundColor: t.surface,
     },
-    grandeCarteId: { ...typography.arcadeTitle, fontSize: 15, color: '#FFF' },
-    grandeCartePts: { fontSize: 11.5, color: t.accent, fontWeight: '700' },
+    grandeCarteId: { ...typography.arcadeTitle, fontSize: 15, color: t.textPrimary },
+    grandeCarteMeta: { fontSize: 12, color: t.accent, fontWeight: '700', letterSpacing: 0.5 },
     passer: {
       position: 'absolute', left: 0, right: 0, textAlign: 'center',
       fontSize: 11.5, color: 'rgba(255,255,255,0.55)',
