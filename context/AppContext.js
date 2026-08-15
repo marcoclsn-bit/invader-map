@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, useRef, useMemo } from 'react';
+import { createContext, useContext, useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Updates from 'expo-updates';
 
@@ -656,10 +656,13 @@ export function AppProvider({ children }) {
   // Fusionne les URL de photos rapatriées. Additif : une ville retirée de la
   // galerie ne doit pas effacer ce qu'on avait déjà. Persisté immédiatement,
   // l'objet étant petit (~30 Ko pour 400 entrées) et écrit rarement.
-  // Écriture immédiate, sans temporisation : une note se saisit à la main, on ne
-  // peut pas en produire cent à la seconde, et la perdre serait impardonnable —
-  // c'est la seule donnée de l'app que l'utilisateur a VRAIMENT créée.
-  function setNote(id, texte) {
+  // STABLE — et ce n'est pas une optimisation, c'est une correction. Déclarée par
+  // `function`, cette fonction était recréée à chaque rendu du contexte. La fiche
+  // s'en sert dans un effet temporisé à 600 ms : à chaque rendu, le nettoyage de
+  // l'effet annulait le minuteur en attente. Or AppContext se rend en permanence.
+  // L'enregistrement différé ne partait donc JAMAIS, et la note disparaissait à la
+  // réouverture. La forme fonctionnelle de setNotes permet des dépendances vides.
+  const setNote = useCallback((id, texte) => {
     setNotes((prev) => {
       const propre = String(texte ?? '').trim();
       const suivant = { ...prev };
@@ -667,7 +670,7 @@ export function AppProvider({ children }) {
       AsyncStorage.setItem('@invader_notes', JSON.stringify(suivant)).catch(() => {});
       return suivant;
     });
-  }
+  }, []);
 
   function mergeFiPhotos(nouvelles) {
     if (!nouvelles || !Object.keys(nouvelles).length) return;

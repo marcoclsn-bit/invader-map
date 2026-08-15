@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import {
   View, Text, Modal, ScrollView, TextInput, TouchableOpacity, StyleSheet, Keyboard,
+  KeyboardAvoidingView, Platform,
 } from 'react-native';
 import { Image } from 'expo-image';
 import { Ionicons } from '@expo/vector-icons';
@@ -79,12 +80,13 @@ export default function CollectionSheet({ invader, onFermer, onVoirSurCarte }) {
     setTexte(idOuvert ? (notesRef.current?.[idOuvert] ?? '') : '');
   }, [idOuvert]);
 
-  // Enregistrement à la frappe stabilisée. 600 ms : assez pour ne pas écrire à
+  // Enregistrement à la frappe stabilisée. 900 ms : assez pour ne pas écrire à
   // chaque lettre, assez court pour qu'une fermeture brutale ne coûte rien.
+  const enregistre = idOuvert ? texte === (notes?.[idOuvert] ?? '') : true;
   useEffect(() => {
     if (!idOuvert) return undefined;
     if (texte === (notesRef.current?.[idOuvert] ?? '')) return undefined;
-    const minuteur = setTimeout(() => setNote(idOuvert, texte), 600);
+    const minuteur = setTimeout(() => setNote(idOuvert, texte), 900);
     return () => clearTimeout(minuteur);
   }, [texte, idOuvert, setNote]);
 
@@ -112,7 +114,10 @@ export default function CollectionSheet({ invader, onFermer, onVoirSurCarte }) {
 
   return (
     <Modal visible transparent animationType="slide" onRequestClose={fermer}>
-      <View style={st.fond}>
+      <KeyboardAvoidingView
+        style={st.fond}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+      >
         <TouchableOpacity style={{ flex: 1 }} activeOpacity={1} onPress={fermer} />
         <View style={st.corps}>
           <View style={st.poignee} />
@@ -163,7 +168,25 @@ export default function CollectionSheet({ invader, onFermer, onVoirSurCarte }) {
               </View>
             </View>
 
-            <Text style={st.titreNote}>{t('collection.sheet.note')}</Text>
+            <View style={st.enteteNote}>
+              <Text style={st.titreNote}>{t('collection.sheet.note')}</Text>
+              {/* L'état est AFFICHÉ. Une sauvegarde silencieuse oblige à fermer la
+                  fiche et à la rouvrir pour savoir si elle a eu lieu — c'est
+                  exactement ce que Marco a dû faire, et c'est ainsi qu'il a trouvé
+                  le bug. Un mot suffit à supprimer le doute. */}
+              {texte.length > 0 || !enregistre ? (
+                <View style={st.etat}>
+                  <Ionicons
+                    name={enregistre ? 'checkmark-circle' : 'ellipse-outline'}
+                    size={13}
+                    color={enregistre ? theme.accent : theme.textSecondary}
+                  />
+                  <Text style={[st.etatTexte, enregistre && { color: theme.accent }]}>
+                    {t(enregistre ? 'collection.sheet.saved' : 'collection.sheet.saving')}
+                  </Text>
+                </View>
+              ) : null}
+            </View>
             <TextInput
               style={st.champ}
               value={texte}
@@ -173,8 +196,24 @@ export default function CollectionSheet({ invader, onFermer, onVoirSurCarte }) {
               placeholder={t('collection.sheet.notePlaceholder')}
               placeholderTextColor={theme.textSecondary}
               maxLength={600}
+              onBlur={() => { if (idOuvert && !enregistre) setNote(idOuvert, texte); }}
             />
             <Text style={st.aide}>{t('collection.sheet.noteHint')}</Text>
+
+            {/* Bouton explicite : il n'apparaît que s'il reste quelque chose à
+                enregistrer, et referme le clavier. L'enregistrement automatique
+                le rend inutile — c'est précisément pour ça qu'on le montre : il
+                donne le geste à qui n'a pas envie de faire confiance. */}
+            {!enregistre ? (
+              <TouchableOpacity
+                style={st.enregistrer}
+                onPress={() => { setNote(idOuvert, texte); Keyboard.dismiss(); }}
+                activeOpacity={0.8}
+              >
+                <Ionicons name="save-outline" size={16} color={theme.bg} />
+                <Text style={st.enregistrerTexte}>{t('collection.sheet.save')}</Text>
+              </TouchableOpacity>
+            ) : null}
 
             <TouchableOpacity style={st.bouton} onPress={() => { track('collection_to_map'); onVoirSurCarte(invader); }} activeOpacity={0.8}>
               <Ionicons name="map-outline" size={17} color={theme.textPrimary} />
@@ -182,7 +221,7 @@ export default function CollectionSheet({ invader, onFermer, onVoirSurCarte }) {
             </TouchableOpacity>
           </ScrollView>
         </View>
-      </View>
+      </KeyboardAvoidingView>
     </Modal>
   );
 }
@@ -218,7 +257,18 @@ function getStyles(t) {
     ligneValeur: { fontSize: 13.5, color: t.textPrimary, flex: 1, fontWeight: '600' },
     point: { width: 9, height: 9, borderRadius: 5 },
 
-    titreNote: { ...typography.fieldLabel, color: t.textSecondary, marginTop: 20, marginBottom: 8 },
+    enteteNote: {
+      flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
+      marginTop: 20, marginBottom: 8,
+    },
+    titreNote: { ...typography.fieldLabel, color: t.textSecondary },
+    etat: { flexDirection: 'row', alignItems: 'center', gap: 5 },
+    etatTexte: { fontSize: 11.5, color: t.textSecondary },
+    enregistrer: {
+      marginTop: 12, backgroundColor: t.accent, borderRadius: 12, paddingVertical: 12,
+      flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8,
+    },
+    enregistrerTexte: { fontSize: 14, fontWeight: '700', color: t.bg },
     champ: {
       backgroundColor: t.surfaceHigh, borderRadius: 12, borderWidth: 1, borderColor: t.border,
       padding: 13, minHeight: 96, fontSize: 14, color: t.textPrimary, lineHeight: 20,

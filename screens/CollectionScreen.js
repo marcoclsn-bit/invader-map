@@ -1,7 +1,7 @@
 import { useState, useMemo, useCallback, useEffect, useRef, memo } from 'react';
 import {
   View, Text, FlatList, TouchableOpacity, StyleSheet, Switch, Dimensions,
-  Modal, TextInput, Animated, Easing,
+  Modal, TextInput, Animated, Easing, KeyboardAvoidingView, Platform,
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Image } from 'expo-image';
@@ -191,7 +191,13 @@ function SelecteurVille({ visible, cityIndex, courante, onChoisir, onFermer, the
 
   return (
     <Modal visible={visible} animationType="slide" transparent onRequestClose={onFermer}>
-      <View style={st.modalFond}>
+      {/* Sans cela, le clavier recouvre la moitié de la liste : on cherche une
+          ville et on ne voit plus les résultats qu'on filtre. */}
+      <KeyboardAvoidingView
+        style={st.modalFond}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+      >
+        <TouchableOpacity style={{ flex: 1 }} activeOpacity={1} onPress={onFermer} />
         <View style={st.modalCorps}>
           <View style={st.modalTete}>
             <Text style={st.modalTitre}>{t('list.picker.title')}</Text>
@@ -229,7 +235,7 @@ function SelecteurVille({ visible, cityIndex, courante, onChoisir, onFermer, the
             }}
           />
         </View>
-      </View>
+      </KeyboardAvoidingView>
     </Modal>
   );
 }
@@ -764,7 +770,7 @@ function getStyles(t) {
 
     modalFond: { flex: 1, backgroundColor: 'rgba(0,0,0,0.55)', justifyContent: 'flex-end' },
     modalCorps: {
-      maxHeight: '75%', backgroundColor: t.surface,
+      maxHeight: '70%', backgroundColor: t.surface,
       borderTopLeftRadius: 18, borderTopRightRadius: 18, paddingBottom: 28,
     },
     modalTete: {

@@ -1343,7 +1343,10 @@
       "note": "Ta note",
       "notePlaceholder": "Avec qui, comment tu l'as trouvé, ce qu'il t'a coûté…",
       "noteHint": "Visible de toi seul, gardée sur ce téléphone.",
-      "seeOnMap": "Voir sur la carte"
+      "seeOnMap": "Voir sur la carte",
+      "saved": "Enregistré",
+      "saving": "Enregistrement…",
+      "save": "Enregistrer"
     }
   }
 }
