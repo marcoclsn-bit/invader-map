@@ -28,6 +28,45 @@ const JETON = /\b[A-Z]{2,5}_\d{1,4}\b/g;
 // résultat sur deux.
 const JETON_UNIQUE = /\b[A-Z]{2,5}_\d{1,4}\b/;
 
+// Date de flash accolée à un identifiant : « PA_1247 2026-08-12T14:33:01 ».
+//
+// Le motif des jetons exige DES LETTRES suivies d'un tiret bas et de chiffres :
+// une date n'y répond jamais. Les anciennes versions de l'app, et tout autre
+// outil qui relit ce format, ignorent donc simplement cette seconde colonne au
+// lieu de s'y perdre. C'est ce qui permet de l'ajouter sans rien casser.
+const DATE_COLLEE = /\b(\d{4}-\d{2}-\d{2})(?:[T ](\d{2}:\d{2}(?::\d{2})?))?\b/;
+
+/** Forme canonique d'un jeton : « PA_1 » → « PA_01 ». */
+function canonique(jeton) {
+  const i = jeton.lastIndexOf('_');
+  return `${jeton.slice(0, i)}_${String(Number(jeton.slice(i + 1))).padStart(2, '0')}`;
+}
+
+/**
+ * Dates trouvées dans le texte, par identifiant canonique.
+ *
+ * Lecture LIGNE PAR LIGNE, et uniquement quand la ligne ne porte qu'un seul
+ * identifiant : sur « PA_01, PA_02  2026-08-12 », on ne saurait pas à qui
+ * attribuer la date, et deviner serait pire que renoncer.
+ *
+ * Sans heure, on écrit minuit LOCAL — jamais un « Z ». La fiche traite minuit
+ * pile comme « heure inconnue » et n'affiche alors que le jour ; ajouter un
+ * fuseau décalerait la date d'un jour pour la moitié de la planète.
+ */
+export function datesDuTexte(texte) {
+  const out = new Map();
+  for (const ligne of String(texte || '').split(/\r?\n/)) {
+    const jetons = ligne.toUpperCase().match(JETON);
+    if (!jetons || jetons.length !== 1) continue;
+    const m = DATE_COLLEE.exec(ligne);
+    if (!m) continue;
+    const heure = m[2] ? (m[2].length === 5 ? `${m[2]}:00` : m[2]) : '00:00:00';
+    const iso = `${m[1]}T${heure}`;
+    if (Number.isFinite(new Date(iso).getTime())) out.set(canonique(jetons[0]), iso);
+  }
+  return out;
+}
+
 /**
  * Normalise UNE saisie manuelle avant analyse (volet du mode explorateur).
  *
@@ -127,7 +166,20 @@ export function analyseListe(texte, flashed) {
     if (ville.detruits.has(num)) detruits.push(id);
   }
 
-  return { nouveaux, dejaFlashes, detruits, inconnus, villes, total: uniques.length };
+  // Dates éventuellement présentes en seconde colonne. Restreintes aux
+  // identifiants effectivement reconnus : une date orpheline n'a pas de sens.
+  const brutes = datesDuTexte(texte);
+  const dates = {};
+  for (const id of [...nouveaux, ...dejaFlashes]) {
+    const d = brutes.get(id);
+    if (d) dates[id] = d;
+  }
+
+  return {
+    nouveaux, dejaFlashes, detruits, inconnus, villes,
+    dates, avecDates: Object.keys(dates).length,
+    total: uniques.length,
+  };
 }
 
 /**
@@ -136,12 +188,64 @@ export function analyseListe(texte, flashed) {
  * exporte, l'app le réimporte. C'est la sauvegarde avant changement de téléphone,
  * sans compte ni serveur.
  */
-export function exportListe(flashed) {
+export function exportListe(flashed, flashedDates) {
   return [...(flashed ?? [])]
     .sort((a, b) => {
       const [va, na] = [a.slice(0, a.lastIndexOf('_')), Number(a.slice(a.lastIndexOf('_') + 1))];
       const [vb, nb] = [b.slice(0, b.lastIndexOf('_')), Number(b.slice(b.lastIndexOf('_') + 1))];
       return va === vb ? na - nb : va.localeCompare(vb);
     })
+    .map((id) => {
+      const d = flashedDates?.get?.(id);
+      return d ? `${id} ${d}` : id;
+    })
     .join('\n');
+}
+
+// ─── Notes personnelles ──────────────────────────────────────────────────────
+//
+// À PART, et volontairement. Une note contient des retours à la ligne, des
+// virgules, des accents : la mettre dans un format « un identifiant par ligne »
+// aurait exigé un échappement, donc un format que plus personne ne peut relire à
+// l'œil. Et mêler quatre cents identifiants à vingt notes donne un bloc que l'on
+// ne peut plus coller nulle part.
+//
+// D'où deux exports séparés : la liste reste du texte simple, les notes sont un
+// petit objet JSON. À l'IMPORT en revanche, un seul champ accepte les deux — on
+// colle, l'app reconnaît.
+
+const MARQUE = 'invaderquest-notes';
+
+export function exportNotes(notes, quand) {
+  const propres = {};
+  for (const [id, texte] of Object.entries(notes ?? {})) {
+    const t = String(texte ?? '').trim();
+    if (t) propres[id] = t;
+  }
+  return JSON.stringify({ [MARQUE]: 1, date: quand ?? null, notes: propres }, null, 1);
+}
+
+/**
+ * Rend { notes, nouvelles, existantes } ou null si le texte n'est pas une
+ * sauvegarde de notes. Ne lève jamais : un collage hasardeux doit être refusé,
+ * pas planter l'écran.
+ */
+export function analyseNotes(texte, notesActuelles) {
+  const brut = String(texte ?? '').trim();
+  if (!brut.startsWith('{')) return null;
+  let json;
+  try { json = JSON.parse(brut); } catch { return null; }
+  if (!json || typeof json !== 'object' || !json[MARQUE]) return null;
+  const recues = json.notes && typeof json.notes === 'object' ? json.notes : {};
+
+  const notes = {};
+  let nouvelles = 0, existantes = 0;
+  for (const [id, valeur] of Object.entries(recues)) {
+    const t = String(valeur ?? '').trim();
+    if (!t || !JETON_UNIQUE.test(id)) continue;
+    notes[id] = t;
+    if ((notesActuelles?.[id] ?? '') === '') nouvelles += 1;
+    else if (notesActuelles[id] !== t) existantes += 1;
+  }
+  return { notes, nouvelles, existantes, total: Object.keys(notes).length };
 }

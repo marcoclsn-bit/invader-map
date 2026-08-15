@@ -1218,7 +1218,8 @@
       "destroyed": "of which destroyed mosaics",
       "unknown": "unknown IDs",
       "none": "No ID recognised in this text.",
-      "dates": "flash dates to recover"
+      "dates": "flash dates to recover",
+      "withDates": "with flash dates recovered"
     },
     "apply": "Add {{count}} Invaders",
     "applyIdle": "Nothing to add",
@@ -1263,7 +1264,23 @@
       "hint": "The bolt on the right of each row marks an Invader as flashed. Same tap to unmark it.",
       "action": "Open the list"
     },
-    "applyDates": "Date {{count}} flashes"
+    "applyDates": "Date {{count}} flashes",
+    "notes": {
+      "label": "Your personal notes",
+      "hint": "{{count}} notes written on your catches. They exist NOWHERE else: neither FlashInvaders nor any site knows them. Export them before changing phone.",
+      "action": "Share my notes",
+      "subject": "My InvaderQuest notes",
+      "resNew": "notes to restore",
+      "resOverwrite": "notes already written, which would be replaced",
+      "resNone": "This backup contains no readable note.",
+      "restore": "Restore {{count}} notes",
+      "confirmTitle": "Restore the notes",
+      "confirmBody": "{{count}} notes will be written, {{ecrase}} of which replace an existing one.",
+      "doneTitle": "Notes restored",
+      "doneBody": "{{count}} notes found their place again.",
+      "emptyTitle": "No note",
+      "emptyBody": "You have not written any note on your catches yet."
+    }
   },
   "explorer": {
     "badge": "Explorer mode",

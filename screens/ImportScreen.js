@@ -8,7 +8,7 @@ import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import { useAppContext } from '../context/AppContext';
 import { useGamification } from '../context/GamificationContext';
-import { analyseListe, exportListe } from '../utils/importList';
+import { analyseListe, exportListe, exportNotes, analyseNotes } from '../utils/importList';
 import { recupererGalerie, uidValide, getUid, setUid, oublierUid, setCompteConnu } from '../services/flashinvaders';
 import { track } from '../services/analytics';
 
@@ -36,7 +36,7 @@ export default function ImportScreen({ navigation }) {
   const { theme } = useTheme();
   const { t } = useTranslation();
   const st = getStyles(theme);
-  const { flashed, flashedDates, bulkFlash, bulkUnflash, mergeFiPhotos } = useAppContext();
+  const { flashed, flashedDates, bulkFlash, bulkUnflash, mergeFiPhotos, notes, setNote } = useAppContext();
   const { beginBatch } = useGamification();
 
   const [texte, setTexte] = useState('');
@@ -56,7 +56,14 @@ export default function ImportScreen({ navigation }) {
   // ici, et on les applique à ceux qui en ont une. Une liste collée à la main
   // n'en a aucune : le comportement d'avant vaut toujours pour elle.
   const datesUid = useRef(null);
-  const analyse = useMemo(() => (texte.trim() ? analyseListe(texte, flashed) : null), [texte, flashed]);
+  // Le MÊME champ accepte les deux. On colle, l'app reconnaît : une sauvegarde de
+  // notes commence par une accolade, une liste non. Demander à l'utilisateur de
+  // choisir le bon champ avant de coller serait lui faire porter notre problème.
+  const notesCollees = useMemo(() => analyseNotes(texte, notes), [texte, notes]);
+  const analyse = useMemo(
+    () => (texte.trim() && !notesCollees ? analyseListe(texte, flashed) : null),
+    [texte, flashed, notesCollees],
+  );
   // Dates récupérables sans rien ajouter : le cas de quelqu'un qui avait DÉJÀ
   // importé sa galerie. Rien de nouveau à cocher, mais tout un historique à
   // dater. Sans ce compte, le bouton resterait « Rien à ajouter » et l'intérêt
@@ -81,7 +88,10 @@ export default function ImportScreen({ navigation }) {
     // beginBatch AVANT bulkFlash : sans la fenêtre groupée, un import qui franchit
     // dix paliers enchaîne dix célébrations de 3,5 s.
     beginBatch();
-    bulkFlash(ajoutes, datesUid.current || undefined);
+    // Deux sources de dates : celles du dernier téléchargement par uID, et celles
+    // lues en seconde colonne du texte collé. Les secondes l'emportent, car elles
+    // viennent d'une sauvegarde que l'utilisateur a produite lui-même.
+    bulkFlash(ajoutes, { ...(datesUid.current || {}), ...(analyse.dates || {}) });
     track('import_applied', {
       added: ajoutes.length,
       already: analyse.dejaFlashes.length,
@@ -153,14 +163,47 @@ export default function ImportScreen({ navigation }) {
     );
   }, [dernier, bulkUnflash, t]);
 
+  const restaurerNotes = useCallback(() => {
+    if (!notesCollees?.total) return;
+    Alert.alert(
+      t('import.notes.confirmTitle'),
+      t('import.notes.confirmBody', { count: notesCollees.total, ecrase: notesCollees.existantes }),
+      [
+        { text: t('common.cancel'), style: 'cancel' },
+        {
+          text: t('common.confirm'),
+          onPress: () => {
+            for (const [id, valeur] of Object.entries(notesCollees.notes)) setNote(id, valeur);
+            track('notes_imported', { count: notesCollees.total });
+            setTexte('');
+            Alert.alert(t('import.notes.doneTitle'),
+              t('import.notes.doneBody', { count: notesCollees.total }));
+          },
+        },
+      ],
+    );
+  }, [notesCollees, setNote, t]);
+
+  const exporterNotes = useCallback(async () => {
+    const combien = Object.keys(notes ?? {}).length;
+    if (!combien) { Alert.alert(t('import.notes.emptyTitle'), t('import.notes.emptyBody')); return; }
+    track('notes_exported', { count: combien });
+    try {
+      await Share.share({
+        subject: t('import.notes.subject'),
+        message: exportNotes(notes, new Date().toISOString().slice(0, 10)),
+      });
+    } catch (_) { /* partage annulé */ }
+  }, [notes, t]);
+
   const exporter = useCallback(async () => {
-    const corps = exportListe(flashed);
+    const corps = exportListe(flashed, flashedDates);
     if (!corps) { Alert.alert(t('import.export.emptyTitle'), t('import.export.emptyBody')); return; }
     track('import_exported', { count: flashed.size });
     try {
       await Share.share({ subject: t('import.export.subject'), message: corps });
     } catch (_) { /* partage annulé */ }
-  }, [flashed, t]);
+  }, [flashed, flashedDates, t]);
 
   return (
     <ScrollView style={st.page} contentContainerStyle={st.content} keyboardShouldPersistTaps="handled">
@@ -227,6 +270,27 @@ export default function ImportScreen({ navigation }) {
       />
       <Text style={st.aide}>{t('import.paste.hint')}</Text>
 
+      {/* Une sauvegarde de notes a été reconnue : on ne parle plus d'Invaders. */}
+      {notesCollees && (
+        <View style={st.resultat}>
+          <Ligne theme={theme} valeur={notesCollees.nouvelles} ton="accent"
+            texte={t('import.notes.resNew')} />
+          {notesCollees.existantes > 0 && (
+            <Ligne theme={theme} valeur={notesCollees.existantes} ton="warn"
+              texte={t('import.notes.resOverwrite')} />
+          )}
+          {notesCollees.total === 0 && <Text style={st.rien}>{t('import.notes.resNone')}</Text>}
+        </View>
+      )}
+
+      {notesCollees && notesCollees.total > 0 && (
+        <TouchableOpacity style={st.bouton} onPress={restaurerNotes} activeOpacity={0.8}>
+          <Text style={st.boutonTexte}>
+            {t('import.notes.restore', { count: notesCollees.total })}
+          </Text>
+        </TouchableOpacity>
+      )}
+
       {analyse && (
         <View style={st.resultat}>
           <Ligne theme={theme} valeur={analyse.nouveaux.length} ton="accent" texte={t('import.res.new')} />
@@ -241,6 +305,9 @@ export default function ImportScreen({ navigation }) {
               <Ligne theme={theme} valeur={analyse.inconnus.length} ton="warn" texte={t('import.res.unknown')} />
               <Text style={st.rejets} numberOfLines={3}>{analyse.inconnus.slice(0, 12).join(' · ')}</Text>
             </>
+          )}
+          {analyse.avecDates > 0 && (
+            <Ligne theme={theme} valeur={analyse.avecDates} texte={t('import.res.withDates')} />
           )}
           {aDater > 0 && (
             <Ligne theme={theme} valeur={aDater} ton="accent" texte={t('import.res.dates')} />
@@ -294,12 +361,35 @@ export default function ImportScreen({ navigation }) {
 
       <View style={st.separateur} />
 
-      <Text style={st.label}>{t('import.export.label')}</Text>
-      <Text style={st.aide}>{t('import.export.hint')}</Text>
-      <TouchableOpacity style={st.boutonSecondaire} onPress={exporter} activeOpacity={0.8}>
-        <Ionicons name="share-outline" size={17} color={theme.textPrimary} />
-        <Text style={st.boutonSecondaireTexte}>{t('import.export.action')}</Text>
-      </TouchableOpacity>
+      <View style={st.carte}>
+        <View style={st.carteTitre}>
+          <Ionicons name="share-outline" size={18} color={theme.accent} />
+          <Text style={st.label}>{t('import.export.label')}</Text>
+        </View>
+        <Text style={[st.aide, { marginTop: 0 }]}>{t('import.export.hint')}</Text>
+        <TouchableOpacity style={st.boutonSecondaire} onPress={exporter} activeOpacity={0.8}>
+          <Ionicons name="list-outline" size={17} color={theme.textPrimary} />
+          <Text style={st.boutonSecondaireTexte}>{t('import.export.action')}</Text>
+        </TouchableOpacity>
+      </View>
+
+      {/* Les notes partent SÉPARÉMENT. Mêlées à quatre cents identifiants, elles
+          donneraient un bloc qu'on ne peut plus coller nulle part — et ce sont
+          elles qu'on tient le plus à ne pas perdre, puisqu'elles n'existent
+          qu'ici. */}
+      <View style={st.carte}>
+        <View style={st.carteTitre}>
+          <Ionicons name="create-outline" size={18} color={theme.accent} />
+          <Text style={st.label}>{t('import.notes.label')}</Text>
+        </View>
+        <Text style={[st.aide, { marginTop: 0 }]}>
+          {t('import.notes.hint', { count: Object.keys(notes ?? {}).length })}
+        </Text>
+        <TouchableOpacity style={st.boutonSecondaire} onPress={exporterNotes} activeOpacity={0.8}>
+          <Ionicons name="share-outline" size={17} color={theme.textPrimary} />
+          <Text style={st.boutonSecondaireTexte}>{t('import.notes.action')}</Text>
+        </TouchableOpacity>
+      </View>
     </ScrollView>
   );
 }

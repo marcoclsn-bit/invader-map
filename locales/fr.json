@@ -1218,7 +1218,8 @@
       "destroyed": "dont mosaïques détruites",
       "unknown": "identifiants introuvables",
       "none": "Aucun identifiant reconnu dans ce texte.",
-      "dates": "dates de flash à récupérer"
+      "dates": "dates de flash à récupérer",
+      "withDates": "dont dates de flash retrouvées"
     },
     "apply": "Ajouter {{count}} Invaders",
     "applyIdle": "Rien à ajouter",
@@ -1263,7 +1264,23 @@
       "hint": "L'éclair à droite de chaque ligne marque l'Invader comme flashé. C'est aussi comme ça qu'on démarque.",
       "action": "Ouvrir la liste"
     },
-    "applyDates": "Dater {{count}} flashs"
+    "applyDates": "Dater {{count}} flashs",
+    "notes": {
+      "label": "Tes notes personnelles",
+      "hint": "{{count}} notes écrites sur tes prises. Elles n'existent NULLE PART ailleurs : ni FlashInvaders ni aucun site ne les connaît. Exporte-les avant de changer de téléphone.",
+      "action": "Partager mes notes",
+      "subject": "Mes notes InvaderQuest",
+      "resNew": "notes à restaurer",
+      "resOverwrite": "notes déjà écrites, qui seraient remplacées",
+      "resNone": "Cette sauvegarde ne contient aucune note lisible.",
+      "restore": "Restaurer {{count}} notes",
+      "confirmTitle": "Restaurer les notes",
+      "confirmBody": "{{count}} notes vont être écrites, dont {{ecrase}} qui en remplaceront une existante.",
+      "doneTitle": "Notes restaurées",
+      "doneBody": "{{count}} notes ont retrouvé leur place.",
+      "emptyTitle": "Aucune note",
+      "emptyBody": "Tu n'as encore écrit aucune note sur tes prises."
+    }
   },
   "explorer": {
     "badge": "Mode explorateur",
