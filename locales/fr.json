@@ -1332,6 +1332,7 @@
       "done": "flashé",
       "todo": "pas encore trouvé",
       "gone": "détruit, jamais flashé"
-    }
+    },
+    "skipReveal": "Touche pour passer"
   }
 }

@@ -1332,6 +1332,7 @@
       "done": "flashed",
       "todo": "not found yet",
       "gone": "destroyed, never flashed"
-    }
+    },
+    "skipReveal": "Tap to skip"
   }
 }

@@ -58,12 +58,24 @@ import { dispositionRangee } from '../utils/gridLayout';
  */
 
 // Révélation. On retient les identifiants DÉJÀ montrés dans la Collection ; à
-// l'ouverture, ceux qui sont flashés sans avoir été montrés se retournent, l'un
-// après l'autre. C'est la récompense d'être sorti marcher.
+// l'ouverture, ceux qui sont flashés sans avoir été montrés sont présentés.
+//
+// PREMIÈRE VERSION, ABANDONNÉE : la case se retournait sur place, dans la grille.
+// Ça ne pouvait pas marcher, et pas à cause d'un bug — par conception. Une prise
+// se trouve à la rangée 200 aussi souvent qu'à la première : l'animation jouait
+// hors écran, pour personne. Marco l'a formulé exactement ainsi.
+//
+// VERSION ACTUELLE : la carte est présentée EN GRAND, au centre, face cachée.
+// Elle se retourne, on voit la prise, puis elle rejoint sa place dans la grille —
+// que l'on a fait défiler d'avance pour qu'elle soit visible à l'atterrissage.
+// La mise en scène ne dépend donc plus du tout de la position de défilement.
 const CLE_VUS = '@invader_collection_vus';
-const MAX_REVELATIONS = 24;   // au-delà, ce n'est plus une fête mais une attente
-const PAS_MS = 130;           // décalage entre deux cartes
-const DUREE_MS = 520;
+const MAX_REVELATIONS = 12;   // au-delà, ce n'est plus une fête mais une attente
+const MS_DEFILEMENT = 420;    // le temps que la rangée visée arrive au centre
+const MS_RETOURNEMENT = 620;
+const MS_CONTEMPLATION = 420; // on laisse le temps de regarder ce qu'on a pris
+const MS_ATTERRISSAGE = 560;
+const GRANDE_CARTE = Math.min(Math.round(Dimensions.get('window').width * 0.58), 250);
 
 const COLONNES = 5;
 const MARGE = 14;
@@ -87,37 +99,11 @@ const ALIEN = {
 // (un seul cas dans toute la base), sept en pratique : la police se réduit
 // d'elle-même plutôt que de tronquer.
 
-const Case = memo(function Case({ inv, etat, photoUrl, spotterUrl, taille, theme, onPress, t, ordre }) {
+// `cache` : la case est flashée mais son tour de révélation n'est pas passé. Elle
+// reste une ombre jusque-là, sinon la carte qui atterrit trouverait sa place déjà
+// occupée par sa propre photo et la mise en scène perdrait son sens.
+const Case = memo(function Case({ inv, etat, photoUrl, spotterUrl, taille, theme, onPress, t, cache }) {
   const st = getStyles(theme);
-  // `ordre` vaut null pour l'immense majorité des cases : rien n'est animé, et
-  // aucun coût n'est payé. Seules les prises jamais montrées se retournent.
-  const flip = useRef(new Animated.Value(ordre == null ? 1 : 0)).current;
-  const [retourne, setRetourne] = useState(ordre == null);
-
-  useEffect(() => {
-    // Remise à plat AVANT toute chose. Les révélations arrivent après la lecture
-    // du disque, donc la case a déjà été rendue une fois avec `ordre` à null :
-    // sa valeur animée valait 1 et sa face était déjà retournée. Sans cette
-    // réinitialisation, l'animation jouait de 1 vers 1 — invisible.
-    if (ordre == null) { flip.setValue(1); setRetourne(true); return undefined; }
-    flip.setValue(0);
-    setRetourne(false);
-
-    const anim = Animated.timing(flip, {
-      toValue: 1,
-      duration: DUREE_MS,
-      delay: Math.min(ordre * PAS_MS, 2600),
-      easing: Easing.out(Easing.cubic),
-      useNativeDriver: true,
-    });
-    // À mi-course la carte est de profil : c'est le seul instant où l'on peut
-    // échanger les faces sans que ça se voie.
-    const mi = setTimeout(() => setRetourne(true), Math.min(ordre * PAS_MS, 2600) + DUREE_MS / 2);
-    anim.start();
-    return () => { anim.stop(); clearTimeout(mi); };
-  }, [ordre, flip]);
-
-  const rotation = flip.interpolate({ inputRange: [0, 1], outputRange: ['180deg', '360deg'] });
   // UNE PHOTO NE S'AFFICHE QUE SUR UNE CASE ACQUISE. Assombrir la photo d'un
   // Invader non trouvé ne cachait rien : à 38 %, la mosaïque restait parfaitement
   // identifiable et la grille livrait d'avance ce qu'elle devait faire chercher.
@@ -130,20 +116,18 @@ const Case = memo(function Case({ inv, etat, photoUrl, spotterUrl, taille, theme
   // Deux sources possibles, deux poids très différents : la photo personnelle
   // pèse 216 Ko, le gros plan d'invader-spotter 20 Ko. La file règle sa cadence
   // là-dessus, sinon les vignettes légères attendraient dix fois trop.
-  const acquis = etat === 'photo' || etat === 'done';
-  const perso = etat === 'photo' ? photoUrl : null;
-  // Tant que la carte n'a pas basculé, elle montre encore sa face d'ombre : on ne
-  // demande donc pas la photo, ce qui évite de la charger pour rien si l'écran
-  // est quitté pendant l'attente.
-  const url = acquis && retourne ? (perso || spotterUrl) : null;
+  const acquis = (etat === 'photo' || etat === 'done') && !cache;
+  const perso = etat === 'photo' && !cache ? photoUrl : null;
+  const url = acquis ? (perso || spotterUrl) : null;
   const { src, fini } = usePhotoCreneau(
     url, PRIORITE_LISTE, perso ? POIDS_FLASHINVADERS : POIDS_SPOTTER,
   );
   const dim = { width: taille, height: taille };
 
-  const teinte = etat === 'done' ? theme.flashed
-    : etat === 'gone' ? theme.statusDestroyed
-      : theme.textSecondary;
+  const teinte = cache ? theme.textSecondary
+    : etat === 'done' ? theme.flashed
+      : etat === 'gone' ? theme.statusDestroyed
+        : theme.textSecondary;
 
   const contenu = (
     <>
@@ -178,34 +162,15 @@ const Case = memo(function Case({ inv, etat, photoUrl, spotterUrl, taille, theme
     </>
   );
 
-  const dedans = ordre == null ? contenu : (
-    <Animated.View
-      style={[
-        StyleSheet.absoluteFill,
-        { alignItems: 'center', justifyContent: 'center', transform: [{ perspective: 700 }, { rotateY: rotation }] },
-      ]}
-    >
-      {retourne ? contenu : (
-        <Image
-          source={ALIEN[statusKey(inv.status)] ?? ALIEN.unknown}
-          style={st.px}
-          contentFit="contain"
-          tintColor={theme.textSecondary}
-          transition={0}
-        />
-      )}
-    </Animated.View>
-  );
-
   return (
     <TouchableOpacity
-      style={[st.case, dim, st[`case_${etat}`]]}
+      style={[st.case, dim, st[cache ? 'case_todo' : `case_${etat}`]]}
       onPress={() => onPress(inv)}
       activeOpacity={0.7}
       accessibilityRole="button"
       accessibilityLabel={`${inv.id}, ${t(`collection.state.${etat}`)}`}
     >
-      {dedans}
+      {contenu}
     </TouchableOpacity>
   );
 });
@@ -268,15 +233,115 @@ function SelecteurVille({ visible, cityIndex, courante, onChoisir, onFermer, the
   );
 }
 
+/**
+ * La carte présentée en grand, puis reposée à sa place.
+ *
+ * Les coordonnées d'arrivée sont CALCULÉES, jamais mesurées : la colonne se
+ * déduit de l'index, et la ligne est au centre vertical de la liste parce qu'on
+ * a demandé `viewPosition: 0.5` au défilement. Mesurer une cellule virtualisée
+ * qui vient d'apparaître aurait été une course perdue d'avance.
+ */
+function CarteRevelation({ inv, index, zone, etat, photoUrl, spotterUrl, theme, phase, t }) {
+  const st = getStyles(theme);
+  const flip = useRef(new Animated.Value(0)).current;
+  const pose = useRef(new Animated.Value(0)).current;
+  const [face, setFace] = useState('dos');
+
+  const perso = etat === 'photo' ? photoUrl : null;
+  const url = perso || spotterUrl;
+  const { src, fini } = usePhotoCreneau(
+    url, PRIORITE_FICHE, perso ? POIDS_FLASHINVADERS : POIDS_SPOTTER,
+  );
+
+  const { width: LARGEUR } = Dimensions.get('window');
+  const centreX = LARGEUR / 2;
+  const centreY = zone.y + zone.h / 2;
+  const colonne = index % COLONNES;
+  const cibleX = MARGE + colonne * (TAILLE + ECART) + TAILLE / 2;
+  const cibleY = centreY;   // la rangée a été centrée par le défilement
+
+  useEffect(() => {
+    if (phase === 'retourne') {
+      const a = Animated.timing(flip, {
+        toValue: 1, duration: MS_RETOURNEMENT, easing: Easing.out(Easing.cubic), useNativeDriver: true,
+      });
+      const mi = setTimeout(() => setFace('face'), MS_RETOURNEMENT / 2);
+      a.start();
+      return () => { a.stop(); clearTimeout(mi); };
+    }
+    if (phase === 'pose') {
+      const a = Animated.timing(pose, {
+        toValue: 1, duration: MS_ATTERRISSAGE, easing: Easing.in(Easing.cubic), useNativeDriver: true,
+      });
+      a.start();
+      return () => a.stop();
+    }
+    return undefined;
+  }, [phase, flip, pose]);
+
+  const rotation = flip.interpolate({ inputRange: [0, 1], outputRange: ['180deg', '360deg'] });
+  const echelle = pose.interpolate({ inputRange: [0, 1], outputRange: [1, TAILLE / GRANDE_CARTE] });
+  const dx = pose.interpolate({ inputRange: [0, 1], outputRange: [0, cibleX - centreX] });
+  const dy = pose.interpolate({ inputRange: [0, 1], outputRange: [0, cibleY - centreY] });
+  const opacite = pose.interpolate({ inputRange: [0, 0.82, 1], outputRange: [1, 1, 0] });
+
+  return (
+    <Animated.View
+      pointerEvents="none"
+      style={[
+        st.grandeCarte,
+        {
+          width: GRANDE_CARTE, height: GRANDE_CARTE,
+          left: centreX - GRANDE_CARTE / 2, top: centreY - GRANDE_CARTE / 2,
+          opacity: opacite,
+          transform: [
+            { translateX: dx }, { translateY: dy },
+            { perspective: 900 }, { rotateY: rotation }, { scale: echelle },
+          ],
+        },
+      ]}
+    >
+      {face === 'face' && src ? (
+        <Image
+          source={{ uri: src }}
+          style={[StyleSheet.absoluteFill, { borderRadius: 20 }]}
+          contentFit="cover" transition={0} cachePolicy="disk"
+          onLoadEnd={fini} onError={fini}
+        />
+      ) : (
+        <Image
+          source={ALIEN[statusKey(inv.status)] ?? ALIEN.unknown}
+          style={{ width: '46%', height: '34%' }}
+          contentFit="contain"
+          tintColor={face === 'face' ? theme.flashed : theme.textSecondary}
+          transition={0}
+        />
+      )}
+      <View style={st.grandeCarteBas}>
+        <Text style={st.grandeCarteId} numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.6}>
+          {inv.id}
+        </Text>
+        <Text style={st.grandeCartePts}>{inv.points} {t('common.pts')}</Text>
+      </View>
+    </Animated.View>
+  );
+}
+
 export default function CollectionScreen({ navigation }) {
   const { invaders, flashed, currentCityCode, setCurrentCity, cityIndex,
     isChangingCity, fiPhotos, photosListe, photosSpotter } = useAppContext();
   const [selecteurOuvert, setSelecteurOuvert] = useState(false);
   // id → rang d'apparition. Calculé UNE fois à l'ouverture de l'écran : flasher
   // depuis la Collection ne doit pas déclencher une animation sous les doigts.
-  const [revelations, setRevelations] = useState(null);
   const flashedRef = useRef(flashed);
   flashedRef.current = flashed;
+  // File des prises à présenter, et celle du moment.
+  const [aReveler, setAReveler] = useState([]);       // ids en attente de présentation
+  const [courante, setCourante] = useState(null);      // { inv, index, phase }
+  const [zone, setZone] = useState({ y: 0, h: 0 });    // aire de la liste, mesurée
+  const listeRef = useRef(null);
+  const casesRef = useRef([]);
+  const abandon = useRef(false);
   const { theme } = useTheme();
   const { t } = useTranslation();
   const st = getStyles(theme);
@@ -307,17 +372,57 @@ export default function CollectionScreen({ navigation }) {
       // cartes serait une punition, pas une fête. On note tout comme vu sans
       // rien animer — la mise en scène commence à la prochaine sortie.
       const anime = dejaVus.size > 0 && nouveaux.length <= MAX_REVELATIONS;
-      const carte = new Map();
-      if (anime) nouveaux.forEach((id, i) => carte.set(id, i));
-      if (vivant) setRevelations(carte);
+      if (vivant) setAReveler(anime ? nouveaux : []);
 
       if (nouveaux.length) {
         try { await AsyncStorage.setItem(CLE_VUS, JSON.stringify(tous)); } catch { /* sans effet */ }
       }
       if (anime) track('collection_reveal', { count: nouveaux.length });
     })();
-    return () => { vivant = false; };
+    return () => { vivant = false; abandon.current = true; setCourante(null); };
   }, []));
+
+  // Déroulé d'une présentation. Une seule à la fois, en série : chacune attend
+  // que la précédente ait rejoint sa place.
+  useEffect(() => {
+    if (!aReveler.length || courante || !zone.h) return undefined;
+    abandon.current = false;
+    const id = aReveler[0];
+    const index = casesRef.current.findIndex((c) => c.id === id);
+    // La prise peut appartenir à une autre ville, ou être masquée par le filtre :
+    // dans ce cas on la retire de la file sans rien montrer.
+    if (index < 0) { setAReveler((f) => f.slice(1)); return undefined; }
+    const inv = casesRef.current[index];
+
+    const minuteurs = [];
+    const plus_tard = (fn, ms) => minuteurs.push(setTimeout(fn, ms));
+
+    // On amène la RANGÉE au centre. scrollToIndex compte en rangées, comme
+    // getItemLayout — vérifié dans le source de React Native, pas supposé.
+    try {
+      listeRef.current?.scrollToIndex({
+        index: Math.floor(index / COLONNES), viewPosition: 0.5, animated: true,
+      });
+    } catch { /* liste pas encore prête : on présente quand même */ }
+
+    plus_tard(() => setCourante({ inv, index, phase: 'retourne' }), MS_DEFILEMENT);
+    plus_tard(() => setCourante((c) => (c ? { ...c, phase: 'pose' } : c)),
+      MS_DEFILEMENT + MS_RETOURNEMENT + MS_CONTEMPLATION);
+    plus_tard(() => {
+      if (abandon.current) return;
+      setCourante(null);
+      setAReveler((f) => f.slice(1));
+    }, MS_DEFILEMENT + MS_RETOURNEMENT + MS_CONTEMPLATION + MS_ATTERRISSAGE);
+
+    return () => minuteurs.forEach(clearTimeout);
+  }, [aReveler, courante, zone.h]);
+
+  // Tout écarter d'un geste : on ne retient personne devant une animation.
+  const passerLaSuite = useCallback(() => {
+    abandon.current = true;
+    setCourante(null);
+    setAReveler([]);
+  }, []);
 
   // Un « impossible » est un Invader détruit que l'utilisateur n'a jamais flashé :
   // il ne pourra jamais l'obtenir. Le masquer n'est pas de la triche, c'est la
@@ -338,6 +443,15 @@ export default function CollectionScreen({ navigation }) {
     const n = gardees.reduce((s, inv) => s + (flashed.has(inv.id) ? 1 : 0), 0);
     return { cases: gardees, faits: n, total: gardees.length, impossibles: nImpossibles };
   }, [invaders, flashed, masquerImpossibles]);
+
+  casesRef.current = cases;
+  // Une prise encore en file, ou en cours de présentation, reste une ombre dans
+  // la grille : sa place doit être vide quand la grande carte vient s'y poser.
+  const masquees = useMemo(() => {
+    const s = new Set(aReveler);
+    if (courante) s.add(courante.inv.id);
+    return s;
+  }, [aReveler, courante]);
 
   const pct = total > 0 ? (faits / total) * 100 : 0;
 
@@ -364,13 +478,13 @@ export default function CollectionScreen({ navigation }) {
       etat={etatDe(item)}
       photoUrl={fiPhotos?.[item.id] || null}
       spotterUrl={photosSpotter ? (item.photoUrl || null) : null}
-      ordre={revelations?.has(item.id) ? revelations.get(item.id) : null}
+      cache={masquees.has(item.id)}
       taille={TAILLE}
       theme={theme}
       onPress={ouvrir}
       t={t}
     />
-  ), [etatDe, fiPhotos, photosSpotter, revelations, theme, ouvrir, t]);
+  ), [etatDe, fiPhotos, photosSpotter, masquees, theme, ouvrir, t]);
 
   // `index` est ici un index de RANGÉE, pas d'élément : voir utils/gridLayout.js.
   const getItemLayout = useCallback((_, index) => dispositionRangee(index, TAILLE, ECART), []);
@@ -440,20 +554,67 @@ export default function CollectionScreen({ navigation }) {
         t={t}
       />
 
+      <View style={{ flex: 1 }} onLayout={(e) => {
+        const { y, height } = e.nativeEvent.layout;
+        setZone((z) => (z.y === y && z.h === height ? z : { y, h: height }));
+      }}>
       <FlatList
+        ref={listeRef}
         data={isChangingCity ? [] : cases}
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
         numColumns={COLONNES}
         getItemLayout={getItemLayout}
-        extraData={[flashed, theme, photosListe, photosSpotter, fiPhotos, revelations]}
+        extraData={[flashed, theme, photosListe, photosSpotter, fiPhotos, masquees]}
         columnWrapperStyle={{ gap: ECART, marginBottom: ECART }}
         contentContainerStyle={{ paddingHorizontal: MARGE, paddingBottom: insets.bottom + 24 }}
         initialNumToRender={40}
         maxToRenderPerBatch={40}
         windowSize={7}
         removeClippedSubviews
+        onScrollToIndexFailed={({ index, averageItemLength }) => {
+          // Peut arriver si la rangée visée n'a jamais été rendue. On y va au
+          // décalage estimé, puis on retente : sans ce filet, la présentation
+          // resterait bloquée sur une prise inatteignable.
+          listeRef.current?.scrollToOffset({
+            offset: index * (averageItemLength || TAILLE + ECART), animated: false,
+          });
+          setTimeout(() => {
+            try { listeRef.current?.scrollToIndex({ index, viewPosition: 0.5, animated: false }); }
+            catch { /* on renonce, la présentation continue */ }
+          }, 60);
+        }}
       />
+      </View>
+
+      {/* Voile + carte présentée. Un appui n'importe où écarte la mise en scène. */}
+      {courante ? (
+        <>
+          <TouchableOpacity
+            style={StyleSheet.absoluteFill}
+            activeOpacity={1}
+            onPress={passerLaSuite}
+            accessibilityRole="button"
+            accessibilityLabel={t('collection.skipReveal')}
+          >
+            <View style={[StyleSheet.absoluteFill, st.voile]} />
+          </TouchableOpacity>
+          <CarteRevelation
+            inv={courante.inv}
+            index={courante.index}
+            zone={zone}
+            phase={courante.phase}
+            etat={etatDe(courante.inv)}
+            photoUrl={fiPhotos?.[courante.inv.id] || null}
+            spotterUrl={photosSpotter ? (courante.inv.photoUrl || null) : null}
+            theme={theme}
+            t={t}
+          />
+          <Text style={[st.passer, { top: zone.y + zone.h - 26 }]} pointerEvents="none">
+            {t('collection.skipReveal')}
+          </Text>
+        </>
+      ) : null}
     </View>
   );
 }
@@ -511,6 +672,26 @@ function getStyles(t) {
       color: '#FFF', backgroundColor: 'rgba(0,0,0,0.55)',
       paddingHorizontal: 4, borderRadius: 4, overflow: 'hidden',
     },
+    voile: { backgroundColor: 'rgba(0,0,0,0.72)' },
+    grandeCarte: {
+      position: 'absolute', borderRadius: 20, overflow: 'hidden',
+      backgroundColor: t.surfaceHigh, borderWidth: 2, borderColor: t.flashed,
+      alignItems: 'center', justifyContent: 'center',
+      shadowColor: t.flashed, shadowOpacity: 0.5, shadowRadius: 26,
+      shadowOffset: { width: 0, height: 8 }, elevation: 16,
+    },
+    grandeCarteBas: {
+      position: 'absolute', left: 0, right: 0, bottom: 0,
+      backgroundColor: 'rgba(0,0,0,0.55)', paddingVertical: 8, paddingHorizontal: 10,
+      alignItems: 'center', gap: 2,
+    },
+    grandeCarteId: { ...typography.arcadeTitle, fontSize: 15, color: '#FFF' },
+    grandeCartePts: { fontSize: 11.5, color: t.accent, fontWeight: '700' },
+    passer: {
+      position: 'absolute', left: 0, right: 0, textAlign: 'center',
+      fontSize: 11.5, color: 'rgba(255,255,255,0.55)',
+    },
+
     modalFond: { flex: 1, backgroundColor: 'rgba(0,0,0,0.55)', justifyContent: 'flex-end' },
     modalCorps: {
       maxHeight: '75%', backgroundColor: t.surface,

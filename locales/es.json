@@ -1332,6 +1332,7 @@
       "done": "fotografiado",
       "todo": "aún no encontrado",
       "gone": "destruido, nunca fotografiado"
-    }
+    },
+    "skipReveal": "Toca para saltar"
   }
 }
