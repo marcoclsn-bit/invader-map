@@ -251,7 +251,7 @@ function SelecteurVille({ visible, cityIndex, courante, onChoisir, onFermer, the
  * assumé : une seule vue, sept dixièmes de seconde. La sortie et les informations,
  * elles, restent sur le pilote natif.
  */
-function CarteRevelation({ inv, zone, etat, photoUrl, spotterUrl, theme, phase, t }) {
+function CarteRevelation({ inv, etat, photoUrl, spotterUrl, theme, phase, t }) {
   const st = getStyles(theme);
   const balayage = useRef(new Animated.Value(0)).current;
   const infos = useRef(new Animated.Value(0)).current;
@@ -302,13 +302,7 @@ function CarteRevelation({ inv, zone, etat, photoUrl, spotterUrl, theme, phase, 
       pointerEvents="none"
       style={[
         st.grandeCarte,
-        {
-          width: GRANDE_CARTE,
-          left: (Dimensions.get('window').width - GRANDE_CARTE) / 2,
-          top: zone.y + zone.h / 2 - (GRANDE_CARTE + 66) / 2,
-          opacity: opaciteSortie,
-          transform: [{ scale: echelleSortie }],
-        },
+        { width: GRANDE_CARTE, opacity: opaciteSortie, transform: [{ scale: echelleSortie }] },
       ]}
     >
       <View style={{ width: GRANDE_CARTE, height: GRANDE_CARTE, overflow: 'hidden' }}>
@@ -625,17 +619,18 @@ export default function CollectionScreen({ navigation }) {
           >
             <View style={[StyleSheet.absoluteFill, st.voile]} />
           </TouchableOpacity>
-          <CarteRevelation
-            inv={courante.inv}
-            zone={zone}
-            phase={courante.phase}
-            etat={etatDe(courante.inv)}
-            photoUrl={fiPhotos?.[courante.inv.id] || null}
-            spotterUrl={photosSpotter ? (courante.inv.photoUrl || null) : null}
-            theme={theme}
-            t={t}
-          />
-          <Text style={[st.passer, { top: zone.y + zone.h - 26 }]} pointerEvents="none">
+          <View style={st.centreur} pointerEvents="none">
+            <CarteRevelation
+              inv={courante.inv}
+              phase={courante.phase}
+              etat={etatDe(courante.inv)}
+              photoUrl={fiPhotos?.[courante.inv.id] || null}
+              spotterUrl={photosSpotter ? (courante.inv.photoUrl || null) : null}
+              theme={theme}
+              t={t}
+            />
+          </View>
+          <Text style={[st.passer, { bottom: insets.bottom + 26 }]} pointerEvents="none">
             {t('collection.skipReveal')}
           </Text>
         </>
@@ -698,8 +693,13 @@ function getStyles(t) {
       paddingHorizontal: 4, borderRadius: 4, overflow: 'hidden',
     },
     voile: { backgroundColor: 'rgba(0,0,0,0.72)' },
+    // Plus aucune coordonnée ici : c'est un conteneur en flex qui centre la carte.
+    // La version d'avant la posait au milieu de l'AIRE DE LA LISTE, laquelle
+    // commence sous l'en-tête, le bloc ville et le filtre — d'où une carte visible-
+    // ment trop basse. Centrer à la main demandait en plus de deviner la hauteur du
+    // bandeau d'informations ; le flex la connaît, lui.
     grandeCarte: {
-      position: 'absolute', borderRadius: 18, overflow: 'hidden',
+      borderRadius: 18, overflow: 'hidden',
       backgroundColor: t.surfaceHigh, borderWidth: 2, borderColor: t.accent,
       shadowColor: t.accent, shadowOpacity: 0.45, shadowRadius: 24,
       shadowOffset: { width: 0, height: 6 }, elevation: 16,
@@ -723,6 +723,10 @@ function getStyles(t) {
     },
     grandeCarteId: { ...typography.arcadeTitle, fontSize: 15, color: t.textPrimary },
     grandeCarteMeta: { fontSize: 12, color: t.accent, fontWeight: '700', letterSpacing: 0.5 },
+    centreur: {
+      ...StyleSheet.absoluteFillObject,
+      alignItems: 'center', justifyContent: 'center',
+    },
     passer: {
       position: 'absolute', left: 0, right: 0, textAlign: 'center',
       fontSize: 11.5, color: 'rgba(255,255,255,0.55)',
