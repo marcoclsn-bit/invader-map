@@ -121,6 +121,11 @@ export function AppProvider({ children }) {
   const [flashed,      setFlashed]      = useState(new Set());
   // Map<id, isoString> — absente = null (Invader flashé avant cette version)
   const [flashedDates, setFlashedDates] = useState(new Map());
+  // Notes personnelles, id → texte. Ce que l'app ne saura jamais deviner : avec
+  // qui on y était, ce qu'on a galéré à trouver, pourquoi celui-là compte.
+  // Objet simple plutôt qu'une Map : il se sérialise tel quel, et il restera
+  // petit — on n'écrit pas une note sur mille mosaïques.
+  const [notes, setNotes] = useState({});
   // Photos personnelles rapatriées de FlashInvaders : id → URL. Ce sont les
   // clichés de l'utilisateur lui-même, servis publiquement par space-invaders.com
   // (aucune authentification, ~66 Ko, cache d'un mois). On ne stocke que l'URL.
@@ -368,6 +373,8 @@ export function AppProvider({ children }) {
         AsyncStorage.getItem('@invader_explorer_suggest'),
         AsyncStorage.getItem('@invader_dev'),
       ]);
+      const notesRaw = await AsyncStorage.getItem('@invader_notes');
+      if (notesRaw) { try { setNotes(JSON.parse(notesRaw) || {}); } catch { /* illisible */ } }
       const photosListeRaw = await AsyncStorage.getItem('@invader_photos_liste');
       if (photosListeRaw === '1') setPhotosListeState(true);
       // Trois cas distincts : jamais touché (null) → on garde le défaut du
@@ -649,6 +656,19 @@ export function AppProvider({ children }) {
   // Fusionne les URL de photos rapatriées. Additif : une ville retirée de la
   // galerie ne doit pas effacer ce qu'on avait déjà. Persisté immédiatement,
   // l'objet étant petit (~30 Ko pour 400 entrées) et écrit rarement.
+  // Écriture immédiate, sans temporisation : une note se saisit à la main, on ne
+  // peut pas en produire cent à la seconde, et la perdre serait impardonnable —
+  // c'est la seule donnée de l'app que l'utilisateur a VRAIMENT créée.
+  function setNote(id, texte) {
+    setNotes((prev) => {
+      const propre = String(texte ?? '').trim();
+      const suivant = { ...prev };
+      if (propre) suivant[id] = propre; else delete suivant[id];
+      AsyncStorage.setItem('@invader_notes', JSON.stringify(suivant)).catch(() => {});
+      return suivant;
+    });
+  }
+
   function mergeFiPhotos(nouvelles) {
     if (!nouvelles || !Object.keys(nouvelles).length) return;
     setFiPhotos(prev => {
@@ -926,6 +946,7 @@ export function AppProvider({ children }) {
     filters, setFilters,
     toggleFlash, bulkFlash, bulkUnflash, clearFlashDates,
     fiPhotos, mergeFiPhotos,
+    notes, setNote,
     setStatusColor, setFlashedColor,
     // News
     news, newsCities, setNewsCitiesPref, newsLastSeen, markNewsSeen, newsUnreadCount,

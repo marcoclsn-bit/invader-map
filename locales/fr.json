@@ -1333,6 +1333,17 @@
       "todo": "pas encore trouvé",
       "gone": "détruit, jamais flashé"
     },
-    "skipReveal": "Touche pour passer"
+    "skipReveal": "Touche pour passer",
+    "sheet": {
+      "city": "Ville",
+      "posed": "Posé le",
+      "flashed": "Flashé le",
+      "status": "État",
+      "noDate": "date inconnue",
+      "note": "Ta note",
+      "notePlaceholder": "Avec qui, comment tu l'as trouvé, ce qu'il t'a coûté…",
+      "noteHint": "Visible de toi seul, gardée sur ce téléphone.",
+      "seeOnMap": "Voir sur la carte"
+    }
   }
 }

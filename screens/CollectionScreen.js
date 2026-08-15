@@ -17,6 +17,7 @@ import { CITIES } from '../cities/registry';
 import { usePhotoCreneau, PRIORITE_LISTE, PRIORITE_FICHE, POIDS_FLASHINVADERS, POIDS_SPOTTER } from '../services/photoQueue';
 import { track } from '../services/analytics';
 import { dispositionRangee } from '../utils/gridLayout';
+import CollectionSheet from '../components/CollectionSheet';
 
 /**
  * Collection — la vue « Pokédex ».
@@ -355,6 +356,7 @@ export default function CollectionScreen({ navigation }) {
   const { invaders, flashed, currentCityCode, setCurrentCity, cityIndex,
     isChangingCity, fiPhotos, photosListe, photosSpotter } = useAppContext();
   const [selecteurOuvert, setSelecteurOuvert] = useState(false);
+  const [fiche, setFiche] = useState(null);
   // id → rang d'apparition. Calculé UNE fois à l'ouverture de l'écran : flasher
   // depuis la Collection ne doit pas déclencher une animation sous les doigts.
   const flashedRef = useRef(flashed);
@@ -496,13 +498,21 @@ export default function CollectionScreen({ navigation }) {
     return statusKey(inv.status) === 'destroyed' ? 'gone' : 'todo';
   }, [flashed, photosListe, fiPhotos]);
 
+  // Toucher une case ouvre SA FICHE, et non plus la carte. La grille dit ce qu'on
+  // a attrapé ; la fiche dit ce qu'on en a vécu — la date du flash, une note. Le
+  // renvoi vers la carte reste disponible depuis la fiche, d'un bouton.
   const ouvrir = useCallback((inv) => {
     track('collection_open_invader', { state: etatDe(inv) });
+    setFiche(inv);
+  }, [etatDe]);
+
+  const versLaCarte = useCallback((inv) => {
+    setFiche(null);
     navigation.navigate('Tabs', {
       screen: 'Carte',
       params: { focusId: inv.id, _ts: Date.now() },
     });
-  }, [navigation, etatDe]);
+  }, [navigation]);
 
   const renderItem = useCallback(({ item }) => (
     <Case
@@ -575,6 +585,12 @@ export default function CollectionScreen({ navigation }) {
           />
         </View>
       ) : null}
+
+      <CollectionSheet
+        invader={fiche}
+        onFermer={() => setFiche(null)}
+        onVoirSurCarte={versLaCarte}
+      />
 
       <SelecteurVille
         visible={selecteurOuvert}

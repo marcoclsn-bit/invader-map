@@ -1333,6 +1333,17 @@
       "todo": "not found yet",
       "gone": "destroyed, never flashed"
     },
-    "skipReveal": "Tap to skip"
+    "skipReveal": "Tap to skip",
+    "sheet": {
+      "city": "City",
+      "posed": "Installed",
+      "flashed": "Flashed",
+      "status": "State",
+      "noDate": "date unknown",
+      "note": "Your note",
+      "notePlaceholder": "Who you were with, how you found it, what it cost you…",
+      "noteHint": "Only you can see it, kept on this phone.",
+      "seeOnMap": "See on the map"
+    }
   }
 }

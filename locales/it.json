@@ -1333,6 +1333,17 @@
       "todo": "non ancora trovato",
       "gone": "distrutto, mai fotografato"
     },
-    "skipReveal": "Tocca per saltare"
+    "skipReveal": "Tocca per saltare",
+    "sheet": {
+      "city": "Città",
+      "posed": "Posato il",
+      "flashed": "Fotografato il",
+      "status": "Stato",
+      "noDate": "data sconosciuta",
+      "note": "La tua nota",
+      "notePlaceholder": "Con chi eri, come l'hai trovato, quanto ti è costato…",
+      "noteHint": "La vedi solo tu, resta su questo telefono.",
+      "seeOnMap": "Vedi sulla mappa"
+    }
   }
 }
