@@ -36,7 +36,7 @@ export default function ImportScreen({ navigation }) {
   const { theme } = useTheme();
   const { t } = useTranslation();
   const st = getStyles(theme);
-  const { flashed, flashedDates, bulkFlash, bulkUnflash, mergeFiPhotos, notes, setNote } = useAppContext();
+  const { flashed, flashedDates, bulkFlash, bulkUnflash, notes, setNote } = useAppContext();
   const { beginBatch } = useGamification();
 
   const [texte, setTexte] = useState('');
@@ -115,10 +115,9 @@ export default function ImportScreen({ navigation }) {
     Keyboard.dismiss();
     setChargement(true);
     try {
-      const { ids, dates, photos } = await recupererGalerie(uid);
+      const { ids, dates } = await recupererGalerie(uid);
       datesUid.current = dates;
       setSignature((n) => n + 1);
-      mergeFiPhotos(photos);
       await setUid(uid);
       // Point de départ du bandeau de synchronisation : sans lui, le premier
       // lancement suivant annoncerait « X nouveaux » pour la liste entière.

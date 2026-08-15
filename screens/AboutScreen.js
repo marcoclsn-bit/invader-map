@@ -202,6 +202,16 @@ export default function AboutScreen() {
         )}
         <LinkRow label="invader-spotter.art" url="https://www.invader-spotter.art" theme={theme} />
         <Divider theme={theme} />
+
+        {/* Crédit dédié, et non une ligne perdue dans les sources de données :
+            ce sont leurs photographies qu'on affiche, pas seulement leurs
+            informations. Le dire à part est la moindre des choses. */}
+        <SubHeader label={t('about.creditsPhotosLabel')} theme={theme} />
+        <Text style={[styles.paragraph, { color: theme.textSecondary }]}>
+          {t('about.creditsPhotosText')}
+        </Text>
+        <LinkRow label="invader-spotter.art" url="https://www.invader-spotter.art" theme={theme} />
+        <Divider theme={theme} />
         <SubHeader label={`${t('about.creditsMapLabel')} & ${t('about.creditsRoutingLabel')}`} theme={theme} />
         <LinkRow label="© OpenStreetMap contributors" url="https://www.openstreetmap.org/copyright" theme={theme} />
         <LinkRow label="OpenRouteService" url="https://openrouteservice.org" theme={theme} />
@@ -243,6 +253,7 @@ const styles = StyleSheet.create({
   appPitch: { fontSize: 15, marginTop: 12, textAlign: 'center', lineHeight: 22 },
 
   section: { marginBottom: 24 },
+  paragraph: { fontSize: 12.5, lineHeight: 18, paddingHorizontal: 14, paddingBottom: 10 },
   sectionTitle: {
     fontSize: 11, fontWeight: '600', letterSpacing: 0.6,
     marginBottom: 8, paddingLeft: 4,

@@ -4,8 +4,6 @@ import {
   TouchableOpacity, Switch, Alert, ActivityIndicator,
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Image } from 'expo-image';
-import { usePhotoCreneau, PRIORITE_LISTE } from '../services/photoQueue';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
@@ -41,35 +39,13 @@ function getStyles(theme) {
 
 // ─── Ligne ────────────────────────────────────────────────────────────────────
 
-const InvaderRow = memo(function InvaderRow({ item, isFlashed, onToggle, cityLabel, theme, photoUrl }) {
+const InvaderRow = memo(function InvaderRow({ item, isFlashed, onToggle, cityLabel, theme }) {
   const { t } = useTranslation();
-  // La vignette ne part QUE lorsque la file lui donne le feu vert : dérouler une
-  // longue liste ne doit pas lancer une requête par ligne au rythme du doigt.
-  const { src: photoSrc, fini: photoFinie } = usePhotoCreneau(photoUrl, PRIORITE_LISTE);
   const styles = getStyles(theme);
   const meta = `${t(`common.status.${item.status}`)} · ${item.points} ${t('common.pts')}`;
   return (
     <View style={styles.row}>
       <View style={[styles.statusDot, { backgroundColor: STATUS_COLOR[statusKey(item.status)] }]} />
-      {/* Vignette du cliché personnel, quand il existe. Chargée à la demande par
-          la virtualisation de la liste : seules les lignes visibles téléchargent.
-          Sans photo, rien ne s'affiche et la ligne garde sa hauteur — ROW_HEIGHT
-          alimente getItemLayout, une ligne plus haute désaccorderait le calcul. */}
-      {photoUrl ? (
-        <View style={styles.rowPhoto}>
-          {photoSrc ? (
-            <Image
-              source={{ uri: photoSrc }}
-              style={styles.rowPhotoImg}
-              contentFit="cover"
-              transition={120}
-              cachePolicy="disk"
-              onLoadEnd={photoFinie}
-              onError={photoFinie}
-            />
-          ) : null}
-        </View>
-      ) : null}
       <View style={styles.rowInfo}>
         <Text style={styles.rowId}>{item.id}</Text>
         <Text style={styles.rowMeta} numberOfLines={1}>
@@ -191,7 +167,7 @@ function CityPicker({ initial, cityIndex, onValidate, onClose, theme, t }) {
 // ─── Écran liste ──────────────────────────────────────────────────────────────
 
 export default function ListScreen({ navigation }) {
-  const { invaders, flashed, toggleFlash, bulkFlash, bulkUnflash, currentCityCode, cityIndex, fiPhotos, photosListe } = useAppContext();
+  const { invaders, flashed, toggleFlash, bulkFlash, bulkUnflash, currentCityCode, cityIndex } = useAppContext();
   const [carteImport, setCarteImport] = useState(false);
   useEffect(() => { AsyncStorage.getItem(KEY_IMPORT_CARD).then((v) => setCarteImport(v !== '1')); }, []);
   const ecarterCarte = useCallback(() => {
@@ -304,9 +280,8 @@ export default function ListScreen({ navigation }) {
       onToggle={() => toggleFlash(item.id, { dated: false })}
       cityLabel={multi ? (CITIES[cityCodeOfId(item.id)]?.name ?? null) : null}
       theme={theme}
-      photoUrl={photosListe ? (fiPhotos?.[item.id] || null) : null}
     />
-  ), [flashed, toggleFlash, theme, multi, fiPhotos, photosListe]);
+  ), [flashed, toggleFlash, theme, multi]);
 
   function confirmBulkFlash() {
     const ids = rows.map(r => r.id);
@@ -463,7 +438,7 @@ export default function ListScreen({ navigation }) {
           keyExtractor={(item) => item.id}
           renderItem={renderItem}
           getItemLayout={getItemLayout}
-          extraData={[flashed, theme, multi, fiPhotos, photosListe]}
+          extraData={[flashed, theme, multi]}
           initialNumToRender={20}
           maxToRenderPerBatch={20}
           windowSize={5}
@@ -480,11 +455,6 @@ export default function ListScreen({ navigation }) {
 function makeStyles(t) {
   return StyleSheet.create({
     container: { flex: 1, backgroundColor: t.bg },
-    rowPhoto: {
-      width: 40, height: 40, borderRadius: 8, marginRight: 10,
-      backgroundColor: t.surfaceHigh, overflow: 'hidden',
-    },
-    rowPhotoImg: { width: '100%', height: '100%' },
 
     importCard: {
       flexDirection: 'row', alignItems: 'flex-start', gap: 11,

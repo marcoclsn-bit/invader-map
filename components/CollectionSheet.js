@@ -12,7 +12,7 @@ import { typography } from '../theme/tokens';
 import { useAppContext } from '../context/AppContext';
 import { statusKey, STATUS_COLOR } from '../constants';
 import { CITIES } from '../cities/registry';
-import { usePhotoCreneau, PRIORITE_FICHE, POIDS_FLASHINVADERS, POIDS_SPOTTER } from '../services/photoQueue';
+import { usePhotoCreneau, PRIORITE_FICHE, POIDS_SPOTTER } from '../services/photoQueue';
 import { track } from '../services/analytics';
 
 /**
@@ -66,7 +66,7 @@ export default function CollectionSheet({ invader, onFermer, onVoirSurCarte }) {
   const { theme } = useTheme();
   const { t } = useTranslation();
   const st = getStyles(theme);
-  const { flashed, flashedDates, fiPhotos, photosSpotter, notes, setNote } = useAppContext();
+  const { flashed, flashedDates, notes, setNote } = useAppContext();
 
   const [texte, setTexte] = useState('');
   // On lit la note par une RÉFÉRENCE, et on ne se resynchronise QUE lorsque la
@@ -111,12 +111,10 @@ export default function CollectionSheet({ invader, onFermer, onVoirSurCarte }) {
   }, [idOuvert, texte, setNote, onFermer]);
 
   const estFlashe = invader ? flashed.has(invader.id) : false;
-  const perso = invader ? fiPhotos?.[invader.id] : null;
-  const spotter = photosSpotter && invader ? invader.photoUrl : null;
+  // La photo n'apparaît QUE si la mosaïque est déjà trouvée : cette fiche
+  // s'ouvre depuis la Collection, où une case non acquise reste une ombre.
   const { src, fini } = usePhotoCreneau(
-    estFlashe ? (perso || spotter) : null,
-    PRIORITE_FICHE,
-    perso ? POIDS_FLASHINVADERS : POIDS_SPOTTER,
+    estFlashe ? invader?.photoUrl : null, PRIORITE_FICHE, POIDS_SPOTTER,
   );
 
   if (!invader) return null;

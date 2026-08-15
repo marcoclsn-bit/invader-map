@@ -524,19 +524,15 @@
     "legalText": "$t(common.appName) è un progetto di fan indipendente, non ufficiale e non affiliato all'artista Invader né all'applicazione FlashInvaders. I mosaici Space Invader sono l'opera e la proprietà esclusiva dell'artista Invader. Questa applicazione non è autorizzata, sponsorizzata né approvata dall'artista.",
     "devOn": "Modalità sviluppatore attiva. I gesti di prova sono disponibili con pressione prolungata: Novità e Modalità esploratore nelle Impostazioni, Notifica in Passeggiata.",
     "devOff": "Modalità sviluppatore disattivata. I gesti di prova non rispondono più.",
-    "devCountdown": "Ancora {{count}}…"
+    "devCountdown": "Ancora {{count}}…",
+    "creditsPhotosLabel": "Fotografie dei mosaici",
+    "creditsPhotosText": "I primi piani mostrati nella Collezione provengono da invader-spotter.art, una base documentaria curata da appassionati. Appaiono solo sui mosaici che hai già trovato. Le opere fotografate restano di Invader."
   },
   "settings": {
     "title": "Impostazioni",
     "appearance": {
       "section": "Aspetto",
-      "darkTheme": "Tema scuro",
-      "listPhotos": "Le mie foto nell'elenco",
-      "listPhotosHint": "Mostra il tuo scatto FlashInvaders su ogni riga già fotografata. Spento di default: il server non offre miniature, quindi ogni anteprima scarica la foto intera, circa 200 KB.",
-      "listPhotosWarnTitle": "Scaricare le tue foto?",
-      "listPhotosWarnBody": "FlashInvaders non offre miniature: ogni riga scaricherà la foto intera, circa 216 KB. Per i tuoi {{count}} scatti sono all'incirca {{mo}} MB, presi dai tuoi dati e dai server di Space Invaders. Ogni foto viene scaricata una sola volta, poi tenuta in cache.",
-      "spotterPhotos": "Foto reali nella Collezione (prova)",
-      "spotterPhotosHint": "Sulle caselle già fotografate, mostra il mosaico vero (primi piani invader-spotter, ~20 KB). Quelle che ti restano da trovare mantengono la loro ombra."
+      "darkTheme": "Tema scuro"
     },
     "statusColors": {
       "section": "Colori degli stati",

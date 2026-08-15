@@ -119,19 +119,21 @@ export async function recupererGalerie(uid) {
   // historique honnête plutôt que d'empiler tout un passé sur la date du jour.
   const entrees = brut && !Array.isArray(brut) ? Object.entries(brut)
     : Array.isArray(brut) ? brut.filter((x) => x?.name).map((x) => [x.name, x]) : [];
+  // On ne garde QUE les dates. La galerie porte aussi `image_url`, le cliché de
+  // l'utilisateur, et on l'a affiché un temps — c'est retiré à la demande de
+  // Marco : chaque photo est servie par les serveurs d'Invader, et une
+  // collection de mille prises consultée par des milliers de personnes ferait
+  // peser sur eux une charge qu'ils n'ont pas demandée. Les gros plans
+  // d'invader-spotter font le même travail sans les solliciter.
   const dates = {};
-  const photos = {};
   for (const [id, v] of entrees) {
     const d = normaliseDate(v?.date_flash);
     if (d) dates[id] = d;
-    if (typeof v?.photoUrl === 'string') photos[id] = v.photoUrl;
-    else if (typeof v?.image_url === 'string') photos[id] = v.image_url;
   }
 
   return {
     ids,
     dates,
-    photos,
     villes: Array.isArray(json.cities) ? json.cities.length : null,
     total: Number(json.total_si_count) || null,
   };

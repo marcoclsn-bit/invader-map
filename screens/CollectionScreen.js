@@ -14,7 +14,7 @@ import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import { statusKey } from '../constants';
 import { CITIES } from '../cities/registry';
-import { usePhotoCreneau, PRIORITE_LISTE, PRIORITE_FICHE, POIDS_FLASHINVADERS, POIDS_SPOTTER } from '../services/photoQueue';
+import { usePhotoCreneau, PRIORITE_LISTE, PRIORITE_FICHE, POIDS_SPOTTER } from '../services/photoQueue';
 import { track } from '../services/analytics';
 import { dispositionRangee } from '../utils/gridLayout';
 import CollectionSheet from '../components/CollectionSheet';
@@ -27,32 +27,24 @@ import CollectionSheet from '../components/CollectionSheet';
  * qui fait marcher un Pokédex — il ne montre pas la photo de ce qu'on n'a pas
  * attrapé, il montre une OMBRE.
  *
- * UN RÉGLAGE EXPÉRIMENTAL montre la vraie mosaïque — SUR LES CASES ACQUISES
- * SEULEMENT. J'avais d'abord écrit ici que des photos dans une grille étaient
- * arithmétiquement impossibles, en extrapolant le poids des photos FlashInvaders :
- * 216 Ko pièce, donc 319 Mo pour Paris. MESURE FAITE : les gros plans
- * d'invader-spotter pèsent 20 Ko — des recadrages serrés, pas des photos pleines.
- * Je m'étais trompé d'un facteur dix.
+ * LES CASES ACQUISES montrent le gros plan d'invader-spotter — 20 Ko pièce,
+ * mesuré, des recadrages serrés et non des photos pleines. C'est le SEUL endroit
+ * de l'app où une mosaïque est reproduite, et la règle qui le rend tenable est
+ * celle du Pokédex : on ne la montre qu'à qui l'a déjà trouvée. La fiche de la
+ * carte, ouvrable sur n'importe quel Invader, n'en affiche aucune — sinon elle
+ * gâcherait la recherche.
  *
- * Première version : photo partout, assombrie à 38 % sur les cases non acquises.
- * Ça ne cachait rien du tout — la mosaïque restait parfaitement identifiable, et
- * la grille livrait d'avance ce qu'elle est censée faire chercher. Une case non
- * acquise est donc redevenue une ombre, sans exception.
+ * Les photos personnelles rapatriées de FlashInvaders ont existé un temps ici.
+ * Retirées à la demande de Marco : chaque cliché est servi par les serveurs
+ * d'Invader, et des milliers de collections consultées leur imposeraient une
+ * charge qu'ils n'ont pas demandée. Les gros plans d'invader-spotter font le même
+ * travail sans les solliciter, et sont crédités dans « À propos ».
  *
- * Le gain est double. Ludique : la surprise revient. Et technique : sur une
- * collection parisienne à 329 flashs sur 1 597, on passe de 1 597 photos
- * téléchargées à 329, soit 31 Mo → 6,6 Mo. Un nouvel utilisateur, qui n'a rien
- * flashé, ne télécharge RIEN — c'est exactement l'inverse du profil de charge
- * qu'on redoutait pour invader-spotter.
+ * Le trafic suit donc la progression et non le catalogue : sur 329 flashs pour
+ * 1 597 Invaders, 6,4 Mo au lieu de 31 — et RIEN du tout pour un nouvel arrivant.
  *
- * Reste la question des droits : InvaderPhoto.js porte le renoncement d'origine,
- * « reproduction de l'œuvre d'Invader ». D'où un réglage allumé sur le seul canal
- * preview, éteint partout ailleurs.
- *
- * Cinq états :
- *   photo  — flashé, et le cliché personnel de l'utilisateur est disponible
- *            (uID renseigné ET vignettes activées dans les Réglages)
- *   done   — flashé : l'alien en violet
+ * Quatre états :
+ *   done   — flashé : le gros plan d'invader-spotter, ou l'alien violet à défaut
  *   todo   — pas encore trouvé : la silhouette. Le moteur du jeu.
  *   gone   — détruit et jamais flashé : hachuré. Une catégorie que Pokémon n'a
  *            pas, et qui appartient en propre à ce sujet : on ne l'aura jamais.
@@ -103,25 +95,18 @@ const ALIEN = {
 // `cache` : la case est flashée mais son tour de révélation n'est pas passé. Elle
 // reste une ombre jusque-là, sinon la carte qui atterrit trouverait sa place déjà
 // occupée par sa propre photo et la mise en scène perdrait son sens.
-const Case = memo(function Case({ inv, etat, photoUrl, spotterUrl, taille, theme, onPress, t, cache }) {
+const Case = memo(function Case({ inv, etat, taille, theme, onPress, t, cache }) {
   const st = getStyles(theme);
-  // UNE PHOTO NE S'AFFICHE QUE SUR UNE CASE ACQUISE. Assombrir la photo d'un
-  // Invader non trouvé ne cachait rien : à 38 %, la mosaïque restait parfaitement
-  // identifiable et la grille livrait d'avance ce qu'elle devait faire chercher.
-  // Une case non acquise est donc une ombre, un point.
+  // UNE PHOTO NE S'AFFICHE QUE SUR UNE CASE ACQUISE. C'est la règle du Pokédex,
+  // et c'est aussi ce qui rend l'usage des gros plans d'invader-spotter tenable :
+  // on ne montre jamais une mosaïque à quelqu'un qui ne l'a pas encore trouvée.
+  // La fiche de la carte, elle, n'en affiche aucune — on n'y gâche rien.
   //
-  // Le gain n'est pas que ludique : sur une collection parisienne à 329 flashs
-  // sur 1 597, on passe de 1 597 photos à 329, soit 31 Mo → 6,6 Mo. Et un
-  // nouvel utilisateur, qui n'a rien flashé, ne télécharge RIEN.
-  //
-  // Deux sources possibles, deux poids très différents : la photo personnelle
-  // pèse 216 Ko, le gros plan d'invader-spotter 20 Ko. La file règle sa cadence
-  // là-dessus, sinon les vignettes légères attendraient dix fois trop.
+  // Le trafic suit ainsi la progression et non le catalogue : sur 329 flashs pour
+  // 1 597 Invaders, 6,4 Mo au lieu de 31, et RIEN du tout pour un nouvel arrivant.
   const acquis = (etat === 'photo' || etat === 'done') && !cache;
-  const perso = etat === 'photo' && !cache ? photoUrl : null;
-  const url = acquis ? (perso || spotterUrl) : null;
   const { src, fini } = usePhotoCreneau(
-    url, PRIORITE_LISTE, perso ? POIDS_FLASHINVADERS : POIDS_SPOTTER,
+    acquis ? inv.photoUrl : null, PRIORITE_LISTE, POIDS_SPOTTER,
   );
   const dim = { width: taille, height: taille };
 
@@ -265,17 +250,13 @@ function SelecteurVille({ visible, cityIndex, courante, onChoisir, onFermer, the
  * effacer par le haut à mesure que la photo se découvre — ce qui est mieux que
  * l'effet visé : l'ombre est essuyée, elle ne s'en va pas.
  */
-function CarteRevelation({ inv, etat, photoUrl, spotterUrl, theme, phase, t }) {
+function CarteRevelation({ inv, theme, phase, t }) {
   const st = getStyles(theme);
   const balayage = useRef(new Animated.Value(0)).current;
   const infos = useRef(new Animated.Value(0)).current;
   const sortie = useRef(new Animated.Value(0)).current;
 
-  const perso = etat === 'photo' ? photoUrl : null;
-  const url = perso || spotterUrl;
-  const { src, fini } = usePhotoCreneau(
-    url, PRIORITE_FICHE, perso ? POIDS_FLASHINVADERS : POIDS_SPOTTER,
-  );
+  const { src, fini } = usePhotoCreneau(inv.photoUrl, PRIORITE_FICHE, POIDS_SPOTTER);
 
   useEffect(() => {
     if (phase === 'balaye') {
@@ -360,7 +341,7 @@ function CarteRevelation({ inv, etat, photoUrl, spotterUrl, theme, phase, t }) {
 
 export default function CollectionScreen({ navigation }) {
   const { invaders, flashed, currentCityCode, setCurrentCity, cityIndex,
-    isChangingCity, fiPhotos, photosListe, photosSpotter } = useAppContext();
+    isChangingCity } = useAppContext();
   const [selecteurOuvert, setSelecteurOuvert] = useState(false);
   const [fiche, setFiche] = useState(null);
   // id → rang d'apparition. Calculé UNE fois à l'ouverture de l'écran : flasher
@@ -496,13 +477,9 @@ export default function CollectionScreen({ navigation }) {
   const pct = total > 0 ? (faits / total) * 100 : 0;
 
   const etatDe = useCallback((inv) => {
-    const estFlashe = flashed.has(inv.id);
-    if (estFlashe) {
-      if (photosListe && fiPhotos?.[inv.id]) return 'photo';
-      return 'done';
-    }
+    if (flashed.has(inv.id)) return 'done';
     return statusKey(inv.status) === 'destroyed' ? 'gone' : 'todo';
-  }, [flashed, photosListe, fiPhotos]);
+  }, [flashed]);
 
   // Toucher une case ouvre SA FICHE, et non plus la carte. La grille dit ce qu'on
   // a attrapé ; la fiche dit ce qu'on en a vécu — la date du flash, une note. Le
@@ -524,15 +501,13 @@ export default function CollectionScreen({ navigation }) {
     <Case
       inv={item}
       etat={etatDe(item)}
-      photoUrl={fiPhotos?.[item.id] || null}
-      spotterUrl={photosSpotter ? (item.photoUrl || null) : null}
       cache={masquees.has(item.id)}
       taille={TAILLE}
       theme={theme}
       onPress={ouvrir}
       t={t}
     />
-  ), [etatDe, fiPhotos, photosSpotter, masquees, theme, ouvrir, t]);
+  ), [etatDe, masquees, theme, ouvrir, t]);
 
   // `index` est ici un index de RANGÉE, pas d'élément : voir utils/gridLayout.js.
   const getItemLayout = useCallback((_, index) => dispositionRangee(index, TAILLE, ECART), []);
@@ -619,7 +594,7 @@ export default function CollectionScreen({ navigation }) {
         renderItem={renderItem}
         numColumns={COLONNES}
         getItemLayout={getItemLayout}
-        extraData={[flashed, theme, photosListe, photosSpotter, fiPhotos, masquees]}
+        extraData={[flashed, theme, masquees]}
         columnWrapperStyle={{ gap: ECART, marginBottom: ECART }}
         contentContainerStyle={{ paddingHorizontal: MARGE, paddingBottom: insets.bottom + 24 }}
         initialNumToRender={40}
@@ -657,9 +632,6 @@ export default function CollectionScreen({ navigation }) {
             <CarteRevelation
               inv={courante.inv}
               phase={courante.phase}
-              etat={etatDe(courante.inv)}
-              photoUrl={fiPhotos?.[courante.inv.id] || null}
-              spotterUrl={photosSpotter ? (courante.inv.photoUrl || null) : null}
               theme={theme}
               t={t}
             />

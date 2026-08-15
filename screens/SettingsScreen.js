@@ -108,28 +108,8 @@ export default function SettingsScreen({ navigation }) {
     resetLabels, clearFlashDates,
     dataVersion, dataUpdatedAt, checkDataUpdate,
     resetPoiIntro, checkPoiUpdate, getPoiVersion, poiDataVersion, devMode,
-    photosListe, setPhotosListe, fiPhotos, photosSpotter, setPhotosSpotter,
   } = useAppContext();
 
-  // Activer les vignettes engage un volume qu'on peut CHIFFRER avant de le
-  // dépenser : le serveur ne sert aucune miniature, chaque ligne tire la photo
-  // pleine taille. Sur une collection de mille Invaders, c'est ~210 Mo — pris
-  // sur les données de l'utilisateur ET sur la bande passante d'un tiers. On le
-  // dit avant, avec son propre chiffre, pas une moyenne abstraite.
-  const PHOTO_MOYENNE_KO = 216;
-  function basculerPhotosListe(on) {
-    if (!on) { setPhotosListe(false); return; }
-    const n = Object.keys(fiPhotos || {}).length;
-    const mo = Math.round((n * PHOTO_MOYENNE_KO) / 1024);
-    Alert.alert(
-      t('settings.appearance.listPhotosWarnTitle'),
-      t('settings.appearance.listPhotosWarnBody', { count: n, mo }),
-      [
-        { text: t('common.cancel'), style: 'cancel' },
-        { text: t('common.confirm'), onPress: () => setPhotosListe(true) },
-      ],
-    );
-  }
 
   const flashedColor = labelDefs.find((d) => d.id === 'lbl_flashed')?.color;
 
@@ -186,39 +166,6 @@ export default function SettingsScreen({ navigation }) {
             <Switch
               value={isDark}
               onValueChange={toggle}
-              trackColor={{ false: theme.border, true: theme.accent }}
-              thumbColor={theme.bg}
-              ios_backgroundColor={theme.border}
-            />
-          }
-        />
-        {/* Éteint par défaut, et l'aide dit pourquoi en clair : FlashInvaders ne
-            sert pas de miniature, chaque vignette de 40 px télécharge la photo
-            entière. On ne dépense pas les données de quelqu'un sans le lui dire. */}
-        <Row
-          label={t('settings.appearance.listPhotos')}
-          hint={t('settings.appearance.listPhotosHint')}
-          trailing={
-            <Switch
-              value={photosListe}
-              onValueChange={basculerPhotosListe}
-              trackColor={{ false: theme.border, true: theme.accent }}
-              thumbColor={theme.bg}
-              ios_backgroundColor={theme.border}
-            />
-          }
-        />
-        {/* Expérimental. L'aide dit d'où viennent les images et ce qu'elles
-            pèsent : 20 Ko l'unité, mesuré, soit 31 Mo pour toute une grille
-            parisienne. C'est la question des droits qui le garde éteint, pas
-            celle du poids. */}
-        <Row
-          label={t('settings.appearance.spotterPhotos')}
-          hint={t('settings.appearance.spotterPhotosHint')}
-          trailing={
-            <Switch
-              value={photosSpotter}
-              onValueChange={setPhotosSpotter}
               trackColor={{ false: theme.border, true: theme.accent }}
               thumbColor={theme.bg}
               ios_backgroundColor={theme.border}

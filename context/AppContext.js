@@ -1,12 +1,6 @@
 import { createContext, useContext, useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import * as Updates from 'expo-updates';
 
-// Défaut du réglage expérimental des photos invader-spotter : allumé sur le
-// canal de test, éteint ailleurs. Lu une fois au chargement du module.
-// `Updates.channel` vaut null en développement et dans Expo Go, où l'essai
-// n'a pas de sens : le `=== 'preview'` couvre les deux d'un coup.
-const DEFAUT_SPOTTER = Updates.channel === 'preview';
 import * as Location from 'expo-location';
 import { INVADERS as EMBEDDED_PA, INVADERS_VERSION, INVADERS_UPDATED_AT } from '../data/invaders';
 import { ALL_STATUSES, STATUS_COLOR, DEFAULT_LABEL_DEFS } from '../constants';
@@ -126,10 +120,6 @@ export function AppProvider({ children }) {
   // Objet simple plutôt qu'une Map : il se sérialise tel quel, et il restera
   // petit — on n'écrit pas une note sur mille mosaïques.
   const [notes, setNotes] = useState({});
-  // Photos personnelles rapatriées de FlashInvaders : id → URL. Ce sont les
-  // clichés de l'utilisateur lui-même, servis publiquement par space-invaders.com
-  // (aucune authentification, ~66 Ko, cache d'un mois). On ne stocke que l'URL.
-  const [fiPhotos, setFiPhotos] = useState({});
   // Registre persistant de progression par ville — alimenté par la ville ACTIVE
   // (points exacts, complétion « juste »). Sert aux trophées (points cumulés,
   // villes terminées) sans devoir charger les données de toutes les villes.
@@ -164,25 +154,6 @@ export function AppProvider({ children }) {
   // est à 30 m par là ». Reste un interrupteur pour qui veut la saisie strictement
   // aveugle.
   const [explorerSuggest, setExplorerSuggestState] = useState(true);
-  // Vignettes personnelles dans la liste des Flashs. ÉTEINT par défaut, et c'est
-  // une décision mesurée : FlashInvaders ne sert AUCUNE version réduite (toutes
-  // les variantes de chemin testées répondent 404), donc une vignette de 40 px
-  // télécharge la photo pleine taille — 216 Ko en moyenne, mesuré sur 12 clichés.
-  // Faire défiler une collection de 400 Invaders tirerait ~87 Mo, sur la bande
-  // passante de space-invaders.com, pour afficher des timbres-poste. La fiche,
-  // elle, charge UNE image à la demande : là, le coût est proportionné.
-  const [photosListe, setPhotosListeState] = useState(false);
-  // EXPÉRIMENTAL. Affiche dans la grille de Collection les gros plans
-  // d'invader-spotter à la place des aliens pixel. Mesuré avant d'être branché :
-  // ces images pèsent 20 Ko, pas 216 — ce sont des recadrages, pas des photos
-  // pleines. Une grille de Paris tient donc en 31 Mo et un écran en 600 Ko.
-  //
-  // ALLUMÉ D'OFFICE SUR LE CANAL PREVIEW, éteint partout ailleurs. Un essai
-  // demandé ne doit pas commencer par une chasse à l'interrupteur ; et la
-  // production, où la question des droits n'est pas tranchée (voir le
-  // renoncement documenté dans InvaderPhoto.js), reste sur les aliens pixel.
-  // Le réglage explicite, une fois touché, l'emporte sur ce défaut.
-  const [photosSpotter, setPhotosSpotterState] = useState(DEFAUT_SPOTTER);
   // Gestes de test (appui long) réservés au porteur du projet. Ils envoient de
   // VRAIES notifications et rejouent des panneaux : en production, un utilisateur
   // qui laisse le doigt sur une ligne les déclenche sans comprendre, et sans
@@ -375,15 +346,13 @@ export function AppProvider({ children }) {
       ]);
       const notesRaw = await AsyncStorage.getItem('@invader_notes');
       if (notesRaw) { try { setNotes(JSON.parse(notesRaw) || {}); } catch { /* illisible */ } }
-      const photosListeRaw = await AsyncStorage.getItem('@invader_photos_liste');
-      if (photosListeRaw === '1') setPhotosListeState(true);
-      // Trois cas distincts : jamais touché (null) → on garde le défaut du
-      // canal ; '1' ou '0' → le choix de l'utilisateur, qui prime.
-      const photosSpotterRaw = await AsyncStorage.getItem('@invader_photos_spotter');
-      if (photosSpotterRaw === '1') setPhotosSpotterState(true);
-      else if (photosSpotterRaw === '0') setPhotosSpotterState(false);
-      const fiPhotosRaw = await AsyncStorage.getItem('@invader_fi_photos');
-      if (fiPhotosRaw) { try { setFiPhotos(JSON.parse(fiPhotosRaw) || {}); } catch {} }
+      // Ménage unique : ces trois clés servaient aux photos personnelles
+      // FlashInvaders et aux deux réglages qui les gouvernaient. La
+      // fonctionnalité est retirée ; laisser les URL collectées sur l'appareil
+      // n'aurait plus aucune raison d'être.
+      AsyncStorage.multiRemove([
+        '@invader_fi_photos', '@invader_photos_liste', '@invader_photos_spotter',
+      ]).catch(() => {});
       // Comparé à '0' et non à '1' : le défaut est ACTIF, seul un refus explicite
       // est enregistré. Tester l'inverse aurait éteint l'option chez tout le monde.
       if (explorerSuggestRaw === '0') setExplorerSuggestState(false);
@@ -653,15 +622,14 @@ export function AppProvider({ children }) {
   // Une date DÉJÀ POSÉE n'est jamais écrasée : si l'utilisateur a coché cet
   // Invader ici, c'est son geste et son horodatage qui font foi, pas ceux d'une
   // autre app.
-  // Fusionne les URL de photos rapatriées. Additif : une ville retirée de la
-  // galerie ne doit pas effacer ce qu'on avait déjà. Persisté immédiatement,
-  // l'objet étant petit (~30 Ko pour 400 entrées) et écrit rarement.
   // STABLE — et ce n'est pas une optimisation, c'est une correction. Déclarée par
   // `function`, cette fonction était recréée à chaque rendu du contexte. La fiche
-  // s'en sert dans un effet temporisé à 600 ms : à chaque rendu, le nettoyage de
-  // l'effet annulait le minuteur en attente. Or AppContext se rend en permanence.
-  // L'enregistrement différé ne partait donc JAMAIS, et la note disparaissait à la
-  // réouverture. La forme fonctionnelle de setNotes permet des dépendances vides.
+  // s'en sert dans un effet temporisé : à chaque rendu, le nettoyage de l'effet
+  // annulait le minuteur en attente, et l'enregistrement ne partait jamais.
+  //
+  // Écriture immédiate, sans temporisation ici : une note se saisit à la main, on
+  // ne peut pas en produire cent à la seconde, et la perdre serait impardonnable —
+  // c'est la seule donnée de l'app que l'utilisateur a VRAIMENT créée.
   const setNote = useCallback((id, texte) => {
     setNotes((prev) => {
       const propre = String(texte ?? '').trim();
@@ -671,23 +639,6 @@ export function AppProvider({ children }) {
       return suivant;
     });
   }, []);
-
-  function mergeFiPhotos(nouvelles) {
-    if (!nouvelles || !Object.keys(nouvelles).length) return;
-    setFiPhotos(prev => {
-      // On n'écrit que si quelque chose a VRAIMENT changé : la galerie est
-      // retéléchargée à chaque nouveau flash, et réécrire 30 Ko sur le disque à
-      // chaque fois userait la mémoire flash pour rien.
-      let change = false;
-      for (const [id, url] of Object.entries(nouvelles)) {
-        if (prev[id] !== url) { change = true; break; }
-      }
-      if (!change) return prev;
-      const next = { ...prev, ...nouvelles };
-      AsyncStorage.setItem('@invader_fi_photos', JSON.stringify(next)).catch(() => {});
-      return next;
-    });
-  }
 
   function bulkFlash(ids, dates) {
     const list = ids ?? invaders.map(inv => inv.id);
@@ -847,16 +798,6 @@ export function AppProvider({ children }) {
     AsyncStorage.setItem('@invader_dev', on ? '1' : '0').catch(() => {});
   }
 
-  function setPhotosSpotter(on) {
-    setPhotosSpotterState(on);
-    AsyncStorage.setItem('@invader_photos_spotter', on ? '1' : '0').catch(() => {});
-  }
-
-  function setPhotosListe(on) {
-    setPhotosListeState(on);
-    AsyncStorage.setItem('@invader_photos_liste', on ? '1' : '0').catch(() => {});
-  }
-
   function setExplorerSuggest(on) {
     setExplorerSuggestState(on);
     AsyncStorage.setItem('@invader_explorer_suggest', on ? '1' : '0').catch(() => {});
@@ -948,7 +889,6 @@ export function AppProvider({ children }) {
     labels, labelDefs, statusColors, colorOverrides,
     filters, setFilters,
     toggleFlash, bulkFlash, bulkUnflash, clearFlashDates,
-    fiPhotos, mergeFiPhotos,
     notes, setNote,
     setStatusColor, setFlashedColor,
     // News
@@ -959,8 +899,6 @@ export function AppProvider({ children }) {
     // Villes favorites
     favCities, toggleFavCity,
     explorerSuggest, setExplorerSuggest,
-    photosListe, setPhotosListe,
-    photosSpotter, setPhotosSpotter,
     devMode, setDevMode,
     // Légende des couleurs
     legendSeen, dismissLegend,
@@ -992,7 +930,7 @@ export function AppProvider({ children }) {
     // photos sans effet immédiat. La valeur du contexte n'étant pas recréée, les
     // consommateurs continuaient de lire l'ancien objet. Un test statique vérifie
     // désormais que tout état exposé figure dans cette liste.
-    notes, fiPhotos, photosListe, photosSpotter,
+    notes,
   ]);
 
   return (

@@ -42,9 +42,10 @@ const POIDS_DEFAUT = 216 * 1024;
 const SECOURS_MS      = 15000; // rend le créneau même si l'image ne dit rien
 
 export const PRIORITE_FICHE  = 10;
-// Poids indicatifs, mesurés : ils ne servent qu'à régler la cadence.
-export const POIDS_FLASHINVADERS = 216 * 1024;
-export const POIDS_SPOTTER       = 20 * 1024;
+// Poids indicatif, mesuré sur douze gros plans invader-spotter : il ne sert qu'à
+// régler la cadence. La constante FlashInvaders (216 Ko) a disparu avec les
+// photos personnelles ; c'est elle qui avait servi à calibrer le débit plafond.
+export const POIDS_SPOTTER = 20 * 1024;
 export const PRIORITE_LISTE  = 0;
 
 let enCours = 0;

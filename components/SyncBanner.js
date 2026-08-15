@@ -41,7 +41,7 @@ export default function SyncBanner({ style }) {
   // fusionner avant la lecture disque ne perdrait rien (bulkFlash est
   // fonctionnel, l'écriture est gardée) mais la fusion serait ensuite écrasée et
   // l'utilisateur croirait avoir synchronisé.
-  const { flashed, bulkFlash, loaded, mergeFiPhotos } = useAppContext();
+  const { flashed, bulkFlash, loaded } = useAppContext();
   const { beginBatch } = useGamification();
 
   const [nouveaux, setNouveaux] = useState(0);
@@ -62,8 +62,6 @@ export default function SyncBanner({ style }) {
   // donc la liste courante par une référence plutôt que par la fermeture.
   const flashedRef = useRef(flashed);
   flashedRef.current = flashed;
-  const mergeRef = useRef(mergeFiPhotos);
-  mergeRef.current = mergeFiPhotos;
 
   const sonder = useCallback(async () => {
     const maintenant = Date.now();
@@ -88,10 +86,9 @@ export default function SyncBanner({ style }) {
     // les deux compteurs montent ensemble. Annoncer « 5 nouveaux » sur ce seul
     // écart afficherait un bandeau pour rien, dont l'appui ne ferait rien de
     // visible, et qui reviendrait à chaque ouverture. Seule la galerie tranche.
-    let ids, dates, photos;
-    try { ({ ids, dates, photos } = await recupererGalerie(uid)); } catch { return; }
+    let ids, dates;
+    try { ({ ids, dates } = await recupererGalerie(uid)); } catch { return; }
     compteAnalyse.current = compte;
-    mergeRef.current(photos);
     const ajouts = ids.filter((id) => !flashedRef.current.has(id));
     if (!ajouts.length) {
       // Déjà à jour : on aligne le compteur en silence. Aucun bandeau, aucun

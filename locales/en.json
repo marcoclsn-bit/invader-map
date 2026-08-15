@@ -524,19 +524,15 @@
     "legalText": "$t(common.appName) is an independent fan project, unofficial and unaffiliated with the artist Invader or the FlashInvaders app. Space Invader mosaics are the work and exclusive property of the artist Invader. This application is not authorised, sponsored, or approved by the artist.",
     "devOn": "Developer mode on. Test gestures are available by long press: News and Explorer mode in Settings, Notification in Stroll.",
     "devOff": "Developer mode off. Test gestures no longer respond.",
-    "devCountdown": "{{count}} more…"
+    "devCountdown": "{{count}} more…",
+    "creditsPhotosLabel": "Mosaic photographs",
+    "creditsPhotosText": "The close-ups shown in the Collection come from invader-spotter.art, a documentary database maintained by enthusiasts. They only appear on mosaics you have already found. The photographed works remain Invader's."
   },
   "settings": {
     "title": "Settings",
     "appearance": {
       "section": "Appearance",
-      "darkTheme": "Dark theme",
-      "listPhotos": "My photos in the list",
-      "listPhotosHint": "Shows your FlashInvaders shot on each flashed row. Off by default: the server has no thumbnails, so every tile downloads the full photo, around 200 KB.",
-      "listPhotosWarnTitle": "Download your photos?",
-      "listPhotosWarnBody": "FlashInvaders offers no thumbnails: every row will download the full photo, around 216 KB. For your {{count}} shots that is roughly {{mo}} MB, taken from your data plan and from Space Invaders' servers. Each photo is downloaded once, then cached.",
-      "spotterPhotos": "Real photos in the Collection (test)",
-      "spotterPhotosHint": "On cells you have already flashed, shows the real mosaic (invader-spotter close-ups, ~20 KB). The ones left to find keep their shadow."
+      "darkTheme": "Dark theme"
     },
     "statusColors": {
       "section": "Status colours",
