@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import {
   View, Text, Modal, ScrollView, TextInput, TouchableOpacity, StyleSheet, Keyboard,
-  KeyboardAvoidingView, Platform, ActivityIndicator,
+  KeyboardAvoidingView, Platform,
 } from 'react-native';
 import { Image } from 'expo-image';
 import { Ionicons } from '@expo/vector-icons';
@@ -80,28 +80,24 @@ export default function CollectionSheet({ invader, onFermer, onVoirSurCarte }) {
     setTexte(idOuvert ? (notesRef.current?.[idOuvert] ?? '') : '');
   }, [idOuvert]);
 
-  // Trois états, et non deux : « rien à faire », « en train d'écrire », « écrit ».
-  // C'est la distinction que Marco a demandée, et elle est juste — un bouton qui
-  // reste actif alors qu'il n'y a rien à enregistrer laisse croire à un travail
-  // en attente.
+  // PLUS DE BOUTON « Enregistrer ». Il avait été ajouté quand l'enregistrement
+  // était cassé et qu'on ne pouvait pas savoir s'il avait lieu ; une fois la
+  // cause réglée, il ne servait plus qu'à donner un geste à faire pour un travail
+  // déjà accompli. Marco l'a dit sans détour : il ne sert à rien.
+  //
+  // Reste l'indication, qui elle est nécessaire : « Enregistrement… » puis
+  // « Enregistré ». Une note qu'on écrit sans aucun retour laisse un doute que
+  // seule la fermeture de la fiche permet de lever.
   const enregistre = idOuvert ? texte === (notes?.[idOuvert] ?? '') : true;
-  const [enCours, setEnCours] = useState(false);
-  useEffect(() => { if (enregistre) setEnCours(false); }, [enregistre]);
-
-  const enregistrer = useCallback(() => {
-    if (!idOuvert) return;
-    setEnCours(true);
-    setNote(idOuvert, texte);
-  }, [idOuvert, texte, setNote]);
 
   // Enregistrement à la frappe stabilisée. 900 ms : assez pour ne pas écrire à
   // chaque lettre, assez court pour qu'une fermeture brutale ne coûte rien.
   useEffect(() => {
     if (!idOuvert) return undefined;
     if (texte === (notesRef.current?.[idOuvert] ?? '')) return undefined;
-    const minuteur = setTimeout(enregistrer, 900);
+    const minuteur = setTimeout(() => setNote(idOuvert, texte), 900);
     return () => clearTimeout(minuteur);
-  }, [texte, idOuvert, enregistrer]);
+  }, [texte, idOuvert, setNote]);
 
   const fermer = useCallback(() => {
     // Dernière chance : ce qui n'a pas encore été stabilisé part maintenant.
@@ -131,7 +127,22 @@ export default function CollectionSheet({ invader, onFermer, onVoirSurCarte }) {
       >
         <TouchableOpacity style={{ flex: 1 }} activeOpacity={1} onPress={fermer} />
         <View style={st.corps}>
-          <View style={st.poignee} />
+          {/* Poignée ET croix. La poignée seule ne dit pas comment sortir : il
+              fallait deviner qu'un appui hors de la feuille la referme, ce qui
+              n'est un réflexe pour personne. PoiSheet porte déjà une croix au
+              même endroit — autant que toutes les feuilles se ferment pareil. */}
+          <View style={st.barreTete}>
+            <View style={st.poignee} />
+            <TouchableOpacity
+              style={st.fermeBtn}
+              onPress={fermer}
+              hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}
+              accessibilityRole="button"
+              accessibilityLabel={t('common.close')}
+            >
+              <Ionicons name="close" size={21} color={theme.textSecondary} />
+            </TouchableOpacity>
+          </View>
 
           <ScrollView keyboardShouldPersistTaps="handled" contentContainerStyle={{ paddingBottom: 26 }}>
             <View style={st.visuel}>
@@ -185,11 +196,15 @@ export default function CollectionSheet({ invader, onFermer, onVoirSurCarte }) {
                   fiche et à la rouvrir pour savoir si elle a eu lieu — c'est
                   exactement ce que Marco a dû faire, et c'est ainsi qu'il a trouvé
                   le bug. Un mot suffit à supprimer le doute. */}
-              {enregistre && texte.length > 0 ? (
+              {texte.length > 0 || !enregistre ? (
                 <View style={st.etat}>
-                  <Ionicons name="checkmark-circle" size={14} color={theme.accent} />
-                  <Text style={[st.etatTexte, { color: theme.accent }]}>
-                    {t('collection.sheet.saved')}
+                  <Ionicons
+                    name={enregistre ? 'checkmark-circle' : 'sync-outline'}
+                    size={14}
+                    color={enregistre ? theme.accent : theme.textSecondary}
+                  />
+                  <Text style={[st.etatTexte, enregistre && { color: theme.accent }]}>
+                    {t(enregistre ? 'collection.sheet.saved' : 'collection.sheet.saving')}
                   </Text>
                 </View>
               ) : null}
@@ -207,28 +222,6 @@ export default function CollectionSheet({ invader, onFermer, onVoirSurCarte }) {
             />
             <Text style={st.aide}>{t('collection.sheet.noteHint')}</Text>
 
-            {/* Le bouton porte l'action ET son état. Il reste TOUJOURS visible,
-                grisé et inerte quand il n'y a rien à enregistrer : le faire
-                disparaître obligerait à chercher où est passé le geste, et le
-                laisser actif laisserait croire à un travail en attente. */}
-            <TouchableOpacity
-              style={[st.enregistrer, enregistre && st.enregistrerInactif]}
-              onPress={() => { enregistrer(); Keyboard.dismiss(); }}
-              disabled={enregistre || enCours}
-              activeOpacity={0.8}
-            >
-              {enCours ? (
-                <ActivityIndicator size="small" color={theme.bg} />
-              ) : (
-                <Ionicons
-                  name="save-outline" size={16}
-                  color={enregistre ? theme.textSecondary : theme.bg}
-                />
-              )}
-              <Text style={[st.enregistrerTexte, enregistre && { color: theme.textSecondary }]}>
-                {t(enCours ? 'collection.sheet.saving' : 'collection.sheet.save')}
-              </Text>
-            </TouchableOpacity>
 
             <TouchableOpacity style={st.bouton} onPress={() => { track('collection_to_map'); onVoirSurCarte(invader); }} activeOpacity={0.8}>
               <Ionicons name="map-outline" size={17} color={theme.textPrimary} />
@@ -249,10 +242,12 @@ function getStyles(t) {
       borderTopLeftRadius: 20, borderTopRightRadius: 20,
       paddingHorizontal: 18, paddingBottom: 22,
     },
-    poignee: {
-      width: 38, height: 4, borderRadius: 2, backgroundColor: t.border,
-      alignSelf: 'center', marginTop: 10, marginBottom: 14,
+    barreTete: {
+      flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
+      marginTop: 10, marginBottom: 12, minHeight: 26,
     },
+    poignee: { width: 38, height: 4, borderRadius: 2, backgroundColor: t.border },
+    fermeBtn: { position: 'absolute', right: 0, top: 0, padding: 2 },
     visuel: {
       height: 190, borderRadius: 14, backgroundColor: t.surfaceHigh,
       borderWidth: 1, borderColor: t.border, overflow: 'hidden',
@@ -279,12 +274,6 @@ function getStyles(t) {
     titreNote: { ...typography.fieldLabel, color: t.textSecondary },
     etat: { flexDirection: 'row', alignItems: 'center', gap: 5 },
     etatTexte: { fontSize: 11.5, color: t.textSecondary },
-    enregistrer: {
-      marginTop: 12, backgroundColor: t.accent, borderRadius: 12, paddingVertical: 12,
-      flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8,
-    },
-    enregistrerInactif: { backgroundColor: t.surfaceHigh },
-    enregistrerTexte: { fontSize: 14, fontWeight: '700', color: t.bg },
     champ: {
       backgroundColor: t.surfaceHigh, borderRadius: 12, borderWidth: 1, borderColor: t.border,
       padding: 13, minHeight: 96, fontSize: 14, color: t.textPrimary, lineHeight: 20,
