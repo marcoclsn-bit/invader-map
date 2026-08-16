@@ -165,14 +165,30 @@ export default function UpdateGate({ children }) {
   // Quand une mise à jour est prête, on la charge tout de suite : elle est déjà
   // sur le disque, le rechargement est instantané, il n'y a rien à attendre.
   //
-  // Fenêtre de trois secondes après le démarrage, et uniquement au premier plan :
-  // une mise à jour qui finit de se télécharger pendant qu'on se sert de l'app ne
-  // doit RIEN interrompre. Elle attendra le lancement suivant, comme avant.
+  // LA CONDITION N'EST PAS LE TEMPS, C'EST L'ABSENCE DE GESTE.
+  //
+  // Première version : une fenêtre de trois secondes après le démarrage. Elle ne
+  // s'est jamais déclenchée, et c'était arithmétique — le bundle pèse 6 Mo, son
+  // téléchargement dure de 5 secondes en 4G à 34 secondes en 3G. La fenêtre était
+  // refermée avant que la mise à jour ne soit prête. Marco a dû redémarrer deux
+  // fois, exactement ce que ce code devait lui épargner.
+  //
+  // Ce qu'on veut protéger n'est pas un instant, c'est un TRAVAIL EN COURS : une
+  // chasse qui enregistre, une note qu'on écrit, une fiche ouverte. Or tout cela
+  // commence par un geste. Tant que personne n'a touché l'écran, recharger ne
+  // coûte rien à personne — et une fois qu'on l'a touché, on ne recharge plus,
+  // quelle que soit l'heure.
+  //
+  // `onStartShouldSetResponderCapture` voit le geste en descendant, avant tous
+  // les composants, et rend `false` : on observe sans intercepter, la touche
+  // poursuit son chemin normalement.
   const naissance = useRef(Date.now());
+  const intact = useRef(true);
   useEffect(() => {
     if (!Updates.isEnabled || entre.current) return;
     if (!isUpdatePending) return;
-    if (Date.now() - naissance.current > 3000) return;
+    if (!intact.current) return;                       // l'utilisateur a commencé quelque chose
+    if (Date.now() - naissance.current > 90000) return; // garde-fou : pas des heures après
     if (AppState.currentState !== 'active') return;
     track('update_pending_applied', { ms: Date.now() - naissance.current });
     Updates.reloadAsync().catch(() => { /* on continue sur la version en place */ });
@@ -203,7 +219,16 @@ export default function UpdateGate({ children }) {
     lastCheckForUpdateTimeSinceRestart, checkError, downloadError,
     graceEcoulee, appliquer, laisserEntrer]);
 
-  if (ouvert) return children;
+  if (ouvert) {
+    return (
+      <View
+        style={{ flex: 1 }}
+        onStartShouldSetResponderCapture={() => { intact.current = false; return false; }}
+      >
+        {children}
+      </View>
+    );
+  }
 
   const st = getStyles(theme);
   return (
