@@ -40,3 +40,7 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# Maquettes HTML publiées comme artefacts : utiles à la discussion,
+# sans objet dans le dépôt (jusqu'à 500 Ko de son en base64).
+*.html
