@@ -17,6 +17,7 @@
 
 import * as Location from 'expo-location';
 import * as Notifications from 'expo-notifications';
+import { Platform } from 'react-native';
 import * as Haptics from 'expo-haptics';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -32,17 +33,38 @@ try {
 }
 const ENGINE_AVAILABLE = !!TaskManager;
 
-export // Son de l'alerte de proximité.
+export // Son de l'alerte de proximité — NOTRE choix, pas celui de l'utilisateur.
 //
-// `true` = le son système. Pour en jouer un des nôtres, écrire ici le NOM DU
-// FICHIER, par exemple 'alerte_arcade.wav'. Ce changement-là passe en OTA.
+// Lui décide s'il veut du son ou non (réglage `son` du Mode balade) ; nous
+// décidons lequel, parce que c'est une question d'identité et non de préférence.
+// Huit candidats sont embarqués : écrire ici un autre nom de fichier suffit à
+// changer d'avis, et ce changement-là passe PAR-DESSUS LES AIRS.
 //
-// LE FICHIER, LUI, NON : le plugin expo-notifications le recopie dans le paquet
-// de l'application au moment de la CONSTRUCTION (copyFileSync). D'où trois
-// candidats embarqués dès le build 1.4.0 — alerte_bip, alerte_arcade et
-// alerte_radar — pour qu'un simple envoi par-dessus les airs suffise à choisir,
-// sans repasser par une revue Apple.
-const SON_ALERTE = true;
+// Le FICHIER, lui, ne peut pas arriver par OTA : le plugin expo-notifications le
+// recopie dans le paquet de l'application au moment de la construction
+// (copyFileSync). D'où huit candidats plutôt qu'un seul.
+const SON_ALERTE = 'alerte_arcade_grave.wav';
+
+// Canal Android. Un canal fige son son et sa vibration à la création : pour en
+// changer il faut un IDENTIFIANT DIFFÉRENT, sinon Android ignore la mise à jour
+// en silence. On le dérive donc des réglages. iOS n'a pas de canaux : la
+// notification y part sans déclencheur.
+async function canalAndroid(avecSon, avecVibration) {
+  if (Platform.OS !== 'android') return null;
+  const id = `stroll-${avecSon ? 'son' : 'muet'}-${avecVibration ? 'vib' : 'sansvib'}`;
+  try {
+    await Notifications.setNotificationChannelAsync(id, {
+      name: 'Alertes de proximité',
+      importance: Notifications.AndroidImportance.HIGH,
+      sound: avecSon ? SON_ALERTE : null,
+      enableVibrate: avecVibration,
+      vibrationPattern: avecVibration ? [0, 220, 120, 220] : null,
+    });
+    return id;
+  } catch {
+    return null;   // au pire, le canal par défaut : mieux que pas d'alerte
+  }
+}
 
 const GEOFENCE_TASK = 'invaderquest-stroll-geofencing';
 
@@ -198,7 +220,12 @@ export async function persistCandidates(candidates) {
  * propre copie, pas ce que reçoit l'utilisateur. C'est le comportement au tap
  * qui compte ici, et il dépend entièrement du contenu de `data`.
  */
-async function notifyProximity(invId) {
+async function notifyProximity(invId, reglages) {
+  // Réglages relus si l'appelant ne les fournit pas : la simulation depuis
+  // l'écran n'a pas de raison de les connaître.
+  const r = reglages ?? await readJSON(KEY_SETTINGS, {});
+  const avecSon = r.son !== false;
+  const canal = await canalAndroid(avecSon, r.vibration !== false);
   const tpl = await readJSON(KEY_NOTIF, { title: 'Invader à proximité 👾', bodies: ['{id} est tout près !'] });
   // Mode explorateur : l'alerte devient l'atout du mode plutôt que sa faille.
   // Elle dit qu'il y a quelque chose dans les parages, elle ne nomme pas
@@ -239,7 +266,10 @@ async function notifyProximity(invId) {
       content: {
         title: titre,
         body: explorer ? chosen : chosen.replace('{id}', invId),
-        sound: SON_ALERTE,
+        // `false` coupe le son sans supprimer la notification : c'est la
+        // distinction que réclamait Marco — voir passer l'alerte sans qu'elle
+        // sonne. Sur Android c'est le canal qui tranche, d'où les deux.
+        sound: avecSon ? SON_ALERTE : false,
         // SENSIBLE AU TEMPS. Une alerte de proximité n'a de valeur que sur le
         // moment : quarante mètres plus loin, elle ne veut plus rien dire. Ce
         // niveau lui permet de percer les modes Concentration et « Ne pas
@@ -252,7 +282,9 @@ async function notifyProximity(invId) {
         interruptionLevel: 'timeSensitive',
         data: explorer ? { type: 'stroll' } : { type: 'stroll', invId },
       },
-      trigger: null, // immédiat
+      // Android : le canal porte le son et la vibration, on le désigne ici.
+      // iOS : pas de canaux, `null` signifie « tout de suite ».
+      trigger: canal ? { channelId: canal } : null,
     });
   } catch (e) { __DEV__ && console.log('[Stroll] notif erreur :', e?.message); }
 }
@@ -382,7 +414,7 @@ async function handleEnter(invId) {
     if (settings.vibration) {
       try { await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success); } catch {}
     }
-    if (settings.notification) await notifyProximity(invId);
+    if (settings.notification) await notifyProximity(invId, settings);
 
     __DEV__ && console.log('[Stroll] ALERTE', invId);
   } finally {

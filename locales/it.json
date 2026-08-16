@@ -762,7 +762,10 @@
       "body": "Senza il permesso «Sempre», gli avvisi scattano solo ad app aperta. Attiva «Consenti sempre» nelle Impostazioni iOS per l'uso in tasca."
     },
     "statusSectionTitle": "Per quali stati avvisare?",
-    "statusNote": "I già fotografati e i distrutti sono sempre esclusi."
+    "statusNote": "I già fotografati e i distrutti sono sempre esclusi.",
+    "son": "Suono",
+    "sonHint": "Riproduce il suono di avviso di InvaderQuest. Disattivalo per essere avvisato senza rumore.",
+    "vibrationHint": "Su iPhone la vibrazione segue l'interruttore laterale e le impostazioni di sistema: questo pulsante agisce solo su Android."
   },
   "routing": {
     "error": {

@@ -762,7 +762,10 @@
       "body": "Sans l'autorisation « Toujours », les alertes ne se déclenchent que lorsque l'app est ouverte. Active « Toujours autoriser » dans les Réglages iOS pour le fonctionnement en poche."
     },
     "statusSectionTitle": "Pour quels statuts être alerté ?",
-    "statusNote": "Les déjà flashés et les détruits sont toujours exclus."
+    "statusNote": "Les déjà flashés et les détruits sont toujours exclus.",
+    "son": "Son",
+    "sonHint": "Joue le son d'alerte d'InvaderQuest. Coupe-le pour être prévenu sans bruit.",
+    "vibrationHint": "Sur iPhone, la vibration suit l'interrupteur latéral et les réglages du système : ce bouton n'agit que sur Android."
   },
   "routing": {
     "error": {

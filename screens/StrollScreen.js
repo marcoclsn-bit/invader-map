@@ -216,8 +216,20 @@ export default function StrollScreen({ navigation }) {
 
         {/* ── Comment être alerté ── */}
         <Section title={t('stroll.alertsSection')} theme={theme}>
+          {/* Le son AVANT la vibration : c'est celui qu'on veut couper en
+              premier, dans un train ou une salle d'attente. Et c'est le seul des
+              deux qui fonctionne à l'identique sur les deux plateformes. */}
+          <ToggleRow
+            label={t('stroll.son')}
+            hint={t('stroll.sonHint')}
+            value={stroll.son !== false}
+            onValueChange={(v) => { track('stroll_setting', { setting: 'son', state: v ? 'on' : 'off' }); setStrollPref({ son: v }); }}
+            disabled={off}
+            theme={theme}
+          />
           <ToggleRow
             label={t('stroll.vibration')}
+            hint={t('stroll.vibrationHint')}
             value={stroll.vibration}
             onValueChange={(v) => { track('stroll_setting', { setting: 'vibration', state: v ? 'on' : 'off' }); setStrollPref({ vibration: v }); }}
             disabled={off}

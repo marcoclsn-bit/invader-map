@@ -22,6 +22,7 @@ const DEFAULT_STROLL = {
   radius:        50,     // rayon d'alerte en mètres (50 / 100 / 150)
   vibration:     true,   // alerter par vibration
   notification:  true,   // alerter par notification
+  son:           true,   // jouer le son d'alerte (lequel : SON_ALERTE, côté moteur)
   // Statuts qui déclenchent une alerte. Défaut « à faire » : ok / endommagé / inconnu.
   // Les flashés sont TOUJOURS exclus ; les détruits ne sont jamais proposés (non flashables).
   alertStatuses: ['ok', 'damaged', 'unknown'],

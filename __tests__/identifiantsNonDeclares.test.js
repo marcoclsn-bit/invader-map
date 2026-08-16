@@ -24,7 +24,7 @@ const FOURNIS = new Set([
   'Number', 'String', 'Boolean', 'Promise', 'Symbol', 'RegExp', 'Error',
   'TypeError', 'RangeError', 'Infinity', 'NaN', 'undefined', 'parseInt',
   'parseFloat', 'isNaN', 'isFinite', 'encodeURIComponent', 'decodeURIComponent',
-  'Intl', 'BigInt', 'Proxy', 'Reflect',
+  'Intl', 'BigInt', 'Proxy', 'Reflect', 'Infinity',
   // hôte React Native
   'console', 'setTimeout', 'clearTimeout', 'setInterval', 'clearInterval',
   'requestAnimationFrame', 'cancelAnimationFrame', 'fetch', 'Headers', 'Request',

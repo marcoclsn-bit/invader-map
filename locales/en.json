@@ -762,7 +762,10 @@
       "body": "Without “Always” permission, alerts only fire while the app is open. Enable “Always Allow” in iOS Settings for in-pocket use."
     },
     "statusSectionTitle": "Which statuses to alert for?",
-    "statusNote": "Already flashed and destroyed are always excluded."
+    "statusNote": "Already flashed and destroyed are always excluded.",
+    "son": "Sound",
+    "sonHint": "Plays the InvaderQuest alert sound. Turn it off to be warned silently.",
+    "vibrationHint": "On iPhone, vibration follows the side switch and system settings: this toggle only affects Android."
   },
   "routing": {
     "error": {

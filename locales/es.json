@@ -762,7 +762,10 @@
       "body": "Sin el permiso «Siempre», los avisos solo se activan con la app abierta. Activa «Permitir siempre» en Ajustes de iOS para usarlo en el bolsillo."
     },
     "statusSectionTitle": "¿Para qué estados avisar?",
-    "statusNote": "Los ya fotografiados y los destruidos siempre se excluyen."
+    "statusNote": "Los ya fotografiados y los destruidos siempre se excluyen.",
+    "son": "Sonido",
+    "sonHint": "Reproduce el sonido de alerta de InvaderQuest. Desactívalo para avisos silenciosos.",
+    "vibrationHint": "En iPhone, la vibración depende del interruptor lateral y de los ajustes del sistema: este botón solo afecta a Android."
   },
   "routing": {
     "error": {
