@@ -41,7 +41,7 @@ export default function SyncBanner({ style }) {
   // fusionner avant la lecture disque ne perdrait rien (bulkFlash est
   // fonctionnel, l'écriture est gardée) mais la fusion serait ensuite écrasée et
   // l'utilisateur croirait avoir synchronisé.
-  const { flashed, bulkFlash, loaded, retires } = useAppContext();
+  const { flashed, bulkFlash, loaded, retires, retiresVus, confirmerRetraits } = useAppContext();
   const { beginBatch } = useGamification();
 
   const [nouveaux, setNouveaux] = useState([]);      // identifiants à ajouter
@@ -65,6 +65,8 @@ export default function SyncBanner({ style }) {
   flashedRef.current = flashed;
   const retiresRef = useRef(retires);
   retiresRef.current = retires;
+  const vusRef = useRef(retiresVus);
+  vusRef.current = retiresVus;
 
   const sonder = useCallback(async () => {
     const maintenant = Date.now();
@@ -99,7 +101,11 @@ export default function SyncBanner({ style }) {
     // geste délibéré, et l'utilisateur ne comprendrait pas pourquoi ils sont de
     // retour. On les met de côté et on propose, séparément.
     const ajouts = manquants.filter((id) => !retiresRef.current.has(id));
-    const refuses = manquants.filter((id) => retiresRef.current.has(id));
+    // On n'en parle qu'UNE fois : ceux dont le sort a déjà été tranché par
+    // « Ne rien faire » ne remontent plus.
+    const refuses = manquants.filter(
+      (id) => retiresRef.current.has(id) && !vusRef.current.has(id),
+    );
     if (!ajouts.length) {
       // Déjà à jour : on aligne le compteur en silence. Aucun bandeau, aucun
       // geste demandé pour un travail déjà fait.
@@ -163,6 +169,7 @@ export default function SyncBanner({ style }) {
     }
   }, [nouveaux, ecartes, bulkFlash, beginBatch]);
 
+
   if (!loaded || !nouveaux.length || masque) return null;
 
   return (
@@ -204,15 +211,32 @@ export default function SyncBanner({ style }) {
             ))}
           </ScrollView>
 
-          {/* Les retirés à la main : mentionnés, jamais remis d'office. */}
+          {/* Les retirés à la main. On explique la situation — l'écart entre les
+              deux apps n'a rien d'évident — puis on donne DEUX gestes explicites.
+              « Ne rien faire » n'est pas un simple repli : il clôt le sujet pour
+              ces identifiants, sinon le même message reviendrait à chaque
+              synchronisation pour un choix déjà fait. */}
           {ecartes.length > 0 ? (
             <View style={st.ecartes}>
               <Text style={st.ecartesTexte}>
                 {t('sync.removedKept', { count: ecartes.length })}
               </Text>
-              <TouchableOpacity onPress={() => synchroniser(true)} hitSlop={8}>
-                <Text style={st.ecartesAction}>{t('sync.restoreRemoved')}</Text>
-              </TouchableOpacity>
+              <View style={st.ecartesBoutons}>
+                <TouchableOpacity
+                  style={[st.petitBouton, st.petitBoutonFort]}
+                  onPress={() => synchroniser(true)}
+                  activeOpacity={0.8}
+                >
+                  <Text style={st.petitBoutonFortTexte}>{t('sync.restoreRemoved')}</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={st.petitBouton}
+                  onPress={() => { confirmerRetraits(ecartes); setEcartes([]); }}
+                  activeOpacity={0.8}
+                >
+                  <Text style={st.petitBoutonTexte}>{t('sync.leaveRemoved')}</Text>
+                </TouchableOpacity>
+              </View>
             </View>
           ) : null}
         </View>
@@ -249,10 +273,14 @@ function getStyles(t) {
       borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: t.border,
     },
     ecartesTexte: { fontSize: 11.5, color: t.textSecondary, lineHeight: 16 },
-    ecartesAction: {
-      fontSize: 12, color: t.accent, fontWeight: '700', marginTop: 6,
-      textDecorationLine: 'underline',
+    ecartesBoutons: { flexDirection: 'row', gap: 8, marginTop: 10 },
+    petitBouton: {
+      flex: 1, paddingVertical: 8, borderRadius: 9, alignItems: 'center',
+      borderWidth: StyleSheet.hairlineWidth, borderColor: t.border,
     },
+    petitBoutonTexte: { fontSize: 12, color: t.textSecondary, fontWeight: '600' },
+    petitBoutonFort: { backgroundColor: t.accent, borderColor: 'transparent' },
+    petitBoutonFortTexte: { fontSize: 12, color: t.bg, fontWeight: '700' },
     action: {
       backgroundColor: t.accent, borderRadius: 9,
       paddingHorizontal: 12, paddingVertical: 7, minWidth: 92, alignItems: 'center',

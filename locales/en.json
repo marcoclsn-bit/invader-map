@@ -1339,8 +1339,9 @@
     "action": "Sync",
     "showList": "See the {{count}} IDs",
     "hideList": "Hide the list",
-    "removedKept": "{{count}} Invaders you removed by hand are still in your FlashInvaders gallery. They will not be put back.",
-    "restoreRemoved": "Put them back too"
+    "removedKept": "You removed {{count}} Invaders by hand here, although they are flashed in FlashInvaders. We will not put them back without asking.",
+    "restoreRemoved": "Put them back",
+    "leaveRemoved": "Leave as is"
   },
   "update": {
     "step1": "Getting InvaderQuest ready…",

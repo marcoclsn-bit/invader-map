@@ -1339,8 +1339,9 @@
     "action": "Sincronizza",
     "showList": "Vedere i {{count}} identificativi",
     "hideList": "Nascondere l'elenco",
-    "removedKept": "{{count}} Invader che avevi tolto a mano sono ancora nella tua galleria FlashInvaders. Non verranno rimessi.",
-    "restoreRemoved": "Rimetterli anche"
+    "removedKept": "Hai tolto {{count}} Invader a mano qui, benché siano fotografati su FlashInvaders. Non li rimettiamo senza chiedertelo.",
+    "restoreRemoved": "Rimetterli",
+    "leaveRemoved": "Non fare nulla"
   },
   "update": {
     "step1": "Preparazione di InvaderQuest…",

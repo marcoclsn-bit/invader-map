@@ -126,6 +126,10 @@ export function AppProvider({ children }) {
   // d'ici, donc « manquants ». Décocher serait sans effet durable, ce qui est la
   // pire réponse possible à un geste délibéré.
   const [retires, setRetires] = useState(new Set());
+  // Retraits dont on a DÉJÀ parlé et que l'utilisateur a laissés tels quels.
+  // Sans cette seconde mémoire, « Ne rien faire » ne ferait vraiment rien : le
+  // même message reviendrait à chaque synchronisation, pour un choix déjà fait.
+  const [retiresVus, setRetiresVus] = useState(new Set());
   // Registre persistant de progression par ville — alimenté par la ville ACTIVE
   // (points exacts, complétion « juste »). Sert aux trophées (points cumulés,
   // villes terminées) sans devoir charger les données de toutes les villes.
@@ -352,6 +356,8 @@ export function AppProvider({ children }) {
       ]);
       const retiresRaw = await AsyncStorage.getItem('@invader_retires');
       if (retiresRaw) { try { setRetires(new Set(JSON.parse(retiresRaw))); } catch { /* illisible */ } }
+      const retiresVusRaw = await AsyncStorage.getItem('@invader_retires_vus');
+      if (retiresVusRaw) { try { setRetiresVus(new Set(JSON.parse(retiresVusRaw))); } catch { /* illisible */ } }
       const notesRaw = await AsyncStorage.getItem('@invader_notes');
       if (notesRaw) { try { setNotes(JSON.parse(notesRaw) || {}); } catch { /* illisible */ } }
       // Ménage unique : ces trois clés servaient aux photos personnelles
@@ -626,8 +632,28 @@ export function AppProvider({ children }) {
       const next = new Set(prev);
       for (const id of retraits) next.add(id);
       for (const id of ajoutes) next.delete(id);
+      if (ajoutes.length) {
+        setRetiresVus((v) => {
+          if (!ajoutes.some((id) => v.has(id))) return v;
+          const w = new Set(v);
+          for (const id of ajoutes) w.delete(id);
+          AsyncStorage.setItem('@invader_retires_vus', JSON.stringify([...w])).catch(() => {});
+          return w;
+        });
+      }
       if (next.size === prev.size && [...next].every((x) => prev.has(x))) return prev;
       AsyncStorage.setItem('@invader_retires', JSON.stringify([...next])).catch(() => {});
+      return next;
+    });
+  }, []);
+
+  /** « Ne rien faire » : on n'en reparle plus. */
+  const confirmerRetraits = useCallback((ids) => {
+    if (!ids?.length) return;
+    setRetiresVus((prev) => {
+      const next = new Set(prev);
+      for (const id of ids) next.add(id);
+      AsyncStorage.setItem('@invader_retires_vus', JSON.stringify([...next])).catch(() => {});
       return next;
     });
   }, []);
@@ -915,7 +941,7 @@ export function AppProvider({ children }) {
     filters, setFilters,
     toggleFlash, bulkFlash, bulkUnflash, clearFlashDates,
     notes, setNote,
-    retires,
+    retires, retiresVus, confirmerRetraits,
     setStatusColor, setFlashedColor,
     // News
     news, newsCities, setNewsCitiesPref, newsLastSeen, markNewsSeen, newsUnreadCount,
@@ -956,7 +982,7 @@ export function AppProvider({ children }) {
     // photos sans effet immédiat. La valeur du contexte n'étant pas recréée, les
     // consommateurs continuaient de lire l'ancien objet. Un test statique vérifie
     // désormais que tout état exposé figure dans cette liste.
-    notes, retires,
+    notes, retires, retiresVus,
   ]);
 
   return (
