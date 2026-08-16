@@ -20,9 +20,6 @@
       "supportsTablet": false,
       "bundleIdentifier": "com.marco.invaderquest",
       "buildNumber": "1",
-      "entitlements": {
-        "com.apple.developer.usernotifications.time-sensitive": true
-      },
       "infoPlist": {
         "LSApplicationQueriesSchemes": [
           "comgooglemaps",

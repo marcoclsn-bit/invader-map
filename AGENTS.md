@@ -72,20 +72,23 @@ dépendent pas du runtime.
    l'épinglage du SDK 54, qui reste sur 1.20.1 : `expo install --check` s'en
    plaindra à chaque fois.
 
-2. **Notifications sensibles au temps.** Entitlement
-   `com.apple.developer.usernotifications.time-sensitive` dans `app.json`, et
-   `interruptionLevel: 'timeSensitive'` dans `strollEngine`. Ce qui manquait
-   n'était pas le son mais le droit de percer les modes Concentration — ceux-là
-   mêmes qu'on active en marchant. Sans entitlement, iOS ignore la clé sans
-   rejeter la notification.
+2. **Le son de l'alerte de proximité.** PAS d'entitlement « sensible au temps » :
+   proposé, puis retiré après objection de Marco. Quelqu'un qui active
+   Concentration dit qu'il ne veut pas être dérangé ; en faire un obstacle à
+   contourner est ce que font les applications qu'on désinstalle. S'il veut ses
+   alertes malgré tout, iOS lui offre déjà d'autoriser l'app dans ce mode précis.
+   Le seul bénéfice réel — échapper au résumé programmé — touche une minorité,
+   l'objection touche tout le monde. Et ça coûtait une capacité Apple : le
+   premier build 1.4.0 a échoué dessus.
 
-   **Trois sons embarqués** dans `assets/sons/`, déclarés dans le plugin
-   `expo-notifications` : `alerte_bip`, `alerte_arcade`, `alerte_radar`. Ondes
-   carrées synthétisées, 18 à 44 Ko. Le plugin les RECOPIE dans le paquet au
+   **Huit sons embarqués** dans `assets/sons/`, déclarés dans le plugin
+   `expo-notifications`. Ondes
+   carrées, triangle et pulse, synthétisées, 18 à 101 Ko. **Arcade grave retenu.** Le plugin les RECOPIE dans le paquet au
    moment de la construction (`copyFileSync`) : un son ne peut donc jamais
    arriver par OTA. En revanche `SON_ALERTE` dans `strollEngine.js` décide lequel
-   on joue, et CE changement-là passe par-dessus les airs. D'où trois candidats
-   plutôt qu'aucun : choisir plus tard ne coûtera pas une revue Apple.
+   on joue, et CE changement-là passe par-dessus les airs. D'où huit candidats
+   plutôt qu'un : changer d'avis ne coûtera pas une revue Apple. L'utilisateur,
+   lui, décide seulement s'il veut du son — réglage `son` du Mode balade.
 
 3. **Import et export par FICHIER**, avec `expo-document-picker` et
    `expo-file-system`. Écrit et livré dans ce build, pas seulement les modules :

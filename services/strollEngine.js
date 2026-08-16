@@ -270,16 +270,23 @@ async function notifyProximity(invId, reglages) {
         // distinction que réclamait Marco — voir passer l'alerte sans qu'elle
         // sonne. Sur Android c'est le canal qui tranche, d'où les deux.
         sound: avecSon ? SON_ALERTE : false,
-        // SENSIBLE AU TEMPS. Une alerte de proximité n'a de valeur que sur le
-        // moment : quarante mètres plus loin, elle ne veut plus rien dire. Ce
-        // niveau lui permet de percer les modes Concentration et « Ne pas
-        // déranger » — précisément ceux qu'on active en marchant.
+        // PAS de `interruptionLevel: 'timeSensitive'`, et c'est un choix.
         //
-        // Exige l'entitlement com.apple.developer.usernotifications.time-sensitive
-        // dans app.json, donc un build natif : cette ligne ne fera rien tant que
-        // l'appareil tourne sur un binaire antérieur au 1.4.0. Sans droit
-        // accordé, iOS l'ignore simplement, il ne rejette pas la notification.
-        interruptionLevel: 'timeSensitive',
+        // Je l'avais ajouté en le présentant comme gratuit et comme « le droit de
+        // percer les modes Concentration ». Marco a retourné l'argument, et il
+        // avait raison : quelqu'un qui active Concentration DIT qu'il ne veut pas
+        // être dérangé. Traiter ce réglage comme un obstacle à contourner est
+        // exactement ce que font les applications qu'on désinstalle. Et s'il veut
+        // ses alertes malgré tout, iOS lui offre déjà la réponse — autoriser
+        // InvaderQuest dans ce mode précis, sans aucun entitlement.
+        //
+        // Il restait un bénéfice réel mais mince : échapper au résumé programmé,
+        // qui retiendrait une alerte de proximité jusqu'au soir — inutile et
+        // déroutante. Cette fonction n'est pas active par défaut ; le bénéfice
+        // touche une minorité, l'objection touche tout le monde.
+        //
+        // Ça coûtait en plus une capacité à activer chez Apple et un profil de
+        // provisionnement à régénérer : le premier build 1.4.0 a échoué là-dessus.
         data: explorer ? { type: 'stroll' } : { type: 'stroll', invId },
       },
       // Android : le canal porte le son et la vibration, on le désigne ici.
