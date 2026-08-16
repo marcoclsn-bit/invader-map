@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../theme/ThemeContext';
 import { useAppContext } from '../context/AppContext';
+import { decisionRetour } from '../utils/sondageSync';
 import { useGamification } from '../context/GamificationContext';
 import { getUid, getCompteConnu, setCompteConnu, sonderCompte, recupererGalerie } from '../services/flashinvaders';
 import { track } from '../services/analytics';
@@ -28,7 +29,17 @@ import { track } from '../services/analytics';
  * Échoue en silence : pas de réseau, serveur fermé, UID révoqué, le bandeau ne
  * s'affiche simplement pas. C'est un confort, jamais un passage obligé.
  */
-const REPOS_MS = 60000;   // pas plus d'un sondage par minute
+const REPOS_MS = 60000;   // pas plus d'un sondage par minute, en usage normal
+
+// Un aller-retour vers FlashInvaders lève le repos. C'est LE geste de la chasse :
+// on photographie là-bas, on revient ici, et l'écart de compteur date de quelques
+// secondes. Le repos d'une minute, pensé contre les sondages en rafale, tombait
+// pile sur ce trajet — il faut moins d'une minute pour flasher — et le bandeau
+// n'apparaissait donc qu'au lancement suivant. Le seuil écarte les retours qui ne
+// sont pas des allers-retours : boîte de dialogue système, volet de contrôle,
+// écran verrouillé effleuré. Sonder coûte 389 octets ; la galerie, elle, reste
+// gardée par `compteAnalyse` et n'est retéléchargée que si le compteur a bougé.
+const RETOUR_MIN_MS = 3000;
 
 export default function SyncBanner({ style }) {
   const { theme } = useTheme();
@@ -68,13 +79,16 @@ export default function SyncBanner({ style }) {
   const vusRef = useRef(retiresVus);
   vusRef.current = retiresVus;
 
-  const sonder = useCallback(async () => {
+  const sonder = useCallback(async (force = false) => {
     const maintenant = Date.now();
-    if (maintenant - dernierSondage.current < REPOS_MS) return;
-    dernierSondage.current = maintenant;
+    if (!force && maintenant - dernierSondage.current < REPOS_MS) return;
 
     const uid = await getUid();
+    // Le repos n'est consommé qu'une fois qu'on sait qu'il y a un UID : sans lui,
+    // rien n'est parti sur le réseau, et griller la fenêtre ferait rater le premier
+    // sondage à celui qui renseigne son identifiant dans la minute qui suit.
     if (!uid) return;
+    dernierSondage.current = maintenant;
     const compte = await sonderCompte(uid);
     if (compte == null) return;
 
@@ -124,10 +138,23 @@ export default function SyncBanner({ style }) {
   const enAttenteRef = useRef(false);
   enAttenteRef.current = nouveaux.length > 0 && !masque;
 
+  // Instant du passage en arrière-plan : sert à distinguer un vrai aller-retour
+  // vers une autre app d'un simple clignotement d'état.
+  const partiEnFond = useRef(0);
+
   useEffect(() => {
     sonder();
     const sub = AppState.addEventListener('change', (etat) => {
-      if (etat === 'active' && !enAttenteRef.current) sonder();
+      const maintenant = Date.now();
+      const d = decisionRetour({
+        etat,
+        partiEnFond: partiEnFond.current,
+        maintenant,
+        enAttente: enAttenteRef.current,
+        seuilRetour: RETOUR_MIN_MS,
+      });
+      if (etat !== 'active') partiEnFond.current = maintenant;
+      if (d) sonder(d.force);
     });
     return () => sub.remove();
   }, [sonder]);
