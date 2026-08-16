@@ -88,23 +88,36 @@ export default function CollectionSheet({ invader, onFermer, onVoirSurCarte }) {
   // Reste l'indication, qui elle est nécessaire : « Enregistrement… » puis
   // « Enregistré ». Une note qu'on écrit sans aucun retour laisse un doute que
   // seule la fermeture de la fiche permet de lever.
-  const enregistre = idOuvert ? texte === (notes?.[idOuvert] ?? '') : true;
+  // COMPARER CE QUI SERA ÉCRIT, PAS CE QUI EST TAPÉ. `setNote` applique `trim()` :
+  // comparer le texte brut au texte enregistré rendait l'égalité impossible dès
+  // qu'une note se terminait par une espace ou un retour à la ligne. La note
+  // partait bien, mais « Enregistrement… » restait affiché pour toujours — soit
+  // exactement le doute que cet indicateur existe pour lever.
+  const enregistre = idOuvert ? texte.trim() === (notes?.[idOuvert] ?? '') : true;
 
   // Enregistrement à la frappe stabilisée. 900 ms : assez pour ne pas écrire à
   // chaque lettre, assez court pour qu'une fermeture brutale ne coûte rien.
   useEffect(() => {
     if (!idOuvert) return undefined;
-    if (texte === (notesRef.current?.[idOuvert] ?? '')) return undefined;
+    if (texte.trim() === (notesRef.current?.[idOuvert] ?? '')) return undefined;
     const minuteur = setTimeout(() => setNote(idOuvert, texte), 900);
     return () => clearTimeout(minuteur);
   }, [texte, idOuvert, setNote]);
 
+  // Vide la saisie en attente. TOUTE sortie de la fiche doit passer par là, y
+  // compris celles qui ne ferment pas la fiche elles-mêmes : « Voir sur la
+  // carte » démontait le composant sans rien écrire, et le minuteur de 900 ms
+  // était annulé par le nettoyage de l'effet. Une note tapée puis suivie de ce
+  // bouton disparaissait sans un mot.
+  const vider = useCallback(() => {
+    if (idOuvert && texte.trim() !== (notesRef.current?.[idOuvert] ?? '')) setNote(idOuvert, texte);
+  }, [idOuvert, texte, setNote]);
+
   const fermer = useCallback(() => {
-    // Dernière chance : ce qui n'a pas encore été stabilisé part maintenant.
-    if (idOuvert && texte !== (notesRef.current?.[idOuvert] ?? '')) setNote(idOuvert, texte);
+    vider();
     Keyboard.dismiss();
     onFermer();
-  }, [idOuvert, texte, setNote, onFermer]);
+  }, [vider, onFermer]);
 
   const estFlashe = invader ? flashed.has(invader.id) : false;
   // La photo n'apparaît QUE si la mosaïque est déjà trouvée : cette fiche
@@ -223,7 +236,7 @@ export default function CollectionSheet({ invader, onFermer, onVoirSurCarte }) {
             <Text style={st.aide}>{t('collection.sheet.noteHint')}</Text>
 
 
-            <TouchableOpacity style={st.bouton} onPress={() => { track('collection_to_map'); onVoirSurCarte(invader); }} activeOpacity={0.8}>
+            <TouchableOpacity style={st.bouton} onPress={() => { vider(); track('collection_to_map'); onVoirSurCarte(invader); }} activeOpacity={0.8}>
               <Ionicons name="map-outline" size={17} color={theme.textPrimary} />
               <Text style={st.boutonTexte}>{t('collection.sheet.seeOnMap')}</Text>
             </TouchableOpacity>

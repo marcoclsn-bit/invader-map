@@ -83,21 +83,28 @@ export default function ImportScreen({ navigation }) {
   const aFaire = (analyse?.nouveaux.length || 0) + aDater;
 
   const confirmer = useCallback(() => {
-    if (!analyse?.nouveaux.length && !datesUid.current) return;
+    // La garde reprend EXACTEMENT la condition qui active le bouton. Elle en
+    // divergeait, et ça fermait l'app : `analyse` vaut null dès que le champ est
+    // vide ou qu'il contient une sauvegarde de notes, tandis qu'`aDater` reste
+    // positif tant qu'un téléchargement par uID a laissé ses dates. Le bouton
+    // restait donc actif, et la ligne suivante déréférençait null. Chemin réel :
+    // on récupère sa galerie, puis on colle sa sauvegarde de notes dans le même
+    // champ — ce que l'écran invite explicitement à faire.
+    if (!aFaire) return;
     Keyboard.dismiss();
-    const ajoutes = analyse.nouveaux;
+    const ajoutes = analyse?.nouveaux ?? [];
     // beginBatch AVANT bulkFlash : sans la fenêtre groupée, un import qui franchit
     // dix paliers enchaîne dix célébrations de 3,5 s.
     beginBatch();
     // Deux sources de dates : celles du dernier téléchargement par uID, et celles
     // lues en seconde colonne du texte collé. Les secondes l'emportent, car elles
     // viennent d'une sauvegarde que l'utilisateur a produite lui-même.
-    bulkFlash(ajoutes, { ...(datesUid.current || {}), ...(analyse.dates || {}) });
+    bulkFlash(ajoutes, { ...(datesUid.current || {}), ...(analyse?.dates || {}) });
     track('import_applied', {
       added: ajoutes.length,
-      already: analyse.dejaFlashes.length,
-      unknown: analyse.inconnus.length,
-      cities: Object.keys(analyse.villes).length,
+      already: analyse?.dejaFlashes.length ?? 0,
+      unknown: analyse?.inconnus.length ?? 0,
+      cities: analyse ? Object.keys(analyse.villes).length : 0,
     });
     setTexte('');
     setDernier(ajoutes.length ? ajoutes : null);
@@ -107,7 +114,7 @@ export default function ImportScreen({ navigation }) {
         ? t('import.done.body', { count: ajoutes.length })
         : t('import.done.datesOnly', { count: aDater }),
     );
-  }, [analyse, aDater, beginBatch, bulkFlash, t]);
+  }, [analyse, aFaire, aDater, beginBatch, bulkFlash, t]);
 
   // Récupère la galerie et verse le résultat dans le MÊME champ que le
   // copier-coller : une seule analyse, un seul écran de résultat, un seul bouton

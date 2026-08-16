@@ -91,7 +91,16 @@ export default function UpdateGate({ children }) {
   const { t } = useTranslation();
 
   const { isUpdatePending, isChecking, isDownloading, isStartupProcedureRunning,
-    lastCheckForUpdateTimeSinceRestart, checkError, downloadError } = Updates.useUpdates();
+    downloadedUpdate, lastCheckForUpdateTimeSinceRestart, checkError, downloadError } = Updates.useUpdates();
+  // `isUpdatePending` SEUL ne prouve pas qu'un bundle a été téléchargé.
+  // expo-updates lève ce drapeau sur un `downloadComplete` nu — émis quand le
+  // chargeur termine en « aucune mise à jour » alors que la machine à états est
+  // déjà en téléchargement, cas d'une mise à jour déjà en base ou d'une directive
+  // sans effet. On rechargeait alors pour relancer EXACTEMENT le même bundle :
+  // l'utilisateur voyait l'app redémarrer toute seule, sans rien y gagner, et
+  // potentiellement à chaque démarrage à froid. `downloadedUpdate` est le
+  // manifeste réellement téléchargé ; sans lui, il n'y a rien à appliquer.
+  const aAppliquer = isUpdatePending && !!downloadedUpdate;
   // Distingue « le cycle natif n'a pas encore démarré » de « il a fini sans
   // rien trouver ». Les deux se ressemblent à la première image, et les
   // confondre ferait ouvrir la barrière aussitôt, en la marquant conclue :
@@ -127,11 +136,27 @@ export default function UpdateGate({ children }) {
     track('first_launch_gate', { issue: 'appliquee', ms: Date.now() - debut.current });
     rechargement.current = true;
     try { await AsyncStorage.setItem(CLE_FAIT, '1'); } catch { /* sans effet */ }
-    try { await Updates.reloadAsync(); } catch { rechargement.current = false; laisserEntrer('erreur'); }
+    try {
+      await Updates.reloadAsync();
+    } catch {
+      // Le rechargement a échoué : rien n'a été appliqué, donc la barrière n'a
+      // rien conclu. Laisser CLE_FAIT en place la priverait à jamais de sa seule
+      // occasion d'agir.
+      AsyncStorage.removeItem(CLE_FAIT).catch(() => {});
+      rechargement.current = false;
+      laisserEntrer('erreur');
+    }
   }, [laisserEntrer]);
 
   useEffect(() => {
     if (!DOIT_BARRER) return undefined;
+    // Remis à vrai À L'ENTRÉE, et pas seulement à l'initialisation du ref. Tous
+    // les minuteurs testent `vivant`, y compris celui qui ouvre la barrière : un
+    // nettoyage suivi d'un ré-appel sur la même instance — Fast Refresh, ou
+    // l'ajout d'un StrictMode un jour — laissait `vivant` à faux et la barrière
+    // fermée POUR TOUJOURS. C'est la seule construction du fichier capable de
+    // supprimer la sortie garantie.
+    vivant.current = true;
 
     // Butée dure, armée AVANT tout await : c'est la seule sortie garantie.
     minuteurs.current.push(setTimeout(() => laisserEntrer('delai'), BUDGET_PREMIER_MS));
@@ -207,7 +232,12 @@ export default function UpdateGate({ children }) {
   // rechargement unique.
   useEffect(() => {
     if (!Updates.isEnabled || rechargement.current) return;
-    if (!isUpdatePending) return;
+    // Garde anti-boucle, présent dans DOIT_BARRER mais absent ici : après un
+    // lancement de secours (une mise à jour qui refuse de démarrer), le cycle
+    // peut la retélécharger, et on rechargeait pour retomber sur l'embarqué.
+    // Un redémarrage visible à chaque ouverture, jusqu'à la publication suivante.
+    if (Updates.isEmergencyLaunch === true) return;
+    if (!aAppliquer) return;
     if (!intact.current) return;                       // l'utilisateur a commencé quelque chose
     if (Date.now() - naissance.current > 90000) return; // garde-fou : pas des heures après
     if (AppState.currentState !== 'active') return;
@@ -216,7 +246,7 @@ export default function UpdateGate({ children }) {
     Updates.reloadAsync().catch(() => {
       rechargement.current = false; /* on continue sur la version en place */
     });
-  }, [isUpdatePending]);
+  }, [aAppliquer]);
 
   // Rien ne descend : on ouvre. La vérification finit en arrière-plan, et si elle
   // trouve quelque chose, l'application sans geste s'en charge. On ne marque PAS
@@ -225,7 +255,7 @@ export default function UpdateGate({ children }) {
   useEffect(() => {
     if (!DOIT_BARRER || entre.current) return;
     if (!sondeEcoulee) return;
-    if (isDownloading || isUpdatePending) return;
+    if (isDownloading || aAppliquer) return;
     // Une vérification encore en cours mérite un court sursis : à 1,2 s elle n'a
     // pas forcément eu le temps de répondre, et ouvrir maintenant ferait rater un
     // téléchargement qui allait démarrer. Mais le sursis est borné par la grâce de
@@ -233,14 +263,14 @@ export default function UpdateGate({ children }) {
     // que Marco a vu. Seul un téléchargement CONFIRMÉ justifie d'aller au-delà.
     if (isChecking && !graceEcoulee) return;
     laisserEntrer('rien-a-telecharger');
-  }, [sondeEcoulee, isDownloading, isUpdatePending, isChecking, graceEcoulee, laisserEntrer]);
+  }, [sondeEcoulee, isDownloading, aAppliquer, isChecking, graceEcoulee, laisserEntrer]);
 
   // Conclusion du cycle. Continue de tourner APRÈS une ouverture anticipée : le
   // seul but restant est d'écrire CLE_FAIT quand le serveur a répondu « rien »,
   // pour ne pas réarmer la barrière au prochain démarrage à froid.
   useEffect(() => {
     if (!DOIT_BARRER) return;
-    if (isUpdatePending) { appliquer(); return; }
+    if (aAppliquer) { appliquer(); return; }
 
     // `isStartupProcedureRunning` est le drapeau du cycle automatique lancé par
     // expo-updates au démarrage : c'est lui qu'on attend, pas le nôtre.
@@ -259,7 +289,7 @@ export default function UpdateGate({ children }) {
       if (!echec) AsyncStorage.setItem(CLE_FAIT, '1').catch(() => {});
       laisserEntrer(echec ? 'erreur' : 'aucune');   // sans effet si déjà ouvert
     }
-  }, [isUpdatePending, isChecking, isDownloading, isStartupProcedureRunning,
+  }, [aAppliquer, isChecking, isDownloading, isStartupProcedureRunning,
     lastCheckForUpdateTimeSinceRestart, checkError, downloadError,
     graceEcoulee, appliquer, laisserEntrer]);
 
@@ -291,7 +321,7 @@ export default function UpdateGate({ children }) {
       )}
       {!muet && proposerPasser && (
         <TouchableOpacity
-          onPress={() => laisserEntrer('passe')}
+          onPress={() => { intact.current = false; laisserEntrer('passe'); }}
           hitSlop={12}
           style={st.passer}
           accessibilityRole="button"

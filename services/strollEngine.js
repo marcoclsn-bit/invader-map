@@ -95,7 +95,15 @@ const INV_PREFIX      = 'inv:';
 // quasi simultanément pour le même Invader → ces gardes empêchent la double notif.
 const inFlight = new Set();          // ids en cours de traitement
 const memAlerts = new Map();         // id -> dernier alerte (ms)
-let memLastGlobal = 0;               // dernière alerte, tous Invaders
+let memLastGlobal = 0;               // dernière alerte ÉMISE, tous Invaders
+// Fenêtre RÉSERVÉE par un handleEnter encore en vol. `memLastGlobal` n'est écrit
+// qu'après quatre await (réglages, disque, position, verrou) : sur une rafale
+// d'entrées simultanées — iOS ré-émet « Enter » pour chaque zone où l'on se
+// trouve déjà quand la surveillance redémarre, et Paris en compte plusieurs à la
+// fois — tous les appels se suspendaient sur le premier await, lisaient la même
+// valeur périmée, et passaient. Quatre notifications d'un coup. La réservation
+// est prise SYNCHRONEMENT, avant tout await, et rendue si l'alerte n'a pas lieu.
+let reservationGlobale = 0;
 
 // File d'attente : sérialise les lectures/écritures de KEY_ALERTS entre plusieurs
 // handleEnter concurrents (zone dense = rafale d'événements). Sans elle, chaque
@@ -374,9 +382,12 @@ async function handleEnter(invId) {
   // (avant le moindre await → un seul handleEnter passe à la fois)
   if (inFlight.has(invId)) { __DEV__ && console.log('[Stroll] skip (déjà en cours)', invId); return; }
   const now = Date.now();
-  if (memLastGlobal && now - memLastGlobal < GLOBAL_GAP) { __DEV__ && console.log('[Stroll] skip (gap global)'); return; }
+  const dernierConnu = Math.max(memLastGlobal, reservationGlobale);
+  if (dernierConnu && now - dernierConnu < GLOBAL_GAP) { __DEV__ && console.log('[Stroll] skip (gap global)'); return; }
   if (memAlerts.has(invId) && now - memAlerts.get(invId) < PER_ID_COOLDOWN) { __DEV__ && console.log('[Stroll] skip (déjà alerté)', invId); return; }
   inFlight.add(invId);
+  reservationGlobale = now;
+  let emise = false;
 
   try {
     const settings = await readJSON(KEY_SETTINGS, null);
@@ -422,10 +433,15 @@ async function handleEnter(invId) {
       try { await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success); } catch {}
     }
     if (settings.notification) await notifyProximity(invId, settings);
+    emise = true;
 
     __DEV__ && console.log('[Stroll] ALERTE', invId);
   } finally {
     inFlight.delete(invId);
+    // Rendre la réservation si rien n'a été émis : sans quoi un abandon (mode
+    // éteint, vitesse trop élevée, déjà alerté) ferait taire l'Invader suivant
+    // pendant dix secondes pour rien.
+    if (!emise && reservationGlobale === now) reservationGlobale = 0;
   }
 }
 
