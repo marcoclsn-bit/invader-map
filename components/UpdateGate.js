@@ -58,6 +58,13 @@ const CLE_ESSAIS = '@invader_gate_essais';   // tentatives restées sans conclus
 // (dist/metadata.json). Les assets déjà présents dans le binaire ne sont pas
 // retéléchargés, c'est donc surtout ce bundle qui passe — environ 7 s sur une 4G
 // correcte, davantage en dessous.
+// Délai avant de renoncer à attendre autre chose qu'un téléchargement. On
+// n'attend plus la vérification : elle peut traîner sur un réseau faible pour
+// finir par répondre « rien à faire », et on aura fait patienter pour apprendre
+// qu'il n'y avait rien à apprendre. Marco l'a vu sur le build 21, tout juste
+// compilé, donc sans la moindre mise à jour à recevoir. Sous ce délai, l'écran
+// est un simple splash muet, indiscernable d'un démarrage normal.
+const SONDE_MS = 1200;
 const BUDGET_PREMIER_MS = 20000;
 const BUDGET_ENSUITE_MS = 6000;
 const MAX_ESSAIS = 3;
@@ -90,12 +97,16 @@ export default function UpdateGate({ children }) {
   // confondre ferait ouvrir la barrière aussitôt, en la marquant conclue :
   // la fonctionnalité serait un trompe-l'œil, sans que rien ne le signale.
   const [graceEcoulee, setGraceEcoulee] = useState(false);
+  // Passée la sonde, on sait si un téléchargement est en cours. Avant, l'écran
+  // reste muet : un logo, rien d'autre.
+  const [sondeEcoulee, setSondeEcoulee] = useState(false);
 
   const entre     = useRef(!DOIT_BARRER);   // dans l'app : plus aucun rechargement
   const vivant    = useRef(true);
   const minuteurs = useRef([]);
   const debut     = useRef(Date.now());
   const enAttente = useRef(false);          // mise à jour prête, application différée
+  const rechargement = useRef(false);       // un seul reloadAsync, deux chemins possibles
 
   const laisserEntrer = useCallback((issue) => {
     if (!vivant.current || entre.current) return;
@@ -111,11 +122,12 @@ export default function UpdateGate({ children }) {
   // quelqu'un qui a quitté un écran de chargement n'a aucune session à protéger
   // et n'a même jamais vu l'app. On garde donc la main et on retente au retour.
   const appliquer = useCallback(async () => {
-    if (!vivant.current || entre.current) return;
+    if (!vivant.current || entre.current || rechargement.current) return;
     if (AppState.currentState !== 'active') { enAttente.current = true; return; }
     track('first_launch_gate', { issue: 'appliquee', ms: Date.now() - debut.current });
+    rechargement.current = true;
     try { await AsyncStorage.setItem(CLE_FAIT, '1'); } catch { /* sans effet */ }
-    try { await Updates.reloadAsync(); } catch { laisserEntrer('erreur'); }
+    try { await Updates.reloadAsync(); } catch { rechargement.current = false; laisserEntrer('erreur'); }
   }, [laisserEntrer]);
 
   useEffect(() => {
@@ -126,6 +138,7 @@ export default function UpdateGate({ children }) {
     minuteurs.current.push(setTimeout(() => vivant.current && setProposerPasser(true), OFFRIR_PASSER_MS));
     minuteurs.current.push(setTimeout(() => vivant.current && setEtape(2), 4500));
     minuteurs.current.push(setTimeout(() => vivant.current && setGraceEcoulee(true), 3000));
+    minuteurs.current.push(setTimeout(() => vivant.current && setSondeEcoulee(true), SONDE_MS));
 
     const abo = AppState.addEventListener('change', (etat) => {
       if (etat === 'active' && enAttente.current) { enAttente.current = false; appliquer(); }
@@ -184,18 +197,49 @@ export default function UpdateGate({ children }) {
   // poursuit son chemin normalement.
   const naissance = useRef(Date.now());
   const intact = useRef(true);
+  //
+  // NE PAS REMETTRE DE GARDE `entre.current` ICI. Elle y était, et elle annulait
+  // toute la mécanique : `entre` vaut `!DOIT_BARRER`, donc TRUE d'emblée sur tout
+  // lancement NON embarqué — c'est-à-dire précisément le cas décrit ci-dessus,
+  // celui de l'utilisateur installé qui reçoit une publication. L'effet sortait à
+  // la première ligne et personne n'a jamais rien appliqué sans redémarrer deux
+  // fois. La seule condition légitime est l'absence de geste, plus le verrou de
+  // rechargement unique.
   useEffect(() => {
-    if (!Updates.isEnabled || entre.current) return;
+    if (!Updates.isEnabled || rechargement.current) return;
     if (!isUpdatePending) return;
     if (!intact.current) return;                       // l'utilisateur a commencé quelque chose
     if (Date.now() - naissance.current > 90000) return; // garde-fou : pas des heures après
     if (AppState.currentState !== 'active') return;
+    rechargement.current = true;
     track('update_pending_applied', { ms: Date.now() - naissance.current });
-    Updates.reloadAsync().catch(() => { /* on continue sur la version en place */ });
+    Updates.reloadAsync().catch(() => {
+      rechargement.current = false; /* on continue sur la version en place */
+    });
   }, [isUpdatePending]);
 
+  // Rien ne descend : on ouvre. La vérification finit en arrière-plan, et si elle
+  // trouve quelque chose, l'application sans geste s'en charge. On ne marque PAS
+  // CLE_FAIT ici — la barrière n'a rien conclu, c'est l'effet suivant qui le fera
+  // quand le serveur aura vraiment répondu.
   useEffect(() => {
     if (!DOIT_BARRER || entre.current) return;
+    if (!sondeEcoulee) return;
+    if (isDownloading || isUpdatePending) return;
+    // Une vérification encore en cours mérite un court sursis : à 1,2 s elle n'a
+    // pas forcément eu le temps de répondre, et ouvrir maintenant ferait rater un
+    // téléchargement qui allait démarrer. Mais le sursis est borné par la grâce de
+    // 3 s — attendre une réponse coûte peu, attendre indéfiniment coûtait l'écran
+    // que Marco a vu. Seul un téléchargement CONFIRMÉ justifie d'aller au-delà.
+    if (isChecking && !graceEcoulee) return;
+    laisserEntrer('rien-a-telecharger');
+  }, [sondeEcoulee, isDownloading, isUpdatePending, isChecking, graceEcoulee, laisserEntrer]);
+
+  // Conclusion du cycle. Continue de tourner APRÈS une ouverture anticipée : le
+  // seul but restant est d'écrire CLE_FAIT quand le serveur a répondu « rien »,
+  // pour ne pas réarmer la barrière au prochain démarrage à froid.
+  useEffect(() => {
+    if (!DOIT_BARRER) return;
     if (isUpdatePending) { appliquer(); return; }
 
     // `isStartupProcedureRunning` est le drapeau du cycle automatique lancé par
@@ -213,7 +257,7 @@ export default function UpdateGate({ children }) {
       // « le serveur a répondu, il n'y a rien » clôt le sujet. Les tentatives
       // ratées restent bornées par MAX_ESSAIS.
       if (!echec) AsyncStorage.setItem(CLE_FAIT, '1').catch(() => {});
-      laisserEntrer(echec ? 'erreur' : 'aucune');
+      laisserEntrer(echec ? 'erreur' : 'aucune');   // sans effet si déjà ouvert
     }
   }, [isUpdatePending, isChecking, isDownloading, isStartupProcedureRunning,
     lastCheckForUpdateTimeSinceRestart, checkError, downloadError,
@@ -231,13 +275,21 @@ export default function UpdateGate({ children }) {
   }
 
   const st = getStyles(theme);
+  // Tant qu'aucun téléchargement n'est confirmé, pas de tourniquet ni de texte :
+  // annoncer un travail qui n'a peut-être pas lieu d'être fait paraître long ce
+  // qui ne l'est pas. Le logo seul se lit comme un écran de démarrage.
+  const muet = !sondeEcoulee && !isDownloading;
   return (
     <View style={st.page}>
       <Logo size={72} />
       <Text style={st.nom}>{t('common.appName')}</Text>
-      <ActivityIndicator size="small" color={theme.accent} style={{ marginTop: 26 }} />
-      <Text style={st.etape}>{t(etape === 1 ? 'update.step1' : 'update.step2')}</Text>
-      {proposerPasser && (
+      {muet ? null : (
+        <>
+          <ActivityIndicator size="small" color={theme.accent} style={{ marginTop: 26 }} />
+          <Text style={st.etape}>{t(etape === 1 ? 'update.step1' : 'update.step2')}</Text>
+        </>
+      )}
+      {!muet && proposerPasser && (
         <TouchableOpacity
           onPress={() => laisserEntrer('passe')}
           hitSlop={12}

@@ -1349,8 +1349,8 @@
     "leaveRemoved": "No hacer nada"
   },
   "update": {
-    "step1": "Preparando InvaderQuest…",
-    "step2": "Recuperando Invaders y lugares…",
+    "step1": "Actualizando InvaderQuest…",
+    "step2": "Solo unos segundos más…",
     "skip": "Continuar sin esperar"
   },
   "collection": {
