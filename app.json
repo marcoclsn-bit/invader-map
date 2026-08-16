@@ -71,6 +71,7 @@
           "sounds": [
             "./assets/sons/alerte_bip.wav",
             "./assets/sons/alerte_arcade.wav",
+            "./assets/sons/alerte_arcade_grave.wav",
             "./assets/sons/alerte_radar.wav"
           ]
         }
