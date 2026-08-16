@@ -382,8 +382,8 @@ export function AppProvider({ children }) {
         try { setFavCities(new Set(JSON.parse(favCitiesRaw))); } catch {}
       }
       if (explorerRaw === '1') setExplorerState(true);
-      // Ne s'affiche qu'aux anciens : un onboarding tout juste terminé porte
-      // déjà le choix, et le marque vu au passage (completeOnboarding).
+      // Ne s'affiche jamais pendant l'onboarding, mais au lancement d'APRÈS :
+      // à ce moment la carte a été vue une fois, donc le choix a un sens.
       if (onboardingRaw === '1' && explorerIntroRaw !== '1') setExplorerIntroSeen(false);
       if (cityProgressRaw) { try { setCityProgress(JSON.parse(cityProgressRaw)); } catch {} }
       if (legendSeenRaw === '1') setLegendSeen(true);
@@ -911,10 +911,12 @@ export function AppProvider({ children }) {
   function completeOnboarding() {
     setShowOnboarding(false);
     AsyncStorage.setItem('@invader_onboarding_done', '1');
-    // Le choix vient d'être fait dans l'onboarding : la présentation destinée
-    // aux anciens n'a plus lieu d'être, et l'enchaîner serait absurde.
-    setExplorerIntroSeen(true);
-    AsyncStorage.setItem('@invader_explorer_intro', '1').catch(() => {});
+    // On NE marque PAS l'intro Explorateur comme vue. Le mode vide la carte :
+    // le proposer avant d'avoir vu ce à quoi il fait renoncer ne veut rien
+    // dire. Il a donc quitté l'onboarding, et `explorerIntroSeen` reste à sa
+    // valeur initiale `true` pour le reste de la session — l'intro n'apparaît
+    // pas dans la foulée. Au lancement suivant, le chargement lit
+    // onboarding_done === '1' et explorer_intro absent, et la déclenche.
   }
 
   function resetOnboarding() {

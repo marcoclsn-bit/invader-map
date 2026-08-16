@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -134,6 +135,7 @@ function AppShell() {
   const { theme, isDark } = useTheme();
   const { t } = useTranslation();
   const { showOnboarding, completeOnboarding, loaded } = useAppContext();
+  const [ouvrirImport, setOuvrirImport] = useState(false);
 
   if (!loaded) {
     return <View style={{ flex: 1, backgroundColor: theme.bg }} />;
@@ -143,7 +145,16 @@ function AppShell() {
     return (
       <>
         <StatusBar style={isDark ? 'light' : 'dark'} />
-        <OnboardingScreen onComplete={completeOnboarding} />
+        <OnboardingScreen
+          onComplete={(opts) => {
+            // Le panneau « Importe tes flashs » peut demander l'ouverture de
+            // l'import. On ne peut pas naviguer ici : le NavigationContainer
+            // n'est monté qu'une fois l'onboarding sorti de l'arbre. D'où le
+            // drapeau, consommé par onReady juste en dessous.
+            if (opts?.import === true) setOuvrirImport(true);
+            completeOnboarding();
+          }}
+        />
       </>
     );
   }
@@ -154,6 +165,11 @@ function AppShell() {
       <StrollEngine />
       <NavigationContainer
         ref={navigationRef}
+        onReady={() => {
+          if (!ouvrirImport) return;
+          setOuvrirImport(false);
+          navigationRef.navigate('Import');
+        }}
         onStateChange={() => {
           // Suit l'écran affiché (le plus profond) → « pages les plus visitées ».
           //

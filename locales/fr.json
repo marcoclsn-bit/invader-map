@@ -269,35 +269,28 @@
     "slides": {
       "welcome": {
         "title": "$t(common.appName)",
-        "subtitle": "Pars à la chasse aux Space Invaders, à Paris et dans le monde."
-      },
-      "map": {
-        "title": "Carte & Flash",
-        "body": "Repère les mosaïques autour de toi et marque celles que tu as flashées. Par défaut, la carte ne montre que les Invaders qu'il te reste à faire ; les filtres révèlent les flashés et les détruits."
-      },
-      "explorer": {
-        "title": "Deux façons de jouer",
-        "body": "Tu peux voir tous les Invaders sur la carte, ou les découvrir toi-même. Ce choix se change à tout moment.",
-        "normal": "Tout voir",
-        "normalSub": "La carte affiche tous les Invaders",
-        "blind": "Explorateur",
-        "blindSub": "Ils n'apparaissent qu'une fois trouvés"
-      },
-      "location": {
-        "title": "Position GPS",
-        "body": "L'app utilise ta position pour te situer sur la carte et calculer tes itinéraires. Tes données restent sur ton appareil."
-      },
-      "trajet": {
-        "title": "Sur ton trajet",
-        "body": "Tu vas d'un point A à un point B ? Découvre tous les Invaders sur ton chemin et laisse-toi guider pour les flasher en route."
+        "subtitle": "Nous te proposons de flasher les Space Invaders dans plus de 80 villes, tout en apprenant plus sur l'histoire des lieux autour de toi."
       },
       "chasse": {
-        "title": "Pars en chasse",
-        "body": "Pas d'itinéraire précis ? Génère une chasse optimisée autour de toi selon ton temps et ton moyen de transport, et pars à l'aventure."
+        "title": "On t'aide dans ta chasse",
+        "body": "Tu vas quelque part ? L'app trouve les Invaders sur ton chemin. Tu as une heure devant toi ? Elle te dessine une boucle, qui passe aussi par ce qu'il y a à voir autour. Tu ne cherches plus où chasser, on prépare tout pour toi."
       },
-      "balade": {
-        "title": "Alertes Balade",
-        "body": "Sois alerté quand tu passes près d'un Invader pas encore flashé, même l'application fermée. Il te faudra autoriser la localisation « Toujours » au moment de l'activer."
+      "alerte": {
+        "title": "On te prévient si tu en rates un",
+        "body": "Si tu passes à moins de cent mètres d'un Invader qu'il te reste à faire, l'app peut t'envoyer une alerte. Les meilleures trouvailles sont celles qu'on ne cherchait pas."
+      },
+      "import": {
+        "title": "Importe tes flashs",
+        "body": "Déjà des centaines de flashs à ton actif ? Récupère-les d'un coup par UID, par fichier .csv ou .txt, ou coche-les à la main dans la liste.",
+        "action": "Importer mes flashs"
+      },
+      "collection": {
+        "title": "Flashe-les tous",
+        "body": "Chaque prise rejoint ta Collection : sa photo, sa date, ses points. Et tu peux écrire à côté de chacune des notes pour te rappeler les moments cool de ta chasse !"
+      },
+      "location": {
+        "title": "Ta position",
+        "body": "Pour te situer, calculer tes trajets et te prévenir en balade. Tes positions ne quittent jamais ton téléphone : il n'y a ni compte, ni serveur."
       }
     }
   },

@@ -1,6 +1,6 @@
 import { useRef, useState, useCallback, useMemo } from 'react';
 import {
-  View, Text, FlatList, TouchableOpacity, StyleSheet, useWindowDimensions,
+  View, Text, Image, FlatList, TouchableOpacity, StyleSheet, useWindowDimensions,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
@@ -11,20 +11,22 @@ import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import Logo from '../components/Logo';
 import { track } from '../services/analytics';
+import { illustrations } from '../assets/onboarding';
 
-// ─── Données des slides ───────────────────────────────────────────────────────
+// ─── Données des panneaux ─────────────────────────────────────────────────────
 //
-// Pour modifier un slide : éditez les clés correspondantes dans locales/fr.json
-// (et en.json / es.json / it.json pour les traductions).
+// Six panneaux, dans cet ordre : ce qu'on propose, ce qu'on prépare pour toi,
+// ce qu'on t'évite de rater, ce que tu apportes, ce que tu accumules, ce qu'on
+// te demande en échange. La permission arrive en dernier parce qu'elle ne se
+// justifie qu'une fois les trois usages qui en dépendent montrés.
 //
-// Pour ajouter un slide : ajoutez un objet ici ET les clés i18n dans les 4 fichiers.
-// Pour retirer un slide : supprimez l'objet ici (et les clés i18n orphelines si souhaité).
+// Pour modifier un panneau : éditez les clés dans locales/fr.json (et en/es/it).
+// Pour l'illustrer : déposez l'image et déclarez-la dans assets/onboarding/index.js.
+// Icônes : n'importe quelle icône Ionicons — https://ionic.io/ionicons
 //
-// Icônes disponibles : n'importe quelle icône Ionicons.
-// https://ionic.io/ionicons
-//
-// Pour remplacer les icônes par de vraies illustrations :
-//   dans le composant Slide ci-dessous, cherchez le commentaire « 📸 Illustration ».
+// Le mode Explorateur n'est plus présenté ici : il VIDE la carte, et le choix
+// n'a aucun sens avant d'avoir vu ce à quoi il fait renoncer. Il est proposé au
+// lancement suivant par components/ExplorerIntro.js.
 
 function buildSlides(t) {
   return [
@@ -36,35 +38,29 @@ function buildSlides(t) {
       subtitle: t('onboarding.slides.welcome.subtitle'),
     },
     {
-      key: 'map',
-      icons: ['map-outline'],
-      title: t('onboarding.slides.map.title'),
-      body: t('onboarding.slides.map.body'),
-    },
-    {
-      key: 'trajet',
-      icons: ['navigate-outline'],
-      title: t('onboarding.slides.trajet.title'),
-      body: t('onboarding.slides.trajet.body'),
-    },
-    {
       key: 'chasse',
-      icons: ['compass-outline'],
+      icons: ['navigate-outline', 'compass-outline'],
       title: t('onboarding.slides.chasse.title'),
       body: t('onboarding.slides.chasse.body'),
     },
     {
-      key: 'balade',
-      icons: ['walk-outline'],
-      title: t('onboarding.slides.balade.title'),
-      body: t('onboarding.slides.balade.body'),
+      key: 'alerte',
+      icons: ['notifications-outline'],
+      title: t('onboarding.slides.alerte.title'),
+      body: t('onboarding.slides.alerte.body'),
     },
     {
-      key: 'explorer',
-      icons: ['eye-off-outline'],
-      title: t('onboarding.slides.explorer.title'),
-      body: t('onboarding.slides.explorer.body'),
-      isExplorerSlide: true,
+      key: 'import',
+      icons: ['download-outline'],
+      title: t('onboarding.slides.import.title'),
+      body: t('onboarding.slides.import.body'),
+      isImportSlide: true,
+    },
+    {
+      key: 'collection',
+      icons: ['grid-outline'],
+      title: t('onboarding.slides.collection.title'),
+      body: t('onboarding.slides.collection.body'),
     },
     {
       key: 'location',
@@ -78,24 +74,26 @@ function buildSlides(t) {
 
 // ─── Slide individuel ─────────────────────────────────────────────────────────
 
-function Slide({ slide, slotWidth, illustrationHeight, theme, t, locationDenied, onRetry, explorer, onExplorer }) {
+function Slide({ slide, slotWidth, illustrationHeight, theme, t, locationDenied, onRetry, onImport }) {
   const iconSize = slide.icons.length > 1 ? 52 : 80;
+  const image = illustrations[slide.key];
 
   return (
     <View style={{ width: slotWidth }}>
 
       {/* ── Zone illustration ── */}
       <View style={[styles.illustrationArea, { height: illustrationHeight }]}>
-        {/*
-          📸 Illustration — pour remplacer par une vraie image :
-          Supprimez le <View style={styles.iconCircle}> ci-dessous et ajoutez :
+        {image ? (
+          // resizeMode "contain" et non "cover" : une capture recadrée par la
+          // hauteur perdrait justement la partie qui porte le message.
           <Image
-            source={require('../assets/onboarding/slide_${slide.key}.png')}
-            style={{ width: slotWidth, height: illustrationHeight, resizeMode: 'contain' }}
+            source={image}
+            style={{ width: slotWidth, height: illustrationHeight }}
+            resizeMode="contain"
+            accessible
+            accessibilityLabel={slide.title}
           />
-          (créez le dossier assets/onboarding/ et déposez vos images dedans)
-        */}
-        {slide.logo ? (
+        ) : slide.logo ? (
           // Logo InvaderQuest (variante auto selon le thème — jamais invisible)
           <Logo size={Math.min(140, illustrationHeight * 0.7)} />
         ) : (
@@ -130,40 +128,24 @@ function Slide({ slide, slotWidth, illustrationHeight, theme, t, locationDenied,
           <Text style={[styles.slideBody, { color: theme.textSecondary }]}>{slide.body}</Text>
         ) : null}
 
-        {/* Message de refus de localisation */}
-        {/* Le choix se fait ICI, pas dans un réglage qu'on ne trouvera jamais.
-            Mais le défaut reste « tout voir » : personne ne doit se retrouver
-            avec une carte vide sans l'avoir demandé, et le mode se comprend
-            mieux une fois qu'on a vu à quoi il renonce. */}
-        {slide.isExplorerSlide ? (
-          <View style={styles.modeRow}>
-            {[
-              { on: false, label: t('onboarding.slides.explorer.normal'), sub: t('onboarding.slides.explorer.normalSub') },
-              { on: true, label: t('onboarding.slides.explorer.blind'), sub: t('onboarding.slides.explorer.blindSub') },
-            ].map((opt) => {
-              const actif = explorer === opt.on;
-              return (
-                <TouchableOpacity
-                  key={String(opt.on)}
-                  style={[
-                    styles.modeCard,
-                    { backgroundColor: theme.surfaceHigh, borderColor: actif ? theme.accent : theme.border },
-                  ]}
-                  onPress={() => onExplorer(opt.on)}
-                  activeOpacity={0.85}
-                  accessibilityRole="radio"
-                  accessibilityState={{ selected: actif }}
-                >
-                  <Text style={[styles.modeCardLabel, { color: actif ? theme.accent : theme.textPrimary }]}>
-                    {opt.label}
-                  </Text>
-                  <Text style={[styles.modeCardSub, { color: theme.textSecondary }]}>{opt.sub}</Text>
-                </TouchableOpacity>
-              );
-            })}
-          </View>
+        {/* Raccourci vers l'import.
+            Pas de bouton « Plus tard » en face : le « Suivant » du bas le dit
+            déjà, et deux façons de ne rien faire brouillent la seule action. */}
+        {slide.isImportSlide ? (
+          <TouchableOpacity
+            style={[styles.secondaryBtn, { borderColor: theme.accent }]}
+            onPress={onImport}
+            activeOpacity={0.8}
+            accessibilityRole="button"
+          >
+            <Ionicons name="download-outline" size={18} color={theme.accent} />
+            <Text style={[styles.secondaryBtnText, { color: theme.accent }]}>
+              {t('onboarding.slides.import.action')}
+            </Text>
+          </TouchableOpacity>
         ) : null}
 
+        {/* Message de refus de localisation */}
         {slide.isLocationSlide && locationDenied ? (
           <View style={[styles.deniedCard, { backgroundColor: theme.surfaceHigh, borderColor: theme.border }]}>
             <Text style={[styles.deniedText, { color: theme.textSecondary }]}>
@@ -185,7 +167,6 @@ function Slide({ slide, slotWidth, illustrationHeight, theme, t, locationDenied,
 
 export default function OnboardingScreen({ onComplete }) {
   const { t } = useTranslation();
-  const { explorer, setExplorer } = useAppContext();
   const { theme } = useTheme();
   const insets = useSafeAreaInsets();
   const { width, height } = useWindowDimensions();
@@ -198,7 +179,12 @@ export default function OnboardingScreen({ onComplete }) {
   const slides = useMemo(() => buildSlides(t), [t]);
   const isLast = currentIndex === slides.length - 1;
 
-  const illustrationHeight = Math.round(height * 0.40);
+  // Les textes des six panneaux sont longs et la zone texte ne défile pas.
+  // Sur un petit écran l'illustration cède donc de la place ; sur un grand elle
+  // est plafonnée, sans quoi elle s'étirerait pour rien au détriment du texte.
+  const illustrationHeight = Math.round(
+    height < 700 ? height * 0.32 : Math.min(height * 0.40, 330),
+  );
 
   // ── Navigation entre slides ────────────────────────────────────────────────
 
@@ -246,6 +232,17 @@ export default function OnboardingScreen({ onComplete }) {
     }
   }
 
+  // ── Raccourci « Importer mes flashs » ──────────────────────────────────────
+  //
+  // On termine l'onboarding et on ouvre l'import tout de suite : différer le
+  // geste jusqu'au dernier panneau trahirait le bouton. La permission GPS n'est
+  // pas perdue pour autant — la Carte, le Trajet et la Chasse la redemandent
+  // chacun au premier usage.
+  function handleImport() {
+    track('onboarding_import', { panneau: currentIndex });
+    onComplete({ import: true });
+  }
+
   // ── Action du bouton principal ─────────────────────────────────────────────
 
   function handlePrimary() {
@@ -271,10 +268,9 @@ export default function OnboardingScreen({ onComplete }) {
       t={t}
       locationDenied={locationDenied}
       onRetry={requestLocation}
-      explorer={explorer}
-      onExplorer={setExplorer}
+      onImport={handleImport}
     />
-  ), [width, illustrationHeight, theme, t, locationDenied, explorer, setExplorer]); // eslint-disable-line
+  ), [width, illustrationHeight, theme, t, locationDenied, currentIndex]); // eslint-disable-line
 
   return (
     <View style={[styles.container, { backgroundColor: theme.bg, paddingTop: insets.top }]}>
@@ -381,12 +377,18 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
 
-  modeRow: { flexDirection: 'row', gap: 10, marginTop: 18, paddingHorizontal: 4 },
-  modeCard: {
-    flex: 1, borderRadius: 12, borderWidth: 1.5, paddingVertical: 12, paddingHorizontal: 11,
+  secondaryBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    alignSelf: 'flex-start',
+    gap: 8,
+    marginTop: 20,
+    borderRadius: 12,
+    borderWidth: 1.5,
+    paddingVertical: 12,
+    paddingHorizontal: 16,
   },
-  modeCardLabel: { fontSize: 13.5, fontWeight: '700' },
-  modeCardSub: { fontSize: 11.5, marginTop: 4, lineHeight: 15 },
+  secondaryBtnText: { fontSize: 15, fontWeight: '700' },
 
   deniedCard: {
     marginTop: 20,

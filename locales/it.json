@@ -269,35 +269,28 @@
     "slides": {
       "welcome": {
         "title": "$t(common.appName)",
-        "subtitle": "Vai a caccia di Space Invaders, a Parigi e nel mondo."
-      },
-      "map": {
-        "title": "Mappa & Flash",
-        "body": "Individua i mosaici intorno a te e segna quelli che hai fotografato. Di default la mappa mostra solo gli Invader che ti restano; i filtri rivelano quelli fatti e quelli distrutti."
-      },
-      "explorer": {
-        "title": "Due modi di giocare",
-        "body": "Puoi vedere tutti gli Invader sulla mappa, oppure scoprirli da solo. Questa scelta si cambia quando vuoi.",
-        "normal": "Vedere tutto",
-        "normalSub": "La mappa mostra tutti gli Invader",
-        "blind": "Esploratore",
-        "blindSub": "Compaiono solo una volta trovati"
-      },
-      "location": {
-        "title": "Posizione GPS",
-        "body": "L'app usa la tua posizione per mostrarti sulla mappa e calcolare percorsi. I dati restano sul tuo dispositivo."
-      },
-      "trajet": {
-        "title": "Sul tuo percorso",
-        "body": "Vai da un punto A a un punto B? Scopri tutti gli Invader lungo il tragitto e lasciati guidare per fotografarli strada facendo."
+        "subtitle": "Ti proponiamo di flashare gli Space Invaders in più di 80 città, scoprendo al tempo stesso la storia dei luoghi intorno a te."
       },
       "chasse": {
-        "title": "Vai a caccia",
-        "body": "Nessun percorso preciso? Genera una caccia ottimizzata intorno a te in base al tuo tempo e al mezzo di trasporto, e parti all'avventura."
+        "title": "Ti diamo una mano nella caccia",
+        "body": "Stai andando da qualche parte? L'app trova gli Invaders sul tuo percorso. Hai un'ora davanti a te? Ti disegna un anello che passa anche da ciò che vale la pena vedere lì intorno. Non devi più cercare dove cacciare: prepariamo tutto noi."
       },
-      "balade": {
-        "title": "Avvisi Passeggiata",
-        "body": "Ricevi un avviso quando passi vicino a un Invader non ancora fotografato, anche con l'app chiusa. Dovrai autorizzare la posizione «Sempre» quando la attivi."
+      "alerte": {
+        "title": "Ti avvisiamo se stai per perderne uno",
+        "body": "Se passi a meno di cento metri da un Invader che ti manca, l'app può inviarti un avviso. Le scoperte migliori sono quelle che non stavi cercando."
+      },
+      "import": {
+        "title": "Importa i tuoi flash",
+        "body": "Hai già centinaia di flash all'attivo? Recuperali tutti in una volta tramite UID, da un file .csv o .txt, oppure spuntali a mano nella lista.",
+        "action": "Importa i miei flash"
+      },
+      "collection": {
+        "title": "Falli tutti",
+        "body": "Ogni presa entra nella tua Collezione: la sua foto, la sua data, i suoi punti. E accanto a ognuna puoi scrivere una nota per ricordare i bei momenti della tua caccia."
+      },
+      "location": {
+        "title": "La tua posizione",
+        "body": "Per localizzarti, calcolare i percorsi e avvisarti durante la passeggiata. Le tue posizioni non lasciano mai il telefono: non ci sono né account né server."
       }
     }
   },

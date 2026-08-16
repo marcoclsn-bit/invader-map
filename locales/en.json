@@ -269,35 +269,28 @@
     "slides": {
       "welcome": {
         "title": "$t(common.appName)",
-        "subtitle": "Hunt Space Invaders, in Paris and around the world."
-      },
-      "map": {
-        "title": "Map & Flash",
-        "body": "Spot the mosaics around you and mark the ones you've flashed. By default the map only shows the Invaders you still have to find; filters reveal the flashed and destroyed ones."
-      },
-      "explorer": {
-        "title": "Two ways to play",
-        "body": "You can see every Invader on the map, or discover them yourself. This choice can be changed at any time.",
-        "normal": "Show all",
-        "normalSub": "The map shows every Invader",
-        "blind": "Explorer",
-        "blindSub": "They appear only once found"
-      },
-      "location": {
-        "title": "Location",
-        "body": "The app uses your location to show you on the map and calculate routes. Your data stays on your device."
-      },
-      "trajet": {
-        "title": "On your way",
-        "body": "Going from A to B? See every Invader along your route and get guided to flash them on the go."
+        "subtitle": "Flash Space Invaders across more than 80 cities, and learn about the history of the places around you along the way."
       },
       "chasse": {
-        "title": "Go hunting",
-        "body": "No set route? Generate an optimized hunt around you based on your time and travel mode, and set off on an adventure."
+        "title": "We help you hunt",
+        "body": "Heading somewhere? The app finds the Invaders along your way. Got an hour to spare? It draws you a loop that also takes in what's worth seeing nearby. No more wondering where to hunt: we set it all up for you."
       },
-      "balade": {
-        "title": "Walk Alerts",
-        "body": "Get alerted when you walk near an Invader you haven't flashed yet, even with the app closed. You'll need to allow “Always” location when you enable it."
+      "alerte": {
+        "title": "We'll warn you before you miss one",
+        "body": "Walk within a hundred metres of an Invader you still need and the app can send you an alert. The best finds are the ones you weren't looking for."
+      },
+      "import": {
+        "title": "Import your flashes",
+        "body": "Already hundreds of flashes to your name? Bring them all in at once by UID, from a .csv or .txt file, or tick them off by hand in the list.",
+        "action": "Import my flashes"
+      },
+      "collection": {
+        "title": "Flash them all",
+        "body": "Every catch joins your Collection: its photo, its date, its points. And you can write a note beside each one to remember the good moments of your hunt."
+      },
+      "location": {
+        "title": "Your location",
+        "body": "To place you on the map, work out your routes and alert you on a stroll. Your locations never leave your phone: there is no account and no server."
       }
     }
   },
