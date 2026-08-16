@@ -228,6 +228,16 @@ async function notifyProximity(invId) {
         title: titre,
         body: explorer ? chosen : chosen.replace('{id}', invId),
         sound: true,
+        // SENSIBLE AU TEMPS. Une alerte de proximité n'a de valeur que sur le
+        // moment : quarante mètres plus loin, elle ne veut plus rien dire. Ce
+        // niveau lui permet de percer les modes Concentration et « Ne pas
+        // déranger » — précisément ceux qu'on active en marchant.
+        //
+        // Exige l'entitlement com.apple.developer.usernotifications.time-sensitive
+        // dans app.json, donc un build natif : cette ligne ne fera rien tant que
+        // l'appareil tourne sur un binaire antérieur au 1.4.0. Sans droit
+        // accordé, iOS l'ignore simplement, il ne rejette pas la notification.
+        interruptionLevel: 'timeSensitive',
         data: explorer ? { type: 'stroll' } : { type: 'stroll', invId },
       },
       trigger: null, // immédiat

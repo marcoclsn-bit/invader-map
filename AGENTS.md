@@ -47,51 +47,64 @@ Alerte de proximité, cartes hors-ligne, stats de progression, multi-villes, "In
 - Commit Git régulier.
 - Privilégier le local (pas de backend) tant que possible.
 
-## Prochain build natif : quatre raisons, une seule revue Apple
+## Build 1.4.0 — préparé, à lancer
 
-Tout passe en OTA sur le runtime `1.2.0` (voir Stack). Ces quatre points ne le
-peuvent pas et attendent donc un build. Les grouper évite deux revues et deux
-montées de runtime, qui scindent chaque fois la base d'utilisateurs.
+Le dépôt est prêt : `version` et `runtimeVersion` sont à `1.4.0`. On saute la
+1.3.0, deux builds portant déjà ce numéro (iOS 19 du 29 juillet, Android 4 du
+10 août) sans qu'on sache s'ils ont été soumis.
 
-1. **react-native-maps 1.20.1 → 1.29.0.** Corrige des PLANTAGES qui touchent
-   déjà la production. Signature relevée sur deux journaux d'incident du
-   2026-08-09 : `-[__NSArrayM insertObject:atIndex:]: object cannot be nil`,
-   levée depuis `RCTLegacyViewManagerInteropComponentView`. La 1.20.1 n'a aucun
-   composant pour la nouvelle architecture, tous les enfants de la carte
-   transitent donc par la couche d'interopérabilité de React Native ; celle-ci
-   met en file tout enfant inséré ailleurs qu'en fin de liste, et insère au
-   vidage un `contentView` encore nul quand la vue a été recyclée. La 1.29.0
-   embarque de vrais composants (`ios/generated/RNMapsSpecs/`) et supprime la
-   couche du chemin. Atténuation OTA en place : les marqueurs qui changent le
-   plus sont montés EN DERNIER sur les trois écrans de carte, ce qui les fait
-   passer par l'ajout direct. Vérifié sur l'appareil, mais partiel.
+**CONSÉQUENCE IMMÉDIATE : plus aucun OTA n'atteint qui que ce soit.** Une
+publication vise désormais le runtime `1.4.0`, qu'aucun appareil installé ne
+porte. La chaîne de test par-dessus les airs est gelée jusqu'à ce qu'un build soit
+installé. Les données de `data/`, elles, continuent d'arriver partout — elles ne
+dépendent pas du runtime.
 
-2. **Alerte de proximité perceptible.** Son personnalisé (fichier embarqué) et
-   `interruptionLevel: 'timeSensitive'` (entitlement). Le haptique d'iOS ne
-   produit RIEN quand l'app n'est pas au premier plan, ce qui est le cas d'usage
-   entier ; sans build, le seul levier est de répéter les notifications. Voir la
-   note mémoire `alerte-proximite-contraintes`.
+### Ce que le build apporte, et qui ne pouvait pas passer autrement
 
-3. **Android : refuser l'assombrissement forcé.** Constaté le 2026-08-10 sur un
-   Xiaomi, confirmé en désactivant l'option système : le mode sombre forcé
-   d'Android (« assombrir les applications » chez MIUI) repeint une app qui est
-   DÉJÀ sombre. Le jaune `accentScore` `#FFD23F` devient brun, et le texte
-   presque noir `#221A00` du bouton devient blanc. Les images ne sont jamais
-   touchées, d'où le losange de lieu resté jaune sur la carte : c'est ce
-   contraste qui a identifié la cause. Aucun correctif OTA n'existe, la couleur
-   est repeinte par le système après nous.
-   Correctif : `android:forceDarkAllowed=false` sur le thème de l'app, via un
-   plugin de configuration `withAndroidStyles` (`@expo/config-plugins` est déjà
-   installé ; `expo-build-properties` ne l'est pas et n'expose pas cette clé).
-   Ne PAS y répondre en passant `userInterfaceStyle` à `dark` : ça figerait
-   aussi le thème clair choisi par l'utilisateur dans les Réglages.
+1. **react-native-maps 1.20.1 → 1.29.0.** Corrige des PLANTAGES en production :
+   `-[__NSArrayM insertObject:atIndex:]: object cannot be nil`, levée depuis
+   `RCTLegacyViewManagerInteropComponentView`. La 1.20.1 n'a aucun composant pour
+   la nouvelle architecture, tous les enfants de la carte transitent donc par la
+   couche d'interopérabilité, qui met en file tout enfant inséré ailleurs qu'en
+   fin de liste et insère au vidage un `contentView` encore nul. La 1.29.0 embarque
+   de vrais composants — vérifié dans `ios/generated/RNMapsSpecs/` : MapView,
+   Marker, Polygon ET Polyline, les quatre que nous utilisons. Écart assumé avec
+   l'épinglage du SDK 54, qui reste sur 1.20.1 : `expo install --check` s'en
+   plaindra à chaque fois.
 
-4. **Import d'un fichier .txt ou .csv.** Demandé le 2026-08-14. L'écran d'import
-   ne sait lire qu'un texte collé ; ouvrir un fichier exige `expo-document-picker`,
-   absent de `package.json` et donc du binaire. L'import par UID FlashInvaders,
-   lui, est parti en OTA le même jour : il n'est que du réseau et du texte.
-   Ajouter aussi `expo-file-system` si l'on veut écrire un export sur disque
-   plutôt que de passer par la feuille de partage.
+2. **Notifications sensibles au temps.** Entitlement
+   `com.apple.developer.usernotifications.time-sensitive` dans `app.json`, et
+   `interruptionLevel: 'timeSensitive'` dans `strollEngine`. Aucun fichier son :
+   Marco a tranché, le vibreur suffit. Ce qui manquait n'était pas le son mais le
+   droit de percer les modes Concentration — précisément ceux qu'on active en
+   marchant. Sans entitlement, iOS ignore la clé sans rejeter la notification.
+
+3. **`expo-document-picker` et `expo-file-system`.** Les modules sont dans le
+   binaire ; l'interface d'import et d'export par fichier pourra donc partir en
+   OTA, sur le nouveau runtime, sans attendre un autre build. Le format est déjà
+   écrit et testé : liste avec dates en seconde colonne, notes en JSON à part.
+
+4. **`expo-location` épinglé à `19.0.8` exactement.** `patches/expo-location+19.0.8.patch`
+   vise cette version au caractère près, et ce build régénère le verrou. Le
+   correctif retire le garde exigeant `UIBackgroundModes:location` et force
+   `allowsBackgroundLocationUpdates` à `NO` : sans lui, `startGeofencingAsync` lève
+   `LocationUpdatesUnavailable` et le mode Balade cesse d'exister.
+
+5. `expo` 54.0.36 et `expo-updates` 29.0.19 — correctifs mineurs, gratuits ici.
+
+### Abandonné, et pourquoi
+
+**Le plugin Android `forceDarkAllowed=false`.** Décision de Marco : la population
+concernée est marginale et le défaut est cosmétique. Mesuré avant de renoncer —
+le contraste du bouton passe de 12,0:1 à 8,7:1 sous l'assombrissement forcé de
+MIUI, bien au-dessus du seuil de 4,5:1. C'est laid, ce n'est pas illisible. Fait
+tomber du même coup le besoin de déclarer `@expo/config-plugins`.
+
+### Après le build
+
+Installer le build preview À NEUF : c'est la seule façon de vérifier
+`components/UpdateGate.js`, qui ne s'arme que sur un lancement embarqué. Vérifier
+qu'un écran de préparation apparaît puis cède la place à l'app à jour.
 
 ## À compléter (TODO)
 - Étiquettes : UI pour créer / renommer / supprimer des étiquettes personnalisées (pour l'instant, seules les étiquettes par défaut existent).
