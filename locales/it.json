@@ -694,10 +694,8 @@
     "vsTrajetBody": "Il tracciamento del Percorso ti guida lungo un itinerario calcolato. Gli Avvisi Passeggiata invece controllano in background senza un percorso definito: cammini dove vuoi.",
     "enableLabel": "Attiva gli avvisi passeggiata",
     "enableHint": "Controlla gli Invaders intorno a te mentre ti sposti.",
-    "radiusSection": "Raggio di avviso",
-    "radiusLabel": "Distanza di attivazione",
-    "radiusValue": "{{m}} m",
-    "radiusHint": "Riceverai un avviso quando un Invader si trova a meno di questa distanza. Sotto i 100 m, iOS non rileva più il passaggio in modo affidabile ad app chiusa.",
+    "radiusSection": "Portata dell'avviso",
+    "radiusHint": "iOS decide il momento esatto dell'avviso. Queste impostazioni cambiano la sensibilità, non una distanza garantita.",
     "alertsSection": "Come essere avvisato",
     "vibration": "Vibrazione",
     "notification": "Notifica",
@@ -758,7 +756,21 @@
     "statusNote": "I già fotografati e i distrutti sono sempre esclusi.",
     "son": "Suono",
     "sonHint": "Riproduce il suono di avviso di InvaderQuest. Disattivalo per essere avvisato senza rumore.",
-    "vibrationHint": "Su iPhone la vibrazione segue l'interruttore laterale e le impostazioni di sistema: questo pulsante agisce solo su Android."
+    "vibrationHint": "Su iPhone la vibrazione segue l'interruttore laterale e le impostazioni di sistema: questo pulsante agisce solo su Android.",
+    "radiusLevels": {
+      "proche": {
+        "label": "Vicino",
+        "hint": "Vieni avvisato quando ci sei praticamente sopra."
+      },
+      "moyenne": {
+        "label": "Media",
+        "hint": "Un po' di margine in più, e più avvisi."
+      },
+      "large": {
+        "label": "Ampia",
+        "hint": "Per le città dove gli Invaders sono rari. A Parigi verresti avvisato quasi di continuo."
+      }
+    }
   },
   "routing": {
     "error": {

@@ -26,7 +26,10 @@ const DEFAULT_STROLL = {
   // d'usage de la Balade. Apple recommande 100 à 200 m. Marco l'a constaté sur le
   // terrain : les alertes tombaient surtout à l'ouverture de l'app, jamais en
   // marchant. Un rayon de 50 m était plus précis sur le papier et muet en vrai.
-  radius:        100,    // rayon d'alerte en mètres (100 / 150)
+  // Valeur INTERNE : l'écran n'affiche plus de mètres mais trois niveaux
+  // (Proche 100 / Moyenne 150 / Large 250), parce qu'iOS déclenche bien avant
+  // le rayon demandé et que l'écart n'est pas constant. Voir StrollScreen.
+  radius:        100,    // rayon d'alerte en mètres (100 / 150 / 250)
   vibration:     true,   // alerter par vibration
   notification:  true,   // alerter par notification
   son:           true,   // jouer le son d'alerte (lequel : SON_ALERTE, côté moteur)

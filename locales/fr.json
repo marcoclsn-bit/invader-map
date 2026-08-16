@@ -694,10 +694,8 @@
     "vsTrajetBody": "Le suivi de Trajet te guide le long d'un itinéraire calculé. Les alertes balade, elles, surveillent en arrière-plan sans trajet défini : tu marches où tu veux.",
     "enableLabel": "Activer les alertes balade",
     "enableHint": "Surveille les Invaders autour de toi pendant tes déplacements.",
-    "radiusSection": "Rayon d'alerte",
-    "radiusLabel": "Distance de déclenchement",
-    "radiusValue": "{{m}} m",
-    "radiusHint": "Tu recevras une alerte lorsqu'un Invader se trouve à moins de cette distance. En dessous de 100 m, iOS ne détecte plus le passage de façon fiable quand l'app est fermée.",
+    "radiusSection": "Portée de l'alerte",
+    "radiusHint": "iOS décide du moment exact du déclenchement. Ces réglages font varier la sensibilité, pas une distance garantie.",
     "alertsSection": "Comment être alerté",
     "vibration": "Vibration",
     "notification": "Notification",
@@ -758,7 +756,21 @@
     "statusNote": "Les déjà flashés et les détruits sont toujours exclus.",
     "son": "Son",
     "sonHint": "Joue le son d'alerte d'InvaderQuest. Coupe-le pour être prévenu sans bruit.",
-    "vibrationHint": "Sur iPhone, la vibration suit l'interrupteur latéral et les réglages du système : ce bouton n'agit que sur Android."
+    "vibrationHint": "Sur iPhone, la vibration suit l'interrupteur latéral et les réglages du système : ce bouton n'agit que sur Android.",
+    "radiusLevels": {
+      "proche": {
+        "label": "Proche",
+        "hint": "Tu es prévenu quand tu arrives dessus."
+      },
+      "moyenne": {
+        "label": "Moyenne",
+        "hint": "Un peu d'avance, et plus d'alertes."
+      },
+      "large": {
+        "label": "Large",
+        "hint": "Pour les villes où les Invaders sont rares. À Paris, tu serais alerté presque en continu."
+      }
+    }
   },
   "routing": {
     "error": {

@@ -694,10 +694,8 @@
     "vsTrajetBody": "El seguimiento de Ruta te guía por un itinerario calculado. Las alertas de paseo vigilan en segundo plano sin ruta fija: caminas donde quieras.",
     "enableLabel": "Activar las alertas de paseo",
     "enableHint": "Vigila los Invaders a tu alrededor mientras te mueves.",
-    "radiusSection": "Radio de alerta",
-    "radiusLabel": "Distancia de activación",
-    "radiusValue": "{{m}} m",
-    "radiusHint": "Recibirás una alerta cuando un Invader esté a menos de esta distancia. Por debajo de 100 m, iOS ya no detecta el paso de forma fiable con la app cerrada.",
+    "radiusSection": "Alcance del aviso",
+    "radiusHint": "iOS decide el momento exacto del aviso. Estos ajustes cambian la sensibilidad, no una distancia garantizada.",
     "alertsSection": "Cómo recibir el aviso",
     "vibration": "Vibración",
     "notification": "Notificación",
@@ -758,7 +756,21 @@
     "statusNote": "Los ya fotografiados y los destruidos siempre se excluyen.",
     "son": "Sonido",
     "sonHint": "Reproduce el sonido de alerta de InvaderQuest. Desactívalo para avisos silenciosos.",
-    "vibrationHint": "En iPhone, la vibración depende del interruptor lateral y de los ajustes del sistema: este botón solo afecta a Android."
+    "vibrationHint": "En iPhone, la vibración depende del interruptor lateral y de los ajustes del sistema: este botón solo afecta a Android.",
+    "radiusLevels": {
+      "proche": {
+        "label": "Cerca",
+        "hint": "Se te avisa cuando ya lo tienes encima."
+      },
+      "moyenne": {
+        "label": "Media",
+        "hint": "Un poco más de margen, y más avisos."
+      },
+      "large": {
+        "label": "Amplia",
+        "hint": "Para ciudades donde los Invaders escasean. En París te avisaría casi sin parar."
+      }
+    }
   },
   "routing": {
     "error": {

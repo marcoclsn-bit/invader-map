@@ -4,7 +4,6 @@ import {
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import Slider from '@react-native-community/slider';
 import { useTranslation } from 'react-i18next';
 import { DrawerActions } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -20,15 +19,44 @@ import { STATUS_COLOR } from '../constants';
 import { requestStrollPermissions } from '../services/strollEngine';
 import { track } from '../services/analytics';
 
-// 50 / 100 / 150 m uniquement : en dessous de ~50 m le geofencing iOS n'est pas fiable.
-// 100 m au minimum, et non 50. La surveillance de régions d'iOS ne détecte pas
-// de façon fiable en dessous d'une centaine de mètres quand l'app est fermée —
-// Apple recommande 100 à 200 m. Proposer 50 m revenait à offrir le réglage le
-// plus précis sur le papier et le plus muet sur le terrain, ce que personne ne
-// pouvait deviner en lisant « 50 m ».
-const RADIUS_MIN = 100;
-const RADIUS_MAX = 150;
-const RADIUS_STEP = 50;
+// ─── Portée de l'alerte : trois niveaux, aucun mètre affiché ──────────────────
+//
+// On affichait « 100 m », et iOS déclenchait à 20 ou 30 — mesuré sur le terrain,
+// capture à l'appui. Ce n'est pas un défaut de notre code : la surveillance de
+// régions ne se déclenche pas au franchissement du cercle, mais quand le système
+// est SÛR du franchissement, en s'appuyant sur les antennes et le Wi-Fi. Le rayon
+// est donc un plafond, pas une distance. Et l'écart n'est pas une constante : il
+// dépend du bâti, de la densité des bornes, de la vitesse et de la direction
+// d'approche. Remplacer « 100 m » par « 50 m » n'aurait fait que substituer une
+// promesse fausse à une autre.
+//
+// D'où des niveaux, décrits par le vécu. L'interface n'a plus de chiffre à tenir,
+// le niveau large devient proposable (absurde à Paris, légitime à Orléans), et
+// surtout on peut changer les valeurs sous le capot — le jour où le rayon
+// dépendra de la densité locale — sans qu'un « 100 m » se transforme en « 300 m »
+// sous les yeux de l'utilisateur.
+//
+// Mesure de densité, 1 350 Invaders parisiens non détruits, 1 500 points tirés au
+// hasard dans Paris intra-muros : distance médiane au plus proche = 118 m. On est
+// DANS une zone 40 % du parcours à 100 m, 64 % à 150 m, 88 % à 250 m avec 4,3
+// Invaders en portée à tout instant. Au-delà de 150 m, à Paris, l'alerte cesse
+// d'être un signal.
+const NIVEAUX = [
+  { cle: 'proche', radius: 100 },
+  { cle: 'moyenne', radius: 150 },
+  { cle: 'large', radius: 250 },
+];
+
+/** Niveau correspondant à un rayon stocké — le plus proche, jamais undefined.
+ *  Les valeurs héritées (100, 150) retombent exactement sur les deux premiers,
+ *  donc aucune migration : c'est l'étiquette qui change, pas la donnée. */
+export function niveauPourRayon(radius) {
+  let meilleur = NIVEAUX[0];
+  for (const n of NIVEAUX) {
+    if (Math.abs(n.radius - radius) < Math.abs(meilleur.radius - radius)) meilleur = n;
+  }
+  return meilleur.cle;
+}
 
 // ─── Cache de styles thémés ───────────────────────────────────────────────────
 let _styleCache = null;
@@ -196,26 +224,42 @@ export default function StrollScreen({ navigation }) {
           />
         </Section>
 
-        {/* ── Rayon d'alerte ── */}
+        {/* ── Portée de l'alerte ── */}
         <Section title={t('stroll.radiusSection')} theme={theme}>
           <View style={[styles.radiusBlock, off && styles.rowDisabled]}>
-            <View style={styles.radiusHeader}>
-              <Text style={styles.rowLabel}>{t('stroll.radiusLabel')}</Text>
-              <Text style={styles.radiusValue}>{t('stroll.radiusValue', { m: stroll.radius })}</Text>
-            </View>
-            <Slider
-              style={styles.slider}
-              minimumValue={RADIUS_MIN}
-              maximumValue={RADIUS_MAX}
-              step={RADIUS_STEP}
-              value={stroll.radius}
-              onValueChange={(v) => setStrollPref({ radius: Math.round(v) })}
-              minimumTrackTintColor={theme.accent}
-              maximumTrackTintColor={theme.border}
-              thumbTintColor={theme.accent}
-              disabled={off}
-            />
-            <Text style={styles.rowHint}>{t('stroll.radiusHint')}</Text>
+            {NIVEAUX.map((n, i) => {
+              const actif = niveauPourRayon(stroll.radius) === n.cle;
+              return (
+                <TouchableOpacity
+                  key={n.cle}
+                  style={[
+                    styles.niveauRow,
+                    i > 0 && styles.niveauRowSep,
+                    actif && styles.niveauRowActif,
+                  ]}
+                  onPress={off ? undefined : () => setStrollPref({ radius: n.radius })}
+                  disabled={off}
+                  activeOpacity={0.8}
+                  accessibilityRole="radio"
+                  accessibilityState={{ selected: actif, disabled: off }}
+                >
+                  <View style={styles.niveauTexte}>
+                    <Text style={[styles.rowLabel, actif && { color: theme.accent }]}>
+                      {t(`stroll.radiusLevels.${n.cle}.label`)}
+                    </Text>
+                    <Text style={styles.rowHint}>
+                      {t(`stroll.radiusLevels.${n.cle}.hint`)}
+                    </Text>
+                  </View>
+                  <Ionicons
+                    name={actif ? 'radio-button-on' : 'radio-button-off'}
+                    size={22}
+                    color={actif ? theme.accent : theme.border}
+                  />
+                </TouchableOpacity>
+              );
+            })}
+            <Text style={[styles.rowHint, styles.niveauNote]}>{t('stroll.radiusHint')}</Text>
           </View>
         </Section>
 
@@ -380,10 +424,19 @@ function makeStyles(t) {
     aboutLabel: { ...typography.arcadeHeading, fontSize: 12, color: t.textPrimary, marginBottom: 6 },
     aboutBody: { fontSize: 14, lineHeight: 21, color: t.textSecondary },
 
-    radiusBlock: { paddingHorizontal: 16, paddingVertical: 14 },
-    radiusHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
-    radiusValue: { ...typography.arcadeScore, fontSize: 15, color: t.accent },
-    slider: { width: '100%', height: 36, marginVertical: 4 },
+    radiusBlock: { paddingVertical: 4 },
+    niveauRow: {
+      flexDirection: 'row', alignItems: 'center', gap: 14,
+      paddingHorizontal: 16, paddingVertical: 12,
+    },
+    // Séparateur entre niveaux, pas au-dessus du premier : la carte a déjà un bord.
+    niveauRowSep: { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: t.border },
+    niveauRowActif: { backgroundColor: t.accentDim },
+    niveauTexte: { flex: 1, gap: 3 },
+    niveauNote: {
+      paddingHorizontal: 16, paddingTop: 12, paddingBottom: 6,
+      borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: t.border,
+    },
 
     footnote: {
       fontSize: 12, lineHeight: 18, color: t.textSecondary,

@@ -694,10 +694,8 @@
     "vsTrajetBody": "Route tracking guides you along a calculated itinerary. Walk Alerts watch in the background with no set route: walk wherever you like.",
     "enableLabel": "Enable walk alerts",
     "enableHint": "Watches for Invaders around you as you move.",
-    "radiusSection": "Alert radius",
-    "radiusLabel": "Trigger distance",
-    "radiusValue": "{{m}} m",
-    "radiusHint": "You will be alerted when an Invader is closer than this. Below 100 m, iOS no longer reliably detects the crossing while the app is closed.",
+    "radiusSection": "Alert range",
+    "radiusHint": "iOS decides exactly when the alert fires. These settings change the sensitivity, not a guaranteed distance.",
     "alertsSection": "How to be alerted",
     "vibration": "Vibration",
     "notification": "Notification",
@@ -758,7 +756,21 @@
     "statusNote": "Already flashed and destroyed are always excluded.",
     "son": "Sound",
     "sonHint": "Plays the InvaderQuest alert sound. Turn it off to be warned silently.",
-    "vibrationHint": "On iPhone, vibration follows the side switch and system settings: this toggle only affects Android."
+    "vibrationHint": "On iPhone, vibration follows the side switch and system settings: this toggle only affects Android.",
+    "radiusLevels": {
+      "proche": {
+        "label": "Close",
+        "hint": "You get warned once you're right on top of it."
+      },
+      "moyenne": {
+        "label": "Medium",
+        "hint": "A little more warning, and more alerts."
+      },
+      "large": {
+        "label": "Wide",
+        "hint": "For cities where Invaders are scarce. In Paris you would be alerted almost non-stop."
+      }
+    }
   },
   "routing": {
     "error": {
