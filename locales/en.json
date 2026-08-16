@@ -1336,7 +1336,11 @@
   "sync": {
     "banner_one": "You have flashed 1 Invader since your last visit.",
     "banner_other": "You have flashed {{count}} Invaders since your last visit.",
-    "action": "Sync"
+    "action": "Sync",
+    "showList": "See the {{count}} IDs",
+    "hideList": "Hide the list",
+    "removedKept": "{{count}} Invaders you removed by hand are still in your FlashInvaders gallery. They will not be put back.",
+    "restoreRemoved": "Put them back too"
   },
   "update": {
     "step1": "Getting InvaderQuest ready…",

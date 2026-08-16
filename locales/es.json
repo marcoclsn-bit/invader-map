@@ -1336,7 +1336,11 @@
   "sync": {
     "banner_one": "Has fotografiado 1 Invader desde tu última visita.",
     "banner_other": "Has fotografiado {{count}} Invaders desde tu última visita.",
-    "action": "Sincronizar"
+    "action": "Sincronizar",
+    "showList": "Ver los {{count}} identificadores",
+    "hideList": "Ocultar la lista",
+    "removedKept": "{{count}} Invaders que quitaste a mano siguen en tu galería de FlashInvaders. No se volverán a añadir.",
+    "restoreRemoved": "Añadirlos también"
   },
   "update": {
     "step1": "Preparando InvaderQuest…",

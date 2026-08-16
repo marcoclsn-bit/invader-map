@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, AppState, ActivityIndicator } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, AppState, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../theme/ThemeContext';
@@ -41,11 +41,12 @@ export default function SyncBanner({ style }) {
   // fusionner avant la lecture disque ne perdrait rien (bulkFlash est
   // fonctionnel, l'écriture est gardée) mais la fusion serait ensuite écrasée et
   // l'utilisateur croirait avoir synchronisé.
-  const { flashed, bulkFlash, loaded } = useAppContext();
+  const { flashed, bulkFlash, loaded, retires } = useAppContext();
   const { beginBatch } = useGamification();
 
-  const [nouveaux, setNouveaux] = useState(0);
-  const [enCours, setEnCours] = useState(false);
+  const [nouveaux, setNouveaux] = useState([]);      // identifiants à ajouter
+  const [ecartes, setEcartes] = useState([]);        // retirés à la main, ignorés
+  const [deplie, setDeplie] = useState(false);
   const [masque, setMasque] = useState(false);
   const dernierSondage = useRef(0);
   // Compteur serveur pour lequel la galerie a DÉJÀ été téléchargée et analysée.
@@ -62,6 +63,8 @@ export default function SyncBanner({ style }) {
   // donc la liste courante par une référence plutôt que par la fermeture.
   const flashedRef = useRef(flashed);
   flashedRef.current = flashed;
+  const retiresRef = useRef(retires);
+  retiresRef.current = retires;
 
   const sonder = useCallback(async () => {
     const maintenant = Date.now();
@@ -89,7 +92,14 @@ export default function SyncBanner({ style }) {
     let ids, dates;
     try { ({ ids, dates } = await recupererGalerie(uid)); } catch { return; }
     compteAnalyse.current = compte;
-    const ajouts = ids.filter((id) => !flashedRef.current.has(id));
+    const manquants = ids.filter((id) => !flashedRef.current.has(id));
+    // CE QUI A ÉTÉ RETIRÉ À LA MAIN NE REVIENT PAS TOUT SEUL. Ces Invaders sont
+    // toujours dans la galerie FlashInvaders, donc « manquants » ici — mais leur
+    // absence est un choix, pas un oubli. Les remettre d'office annulerait un
+    // geste délibéré, et l'utilisateur ne comprendrait pas pourquoi ils sont de
+    // retour. On les met de côté et on propose, séparément.
+    const ajouts = manquants.filter((id) => !retiresRef.current.has(id));
+    const refuses = manquants.filter((id) => retiresRef.current.has(id));
     if (!ajouts.length) {
       // Déjà à jour : on aligne le compteur en silence. Aucun bandeau, aucun
       // geste demandé pour un travail déjà fait.
@@ -98,13 +108,15 @@ export default function SyncBanner({ style }) {
     }
     idsPrets.current = ids;
     datesPretes.current = dates;
-    setNouveaux(ajouts.length);
+    setNouveaux(ajouts);
+    setEcartes(refuses);
+    setDeplie(false);
     setMasque(false);
   }, []);
 
   // Un bandeau déjà affiché attend une réponse : rien à redemander au serveur.
   const enAttenteRef = useRef(false);
-  enAttenteRef.current = nouveaux > 0 && !masque;
+  enAttenteRef.current = nouveaux.length > 0 && !masque;
 
   useEffect(() => {
     sonder();
@@ -114,48 +126,97 @@ export default function SyncBanner({ style }) {
     return () => sub.remove();
   }, [sonder]);
 
-  const synchroniser = useCallback(async () => {
-    setEnCours(true);
+  /**
+   * Applique, et referme AVANT d'appliquer.
+   *
+   * La version précédente montrait un indicateur pendant tout le travail, ce qui
+   * donnait l'impression d'une synchronisation lente — alors que la galerie est
+   * déjà téléchargée depuis le sondage et qu'il ne reste qu'une fusion locale.
+   * Ce qui coûte, c'est le rendu qui suit : des centaines de marqueurs et de
+   * lignes se redessinent. Le faire DERRIÈRE un bandeau refermé, au lieu de
+   * l'attendre devant, ne change pas la durée mais change tout au ressenti.
+   *
+   * En cas d'échec, le bandeau revient avec sa liste : rien n'est perdu.
+   */
+  const synchroniser = useCallback(async (avecEcartes = false) => {
+    const aAjouter = avecEcartes ? [...nouveaux, ...ecartes] : nouveaux;
+    const sauvegarde = { nouveaux, ecartes };
+    setNouveaux([]);          // refermé tout de suite : le travail se fait après
+    setEcartes([]);
     try {
-      // La galerie a déjà été téléchargée par le sondage, qui s'en est servi
-      // pour compter juste : la réutiliser évite 92 Ko inutiles.
       let ids = idsPrets.current;
       let dates = datesPretes.current;
       if (!ids) { ({ ids, dates } = await recupererGalerie(await getUid())); }
-      const ajouts = ids.filter((id) => !flashed.has(id));
-      if (ajouts.length) {
+      if (aAjouter.length) {
         beginBatch();      // sans la fenêtre groupée, dix paliers = dix célébrations
-        bulkFlash(ajouts, dates || undefined);
+        bulkFlash(aAjouter, dates || undefined);
       }
       await setCompteConnu(ids.length);
       idsPrets.current = null;
       datesPretes.current = null;
-      track('sync_applied', { added: ajouts.length });
-      setNouveaux(0);
+      track('sync_applied', { added: aAjouter.length, repris: avecEcartes ? ecartes.length : 0 });
     } catch (e) {
       track('sync_echec', { motif: e?.motif || 'reseau' });
+      setNouveaux(sauvegarde.nouveaux);
+      setEcartes(sauvegarde.ecartes);
       setMasque(true);     // on ne harcèle pas : on réessaiera au prochain retour
-    } finally {
-      setEnCours(false);
     }
-  }, [flashed, bulkFlash, beginBatch]);
+  }, [nouveaux, ecartes, bulkFlash, beginBatch]);
 
-  if (!loaded || !nouveaux || masque) return null;
+  if (!loaded || !nouveaux.length || masque) return null;
 
   return (
     <View style={[st.bandeau, style]}>
-      <Ionicons name="sync-outline" size={17} color={theme.accent} />
-      <Text style={st.texte} numberOfLines={2}>
-        {t('sync.banner', { count: nouveaux })}
-      </Text>
-      <TouchableOpacity style={st.action} onPress={synchroniser} disabled={enCours} activeOpacity={0.8}>
-        {enCours
-          ? <ActivityIndicator size="small" color={theme.bg} />
-          : <Text style={st.actionTexte}>{t('sync.action')}</Text>}
+      <View style={st.ligne}>
+        <Ionicons name="sync-outline" size={17} color={theme.accent} />
+        <Text style={st.texte} numberOfLines={2}>
+          {t('sync.banner', { count: nouveaux.length })}
+        </Text>
+        <TouchableOpacity style={st.action} onPress={() => synchroniser(false)} activeOpacity={0.8}>
+          <Text style={st.actionTexte}>{t('sync.action')}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => setMasque(true)} hitSlop={10} accessibilityLabel={t('common.cancel')}>
+          <Ionicons name="close" size={16} color={theme.textSecondary} />
+        </TouchableOpacity>
+      </View>
+
+      {/* QUELS Invaders. Un nombre seul demande de faire confiance à l'aveugle
+          pour un geste qui modifie sa collection : on doit pouvoir regarder
+          avant d'accepter. Replié par défaut — la liste est un recours, pas une
+          lecture obligatoire. */}
+      <TouchableOpacity
+        style={st.deplier}
+        onPress={() => setDeplie((v) => !v)}
+        hitSlop={6}
+        accessibilityRole="button"
+      >
+        <Text style={st.deplierTexte}>
+          {t(deplie ? 'sync.hideList' : 'sync.showList', { count: nouveaux.length })}
+        </Text>
+        <Ionicons name={deplie ? 'chevron-up' : 'chevron-down'} size={13} color={theme.textSecondary} />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => setMasque(true)} hitSlop={10} accessibilityLabel={t('common.cancel')}>
-        <Ionicons name="close" size={16} color={theme.textSecondary} />
-      </TouchableOpacity>
+
+      {deplie ? (
+        <View style={st.liste}>
+          <ScrollView style={{ maxHeight: 132 }} nestedScrollEnabled>
+            {nouveaux.map((id) => (
+              <Text key={id} style={st.item}>{id}</Text>
+            ))}
+          </ScrollView>
+
+          {/* Les retirés à la main : mentionnés, jamais remis d'office. */}
+          {ecartes.length > 0 ? (
+            <View style={st.ecartes}>
+              <Text style={st.ecartesTexte}>
+                {t('sync.removedKept', { count: ecartes.length })}
+              </Text>
+              <TouchableOpacity onPress={() => synchroniser(true)} hitSlop={8}>
+                <Text style={st.ecartesAction}>{t('sync.restoreRemoved')}</Text>
+              </TouchableOpacity>
+            </View>
+          ) : null}
+        </View>
+      ) : null}
     </View>
   );
 }
@@ -164,14 +225,34 @@ function getStyles(t) {
   return StyleSheet.create({
     bandeau: {
       position: 'absolute', left: 12, right: 12,
-      flexDirection: 'row', alignItems: 'center', gap: 10,
       backgroundColor: t.surface, borderRadius: 14,
       borderWidth: StyleSheet.hairlineWidth, borderColor: t.border,
       paddingHorizontal: 14, paddingVertical: 11,
       shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
       shadowOpacity: 0.35, shadowRadius: 10, elevation: 8,
     },
+    ligne: { flexDirection: 'row', alignItems: 'center', gap: 10 },
     texte: { flex: 1, fontSize: 13, color: t.textPrimary, lineHeight: 18 },
+    deplier: {
+      flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 5,
+      paddingTop: 9, paddingBottom: 2,
+    },
+    deplierTexte: { fontSize: 11.5, color: t.textSecondary },
+    liste: {
+      marginTop: 8, backgroundColor: t.surfaceHigh, borderRadius: 10,
+      borderWidth: StyleSheet.hairlineWidth, borderColor: t.border,
+      paddingHorizontal: 12, paddingVertical: 8,
+    },
+    item: { fontSize: 12.5, color: t.textPrimary, paddingVertical: 3, fontVariant: ['tabular-nums'] },
+    ecartes: {
+      marginTop: 8, paddingTop: 8,
+      borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: t.border,
+    },
+    ecartesTexte: { fontSize: 11.5, color: t.textSecondary, lineHeight: 16 },
+    ecartesAction: {
+      fontSize: 12, color: t.accent, fontWeight: '700', marginTop: 6,
+      textDecorationLine: 'underline',
+    },
     action: {
       backgroundColor: t.accent, borderRadius: 9,
       paddingHorizontal: 12, paddingVertical: 7, minWidth: 92, alignItems: 'center',

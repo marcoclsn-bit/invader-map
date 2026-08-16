@@ -121,6 +121,11 @@ export function AppProvider({ children }) {
   // Objet simple plutôt qu'une Map : il se sérialise tel quel, et il restera
   // petit — on n'écrit pas une note sur mille mosaïques.
   const [notes, setNotes] = useState({});
+  // Invaders RETIRÉS À LA MAIN. Sans cette mémoire, la synchronisation suivante
+  // les remet : ils sont toujours dans la galerie FlashInvaders, donc absents
+  // d'ici, donc « manquants ». Décocher serait sans effet durable, ce qui est la
+  // pire réponse possible à un geste délibéré.
+  const [retires, setRetires] = useState(new Set());
   // Registre persistant de progression par ville — alimenté par la ville ACTIVE
   // (points exacts, complétion « juste »). Sert aux trophées (points cumulés,
   // villes terminées) sans devoir charger les données de toutes les villes.
@@ -345,6 +350,8 @@ export function AppProvider({ children }) {
         AsyncStorage.getItem('@invader_explorer_suggest'),
         AsyncStorage.getItem('@invader_dev'),
       ]);
+      const retiresRaw = await AsyncStorage.getItem('@invader_retires');
+      if (retiresRaw) { try { setRetires(new Set(JSON.parse(retiresRaw))); } catch { /* illisible */ } }
       const notesRaw = await AsyncStorage.getItem('@invader_notes');
       if (notesRaw) { try { setNotes(JSON.parse(notesRaw) || {}); } catch { /* illisible */ } }
       // Ménage unique : ces trois clés servaient aux photos personnelles
@@ -596,6 +603,7 @@ export function AppProvider({ children }) {
   // mais PAS dans les stats temporelles (courbe, série, meilleure journée, jour/nuit).
   function toggleFlash(id, { dated = true } = {}) {
     const removing = flashed.has(id);
+    noterRetrait(removing ? [id] : [], removing ? [] : [id]);
     setFlashed(prev => {
       const next = new Set(prev);
       removing ? next.delete(id) : next.add(id);
@@ -609,6 +617,20 @@ export function AppProvider({ children }) {
       return next;
     });
   }
+
+  // Tient le registre des retraits manuels. `ajoutes` efface le refus : remettre
+  // un Invader à la main est aussi délibéré que l'avoir retiré.
+  const noterRetrait = useCallback((retraits, ajoutes) => {
+    if (!retraits.length && !ajoutes.length) return;
+    setRetires((prev) => {
+      const next = new Set(prev);
+      for (const id of retraits) next.add(id);
+      for (const id of ajoutes) next.delete(id);
+      if (next.size === prev.size && [...next].every((x) => prev.has(x))) return prev;
+      AsyncStorage.setItem('@invader_retires', JSON.stringify([...next])).catch(() => {});
+      return next;
+    });
+  }, []);
 
   // Marquage en masse. FUSIONNE, ne remplace jamais (les autres villes restent).
   //
@@ -643,6 +665,7 @@ export function AppProvider({ children }) {
 
   function bulkFlash(ids, dates) {
     const list = ids ?? invaders.map(inv => inv.id);
+    noterRetrait([], list);   // les remettre efface le refus
     setFlashed(prev => {
       const next = new Set(prev);
       for (const id of list) next.add(id);
@@ -676,6 +699,7 @@ export function AppProvider({ children }) {
 
   function bulkUnflash(ids) {
     const list = ids ?? invaders.map(inv => inv.id);
+    noterRetrait(list, []);
     setFlashed(prev => {
       const next = new Set(prev);
       for (const id of list) next.delete(id);
@@ -891,6 +915,7 @@ export function AppProvider({ children }) {
     filters, setFilters,
     toggleFlash, bulkFlash, bulkUnflash, clearFlashDates,
     notes, setNote,
+    retires,
     setStatusColor, setFlashedColor,
     // News
     news, newsCities, setNewsCitiesPref, newsLastSeen, markNewsSeen, newsUnreadCount,
@@ -931,7 +956,7 @@ export function AppProvider({ children }) {
     // photos sans effet immédiat. La valeur du contexte n'étant pas recréée, les
     // consommateurs continuaient de lire l'ancien objet. Un test statique vérifie
     // désormais que tout état exposé figure dans cette liste.
-    notes,
+    notes, retires,
   ]);
 
   return (
