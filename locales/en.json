@@ -704,7 +704,7 @@
     "radiusSection": "Alert radius",
     "radiusLabel": "Trigger distance",
     "radiusValue": "{{m}} m",
-    "radiusHint": "You'll be alerted when an Invader is closer than this distance.",
+    "radiusHint": "You will be alerted when an Invader is closer than this. Below 100 m, iOS no longer reliably detects the crossing while the app is closed.",
     "alertsSection": "How to be alerted",
     "vibration": "Vibration",
     "notification": "Notification",

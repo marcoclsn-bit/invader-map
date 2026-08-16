@@ -19,7 +19,14 @@ const AppContext = createContext(null);
 // Persistés tels quels — le futur moteur lira cet objet sans refactor.
 const DEFAULT_STROLL = {
   enabled:       false,  // toggle principal — éteint par défaut
-  radius:        50,     // rayon d'alerte en mètres (50 / 100 / 150)
+  // 100 m et non 50. La surveillance de régions d'iOS s'appuie sur les cellules
+  // et les bornes Wi-Fi, pas sur le GPS continu, et attend d'être sûre avant de
+  // déclencher : en dessous d'une centaine de mètres, le franchissement passe
+  // souvent inaperçu quand l'app est fermée — c'est-à-dire dans tout le cas
+  // d'usage de la Balade. Apple recommande 100 à 200 m. Marco l'a constaté sur le
+  // terrain : les alertes tombaient surtout à l'ouverture de l'app, jamais en
+  // marchant. Un rayon de 50 m était plus précis sur le papier et muet en vrai.
+  radius:        100,    // rayon d'alerte en mètres (100 / 150)
   vibration:     true,   // alerter par vibration
   notification:  true,   // alerter par notification
   son:           true,   // jouer le son d'alerte (lequel : SON_ALERTE, côté moteur)
@@ -434,8 +441,10 @@ export function AppProvider({ children }) {
           const parsed = JSON.parse(strollRaw);
           if (parsed && typeof parsed === 'object') {
             const merged = { ...DEFAULT_STROLL, ...parsed };
-            // Rayons hérités < 50 m (peu fiables) → ramenés à 50 m.
-            if (!(merged.radius >= 50)) merged.radius = 50;
+            // Rayons hérités sous 100 m → relevés. Ceux qui avaient choisi 50 m
+            // recevaient de fait très peu d'alertes en arrière-plan : les laisser
+            // sur ce réglage reviendrait à leur laisser une fonctionnalité muette.
+            if (!(merged.radius >= 100)) merged.radius = 100;
             setStroll(merged);
           }
         } catch (_) {}

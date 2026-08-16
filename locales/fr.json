@@ -704,7 +704,7 @@
     "radiusSection": "Rayon d'alerte",
     "radiusLabel": "Distance de déclenchement",
     "radiusValue": "{{m}} m",
-    "radiusHint": "Tu recevras une alerte lorsqu'un Invader se trouve à moins de cette distance.",
+    "radiusHint": "Tu recevras une alerte lorsqu'un Invader se trouve à moins de cette distance. En dessous de 100 m, iOS ne détecte plus le passage de façon fiable quand l'app est fermée.",
     "alertsSection": "Comment être alerté",
     "vibration": "Vibration",
     "notification": "Notification",

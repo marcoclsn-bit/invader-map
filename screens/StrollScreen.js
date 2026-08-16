@@ -21,7 +21,12 @@ import { requestStrollPermissions } from '../services/strollEngine';
 import { track } from '../services/analytics';
 
 // 50 / 100 / 150 m uniquement : en dessous de ~50 m le geofencing iOS n'est pas fiable.
-const RADIUS_MIN = 50;
+// 100 m au minimum, et non 50. La surveillance de régions d'iOS ne détecte pas
+// de façon fiable en dessous d'une centaine de mètres quand l'app est fermée —
+// Apple recommande 100 à 200 m. Proposer 50 m revenait à offrir le réglage le
+// plus précis sur le papier et le plus muet sur le terrain, ce que personne ne
+// pouvait deviner en lisant « 50 m ».
+const RADIUS_MIN = 100;
 const RADIUS_MAX = 150;
 const RADIUS_STEP = 50;
 

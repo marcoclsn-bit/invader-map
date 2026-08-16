@@ -704,7 +704,7 @@
     "radiusSection": "Radio de alerta",
     "radiusLabel": "Distancia de activación",
     "radiusValue": "{{m}} m",
-    "radiusHint": "Recibirás un aviso cuando un Invader esté a menos de esta distancia.",
+    "radiusHint": "Recibirás una alerta cuando un Invader esté a menos de esta distancia. Por debajo de 100 m, iOS ya no detecta el paso de forma fiable con la app cerrada.",
     "alertsSection": "Cómo recibir el aviso",
     "vibration": "Vibración",
     "notification": "Notificación",
