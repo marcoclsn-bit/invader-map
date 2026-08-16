@@ -1276,6 +1276,11 @@
       "doneBody": "{{count}} notes found their place again.",
       "emptyTitle": "No note",
       "emptyBody": "You have not written any note on your catches yet."
+    },
+    "file": {
+      "action": "Open a .txt or .csv file",
+      "errTitle": "Cannot read",
+      "errBody": "This file could not be read. Check that it is a text file."
     }
   },
   "explorer": {

@@ -74,15 +74,25 @@ dépendent pas du runtime.
 
 2. **Notifications sensibles au temps.** Entitlement
    `com.apple.developer.usernotifications.time-sensitive` dans `app.json`, et
-   `interruptionLevel: 'timeSensitive'` dans `strollEngine`. Aucun fichier son :
-   Marco a tranché, le vibreur suffit. Ce qui manquait n'était pas le son mais le
-   droit de percer les modes Concentration — précisément ceux qu'on active en
-   marchant. Sans entitlement, iOS ignore la clé sans rejeter la notification.
+   `interruptionLevel: 'timeSensitive'` dans `strollEngine`. Ce qui manquait
+   n'était pas le son mais le droit de percer les modes Concentration — ceux-là
+   mêmes qu'on active en marchant. Sans entitlement, iOS ignore la clé sans
+   rejeter la notification.
 
-3. **`expo-document-picker` et `expo-file-system`.** Les modules sont dans le
-   binaire ; l'interface d'import et d'export par fichier pourra donc partir en
-   OTA, sur le nouveau runtime, sans attendre un autre build. Le format est déjà
-   écrit et testé : liste avec dates en seconde colonne, notes en JSON à part.
+   **Trois sons embarqués** dans `assets/sons/`, déclarés dans le plugin
+   `expo-notifications` : `alerte_bip`, `alerte_arcade`, `alerte_radar`. Ondes
+   carrées synthétisées, 18 à 44 Ko. Le plugin les RECOPIE dans le paquet au
+   moment de la construction (`copyFileSync`) : un son ne peut donc jamais
+   arriver par OTA. En revanche `SON_ALERTE` dans `strollEngine.js` décide lequel
+   on joue, et CE changement-là passe par-dessus les airs. D'où trois candidats
+   plutôt qu'aucun : choisir plus tard ne coûtera pas une revue Apple.
+
+3. **Import et export par FICHIER**, avec `expo-document-picker` et
+   `expo-file-system`. Écrit et livré dans ce build, pas seulement les modules :
+   un bouton « Ouvrir un fichier » verse le contenu dans le même champ que le
+   collage, et les deux exports écrivent un vrai fichier partagé par la feuille
+   système, avec repli sur le texte. Utile parce qu'une collection parisienne
+   complète avec ses dates pèse ~45 Ko : on ne colle pas ça dans un message.
 
 4. **`expo-location` épinglé à `19.0.8` exactement.** `patches/expo-location+19.0.8.patch`
    vise cette version au caractère près, et ce build régénère le verrou. Le

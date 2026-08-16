@@ -1276,6 +1276,11 @@
       "doneBody": "{{count}} notes ont retrouvé leur place.",
       "emptyTitle": "Aucune note",
       "emptyBody": "Tu n'as encore écrit aucune note sur tes prises."
+    },
+    "file": {
+      "action": "Ouvrir un fichier .txt ou .csv",
+      "errTitle": "Lecture impossible",
+      "errBody": "Ce fichier n'a pas pu être lu. Vérifie qu'il s'agit bien d'un fichier texte."
     }
   },
   "explorer": {

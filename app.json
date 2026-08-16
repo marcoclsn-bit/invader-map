@@ -67,7 +67,12 @@
         "expo-notifications",
         {
           "color": "#3DF96B",
-          "icon": "./assets/notification-icon.png"
+          "icon": "./assets/notification-icon.png",
+          "sounds": [
+            "./assets/sons/alerte_bip.wav",
+            "./assets/sons/alerte_arcade.wav",
+            "./assets/sons/alerte_radar.wav"
+          ]
         }
       ],
       "expo-localization",

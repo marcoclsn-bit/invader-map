@@ -1276,6 +1276,11 @@
       "doneBody": "{{count}} notas han recuperado su lugar.",
       "emptyTitle": "Ninguna nota",
       "emptyBody": "Todavía no has escrito ninguna nota sobre tus capturas."
+    },
+    "file": {
+      "action": "Abrir un archivo .txt o .csv",
+      "errTitle": "Lectura imposible",
+      "errBody": "No se ha podido leer este archivo. Comprueba que es un archivo de texto."
     }
   },
   "explorer": {

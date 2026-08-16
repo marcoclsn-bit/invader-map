@@ -9,6 +9,7 @@ import { typography } from '../theme/tokens';
 import { useAppContext } from '../context/AppContext';
 import { useGamification } from '../context/GamificationContext';
 import { analyseListe, exportListe, exportNotes, analyseNotes } from '../utils/importList';
+import { lireFichierTexte, ecrireEtPartager, dateDuJour } from '../utils/fichiers';
 import { recupererGalerie, uidValide, getUid, setUid, oublierUid, setCompteConnu } from '../services/flashinvaders';
 import { track } from '../services/analytics';
 
@@ -162,6 +163,21 @@ export default function ImportScreen({ navigation }) {
     );
   }, [dernier, bulkUnflash, t]);
 
+  // Le contenu du fichier va dans le MÊME champ que le collage. Une liste, une
+  // sauvegarde de notes, un export d'un autre outil : c'est l'analyse qui décide
+  // ensuite. Rien de nouveau à comprendre pour l'utilisateur, juste une autre
+  // façon d'amener le texte.
+  const ouvrirFichier = useCallback(async () => {
+    try {
+      const res = await lireFichierTexte();
+      if (!res) return;
+      setTexte(res.contenu);
+      track('import_file_opened', { taille: res.contenu.length });
+    } catch (e) {
+      Alert.alert(t('import.file.errTitle'), t('import.file.errBody'));
+    }
+  }, [t]);
+
   const restaurerNotes = useCallback(() => {
     if (!notesCollees?.total) return;
     Alert.alert(
@@ -187,11 +203,15 @@ export default function ImportScreen({ navigation }) {
     const combien = Object.keys(notes ?? {}).length;
     if (!combien) { Alert.alert(t('import.notes.emptyTitle'), t('import.notes.emptyBody')); return; }
     track('notes_exported', { count: combien });
+    const corps = exportNotes(notes, dateDuJour());
     try {
-      await Share.share({
-        subject: t('import.notes.subject'),
-        message: exportNotes(notes, new Date().toISOString().slice(0, 10)),
-      });
+      // Fichier d'abord : une sauvegarde se range, elle ne se colle pas dans un
+      // message. Repli sur le texte si le partage de fichier est indisponible.
+      const ok = await ecrireEtPartager(
+        `invaderquest-notes-${dateDuJour()}.json`, corps,
+        { mimeType: 'application/json', titre: t('import.notes.subject') },
+      );
+      if (!ok) await Share.share({ subject: t('import.notes.subject'), message: corps });
     } catch (_) { /* partage annulé */ }
   }, [notes, t]);
 
@@ -200,7 +220,11 @@ export default function ImportScreen({ navigation }) {
     if (!corps) { Alert.alert(t('import.export.emptyTitle'), t('import.export.emptyBody')); return; }
     track('import_exported', { count: flashed.size });
     try {
-      await Share.share({ subject: t('import.export.subject'), message: corps });
+      const ok = await ecrireEtPartager(
+        `invaderquest-flashs-${dateDuJour()}.txt`, corps,
+        { mimeType: 'text/plain', titre: t('import.export.subject') },
+      );
+      if (!ok) await Share.share({ subject: t('import.export.subject'), message: corps });
     } catch (_) { /* partage annulé */ }
   }, [flashed, flashedDates, t]);
 
@@ -268,6 +292,14 @@ export default function ImportScreen({ navigation }) {
         textAlignVertical="top"
       />
       <Text style={st.aide}>{t('import.paste.hint')}</Text>
+
+      {/* Le fichier verse son contenu dans le champ ci-dessus : une seule
+          analyse, un seul écran de résultat. Coller ou ouvrir, c'est le même
+          parcours à partir d'ici. */}
+      <TouchableOpacity style={st.boutonSecondaire} onPress={ouvrirFichier} activeOpacity={0.8}>
+        <Ionicons name="document-text-outline" size={17} color={theme.textPrimary} />
+        <Text style={st.boutonSecondaireTexte}>{t('import.file.action')}</Text>
+      </TouchableOpacity>
 
       {/* Une sauvegarde de notes a été reconnue : on ne parle plus d'Invaders. */}
       {notesCollees && (

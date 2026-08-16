@@ -32,7 +32,19 @@ try {
 }
 const ENGINE_AVAILABLE = !!TaskManager;
 
-export const GEOFENCE_TASK = 'invaderquest-stroll-geofencing';
+export // Son de l'alerte de proximité.
+//
+// `true` = le son système. Pour en jouer un des nôtres, écrire ici le NOM DU
+// FICHIER, par exemple 'alerte_arcade.wav'. Ce changement-là passe en OTA.
+//
+// LE FICHIER, LUI, NON : le plugin expo-notifications le recopie dans le paquet
+// de l'application au moment de la CONSTRUCTION (copyFileSync). D'où trois
+// candidats embarqués dès le build 1.4.0 — alerte_bip, alerte_arcade et
+// alerte_radar — pour qu'un simple envoi par-dessus les airs suffise à choisir,
+// sans repasser par une revue Apple.
+const SON_ALERTE = true;
+
+const GEOFENCE_TASK = 'invaderquest-stroll-geofencing';
 
 // Clés AsyncStorage (lues aussi par la tâche de fond, hors contexte React)
 const KEY_SETTINGS   = '@invader_stroll';        // {enabled, radius, vibration, notification, unflashedOnly}
@@ -227,7 +239,7 @@ async function notifyProximity(invId) {
       content: {
         title: titre,
         body: explorer ? chosen : chosen.replace('{id}', invId),
-        sound: true,
+        sound: SON_ALERTE,
         // SENSIBLE AU TEMPS. Une alerte de proximité n'a de valeur que sur le
         // moment : quarante mètres plus loin, elle ne veut plus rien dire. Ce
         // niveau lui permet de percer les modes Concentration et « Ne pas
