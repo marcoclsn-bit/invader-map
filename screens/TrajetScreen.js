@@ -1115,7 +1115,14 @@ export default function TrajetScreen() {
           loadingIndicatorColor={theme.accent}
           showsCompass={false}
           showsTraffic={false}
-          showsPointsOfInterest={false}
+          // « s » final : react-native-maps 1.29 a RENOMMÉ cette prop
+        // (showsPointsOfInterest → showsPointsOfInterests) sans rétrocompatibilité.
+        // L'ancienne orthographe n'est plus lue, donc plus d'erreur, plus
+        // d'avertissement — seulement les jardins, zoos et musées d'Apple Maps
+        // qui réapparaissent par-dessus les Invaders. Marco l'a vu sur le premier
+        // build 1.4.0. Vérifier qu'une prop EXISTE ne suffit pas : encore
+        // faut-il vérifier qu'elle porte toujours le même nom.
+        showsPointsOfInterests={false}
           showsUserLocation={locationGranted}
           showsMyLocationButton={false}
           initialRegion={{ latitude: city.center.lat, longitude: city.center.lng, ...city.mapDelta }}
