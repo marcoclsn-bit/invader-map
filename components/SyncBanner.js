@@ -134,10 +134,6 @@ export default function SyncBanner({ style }) {
     setMasque(false);
   }, []);
 
-  // Un bandeau déjà affiché attend une réponse : rien à redemander au serveur.
-  const enAttenteRef = useRef(false);
-  enAttenteRef.current = nouveaux.length > 0 && !masque;
-
   // Instant du passage en arrière-plan : sert à distinguer un vrai aller-retour
   // vers une autre app d'un simple clignotement d'état.
   const partiEnFond = useRef(0);
@@ -150,7 +146,6 @@ export default function SyncBanner({ style }) {
         etat,
         partiEnFond: partiEnFond.current,
         maintenant,
-        enAttente: enAttenteRef.current,
         seuilRetour: RETOUR_MIN_MS,
       });
       if (etat !== 'active') partiEnFond.current = maintenant;

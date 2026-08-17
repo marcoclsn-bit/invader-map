@@ -22,7 +22,6 @@ import ExplorerSheet from '../components/ExplorerSheet';
 import PoiSheet from '../components/PoiSheet';
 import PoiMarker from '../components/PoiMarker';
 import PoiIntroCard from '../components/PoiIntroCard';
-import SyncBanner from '../components/SyncBanner';
 import { useTheme } from '../theme/ThemeContext';
 import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
 import { typography } from '../theme/tokens';
@@ -644,7 +643,6 @@ export default function MapScreen({ navigation, route }) {
       {/* Bandeau de synchronisation, sous la barre du haut. Il ne s'affiche que
           si un UID est enregistré ET que le compteur du serveur a augmenté :
           l'immense majorité des lancements ne le verra jamais. */}
-      {!isChangingCity && <SyncBanner style={{ top: insets.top + 56 }} />}
 
       {!isChangingCity && (
         <View style={[styles.topBar, { top: insets.top + 8 }]}>

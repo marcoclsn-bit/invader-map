@@ -16,7 +16,7 @@ import { PressStart2P_400Regular } from '@expo-google-fonts/press-start-2p';
 // Aucun code natif : ce sont des .ttf chargés par expo-font, déjà lié. OTA sûr.
 import { RobotoMono_400Regular, RobotoMono_700Bold } from '@expo-google-fonts/roboto-mono';
 import { useTranslation } from 'react-i18next';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import './i18n';
 import { AppProvider, useAppContext } from './context/AppContext';
 import { GamificationProvider } from './context/GamificationContext';
@@ -42,6 +42,7 @@ import BadgeCelebration from './components/gamification/BadgeCelebration';
 import BadgeBatch from './components/gamification/BadgeBatch';
 import ExplorerIntro from './components/ExplorerIntro';
 import UpdateGate from './components/UpdateGate';
+import SyncBanner from './components/SyncBanner';
 import ImportScreen from './screens/ImportScreen';
 import CollectionScreen from './screens/CollectionScreen';
 import { navigationRef } from './utils/navigationRef';
@@ -61,30 +62,39 @@ const Root   = createNativeStackNavigator();
 function MainTabs() {
   const { theme } = useTheme();
   const { t } = useTranslation();
+  const insets = useSafeAreaInsets();
+  // Le bandeau de synchronisation vit ICI, au-dessus des trois onglets, et non
+  // dans la Carte. Il n'y apparaissait que sur la Carte : quelqu'un qui chasse
+  // est sur Trajet ou sur Chasse, c'est-à-dire exactement là où l'on flashe, et
+  // il n'a jamais rien vu. Une seule instance : en monter une par écran
+  // multiplierait par trois les sondages, chacune avec son propre repos.
   return (
-    <Tab.Navigator
-      screenOptions={{
-        headerShown: false,
-        tabBarActiveTintColor: theme.accent,
-        tabBarInactiveTintColor: theme.textSecondary,
-        tabBarStyle: {
-          backgroundColor: theme.tabBarBg,
-          borderTopColor: theme.tabBarBorder,
-          borderTopWidth: StyleSheet.hairlineWidth,
-        },
-      }}
-    >
-      <Tab.Screen name="Carte" component={MapScreen}
-        options={{ tabBarLabel: t('tabs.map'), tabBarIcon: ({ color, size, focused }) =>
-          <Ionicons name={focused ? 'map' : 'map-outline'} size={size} color={color} /> }} />
-      <Tab.Screen name="Trajet" component={TrajetScreen}
-        options={{ tabBarLabel: t('tabs.route'), tabBarIcon: ({ color, size, focused }) =>
-          <Ionicons name={focused ? 'navigate' : 'navigate-outline'} size={size} color={color} /> }} />
-      {/* Boussole (pas trophée : le trophée évoquerait le Palmarès) */}
-      <Tab.Screen name="Chasse" component={ChasseScreen}
-        options={{ tabBarLabel: t('tabs.hunt'), tabBarIcon: ({ color, size, focused }) =>
-          <Ionicons name={focused ? 'compass' : 'compass-outline'} size={size} color={color} /> }} />
-    </Tab.Navigator>
+    <View style={{ flex: 1 }}>
+      <Tab.Navigator
+        screenOptions={{
+          headerShown: false,
+          tabBarActiveTintColor: theme.accent,
+          tabBarInactiveTintColor: theme.textSecondary,
+          tabBarStyle: {
+            backgroundColor: theme.tabBarBg,
+            borderTopColor: theme.tabBarBorder,
+            borderTopWidth: StyleSheet.hairlineWidth,
+          },
+        }}
+      >
+        <Tab.Screen name="Carte" component={MapScreen}
+          options={{ tabBarLabel: t('tabs.map'), tabBarIcon: ({ color, size, focused }) =>
+            <Ionicons name={focused ? 'map' : 'map-outline'} size={size} color={color} /> }} />
+        <Tab.Screen name="Trajet" component={TrajetScreen}
+          options={{ tabBarLabel: t('tabs.route'), tabBarIcon: ({ color, size, focused }) =>
+            <Ionicons name={focused ? 'navigate' : 'navigate-outline'} size={size} color={color} /> }} />
+        {/* Boussole (pas trophée : le trophée évoquerait le Palmarès) */}
+        <Tab.Screen name="Chasse" component={ChasseScreen}
+          options={{ tabBarLabel: t('tabs.hunt'), tabBarIcon: ({ color, size, focused }) =>
+            <Ionicons name={focused ? 'compass' : 'compass-outline'} size={size} color={color} /> }} />
+      </Tab.Navigator>
+      <SyncBanner style={{ top: insets.top + 56 }} />
+    </View>
   );
 }
 
