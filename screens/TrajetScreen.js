@@ -1401,10 +1401,9 @@ export default function TrajetScreen() {
                   style={styles.startBtn}
                   onPress={startFollowing}
                   accessibilityRole="button"
-                  accessibilityLabel={`${t('hunt.start')}. ${t('hunt.startSub')}`}
+                  accessibilityLabel={t('hunt.start')}
                 >
                   <Text style={styles.startBtnText} numberOfLines={1}>{t('hunt.start')}</Text>
-                  <Text style={styles.startBtnSub} numberOfLines={2}>{t('hunt.startSub')}</Text>
                 </TouchableOpacity>
               )}
               <View style={styles.rightControls}>
@@ -1593,7 +1592,6 @@ function makeStyles(t) {
     },
     rightControls: { flexDirection: 'row', alignItems: 'center', gap: 8 },
     startBtn: {
-      // Colonne et non rangée : le bouton porte un titre et son bénéfice.
       alignItems: 'flex-start', backgroundColor: t.accent, borderRadius: 14,
       paddingHorizontal: 16, paddingVertical: 9,
       // Cède la place plutôt que de pousser. Il partage sa rangée avec les
@@ -1614,7 +1612,6 @@ function makeStyles(t) {
     trackBtnText: { color: t.textPrimary, fontWeight: '600', fontSize: 14 },
     startBtnText: { color: '#000', fontWeight: '800', fontSize: 15 },
     // Même encre que le titre, atténuée : un gris franc sur fond vif se lit mal.
-    startBtnSub: { color: '#000', opacity: 0.68, fontSize: 11, marginTop: 1 },
     recenterBtn: {
       width: 42, height: 42, borderRadius: 21,
       backgroundColor: t.surface, alignItems: 'center', justifyContent: 'center',
