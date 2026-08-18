@@ -6,9 +6,11 @@ import Svg, { Path, Defs, LinearGradient, Stop, Line, Text as SvgText } from 're
  * @param {number} width / height
  * @param {string} accent / textSec / border
  * @param {'week'|'month'} unit
+ * @param {string} locale  langue de l'app, pour nommer les mois
  */
 export default function AreaChart({
   points = [], width = 320, height = 170, accent = '#3DF96B', textSec = '#8FA39A', border = '#283430', unit = 'week',
+  locale = 'fr',
 }) {
   const pad = { t: 14, r: 12, b: 22, l: 30 };
   const cw = width - pad.l - pad.r;
@@ -24,10 +26,20 @@ export default function AreaChart({
   const linePath = `M${linePts.join(' L')}`;
   const areaPath = `${linePath} L${toX(n - 1).toFixed(1)},${(pad.t + ch).toFixed(1)} L${toX(0).toFixed(1)},${(pad.t + ch).toFixed(1)} Z`;
 
+  // L'axe affichait le SEUL numéro du mois : « 08 … 02 … 08 ». Impossible de
+  // savoir s'il s'agissait de jours, de mois ou d'années — et les deux « 08 »,
+  // séparés d'un an, étaient rigoureusement identiques. Un historique importé de
+  // FlashInvaders s'étale sur plusieurs années : c'est le cas normal, pas un cas
+  // limite. Le mois est donc nommé, et l'année suit.
   function fmt(key) {
     if (unit === 'month') {
-      const [, m] = key.split('-');
-      return `${m}`;
+      const [a, m] = key.split('-');
+      const d = new Date(Number(a), Number(m) - 1, 1);
+      try {
+        return d.toLocaleDateString(locale, { month: 'short', year: '2-digit' });
+      } catch {
+        return `${m}/${a.slice(2)}`;   // repli si la locale est inconnue
+      }
     }
     const d = new Date(key);
     return `${String(d.getDate()).padStart(2, '0')}/${String(d.getMonth() + 1).padStart(2, '0')}`;

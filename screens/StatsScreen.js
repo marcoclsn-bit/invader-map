@@ -651,6 +651,7 @@ export default function StatsScreen({ navigation }) {
                   textSec={theme.textSecondary}
                   border={theme.border}
                   unit={series.unit}
+                  locale={i18n.language}
                 />
               ) : (
                 <Hint theme={theme}>{t('stats.profile.empty.curve')}</Hint>
