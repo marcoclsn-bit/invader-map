@@ -147,6 +147,26 @@ export function GamificationProvider({ children }) {
     return session;
   }, []);
 
+  /**
+   * Renseigne la distance d'un récap DÉJÀ ouvert.
+   *
+   * Une sortie reconstituée n'a pas de trace GPS : sa distance demande un
+   * itinéraire piéton, donc un aller-retour réseau d'une seconde ou deux.
+   * L'attendre avant d'ouvrir le récap rendrait le bouton poussif pour un
+   * chiffre décoratif ; on ouvre donc tout de suite avec « — », et on remplit
+   * quand la réponse arrive.
+   *
+   * Comparé à l'identifiant : une réponse tardive ne doit pas s'appliquer à un
+   * récap qu'on a refermé entre-temps, ni à celui d'une AUTRE sortie ouverte
+   * depuis.
+   */
+  const majDistanceRecap = useCallback((sessionId, km) => {
+    if (!Number.isFinite(km) || km <= 0) return;
+    setPendingRecap((p) => (p?.session?.id === sessionId
+      ? { ...p, session: { ...p.session, distanceKm: km } }
+      : p));
+  }, []);
+
   // ─── Déblocages groupés (« tout marquer », import d'une liste) ──────────────
   //
   // Un marquage en lot peut franchir dix paliers d'un coup. Célébrés un par un,
@@ -205,6 +225,7 @@ export function GamificationProvider({ children }) {
     pendingRecap,
     clearRecap,
     previewRecap,
+    majDistanceRecap,
     beginBatch,
     batchBadges,
     clearBatchBadges,

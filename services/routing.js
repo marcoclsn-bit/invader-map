@@ -69,6 +69,7 @@ async function mapboxDirections(waypointsLonLat, profile) {
   const coords = [];
   const legsMin = [];
   let totalSec = 0;
+  let totalM = 0;
 
   for (const chunk of chunkWaypoints(waypointsLonLat)) {
     if (!(await underCap('mapbox'))) throw new Error(i18n.t('routing.error.limit'));
@@ -87,12 +88,18 @@ async function mapboxDirections(waypointsLonLat, profile) {
     coords.push(...(coords.length ? geo.slice(1) : geo));
     for (const leg of r.legs ?? []) legsMin.push(leg.duration / 60);
     totalSec += r.duration ?? 0;
+    totalM += r.distance ?? 0;
   }
 
   return {
     coords,
     durationMin: Math.round(totalSec / 60),
     legsMin: legsMin.length ? legsMin : null,
+    // La distance était renvoyée par les deux fournisseurs et jetée. Elle sert
+    // aux sorties reconstituées, qui n'ont aucune trace GPS : c'est la seule
+    // façon d'annoncer des kilomètres qui soient VRAIS, mesurés sur les rues
+    // plutôt qu'à vol d'oiseau.
+    distanceKm: totalM ? Math.round(totalM / 10) / 100 : null,
   };
 }
 
@@ -296,10 +303,12 @@ export async function multiRoute(waypointsLonLat, profile) {
     // Durée par tronçon (leg entre 2 waypoints consécutifs) — sert à ajuster une
     // boucle de chasse au budget sans multiplier les appels ORS.
     const segs = feature.properties.segments;
+    const metres = feature.properties.summary?.distance;
     result = {
       coords: feature.geometry.coordinates,
       durationMin: Math.round(feature.properties.summary.duration / 60),
       legsMin: Array.isArray(segs) ? segs.map(s => s.duration / 60) : null,
+      distanceKm: Number.isFinite(metres) ? Math.round(metres / 10) / 100 : null,
     };
   } catch (e) {
     if (e.message !== QUOTA) throw e;   // vraie erreur de calcul → on la remonte
