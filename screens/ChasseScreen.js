@@ -27,6 +27,7 @@ import ExplorerSheet from '../components/ExplorerSheet';
 import IndiceButton from '../components/IndiceButton';
 import { backtrackScore, simplifyPath } from '../utils/tourGeometry';
 import { useTheme } from '../theme/ThemeContext';
+import BoutonPartageSortie from '../components/session/BoutonPartageSortie';
 import { typography } from '../theme/tokens';
 import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
 import InvaderPanel from '../components/InvaderPanel';
@@ -1733,6 +1734,7 @@ export default function ChasseScreen({ route }) {
                       <Ionicons name="locate-outline" size={22} color={theme.accent} />
                     </TouchableOpacity>
                   )}
+                  <BoutonPartageSortie style={styles.recenterBtn} />
                   <TouchableOpacity style={styles.recenterBtn} onPress={askResetHunt} accessibilityLabel={t('common.reset')}>
                     <Ionicons name="refresh" size={20} color={theme.accent} />
                   </TouchableOpacity>

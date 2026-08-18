@@ -35,6 +35,7 @@ import { useSessionRecorder } from '../components/session/useSessionRecorder';
 import useKeepScreenOn from '../components/session/useKeepScreenOn';
 import { useGamification } from '../context/GamificationContext';
 import { useTheme } from '../theme/ThemeContext';
+import BoutonPartageSortie from '../components/session/BoutonPartageSortie';
 import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
 import { typography } from '../theme/tokens';
 import { openInstagramTag, openNavigationApp } from '../utils/navigation';
@@ -1408,6 +1409,7 @@ export default function TrajetScreen() {
                     <Ionicons name="locate-outline" size={22} color={theme.accent} />
                   </TouchableOpacity>
                 )}
+                <BoutonPartageSortie style={styles.recenterBtn} />
                 <TouchableOpacity style={styles.recenterBtn} onPress={askResetRoute} accessibilityLabel={t('common.reset')}>
                   <Ionicons name="refresh" size={20} color={theme.accent} />
                 </TouchableOpacity>
