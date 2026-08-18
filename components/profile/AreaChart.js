@@ -20,6 +20,42 @@ export default function AreaChart({
   const cw = width - pad.l - pad.r;
   const ch = height - pad.t - pad.b;
   const n = points.length;
+
+  // ── Lecture au doigt ──────────────────────────────────────────────────────
+  //
+  // TOUS LES HOOKS AVANT LE MOINDRE RETOUR ANTICIPÉ. Ils étaient déclarés plus
+  // bas, après le `if (n < 2) return null` : le nombre de hooks changeait donc
+  // entre un rendu sans données et un rendu avec, ce que React refuse.
+  //
+  // Trois libellés sur l'axe donnent la FORME, jamais une valeur. Poser le doigt
+  // donne le mois exact, le total à cette date, et ce qui a été flashé pendant
+  // la période. La sélection PERSISTE au relâchement : lever le doigt effacerait
+  // ce qu'on venait chercher.
+  const [idx, setIdx] = useState(null);
+  // Géométrie relue par référence : le gestionnaire de geste est mémoïsé et
+  // capturerait sinon les valeurs du premier rendu — largeur d'écran comprise.
+  const geo = useRef(null);
+  geo.current = { gauche: pad.l, largeur: Math.max(1, cw), n };
+
+  const pan = useMemo(() => {
+    const majIdx = (x) => {
+      const { gauche, largeur, n: nb } = geo.current;
+      if (nb < 2) return;
+      const i = Math.round(((x - gauche) / largeur) * (nb - 1));
+      setIdx(Math.max(0, Math.min(nb - 1, i)));
+    };
+    return PanResponder.create({
+      onStartShouldSetPanResponder: () => !!legende,
+      onMoveShouldSetPanResponder: () => !!legende,
+      // Le graphique vit dans une ScrollView : sans ce garde, un défilement
+      // vertical amorcé sur la courbe serait capturé et la page se figerait.
+      onMoveShouldSetPanResponderCapture: (_e, g) => !!legende && Math.abs(g.dx) > Math.abs(g.dy),
+      onPanResponderGrant: (e) => majIdx(e.nativeEvent.locationX),
+      onPanResponderMove: (e) => majIdx(e.nativeEvent.locationX),
+      onPanResponderTerminationRequest: () => false,
+    });
+  }, [legende]);
+
   if (n < 2) return null;
 
   const maxVal = Math.max(1, ...points.map((p) => p.cum));
@@ -52,37 +88,6 @@ export default function AreaChart({
   const midIdx = Math.floor((n - 1) / 2);
   const labelIdx = [0, midIdx, n - 1].filter((v, i, a) => a.indexOf(v) === i);
 
-  // ── Lecture au doigt ──────────────────────────────────────────────────────
-  //
-  // Trois libellés sur l'axe suffisent à donner la FORME, pas à lire une valeur.
-  // Poser le doigt sur la courbe donne le mois exact, le total à cette date et
-  // ce qui a été flashé pendant la période — ce que douze libellés serrés
-  // n'auraient jamais réussi à montrer sur une largeur de téléphone.
-  //
-  // La sélection PERSISTE après le relâchement : on touche pour lire, et lever
-  // le doigt effacerait justement ce qu'on venait chercher.
-  const [idx, setIdx] = useState(null);
-  const zoneX = useRef({ gauche: pad.l, largeur: Math.max(1, cw) });
-  zoneX.current = { gauche: pad.l, largeur: Math.max(1, cw) };
-
-  const pan = useMemo(() => PanResponder.create({
-    onStartShouldSetPanResponder: () => !!legende,
-    onMoveShouldSetPanResponder: () => !!legende,
-    // Le graphique vit dans une ScrollView : sans ce garde, un défilement
-    // vertical amorcé sur la courbe serait capturé et la page se figerait.
-    onMoveShouldSetPanResponderCapture: (_e, g) => !!legende && Math.abs(g.dx) > Math.abs(g.dy),
-    onPanResponderGrant: (e) => majIdx(e.nativeEvent.locationX),
-    onPanResponderMove: (e) => majIdx(e.nativeEvent.locationX),
-    onPanResponderTerminationRequest: () => false,
-  }), [legende]);
-
-  function majIdx(x) {
-    const { gauche, largeur } = zoneX.current;
-    const rel = (x - gauche) / largeur;
-    const i = Math.round(rel * (n - 1));
-    setIdx(Math.max(0, Math.min(n - 1, i)));
-  }
-
   const actif = idx != null && points[idx] ? points[idx] : null;
   const valeur = actif && legende ? legende(actif) : null;
   // Deux ancrages plutôt qu'une bulle unique : la DATE se lit sous le trait de
@@ -94,8 +99,16 @@ export default function AreaChart({
   const valeurX = actif ? bornerX(toX(idx), 52) : 0;
   // Sous le plafond du cadre : au maximum de la courbe, l'étiquette sortirait
   // par le haut. Elle bascule alors sous le point.
-  const hautY = actif ? toY(actif.cum) - 10 : 0;
-  const valeurY = hautY < pad.t + 8 ? toY(actif.cum) + 16 : hautY;
+  //
+  // Le calcul entier est gardé par `actif`. Il ne l'était qu'à moitié : sans
+  // sélection, `hautY` valait 0, la comparaison passait, et la branche
+  // déréférençait `actif.cum` sur null — à CHAQUE rendu sans sélection, donc dès
+  // l'ouverture de l'onglet Cumul.
+  let valeurY = 0;
+  if (actif) {
+    const haut = toY(actif.cum) - 10;
+    valeurY = haut < pad.t + 8 ? toY(actif.cum) + 16 : haut;
+  }
 
   return (
     <View {...pan.panHandlers}>
