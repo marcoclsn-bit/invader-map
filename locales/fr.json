@@ -1385,6 +1385,8 @@
     "resume_one": "{{count}} Invader · {{ville}} · {{duree}}",
     "resume_other": "{{count}} Invaders · {{ville}} · {{duree}}",
     "emptyTitle": "Aucune sortie pour le moment",
-    "emptyBody": "Flashe au moins deux Invaders dans la même balade et elle apparaîtra ici, prête à partager."
+    "emptyBody": "Flashe au moins deux Invaders dans la même balade et elle apparaîtra ici, prête à partager.",
+    "btnLabel": "Partager ma sortie",
+    "btnDisabled": "Flashe au moins deux Invaders dans la même balade, et tu pourras la partager d'ici."
   }
 }

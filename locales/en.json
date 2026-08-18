@@ -1385,6 +1385,8 @@
     "resume_one": "{{count}} Invader · {{ville}} · {{duree}}",
     "resume_other": "{{count}} Invaders · {{ville}} · {{duree}}",
     "emptyTitle": "No outings yet",
-    "emptyBody": "Flash at least two Invaders on the same walk and it will show up here, ready to share."
+    "emptyBody": "Flash at least two Invaders on the same walk and it will show up here, ready to share.",
+    "btnLabel": "Share my outing",
+    "btnDisabled": "Flash at least two Invaders on the same walk, and you will be able to share it from here."
   }
 }

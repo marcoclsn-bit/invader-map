@@ -1,4 +1,3 @@
-import { useMemo, useCallback } from 'react';
 import {
   View, Text, FlatList, TouchableOpacity, StyleSheet,
 } from 'react-native';
@@ -6,12 +5,9 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { DrawerActions } from '@react-navigation/native';
-import { useAppContext } from '../context/AppContext';
-import { useGamification } from '../context/GamificationContext';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
-import { decouperSorties, traceSortie } from '../utils/sorties';
-import { makeSession } from '../utils/session';
+import { useSorties } from '../components/session/useSorties';
 import { CITIES } from '../cities/registry';
 
 // ─── Mes sorties ──────────────────────────────────────────────────────────────
@@ -60,36 +56,8 @@ export default function SortiesScreen({ navigation }) {
   const { t, i18n } = useTranslation();
   const st = getStyles(theme);
   const insets = useSafeAreaInsets();
-  const { flashedDates, invaders } = useAppContext();
-  const { previewRecap } = useGamification();
+  const { sorties, ouvrir } = useSorties();
 
-  const sorties = useMemo(() => decouperSorties(flashedDates), [flashedDates]);
-
-  // Index par identifiant, construit une fois : `traceSortie` en a besoin à
-  // chaque ouverture, et Paris compte 1 351 mosaïques.
-  const parId = useMemo(
-    () => new Map((invaders ?? []).map((i) => [i.id, i])),
-    [invaders],
-  );
-
-  const ouvrir = useCallback((sortie) => {
-    const session = makeSession({
-      source: 'auto',
-      startedAt: sortie.startedAt,
-      endedAt: sortie.endedAt,
-      city: sortie.city,
-      invaderIds: sortie.invaderIds,
-      // PAS de distance : sans trace GPS, relier les mosaïques en ligne droite
-      // sous-estimerait toujours le trajet réel. Le récap affiche « — », ce qui
-      // est honnête ; annoncer 2 km à qui en a marché 5 ne le serait pas.
-      distanceKm: null,
-      routeCoords: traceSortie(sortie, parId),
-    });
-    // L'identifiant déterministe de la sortie l'emporte sur celui, tiré au
-    // hasard, que produit makeSession. Sans effet tant qu'on ne fait
-    // qu'afficher ; indispensable le jour où ces sorties seront enregistrées.
-    previewRecap({ ...session, id: sortie.id });
-  }, [parId, previewRecap]);
 
   return (
     <View style={[st.page, { paddingTop: insets.top, paddingBottom: insets.bottom }]}>

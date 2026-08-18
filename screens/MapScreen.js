@@ -9,6 +9,7 @@ import { useTranslation } from 'react-i18next';
 import i18n from '../i18n';
 import { DrawerActions } from '@react-navigation/native';
 import { useAppContext } from '../context/AppContext';
+import { useSorties } from '../components/session/useSorties';
 import { CITIES, ENABLED_CITIES } from '../cities/registry';
 import { ALL_STATUSES, statusKey, statusLabelKey } from '../constants';
 import { familyOf } from '../data/poiFamilies';
@@ -217,6 +218,8 @@ export default function MapScreen({ navigation, route }) {
   const { t } = useTranslation();
   const styles = getStyles(theme);
   const insets = useSafeAreaInsets();
+  // Sortie partageable la plus récente — voir le bouton bas-droite.
+  const { derniere: derniereSortie, ouvrir: ouvrirSortie } = useSorties();
 
   const mapRef = useRef(null);
   const centeredRef = useRef(false);
@@ -702,9 +705,28 @@ export default function MapScreen({ navigation, route }) {
         </TouchableOpacity>
       )}
 
-      {/* ── Boutons bas-droite : Filtres + Localisation ── */}
+      {/* ── Boutons bas-droite : Partage + Filtres + Localisation ── */}
       {!isChangingCity && (
         <View style={[styles.bottomRight, { bottom: insets.bottom + 16 }]}>
+          {/* PARTAGER SA SORTIE.
+              Un bouton et non un bandeau différé : après une chasse, l'app est
+              fermée. Un déclenchement « 30 minutes sans flash » ne serait donc
+              jamais vu au bon moment — il attendrait la prochaine ouverture,
+              parfois des jours plus tard.
+              Toujours VISIBLE, grisé tant qu'il n'y a rien à partager : c'est ce
+              qui apprend son existence. Mais un bouton mort qui ne dit pas
+              pourquoi frustre — celui-ci s'explique quand on le touche. */}
+          <TouchableOpacity
+            style={[styles.circleBtn, !derniereSortie && { opacity: 0.4 }]}
+            onPress={() => (derniereSortie
+              ? ouvrirSortie(derniereSortie)
+              : Alert.alert(t('sorties.title'), t('sorties.btnDisabled')))}
+            accessibilityRole="button"
+            accessibilityLabel={t('sorties.btnLabel')}
+            accessibilityState={{ disabled: !derniereSortie }}
+          >
+            <Ionicons name="share-social-outline" size={19} color={theme.textPrimary} />
+          </TouchableOpacity>
           <TouchableOpacity
             style={[styles.circleBtn, hasActiveFilters && styles.circleBtnActive]}
             onPress={() => {
