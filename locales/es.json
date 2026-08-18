@@ -314,7 +314,8 @@
       "togglePts": "Puntos",
       "insufficient": "Sigue unas semanas más para ver tu curva de progreso.",
       "toggleDaily": "Por día (7 d)",
-      "toggleCum": "Acumulado"
+      "toggleCum": "Acumulado",
+      "point": "{{total}} en total · +{{ajout}}"
     },
     "streak": {
       "section": "Racha & récords",

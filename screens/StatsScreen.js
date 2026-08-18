@@ -414,7 +414,10 @@ export default function StatsScreen({ navigation }) {
 
   // ── Courbe ──
   const series = profile.series;
-  const curvePoints = series.points.map(p => ({ key: p.key, cum: p.cum }));
+  // `count` en plus de `cum` : l'infobulle dit le total À CETTE DATE et ce qui a
+  // été flashé pendant la période. Le cumul seul ne raconte pas où sont les
+  // grosses semaines.
+  const curvePoints = series.points.map(p => ({ key: p.key, cum: p.cum, count: p.count }));
 
   const sliderDefs = [
     { k: 'rarity', d: profile.sliders.rarity },
@@ -652,6 +655,7 @@ export default function StatsScreen({ navigation }) {
                   border={theme.border}
                   unit={series.unit}
                   locale={i18n.language}
+                  legende={(p) => t('stats.chart.point', { total: p.cum, ajout: p.count ?? 0 })}
                 />
               ) : (
                 <Hint theme={theme}>{t('stats.profile.empty.curve')}</Hint>

@@ -314,7 +314,8 @@
       "togglePts": "Points",
       "insufficient": "Keep flashing for a few more weeks to see your progress curve.",
       "toggleDaily": "Daily (7 d)",
-      "toggleCum": "All-time"
+      "toggleCum": "All-time",
+      "point": "{{total}} total · +{{ajout}}"
     },
     "streak": {
       "section": "Streak & records",

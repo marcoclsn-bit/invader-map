@@ -314,7 +314,8 @@
       "togglePts": "Points",
       "insufficient": "Flash encore quelques semaines pour voir la courbe se dessiner.",
       "toggleDaily": "Par jour (7 j)",
-      "toggleCum": "Cumul"
+      "toggleCum": "Cumul",
+      "point": "{{total}} au total · +{{ajout}}"
     },
     "streak": {
       "section": "Série & records",

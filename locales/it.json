@@ -314,7 +314,8 @@
       "togglePts": "Punti",
       "insufficient": "Continua ancora qualche settimana per vedere la curva di progressione.",
       "toggleDaily": "Al giorno (7 g)",
-      "toggleCum": "Cumulativo"
+      "toggleCum": "Cumulativo",
+      "point": "{{total}} in totale · +{{ajout}}"
     },
     "streak": {
       "section": "Serie & record",
