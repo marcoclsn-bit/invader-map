@@ -178,7 +178,7 @@
     "filteredTo": "Limité au {{label}}",
     "generate": "Générer la chasse",
     "generating": "Calcul de l'itinéraire…",
-    "start": "Démarrer",
+    "start": "Suivre l'itinéraire",
     "quit": "Terminer",
     "waitingGps": "En attente de la position GPS…",
     "resultCount_one": "{{count}} Invader",
@@ -221,7 +221,7 @@
       "other": "Lieu remarquable"
     },
     "timeLabelBare": "Temps",
-    "startSub": "Enregistre ta carte de fin",
+    "startSub": "Guide-moi et mesure ma distance",
     "pickDistrict": "Choisis un arrondissement",
     "districtSelected": "{{ar}}e arrondissement",
     "legend": {

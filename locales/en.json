@@ -178,7 +178,7 @@
     "filteredTo": "Limited to {{label}}",
     "generate": "Generate hunt",
     "generating": "Building your route…",
-    "start": "Start",
+    "start": "Follow the route",
     "quit": "Finish",
     "waitingGps": "Waiting for GPS signal…",
     "resultCount_one": "{{count}} Invader",
@@ -221,7 +221,7 @@
       "other": "Notable place"
     },
     "timeLabelBare": "Time",
-    "startSub": "Records your end-of-run card",
+    "startSub": "Guide me and measure my distance",
     "pickDistrict": "Pick a district",
     "districtSelected": "District {{ar}}",
     "legend": {

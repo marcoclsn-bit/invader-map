@@ -178,7 +178,7 @@
     "filteredTo": "Limitato al {{label}}",
     "generate": "Genera caccia",
     "generating": "Calcolo del percorso…",
-    "start": "Avvia",
+    "start": "Segui il percorso",
     "quit": "Termina",
     "waitingGps": "In attesa del segnale GPS…",
     "resultCount_one": "{{count}} Invader",
@@ -221,7 +221,7 @@
       "other": "Luogo notevole"
     },
     "timeLabelBare": "Tempo",
-    "startSub": "Registra la tua scheda finale",
+    "startSub": "Guidami e misura la mia distanza",
     "pickDistrict": "Scegli un arrondissement",
     "districtSelected": "{{ar}}° arrondissement",
     "legend": {

@@ -1403,8 +1403,8 @@ export default function TrajetScreen() {
                   accessibilityRole="button"
                   accessibilityLabel={`${t('hunt.start')}. ${t('hunt.startSub')}`}
                 >
-                  <Text style={styles.startBtnText}>{t('hunt.start')}</Text>
-                  <Text style={styles.startBtnSub}>{t('hunt.startSub')}</Text>
+                  <Text style={styles.startBtnText} numberOfLines={1}>{t('hunt.start')}</Text>
+                  <Text style={styles.startBtnSub} numberOfLines={2}>{t('hunt.startSub')}</Text>
                 </TouchableOpacity>
               )}
               <View style={styles.rightControls}>
@@ -1596,6 +1596,11 @@ function makeStyles(t) {
       // Colonne et non rangée : le bouton porte un titre et son bénéfice.
       alignItems: 'flex-start', backgroundColor: t.accent, borderRadius: 14,
       paddingHorizontal: 16, paddingVertical: 9,
+      // Cède la place plutôt que de pousser. Il partage sa rangée avec les
+      // boutons ronds — quatre depuis l'ajout du partage — et son libellé a
+      // grandi en devenant « Suivre l'itinéraire ». Sans ce retrait, la rangée
+      // déborde sur les écrans étroits et les boutons ronds sortent du cadre.
+      flexShrink: 1,
       shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
       shadowOpacity: 0.2, shadowRadius: 4, elevation: 4,
     },

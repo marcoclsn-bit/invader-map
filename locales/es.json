@@ -178,7 +178,7 @@
     "filteredTo": "Limitado al {{label}}",
     "generate": "Generar caza",
     "generating": "Calculando la ruta…",
-    "start": "Iniciar",
+    "start": "Seguir la ruta",
     "quit": "Terminar",
     "waitingGps": "Esperando señal GPS…",
     "resultCount_one": "{{count}} Invader",
@@ -221,7 +221,7 @@
       "other": "Lugar destacado"
     },
     "timeLabelBare": "Tiempo",
-    "startSub": "Graba tu tarjeta final",
+    "startSub": "Guíame y mide mi distancia",
     "pickDistrict": "Elige un distrito",
     "districtSelected": "Distrito {{ar}}",
     "legend": {
