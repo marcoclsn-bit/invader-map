@@ -55,7 +55,7 @@ export default function SessionRecap() {
 
 function RecapBody({ session, newBadgeIds, onClose }) {
   const { theme } = useTheme();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { invaders, flashed, explorer } = useAppContext();
   const { width: screenW, height: screenH } = useWindowDimensions();
   const storyRef = useRef(null);
@@ -68,6 +68,11 @@ function RecapBody({ session, newBadgeIds, onClose }) {
   const fondsRef = useRef({});
 
   const cityName = CITIES[session.city]?.name ?? session.city ?? '—';
+  const dateSortie = useMemo(() => {
+    const d = new Date(session.startedAt);
+    if (!Number.isFinite(d.getTime())) return null;
+    return d.toLocaleDateString(i18n.language, { day: 'numeric', month: 'long' });
+  }, [session.startedAt, i18n.language]);
 
   // Pins des Invaders attrapés : coordonnées + points, retrouvés dans les données
   // de la ville courante (la session se déroule dans cette ville).
@@ -176,7 +181,12 @@ function RecapBody({ session, newBadgeIds, onClose }) {
           <Text style={[typography.arcadeTitle, styles.title, { color: theme.accent }]}>
             {t('session.recap.title')}
           </Text>
-          <Text style={[styles.city, { color: theme.textSecondary }]}>{cityName}</Text>
+          {/* La ville ET la date : deux sorties de tailles voisines dans la même
+              ville étaient indiscernables, et une sortie ouverte depuis
+              « Mes sorties » peut dater de plusieurs jours. */}
+          <Text style={[styles.city, { color: theme.textSecondary }]}>
+            {cityName}{dateSortie ? ` · ${dateSortie}` : ''}
+          </Text>
 
           {/* Tableau de score rétro */}
           <View style={[styles.board, { backgroundColor: theme.surface, borderColor: theme.border }]}>
@@ -294,7 +304,17 @@ function RecapBody({ session, newBadgeIds, onClose }) {
 function Stat({ value, label, theme, accent }) {
   return (
     <View style={styles.stat}>
-      <Text style={[typography.arcadeScore, styles.statValue, { color: accent ?? theme.accent }]}>{value}</Text>
+      {/* UNE SEULE LIGNE, quitte à rétrécir. Silkscreen est à chasse fixe et la
+          colonne fait le quart de l'écran : « 10,3 », « 1h21 » et « +1010 »
+          passaient à la ligne, coupant le nombre en deux — « 10, » au-dessus de
+          « 3 ». adjustsFontSizeToFit réduit jusqu'à ce que ça tienne ; le
+          plancher évite qu'un score à six chiffres devienne illisible. */}
+      <Text
+        style={[typography.arcadeScore, styles.statValue, { color: accent ?? theme.accent }]}
+        numberOfLines={1}
+        adjustsFontSizeToFit
+        minimumFontScale={0.55}
+      >{value}</Text>
       <Text style={[styles.statLabel, { color: theme.textSecondary }]}>{label}</Text>
     </View>
   );

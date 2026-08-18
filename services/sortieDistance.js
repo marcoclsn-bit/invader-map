@@ -32,30 +32,38 @@ async function lire() {
 }
 
 /**
+ * On rend AUSSI la géométrie de l'itinéraire. La carte de partage reliait les
+ * mosaïques en lignes droites, qui traversaient les immeubles : on avait déjà
+ * le vrai tracé sous la main — c'est la même réponse — et on le jetait.
+ *
  * @param {string} sortieId   identifiant DÉTERMINISTE (voir utils/sorties.js)
  * @param {Array<[number,number]>} trace  [[lon, lat], …] dans l'ordre chronologique
- * @returns {Promise<number|null>} kilomètres, ou null si indisponible
+ * @returns {Promise<{km: number, coords: Array}|null>} null si indisponible
  */
 export async function distanceSortie(sortieId, trace) {
   if (!sortieId || !trace || trace.length < 2) return null;
 
   const cache = await lire();
-  // `null` mis en cache = « déjà tenté, sans succès ». On ne le distingue pas
-  // d'une absence : un échec vient presque toujours du réseau ou du quota, deux
-  // choses qui changent. Retenter à la prochaine ouverture est le bon défaut.
-  if (typeof cache[sortieId] === 'number') return cache[sortieId];
+  // Seuls les KILOMÈTRES sont mis en cache, pas la géométrie : un itinéraire
+  // parisien de 31 étapes pèse plusieurs dizaines de kilo-octets, et le stocker
+  // pour 200 sorties gonflerait le stockage local pour un tracé qu'on redemande
+  // rarement. `multiRoute` a de toute façon son propre cache mémoire.
+  const connu = typeof cache[sortieId] === 'number' && cache[sortieId] > 0;
 
-  let km = null;
+  let r = null;
   try {
-    const r = await multiRoute(trace, 'foot-walking');
-    km = Number.isFinite(r?.distanceKm) ? r.distanceKm : null;
+    r = await multiRoute(trace, 'foot-walking');
   } catch {
     // Hors ligne, quota épuisé, aucun itinéraire piéton entre deux points : le
-    // récap affichera « — », exactement comme avant. Jamais d'erreur montrée
-    // pour un chiffre décoratif.
-    return null;
+    // récap garde ses lignes droites et « — », exactement comme avant. Jamais
+    // d'erreur montrée pour un chiffre décoratif.
+    return connu ? { km: cache[sortieId], coords: null } : null;
   }
-  if (km == null) return null;
+  // Zéro n'est pas une distance : c'est le symptôme d'un itinéraire qui n'a pas
+  // abouti. Le laisser passer afficherait « 0,0 KM » sur une image partagée.
+  const km = Number.isFinite(r?.distanceKm) && r.distanceKm > 0 ? r.distanceKm : null;
+  const coords = Array.isArray(r?.coords) && r.coords.length > 1 ? r.coords : null;
+  if (km == null) return coords ? { km: null, coords } : null;
 
   try {
     const suivant = { ...cache, [sortieId]: km };
@@ -68,7 +76,7 @@ export async function distanceSortie(sortieId, trace) {
     await AsyncStorage.setItem(CLE, JSON.stringify(suivant));
   } catch { /* le cache est un confort, pas une condition */ }
 
-  return km;
+  return { km, coords };
 }
 
 export default distanceSortie;

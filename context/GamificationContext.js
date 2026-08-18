@@ -148,7 +148,7 @@ export function GamificationProvider({ children }) {
   }, []);
 
   /**
-   * Renseigne la distance d'un récap DÉJÀ ouvert.
+   * Renseigne la distance ET le tracé réel d'un récap DÉJÀ ouvert.
    *
    * Une sortie reconstituée n'a pas de trace GPS : sa distance demande un
    * itinéraire piéton, donc un aller-retour réseau d'une seconde ou deux.
@@ -160,11 +160,23 @@ export function GamificationProvider({ children }) {
    * récap qu'on a refermé entre-temps, ni à celui d'une AUTRE sortie ouverte
    * depuis.
    */
-  const majDistanceRecap = useCallback((sessionId, km) => {
-    if (!Number.isFinite(km) || km <= 0) return;
-    setPendingRecap((p) => (p?.session?.id === sessionId
-      ? { ...p, session: { ...p.session, distanceKm: km } }
-      : p));
+  const majDistanceRecap = useCallback((sessionId, { km, coords } = {}) => {
+    const kmOk = Number.isFinite(km) && km > 0;
+    const traceOk = Array.isArray(coords) && coords.length > 1;
+    if (!kmOk && !traceOk) return;
+    setPendingRecap((p) => {
+      if (p?.session?.id !== sessionId) return p;
+      return {
+        ...p,
+        session: {
+          ...p.session,
+          ...(kmOk ? { distanceKm: km } : null),
+          // Le vrai tracé piéton remplace les lignes droites qui reliaient les
+          // mosaïques en traversant les immeubles.
+          ...(traceOk ? { routeCoords: coords } : null),
+        },
+      };
+    });
   }, []);
 
   // ─── Déblocages groupés (« tout marquer », import d'une liste) ──────────────

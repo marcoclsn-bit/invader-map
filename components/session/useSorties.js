@@ -39,18 +39,21 @@ export function useSorties() {
       // pour la connaître, et il arrive quelques instants plus tard (voir plus
       // bas). Le récap affiche « — » en attendant.
       distanceKm: null,
+      // Provisoire : mosaïques reliées en ligne droite. Remplacé par le vrai
+      // cheminement dès que l'itinéraire répond — les lignes droites traversent
+      // les immeubles, ce qui se voit sur une carte partagée.
       routeCoords: trace,
     });
     // L'identifiant déterministe l'emporte sur celui, tiré au hasard, que
     // produit makeSession. Sans effet tant qu'on ne fait qu'afficher ;
     // indispensable le jour où ces sorties seront enregistrées.
     previewRecap({ ...session, id: sortie.id });
-    // Distance en différé : le récap s'ouvre immédiatement avec « — » et se
-    // complète quand l'itinéraire piéton répond. Mis en cache par identifiant,
-    // donc calculé une seule fois par sortie.
+    // Distance ET tracé réel en différé : le récap s'ouvre immédiatement avec
+    // « — » et des lignes droites, puis se complète quand l'itinéraire piéton
+    // répond. Un seul appel réseau sert les deux.
     distanceSortie(sortie.id, trace)
-      .then((km) => majDistanceRecap(sortie.id, km))
-      .catch(() => { /* le récap reste sans kilomètres, comme avant */ });
+      .then((r) => r && majDistanceRecap(sortie.id, r))
+      .catch(() => { /* le récap garde ses lignes droites, comme avant */ });
   }, [parId, previewRecap, majDistanceRecap]);
 
   return { sorties, derniere: sorties[0] ?? null, ouvrir };
