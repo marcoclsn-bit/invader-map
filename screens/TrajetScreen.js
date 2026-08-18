@@ -1111,7 +1111,19 @@ export default function TrajetScreen() {
           mapType={Platform.OS === 'android' ? 'standard' : 'mutedStandard'}
           userInterfaceStyle={isDark ? 'dark' : 'light'}
           customMapStyle={Platform.OS === 'android' ? (isDark ? DARK_MAP_STYLE : LIGHT_MAP_STYLE) : undefined}
-          loadingEnabled={Platform.OS === 'android'}
+          // SUR LES DEUX PLATEFORMES, et non le seul Android. C'est ce drapeau qui
+          // commande les deux lignes suivantes : côté natif, la vue de chargement
+          // reste masquée tant qu'il est faux (AIRMap.mm, setLoadingEnabled). On
+          // réglait donc la couleur d'un voile qui ne s'affichait jamais, et Apple
+          // Maps montrait son fond BLANC le temps de charger ses tuiles.
+          //
+          // Il avait été restreint à Android au motif que la prop serait « ignorée
+          // par Apple Maps ». C'est l'inverse : la documentation dit « iOS : Apple
+          // Maps only » — elle ne vaut PAS pour Google Maps sur iOS, mais vaut
+          // précisément pour le fournisseur que nous utilisons. Vérifié sur une
+          // vidéo de Marco : à 2,00 s l'interface est déjà dessinée, seule la zone
+          // de carte est blanche.
+          loadingEnabled
           loadingBackgroundColor={theme.bg}
           loadingIndicatorColor={theme.accent}
           showsCompass={false}
