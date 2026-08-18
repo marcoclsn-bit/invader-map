@@ -27,6 +27,7 @@ import ExplorerSheet from '../components/ExplorerSheet';
 import IndiceButton from '../components/IndiceButton';
 import { backtrackScore, simplifyPath } from '../utils/tourGeometry';
 import { useTheme } from '../theme/ThemeContext';
+import VoileCarte from '../components/VoileCarte';
 import BoutonPartageSortie from '../components/session/BoutonPartageSortie';
 import { typography } from '../theme/tokens';
 import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
@@ -584,6 +585,8 @@ function LegendRow({ children, label, styles }) {
 export default function ChasseScreen({ route }) {
   const insets = useSafeAreaInsets();
   const mapRef = useRef(null);
+  // Carte prête : commande le voile anti-éclair blanc (VoileCarte).
+  const [mapPret, setMapPret] = useState(false);
   const gpsRef = useRef(null);
   const quartierInputRef = useRef(null);
   const debounce = useRef(null);
@@ -1297,6 +1300,7 @@ export default function ChasseScreen({ route }) {
         <View style={styles.mapContainer}>
           <MapView
             ref={mapRef}
+            onMapReady={() => setMapPret(true)}
             style={styles.map}
             mapType={Platform.OS === 'android' ? 'standard' : 'mutedStandard'}
             userInterfaceStyle={isDark ? 'dark' : 'light'}
@@ -1463,6 +1467,9 @@ export default function ChasseScreen({ route }) {
               </Fragment>
             )}
           </MapView>
+
+          {/* Voile anti-éclair blanc — voir components/VoileCarte.js */}
+          <VoileCarte pret={mapPret} />
           {isChangingCity && <View style={[StyleSheet.absoluteFillObject, styles.cityTransitionOverlay]} />}
 
           {/* ── Carte flottante formulaire (masquée en navigation) ── */}

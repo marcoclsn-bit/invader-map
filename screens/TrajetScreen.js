@@ -35,6 +35,7 @@ import { useSessionRecorder } from '../components/session/useSessionRecorder';
 import useKeepScreenOn from '../components/session/useKeepScreenOn';
 import { useGamification } from '../context/GamificationContext';
 import { useTheme } from '../theme/ThemeContext';
+import VoileCarte from '../components/VoileCarte';
 import BoutonPartageSortie from '../components/session/BoutonPartageSortie';
 import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
 import { typography } from '../theme/tokens';
@@ -323,6 +324,8 @@ function RoutePanel({ allInvaders, displayInvaders, flashed, statusColors, showO
 export default function TrajetScreen() {
   const insets = useSafeAreaInsets();
   const mapRef = useRef(null);
+  // Carte prête : commande le voile anti-éclair blanc (VoileCarte).
+  const [mapPret, setMapPret] = useState(false);
   const gpsRef = useRef(null);
   const calcCollapseRef = useRef(false); // replie le volet une fois la recherche terminée
   const depInputRef = useRef(null);
@@ -1107,6 +1110,7 @@ export default function TrajetScreen() {
         <View style={styles.mapContainer}>
         <MapView
           ref={mapRef}
+          onMapReady={() => setMapPret(true)}
           style={styles.map}
           mapType={Platform.OS === 'android' ? 'standard' : 'mutedStandard'}
           userInterfaceStyle={isDark ? 'dark' : 'light'}
@@ -1221,6 +1225,9 @@ export default function TrajetScreen() {
           {/* Lieux du couloir : même losange doré que sur la Carte et la Chasse */}
 
         </MapView>
+
+        {/* Voile anti-éclair blanc — voir components/VoileCarte.js */}
+        <VoileCarte pret={mapPret} />
 
         {isChangingCity && <View style={[StyleSheet.absoluteFillObject, styles.cityTransitionOverlay]} />}
 

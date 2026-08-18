@@ -24,6 +24,7 @@ import PoiSheet from '../components/PoiSheet';
 import PoiMarker from '../components/PoiMarker';
 import PoiIntroCard from '../components/PoiIntroCard';
 import { useTheme } from '../theme/ThemeContext';
+import VoileCarte from '../components/VoileCarte';
 import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
 import { typography } from '../theme/tokens';
 import { openNavigationApp } from '../utils/navigation';
@@ -651,6 +652,9 @@ export default function MapScreen({ navigation, route }) {
         })}
 
       </MapView>
+
+      {/* Voile anti-éclair blanc — voir components/VoileCarte.js */}
+      <VoileCarte pret={mapReady} />
 
       {/* ── Barre supérieure : Menu | barre de progression | chip ville ── */}
       {/* Bandeau de synchronisation, sous la barre du haut. Il ne s'affiche que
