@@ -123,3 +123,31 @@ describe('tracé d’une sortie', () => {
     expect(traceSortie(null, invaders)).toBeNull();
   });
 });
+
+describe('plafond d’affichage', () => {
+  // Le cas réel : quelqu'un importe dix ans de FlashInvaders. Des centaines de
+  // sorties, un écran impraticable, et autant d'occasions d'ouvrir un récap —
+  // chacun demandant un itinéraire au réseau.
+  const beaucoup = () => {
+    const m = new Map();
+    for (let j = 1; j <= 120; j += 1) {
+      const jour = String((j % 28) + 1).padStart(2, '0');
+      const mois = String((j % 12) + 1).padStart(2, '0');
+      m.set(`PA_${j}a`, `2020-${mois}-${jour}T10:00:00`);
+      m.set(`PA_${j}b`, `2020-${mois}-${jour}T10:20:00`);
+    }
+    return m;
+  };
+
+  test('la liste est plafonnée, et garde les plus RÉCENTES', () => {
+    const { MAX_SORTIES } = require('../utils/sorties');
+    const s = decouperSorties(beaucoup());
+    expect(s).toHaveLength(MAX_SORTIES);
+    // Décroissant strict : la première est bien la plus récente de toutes.
+    const dates = s.map((x) => new Date(x.startedAt).getTime());
+    expect([...dates].sort((a, b) => b - a)).toEqual(dates);
+    const toutes = decouperSorties(beaucoup(), { maxSorties: Infinity });
+    expect(toutes.length).toBeGreaterThan(MAX_SORTIES);
+    expect(s[0].id).toBe(toutes[0].id);
+  });
+});

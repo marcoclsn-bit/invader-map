@@ -1387,6 +1387,7 @@
     "emptyTitle": "Aucune sortie pour le moment",
     "emptyBody": "Flashe au moins deux Invaders dans la même balade et elle apparaîtra ici, prête à partager.",
     "btnLabel": "Partager ma sortie",
-    "btnDisabled": "Flashe au moins deux Invaders dans la même balade, et tu pourras la partager d'ici."
+    "btnDisabled": "Flashe au moins deux Invaders dans la même balade, et tu pourras la partager d'ici.",
+    "limite": "Seules tes {{count}} dernières sorties sont affichées."
   }
 }

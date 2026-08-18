@@ -8,6 +8,7 @@ import { DrawerActions } from '@react-navigation/native';
 import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import { useSorties } from '../components/session/useSorties';
+import { MAX_SORTIES } from '../utils/sorties';
 import { CITIES } from '../cities/registry';
 
 // ─── Mes sorties ──────────────────────────────────────────────────────────────
@@ -94,6 +95,9 @@ export default function SortiesScreen({ navigation }) {
             />
           )}
           ItemSeparatorComponent={() => <View style={st.sep} />}
+          ListFooterComponent={sorties.length >= MAX_SORTIES
+            ? <Text style={st.pied}>{t('sorties.limite', { count: MAX_SORTIES })}</Text>
+            : null}
           contentContainerStyle={{ paddingBottom: 24 }}
         />
       )}
@@ -123,6 +127,10 @@ function getStyles(theme) {
     date: { ...typography.arcadeHeading, fontSize: 12, color: theme.textPrimary },
     detail: { fontSize: 14, color: theme.textSecondary },
     sep: { height: StyleSheet.hairlineWidth, backgroundColor: theme.border, marginLeft: 20 },
+    pied: {
+      fontSize: 12.5, lineHeight: 18, color: theme.textSecondary,
+      paddingHorizontal: 20, paddingTop: 18, textAlign: 'center',
+    },
     vide: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 12, padding: 40 },
     videTitre: { ...typography.arcadeHeading, fontSize: 13, color: theme.textPrimary, textAlign: 'center' },
     videCorps: { fontSize: 14, lineHeight: 21, color: theme.textSecondary, textAlign: 'center' },

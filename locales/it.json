@@ -1387,6 +1387,7 @@
     "emptyTitle": "Nessuna uscita per ora",
     "emptyBody": "Flasha almeno due Invaders nella stessa passeggiata e comparirà qui, pronta da condividere.",
     "btnLabel": "Condividi la mia uscita",
-    "btnDisabled": "Flasha almeno due Invaders nella stessa passeggiata e potrai condividerla da qui."
+    "btnDisabled": "Flasha almeno due Invaders nella stessa passeggiata e potrai condividerla da qui.",
+    "limite": "Vengono mostrate solo le tue ultime {{count}} uscite."
   }
 }

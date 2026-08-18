@@ -35,6 +35,18 @@ export const TROU_MS = 90 * 60 * 1000;
 // travail. Rien à raconter, et un récap pour une seule mosaïque serait ridicule.
 export const MIN_FLASHS = 2;
 
+// Plafond d'affichage. Quelqu'un qui importe dix ans de FlashInvaders arrive
+// avec des milliers de flashs, donc des CENTAINES de sorties. Aucune ne coûte
+// quoi que ce soit tant qu'on ne l'ouvre pas — la liste ne fait aucun appel
+// réseau — mais un écran de quatre cents lignes ne se parcourt pas, et la
+// dernière chose qu'on veut est de donner l'occasion d'ouvrir des dizaines de
+// récaps par curiosité, chacun demandant un itinéraire.
+//
+// Un plafond en NOMBRE et non en durée : une fenêtre de douze mois ne montrerait
+// rien à qui chasse deux fois par an, alors que cinquante sorties montrent
+// toujours quelque chose, quel que soit le rythme.
+export const MAX_SORTIES = 50;
+
 /** Un horodatage à minuit pile signale une heure inconnue, pas une heure. */
 export function heureInconnue(iso) {
   return /T00:00:00/.test(String(iso));
@@ -44,12 +56,13 @@ export function heureInconnue(iso) {
  * Découpe l'historique en sorties, de la plus récente à la plus ancienne.
  *
  * @param {Map<string,string>} flashedDates  id → ISO local (sans Z)
- * @param {object} [opts]  { trouMs, minFlashs }
+ * @param {object} [opts]  { trouMs, minFlashs, maxSorties }
  * @returns {Array<{ id, startedAt, endedAt, city, invaderIds }>}
  */
 export function decouperSorties(flashedDates, opts = {}) {
   const trouMs = opts.trouMs ?? TROU_MS;
   const minFlashs = opts.minFlashs ?? MIN_FLASHS;
+  const maxSorties = opts.maxSorties ?? MAX_SORTIES;
   if (!flashedDates || typeof flashedDates.forEach !== 'function') return [];
 
   const points = [];
@@ -89,16 +102,17 @@ export function decouperSorties(flashedDates, opts = {}) {
       city: g[0].city,
       invaderIds: g.map((p) => p.id),
     }))
-    .reverse();   // la plus récente en tête
+    .reverse()             // la plus récente en tête
+    .slice(0, maxSorties); // … donc `slice` garde bien les plus RÉCENTES
 }
 
 /**
  * Coordonnées des flashs d'une sortie, dans l'ordre chronologique.
  *
  * Ce n'est PAS un itinéraire : personne n'a marché en ligne droite d'une
- * mosaïque à l'autre. C'est la forme de la balade, et à ce titre elle est
- * honnête — d'où l'absence de distance affichée, qui serait toujours
- * sous-évaluée donc fausse.
+ * mosaïque à l'autre. Ces points servent de PROVISOIRE, le temps que le vrai
+ * cheminement piéton revienne du service de routage, et de liste de passage à
+ * lui soumettre. La distance, elle, ne vient jamais d'ici.
  *
  * Rend [[lon, lat], …] pour coller à `routeCoords`, qui suit l'ordre GeoJSON.
  */

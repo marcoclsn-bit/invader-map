@@ -1387,6 +1387,7 @@
     "emptyTitle": "Todavía no hay salidas",
     "emptyBody": "Flashea al menos dos Invaders en el mismo paseo y aparecerá aquí, listo para compartir.",
     "btnLabel": "Compartir mi salida",
-    "btnDisabled": "Flashea al menos dos Invaders en el mismo paseo y podrás compartirlo desde aquí."
+    "btnDisabled": "Flashea al menos dos Invaders en el mismo paseo y podrás compartirlo desde aquí.",
+    "limite": "Solo se muestran tus últimas {{count}} salidas."
   }
 }
