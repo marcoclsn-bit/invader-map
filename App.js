@@ -45,6 +45,7 @@ import UpdateGate from './components/UpdateGate';
 import SyncBanner from './components/SyncBanner';
 import ImportScreen from './screens/ImportScreen';
 import CollectionScreen from './screens/CollectionScreen';
+import SortiesScreen from './screens/SortiesScreen';
 import { navigationRef } from './utils/navigationRef';
 import './services/strollEngine'; // enregistre la tâche de fond + le handler de notif
 import { initAnalytics, track } from './services/analytics';
@@ -127,6 +128,7 @@ function DrawerNavigator() {
       <Drawer.Screen name="Liste" component={ListScreen} />
       <Drawer.Screen name="Palmarès" component={PalmaresScreen} />
       <Drawer.Screen name="Stats" component={StatsScreen} />
+      <Drawer.Screen name="Sorties" component={SortiesScreen} />
       <Drawer.Screen name="News" component={NewsScreen} />
       <Drawer.Screen name="Balade" component={StrollScreen} />
     </Drawer.Navigator>

@@ -46,6 +46,10 @@ export default function DrawerContent({ navigation, state }) {
     { name: 'Collection', icon: 'grid',       label: t('collection.title') },
     { name: 'News',     icon: 'newspaper',    label: t('news.title'), badge: newsUnreadCount },
     { name: 'Stats',    icon: 'stats-chart',  label: t('tabs.stats') },
+    // Après Stats : c'est un regard en arrière, comme elles. Le partage d'une
+    // Chasse ou d'un Trajet reste proposé à la fin de la sortie ; ici on rattrape
+    // les balades libres, que rien ne déclenchait.
+    { name: 'Sorties',  icon: 'footsteps',    label: t('sorties.title') },
     { name: 'Balade',   icon: 'radio',        label: t('stroll.title') },   // « Alertes Balade »
   ];
 

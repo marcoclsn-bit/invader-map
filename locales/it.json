@@ -1378,5 +1378,13 @@
       "saved": "Salvato",
       "saving": "Salvataggio…"
     }
+  },
+  "sorties": {
+    "title": "Le mie uscite",
+    "intro": "Le tue passeggiate, ricostruite dall'ora dei tuoi flash. Tocca una per condividerla.",
+    "resume_one": "{{count}} Invader · {{ville}} · {{duree}}",
+    "resume_other": "{{count}} Invaders · {{ville}} · {{duree}}",
+    "emptyTitle": "Nessuna uscita per ora",
+    "emptyBody": "Flasha almeno due Invaders nella stessa passeggiata e comparirà qui, pronta da condividere."
   }
 }

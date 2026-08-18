@@ -1378,5 +1378,13 @@
       "saved": "Enregistré",
       "saving": "Enregistrement en cours…"
     }
+  },
+  "sorties": {
+    "title": "Mes sorties",
+    "intro": "Tes balades, reconstituées d'après l'heure de tes flashs. Touche l'une d'elles pour la partager.",
+    "resume_one": "{{count}} Invader · {{ville}} · {{duree}}",
+    "resume_other": "{{count}} Invaders · {{ville}} · {{duree}}",
+    "emptyTitle": "Aucune sortie pour le moment",
+    "emptyBody": "Flashe au moins deux Invaders dans la même balade et elle apparaîtra ici, prête à partager."
   }
 }

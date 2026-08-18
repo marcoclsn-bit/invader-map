@@ -1378,5 +1378,13 @@
       "saved": "Guardado",
       "saving": "Guardando…"
     }
+  },
+  "sorties": {
+    "title": "Mis salidas",
+    "intro": "Tus paseos, reconstruidos a partir de la hora de tus flashes. Toca uno para compartirlo.",
+    "resume_one": "{{count}} Invader · {{ville}} · {{duree}}",
+    "resume_other": "{{count}} Invaders · {{ville}} · {{duree}}",
+    "emptyTitle": "Todavía no hay salidas",
+    "emptyBody": "Flashea al menos dos Invaders en el mismo paseo y aparecerá aquí, listo para compartir."
   }
 }

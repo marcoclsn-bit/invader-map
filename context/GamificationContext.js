@@ -121,6 +121,32 @@ export function GamificationProvider({ children }) {
   const dismissCelebration = useCallback(() => setQueue((q) => q.slice(1)), []);
   const clearRecap = useCallback(() => setPendingRecap(null), []);
 
+  /**
+   * Affiche un récap SANS RIEN ENREGISTRER.
+   *
+   * `recordSession` fait deux choses qu'on avait fini par confondre : il montre
+   * le récap, et il écrit la session dans l'historique. Pour une sortie
+   * reconstituée après coup, seul le premier est voulu — `addSession` empile
+   * sans dédupliquer, donc partager deux fois la même balade créerait deux
+   * sessions, fausserait Stats, et débloquerait le badge des dix sessions à
+   * coups de partages répétés.
+   *
+   * Les badges ne sont pas réévalués non plus, et c'est correct : ceux qui
+   * dépendent des flashs le sont déjà automatiquement à chaque flash (voir
+   * l'effet plus haut). Seuls ceux qui comptent les SESSIONS diffèrent, et
+   * ceux-là ne doivent justement pas se déclencher sur un geste de partage.
+   */
+  const previewRecap = useCallback((session) => {
+    if (!session?.invaderIds?.length) return null;
+    setPendingRecap({ session, newBadgeIds: [] });
+    track('recap_preview', {
+      source: session.source ?? 'unknown',
+      invaders: session.invaderIds.length,
+      durationMin: Math.round((session.durationSec ?? 0) / 60),
+    });
+    return session;
+  }, []);
+
   // ─── Déblocages groupés (« tout marquer », import d'une liste) ──────────────
   //
   // Un marquage en lot peut franchir dix paliers d'un coup. Célébrés un par un,
@@ -178,6 +204,7 @@ export function GamificationProvider({ children }) {
     dismissCelebration,
     pendingRecap,
     clearRecap,
+    previewRecap,
     beginBatch,
     batchBadges,
     clearBatchBadges,
