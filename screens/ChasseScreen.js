@@ -1967,7 +1967,11 @@ export default function ChasseScreen({ route }) {
 
 function makeStyles(t) {
   return StyleSheet.create({
-    container: { flex: 1 },
+    // Fond sombre SOUS la carte. Sans lui, le conteneur n'a aucune couleur et
+    // le blanc par défaut de la plateforme apparaît le temps que la carte native
+    // s'initialise — un éclair blanc au premier affichage de l'onglet, très
+    // visible dans une app sombre.
+    container: { flex: 1, backgroundColor: t.bg },
     mapContainer: { flex: 1 },
     map: { flex: 1 },
     cityTransitionOverlay: { backgroundColor: t.bg },

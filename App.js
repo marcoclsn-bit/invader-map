@@ -72,6 +72,11 @@ function MainTabs() {
   return (
     <View style={{ flex: 1 }}>
       <Tab.Navigator
+        // Fond du conteneur d'écran : il est visible pendant l'instant qui
+        // précède le montage d'un onglet — les onglets sont montés
+        // paresseusement, donc au PREMIER passage sur Trajet ou sur Chasse. Sans
+        // lui, un éclair blanc, très voyant dans une app sombre.
+        sceneContainerStyle={{ backgroundColor: theme.bg }}
         screenOptions={{
           headerShown: false,
           tabBarActiveTintColor: theme.accent,
@@ -106,6 +111,7 @@ function DrawerNavigator() {
   return (
     <Drawer.Navigator
       drawerContent={(props) => <DrawerContent {...props} />}
+      sceneContainerStyle={{ backgroundColor: theme.bg }}
       screenOptions={{
         headerShown: false,
         drawerType: 'front',
