@@ -43,9 +43,13 @@ export const MIN_FLASHS = 2;
 // récaps par curiosité, chacun demandant un itinéraire.
 //
 // Un plafond en NOMBRE et non en durée : une fenêtre de douze mois ne montrerait
-// rien à qui chasse deux fois par an, alors que cinquante sorties montrent
-// toujours quelque chose, quel que soit le rythme.
-export const MAX_SORTIES = 50;
+// rien à qui chasse deux fois par an, alors que vingt sorties montrent toujours
+// quelque chose, quel que soit le rythme.
+//
+// Vingt et non cinquante : au-delà, on ne parcourt plus une liste, on fouille
+// une archive — et personne ne partage sa quinzième sortie la plus récente. Ce
+// qui compte est ce qu'on vient de faire, ou d'oublier de partager hier.
+export const MAX_SORTIES = 20;
 
 /** Un horodatage à minuit pile signale une heure inconnue, pas une heure. */
 export function heureInconnue(iso) {
