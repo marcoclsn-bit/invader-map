@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { View, PanResponder } from 'react-native';
 import Svg, { Path, Defs, LinearGradient, Stop, Line, Circle, Text as SvgText } from 'react-native-svg';
 
@@ -36,6 +36,11 @@ export default function AreaChart({
   // capturerait sinon les valeurs du premier rendu — largeur d'écran comprise.
   const geo = useRef(null);
   geo.current = { gauche: pad.l, largeur: Math.max(1, cw), n };
+
+  // La sélection ne survit pas à un changement de jeu de données : après une
+  // bascule semaine/mois, le même index désigne une autre période, et on lirait
+  // une valeur valide qui ne correspond plus à ce qu'on avait touché.
+  useEffect(() => { setIdx(null); }, [n, unit]);
 
   const pan = useMemo(() => {
     const majIdx = (x) => {

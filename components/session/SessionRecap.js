@@ -125,13 +125,18 @@ function RecapBody({ session, newBadgeIds, onClose }) {
 
   // Fond Mapbox du format demandé. Un appel compté dans le plafond quotidien ;
   // sans token, plafond atteint ou hors-ligne → repli sur le fond stylisé.
-  const chargerFond = useCallback(async (cle) => {
+  // La clé porte AUSSI la longueur du tracé. Elle ne portait que le format : sur
+  // une sortie reconstituée, le fond était calculé sur les lignes droites, puis
+  // le vrai cheminement arrivait une seconde plus tard sans que le cadrage ne
+  // bouge — les détours de rue sortaient de l'image partagée.
+  const chargerFond = useCallback(async (fmtCle) => {
+    const cle = `${fmtCle}|${shareRoute?.length ?? 0}`;
     if (fondsRef.current[cle] !== undefined) return fondsRef.current[cle];
     let map = null;
     if (shareRoute?.length >= 2 || pins.length > 0) {
       try {
         if (MAPBOX_TOKEN && (await reserveMapboxCall())) {
-          const m = buildStaticMap(shareRoute, pins, MAPBOX_TOKEN, FORMATS[cle]);
+          const m = buildStaticMap(shareRoute, pins, MAPBOX_TOKEN, FORMATS[fmtCle]);
           if (m) { await Image.prefetch(m.url); map = m; }
         }
       } catch { map = null; } // hors-ligne / erreur → stylisé

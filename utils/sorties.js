@@ -51,9 +51,17 @@ export const MIN_FLASHS = 2;
 // qui compte est ce qu'on vient de faire, ou d'oublier de partager hier.
 export const MAX_SORTIES = 20;
 
-/** Un horodatage à minuit pile signale une heure inconnue, pas une heure. */
+/**
+ * Un horodatage à minuit pile signale une heure inconnue, pas une heure.
+ *
+ * ANCRÉ EN FIN DE CHAÎNE. Sans le `$`, le motif accrochait aussi
+ * « …T00:00:00.123Z » — le format que `toggleFlash` écrit, en UTC, soit 2 h du
+ * matin à Paris l'été. Un flash pris dans cette seconde-là disparaissait de
+ * toute sortie. Les seules dates réellement sans heure viennent de
+ * FlashInvaders et de l'import, tous deux en local sans millisecondes ni Z.
+ */
 export function heureInconnue(iso) {
-  return /T00:00:00/.test(String(iso));
+  return /T00:00:00$/.test(String(iso));
 }
 
 /**

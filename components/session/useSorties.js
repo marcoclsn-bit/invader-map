@@ -14,10 +14,18 @@ import { distanceSortie } from '../../services/sortieDistance';
  * dupliquer aurait garanti qu'une des deux copies dérive.
  */
 export function useSorties() {
-  const { flashedDates, invaders } = useAppContext();
+  const { flashedDates, invaders, currentCityCode } = useAppContext();
   const { previewRecap, majDistanceRecap } = useGamification();
 
-  const sorties = useMemo(() => decouperSorties(flashedDates), [flashedDates]);
+  // LA VILLE AFFICHÉE SEULEMENT. `invaders` ne contient que celle-ci : une
+  // sortie d'ailleurs ne trouverait aucune coordonnée, donc ni tracé, ni
+  // distance, ni points — un récap vide, sans que rien n'explique pourquoi.
+  // Le reste de l'app est déjà découpé par ville (Collection, Palmarès) ;
+  // changer de ville fait apparaître ses sorties.
+  const sorties = useMemo(
+    () => decouperSorties(flashedDates).filter((s) => s.city === currentCityCode),
+    [flashedDates, currentCityCode],
+  );
 
   // Index par identifiant : `traceSortie` en a besoin à chaque ouverture, et
   // Paris compte 1 351 mosaïques.

@@ -54,8 +54,15 @@ async function lire() {
 export async function distanceSortie(sortieId, trace) {
   if (!sortieId || !trace || trace.length < 2) return null;
 
+  // LA CLÉ PORTE LE NOMBRE D'ÉTAPES, et pas seulement l'identifiant de la sortie.
+  // Celui-ci ne dépend que du PREMIER flash : une sortie qui s'allonge le
+  // conserve. Sans le compte, on partageait 10 mosaïques avec la distance et le
+  // tracé des 5 premières — le chiffre faux publié sous son nom que ce module
+  // dit précisément vouloir éviter. Le geste est banal : on partage en cours de
+  // balade, on continue, on repartage.
+  const cle = `${sortieId}|${trace.length}`;
   const cache = await lire();
-  const dejaVu = cache[sortieId];
+  const dejaVu = cache[cle];
   // Déjà calculé : on ne redemande RIEN au réseau. C'est tout l'intérêt de
   // persister aussi le tracé.
   if (dejaVu && dejaVu.km > 0) return { km: dejaVu.km, coords: dejaVu.coords ?? null };
@@ -73,23 +80,34 @@ export async function distanceSortie(sortieId, trace) {
   // abouti. Le laisser passer afficherait « 0,0 KM » sur une image partagée.
   const km = Number.isFinite(r?.distanceKm) && r.distanceKm > 0 ? r.distanceKm : null;
   const coords = Array.isArray(r?.coords) && r.coords.length > 1 ? r.coords : null;
-  if (km == null) return coords ? { km: null, coords } : null;
-
-  // Simplifié avant rangement : Douglas-Peucker retire les points alignés, ceux
-  // qui ne changent rien au rendu. C'est le même traitement que le mode
-  // explorateur applique déjà aux tracés partagés.
+  // Simplifié AVANT tout usage, et pas seulement avant rangement. On rendait le
+  // tracé brut au premier appel et la version simplifiée aux suivants : un
+  // itinéraire piéton en compte plus d'un millier de points, et `missedAlongRoute`
+  // les croise avec les 1 350 Invaders parisiens — deux millions d'itérations sur
+  // le fil JS, modale déjà ouverte. Le même récap ne se comportait donc pas
+  // pareil selon qu'on l'ouvrait pour la première fois ou non.
+  //
+  // Douglas-Peucker retire les points alignés, ceux qui ne changent rien au
+  // rendu. C'est le traitement que le mode explorateur applique déjà aux tracés
+  // partagés.
   const compact = coords
     ? simplifyPath(coords.map(([lng, lat]) => ({ latitude: lat, longitude: lng })), true)
         .map((pt) => [Math.round(pt.longitude * 1e5) / 1e5, Math.round(pt.latitude * 1e5) / 1e5])
     : null;
+  if (km == null) return compact ? { km: null, coords: compact } : null;
 
   try {
-    const suivant = { ...cache, [sortieId]: { km, coords: compact } };
+    const suivant = { ...cache, [cle]: { km, coords: compact } };
     const cles = Object.keys(suivant);
     if (cles.length > MAX_ENTREES) {
-      // Les identifiants portent l'horodatage du premier flash : l'ordre
-      // alphabétique suffit à retrouver les plus anciens.
-      for (const k of cles.sort().slice(0, cles.length - MAX_ENTREES)) delete suivant[k];
+      // Par HORODATAGE, extrait de la clé. L'ordre alphabétique paraissait
+      // suffire, mais la clé commence par le code de la ville :
+      // « out_LDN_1755… », récent, triait avant « out_PA_1500… », ancien. On
+      // purgeait donc les villes en tête d'alphabet plutôt que les vieilles
+      // sorties.
+      const quand = (k) => Number(k.split('_')[2]?.split('|')[0]) || 0;
+      const tries = cles.sort((a, b) => quand(a) - quand(b));
+      for (const k of tries.slice(0, cles.length - MAX_ENTREES)) delete suivant[k];
     }
     await AsyncStorage.setItem(CLE, JSON.stringify(suivant));
   } catch { /* le cache est un confort, pas une condition */ }

@@ -151,3 +151,25 @@ describe('plafond d’affichage', () => {
     expect(s[0].id).toBe(toutes[0].id);
   });
 });
+
+describe('heure inconnue : le format compte', () => {
+  const { heureInconnue } = require('../utils/sorties');
+
+  test('minuit local sans millisecondes = heure inconnue', () => {
+    // Le format de FlashInvaders et de l'import : local, sans Z.
+    expect(heureInconnue('2026-08-12T00:00:00')).toBe(true);
+  });
+
+  test('minuit UTC avec millisecondes = VRAIE heure', () => {
+    // Ce que `toggleFlash` écrit : `new Date().toISOString()`. À Paris l'été,
+    // T00:00:00.123Z vaut 2 h du matin — un flash bien réel, qui disparaissait
+    // de toute sortie tant que le motif n'était pas ancré en fin de chaîne.
+    expect(heureInconnue('2026-08-12T00:00:00.123Z')).toBe(false);
+    expect(heureInconnue('2026-08-12T00:00:00Z')).toBe(false);
+  });
+
+  test('une heure ordinaire n’est jamais écartée', () => {
+    expect(heureInconnue('2026-08-12T14:30:00')).toBe(false);
+    expect(heureInconnue('2026-08-12T00:30:00')).toBe(false);
+  });
+});
