@@ -1,9 +1,16 @@
 {
-  "version": 19,
-  "updatedAt": "2026-08-16",
+  "version": 20,
+  "updatedAt": "2026-08-19",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "source": "invader-spotter.art",
   "events": [
+    {
+      "type": "damaged",
+      "id": "PA_431",
+      "city": "PA",
+      "date": "2026-08-18",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_0431-grosplan.png"
+    },
     {
       "type": "destroyed",
       "id": "TK_28",
