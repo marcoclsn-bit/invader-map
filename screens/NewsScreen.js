@@ -83,7 +83,8 @@ function EventRow({ event, isNew, onPress, theme, t }) {
   return (
     <TouchableOpacity style={styles.row} onPress={onPress} activeOpacity={0.7}>
       <View style={styles.thumbWrap}>
-        <InvaderPhoto photoUrl={event.photoUrl} status={TYPE_STATUS[event.type] ?? 'unknown'} style={styles.thumb} />
+        <InvaderPhoto photoUrl={event.photoUrl} status={TYPE_STATUS[event.type] ?? 'unknown'}
+          style={styles.thumb} />
         <View style={[styles.typeBadge, { backgroundColor: color }]}>
           <Ionicons name={icon} size={12} color="#fff" />
         </View>
