@@ -1,6 +1,6 @@
 {
-  "version": 23,
-  "updatedAt": "2026-08-19",
+  "version": 25,
+  "updatedAt": "2026-08-21",
   "cities": [
     {
       "code": "AIX",
@@ -228,7 +228,7 @@
       "name": "Bastia",
       "count": 34,
       "destroyed": 3,
-      "version": 7,
+      "version": 8,
       "center": {
         "lat": 42.700778,
         "lng": 9.45079
@@ -1031,7 +1031,7 @@
       "name": "Paris",
       "count": 1597,
       "destroyed": 247,
-      "version": 11,
+      "version": 12,
       "center": {
         "lat": 48.8566,
         "lng": 2.3522
