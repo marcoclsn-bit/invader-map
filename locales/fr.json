@@ -1265,7 +1265,7 @@
     "intro": "Trois façons de récupérer une collection déjà constituée. Rien n'est ajouté sans ton accord : le décompte s'affiche avant.",
     "hand": {
       "label": "Un par un, dans la liste",
-      "hint": "L'éclair à droite de chaque ligne marque l'Invader comme flashé. C'est aussi comme ça qu'on démarque.",
+      "hint": "L'éclair à droite de chaque ligne marque l'Invader comme flashé. Le même appui le retire de tes flashs.",
       "action": "Ouvrir la liste"
     },
     "applyDates": "Dater {{count}} flashs",
