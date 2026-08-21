@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Platform, StyleSheet, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -119,10 +119,14 @@ function DrawerNavigator() {
       // ne les remonte : côté React ils sont déjà « rendus ». Le fond de carte
       // et le point bleu, dessinés par Google Maps lui-même, survivent, ce qui
       // rend le vide d'autant plus déroutant. Constaté par Marco sur Android ;
-      // iOS gère le rattachement proprement. Coût : les écrans du tiroir restent
-      // en mémoire — ils l'étaient déjà en JS, seules les vues natives sont
-      // concernées.
-      detachInactiveScreens={false}
+      // iOS gère le rattachement proprement — ET N'EST DONC PAS TOUCHÉ : le
+      // correctif est borné à Android dans le code même. Un envoi par-dessus
+      // les airs pourrait cibler une seule plateforme (--platform android),
+      // mais les deux divergeraient jusqu'à l'envoi suivant ; la garde dans le
+      // code donne le même résultat sans créer deux lignées. Coût Android :
+      // les écrans du tiroir restent en mémoire — ils l'étaient déjà en JS,
+      // seules les vues natives sont concernées.
+      detachInactiveScreens={Platform.OS === 'android' ? false : undefined}
       screenOptions={{
         headerShown: false,
         drawerType: 'front',
