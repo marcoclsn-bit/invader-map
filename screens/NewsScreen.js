@@ -16,6 +16,10 @@ import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import { track } from '../services/analytics';
 
+// Voir le commentaire de `feed` : ce plafond borne la charge chez
+// invader-spotter.art, qui héberge les gros plans affichés en vignette.
+const MAX_EVENEMENTS = 30;
+
 const BELL_HINT_KEY = '@invader_news_bell_hint'; // '1' une fois l'infobulle vue
 
 // ─── Cache de styles thémés ───────────────────────────────────────────────────
@@ -251,13 +255,23 @@ export default function NewsScreen({ navigation }) {
     AsyncStorage.setItem(BELL_HINT_KEY, '1').catch(() => {});
   }, []);
 
-  // Événements filtrés par villes suivies, plus récents d'abord
+  // Événements filtrés par villes suivies, plus récents d'abord, PLAFONNÉS.
+  //
+  // Trente et non tout le fil. Chaque ligne affiche désormais le gros plan de sa
+  // mosaïque, hébergé par invader-spotter.art — un site tiers qui nous les offre
+  // gracieusement. Dérouler quatre-vingt-dix-sept événements y faisait autant de
+  // requêtes, multipliées par tous les utilisateurs de l'app.
+  //
+  // Le plafond ne coûte presque rien à la lecture : un fil d'actualité se
+  // consulte par le haut, et trente événements couvrent largement ce qui a
+  // changé récemment dans les villes que l'on suit.
   const feed = useMemo(() => {
     if (!newsCities) return [];
     return news.events
       .filter(e => newsCities.has(e.city))
       .slice()
-      .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+      .sort((a, b) => (b.date || '').localeCompare(a.date || ''))
+      .slice(0, MAX_EVENEMENTS);
   }, [news, newsCities]);
 
   function goToMap(city, focusId) {
