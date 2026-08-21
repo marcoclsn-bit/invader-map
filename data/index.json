@@ -1,6 +1,6 @@
 {
-  "version": 24,
-  "updatedAt": "2026-08-20",
+  "version": 25,
+  "updatedAt": "2026-08-21",
   "cities": [
     {
       "code": "AIX",
@@ -228,7 +228,7 @@
       "name": "Bastia",
       "count": 34,
       "destroyed": 3,
-      "version": 7,
+      "version": 8,
       "center": {
         "lat": 42.700778,
         "lng": 9.45079
