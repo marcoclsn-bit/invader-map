@@ -112,6 +112,17 @@ function DrawerNavigator() {
     <Drawer.Navigator
       drawerContent={(props) => <DrawerContent {...props} />}
       sceneContainerStyle={{ backgroundColor: theme.bg }}
+      // NE PAS DÉTACHER LES ÉCRANS INACTIFS. Par défaut, naviguer vers un écran
+      // du tiroir (Collection, Actus, Flashs…) détache les onglets de la
+      // hiérarchie native. Au rattachement, la carte Google sur Android perd
+      // tous ses enfants React — marqueurs, losanges, faisceau — sans que rien
+      // ne les remonte : côté React ils sont déjà « rendus ». Le fond de carte
+      // et le point bleu, dessinés par Google Maps lui-même, survivent, ce qui
+      // rend le vide d'autant plus déroutant. Constaté par Marco sur Android ;
+      // iOS gère le rattachement proprement. Coût : les écrans du tiroir restent
+      // en mémoire — ils l'étaient déjà en JS, seules les vues natives sont
+      // concernées.
+      detachInactiveScreens={false}
       screenOptions={{
         headerShown: false,
         drawerType: 'front',

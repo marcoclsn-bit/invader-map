@@ -26,6 +26,13 @@
         "NODE_OPTIONS": "--max-old-space-size=4096"
       }
     },
+    "apk": {
+      "extends": "production",
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      }
+    },
     "beta": {
       "extends": "production",
       "channel": "preview",
