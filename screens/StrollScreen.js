@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {
-  StyleSheet, View, Text, ScrollView, Switch, TouchableOpacity, Alert,
+  StyleSheet, View, Text, ScrollView, Switch, TouchableOpacity, Alert, Modal, Platform,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
@@ -125,6 +125,10 @@ export default function StrollScreen({ navigation }) {
   const off = !stroll.enabled;
   // true = activé mais sans autorisation « Toujours » → alertes seulement app ouverte
   const [bgDenied, setBgDenied] = useState(false);
+  // Divulgation Google Play (localisation en arrière-plan). Android seulement :
+  // c'est une exigence de leur politique, et le parcours iOS approuvé par Apple
+  // ne doit pas bouger.
+  const [disclosure, setDisclosure] = useState(false);
   const [advancedOpen, setAdvancedOpen] = useState(false);
 
   const alertStatuses = stroll.alertStatuses ?? STROLL_STATUS_OPTIONS;
@@ -154,6 +158,17 @@ export default function StrollScreen({ navigation }) {
     // Portail d'autorisation (v2 : abonnement + quotas). Aujourd'hui : toujours allowed.
     const access = await canUseFeature(FEATURES.BALADE);
     if (!access.allowed) { /* TODO v2: afficher paywall */ return; }
+    // DIVULGATION AVANT LA DEMANDE SYSTÈME — exigence Google Play pour la
+    // localisation en arrière-plan (« prominent disclosure »). L'écran doit dire
+    // ce qui est collecté, pour quelle fonctionnalité, et que ça vaut « même
+    // app fermée », PUIS recueillir un accord explicite, AVANT que la boîte de
+    // permission d'Android n'apparaisse. La soumission 1.4.0 a été refusée
+    // précisément pour son absence. iOS garde son parcours approuvé.
+    if (Platform.OS === 'android') { setDisclosure(true); return; }
+    await activerBalade();
+  }
+
+  async function activerBalade() {
     // Activation : on demande les autorisations
     const { foreground, background } = await requestStrollPermissions();
     if (!foreground) {
@@ -263,7 +278,34 @@ export default function StrollScreen({ navigation }) {
           </View>
         </Section>
 
-        {/* ── Comment être alerté ── */}
+        {/* ── Divulgation localisation arrière-plan (Google Play) ── */}
+      <Modal visible={disclosure} transparent animationType="fade"
+        onRequestClose={() => setDisclosure(false)}>
+        <View style={styles.discFond}>
+          <View style={styles.discCarte}>
+            <Ionicons name="location" size={34} color={theme.accent} style={{ alignSelf: 'center' }} />
+            <Text style={styles.discTitre}>{t('stroll.disclosure.title')}</Text>
+            <Text style={styles.discCorps}>{t('stroll.disclosure.body')}</Text>
+            <Text style={styles.discPrive}>{t('stroll.disclosure.privacy')}</Text>
+            <TouchableOpacity
+              style={styles.discAccepter}
+              onPress={() => { setDisclosure(false); activerBalade(); }}
+              accessibilityRole="button"
+            >
+              <Text style={styles.discAccepterTxt}>{t('stroll.disclosure.accept')}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.discPlusTard}
+              onPress={() => setDisclosure(false)}
+              accessibilityRole="button"
+            >
+              <Text style={styles.discPlusTardTxt}>{t('stroll.disclosure.later')}</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
+
+      {/* ── Comment être alerté ── */}
         <Section title={t('stroll.alertsSection')} theme={theme}>
           {/* Le son AVANT la vibration : c'est celui qu'on veut couper en
               premier, dans un train ou une salle d'attente. Et c'est le seul des
@@ -374,6 +416,29 @@ export default function StrollScreen({ navigation }) {
 function makeStyles(t) {
   return StyleSheet.create({
     container: { flex: 1, backgroundColor: t.bg },
+
+    // ── Divulgation localisation arrière-plan ──
+    discFond: {
+      flex: 1, backgroundColor: 'rgba(0,0,0,0.6)',
+      justifyContent: 'center', padding: 24,
+    },
+    discCarte: {
+      backgroundColor: t.surface, borderRadius: 18, borderWidth: 1,
+      borderColor: t.border, padding: 22, gap: 12,
+    },
+    discTitre: {
+      ...typography.arcadeHeading, fontSize: 15, color: t.textPrimary,
+      textAlign: 'center',
+    },
+    discCorps: { fontSize: 15, lineHeight: 22, color: t.textPrimary },
+    discPrive: { fontSize: 13.5, lineHeight: 20, color: t.textSecondary },
+    discAccepter: {
+      backgroundColor: t.accent, borderRadius: 12, paddingVertical: 14,
+      alignItems: 'center', marginTop: 6,
+    },
+    discAccepterTxt: { color: t.bg, fontWeight: '800', fontSize: 15 },
+    discPlusTard: { alignItems: 'center', paddingVertical: 10 },
+    discPlusTardTxt: { color: t.textSecondary, fontSize: 14 },
     header: {
       flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
       paddingHorizontal: 20, paddingVertical: 14,

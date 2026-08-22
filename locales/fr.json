@@ -770,6 +770,13 @@
         "label": "Large",
         "hint": "Pour les villes où les Invaders sont rares. À Paris, tu serais alerté presque en continu."
       }
+    },
+    "disclosure": {
+      "title": "Ta position en arrière-plan",
+      "body": "InvaderQuest collecte des données de localisation pour t'alerter quand tu passes près d'un Invader qu'il te reste à flasher, y compris lorsque l'application est fermée ou n'est pas utilisée.",
+      "privacy": "Ta position sert uniquement à déclencher ces alertes, sur ton téléphone. Elle n'est ni enregistrée sur un serveur, ni partagée avec qui que ce soit.",
+      "accept": "J'accepte",
+      "later": "Pas maintenant"
     }
   },
   "routing": {

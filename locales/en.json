@@ -770,6 +770,13 @@
         "label": "Wide",
         "hint": "For cities where Invaders are scarce. In Paris you would be alerted almost non-stop."
       }
+    },
+    "disclosure": {
+      "title": "Your location in the background",
+      "body": "InvaderQuest collects location data to alert you when you walk near an Invader you still need to flash, even when the app is closed or not in use.",
+      "privacy": "Your location is only used to trigger these alerts, on your phone. It is never stored on a server or shared with anyone.",
+      "accept": "I agree",
+      "later": "Not now"
     }
   },
   "routing": {

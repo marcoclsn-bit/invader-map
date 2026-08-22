@@ -770,6 +770,13 @@
         "label": "Amplia",
         "hint": "Para ciudades donde los Invaders escasean. En París te avisaría casi sin parar."
       }
+    },
+    "disclosure": {
+      "title": "Tu ubicación en segundo plano",
+      "body": "InvaderQuest recopila datos de ubicación para avisarte cuando pasas cerca de un Invader que te falta por flashear, incluso cuando la aplicación está cerrada o no se está usando.",
+      "privacy": "Tu ubicación solo sirve para activar estos avisos, en tu teléfono. Nunca se guarda en un servidor ni se comparte con nadie.",
+      "accept": "Acepto",
+      "later": "Ahora no"
     }
   },
   "routing": {
