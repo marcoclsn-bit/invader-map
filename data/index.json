@@ -1,6 +1,6 @@
 {
-  "version": 25,
-  "updatedAt": "2026-08-23",
+  "version": 26,
+  "updatedAt": "2026-08-24",
   "cities": [
     {
       "code": "AIX",
@@ -1382,7 +1382,7 @@
       "name": "Vienne",
       "count": 56,
       "destroyed": 6,
-      "version": 8,
+      "version": 9,
       "center": {
         "lat": 48.2082,
         "lng": 16.3738
