@@ -289,7 +289,7 @@
       },
       "location": {
         "title": "Ta position",
-        "body": "Pour te situer sur la carte, calculer tes trajets, et te prévenir quand tu passes près d'un Invader, même lorsque l'application est fermée ou n'est pas utilisée, si tu actives le Mode balade. Le calcul d'itinéraire transmet les points de ton trajet à nos prestataires de cartographie. Rien n'est enregistré sur un serveur : il n'y a pas de compte."
+        "body": "Pour te situer sur la carte, calculer tes trajets, et te prévenir quand tu passes près d'un Invader, même lorsque l'application est fermée ou n'est pas utilisée, si tu actives le Mode balade. Le calcul d'itinéraire transmet les points de ton trajet à nos prestataires de cartographie. Rien n'est enregistré sur un serveur qui nous appartient : il n'y a pas de compte."
       }
     }
   },
@@ -774,7 +774,7 @@
     "disclosure": {
       "title": "Ta position en arrière-plan",
       "body": "InvaderQuest collecte des données de localisation pour t'alerter quand tu passes près d'un Invader qu'il te reste à flasher, y compris lorsque l'application est fermée ou n'est pas utilisée.",
-      "privacy": "Ta position sert à déclencher ces alertes sur ton téléphone, et à calculer tes itinéraires : dans ce cas seulement, les points du trajet sont transmis à nos prestataires de cartographie. Elle n'est jamais enregistrée sur un serveur, ni partagée à d'autres fins.",
+      "privacy": "Ces alertes se déclenchent sur ton téléphone. Ta position sert aussi à te situer sur la carte, à calculer tes itinéraires et à améliorer la recherche d'adresse : dans ces cas, elle est transmise à nos prestataires de cartographie (Mapbox, OpenRouteService). Elle n'est jamais enregistrée sur un serveur qui nous appartient, ni utilisée pour de la publicité.",
       "accept": "J'accepte",
       "later": "Pas maintenant"
     }
@@ -1059,7 +1059,7 @@
     "flagship": "Fonction phare",
     "howto": "Comment faire",
     "replayIntro": "Revoir l'introduction",
-    "intro": "Bienvenue ! InvaderQuest t'aide à repérer et flasher les mosaïques Space Invader. Tout est gratuit et tes données restent sur ton téléphone. Voici comment tirer le meilleur de chaque mode.",
+    "intro": "Bienvenue ! InvaderQuest t'aide à repérer et flasher les mosaïques Space Invader. Tout est gratuit, sans compte ni publicité. Voici comment tirer le meilleur de chaque mode.",
     "groups": {
       "field": "Sur le terrain",
       "progress": "Suivre ta progression",

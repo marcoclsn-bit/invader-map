@@ -289,7 +289,7 @@
       },
       "location": {
         "title": "Your location",
-        "body": "To place you on the map, work out your routes, and alert you when you pass near an Invader, even when the app is closed or not in use, if you turn on Walk alerts. Route calculation sends the points of your route to our mapping providers. Nothing is stored on a server: there is no account."
+        "body": "To place you on the map, work out your routes, and alert you when you pass near an Invader, even when the app is closed or not in use, if you turn on Walk alerts. Route calculation sends the points of your route to our mapping providers. Nothing is stored on a server of ours: there is no account."
       }
     }
   },
@@ -774,7 +774,7 @@
     "disclosure": {
       "title": "Your location in the background",
       "body": "InvaderQuest collects location data to alert you when you walk near an Invader you still need to flash, even when the app is closed or not in use.",
-      "privacy": "Your location triggers these alerts on your phone, and computes your routes: in that case only, the route points are sent to our mapping providers. It is never stored on a server, nor shared for any other purpose.",
+      "privacy": "These alerts fire on your phone. Your location is also used to place you on the map, compute your routes and improve address search: in those cases it is sent to our mapping providers (Mapbox, OpenRouteService). It is never stored on a server of ours, nor used for advertising.",
       "accept": "I agree",
       "later": "Not now"
     }
@@ -1059,7 +1059,7 @@
     "flagship": "Flagship feature",
     "howto": "How to",
     "replayIntro": "Replay the intro",
-    "intro": "Welcome! InvaderQuest helps you spot and flash Space Invader mosaics. Everything is free and your data stays on your phone. Here's how to get the most out of each mode.",
+    "intro": "Welcome! InvaderQuest helps you spot and flash Space Invader mosaics. Everything is free, with no account and no ads. Here's how to get the most out of each mode.",
     "groups": {
       "field": "In the field",
       "progress": "Track your progress",

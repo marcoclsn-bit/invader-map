@@ -289,7 +289,7 @@
       },
       "location": {
         "title": "Tu ubicación",
-        "body": "Para situarte en el mapa, calcular tus rutas y avisarte cuando pasas cerca de un Invader, incluso cuando la aplicación está cerrada o no se está usando, si activas las Alertas de paseo. El cálculo de rutas envía los puntos de tu trayecto a nuestros proveedores de mapas. Nada se guarda en un servidor: no hay cuenta."
+        "body": "Para situarte en el mapa, calcular tus rutas y avisarte cuando pasas cerca de un Invader, incluso cuando la aplicación está cerrada o no se está usando, si activas las Alertas de paseo. El cálculo de rutas envía los puntos de tu trayecto a nuestros proveedores de mapas. Nada se guarda en un servidor nuestro: no hay cuenta."
       }
     }
   },
@@ -774,7 +774,7 @@
     "disclosure": {
       "title": "Tu ubicación en segundo plano",
       "body": "InvaderQuest recopila datos de ubicación para avisarte cuando pasas cerca de un Invader que te falta por flashear, incluso cuando la aplicación está cerrada o no se está usando.",
-      "privacy": "Tu ubicación activa estos avisos en tu teléfono y calcula tus rutas: solo en ese caso, los puntos del trayecto se envían a nuestros proveedores de mapas. Nunca se guarda en un servidor ni se comparte con otros fines.",
+      "privacy": "Estos avisos se activan en tu teléfono. Tu ubicación también sirve para situarte en el mapa, calcular tus rutas y mejorar la búsqueda de direcciones: en esos casos se envía a nuestros proveedores de mapas (Mapbox, OpenRouteService). Nunca se guarda en un servidor nuestro ni se usa para publicidad.",
       "accept": "Acepto",
       "later": "Ahora no"
     }
@@ -1059,7 +1059,7 @@
     "flagship": "Función estrella",
     "howto": "Cómo hacerlo",
     "replayIntro": "Volver a ver la introducción",
-    "intro": "¡Bienvenido! InvaderQuest te ayuda a localizar y fotografiar los mosaicos Space Invader. Todo es gratis y tus datos se quedan en tu teléfono. Así aprovechas cada modo.",
+    "intro": "¡Bienvenido! InvaderQuest te ayuda a localizar y flashear los mosaicos Space Invader. Todo es gratis, sin cuenta ni anuncios. Así aprovechas al máximo cada modo.",
     "groups": {
       "field": "Sobre el terreno",
       "progress": "Sigue tu progreso",
