@@ -598,6 +598,11 @@
       "label": "Modo Explorador",
       "hint": "El mapa solo muestra los Invaders que ya has fotografiado. Cazas a ojo y luego registras el identificador que te da FlashInvaders. Todo lo demás (rutas, lugares, estadísticas, trofeos) sigue igual.",
       "introReset": "La presentación del modo volverá a aparecer en un momento."
+    },
+    "privacy": {
+      "section": "Privacidad",
+      "location": "Permiso de ubicación",
+      "locationHint": "Abre los ajustes del teléfono para permitir o cambiar el acceso a tu ubicación."
     }
   },
   "feedback": {

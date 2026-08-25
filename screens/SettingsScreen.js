@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import {
   StyleSheet, View, Text, TouchableOpacity, ScrollView, Switch, Alert,
-  Modal, Pressable,
+  Modal, Pressable, Linking,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
@@ -203,6 +203,21 @@ export default function SettingsScreen({ navigation }) {
       </Section>
 
       {/* ── Mode explorateur ── */}
+      {/* ── Confidentialité : rouvrir l'accès à la position ── */}
+      {/* Après un refus « Ne plus demander », aucun geste dans l'app ne peut
+          rappeler la boîte système : le seul recours est les réglages du
+          téléphone. Ce point y mène directement, dans les deux sens (autoriser
+          ou retirer). Google apprécie cette transparence. */}
+      <Section title={t('settings.privacy.section')}>
+        <Row
+          label={t('settings.privacy.location')}
+          hint={t('settings.privacy.locationHint')}
+          onPress={() => Linking.openSettings().catch(() => {})}
+          trailing={<Ionicons name="open-outline" size={18} color={theme.textSecondary} />}
+          last
+        />
+      </Section>
+
       <Section title={t('settings.explorer.section')}>
         <Row
           label={t('settings.explorer.label')}

@@ -598,6 +598,11 @@
       "label": "Mode Explorateur",
       "hint": "La carte ne montre que les Invaders que tu as déjà flashés. Tu chasses à l'œil, et tu saisis ensuite l'identifiant que FlashInvaders t'affiche. Tout le reste (parcours, lieux, statistiques, trophées) continue normalement.",
       "introReset": "La présentation du mode réapparaîtra dans un instant."
+    },
+    "privacy": {
+      "section": "Confidentialité",
+      "location": "Autorisation de localisation",
+      "locationHint": "Ouvrir les réglages du téléphone pour autoriser ou modifier l'accès à ta position."
     }
   },
   "feedback": {

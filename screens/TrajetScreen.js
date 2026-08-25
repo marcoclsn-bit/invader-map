@@ -756,13 +756,21 @@ export default function TrajetScreen() {
     Keyboard.dismiss();
   }
 
-  function selectDepGps() {
-    setDepText(GPS_LABEL);
-    setDepCoords(gpsRef.current);
+  async function selectDepGps() {
+    Keyboard.dismiss();
+    setDepFocused(false);
     setDepSugg([]);
     setDepSearching(false);
-    setDepFocused(false);
-    Keyboard.dismiss();
+    // Pas encore de position (parcours « Passer ») : ce choix explicite est
+    // l'endroit légitime pour demander la permission — anti-3e-refus Google Play.
+    if (!gpsRef.current) {
+      const ok = await permissionSurGeste();
+      if (!ok) return;                 // refus : le champ reste vide, pas d'erreur
+      await demarrerGps();             // pose gpsRef.current + le point bleu
+      if (!gpsRef.current) return;
+    }
+    setDepText(GPS_LABEL);
+    setDepCoords(gpsRef.current);
   }
 
   async function onDepFallback() {
@@ -1110,7 +1118,11 @@ export default function TrajetScreen() {
   // depShowEmpty / arrShowEmpty conditionnés à *Focused : ferme le dropdown après blur
   const depShowEmpty = depText.length >= MIN_CHARS && !depSearching && depSugg.length === 0 && !depCoords && depFocused;
   const arrShowEmpty = arrText.length >= MIN_CHARS && !arrSearching && arrSugg.length === 0 && !arrCoords && arrFocused;
-  const showDepGpsOption = gpsAvailable && depFocused && depText !== GPS_LABEL;
+  // Affichée dès que le champ départ est actif — y compris SANS permission sur
+  // Android (parcours « Passer ») : c'est le geste par lequel on la demandera.
+  // Sur iOS, la permission est déjà acquise au montage, donc gpsAvailable suffit.
+  const showDepGpsOption =
+    (gpsAvailable || Platform.OS === 'android') && depFocused && depText !== GPS_LABEL;
 
   return (
     <KeyboardAvoidingView
