@@ -1,6 +1,6 @@
 {
-  "version": 7,
-  "updatedAt": "2026-08-13",
+  "version": 8,
+  "updatedAt": "2026-08-25",
   "city": "NY",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 192,
@@ -399,7 +399,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_029-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_029-mars2016.jpg",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NY/NY_029-aout2026.jpg",
       "datePosed": "2000-02-27"
     },
     {

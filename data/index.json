@@ -1,6 +1,6 @@
 {
-  "version": 26,
-  "updatedAt": "2026-08-24",
+  "version": 27,
+  "updatedAt": "2026-08-25",
   "cities": [
     {
       "code": "AIX",
@@ -997,7 +997,7 @@
       "name": "New York",
       "count": 192,
       "destroyed": 173,
-      "version": 7,
+      "version": 8,
       "center": {
         "lat": 40.7128,
         "lng": -74.006
@@ -1031,7 +1031,7 @@
       "name": "Paris",
       "count": 1597,
       "destroyed": 247,
-      "version": 12,
+      "version": 13,
       "center": {
         "lat": 48.8566,
         "lng": 2.3522
@@ -1382,7 +1382,7 @@
       "name": "Vienne",
       "count": 56,
       "destroyed": 6,
-      "version": 9,
+      "version": 10,
       "center": {
         "lat": 48.2082,
         "lng": 16.3738
