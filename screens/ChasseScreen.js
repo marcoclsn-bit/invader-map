@@ -28,6 +28,7 @@ import IndiceButton from '../components/IndiceButton';
 import { backtrackScore, simplifyPath } from '../utils/tourGeometry';
 import { useTheme } from '../theme/ThemeContext';
 import VoileCarte from '../components/VoileCarte';
+import { permissionAuMontage, permissionSurGeste } from '../utils/permissionPosition';
 import BoutonPartageSortie from '../components/session/BoutonPartageSortie';
 import { typography } from '../theme/tokens';
 import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
@@ -608,10 +609,10 @@ export default function ChasseScreen({ route }) {
   // ─── GPS ──────────────────────────────────────────────────────────────────
   const [gpsReady, setGpsReady] = useState(false);
 
-  useEffect(() => {
-    (async () => {
-      const { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== 'granted') return;
+  // Android : lecture seule au montage, la demande ne part que sur un geste
+  // (générer « Autour de moi », recentrer) — voir utils/permissionPosition.js.
+  async function demarrerGps() {
+    {
       const loc = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.Balanced });
       gpsRef.current = [loc.coords.longitude, loc.coords.latitude];
       setGpsReady(true);
@@ -629,7 +630,11 @@ export default function ChasseScreen({ route }) {
           800
         );
       }
-    })();
+    }
+  }
+
+  useEffect(() => {
+    (async () => { if (await permissionAuMontage()) await demarrerGps(); })();
   }, []);
 
   // ─── Formulaire ───────────────────────────────────────────────────────────
@@ -1019,7 +1024,10 @@ export default function ChasseScreen({ route }) {
   // quartier (autres villes) → adresse résolue.
   const startReady =
     mode === 'around'
-      ? gpsReady
+      // Android après « Passer » : gpsReady est faux mais le bouton doit RESTER
+      // actif — c'est lui, le geste explicite qui déclenchera la demande de
+      // permission (voir `generate`). Un bouton mort serait une impasse.
+      ? (gpsReady || Platform.OS === 'android')
       : hasDistricts
         ? selectedArs.size > 0
         : (qCoords !== null && !qResolving);
@@ -1035,6 +1043,14 @@ export default function ChasseScreen({ route }) {
     // Portail d'autorisation (v2 : abonnement + quotas). Aujourd'hui : toujours allowed.
     const access = await canUseFeature(FEATURES.CHASSE);
     if (!access.allowed) { /* TODO v2: afficher paywall */ return; }
+    // « Autour de moi » sans position : demander ICI, sur le geste — puis
+    // continuer avec le fix obtenu. Refus → on s'arrête sans erreur.
+    if (mode === 'around' && !gpsRef.current) {
+      const ok = await permissionSurGeste();
+      if (!ok) return;
+      await demarrerGps();
+      if (!gpsRef.current) return;
+    }
     setError(null);
     setSpillDismissed(false);
     // En cas de débordement, le parcours actuel RESTE affiché pendant le
@@ -1256,6 +1272,14 @@ export default function ChasseScreen({ route }) {
 
   async function recenter() {
     if (following) { setDrifted(false); return; }
+    // Permission jamais accordée (parcours « Passer ») : geste légitime pour la
+    // demander — anti-3e-refus Google Play.
+    if (!gpsReady) {
+      const ok = await permissionSurGeste();
+      if (!ok) return;
+      await demarrerGps();
+      return;
+    }
     try {
       // Dernier fix connu du système (tenu à jour par le point bleu actif) : quasi
       // instantané ET frais — contrairement à un nouveau fix (lent sur Android) ou au

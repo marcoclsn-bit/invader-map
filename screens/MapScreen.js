@@ -25,6 +25,7 @@ import PoiMarker from '../components/PoiMarker';
 import PoiIntroCard from '../components/PoiIntroCard';
 import { useTheme } from '../theme/ThemeContext';
 import VoileCarte from '../components/VoileCarte';
+import { permissionAuMontage, permissionSurGeste } from '../utils/permissionPosition';
 import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
 import { typography } from '../theme/tokens';
 import { openNavigationApp } from '../utils/navigation';
@@ -294,20 +295,14 @@ export default function MapScreen({ navigation, route }) {
     );
   }
 
-  useEffect(() => {
-    let positionSub = null;
-    let headingSub  = null;
-    (async () => {
-      const { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== 'granted') {
-        // Signalé UNE SEULE FOIS par lancement, et uniquement en cas de refus :
-        // l'octroi est déjà mesuré à l'onboarding, et un événement à chaque
-        // montage de la carte coûterait cher pour ne rien apprendre de neuf.
-        // Ce qu'on cherche ici, c'est le nombre de gens qui continuent d'utiliser
-        // l'app sans GPS — donc sans Chasse, ni Trajet, ni Balade.
-        if (!_deniedReported) { _deniedReported = true; track('location_permission', { result: 'denied', from: 'map' }); }
-        return;
-      }
+  // Abonnements GPS tenus par référence : le démarrage doit pouvoir être appelé
+  // au montage (permission déjà accordée) COMME après un octroi tardif via le
+  // bouton « Me localiser » — voir utils/permissionPosition.js pour la règle.
+  const gpsSubs = useRef({ position: null, heading: null });
+
+  async function demarrerGps() {
+    if (gpsSubs.current.position) return;   // déjà démarré
+    {
       setLocationGranted(true);
 
       // ── Étape A : position du cache iOS (instantanée, max 5 min) ──────────
@@ -320,7 +315,7 @@ export default function MapScreen({ navigation, route }) {
       } catch (_) {}
 
       // ── Étape B : watch live (position) ───────────────────────────────────
-      positionSub = await Location.watchPositionAsync(
+      gpsSubs.current.position = await Location.watchPositionAsync(
         { accuracy: Location.Accuracy.High, distanceInterval: 8 },
         (loc) => {
           if (loc.coords.accuracy > 40) return;
@@ -349,12 +344,30 @@ export default function MapScreen({ navigation, route }) {
       );
 
       // ── Étape C : cap de la boussole ──────────────────────────────────────
-      headingSub = await Location.watchHeadingAsync(({ trueHeading, magHeading }) => {
+      gpsSubs.current.heading = await Location.watchHeadingAsync(({ trueHeading, magHeading }) => {
         const h = trueHeading >= 0 ? trueHeading : magHeading;
         if (h >= 0) setUserHeading(h);
       });
+    }
+  }
+
+  useEffect(() => {
+    (async () => {
+      const ok = await permissionAuMontage();
+      if (!ok) {
+        // Android : simple lecture, personne n'a rien refusé — on ne mesure que
+        // le refus explicite d'iOS, où la boîte vient d'être montrée.
+        if (Platform.OS === 'ios' && !_deniedReported) {
+          _deniedReported = true; track('location_permission', { result: 'denied', from: 'map' });
+        }
+        return;
+      }
+      await demarrerGps();
     })();
-    return () => { positionSub?.remove(); headingSub?.remove(); };
+    return () => {
+      gpsSubs.current.position?.remove(); gpsSubs.current.heading?.remove();
+      gpsSubs.current = { position: null, heading: null };
+    };
   }, []);
 
   // Repli : si onMapReady ne se déclenche pas (rare), on arme les marqueurs après 1,2 s
@@ -372,9 +385,16 @@ export default function MapScreen({ navigation, route }) {
     return () => clearTimeout(id);
   }, [tilesLoaded]);
 
-  function goToUserLocation() {
-    if (!userLocation) return;
-    mapRef.current?.animateToRegion({ ...userLocation, latitudeDelta: 0.01, longitudeDelta: 0.01 }, 600);
+  async function goToUserLocation() {
+    if (userLocation) {
+      mapRef.current?.animateToRegion({ ...userLocation, latitudeDelta: 0.01, longitudeDelta: 0.01 }, 600);
+      return;
+    }
+    // Pas encore de position : c'est LE geste où demander est légitime — l'axe
+    // du correctif anti-3e-refus. Après octroi, le watch centre la carte
+    // lui-même (centeredRef est encore faux à ce stade).
+    const ok = await permissionSurGeste();
+    if (ok) await demarrerGps();
   }
 
   // ── Focus d'un Invader demandé depuis un autre écran (ex. News) ──
@@ -742,7 +762,7 @@ export default function MapScreen({ navigation, route }) {
           </TouchableOpacity>
           <TouchableOpacity
             style={[styles.circleBtn, !userLocation && { opacity: 0.4 }]}
-            onPress={userLocation ? goToUserLocation : undefined}
+            onPress={goToUserLocation}
           >
             <Ionicons name="locate" size={19} color={theme.textPrimary} />
           </TouchableOpacity>

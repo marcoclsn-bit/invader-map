@@ -36,6 +36,7 @@ import useKeepScreenOn from '../components/session/useKeepScreenOn';
 import { useGamification } from '../context/GamificationContext';
 import { useTheme } from '../theme/ThemeContext';
 import VoileCarte from '../components/VoileCarte';
+import { permissionAuMontage, permissionSurGeste } from '../utils/permissionPosition';
 import BoutonPartageSortie from '../components/session/BoutonPartageSortie';
 import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
 import { typography } from '../theme/tokens';
@@ -432,11 +433,11 @@ export default function TrajetScreen() {
   const headingSub  = useRef(null);
 
   // ─── GPS au montage ───────────────────────────────────────────────────────
+  // Android : lecture seule au montage, la demande ne part que sur un geste
+  // (bouton de recentrage) — voir utils/permissionPosition.js.
 
-  useEffect(() => {
-    (async () => {
-      const { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== 'granted') return;
+  async function demarrerGps() {
+    {
       setLocationGranted(true); // affiche le curseur bleu dès l'ouverture
       const loc = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.Balanced });
       const coords = [loc.coords.longitude, loc.coords.latitude];
@@ -456,7 +457,11 @@ export default function TrajetScreen() {
           800
         );
       }
-    })();
+    }
+  }
+
+  useEffect(() => {
+    (async () => { if (await permissionAuMontage()) await demarrerGps(); })();
   }, []);
 
   // ─── Recalcul du couloir quand routeCoords ou bufferKm changent ──────────
@@ -1016,6 +1021,14 @@ export default function TrajetScreen() {
     if (following) {
       setDrifted(false);
       return;
+    }
+    // Permission jamais accordée (parcours « Passer ») : ce geste est l'endroit
+    // légitime pour la demander — anti-3e-refus Google Play.
+    if (!locationGranted) {
+      const ok = await permissionSurGeste();
+      if (!ok) return;
+      await demarrerGps();
+      return;   // demarrerGps recentre déjà si l'on est dans la ville
     }
     try {
       // Position connue instantanément (position live si suivi, sinon dernier fix connu)
