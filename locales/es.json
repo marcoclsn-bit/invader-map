@@ -289,7 +289,7 @@
       },
       "location": {
         "title": "Tu ubicación",
-        "body": "Para situarte, calcular tus rutas y avisarte durante el paseo. Tus ubicaciones nunca salen de tu teléfono: no hay cuenta ni servidor."
+        "body": "Para situarte en el mapa, calcular tus rutas y avisarte cuando pasas cerca de un Invader, incluso cuando la aplicación está cerrada o no se está usando, si activas las Alertas de paseo. El cálculo de rutas envía los puntos de tu trayecto a nuestros proveedores de mapas. Nada se guarda en un servidor: no hay cuenta."
       }
     }
   },
@@ -774,7 +774,7 @@
     "disclosure": {
       "title": "Tu ubicación en segundo plano",
       "body": "InvaderQuest recopila datos de ubicación para avisarte cuando pasas cerca de un Invader que te falta por flashear, incluso cuando la aplicación está cerrada o no se está usando.",
-      "privacy": "Tu ubicación solo sirve para activar estos avisos, en tu teléfono. Nunca se guarda en un servidor ni se comparte con nadie.",
+      "privacy": "Tu ubicación activa estos avisos en tu teléfono y calcula tus rutas: solo en ese caso, los puntos del trayecto se envían a nuestros proveedores de mapas. Nunca se guarda en un servidor ni se comparte con otros fines.",
       "accept": "Acepto",
       "later": "Ahora no"
     }

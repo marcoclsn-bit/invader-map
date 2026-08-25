@@ -289,7 +289,7 @@
       },
       "location": {
         "title": "Your location",
-        "body": "To place you on the map, work out your routes and alert you on a stroll. Your locations never leave your phone: there is no account and no server."
+        "body": "To place you on the map, work out your routes, and alert you when you pass near an Invader, even when the app is closed or not in use, if you turn on Walk alerts. Route calculation sends the points of your route to our mapping providers. Nothing is stored on a server: there is no account."
       }
     }
   },
@@ -774,7 +774,7 @@
     "disclosure": {
       "title": "Your location in the background",
       "body": "InvaderQuest collects location data to alert you when you walk near an Invader you still need to flash, even when the app is closed or not in use.",
-      "privacy": "Your location is only used to trigger these alerts, on your phone. It is never stored on a server or shared with anyone.",
+      "privacy": "Your location triggers these alerts on your phone, and computes your routes: in that case only, the route points are sent to our mapping providers. It is never stored on a server, nor shared for any other purpose.",
       "accept": "I agree",
       "later": "Not now"
     }

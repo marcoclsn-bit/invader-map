@@ -289,7 +289,7 @@
       },
       "location": {
         "title": "Ta position",
-        "body": "Pour te situer, calculer tes trajets et te prévenir en balade. Tes positions ne quittent jamais ton téléphone : il n'y a ni compte, ni serveur."
+        "body": "Pour te situer sur la carte, calculer tes trajets, et te prévenir quand tu passes près d'un Invader, même lorsque l'application est fermée ou n'est pas utilisée, si tu actives le Mode balade. Le calcul d'itinéraire transmet les points de ton trajet à nos prestataires de cartographie. Rien n'est enregistré sur un serveur : il n'y a pas de compte."
       }
     }
   },
@@ -774,7 +774,7 @@
     "disclosure": {
       "title": "Ta position en arrière-plan",
       "body": "InvaderQuest collecte des données de localisation pour t'alerter quand tu passes près d'un Invader qu'il te reste à flasher, y compris lorsque l'application est fermée ou n'est pas utilisée.",
-      "privacy": "Ta position sert uniquement à déclencher ces alertes, sur ton téléphone. Elle n'est ni enregistrée sur un serveur, ni partagée avec qui que ce soit.",
+      "privacy": "Ta position sert à déclencher ces alertes sur ton téléphone, et à calculer tes itinéraires : dans ce cas seulement, les points du trajet sont transmis à nos prestataires de cartographie. Elle n'est jamais enregistrée sur un serveur, ni partagée à d'autres fins.",
       "accept": "J'accepte",
       "later": "Pas maintenant"
     }

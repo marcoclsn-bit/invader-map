@@ -289,7 +289,7 @@
       },
       "location": {
         "title": "La tua posizione",
-        "body": "Per localizzarti, calcolare i percorsi e avvisarti durante la passeggiata. Le tue posizioni non lasciano mai il telefono: non ci sono né account né server."
+        "body": "Per localizzarti sulla mappa, calcolare i percorsi e avvisarti quando passi vicino a un Invader, anche quando l'applicazione è chiusa o non è in uso, se attivi gli Avvisi passeggiata. Il calcolo del percorso invia i punti del tragitto ai nostri fornitori di mappe. Nulla viene salvato su un server: non c'è alcun account."
       }
     }
   },
@@ -774,7 +774,7 @@
     "disclosure": {
       "title": "La tua posizione in background",
       "body": "InvaderQuest raccoglie dati di posizione per avvisarti quando passi vicino a un Invader che ti resta da flashare, anche quando l'applicazione è chiusa o non è in uso.",
-      "privacy": "La tua posizione serve solo ad attivare questi avvisi, sul tuo telefono. Non viene mai salvata su un server né condivisa con nessuno.",
+      "privacy": "La tua posizione attiva questi avvisi sul telefono e calcola i tuoi percorsi: solo in quel caso, i punti del tragitto vengono inviati ai nostri fornitori di mappe. Non viene mai salvata su un server né condivisa per altri scopi.",
       "accept": "Accetto",
       "later": "Non ora"
     }
