@@ -1,6 +1,6 @@
 {
-  "version": 8,
-  "updatedAt": "2026-08-13",
+  "version": 9,
+  "updatedAt": "2026-08-26",
   "city": "HK",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 129,
@@ -737,7 +737,7 @@
       "city": "HK",
       "lat": 22.3195869231,
       "lng": 114.1718286062,
-      "status": "damaged",
+      "status": "destroyed",
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/hk_54/",

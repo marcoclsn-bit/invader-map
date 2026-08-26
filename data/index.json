@@ -1,6 +1,6 @@
 {
-  "version": 27,
-  "updatedAt": "2026-08-25",
+  "version": 28,
+  "updatedAt": "2026-08-26",
   "cities": [
     {
       "code": "AIX",
@@ -142,8 +142,8 @@
       "code": "BGK",
       "name": "Bangkok",
       "count": 44,
-      "destroyed": 24,
-      "version": 8,
+      "destroyed": 25,
+      "version": 9,
       "center": {
         "lat": 13.7563,
         "lng": 100.502
@@ -227,8 +227,8 @@
       "code": "BTA",
       "name": "Bastia",
       "count": 34,
-      "destroyed": 3,
-      "version": 8,
+      "destroyed": 4,
+      "version": 9,
       "center": {
         "lat": 42.700778,
         "lng": 9.45079
@@ -549,8 +549,8 @@
       "code": "HK",
       "name": "Hong Kong",
       "count": 130,
-      "destroyed": 108,
-      "version": 8,
+      "destroyed": 109,
+      "version": 9,
       "center": {
         "lat": 22.3193,
         "lng": 114.169
@@ -662,8 +662,8 @@
       "code": "LDN",
       "name": "London",
       "count": 193,
-      "destroyed": 68,
-      "version": 8,
+      "destroyed": 69,
+      "version": 9,
       "center": {
         "lat": 51.5074,
         "lng": -0.1278
@@ -708,7 +708,7 @@
       "name": "Lausanne",
       "count": 16,
       "destroyed": 9,
-      "version": 7,
+      "version": 8,
       "center": {
         "lat": 46.5197,
         "lng": 6.6323
@@ -996,8 +996,8 @@
       "code": "NY",
       "name": "New York",
       "count": 192,
-      "destroyed": 173,
-      "version": 8,
+      "destroyed": 174,
+      "version": 9,
       "center": {
         "lat": 40.7128,
         "lng": -74.006
@@ -1031,7 +1031,7 @@
       "name": "Paris",
       "count": 1597,
       "destroyed": 247,
-      "version": 13,
+      "version": 14,
       "center": {
         "lat": 48.8566,
         "lng": 2.3522
@@ -1286,7 +1286,7 @@
       "name": "Tokyo",
       "count": 123,
       "destroyed": 109,
-      "version": 6,
+      "version": 7,
       "center": {
         "lat": 35.6762,
         "lng": 139.6503
@@ -1382,7 +1382,7 @@
       "name": "Vienne",
       "count": 56,
       "destroyed": 6,
-      "version": 10,
+      "version": 11,
       "center": {
         "lat": 48.2082,
         "lng": 16.3738
