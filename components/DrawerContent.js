@@ -51,6 +51,7 @@ export default function DrawerContent({ navigation, state }) {
     // les balades libres, que rien ne déclenchait.
     { name: 'Sorties',  icon: 'footsteps',    label: t('sorties.title') },
     { name: 'Balade',   icon: 'radio',        label: t('stroll.title') },   // « Alertes Balade »
+    { name: 'ISS',      icon: 'planet',       label: t('iss.title') },      // l'Invader SPACE_02 en orbite
   ];
 
   function goTo(screen) {

@@ -1401,5 +1401,29 @@
     "btnLabel": "Partager ma sortie",
     "btnDisabled": "Flashe au moins deux Invaders dans la même balade, et tu pourras la partager d'ici.",
     "limite": "Seules tes {{count}} dernières sorties sont affichées."
+  },
+  "iss": {
+    "title": "ISS",
+    "headerTitle": "SPACE_02",
+    "subtitle": "L'Invader en orbite",
+    "intro": "La seule mosaïque hors de la Terre : à bord de la Station spatiale internationale. Elle se flashe quand la station passe presque à la verticale de toi, quelques secondes, quelques fois par mois. On guette pour toi.",
+    "searchTitle": "D'où observes-tu ?",
+    "searchPlaceholder": "Cherche ta ville…",
+    "changeLocation": "Changer",
+    "computing": "Calcul des passages…",
+    "unavailable": "Prédiction indisponible pour l'instant. Vérifie ta connexion et réessaie.",
+    "noPass": "Aucun passage assez haut depuis {{city}} dans les {{days}} prochains jours. La station ne monte pas toujours près du zénith : reviens plus tard.",
+    "nextPass": "Prochain passage flashable",
+    "otherPasses": "Passages suivants",
+    "elevation": "Élévation",
+    "window": "Fenêtre",
+    "today": "aujourd'hui",
+    "tomorrow": "demain",
+    "inDays": "dans {{n}} j",
+    "alert": "M'alerter",
+    "reminderVeille": "Rappel la veille à 20 h 30, pour mettre un réveil",
+    "reminderMatin": "Rappel le matin à 9 h",
+    "reminderImminent": "Alerte 10 min avant",
+    "flashNote": "Pour valider, la station doit dépasser 80° au-dessus de l'horizon, presque le zénith. Ces fenêtres tombent surtout la nuit : d'où le rappel de la veille au soir."
   }
 }

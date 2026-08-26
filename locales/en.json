@@ -1401,5 +1401,29 @@
     "btnLabel": "Share my outing",
     "btnDisabled": "Flash at least two Invaders on the same walk, and you will be able to share it from here.",
     "limite": "Only your last {{count}} outings are shown."
+  },
+  "iss": {
+    "title": "ISS",
+    "headerTitle": "SPACE_02",
+    "subtitle": "The Invader in orbit",
+    "intro": "The only mosaic off Earth: aboard the International Space Station. You flash it when the station passes almost straight overhead, a few seconds, a few times a month. We keep watch for you.",
+    "searchTitle": "Where are you watching from?",
+    "searchPlaceholder": "Search your city…",
+    "changeLocation": "Change",
+    "computing": "Computing passes…",
+    "unavailable": "Prediction unavailable right now. Check your connection and try again.",
+    "noPass": "No high-enough pass from {{city}} in the next {{days}} days. The station does not always climb near the zenith: check back later.",
+    "nextPass": "Next flashable pass",
+    "otherPasses": "Following passes",
+    "elevation": "Elevation",
+    "window": "Window",
+    "today": "today",
+    "tomorrow": "tomorrow",
+    "inDays": "in {{n}} d",
+    "alert": "Alert me",
+    "reminderVeille": "Reminder the evening before at 8:30 PM, to set an alarm",
+    "reminderMatin": "Reminder in the morning at 9 AM",
+    "reminderImminent": "Alert 10 min before",
+    "flashNote": "To count, the station must rise above 80° over the horizon, nearly the zenith. These windows fall mostly at night: hence the evening-before reminder."
   }
 }

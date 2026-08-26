@@ -1401,5 +1401,29 @@
     "btnLabel": "Compartir mi salida",
     "btnDisabled": "Flashea al menos dos Invaders en el mismo paseo y podrás compartirlo desde aquí.",
     "limite": "Solo se muestran tus últimas {{count}} salidas."
+  },
+  "iss": {
+    "title": "ISS",
+    "headerTitle": "SPACE_02",
+    "subtitle": "El Invader en órbita",
+    "intro": "El único mosaico fuera de la Tierra: a bordo de la Estación Espacial Internacional. Se flashea cuando la estación pasa casi sobre tu vertical, unos segundos, unas veces al mes. Vigilamos por ti.",
+    "searchTitle": "¿Desde dónde observas?",
+    "searchPlaceholder": "Busca tu ciudad…",
+    "changeLocation": "Cambiar",
+    "computing": "Calculando pasos…",
+    "unavailable": "Predicción no disponible por ahora. Comprueba tu conexión e inténtalo de nuevo.",
+    "noPass": "Ningún paso lo bastante alto desde {{city}} en los próximos {{days}} días. La estación no siempre sube cerca del cenit: vuelve más tarde.",
+    "nextPass": "Próximo paso flasheable",
+    "otherPasses": "Pasos siguientes",
+    "elevation": "Elevación",
+    "window": "Ventana",
+    "today": "hoy",
+    "tomorrow": "mañana",
+    "inDays": "en {{n}} d",
+    "alert": "Avisarme",
+    "reminderVeille": "Aviso la víspera a las 20:30, para poner una alarma",
+    "reminderMatin": "Aviso por la mañana a las 9:00",
+    "reminderImminent": "Aviso 10 min antes",
+    "flashNote": "Para que cuente, la estación debe superar los 80° sobre el horizonte, casi el cenit. Estas ventanas caen sobre todo de noche: de ahí el aviso de la víspera."
   }
 }
