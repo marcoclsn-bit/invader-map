@@ -5,7 +5,9 @@ Read the exact versioned docs at https://docs.expo.dev/versions/v54.0.0/ before 
 # Invader Map — Contexte projet
 
 ## Vision
-App mobile cross-plateforme pour repérer les mosaïques Space Invader, avec une meilleure UX que les outils existants (FlashInvaders, Paris Invaders Map, pnote.eu). Pas de fonctionnalité sociale.
+App mobile cross-plateforme pour repérer les mosaïques Space Invader, avec une meilleure UX que les outils existants (FlashInvaders, Paris Invaders Map, pnote.eu).
+
+**Le « pas de social » n'est plus la règle.** Décision levée consciemment le 27/08/2026 : des utilisateurs le demandent, et tous les concurrents en ont — ce n'est plus un différenciateur, c'est un rattrapage. Un lot unique est cadré (compte de sauvegarde, amis, deux défis, modération), mais **rien n'est engagé côté code** et SPACE_02 reste prioritaire. Lire `docs/SOCIAL-passation.md` avant toute action sur ce sujet.
 
 ## Profil
 Porteur de projet orienté produit/design, débutant en code. Explications claires, pas-à-pas, une étape à la fois. Le code est délégué à l'assistant.
@@ -40,7 +42,11 @@ Porteur de projet orienté produit/design, débutant en code. Explications clair
 - GeoJSON = coordonnées [longitude, latitude] (ordre inversé !).
 
 ## Features prévues
-Alerte de proximité, cartes hors-ligne, stats de progression, multi-villes, "Invaders sur le trajet". Social abandonné.
+Alerte de proximité, cartes hors-ligne, stats de progression, multi-villes, "Invaders sur le trajet".
+
+**Social — cadré le 27/08/2026, non engagé.** Lot unique : compte de sauvegarde (e-mail + mot de passe), amis avec pseudo, flashs en commun et surtout *la différence exploitable en chasse*, deux défis (chrono asynchrone, duel hebdomadaire sans sanction), signalement et blocage. 90–125 h. Hors lot : classement mondial, sortie partagée, abonnement. Détail dans `docs/SOCIAL-passation.md`, `docs/SOCIAL-modes-et-defis.md`, `docs/SOCIAL-cadrage-donnees.md`.
+
+Règles à ne pas éroder : pas de sanction sur le duel quotidien (ni élimination, ni jokers) · les notes personnelles ne sont jamais visibles d'un tiers · l'UID FlashInvaders ne quitte jamais l'appareil · le cœur (carte, flashs, collection) reste utilisable sans compte ni serveur.
 
 ## Conventions
 - Une fonctionnalité à la fois, une victoire visible à chaque étape.
