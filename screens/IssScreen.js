@@ -14,6 +14,7 @@ import { passagesISS } from '../utils/issPassages';
 import { obtenirTle } from '../services/issTle';
 import { planNotificationsISS } from '../utils/issNotifications';
 import { rechercherVilles } from '../utils/villesSearch';
+import { demanderPermissionISS, synchroniserNotificationsISS } from '../services/issNotify';
 import { track } from '../services/analytics';
 
 // ─── Réglages de recherche des passages ──────────────────────────────────────
@@ -106,14 +107,31 @@ export default function IssScreen({ navigation }) {
   }, []);
 
   // ── Armer / désarmer une alerte pour un passage ──────────────────────────────
+  // La permission notifications se demande ICI, sur le geste d'armement, jamais
+  // au montage (règle Google Play). La synchro OS suit chaque bascule.
   const basculerAlerte = useCallback((pic) => {
     setArmes((prev) => {
       const suivant = new Set(prev);
-      if (suivant.has(pic)) suivant.delete(pic); else suivant.add(pic);
+      const armement = !suivant.has(pic);
+      if (armement) suivant.add(pic); else suivant.delete(pic);
       AsyncStorage.setItem(CLE_ALERTES, JSON.stringify([...suivant])).catch(() => {});
+      (async () => {
+        if (armement) await demanderPermissionISS();
+        await synchroniserNotificationsISS(passages || [], suivant, lieu?.nom || '');
+      })();
+      if (armement) track('iss_alerte_armee');
       return suivant;
     });
-  }, []);
+  }, [passages, lieu]);
+
+  // Recalcul terminé (lieu ou TLE frais) : réaligner les rappels programmés sur
+  // les heures de passage les plus récentes, et purger ceux du passé.
+  useEffect(() => {
+    if (!passages || passages.length === 0) return;
+    synchroniserNotificationsISS(passages, armes, lieu?.nom || '');
+    // `armes` volontairement hors dépendances : les bascules sont déjà couvertes
+    // par basculerAlerte ; ici on ne réagit qu'aux nouvelles prédictions.
+  }, [passages]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── Formatage des dates (langue de l'app, fuseau de l'appareil) ──────────────
   // Même motif que SortiesScreen : toLocale*, éprouvé sous Hermes.

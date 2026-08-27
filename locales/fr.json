@@ -1424,6 +1424,14 @@
     "reminderVeille": "Rappel la veille à 20 h 30, pour mettre un réveil",
     "reminderMatin": "Rappel le matin à 9 h",
     "reminderImminent": "Alerte 10 min avant",
-    "flashNote": "Pour valider, la station doit dépasser 80° au-dessus de l'horizon, presque le zénith. Ces fenêtres tombent surtout la nuit : d'où le rappel de la veille au soir."
+    "flashNote": "Pour valider, la station doit dépasser 80° au-dessus de l'horizon, presque le zénith. Ces fenêtres tombent surtout la nuit : d'où le rappel de la veille au soir.",
+    "notif": {
+      "veilleTitle": "SPACE_02 passe cette nuit",
+      "veilleBody": "L’ISS sera au zénith de {{city}} à {{time}}, pendant {{sec}} s. Mets un réveil !",
+      "matinTitle": "SPACE_02 passe aujourd’hui",
+      "matinBody": "L’ISS sera au zénith de {{city}} à {{time}}, pendant {{sec}} s. Garde ton téléphone à portée.",
+      "imminentTitle": "SPACE_02 arrive !",
+      "imminentBody": "Zénith à {{time}} : {{sec}} s de fenêtre. Ouvre FlashInvaders et vise le ciel."
+    }
   }
 }

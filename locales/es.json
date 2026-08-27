@@ -1424,6 +1424,14 @@
     "reminderVeille": "Aviso la víspera a las 20:30, para poner una alarma",
     "reminderMatin": "Aviso por la mañana a las 9:00",
     "reminderImminent": "Aviso 10 min antes",
-    "flashNote": "Para que cuente, la estación debe superar los 80° sobre el horizonte, casi el cenit. Estas ventanas caen sobre todo de noche: de ahí el aviso de la víspera."
+    "flashNote": "Para que cuente, la estación debe superar los 80° sobre el horizonte, casi el cenit. Estas ventanas caen sobre todo de noche: de ahí el aviso de la víspera.",
+    "notif": {
+      "veilleTitle": "SPACE_02 pasa esta noche",
+      "veilleBody": "La ISS estará en el cenit sobre {{city}} a las {{time}}, durante {{sec}} s. ¡Pon una alarma!",
+      "matinTitle": "SPACE_02 pasa hoy",
+      "matinBody": "La ISS estará en el cenit sobre {{city}} a las {{time}}, durante {{sec}} s. Ten el móvil a mano.",
+      "imminentTitle": "¡SPACE_02 llega!",
+      "imminentBody": "Cenit a las {{time}}: ventana de {{sec}} s. Abre FlashInvaders y apunta al cielo."
+    }
   }
 }
