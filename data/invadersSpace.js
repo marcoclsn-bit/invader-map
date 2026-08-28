@@ -24,11 +24,20 @@
  * source : l'identifiant de SPACE_01 y traîne une espace finale (`"SPACE_01 "`).
  * On stocke la forme propre et on compare en ayant retiré les espaces.
  *
- * STATUTS — repris de la source, pas réinventés
+ * STATUTS ET POINTS — repris de la source, pas réinventés
  *
- * SPACE_01 est `hidden` à 0 point (elle n'existe plus), SPACE_02 est `ok` à 100
- * points. `hidden` retombe dans le seau « Non visible » de `constants.js`, coché
- * par défaut : rien de particulier à prévoir.
+ * SPACE_01 est `hidden` à 0 point, SPACE_02 est `ok` à 100 points. `hidden`
+ * retombe dans le seau « Non visible » de `constants.js`, coché par défaut :
+ * rien de particulier à prévoir.
+ *
+ * NE PAS « CORRIGER » LE 0 DE SPACE_01. Il intrigue, et une statistique le fait
+ * passer pour une coquille : sur les 19 Invaders `hidden` de la base, c'est le
+ * SEUL à 0 point, les autres valant 10 à 100. Conclusion tentante et FAUSSE —
+ * elle a été tirée une fois, puis démentie par Marco. SPACE_01 ne vaut pas 0
+ * parce qu'il est masqué, mais parce qu'il n'est PAS FLASHABLE : aucun joueur ne
+ * peut plus le déclencher, donc il ne rapporte rien. Un Invader détruit au sol
+ * garde ses points parce qu'il a pu être flashé de son vivant ; celui-là, non.
+ * La valeur est juste, et elle doit rester à 0.
  */
 
 export const SPACE_CITY_CODE = 'SPACE';

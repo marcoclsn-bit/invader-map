@@ -21,9 +21,17 @@ describe('Espace / ISS — les deux mosaïques hors du sol', () => {
   test('statuts et points repris de la source, pas réinventés', () => {
     const parId = Object.fromEntries(SPACE_INVADERS.map((i) => [i.id, i]));
     expect(parId.SPACE_01.status).toBe('hidden');
-    expect(parId.SPACE_01.points).toBe(0);
     expect(parId.SPACE_02.status).toBe('ok');
     expect(parId.SPACE_02.points).toBe(100);
+  });
+
+  test('SPACE_01 vaut 0 point, et ce n\'est pas une coquille', () => {
+    // Confirmé par Marco : il ne vaut rien parce qu'il n'est PAS FLASHABLE,
+    // pas parce qu'il est masqué. Un détruit au sol garde ses points, lui ayant
+    // pu être flashé de son vivant. Ce test existe pour qu'une « correction »
+    // bien intentionnée échoue bruyamment. Voir data/invadersSpace.js.
+    const space01 = SPACE_INVADERS.find((i) => i.id === 'SPACE_01');
+    expect(space01.points).toBe(0);
   });
 
   test('la ville n\'a ni centre ni cadre : elle n\'est pas cartographiable', () => {
