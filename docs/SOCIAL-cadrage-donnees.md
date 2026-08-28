@@ -8,9 +8,11 @@
 > Complète `SOCIAL-modes-et-defis.md` (conception) et `AGENTSsocial.md`
 > (contexte et contraintes).
 >
-> **Périmètre de l'inventaire :** établi à partir de `context/AppContext.js`,
-> `context/GamificationContext.js` et `utils/fichiers.js`. Voir §6 pour les
-> vérifications restantes.
+> **Périmètre de l'inventaire :** établi d'abord à partir de trois fichiers
+> seulement, puis COMPLÉTÉ par un balayage exhaustif du dépôt le 28/08/2026.
+> Voir §15 pour les 23 clés qui manquaient, dont une qui change le cadrage
+> (`@invader_profile` porte déjà un pseudo ET une photo), et §14 pour l'audit
+> de l'UID FlashInvaders.
 
 ---
 
@@ -158,10 +160,8 @@ la carte ou la collection ne le serait pas.
 
 ## 6. Points à vérifier avant de coder
 
-1. **L'UID FlashInvaders** : confirmer dans `services/flashinvaders.js` qu'aucun
-   chemin ne peut le faire remonter dans une sauvegarde.
-2. **Les stockages non inventoriés** : d'autres clés existent peut-être hors des
-   trois fichiers lus. Inventaire à compléter.
+1. ~~L'UID FlashInvaders~~ — **AUDITÉ le 28/08/2026, voir §14.**
+2. ~~Les stockages non inventoriés~~ — **INVENTAIRE COMPLET, voir §15.**
 3. **La forme exacte d'une session** (`utils/session.js`), si on envisage un jour
    de les faire monter sans `routeCoords`.
 4. ~~La méthode de connexion~~ — **tranché, voir §9.**
@@ -531,3 +531,93 @@ en supposant un seul cycle de revue — ce qui n'est jamais arrivé sur ce proje
 **Régime de croisière après livraison : 1 à 3 h/mois** (surveillance, mises à
 jour, questions d'utilisateurs), plus les incidents. Sur un an, comparable au
 temps de construction.
+
+---
+
+## 14. Audit de l'UID FlashInvaders (28/08/2026)
+
+**Verdict : aujourd'hui, l'UID ne peut pas fuir. Mais rien ne protège l'avenir.**
+
+Ce qui a été vérifié, chemin par chemin :
+
+- Il vit sous une clé unique, `@invader_fi_uid`, déclarée dans le seul
+  `services/flashinvaders.js`. Aucun autre fichier ne nomme cette clé.
+- `getUid()` est le seul lecteur. Il n'a que **deux** consommateurs :
+  `screens/ImportScreen.js` (pré-remplir le champ de saisie) et
+  `components/SyncBanner.js` (l'envoyer à l'API FlashInvaders, sa raison d'être).
+- `flashinvaders.js` ne contient **aucun** appel à `track()` ni à `console`.
+- Les envois de mesure d'ImportScreen et de SyncBanner transmettent des
+  compteurs, jamais l'identifiant. Le code porte déjà le commentaire
+  « JAMAIS l'uid lui-même ».
+- Les deux exports (`exportListe`, `exportNotes` dans `utils/importList.js`) sont
+  des fonctions **pures de leurs arguments** : elles reçoivent respectivement
+  `(flashed, flashedDates)` et `(notes, quand)`. Elles ne lisent aucun état
+  global, donc l'UID n'est jamais dans leur portée.
+
+### Le vrai danger est devant nous, pas derrière
+
+Le risque n'est pas dans le code actuel : il naîtra le jour où quelqu'un écrira
+la sauvegarde. La façon la plus naturelle de sauvegarder un état AsyncStorage est
+`AsyncStorage.getAllKeys()` puis `multiGet`. Cette approche, en trois lignes et
+parfaitement innocente à la lecture, **emporterait l'UID au serveur**, ainsi que
+les traces GPS des sorties.
+
+**RÈGLE À TENIR : la sauvegarde énumère explicitement les clés qu'elle emporte.**
+Jamais de « tout sauf », jamais de balayage. Une liste blanche se relit et se
+vérifie ; une liste noire oublie ce qui n'existait pas encore quand on l'a
+écrite. Cette règle doit apparaître dans le code qui construira la sauvegarde,
+pas seulement ici.
+
+---
+
+## 15. Inventaire complet des clés de stockage (28/08/2026)
+
+Le §2 et le §3 reposaient sur trois fichiers seulement, et le §6 signalait
+lui-même la lacune. Balayage exhaustif du dépôt : **51 clés**, contre les ~28
+recensées. Voici les 23 manquantes, classées.
+
+### 15.1 À DÉCIDER — le profil porte déjà un pseudo, un avatar et une PHOTO
+
+`@invader_profile` (`components/profile/useProfile.js`) contient
+`{ name, avatar, photoUri }`. Le fichier le décrit ainsi : « Profil 100 % LOCAL :
+pseudo + avatar/photo stockés sur l'appareil. Pas de compte. »
+
+**Trois conséquences que le cadrage n'avait pas vues :**
+
+1. **Un pseudo existe déjà.** Le §2.2 le présente comme une nouveauté du lot
+   social. Il faudra décider si le pseudo social réutilise celui-ci ou s'en
+   distingue. Réutiliser est tentant, mais un pseudo choisi pour soi n'a pas été
+   choisi pour être vu des autres : le rendre public sans le redemander serait
+   déloyal.
+2. **Il y a une PHOTO**, et le cadrage n'en parle nulle part. Une photo de profil
+   visible par un ami est du contenu visuel produit par l'utilisateur : cela
+   pèse bien plus lourd qu'un pseudo textuel en obligation de modération, et
+   touche aux obligations sur les mineurs. **Recommandation : ne pas exposer la
+   photo dans le lot social.** L'avatar prédéfini suffit à identifier un ami.
+3. **`photoUri` est un chemin de fichier local.** Il n'a aucun sens hors de
+   l'appareil. Le sauvegarder tel quel produirait un lien mort ; sauvegarder
+   l'image demanderait un hébergement, donc un coût et une modération.
+
+### 15.2 Ne monte pas — caches, retéléchargeables
+
+`@invader_index_v2` · `@invader_data_<CODE>` · `@invader_meta_<CODE>` (dynamiques,
+`services/invaderData.js`) · `@invader_news` · `@invader_iss_tle` ·
+`@invader_photos_liste` · `@invader_photos_spotter` · `@invader_fi_photos`
+
+### 15.3 Ne monte pas — préférences et état d'appareil
+
+`@invader_theme` · `@invader_list_cities` · `@invader_collection_vus` ·
+`@invader_import_card_off` · `@invader_gate_essais` · `@invader_gate_fait`
+(UpdateGate) · `@invader_stroll_started` · `@invader_sortie_km` ·
+`@invader_news_bell_hint` · `@invader_news_notified_upto` ·
+`@invader_news_notify_day` · `@invader_iss_lieu` · `@invader_iss_alertes` ·
+`@invader_api_calls` (quota ORS) · `@invader_fi_count`
+
+### 15.4 Cas particulier — `@invader_usage`
+
+`services/usageCounter.js` compte les usages hebdomadaires par fonctionnalité.
+C'est **la fondation du futur abonnement** (§12) : le fichier documente déjà
+comment l'activer en v2. Ne pas le sauvegarder, sinon un compteur de quota
+deviendrait remettable à zéro en réinstallant. Il doit rester local, ou vivre
+côté serveur le jour où l'abonnement arrive. À ne pas trancher maintenant, mais
+à ne pas oublier non plus.
