@@ -1433,6 +1433,7 @@
     "ptsFlash": "por el flash",
     "ptsCity": "ciudad nueva",
     "scheduled_one": "{{count}} recordatorio programado en tu teléfono",
-    "scheduled_other": "{{count}} recordatorios programados en tu teléfono"
+    "scheduled_other": "{{count}} recordatorios programados en tu teléfono",
+    "yourTime": "{{time}} donde estás"
   }
 }

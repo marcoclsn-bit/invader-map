@@ -26,12 +26,15 @@ function normaliser(s) {
 function charger() {
   if (INDEX) return INDEX;
   // require ici (pas en tête de module) : Metro n'inline le JSON qu'au premier appel.
-  const { cities } = require('../data/villes.json');
-  INDEX = cities.map(([nom, label, lat, lng]) => ({
+  const { cities, fuseaux } = require('../data/villes.json');
+  // `tz` est un INDEX dans la table `fuseaux` : 284 noms distincts pour 21 000
+  // villes, les répéter en clair coûterait des centaines de kilo-octets.
+  INDEX = cities.map(([nom, label, lat, lng, tz]) => ({
     nom,
     label,
     lat,
     lng,
+    fuseau: (fuseaux && fuseaux[tz]) || null,
     norm: normaliser(nom),
   }));
   return INDEX;
@@ -40,7 +43,9 @@ function charger() {
 /**
  * @param {string} requete   texte tapé par l'utilisateur
  * @param {number} [limite=8]
- * @returns {Array<{nom, label, lat, lng}>} triés par pertinence puis population
+ * @returns {Array<{nom, label, lat, lng, fuseau}>} triés par pertinence puis
+ *          population. `fuseau` est le nom IANA (« Europe/Paris »), utilisé pour
+ *          afficher l'heure DU LIEU observé plutôt que celle du téléphone.
  *          (l'annuaire est déjà ordonné par population décroissante).
  */
 export function rechercherVilles(requete, limite = 8) {
@@ -70,6 +75,7 @@ export function rechercherVilles(requete, limite = 8) {
     label: v.label,
     lat: v.lat,
     lng: v.lng,
+    fuseau: v.fuseau,
   }));
 }
 

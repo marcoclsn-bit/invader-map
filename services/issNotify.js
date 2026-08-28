@@ -25,12 +25,17 @@ const MAX_PASSAGES = 8;
 // Seule l'alerte imminente sonne fort ; le rappel de la veille reste sobre.
 const SON_IMMINENT = 'alerte_arcade_grave.wav';
 
-const heureLocale = (ms) =>
-  new Date(ms).toLocaleTimeString(i18n.language, { hour: '2-digit', minute: '2-digit' });
+// L'heure DU LIEU observé : la phrase dit « au zénith de {{city}} », elle doit
+// donc porter l'heure qu'il sera là-bas. `timeZone: undefined` retombe sur celui
+// de l'appareil, ce qui couvre les villes mémorisées avant l'ajout des fuseaux.
+const heureLocale = (ms, fuseau) =>
+  new Date(ms).toLocaleTimeString(i18n.language, {
+    hour: '2-digit', minute: '2-digit', timeZone: fuseau || undefined,
+  });
 
-function contenu(entree, lieuNom) {
+function contenu(entree, lieuNom, fuseau) {
   const p = entree.passage;
-  const heure = heureLocale(p.picMs);
+  const heure = heureLocale(p.picMs, fuseau);
   const sec = Math.max(1, Math.round((p.flashableFinMs - p.flashableDebutMs) / 1000));
 
   if (entree.type === 'veille') {
@@ -80,9 +85,16 @@ export async function demanderPermissionISS() {
  * @param {Array} passages  sortie de passagesISS (triée par date)
  * @param {Set<number>} armes  les picMs dont la cloche est armée
  * @param {string} lieuNom  nom de la ville affichée dans les textes
+ * @param {string} [fuseau]  fuseau IANA du lieu, pour l'heure citée dans le texte
+ *
+ * NOTE : le CALENDRIER (nuit ou heure ouvrable, d'où une ou deux alertes) reste
+ * calculé sur le fuseau de l'APPAREIL, volontairement. Il décide du moment où le
+ * téléphone sonne : c'est le sommeil de celui qui le tient qui compte, pas
+ * l'heure qu'il est à l'autre bout du monde. Les deux coïncident dès qu'on est
+ * dans la ville qu'on a choisie, c'est-à-dire dans le cas normal.
  * Ne lève jamais : au pire, silence (les rappels sont un confort).
  */
-export async function synchroniserNotificationsISS(passages, armes, lieuNom) {
+export async function synchroniserNotificationsISS(passages, armes, lieuNom, fuseau) {
   try {
     // 1. Purge des nôtres, et seulement des nôtres.
     const programmees = await Notifications.getAllScheduledNotificationsAsync();
@@ -103,7 +115,7 @@ export async function synchroniserNotificationsISS(passages, armes, lieuNom) {
       plan.map((e) =>
         Notifications.scheduleNotificationAsync({
           content: {
-            ...contenu(e, lieuNom),
+            ...contenu(e, lieuNom, fuseau),
             data: { type: 'iss', picMs: e.passage.picMs },
           },
           trigger: {
