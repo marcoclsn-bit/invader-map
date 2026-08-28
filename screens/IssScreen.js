@@ -159,31 +159,22 @@ export default function IssScreen({ navigation }) {
 
   // ── Formatage des dates ──────────────────────────────────────────────────────
   //
-  // On affiche l'heure DU LIEU OBSERVÉ, pas celle du téléphone. Un passage
-  // au-dessus de Calgary consulté depuis Paris s'affichait « 14 h 22 », alors
-  // qu'il est 6 h 22 du matin là-bas : c'est l'heure d'une horloge sur place qui
-  // renseigne, puisqu'on va lever les yeux depuis cet endroit.
+  // TOUT est à l'heure du LIEU OBSERVÉ : affichage et calendrier des alertes.
+  // Une seule heure, jamais deux. iOS règle le téléphone sur le fuseau où l'on
+  // se trouve, donc quand on est dans la ville choisie, rien ne diverge. Et
+  // quand on consulte un lieu lointain, c'est son horloge à lui qui renseigne,
+  // puisque c'est de là qu'on lèvera les yeux.
   //
   // Le fuseau vient de l'annuaire (GeoNames). Si une ville mémorisée avant cette
   // version n'en a pas, on retombe sur celui de l'appareil : `timeZone:
   // undefined` équivaut au défaut, aucun cas particulier à écrire.
   // Même motif que SortiesScreen : toLocale*, éprouvé sous Hermes.
   const fuseauLieu = lieu?.fuseau || undefined;
-  const fuseauTel = (() => {
-    try { return Intl.DateTimeFormat().resolvedOptions().timeZone; } catch { return null; }
-  })();
-  // Vrai seulement si l'on sait comparer ET que les deux diffèrent.
-  const fuseauDifferent = !!(lieu?.fuseau && fuseauTel && lieu.fuseau !== fuseauTel);
-
   const jourDe = (ms) => new Date(ms).toLocaleDateString(i18n.language, {
     weekday: 'long', day: 'numeric', month: 'long', timeZone: fuseauLieu,
   });
   const heureDe = (ms) => new Date(ms).toLocaleTimeString(i18n.language, {
     hour: '2-digit', minute: '2-digit', timeZone: fuseauLieu,
-  });
-  /** L'heure sur le téléphone : quand la notification sonnera pour toi. */
-  const heureTel = (ms) => new Date(ms).toLocaleTimeString(i18n.language, {
-    hour: '2-digit', minute: '2-digit',
   });
 
   // « aujourd'hui / demain » se comptent en jours civils DU LIEU observé : à
@@ -202,7 +193,7 @@ export default function IssScreen({ navigation }) {
 
   // Description des rappels qu'arme la cloche, adaptée à l'heure du passage.
   function descriptionAlertes(p) {
-    const plan = planNotificationsISS([p], Date.now());
+    const plan = planNotificationsISS([p], Date.now(), 3, lieu?.fuseau);
     return plan.map((e) => {
       if (e.type === 'veille') return t('iss.reminderVeille');
       return t('iss.reminderImminent');
@@ -345,12 +336,6 @@ export default function IssScreen({ navigation }) {
           <Text style={styles.heroRelatif}>{relatif(p.picMs)}</Text>
         </View>
         <Text style={styles.heroTime}>{heureDe(p.picMs)}</Text>
-        {/* Quand on consulte une ville d'un autre fuseau, l'heure ci-dessus est
-            celle de LÀ-BAS. On rappelle alors celle d'ici, sinon on ne saurait
-            pas quand le téléphone va sonner. */}
-        {fuseauDifferent && (
-          <Text style={styles.heroLocal}>{t('iss.yourTime', { time: heureTel(p.picMs) })}</Text>
-        )}
         <View style={styles.facts}>
           <View style={styles.fact}>
             <Text style={styles.factValue}>{Math.round(p.elevationMaxDeg)}°</Text>
@@ -376,7 +361,6 @@ export default function IssScreen({ navigation }) {
           </Text>
           <Text style={styles.rowMeta}>
             {Math.round(p.elevationMaxDeg)}° · {fenetreSec(p)} s
-            {fuseauDifferent ? ` · ${t('iss.yourTime', { time: heureTel(p.picMs) })}` : ''}
           </Text>
         </View>
         <TouchableOpacity
@@ -499,7 +483,6 @@ function makeStyles(theme) {
     heroDay: { fontSize: 14, color: theme.textSecondary },
     heroRelatif: { fontSize: 12.5, fontWeight: '700', color: theme.accentScore },
     heroTime: { fontSize: 42, fontWeight: '800', color: theme.textPrimary, marginTop: 4, letterSpacing: 1 },
-    heroLocal: { fontSize: 12.5, color: theme.textSecondary, marginTop: 2 },
     facts: { flexDirection: 'row', gap: 8, marginTop: 14 },
     fact: {
       flex: 1, backgroundColor: theme.surfaceHigh, borderRadius: 11,

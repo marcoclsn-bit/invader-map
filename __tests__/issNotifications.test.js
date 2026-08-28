@@ -135,3 +135,60 @@ describe('armePour — l\'alerte survit à la dérive du TLE', () => {
     expect(armePour(new Set(), Date.now())).toBeNull();
   });
 });
+
+describe('heure murale : tout raisonne sur le fuseau DU LIEU', () => {
+  const { mural, instantMural } = require('../utils/issNotifications');
+
+  test('lit l\'heure qu\'affiche une horloge sur place', () => {
+    // 12:23 UTC le 28/08/2026 : 06:23 à Medicine Hat, 21:23 à Tokyo (déjà le 28)
+    const t = Date.UTC(2026, 7, 28, 12, 23);
+    expect(mural(t, 'America/Edmonton')).toMatchObject({ jour: 28, heure: 6, minute: 23 });
+    expect(mural(t, 'Asia/Tokyo')).toMatchObject({ jour: 28, heure: 21, minute: 23 });
+    expect(mural(t, 'Europe/Paris')).toMatchObject({ jour: 28, heure: 14, minute: 23 });
+  });
+
+  test('le jour civil change avec le fuseau', () => {
+    // 23:30 UTC : on est déjà le lendemain à Tokyo, pas encore à New York.
+    const t = Date.UTC(2026, 7, 28, 23, 30);
+    expect(mural(t, 'Asia/Tokyo').jour).toBe(29);
+    expect(mural(t, 'America/New_York').jour).toBe(28);
+  });
+
+  test('instantMural est l\'inverse exact de mural', () => {
+    for (const tz of ['Europe/Paris', 'Asia/Tokyo', 'America/Edmonton', 'Pacific/Auckland']) {
+      const vise = { annee: 2026, mois: 9, jour: 15, heure: 20, minute: 30 };
+      const t = instantMural(vise, tz);
+      expect(mural(t, tz)).toMatchObject(vise);
+    }
+  });
+
+  test('resiste au changement d\'heure', () => {
+    // Nuit du 25/10/2026 : la France repasse à l'heure d'hiver. 20 h 30 le soir
+    // même reste 20 h 30 sur l'horloge, quel que soit le décalage appliqué.
+    const t = instantMural({ annee: 2026, mois: 10, jour: 25, heure: 20, minute: 30 }, 'Europe/Paris');
+    expect(mural(t, 'Europe/Paris')).toMatchObject({ jour: 25, heure: 20, minute: 30 });
+  });
+});
+
+describe('le calendrier suit le fuseau du lieu, pas celui du téléphone', () => {
+  const pass = (picMs) => ({
+    picMs, elevationMaxDeg: 85,
+    flashableDebutMs: picMs - 8000, flashableFinMs: picMs + 8000,
+  });
+
+  test('un passage nocturne à Tokyo déclenche la veille à 20 h 30 heure de Tokyo', () => {
+    // 19:00 UTC le 2 septembre = 04:00 le 3 à Tokyo : nocturne LÀ-BAS.
+    const pic = Date.UTC(2026, 8, 2, 19, 0);
+    const plan = planNotificationsISS([pass(pic)], Date.UTC(2026, 8, 1), 3, 'Asia/Tokyo');
+    expect(plan.map((n) => n.type)).toEqual(['veille', 'imminent']);
+    const { mural } = require('../utils/issNotifications');
+    expect(mural(plan[0].quandMs, 'Asia/Tokyo')).toMatchObject({ jour: 2, heure: 20, minute: 30 });
+  });
+
+  test('le même instant, jugé sur un autre fuseau, devient diurne', () => {
+    // 19:00 UTC = 13:00 à Medicine Hat : heure ouvrable, donc une seule alerte.
+    const pic = Date.UTC(2026, 8, 2, 19, 0);
+    const plan = planNotificationsISS([pass(pic)], Date.UTC(2026, 8, 1), 3, 'America/Edmonton');
+    expect(plan.map((n) => n.type)).toEqual(['imminent']);
+  });
+});

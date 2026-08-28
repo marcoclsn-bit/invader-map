@@ -1433,7 +1433,6 @@
     "ptsFlash": "per il flash",
     "ptsCity": "città nuova",
     "scheduled_one": "{{count}} promemoria programmato sul telefono",
-    "scheduled_other": "{{count}} promemoria programmati sul telefono",
-    "yourTime": "{{time}} da te"
+    "scheduled_other": "{{count}} promemoria programmati sul telefono"
   }
 }

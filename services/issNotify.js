@@ -87,11 +87,11 @@ export async function demanderPermissionISS() {
  * @param {string} lieuNom  nom de la ville affichée dans les textes
  * @param {string} [fuseau]  fuseau IANA du lieu, pour l'heure citée dans le texte
  *
- * NOTE : le CALENDRIER (nuit ou heure ouvrable, d'où une ou deux alertes) reste
- * calculé sur le fuseau de l'APPAREIL, volontairement. Il décide du moment où le
- * téléphone sonne : c'est le sommeil de celui qui le tient qui compte, pas
- * l'heure qu'il est à l'autre bout du monde. Les deux coïncident dès qu'on est
- * dans la ville qu'on a choisie, c'est-à-dire dans le cas normal.
+ * Tout raisonne sur le fuseau DU LIEU : l'heure citée dans le texte, et le
+ * calendrier lui-même (nuit ou heure ouvrable, d'où une ou deux alertes). iOS
+ * règle le téléphone sur le fuseau où l'on se trouve, donc dès qu'on est dans la
+ * ville choisie les deux coïncident ; et quand on consulte un lieu lointain,
+ * c'est bien son heure à lui qui décide s'il faudra un réveil.
  * Ne lève jamais : au pire, silence (les rappels sont un confort).
  */
 export async function synchroniserNotificationsISS(passages, armes, lieuNom, fuseau) {
@@ -110,7 +110,7 @@ export async function synchroniserNotificationsISS(passages, armes, lieuNom, fus
       .slice(0, MAX_PASSAGES);
     if (vises.length === 0) return;
 
-    const plan = planNotificationsISS(vises, Date.now(), MAX_PASSAGES);
+    const plan = planNotificationsISS(vises, Date.now(), MAX_PASSAGES, fuseau);
     await Promise.all(
       plan.map((e) =>
         Notifications.scheduleNotificationAsync({
