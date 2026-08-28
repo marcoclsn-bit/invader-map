@@ -1406,7 +1406,7 @@
     "title": "ISS",
     "headerTitle": "SPACE_02",
     "subtitle": "L'Invader en orbite",
-    "intro": "La seule mosaïque hors de la Terre : à bord de la Station spatiale internationale. Elle se flashe quand la station passe presque à la verticale de toi, quelques secondes, quelques fois par mois. On guette pour toi.",
+    "intro": "La mosaïque encore en orbite, à bord de la Station spatiale internationale. Pour la flasher, il faut que la station passe presque à la verticale de toi : tu n'as alors que quelques secondes. Selon l'endroit d'où tu regardes, l'occasion revient plusieurs fois par semaine… ou une fois par mois.",
     "searchTitle": "D'où observes-tu ?",
     "searchPlaceholder": "Cherche ta ville…",
     "changeLocation": "Changer",
@@ -1424,7 +1424,7 @@
     "reminderVeille": "Rappel la veille à 20 h 30, pour mettre un réveil",
     "reminderMatin": "Rappel le matin à 9 h",
     "reminderImminent": "Alerte 10 min avant",
-    "flashNote": "Pour valider, la station doit dépasser 80° au-dessus de l'horizon, presque le zénith. Ces fenêtres tombent surtout la nuit : d'où le rappel de la veille au soir.",
+    "flashNote": "Pour valider, la station doit dépasser 80° au-dessus de l'horizon, presque le zénith. Ces fenêtres tombent surtout la nuit : d'où le rappel de la veille au soir. SPACE_01, la première envoyée dans l'espace, n'a pas survécu.",
     "notif": {
       "veilleTitle": "SPACE_02 passe cette nuit",
       "veilleBody": "L’ISS sera au zénith de {{city}} à {{time}}, pendant {{sec}} s. Mets un réveil !",
@@ -1432,6 +1432,8 @@
       "matinBody": "L’ISS sera au zénith de {{city}} à {{time}}, pendant {{sec}} s. Garde ton téléphone à portée.",
       "imminentTitle": "SPACE_02 arrive !",
       "imminentBody": "Zénith à {{time}} : {{sec}} s de fenêtre. Ouvre FlashInvaders et vise le ciel."
-    }
+    },
+    "ptsFlash": "pour le flash",
+    "ptsCity": "nouvelle ville"
   }
 }

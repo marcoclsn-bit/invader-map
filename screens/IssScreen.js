@@ -187,9 +187,12 @@ export default function IssScreen({ navigation }) {
             <Text style={styles.idName}>SPACE_02</Text>
             <Text style={styles.idSub}>{t('iss.subtitle')}</Text>
           </View>
+          {/* « 100 + 100 PTS » ne se comprenait pas : on nomme les deux gains. */}
           <View style={styles.pts}>
-            <Text style={styles.ptsValue}>100 + 100</Text>
-            <Text style={styles.ptsLabel}>PTS</Text>
+            <Text style={styles.ptsValue}>100</Text>
+            <Text style={styles.ptsLabel}>{t('iss.ptsFlash')}</Text>
+            <Text style={[styles.ptsValue, styles.ptsSecond]}>+100</Text>
+            <Text style={styles.ptsLabel}>{t('iss.ptsCity')}</Text>
           </View>
         </View>
         <Text style={styles.intro}>{t('iss.intro')}</Text>
@@ -377,8 +380,9 @@ function makeStyles(theme) {
     idName: { ...typography.arcadeHeading, color: theme.textPrimary },
     idSub: { fontSize: 12.5, color: theme.flashed, marginTop: 2 },
     pts: { alignItems: 'flex-end' },
-    ptsValue: { fontSize: 14, fontWeight: '800', color: theme.accentScore },
-    ptsLabel: { fontSize: 10, letterSpacing: 1, color: theme.textSecondary },
+    ptsValue: { fontSize: 15, fontWeight: '800', color: theme.accentScore, textAlign: 'right' },
+    ptsSecond: { marginTop: 5 },
+    ptsLabel: { fontSize: 9.5, letterSpacing: 0.3, color: theme.textSecondary, textAlign: 'right' },
     intro: {
       paddingHorizontal: 16, marginTop: 12, marginBottom: 18,
       fontSize: 13.5, lineHeight: 20, color: theme.textSecondary,

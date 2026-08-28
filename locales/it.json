@@ -1406,7 +1406,7 @@
     "title": "ISS",
     "headerTitle": "SPACE_02",
     "subtitle": "L'Invader in orbita",
-    "intro": "L'unico mosaico fuori dalla Terra: a bordo della Stazione Spaziale Internazionale. Si flasha quando la stazione passa quasi allo zenit sopra di te, qualche secondo, qualche volta al mese. Vigiliamo per te.",
+    "intro": "Il mosaico ancora in orbita, a bordo della Stazione Spaziale Internazionale. Per flasharlo, la stazione deve passare quasi allo zenit sopra di te: hai solo pochi secondi. A seconda di dove guardi, l'occasione torna più volte a settimana… o una volta al mese.",
     "searchTitle": "Da dove osservi?",
     "searchPlaceholder": "Cerca la tua città…",
     "changeLocation": "Cambia",
@@ -1424,7 +1424,7 @@
     "reminderVeille": "Promemoria la sera prima alle 20:30, per mettere una sveglia",
     "reminderMatin": "Promemoria la mattina alle 9:00",
     "reminderImminent": "Avviso 10 min prima",
-    "flashNote": "Per valere, la stazione deve superare gli 80° sopra l'orizzonte, quasi lo zenit. Queste finestre cadono soprattutto di notte: da qui il promemoria della sera prima.",
+    "flashNote": "Per valere, la stazione deve superare gli 80° sopra l'orizzonte, quasi lo zenit. Queste finestre cadono soprattutto di notte: da qui il promemoria della sera prima. SPACE_01, il primo mandato nello spazio, non è sopravvissuto.",
     "notif": {
       "veilleTitle": "SPACE_02 passa stanotte",
       "veilleBody": "La ISS sarà allo zenit su {{city}} alle {{time}}, per {{sec}} s. Metti una sveglia!",
@@ -1432,6 +1432,8 @@
       "matinBody": "La ISS sarà allo zenit su {{city}} alle {{time}}, per {{sec}} s. Tieni il telefono a portata.",
       "imminentTitle": "SPACE_02 in arrivo!",
       "imminentBody": "Zenit alle {{time}}: finestra di {{sec}} s. Apri FlashInvaders e punta al cielo."
-    }
+    },
+    "ptsFlash": "per il flash",
+    "ptsCity": "città nuova"
   }
 }
