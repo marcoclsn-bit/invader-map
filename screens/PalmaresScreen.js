@@ -311,6 +311,9 @@ export default function PalmaresScreen({ navigation }) {
           onPress={() => {
             if (isChangingCity || isActive) return;
             setCurrentCity(c.code);
+            // Espace / ISS n'a pas de position : l'envoyer sur la Carte n'aurait
+            // aucun sens. Ses deux mosaïques se cochent depuis la liste des Flashs.
+            if (c.mappable === false) { navigation.navigate('Liste'); return; }
             navigation.navigate('Tabs', { screen: 'Carte' }); // Carte = onglet imbriqué dans "Tabs"
           }}
           activeOpacity={0.7}
