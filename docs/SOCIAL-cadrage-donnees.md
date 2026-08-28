@@ -106,8 +106,14 @@ ville de démarrage étant déduite du GPS au lancement.
 
 Ce qu'elle peut affirmer **sans mentir** :
 
-- aucune position ni trajet n'est envoyé au serveur du compte ;
+- aucun tracé de déplacement (`routeCoords`) n'est envoyé au serveur ;
 - les notes personnelles restent privées, invisibles des autres utilisateurs.
+
+> ⚠️ **NE PLUS ÉCRIRE « aucune position n'est envoyée au serveur ».** C'était vrai
+> tant que les défis n'envoyaient que des scores. Ce n'est PLUS vrai depuis la
+> décision du 28/08/2026 de transmettre l'horodatage des flashs à la minute :
+> voir §16. Reprendre cette phrase d'une version antérieure du document
+> reproduirait exactement la faute qui a valu deux refus à Google.
 
 Ce qu'elle **doit** déclarer, du fait du social :
 
@@ -621,3 +627,53 @@ comment l'activer en v2. Ne pas le sauvegarder, sinon un compteur de quota
 deviendrait remettable à zéro en réinstallant. Il doit rester local, ou vivre
 côté serveur le jour où l'abonnement arrive. À ne pas trancher maintenant, mais
 à ne pas oublier non plus.
+
+---
+
+## 16. Décisions du 28/08/2026
+
+### 16.1 Photo de profil : elle reste locale
+
+Les amis voient l'**avatar prédéfini**, jamais la photo. Celle-ci continue de
+vivre sur l'appareil, comme aujourd'hui, pour son propriétaire seul.
+
+Motif : la règle 1.2 d'Apple exige « a method for filtering objectionable
+material **from being posted** », donc un filtrage AVANT publication, pas un
+simple bouton de signalement. Héberger des photos imposerait soit une relecture
+manuelle à vie, soit un service d'analyse payant, et exposerait Marco au contenu
+illégal que reçoit fatalement toute app qui accepte des images.
+
+Ce choix laisse la porte ouverte : si des utilisateurs réclament les photos une
+fois le social lancé, on tranchera sur des retours réels. Il rend surtout la
+modération tenable, le seul contenu à filtrer devenant le pseudo.
+
+### 16.2 Pseudo : proposé, jamais imposé
+
+Le champ est **pré-rempli** avec `@invader_profile.name` s'il existe, mais
+l'utilisateur doit le **confirmer explicitement**, avec un texte disant qu'il
+sera visible des autres. Un pseudo choisi pour soi n'a pas été choisi pour être
+vu : le publier sans le redemander serait déloyal.
+
+### 16.3 Horodatage des défis : à la minute — ET SES CONSÉQUENCES
+
+**Décision de Marco : on transmet l'horodatage des flashs à la minute**, comme le
+prévoyait le §2.2. La recommandation inverse (score de manche et jour seulement)
+n'a pas été retenue.
+
+**Ce que cela oblige, et qui n'est pas négociable :**
+
+1. **C'est de la donnée de localisation.** Un Invader a une position publique
+   connue. « Flashé à 14 h 23 » signifie donc « cette personne était à ces
+   coordonnées à 14 h 23 ». Sur une semaine de duel quotidien, le serveur détient
+   une trace de déplacement.
+2. **Les deux boutiques doivent le déclarer comme tel.** Position collectée, dans
+   la Sécurité des données de Google Play comme dans les étiquettes Apple. Ne pas
+   le faire serait un troisième refus assuré.
+3. **La politique de confidentialité doit le dire en clair**, et ne peut plus
+   affirmer qu'aucune position n'est transmise. Voir l'avertissement du §4.1.
+
+**Atténuation à étudier, sans renoncer à la fonctionnalité :** purger les
+horodatages dès la **clôture du défi** (une semaine au plus). La fonctionnalité
+garde tout ce dont elle a besoin pendant qu'elle en a besoin, et le serveur cesse
+d'accumuler une trace de déplacement au long cours. La déclaration reste due,
+mais l'exposition devient bornée et se défend bien mieux devant un relecteur.
