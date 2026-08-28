@@ -1401,5 +1401,38 @@
     "btnLabel": "Condividi la mia uscita",
     "btnDisabled": "Flasha almeno due Invaders nella stessa passeggiata e potrai condividerla da qui.",
     "limite": "Vengono mostrate solo le tue ultime {{count}} uscite."
+  },
+  "iss": {
+    "title": "ISS",
+    "headerTitle": "SPACE_02",
+    "subtitle": "L'Invader in orbita",
+    "intro": "Il mosaico ancora in orbita, a bordo della Stazione Spaziale Internazionale. Per flasharlo, la stazione deve passare quasi allo zenit sopra di te: hai solo pochi secondi. A seconda di dove guardi, l'occasione torna più volte a settimana… o una volta al mese.",
+    "searchTitle": "Da dove osservi?",
+    "searchPlaceholder": "Cerca la tua città…",
+    "changeLocation": "Cambia",
+    "computing": "Calcolo dei passaggi…",
+    "unavailable": "Previsione non disponibile al momento. Controlla la connessione e riprova.",
+    "noPass": "Nessun passaggio abbastanza alto da {{city}} nei prossimi {{days}} giorni. La stazione non sale sempre vicino allo zenit: torna più tardi.",
+    "nextPass": "Prossimo passaggio flashabile",
+    "otherPasses": "Passaggi successivi",
+    "elevation": "Elevazione",
+    "window": "Finestra",
+    "today": "oggi",
+    "tomorrow": "domani",
+    "inDays": "tra {{n}} g",
+    "alert": "Avvisami",
+    "reminderVeille": "Promemoria la sera prima alle 20:30, per mettere una sveglia",
+    "reminderImminent": "Avviso 10 min prima",
+    "flashNote": "Per valere, la stazione deve superare gli 80° sopra l'orizzonte, quasi lo zenit. Queste finestre cadono soprattutto di notte: da qui il promemoria della sera prima. SPACE_01, il primo mandato nello spazio, non è sopravvissuto.",
+    "notif": {
+      "veilleTitle": "SPACE_02 passa stanotte",
+      "veilleBody": "La ISS sarà allo zenit su {{city}} alle {{time}}, per {{sec}} s. Metti una sveglia!",
+      "imminentTitle": "SPACE_02 in arrivo!",
+      "imminentBody": "Zenit alle {{time}}, finestra di {{sec}} s. Apri FlashInvaders e punta al cielo."
+    },
+    "ptsFlash": "per il flash",
+    "ptsCity": "città nuova",
+    "scheduled_one": "{{count}} promemoria programmato sul telefono",
+    "scheduled_other": "{{count}} promemoria programmati sul telefono"
   }
 }

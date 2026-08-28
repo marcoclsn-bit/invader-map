@@ -29,6 +29,7 @@ import PalmaresScreen from './screens/PalmaresScreen';
 import StatsScreen from './screens/StatsScreen';
 import NewsScreen from './screens/NewsScreen';
 import StrollScreen from './screens/StrollScreen';
+import IssScreen from './screens/IssScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import AboutScreen from './screens/AboutScreen';
 import GuideScreen from './screens/GuideScreen';
@@ -152,6 +153,7 @@ function DrawerNavigator() {
       <Drawer.Screen name="Sorties" component={SortiesScreen} />
       <Drawer.Screen name="News" component={NewsScreen} />
       <Drawer.Screen name="Balade" component={StrollScreen} />
+      <Drawer.Screen name="ISS" component={IssScreen} />
     </Drawer.Navigator>
   );
 }

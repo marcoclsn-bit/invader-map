@@ -26,6 +26,7 @@ import {
   INVADERS_VERSION as EMBEDDED_PA_VERSION,
   INVADERS_UPDATED_AT as EMBEDDED_PA_DATE,
 } from '../data/invaders';
+import { SPACE_INVADERS, SPACE_CITY_META, SPACE_CITY_CODE } from '../data/invadersSpace';
 
 // ─── URLs ─────────────────────────────────────────────────────────────────────
 
@@ -48,6 +49,14 @@ _cityData.set('PA', {
   invaders:  EMBEDDED_PA,
   version:   EMBEDDED_PA_VERSION,
   updatedAt: EMBEDDED_PA_DATE,
+});
+// Espace / ISS : embarquée pour de bon, jamais chargée depuis le réseau. Ses
+// deux fiches n'ont pas de coordonnées à rafraîchir et la source amont les
+// écarte pour cette raison même. Voir `data/invadersSpace.js`.
+_cityData.set(SPACE_CITY_CODE, {
+  invaders:  SPACE_INVADERS,
+  version:   SPACE_CITY_META.version,
+  updatedAt: null,
 });
 
 const _listeners = new Set();
@@ -104,6 +113,9 @@ export async function initInvaderService(onIndex) {
  *   - Retourne immédiatement les données disponibles.
  */
 export async function loadCityData(code) {
+  // Espace / ISS : purement embarquée. Ni cache à relire, ni fichier distant à
+  // demander — `invaders_SPACE.json` n'existe pas, le fetch échouerait en boucle.
+  if (code === SPACE_CITY_CODE) return _cityData.get(SPACE_CITY_CODE) ?? null;
   await _loadCityCache(code);
   _fetchCity(code).catch(() => {});
   return _cityData.get(code) ?? null;
@@ -124,13 +136,24 @@ export async function checkForUpdate(code = 'PA') {
 
 // ─── Implémentation privée ────────────────────────────────────────────────────
 
+/**
+ * L'index distant ignore l'Espace — et doit l'ignorer : `data/index.json` est
+ * régénéré chaque nuit et lu par tous les utilisateurs. On la rajoute donc à
+ * chaque affectation, sans quoi le Palmarès perdrait son compteur dès le premier
+ * rafraîchissement réussi.
+ */
+function _avecEspace(cities) {
+  const liste = Array.isArray(cities) ? cities : [];
+  return liste.some(c => c?.code === SPACE_CITY_CODE) ? liste : [...liste, SPACE_CITY_META];
+}
+
 async function _loadIndexCache() {
   try {
     const raw = await AsyncStorage.getItem(KEY_INDEX);
     if (!raw) return;
     const parsed = JSON.parse(raw);
     if (Array.isArray(parsed?.cities) && parsed.cities.length > 0) {
-      _cityIndex = parsed.cities;
+      _cityIndex = _avecEspace(parsed.cities);
     }
   } catch (e) {
     __DEV__ && console.log('[InvaderData] Index cache error:', e.message);
@@ -143,7 +166,9 @@ async function _fetchIndex() {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const json = await res.json();
     if (!Array.isArray(json?.cities) || json.cities.length === 0) throw new Error('Index invalide');
-    _cityIndex = json.cities;
+    _cityIndex = _avecEspace(json.cities);
+    // On met en cache l'index DISTANT tel quel : l'Espace est réinjectée à la
+    // lecture, elle n'a rien à faire dans un cache de données téléchargées.
     await AsyncStorage.setItem(KEY_INDEX, JSON.stringify(json));
   } catch (e) {
     __DEV__ && console.log('[InvaderData] Index fetch error:', e.message);

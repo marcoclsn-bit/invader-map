@@ -214,7 +214,10 @@ function FilterPanel({ filters, onFiltersChange, onClose, explorer }) {
 
 export default function MapScreen({ navigation, route }) {
   const { invaders, flashed, labels, labelDefs, statusColors, colorOverrides, filters, setFilters, toggleFlash, mapsApp, setMapsAppPref, currentCityCode, isChangingCity, pendingCityCode, legendSeen, dismissLegend, poiPrefs, poiIntroSeen, poiDataVersion, explorer } = useAppContext();
-  const city = CITIES[currentCityCode] ?? CITIES.PA;
+  // Repli sur Paris si la ville courante n'est pas cartographiable (Espace / ISS,
+  // sans centre ni bbox) : plus bas, `city.bbox.minLat` planterait sur un null.
+  const _cityBrute = CITIES[currentCityCode];
+  const city = (_cityBrute && _cityBrute.mappable !== false) ? _cityBrute : CITIES.PA;
   const overlayName = (pendingCityCode ? CITIES[pendingCityCode]?.name : null) ?? city.name;
   const { theme, isDark } = useTheme();
   const { t } = useTranslation();

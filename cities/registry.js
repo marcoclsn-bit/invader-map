@@ -8,6 +8,7 @@
  */
 
 import INDEX from '../data/index.json';
+import { SPACE_CITY_META } from '../data/invadersSpace';
 
 // ─── Surcharges par ville ─────────────────────────────────────────────────────
 
@@ -124,8 +125,8 @@ function _bbox(c) {
   };
 }
 
-export const CITIES = Object.fromEntries(
-  INDEX.cities.map(c => [c.code, {
+export const CITIES = Object.fromEntries([
+  ...INDEX.cities.map(c => [c.code, {
     code:            c.code,
     name:            c.name,
     center:          c.center,
@@ -134,8 +135,31 @@ export const CITIES = Object.fromEntries(
     orsCountry:      OVERRIDES[c.code]?.orsCountry      ?? null,
     subdivisionsKey: OVERRIDES[c.code]?.subdivisionsKey ?? null,
     enabled:         true,
-  }])
-);
+    // Toutes les villes de l'index ont un centre : elles se cartographient.
+    mappable:        true,
+  }]),
+  // ── Espace / ISS ────────────────────────────────────────────────────────────
+  // Injectée par le CODE, pas par `data/index.json`. Deux raisons : le fichier
+  // est régénéré chaque nuit par l'Action GitHub (l'ajout y serait écrasé), et
+  // il est lu en direct par TOUS les utilisateurs, quel que soit leur binaire —
+  // une ville ajoutée là apparaîtrait partout sans revue. Ici, elle n'existe que
+  // pour les binaires qui portent ce code. Voir `data/invadersSpace.js`.
+  [SPACE_CITY_META.code, {
+    code:            SPACE_CITY_META.code,
+    name:            SPACE_CITY_META.name,
+    center:          null,
+    mapDelta:        null,
+    bbox:            null,
+    orsCountry:      null,
+    subdivisionsKey: null,
+    enabled:         true,
+    // Sans position, rien à afficher sur une carte : ni épingle, ni cadrage.
+    // Ce drapeau la retire du sélecteur de ville de la carte.
+    mappable:        false,
+  }],
+]);
 
 export const ENABLED_CITIES  = Object.values(CITIES);
+/** Villes affichables sur la carte — exclut l'Espace, qui n'a pas de position. */
+export const MAPPABLE_CITIES = ENABLED_CITIES.filter(c => c.mappable);
 export const DEFAULT_CITY_CODE = 'PA';

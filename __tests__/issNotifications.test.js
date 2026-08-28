@@ -48,14 +48,31 @@ describe('passage en soirée (23 h) : la « veille » est le soir même', () => 
   });
 });
 
-describe('passage diurne (15 h) : rappel du matin, pas de réveil à mettre', () => {
+describe('passage diurne (15 h) : une seule alerte, aucun réveil à mettre', () => {
   const pic = new Date(2026, 7, 27, 15, 0);
   const maintenant = new Date(2026, 7, 27, 7, 0);
   const plan = planNotificationsISS([passage(pic)], maintenant.getTime());
 
-  test('un rappel à 9 h et l\'imminente, aucune « veille »', () => {
-    expect(plan.map((n) => n.type)).toEqual(['matin', 'imminent']);
-    expect(new Date(plan[0].quandMs).getHours()).toBe(9);
+  test('seulement l\'imminente : prévenir la veille pour 15 h serait du bruit', () => {
+    expect(plan.map((n) => n.type)).toEqual(['imminent']);
+  });
+});
+
+describe('le nombre d\'alertes dépend de l\'heure du passage', () => {
+  test('nuit → DEUX alertes (la veille au soir, puis 10 min avant)', () => {
+    const plan = planNotificationsISS(
+      [passage(new Date(2026, 7, 29, 4, 12))],
+      new Date(2026, 7, 28, 12, 0).getTime(),
+    );
+    expect(plan.map((n) => n.type)).toEqual(['veille', 'imminent']);
+  });
+
+  test('heure ouvrable → UNE seule alerte', () => {
+    const plan = planNotificationsISS(
+      [passage(new Date(2026, 7, 29, 14, 30))],
+      new Date(2026, 7, 28, 12, 0).getTime(),
+    );
+    expect(plan.map((n) => n.type)).toEqual(['imminent']);
   });
 });
 
@@ -86,5 +103,92 @@ describe('garde-fous', () => {
   test('entrées vides ou nulles : tableau vide, jamais d\'erreur', () => {
     expect(planNotificationsISS([], Date.UTC(2026, 7, 26))).toEqual([]);
     expect(planNotificationsISS(null, Date.UTC(2026, 7, 26))).toEqual([]);
+  });
+});
+
+describe('armePour — l\'alerte survit à la dérive du TLE', () => {
+  const { armePour, TOLERANCE_MS } = require('../utils/issNotifications');
+
+  test('un décalage de quelques secondes retrouve le passage armé', () => {
+    // Le TLE se rafraîchit toutes les 12 h : le pic recalculé bouge un peu.
+    // Sans tolérance, la cloche se décochait toute seule une à deux fois par jour.
+    const arme = new Set([Date.UTC(2026, 8, 3, 3, 3, 21)]);
+    const recalcule = Date.UTC(2026, 8, 3, 3, 3, 47); // 26 s plus tard
+    expect(armePour(arme, recalcule)).not.toBeNull();
+  });
+
+  test('un décalage de plusieurs minutes aussi', () => {
+    const arme = new Set([Date.UTC(2026, 8, 3, 3, 3, 21)]);
+    expect(armePour(arme, Date.UTC(2026, 8, 3, 3, 12, 0))).not.toBeNull();
+  });
+
+  test('mais deux passages distincts ne se confondent jamais', () => {
+    // Mesuré : deux passages au zénith d'une même nuit sont séparés de 194 min,
+    // soit bien plus que la tolérance.
+    const arme = new Set([Date.UTC(2026, 8, 2, 23, 49, 26)]);
+    expect(armePour(arme, Date.UTC(2026, 8, 3, 3, 3, 21))).toBeNull();
+    expect(TOLERANCE_MS).toBeLessThan(90 * 60000); // sous une orbite complète
+  });
+
+  test('entrées vides : jamais d\'erreur', () => {
+    expect(armePour(null, Date.now())).toBeNull();
+    expect(armePour(new Set(), Date.now())).toBeNull();
+  });
+});
+
+describe('heure murale : tout raisonne sur le fuseau DU LIEU', () => {
+  const { mural, instantMural } = require('../utils/issNotifications');
+
+  test('lit l\'heure qu\'affiche une horloge sur place', () => {
+    // 12:23 UTC le 28/08/2026 : 06:23 à Medicine Hat, 21:23 à Tokyo (déjà le 28)
+    const t = Date.UTC(2026, 7, 28, 12, 23);
+    expect(mural(t, 'America/Edmonton')).toMatchObject({ jour: 28, heure: 6, minute: 23 });
+    expect(mural(t, 'Asia/Tokyo')).toMatchObject({ jour: 28, heure: 21, minute: 23 });
+    expect(mural(t, 'Europe/Paris')).toMatchObject({ jour: 28, heure: 14, minute: 23 });
+  });
+
+  test('le jour civil change avec le fuseau', () => {
+    // 23:30 UTC : on est déjà le lendemain à Tokyo, pas encore à New York.
+    const t = Date.UTC(2026, 7, 28, 23, 30);
+    expect(mural(t, 'Asia/Tokyo').jour).toBe(29);
+    expect(mural(t, 'America/New_York').jour).toBe(28);
+  });
+
+  test('instantMural est l\'inverse exact de mural', () => {
+    for (const tz of ['Europe/Paris', 'Asia/Tokyo', 'America/Edmonton', 'Pacific/Auckland']) {
+      const vise = { annee: 2026, mois: 9, jour: 15, heure: 20, minute: 30 };
+      const t = instantMural(vise, tz);
+      expect(mural(t, tz)).toMatchObject(vise);
+    }
+  });
+
+  test('resiste au changement d\'heure', () => {
+    // Nuit du 25/10/2026 : la France repasse à l'heure d'hiver. 20 h 30 le soir
+    // même reste 20 h 30 sur l'horloge, quel que soit le décalage appliqué.
+    const t = instantMural({ annee: 2026, mois: 10, jour: 25, heure: 20, minute: 30 }, 'Europe/Paris');
+    expect(mural(t, 'Europe/Paris')).toMatchObject({ jour: 25, heure: 20, minute: 30 });
+  });
+});
+
+describe('le calendrier suit le fuseau du lieu, pas celui du téléphone', () => {
+  const pass = (picMs) => ({
+    picMs, elevationMaxDeg: 85,
+    flashableDebutMs: picMs - 8000, flashableFinMs: picMs + 8000,
+  });
+
+  test('un passage nocturne à Tokyo déclenche la veille à 20 h 30 heure de Tokyo', () => {
+    // 19:00 UTC le 2 septembre = 04:00 le 3 à Tokyo : nocturne LÀ-BAS.
+    const pic = Date.UTC(2026, 8, 2, 19, 0);
+    const plan = planNotificationsISS([pass(pic)], Date.UTC(2026, 8, 1), 3, 'Asia/Tokyo');
+    expect(plan.map((n) => n.type)).toEqual(['veille', 'imminent']);
+    const { mural } = require('../utils/issNotifications');
+    expect(mural(plan[0].quandMs, 'Asia/Tokyo')).toMatchObject({ jour: 2, heure: 20, minute: 30 });
+  });
+
+  test('le même instant, jugé sur un autre fuseau, devient diurne', () => {
+    // 19:00 UTC = 13:00 à Medicine Hat : heure ouvrable, donc une seule alerte.
+    const pic = Date.UTC(2026, 8, 2, 19, 0);
+    const plan = planNotificationsISS([pass(pic)], Date.UTC(2026, 8, 1), 3, 'America/Edmonton');
+    expect(plan.map((n) => n.type)).toEqual(['imminent']);
   });
 });
