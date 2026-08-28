@@ -11,16 +11,18 @@
  * D'où une échelle à deux ou trois crans selon l'heure du passage :
  *
  *   Passage NOCTURNE (avant l'heure de réveil du commun des mortels) :
- *     1. la veille à 20 h 30 — « demain 04 h 12, mets un réveil » ;
- *     2. 10 min avant — pour celui qui s'est levé, téléphone en main.
+ *     1. la veille à 20 h 30 : « demain 04 h 12, mets un réveil » ;
+ *     2. 10 min avant, pour celui qui s'est levé, téléphone en main.
  *
- *   Passage DIURNE :
- *     1. le matin même à 9 h, si le passage est après 10 h ;
- *     2. 10 min avant.
+ *   Passage à HEURE OUVRABLE :
+ *     seulement 10 min avant. Un rappel du matin pour un passage de 15 h a
+ *     existé, puis a été retiré à la demande de Marco : c'était du bruit, on
+ *     n'a pas besoin qu'on nous prévienne d'avance pour un événement auquel on
+ *     est déjà éveillé.
  *
  * Pure fonction : passages + instant courant → liste d'instants et de types.
  * Les textes appartiennent à l'interface (i18n) ; ici, seulement le calendrier.
- * Aucune horloge interne — testable au déterminisme près.
+ * Aucune horloge interne, testable au déterminisme près.
  */
 
 // Bornes « nocturnes » : un passage entre 22 h et 9 h du matin ne sera pas vu
@@ -29,7 +31,6 @@
 const NUIT_DEBUT_H = 22;
 const NUIT_FIN_H = 9;
 const VEILLE_H = 20.5;      // 20 h 30 : après le dîner, avant le coucher
-const MATIN_H = 9;          // rappel du matin pour les passages diurnes
 const AVANT_MS = 10 * 60000;
 
 // ─── Identité d'un passage à travers les recalculs ───────────────────────────
@@ -81,7 +82,7 @@ function veilleAuSoir(picMs) {
  * @param {number} maintenantMs
  * @param {number} [max=3]  nombre de passages à planifier (iOS plafonne à 64
  *                          notifications locales : on reste très en dessous)
- * @returns {Array<{quandMs, type: 'veille'|'matin'|'imminent', passage}>}
+ * @returns {Array<{quandMs, type: 'veille'|'imminent', passage}>}
  *          triés par date, uniquement dans le futur.
  */
 export function planNotificationsISS(passages, maintenantMs, max = 3) {

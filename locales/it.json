@@ -1422,16 +1422,13 @@
     "inDays": "tra {{n}} g",
     "alert": "Avvisami",
     "reminderVeille": "Promemoria la sera prima alle 20:30, per mettere una sveglia",
-    "reminderMatin": "Promemoria la mattina alle 9:00",
     "reminderImminent": "Avviso 10 min prima",
     "flashNote": "Per valere, la stazione deve superare gli 80° sopra l'orizzonte, quasi lo zenit. Queste finestre cadono soprattutto di notte: da qui il promemoria della sera prima. SPACE_01, il primo mandato nello spazio, non è sopravvissuto.",
     "notif": {
       "veilleTitle": "SPACE_02 passa stanotte",
       "veilleBody": "La ISS sarà allo zenit su {{city}} alle {{time}}, per {{sec}} s. Metti una sveglia!",
-      "matinTitle": "SPACE_02 passa oggi",
-      "matinBody": "La ISS sarà allo zenit su {{city}} alle {{time}}, per {{sec}} s. Tieni il telefono a portata.",
       "imminentTitle": "SPACE_02 in arrivo!",
-      "imminentBody": "Zenit alle {{time}}: finestra di {{sec}} s. Apri FlashInvaders e punta al cielo."
+      "imminentBody": "Zenit alle {{time}}, finestra di {{sec}} s. Apri FlashInvaders e punta al cielo."
     },
     "ptsFlash": "per il flash",
     "ptsCity": "città nuova",

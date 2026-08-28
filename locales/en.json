@@ -1422,16 +1422,13 @@
     "inDays": "in {{n}} d",
     "alert": "Alert me",
     "reminderVeille": "Reminder the evening before at 8:30 PM, to set an alarm",
-    "reminderMatin": "Reminder in the morning at 9 AM",
     "reminderImminent": "Alert 10 min before",
     "flashNote": "To count, the station must rise above 80° over the horizon, nearly the zenith. These windows fall mostly at night: hence the evening-before reminder. SPACE_01, the first one sent to space, did not survive.",
     "notif": {
       "veilleTitle": "SPACE_02 passes tonight",
       "veilleBody": "The ISS will be at the zenith over {{city}} at {{time}}, for {{sec}} s. Set an alarm!",
-      "matinTitle": "SPACE_02 passes today",
-      "matinBody": "The ISS will be at the zenith over {{city}} at {{time}}, for {{sec}} s. Keep your phone handy.",
       "imminentTitle": "SPACE_02 incoming!",
-      "imminentBody": "Zenith at {{time}}: a {{sec}} s window. Open FlashInvaders and aim at the sky."
+      "imminentBody": "Zenith at {{time}}, a {{sec}} s window. Open FlashInvaders and aim at the sky."
     },
     "ptsFlash": "for the flash",
     "ptsCity": "new city",

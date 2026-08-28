@@ -176,7 +176,6 @@ export default function IssScreen({ navigation }) {
     const plan = planNotificationsISS([p], Date.now());
     return plan.map((e) => {
       if (e.type === 'veille') return t('iss.reminderVeille');
-      if (e.type === 'matin') return t('iss.reminderMatin');
       return t('iss.reminderImminent');
     });
   }

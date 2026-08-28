@@ -22,7 +22,7 @@ const MAX_PASSAGES = 8;
 
 
 // Même son que l'alerte de proximité (Balade) : déjà embarqué dans le binaire.
-// Seule l'alerte imminente sonne fort ; les rappels veille/matin restent sobres.
+// Seule l'alerte imminente sonne fort ; le rappel de la veille reste sobre.
 const SON_IMMINENT = 'alerte_arcade_grave.wav';
 
 const heureLocale = (ms) =>
@@ -37,13 +37,6 @@ function contenu(entree, lieuNom) {
     return {
       title: i18n.t('iss.notif.veilleTitle'),
       body: i18n.t('iss.notif.veilleBody', { time: heure, city: lieuNom, sec }),
-      sound: true,
-    };
-  }
-  if (entree.type === 'matin') {
-    return {
-      title: i18n.t('iss.notif.matinTitle'),
-      body: i18n.t('iss.notif.matinBody', { time: heure, city: lieuNom, sec }),
       sound: true,
     };
   }
