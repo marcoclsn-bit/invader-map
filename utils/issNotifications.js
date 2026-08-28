@@ -32,6 +32,27 @@ const VEILLE_H = 20.5;      // 20 h 30 : après le dîner, avant le coucher
 const MATIN_H = 9;          // rappel du matin pour les passages diurnes
 const AVANT_MS = 10 * 60000;
 
+// ─── Identité d'un passage à travers les recalculs ───────────────────────────
+//
+// L'écran mémorise l'instant du pic pour savoir quelle cloche est armée. Mais
+// cet instant est RECALCULÉ à chaque ouverture, et le TLE se rafraîchit toutes
+// les 12 h : les heures de passage se décalent alors de quelques secondes.
+// Comparer à la milliseconde près décrochait donc l'alerte une à deux fois par
+// jour, sans que rien ne l'explique à l'écran — signalé par Marco.
+//
+// D'où une tolérance. Deux passages distincts ne peuvent pas être proches :
+// l'ISS met ~93 min à faire un tour, et deux passages au zénith d'une même nuit
+// sont séparés d'au moins deux orbites (mesuré sur Paris : 194 min). Une
+// demi-heure absorbe largement la dérive sans jamais confondre deux passages.
+export const TOLERANCE_MS = 30 * 60000;
+
+/** L'instant mémorisé correspondant à ce passage, ou null. */
+export function armePour(armes, picMs) {
+  if (!armes) return null;
+  for (const t of armes) if (Math.abs(t - picMs) < TOLERANCE_MS) return t;
+  return null;
+}
+
 function estNocturne(picMs) {
   const h = new Date(picMs).getHours() + new Date(picMs).getMinutes() / 60;
   return h < NUIT_FIN_H || h >= NUIT_DEBUT_H;
@@ -68,15 +89,12 @@ export function planNotificationsISS(passages, maintenantMs, max = 3) {
   for (const p of (passages || []).slice(0, max)) {
     if (p.picMs <= maintenantMs) continue;
 
+    // Passage NOCTURNE : deux crans, parce qu'une alerte à 4 h du matin ne
+    // réveille personne. Passage à une heure OUVRABLE : un seul cran, le rappel
+    // imminent — prévenir la veille pour un passage de 15 h serait du bruit.
     if (estNocturne(p.picMs)) {
       const v = veilleAuSoir(p.picMs);
       if (v > maintenantMs) plan.push({ quandMs: v, type: 'veille', passage: p });
-    } else if (new Date(p.picMs).getHours() >= MATIN_H + 1) {
-      const matin = new Date(p.picMs);
-      matin.setHours(MATIN_H, 0, 0, 0);
-      if (matin.getTime() > maintenantMs) {
-        plan.push({ quandMs: matin.getTime(), type: 'matin', passage: p });
-      }
     }
 
     const imminent = p.flashableDebutMs - AVANT_MS;

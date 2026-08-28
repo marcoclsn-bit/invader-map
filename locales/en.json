@@ -1434,6 +1434,8 @@
       "imminentBody": "Zenith at {{time}}: a {{sec}} s window. Open FlashInvaders and aim at the sky."
     },
     "ptsFlash": "for the flash",
-    "ptsCity": "new city"
+    "ptsCity": "new city",
+    "scheduled_one": "{{count}} reminder scheduled on your phone",
+    "scheduled_other": "{{count}} reminders scheduled on your phone"
   }
 }

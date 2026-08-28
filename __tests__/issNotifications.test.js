@@ -48,14 +48,31 @@ describe('passage en soirée (23 h) : la « veille » est le soir même', () => 
   });
 });
 
-describe('passage diurne (15 h) : rappel du matin, pas de réveil à mettre', () => {
+describe('passage diurne (15 h) : une seule alerte, aucun réveil à mettre', () => {
   const pic = new Date(2026, 7, 27, 15, 0);
   const maintenant = new Date(2026, 7, 27, 7, 0);
   const plan = planNotificationsISS([passage(pic)], maintenant.getTime());
 
-  test('un rappel à 9 h et l\'imminente, aucune « veille »', () => {
-    expect(plan.map((n) => n.type)).toEqual(['matin', 'imminent']);
-    expect(new Date(plan[0].quandMs).getHours()).toBe(9);
+  test('seulement l\'imminente : prévenir la veille pour 15 h serait du bruit', () => {
+    expect(plan.map((n) => n.type)).toEqual(['imminent']);
+  });
+});
+
+describe('le nombre d\'alertes dépend de l\'heure du passage', () => {
+  test('nuit → DEUX alertes (la veille au soir, puis 10 min avant)', () => {
+    const plan = planNotificationsISS(
+      [passage(new Date(2026, 7, 29, 4, 12))],
+      new Date(2026, 7, 28, 12, 0).getTime(),
+    );
+    expect(plan.map((n) => n.type)).toEqual(['veille', 'imminent']);
+  });
+
+  test('heure ouvrable → UNE seule alerte', () => {
+    const plan = planNotificationsISS(
+      [passage(new Date(2026, 7, 29, 14, 30))],
+      new Date(2026, 7, 28, 12, 0).getTime(),
+    );
+    expect(plan.map((n) => n.type)).toEqual(['imminent']);
   });
 });
 
@@ -86,5 +103,35 @@ describe('garde-fous', () => {
   test('entrées vides ou nulles : tableau vide, jamais d\'erreur', () => {
     expect(planNotificationsISS([], Date.UTC(2026, 7, 26))).toEqual([]);
     expect(planNotificationsISS(null, Date.UTC(2026, 7, 26))).toEqual([]);
+  });
+});
+
+describe('armePour — l\'alerte survit à la dérive du TLE', () => {
+  const { armePour, TOLERANCE_MS } = require('../utils/issNotifications');
+
+  test('un décalage de quelques secondes retrouve le passage armé', () => {
+    // Le TLE se rafraîchit toutes les 12 h : le pic recalculé bouge un peu.
+    // Sans tolérance, la cloche se décochait toute seule une à deux fois par jour.
+    const arme = new Set([Date.UTC(2026, 8, 3, 3, 3, 21)]);
+    const recalcule = Date.UTC(2026, 8, 3, 3, 3, 47); // 26 s plus tard
+    expect(armePour(arme, recalcule)).not.toBeNull();
+  });
+
+  test('un décalage de plusieurs minutes aussi', () => {
+    const arme = new Set([Date.UTC(2026, 8, 3, 3, 3, 21)]);
+    expect(armePour(arme, Date.UTC(2026, 8, 3, 3, 12, 0))).not.toBeNull();
+  });
+
+  test('mais deux passages distincts ne se confondent jamais', () => {
+    // Mesuré : deux passages au zénith d'une même nuit sont séparés de 194 min,
+    // soit bien plus que la tolérance.
+    const arme = new Set([Date.UTC(2026, 8, 2, 23, 49, 26)]);
+    expect(armePour(arme, Date.UTC(2026, 8, 3, 3, 3, 21))).toBeNull();
+    expect(TOLERANCE_MS).toBeLessThan(90 * 60000); // sous une orbite complète
+  });
+
+  test('entrées vides : jamais d\'erreur', () => {
+    expect(armePour(null, Date.now())).toBeNull();
+    expect(armePour(new Set(), Date.now())).toBeNull();
   });
 });

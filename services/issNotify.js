@@ -1,6 +1,6 @@
 import * as Notifications from 'expo-notifications';
 import i18n from '../i18n';
-import { planNotificationsISS } from '../utils/issNotifications';
+import { planNotificationsISS, armePour } from '../utils/issNotifications';
 
 /**
  * Programmation des rappels ISS — la couche OS au-dessus du calendrier pur
@@ -19,6 +19,7 @@ import { planNotificationsISS } from '../utils/issNotifications';
  */
 
 const MAX_PASSAGES = 8;
+
 
 // Même son que l'alerte de proximité (Balade) : déjà embarqué dans le binaire.
 // Seule l'alerte imminente sonne fort ; les rappels veille/matin restent sobres.
@@ -53,6 +54,21 @@ function contenu(entree, lieuNom) {
   };
 }
 
+/**
+ * Ce que le SYSTÈME a réellement en attente pour nous — pas ce qu'on croit lui
+ * avoir demandé. Sert à afficher une confirmation vérifiable : sans elle, une
+ * permission refusée ou un échec silencieux passerait inaperçu.
+ * @returns {Promise<number>}
+ */
+export async function compterNotificationsISS() {
+  try {
+    const tout = await Notifications.getAllScheduledNotificationsAsync();
+    return tout.filter((n) => n?.content?.data?.type === 'iss').length;
+  } catch {
+    return 0;
+  }
+}
+
 /** Demande la permission notifications. À appeler sur GESTE (l'armement d'une
  *  cloche), jamais au montage : règle Google Play. Rend true si accordée. */
 export async function demanderPermissionISS() {
@@ -84,7 +100,9 @@ export async function synchroniserNotificationsISS(passages, armes, lieuNom) {
     );
 
     // 2. Reprogrammation depuis l'état courant.
-    const vises = (passages || []).filter((p) => armes?.has(p.picMs)).slice(0, MAX_PASSAGES);
+    const vises = (passages || [])
+      .filter((p) => armePour(armes, p.picMs) !== null)
+      .slice(0, MAX_PASSAGES);
     if (vises.length === 0) return;
 
     const plan = planNotificationsISS(vises, Date.now(), MAX_PASSAGES);

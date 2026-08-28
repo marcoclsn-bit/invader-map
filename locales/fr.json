@@ -1434,6 +1434,8 @@
       "imminentBody": "Zénith à {{time}} : {{sec}} s de fenêtre. Ouvre FlashInvaders et vise le ciel."
     },
     "ptsFlash": "pour le flash",
-    "ptsCity": "nouvelle ville"
+    "ptsCity": "nouvelle ville",
+    "scheduled_one": "{{count}} rappel programmé sur ton téléphone",
+    "scheduled_other": "{{count}} rappels programmés sur ton téléphone"
   }
 }

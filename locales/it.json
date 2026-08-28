@@ -1434,6 +1434,8 @@
       "imminentBody": "Zenit alle {{time}}: finestra di {{sec}} s. Apri FlashInvaders e punta al cielo."
     },
     "ptsFlash": "per il flash",
-    "ptsCity": "città nuova"
+    "ptsCity": "città nuova",
+    "scheduled_one": "{{count}} promemoria programmato sul telefono",
+    "scheduled_other": "{{count}} promemoria programmati sul telefono"
   }
 }

@@ -12,9 +12,11 @@ import { useTheme } from '../theme/ThemeContext';
 import { typography } from '../theme/tokens';
 import { passagesISS } from '../utils/issPassages';
 import { obtenirTle } from '../services/issTle';
-import { planNotificationsISS } from '../utils/issNotifications';
+import { planNotificationsISS, armePour } from '../utils/issNotifications';
 import { rechercherVilles } from '../utils/villesSearch';
-import { demanderPermissionISS, synchroniserNotificationsISS } from '../services/issNotify';
+import {
+  demanderPermissionISS, synchroniserNotificationsISS, compterNotificationsISS,
+} from '../services/issNotify';
 import { track } from '../services/analytics';
 
 // ─── Réglages de recherche des passages ──────────────────────────────────────
@@ -49,7 +51,14 @@ export default function IssScreen({ navigation }) {
   const [passages, setPassages] = useState(null);   // null = pas encore calculé
   const [calcul, setCalcul] = useState(false);
   const [armes, setArmes] = useState(() => new Set()); // picMs alarmés (persistés)
+  const [nbProgrammees, setNbProgrammees] = useState(0); // lu du système, pas déduit
   const [maintenant] = useState(() => Date.now());
+
+  // Ce que le système a réellement en attente. Affiché sous le premier passage :
+  // c'est la seule preuve qu'une alerte est bien posée, permission comprise.
+  const rafraichirCompteur = useCallback(async () => {
+    setNbProgrammees(await compterNotificationsISS());
+  }, []);
 
   // ── Chargement initial : lieu mémorisé, alertes mémorisées, TLE ──────────────
   useEffect(() => {
@@ -60,8 +69,18 @@ export default function IssScreen({ navigation }) {
       } catch { setChoix(true); }
       try {
         const a = await AsyncStorage.getItem(CLE_ALERTES);
-        if (a) setArmes(new Set(JSON.parse(a)));
+        if (a) {
+          // On élague les passages révolus : sans cela l'ensemble grossit sans
+          // fin et de vieux instants pourraient un jour tomber dans la
+          // tolérance d'un passage à venir.
+          const vivants = JSON.parse(a).filter((ms) => ms > Date.now());
+          setArmes(new Set(vivants));
+          if (vivants.length !== JSON.parse(a).length) {
+            AsyncStorage.setItem(CLE_ALERTES, JSON.stringify(vivants)).catch(() => {});
+          }
+        }
       } catch { /* pas grave */ }
+      rafraichirCompteur();
     })();
 
     (async () => {
@@ -109,26 +128,31 @@ export default function IssScreen({ navigation }) {
   // ── Armer / désarmer une alerte pour un passage ──────────────────────────────
   // La permission notifications se demande ICI, sur le geste d'armement, jamais
   // au montage (règle Google Play). La synchro OS suit chaque bascule.
+  // Aucun effet de bord dans le calculateur d'état : React peut le rejouer.
+  // On calcule le nouvel ensemble, puis on écrit et on programme.
   const basculerAlerte = useCallback((pic) => {
-    setArmes((prev) => {
-      const suivant = new Set(prev);
-      const armement = !suivant.has(pic);
-      if (armement) suivant.add(pic); else suivant.delete(pic);
-      AsyncStorage.setItem(CLE_ALERTES, JSON.stringify([...suivant])).catch(() => {});
-      (async () => {
-        if (armement) await demanderPermissionISS();
-        await synchroniserNotificationsISS(passages || [], suivant, lieu?.nom || '');
-      })();
-      if (armement) track('iss_alerte_armee');
-      return suivant;
-    });
-  }, [passages, lieu]);
+    const existant = armePour(armes, pic);
+    const suivant = new Set(armes);
+    const armement = existant === null;
+    if (armement) suivant.add(pic); else suivant.delete(existant);
+    setArmes(suivant);
+    AsyncStorage.setItem(CLE_ALERTES, JSON.stringify([...suivant])).catch(() => {});
+    (async () => {
+      if (armement) await demanderPermissionISS();
+      await synchroniserNotificationsISS(passages || [], suivant, lieu?.nom || '');
+      await rafraichirCompteur();
+    })();
+    if (armement) track('iss_alerte_armee');
+  }, [armes, passages, lieu, rafraichirCompteur]);
 
   // Recalcul terminé (lieu ou TLE frais) : réaligner les rappels programmés sur
   // les heures de passage les plus récentes, et purger ceux du passé.
   useEffect(() => {
     if (!passages || passages.length === 0) return;
-    synchroniserNotificationsISS(passages, armes, lieu?.nom || '');
+    (async () => {
+      await synchroniserNotificationsISS(passages, armes, lieu?.nom || '');
+      await rafraichirCompteur();
+    })();
     // `armes` volontairement hors dépendances : les bascules sont déjà couvertes
     // par basculerAlerte ; ici on ne réagit qu'aux nouvelles prédictions.
   }, [passages]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -285,7 +309,7 @@ export default function IssScreen({ navigation }) {
 
   // ── Sous-rendus ────────────────────────────────────────────────────────────
   function renderHero(p) {
-    const arme = armes.has(p.picMs);
+    const arme = armePour(armes, p.picMs) !== null;
     return (
       <View style={styles.hero}>
         <View style={styles.heroTop}>
@@ -309,7 +333,7 @@ export default function IssScreen({ navigation }) {
   }
 
   function renderRow(p) {
-    const arme = armes.has(p.picMs);
+    const arme = armePour(armes, p.picMs) !== null;
     return (
       <View key={p.picMs} style={styles.row}>
         <View style={{ flex: 1 }}>
@@ -353,6 +377,13 @@ export default function IssScreen({ navigation }) {
             <Text style={styles.alerteLineText}>{d}</Text>
           </View>
         ))}
+        {/* Compté auprès du système, pas déduit de notre état : c'est la seule
+            preuve qu'une alerte est réellement posée, permission comprise. */}
+        {nbProgrammees > 0 && (
+          <Text style={styles.alerteCompteur}>
+            {t('iss.scheduled', { count: nbProgrammees })}
+          </Text>
+        )}
       </View>
     );
   }
@@ -447,6 +478,7 @@ function makeStyles(theme) {
     alerteTitle: { fontSize: 15, fontWeight: '600', color: theme.textPrimary },
     alerteLine: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 8 },
     alerteLineText: { flex: 1, fontSize: 12.5, color: theme.textSecondary },
+    alerteCompteur: { marginTop: 10, fontSize: 11.5, color: theme.textSecondary, fontStyle: 'italic' },
 
     // Ligne de passage
     row: {
