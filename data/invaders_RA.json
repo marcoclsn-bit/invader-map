@@ -1,6 +1,6 @@
 {
-  "version": 7,
-  "updatedAt": "2026-08-13",
+  "version": 8,
+  "updatedAt": "2026-08-29",
   "city": "RA",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 40,
@@ -107,7 +107,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RA/RA_07-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/RA/RA_07-septembre2016.jpg",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RA/RA_07-aout2026.jpg",
       "datePosed": "2014-10-05"
     },
     {
