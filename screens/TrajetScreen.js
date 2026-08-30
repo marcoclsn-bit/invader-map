@@ -931,18 +931,28 @@ export default function TrajetScreen() {
   // ─── Sélection / navigation ───────────────────────────────────────────────
 
   // ── Export GPX : le trajet vers la montre connectée ─────────────────────────
-  // Écrit un fichier .gpx (tracé + un waypoint par Invader du couloir) et ouvre
-  // la feuille de partage : Garmin Connect, komoot, Fichiers… L'utilisateur
-  // choisit, rien ne part tout seul. Même mécanique que l'export de collection.
+  // Écrit un fichier .gpx (tracé + waypoints) et ouvre la feuille de partage :
+  // Garmin Connect, komoot, Fichiers… L'utilisateur choisit, rien ne part tout
+  // seul. Même mécanique que l'export de collection.
+  //
+  // RÈGLE : le fichier exporte CE QUE L'ÉCRAN MONTRE. Relevé par Marco : la
+  // première version exportait la liste brute du couloir, donc « À faire »
+  // décoché ou coché produisait le même fichier, et les lieux à découvrir n'y
+  // étaient pas. Désormais `displayInvaders` (filtre compris) + `routePois`,
+  // qui portent leur `along` et s'intercalent dans le sens de la marche.
   async function exporterGpx() {
+    const etapes = [
+      ...(displayInvaders ?? []),
+      ...routePois.map((p) => ({ id: p.id, lat: p.lat, lng: p.lng, nom: p.name, along: p.along })),
+    ];
     const corps = genererGpx({
       nom: `InvaderQuest · ${t('route.exportWatch.courseName', { city: CITIES[currentCityCode]?.name ?? '' })}`,
       coords: routeCoords,
-      invaders: routeInvaders ?? [],
+      invaders: etapes,
       date: dateDuJour(),
     });
     if (!corps) return; // pas de tracé : le bouton n'est affiché qu'avec un trajet
-    track('gpx_exported', { source: 'route', waypoints: routeInvaders?.length ?? 0 });
+    track('gpx_exported', { source: 'route', waypoints: etapes.length });
     try {
       const ok = await ecrireEtPartager(
         `invaderquest-trajet-${dateDuJour()}.gpx`, corps,
