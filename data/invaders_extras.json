@@ -234,6 +234,57 @@
       "lat": 48.845937,
       "lng": 2.385125,
       "source": "invader-spotter"
+    },
+    {
+      "_note_signalements": "Signalement utilisateur du 30/08/2026. ATTENTION : une entree extras FIGE la fiche (prioritaire sur goguelnikov ET spotter). Si le statut evolue de nouveau sur le terrain, mettre a jour ou retirer cette entree.",
+      "disabled": true,
+      "id": "_DOC_SIGNALEMENTS",
+      "lat": 0,
+      "lng": 0
+    },
+    {
+      "_comment": "Signale abime par un utilisateur (30/08/2026), etait ok chez goguelnikov.",
+      "id": "PA_1253",
+      "lat": 48.8659095298,
+      "lng": 2.303645337,
+      "status": "damaged",
+      "points": 30,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/pa_1253/",
+      "source": "signalement-utilisateur"
+    },
+    {
+      "_comment": "Signale abime par un utilisateur (30/08/2026), etait ok chez goguelnikov.",
+      "id": "PA_55",
+      "lat": 48.8276214287,
+      "lng": 2.3530220144,
+      "status": "damaged",
+      "points": 10,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/pa_55/",
+      "source": "signalement-utilisateur"
+    },
+    {
+      "_comment": "Signale repare/en bon etat par un utilisateur (30/08/2026), etait damaged chez goguelnikov.",
+      "id": "PA_968",
+      "lat": 48.8565539537,
+      "lng": 2.286578032,
+      "status": "ok",
+      "points": 30,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/pa_968/",
+      "source": "signalement-utilisateur"
+    },
+    {
+      "_comment": "Signale detruit par un utilisateur (30/08/2026), etait hidden chez goguelnikov.",
+      "id": "PA_1283",
+      "lat": 48.8597697035,
+      "lng": 2.3459461967,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/pa_1283/",
+      "source": "signalement-utilisateur"
     }
   ]
 }

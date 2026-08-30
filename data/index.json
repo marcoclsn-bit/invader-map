@@ -1,5 +1,5 @@
 {
-  "version": 32,
+  "version": 33,
   "updatedAt": "2026-08-30",
   "cities": [
     {
@@ -1030,8 +1030,8 @@
       "code": "PA",
       "name": "Paris",
       "count": 1597,
-      "destroyed": 246,
-      "version": 18,
+      "destroyed": 247,
+      "version": 19,
       "center": {
         "lat": 48.8566,
         "lng": 2.3522
