@@ -238,7 +238,15 @@
       "near": "Invader alentour, hors parcours",
       "done": "Déjà flashé"
     },
-    "poiUnavailable": "Les lieux à découvrir ne sont pas encore disponibles à {{city}} : le parcours ne contient que des Invaders."
+    "poiUnavailable": "Les lieux à découvrir ne sont pas encore disponibles à {{city}} : le parcours ne contient que des Invaders.",
+    "exportWatch": {
+      "courseName": "Chasse {{city}}",
+      "subject": "Parcours GPX InvaderQuest",
+      "label": "Envoyer vers ma montre",
+      "hint": "Exporte la chasse en fichier GPX pour Garmin, Suunto, Coros ou une autre montre",
+      "failTitle": "Export impossible",
+      "failBody": "Le partage de fichier est indisponible sur cet appareil."
+    }
   },
   "palmares": {
     "title": "Villes",

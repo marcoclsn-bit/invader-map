@@ -38,7 +38,10 @@ const coord = (n) => Number(n).toFixed(6);
  * @param {object} p
  * @param {string} p.nom                nom du parcours affiché par la montre
  * @param {Array<[number,number]>} p.coords  tracé [lng, lat] (ordre GeoJSON !)
- * @param {Array<{id, lat, lng, hint?, along?}>} [p.invaders]  points de passage
+ * @param {Array<{id, lat, lng, hint?, along?, nom?}>} [p.invaders]  points de
+ *        passage. `nom` prime sur `id` : la Chasse s'en sert pour numéroter ses
+ *        étapes comme à l'écran (« 1 · PA_632 »), un ordre qui n'a de sens que
+ *        là-bas. Le Trajet, lui, n'affiche pas de numéros et garde l'identifiant.
  * @param {string} [p.date]             AAAA-MM-JJ, pour les métadonnées
  * @returns {string|null} le document GPX, ou null si le tracé est inutilisable
  */
@@ -49,6 +52,8 @@ export function genererGpx({ nom, coords, invaders, date }) {
   if (points.length < 2) return null; // une trace à moins de 2 points n'existe pas
 
   // Sens de la marche : `along` (distance le long du tracé) quand il existe.
+  // La Chasse fournit ses étapes DÉJÀ ordonnées et sans `along` : le tri les
+  // laisse alors en place, `?? 0` rendant la comparaison neutre.
   const wpts = [...(invaders ?? [])]
     .filter((i) => Number.isFinite(i?.lat) && Number.isFinite(i?.lng))
     .sort((a, b) => (a.along ?? 0) - (b.along ?? 0));
@@ -64,7 +69,7 @@ export function genererGpx({ nom, coords, invaders, date }) {
 
   for (const inv of wpts) {
     lignes.push(`<wpt lat="${coord(inv.lat)}" lon="${coord(inv.lng)}">`);
-    lignes.push(`<name>${xml(inv.id)}</name>`);
+    lignes.push(`<name>${xml(inv.nom || inv.id)}</name>`);
     if (inv.hint) lignes.push(`<desc>${xml(inv.hint)}</desc>`);
     lignes.push('<sym>Flag, Blue</sym>');
     lignes.push('</wpt>');

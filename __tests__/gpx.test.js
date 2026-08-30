@@ -55,3 +55,33 @@ describe('genererGpx — le trajet vers la montre', () => {
     expect((g.match(/<trkpt /g) ?? []).length).toBe(3);
   });
 });
+
+describe('libellé explicite : la Chasse numérote ses étapes', () => {
+  test('`nom` prime sur `id` quand il est fourni', () => {
+    const g = genererGpx({
+      nom: 'Chasse', coords: COORDS,
+      invaders: [
+        { id: 'PA_632', lat: 48.8540, lng: 2.3500, nom: '1 · PA_632' },
+        { id: 'PA_198', lat: 48.8600, lng: 2.3590, nom: '2 · PA_198' },
+      ],
+    });
+    const noms = [...g.matchAll(/<name>([^<]+)<\/name>/g)].map((m) => m[1]);
+    expect(noms).toContain('1 · PA_632');
+    expect(noms).toContain('2 · PA_198');
+  });
+
+  test('sans `along`, l\'ordre fourni est préservé', () => {
+    // La Chasse rend ses étapes déjà ordonnées et n'a pas de `along` : un tri
+    // qui les réarrangerait casserait la numérotation affichée à l'écran.
+    const g = genererGpx({
+      nom: 'Chasse', coords: COORDS,
+      invaders: [
+        { id: 'C', lat: 48.86, lng: 2.36, nom: '1 · C' },
+        { id: 'A', lat: 48.85, lng: 2.35, nom: '2 · A' },
+        { id: 'B', lat: 48.855, lng: 2.355, nom: '3 · B' },
+      ],
+    });
+    const noms = [...g.matchAll(/<wpt[^>]*>\n<name>([^<]+)<\/name>/g)].map((m) => m[1]);
+    expect(noms).toEqual(['1 · C', '2 · A', '3 · B']);
+  });
+});

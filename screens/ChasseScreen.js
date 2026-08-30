@@ -43,6 +43,8 @@ import { canUseFeature, FEATURES } from '../services/featureAccess';
 import { getPois, hasPois, wikiUrl, summaryOf } from '../services/poiData';
 import { familyOf } from '../data/poiFamilies';
 import { track, failureReason } from '../services/analytics';
+import { genererGpx } from '../utils/gpx';
+import { ecrireEtPartager, dateDuJour } from '../utils/fichiers';
 import ObjectivePicker from '../components/ObjectivePicker';
 import PoiFamiliesRow from '../components/PoiFamiliesRow';
 
@@ -1174,6 +1176,40 @@ export default function ChasseScreen({ route }) {
   }
 
   // ─── Navigation ───────────────────────────────────────────────────────────
+  // ── Export GPX : la chasse vers la montre connectée ─────────────────────────
+  // Même mécanique que le Trajet, avec une différence qui compte : les étapes
+  // sont NUMÉROTÉES comme à l'écran. Sur une montre, « 3 · PA_199 » dit où l'on
+  // en est du parcours, ce qu'un identifiant seul ne dit pas. Les lieux à
+  // visiter sont exportés aussi : ce sont des étapes du parcours.
+  async function exporterGpx() {
+    if (!result?.routeCoords) return;
+    let n = 0;
+    const etapes = (result.invaders ?? []).map((s) => ({
+      id: s.id,
+      lat: s.lat,
+      lng: s.lng,
+      hint: s.isPoi ? undefined : s.hint,
+      // La numérotation ne compte que les Invaders, exactement comme la carte
+      // et la liste : un lieu touristique n'y prend pas de numéro.
+      nom: s.isPoi ? (s.name || s.id) : `${++n} · ${s.id}`,
+    }));
+    const corps = genererGpx({
+      nom: `InvaderQuest · ${t('hunt.exportWatch.courseName', { city: city?.name ?? '' })}`,
+      coords: result.routeCoords,
+      invaders: etapes,
+      date: dateDuJour(),
+    });
+    if (!corps) return;
+    track('gpx_exported', { source: 'hunt', waypoints: etapes.length });
+    try {
+      const ok = await ecrireEtPartager(
+        `invaderquest-chasse-${dateDuJour()}.gpx`, corps,
+        { mimeType: 'application/gpx+xml', titre: t('hunt.exportWatch.subject') },
+      );
+      if (!ok) Alert.alert(t('hunt.exportWatch.failTitle'), t('hunt.exportWatch.failBody'));
+    } catch (_) { /* partage annulé */ }
+  }
+
   async function startFollowing() {
     // Sans permission, watchPositionAsync échoue et son .catch() avale l'erreur :
     // le suivi était mort en silence et la session enregistrait 0 km. On le dit.
@@ -1744,14 +1780,27 @@ export default function ChasseScreen({ route }) {
                   // qu'il portait vantait un enregistrement devenu facultatif, et
                   // elle élargissait un bouton qui partage sa rangée avec quatre
                   // boutons ronds.
-                  <TouchableOpacity
-                    style={styles.startBtn}
-                    onPress={startFollowing}
-                    accessibilityRole="button"
-                    accessibilityLabel={t('hunt.start')}
-                  >
-                    <Text style={styles.startBtnText} numberOfLines={1}>{t('hunt.start')}</Text>
-                  </TouchableOpacity>
+                  <View style={styles.startRow}>
+                    <TouchableOpacity
+                      style={styles.startBtn}
+                      onPress={startFollowing}
+                      accessibilityRole="button"
+                      accessibilityLabel={t('hunt.start')}
+                    >
+                      <Text style={styles.startBtnText} numberOfLines={1}>{t('hunt.start')}</Text>
+                    </TouchableOpacity>
+                    {/* Voisin de « Suivre », comme dans le Trajet : même geste,
+                        même place, pour que l'un enseigne l'autre. */}
+                    <TouchableOpacity
+                      style={styles.watchBtn}
+                      onPress={exporterGpx}
+                      accessibilityRole="button"
+                      accessibilityLabel={t('hunt.exportWatch.label')}
+                      accessibilityHint={t('hunt.exportWatch.hint')}
+                    >
+                      <Ionicons name="watch-outline" size={20} color={theme.accent} />
+                    </TouchableOpacity>
+                  </View>
                 )}
                 <View style={styles.rightControls}>
                   {/* Report depuis la Chasse. C'est ICI qu'on trouve les Invaders :
@@ -2147,6 +2196,15 @@ function makeStyles(t) {
       paddingHorizontal: 12, paddingBottom: 12, paddingTop: 8,
     },
     rightControls: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+    // Voir TrajetScreen : le couple cède la place ensemble pour ne pas déborder.
+    startRow: { flexDirection: 'row', alignItems: 'center', gap: 8, flexShrink: 1 },
+    watchBtn: {
+      width: 42, height: 42, borderRadius: 14,
+      backgroundColor: t.surface, alignItems: 'center', justifyContent: 'center',
+      borderWidth: 1, borderColor: t.accent, flexShrink: 0,
+      shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.2, shadowRadius: 4, elevation: 4,
+    },
     startBtn: {
       alignItems: 'flex-start', backgroundColor: t.accent, borderRadius: 14,
       paddingHorizontal: 16, paddingVertical: 9,

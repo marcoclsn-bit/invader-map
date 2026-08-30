@@ -238,7 +238,15 @@
       "near": "Invader vicino, fuori percorso",
       "done": "Già flashato"
     },
-    "poiUnavailable": "I luoghi da scoprire non sono ancora disponibili a {{city}}, quindi il percorso contiene solo Invader."
+    "poiUnavailable": "I luoghi da scoprire non sono ancora disponibili a {{city}}, quindi il percorso contiene solo Invader.",
+    "exportWatch": {
+      "courseName": "Caccia {{city}}",
+      "subject": "Percorso GPX InvaderQuest",
+      "label": "Invia al mio orologio",
+      "hint": "Esporta la caccia come file GPX per Garmin, Suunto, Coros o un altro orologio",
+      "failTitle": "Esportazione impossibile",
+      "failBody": "La condivisione di file non è disponibile su questo dispositivo."
+    }
   },
   "palmares": {
     "title": "Città",
