@@ -1,4 +1,4 @@
-import { useRef, useState, useCallback, useMemo } from 'react';
+import { useRef, useState, useCallback, useMemo, useEffect } from 'react';
 import {
   View, Text, Image, FlatList, TouchableOpacity, StyleSheet, useWindowDimensions,
 } from 'react-native';
@@ -178,6 +178,12 @@ export default function OnboardingScreen({ onComplete }) {
 
   const slides = useMemo(() => buildSlides(t), [t]);
   const isLast = currentIndex === slides.length - 1;
+  // Cliquet : une fois le panneau localisation VU, « Passer » disparaît pour de
+  // bon, même si l'on glisse en arrière. Sans lui, voir le message puis reculer
+  // d'un panneau redonnait l'échappatoire que le refus Apple 5.1.1(iv) vise —
+  // le relecteur a cité le bouton sur le panneau même, la phrase couvre le reste.
+  const [panneauLocalisationVu, setPanneauLocalisationVu] = useState(false);
+  useEffect(() => { if (isLast) setPanneauLocalisationVu(true); }, [isLast]);
 
   // Les textes des six panneaux sont longs et la zone texte ne défile pas.
   // Sur un petit écran l'illustration cède donc de la place ; sur un grand elle
@@ -285,7 +291,7 @@ export default function OnboardingScreen({ onComplete }) {
           et elle seule, qui permet de refuser. « Passer » depuis les panneaux
           précédents reste possible : le message n'a alors pas été montré, et
           les écrans redemandent chacun au premier usage. */}
-      {!isLast && (
+      {!isLast && !panneauLocalisationVu && (
         <TouchableOpacity style={styles.skipBtn} onPress={onComplete} hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}>
           <Text style={[styles.skipText, { color: theme.textSecondary }]}>{t('onboarding.skip')}</Text>
         </TouchableOpacity>
