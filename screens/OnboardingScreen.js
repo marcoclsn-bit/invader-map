@@ -251,11 +251,14 @@ export default function OnboardingScreen({ onComplete }) {
     requestLocation();
   }
 
+  // « Commencer », PAS « Autoriser » : refus Apple 5.1.1(iv) du 30/08/2026 sur
+  // la 1.5.0 (25). Un bouton qui precede la boite systeme ne doit pas employer
+  // le vocabulaire de la permission — mot neutre exige (« Continue », « Next »).
   const primaryLabel = !isLast
     ? t('onboarding.next')
     : locationDenied
       ? t('onboarding.continueWithoutGps')
-      : t('onboarding.allowAndStart');
+      : t('onboarding.start');
 
   // ── Rendu ─────────────────────────────────────────────────────────────────
 
@@ -275,10 +278,18 @@ export default function OnboardingScreen({ onComplete }) {
   return (
     <View style={[styles.container, { backgroundColor: theme.bg, paddingTop: insets.top }]}>
 
-      {/* ── Bouton Passer (haut droite) ── */}
-      <TouchableOpacity style={styles.skipBtn} onPress={onComplete} hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}>
-        <Text style={[styles.skipText, { color: theme.textSecondary }]}>{t('onboarding.skip')}</Text>
-      </TouchableOpacity>
+      {/* ── Bouton Passer (haut droite) ──
+          MASQUÉ sur le panneau localisation : second grief du refus Apple
+          5.1.1(iv) du 30/08/2026. Une fois le message préparatoire affiché,
+          l'utilisateur doit toujours aboutir à la boîte système — c'est elle,
+          et elle seule, qui permet de refuser. « Passer » depuis les panneaux
+          précédents reste possible : le message n'a alors pas été montré, et
+          les écrans redemandent chacun au premier usage. */}
+      {!isLast && (
+        <TouchableOpacity style={styles.skipBtn} onPress={onComplete} hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}>
+          <Text style={[styles.skipText, { color: theme.textSecondary }]}>{t('onboarding.skip')}</Text>
+        </TouchableOpacity>
+      )}
 
       {/* ── Carrousel ── */}
       <FlatList

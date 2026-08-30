@@ -261,7 +261,6 @@
   "onboarding": {
     "skip": "Saltar",
     "next": "Siguiente",
-    "allowAndStart": "Autorizar y empezar",
     "continueWithoutGps": "Continuar sin GPS",
     "retryPermission": "Reintentar",
     "locationDenied": "La ubicación fue denegada. Puedes activarla más tarde en los Ajustes de tu teléfono. La app funciona sin GPS (mapa y lista disponibles).",
@@ -291,7 +290,8 @@
         "title": "Tu ubicación",
         "body": "Para situarte en el mapa, calcular tus rutas y avisarte cuando pasas cerca de un Invader, incluso cuando la aplicación está cerrada o no se está usando, si activas las Alertas de paseo. El cálculo de rutas envía los puntos de tu trayecto a nuestros proveedores de mapas. Nada se guarda en un servidor nuestro: no hay cuenta."
       }
-    }
+    },
+    "start": "Comenzar"
   },
   "stats": {
     "title": "Stats",

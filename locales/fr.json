@@ -261,7 +261,6 @@
   "onboarding": {
     "skip": "Passer",
     "next": "Suivant",
-    "allowAndStart": "Autoriser et commencer",
     "continueWithoutGps": "Continuer sans GPS",
     "retryPermission": "Réessayer",
     "locationDenied": "La localisation a été refusée. Vous pourrez l'activer plus tard dans les Réglages de votre téléphone. L'app fonctionne sans GPS (carte et liste disponibles).",
@@ -291,7 +290,8 @@
         "title": "Ta position",
         "body": "Pour te situer sur la carte, calculer tes trajets, et te prévenir quand tu passes près d'un Invader, même lorsque l'application est fermée ou n'est pas utilisée, si tu actives le Mode balade. Le calcul d'itinéraire transmet les points de ton trajet à nos prestataires de cartographie. Rien n'est enregistré sur un serveur qui nous appartient : il n'y a pas de compte."
       }
-    }
+    },
+    "start": "Commencer"
   },
   "stats": {
     "title": "Stats",

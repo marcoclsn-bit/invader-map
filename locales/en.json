@@ -261,7 +261,6 @@
   "onboarding": {
     "skip": "Skip",
     "next": "Next",
-    "allowAndStart": "Allow location & start",
     "continueWithoutGps": "Continue without GPS",
     "retryPermission": "Try again",
     "locationDenied": "Location was denied. You can enable it later in your phone's Settings. The app works without GPS (map and list available).",
@@ -291,7 +290,8 @@
         "title": "Your location",
         "body": "To place you on the map, work out your routes, and alert you when you pass near an Invader, even when the app is closed or not in use, if you turn on Walk alerts. Route calculation sends the points of your route to our mapping providers. Nothing is stored on a server of ours: there is no account."
       }
-    }
+    },
+    "start": "Get started"
   },
   "stats": {
     "title": "Stats",
