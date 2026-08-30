@@ -42,6 +42,8 @@ import { DARK_MAP_STYLE, LIGHT_MAP_STYLE } from '../theme/mapStyle';
 import { typography } from '../theme/tokens';
 import { openInstagramTag, openNavigationApp } from '../utils/navigation';
 import { track, failureReason } from '../services/analytics';
+import { genererGpx } from '../utils/gpx';
+import { ecrireEtPartager, dateDuJour } from '../utils/fichiers';
 import ObjectivePicker from '../components/ObjectivePicker';
 import PoiFamiliesRow from '../components/PoiFamiliesRow';
 
@@ -928,6 +930,28 @@ export default function TrajetScreen() {
 
   // ─── Sélection / navigation ───────────────────────────────────────────────
 
+  // ── Export GPX : le trajet vers la montre connectée ─────────────────────────
+  // Écrit un fichier .gpx (tracé + un waypoint par Invader du couloir) et ouvre
+  // la feuille de partage : Garmin Connect, komoot, Fichiers… L'utilisateur
+  // choisit, rien ne part tout seul. Même mécanique que l'export de collection.
+  async function exporterGpx() {
+    const corps = genererGpx({
+      nom: `InvaderQuest · ${t('route.exportWatch.courseName', { city: CITIES[currentCityCode]?.name ?? '' })}`,
+      coords: routeCoords,
+      invaders: routeInvaders ?? [],
+      date: dateDuJour(),
+    });
+    if (!corps) return; // pas de tracé : le bouton n'est affiché qu'avec un trajet
+    track('gpx_exported', { source: 'route', waypoints: routeInvaders?.length ?? 0 });
+    try {
+      const ok = await ecrireEtPartager(
+        `invaderquest-trajet-${dateDuJour()}.gpx`, corps,
+        { mimeType: 'application/gpx+xml', titre: t('route.exportWatch.subject') },
+      );
+      if (!ok) Alert.alert(t('route.exportWatch.failTitle'), t('route.exportWatch.failBody'));
+    } catch (_) { /* partage annulé */ }
+  }
+
   async function startFollowing() {
     // Sans permission, watchPositionAsync échoue et son .catch() avale l'erreur :
     // le suivi était mort en silence et la session enregistrait 0 km. On le dit.
@@ -1422,14 +1446,29 @@ export default function TrajetScreen() {
               ) : (
                 // Le bénéfice est DANS le bouton, pas au-dessus : une pastille
                 // flottante n'était reliée à lui que par la proximité.
-                <TouchableOpacity
-                  style={styles.startBtn}
-                  onPress={startFollowing}
-                  accessibilityRole="button"
-                  accessibilityLabel={t('hunt.start')}
-                >
-                  <Text style={styles.startBtnText} numberOfLines={1}>{t('hunt.start')}</Text>
-                </TouchableOpacity>
+                <View style={styles.startRow}>
+                  <TouchableOpacity
+                    style={styles.startBtn}
+                    onPress={startFollowing}
+                    accessibilityRole="button"
+                    accessibilityLabel={t('hunt.start')}
+                  >
+                    <Text style={styles.startBtnText} numberOfLines={1}>{t('hunt.start')}</Text>
+                  </TouchableOpacity>
+                  {/* Voisin de « Suivre », pas dans la pile de droite : l'export
+                      vers la montre est inconnu du public, une icône enfouie ne
+                      serait jamais découverte. Bordure verte = action liée au
+                      trajet affiché. Choix de Marco sur maquette (option B). */}
+                  <TouchableOpacity
+                    style={styles.watchBtn}
+                    onPress={exporterGpx}
+                    accessibilityRole="button"
+                    accessibilityLabel={t('route.exportWatch.label')}
+                    accessibilityHint={t('route.exportWatch.hint')}
+                  >
+                    <Ionicons name="watch-outline" size={20} color={theme.accent} />
+                  </TouchableOpacity>
+                </View>
               )}
               <View style={styles.rightControls}>
                 {/* Flasher depuis le Trajet. Sans ce bouton, le mode explorateur
@@ -1616,6 +1655,16 @@ function makeStyles(t) {
       paddingHorizontal: 12, paddingBottom: 12, paddingTop: 8,
     },
     rightControls: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+    // « Suivre » + montre : le couple cède la place ensemble (flexShrink) pour
+    // que la rangée ne déborde jamais, cf. le commentaire de startBtn.
+    startRow: { flexDirection: 'row', alignItems: 'center', gap: 8, flexShrink: 1 },
+    watchBtn: {
+      width: 42, height: 42, borderRadius: 14,
+      backgroundColor: t.surface, alignItems: 'center', justifyContent: 'center',
+      borderWidth: 1, borderColor: t.accent, flexShrink: 0,
+      shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.2, shadowRadius: 4, elevation: 4,
+    },
     startBtn: {
       alignItems: 'flex-start', backgroundColor: t.accent, borderRadius: 14,
       paddingHorizontal: 16, paddingVertical: 9,

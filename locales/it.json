@@ -156,7 +156,15 @@
     "objectiveHint_balanced": "Gli Invader del corridoio, più qualche luogo notevole.",
     "objectiveHint_visit": "Gli Invader del corridoio e il massimo di luoghi da vedere lungo la strada.",
     "corridorLabel": "Corridoio",
-    "poiUnavailable": "I luoghi da scoprire non sono ancora disponibili a {{city}}, quindi il percorso contiene solo Invader."
+    "poiUnavailable": "I luoghi da scoprire non sono ancora disponibili a {{city}}, quindi il percorso contiene solo Invader.",
+    "exportWatch": {
+      "courseName": "Percorso {{city}}",
+      "subject": "Percorso GPX InvaderQuest",
+      "label": "Invia al mio orologio",
+      "hint": "Esporta il percorso come file GPX per Garmin, Suunto, Coros o un altro orologio",
+      "failTitle": "Esportazione impossibile",
+      "failBody": "La condivisione di file non è disponibile su questo dispositivo."
+    }
   },
   "hunt": {
     "aroundMe": "Intorno a me",

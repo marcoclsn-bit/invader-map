@@ -156,7 +156,15 @@
     "objectiveHint_balanced": "Invaders in the corridor, plus a few notable places.",
     "objectiveHint_visit": "Invaders in the corridor and as many places to see as possible.",
     "corridorLabel": "Corridor",
-    "poiUnavailable": "Places to discover aren't available in {{city}} yet, so the route only includes Invaders."
+    "poiUnavailable": "Places to discover aren't available in {{city}} yet, so the route only includes Invaders.",
+    "exportWatch": {
+      "courseName": "{{city}} route",
+      "subject": "InvaderQuest GPX course",
+      "label": "Send to my watch",
+      "hint": "Exports the route as a GPX file for Garmin, Suunto, Coros or another watch",
+      "failTitle": "Export failed",
+      "failBody": "File sharing is unavailable on this device."
+    }
   },
   "hunt": {
     "aroundMe": "Around me",

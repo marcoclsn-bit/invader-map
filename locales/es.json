@@ -156,7 +156,15 @@
     "objectiveHint_balanced": "Los Invaders del corredor, más algunos lugares notables.",
     "objectiveHint_visit": "Los Invaders del corredor y el máximo de lugares que ver por el camino.",
     "corridorLabel": "Corredor",
-    "poiUnavailable": "Los lugares por descubrir aún no están disponibles en {{city}}, así que la ruta solo incluye Invaders."
+    "poiUnavailable": "Los lugares por descubrir aún no están disponibles en {{city}}, así que la ruta solo incluye Invaders.",
+    "exportWatch": {
+      "courseName": "Ruta {{city}}",
+      "subject": "Recorrido GPX InvaderQuest",
+      "label": "Enviar a mi reloj",
+      "hint": "Exporta la ruta como archivo GPX para Garmin, Suunto, Coros u otro reloj",
+      "failTitle": "Exportación imposible",
+      "failBody": "Compartir archivos no está disponible en este dispositivo."
+    }
   },
   "hunt": {
     "aroundMe": "A mi alrededor",

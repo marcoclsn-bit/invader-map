@@ -156,7 +156,15 @@
     "objectiveHint_balanced": "Les Invaders du couloir, plus quelques lieux remarquables.",
     "objectiveHint_visit": "Les Invaders du couloir et un maximum de lieux à voir en chemin.",
     "corridorLabel": "Couloir",
-    "poiUnavailable": "Les lieux à découvrir ne sont pas encore disponibles à {{city}} : le parcours ne contient que des Invaders."
+    "poiUnavailable": "Les lieux à découvrir ne sont pas encore disponibles à {{city}} : le parcours ne contient que des Invaders.",
+    "exportWatch": {
+      "courseName": "Trajet {{city}}",
+      "subject": "Parcours GPX InvaderQuest",
+      "label": "Envoyer vers ma montre",
+      "hint": "Exporte le trajet en fichier GPX pour Garmin, Suunto, Coros ou une autre montre",
+      "failTitle": "Export impossible",
+      "failBody": "Le partage de fichier est indisponible sur cet appareil."
+    }
   },
   "hunt": {
     "aroundMe": "Autour de moi",
