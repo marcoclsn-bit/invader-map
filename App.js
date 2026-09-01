@@ -49,7 +49,7 @@ import CollectionScreen from './screens/CollectionScreen';
 import SortiesScreen from './screens/SortiesScreen';
 import { navigationRef } from './utils/navigationRef';
 import './services/strollEngine'; // enregistre la tâche de fond + le handler de notif
-import { initAnalytics, track } from './services/analytics';
+import { initAnalytics } from './services/analytics';
 
 // Analytics (Aptabase) : démarré une fois au chargement du module, avant l'app.
 // Sans clé configurée (config/aptabase.js) → totalement inactif.
@@ -158,12 +158,6 @@ function DrawerNavigator() {
   );
 }
 
-// Dernier écran mesuré, pour ne pas répéter le même (voir onStateChange).
-// Variable de module plutôt que useRef : AppShell fait deux retours anticipés
-// avant son rendu principal, un hook déclaré après serait conditionnel — et il
-// n'existe de toute façon qu'un seul NavigationContainer.
-let _lastScreen = null;
-
 // ─── AppShell : onboarding ou app principale ─────────────────────────────────
 
 function AppShell() {
@@ -205,24 +199,17 @@ function AppShell() {
           setOuvrirImport(false);
           navigationRef.navigate('Import');
         }}
-        onStateChange={() => {
-          // Suit l'écran affiché (le plus profond) → « pages les plus visitées ».
-          //
-          // onStateChange se déclenche à chaque changement d'ÉTAT de navigation,
-          // pas d'écran : ouvrir le tiroir, le refermer, mettre à jour des
-          // paramètres (focusId depuis une notification) déclenchaient chacun un
-          // événement répétant l'écran courant. Comme le tiroir est le seul accès
-          // à Liste, Palmarès, Stats, Actus et Balade, ces doublons formaient une
-          // part importante du quota mensuel — sans rien apprendre.
-          //
-          // On ne garde donc que les CHANGEMENTS d'écran. Deux visites distinctes
-          // de la Carte séparées par un autre écran restent bien comptées : seuls
-          // les doublons consécutifs disparaissent.
-          const route = navigationRef.getCurrentRoute();
-          if (!route?.name || route.name === _lastScreen) return;
-          _lastScreen = route.name;
-          track('screen_view', { screen: route.name });
-        }}
+        // `screen_view` RETIRÉ le 01/09/2026, décision de Marco. Il était déjà
+        // dédoublonné (seuls les changements d'écran comptaient) et pesait
+        // encore 330 événements sur 708 relevés, soit près de la moitié du quota
+        // mensuel de 20 000. Ce qu'il apprenait — quels écrans sont ouverts — se
+        // lit déjà dans les événements de FEATURE, qui disent en plus ce que la
+        // personne y a fait : `plan_generated`, `poi_open`, `city_change`,
+        // `filters_applied`, `collection_reveal`… Un écran ouvert sans rien y
+        // faire n'était pas une information exploitable.
+        //
+        // Si le besoin revient, ne pas remettre un suivi global : n'instrumenter
+        // que le ou les écrans en question, ou échantillonner.
       >
         <Root.Navigator screenOptions={{ headerShown: false }}>
           {/* Drawer (+ ses 3 onglets) comme écran principal */}
