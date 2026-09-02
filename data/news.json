@@ -1,6 +1,6 @@
 {
-  "version": 26,
-  "updatedAt": "2026-09-01",
+  "version": 27,
+  "updatedAt": "2026-09-02",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "source": "invader-spotter.art",
   "events": [
@@ -10,6 +10,13 @@
       "city": "PA",
       "date": "2026-09-01",
       "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1346-grosplan.png"
+    },
+    {
+      "type": "damaged",
+      "id": "BAB_13",
+      "city": "BAB",
+      "date": "2026-09-01",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_13-grosplan.png"
     },
     {
       "type": "reactivated",

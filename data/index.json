@@ -1,6 +1,6 @@
 {
-  "version": 34,
-  "updatedAt": "2026-09-01",
+  "version": 35,
+  "updatedAt": "2026-09-02",
   "cities": [
     {
       "code": "AIX",
@@ -108,8 +108,8 @@
       "code": "BAB",
       "name": "Biarritz Anglet-Bayonne",
       "count": 60,
-      "destroyed": 6,
-      "version": 9,
+      "destroyed": 7,
+      "version": 10,
       "center": {
         "lat": 43.483143,
         "lng": -1.530272
