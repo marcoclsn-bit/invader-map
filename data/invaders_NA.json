@@ -1,6 +1,6 @@
 {
-  "version": 7,
-  "updatedAt": "2026-08-13",
+  "version": 8,
+  "updatedAt": "2026-09-06",
   "city": "NA",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 3,
@@ -32,7 +32,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/NA/NA_02-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/NA/NA_02-mars2015.jpg",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/NA/NA_02-septembre2026.jpg",
       "datePosed": "2001-04-21"
     },
     {

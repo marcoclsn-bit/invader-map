@@ -1,6 +1,6 @@
 {
-  "version": 35,
-  "updatedAt": "2026-09-05",
+  "version": 36,
+  "updatedAt": "2026-09-06",
   "cities": [
     {
       "code": "AIX",
@@ -929,7 +929,7 @@
       "name": "Nantes",
       "count": 3,
       "destroyed": 2,
-      "version": 7,
+      "version": 8,
       "center": {
         "lat": 47.216183,
         "lng": -1.545731
