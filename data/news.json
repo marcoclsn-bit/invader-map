@@ -1,9 +1,45 @@
 {
-  "version": 29,
-  "updatedAt": "2026-09-11",
+  "version": 30,
+  "updatedAt": "2026-09-12",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "source": "invader-spotter.art",
   "events": [
+    {
+      "type": "added",
+      "id": "STK_01",
+      "city": "STK",
+      "date": "2026-09-11"
+    },
+    {
+      "type": "added",
+      "id": "STK_02",
+      "city": "STK",
+      "date": "2026-09-11"
+    },
+    {
+      "type": "added",
+      "id": "STK_03",
+      "city": "STK",
+      "date": "2026-09-11"
+    },
+    {
+      "type": "added",
+      "id": "STK_04",
+      "city": "STK",
+      "date": "2026-09-11"
+    },
+    {
+      "type": "added",
+      "id": "STK_05",
+      "city": "STK",
+      "date": "2026-09-11"
+    },
+    {
+      "type": "added",
+      "id": "STK_06",
+      "city": "STK",
+      "date": "2026-09-11"
+    },
     {
       "type": "updated",
       "id": "PA_845",
