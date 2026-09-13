@@ -7,7 +7,9 @@
  *   Enrichit  : pnote.eu — instagramUrl (100 % couverture) + ids absents de gog
  *   Enrichit  : invader-spotter.art — points manquants + photos (gros plan) + statut de secours
  *               (comble uniquement les trous, ne écrase jamais gog ; villes couvertes = SPOTTER_CITIES)
- *   Surcharge : data/invaders_extras.json — toujours prioritaire
+ *   Surcharge : data/invaders_extras.json — toujours prioritaire, toutes villes
+ *               (la ville se lit dans l'id ; une ville que ni gog ni pnote ne
+ *               connaissent peut n'exister que par ses extras, ex. STK)
  *
  * Règles de fusion (par id) :
  *   - Coordonnées  : goguelnikov (réelles) pour les ids communs ; obf_lat/obf_lng pnote pour les ids pnote-only
@@ -146,6 +148,7 @@ const KNOWN_CITIES = {
   RDU:  { name: 'Redu', bbox: { minLat: 49.75, maxLat: 50.26, minLng: 4.9, maxLng: 5.41 } },
   SL:   { name: 'Séoul', bbox: { minLat: 37.3, maxLat: 37.82, minLng: 126.67, maxLng: 127.24 } },
   SPACE:{ name: 'SPACE' },
+  STK:  { name: 'Stockholm', bbox: { minLat: 59.20, maxLat: 59.45, minLng: 17.75, maxLng: 18.30 } },
   VLMO: { name: 'Valmorel', bbox: { minLat: 45.21, maxLat: 45.73, minLng: 6.19, maxLng: 6.71 } },
   VRS:  { name: 'Versailles', bbox: { minLat: 48.55, maxLat: 49.08, minLng: 1.86, maxLng: 2.41 } },
   VSB:  { name: 'Visby', bbox: { minLat: 57.39, maxLat: 57.89, minLng: 18.04, maxLng: 18.54 } },
@@ -158,6 +161,7 @@ const SPOTTER_CITIES = new Set(Object.keys(KNOWN_CITIES).filter((c) => SPOTTER_S
 // Centres géographiques précis (carte + index)
 const KNOWN_CENTERS = {
   PA:   { lat: 48.8566, lng: 2.3522   },
+  STK:  { lat: 59.3293, lng: 18.0686  },
   LDN:  { lat: 51.5074, lng: -0.1278  },
   NY:   { lat: 40.7128, lng: -74.0060 },
   TK:   { lat: 35.6762, lng: 139.6503 },
@@ -415,11 +419,10 @@ async function main() {
     });
   }
 
-  // Union des codes (gog ∪ pnote)
+  // Union des codes (gog ∪ pnote). Les villes connues seulement par les extras
+  // sont ajoutées à l'étape [4/6], une fois le fichier lu.
   const allCodes = new Set([...gogByCity.keys(), ...pnoteByCity.keys()]);
-  const sortedCodes = [...allCodes].sort();
   console.log(`      ${gogByCity.size} villes goguelnikov, ${pnoteByCity.size} villes pnote`);
-  console.log(`      ${allCodes.size} villes au total`);
 
   // ── [3/6] État précédent ──────────────────────────────────────────────────
   console.log('\n[3/6] État précédent…');
@@ -446,38 +449,54 @@ async function main() {
   }
 
   // ── [4/6] Extras ──────────────────────────────────────────────────────────
+  // Par ville, la ville étant lue dans l'id. Deux usages :
+  //   - Paris : corrections ponctuelles, l'entrée remplace le record entier
+  //     (état figé, c'est voulu pour les signalements d'utilisateurs).
+  //   - Ville absente des sources (Stockholm, relevé sur place par Marco le
+  //     13/09/2026) : l'entrée ne porte que la position ; points, état et photo
+  //     viennent d'invader-spotter chaque nuit, puisque l'extra les laisse vides.
   console.log('\n[4/6] Extras…');
-  const extrasPA = new Map();
+  const extrasByCity = new Map();
   if (existsSync(EXTRAS_FILE)) {
     try {
       const extrasRaw   = JSON.parse(readFileSync(EXTRAS_FILE, 'utf8'));
       const allEntries  = extrasRaw.invaders ?? [];
       const disabledCnt = allEntries.filter(e => e.disabled).length;
       const active      = allEntries.filter(e => !e.disabled);
-      let skipped = 0;
+      let skipped = 0, valid = 0;
       for (const e of active) {
-        if (!e.id || typeof e.lat !== 'number' || typeof e.lng !== 'number') { skipped++; continue; }
-        if (KNOWN_CITIES.PA?.bbox && !inBbox(e.lat, e.lng, KNOWN_CITIES.PA.bbox)) { skipped++; continue; }
-        extrasPA.set(String(e.id), {
+        const city = cityCodeFromId(e.id);
+        if (!e.id || !city || typeof e.lat !== 'number' || typeof e.lng !== 'number') { skipped++; continue; }
+        const bbox = KNOWN_CITIES[city]?.bbox;
+        if (bbox && !inBbox(e.lat, e.lng, bbox)) { skipped++; continue; }
+        if (!extrasByCity.has(city)) extrasByCity.set(city, new Map());
+        extrasByCity.get(city).set(String(e.id), {
           id:           String(e.id),
-          city:         'PA',
+          city,
           lat:          e.lat,
           lng:          e.lng,
+          // Statut absent → 'unknown' : laisse invader-spotter le poser.
           status:       normalizeStatus(e.status),
           // Points absents dans l'extra → null : laisse invader-spotter les combler
           // (utile pour les Invaders ajoutés à la main dont on n'a que les coordonnées).
           points:       e.points == null ? null : Math.max(0, parseInt(String(e.points), 10) || 0),
           hint:         String(e.hint ?? '').trim(),
-          instagramUrl:    String(e.instagramUrl ?? '').trim() || null,
+          // Lien Instagram absent → même règle que pnote : le tag est l'id en minuscules.
+          instagramUrl:    String(e.instagramUrl ?? '').trim()
+                           || `https://www.instagram.com/explore/tags/${String(e.id).toLowerCase()}/`,
           source:          String(e.source ?? 'extras'),
           statusFromPnote: false,
         });
+        valid++;
       }
-      console.log(`      ${extrasPA.size} extras valides, ${skipped} ignorées, ${disabledCnt} désactivées`);
+      for (const city of extrasByCity.keys()) allCodes.add(city);
+      console.log(`      ${valid} extras valides (${extrasByCity.size} villes), ${skipped} ignorées, ${disabledCnt} désactivées`);
     } catch (e) { console.warn('      ⚠ Extras illisibles :', e.message); }
   } else {
     console.log('      Fichier extras absent');
   }
+  const sortedCodes = [...allCodes].sort();
+  console.log(`      ${allCodes.size} villes au total`);
 
   // ── [5/6] Traitement par ville ────────────────────────────────────────────
   console.log('\n[5/6] Traitement par ville…');
@@ -611,6 +630,20 @@ async function main() {
     let enriched = [...baseInvaders, ...pnoteOnlyInvaders]
       .sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
 
+    // ── Fusion extras (toutes villes) ─────────────────────────────────────
+    // Avant le contrôle « aucun Invader » : une ville peut n'exister que par eux.
+    let extrasAdded = 0, extrasOverridden = 0;
+    const extrasForCity = extrasByCity.get(code);
+    if (extrasForCity?.size) {
+      const merged = new Map(enriched.map(i => [i.id, i]));
+      for (const [id, extra] of extrasForCity) {
+        merged.has(id) ? extrasOverridden++ : extrasAdded++;
+        merged.set(id, extra);
+      }
+      enriched = [...merged.values()]
+        .sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
+    }
+
     if (enriched.length === 0) {
       console.log('⚠  SKIP — aucun Invader valide');
       const prevCity = prevIndex?.cities?.find(c => c.code === code);
@@ -618,18 +651,7 @@ async function main() {
       continue;
     }
 
-    // ── Fusion extras (PA uniquement) ─────────────────────────────────────
-    let extrasAdded = 0, extrasOverridden = 0;
-    let finalInvaders = enriched;
-    if (code === 'PA' && extrasPA.size > 0) {
-      const merged = new Map(enriched.map(i => [i.id, i]));
-      for (const [id, extra] of extrasPA) {
-        merged.has(id) ? extrasOverridden++ : extrasAdded++;
-        merged.set(id, extra);
-      }
-      finalInvaders = [...merged.values()]
-        .sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
-    }
+    const finalInvaders = enriched;
 
     // ── Enrichissement invader-spotter ────────────────────────────────────
     // Appliqué APRÈS les extras (qui restent prioritaires) : ne comble que des trous.
@@ -689,6 +711,7 @@ async function main() {
     const parts = [`${baseInvaders.length} gog`];
     if (pnoteOnlyInvaders.length) parts.push(`+${pnoteOnlyInvaders.length} pnote`);
     if (extrasAdded)              parts.push(`+${extrasAdded} extras`);
+    if (extrasOverridden)         parts.push(`${extrasOverridden} extras écrasent la base`);
     if (cityDivergences)          parts.push(`~${cityDivergences}⚡`);
     if (bboxRejets)               parts.push(`⚠ ${bboxRejets} hors bbox`);
     const flag = changed ? `✓ v${newVersion}` : `— v${newVersion}`;

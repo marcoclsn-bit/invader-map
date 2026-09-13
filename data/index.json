@@ -1,5 +1,5 @@
 {
-  "version": 38,
+  "version": 39,
   "updatedAt": "2026-09-13",
   "cities": [
     {
@@ -1031,7 +1031,7 @@
       "name": "Paris",
       "count": 1597,
       "destroyed": 245,
-      "version": 22,
+      "version": 23,
       "center": {
         "lat": 48.8566,
         "lng": 2.3522
@@ -1279,6 +1279,23 @@
         "maxLat": -23.45,
         "minLng": -46.8,
         "maxLng": -46.5
+      }
+    },
+    {
+      "code": "STK",
+      "name": "Stockholm",
+      "count": 19,
+      "destroyed": 3,
+      "version": 2,
+      "center": {
+        "lat": 59.3293,
+        "lng": 18.0686
+      },
+      "bbox": {
+        "minLat": 59.2,
+        "maxLat": 59.45,
+        "minLng": 17.75,
+        "maxLng": 18.3
       }
     },
     {

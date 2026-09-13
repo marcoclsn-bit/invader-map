@@ -50,7 +50,7 @@ const PA_ARRONDISSEMENTS = [
 ];
 
 // Villes couvertes par invader-spotter : une case à cocher = un code ville.
-// Liste extraite du formulaire cherche.php (87 villes + Paris).
+// Liste extraite du formulaire cherche.php (87 villes + Paris). STK ajouté le 13/09/2026.
 export const SPOTTER_SUPPORTED = new Set([
   'PA',
   'SPACE','BRL','FKF','KLN','MUN','MLB','PRT','WN','DHK','ANVR','BXL','CHAR','RDU',
@@ -59,7 +59,7 @@ export const SPOTTER_SUPPORTED = new Set([
   'GRN','LCT','REUN','LIL','LBR','LY','MARS','MTB','MPL','NA','NIM','ORLN','PAU',
   'PRP','RN','TLS','VLMO','VRS','LDN','MAN','NCL','VRN','ELT','RA','ROM','TK','MBSA',
   'MRAK','RBA','CCU','KAT','AMS','NOO','RTD','FAO','LJU','HALM','VSB','ANZR','BSL',
-  'BRN','GNV','LSN','GRTI','BGK','DJBA','IST',
+  'BRN','GNV','LSN','GRTI','BGK','DJBA','IST','STK',
 ]);
 
 // Cases « ville » du formulaire pour un code donné.

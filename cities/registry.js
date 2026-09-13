@@ -66,6 +66,7 @@ const OVERRIDES = {
   BRC:  { orsCountry: 'boundary.country=ES' },
   MLGA: { orsCountry: 'boundary.country=ES' },
   VSB:  { orsCountry: 'boundary.country=SE' },
+  STK:  { orsCountry: 'boundary.country=SE' },
   WN:   { orsCountry: 'boundary.country=AT' },
   LJU:  { orsCountry: 'boundary.country=SI' },
   ELT:  { orsCountry: 'boundary.country=IL' },

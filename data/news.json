@@ -1,5 +1,5 @@
 {
-  "version": 31,
+  "version": 32,
   "updatedAt": "2026-09-13",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "source": "invader-spotter.art",
@@ -8,55 +8,64 @@
       "type": "added",
       "id": "STK_11",
       "city": "STK",
-      "date": "2026-09-12"
+      "date": "2026-09-12",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/STK/STK_11-grosplan.png"
     },
     {
       "type": "added",
       "id": "STK_12",
       "city": "STK",
-      "date": "2026-09-12"
+      "date": "2026-09-12",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/STK/STK_12-grosplan.png"
     },
     {
       "type": "added",
       "id": "STK_15",
       "city": "STK",
-      "date": "2026-09-12"
+      "date": "2026-09-12",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/STK/STK_15-grosplan.png"
     },
     {
       "type": "added",
       "id": "STK_01",
       "city": "STK",
-      "date": "2026-09-11"
+      "date": "2026-09-11",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/STK/STK_01-grosplan.png"
     },
     {
       "type": "added",
       "id": "STK_02",
       "city": "STK",
-      "date": "2026-09-11"
+      "date": "2026-09-11",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/STK/STK_02-grosplan.png"
     },
     {
       "type": "added",
       "id": "STK_03",
       "city": "STK",
-      "date": "2026-09-11"
+      "date": "2026-09-11",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/STK/STK_03-grosplan.png"
     },
     {
       "type": "added",
       "id": "STK_04",
       "city": "STK",
-      "date": "2026-09-11"
+      "date": "2026-09-11",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/STK/STK_04-grosplan.png"
     },
     {
       "type": "added",
       "id": "STK_05",
       "city": "STK",
-      "date": "2026-09-11"
+      "date": "2026-09-11",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/STK/STK_05-grosplan.png"
     },
     {
       "type": "added",
       "id": "STK_06",
       "city": "STK",
-      "date": "2026-09-11"
+      "date": "2026-09-11",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/STK/STK_06-grosplan.png"
     },
     {
       "type": "updated",
