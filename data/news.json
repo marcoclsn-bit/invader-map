@@ -1,9 +1,16 @@
 {
-  "version": 32,
-  "updatedAt": "2026-09-13",
+  "version": 33,
+  "updatedAt": "2026-09-14",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "source": "invader-spotter.art",
   "events": [
+    {
+      "type": "destroyed",
+      "id": "NY_173",
+      "city": "NY",
+      "date": "2026-09-13",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/NY/NY_173-grosplan.png"
+    },
     {
       "type": "added",
       "id": "STK_11",

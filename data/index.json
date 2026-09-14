@@ -1,6 +1,6 @@
 {
-  "version": 39,
-  "updatedAt": "2026-09-13",
+  "version": 40,
+  "updatedAt": "2026-09-14",
   "cities": [
     {
       "code": "AIX",
@@ -996,8 +996,8 @@
       "code": "NY",
       "name": "New York",
       "count": 192,
-      "destroyed": 174,
-      "version": 9,
+      "destroyed": 175,
+      "version": 10,
       "center": {
         "lat": 40.7128,
         "lng": -74.006
