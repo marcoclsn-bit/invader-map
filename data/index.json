@@ -1,5 +1,5 @@
 {
-  "version": 40,
+  "version": 42,
   "updatedAt": "2026-09-14",
   "cities": [
     {
@@ -329,12 +329,18 @@
       "code": "CLR",
       "name": "Clermont-Ferrand",
       "count": 47,
-      "version": 5,
+      "destroyed": 3,
+      "version": 6,
       "center": {
-        "lat": 45.800334,
-        "lng": 3.090138
+        "lat": 45.7772,
+        "lng": 3.087
       },
-      "destroyed": 2
+      "bbox": {
+        "minLat": 45.7,
+        "maxLat": 46,
+        "minLng": 2.95,
+        "maxLng": 3.25
+      }
     },
     {
       "code": "CON",
@@ -374,12 +380,18 @@
       "code": "DJBA",
       "name": "Djerba",
       "count": 58,
-      "version": 5,
+      "destroyed": 6,
+      "version": 6,
       "center": {
-        "lat": 33.807735,
-        "lng": 10.891873
+        "lat": 33.8751,
+        "lng": 10.8451
       },
-      "destroyed": 4
+      "bbox": {
+        "minLat": 33.55,
+        "maxLat": 33.95,
+        "minLng": 10.65,
+        "maxLng": 11.15
+      }
     },
     {
       "code": "DJN",
@@ -419,12 +431,18 @@
       "code": "FAO",
       "name": "Faro",
       "count": 4,
-      "version": 5,
+      "destroyed": 1,
+      "version": 6,
       "center": {
-        "lat": 37.018078,
-        "lng": -7.956933
+        "lat": 37.0194,
+        "lng": -7.9322
       },
-      "destroyed": 3
+      "bbox": {
+        "minLat": 36.95,
+        "maxLat": 37.1,
+        "minLng": -8.1,
+        "maxLng": -7.85
+      }
     },
     {
       "code": "FKF",
@@ -600,12 +618,18 @@
       "code": "KLN",
       "name": "Cologne",
       "count": 27,
-      "version": 5,
+      "destroyed": 4,
+      "version": 6,
       "center": {
-        "lat": 50.928348,
-        "lng": 6.972527
+        "lat": 50.9333,
+        "lng": 6.95
       },
-      "destroyed": 4
+      "bbox": {
+        "minLat": 50.8,
+        "maxLat": 51.05,
+        "minLng": 6.8,
+        "maxLng": 7.2
+      }
     },
     {
       "code": "LA",
@@ -679,12 +703,18 @@
       "code": "LIL",
       "name": "Lille",
       "count": 6,
-      "version": 5,
+      "destroyed": 3,
+      "version": 6,
       "center": {
-        "lat": 50.59408,
-        "lng": 3.046499
+        "lat": 50.6292,
+        "lng": 3.0573
       },
-      "destroyed": 1
+      "bbox": {
+        "minLat": 50.3,
+        "maxLat": 50.75,
+        "minLng": 2.85,
+        "maxLng": 3.25
+      }
     },
     {
       "code": "LJU",
@@ -1030,8 +1060,8 @@
       "code": "PA",
       "name": "Paris",
       "count": 1597,
-      "destroyed": 245,
-      "version": 23,
+      "destroyed": 249,
+      "version": 24,
       "center": {
         "lat": 48.8566,
         "lng": 2.3522
@@ -1319,12 +1349,18 @@
       "code": "TLS",
       "name": "Toulouse",
       "count": 11,
-      "version": 5,
+      "destroyed": 5,
+      "version": 6,
       "center": {
-        "lat": 43.695205,
-        "lng": 1.353076
+        "lat": 43.6047,
+        "lng": 1.4442
       },
-      "destroyed": 3
+      "bbox": {
+        "minLat": 43.45,
+        "maxLat": 44.35,
+        "minLng": 0.7,
+        "maxLng": 1.7
+      }
     },
     {
       "code": "VLMO",

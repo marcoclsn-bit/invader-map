@@ -1,6 +1,6 @@
 {
-  "version": 5,
-  "updatedAt": "2026-08-13",
+  "version": 6,
+  "updatedAt": "2026-09-14",
   "city": "LIL",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 6,
@@ -13,36 +13,42 @@
       "status": "damaged",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lil_00/",
       "source": "goguelnikov",
+      "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LIL/LIL_00-grosplan.png",
-      "datePosed": "1999-01-11",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/LIL/LIL_00-mars2017.jpg"
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LIL/LIL_00-mars2017.jpg",
+      "datePosed": "1999-01-11"
     },
     {
       "id": "LIL_01",
       "city": "LIL",
       "lat": 50.6421805816,
       "lng": 3.0659438893,
-      "status": "damaged",
+      "status": "destroyed",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lil_01/",
       "source": "goguelnikov",
+      "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LIL/LIL_01-grosplan.png",
-      "datePosed": "2002-08-30",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/LIL/LIL_01-mars2023.jpg"
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LIL/LIL_01-mars2023.jpg",
+      "datePosed": "2002-08-30"
     },
     {
       "id": "LIL_02",
       "city": "LIL",
       "lat": 50.6395324599,
       "lng": 3.0613793033,
-      "status": "ok",
+      "status": "destroyed",
       "points": 10,
       "hint": "",
-      "source": "goguelnikov",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lil_02/",
+      "source": "signalement-utilisateur",
+      "statusFromPnote": false,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LIL/LIL_02-grosplan.png",
-      "datePosed": "2002-08-30",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/LIL/LIL_02-mai2025.jpg"
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LIL/LIL_02-mai2025.jpg",
+      "datePosed": "2002-08-30"
     },
     {
       "id": "LIL_03",
@@ -52,10 +58,12 @@
       "status": "ok",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lil_03/",
       "source": "goguelnikov",
+      "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LIL/LIL_03-grosplan.png",
-      "datePosed": "2002-08-30",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/LIL/LIL_03-mars2017.jpg"
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LIL/LIL_03-mars2017.jpg",
+      "datePosed": "2002-08-30"
     },
     {
       "id": "LIL_04",
@@ -65,10 +73,12 @@
       "status": "destroyed",
       "points": 10,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lil_04/",
       "source": "goguelnikov",
+      "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LIL/LIL_04-grosplan.png",
-      "datePosed": "2002-08-30",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/LIL/LIL_04-mars2021.jpg"
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LIL/LIL_04-mars2021.jpg",
+      "datePosed": "2002-08-30"
     },
     {
       "id": "LIL_05",
@@ -78,10 +88,12 @@
       "status": "damaged",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lil_05/",
       "source": "goguelnikov",
+      "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LIL/LIL_05-grosplan.png",
-      "datePosed": "2002-08-30",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/LIL/LIL_05-mars2025-2.jpg"
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LIL/LIL_05-mars2025-2.jpg",
+      "datePosed": "2002-08-30"
     }
   ]
 }

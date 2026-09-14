@@ -1,6 +1,6 @@
 {
-  "version": 5,
-  "updatedAt": "2026-08-13",
+  "version": 6,
+  "updatedAt": "2026-09-14",
   "city": "TLS",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 11,
@@ -13,10 +13,12 @@
       "status": "destroyed",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/tls_01/",
       "source": "goguelnikov",
+      "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_01-grosplan.png",
-      "datePosed": "2016-07-08",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_01-mars2024.jpg"
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_01-mars2024.jpg",
+      "datePosed": "2016-07-08"
     },
     {
       "id": "TLS_02",
@@ -26,23 +28,27 @@
       "status": "destroyed",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/tls_02/",
       "source": "goguelnikov",
+      "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_02-grosplan.png",
-      "datePosed": "2016-07-08",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_02-mars2024.jpg"
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_02-mars2024.jpg",
+      "datePosed": "2016-07-08"
     },
     {
       "id": "TLS_03",
       "city": "TLS",
       "lat": 43.6084082405,
       "lng": 1.4374261224,
-      "status": "ok",
+      "status": "destroyed",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/tls_03/",
       "source": "goguelnikov",
+      "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_03-grosplan.png",
-      "datePosed": "2016-07-11",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_03-juillet2025.jpg"
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_03-juillet2025.jpg",
+      "datePosed": "2016-07-11"
     },
     {
       "id": "TLS_04",
@@ -52,10 +58,12 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/tls_04/",
       "source": "goguelnikov",
+      "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_04-grosplan.png",
-      "datePosed": "2016-07-11",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_04-septembre2016.jpg"
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_04-septembre2016.jpg",
+      "datePosed": "2016-07-11"
     },
     {
       "id": "TLS_05",
@@ -65,23 +73,27 @@
       "status": "ok",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/tls_05/",
       "source": "goguelnikov",
+      "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_05-grosplan.png",
-      "datePosed": "2016-07-11",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_05-septembre2016.jpg"
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_05-septembre2016.jpg",
+      "datePosed": "2016-07-11"
     },
     {
       "id": "TLS_06",
       "city": "TLS",
       "lat": 43.6056649327,
       "lng": 1.4442272748,
-      "status": "damaged",
+      "status": "destroyed",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/tls_06/",
       "source": "goguelnikov",
+      "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_06-grosplan.png",
-      "datePosed": "2016-07-13",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_06-octobre2025.jpg"
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_06-octobre2025.jpg",
+      "datePosed": "2016-07-13"
     },
     {
       "id": "TLS_07",
@@ -91,10 +103,12 @@
       "status": "ok",
       "points": 20,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/tls_07/",
       "source": "goguelnikov",
+      "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_07-grosplan.png",
-      "datePosed": "2016-07-13",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_07-septembre2016.jpg"
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_07-septembre2016.jpg",
+      "datePosed": "2016-07-13"
     },
     {
       "id": "TLS_08",
@@ -104,10 +118,12 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/tls_08/",
       "source": "goguelnikov",
+      "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_08-grosplan.png",
-      "datePosed": "2016-07-13",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_08-septembre2016.jpg"
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_08-septembre2016.jpg",
+      "datePosed": "2016-07-13"
     },
     {
       "id": "TLS_09",
@@ -117,10 +133,12 @@
       "status": "ok",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/tls_09/",
       "source": "goguelnikov",
+      "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_09-grosplan.png",
-      "datePosed": "2016-07-15",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_09-septembre2016.jpg"
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_09-septembre2016.jpg",
+      "datePosed": "2016-07-15"
     },
     {
       "id": "TLS_10",
@@ -130,7 +148,9 @@
       "status": "destroyed",
       "points": 50,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/tls_10/",
       "source": "goguelnikov",
+      "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_10-grosplan.png",
       "datePosed": "2016-07-15"
     },
@@ -142,10 +162,12 @@
       "status": "hidden",
       "points": 30,
       "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/tls_11/",
       "source": "goguelnikov",
+      "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/TLS/TLS_11-grosplan.png",
-      "datePosed": "2017-03-29",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_11-septembre2024.jpg"
+      "photoWideUrl": "https://www.invader-spotter.art/photos/TLS/TLS_11-septembre2024.jpg",
+      "datePosed": "2017-03-29"
     }
   ]
 }

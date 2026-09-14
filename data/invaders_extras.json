@@ -400,6 +400,61 @@
       "lat": 59.325111,
       "lng": 18.084222,
       "source": "releve-terrain"
+    },
+    {
+      "_comment": "Signale detruit par Marco sur le terrain (14/09/2026), etait ok chez goguelnikov.",
+      "id": "PA_448",
+      "lat": 48.8720628477,
+      "lng": 2.3651469112,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/pa_448/",
+      "source": "signalement-utilisateur"
+    },
+    {
+      "_comment": "Signale detruit par Marco sur le terrain (14/09/2026), etait damaged chez goguelnikov.",
+      "id": "PA_431",
+      "lat": 48.8472884738,
+      "lng": 2.4142008803,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/pa_431/",
+      "source": "signalement-utilisateur"
+    },
+    {
+      "_comment": "Signale detruit par Marco sur le terrain (14/09/2026), etait ok chez goguelnikov.",
+      "id": "PA_477",
+      "lat": 48.8543932815,
+      "lng": 2.4155053144,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/pa_477/",
+      "source": "signalement-utilisateur"
+    },
+    {
+      "_comment": "Signale detruit par Marco sur le terrain (14/09/2026), etait damaged chez goguelnikov.",
+      "id": "PA_920",
+      "lat": 48.8752962351,
+      "lng": 2.4406010079,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/pa_920/",
+      "source": "signalement-utilisateur"
+    },
+    {
+      "_comment": "Signale detruit par Marco sur le terrain (14/09/2026), etait ok chez goguelnikov.",
+      "id": "LIL_02",
+      "lat": 50.6395324599,
+      "lng": 3.0613793033,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/lil_02/",
+      "source": "signalement-utilisateur"
     }
   ]
 }

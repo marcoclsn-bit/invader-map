@@ -80,18 +80,18 @@ const KNOWN_CITIES = {
   BXL:  { name: 'Bruxelles',        bbox: { minLat: 50.75, maxLat: 50.95, minLng: 4.25,  maxLng: 4.50  } },
   CAZ:  { name: "Côte d'Azur",      bbox: { minLat: 42.95, maxLat: 44.0, minLng: 5.55, maxLng: 7.8 } },
   CCU:  { name: 'Cancún',           bbox: { minLat: 20.85, maxLat: 21.50, minLng: -87.20, maxLng: -86.65} },
-  CLR:  { name: 'Clermont-Ferrand', bbox: { minLat: 45.70, maxLat: 45.85, minLng: 3.00,  maxLng: 3.20  } },
+  CLR:  { name: 'Clermont-Ferrand', bbox: { minLat: 45.70, maxLat: 46.00, minLng: 2.95,  maxLng: 3.25  } }, // Riom (CLR_40+) au nord
   DIJ:  { name: 'Dijon',            bbox: { minLat: 47.25, maxLat: 47.40, minLng: 4.95,  maxLng: 5.15  } },
-  DJBA: { name: 'Djerba',           bbox: { minLat: 33.65, maxLat: 33.95, minLng: 10.70, maxLng: 11.00 } },
-  FAO:  { name: 'Faro',             bbox: { minLat: 36.95, maxLat: 37.10, minLng: -7.95, maxLng: -7.85 } },
+  DJBA: { name: 'Djerba',           bbox: { minLat: 33.55, maxLat: 33.95, minLng: 10.65, maxLng: 11.15 } }, // toute l'ile, jusqu'a la pointe est
+  FAO:  { name: 'Faro',             bbox: { minLat: 36.95, maxLat: 37.10, minLng: -8.10, maxLng: -7.85 } }, // FAO_03 a l'ouest
   FKF:  { name: 'Francfort',        bbox: { minLat: 49.80, maxLat: 50.25, minLng:  8.45, maxLng:  8.85 } },
   FTBL: { name: 'Fontainebleau',    bbox: { minLat: 48.15, maxLat: 48.65, minLng:  2.40, maxLng:  3.00 } },
   GNV:  { name: 'Genève',           bbox: { minLat: 46.15, maxLat: 46.30, minLng: 6.05,  maxLng: 6.25  } },
   GRN:  { name: 'Grenoble',         bbox: { minLat: 45.10, maxLat: 45.25, minLng: 5.65,  maxLng: 5.80  } },
   IST:  { name: 'Istanbul',         bbox: { minLat: 40.85, maxLat: 41.25, minLng: 28.60, maxLng: 29.20 } },
   KAT:  { name: 'Katmandu',         bbox: { minLat: 27.60, maxLat: 27.80, minLng: 85.20, maxLng: 85.45 } },
-  KLN:  { name: 'Cologne',          bbox: { minLat: 50.80, maxLat: 51.05, minLng: 6.80,  maxLng: 7.10  } },
-  LIL:  { name: 'Lille',            bbox: { minLat: 50.55, maxLat: 50.70, minLng: 2.95,  maxLng: 3.15  } },
+  KLN:  { name: 'Cologne',          bbox: { minLat: 50.80, maxLat: 51.05, minLng: 6.80,  maxLng: 7.20  } }, // KLN_25-27 rive droite, a l'est
+  LIL:  { name: 'Lille',            bbox: { minLat: 50.30, maxLat: 50.75, minLng: 2.85,  maxLng: 3.25  } }, // LIL_00 a 30 km au sud
   LJU:  { name: 'Ljubljana',        bbox: { minLat: 46.00, maxLat: 46.12, minLng: 14.45, maxLng: 14.60 } },
   LSN:  { name: 'Lausanne',         bbox: { minLat: 46.48, maxLat: 46.58, minLng: 6.58,  maxLng: 6.72  } },
   LY:   { name: 'Lyon',             bbox: { minLat: 45.65, maxLat: 45.85, minLng: 4.75,  maxLng: 5.00  } },
@@ -116,7 +116,7 @@ const KNOWN_CITIES = {
   RTD:  { name: 'Rotterdam',        bbox: { minLat: 51.85, maxLat: 52.00, minLng: 4.35,  maxLng: 4.55  } },
   SD:   { name: 'San Diego',        bbox: { minLat: 32.60, maxLat: 32.85, minLng: -117.3,maxLng: -117.0} },
   SP:   { name: 'São Paulo',        bbox: { minLat: -23.70,maxLat: -23.45,minLng: -46.80,maxLng: -46.50} },
-  TLS:  { name: 'Toulouse',         bbox: { minLat: 43.55, maxLat: 43.70, minLng: 1.35,  maxLng: 1.55  } },
+  TLS:  { name: 'Toulouse',         bbox: { minLat: 43.45, maxLat: 44.35, minLng: 0.70,  maxLng: 1.70  } }, // TLS_01/02 dans le Gers, TLS_11 pres de Montauban
   VRN:  { name: 'Varanasi',         bbox: { minLat: 25.15, maxLat: 25.55, minLng: 82.85, maxLng: 83.20 } },
   WN:   { name: 'Vienne',           bbox: { minLat: 48.15, maxLat: 48.25, minLng: 16.30, maxLng: 16.45 } },
   // ── Noms identifiés, bbox inconnue (pas de validation coords) ─────────────
@@ -576,6 +576,8 @@ async function main() {
       } catch { /* ignore */ }
     }
 
+    const extrasForCity = extrasByCity.get(code);
+
     // ── Garde-fou : chute brutale de la base goguelnikov ─────────────────
     if (prevBaseCount > 0 && gogEntries.length > 0) {
       const loss = (prevBaseCount - baseInvaders.length) / prevBaseCount;
@@ -586,6 +588,15 @@ async function main() {
         // temporaire de goguelnikov priverait la ville de ses photos).
         let idxEntry = prevIndex?.cities?.find(c => c.code === code);
         if (prevInvaders?.length) {
+          // Les extras aussi : un signalement de terrain n'a pas à attendre que
+          // goguelnikov se stabilise. Sur une ville de six (Lille), un seul retrait
+          // en amont dépasse le seuil et gelait tout, signalements compris.
+          if (extrasForCity?.size) {
+            const byId = new Map(prevInvaders.map(i => [i.id, i]));
+            for (const [id, extra] of extrasForCity) byId.set(id, extra);
+            prevInvaders = [...byId.values()]
+              .sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
+          }
           const e = enrichWithSpotter(prevInvaders, spotterByCity.get(code));
           gPtsFilled += e.pts; gPhotos += e.photos; gWides += e.wides; gStatusFilled += e.status;
           const nh = contentHash(prevInvaders);
@@ -633,7 +644,6 @@ async function main() {
     // ── Fusion extras (toutes villes) ─────────────────────────────────────
     // Avant le contrôle « aucun Invader » : une ville peut n'exister que par eux.
     let extrasAdded = 0, extrasOverridden = 0;
-    const extrasForCity = extrasByCity.get(code);
     if (extrasForCity?.size) {
       const merged = new Map(enriched.map(i => [i.id, i]));
       for (const [id, extra] of extrasForCity) {
