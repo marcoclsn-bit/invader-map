@@ -1,6 +1,6 @@
 {
-  "version": 42,
-  "updatedAt": "2026-09-15",
+  "version": 43,
+  "updatedAt": "2026-09-16",
   "cities": [
     {
       "code": "AIX",
@@ -1315,8 +1315,8 @@
       "code": "STK",
       "name": "Stockholm",
       "count": 19,
-      "destroyed": 3,
-      "version": 2,
+      "destroyed": 4,
+      "version": 3,
       "center": {
         "lat": 59.3293,
         "lng": 18.0686
