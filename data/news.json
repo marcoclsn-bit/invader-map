@@ -1,9 +1,23 @@
 {
-  "version": 34,
-  "updatedAt": "2026-09-16",
+  "version": 35,
+  "updatedAt": "2026-09-18",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "source": "invader-spotter.art",
   "events": [
+    {
+      "type": "updated",
+      "id": "BRN_21",
+      "city": "BRN",
+      "date": "2026-09-18",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BRN/BRN_21-grosplan.png"
+    },
+    {
+      "type": "destroyed",
+      "id": "BRL_09",
+      "city": "BRL",
+      "date": "2026-09-18",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BRL/BRL_09-grosplan.png"
+    },
     {
       "type": "destroyed",
       "id": "STK_13",

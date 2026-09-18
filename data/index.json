@@ -1,6 +1,6 @@
 {
-  "version": 43,
-  "updatedAt": "2026-09-17",
+  "version": 44,
+  "updatedAt": "2026-09-18",
   "cities": [
     {
       "code": "AIX",
@@ -177,7 +177,7 @@
       "name": "Berlin",
       "count": 11,
       "destroyed": 1,
-      "version": 7,
+      "version": 8,
       "center": {
         "lat": 52.52,
         "lng": 13.405
@@ -194,7 +194,7 @@
       "name": "Berne",
       "count": 29,
       "destroyed": 10,
-      "version": 7,
+      "version": 8,
       "center": {
         "lat": 46.9481,
         "lng": 7.4474
@@ -1061,7 +1061,7 @@
       "name": "Paris",
       "count": 1597,
       "destroyed": 249,
-      "version": 24,
+      "version": 25,
       "center": {
         "lat": 48.8566,
         "lng": 2.3522

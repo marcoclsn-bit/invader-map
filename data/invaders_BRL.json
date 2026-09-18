@@ -1,6 +1,6 @@
 {
-  "version": 7,
-  "updatedAt": "2026-08-13",
+  "version": 8,
+  "updatedAt": "2026-09-18",
   "city": "BRL",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 11,
@@ -121,7 +121,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BRL/BRL_09-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/BRL/BRL_09-novembre2021.jpg",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BRL/BRL_09-septembre2026.jpg",
       "datePosed": "2002-05-11"
     },
     {
