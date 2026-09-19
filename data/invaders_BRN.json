@@ -1,6 +1,6 @@
 {
-  "version": 8,
-  "updatedAt": "2026-09-18",
+  "version": 9,
+  "updatedAt": "2026-09-19",
   "city": "BRN",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 29,
@@ -310,7 +310,7 @@
       "city": "BRN",
       "lat": 46.9468792905,
       "lng": 7.4523607296,
-      "status": "hidden",
+      "status": "damaged",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/brn_21/",
