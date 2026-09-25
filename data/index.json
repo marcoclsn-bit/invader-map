@@ -1,6 +1,6 @@
 {
-  "version": 49,
-  "updatedAt": "2026-09-24",
+  "version": 50,
+  "updatedAt": "2026-09-25",
   "cities": [
     {
       "code": "AIX",
@@ -41,7 +41,7 @@
       "name": "Amsterdam",
       "count": 26,
       "destroyed": 6,
-      "version": 7,
+      "version": 8,
       "center": {
         "lat": 52.3676,
         "lng": 4.9041
