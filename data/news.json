@@ -1,9 +1,23 @@
 {
-  "version": 41,
-  "updatedAt": "2026-09-28",
+  "version": 42,
+  "updatedAt": "2026-09-29",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "source": "invader-spotter.art",
   "events": [
+    {
+      "type": "updated",
+      "id": "MAN_08",
+      "city": "MAN",
+      "date": "2026-09-28",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MAN/MAN_08-grosplan.png"
+    },
+    {
+      "type": "destroyed",
+      "id": "RTD_14",
+      "city": "RTD",
+      "date": "2026-09-28",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/RTD/RTD_14-grosplan.png"
+    },
     {
       "type": "reactivated",
       "id": "PA_207",

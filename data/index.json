@@ -1,6 +1,6 @@
 {
-  "version": 52,
-  "updatedAt": "2026-09-28",
+  "version": 53,
+  "updatedAt": "2026-09-29",
   "cities": [
     {
       "code": "AIX",
@@ -772,7 +772,7 @@
       "name": "Manchester",
       "count": 47,
       "destroyed": 11,
-      "version": 6,
+      "version": 7,
       "center": {
         "lat": 53.4808,
         "lng": -2.2426
@@ -1061,7 +1061,7 @@
       "name": "Paris",
       "count": 1597,
       "destroyed": 247,
-      "version": 30,
+      "version": 31,
       "center": {
         "lat": 48.8566,
         "lng": 2.3522
@@ -1247,8 +1247,8 @@
       "code": "RTD",
       "name": "Rotterdam",
       "count": 25,
-      "destroyed": 3,
-      "version": 7,
+      "destroyed": 4,
+      "version": 8,
       "center": {
         "lat": 51.9225,
         "lng": 4.4792
