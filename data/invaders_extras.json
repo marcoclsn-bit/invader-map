@@ -236,6 +236,13 @@
       "source": "invader-spotter"
     },
     {
+      "_comment": "Releve sur le terrain le 30/09/2026. invader-spotter reference PA_1598 (pose le 17/09/2026, 30 pts) mais ne publie pas ses coordonnees : sans cette entree l'Invader n'apparait pas sur la carte. Statut, points et photos sont completes automatiquement par l'enrichissement spotter.",
+      "id": "PA_1598",
+      "lat": 48.893493,
+      "lng": 2.393066,
+      "source": "perso"
+    },
+    {
       "_note_signalements": "Signalement utilisateur du 30/08/2026. ATTENTION : une entree extras FIGE la fiche (prioritaire sur goguelnikov ET spotter). Si le statut evolue de nouveau sur le terrain, mettre a jour ou retirer cette entree.",
       "disabled": true,
       "id": "_DOC_SIGNALEMENTS",
