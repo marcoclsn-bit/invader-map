@@ -1,6 +1,6 @@
 {
-  "version": 57,
-  "updatedAt": "2026-10-03",
+  "version": 58,
+  "updatedAt": "2026-10-04",
   "cities": [
     {
       "code": "AIX",
@@ -1060,8 +1060,8 @@
       "code": "PA",
       "name": "Paris",
       "count": 1598,
-      "destroyed": 246,
-      "version": 34,
+      "destroyed": 247,
+      "version": 35,
       "center": {
         "lat": 48.8566,
         "lng": 2.3522
