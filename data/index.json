@@ -1,6 +1,6 @@
 {
-  "version": 58,
-  "updatedAt": "2026-10-04",
+  "version": 59,
+  "updatedAt": "2026-10-05",
   "cities": [
     {
       "code": "AIX",
@@ -687,7 +687,7 @@
       "name": "London",
       "count": 193,
       "destroyed": 69,
-      "version": 9,
+      "version": 10,
       "center": {
         "lat": 51.5074,
         "lng": -0.1278

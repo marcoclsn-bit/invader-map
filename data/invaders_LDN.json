@@ -1,6 +1,6 @@
 {
-  "version": 9,
-  "updatedAt": "2026-08-26",
+  "version": 10,
+  "updatedAt": "2026-10-05",
   "city": "LDN",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 162,
@@ -203,14 +203,14 @@
       "city": "LDN",
       "lat": 51.5101849948,
       "lng": -0.1341123325,
-      "status": "ok",
+      "status": "hidden",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ldn_14/",
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/LDN/LDN_014-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/LDN/LDN_014-juillet2026.jpg",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/LDN/LDN_014-octobre2026.jpg",
       "datePosed": "1999-06-08"
     },
     {
