@@ -7,6 +7,14 @@
  * ressemblent à un identifiant et on ignore tout le reste. Virgules, tabulations,
  * guillemets, colonnes de dates : rien de tout ça n'a besoin d'être prévu.
  *
+ * Seule exception à « on ne prévoit rien » : le SÉPARATEUR de l'identifiant. Un
+ * jeton se reconnaît à sa forme, et « PA-0933 » n'avait pas la bonne — l'app
+ * ParisInvader exporte au tiret (« PA-0933:2 »), si bien qu'une liste entière
+ * ressortait à zéro identifiant reconnu, sans rien à corriger côté utilisateur.
+ * D'où `unifieSeparateurs`, passée avant extraction : le tiret devient un
+ * souligné À L'INTÉRIEUR DES JETONS seulement. Pas de remplacement global, sinon
+ * « 2026-08-12 » deviendrait « 2026_08_12 » et les dates de flash seraient perdues.
+ *
  * La validation se fait contre `data/invader_ids.json`, index des 4 288 Invaders
  * des 84 villes encodé par plages (« 1-42 », « 1-10,12-14,16-132 »). Il pèse 4,8 Ko
  * et rend l'analyse exacte ET hors ligne : quelqu'un qui colle une liste
@@ -36,6 +44,21 @@ const JETON_UNIQUE = /\b[A-Z]{2,5}_\d{1,4}\b/;
 // lieu de s'y perdre. C'est ce qui permet de l'ajouter sans rien casser.
 const DATE_COLLEE = /\b(\d{4}-\d{2}-\d{2})(?:[T ](\d{2}:\d{2}(?::\d{2})?))?\b/;
 
+// Séparateur d'identifiant toléré à l'entrée. Le motif exige DES LETTRES avant le
+// tiret : une date (« 2026-08-12 »), un numéro de téléphone ou une plage de pages
+// n'y répondent jamais, et traversent donc l'analyse intacts.
+const SEPARATEUR_TIRET = /\b([A-Z]{2,5})-(\d{1,4})\b/g;
+
+/**
+ * Unifie le séparateur des identifiants d'un texte DÉJÀ en majuscules.
+ * « PA-0933:2 » → « PA_0933:2 ». Le reste de la ligne n'est pas touché : ce qui
+ * suit les deux-points est ignoré par l'extraction, comme n'importe quelle
+ * seconde colonne.
+ */
+function unifieSeparateurs(texte) {
+  return String(texte ?? '').replace(SEPARATEUR_TIRET, '$1_$2');
+}
+
 /** Forme canonique d'un jeton : « PA_1 » → « PA_01 ». */
 function canonique(jeton) {
   const i = jeton.lastIndexOf('_');
@@ -56,7 +79,7 @@ function canonique(jeton) {
 export function datesDuTexte(texte) {
   const out = new Map();
   for (const ligne of String(texte || '').split(/\r?\n/)) {
-    const jetons = ligne.toUpperCase().match(JETON);
+    const jetons = unifieSeparateurs(ligne.toUpperCase()).match(JETON);
     if (!jetons || jetons.length !== 1) continue;
     const m = DATE_COLLEE.exec(ligne);
     if (!m) continue;
@@ -82,7 +105,7 @@ export function datesDuTexte(texte) {
  * @param villeParDefaut  code de la ville courante, pour un numéro seul
  */
 export function normaliseSaisie(texte, villeParDefaut) {
-  const brut = String(texte ?? '').toUpperCase().trim();
+  const brut = unifieSeparateurs(String(texte ?? '').toUpperCase().trim());
   if (!brut) return brut;
   if (JETON_UNIQUE.test(brut)) return brut;
 
@@ -134,31 +157,38 @@ function villeSets(code) {
  * }}
  */
 export function analyseListe(texte, flashed) {
-  const jetons = String(texte || '').toUpperCase().match(JETON) ?? [];
-
-  // Dédoublonnage en conservant l'ordre : une même photo peut apparaître deux fois.
-  const vus = new Set();
-  const uniques = [];
-  for (const j of jetons) if (!vus.has(j)) { vus.add(j); uniques.push(j); }
+  const jetons = unifieSeparateurs(String(texte || '').toUpperCase()).match(JETON) ?? [];
 
   const nouveaux = [], dejaFlashes = [], detruits = [], inconnus = [];
   const villes = {};
 
-  for (const jeton of uniques) {
+  // Dédoublonnage en conservant l'ordre, sur la FORME CANONIQUE et non sur le
+  // jeton tel qu'il a été écrit. « PA_933 » et « PA_0933 » désignent le même
+  // Invader : dédoublonner sur le texte brut les comptait deux fois, et le bouton
+  // annonçait « Ajouter 31 Invaders » pour 30 réels. Le cas devient courant
+  // maintenant qu'on lit ParisInvader, qui pade les numéros sur quatre chiffres
+  // là où notre propre export ne les pade pas : une liste recollée des deux
+  // sources mélange les deux écritures.
+  const vus = new Set();
+
+  for (const jeton of jetons) {
     const i = jeton.lastIndexOf('_');
     const code = jeton.slice(0, i);
     const num = Number(jeton.slice(i + 1));
-    const ville = villeSets(code);
 
-    if (!ville || !ville.tous.has(num)) { inconnus.push(jeton); continue; }
-
-    // FORME CANONIQUE, et non le jeton tel qu'il a été tapé. Les 4 288
-    // identifiants padent le numéro sur DEUX chiffres au minimum : le premier
-    // Invader de Paris est `PA_01`, pas `PA_1`. Renvoyer le jeton brut écrivait
-    // « PA_1 » dans les flashés — une chaîne qui ne correspond à aucun Invader,
-    // donc un flash perdu en silence, jamais affiché sur la carte. Le défaut
-    // existait déjà à l'import ; la saisie d'un numéro seul le rendait courant.
+    // Les 4 288 identifiants padent le numéro sur DEUX chiffres au minimum : le
+    // premier Invader de Paris est `PA_01`, pas `PA_1`. Écrire le jeton brut dans
+    // les flashés donnait « PA_1 » — une chaîne qui ne correspond à aucun Invader,
+    // donc un flash perdu en silence, jamais affiché sur la carte.
     const id = `${code}_${String(num).padStart(2, '0')}`;
+
+    if (vus.has(id)) continue;
+    vus.add(id);
+
+    const ville = villeSets(code);
+    // Pour un identifiant introuvable, on montre ce qui a été écrit, pas la forme
+    // canonique : c'est la ligne que l'utilisateur doit retrouver dans son texte.
+    if (!ville || !ville.tous.has(num)) { inconnus.push(jeton); continue; }
 
     villes[code] = (villes[code] ?? 0) + 1;
     if (flashed?.has?.(id)) { dejaFlashes.push(id); continue; }
@@ -178,7 +208,7 @@ export function analyseListe(texte, flashed) {
   return {
     nouveaux, dejaFlashes, detruits, inconnus, villes,
     dates, avecDates: Object.keys(dates).length,
-    total: uniques.length,
+    total: vus.size,
   };
 }
 

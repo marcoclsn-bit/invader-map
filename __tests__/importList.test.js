@@ -74,6 +74,56 @@ describe('analyseListe', () => {
   });
 });
 
+// Échantillon réel d'un utilisateur venu de ParisInvader : séparateur au tiret,
+// numéros padés sur quatre chiffres, et une seconde colonne « :2 » dont on ignore
+// la valeur comme toute autre colonne. Avant correction, cette liste rendait
+// ZÉRO identifiant reconnu.
+const PARIS_INVADER = `PA-1315:2
+PA-0933:2
+PA-0427:2
+PA-0563:2
+PA-0106:2
+PA-0980:2
+PA-1266:2`;
+
+describe('analyseListe — liste venue de ParisInvader', () => {
+  test('reconnaît le séparateur au tiret', () => {
+    const r = analyseListe(PARIS_INVADER, new Set());
+    expect(r.total).toBe(7);
+    expect(r.inconnus).toEqual([]);
+    expect(r.villes).toEqual({ PA: 7 });
+  });
+
+  test('rend la forme canonique, sans les zéros de tête ni le tiret', () => {
+    const r = analyseListe(PARIS_INVADER, new Set());
+    expect(r.nouveaux).toEqual([
+      'PA_1315', 'PA_933', 'PA_427', 'PA_563', 'PA_106', 'PA_980', 'PA_1266',
+    ]);
+  });
+
+  test('signale les détruits et les déjà flashés comme pour tout autre format', () => {
+    const r = analyseListe(PARIS_INVADER, new Set(['PA_427']));
+    expect(r.dejaFlashes).toEqual(['PA_427']);
+    expect(r.detruits).toContain('PA_980');
+  });
+
+  test('un même Invader écrit au tiret et au souligné ne compte qu’une fois', () => {
+    const r = analyseListe('PA-0933\nPA_933\nPA_0933', new Set());
+    expect(r.nouveaux).toEqual(['PA_933']);
+    expect(r.total).toBe(1);
+  });
+
+  test('ne touche pas aux dates : le tiret des dates reste un tiret', () => {
+    const r = analyseListe('PA-0933 2026-08-12T14:33:01', new Set());
+    expect(r.nouveaux).toEqual(['PA_933']);
+    expect(r.dates).toEqual({ PA_933: '2026-08-12T14:33:01' });
+  });
+
+  test('ne fabrique pas d’identifiant à partir d’une date seule', () => {
+    expect(analyseListe('2026-08-12\n12-2026', new Set()).total).toBe(0);
+  });
+});
+
 describe('exportListe', () => {
   test('trie par ville puis par numéro, une ligne par identifiant', () => {
     const out = exportListe(new Set(['BXL_10', 'BRC_02', 'BXL_02']));
