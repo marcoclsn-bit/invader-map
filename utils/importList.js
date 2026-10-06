@@ -15,8 +15,8 @@
  * souligné À L'INTÉRIEUR DES JETONS seulement. Pas de remplacement global, sinon
  * « 2026-08-12 » deviendrait « 2026_08_12 » et les dates de flash seraient perdues.
  *
- * La validation se fait contre `data/invader_ids.json`, index des 4 288 Invaders
- * des 84 villes encodé par plages (« 1-42 », « 1-10,12-14,16-132 »). Il pèse 4,8 Ko
+ * La validation se fait contre `data/invader_ids.json`, index des 4 308 Invaders
+ * des 85 villes encodé par plages (« 1-42 », « 1-10,12-14,16-132 »). Il pèse 4,9 Ko
  * et rend l'analyse exacte ET hors ligne : quelqu'un qui colle une liste
  * barcelonaise depuis Bruxelles obtient un verdict juste sans réseau.
  *
@@ -176,7 +176,7 @@ export function analyseListe(texte, flashed) {
     const code = jeton.slice(0, i);
     const num = Number(jeton.slice(i + 1));
 
-    // Les 4 288 identifiants padent le numéro sur DEUX chiffres au minimum : le
+    // Tous les identifiants padent le numéro sur DEUX chiffres au minimum : le
     // premier Invader de Paris est `PA_01`, pas `PA_1`. Écrire le jeton brut dans
     // les flashés donnait « PA_1 » — une chaîne qui ne correspond à aucun Invader,
     // donc un flash perdu en silence, jamais affiché sur la carte.
