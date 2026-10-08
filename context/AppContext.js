@@ -8,7 +8,7 @@ import { initInvaderService, loadCityData, onCityUpdate, checkCityForUpdate, get
 import { getCachedNews, fetchNews } from '../services/newsData';
 import { enableNewsNotify, disableNewsNotify, syncNewsNotify } from '../services/newsNotify';
 import i18n, { applyLanguage, LANGUAGE_STORAGE_KEY } from '../i18n';
-import { ENABLED_CITIES, DEFAULT_CITY_CODE, CITIES } from '../cities/registry';
+import { ENABLED_CITIES, DEFAULT_CITY_CODE, CITIES, MAPPABLE_CITIES, villeRestaurable } from '../cities/registry';
 import { ALL_POI_FAMILIES } from '../data/poiFamilies';
 import { initPoiService, checkPoiUpdate, getPoiVersion, setPoiLanguage } from '../services/poiData';
 import { track } from '../services/analytics';
@@ -86,13 +86,18 @@ export function useAppContext() {
 }
 
 // Ville activée la plus proche d'une coordonnée GPS
+// Villes CARTOGRAPHIABLES seulement : l'Espace a un `center` nul, et `null.lat`
+// levait une exception à chaque passage ici. Elle était avalée par le try/catch
+// de l'appelant, qui retombait sur la ville stockée : le choix par GPS n'a donc
+// jamais fonctionné depuis l'arrivée de l'Espace (28/08/2026), sans un seul
+// message. C'est aussi ce qui empêchait d'échapper à une ville stockée invalide.
 function _nearestCity(lat, lng) {
-  return ENABLED_CITIES.reduce((best, c) => {
+  return MAPPABLE_CITIES.reduce((best, c) => {
     const dlat = lat - c.center.lat;
     const dlng = (lng - c.center.lng) * Math.cos(lat * Math.PI / 180);
     const d2 = dlat * dlat + dlng * dlng;
     return d2 < best.d2 ? { city: c, d2 } : best;
-  }, { city: ENABLED_CITIES[0], d2: Infinity }).city;
+  }, { city: MAPPABLE_CITIES[0], d2: Infinity }).city;
 }
 
 
@@ -283,7 +288,10 @@ export function AppProvider({ children }) {
     // lieux d'intérêt hors de Paris.
     track('city_change', { city: code });
     currentCityCodeRef.current = code;
-    AsyncStorage.setItem('@invader_current_city', code);
+    // On ne mémorise que ce qu'on saura rouvrir : l'Espace se consulte, il ne se
+    // rouvre pas au démarrage (voir villeRestaurable). La ville précédente reste
+    // donc la ville de démarrage.
+    if (villeRestaurable(code)) AsyncStorage.setItem('@invader_current_city', code);
 
     // Phase 1 : overlay (nom de la ville cible), supprime les marqueurs de l'ancienne ville
     setIsChangingCity(true);
@@ -477,11 +485,11 @@ export function AppProvider({ children }) {
         const pos = await Location.getLastKnownPositionAsync({ maxAge: 3_600_000 });
         if (pos) {
           cityToLoad = _nearestCity(pos.coords.latitude, pos.coords.longitude).code;
-        } else if (currentCityRaw && CITIES[currentCityRaw]) {
+        } else if (villeRestaurable(currentCityRaw)) {
           cityToLoad = currentCityRaw;
         }
       } catch (_) {
-        if (currentCityRaw && CITIES[currentCityRaw]) cityToLoad = currentCityRaw;
+        if (villeRestaurable(currentCityRaw)) cityToLoad = currentCityRaw;
       }
 
       if (cityToLoad !== DEFAULT_CITY_CODE) {

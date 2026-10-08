@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import { Image, View, StyleSheet, Platform } from 'react-native';
 import { Marker } from 'react-native-maps';
+import { aUnePosition } from '../utils/coordonnees';
 
 // iOS : images pleine résolution dans une vue personnalisée (permet le halo néon).
 const IMAGES = {
@@ -29,6 +30,10 @@ const SIZE = 30;
 const ANCHOR = { x: 0.5, y: 0.5 };
 
 const InvaderMarker = memo(function InvaderMarker({ invader, isFlashed, onPress, stopPropagation, label, hint }) {
+  // Jamais de marqueur sans position : Google Maps s'arrête sur des coordonnées
+  // nulles, et c'est tout le processus qui tombe. Voir utils/coordonnees.js.
+  if (!aUnePosition(invader)) return null;
+
   const statusKey = IMAGES[invader.status] ? invader.status : 'unknown';
   const key = isFlashed ? 'flashed' : statusKey;
 

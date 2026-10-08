@@ -164,3 +164,20 @@ export const ENABLED_CITIES  = Object.values(CITIES);
 /** Villes affichables sur la carte — exclut l'Espace, qui n'a pas de position. */
 export const MAPPABLE_CITIES = ENABLED_CITIES.filter(c => c.mappable);
 export const DEFAULT_CITY_CODE = 'PA';
+
+/**
+ * Une ville peut-elle être RESTAURÉE comme ville de démarrage ?
+ *
+ * Seules les villes cartographiables le peuvent. L'Espace est une ville légitime
+ * pour la Liste et le Palmarès, mais la Carte est le premier onglet : démarrer
+ * dessus, c'est lui demander d'afficher des mosaïques sans position. Sur Android,
+ * Google Maps refuse un marqueur à coordonnées nulles et l'app s'arrête avant
+ * d'avoir affiché quoi que ce soit, à CHAQUE lancement, puisque la ville est
+ * relue au démarrage. Et la désinstallation n'y change rien : la sauvegarde
+ * automatique d'Android remet le stockage en place à la réinstallation.
+ * Deux utilisateurs bloqués ainsi pendant des semaines, octobre 2026.
+ */
+export function villeRestaurable(code) {
+  const c = code ? CITIES[code] : null;
+  return !!c && c.mappable !== false;
+}
