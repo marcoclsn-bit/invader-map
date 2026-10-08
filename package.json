@@ -8,6 +8,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "test": "jest",
+    "ota": "node scripts/ota.mjs",
     "postinstall": "patch-package"
   },
   "dependencies": {

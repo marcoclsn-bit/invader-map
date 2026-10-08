@@ -125,5 +125,34 @@ Installer le build preview À NEUF : c'est la seule façon de vérifier
 `components/UpdateGate.js`, qui ne s'arme que sur un lancement embarqué. Vérifier
 qu'un écran de préparation apparaît puis cède la place à l'app à jour.
 
+## Publier un OTA
+
+**Toujours par `npm run ota -- "message"`, depuis `invader-map-main`. Jamais
+`eas update` à la main.**
+
+Pourquoi : les clés ORS et Mapbox (`config/ors.js`, `config/mapbox.js`) sont lues
+dans `process.env.EXPO_PUBLIC_*` et inlinées par Metro AU MOMENT DE L'EXPORT.
+Elles viennent soit du `.env.local` (dossier principal seulement, gitignoré),
+soit de l'environnement EAS via `--environment production`. Le 06/10/2026, un
+`eas update` sans ce drapeau, lancé depuis le worktree `main` qui n'a pas de
+`.env.local`, a publié des clés VIDES : itinéraires, géocodage, repli Mapbox et
+carte du partage morts pendant 24 h, sans le moindre avertissement. Le drapeau
+n'est obligatoire qu'à partir du SDK 55.
+
+Le script refuse de publier hors de `main` ou avec un arbre sale, vérifie les
+clés dans l'environnement EAS avant, les cherche dans les paquets exportés
+après, et affiche l'identifiant que sert le serveur de mises à jour.
+`npm run ota -- --verifier` fait les contrôles sans publier.
+
+Les trois seules valeurs qui dépendent de l'environnement : `EXPO_PUBLIC_ORS_API_KEY`
+et `EXPO_PUBLIC_MAPBOX_TOKEN` (OTA, inlinées) ; `GOOGLE_MAPS_ANDROID_KEY`
+(`app.config.js`, config native Android, build seulement, injectée par le profil
+`production` d'`eas.json`). En ajouter une = l'ajouter à `CLES` dans
+`scripts/ota.mjs`.
+
+Un appareil déjà installé applique l'OTA au DEUXIÈME démarrage à froid (voir
+`components/UpdateGate.js`, qui ne s'arme que sur un lancement embarqué). La
+ligne « Mise à jour » de l'écran À propos affiche l'identifiant réellement servi.
+
 ## À compléter (TODO)
 - Étiquettes : UI pour créer / renommer / supprimer des étiquettes personnalisées (pour l'instant, seules les étiquettes par défaut existent).
