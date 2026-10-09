@@ -272,11 +272,11 @@
       "source": "signalement-utilisateur"
     },
     {
-      "_comment": "Signale detruit par un utilisateur (09/10/2026), etait damaged en amont.",
+      "_comment": "RESTAUREE. Signalee detruite le 09/10/2026, puis restauree le meme jour. L'entree reste NECESSAIRE bien que le statut soit ok : l'amont (goguelnikov et pnote) la donne encore damaged, son etat d'avant la destruction. La retirer la ferait repasser en abimee.",
       "id": "PA_286",
       "lat": 48.8874348329,
       "lng": 2.3445237102,
-      "status": "destroyed",
+      "status": "ok",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/pa_286/",
