@@ -250,6 +250,61 @@
       "lng": 0
     },
     {
+      "_comment": "Signale detruit par un utilisateur (09/10/2026), etait ok en amont.",
+      "id": "PA_857",
+      "lat": 48.8864026263,
+      "lng": 2.3404757502,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/pa_857/",
+      "source": "signalement-utilisateur"
+    },
+    {
+      "_comment": "Signale detruit par un utilisateur (09/10/2026), etait ok en amont.",
+      "id": "PA_1053",
+      "lat": 48.8842139373,
+      "lng": 2.3390396811,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/pa_1053/",
+      "source": "signalement-utilisateur"
+    },
+    {
+      "_comment": "Signale detruit par un utilisateur (09/10/2026), etait damaged en amont.",
+      "id": "PA_286",
+      "lat": 48.8874348329,
+      "lng": 2.3445237102,
+      "status": "destroyed",
+      "points": 10,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/pa_286/",
+      "source": "signalement-utilisateur"
+    },
+    {
+      "_comment": "Signale detruit par un utilisateur (09/10/2026), etait ok en amont.",
+      "id": "PA_1546",
+      "lat": 48.8724114011,
+      "lng": 2.3264141732,
+      "status": "destroyed",
+      "points": 50,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/pa_1546/",
+      "source": "signalement-utilisateur"
+    },
+    {
+      "_comment": "Signale detruit par un utilisateur (09/10/2026), etait ok en amont.",
+      "id": "PA_438",
+      "lat": 48.883019065,
+      "lng": 2.3858660969,
+      "status": "destroyed",
+      "points": 20,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/pa_438/",
+      "source": "signalement-utilisateur"
+    },
+    {
       "_comment": "Signale abime par un utilisateur (30/08/2026), etait ok chez goguelnikov.",
       "id": "PA_1253",
       "lat": 48.8659095298,
