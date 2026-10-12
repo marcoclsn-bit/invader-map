@@ -1,6 +1,6 @@
 {
-  "version": 7,
-  "updatedAt": "2026-10-02",
+  "version": 8,
+  "updatedAt": "2026-10-12",
   "city": "STK",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 0,
@@ -122,7 +122,7 @@
       "city": "STK",
       "lat": 59.332944,
       "lng": 18.071306,
-      "status": "ok",
+      "status": "damaged",
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/stk_08/",
@@ -130,7 +130,7 @@
       "statusFromPnote": false,
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/STK/STK_08-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/STK/STK_08-septembre2026.jpg",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/STK/STK_08-septembre2026-2.jpg",
       "datePosed": "2026-09-07"
     },
     {
