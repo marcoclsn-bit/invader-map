@@ -1,9 +1,21 @@
 {
-  "version": 52,
-  "updatedAt": "2026-10-12",
+  "version": 53,
+  "updatedAt": "2026-10-14",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "source": "invader-spotter.art",
   "events": [
+    {
+      "type": "added",
+      "id": "LAP_77",
+      "city": "LAP",
+      "date": "2026-10-13"
+    },
+    {
+      "type": "destroyed",
+      "id": "LAP_05",
+      "city": "LAP",
+      "date": "2026-10-13"
+    },
     {
       "type": "added",
       "id": "LAP_01",
