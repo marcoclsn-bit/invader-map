@@ -305,11 +305,11 @@
       "source": "signalement-utilisateur"
     },
     {
-      "_comment": "Signale abime par un utilisateur (30/08/2026), etait ok chez goguelnikov.",
+      "_comment": "Signale abime par un utilisateur (30/08/2026), puis DETRUIT (15/10/2026). L'amont (goguelnikov, pnote et invader-spotter) la donne toujours ok : l'entree reste necessaire.",
       "id": "PA_1253",
       "lat": 48.8659095298,
       "lng": 2.303645337,
-      "status": "damaged",
+      "status": "destroyed",
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/pa_1253/",
@@ -516,6 +516,28 @@
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/lil_02/",
+      "source": "signalement-utilisateur"
+    },
+    {
+      "_comment": "Signale NON VISIBLE par un utilisateur (15/10/2026) : masquee par du lierre. L'amont (goguelnikov, pnote et invader-spotter) la donne ok.",
+      "id": "PA_567",
+      "lat": 48.8760229293,
+      "lng": 2.4020905421,
+      "status": "hidden",
+      "points": 30,
+      "hint": "Difficile à flasher à cause du lierre.",
+      "instagramUrl": "https://www.instagram.com/explore/tags/pa_567/",
+      "source": "signalement-utilisateur"
+    },
+    {
+      "_comment": "Signale DETRUIT par un utilisateur (15/10/2026). L'amont (goguelnikov, pnote et invader-spotter) la donne ok.",
+      "id": "PA_188",
+      "lat": 48.8579160975,
+      "lng": 2.3601932982,
+      "status": "destroyed",
+      "points": 30,
+      "hint": "",
+      "instagramUrl": "https://www.instagram.com/explore/tags/pa_188/",
       "source": "signalement-utilisateur"
     }
   ]
