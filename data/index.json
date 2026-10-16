@@ -1,6 +1,6 @@
 {
-  "version": 63,
-  "updatedAt": "2026-10-15",
+  "version": 64,
+  "updatedAt": "2026-10-16",
   "cities": [
     {
       "code": "AIX",
@@ -431,8 +431,8 @@
       "code": "FAO",
       "name": "Faro",
       "count": 4,
-      "destroyed": 1,
-      "version": 6,
+      "destroyed": 0,
+      "version": 7,
       "center": {
         "lat": 37.0194,
         "lng": -7.9322
@@ -1027,7 +1027,7 @@
       "name": "New York",
       "count": 192,
       "destroyed": 175,
-      "version": 10,
+      "version": 11,
       "center": {
         "lat": 40.7128,
         "lng": -74.006
