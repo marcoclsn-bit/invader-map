@@ -1,6 +1,6 @@
 {
-  "version": 41,
-  "updatedAt": "2026-10-21",
+  "version": 42,
+  "updatedAt": "2026-10-24",
   "city": "PA",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 1528,
@@ -18030,14 +18030,14 @@
       "city": "PA",
       "lat": 48.8354170051,
       "lng": 2.3687931159,
-      "status": "damaged",
+      "status": "ok",
       "points": 100,
       "hint": "Dr House!",
       "instagramUrl": "https://www.instagram.com/explore/tags/pa_1205/",
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1205-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/PA/PA_1205-octobre2025.jpg",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/PA/PA_1205-juin2016.jpg",
       "datePosed": "2016-06-22"
     },
     {

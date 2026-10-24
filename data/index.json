@@ -1,6 +1,6 @@
 {
-  "version": 67,
-  "updatedAt": "2026-10-23",
+  "version": 68,
+  "updatedAt": "2026-10-24",
   "cities": [
     {
       "code": "AIX",
@@ -789,7 +789,7 @@
       "name": "Marseille",
       "count": 97,
       "destroyed": 24,
-      "version": 7,
+      "version": 8,
       "center": {
         "lat": 43.2965,
         "lng": 5.3698
@@ -1061,7 +1061,7 @@
       "name": "Paris",
       "count": 1598,
       "destroyed": 255,
-      "version": 41,
+      "version": 42,
       "center": {
         "lat": 48.8566,
         "lng": 2.3522
