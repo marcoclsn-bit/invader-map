@@ -1,6 +1,6 @@
 {
-  "version": 68,
-  "updatedAt": "2026-10-24",
+  "version": 69,
+  "updatedAt": "2026-10-25",
   "cities": [
     {
       "code": "AIX",
@@ -636,7 +636,7 @@
       "name": "Los Angeles",
       "count": 214,
       "destroyed": 189,
-      "version": 7,
+      "version": 8,
       "center": {
         "lat": 34.0522,
         "lng": -118.243
