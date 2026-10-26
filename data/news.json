@@ -1,9 +1,34 @@
 {
-  "version": 63,
-  "updatedAt": "2026-10-25",
+  "version": 64,
+  "updatedAt": "2026-10-26",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "source": "invader-spotter.art",
   "events": [
+    {
+      "type": "added",
+      "id": "LAP_10",
+      "city": "LAP",
+      "date": "2026-10-25"
+    },
+    {
+      "type": "added",
+      "id": "LAP_75",
+      "city": "LAP",
+      "date": "2026-10-25"
+    },
+    {
+      "type": "added",
+      "id": "LAP_85",
+      "city": "LAP",
+      "date": "2026-10-25"
+    },
+    {
+      "type": "destroyed",
+      "id": "VRS_01",
+      "city": "VRS",
+      "date": "2026-10-25",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_01-grosplan.png"
+    },
     {
       "type": "damaged",
       "id": "LA_07",

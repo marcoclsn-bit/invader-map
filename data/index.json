@@ -1,6 +1,6 @@
 {
-  "version": 69,
-  "updatedAt": "2026-10-25",
+  "version": 70,
+  "updatedAt": "2026-10-26",
   "cities": [
     {
       "code": "AIX",
@@ -1400,8 +1400,8 @@
       "code": "VRS",
       "name": "Versailles",
       "count": 42,
-      "destroyed": 16,
-      "version": 8,
+      "destroyed": 17,
+      "version": 9,
       "center": {
         "lat": 48.80571,
         "lng": 2.128069

@@ -1,6 +1,6 @@
 {
-  "version": 8,
-  "updatedAt": "2026-08-13",
+  "version": 9,
+  "updatedAt": "2026-10-26",
   "city": "VRS",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 42,
@@ -10,14 +10,14 @@
       "city": "VRS",
       "lat": 48.8077031992,
       "lng": 2.1308988348,
-      "status": "ok",
+      "status": "destroyed",
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/vrs_01/",
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/VRS/VRS_01-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/VRS/VRS_01-juin2017.jpg",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/VRS/VRS_01-octobre2026.jpg",
       "datePosed": "2017-06-06"
     },
     {
