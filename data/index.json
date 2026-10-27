@@ -1,6 +1,6 @@
 {
-  "version": 70,
-  "updatedAt": "2026-10-26",
+  "version": 71,
+  "updatedAt": "2026-10-27",
   "cities": [
     {
       "code": "AIX",
@@ -109,7 +109,7 @@
       "name": "Biarritz Anglet-Bayonne",
       "count": 60,
       "destroyed": 7,
-      "version": 11,
+      "version": 12,
       "center": {
         "lat": 43.483143,
         "lng": -1.530272
@@ -1060,8 +1060,8 @@
       "code": "PA",
       "name": "Paris",
       "count": 1598,
-      "destroyed": 255,
-      "version": 42,
+      "destroyed": 256,
+      "version": 43,
       "center": {
         "lat": 48.8566,
         "lng": 2.3522

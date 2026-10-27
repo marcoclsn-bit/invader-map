@@ -1,6 +1,6 @@
 {
-  "version": 42,
-  "updatedAt": "2026-10-24",
+  "version": 43,
+  "updatedAt": "2026-10-27",
   "city": "PA",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 1528,
@@ -2682,7 +2682,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_0179-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/PA/PA_0179-juillet2026.jpg",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/PA/PA_0179-aout2019.jpg",
       "datePosed": "1999-04-26"
     },
     {
@@ -3811,14 +3811,14 @@
       "city": "PA",
       "lat": 48.8614476853,
       "lng": 2.29139736,
-      "status": "damaged",
+      "status": "destroyed",
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/pa_255/",
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_0255-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/PA/PA_0255-mai2026.jpg",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/PA/PA_0255-octobre2026.jpg",
       "datePosed": "2000-01-31"
     },
     {
@@ -19678,14 +19678,14 @@
       "city": "PA",
       "lat": 48.8235213116,
       "lng": 2.3252883959,
-      "status": "ok",
+      "status": "damaged",
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/pa_1315/",
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1315-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/PA/PA_1315-novembre2017.jpg",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/PA/PA_1315-octobre2026.jpg",
       "datePosed": "2017-10-24"
     },
     {

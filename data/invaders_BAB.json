@@ -1,6 +1,6 @@
 {
-  "version": 11,
-  "updatedAt": "2026-10-20",
+  "version": 12,
+  "updatedAt": "2026-10-27",
   "city": "BAB",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 60,
@@ -135,7 +135,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/BAB/BAB_09-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/BAB/BAB_09-novembre2024.jpg",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/BAB/BAB_09-octobre2026.jpg",
       "datePosed": "2024-11-08"
     },
     {
