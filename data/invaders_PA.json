@@ -1,6 +1,6 @@
 {
-  "version": 43,
-  "updatedAt": "2026-10-27",
+  "version": 44,
+  "updatedAt": "2026-10-28",
   "city": "PA",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 1528,
@@ -2675,7 +2675,7 @@
       "city": "PA",
       "lat": 48.8273494174,
       "lng": 2.5071296224,
-      "status": "damaged",
+      "status": "destroyed",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/pa_179/",
