@@ -1,6 +1,6 @@
 {
-  "version": 45,
-  "updatedAt": "2026-10-30",
+  "version": 46,
+  "updatedAt": "2026-10-31",
   "city": "PA",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 1528,
@@ -2300,14 +2300,14 @@
       "city": "PA",
       "lat": 48.841689905,
       "lng": 2.400891678,
-      "status": "destroyed",
+      "status": "ok",
       "points": 50,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/pa_154/",
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_0154-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/PA/PA_0154-juin2025.jpg",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/PA/PA_0154-septembre2016.jpg",
       "datePosed": "1999-01-16"
     },
     {
@@ -14402,14 +14402,14 @@
       "city": "PA",
       "lat": 48.8661835644,
       "lng": 2.3645556672,
-      "status": "destroyed",
+      "status": "ok",
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/pa_963/",
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_0963-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/PA/PA_0963-mars2025.jpg",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/PA/PA_0963-decembre2018.jpg",
       "datePosed": "2011-05-02"
     },
     {
@@ -19258,14 +19258,14 @@
       "city": "PA",
       "lat": 48.8619595068,
       "lng": 2.4232971494,
-      "status": "destroyed",
+      "status": "ok",
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/pa_1287/",
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1287-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/PA/PA_1287-octobre2024.jpg",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/PA/PA_1287-septembre2017.jpg",
       "datePosed": "2017-07-20"
     },
     {
@@ -23303,7 +23303,7 @@
       "statusFromPnote": true,
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1555-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/PA/PA_1555-octobre2026.jpg",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/PA/PA_1555-octobre2026-2.jpg",
       "datePosed": "2026-01-21"
     },
     {
