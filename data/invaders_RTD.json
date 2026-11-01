@@ -1,6 +1,6 @@
 {
-  "version": 8,
-  "updatedAt": "2026-09-29",
+  "version": 9,
+  "updatedAt": "2026-11-01",
   "city": "RTD",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 25,
@@ -104,7 +104,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/RTD/RTD_07-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/RTD/RTD_07-mai2026.jpg",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/RTD/RTD_07-novembre2026.jpg",
       "datePosed": "2001-11-01"
     },
     {
