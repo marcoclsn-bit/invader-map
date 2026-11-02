@@ -1,6 +1,6 @@
 {
-  "version": 9,
-  "updatedAt": "2026-11-01",
+  "version": 10,
+  "updatedAt": "2026-11-02",
   "city": "RTD",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 25,
@@ -97,7 +97,7 @@
       "city": "RTD",
       "lat": 51.9197575277,
       "lng": 4.465478533,
-      "status": "damaged",
+      "status": "destroyed",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/rtd_07/",

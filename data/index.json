@@ -1,6 +1,6 @@
 {
-  "version": 75,
-  "updatedAt": "2026-11-01",
+  "version": 76,
+  "updatedAt": "2026-11-02",
   "cities": [
     {
       "code": "AIX",
@@ -1026,8 +1026,8 @@
       "code": "NY",
       "name": "New York",
       "count": 192,
-      "destroyed": 175,
-      "version": 11,
+      "destroyed": 176,
+      "version": 12,
       "center": {
         "lat": 40.7128,
         "lng": -74.006
@@ -1247,8 +1247,8 @@
       "code": "RTD",
       "name": "Rotterdam",
       "count": 25,
-      "destroyed": 4,
-      "version": 9,
+      "destroyed": 5,
+      "version": 10,
       "center": {
         "lat": 51.9225,
         "lng": 4.4792
