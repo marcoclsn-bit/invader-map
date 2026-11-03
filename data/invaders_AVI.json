@@ -1,6 +1,6 @@
 {
-  "version": 7,
-  "updatedAt": "2026-08-13",
+  "version": 8,
+  "updatedAt": "2026-11-03",
   "city": "AVI",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 41,
@@ -62,7 +62,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/AVI/AVI_04-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/AVI/AVI_04-juin2018.jpg",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/AVI/AVI_04-novembre2026.jpg",
       "datePosed": "2000-05-26"
     },
     {
