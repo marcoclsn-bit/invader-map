@@ -1,6 +1,6 @@
 {
-  "version": 78,
-  "updatedAt": "2026-11-06",
+  "version": 79,
+  "updatedAt": "2026-11-07",
   "cities": [
     {
       "code": "AIX",
@@ -296,7 +296,7 @@
       "name": "Cancún",
       "count": 3,
       "destroyed": 0,
-      "version": 6,
+      "version": 7,
       "center": {
         "lat": 21.164,
         "lng": -86.765
