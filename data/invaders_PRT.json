@@ -1,6 +1,6 @@
 {
-  "version": 8,
-  "updatedAt": "2026-11-09",
+  "version": 9,
+  "updatedAt": "2026-11-10",
   "city": "PRT",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 26,
@@ -84,14 +84,14 @@
       "city": "PRT",
       "lat": -31.9528672973,
       "lng": 115.8592302382,
-      "status": "destroyed",
+      "status": "ok",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/prt_06/",
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/PRT/PRT_06-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/PRT/PRT_06-novembre2025.jpg",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/PRT/PRT_06-archive.jpg",
       "datePosed": "2002-10-21"
     },
     {
@@ -150,7 +150,6 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/PRT/PRT_10-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/PRT/PRT_10-november2025.jpg",
       "datePosed": "2002-10-22"
     },
     {
@@ -158,14 +157,13 @@
       "city": "PRT",
       "lat": -31.9545901834,
       "lng": 115.8603674553,
-      "status": "destroyed",
+      "status": "ok",
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/prt_11/",
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/PRT/PRT_11-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/PRT/PRT_11-november2025.jpg",
       "datePosed": "2002-10-22"
     },
     {
@@ -180,7 +178,6 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/PRT/PRT_12-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/PRT/PRT_12-novembre2025.jpg",
       "datePosed": "2002-10-22"
     },
     {
@@ -298,7 +295,6 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/PRT/PRT_20-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/PRT/PRT_20-november2025.jpg",
       "datePosed": "2002-10-25"
     },
     {

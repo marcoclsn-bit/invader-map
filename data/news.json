@@ -1,6 +1,6 @@
 {
-  "version": 75,
-  "updatedAt": "2026-11-09",
+  "version": 76,
+  "updatedAt": "2026-11-10",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "source": "invader-spotter.art",
   "events": [
@@ -41,6 +41,13 @@
     },
     {
       "type": "reactivated",
+      "id": "PRT_06",
+      "city": "PRT",
+      "date": "2026-11-09",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PRT/PRT_06-grosplan.png"
+    },
+    {
+      "type": "reactivated",
       "id": "PRT_07",
       "city": "PRT",
       "date": "2026-11-09",
@@ -55,10 +62,10 @@
     },
     {
       "type": "reactivated",
-      "id": "PRT_26",
+      "id": "PRT_11",
       "city": "PRT",
       "date": "2026-11-09",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/PRT/PRT_26-grosplan.png"
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PRT/PRT_11-grosplan.png"
     },
     {
       "type": "reactivated",
