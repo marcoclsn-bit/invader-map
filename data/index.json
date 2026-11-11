@@ -1,6 +1,6 @@
 {
-  "version": 81,
-  "updatedAt": "2026-11-10",
+  "version": 82,
+  "updatedAt": "2026-11-11",
   "cities": [
     {
       "code": "AIX",
@@ -619,7 +619,7 @@
       "name": "Cologne",
       "count": 27,
       "destroyed": 4,
-      "version": 6,
+      "version": 7,
       "center": {
         "lat": 50.9333,
         "lng": 6.95
@@ -687,7 +687,7 @@
       "name": "London",
       "count": 193,
       "destroyed": 69,
-      "version": 10,
+      "version": 11,
       "center": {
         "lat": 51.5074,
         "lng": -0.1278
@@ -839,8 +839,8 @@
       "code": "MIA",
       "name": "Miami",
       "count": 80,
-      "destroyed": 63,
-      "version": 7,
+      "destroyed": 64,
+      "version": 8,
       "center": {
         "lat": 25.7617,
         "lng": -80.1918
@@ -856,8 +856,8 @@
       "code": "MLB",
       "name": "Melbourne",
       "count": 16,
-      "destroyed": 4,
-      "version": 9,
+      "destroyed": 2,
+      "version": 10,
       "center": {
         "lat": -37.814,
         "lng": 144.963
@@ -1060,8 +1060,8 @@
       "code": "PA",
       "name": "Paris",
       "count": 1598,
-      "destroyed": 253,
-      "version": 51,
+      "destroyed": 254,
+      "version": 52,
       "center": {
         "lat": 48.8566,
         "lng": 2.3522

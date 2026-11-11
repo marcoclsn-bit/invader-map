@@ -1,6 +1,6 @@
 {
-  "version": 7,
-  "updatedAt": "2026-08-13",
+  "version": 8,
+  "updatedAt": "2026-11-11",
   "city": "MIA",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 80,
@@ -1130,7 +1130,7 @@
       "city": "MIA",
       "lat": 25.7916497598,
       "lng": -80.1492027121,
-      "status": "ok",
+      "status": "destroyed",
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mia_81/",

@@ -1,6 +1,6 @@
 {
-  "version": 9,
-  "updatedAt": "2026-11-01",
+  "version": 10,
+  "updatedAt": "2026-11-11",
   "city": "MLB",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 16,
@@ -160,14 +160,14 @@
       "city": "MLB",
       "lat": -37.8187936297,
       "lng": 144.9682460347,
-      "status": "destroyed",
+      "status": "ok",
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mlb_19/",
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_19-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/MLB/MLB_19-mai2026.jpg",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLB/MLB_19-decembre2023.jpg",
       "datePosed": "2002-11-03"
     },
     {
@@ -190,14 +190,14 @@
       "city": "MLB",
       "lat": -37.8171650186,
       "lng": 144.9651248871,
-      "status": "destroyed",
+      "status": "damaged",
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/mlb_22/",
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_22-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/MLB/MLB_22-octobre2026.jpg",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/MLB/MLB_22-novembre2026.jpg",
       "datePosed": "2002-11-03"
     },
     {

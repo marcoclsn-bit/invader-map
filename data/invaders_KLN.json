@@ -1,6 +1,6 @@
 {
-  "version": 6,
-  "updatedAt": "2026-09-14",
+  "version": 7,
+  "updatedAt": "2026-11-11",
   "city": "KLN",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 27,
@@ -55,14 +55,14 @@
       "city": "KLN",
       "lat": 50.9409918291,
       "lng": 6.9452655655,
-      "status": "ok",
+      "status": "damaged",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/kln_04/",
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_04-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/KLN/KLN_04-juin2017.jpg",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/KLN/KLN_04-novembre2026.jpg",
       "datePosed": "2007-02-10"
     },
     {
@@ -174,13 +174,14 @@
       "city": "KLN",
       "lat": 50.9305458647,
       "lng": 6.9393572484,
-      "status": "ok",
+      "status": "damaged",
       "points": 20,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/kln_12/",
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_12-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/KLN/KLN_12-novembre2026.jpg",
       "datePosed": "2007-02-12"
     },
     {
@@ -225,7 +226,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_15-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/KLN/KLN_15-juin2017.jpg",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/KLN/KLN_15-novembre2026.jpg",
       "datePosed": "2007-02-12"
     },
     {
@@ -344,7 +345,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_23-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/KLN/KLN_23-juin2017.jpg",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/KLN/KLN_23-novembre2026.jpg",
       "datePosed": "2007-02-13"
     },
     {

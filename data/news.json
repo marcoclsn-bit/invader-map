@@ -1,9 +1,72 @@
 {
-  "version": 76,
-  "updatedAt": "2026-11-10",
+  "version": 77,
+  "updatedAt": "2026-11-11",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "source": "invader-spotter.art",
   "events": [
+    {
+      "type": "reactivated",
+      "id": "MLB_04",
+      "city": "MLB",
+      "date": "2026-11-11",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_04-grosplan.png"
+    },
+    {
+      "type": "reactivated",
+      "id": "MLB_19",
+      "city": "MLB",
+      "date": "2026-11-11",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_19-grosplan.png"
+    },
+    {
+      "type": "reactivated",
+      "id": "MLB_21",
+      "city": "MLB",
+      "date": "2026-11-11",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_21-grosplan.png"
+    },
+    {
+      "type": "updated",
+      "id": "MLB_22",
+      "city": "MLB",
+      "date": "2026-11-11",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_22-grosplan.png"
+    },
+    {
+      "type": "damaged",
+      "id": "KLN_04",
+      "city": "KLN",
+      "date": "2026-11-11",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_04-grosplan.png"
+    },
+    {
+      "type": "updated",
+      "id": "PA_1222",
+      "city": "PA",
+      "date": "2026-11-10",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1222-grosplan.png"
+    },
+    {
+      "type": "damaged",
+      "id": "LDN_121",
+      "city": "LDN",
+      "date": "2026-11-10",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/LDN/LDN_121-grosplan.png"
+    },
+    {
+      "type": "destroyed",
+      "id": "MIA_81",
+      "city": "MIA",
+      "date": "2026-11-10",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MIA/MIA_81-grosplan.png"
+    },
+    {
+      "type": "destroyed",
+      "id": "PA_59",
+      "city": "PA",
+      "date": "2026-11-10",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_0059-grosplan.png"
+    },
     {
       "type": "reactivated",
       "id": "PA_768",

@@ -1,6 +1,6 @@
 {
-  "version": 10,
-  "updatedAt": "2026-10-05",
+  "version": 11,
+  "updatedAt": "2026-11-11",
   "city": "LDN",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 162,
@@ -1774,7 +1774,7 @@
       "city": "LDN",
       "lat": 51.5272646948,
       "lng": -0.0817225573,
-      "status": "ok",
+      "status": "damaged",
       "points": 30,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/ldn_121/",
