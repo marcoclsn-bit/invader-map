@@ -1,6 +1,6 @@
 {
-  "version": 82,
-  "updatedAt": "2026-11-11",
+  "version": 83,
+  "updatedAt": "2026-11-12",
   "cities": [
     {
       "code": "AIX",
@@ -856,8 +856,8 @@
       "code": "MLB",
       "name": "Melbourne",
       "count": 16,
-      "destroyed": 2,
-      "version": 10,
+      "destroyed": 1,
+      "version": 11,
       "center": {
         "lat": -37.814,
         "lng": 144.963
@@ -1061,7 +1061,7 @@
       "name": "Paris",
       "count": 1598,
       "destroyed": 254,
-      "version": 52,
+      "version": 53,
       "center": {
         "lat": 48.8566,
         "lng": 2.3522

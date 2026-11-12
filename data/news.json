@@ -1,9 +1,35 @@
 {
-  "version": 77,
-  "updatedAt": "2026-11-11",
+  "version": 78,
+  "updatedAt": "2026-11-12",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "source": "invader-spotter.art",
   "events": [
+    {
+      "type": "added",
+      "id": "LAP_13",
+      "city": "LAP",
+      "date": "2026-11-12"
+    },
+    {
+      "type": "added",
+      "id": "LAP_41",
+      "city": "LAP",
+      "date": "2026-11-12"
+    },
+    {
+      "type": "reactivated",
+      "id": "MLB_01",
+      "city": "MLB",
+      "date": "2026-11-12",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_01-grosplan.png"
+    },
+    {
+      "type": "reactivated",
+      "id": "MLB_09",
+      "city": "MLB",
+      "date": "2026-11-12",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_09-grosplan.png"
+    },
     {
       "type": "reactivated",
       "id": "MLB_04",
@@ -31,13 +57,6 @@
       "city": "MLB",
       "date": "2026-11-11",
       "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_22-grosplan.png"
-    },
-    {
-      "type": "damaged",
-      "id": "KLN_04",
-      "city": "KLN",
-      "date": "2026-11-11",
-      "photoUrl": "https://www.invader-spotter.art/grosplan/KLN/KLN_04-grosplan.png"
     },
     {
       "type": "updated",

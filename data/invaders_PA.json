@@ -1,6 +1,6 @@
 {
-  "version": 52,
-  "updatedAt": "2026-11-11",
+  "version": 53,
+  "updatedAt": "2026-11-12",
   "city": "PA",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 1528,
@@ -15548,7 +15548,7 @@
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/PA/PA_1039-grosplan.png",
-      "photoWideUrl": "https://www.invader-spotter.art/photos/PA/PA_1039-aout2025.jpg",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/PA/PA_1039-avril2015.jpg",
       "datePosed": "2013-02-10"
     },
     {
