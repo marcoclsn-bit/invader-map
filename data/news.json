@@ -1,9 +1,44 @@
 {
-  "version": 81,
-  "updatedAt": "2026-11-15",
+  "version": 82,
+  "updatedAt": "2026-11-17",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "source": "invader-spotter.art",
   "events": [
+    {
+      "type": "reactivated",
+      "id": "BGK_03",
+      "city": "BGK",
+      "date": "2026-11-17",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_03-grosplan.png"
+    },
+    {
+      "type": "reactivated",
+      "id": "BGK_16",
+      "city": "BGK",
+      "date": "2026-11-17",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_16-grosplan.png"
+    },
+    {
+      "type": "reactivated",
+      "id": "BGK_21",
+      "city": "BGK",
+      "date": "2026-11-17",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_21-grosplan.png"
+    },
+    {
+      "type": "reactivated",
+      "id": "BGK_33",
+      "city": "BGK",
+      "date": "2026-11-17",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_33-grosplan.png"
+    },
+    {
+      "type": "reactivated",
+      "id": "BGK_45",
+      "city": "BGK",
+      "date": "2026-11-17",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/BGK/BGK_45-grosplan.png"
+    },
     {
       "type": "added",
       "id": "LAP_36",

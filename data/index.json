@@ -1,6 +1,6 @@
 {
-  "version": 84,
-  "updatedAt": "2026-11-16",
+  "version": 85,
+  "updatedAt": "2026-11-17",
   "cities": [
     {
       "code": "AIX",
@@ -142,8 +142,8 @@
       "code": "BGK",
       "name": "Bangkok",
       "count": 44,
-      "destroyed": 25,
-      "version": 9,
+      "destroyed": 20,
+      "version": 10,
       "center": {
         "lat": 13.7563,
         "lng": 100.502
