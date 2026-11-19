@@ -1,6 +1,6 @@
 {
-  "version": 85,
-  "updatedAt": "2026-11-18",
+  "version": 86,
+  "updatedAt": "2026-11-19",
   "cities": [
     {
       "code": "AIX",
@@ -109,7 +109,7 @@
       "name": "Biarritz Anglet-Bayonne",
       "count": 60,
       "destroyed": 7,
-      "version": 12,
+      "version": 13,
       "center": {
         "lat": 43.483143,
         "lng": -1.530272
@@ -1128,8 +1128,8 @@
       "code": "PRT",
       "name": "Perth",
       "count": 26,
-      "destroyed": 3,
-      "version": 10,
+      "destroyed": 4,
+      "version": 11,
       "center": {
         "lat": -31.964,
         "lng": 115.83

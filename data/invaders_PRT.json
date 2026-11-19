@@ -1,6 +1,6 @@
 {
-  "version": 10,
-  "updatedAt": "2026-11-13",
+  "version": 11,
+  "updatedAt": "2026-11-19",
   "city": "PRT",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 26,
@@ -25,13 +25,14 @@
       "city": "PRT",
       "lat": -31.9511603796,
       "lng": 115.8554314925,
-      "status": "ok",
+      "status": "destroyed",
       "points": 10,
       "hint": "",
       "instagramUrl": "https://www.instagram.com/explore/tags/prt_02/",
       "source": "goguelnikov",
       "statusFromPnote": true,
       "photoUrl": "https://www.invader-spotter.art/grosplan/PRT/PRT_02-grosplan.png",
+      "photoWideUrl": "https://www.invader-spotter.art/photos/PRT/PRT_02-novembre2026-2.jpg",
       "datePosed": "2002-10-20"
     },
     {
