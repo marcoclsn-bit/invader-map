@@ -1,9 +1,48 @@
 {
-  "version": 87,
-  "updatedAt": "2026-11-22",
+  "version": 88,
+  "updatedAt": "2026-11-23",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "source": "invader-spotter.art",
   "events": [
+    {
+      "type": "destroyed",
+      "id": "MLB_17",
+      "city": "MLB",
+      "date": "2026-11-23",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/MLB/MLB_17-grosplan.png"
+    },
+    {
+      "type": "destroyed",
+      "id": "PRT_12",
+      "city": "PRT",
+      "date": "2026-11-23",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PRT/PRT_12-grosplan.png"
+    },
+    {
+      "type": "destroyed",
+      "id": "PRT_19",
+      "city": "PRT",
+      "date": "2026-11-23",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/PRT/PRT_19-grosplan.png"
+    },
+    {
+      "type": "added",
+      "id": "BDA_08",
+      "city": "BDA",
+      "date": "2026-11-22"
+    },
+    {
+      "type": "added",
+      "id": "BDA_17",
+      "city": "BDA",
+      "date": "2026-11-22"
+    },
+    {
+      "type": "added",
+      "id": "BDA_46",
+      "city": "BDA",
+      "date": "2026-11-22"
+    },
     {
       "type": "added",
       "id": "BDA_04",

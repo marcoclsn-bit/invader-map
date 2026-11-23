@@ -1,6 +1,6 @@
 {
-  "version": 86,
-  "updatedAt": "2026-11-22",
+  "version": 87,
+  "updatedAt": "2026-11-23",
   "cities": [
     {
       "code": "AIX",
@@ -1129,7 +1129,7 @@
       "name": "Perth",
       "count": 26,
       "destroyed": 4,
-      "version": 11,
+      "version": 12,
       "center": {
         "lat": -31.964,
         "lng": 115.83
