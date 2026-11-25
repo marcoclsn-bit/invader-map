@@ -1,6 +1,6 @@
 {
-  "version": 88,
-  "updatedAt": "2026-11-24",
+  "version": 89,
+  "updatedAt": "2026-11-25",
   "cities": [
     {
       "code": "AIX",
@@ -602,7 +602,7 @@
       "name": "Katmandu",
       "count": 21,
       "destroyed": 7,
-      "version": 7,
+      "version": 8,
       "center": {
         "lat": 27.7172,
         "lng": 85.324
@@ -1061,7 +1061,7 @@
       "name": "Paris",
       "count": 1598,
       "destroyed": 254,
-      "version": 53,
+      "version": 54,
       "center": {
         "lat": 48.8566,
         "lng": 2.3522
@@ -1316,7 +1316,7 @@
       "name": "Stockholm",
       "count": 19,
       "destroyed": 4,
-      "version": 10,
+      "version": 11,
       "center": {
         "lat": 59.3293,
         "lng": 18.0686

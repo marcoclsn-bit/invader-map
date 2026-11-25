@@ -1,6 +1,6 @@
 {
-  "version": 10,
-  "updatedAt": "2026-10-31",
+  "version": 11,
+  "updatedAt": "2026-11-25",
   "city": "STK",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "_baseCount": 0,
@@ -19,7 +19,7 @@
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/STK/STK_01-grosplan.png",
       "photoWideUrl": "https://www.invader-spotter.art/photos/STK/STK_01-septembre2026.jpg",
-      "datePosed": "2026-09-07"
+      "datePosed": "2026-09-03"
     },
     {
       "id": "STK_02",
@@ -35,7 +35,7 @@
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/STK/STK_02-grosplan.png",
       "photoWideUrl": "https://www.invader-spotter.art/photos/STK/STK_02-septembre2026.jpg",
-      "datePosed": "2026-09-07"
+      "datePosed": "2026-09-03"
     },
     {
       "id": "STK_03",
@@ -51,7 +51,7 @@
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/STK/STK_03-grosplan.png",
       "photoWideUrl": "https://www.invader-spotter.art/photos/STK/STK_03-septembre2026.jpg",
-      "datePosed": "2026-09-07"
+      "datePosed": "2026-09-03"
     },
     {
       "id": "STK_04",
@@ -67,7 +67,7 @@
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/STK/STK_04-grosplan.png",
       "photoWideUrl": "https://www.invader-spotter.art/photos/STK/STK_04-septembre2026.jpg",
-      "datePosed": "2026-09-07"
+      "datePosed": "2026-09-04"
     },
     {
       "id": "STK_05",
@@ -83,7 +83,7 @@
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/STK/STK_05-grosplan.png",
       "photoWideUrl": "https://www.invader-spotter.art/photos/STK/STK_05-septembre2026.jpg",
-      "datePosed": "2026-09-07"
+      "datePosed": "2026-09-04"
     },
     {
       "id": "STK_06",
@@ -99,7 +99,7 @@
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/STK/STK_06-grosplan.png",
       "photoWideUrl": "https://www.invader-spotter.art/photos/STK/STK_06-septembre2026.jpg",
-      "datePosed": "2026-09-07"
+      "datePosed": "2026-09-04"
     },
     {
       "id": "STK_07",
@@ -115,7 +115,7 @@
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/STK/STK_07-grosplan.png",
       "photoWideUrl": "https://www.invader-spotter.art/photos/STK/STK_07-septembre2026.jpg",
-      "datePosed": "2026-09-07"
+      "datePosed": "2026-09-05"
     },
     {
       "id": "STK_08",
@@ -131,7 +131,7 @@
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/STK/STK_08-grosplan.png",
       "photoWideUrl": "https://www.invader-spotter.art/photos/STK/STK_08-septembre2026-2.jpg",
-      "datePosed": "2026-09-07"
+      "datePosed": "2026-09-05"
     },
     {
       "id": "STK_09",
@@ -147,7 +147,7 @@
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/STK/STK_09-grosplan.png",
       "photoWideUrl": "https://www.invader-spotter.art/photos/STK/STK_09-septembre2026.jpg",
-      "datePosed": "2026-09-07"
+      "datePosed": "2026-09-05"
     },
     {
       "id": "STK_10",
@@ -163,7 +163,7 @@
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/STK/STK_10-grosplan.png",
       "photoWideUrl": "https://www.invader-spotter.art/photos/STK/STK_10-septembre2026.jpg",
-      "datePosed": "2026-09-07"
+      "datePosed": "2026-09-05"
     },
     {
       "id": "STK_11",
@@ -179,7 +179,7 @@
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/STK/STK_11-grosplan.png",
       "photoWideUrl": "https://www.invader-spotter.art/photos/STK/STK_11-octobre2026.jpg",
-      "datePosed": "2026-09-07"
+      "datePosed": "2026-09-06"
     },
     {
       "id": "STK_12",
@@ -194,7 +194,7 @@
       "statusFromPnote": false,
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/STK/STK_12-grosplan.png",
-      "datePosed": "2026-09-07"
+      "datePosed": "2026-09-06"
     },
     {
       "id": "STK_13",
@@ -210,7 +210,7 @@
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/STK/STK_13-grosplan.png",
       "photoWideUrl": "https://www.invader-spotter.art/photos/STK/STK_13-octobre2026.jpg",
-      "datePosed": "2026-09-07"
+      "datePosed": "2026-09-06"
     },
     {
       "id": "STK_14",
@@ -226,7 +226,7 @@
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/STK/STK_14-grosplan.png",
       "photoWideUrl": "https://www.invader-spotter.art/photos/STK/STK_14-septembre2026.jpg",
-      "datePosed": "2026-09-07"
+      "datePosed": "2026-09-06"
     },
     {
       "id": "STK_15",
@@ -242,7 +242,7 @@
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/STK/STK_15-grosplan.png",
       "photoWideUrl": "https://www.invader-spotter.art/photos/STK/STK_15-septembre2026.jpg",
-      "datePosed": "2026-09-07"
+      "datePosed": "2026-09-06"
     },
     {
       "id": "STK_16",
@@ -258,7 +258,7 @@
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/STK/STK_16-grosplan.png",
       "photoWideUrl": "https://www.invader-spotter.art/photos/STK/STK_16-septembre2026.jpg",
-      "datePosed": "2026-09-07"
+      "datePosed": "2026-09-06"
     },
     {
       "id": "STK_17",
@@ -274,7 +274,7 @@
       "pointsSource": "invader-spotter",
       "photoUrl": "https://www.invader-spotter.art/grosplan/STK/STK_17-grosplan.png",
       "photoWideUrl": "https://www.invader-spotter.art/photos/STK/STK_17-septembre2026.jpg",
-      "datePosed": "2026-09-07"
+      "datePosed": "2026-09-06"
     },
     {
       "id": "STK_18",

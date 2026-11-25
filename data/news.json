@@ -1,9 +1,41 @@
 {
-  "version": 88,
-  "updatedAt": "2026-11-23",
+  "version": 89,
+  "updatedAt": "2026-11-25",
   "attribution": "Données issues de goguelnikov/SpaceInvaders (communauté Space Invader hunters, licence ODbL) et pnote.eu (statuts à jour + identifiants supplémentaires, avec autorisation de l'auteur). Certaines coordonnées dérivées d'OpenStreetMap, licence ODbL.",
   "source": "invader-spotter.art",
   "events": [
+    {
+      "type": "added",
+      "id": "LAP_60",
+      "city": "LAP",
+      "date": "2026-11-25"
+    },
+    {
+      "type": "reactivated",
+      "id": "KAT_07",
+      "city": "KAT",
+      "date": "2026-11-25",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_07-grosplan.png"
+    },
+    {
+      "type": "reactivated",
+      "id": "KAT_18",
+      "city": "KAT",
+      "date": "2026-11-25",
+      "photoUrl": "https://www.invader-spotter.art/grosplan/KAT/KAT_18-grosplan.png"
+    },
+    {
+      "type": "added",
+      "id": "LAP_18",
+      "city": "LAP",
+      "date": "2026-11-24"
+    },
+    {
+      "type": "added",
+      "id": "LAP_69",
+      "city": "LAP",
+      "date": "2026-11-24"
+    },
     {
       "type": "destroyed",
       "id": "MLB_17",
